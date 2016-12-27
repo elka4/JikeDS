@@ -19,7 +19,7 @@ public class InverseIntArray {
         }
     }
 
-    public void invertArray(int[] array) {
+    public void invert01(int[] array){
         if (array == null | array.length <= 1){
             return;
         }
@@ -28,16 +28,40 @@ public class InverseIntArray {
         }
     }
 
+    public void invert02(int[] array){
+        if (array == null | array.length <= 1){
+            return;
+        }
+        int n = array.length;
+        int half = n / 2;
+        for(int i = 0; i < half; i++){
+            swap(array, i, n - i - 1);
+        }
+
+    }
+
     @Test
     public void test01(){
         int[] array1={1,2,3,4,5,6,7};
         printArray(array1);
-        inverse01(array1);
+        invert01(array1);
         printArray(array1);
+
         int[] array2={1,2,3,4,5,6};
         printArray(array2);
-        inverse01(array2);
+        invert01(array2);
         printArray(array2);
+    }
+
+    @Test
+    public void test02(){
+        int[] array2 = {1, 2, 3, 4, 5, 6, 7};
+        printArray(array2);
+        invert02(array2);
+        printArray(array2);
+
+
+
     }
 }
 
