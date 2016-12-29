@@ -1,4 +1,4 @@
-package com.jikexueyuan.one;
+package com.jikexueyuan.array.one;
 
 import org.junit.Test;
 

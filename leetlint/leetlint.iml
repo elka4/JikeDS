@@ -17,5 +17,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="dom4j-2.0.0-ALPHA-21" level="project" />
+    <orderEntry type="library" name="gson-2.3.1" level="project" />
   </component>
 </module>

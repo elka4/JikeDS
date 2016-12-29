@@ -1,4 +1,4 @@
-package com.jikexueyuan.one;
+package com.jikexueyuan.array.one;
 
 /**
  * Created by Student on 12/28/16.
