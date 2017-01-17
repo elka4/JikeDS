@@ -26,7 +26,7 @@ class Happiness{
 
 public class _1Happy_Iteration {
 	public static void main (String[] args) throws FileNotFoundException{
-		Scanner in = new Scanner(new File("input.txt"));
+		Scanner in = new Scanner(new File("_1Happy_Iteration.txt"));
 		int n = in.nextInt();
 		Happiness  happiness = new Happiness();
 		while (n != -1) {
