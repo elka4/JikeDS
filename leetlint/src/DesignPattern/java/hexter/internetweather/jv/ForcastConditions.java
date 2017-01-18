@@ -7,7 +7,7 @@ import com.java.hexter.internetweather.jv.WeatherData.Data;
 
 
 public class ForcastConditions implements Observer  {
-	
+	/*
 	private float mTemperatrue;
 	private float mPressure;
 	private float mHumidity;
@@ -26,6 +26,6 @@ public class ForcastConditions implements Observer  {
 		System.out.println("***Tomorrow mPressure:" +(mPressure+1)+"***");
 		System.out.println("***Tomorrow mHumidity:" +(mHumidity+1)+"***");
 	}
-	
+	*/
 	
 }

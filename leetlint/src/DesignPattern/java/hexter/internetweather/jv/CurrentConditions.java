@@ -7,7 +7,7 @@ import com.java.hexter.internetweather.jv.WeatherData.Data;
 
 
 public class CurrentConditions implements Observer {
-	
+	/*
 	private float mTemperatrue;
 	private float mPressure;
 	private float mHumidity;
@@ -27,5 +27,5 @@ public class CurrentConditions implements Observer {
 		System.out.println("***Today mHumidity:" +mHumidity+"***");
 	}
 	
-	
+	*/
 }
