@@ -1,7 +1,7 @@
 package java.hexter.internetweather.jv;
 
 import com.java.hexter.internetweather.jv.WeatherData;
-
+import java.util.*;
 
 public class CurrentConditions implements Observer {
 

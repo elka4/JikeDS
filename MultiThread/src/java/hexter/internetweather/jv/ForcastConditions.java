@@ -1,5 +1,5 @@
 package java.hexter.internetweather.jv;
-
+import java.util.*;
 import com.java.hexter.internetweather.jv.WeatherData.Data;
 
 
