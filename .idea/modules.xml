@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JikeDS.iml" filepath="$PROJECT_DIR$/JikeDS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Try/Try.iml" filepath="$PROJECT_DIR$/Try/Try.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetlint/leetlint.iml" filepath="$PROJECT_DIR$/leetlint/leetlint.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tryModule/tryModule.iml" filepath="$PROJECT_DIR$/tryModule/tryModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MultiThread/tryModule.iml" filepath="$PROJECT_DIR$/MultiThread/tryModule.iml" />
     </modules>
   </component>
 </project>
