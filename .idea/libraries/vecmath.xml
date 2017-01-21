@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="dom4j-2.0.0-ALPHA-21">
+  <library name="vecmath">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/dom4j-2.0.0-ALPHA-2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Algo4/src/vecmath.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
