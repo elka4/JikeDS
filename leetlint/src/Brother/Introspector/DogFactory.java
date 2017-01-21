@@ -15,10 +15,11 @@ public class DogFactory {
     static {
         //读取属性文件
         InputStream inStream = Thread.currentThread().getContextClassLoader().
-                getResourceAsStream("bean.properties");
+                getResourceAsStream(" Brother/Introspector/bean.properties");//包名 Brother/Introspector/
         //加载属性文件
         try {
             config.load(inStream);
+            inStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -33,6 +34,7 @@ public class DogFactory {
         try {
             //根据类全名获取类信息对象（Class对象)
             Class dogClass = Class.forName(className);
+            //实例化对象
             Dog dog = (Dog)dogClass.newInstance();
 
             //开始使用内省了
