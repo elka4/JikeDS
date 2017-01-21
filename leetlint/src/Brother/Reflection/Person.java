@@ -19,6 +19,10 @@ public class Person {
         System.out.println("--有参构造方法--");
     }
 
+    private  void say() {
+        System.out.println("私有方法在跑");
+    }
+
     public String getName() {
         return name;
     }
