@@ -1,0 +1,113 @@
+
+
+public class AddressAda extends BaseAdapter {
+	
+	public AddressAda(Context ct) {
+		this.ct = ct;
+		
+	}
+
+	
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return data.length();
+	}
+
+	@Override
+	public Object getItem(int arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long getItemId(int arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup arg2) {
+		// TODO Auto-generated method stub
+		Holder mHolder = null;
+		final int p = position;
+		if (convertView == null) {
+			mHolder = new Holder();
+			convertView = LayoutInflater.from(ct).inflate(R.layout.addressitem,
+					null);
+			mHolder.address = (TextView) convertView
+					.findViewById(R.id.address);
+			mHolder.name = (TextView) convertView.findViewById(R.id.name);
+			mHolder.phone = (TextView) convertView.findViewById(R.id.phone);
+			mHolder.select= (RadioButton) convertView.findViewById(R.id.select);
+			
+			settext(mHolder.address, 58, R.color.black);
+			settext(mHolder.name, 48, R.color.black);
+			settext(mHolder.phone, 48, R.color.black);
+			
+			convertView.setTag(mHolder);
+		} else {
+			mHolder = (Holder) convertView.getTag();
+		}
+		mHolder.address.setText(getJsonfield.getJsonArrayinfo(data, p,
+				"address"));
+		mHolder.name
+				.setText(getJsonfield.getJsonArrayinfo(data, p, "name")+","+getJsonfield.getJsonArrayinfo(data, p,
+						"phone"));
+		//mHolder.phone.setText();
+		
+	
+		if(addresspos==p)
+		{
+			mHolder.select.setChecked(true);
+			selectrdo=mHolder.select;
+		
+		}else{
+			mHolder.select.setChecked(false);
+		}
+		
+		mHolder.select.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView,
+					boolean isChecked) {
+				// TODO Auto-generated method stub
+				if(isChecked)
+				{
+					 Constant.InputSharedPreferences(ct, "addressinfo",
+							 getJsonfield.getJsonArrayinfo(data, p, "name")+","+getJsonfield.getJsonArrayinfo(data, p,
+										"phone")+","	+getJsonfield.getJsonArrayinfo(data, p,
+												"address")	);
+					
+					 addresspos=p;
+					 Constant.InputSharedPreferences(ct, "addresspos", addresspos);
+						
+					buttonView.setChecked(true);
+					selectrdo.setChecked(false);
+					selectrdo=(RadioButton) buttonView;
+				}
+					
+			}
+			
+		});
+		
+		
+		return convertView;
+	}
+
+	
+	private void settext(TextView tv, int size, int color) {
+		tv.setTextSize(TypedValue.COMPLEX_UNIT_PX,
+				(int) (size * Constant.Ratio));
+		tv.setTextColor(ct.getResources().getColor(color));
+	}
+
+	
+
+	private class Holder {
+
+		TextView phone, name, address;
+		RadioButton select;
+	}
+}
+
