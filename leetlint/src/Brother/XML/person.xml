@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<person>
+    <teacher id="1">
+        <name>小白</name>
+        <desc>一个猥琐但不下流的淫</desc>
+    </teacher>>
+
+    <teacher id="2">
+        <name>威哥</name>
+        <desc>高端大气上档次的人</desc>
+    </teacher>>
+
+</person>
