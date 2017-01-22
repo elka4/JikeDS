@@ -5,6 +5,6 @@
 	<bean id="helloWorld" class="com.jike.spring.chapter01.HelloWorld"></bean>
 	<bean id="helloChina" class="com.jike.spring.chapter01.HelloChina"></bean>
 	<bean id="person" class="com.jike.spring.chapter01.Person">
-	    <property name="helloMessage" ref="helloWorld"/>
+	    <property name="helloMessage" ref="helloChina"/>
 	</bean>
 </beans>

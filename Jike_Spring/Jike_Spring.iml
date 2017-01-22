@@ -18,5 +18,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib copy" level="project" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="org.dom4j:dom4j:2.0.0" level="project" />
   </component>
 </module>
