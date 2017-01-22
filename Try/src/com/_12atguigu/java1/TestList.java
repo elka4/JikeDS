@@ -6,21 +6,21 @@ import java.util.List;
 import org.junit.Test;
 
 public class TestList {
-	
-	//ArrayListï¿½ï¿½Listï¿½ï¿½ï¿½ï¿½ÒªÊµï¿½ï¿½ï¿½ï¿½
+
+	//ArrayList£ºListµÄÖ÷ÒªÊµÏÖÀà
 	/*
-	 * Listï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Collectionï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÓµÄ·ï¿½ï¿½ï¿½
-	 *  void add(int index, Object ele):ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½indexï¿½ï¿½ï¿½Ôªï¿½ï¿½ele
+	 * ListÖÐÏà¶ÔÓÚCollection£¬ÐÂÔö¼ÓµÄ·½·¨
+	 *  void add(int index, Object ele):ÔÚÖ¸¶¨µÄË÷ÒýÎ»ÖÃindexÌí¼ÓÔªËØele
 		boolean addAll(int index, Collection eles)
-		Object get(int index):ï¿½ï¿½È¡Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½
-		Object remove(int index):É¾ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ãµï¿½Ôªï¿½ï¿½
-		Object set(int index, Object ele):ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½Ãµï¿½Ôªï¿½ï¿½Îªele
-		int indexOf(Object obj):ï¿½ï¿½ï¿½ï¿½objï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Î³ï¿½ï¿½Öµï¿½Î»ï¿½Ã¡ï¿½Ã»ï¿½ÐµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-1
-		int lastIndexOf(Object obj)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½objï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Î³ï¿½ï¿½Öµï¿½Î»ï¿½ï¿½.Ã»ï¿½ÐµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-1
-		List subList(int fromIndex, int toIndex):ï¿½ï¿½ï¿½Ø´ï¿½fromIndexï¿½ï¿½toIndexï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¿ï¿½Ò»ï¿½ï¿½ï¿½ï¿½list
-		
-		Listï¿½ï¿½ï¿½ÃµÄ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(add(Object obj)) É¾(remove) ï¿½ï¿½(set(int index,Object obj))
-					ï¿½ï¿½(get(int index)) ï¿½ï¿½(add(int index, Object ele)) ï¿½ï¿½ï¿½ï¿½(size())
+		Object get(int index):»ñÈ¡Ö¸¶¨Ë÷ÒýµÄÔªËØ
+		Object remove(int index):É¾³ýÖ¸¶¨Ë÷ÒýÎ»ÖÃµÄÔªËØ
+		Object set(int index, Object ele):ÉèÖÃÖ¸¶¨Ë÷ÒýÎ»ÖÃµÄÔªËØÎªele
+		int indexOf(Object obj):·µ»ØobjÔÚ¼¯ºÏÖÐÊ×´Î³öÏÖµÄÎ»ÖÃ¡£Ã»ÓÐµÄ»°£¬·µ»Ø-1
+		int lastIndexOf(Object obj)£º·µ»ØobjÔÚ¼¯ºÏÖÐ×îºóÒ»´Î³öÏÖµÄÎ»ÖÃ.Ã»ÓÐµÄ»°£¬·µ»Ø-1
+		List subList(int fromIndex, int toIndex):·µ»Ø´ÓfromIndexµ½toIndex½áÊøµÄ×ó±ÕÓÒ¿ªÒ»¸ö×Ólist
+
+		List³£ÓÃµÄ·½·¨£ºÔö(add(Object obj)) É¾(remove) ¸Ä(set(int index,Object obj))
+					²é(get(int index)) ²å(add(int index, Object ele)) ³¤¶È(size())
 	 */
 	@Test
 	public void testList2(){
