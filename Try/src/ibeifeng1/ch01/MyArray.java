@@ -1,8 +1,8 @@
-package ibeifeng1.java.ch01;
+package ibeifeng1.ch01;
 
 public class MyArray {
 	private long[] arr;
-	//±íÊ¾ÓÐÐ§Êý¾ÝµÄ³¤¶È
+	//ï¿½ï¿½Ê¾ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ÝµÄ³ï¿½ï¿½ï¿½
 	private int elements;
 	
 	public MyArray() {
@@ -14,7 +14,7 @@ public class MyArray {
 	}
 	
 	/**
-	 * Ìí¼ÓÊý¾Ý
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void insert(long value) {
 		arr[elements] = value;
@@ -22,7 +22,7 @@ public class MyArray {
 	}
 	
 	/**
-	 * ÏÔÊ¾Êý¾Ý
+	 * ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void display() {
 		System.out.print("[");
@@ -33,7 +33,7 @@ public class MyArray {
 	}
 	
 	/**
-	 * ²éÕÒÊý¾Ý
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public int search(long value) {
 		int i;
@@ -52,7 +52,7 @@ public class MyArray {
 	}
 	
 	/**
-	 * ²éÕÒÊý¾Ý£¬¸ù¾ÝË÷ÒýÀ´²é
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public long get(int index) {
 		if(index >= elements || index < 0) {
@@ -63,7 +63,7 @@ public class MyArray {
 	}
 	
 	/**
-	 * É¾³ýÊý¾Ý
+	 * É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void delete(int index) {
 		if(index >= elements || index < 0) {
@@ -77,7 +77,7 @@ public class MyArray {
 	}
 	
 	/**
-	 * ¸üÐÂÊý¾Ý
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void change(int index, int newvalue) {
 		if(index >= elements || index < 0) {

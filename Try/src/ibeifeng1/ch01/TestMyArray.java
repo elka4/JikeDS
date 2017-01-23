@@ -1,4 +1,4 @@
-package ibeifeng1.java.ch01;
+package ibeifeng1.ch01;
 
 public class TestMyArray {
 	public static void main(String[] args) {

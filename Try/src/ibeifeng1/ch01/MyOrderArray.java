@@ -1,8 +1,8 @@
-package ibeifeng1.java.ch01;
+package ibeifeng1.ch01;
 
 public class MyOrderArray {
 	private long[] arr;
-	//±íÊ¾ÓÐÐ§Êý¾ÝµÄ³¤¶È
+	//ï¿½ï¿½Ê¾ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ÝµÄ³ï¿½ï¿½ï¿½
 	private int elements;
 	
 	public MyOrderArray() {
@@ -14,7 +14,7 @@ public class MyOrderArray {
 	}
 	
 	/**
-	 * Ìí¼ÓÊý¾Ý
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void insert(long value) {
 		int i;
@@ -32,7 +32,7 @@ public class MyOrderArray {
 	}
 	
 	/**
-	 * ÏÔÊ¾Êý¾Ý
+	 * ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void display() {
 		System.out.print("[");
@@ -43,7 +43,7 @@ public class MyOrderArray {
 	}
 	
 	/**
-	 * ²éÕÒÊý¾Ý
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public int search(long value) {
 		int i;
@@ -62,7 +62,7 @@ public class MyOrderArray {
 	}
 	
 	/**
-	 * ¶þ·Ö·¨²éÕÒÊý¾Ý
+	 * ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public int binarySearch(long value) {
 		int middle = 0;
@@ -87,7 +87,7 @@ public class MyOrderArray {
 	
 	
 	/**
-	 * ²éÕÒÊý¾Ý£¬¸ù¾ÝË÷ÒýÀ´²é
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public long get(int index) {
 		if(index >= elements || index < 0) {
@@ -98,7 +98,7 @@ public class MyOrderArray {
 	}
 	
 	/**
-	 * É¾³ýÊý¾Ý
+	 * É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void delete(int index) {
 		if(index >= elements || index < 0) {
@@ -112,7 +112,7 @@ public class MyOrderArray {
 	}
 	
 	/**
-	 * ¸üÐÂÊý¾Ý
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public void change(int index, int newvalue) {
 		if(index >= elements || index < 0) {
