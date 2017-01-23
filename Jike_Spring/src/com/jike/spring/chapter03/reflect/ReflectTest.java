@@ -11,7 +11,7 @@ public class ReflectTest {
 	public static Car  initByDefaultConst() throws Throwable
 	{
 		//1.通过类装载器获取Car类对象
-		ClassLoader loader = Thread.currentThread().getContextClassLoader();		
+		ClassLoader loader = Thread.currentThread().getContextClassLoader();
 		Class clazz = loader.loadClass("com.jike.spring.chapter03.reflect.Car");
 	
 		//2.获取类的默认构造器对象并实例化Car
@@ -24,7 +24,7 @@ public class ReflectTest {
 		Method setColor = clazz.getMethod("setColor",String.class);
 		setColor.invoke(car,"黑色");		
 		Method setMaxSpeed = clazz.getMethod("setMaxSpeed",int.class);
-		setMaxSpeed.invoke(car,200);		
+		setMaxSpeed.invoke(car,200);
 		return car;
 	}
 	

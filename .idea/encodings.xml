@@ -6,11 +6,16 @@
     <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter01/IHelloMessage.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter01/Main.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter01/Person.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter03/reflect/ReflectTest.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Jike_Spring2/src/com/jike/spring/chapter01/HelloChina.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Jike_Spring2/src/com/jike/spring/chapter01/HelloWorld.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Jike_Spring2/src/com/jike/spring/chapter01/IHelloMessage.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Jike_Spring2/src/com/jike/spring/chapter01/Main.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Jike_Spring2/src/com/jike/spring/chapter01/Person.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ch02/BubbleSort.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ch03/MyCycleQueue.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ch03/MyQueue.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ch03/MyStack.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Try/src/com/_12atguigu/exer/EcmDef.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Try/src/com/_12atguigu/java/TestCircle.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Try/src/com/_12atguigu/java1/TestCollection.java" charset="GB2312" />
@@ -26,5 +31,77 @@
     <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/java/TestList.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/java/TestMap.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/java/TestSet.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch01/MyArray.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch01/MyOrderArray.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch01/ch02/BubbleSort.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch01/ch03/MyCycleQueue.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch02/BubbleSort.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch03/MyCycleQueue.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch03/MyQueue.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch03/MyStack.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch04/LinkList.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch04/Node.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch05/DoubleLinkList.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch05/FirstLastLinkList.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch05/Node.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch07/HanoiTower.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch08/ShellSort.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch09/QuickSort.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch10/Node.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch10/Tree.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch11/Node.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch11/Tree.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch12/Node.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch12/Tree.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch13/Node.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch13/Tree.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch15/HashTable.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch15/Info.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch15/TestHashTable.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch16/HashTable.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch16/Info.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch16/TestHashTable.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch17/HashTable.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch17/Info.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch17/LinkList.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch17/Node.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch17/TestHashTable.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch18/Graph.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch18/Vertex.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch19/Graph.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch19/Vertex.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch20/Graph.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/java/ch20/Vertex.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/_01/TestInput.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/_11/TestIf.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/_11/TestIf2.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/_11/TestSwitch.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/_12/TestDoWhile.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/_12/TestFor.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/_12/TestWhile.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/_13/TestBig.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch01/MyArray.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch01/MyOrderedArray.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch01/Person.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch01/PersonArray.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch01/TestArray.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch01/TestArray2.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch01/TestB.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch01/TestPersonArray.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch02/BubArray.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch02/InsertArray.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch02/SelectArray.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch02/Student.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch02/StudentArray.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch02/TestStudentArray.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch03/CharStack.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch03/MyStack.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch03/TestReverse.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch04/MyQueue.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch04/PriorityQueue.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch04/Queue.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch05/LinkList.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch07/Node.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/ibeifeng2/ch07/Tree.java" charset="GB2312" />
   </component>
 </project>

@@ -5,6 +5,7 @@
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/helloMessage.xml</file>
+          <file>file://$MODULE_DIR$/src/com/jike/spring/chapter03/conf/wuJianDao.xml</file>
         </fileset>
       </configuration>
     </facet>
