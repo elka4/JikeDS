@@ -1,35 +1,36 @@
 package ibeifeng1.ch04;
+
 /*
- * �����൱�ڻ�
+ * 链表，相当于火车
  */
 public class LinkList {
-	//ͷ���
+	//头结点
 	private Node first;
-	
+
 	public LinkList() {
 		first = null;
 	}
-	
+
 	/**
-	 * ����һ����㣬��ͷ������в���
+	 * 插入一个结点，在头结点后进行插入
 	 */
 	public void insertFirst(long value) {
 		Node node = new Node(value);
 		node.next = first;
 		first = node;
 	}
-	
+
 	/**
-	 * ɾ��һ����㣬��ͷ�������ɾ��
+	 * 删除一个结点，在头结点后进行删除
 	 */
 	public Node deleteFirst() {
 		Node tmp = first;
 		first = tmp.next;
 		return tmp;
 	}
-	
+
 	/**
-	 * ��ʾ����
+	 * 显示方法
 	 */
 	public void display() {
 		Node current = first;
@@ -39,9 +40,9 @@ public class LinkList {
 		}
 		System.out.println();
 	}
-	
+
 	/**
-	 * ���ҷ���
+	 * 查找方法
 	 */
 	public Node find(long value) {
 		Node current = first;
@@ -53,9 +54,9 @@ public class LinkList {
 		}
 		return current;
 	}
-	
+
 	/**
-	 * ɾ������������������������ɾ��
+	 * 删除方法，根据数据域来进行删除
 	 */
 	public Node delete(long value) {
 		Node current = first;
@@ -67,13 +68,13 @@ public class LinkList {
 			previous = current;
 			current = current.next;
 		}
-		
+
 		if(current == first) {
 			first = first.next;
 		} else {
 			previous.next = current.next;
 		}
 		return current;
-		
+
 	}
 }

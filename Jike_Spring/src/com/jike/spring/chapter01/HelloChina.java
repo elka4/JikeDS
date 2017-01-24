@@ -3,8 +3,8 @@ package com.jike.spring.chapter01;
 public class HelloChina implements IHelloMessage {
 
 	
-	//¼Ì³ĞºÍÊµÏÖÁËIHelloMessage½Ó¿ÚÖĞµÄsayHello·½·¨£¬
-	//Ïò´ó¼ÒÊä³öÁËHello ChinaµÄĞÅÏ¢
+	//ç»§æ‰¿å’Œå®ç°äº†IHelloMessageæ¥å£ä¸­çš„sayHelloæ–¹æ³•ï¼Œ
+	//å‘å¤§å®¶è¾“å‡ºäº†Hello Chinaçš„ä¿¡æ¯
 	@Override
 	public String sayHello() {
 

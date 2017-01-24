@@ -2,19 +2,19 @@ package ibeifeng1.ch01;
 
 public class MyOrderArray {
 	private long[] arr;
-	//��ʾ��Ч���ݵĳ���
+	//表示有效数据的长度
 	private int elements;
-	
+
 	public MyOrderArray() {
 		arr = new long[50];
 	}
-	
+
 	public MyOrderArray(int maxsize) {
 		arr = new long[maxsize];
 	}
-	
+
 	/**
-	 * �������
+	 * 添加数据
 	 */
 	public void insert(long value) {
 		int i;
@@ -23,16 +23,16 @@ public class MyOrderArray {
 				break;
 			}
 		}
-		
+
 		for(int j = elements; j > i; j--) {
 			arr[j] = arr[j - 1];
 		}
 		arr[i] = value;
 		elements++;
 	}
-	
+
 	/**
-	 * ��ʾ����
+	 * 显示数据
 	 */
 	public void display() {
 		System.out.print("[");
@@ -41,9 +41,9 @@ public class MyOrderArray {
 		}
 		System.out.println("]");
 	}
-	
+
 	/**
-	 * ��������
+	 * 查找数据
 	 */
 	public int search(long value) {
 		int i;
@@ -52,23 +52,23 @@ public class MyOrderArray {
 				break;
 			}
 		}
-		
+
 		if(i == elements) {
 			return -1;
 		} else {
 			return i;
 		}
-		
+
 	}
-	
+
 	/**
-	 * ���ַ���������
+	 * 二分法查找数据
 	 */
 	public int binarySearch(long value) {
 		int middle = 0;
 		int low = 0;
 		int pow = elements;
-		
+
 		while(true) {
 			middle = (pow + low) / 2;
 			if(arr[middle] == value) {
@@ -84,10 +84,10 @@ public class MyOrderArray {
 			}
 		}
 	}
-	
-	
+
+
 	/**
-	 * �������ݣ�������������
+	 * 查找数据，根据索引来查
 	 */
 	public long get(int index) {
 		if(index >= elements || index < 0) {
@@ -96,9 +96,9 @@ public class MyOrderArray {
 			return arr[index];
 		}
 	}
-	
+
 	/**
-	 * ɾ������
+	 * 删除数据
 	 */
 	public void delete(int index) {
 		if(index >= elements || index < 0) {
@@ -110,9 +110,9 @@ public class MyOrderArray {
 			elements--;
 		}
 	}
-	
+
 	/**
-	 * ��������
+	 * 更新数据
 	 */
 	public void change(int index, int newvalue) {
 		if(index >= elements || index < 0) {

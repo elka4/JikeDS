@@ -1,36 +1,36 @@
 package ibeifeng1.ch05;
 //import ibeifeng1.java.ch04.Node;
 /*
- * ˫������
+ * 双端链表
  */
 public class FirstLastLinkList {
-	//ͷ���
-	private ibeifeng1.ch04.Node first;
-	//β���
-	private ibeifeng1.ch04.Node last;
-	
+	//头结点
+	private Node first;
+	//尾结点
+	private Node last;
+
 	public FirstLastLinkList() {
 		first = null;
 		last = null;
 	}
-	
+
 	/**
-	 * ����һ����㣬��ͷ������в���
+	 * 插入一个结点，在头结点后进行插入
 	 */
 	public void insertFirst(long value) {
-		ibeifeng1.ch04.Node node = new ibeifeng1.ch04.Node(value);
+		Node node = new Node(value);
 		if(isEmpty()) {
 			last = node;
 		}
 		node.next = first;
 		first = node;
 	}
-	
+
 	/**
-	 * ����һ����㣬��β�����в���
+	 * 插入一个结点，从尾结点进行插入
 	 */
 	public void insertLast(long value) {
-		ibeifeng1.ch04.Node node = new ibeifeng1.ch04.Node(value);
+		Node node = new Node(value);
 		if(isEmpty()) {
 			first = node;
 		} else {
@@ -38,36 +38,36 @@ public class FirstLastLinkList {
 		}
 		last = node;
 	}
-	
+
 	/**
-	 * ɾ��һ����㣬��ͷ�������ɾ��
+	 * 删除一个结点，在头结点后进行删除
 	 */
-	public ibeifeng1.ch04.Node deleteFirst() {
-		ibeifeng1.ch04.Node tmp = first;
+	public Node deleteFirst() {
+		Node tmp = first;
 		if(first.next == null) {
 			last = null;
 		}
 		first = tmp.next;
 		return tmp;
 	}
-	
+
 	/**
-	 * ��ʾ����
+	 * 显示方法
 	 */
 	public void display() {
-		ibeifeng1.ch04.Node current = first;
+		Node current = first;
 		while(current != null) {
 			current.display();
 			current = current.next;
 		}
 		System.out.println();
 	}
-	
+
 	/**
-	 * ���ҷ���
+	 * 查找方法
 	 */
-	public ibeifeng1.ch04.Node find(long value) {
-		ibeifeng1.ch04.Node current = first;
+	public Node find(long value) {
+		Node current = first;
 		while(current.data != value) {
 			if(current.next == null) {
 				return null;
@@ -76,13 +76,13 @@ public class FirstLastLinkList {
 		}
 		return current;
 	}
-	
+
 	/**
-	 * ɾ������������������������ɾ��
+	 * 删除方法，根据数据域来进行删除
 	 */
-	public ibeifeng1.ch04.Node delete(long value) {
-		ibeifeng1.ch04.Node current = first;
-		ibeifeng1.ch04.Node previous = first;
+	public Node delete(long value) {
+		Node current = first;
+		Node previous = first;
 		while(current.data != value) {
 			if(current.next == null) {
 				return null;
@@ -90,18 +90,18 @@ public class FirstLastLinkList {
 			previous = current;
 			current = current.next;
 		}
-		
+
 		if(current == first) {
 			first = first.next;
 		} else {
 			previous.next = current.next;
 		}
 		return current;
-		
+
 	}
-	
+
 	/**
-	 * �ж��Ƿ�Ϊ��
+	 * 判断是否为空
 	 */
 	public boolean isEmpty() {
 		return (first == null);

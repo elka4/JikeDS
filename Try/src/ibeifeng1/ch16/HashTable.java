@@ -4,41 +4,41 @@ import java.math.BigInteger;
 
 public class HashTable {
 	private Info[] arr;
-	
+
 	/**
-	 * Ĭ�ϵĹ��췽��
+	 * 默认的构造方法
 	 */
 	public HashTable() {
 		arr = new Info[100];
 	}
-	
+
 	/**
-	 * ָ�������ʼ����С
+	 * 指定数组初始化大小
 	 */
 	public HashTable(int maxSize) {
 		arr = new Info[maxSize];
 	}
-	
+
 	/**
-	 * ��������
+	 * 插入数据
 	 */
 	public void insert(Info info) {
-		//��ùؼ���
+		//获得关键字
 		String key = info.getKey();
-		//�ؼ������Զ��Ĺ�ϣ��
+		//关键字所自定的哈希数
 		int hashVal = hashCode(key);
-		//�����������Ѿ���ռ�ã�����������һ��δ��ɾ��������
+		//如果这个索引已经被占用，而且里面是一个未被删除的数据
 		while(arr[hashVal] != null && arr[hashVal].getName() != null) {
-			//���еݼ�
+			//进行递加
 			++hashVal;
-			//ѭ��
+			//循环
 			hashVal %= arr.length;
 		}
 		arr[hashVal] = info;
 	}
-	
+
 	/**
-	 * ��������
+	 * 查找数据
 	 */
 	public Info find(String key) {
 		int hashVal = hashCode(key);
@@ -51,9 +51,9 @@ public class HashTable {
 		}
 		return null;
 	}
-	
+
 	/**
-	 * ɾ������
+	 * 删除数据
 	 * @param key
 	 * @return
 	 */
@@ -70,7 +70,7 @@ public class HashTable {
 		}
 		return null;
 	}
-	
+
 	public int hashCode(String key) {
 //		int hashVal = 0;
 //		for(int i = key.length() - 1; i >= 0; i--) {
@@ -78,7 +78,7 @@ public class HashTable {
 //			hashVal += letter;
 //		}
 //		return hashVal;
-		
+
 		BigInteger hashVal = new BigInteger("0");
 		BigInteger pow27 = new BigInteger("1");
 		for(int i = key.length() - 1; i >= 0; i--) {

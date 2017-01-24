@@ -4,35 +4,35 @@ import java.math.BigInteger;
 
 public class HashTable {
 	private Info[] arr;
-	
+
 	/**
-	 * Ĭ�ϵĹ��췽��
+	 * 默认的构造方法
 	 */
 	public HashTable() {
 		arr = new Info[100];
 	}
-	
+
 	/**
-	 * ָ�������ʼ����С
+	 * 指定数组初始化大小
 	 */
 	public HashTable(int maxSize) {
 		arr = new Info[maxSize];
 	}
-	
+
 	/**
-	 * ��������
+	 * 插入数据
 	 */
 	public void insert(Info info) {
 		arr[hashCode(info.getKey())] = info;
 	}
-	
+
 	/**
-	 * ��������
+	 * 查找数据
 	 */
 	public Info find(String key) {
 		return arr[hashCode(key)];
 	}
-	
+
 	public int hashCode(String key) {
 //		int hashVal = 0;
 //		for(int i = key.length() - 1; i >= 0; i--) {
@@ -40,7 +40,7 @@ public class HashTable {
 //			hashVal += letter;
 //		}
 //		return hashVal;
-		
+
 		BigInteger hashVal = new BigInteger("0");
 		BigInteger pow27 = new BigInteger("1");
 		for(int i = key.length() - 1; i >= 0; i--) {

@@ -1,33 +1,33 @@
 package ibeifeng1.ch10;
 /*
- * ��������
+ * 二叉树类
  */
 public class Tree {
-	//���ڵ�
+	//根节点
 	private Node root;
-	
+
 	/**
-	 * ����ڵ�
+	 * 插入节点
 	 * @param value
 	 */
 	public void insert(long value) {
-		
+
 	}
-	
+
 	/**
-	 * ���ҽڵ�
+	 * 查找节点
 	 * @param value
 	 */
 	public void find(long value) {
-		
+
 	}
-	
+
 	/**
-	 * ɾ���ڵ�
+	 * 删除节点
 	 * @param value
 	 */
 	public void delte(long value) {
-		
+
 	}
-	
+
 }

@@ -2,7 +2,7 @@ package com.jike.spring.chapter01;
 
 public class Person {
 
-	//½«IHelloMessage×÷ÎªÒ»¸öÊôĞÔ£¬ÓÃÓÚÏò´ó¼ÒÊä³öÎÊºòĞÅÏ¢
+	//å°†IHelloMessageä½œä¸ºä¸€ä¸ªå±æ€§ï¼Œç”¨äºå‘å¤§å®¶è¾“å‡ºé—®å€™ä¿¡æ¯
 	private IHelloMessage helloMessage;
 
 	
@@ -14,10 +14,10 @@ public class Person {
 		this.helloMessage = helloMessage;
 	}
 	
-	//ÓÃÓÚµ÷ÓÃIHelloMessage½Ó¿ÚÏòÓÃ»§Êä³öÎÊºòĞÅÏ¢£¬
-	//¾ßÌåµÄÎÊºòĞÅÏ¢£¬ÓÉSpringµÄÅäÖÃÎÄ¼şÀ´·ÖÅäºÍ¾ö¶¨
-	//1.µ±ÅäÖÃÎÄ¼şÖĞ·ÖÅä¸øpersonµÄÊÇHelloWorldµÄÊµÌåÊ±£¬ÔòÊä³ö¡°Hello World£¡¡±µÄĞÅÏ¢£»
-	//2.µ±ÅäÖÃÎÄ¼şÖĞ·ÖÅä¸øpersonµÄÊÇHelloChinaµÄÊµÌåÊ±£¬ÔòÊä³ö¡°Hello China£¡¡±µÄĞÅÏ¢£»
+	//ç”¨äºè°ƒç”¨IHelloMessageæ¥å£å‘ç”¨æˆ·è¾“å‡ºé—®å€™ä¿¡æ¯ï¼Œ
+	//å…·ä½“çš„é—®å€™ä¿¡æ¯ï¼Œç”±Springçš„é…ç½®æ–‡ä»¶æ¥åˆ†é…å’Œå†³å®š
+	//1.å½“é…ç½®æ–‡ä»¶ä¸­åˆ†é…ç»™personçš„æ˜¯HelloWorldçš„å®ä½“æ—¶ï¼Œåˆ™è¾“å‡ºâ€œHello Worldï¼â€çš„ä¿¡æ¯ï¼›
+	//2.å½“é…ç½®æ–‡ä»¶ä¸­åˆ†é…ç»™personçš„æ˜¯HelloChinaçš„å®ä½“æ—¶ï¼Œåˆ™è¾“å‡ºâ€œHello Chinaï¼â€çš„ä¿¡æ¯ï¼›
 	public String sayHello() {
 		return this.helloMessage.sayHello();
 	}

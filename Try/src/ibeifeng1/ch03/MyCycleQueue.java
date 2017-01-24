@@ -1,19 +1,20 @@
 package ibeifeng1.ch03;
+
 /*
- * �ж���
+ * 列队类
  */
 public class MyCycleQueue {
-	//�ײ�ʹ������
+	//底层使用数组
 	private long[] arr;
-	//��Ч���ݵĴ�С
+	//有效数据的大小
 	private int elements;
-	//��ͷ
+	//队头
 	private int front;
-	//��β
+	//队尾
 	private int end;
-	
+
 	/**
-	 * Ĭ�Ϲ��췽��
+	 * 默认构造方法
 	 */
 	public MyCycleQueue() {
 		arr = new long[10];
@@ -21,9 +22,9 @@ public class MyCycleQueue {
 		front = 0;
 		end = -1;
 	}
-	
+
 	/**
-	 * �������Ĺ��췽��������Ϊ����Ĵ�С
+	 * 带参数的构造方法，参数为数组的大小
 	 */
 	public MyCycleQueue(int maxsize) {
 		arr = new long[maxsize];
@@ -31,9 +32,9 @@ public class MyCycleQueue {
 		front = 0;
 		end = -1;
 	}
-	
+
 	/**
-	 * �������,�Ӷ�β����
+	 * 添加数据,从队尾插入
 	 */
 	public void insert(long value) {
 		if(end == arr.length - 1) {
@@ -42,9 +43,9 @@ public class MyCycleQueue {
 		arr[++end] = value;
 		elements++;
 	}
-	
+
 	/**
-	 * ɾ�����ݣ��Ӷ�ͷɾ��
+	 * 删除数据，从队头删除
 	 */
 	public long remove() {
 		long value = arr[front++];
@@ -54,23 +55,23 @@ public class MyCycleQueue {
 		elements--;
 		return value;
 	}
-	
+
 	/**
-	 * �鿴���ݣ��Ӷ�ͷ�鿴
+	 * 查看数据，从队头查看
 	 */
 	public long peek() {
 		return arr[front];
 	}
-	
+
 	/**
-	 * �ж��Ƿ�Ϊ��
+	 * 判断是否为空
 	 */
 	public boolean isEmpty() {
 		return elements == 0;
 	}
-	
+
 	/**
-	 * �ж��Ƿ�����
+	 * 判断是否满了
 	 */
 	public boolean isFull() {
 		return elements == arr.length;

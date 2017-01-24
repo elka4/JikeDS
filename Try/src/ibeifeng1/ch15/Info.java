@@ -1,13 +1,13 @@
 package ibeifeng1.ch15;
 /**
- * Ա����Ϣ��
+ * 员工信息类
  * @author Administrator
  *
  */
 public class Info {
 	private String key;
 	private String name;
-	
+
 	public Info(String key, String name) {
 		this.key = key;
 		this.name = name;
@@ -28,6 +28,6 @@ public class Info {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
+
+
 }

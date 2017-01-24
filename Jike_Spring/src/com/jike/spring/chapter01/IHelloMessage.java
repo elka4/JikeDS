@@ -2,7 +2,7 @@ package com.jike.spring.chapter01;
 
 public interface IHelloMessage {
 	
-	//½Ó¿ÚÖĞµÄÒ»¸ö³éÏó·½·¨£¬ÓÃÓÚÏò´ó¼ÒÊä³öÎÊºòĞÅÏ¢
+	//æ¥å£ä¸­çš„ä¸€ä¸ªæŠ½è±¡æ–¹æ³•ï¼Œç”¨äºå‘å¤§å®¶è¾“å‡ºé—®å€™ä¿¡æ¯
 	public String sayHello();
 
 }

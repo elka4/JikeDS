@@ -1,22 +1,21 @@
 package ibeifeng1.ch05;
 
-
 /*
- * ˫������
+ * 双向链表
  */
 public class DoubleLinkList {
-	//ͷ���
+	//头结点
 	private Node first;
-	//β���
+	//尾结点
 	private Node last;
-	
+
 	public DoubleLinkList() {
 		first = null;
 		last = null;
 	}
-	
+
 	/**
-	 * ����һ����㣬��ͷ������в���
+	 * 插入一个结点，在头结点后进行插入
 	 */
 	public void insertFirst(long value) {
 		Node node = new Node(value);
@@ -28,9 +27,9 @@ public class DoubleLinkList {
 		node.next = first;
 		first = node;
 	}
-	
+
 	/**
-	 * ����һ����㣬��β�����в���
+	 * 插入一个结点，从尾结点进行插入
 	 */
 	public void insertLast(long value) {
 		Node node = new Node(value);
@@ -42,9 +41,9 @@ public class DoubleLinkList {
 		}
 		last = node;
 	}
-	
+
 	/**
-	 * ɾ��һ����㣬��ͷ�������ɾ��
+	 * 删除一个结点，在头结点后进行删除
 	 */
 	public Node deleteFirst() {
 		Node tmp = first;
@@ -56,9 +55,9 @@ public class DoubleLinkList {
 		first = tmp.next;
 		return tmp;
 	}
-	
+
 	/**
-	 * ɾ����㣬��β������ɾ��
+	 * 删除结点，从尾部进行删除
 	 */
 	public Node deleteLast() {
 		Node tmp = last;
@@ -70,9 +69,9 @@ public class DoubleLinkList {
 		last = last.previous;
 		return last;
 	}
-	
+
 	/**
-	 * ��ʾ����
+	 * 显示方法
 	 */
 	public void display() {
 		Node current = first;
@@ -82,9 +81,9 @@ public class DoubleLinkList {
 		}
 		System.out.println();
 	}
-	
+
 	/**
-	 * ���ҷ���
+	 * 查找方法
 	 */
 	public Node find(long value) {
 		Node current = first;
@@ -96,9 +95,9 @@ public class DoubleLinkList {
 		}
 		return current;
 	}
-	
+
 	/**
-	 * ɾ������������������������ɾ��
+	 * 删除方法，根据数据域来进行删除
 	 */
 	public Node delete(long value) {
 		Node current = first;
@@ -108,18 +107,18 @@ public class DoubleLinkList {
 			}
 			current = current.next;
 		}
-		
+
 		if(current == first) {
 			first = first.next;
 		} else {
 			current.previous.next = current.next;
 		}
 		return current;
-		
+
 	}
-	
+
 	/**
-	 * �ж��Ƿ�Ϊ��
+	 * 判断是否为空
 	 */
 	public boolean isEmpty() {
 		return (first == null);

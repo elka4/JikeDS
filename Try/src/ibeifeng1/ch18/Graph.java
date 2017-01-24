@@ -1,19 +1,19 @@
 package ibeifeng1.ch18;
 /**
- * ͼ
+ * 图
  * @author Administrator
  *
  */
 public class Graph {
-	//��������
+	//顶点数组
 	private Vertex[] vertexList;
-	//�ڽӾ���
+	//邻接矩阵
 	private int[][] adjMat;
-	//����������Ŀ
+	//顶点的最大数目
 	private int maxSize;
-	//��ǰ����
+	//当前顶点
 	private int nVertex;
-	
+
 	public Graph() {
 		vertexList = new Vertex[maxSize];
 		adjMat = new int[maxSize][maxSize];
@@ -24,20 +24,20 @@ public class Graph {
 		}
 		nVertex = 0;
 	}
-	
+
 	/**
-	 * ��Ӷ���
+	 * 添加顶点
 	 */
 	public void addVertex(char label) {
 		vertexList[nVertex++] = new Vertex(label);
 	}
-	
+
 	/**
-	 * ��ӱ�
+	 * 添加边
 	 */
 	public void addEdge(int start,int end) {
 		adjMat[start][end] = 1;
 		adjMat[end][start] = 1;
 	}
-	
+
 }

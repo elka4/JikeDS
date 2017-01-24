@@ -1,56 +1,57 @@
 package ibeifeng1.ch03;
 
+
 public class MyStack {
-	//�ײ�ʵ����һ������
+	//底层实现是一个数组
 	private long[] arr;
 	private int top;
-	
+
 	/**
-	 * Ĭ�ϵĹ��췽��
+	 * 默认的构造方法
 	 */
 	public MyStack() {
 		arr = new long[10];
 		top = -1;
 	}
-	
+
 	/**
-	 * ���������췽��������Ϊ�����ʼ����С
+	 * 带参数构造方法，参数为数组初始化大小
 	 */
 	public MyStack(int maxsize) {
 		arr = new long[maxsize];
 		top = -1;
 	}
-	
+
 	/**
-	 * �������
+	 * 添加数据
 	 */
 	public void push(int value) {
 		arr[++top] = value;
 	}
-	
+
 	/**
-	 * �Ƴ�����
+	 * 移除数据
 	 */
 	public long pop() {
 		return arr[top--];
 	}
-	
+
 	/**
-	 * �鿴����
+	 * 查看数据
 	 */
 	public long peek() {
 		return arr[top];
 	}
-	
+
 	/**
-	 * �ж��Ƿ�Ϊ��
+	 * 判断是否为空
 	 */
 	public boolean isEmpty() {
 		return top == -1;
 	}
-	
+
 	/**
-	 * �ж��Ƿ�����
+	 * 判断是否满了
 	 */
 	public boolean isFull() {
 		return top == arr.length - 1;

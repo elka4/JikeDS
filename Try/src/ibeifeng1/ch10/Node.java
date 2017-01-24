@@ -1,21 +1,21 @@
 package ibeifeng1.ch10;
 /*
- * �������ڵ�
+ * 二叉树节点
  */
 public class Node {
-	//������
+	//数据项
 	public long data;
-	//���ӽڵ�
+	//左子节点
 	public Node leftChild;
-	//���ӽڵ�
+	//右子节点
 	public Node rightChild;
-	
+
 	/**
-	 * ���췽��
+	 * 构造方法
 	 * @param data
 	 */
 	public Node(long data) {
 		this.data = data;
 	}
-	
+
 }

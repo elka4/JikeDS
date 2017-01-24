@@ -2,27 +2,27 @@ package ibeifeng1.ch01;
 
 public class MyArray {
 	private long[] arr;
-	//��ʾ��Ч���ݵĳ���
+	//表示有效数据的长度
 	private int elements;
-	
+
 	public MyArray() {
 		arr = new long[50];
 	}
-	
+
 	public MyArray(int maxsize) {
 		arr = new long[maxsize];
 	}
-	
+
 	/**
-	 * �������
+	 * 添加数据
 	 */
 	public void insert(long value) {
 		arr[elements] = value;
 		elements++;
 	}
-	
+
 	/**
-	 * ��ʾ����
+	 * 显示数据
 	 */
 	public void display() {
 		System.out.print("[");
@@ -31,9 +31,9 @@ public class MyArray {
 		}
 		System.out.println("]");
 	}
-	
+
 	/**
-	 * ��������
+	 * 查找数据
 	 */
 	public int search(long value) {
 		int i;
@@ -42,17 +42,17 @@ public class MyArray {
 				break;
 			}
 		}
-		
+
 		if(i == elements) {
 			return -1;
 		} else {
 			return i;
 		}
-		
+
 	}
-	
+
 	/**
-	 * �������ݣ�������������
+	 * 查找数据，根据索引来查
 	 */
 	public long get(int index) {
 		if(index >= elements || index < 0) {
@@ -61,9 +61,9 @@ public class MyArray {
 			return arr[index];
 		}
 	}
-	
+
 	/**
-	 * ɾ������
+	 * 删除数据
 	 */
 	public void delete(int index) {
 		if(index >= elements || index < 0) {
@@ -75,9 +75,9 @@ public class MyArray {
 			elements--;
 		}
 	}
-	
+
 	/**
-	 * ��������
+	 * 更新数据
 	 */
 	public void change(int index, int newvalue) {
 		if(index >= elements || index < 0) {

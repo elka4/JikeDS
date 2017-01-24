@@ -1,21 +1,21 @@
 package ibeifeng1.ch08;
 /*
- * ϣ������
+ * 希尔排序
  */
 public class ShellSort {
 	/**
-	 * ���򷽷�
+	 * 排序方法
 	 */
 	public static void sort(long[] arr) {
-		//��ʼ��һ�����
+		//初始化一个间隔
 		int h = 1;
-		//���������
+		//计算最大间隔
 		while(h < arr.length / 3) {
 			h = h * 3 + 1;
 		}
-		
+
 		while(h > 0) {
-			//���в�������
+			//进行插入排序
 			long tmp = 0;
 			for(int i = h; i < arr.length; i++) {
 				tmp = arr[i];
@@ -26,7 +26,7 @@ public class ShellSort {
 				}
 				arr[j] = tmp;
 			}
-			//��С���
+			//减小间隔
 			h = (h - 1) / 3;
 		}
 	}

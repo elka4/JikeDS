@@ -1,6 +1,6 @@
 package ibeifeng1.ch17;
 /**
- * Ա����Ϣ��
+ * 员工信息类
  * @author Administrator
  *
  */

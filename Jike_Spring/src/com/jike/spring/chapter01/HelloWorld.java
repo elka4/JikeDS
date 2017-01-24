@@ -2,8 +2,8 @@ package com.jike.spring.chapter01;
 
 public class HelloWorld implements IHelloMessage{
 	
-	//¼Ì³ĞºÍÊµÏÖÁËIHelloMessage½Ó¿ÚÖĞµÄsayHello·½·¨£¬
-	//Ïò´ó¼ÒÊä³öÁËHello WorldµÄĞÅÏ¢
+	//ç»§æ‰¿å’Œå®ç°äº†IHelloMessageæ¥å£ä¸­çš„sayHelloæ–¹æ³•ï¼Œ
+	//å‘å¤§å®¶è¾“å‡ºäº†Hello Worldçš„ä¿¡æ¯
 	@Override
 	public String sayHello() {
 		return "Hello World!";

@@ -9,20 +9,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-    	//ÀûÓÃFileSystemResource¶ÁÈ¡ÅäÖÃÎÄ¼ş
+    	//åˆ©ç”¨FileSystemResourceè¯»å–é…ç½®æ–‡ä»¶
         Resource r = new FileSystemResource("Jike_Spring/src/com/jike/spring/chapter01/helloMessage.xml");
 
-        //ÀûÓÃXmlBeanFactoryÀ´¼ÓÔØÅäÖÃÎÄ¼ş£¬Æô¶¯IOCÈİÆ÷
+        //åˆ©ç”¨XmlBeanFactoryæ¥åŠ è½½é…ç½®æ–‡ä»¶ï¼Œå¯åŠ¨IOCå®¹å™¨
         BeanFactory f = new XmlBeanFactory(r);
 
-        //´ÓIOCÈİÆ÷ÖĞ»ñÈ¡PersonÀàµÄÊµÀı
+        //ä»IOCå®¹å™¨ä¸­è·å–Personç±»çš„å®ä¾‹
         Person person = (Person) f.getBean("person");
 
-        //personÊµÀıÏò´ó¼ÒÊä³öÎÊºòĞÅÏ¢
+        //personå®ä¾‹å‘å¤§å®¶è¾“å‡ºé—®å€™ä¿¡æ¯
         String s = person.sayHello();
 
-        //ÔÚÏµÍ³¿ØÖÆÌ¨ÖĞ´òÓ¡ÎÊºòĞÅÏ¢£¬ÓÉÓÚÔÚÕâÀïÅäÖÃÎÄ¼şÖĞÅäÖÃÊÇHelloWorldµÄÊµÀı£¬
-        //ËùÒÔ£¬ÔÚÕâÀï´òÓ¡µÄÊÇ×Ö·û´®£ºHelloWorld
+        //åœ¨ç³»ç»Ÿæ§åˆ¶å°ä¸­æ‰“å°é—®å€™ä¿¡æ¯ï¼Œç”±äºåœ¨è¿™é‡Œé…ç½®æ–‡ä»¶ä¸­é…ç½®æ˜¯HelloWorldçš„å®ä¾‹ï¼Œ
+        //æ‰€ä»¥ï¼Œåœ¨è¿™é‡Œæ‰“å°çš„æ˜¯å­—ç¬¦ä¸²ï¼šHelloWorld
         System.out.println("The Person is currently saying: "+s);
     }
 

@@ -1,31 +1,31 @@
 package ibeifeng1.ch11;
 /*
- * ��������
+ * 二叉树类
  */
 public class Tree {
-	//���ڵ�
+	//根节点
 	public Node root;
-	
+
 	/**
-	 * ����ڵ�
+	 * 插入节点
 	 * @param value
 	 */
 	public void insert(long value,String sValue) {
-		//��װ�ڵ�
+		//封装节点
 		Node newNode = new Node(value,sValue);
-		//���õ�ǰ�ڵ�
+		//引用当前节点
 		Node current = root;
-		//���ø��ڵ�
+		//引用父节点
 		Node parent;
-		//���rootΪnull��Ҳ���ǵ�һ�����ʱ��
+		//如果root为null，也就是第一插入的时候
 		if(root == null) {
 			root = newNode;
 			return;
 		} else {
 			while(true) {
-				//���ڵ�ָ��ǰ�ڵ�
+				//父节点指向当前节点
 				parent = current;
-				//�����ǰָ��Ľڵ����ݱȲ����Ҫ��,��������
+				//如果当前指向的节点数据比插入的要大,则向左走
 				if(current.data > value) {
 					current = current.leftChild;
 					if(current == null) {
@@ -42,36 +42,36 @@ public class Tree {
 			}
 		}
 	}
-	
+
 	/**
-	 * ���ҽڵ�
+	 * 查找节点
 	 * @param value
 	 */
 	public Node find(long value) {
-		//���õ�ǰ�ڵ㣬�Ӹ��ڵ㿪ʼ
+		//引用当前节点，从根节点开始
 		Node current = root;
-		//ѭ����ֻҪ����ֵ�����ڵ�ǰ�ڵ��������
+		//循环，只要查找值不等于当前节点的数据项
 		while(current.data != value) {
-			//���бȽϣ��Ƚϲ���ֵ�͵�ǰ�ڵ�Ĵ�С
+			//进行比较，比较查找值和当前节点的大小
 			if(current.data > value) {
 				current = current.leftChild;
 			} else {
 				current = current.rightChild;
 			}
-			//������Ҳ���
+			//如果查找不到
 			if(current == null) {
 				return null;
 			}
 		}
 		return current;
 	}
-	
+
 	/**
-	 * ɾ���ڵ�
+	 * 删除节点
 	 * @param value
 	 */
 	public void delte(long value) {
-		
+
 	}
-	
+
 }
