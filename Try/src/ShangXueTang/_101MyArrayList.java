@@ -109,6 +109,7 @@ public class _101MyArrayList {
         _101MyArrayList list = new _101MyArrayList();
         list.add("333");
         list.add("444");
+
         list.add("5");
         list.add("333");
         list.add("333");
