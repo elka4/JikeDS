@@ -1,4 +1,4 @@
-package ibeifeng.ch01;
+package ibeifeng1.ch01;
 
 public class MyOrderArray {
 	private long[] arr;

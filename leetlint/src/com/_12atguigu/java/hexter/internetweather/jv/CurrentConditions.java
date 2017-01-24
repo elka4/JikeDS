@@ -1,4 +1,4 @@
-package com._12atguigu.java.hexter.internetweather.jv;
+    package com._12atguigu.java.hexter.internetweather.jv;
 
 import java.util.Observable;
 import java.util.Observer;
