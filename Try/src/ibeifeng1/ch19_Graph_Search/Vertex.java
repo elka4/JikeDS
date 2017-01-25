@@ -1,14 +1,14 @@
-package ibeifeng1.ch18_Graph;
+package ibeifeng1.ch19_Graph_Search;
 /**
  * 顶点类
  * @author Administrator
  *
  */
 public class Vertex {
-	private char label;
+	public char label;
+	public boolean wasVisited;
 
 	public Vertex(char label) {
-
 		this.label = label;
 	}
 }
