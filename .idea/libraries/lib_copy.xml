@@ -4,7 +4,9 @@
       <root url="file://$PROJECT_DIR$/Jike_Spring/lib copy" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/spring-core-4.3.4.RELEASE-sources.jar!/" />
+    </SOURCES>
     <jarDirectory url="file://$PROJECT_DIR$/Jike_Spring/lib copy" recursive="false" />
   </library>
 </component>
