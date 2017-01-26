@@ -1,6 +1,8 @@
 package java2novice.hashset;
 
 import java.util.HashSet;
+import java.util.Iterator;
+
 /*Program: Basic HashSet Operations.
 
 Description:
@@ -19,6 +21,8 @@ public class _01MyBasicHashSet {
         hs.add("second");
         hs.add("third");
         System.out.println(hs);
+        Iterator<String> iterator = hs.iterator();
+
 
         System.out.println("Is HashSet empty? "+hs.isEmpty());
 

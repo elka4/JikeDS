@@ -123,7 +123,7 @@ public class ArrayQueue {
 			    pointer = (pointer+1) % this.maxSize;
 		    }
 		    //new line and indent
-		    s += "\n\t"; 
+		    s += "\n\t";
 		    //add information about current queue size, front and rear
 		    s += "The current size of the quence is " + size() + ".";
 		    s += "The front is at index " + this.front + " and the rear is at index " + this.rear + ".";

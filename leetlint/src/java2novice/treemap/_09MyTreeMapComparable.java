@@ -1,6 +1,7 @@
 package java2novice.treemap;
 
 import java.util.TreeMap;
+import java.util.Comparator;
  /*Program: How to sort keys in TreeMap by using Comparator?
 
 Description:
@@ -14,7 +15,7 @@ public class _09MyTreeMapComparable {
      
     public static void main(String a[]){
         //the treemap sorts by key
-        TreeMap<String, String> hm = new TreeMap<String, String>();
+        TreeMap<String, String> hm = new TreeMap<String, String>(new MyComp_2());
         //add key-value pair to TreeMap
         hm.put("java", "language");
         hm.put("computer", "machine");
@@ -24,15 +25,15 @@ public class _09MyTreeMapComparable {
     }
 }
  
-/*class MyComp_2 implements Comparator<String>{
+class MyComp_2 implements Comparator<String>{
  
     @Override
     public int compare(String str1, String str2) {
         return str1.compareTo(str2);
     }
      
-}*/
-class MyComp_2 implements Comparable<String>{
+}
+/*class MyComp_2 implements Comparable<String>{
 	
 
 	@Override
@@ -41,4 +42,4 @@ class MyComp_2 implements Comparable<String>{
 		return this.compareTo(o);
 	}
 	
-}
+}*/

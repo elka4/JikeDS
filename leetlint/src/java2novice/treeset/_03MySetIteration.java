@@ -22,5 +22,6 @@ public class _03MySetIteration {
         while(itr.hasNext()){
             System.out.println(itr.next());
         }
+
     }
 }

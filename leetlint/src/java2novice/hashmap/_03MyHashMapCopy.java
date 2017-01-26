@@ -20,6 +20,7 @@ public class _03MyHashMapCopy {
         HashMap<String, String> subMap = new HashMap<String, String>();
         subMap.put("s1", "S1 VALUE");
         subMap.put("s2", "S2 VALUE");
+
         hm.putAll(subMap);
         System.out.println(hm);
     }

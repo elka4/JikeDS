@@ -1,6 +1,9 @@
 package java2novice.hashmap;
 
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 /*Program: Basic HashMap Operations.
 
 Description:
@@ -25,6 +28,10 @@ public class _01MyBasicHashMap {
         hm.remove("third");
         System.out.println(hm);
         System.out.println("Size of the HashMap: "+hm.size());
+
+        System.out.println("============");
+        //Iterator<Map.Entry<String, String>> iterator = hm.
+
         
     }
 }

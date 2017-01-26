@@ -8,7 +8,7 @@ import java.util.Queue;
 public class _02CollectionAsLifo0Queue {
  
     public static void main(String args[]) {
-            
+
           Deque<String> dq = new ArrayDeque<String>(5);
           dq.add("java");
           dq.add("c");
@@ -17,6 +17,9 @@ public class _02CollectionAsLifo0Queue {
           dq.add("perl");       
           Queue<String> q = Collections.asLifoQueue(dq);  
           System.out.println("returned queue is: "+q);
+          q.peek();
+          q.poll();
+          q.remove();
        }
 }
 

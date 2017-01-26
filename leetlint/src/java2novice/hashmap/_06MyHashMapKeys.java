@@ -24,6 +24,7 @@ public class _06MyHashMapKeys {
         for(String key: keys){
             System.out.println(key);
         }
+        System.out.println(keys);
         System.out.println(values);
     }
 }

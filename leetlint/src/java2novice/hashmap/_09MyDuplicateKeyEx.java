@@ -18,9 +18,11 @@ public class _09MyDuplicateKeyEx {
         hm.put(new Price("Apple", 40), "Apple");
         hm.put(new Price("Orange", 30), "Orange");
         printMap(hm);
+
         Price key = new Price("Banana", 20);
         System.out.println("Adding duplicate key...");
         hm.put(key, "Grape");
+
         System.out.println("After adding dulicate key:");
         printMap(hm);
     }
@@ -45,6 +47,7 @@ class Price{
     }
      
     public int hashCode(){
+        System.out.println("\"hashCode\"");
         int hashcode = 0;
         hashcode = price*20;
         hashcode += item.hashCode();
@@ -52,6 +55,7 @@ class Price{
     }
      
     public boolean equals(Object obj){
+        System.out.println("\"equals\"");
         if (obj instanceof Price) {
             Price pp = (Price) obj;
             return (pp.item.equals(this.item) && pp.price == this.price);
