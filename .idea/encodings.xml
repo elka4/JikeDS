@@ -7,21 +7,22 @@
     <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter01/Main.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter01/Person.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter03/reflect/ReflectTest.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_12atguigu/exer/EcmDef.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_12atguigu/java/TestCircle.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_12atguigu/java1/TestCollection.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_12atguigu/java1/TestIterator.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_12atguigu/java1/TestList.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/exer/Employee.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/exer/Employee1.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/exer/MyDate.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/exer/TestEmployee.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/java/Person.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/java/TestCollections.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/java/TestEnumeration.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/java/TestList.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/java/TestMap.java" charset="GB2312" />
-    <file url="file://$PROJECT_DIR$/Try/src/com/_13atguigu/java/TestSet.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_12/exer/EcmDef.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_12/java/TestCircle.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_12/java1/TestCollection.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_12/java1/TestIterator.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_12/java1/TestList.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_13/exer/Employee.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_13/exer/Employee1.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_13/exer/MyDate.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_13/exer/TestEmployee.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_13/java/Person.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_13/java/TestCollections.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_13/java/TestEnumeration.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_13/java/TestList.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_13/java/TestMap.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java20_13/java/TestSet.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java8_2/java8/TestStreamAPI3.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/ch01_Array/MyArray.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/ch17_Hash_Open/HashTable.java" charset="UTF-8" />
   </component>
