@@ -12,7 +12,9 @@ public class _08MyVectorArrayCopy {
         vct.add("Random");
         System.out.println("Actual vector:"+vct);
         String[] copyArr = new String[vct.size()];
+
         vct.copyInto(copyArr);
+
         System.out.println("Copied Array content:");
         for(String str:copyArr){
             System.out.println(str);

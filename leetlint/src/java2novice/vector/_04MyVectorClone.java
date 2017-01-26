@@ -13,6 +13,8 @@ public class _04MyVectorClone {
         System.out.println("Actual vector:"+vct);
         Vector<String> copy = (Vector<String>) vct.clone();
         System.out.println("Cloned vector:"+copy);
+
+
     }
 }
 

@@ -21,6 +21,7 @@ public class _06MyHashSetRetain {
         hs.add("apple");
         hs.add("rat");
         System.out.println(hs);
+
         HashSet<String> subSet = new HashSet<String>();
         subSet.add("rat");
         subSet.add("second");

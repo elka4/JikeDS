@@ -19,11 +19,13 @@ public class _05MyHashSetToArray {
         hs.add("third");
         System.out.println("HashSet content: ");
         System.out.println(hs);
+
         String[] strArr = new String[hs.size()];
-        hs.toArray(strArr);
+        String[] strArr2 = hs.toArray(strArr);
         System.out.println("Copied array content:");
         for(String str:strArr){
             System.out.println(str);
         }
+        System.out.println(strArr.equals(strArr2));
     }
 }

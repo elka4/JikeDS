@@ -17,6 +17,7 @@ public class _03MyHashSetCopy {
         hs.add("second");
         hs.add("third");
         System.out.println(hs);
+
         HashSet<String> subSet = new HashSet<String>();
         subSet.add("s1");
         subSet.add("s2");

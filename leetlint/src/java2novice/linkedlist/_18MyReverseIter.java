@@ -21,5 +21,6 @@ public class _18MyReverseIter {
         while(itr.hasNext()){
             System.out.println(itr.next());
         }
+
     }
 }

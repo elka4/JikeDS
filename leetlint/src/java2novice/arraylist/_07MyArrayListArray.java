@@ -13,10 +13,20 @@ public class _07MyArrayListArray {
         arrl.add("Random");
         System.out.println("Actual ArrayList:"+arrl);
         String[] strArr = new String[arrl.size()];
-        arrl.toArray(strArr);
+        String[] strArr2 = arrl.toArray(strArr);
         System.out.println("Created Array content:");
         for(String str:strArr){
             System.out.println(str);
         }
+
+
+        System.out.println("Created Array2 content:");
+        for(String str:strArr2){
+            System.out.println(str);
+        }
+
+        System.out.println(strArr.equals(strArr2));
+
+
     }
 }

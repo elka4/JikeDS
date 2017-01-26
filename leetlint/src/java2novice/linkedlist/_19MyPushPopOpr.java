@@ -20,9 +20,11 @@ public class _19MyPushPopOpr {
         arrl.add("Third");
         arrl.add("Random");
         System.out.println(arrl);
+
         arrl.push("push element");
         System.out.println("After push operation:");
         System.out.println(arrl);
+
         System.out.println("pop element: " + arrl.pop());
         System.out.println("After pop operation:");
         System.out.println(arrl);

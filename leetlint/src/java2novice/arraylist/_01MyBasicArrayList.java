@@ -23,6 +23,14 @@ public class _01MyBasicArrayList {
         al.add("PERL");
         al.add("PHP");
         System.out.println(al);
+
+       String[] strArr =  al.toArray(new String[]{});
+       // String[] strArr2 =  (String[]) al.toArray();
+        Object[] strArr2 =  al.toArray();
+
+        System.out.println(strArr);
+        System.out.println(strArr[0]);
+
         //get elements by index
         System.out.println("Element at index 1: "+al.get(1));
         System.out.println("Does list contains JAVA? "+al.contains("JAVA"));

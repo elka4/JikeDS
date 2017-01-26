@@ -19,9 +19,12 @@ public class _01MyBasicHashSet {
         hs.add("second");
         hs.add("third");
         System.out.println(hs);
+
         System.out.println("Is HashSet empty? "+hs.isEmpty());
+
         hs.remove("third");
         System.out.println(hs);
+
         System.out.println("Size of the HashSet: "+hs.size());
         System.out.println("Does HashSet contains first element? "+hs.contains("first"));
     }
