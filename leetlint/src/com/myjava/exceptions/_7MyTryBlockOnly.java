@@ -13,6 +13,8 @@ public class _7MyTryBlockOnly {
     }
 }
 /*Java Exception Handling - without cache block example
-You can handle exceptions still without having catch blocks also, only thing you need to do is declare the throws clause in your method signature, so that the calling function would handle the exception. Before throwing exception, it executes the finally block.
+You can handle exceptions still without having catch blocks also, only thing you need to do is
+declare the throws clause in your method signature, so that the calling function would handle the exception.
+Before throwing exception, it executes the finally block.
 
 - See more at: http://www.java2novice.com/java_exception_handling_examples/without_catch_block/#sthash.BwZA1QSx.dpuf*/

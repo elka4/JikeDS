@@ -19,7 +19,10 @@ public class _3MyThrowsClause {
 }
 
 /*Throws Clause Examples
-The 'throws' clause in java programming language is belongs to a method to specify that the method raises particular type of exception while being executed.
+The 'throws' clause in java programming language is belongs to a method to
+specify that the method raises particular type of exception while being executed.
+
 The 'throws' clause takes arguments as a list of the objects of type 'Throwables' class.
 Anybody calling a method with a throws clause is needed to be enclosed within the try catch blocks.
+
 - See more at: http://www.java2novice.com/java_exception_handling_examples/throws_clause/#sthash.7Vilpxa5.dpuf*/

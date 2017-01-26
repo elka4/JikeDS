@@ -8,6 +8,7 @@ public class _16MyStringFormatter {
      
         String str = "This is %s format example";
         System.out.println(String.format(str, "string"));
+
         String str1 = "We are displaying no %d";
         System.out.println(String.format(str1, 10));
         /**
@@ -21,6 +22,9 @@ public class _16MyStringFormatter {
 /*How to format given string in java?
 
 Description:
-String.format() method helps us to format the given string. It replaces each format item in a specified string with the text equivalent of a corresponding object's value. Example can explain more:
+String.format() method helps us to format the given string.
+It replaces each format item in a specified string with the text equivalent of a corresponding object's value.
+
+ Example can explain more:
 
 - See more at: http://www.java2novice.com/java_string_examples/format/#sthash.xTYJx6xb.dpuf*/

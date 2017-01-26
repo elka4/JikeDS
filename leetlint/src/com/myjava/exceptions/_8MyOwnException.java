@@ -15,7 +15,9 @@ public class _8MyOwnException {
         }
     }
 }
- 
+
+
+
 class MyAppException extends Exception {
  
     private String message = null;
@@ -45,6 +47,8 @@ class MyAppException extends Exception {
 }
 
 /*How to Create Java Custom Exception
-Sometimes it is required to develop meaningful exceptions based on application requirements. We can create our own exceptions by extending 'Exception' class. Below example shows how to create custom exception by extending Exception class.
+Sometimes it is required to develop meaningful exceptions based on application requirements.
+We can create our own exceptions by extending 'Exception' class.
+Below example shows how to create custom exception by extending Exception class.
 
 - See more at: http://www.java2novice.com/java_exception_handling_examples/create_custom_exception/#sthash.iWJSXDis.dpuf*/

@@ -8,6 +8,7 @@ public class _06MyStringBytes {
         byte[] b = str.getBytes();
         System.out.println("String length: "+str.length());
         System.out.println("Byte array length: "+b.length);
+        System.out.println(b[6]);
     }
 }
 /*How to get byte array from a string object in java?

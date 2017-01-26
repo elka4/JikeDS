@@ -28,7 +28,14 @@ public class _6MyFinallyBlock {
 }
 /*Java Finally Block Examples
 The finally block always executes immediately after try-catch block exits.
-The finally block is executed incase even if an unexpected exception occurs.
-The main usage of finally block is to do clean up job. Keeping cleanup code in a finally block is always a good practice, even when no exceptions are occured.
-The runtime system always executes the code within the finally block regardless of what happens in the try block. So it is the ideal place to keep cleanup code.
+
+The finally block is executed in case even if an unexpected exception occurs.
+
+The main usage of finally block is to do clean up job. Keeping cleanup code in a
+ finally block is always a good practice, even when no exceptions are occured.
+
+The runtime system always executes the code within the finally block regardless
+ of what happens in the try block. So it is the ideal place to keep cleanup code.
+
+
 - See more at: http://www.java2novice.com/java_exception_handling_examples/finally_block/#sthash.lFJj2Mco.dpuf*/
