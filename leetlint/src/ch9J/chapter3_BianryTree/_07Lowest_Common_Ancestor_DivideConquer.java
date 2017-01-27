@@ -12,6 +12,7 @@ public class _07Lowest_Common_Ancestor_DivideConquer {
     public TreeNode lowestCommonAncestor(TreeNode root, 
     										TreeNode node1,
     										TreeNode node2) {
+
         if (root == null || root == node1 || root == node2) {
             return root;
         }

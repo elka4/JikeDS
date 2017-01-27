@@ -3,6 +3,8 @@ package ch9J.chapter3_BianryTree;
 import java.util.*;
 
 //Version 1: Traditional Method， 如果有父亲节点
+@SuppressWarnings("all")
+
 public class _07Lowest_Common_Ancestor_parentNode {
 	class TreeNode {
 		public TreeNode parent, left, right;

@@ -1,4 +1,5 @@
 package top100.Enhance._2Tree_Class;
+@SuppressWarnings("all")
 
 public class _1_SortedArrayToBST {
 
