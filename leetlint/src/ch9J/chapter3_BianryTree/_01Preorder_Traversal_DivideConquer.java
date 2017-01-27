@@ -3,6 +3,8 @@ package ch9J.chapter3_BianryTree;
 import java.util.ArrayList;
 
 //Version 2: Divide & Conquer
+@SuppressWarnings("all")
+
 //递归的定义：找到root为根的preorder并return
 public class _01Preorder_Traversal_DivideConquer {
 	public ArrayList<Integer> preorderTraversal(TreeNode root) {

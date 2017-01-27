@@ -54,7 +54,7 @@ public class TestLambda2 {
 		Runnable r = new Runnable() {
 			@Override
 			public void run() {
-				System.out.println("Hello World!" + num);
+				System.out.println("Hello World!" + num );
 			}
 		};
 		

@@ -16,7 +16,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-
+@SuppressWarnings("unused")
 public class Linear_List {
 
 	
@@ -25,7 +25,7 @@ public class Linear_List {
 		
 	}
 	
-	@SuppressWarnings("unused")
+
 	@Test
 	public void testArrayList () {
 		ArrayList<Integer> arrl = new ArrayList<Integer>();
@@ -37,17 +37,16 @@ public class Linear_List {
 			System.out.print(arrl.get(i) + " ");
 		}
 		System.out.println();
-		Collection<Integer> c_LinkedList = new LinkedList<>();
-		Collection<Integer> c_ArrayList = new ArrayList<>();
+		Collection<Integer> c_LinkedList = new LinkedList<>(arrl);
+		Collection<Integer> c_ArrayList = new ArrayList<>(arrl);
 		Collection<Integer> c_Stack = new Stack<>();
-		Collection<Integer> c_PriorityQueue = new PriorityQueue<>();
+		Collection<Integer> c_PriorityQueue = new PriorityQueue<>(arrl);
 		
-		Collection<Integer> c_HashSet = new HashSet<>();
+		Collection<Integer> c_HashSet = new HashSet<>(arrl);
 		
-		Collection<Integer> c_LinkedHashSet = new LinkedHashSet<>();
+		Collection<Integer> c_LinkedHashSet = new LinkedHashSet<>(arrl);
 	}
-	
-	@SuppressWarnings("unused")
+
 	@Test
 	public void testCollection() {
 		Collection<Integer> c_LinkedList = new LinkedList<>();

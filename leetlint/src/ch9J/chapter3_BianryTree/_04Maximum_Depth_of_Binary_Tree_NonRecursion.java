@@ -4,6 +4,8 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 //non-recursion
+@SuppressWarnings("all")
+
 public class _04Maximum_Depth_of_Binary_Tree_NonRecursion {
 	public int maxDepth(TreeNode root) {
 		if (root == null){

@@ -1,6 +1,8 @@
 package ch9J.chapter3_BianryTree;
 
 //root -> depth Divide & Conquer
+@SuppressWarnings("all")
+
 public class _04Maximum_Depth_of_Binary_Tree_DivideConquer {
   public int maxDepth(TreeNode root) {
 	  //出口

@@ -1,6 +1,7 @@
 package ch9J.chapter3_BianryTree;
 
 //技巧：求最小值，那就先都把默认设成无穷大。最后用Max.min（）来滤过无穷大的值。
+@SuppressWarnings("all")
 
 public class _05Minimum_Depth_of_Binary_Tree_1 {
 	public int minDepth1(TreeNode root) {
@@ -22,6 +23,7 @@ public class _05Minimum_Depth_of_Binary_Tree_1 {
 }
 
 //////////////////////////////////////////////////////////////
+@SuppressWarnings("all")
 
 class _5Minimum_Depth_of_Binary_Tree_2 {
 public int minDepth2(TreeNode root){

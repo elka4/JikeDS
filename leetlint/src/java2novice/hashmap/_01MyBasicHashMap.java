@@ -16,6 +16,7 @@ Below example shows basic HashMap functionalities like creating object,
 public class _01MyBasicHashMap {
  
     public static void main(String a[]){
+
         HashMap<String, String> hm = new HashMap<String, String>();
         //add key-value pair to hashmap
         hm.put("first", "FIRST INSERTED");

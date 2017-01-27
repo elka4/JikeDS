@@ -3,7 +3,7 @@ package ch9J.chapter3_BianryTree;
 import java.util.ArrayList;
 
 //Version 1: Traverse
-public class _01Preorder_Traversal_Preorder_Traverse {
+public class _01Preorder_Traversal_Recursion {
 	public ArrayList<Integer> preorderTraversal(TreeNode root) {
 	    ArrayList<Integer> result = new ArrayList<>();
 	    traverse(root, result);

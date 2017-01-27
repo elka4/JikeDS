@@ -1,6 +1,8 @@
 package ch9J.chapter3_BianryTree;
 
 //version 2: Traverse
+@SuppressWarnings("all")
+
 class _04Maximum_Depth_of_Binary_Tree_Traverse {
 	/**
 	* @param root: The root of binary tree.

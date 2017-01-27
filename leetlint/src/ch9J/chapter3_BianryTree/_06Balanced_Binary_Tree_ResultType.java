@@ -10,6 +10,7 @@ class ResultType {
 		this.maxDepth = maxDepth;
 	}
 }
+@SuppressWarnings("all")
 
 public class _06Balanced_Binary_Tree_ResultType {
  /**

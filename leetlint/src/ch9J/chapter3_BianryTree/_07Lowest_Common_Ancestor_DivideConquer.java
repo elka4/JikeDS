@@ -1,6 +1,8 @@
 package ch9J.chapter3_BianryTree;
 
 //Version 2: Divide & Conquer
+@SuppressWarnings("all")
+
 public class _07Lowest_Common_Ancestor_DivideConquer {
     // 在root为根的二叉树中找A,B的LCA:
     // 如果找到了就返回这个LCA

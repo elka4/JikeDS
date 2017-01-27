@@ -121,12 +121,17 @@ public class _01Arrays {
         System.out.println(p1[0].name);
         System.out.println(p2[0].name);
 
+
+
     }
 
     @Test
     public void testClone01() {
         Student s1=new Student("zhangsan",18);
         Student s2=(Student)s1.clone();
+        System.out.println(s1);
+        System.out.println(s2);
+
         System.out.println("name="+s1.name+","+"age="+s1.age);//修改学生2后，不影响学生1的值。
         System.out.println("name="+s2.name+","+"age="+s2.age);//修改学生2后，不影响学生1的值。
         s2.name="lisi";
