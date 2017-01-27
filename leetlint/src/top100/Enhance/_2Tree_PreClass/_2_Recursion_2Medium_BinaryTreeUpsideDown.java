@@ -2,14 +2,17 @@ package top100.Enhance._2Tree_PreClass;
 
 import java.util.Deque;
 import java.util.LinkedList;
+@SuppressWarnings("all")
 
 public class _2_Recursion_2Medium_BinaryTreeUpsideDown {
+
 	public TreeNode upsideDownBinaryTree1(TreeNode root) {
 		if (root == null) {
 			return root;
 		}
 		Deque<TreeNode> stack = new LinkedList<TreeNode>();
-		
+
+		//pull left nodes into stack
 		while(root != null) {
 			stack.offerLast(root);
 			root = root.left;
@@ -17,6 +20,8 @@ public class _2_Recursion_2Medium_BinaryTreeUpsideDown {
 		
 		TreeNode newRoot = stack.pollLast();
 		TreeNode cur = newRoot;
+
+		//change pointers
 		while (!stack.isEmpty()) {
 			TreeNode oriParent = stack.pollLast();
 			cur.right = oriParent;

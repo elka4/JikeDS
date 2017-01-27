@@ -1,4 +1,5 @@
 package top100.Enhance._2Tree_PreClass;
+@SuppressWarnings("all")
 
 public class _2_BinaryTree_2Medium_3ValidBinaryTree {
 	public boolean isValidBST(TreeNode root) {

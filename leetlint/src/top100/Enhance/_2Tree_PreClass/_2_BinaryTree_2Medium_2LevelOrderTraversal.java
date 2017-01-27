@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+@SuppressWarnings("all")
 
 public class _2_BinaryTree_2Medium_2LevelOrderTraversal {
 	public List<List<Integer>> levelOrder (TreeNode root) {

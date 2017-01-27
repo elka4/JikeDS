@@ -1,4 +1,5 @@
 package top100.Enhance._2Tree_PreClass;
+@SuppressWarnings("all")
 
 public class _2_BianryTree_1Easy_SearchInsertANodeInBST_Iterator {
 	public TreeNode search (TreeNode root, int val) {
