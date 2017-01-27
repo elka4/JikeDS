@@ -33,7 +33,8 @@ public class _2_Recursion_2Medium_BinaryTreeUpsideDown {
 		}
 		return newRoot;
 	}
-	
+
+	//recurtion
 	public TreeNode upsideDownBinaryTree2(TreeNode root) {
 		if (root == null || root.left == null) 
 			return root;
