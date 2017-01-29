@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/SpringPython/SpringPython.iml" filepath="$PROJECT_DIR$/SpringPython/SpringPython.iml" />
       <module fileurl="file://$PROJECT_DIR$/Try/Try.iml" filepath="$PROJECT_DIR$/Try/Try.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetlint/leetlint.iml" filepath="$PROJECT_DIR$/leetlint/leetlint.iml" />
+      <module fileurl="file://$USER_HOME$/PycharmProjects/web2byProject/web2py/web2py.iml" filepath="$USER_HOME$/PycharmProjects/web2byProject/web2py/web2py.iml" />
     </modules>
   </component>
 </project>
