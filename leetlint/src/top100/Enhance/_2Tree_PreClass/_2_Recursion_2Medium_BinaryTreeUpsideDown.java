@@ -36,16 +36,19 @@ public class _2_Recursion_2Medium_BinaryTreeUpsideDown {
 
 	//recurtion
 	public TreeNode upsideDownBinaryTree2(TreeNode root) {
-		if (root == null || root.left == null) 
+		if (root == null || root.left == null) {
 			return root;
-			//Assume all lower levels are handled
-			TreeNode newRoot = upsideDownBinaryTree2(root.left);
-			//Handle current level
-			root.left.left = root.right;
-			root.left.right = root;
-			root.left = null;
-			root.right = null;
-			return newRoot;
+		}
+
+		//Assume all lower levels are handled
+		TreeNode newRoot = upsideDownBinaryTree2(root.left);
+
+		//Handle current level
+		root.left.left = root.right;
+		root.left.right = root;
+		root.left = null;
+		root.right = null;
+		return newRoot;
 	}
 }
 	

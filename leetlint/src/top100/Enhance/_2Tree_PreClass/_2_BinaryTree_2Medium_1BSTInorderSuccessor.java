@@ -2,6 +2,7 @@ package top100.Enhance._2Tree_PreClass;
 @SuppressWarnings("all")
 
 public class _2_BinaryTree_2Medium_1BSTInorderSuccessor {
+
 	public TreeNode inorderSuccessor(TreeNode root, TreeNode p){
 		if(root == null) {
 			return null;
@@ -14,6 +15,7 @@ public class _2_BinaryTree_2Medium_1BSTInorderSuccessor {
 			return searchPar(root, p);
 		}
 	}
+
 	private TreeNode searchPar(TreeNode root, TreeNode p) {
 		TreeNode par = null;
 		while(root != p) {
@@ -26,6 +28,7 @@ public class _2_BinaryTree_2Medium_1BSTInorderSuccessor {
 		}
 		return par;
 	}
+
 	private TreeNode searchLeftMost(TreeNode root) {
 		while (root.left != null) {
 			root = root.left;
