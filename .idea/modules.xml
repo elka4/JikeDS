@@ -8,7 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/Jike_Spring/Jike_Spring.iml" filepath="$PROJECT_DIR$/Jike_Spring/Jike_Spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringPython/SpringPython.iml" filepath="$PROJECT_DIR$/SpringPython/SpringPython.iml" />
       <module fileurl="file://$PROJECT_DIR$/Try/Try.iml" filepath="$PROJECT_DIR$/Try/Try.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Try_Spring_All/Try_Spring_All.iml" filepath="$PROJECT_DIR$/Try_Spring_All/Try_Spring_All.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetlint/leetlint.iml" filepath="$PROJECT_DIR$/leetlint/leetlint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tryMaven_artifactID/tryMaven_artifactID.iml" filepath="$PROJECT_DIR$/tryMaven_artifactID/tryMaven_artifactID.iml" />
       <module fileurl="file://$USER_HOME$/PycharmProjects/web2byProject/web2py/web2py.iml" filepath="$USER_HOME$/PycharmProjects/web2byProject/web2py/web2py.iml" />
     </modules>
   </component>
