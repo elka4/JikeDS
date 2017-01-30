@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AjcSettings">
+    <option name="ajcPath" value="$MAVEN_REPOSITORY$/org/aspectj/aspectjtools/1.8.1/aspectjtools-1.8.1.jar" />
+    <option name="delegateToJavac" value="true" />
+  </component>
   <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="ajc" />
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-mvc-showcase" />
         <module name="tryMaven_artifactID" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring-mvc-showcase" target="1.7" />
       <module name="tryMaven_artifactID" target="1.5" />
     </bytecodeTargetLevel>
   </component>
