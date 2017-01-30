@@ -11,5 +11,19 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file:///Applications/AMPPS/www" />
+          <root url="file://$APPLICATION_HOME_DIR$/bin" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file:///Applications/AMPPS/www" />
+          <root url="file://$APPLICATION_HOME_DIR$/bin" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 8.0.33" level="application_server_libraries" />
   </component>
 </module>

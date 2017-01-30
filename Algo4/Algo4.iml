@@ -11,5 +11,18 @@
     <orderEntry type="library" name="j3dcore" level="project" />
     <orderEntry type="library" name="j3dutils" level="project" />
     <orderEntry type="library" name="vecmath" level="project" />
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file:///Applications/AMPPS/www" />
+          <root url="file://$APPLICATION_HOME_DIR$/bin" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file:///Applications/AMPPS/www" />
+          <root url="file://$APPLICATION_HOME_DIR$/bin" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
