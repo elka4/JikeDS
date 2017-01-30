@@ -8,6 +8,12 @@
           <file>file://$MODULE_DIR$/src/com/jike/spring/chapter03/conf/wuJianDao.xml</file>
           <file>file://$MODULE_DIR$/src/applicationContext.xml</file>
         </fileset>
+        <fileset id="fileset2" name="Spring Application Context (2)" removed="false">
+          <file>file://$MODULE_DIR$/src/com/java2novice/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/src/com/jike/spring/chapter01/helloMessage.xml</file>
+          <file>file://$MODULE_DIR$/src/com/jike/spring/chapter03/conf/wuJianDao.xml</file>
+          <file>file://$MODULE_DIR$/src/com/jike/spring/chapter06/anno/ApplicationContextConfig.java</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
