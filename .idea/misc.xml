@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$USER_HOME$/Downloads/uber/code/week1" />
     <file type="web" url="file://$PROJECT_DIR$/spring-mvc-showcase" />
     <type id="django" />
     <type id="Spring" />
@@ -10,6 +11,9 @@
       <list>
         <option value="$PROJECT_DIR$/tryMaven_artifactID/pom.xml" />
         <option value="$PROJECT_DIR$/spring-mvc-showcase/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week1/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week2/week2-1/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week2/week2-2/pom.xml" />
       </list>
     </option>
   </component>
