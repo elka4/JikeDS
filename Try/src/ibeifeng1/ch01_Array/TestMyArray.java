@@ -17,6 +17,7 @@ public class TestMyArray {
 		MyOrderArray arr = new MyOrderArray();
 		arr.insert(90);
 		arr.insert(30);
+
 		arr.insert(80);
 		arr.insert(10);
 		arr.display();

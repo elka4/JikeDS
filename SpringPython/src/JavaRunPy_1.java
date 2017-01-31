@@ -1,4 +1,4 @@
-import org.junit.Test;
+
 
 /**
  * Created by tzh on 1/29/17.
@@ -17,9 +17,9 @@ public class JavaRunPy_1 {
         }
     }
 
-    @Test
+    /*@Test
     public void test02(){
-        /*PythonInterpreter interpreter = new PythonInterpreter();
+        PythonInterpreter interpreter = new PythonInterpreter();
         try {
             interpreter.execfile(
                     "E:\\project\\python\\example.py");
@@ -27,6 +27,6 @@ public class JavaRunPy_1 {
             System.out.println("command return value = " + res);
         } catch (Exception e) {
             e.printStackTrace();
-        }*/
-    }
+        }
+    }*/
 }

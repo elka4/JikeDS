@@ -6,7 +6,9 @@
   </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="ajc" />
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="750" />
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -21,7 +23,7 @@
     <bytecodeTargetLevel>
       <module name="fleet-location-service" target="1.8" />
       <module name="hello-week1" target="1.8" />
-      <module name="helloworld-spring-boot" target="1.5" />
+      <module name="helloworld-spring-boot" target="1.8" />
       <module name="spring-mvc-showcase" target="1.7" />
       <module name="tryMaven_artifactID" target="1.5" />
     </bytecodeTargetLevel>
