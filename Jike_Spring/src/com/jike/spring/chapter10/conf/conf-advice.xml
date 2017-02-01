@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="greetingBefore"
+		class="com.jike.spring.chapter10.advice.GreetingBeforeAdvice" />
+	<bean id="greetingAfter"
+		class="com.jike.spring.chapter10.advice.GreetingAfterAdvice" />
+	<bean id="greetingAround"
+		class="com.jike.spring.chapter10.advice.GreetingInterceptor" />
+	<bean id="target" class="com.jike.spring.chapter10.advice.NaiveWaiter" />
+	<bean id="waiter" class="org.springframework.aop.framework.ProxyFactoryBean"
+		p:proxyInterfaces="com.jike.spring.chapter10.advice.Waiter"
+		p:target-ref="target" 
+		p:interceptorNames="greetingBefore,greetingAfter,greetingAround" />
+
+
+	<!--4. 异常抛出增强 -->
+	<bean id="forumServiceTarget" class="com.jike.spring.chapter10.advice.ForumService" />
+	<bean id="transactionManager" class="com.jike.spring.chapter10.advice.TransactionManager" />
+	<bean id="forumService" class="org.springframework.aop.framework.ProxyFactoryBean"
+		p:interceptorNames="transactionManager" p:target-ref="forumServiceTarget"
+		p:proxyTargetClass="true" />
+
+
+
+</beans>

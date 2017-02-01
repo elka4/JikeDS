@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="  
+	          http://www.springframework.org/schema/beans  
+	          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	          http://www.springframework.org/schema/util 
+	          http://www.springframework.org/schema/util/spring-util-3.0.xsd   
+	          http://www.springframework.org/schema/context  
+	          http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:annotation-config/>
+
+	<bean id="world" class="java.lang.String" >
+		<constructor-arg value="#{' World!'}" />
+	</bean>
+	
+	<bean id="hello1" class="java.lang.String" >
+		<constructor-arg value="#{'Hello'}#{world}" />
+	</bean>
+	<bean id="hello2" class="java.lang.String" >
+		<constructor-arg value="#{'Hello' + world}" />
+		<!-- 
+		<constructor-arg value="#{'Hello'#{world}}" />
+		 -->
+	</bean>
+
+	<bean id="hello3" class="java.lang.String" >
+		<constructor-arg value="#{'Hello' + @world}" />
+	</bean>
+	
+	<bean id="helloBean1" class="com.jike.spring.chapter08.AnnoExpression" />
+	<bean id="helloBean2" class="com.jike.spring.chapter08.AnnoExpression" >
+		<property name="value" value="haha" />
+	</bean>
+	
+	
+	<bean id="spelLiteral" class="com.jike.spring.chapter08.SpelLiteral">
+		<property name="count" value="#{5}" />
+		<property name="message" value="The value is #{5}" />
+		<property name="frequency" value="#{89.7}" />
+		<property name="capacity" value="#{1e4}" />
+		<property name="name1" value="#{'Chuck'}" />
+		<property name="name2" value='#{"Chuck"}' />
+		<property name="enabled" value="#{false}" />
+	</bean> 
+	
+	<bean id="spelClass" class="com.jike.spring.chapter08.SpelClass">
+		<property name="pi" value="#{T(java.lang.Math).PI}" />
+		<property name="randomNumber" value="#{T(java.lang.Math).random()}" />
+	</bean>
+	
+	<bean id="counter" class="com.jike.spring.chapter08.SpelCounter">
+		<property name="total" value="#{100}" />
+		<property name="count" value="#{10}"  />
+	</bean>
+	
+	<bean id="spelMath" class="com.jike.spring.chapter08.SpelMath">
+		<property name="adjustedAmount" value="#{counter.total + 42}" />
+		<property name="circumference" value="#{2 * T(java.lang.Math).PI * counter.total}" />
+		<property name="average" value="#{counter.total / counter.count}" />
+		<property name="remainder" value="#{counter.total % counter.count}" />
+		<property name="area" value="#{T(java.lang.Math).PI * counter.total ^ 2}" />
+		<property name="fullName" value="#{'张' + ' ' + '三'}" />
+	</bean>
+	
+	
+	<bean id="spelCityList" class="com.jike.spring.chapter08.SpelCityList">
+		<property name="chosenCity1" value="#{cities[2]}" />
+		<property name="chosenCity2"
+			value="#{cities[T(java.lang.Math).random() * cities.size()]}" />
+		<property name="bigCities" value="#{cities.?[population gt  100000]}" />
+		<property name="aBigCity1" value="#{cities.^[population gt  100000]}" />
+		<property name="aBigCity2" value="#{cities.$[population gt  100000]}" />
+		<property name="cityNames1" value="#{cities.![name]}" />
+		<property name="cityNames2" value="#{cities.![name + ', ' + state]}" />
+		<property name="cityNames3"
+			value="#{cities.?[population gt 100000].![name + ', ' + state]}" />
+
+	</bean>
+	<util:list id="cities">
+		<bean class="com.jike.spring.chapter08.SpelCity" p:name="Chicago"
+			  p:state="IL" p:population="2853114" />
+		<bean class="com.jike.spring.chapter08.SpelCity" p:name="Atlanta"
+			  p:state="GA" p:population="537958" />
+		<bean class="com.jike.spring.chapter08.SpelCity" p:name="Dallas"
+			  p:state="TX" p:population="1279910" />
+		<bean class="com.jike.spring.chapter08.SpelCity" p:name="Houston"
+			  p:state="TX" p:population="2242193" />
+		<bean class="com.jike.spring.chapter08.SpelCity" p:name="Odessa"
+			  p:state="TX" p:population="90943" />
+		<bean class="com.jike.spring.chapter08.SpelCity" p:name="El Paso"
+			  p:state="TX" p:population="613190" />
+		<bean class="com.jike.spring.chapter08.SpelCity" p:name="Jal"
+			  p:state="NM" p:population="1996" />
+		<bean class="com.jike.spring.chapter08.SpelCity" p:name="Las Cruces"
+			  p:state="NM" p:population="91865" />
+	</util:list>
+	
+</beans>

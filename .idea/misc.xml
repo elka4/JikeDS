@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC1" />
+    <file type="web" url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC2" />
+    <file type="web" url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC3" />
+    <file type="web" url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC4" />
+    <file type="web" url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC5" />
+    <file type="web" url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC6" />
+    <file type="web" url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC7" />
+    <file type="web" url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC8" />
+    <file type="web" url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC9" />
     <file type="web" url="file://$USER_HOME$/Downloads/uber/code/week1" />
     <file type="web" url="file://$USER_HOME$/Downloads/uber/code/week2/week2-2" />
     <file type="web" url="file://$PROJECT_DIR$/spring-mvc-showcase" />
@@ -16,6 +25,15 @@
         <option value="$USER_HOME$/Downloads/uber/code/week2/week2-2/pom.xml" />
         <option value="$USER_HOME$/Downloads/uber/code/week3/pom.xml" />
         <option value="$USER_HOME$/Downloads/uber/code/week4/pom.xml" />
+        <option value="$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC1/pom.xml" />
+        <option value="$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC2/pom.xml" />
+        <option value="$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC3/pom.xml" />
+        <option value="$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC4/pom.xml" />
+        <option value="$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC5/pom.xml" />
+        <option value="$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC6/pom.xml" />
+        <option value="$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC7/pom.xml" />
+        <option value="$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC8/pom.xml" />
+        <option value="$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC9/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

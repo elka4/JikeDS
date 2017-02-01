@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="aopalliance-1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aopalliance.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aspectjweaver-1.8.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/aspectj-1.8.6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/aspectj-1.8.6.jar!/doc/aspectj5rt-api" />
+      <root url="jar://$PROJECT_DIR$/lib/aspectj-1.8.6.jar!/doc/runtime-api" />
+      <root url="jar://$PROJECT_DIR$/lib/aspectj-1.8.6.jar!/doc/weaver-api" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/aspectj-1.8.6.jar!/doc/examples" />
+      <root url="jar://$PROJECT_DIR$/lib/aspectj-1.8.6.jar!/doc/examples/ltw" />
+    </SOURCES>
+  </library>
+</component>
