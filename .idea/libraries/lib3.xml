@@ -30,6 +30,8 @@
       <root url="jar://$USER_HOME$/Downloads/Study/Jike_Spring/Spring-chapter09/lib/aspectj-1.8.6.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/spring-core-3.2.9.RELEASE-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
