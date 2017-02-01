@@ -9,7 +9,6 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/tryMaven_artifactID/pom.xml" />
         <option value="$PROJECT_DIR$/spring-mvc-showcase/pom.xml" />
         <option value="$USER_HOME$/Downloads/uber/code/week1/pom.xml" />
         <option value="$USER_HOME$/Downloads/uber/code/week2/week2-1/pom.xml" />

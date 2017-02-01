@@ -9,17 +9,12 @@
       <module fileurl="file://$PROJECT_DIR$/Jike_Spring/Jike_Spring.iml" filepath="$PROJECT_DIR$/Jike_Spring/Jike_Spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringPython/SpringPython.iml" filepath="$PROJECT_DIR$/SpringPython/SpringPython.iml" />
       <module fileurl="file://$PROJECT_DIR$/Try/Try.iml" filepath="$PROJECT_DIR$/Try/Try.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Try_Spring_All/Try_Spring_All.iml" filepath="$PROJECT_DIR$/Try_Spring_All/Try_Spring_All.iml" />
       <module fileurl="file://$USER_HOME$/Downloads/uber/code/week2/week2-2/fleet-location-service.iml" filepath="$USER_HOME$/Downloads/uber/code/week2/week2-2/fleet-location-service.iml" />
       <module fileurl="file://$USER_HOME$/Downloads/uber/code/week1/hello-week1.iml" filepath="$USER_HOME$/Downloads/uber/code/week1/hello-week1.iml" />
       <module fileurl="file://$USER_HOME$/Downloads/uber/code/week2/week2-1/helloworld-spring-boot.iml" filepath="$USER_HOME$/Downloads/uber/code/week2/week2-1/helloworld-spring-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetlint/leetlint.iml" filepath="$PROJECT_DIR$/leetlint/leetlint.iml" />
-      <module fileurl="file://$PROJECT_DIR$/phpProject/phpProject.iml" filepath="$PROJECT_DIR$/phpProject/phpProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" filepath="$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" />
-      <module fileurl="file://$PROJECT_DIR$/tryMaven_artifactID/tryMaven_artifactID.iml" filepath="$PROJECT_DIR$/tryMaven_artifactID/tryMaven_artifactID.iml" />
-      <module fileurl="file://$USER_HOME$/PycharmProjects/web2byProject/web2py/web2py.iml" filepath="$USER_HOME$/PycharmProjects/web2byProject/web2py/web2py.iml" />
       <module fileurl="file://$PROJECT_DIR$/webDemo/webDemo.iml" filepath="$PROJECT_DIR$/webDemo/webDemo.iml" />
-      <module fileurl="file:///Applications/AMPPS/www/www.iml" filepath="/Applications/AMPPS/www/www.iml" />
     </modules>
   </component>
 </project>

@@ -17,12 +17,11 @@
         <module name="hello-week1" />
         <module name="helloworld-spring-boot" />
         <module name="spring-mvc-showcase" />
-        <module name="tryMaven_artifactID" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="fleet-location-service" target="1.8" />
-      <module name="hello-week1" target="1.8" />
+      <module name="hello-week1" target="1.5" />
       <module name="helloworld-spring-boot" target="1.8" />
       <module name="spring-mvc-showcase" target="1.7" />
       <module name="tryMaven_artifactID" target="1.5" />
