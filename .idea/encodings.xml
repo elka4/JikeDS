@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$USER_HOME$/Downloads/Study/Jike_Spring/Spring-chapter08/src/com/jike/spring/chapter08/spel/SpelMain.java" charset="GB2312" />
     <file url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC1" charset="UTF-8" />
     <file url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC2" charset="UTF-8" />
     <file url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC3" charset="UTF-8" />
@@ -10,13 +11,12 @@
     <file url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC7" charset="UTF-8" />
     <file url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC8" charset="UTF-8" />
     <file url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC9" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/1Spring Data JPA 入门/SpringDataJPA_1/src/com/jike/usermanage/controller/UserController.java" charset="GB2312" />
-    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/1Spring Data JPA 入门/SpringDataJPA_1/src/com/jike/usermanage/repository/UserRepository.java" charset="GB2312" />
-    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/1Spring Data JPA 入门/SpringDataJPA_1/src/com/jike/usermanage/service/UserService.java" charset="GB2312" />
-    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/1Spring Data JPA 入门/SpringDataJPA_1/src/com/jike/usermanage/service/UserServiceImpl.java" charset="GB2312" />
-    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/1Spring Data JPA 入门/SpringDataJPA_1/src/com/jike/usermanage/test/Client.java" charset="GB2312" />
+    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_1/src/com/jike/usermanage/controller/UserController.java" charset="GB2312" />
+    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_1/src/com/jike/usermanage/repository/UserRepository.java" charset="GB2312" />
     <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_1/src/com/jike/usermanage/service/UserService.java" charset="GB2312" />
     <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_1/src/com/jike/usermanage/service/UserServiceImpl.java" charset="GB2312" />
+    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_1/src/com/jike/usermanage/test/Client.java" charset="GB2312" />
+    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_2/src/com/jike/usermanage/test/Client.java" charset="GB2312" />
     <file url="file://$USER_HOME$/Downloads/uber/code/week2/week2-1" charset="UTF-8" />
     <file url="file://$USER_HOME$/Downloads/uber/code/week2/week2-2" charset="UTF-8" />
     <file url="file://$USER_HOME$/Downloads/uber/code/week3" charset="UTF-8" />
