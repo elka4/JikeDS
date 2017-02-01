@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$USER_HOME$/Downloads/uber/code/week1" />
+    <file type="web" url="file://$USER_HOME$/Downloads/uber/code/week2/week2-2" />
     <file type="web" url="file://$PROJECT_DIR$/spring-mvc-showcase" />
     <type id="django" />
     <type id="Spring" />
@@ -13,7 +14,29 @@
         <option value="$USER_HOME$/Downloads/uber/code/week1/pom.xml" />
         <option value="$USER_HOME$/Downloads/uber/code/week2/week2-1/pom.xml" />
         <option value="$USER_HOME$/Downloads/uber/code/week2/week2-2/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week3/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week4/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$USER_HOME$/Downloads/uber/code/week3/dashboard/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week3/fleet-location-ingest/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week3/fleet-location-service/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week3/fleet-location-simulator/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week3/fleet-location-updater/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week3/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week4/dashboard/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week4/fleet-location-ingest/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week4/fleet-location-service/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week4/fleet-location-simulator/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week4/fleet-location-updater/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week4/platform/eureka/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week4/platform/hystrix-dashboard/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week4/platform/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week4/pom.xml" />
+        <option value="$USER_HOME$/Downloads/uber/code/week4/service-location-service/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
