@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="test_data">
+    <CLASSES>
+      <root url="jar:///Applications/AMPPS/phpMyAdmin/test/test_data/timezone.shp.zip!/" />
+      <root url="jar:///Applications/AMPPS/phpMyAdmin/test/test_data/test.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

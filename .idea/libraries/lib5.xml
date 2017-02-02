@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="lib5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/spring4code/spring-2/lib/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring4code/spring-2/lib/com.springsource.net.sf.cglib-2.2.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring4code/spring-2/lib/spring-context-4.0.0.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring4code/spring-2/lib/spring-expression-4.0.0.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring4code/spring-2/lib/com.springsource.org.aopalliance-1.0.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring4code/spring-2/lib/spring-core-4.0.0.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring4code/spring-2/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring4code/spring-2/lib/spring-aspects-4.0.0.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring4code/spring-2/lib/spring-aop-4.0.0.RELEASE.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/spring4code/spring-2/lib/spring-beans-4.0.0.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

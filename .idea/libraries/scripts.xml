@@ -1,0 +1,32 @@
+<component name="libraryTable">
+  <library name="scripts">
+    <CLASSES>
+      <root url="jar:///Applications/AMPPS/ampps/scripts/drupal8.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/openx.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/sit.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/wallabag.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/drupal.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/postfix.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/sizzle.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/helpdezk.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/prototype.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/webasyst.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/wide.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/phorum.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/phpjs.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/b2e.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/gallery2.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/xcart.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/diy.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/omeka.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/stripe.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/mantis.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/cotonti.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/goffice6.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/zenber.zip!/" />
+      <root url="jar:///Applications/AMPPS/ampps/scripts/pmwiki.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

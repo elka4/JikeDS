@@ -34,5 +34,7 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mysql-connector-java-5.1.40-bin" level="project" />
+    <orderEntry type="library" name="org.hibernate.javax.persistence:hibernate-jpa-2.0-api:1.0.0.Final" level="project" />
   </component>
 </module>

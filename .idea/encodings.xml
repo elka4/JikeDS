@@ -15,29 +15,23 @@
     <file url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC7" charset="UTF-8" />
     <file url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC8" charset="UTF-8" />
     <file url="file://$USER_HOME$/Downloads/Study/SpringMVC/SpringMVC9" charset="UTF-8" />
+    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_1" charset="GB2312" />
     <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_1/src/com/jike/usermanage/controller/UserController.java" charset="GB2312" />
     <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_1/src/com/jike/usermanage/repository/UserRepository.java" charset="GB2312" />
     <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_1/src/com/jike/usermanage/service/UserService.java" charset="GB2312" />
     <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_1/src/com/jike/usermanage/service/UserServiceImpl.java" charset="GB2312" />
     <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_1/src/com/jike/usermanage/test/Client.java" charset="GB2312" />
+    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_2" charset="GB2312" />
     <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_2/src/com/jike/usermanage/test/Client.java" charset="GB2312" />
+    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_3" charset="GB2312" />
+    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_3/src/com/jike/usermanage/test/Client.java" charset="GB2312" />
+    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_4" charset="GB2312" />
+    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_5" charset="GB2312" />
+    <file url="file://$USER_HOME$/Downloads/Study/Spring_Data_JPA/SpringDataJPA_6" charset="GB2312" />
+    <file url="file://$USER_HOME$/Downloads/spring4code/spring-1" charset="GB2312" />
+    <file url="file://$USER_HOME$/Downloads/spring4code/spring-2" charset="GB2312" />
     <file url="file://$USER_HOME$/Downloads/uber/code/week2/week2-1" charset="UTF-8" />
     <file url="file://$USER_HOME$/Downloads/uber/code/week2/week2-2" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week3" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week3/dashboard" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week3/fleet-location-ingest" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week3/fleet-location-service" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week3/fleet-location-simulator" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week3/fleet-location-updater" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week4" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week4/dashboard" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week4/fleet-location-ingest" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week4/fleet-location-service" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week4/fleet-location-simulator" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week4/fleet-location-updater" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week4/platform" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week4/platform/eureka" charset="UTF-8" />
-    <file url="file://$USER_HOME$/Downloads/uber/code/week4/service-location-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter01/HelloChina.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter01/HelloWorld.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter01/IHelloMessage.java" charset="UTF-8" />
@@ -62,5 +56,6 @@
     <file url="file://$PROJECT_DIR$/Try/src/com/atguigu_Java8_2/java8/TestStreamAPI3.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/ch01_Array/MyArray.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/Try/src/ibeifeng1/ch17_Hash_Open/HashTable.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="gettext">
+    <CLASSES>
+      <root url="jar:///Applications/AMPPS/extra/share/gettext/libintl.jar!/" />
+      <root url="jar:///Applications/AMPPS/extra/share/gettext/gettext.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
