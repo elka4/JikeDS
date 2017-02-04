@@ -3,7 +3,7 @@ var s = 'str';
 switch(s) {
 	case "str": 
 		console.log('is str');
-		break;
+		//break;
 	case false:
 		console.log('is boolean false');
 		break;

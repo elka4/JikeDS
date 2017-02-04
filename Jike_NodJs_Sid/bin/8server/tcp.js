@@ -11,7 +11,7 @@ var clientHandler = function(socket){
     socket.write('server received\n');
   });
 
-  socket.on('close', function(){
+  socket.on('close',  function(){
     console.log(socket.remoteAddress, socket.remotePort, 'disconnected');
   })
 };
