@@ -9,6 +9,8 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.11.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-jpa:1.9.0.RELEASE" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="SpringDataJPA_1/web/Web" />
