@@ -22,19 +22,6 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library name="PHP" type="php">
-        <CLASSES>
-          <root url="file:///Applications/AMPPS/www" />
-          <root url="file://$APPLICATION_HOME_DIR$/bin" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file:///Applications/AMPPS/www" />
-          <root url="file://$APPLICATION_HOME_DIR$/bin" />
-        </SOURCES>
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="aopalliance-1.0" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.40-bin" level="project" />
   </component>

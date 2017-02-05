@@ -31,18 +31,5 @@
     <orderEntry type="library" name="Spring Batch-2.2.6" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.33" level="application_server_libraries" />
     <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="module-library">
-      <library name="PHP" type="php">
-        <CLASSES>
-          <root url="file:///Applications/AMPPS/www" />
-          <root url="file://$APPLICATION_HOME_DIR$/bin" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file:///Applications/AMPPS/www" />
-          <root url="file://$APPLICATION_HOME_DIR$/bin" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>

@@ -18,18 +18,5 @@
     <orderEntry type="library" name="lib copy" level="project" />
     <orderEntry type="library" name="Python 2.7.10 (/usr/bin/python) interpreter library" level="application" />
     <orderEntry type="library" name="org.python:jython:2.7.0" level="project" />
-    <orderEntry type="module-library">
-      <library name="PHP" type="php">
-        <CLASSES>
-          <root url="file:///Applications/AMPPS/www" />
-          <root url="file://$APPLICATION_HOME_DIR$/bin" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file:///Applications/AMPPS/www" />
-          <root url="file://$APPLICATION_HOME_DIR$/bin" />
-        </SOURCES>
-      </library>
-    </orderEntry>
   </component>
 </module>

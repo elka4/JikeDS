@@ -44,19 +44,6 @@
     <orderEntry type="library" name="lib copy" level="project" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="org.dom4j:dom4j:2.0.0" level="project" />
-    <orderEntry type="module-library">
-      <library name="PHP" type="php">
-        <CLASSES>
-          <root url="file:///Applications/AMPPS/www" />
-          <root url="file://$APPLICATION_HOME_DIR$/bin" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="file:///Applications/AMPPS/www" />
-          <root url="file://$APPLICATION_HOME_DIR$/bin" />
-        </SOURCES>
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.3.3.RELEASE" level="project" />
     <orderEntry type="library" name="aspectj:aspectjweaver:1.5.3" level="project" />
     <orderEntry type="library" name="aopalliance-1.0" level="project" />
