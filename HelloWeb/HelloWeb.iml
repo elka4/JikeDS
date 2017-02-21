@@ -29,7 +29,5 @@
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Spring Batch-2.2.6" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.33" level="application_server_libraries" />
-    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

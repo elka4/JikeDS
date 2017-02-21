@@ -15,7 +15,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="lib copy" level="project" />
     <orderEntry type="library" name="Python 2.7.10 (/usr/bin/python) interpreter library" level="application" />
     <orderEntry type="library" name="org.python:jython:2.7.0" level="project" />
   </component>

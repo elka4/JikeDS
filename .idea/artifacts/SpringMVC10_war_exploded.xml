@@ -8,7 +8,6 @@
           <element id="library" level="module" name="PHP" module-name="SpringMVC10" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="lib16" />
           <element id="library" level="project" name="org.wisdom-framework:mysql-connector-java:5.1.34_1" />
           <element id="file-copy" path="$PROJECT_DIR$/lib/junit-4.3.jar" />
         </element>
