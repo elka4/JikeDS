@@ -3,10 +3,10 @@ package top100.Public._4DP;
 import java.io.*;
 import java.util.*;
 
-class F{
+class F1{
 
     HashMap<Integer, Integer> cache;
-    F(){
+    F1(){
         cache = new HashMap<>();
         cache.put(0,0);
         cache.put(1,1);
@@ -20,10 +20,11 @@ class F{
 }
 
 public class Fibo {
+
     public static void main(String[] args) throws  FileNotFoundException{
         Scanner in = new Scanner(new File(
 "/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/Public/_4DP/FiboInput"));
-        F f = new F();
+        F1 f = new F1();
         int n = in.nextInt();
         while(n != -1){
             System.out.println(f.get(n));
