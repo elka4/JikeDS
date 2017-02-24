@@ -17,6 +17,7 @@ import java.util.Set;
 	• N: 字符串长度
 	• L: 最长的单词的长度
 */
+@SuppressWarnings("all")
 
 public class _01Word_Break_2016 {
 public boolean wordBreak(String s, Set<String> dict){
@@ -31,14 +32,16 @@ public boolean wordBreak(String s, Set<String> dict){
 	//长的前缀依赖短的前缀，所以从最短的前缀开始，自顶向下
 	
 	for(int i = 1; i <= n; i++){
-		//f[i] is false by default
+		//f[i] is false by default。所以不需要单独提前做initialize
 		for(int j = 0; j < i; j++){
 			if(f[j] == false){
 				continue;
 			}
-			//能走到这里，说面前面的部分(一直到j)可以完美切分
-			// which is: f[j] = true;
-			
+			/*
+			能走到这里，说面前面的部分(一直到j)可以完美切分
+			which is: f[j] = true;
+			*/
+
 			String sub = s.substring(j, i);
 		//那么如果切下来的部分可以构成一个单词，到i为止的就都能完美切分
 		//which is j to i - 1 is also true which makes f[i] true
