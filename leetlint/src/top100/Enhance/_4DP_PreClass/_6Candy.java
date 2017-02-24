@@ -11,7 +11,7 @@ public class _6Candy {
 
         left[0] = 1;
         right[ratings.length - 1] = 1;
-
+        //scan from left
         for(int i = 1; i < ratings.length; i++) {
             if(ratings[i] > ratings[i - 1]) {
                 left[i] = left[i - 1] + 1;
@@ -19,7 +19,7 @@ public class _6Candy {
                 left[i] = 1;
             }
         }
-
+        //scan from right
         for (int i = ratings.length - 2; i >= 0; i--) {
             if(ratings[i] < ratings[i + 1]) {
                 right[i] = right[i + 1] + 1;

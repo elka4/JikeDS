@@ -1,4 +1,4 @@
-package top100.Public._4DP;
+package top100.HighFreq._4DP;
 
 import java.io.*;
 

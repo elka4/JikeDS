@@ -10,8 +10,8 @@ public class _2_MaxSubArray {
         int maxSum = nums[0];
 
         for (int i = 1; i < nums.length; i++) {
-            curSum = Math.max(nums[i], nums[i] + curSum);
-            maxSum = Math.max(maxSum, curSum);
+            curSum = Math.max(nums[i], nums[i] + curSum);//if curSum < 0, reset head pointer
+            maxSum = Math.max(maxSum, curSum);//update global max whena  new curSum got
         }
         return maxSum;
 	}

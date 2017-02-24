@@ -1,7 +1,7 @@
 package top100.Enhance._4DP_PreClass;
 
 public class _5_EditDistance {
-	//Edit Distance I
+	//Edit Distance I， recursion
 	private int match(String word1, String word2, int i, int j, int[][] count) {
         if (i == word1.length()) {
             return word2.length() - j;
@@ -9,6 +9,7 @@ public class _5_EditDistance {
         if (j == word2.length()) {
             return word1.length() - i;
         }
+        //记忆化搜索
         if (count[i][j] != 0) {
                return count[i][j];
         }
@@ -27,7 +28,8 @@ public class _5_EditDistance {
         count[i][j] = res;
         return res;
   }
-//Edit Distance II
+
+//Edit Distance II， iteration
 public int minDistance(String word1, String word2) {
         if (word1 == null || word2 == null) {
             return 0;
