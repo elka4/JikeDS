@@ -16,35 +16,29 @@ public class _1_Minimum_Path_Sum {
             }
         }
         return col[grid[0].length-1];
-    }    
+    }
+
     public int minPathSum(int[][] grid) {
         int[][] minLen = new int[grid.length][grid[0].length];
         return helper(grid, 0, 0, minLen);
     }
 
-
-
     private int helper(int[][] grid, int row, int col, int[][] minLen) {
         if(row == grid.length - 1 && col == grid[0].length - 1) {
                 return grid[row][col];
         }
-
-    if(minLen[row][col] != 0) {
+        if(minLen[row][col] != 0) {
+            return minLen[row][col];
+        }
+        int down = Integer.MAX_VALUE;
+        int right = Integer.MAX_VALUE;
+        if(row < grid.length - 1) {
+            down = helper(grid, row + 1, col, minLen);
+        }
+        if(col < grid[0].length-1) {
+            right = helper(grid, row, col + 1, minLen);
+        }
+        minLen[row][col] = Math.min(down, right) + grid[row][col];
         return minLen[row][col];
     }
-
-
-
-    int down = Integer.MAX_VALUE;
-    int right = Integer.MAX_VALUE;
-    if(row < grid.length - 1) {
-        down = helper(grid, row + 1, col, minLen);
-
-    }
-    if(col < grid[0].length-1) {
-        right = helper(grid, row, col + 1, minLen);
-    }
-    minLen[row][col] = Math.min(down, right) + grid[row][col];
-    return minLen[row][col];
-}
 }
