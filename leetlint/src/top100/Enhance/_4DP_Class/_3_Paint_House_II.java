@@ -4,6 +4,9 @@ public class _3_Paint_House_II {
 	public int minCostII(int[][] costs) {
         //Method DP: Using an int[k] last representing the last min costs in k tracks
         //Using an int[k] cur representing the current min costs
+
+        //TimeO(kn) Space O(k)
+        //use heap, nlogk
         if(costs == null || costs.length == 0)
             return 0;
         if(costs[0] == null || costs[0].length == 0)
@@ -30,6 +33,10 @@ public class _3_Paint_House_II {
         }
         return min == Integer.MAX_VALUE ? 0 : min;
     }
+
+    ////////////////////////////////
+
+    //time O(kn), space O(1)
     public int minCostII2(int[][] costs) {
         if(costs == null || costs.length == 0) return 0;
           int m = costs.length, n = costs[0].length;

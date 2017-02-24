@@ -36,7 +36,7 @@ public boolean wordBreak(String s, Set<String> dict){
 			if(f[j] == false){
 				continue;
 			}
-			//能走到这里，说面前面的部分可以完美切分
+			//能走到这里，说面前面的部分(一直到j)可以完美切分
 			// which is: f[j] = true;
 			
 			String sub = s.substring(j, i);

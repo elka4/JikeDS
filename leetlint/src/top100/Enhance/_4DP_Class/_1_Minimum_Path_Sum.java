@@ -17,7 +17,20 @@ public class _1_Minimum_Path_Sum {
         }
         return col[grid[0].length-1];
     }
+    //induction rule原样
+    public void inducitonRule(int[][] grid){
+        int min[][] = new int[grid.length][];
+        min[0][0] = grid[0][0];
+        int col = grid.length;
+        int row = grid[0].length;
+        for(int i = 1; i < col; i++){
+            for(int j = 1; j < row; j++){
+                min[i][j] = Math.min(min[i][j - 1], min[i - 1][j]) + grid[i][j];
+            }
+        }
+    }
 
+    //recursion
     public int minPathSum(int[][] grid) {
         int[][] minLen = new int[grid.length][grid[0].length];
         return helper(grid, 0, 0, minLen);

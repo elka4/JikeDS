@@ -13,6 +13,7 @@ public class _3_Paint_House_I {
         int[] cur = new int[3];
         //Induction Rule: m[i][k] = costs[i][k] + Math.min(
            //                     m[i - 1][(k + 1) % 3], m[i - 1][(k + 2) % 3]);
+        //cur[k] = costs[i][k] + Math.min(last[(k+1)%3, last[(k+2)%3]])
         for (int[] cost : costs) {
             for (int i = 0; i < 3; i++) {
                 cur[i] = cost[i] + Math.min(last[(i + 1) % 3], last[(i + 2) % 3]);

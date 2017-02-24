@@ -6,7 +6,7 @@ public class _2_Regular_Expression_Matching {
             return false;
         int[][] match = new int[s.length() + 1][p.length() + 1];
         helper(s, p, 0, 0, match);
-        return match[s.length()][p.length()] == 1;
+        return match[s.length()][p.length()] == 1;//访问数组的最后一个
     }
 
     private boolean helper(String s, String p, int i, int j, int[][] match) {
@@ -15,22 +15,20 @@ public class _2_Regular_Expression_Matching {
             match[i][j] = (i == s.length()) ? 1 : -1;
             return match[i][j] == 1;
         }   
-
         if (match[i][j] != 0) {
             return match[i][j] == 1;
         }
 
-
-        //Case 1: p[i + 1] != "*"
+        //Case 1: p[i + 1] == "*"
         if (j < p.length() - 1 && p.charAt(j + 1) == '*') {
-            match[i][j] = (i < s.length() && (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.') && helper(s, p, i + 1, j, match) || helper(s, p, i, j + 2, match)) ? 1 : -1;
-        } else {//Case 2: p[i + 1] == '*'
-            match[i][j] = (i < s.length() && (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.') && helper(s, p, i + 1, j + 1, match)) ? 1 : -1;
+            match[i][j] = (i < s.length() && (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.') &&
+                    helper(s, p, i + 1, j, match) || helper(s, p, i, j + 2, match)) ? 1 : -1;
+        } else {//Case 2: p[i + 1] != '*'
+            match[i][j] = (i < s.length() && (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.') &&
+                    helper(s, p, i + 1, j + 1, match)) ? 1 : -1;
         }
         return match[i][j] == 1;
     }
-
-
 
     private boolean helper2(String s, String p, int i, int j) {
         //Base Case:
@@ -44,8 +42,6 @@ public class _2_Regular_Expression_Matching {
             else
                 return helper2(s, p, i + 1, j + 1);
         }
-
-
 
         //Case 2: p[i + 1] == "*"
         while (i < s.length() && (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.')) {

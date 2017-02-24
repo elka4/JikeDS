@@ -2,7 +2,7 @@ package ch9J.chapter4_DP1;
 
 public class _5Jump_Game {
 
-}
+
 /*
  * Jump Game
 ￼￼• 最优算法:贪心法,时间复杂度 O(n)
@@ -17,11 +17,11 @@ public class _5Jump_Game {
  */
 
 /*version 1: Dynamic Programming
-1. state:  f[i] = 能不能从index = 0跳到index =i
-2.function:  f[i] = OR(f[j]) (0 <= j <= i - 1 
+1. state:  f[i] = 能不能从index = 0跳到idex =i
+2. fuction:  f[i] = OR(f[j]) (0 <= j <= i - 1
 							并且 j能跳到 i: j + A[j] >= i)
 			 OR: &&  只考虑倒数第一步，就是i之前的那步
-3.initialize:  f[0] = true; 
+3.initialize:  f[0] = true;
 //               f[...] = false;
 //4.answer:      f[n - 1]    第n个数的坐标是 n － 1 ！！！！！
 */
@@ -94,3 +94,4 @@ Greedy Dynamic Programming Array
 Related Problems 
 Medium Jump Game II
  */
+}
