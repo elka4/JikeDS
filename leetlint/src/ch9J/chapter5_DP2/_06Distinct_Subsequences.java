@@ -1,6 +1,6 @@
 package ch9J.chapter5_DP2;
 
-/*
+/* 求方案总数
  * Distinct Subsequence
 • state: f[i][j] 表示 S的前i个字符中选取T的前j个字符,有多少种方案
 • function: f[i][j] = f[i - 1][j] + f[i - 1][j - 1] // S[i-1] == T[j-1]

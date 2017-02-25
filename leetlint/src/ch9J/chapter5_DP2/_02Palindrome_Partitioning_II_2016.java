@@ -36,18 +36,23 @@ class _02Palindrome_Partitioning_II_2016{
 	 * f[0] = f[""] = 0
 	 * 
 	 * return f[n] - 1
-	 * 
+	 *
+	 *
+	 *           下面在解释区间型动态规划，划分区间的方法。
+	 *           下面在解释区间型动态规划，划分区间的方法。
 	public int minCut(String s){
 
-		//i依赖比较大的，j依赖比较小的，所以循环i从大往小，循环j从小往大
+		//i依赖比较大的，j依赖比较小的，所以循环i从大往小（也就是从后往前），循环j从小往大（也就是从前往后）
 		for(int i = n - 1; i >= 0; i--){
 			for(int j = i + 1; j < n; j++){
 				f[i][j] = f[i + 1][j - 1] && s[i] == s[j];
 			}
 		}
 	
-		//f[i][j] <- f[i + 1][j - 1];
-		
+		//f[i][j] <- f[i + 1][j - 1]; 这个是更小的推出更大的
+
+
+		//另外一个写法
 		//delta = j - i  区间长度
 		//(0, n - 1)
 		for(int delta = 1; delta < n; delta++){

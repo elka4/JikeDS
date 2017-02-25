@@ -44,6 +44,7 @@ public int longestCommonSubsequence(String A, String B){
 	
 	//state: lcs[i][j] 代表A的前i个字符和B的前j个字符的LCS的长度是多少
 	int[][] lcs = new int[n + 1][m + 1];
+
 	//initialize
 	for(int i = 0; i <= n; i++){
 		lcs[i][0] = 0;
@@ -51,6 +52,7 @@ public int longestCommonSubsequence(String A, String B){
 	for(int j = 0; j <= m; j++){
 		lcs[0][j] = 0;
 	}
+
 	//function
 	for(int i = 1; i <= n; i++){
 		for(int j = 1; j <= m; j++){
@@ -65,6 +67,7 @@ public int longestCommonSubsequence(String A, String B){
 			}
 		}
 	}
+
 	//answer
 	return lcs[n][m];
 }
