@@ -1,5 +1,6 @@
 package ch9S.chapter5_DP1;
 //方法二
+@SuppressWarnings("all")
 public class _4Coins_in_a_Line_2 {
 	/**
      * @param n: an integer

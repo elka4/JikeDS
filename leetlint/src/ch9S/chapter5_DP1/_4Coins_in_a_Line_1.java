@@ -1,5 +1,6 @@
 package ch9S.chapter5_DP1;
 //方法一
+@SuppressWarnings("all")
 public class _4Coins_in_a_Line_1 {
 	/**
      * @param n: an integer
@@ -22,7 +23,8 @@ public class _4Coins_in_a_Line_1 {
         } else if(i == 2) {
             dp[i] = true;
         } else {
-            dp[i] = !MemorySearch(i-1, dp, flag) || !MemorySearch(i-2, dp, flag);
+            dp[i] = !MemorySearch(i-1, dp, flag) || !MemorySearch(i-2, dp, flag);//状态转移
+            //i-1 i-2是指对手走了前一步或者前两步，他赢我输，所以取F非 "！"
         }
         flag[i] =true;
         return dp[i];
