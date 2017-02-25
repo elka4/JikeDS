@@ -5,10 +5,9 @@ public class Longest_Increasing_Continuous_Subsequence {
         if (A == null || A.length == 0) {
             return 0;
         }
-        
         int n = A.length;
         int answer = 1;
-        
+
         // from left to right
         int length = 1; // just A[0] itself
         for (int i = 1; i < n; i++) {
