@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public class _60ArrayRemoveDuplicate {
 	public static void main (String[] args) throws FileNotFoundException{
-		Scanner in = new Scanner(new File("input.txt"));
+		Scanner in = new Scanner(new File
+	("/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/HighFreq/_1Linear/input_60"));
 		int n = in.nextInt();
 		while (n != -1) {
 			int[] nums = new int[n];
