@@ -29,8 +29,11 @@ public class _5Coins_in_a_Line_II_2 {
             dp[n] = values[values.length-2] + values[values.length-3]; 
         } else {
             dp[n] = Math.max(
-                Math.min(MemorySearch(n-2, dp, flag,values) , MemorySearch(n-3, dp, flag, values)) + values[values.length-n],
-                Math.min(MemorySearch(n-3, dp, flag, values), MemorySearch(n-4, dp, flag, values)) + values[values.length-n] + values[values.length - n + 1]
+                Math.min(MemorySearch(n-2, dp, flag,values) ,
+                        MemorySearch(n-3, dp, flag, values)) + values[values.length-n],
+                            Math.min(MemorySearch(n-3, dp, flag, values),
+                                    MemorySearch(n-4, dp, flag, values)) + values[values.length-n]
+                                    + values[values.length - n + 1]
                 );
         }
     

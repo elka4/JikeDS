@@ -1,37 +1,37 @@
 package ch9S.chapter6_DP2;
 
 public class _03BurstBalloons {
-public int maxCoins(int[] nums) {
-    int n = nums.length;
-    int [][]dp = new int [n+2][n+2];
-    int [][]visit = new int[n+2][n+2]; 
-    int [] arr = new int [n+2];
-    for (int i = 1; i <= n; i++){
-    		arr[i] = nums[i-1];
-    }
-    arr[0] = 1;
-    arr[n+1] = 1;
-    
-    return search(arr, dp, visit, 1 , n);
-}
+    public int maxCoins(int[] nums) {
+        int n = nums.length;
+        int [][]dp = new int [n+2][n+2];
+        int [][]visit = new int[n+2][n+2];
+        int [] arr = new int [n+2];
+        for (int i = 1; i <= n; i++){
+                arr[i] = nums[i-1];
+        }
+        arr[0] = 1;
+        arr[n+1] = 1;
 
-public int search(int []arr, int [][]dp, int [][]visit, int left, int right) {
-    if(visit[left][right] == 1)
-    		return dp[left][right];
-    
-    int res = 0;
-    
-    for (int k = left; k <= right; ++k) {
-        	int midValue =  arr[left - 1] * arr[k] * arr[right + 1];
-        	int leftValue = search(arr, dp, visit, left, k - 1);
-        	int rightValue = search(arr, dp, visit, k + 1, right);
-        res = Math.max(res, leftValue + midValue + rightValue);
+        return search(arr, dp, visit, 1 , n);
     }
-    
-    visit[left][right] = 1;
-    dp[left][right] = res;
-    return res;
-}
+
+    public int search(int []arr, int [][]dp, int [][]visit, int left, int right) {
+        if(visit[left][right] == 1)
+                return dp[left][right];
+
+        int res = 0;
+
+        for (int k = left; k <= right; ++k) {
+                int midValue =  arr[left - 1] * arr[k] * arr[right + 1];
+                int leftValue = search(arr, dp, visit, left, k - 1);
+                int rightValue = search(arr, dp, visit, k + 1, right);
+            res = Math.max(res, leftValue + midValue + rightValue);
+        }
+
+        visit[left][right] = 1;
+        dp[left][right] = res;
+        return res;
+    }
 }
 /*死胡同:容易想到的一个思路从小往大,枚举第一次在哪吹爆气球?
 • 记忆化搜索的思路,从大到小,先考虑最后的0-n-1 合并的总价值 • State:

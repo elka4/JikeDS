@@ -9,15 +9,17 @@ public class _02Stone_Game_MemorizeSearch {
         
         if(visit[l][r] == 1)
             return f[l][r];
-        if(l == r) {
+        if(l == r) {//一个石子，不需要合并
             visit[l][r] = 1;
             return f[l][r];
         }
         
         f[l][r] = Integer.MAX_VALUE;
         for (int k = l; k < r; k++) {
-            f[l][r] = Math.min(f[l][r], 
-search(l, k, f, visit, sum) + search(k + 1, r, f, visit, sum) + sum[l][r]);
+            f[l][r] = Math.min(f[l][r],
+                            //l到k区间，k+1到r区间，以及合并这两个区间 分别的代价
+                            search(l, k, f, visit, sum) + search(k + 1, r, f, visit, sum) + sum[l][r]);
+
         }
         visit[l][r] = 1;
         return f[l][r];
@@ -34,11 +36,11 @@ search(l, k, f, visit, sum) + search(k + 1, r, f, visit, sum) + sum[l][r]);
         int[][] f = new int[n][n];
         int[][] visit = new int[n][n];
         
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {//一个硬币，不需要合并
             f[i][i] = 0;
         }
         
-        // preparation
+        // preparation。计算每个区间和。
         int[][] sum = new int[n][n];
         for (int i = 0; i < n; i++) {
             sum[i][i] = A[i];
