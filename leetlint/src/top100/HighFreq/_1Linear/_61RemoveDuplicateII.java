@@ -7,8 +7,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class _61RemoveDuplicateII {
 
-    public static void main (String[] args) throws FileNotFoundException{
-        Scanner in = new Scanner("/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/HighFreq/_1Linear/input_61");
+    public static void main (String[] args) throws Exception{
+        Scanner in = new Scanner(new File("/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/HighFreq/_1Linear/input_61"));
         int n = in.nextInt();
         while (n != -1) {
             int k = in.nextInt();
@@ -36,7 +36,7 @@ public class _61RemoveDuplicateII {
     }
 @Test
     public void test01() throws  Exception{
-        Scanner in = new Scanner("/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/HighFreq/_1Linear/input_61");
+        Scanner in = new Scanner(new File("/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/HighFreq/_1Linear/input_61"));
         int n = in.nextInt();
         while (n != -1) {
             int k = in.nextInt();
