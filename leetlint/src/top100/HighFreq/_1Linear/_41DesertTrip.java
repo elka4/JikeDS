@@ -26,3 +26,9 @@ public class _41DesertTrip {
         in.close();
     }
 }
+
+/*
+第一行是n：
+第二行是m:
+第三行是n对整数，分别
+ */

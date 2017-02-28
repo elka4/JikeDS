@@ -26,11 +26,11 @@ class Finder{
 
 public class _63LowestCommonAncester {
 	public static void main(String[] args) throws FileNotFoundException {
-		Scanner in = new Scanner(new File("input.txt"));
+		Scanner in = new Scanner(new File("/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/HighFreq/_2Tree/input_63"));
 		int n = in.nextInt();
 		Finder finder = new Finder();
 		while (n != -1) {
-				//build tree
+			//build tree
 			Node[] tree = new Node[n];
 			for (int i = 0; i < n; ++i) tree[i] = new Node(i);
 			for (int i = 0; i < n; ++i) {
@@ -39,7 +39,7 @@ public class _63LowestCommonAncester {
 				int rightId = in.nextInt();
 				if(rightId != -1) tree[i].right = tree[rightId];
 			}
-			int m = in.nextInt();
+			int m = in.nextInt();//3， 总共找几对node的公共祖先
 			while(m-- != 0) {
 				System.out.println(finder.findFromRoot(
 						tree[in.nextInt()], tree[in.nextInt()], tree[0]).id);
