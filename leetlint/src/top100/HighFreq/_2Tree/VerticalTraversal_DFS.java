@@ -2,7 +2,7 @@ package top100.HighFreq._2Tree;
 import java.io.*;
 import java.util.*;
 
-
+@SuppressWarnings("all")
 public class VerticalTraversal_DFS {
     static class Node{
         int value;
@@ -10,7 +10,7 @@ public class VerticalTraversal_DFS {
         Node right;
     }
     static  class DFS{
-        HashMap<Integer, LinkedList> rank;
+        HashMap<Integer, LinkedList> rank; //id, list
         DFS(){
             rank = new HashMap<>();
         }
@@ -25,7 +25,7 @@ public class VerticalTraversal_DFS {
             //find the min left
             int pos = 0;
             while(rank.containsKey(pos) == true){
-                pos--;
+                pos--;//最后得到的pos是最左的前一个
             }
             for(int i = pos + 1; rank.containsKey(i); ++i){
                 rank.get(i).forEach((value) -> System.out.print(" " + value));
@@ -43,10 +43,10 @@ public class VerticalTraversal_DFS {
             Node[] tree = new Node[n];
             for(int i = 0; i < n; ++i) tree[i] = new Node();
             for(int i = 0; i < n; ++i){
-                tree[i].value = in.nextInt();
-                int leftID = in.nextInt();
+                tree[i].value = in.nextInt(); //第一个是数值
+                int leftID = in.nextInt();//第二个是编号
                 if(leftID != -1) tree[i].left = tree[leftID];
-                int rightID = in.nextInt();
+                int rightID = in.nextInt();//第三个是编号
                 if(rightID != -1) tree[i].right = tree[rightID];
             }
 
