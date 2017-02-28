@@ -1,11 +1,13 @@
 package top100.HighFreq._2Tree;
+import org.junit.Test;
+
 import java.io.*;
 import java.util.*;
 
 
 
 public class _67TreeInteration {
-    static class Node{
+    class Node{
         int value;
         Node left;
         Node right;
@@ -16,7 +18,7 @@ public class _67TreeInteration {
         }
     }
 
-    static class Pair{
+    class Pair{
         Node node;
         int op;// 0 visit, 1 print
         Pair(Node node, int op){
@@ -25,10 +27,11 @@ public class _67TreeInteration {
         }
     }
 
-    static class Traverser{//BFS
-        void order(Node root, int order){
+    class Traverser{//BFS
+        void order(Node root, int order){ // 0 pre; 1 in; 2 post
             Stack<Pair> processing = new Stack<Pair>();
             processing.add(new Pair(root, 0));
+
             while(processing.isEmpty() == false){
                 Pair temp = processing.pop();
                 if(temp.node == null) continue;
@@ -42,16 +45,19 @@ public class _67TreeInteration {
                         processing.add(new Pair(temp.node.right, 0));
                         processing.add(new Pair(temp.node.left, 0));
                         processing.add(new Pair(temp.node, 1));
+                        break;
 
                     case 1:
                         processing.add(new Pair(temp.node.right, 0));
                         processing.add(new Pair(temp.node, 1));
                         processing.add(new Pair(temp.node.left, 0));
+                        break;
 
                     case 2:
                         processing.add(new Pair(temp.node, 1));
                         processing.add(new Pair(temp.node.right, 0));
                         processing.add(new Pair(temp.node.left, 0));
+                        break;
 
                 }
             }
@@ -59,6 +65,11 @@ public class _67TreeInteration {
 
     }
     public static void main(String[] args) throws FileNotFoundException {
+
+    }
+
+    @Test
+    public void test01() throws FileNotFoundException{
         Scanner in = new Scanner(new File("/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/HighFreq/_2Tree/input_65"));
         int n = in.nextInt();
         Traverser traverser = new Traverser();
@@ -74,15 +85,16 @@ public class _67TreeInteration {
                 int rightId = in.nextInt();
                 if(rightId != -1) tree[i].right = tree[rightId];
             }
+
             //calculate
             traverser.order(tree[0], 0);
             System.out.println();
 
-            //traverser.order(tree[0], 1);
-            //System.out.println();
+            traverser.order(tree[0], 1);
+            System.out.println();
 
-            //traverser.order(tree[0], 2);
-            //System.out.println();
+            traverser.order(tree[0], 2);
+            System.out.println();
 
             n = in.nextInt();
         }

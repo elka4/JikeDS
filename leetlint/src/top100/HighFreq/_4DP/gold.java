@@ -34,7 +34,7 @@ class Street {
 public class gold {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner in = new Scanner(new File(
-                "/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/Public/_4DP/GoldInput"));
+                "/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/HighFreq/_4DP/GoldInput"));
         int n = in.nextInt();
         while(n != -1){
 
