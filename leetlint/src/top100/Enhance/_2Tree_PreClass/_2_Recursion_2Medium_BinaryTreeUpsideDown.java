@@ -33,7 +33,7 @@ public class _2_Recursion_2Medium_BinaryTreeUpsideDown {
 		}
 		return newRoot;
 	}
-
+/////////////////////////////////////////////////////////
 	//recurtion
 	public TreeNode upsideDownBinaryTree2(TreeNode root) {
 		if (root == null || root.left == null) {
@@ -52,4 +52,22 @@ public class _2_Recursion_2Medium_BinaryTreeUpsideDown {
 	}
 }
 	
+/*
 
+all right nodes are either 1 leaf nodes with a left sibling or 2 empty
+reverse it into a new tree where the original right nodes becoming new left leaf nodes.
+                     1
+                   2   3
+                 4   5
+
+                     4
+                   5   2
+                     3  1
+
+
+
+
+
+
+
+ */

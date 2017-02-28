@@ -66,5 +66,23 @@ public class VerticalTraversal_DFS {
 2 1 4 3
 Process finished with exit code 0
 
+            4
+          3   2
+         1  5
+            7   6
+7
+4 1 2
+3 3 4
+2 5 6
+1 -1 -1
+5 -1 -1
+7 -1 -1
+6 -1 -1
+
+
+
+
+
+
 
  */

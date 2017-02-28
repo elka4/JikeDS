@@ -5,6 +5,7 @@ import java.util.LinkedList;
 @SuppressWarnings("all")
 
 public class _2_Recursion_1Easy_SymmetricTree {
+	//recursion
 	public boolean isSymetric_1 (TreeNode root) {
 		if (root == null) return true;
 		return isSymetric(root.left, root.right);
@@ -25,8 +26,9 @@ public class _2_Recursion_1Easy_SymmetricTree {
 		
 	}
 
-	//
+	/////////////////////////////////////////////////////////
 
+	//iteration, deque
 	public boolean isSymetric_2(TreeNode root){
 		if(root == null){
 			return true;
