@@ -1,6 +1,6 @@
 package top100.Enhance._2Tree_PreClass;
 @SuppressWarnings("all")
-
+//time O(logn) spaceO(1)
 public class _2_BinaryTree_2Medium_1BSTInorderSuccessor {
 
 	public TreeNode inorderSuccessor(TreeNode root, TreeNode p){
