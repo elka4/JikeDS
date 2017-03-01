@@ -22,5 +22,34 @@ public class _2_BinaryTree_2Medium_4LongsetConsecutiveSequence {
 		int right = helper(root.right, curLen, root.val);
 		return Math.max(Math.max(left, right), curLen);
 	}
+	////////////////////////////
+	//传统做法，但使用了全局变量
+	private int max = 0;//global变量
+
+	public void helper2(TreeNode root, int last, int count){
+		//Base case
+		if(root == null){
+			max = Integer.max(max, count);
+			return;
+		}
+		//curretn level
+		if(root.val == last + 1){
+			count++;
+		}else{
+			max = Integer.max(max, count);
+		}
+		//next level
+		helper(root.left, root.val, count);
+		helper(root.right, root.val, count);
+	}
+
+	public int longestConsecutive2(TreeNode root){
+		if(root == null){
+			return 0;
+		}
+		helper2(root, Integer.MIN_VALUE, 1);
+		return max;
+
+	}
 
 }
