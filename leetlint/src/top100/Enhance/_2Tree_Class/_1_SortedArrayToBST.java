@@ -2,7 +2,7 @@ package top100.Enhance._2Tree_Class;
 @SuppressWarnings("all")
 
 public class _1_SortedArrayToBST {
-
+//time O(n) space O(logn)
 public TreeNode sortedArrayToBST(int[] num) {
         if (num == null || num.length == 0) {
             return null;

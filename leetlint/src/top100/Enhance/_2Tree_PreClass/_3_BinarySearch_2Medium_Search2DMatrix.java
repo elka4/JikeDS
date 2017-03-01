@@ -58,7 +58,7 @@ public class _3_BinarySearch_2Medium_Search2DMatrix {
         }
     }
 
-    //method2
+    //method2   Time: O（m+n）
     public boolean searchMatrixII_2(int[][] matrix, int target){
         if(matrix == null){
             return false;
