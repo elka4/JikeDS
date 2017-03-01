@@ -6,7 +6,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
- 
+ @SuppressWarnings("all")
+
 public class _19MyFileReadBybis {
  
     public static void main(String a[]){

@@ -1,7 +1,7 @@
 package CtCI.Chapter_08.Question8_10;
 
 import java.util.LinkedList;
-
+@SuppressWarnings("all")
 public class Hash<K, V> {
 	private final int MAX_SIZE = 5;
 	LinkedList<Cell<K, V>>[] items; 

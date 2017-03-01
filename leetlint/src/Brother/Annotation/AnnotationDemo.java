@@ -8,6 +8,7 @@ import java.lang.annotation.Annotation;
 /**
  * Created by tzh on 1/21/17.
  */
+@SuppressWarnings("all")
 public class AnnotationDemo {
     public static void main(String[] args) {
 

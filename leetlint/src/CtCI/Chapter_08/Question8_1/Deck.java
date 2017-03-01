@@ -3,7 +3,7 @@ package CtCI.Chapter_08.Question8_1;
 import java.util.ArrayList;
 
 import CtCILibrary.AssortedMethods;
-
+@SuppressWarnings("all")
 public class Deck <T extends Card> {
 	private ArrayList<T> cards;
 	private int dealtIndex = 0; // marks first undealt card

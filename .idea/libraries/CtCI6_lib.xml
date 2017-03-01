@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="CtCI6_lib">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/leetlint/src" />
+    </SOURCES>
+  </library>
+</component>
