@@ -24,14 +24,14 @@ private void helper(List<Integer> res, int[][] m, int row, int col, int offset) 
         if(row == 0 || col == 0)
             return;
 
-        if(row == 1) {
+        if(row == 1) {//有可能是奇数
             for(int i = offset; i < col + offset; i++) {
                 res.add(m[offset][i]);
             }
             return;
         }
 
-        if(col == 1) {
+        if(col == 1) {//有可能是奇数
             for(int i = offset; i < row + offset; i++) {
                 res.add(m[i][offset]);
             }
