@@ -5,25 +5,25 @@ import java.util.LinkedList;
 @SuppressWarnings("all")
 
 public class _2_Recursion_2Medium_BinaryTreeUpsideDown {
-
+   //time O(n) space O(n)
 	public TreeNode upsideDownBinaryTree1(TreeNode root) {
 		if (root == null) {
 			return root;
 		}
 		Deque<TreeNode> stack = new LinkedList<TreeNode>();
 
-		//pull left nodes into stack
+		//pull left nodes into stack， 不能丢了
 		while(root != null) {
 			stack.offerLast(root);
 			root = root.left;
 		}
 		
-		TreeNode newRoot = stack.pollLast();
+		TreeNode newRoot = stack.pollLast();//左边从下往上第一个
 		TreeNode cur = newRoot;
 
 		//change pointers
 		while (!stack.isEmpty()) {
-			TreeNode oriParent = stack.pollLast();
+			TreeNode oriParent = stack.pollLast();//左边从下往上第二个
 			cur.right = oriParent;
 			cur.left = oriParent.right;
 			
@@ -64,10 +64,6 @@ reverse it into a new tree where the original right nodes becoming new left leaf
                    5   2
                      3  1
 
-
-
-
-
-
-
+右边的sibling编程左孩子
+父节点变成右孩子
  */
