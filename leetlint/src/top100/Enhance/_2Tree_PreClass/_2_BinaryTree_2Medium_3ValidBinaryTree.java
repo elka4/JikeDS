@@ -7,14 +7,14 @@ public class _2_BinaryTree_2Medium_3ValidBinaryTree {
 			return true;
 		return isValidBST(root, Long.MAX_VALUE, Long.MAX_VALUE);
 	}
-	private boolean isValidBST(TreeNode root, long max, long min) {
+	private boolean isValidBST(TreeNode root,  long min, long max) {
 		if(root == null)
 			return true;
 		//current level: check root.val
 		if(root.val >= max || root.val <= min)
 			return false;
 		//recurse down 
-		return isValidBST(root.left, root.val, min) &&
-				isValidBST(root.right, max, root.val);
+		return isValidBST(root.left,  min, root.val) &&
+				isValidBST(root.right, root.val, max);
 	}
 }

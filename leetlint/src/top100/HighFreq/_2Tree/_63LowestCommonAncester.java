@@ -39,7 +39,7 @@ public class _63LowestCommonAncester {
 				int rightId = in.nextInt();
 				if(rightId != -1) tree[i].right = tree[rightId];
 			}
-			int m = in.nextInt();//3， 总共找几对node的公共祖先
+			int m = in.nextInt();//3， 总共找几对node的公共祖先, 6和3， 2和5， 2和7
 			while(m-- != 0) {
 				System.out.println(finder.findFromRoot(
 						tree[in.nextInt()], tree[in.nextInt()], tree[0]).id);
