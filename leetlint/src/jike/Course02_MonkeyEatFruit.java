@@ -9,7 +9,7 @@ import org.junit.Test;
 public class Course02_MonkeyEatFruit {
 	
 /**
- * 递推算法
+ * 递推算法 space O(1)
  */
 public int eat01(int n){
 	int a=1;
