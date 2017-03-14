@@ -28,6 +28,11 @@ public int fib01(int n){
 public int fib02(int n){
 	return n==1||n==2?n:fib02(n-1)+fib02(n-2);
 }
+
+
+/**
+ * 备忘录法
+ */
 public int dfs(int n,int[] array){
 	if(array[n]!=0){
 		return array[n];
@@ -36,9 +41,7 @@ public int dfs(int n,int[] array){
 		return array[n];
 	}
 }
-/**
- * 备忘录法
- */
+
 public int fib03(int n){
 	if(n==1||n==2){
 		return n;
