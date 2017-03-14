@@ -9,7 +9,7 @@ import org.junit.Test;
 public class Course02_040Climb {
 public int count=0;
 /**
- *递归算法
+ *递归算法 弹栈序列为二叉树后序遍历
  */
 public int fib01(int n){
 	count++;
@@ -100,7 +100,7 @@ public int fib06(int n){
 }
 @Test
 public void test(){
-	int n=15;
+	int n=5;
     int result=fib01(n);
     System.out.println(result);
     System.out.println(count);
