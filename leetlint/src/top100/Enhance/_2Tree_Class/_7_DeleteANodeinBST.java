@@ -10,6 +10,7 @@ public TreeNode delete (TreeNode root, int val) {
         dummy.left = root;
         TreeNode prev = dummy;
         TreeNode cur = root;
+
         //1. Find the node with val
         while (cur != null && cur.val != val) {
             prev = cur;
@@ -23,7 +24,8 @@ public TreeNode delete (TreeNode root, int val) {
         if (cur == null)
             return dummy.left;//Not found
         TreeNode target = cur;
-        //2. Case 1: Two child
+
+    //2. Case 1: Two child
     if (cur.left != null && cur.right != null) {
       //2.1 Find the leftMost node in right subTree
       prev = cur;
@@ -35,6 +37,7 @@ public TreeNode delete (TreeNode root, int val) {
       //2.2 Change value
       target.val = cur.val;
   }
+
   //3. Case 2: Delete cur, which has one or no child
   if (cur.left == null) {
       if (prev.left == cur)
@@ -49,14 +52,14 @@ public TreeNode delete (TreeNode root, int val) {
   }
   return dummy.left;
 }
+
+
 	private class TreeNode {
-	
 		public int val ;
 		public TreeNode(int i) {
-			// TODO Auto-generated constructor stub
+
 		}
 		public TreeNode left;
 		public TreeNode right;
-	
 	}
 }

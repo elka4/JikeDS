@@ -26,7 +26,9 @@ public class Course16_4_Traversal {
 			  preOrder(p.right, list);
 		  }
 	  }
-	  public List<Integer> list=null;
+
+	  public List<Integer> list=null;//全局变量。或者作为参数传递。
+
 	  public List<Integer> inorderTraversal(TreeNode root) {
 		  list=new ArrayList<Integer>();
 		  inOrder(root);

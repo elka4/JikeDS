@@ -41,11 +41,14 @@ public class _5_ZigZagLevelOrderTraversal {
 
 		public int val ;
 		public TreeNode(int i) {
-			// TODO Auto-generated constructor stub
 		}
 		public TreeNode left;
 		public TreeNode right;
 
 	}
+
+    //////////////////////////////
+
+    
 
 }
