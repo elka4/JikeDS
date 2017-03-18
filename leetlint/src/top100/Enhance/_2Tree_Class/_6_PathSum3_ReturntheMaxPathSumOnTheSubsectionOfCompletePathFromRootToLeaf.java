@@ -32,7 +32,6 @@ public int maxPathSum(TreeNode root) {
 
 		public int val ;
 		public TreeNode(int i) {
-			// TODO Auto-generated constructor stub
 		}
 		public TreeNode left;
 		public TreeNode right;
