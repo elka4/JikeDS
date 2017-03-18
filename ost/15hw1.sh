@@ -65,8 +65,7 @@ cat ridership.csv | sort -t ',' -nk8,8 | head -10  | sort -u -t ',' -k1,1 | sort
 cat ridership.csv | sort -t, -n -k8,8 | head -10 | cut -d, -f1 | sort | uniq
 
 11. Print the names of all the stations that appear twice or more.
-cat ridership.csv | sort -t ',' -nk2,2 | cut -d ',' -f 2 | uniq -d
-
+cat ridership.csv | sort -t ',' -nk2,2 | cut -d ',' -f 2 | uniq -d （wrong）
 cat ridership.csv | cut -d, -f2 | sort | uniq -d
 
 12. Print the borough with most stations.

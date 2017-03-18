@@ -6,7 +6,8 @@ For example:
 The following will be used to generate the data using your sed script:
 GET http://www.imdb.com/chart/top | sed ­n ­f part1.sed |
 tr '\n' '|' | sed 's/||/\n/g'
-Or, you can use a pre­existing version in /home/unixtool/data/top250.html and run: sed ­n ­f part1.sed < /home/unixtool/data/top250.html |
+Or, you can use a pre­existing version in /home/unixtool/data/top250.html and run:
+sed ­n ­f part1.sed < /home/unixtool/data/top250.html |
 tr '\n' '|' | sed 's/||/\n/g'
 Your sed script is generating intermediate output that is piped into tr and sed, so the script you write will produce output that looks like this:
   1
