@@ -38,8 +38,9 @@ find BMT IRT IND -type f -exec wc {} -l \; | sort -k1,1 -nr | head -1 | cut -d '
 
 8. Print the station with northenmost entrance (that will be the one with the highest latitude).
 find IRT IND BMT -type f -exec cat {} ';' | sort -t ',' -nk2,2 | tail -1 | cut -d ',' -f 1
+Wakefield-241st St,40.903597,-73.85036
 find BMT IRT IND -type f -exec cat {} \; | sort -k2,2 -nr | head -1 | cut -d, -f1
-
+East 180th St,40.841453,-73.872892
 ###################################
 
 
@@ -50,7 +51,9 @@ This part deals with the file ridership.csv, which has the information about how
 3-8. Ridership in 2009, 2010, 2011, 2012, 2013 and 2014
 9. Change: Increase or decrease of ridership between 2013 and 2014
 10. Services: Which services are at this station, each separated by : (e.g. N:R)
+
 Manhattan,86 St,18891890,19147021,19425347,19686985,20528208,20735032,206824,4:5:6
+
 With this file, answer each of the following:
 
 9. Print the top 10 stations with the biggest increase in ridership.
@@ -63,6 +66,7 @@ cat ridership.csv | sort -t, -n -k8,8 | head -10 | cut -d, -f1 | sort | uniq
 
 11. Print the names of all the stations that appear twice or more.
 cat ridership.csv | sort -t ',' -nk2,2 | cut -d ',' -f 2 | uniq -d
+
 cat ridership.csv | cut -d, -f2 | sort | uniq -d
 
 12. Print the borough with most stations.
