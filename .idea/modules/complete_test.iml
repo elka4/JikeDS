@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="complete:test" external.linked.project.path="$USER_HOME$/Downloads/gs-messaging-stomp-websocket-master/complete" external.root.project.path="$USER_HOME$/Downloads/gs-messaging-stomp-websocket-master/complete" external.system.id="GRADLE" external.system.module.group="" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output-test url="file://$USER_HOME$/Downloads/gs-messaging-stomp-websocket-master/complete/build/classes/test" />
     <exclude-output />
     <content url="file://$USER_HOME$/Downloads/gs-messaging-stomp-websocket-master/complete/src/test">

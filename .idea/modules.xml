@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Algo4/Algo4.iml" filepath="$PROJECT_DIR$/Algo4/Algo4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HelloWeb/HelloWeb.iml" filepath="$PROJECT_DIR$/HelloWeb/HelloWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/JikeDS.iml" filepath="$PROJECT_DIR$/JikeDS.iml" />
       <module fileurl="file://$PROJECT_DIR$/Jike_HTML5/Jike_HTML5.iml" filepath="$PROJECT_DIR$/Jike_HTML5/Jike_HTML5.iml" />
       <module fileurl="file://$PROJECT_DIR$/Jike_NodJs_Sid/Jike_NodJs_Sid.iml" filepath="$PROJECT_DIR$/Jike_NodJs_Sid/Jike_NodJs_Sid.iml" />
