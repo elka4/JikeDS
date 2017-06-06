@@ -7,11 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/Jike_HTML5/Jike_HTML5.iml" filepath="$PROJECT_DIR$/Jike_HTML5/Jike_HTML5.iml" />
       <module fileurl="file://$PROJECT_DIR$/Jike_NodJs_Sid/Jike_NodJs_Sid.iml" filepath="$PROJECT_DIR$/Jike_NodJs_Sid/Jike_NodJs_Sid.iml" />
       <module fileurl="file://$PROJECT_DIR$/Jike_Spring/Jike_Spring.iml" filepath="$PROJECT_DIR$/Jike_Spring/Jike_Spring.iml" />
-      <module fileurl="file://$USER_HOME$/Downloads/Study/Jike_Spring/Spring-chapter05/Spring-chapter06.iml" filepath="$USER_HOME$/Downloads/Study/Jike_Spring/Spring-chapter05/Spring-chapter06.iml" />
-      <module fileurl="file://$USER_HOME$/Downloads/Study/Jike_Spring/Spring-chapter08/Spring-chapter08.iml" filepath="$USER_HOME$/Downloads/Study/Jike_Spring/Spring-chapter08/Spring-chapter08.iml" />
-      <module fileurl="file://$USER_HOME$/Downloads/Study/Jike_Spring/Spring-chapter09/Spring-chapter09.iml" filepath="$USER_HOME$/Downloads/Study/Jike_Spring/Spring-chapter09/Spring-chapter09.iml" />
-      <module fileurl="file://$USER_HOME$/Downloads/Study/Jike_Spring/Spring-chapter10/Spring-chapter10.iml" filepath="$USER_HOME$/Downloads/Study/Jike_Spring/Spring-chapter10/Spring-chapter10.iml" />
-      <module fileurl="file://$USER_HOME$/Downloads/Study/Jike_Spring/Spring-chapter11/Spring-chapter11.iml" filepath="$USER_HOME$/Downloads/Study/Jike_Spring/Spring-chapter11/Spring-chapter11.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringPython/SpringPython.iml" filepath="$PROJECT_DIR$/SpringPython/SpringPython.iml" />
       <module fileurl="file://$PROJECT_DIR$/Try/Try.iml" filepath="$PROJECT_DIR$/Try/Try.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete.iml" filepath="$PROJECT_DIR$/.idea/modules/complete.iml" />
@@ -24,7 +19,6 @@
       <module fileurl="file://$PROJECT_DIR$/leetlint/leetlint.iml" filepath="$PROJECT_DIR$/leetlint/leetlint.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" filepath="$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" />
       <module fileurl="file://$PROJECT_DIR$/webDemo/webDemo.iml" filepath="$PROJECT_DIR$/webDemo/webDemo.iml" />
-      <module fileurl="file:///Applications/AMPPS/www/www.iml" filepath="/Applications/AMPPS/www/www.iml" />
     </modules>
   </component>
 </project>
