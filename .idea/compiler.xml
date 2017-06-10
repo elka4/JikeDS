@@ -17,7 +17,6 @@
         <module name="demo (1)" />
         <module name="demo (2)" />
         <module name="fleet-location-service" />
-        <module name="hello-week1" />
         <module name="helloworld-spring-boot" />
         <module name="lesson2" />
         <module name="lesson3" />
