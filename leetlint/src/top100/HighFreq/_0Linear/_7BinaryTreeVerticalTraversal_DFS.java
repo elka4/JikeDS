@@ -21,7 +21,6 @@ class DFS {
 		rank = new HashMap<Integer, LinkedList>();
 	}
 	
-	@SuppressWarnings("unchecked")
 	void traverse(DFSNode ptr, int pos){
 		if (ptr == null) return;
 		if (rank.containsKey(pos) == false) rank.put(pos, new LinkedList());
