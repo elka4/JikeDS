@@ -19,7 +19,7 @@ class Simple{
 
 public class _5SquareSum_1DFS {
 	public static void main(String[] args) throws FileNotFoundException {
-		Scanner in = new Scanner(new File("input.txt"));
+		Scanner in = new Scanner(new File("/home/b/IdeaProjects/JikeDS/leetlint/src/top100/HighFreq/_0Linear/input/_5SquareSum_1DFS"));
 		Simple solution = new Simple();
 		int n = in.nextInt();
 		while (n != -1){

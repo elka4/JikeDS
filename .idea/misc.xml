@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/spring-mvc-showcase" />
+    <file type="web" url="file://$PROJECT_DIR$/../week1" />
+    <file type="web" url="file://$PROJECT_DIR$/../week2/week2-2" />
     <file type="web" url="file://$PROJECT_DIR$/../../../Study/SpringMVC/SpringMVC1" />
     <file type="web" url="file://$PROJECT_DIR$/../../../Study/SpringMVC/SpringMVC2" />
     <file type="web" url="file://$PROJECT_DIR$/../../../Study/SpringMVC/SpringMVC3" />
@@ -10,9 +13,6 @@
     <file type="web" url="file://$PROJECT_DIR$/../../../Study/SpringMVC/SpringMVC7" />
     <file type="web" url="file://$PROJECT_DIR$/../../../Study/SpringMVC/SpringMVC8" />
     <file type="web" url="file://$PROJECT_DIR$/../../../Study/SpringMVC/SpringMVC9" />
-    <file type="web" url="file://$PROJECT_DIR$/spring-mvc-showcase" />
-    <file type="web" url="file://$PROJECT_DIR$/../week1" />
-    <file type="web" url="file://$PROJECT_DIR$/../week2/week2-2" />
     <type id="django" />
     <type id="Spring" />
   </component>
@@ -34,26 +34,6 @@
         <option value="$PROJECT_DIR$/../../../Study/SpringMVC/SpringMVC8/pom.xml" />
         <option value="$PROJECT_DIR$/../../../Study/SpringMVC/SpringMVC9/pom.xml" />
       </list>
-    </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/../week3/dashboard/pom.xml" />
-        <option value="$PROJECT_DIR$/../week3/fleet-location-ingest/pom.xml" />
-        <option value="$PROJECT_DIR$/../week3/fleet-location-service/pom.xml" />
-        <option value="$PROJECT_DIR$/../week3/fleet-location-simulator/pom.xml" />
-        <option value="$PROJECT_DIR$/../week3/fleet-location-updater/pom.xml" />
-        <option value="$PROJECT_DIR$/../week3/pom.xml" />
-        <option value="$PROJECT_DIR$/../week4/dashboard/pom.xml" />
-        <option value="$PROJECT_DIR$/../week4/fleet-location-ingest/pom.xml" />
-        <option value="$PROJECT_DIR$/../week4/fleet-location-service/pom.xml" />
-        <option value="$PROJECT_DIR$/../week4/fleet-location-simulator/pom.xml" />
-        <option value="$PROJECT_DIR$/../week4/fleet-location-updater/pom.xml" />
-        <option value="$PROJECT_DIR$/../week4/platform/eureka/pom.xml" />
-        <option value="$PROJECT_DIR$/../week4/platform/hystrix-dashboard/pom.xml" />
-        <option value="$PROJECT_DIR$/../week4/platform/pom.xml" />
-        <option value="$PROJECT_DIR$/../week4/pom.xml" />
-        <option value="$PROJECT_DIR$/../week4/service-location-service/pom.xml" />
-      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="IntelliJ IDEA IU-171.4694.23" project-jdk-type="IDEA JDK">

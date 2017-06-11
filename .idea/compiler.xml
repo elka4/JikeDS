@@ -6,7 +6,7 @@
   </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="ajc" />
-    <option name="BUILD_PROCESS_HEAP_SIZE" value="1000" />
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="3000" />
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
@@ -30,36 +30,7 @@
     <bytecodeTargetLevel>
       <module name="complete_main" target="1.8" />
       <module name="complete_test" target="1.8" />
-      <module name="dashboard" target="1.8" />
-      <module name="dashboard (1)" target="1.8" />
-      <module name="demo" target="1.7" />
-      <module name="demo (1)" target="1.7" />
-      <module name="demo (2)" target="1.7" />
-      <module name="fleet-eureka-server" target="1.5" />
-      <module name="fleet-hystrix-dashboard" target="1.5" />
-      <module name="fleet-location-ingest" target="1.8" />
-      <module name="fleet-location-ingest (1)" target="1.8" />
-      <module name="fleet-location-service" target="1.8" />
-      <module name="fleet-location-service (1) (org.demo)" target="1.8" />
-      <module name="fleet-location-service (2) (org.demo)" target="1.8" />
-      <module name="fleet-location-simulator" target="1.8" />
-      <module name="fleet-location-simulator (1)" target="1.8" />
-      <module name="fleet-location-updater" target="1.8" />
-      <module name="fleet-location-updater (1)" target="1.8" />
-      <module name="hello-week1" target="1.8" />
-      <module name="helloworld-spring-boot" target="1.8" />
-      <module name="lesson2" target="1.7" />
-      <module name="lesson3" target="1.7" />
-      <module name="lesson4" target="1.7" />
-      <module name="lesson5" target="1.7" />
-      <module name="lesson6" target="1.5" />
-      <module name="platform" target="1.8" />
-      <module name="service-location-service" target="1.8" />
-      <module name="spring-cloud-uber-vehicle-fleet" target="1.8" />
-      <module name="spring-cloud-uber-vehicle-fleet (1)" target="1.8" />
       <module name="spring-mvc-showcase" target="1.7" />
-      <module name="springmvc" target="1.7" />
-      <module name="tryMaven_artifactID" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
