@@ -18,7 +18,7 @@ class Recursion {
 		head.next = null;*/
 		
 		Node newHead = reverse(head.next);
-		
+
 		head.next.next = head;
 		head.next = null;
 		

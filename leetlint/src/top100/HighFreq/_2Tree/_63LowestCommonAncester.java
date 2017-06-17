@@ -26,7 +26,7 @@ class Finder{
 
 public class _63LowestCommonAncester {
 	public static void main(String[] args) throws FileNotFoundException {
-		Scanner in = new Scanner(new File("/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/HighFreq/_2Tree/input_63"));
+		Scanner in = new Scanner(new File("/Users/tianhuizhu/Downloads/uber/code/JikeDS/leetlint/src/top100/HighFreq/_2Tree/input_63"));
 		int n = in.nextInt();
 		Finder finder = new Finder();
 		while (n != -1) {

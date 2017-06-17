@@ -12,9 +12,24 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete.iml" filepath="$PROJECT_DIR$/.idea/modules/complete.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete_main.iml" filepath="$PROJECT_DIR$/.idea/modules/complete_main.iml" group="complete" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete_test.iml" filepath="$PROJECT_DIR$/.idea/modules/complete_test.iml" group="complete" />
+      <module fileurl="file://$PROJECT_DIR$/../week3/dashboard/dashboard (1).iml" filepath="$PROJECT_DIR$/../week3/dashboard/dashboard (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week4/dashboard/dashboard (2).iml" filepath="$PROJECT_DIR$/../week4/dashboard/dashboard (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week4/platform/eureka/fleet-eureka-server.iml" filepath="$PROJECT_DIR$/../week4/platform/eureka/fleet-eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week4/platform/hystrix-dashboard/fleet-hystrix-dashboard.iml" filepath="$PROJECT_DIR$/../week4/platform/hystrix-dashboard/fleet-hystrix-dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week3/fleet-location-ingest/fleet-location-ingest (1).iml" filepath="$PROJECT_DIR$/../week3/fleet-location-ingest/fleet-location-ingest (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week4/fleet-location-ingest/fleet-location-ingest (2).iml" filepath="$PROJECT_DIR$/../week4/fleet-location-ingest/fleet-location-ingest (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week3/fleet-location-service/fleet-location-service (1).iml" filepath="$PROJECT_DIR$/../week3/fleet-location-service/fleet-location-service (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week4/fleet-location-service/fleet-location-service (2).iml" filepath="$PROJECT_DIR$/../week4/fleet-location-service/fleet-location-service (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week3/fleet-location-simulator/fleet-location-simulator (1).iml" filepath="$PROJECT_DIR$/../week3/fleet-location-simulator/fleet-location-simulator (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week4/fleet-location-simulator/fleet-location-simulator (2).iml" filepath="$PROJECT_DIR$/../week4/fleet-location-simulator/fleet-location-simulator (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week3/fleet-location-updater/fleet-location-updater (1).iml" filepath="$PROJECT_DIR$/../week3/fleet-location-updater/fleet-location-updater (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week4/fleet-location-updater/fleet-location-updater (2).iml" filepath="$PROJECT_DIR$/../week4/fleet-location-updater/fleet-location-updater (2).iml" />
       <module fileurl="file://$PROJECT_DIR$/hibernate/hibernate.iml" filepath="$PROJECT_DIR$/hibernate/hibernate.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetlint/leetlint.iml" filepath="$PROJECT_DIR$/leetlint/leetlint.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" filepath="$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week4/platform/platform.iml" filepath="$PROJECT_DIR$/../week4/platform/platform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week4/service-location-service/service-location-service.iml" filepath="$PROJECT_DIR$/../week4/service-location-service/service-location-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week3/spring-cloud-uber-vehicle-fleet (1).iml" filepath="$PROJECT_DIR$/../week3/spring-cloud-uber-vehicle-fleet (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/../week4/spring-cloud-uber-vehicle-fleet (2).iml" filepath="$PROJECT_DIR$/../week4/spring-cloud-uber-vehicle-fleet (2).iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" filepath="$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" />
       <module fileurl="file://$PROJECT_DIR$/webDemo/webDemo.iml" filepath="$PROJECT_DIR$/webDemo/webDemo.iml" />
     </modules>

@@ -26,7 +26,7 @@ class Quicker {
 
 public class _65FindKth {
 	public static void main(String[] args) throws FileNotFoundException {
-		Scanner in = new Scanner(new File("input.txt"));
+		Scanner in = new Scanner(new File("/Users/tianhuizhu/Downloads/uber/code/JikeDS/leetlint/src/top100/HighFreq/_2Tree/input_65"));
 		int n = in.nextInt();
 		Quicker quicker = new Quicker();
 		while (n != -1) {

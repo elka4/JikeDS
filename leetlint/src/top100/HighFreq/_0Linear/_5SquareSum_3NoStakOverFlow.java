@@ -33,7 +33,7 @@ class Perfect3{
 
 public class _5SquareSum_3NoStakOverFlow {
     public static void main (String[] args) throws FileNotFoundException{
-        Scanner in = new Scanner(new File("input.txt"));
+        Scanner in = new Scanner(new File("/Users/tianhuizhu/Downloads/uber/code/JikeDS/leetlint/src/top100/HighFreq/_0Linear/input/_5SquareSum_1DFS"));
 
          //read input process
         int n = in.nextInt();

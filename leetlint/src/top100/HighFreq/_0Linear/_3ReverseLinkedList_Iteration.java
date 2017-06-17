@@ -18,10 +18,10 @@ class Iteration {
 		Node current = head;
 		Node next = null;
 		while (current != null) {
-			next = current.next;
-			current.next = pre;
-			pre = current;
-			current = next;
+			next = current.next;// store the current.next
+			current.next = pre;//mid.next point to front
+			pre = current;//front move one step forward, to mid
+			current = next;//mid move one step forward, to end (saved 'next')
 		}
 		return pre;
 	}
