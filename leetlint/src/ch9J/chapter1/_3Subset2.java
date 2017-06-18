@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class _3Subset2 {
 /**
- * @param S: A set of numbers.
+ * @param nums: A set of numbers.
  * @return: A subset of subsets. All valid subsets.
  */
 public ArrayList<ArrayList<Integer>> subsetsWithDup(ArrayList<Integer> nums) {
