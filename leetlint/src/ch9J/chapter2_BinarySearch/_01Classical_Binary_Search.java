@@ -1,5 +1,7 @@
 package ch9J.chapter2_BinarySearch;
 
+//Classic Binary Search
+
 //version 1: with jiuzhang template
 public class _01Classical_Binary_Search {
 	 /**

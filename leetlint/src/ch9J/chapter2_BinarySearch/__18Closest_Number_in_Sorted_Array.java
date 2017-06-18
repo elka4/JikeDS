@@ -1,5 +1,7 @@
 package ch9J.chapter2_BinarySearch;
 
+//Closest Number in Sorted Array
+
 public class __18Closest_Number_in_Sorted_Array {
 	/**
      * @param A an integer array sorted in ascending order

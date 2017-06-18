@@ -1,5 +1,7 @@
 package ch9J.chapter2_BinarySearch;
 
+//Search a 2D Matrix
+
 //Binary Search Twice
 public class _04Search_a_2D_Matrix_BSTwice {
  public boolean searchMatrix(int[][] matrix, int target) {

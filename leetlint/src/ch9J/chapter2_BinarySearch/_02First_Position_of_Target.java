@@ -1,5 +1,7 @@
 package ch9J.chapter2_BinarySearch;
 
+//First Position of Target
+
 //version 1: with jiuzhang template
 public class _02First_Position_of_Target {
 	 /**

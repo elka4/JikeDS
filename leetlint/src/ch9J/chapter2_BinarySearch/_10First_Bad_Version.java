@@ -1,5 +1,7 @@
 package ch9J.chapter2_BinarySearch;
 
+///First Bad Version
+
 public class _10First_Bad_Version {
 	 /**
      * @param n: An integers.

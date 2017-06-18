@@ -1,5 +1,7 @@
 package ch9J.chapter2_BinarySearch;
 
+//Wood Cut
+
 public class _11Wood_Cut {
 	/** 
 	 *@param L: Given n pieces of wood with length L[i]

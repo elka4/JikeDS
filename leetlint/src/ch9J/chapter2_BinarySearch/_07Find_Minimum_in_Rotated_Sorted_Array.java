@@ -1,5 +1,7 @@
 package ch9J.chapter2_BinarySearch;
 
+// Find Minimum in Rotated Sorted Array
+
 public class _07Find_Minimum_in_Rotated_Sorted_Array {
 	 /**
      * @param nums: a rotated sorted array

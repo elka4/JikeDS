@@ -1,5 +1,7 @@
 package ch9J.chapter2_BinarySearch;
-  
+
+// Search in a Big Sorted Array
+
 class ArrayReader {
 	// get the number at index, return -1 if index is less than zero.
 	public int get(int index){

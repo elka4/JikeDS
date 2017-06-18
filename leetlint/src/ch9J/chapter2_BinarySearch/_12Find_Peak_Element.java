@@ -1,5 +1,7 @@
 package ch9J.chapter2_BinarySearch;
 
+//Find Peak Element
+
 public class _12Find_Peak_Element {
 	/**
 	 * @param A: An integers array.

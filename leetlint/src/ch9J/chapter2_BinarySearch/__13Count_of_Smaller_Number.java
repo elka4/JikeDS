@@ -2,6 +2,8 @@ package ch9J.chapter2_BinarySearch;
 
 import java.util.ArrayList;
 
+// Count of Smaller Number
+
 public class __13Count_of_Smaller_Number {
 	/**
      * @param A: An integer array
