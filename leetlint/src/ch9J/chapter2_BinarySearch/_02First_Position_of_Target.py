@@ -16,3 +16,12 @@ class Solution:
         elif nums[right] == target :
             return right
         return -1;
+
+
+if __name__ == "__main__":
+    sol = Solution()
+    '''nums = [1, 2]'''
+    '''nums = {1, 2}'''
+    A = (1, 2, 3, 4, 5, 5, 5, 8, 9)
+
+    print sol.binarySearch(A, 5)

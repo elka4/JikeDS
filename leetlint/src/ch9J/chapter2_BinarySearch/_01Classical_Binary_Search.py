@@ -28,3 +28,11 @@ class Solution:
             return start
         else:
             return -1
+
+if __name__ == "__main__":
+    sol = Solution()
+    '''nums = [1, 2]'''
+    '''nums = {1, 2}'''
+    A = (1, 2, 3, 4, 5, 8, 9)
+
+    print sol.findPosition(A, 5)

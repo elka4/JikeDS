@@ -41,6 +41,63 @@ public class __17Total_Occurrence_of_Target {
     }
 }
 
+class __17Total_Occurrence_of_Target_mine {
+    /**
+     * @param A an integer array sorted in ascending order
+     * @param target an integer
+     * @return an integer
+     */
+    public int totalOccurrence(int[] A, int target) {
+        if (A == null || A.length == 0) {
+            return 0;
+        }
+        // Write your code here
+        int start = 0;
+        int end = A.length - 1;
+        int first = 0;
+        int last = A.length - 1;
+        while (start + 1 < end) {
+            int mid = start + (end - start) / 2;
+            if  (A[mid] == target) {
+                end = mid;
+            } else if (target < A[mid]) {
+                end = mid;
+            } else {
+                start = mid;
+            }
+        }
+        if (A[start] == target) {
+            first = start;
+        } else if (A[end] == target){
+            first = end;
+        } else {
+            return 0;
+        }
+
+        start = 0;
+        end = A.length - 1;
+        while(start + 1 < end) {
+            int mid = start + (end - start) / 2;
+            if (A[mid] == target) {
+                start = mid;
+            } else if (target < A[mid]) {
+                end = mid;
+            } else {
+                start = mid;
+            }
+        }
+        if (A[end] == target) {
+            last = end;
+        } else if (A[start] == target) {
+            last = start;
+        } else {
+            return 0;
+        }
+
+        return last - first + 1;
+    }
+}
+
 /*
 Given a target number and an integer array sorted in ascending order. 
 Find the total number of occurrences of target in the array.
