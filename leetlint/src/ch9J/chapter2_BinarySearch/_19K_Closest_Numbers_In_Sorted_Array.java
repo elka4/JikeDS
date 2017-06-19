@@ -2,7 +2,7 @@ package ch9J.chapter2_BinarySearch;
 
 //k Closest Number in Sorted Array
 
-public class __19K_Closest_Numbers_In_Sorted_Array {
+public class _19K_Closest_Numbers_In_Sorted_Array {
 	 /**
      * @param A an integer array
      * @param target an integer

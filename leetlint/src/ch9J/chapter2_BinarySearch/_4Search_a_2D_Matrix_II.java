@@ -1,6 +1,6 @@
 package ch9J.chapter2_BinarySearch;
 
-public class __22Search_a_2D_Matrix_II {
+public class _4Search_a_2D_Matrix_II {
  /**
  * @param matrix: A list of lists of integers
  * @param: A number you want to search in the matrix

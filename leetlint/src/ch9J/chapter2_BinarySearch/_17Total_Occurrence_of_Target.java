@@ -1,6 +1,6 @@
 package ch9J.chapter2_BinarySearch;
 
-public class __17Total_Occurrence_of_Target {
+public class _17Total_Occurrence_of_Target {
 	 /**
      * @param A an integer array sorted in ascending order
      * @param target an integer
@@ -39,15 +39,9 @@ public class __17Total_Occurrence_of_Target {
         }
         return end - start + 1;
     }
-}
 
-class __17Total_Occurrence_of_Target_mine {
-    /**
-     * @param A an integer array sorted in ascending order
-     * @param target an integer
-     * @return an integer
-     */
-    public int totalOccurrence(int[] A, int target) {
+
+    public int totalOccurrence_mine(int[] A, int target) {
         if (A == null || A.length == 0) {
             return 0;
         }
@@ -97,6 +91,7 @@ class __17Total_Occurrence_of_Target_mine {
         return last - first + 1;
     }
 }
+
 
 /*
 Given a target number and an integer array sorted in ascending order. 

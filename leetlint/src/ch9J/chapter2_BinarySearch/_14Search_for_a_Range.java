@@ -2,7 +2,7 @@ package ch9J.chapter2_BinarySearch;
 
 // Search for a Range
 
-public class __14Search_for_a_Range {
+public class _14Search_for_a_Range {
 	public int[] searchRange(int[] A, int target) {
         if (A.length == 0) {
             return new int[]{-1, -1};

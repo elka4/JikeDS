@@ -2,7 +2,7 @@ package ch9J.chapter2_BinarySearch;
 
 import java.util.ArrayList;
 
-public class __15Recover_Rotated_Sorted_Array {
+public class _15Recover_Rotated_Sorted_Array {
 	/**
 	 * @param nums: The rotated sorted array
 	 * @return: The recovered sorted array

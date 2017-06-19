@@ -1,6 +1,6 @@
 package ch9J.chapter2_BinarySearch;
 
-public class __16Rotate_String {
+public class _16Rotate_String {
 	  /*
 	 * param A: A string
 	 * param offset: Rotate string with offset.

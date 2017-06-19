@@ -1,6 +1,6 @@
 package ch9J.chapter2_BinarySearch;
 
-public class __21Search_in_Rotated_Sorted_Array_II {
+public class _8Search_in_Rotated_Sorted_Array_II {
 // 这个问题在面试中不会让实现完整程序
 // 只需要举出能够最坏情况的数据是 [1,1,1,1... 1] 里有一个0即可。
 // 在这种情况下是无法使用二分法的，复杂度是O(n)
