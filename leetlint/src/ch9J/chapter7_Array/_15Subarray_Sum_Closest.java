@@ -7,6 +7,7 @@ import java.util.TreeSet;
 //TreeSet  TreeMap
 //uperBound lowerBound
 
+public class _15Subarray_Sum_Closest {
 
 class Pair {
     int sum;
@@ -16,12 +17,11 @@ class Pair {
         index = i;
     }
 }
-public class _15Subarray_Sum_Closest {
-/**
- * @param nums: A list of integers
- * @return: A list of integers includes the index of the first number 
- *          and the index of the last number
- */
+    /**
+     * @param nums: A list of integers
+     * @return: A list of integers includes the index of the first number
+     *          and the index of the last number
+     */
 public int[] subarraySumClosest(int[] nums) {
     int[] res = new int[2];
     if (nums == null || nums.length == 0) {

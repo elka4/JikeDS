@@ -3,16 +3,17 @@ package ch9J.chapter9_Graph;
 import java.util.*;
 
 //version 3: Non-Recursion DFS
-class StackElement {
-    public UndirectedGraphNode node;
-    public int neighborIndex;
-    public StackElement(UndirectedGraphNode node, int neighborIndex) {
-        this.node = node;
-        this.neighborIndex = neighborIndex;
-    }
-}
+
 
 public class _01Clone_Graph_NonRecursion_DFS {
+    class StackElement {
+        public UndirectedGraphNode node;
+        public int neighborIndex;
+        public StackElement(UndirectedGraphNode node, int neighborIndex) {
+            this.node = node;
+            this.neighborIndex = neighborIndex;
+        }
+    }
 /**
  * @param node: A undirected graph node
  * @return: A undirected graph node

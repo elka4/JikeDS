@@ -53,41 +53,43 @@ public class _03Last_Position_of_Target {
 	    	int result = lastPosition(nums, 7777777);
 	    	System.out.println(result);
     }
+
+
+
+
+    //version 2: without jiuzhang template
+    //this code is not working, will get time limit exceeded
+    //because of dead loop
+    /**
+     * @param nums: An integer array sorted in ascending order
+     * @param target: An integer
+     * @return an integer
+     */
+    public int lastPosition2(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+
+        int start = 0, end = nums.length - 1;
+        while (start < end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == target) {
+                start = mid;
+            } else if (nums[mid] < target) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+
+        if (nums[start] == target) {
+            return start;
+        }
+        return -1;
+    }
  }
 
 
-//version 2: without jiuzhang template
-//this code is not working, will get time limit exceeded 
-//because of dead loop
-class Last_Position_of_Target2 {
- /**
-  * @param nums: An integer array sorted in ascending order
-  * @param target: An integer
-  * @return an integer
-  */
- public int lastPosition(int[] nums, int target) {
-     if (nums == null || nums.length == 0) {
-         return -1;
-     }
-     
-     int start = 0, end = nums.length - 1;
-     while (start < end) {
-         int mid = start + (end - start) / 2;
-         if (nums[mid] == target) {
-             start = mid;
-         } else if (nums[mid] < target) {
-             start = mid + 1;
-         } else {
-             end = mid - 1;
-         }
-     }
-     
-     if (nums[start] == target) {
-         return start;
-     }
-     return -1;
- }
-}
 
 /*
 Find the last position of a target number in a sorted array. 

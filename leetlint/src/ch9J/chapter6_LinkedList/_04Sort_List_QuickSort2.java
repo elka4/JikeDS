@@ -2,15 +2,16 @@ package ch9J.chapter6_LinkedList;
 
 //version 3: Quick Sort 2
 
-class Pair {
-	public ListNode first, second; 
-	public Pair(ListNode first, ListNode second) {
-	   this.first = first;
-	   this.second = second;
-	}
-}
+
 
 public class _04Sort_List_QuickSort2 {
+	class Pair {
+		public ListNode first, second;
+		public Pair(ListNode first, ListNode second) {
+			this.first = first;
+			this.second = second;
+		}
+	}
 	/**
 	* @param head: The head of linked list.
 	* @return: You should return the head of the sorted linked list,

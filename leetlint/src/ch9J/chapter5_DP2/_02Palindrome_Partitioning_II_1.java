@@ -62,10 +62,9 @@ public class _02Palindrome_Partitioning_II_1 {
         }
         return f[s.length()] - 1;
     }
-}
 
-////////////////////////////////////
-class lint_AC{
+    /////////////////////////
+
     boolean[][] canPP(String s) {
         int n = s.length();
         boolean[][] f = new boolean[n][n];
@@ -77,13 +76,13 @@ class lint_AC{
         }
         for (int i = 2; i < n; i++) {
             for (int j = 0; j + i < n; j++) {
-                f[j][j + i] = f[j + 1][j + i - 1] && 
+                f[j][j + i] = f[j + 1][j + i - 1] &&
                         (s.charAt(j) == s.charAt(j + i));
             }
         }
         return f;
-    } 
-    public int minCut(String s) {
+    }
+    public int minCut2(String s) {
         // write your code here
         if (s == null || s.length() == 0) {
             return 0;

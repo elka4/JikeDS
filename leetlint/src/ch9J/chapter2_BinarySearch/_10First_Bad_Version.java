@@ -1,9 +1,15 @@
 package ch9J.chapter2_BinarySearch;
 
 ///First Bad Version
-
+class SVNRepo{
+    public static boolean isBadVersion(int i){
+        return true;
+    }
+}
 public class _10First_Bad_Version {
-	 /**
+
+
+    /**
      * @param n: An integers.
      * @return: An integer which is the first bad version.
      */
@@ -26,11 +32,6 @@ public class _10First_Bad_Version {
     }
 }
 
-class SVNRepo{
-	public static boolean isBadVersion(int i){
-		return true;
-	}
-}
 
 /*
  * The code base version is an integer start from 1 to n. 

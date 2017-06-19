@@ -39,39 +39,39 @@ public class _02First_Position_of_Target {
         }
         return -1;
     }
+
+    //version 2: without jiuzhang template
+    /**
+     * @param nums: The integer array.
+     * @param target: Target to find.
+     * @return: The first position of target. Position starts from 0.
+     */
+    public int binarySearch2(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+
+        int start = 0, end = nums.length - 1;
+        while (start < end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == target) {
+                end = mid;
+            } else if (nums[mid] < target) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+
+        if (nums[start] == target) {
+            return start;
+        }
+
+        return -1;
+    }
 }
 
-//version 2: without jiuzhang template
-class First_Position_of_Target2 {
- /**
-  * @param nums: The integer array.
-  * @param target: Target to find.
-  * @return: The first position of target. Position starts from 0.
-  */
- public int binarySearch(int[] nums, int target) {
-     if (nums == null || nums.length == 0) {
-         return -1;
-     }
-     
-     int start = 0, end = nums.length - 1;
-     while (start < end) {
-         int mid = start + (end - start) / 2;
-         if (nums[mid] == target) {
-             end = mid;
-         } else if (nums[mid] < target) {
-             start = mid + 1;
-         } else {
-             end = mid - 1;
-         }
-     }
-     
-     if (nums[start] == target) {
-         return start;
-     }
-     
-     return -1;
- }
-}
+
 
 /*
  * For a given sorted array (ascending order) and a target number, 

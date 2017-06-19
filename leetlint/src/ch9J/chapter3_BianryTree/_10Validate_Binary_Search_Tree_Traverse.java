@@ -21,27 +21,28 @@ public class _10Validate_Binary_Search_Tree_Traverse {
 	     }
 	     return true;
 	 }
-}
-//this is a better solution
-//就是中序遍历一遍，看看是不是每个左边的比右边的小。
-class _10Validate_Binary_Search_Tree_Traverse2{
+
+
+	 ///////
+	//this is a better solution
+	//就是中序遍历一遍，看看是不是每个左边的比右边的小。
 	private TreeNode lastNode = null;
-	public boolean isValidBST(TreeNode root) {
-		 //先判断不正常情况
-		 if (root == null) {
-			 return true;
-		 }
-		 if (!isValidBST(root.left)) {
-			 return false;
-		 }
-		 if (lastNode != null && lastNode.val >= root.val) {
-			 return false;
-		 }
-		 lastNode = root;
-		 if (!isValidBST(root.right)) {
-			 return false;
-		 }
-		 return true;
+	public boolean isValidBST2(TreeNode root) {
+		//先判断不正常情况
+		if (root == null) {
+			return true;
+		}
+		if (!isValidBST(root.left)) {
+			return false;
+		}
+		if (lastNode != null && lastNode.val >= root.val) {
+			return false;
+		}
+		lastNode = root;
+		if (!isValidBST(root.right)) {
+			return false;
+		}
+		return true;
 	}
 }
 

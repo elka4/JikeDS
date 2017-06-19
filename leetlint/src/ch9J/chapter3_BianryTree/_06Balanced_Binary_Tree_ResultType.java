@@ -1,18 +1,17 @@
 package ch9J.chapter3_BianryTree;
 
 //Version 1: with ResultType
-//为了包含两个信息
-class ResultType {
-	public boolean isBalanced;
-	public int maxDepth;
-	public ResultType(boolean isBalanced, int maxDepth) {
-		this.isBalanced = isBalanced;
-		this.maxDepth = maxDepth;
-	}
-}
-@SuppressWarnings("all")
 
 public class _06Balanced_Binary_Tree_ResultType {
+    //为了包含两个信息
+    class ResultType {
+        public boolean isBalanced;
+        public int maxDepth;
+        public ResultType(boolean isBalanced, int maxDepth) {
+            this.isBalanced = isBalanced;
+            this.maxDepth = maxDepth;
+        }
+    }
  /**
   * @param root: The root of binary tree.
   * @return: True if this Binary tree is Balanced, or false.

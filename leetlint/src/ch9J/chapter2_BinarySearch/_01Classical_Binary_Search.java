@@ -38,39 +38,40 @@ public class _01Classical_Binary_Search {
             return end;
         }
         return -1;
-    }	
+    }
+
+
+    //version 2: without jiuzhang template
+    /**
+     * @param A an integer array sorted in ascending order
+     * @param target an integer
+     * @return an integer
+     */
+    public int findPosition2(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+
+        int start = 0, end = nums.length - 1;
+        while (start < end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+
+        if (nums[start] == target) {
+            return start;
+        }
+        return -1;
+    }
 }
 
-//version 2: without jiuzhang template
-class Classical_Binary_Search2 {
- /**
-  * @param A an integer array sorted in ascending order
-  * @param target an integer
-  * @return an integer
-  */
- public int findPosition(int[] nums, int target) {
-     if (nums == null || nums.length == 0) {
-         return -1;
-     }
-     
-     int start = 0, end = nums.length - 1;
-     while (start < end) {
-         int mid = start + (end - start) / 2;
-         if (nums[mid] == target) {
-             return mid;
-         } else if (nums[mid] < target) {
-             start = mid + 1;
-         } else {
-             end = mid - 1;
-         }
-     }
-     
-     if (nums[start] == target) {
-         return start;
-     }
-     return -1;
- }
-}
+
 
 /*
 Find any position of a target number in a sorted array. 
