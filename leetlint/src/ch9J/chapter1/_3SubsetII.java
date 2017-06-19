@@ -7,7 +7,7 @@ import java.util.ArrayList;
 //实际上是问去重的问题，选代表
 //｛1，2'，2''，2'''｝取12'最顺眼，按顺序取，不能跳着取。
 
-public class _3Subset2 {
+public class _3SubsetII {
 /**
  * @param nums: A set of numbers.
  * @return: A subset of subsets. All valid subsets.

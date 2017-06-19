@@ -6,7 +6,7 @@ import java.util.Arrays;
 //Non Recursion，二进制的方式
 public class _2Subsets_Binary {
  /**
-  * @param S: A set of numbers.
+  * @param nums: A set of numbers.
   * @return: A list of lists. All valid subsets.
   */
  public ArrayList<ArrayList<Integer>> subsets(int[] nums) {
