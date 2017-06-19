@@ -1,5 +1,7 @@
 package ch9J.chapter1;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -36,13 +38,22 @@ private void subsetsHelper(ArrayList<ArrayList<Integer>> result,
     for (int i = fromIndex; i < num.length; i++) {
     		subset.add(num[i]);
     		//当前选了第i个数，下一次就从i+1开始选
-        subsetsHelper(result, subset, num, i + 1);
+
+        subsetsHelper(result, subset, num, i + 1); //注意这里是i不是position
         //以｛1｝开头的都找到了。下一层循环寻找以2开头的
         
         //移除刚刚在下一层循环中加入的元素
         subset.remove(subset.size() - 1);
     }
 }
+    @Test
+    public void test01(){
+        _2Subsets sub = new _2Subsets();
+        int[] input = {};
+        ArrayList<ArrayList<Integer>> result = sub.subsets(input);
+        System.out.println(result);
+
+    }
 }
 
 /*Subsets

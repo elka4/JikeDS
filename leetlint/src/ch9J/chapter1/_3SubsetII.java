@@ -1,5 +1,7 @@
 package ch9J.chapter1;
 
+import org.junit.Test;
+
 import java.util.Collections;
 import java.util.ArrayList;
 
@@ -41,6 +43,19 @@ public void helper(ArrayList<ArrayList<Integer>> result,
             subset.remove(subset.size() - 1);
         }
 }
+
+    @Test
+    public void test01(){
+        _3SubsetII sub = new _3SubsetII();
+        ArrayList<Integer>  input = new ArrayList<Integer> ();
+        //input.add(1);
+        //input.add(2);
+        //input.add(2);
+
+        ArrayList<ArrayList<Integer>> result = sub.subsetsWithDup(input);
+        System.out.println(result);
+
+    }
 }
 
 /*Given a subset of numbers that may has duplicate numbers, 

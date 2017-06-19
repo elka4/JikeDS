@@ -13,3 +13,11 @@ class Solution:
         self.results = []
         self.search(sorted(nums), [], 0)
         return self.results
+
+if __name__ == "__main__":
+    sol = Solution()
+    '''nums = [1, 2]'''
+    '''nums = {1, 2}'''
+    nums = [1, 2]
+    sorted(nums)
+    print sol.subsets(nums)
