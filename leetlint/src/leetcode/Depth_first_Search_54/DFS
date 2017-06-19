@@ -1,0 +1,59 @@
+
+#
+Title
+Acceptance
+Difficulty
+339	Nested List Weight Sum 	61.2%	Easy
+100	Same Tree	46.2%	Easy
+101	Symmetric Tree	38.3%	Easy
+104	Maximum Depth of Binary Tree	52.2%	Easy
+257	Binary Tree Paths	37.5%	Easy
+112	Path Sum	33.7%	Easy
+108	Convert Sorted Array to Binary Search Tree	41.7%	Easy
+111	Minimum Depth of Binary Tree	32.9%	Easy
+110	Balanced Binary Tree	37.1%	Easy
+547	Friend Circles	49.1%	Medium
+505	The Maze II 	35.7%	Medium
+542	01 Matrix	32.8%	Medium
+494	Target Sum	43.8%	Medium
+491	Increasing Subsequences	39.0%	Medium
+490	The Maze 	42.5%	Medium
+533	Lonely Pixel II 	41.1%	Medium
+473	Matchsticks to Square	34.6%	Medium
+531	Lonely Pixel I 	53.0%	Medium
+439	Ternary Expression Parser 	50.7%	Medium
+417	Pacific Atlantic Water Flow	33.4%	Medium
+394	Decode String	41.0%	Medium
+366	Find Leaves of Binary Tree 	58.9%	Medium
+364	Nested List Weight Sum II 	51.9%	Medium
+529	Minesweeper	50.6%	Medium
+337	House Robber III	42.9%	Medium
+332	Reconstruct Itinerary	28.9%	Medium
+515	Find Largest Value in Each Tree Row	54.7%	Medium
+323	Number of Connected Components in an Undirected Graph 	47.7%	Medium
+98	Validate Binary Search Tree	23.0%	Medium
+261	Graph Valid Tree 	37.5%	Medium
+105	Construct Binary Tree from Preorder and Inorder Traversal	31.8%	Medium
+210	Course Schedule II	27.2%	Medium
+207	Course Schedule	31.6%	Medium
+200	Number of Islands	33.9%	Medium
+199	Binary Tree Right Side View	40.2%	Medium
+133	Clone Graph	25.1%	Medium
+129	Sum Root to Leaf Numbers	36.2%	Medium
+513	Find Bottom Left Tree Value	55.8%	Medium
+117	Populating Next Right Pointers in Each Node II	33.7%	Medium
+116	Populating Next Right Pointers in Each Node	37.0%	Medium
+114	Flatten Binary Tree to Linked List	34.6%	Medium
+113	Path Sum II	33.0%	Medium
+106	Construct Binary Tree from Inorder and Postorder Traversal	31.8%	Medium
+109	Convert Sorted List to Binary Search Tree	33.6%	Medium
+546	Remove Boxes	30.9%	Hard
+124	Binary Tree Maximum Path Sum	25.7%	Hard
+301	Remove Invalid Parentheses	34.9%	Hard
+329	Longest Increasing Path in a Matrix	36.0%	Hard
+99	Recover Binary Search Tree	29.6%	Hard
+472	Concatenated Words	29.9%	Hard
+488	Zuma Game	36.3%	Hard
+499	The Maze III 	31.5%	Hard
+514	Freedom Trail	36.8%	Hard
+576	Out of Boundary Paths	33.6%	Hard
