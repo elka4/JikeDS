@@ -6,7 +6,8 @@ public class _04Median {
  * @return: An integer denotes the middle number of the array.
  */
 public int median(int[] nums) {
-    return sub(nums, 0, nums.length - 1, (nums.length + 1)/2);
+    return sub(nums, 0,
+            nums.length - 1, (nums.length + 1)/2);
 }
 private int sub(int[] nums, int start, int end, int size) {
     int mid = (start + end) / 2;
