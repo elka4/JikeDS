@@ -4,6 +4,7 @@ import java.util.Random;
 
 import org.junit.Test;
 
+
 public class Course03_1_TestInverse {
 /**
  * 测试对象数组的逆置
@@ -15,7 +16,7 @@ public void testPerson(){
 		array[i]=new Course03_1_Person(i, "name"+i);
 	}
 	Course03_1_InverseArray<Course03_1_Person> ia =
-			new Course03_1_InverseArray<Course03_1_Person>();
+			new Course03_1_InverseArray<>();
 	ia.printArray(array);
 	ia.inverse(array);
 	ia.printArray(array);
@@ -30,7 +31,7 @@ public void testInteger(){
 	for(int i=0;i<7;i++){
 		array[i]=ra.nextInt(10);
 	}
-	Course03_1_InverseArray<Integer> ia=new Course03_1_InverseArray<Integer>();
+	Course03_1_InverseArray<Integer> ia=new Course03_1_InverseArray<>();
 	ia.printArray(array);
 	ia.inverse(array);
 	ia.printArray(array);
