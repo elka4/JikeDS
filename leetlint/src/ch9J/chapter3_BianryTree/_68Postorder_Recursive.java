@@ -14,6 +14,32 @@ public class _68Postorder_Recursive {
 	    result.add(root.val);
 	    return result;   
 	}
+
+	public class Solution_mine {
+		/**
+		 * @param root: The root of binary tree.
+		 * @return: Postorder in ArrayList which contains node values.
+		 */
+		public ArrayList<Integer> postorderTraversal(TreeNode root) {
+			// write your code here
+			ArrayList<Integer> result = new ArrayList<>();
+			if(root == null) {
+				return result;
+			}
+			helper(result, root);
+			return result;
+
+		}
+
+		private void helper(ArrayList<Integer> result, TreeNode root){
+			if(root == null){
+				return;
+			}
+			helper(result, root.left);
+			helper(result, root.right);
+			result.add(root.val);
+		}
+	}
 }
 
 /*Given a binary tree, return the postorder traversal of its nodes' values.
