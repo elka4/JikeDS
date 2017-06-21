@@ -44,5 +44,26 @@ public class a_367_Valid_Perfect_Square {
         return t * t == num;
     }
 
+    public boolean isPerfectSquare_mine (int num) {
+        if (num < 1) return false;
+        long left = 1, right = num;// long type to avoid 2147483647 case
+
+        while (left + 1 < right) {
+            long mid = left + (right - left) / 2;
+            long t = mid * mid;
+            if (t > num) {
+                right = mid ;
+            } else if (t < num) {
+                left = mid;
+            } else {
+                return true;
+            }
+        }
+        if (left * left == num){
+            return true;
+        }
+        return false;
+    }
+
 
 }

@@ -22,6 +22,31 @@ public class _141Sqrtx {
 	    }
 	    return (int) start;
 	}
+
+	public int sqrt_mine (int x) {
+		// write your code here
+		//int result = 0;
+		long start = 1;
+		long end = x;
+		while (start + 1 < end) {
+			long mid = start + (end - start) / 2;
+			long sqr = mid * mid;
+			if (sqr == x) {
+				start = mid; // end also AC
+			} else if (sqr < x) {
+				start = mid;
+			} else {
+				end = mid;
+			}
+
+		}
+		if (end * end <= x) {
+			return (int)end;
+		} else {
+			return (int)start;
+		}
+
+	}
 }
 
 /*
