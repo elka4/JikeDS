@@ -1,4 +1,4 @@
-package leetcode.Recursion;
+package leetcode.Recursion_4;
 
 /**
  * Created by tianhuizhu on 6/19/17.
