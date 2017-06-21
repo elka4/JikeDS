@@ -26,7 +26,7 @@ public class _160Find_Minimum_in_Rotated_Sorted_Array_II {
     // version 2: use *fake* binary-search
     class _07Find_Minimum_in_Rotated_Sorted_Array_II_2 {
         /**
-         * @param num: a rotated sorted array
+         * @param nums: a rotated sorted array
          * @return: the minimum number in the array
          */
         public int findMin(int[] nums) {

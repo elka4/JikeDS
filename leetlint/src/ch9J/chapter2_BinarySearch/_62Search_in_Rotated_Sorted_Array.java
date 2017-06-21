@@ -44,6 +44,43 @@ public class _62Search_in_Rotated_Sorted_Array {
 	    }
 	    return -1;
 	  }
+
+
+	public int search_mine1(int[] A, int target) {
+		// write your code here
+		if (A == null || A.length == 0) {
+			return -1;
+		}
+		int start = 0;
+		int end = A.length - 1;
+
+		while(start + 1 < end){
+			int mid = start + (end - start) / 2;
+
+			if (A[mid] > A[start]){
+				if(A[start] <= target && target <= A[mid]){
+					end = mid;
+				} else {
+					start = mid;
+				}
+			} else if (A[mid] < A[start]){
+				if(A[mid] <= target && target <= A[end]){
+					start = mid;
+				} else {
+					end = mid;
+				}
+			} else {
+				start = mid; // end also AC
+			}
+		}
+		if (A[start] == target){
+			return start;
+		} else if (A[end] == target){
+			return end;
+		} else {
+			return -1;
+		}
+	}
 }
 
 /*

@@ -1,5 +1,7 @@
 package ch9J.chapter2_BinarySearch;
 
+import org.junit.Test;
+
 /**
  * Created by tianhuizhu on 6/18/17.
  */
@@ -53,5 +55,47 @@ public class _585Maximum_Number_in_Mountain_Sequence {
             }
             return nums[left] > nums[right] ? nums[left] : nums[right];
         }
+    }
+
+    public int mountainSequence_mine1(int[] nums) {
+        // Write your code here
+        int start = 0;
+        int end = nums.length - 1;
+        while (start + 1 < end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid - 1] < nums[mid]) {
+                start = mid;
+            } else if (nums[mid] > nums[mid + 1]) {
+                end = mid;
+            } else {
+                end =  mid;
+            }
+        }
+        return Math.max(nums[start], nums[end]);
+    }
+
+    public int mountainSequence_mine2(int[] nums) {
+        // Write your code here
+        int start = 0;
+        int end = nums.length - 1;
+        while (start + 1 < end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid - 1] < nums[mid]) {
+                start = mid;
+            }
+            if (nums[mid + 1] < nums[mid]){
+                end = mid;
+            }
+        }
+        return Math.max(nums[start], nums[end]);
+    }
+
+    @Test
+    public void test01(){
+        int[] input1 = {1, 2, 4, 8, 6, 3};
+        int[] input2 = {10, 9, 8, 7};
+
+        System.out.println(mountainSequence_mine1(input1));
+        System.out.println(mountainSequence_mine1(input2));
     }
 }

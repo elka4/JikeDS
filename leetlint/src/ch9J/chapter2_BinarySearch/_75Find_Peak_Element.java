@@ -20,12 +20,34 @@ public class _75Find_Peak_Element {
 	            end = mid;//这里用end或者start都能在lintcode AC
 	        }
 	    }
+	    //这里先检查start或者先检查end都能AC
 	    if(A[start] < A[end]) {
 	        return end;
 	    } else { 
 	        return start;
 	    }
 	}
+
+	public int findPeak_mine1(int[] A) {
+		// write your code here
+
+		int start = 0;
+		int end = A.length - 2;
+
+		while (start + 1 < end){
+			int mid = start + (end - start) / 2;
+			if (A[mid- 1] < A[mid]){
+				start = mid;
+			} else if (A[mid] > A[mid + 1]){
+				end = mid;
+			} else {
+				start = mid; //end = mid also works
+			}		}
+
+		return A[start] > A[end] ? start : end;
+	}
+
+
 }
 
 /*
