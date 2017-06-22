@@ -21,7 +21,6 @@ package _1_Fundamentals._1_1_BasicProgModel; /**********************************
  *  [3,675,966 total values]
  *  
  *************************************************************************/
-
 import StdLib.StdIn;
 import StdLib.StdOut;
 
@@ -56,3 +55,12 @@ public class BinarySearch {
         }
     }
 }
+
+/*
+javac -classpath "/Users/tianhuizhu/Downloads/uber/code/JikeDS/Algo4/out/classes:/Users/tianhuizhu/Downloads/uber/code/JikeDS/Algo4/src/j3dcore.jar:/Users/tianhuizhu/Downloads/uber/code/JikeDS/Algo4/src/j3dutils.jar:/Users/tianhuizhu/Downloads/uber/code/JikeDS/Algo4/src/vecmath.jar" BinarySearch.java
+
+java -classpath "/Users/tianhuizhu/Downloads/uber/code/JikeDS/Algo4/out/classes:/Users/tianhuizhu/Downloads/uber/code/JikeDS/Algo4/src/j3dcore.jar:/Users/tianhuizhu/Downloads/uber/code/JikeDS/Algo4/src/j3dutils.jar:/Users/tianhuizhu/Downloads/uber/code/JikeDS/Algo4/src/vecmath.jar" _1_Fundamentals._1_1_BasicProgModel.BinarySearch tinyW.txt < tinyT.txt
+
+
+
+ */

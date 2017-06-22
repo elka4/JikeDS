@@ -3,6 +3,7 @@ package _1_Fundamentals._1_1_BasicProgModel;
 import StdLib.StdIn;
 import StdLib.StdOut;
 
+
 /*************************************************************************
  *  Compilation:  javac Average.java
  *  Execution:    java Average < data.txt
