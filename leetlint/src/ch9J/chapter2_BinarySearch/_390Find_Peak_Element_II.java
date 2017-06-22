@@ -1,6 +1,8 @@
 package ch9J.chapter2_BinarySearch;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 /**
  * Created by tianhuizhu on 6/18/17.
  */

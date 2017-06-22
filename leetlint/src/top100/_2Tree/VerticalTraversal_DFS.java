@@ -1,6 +1,10 @@
 package top100._2Tree;
-import java.io.*;
-import java.util.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 @SuppressWarnings("all")
 public class VerticalTraversal_DFS {

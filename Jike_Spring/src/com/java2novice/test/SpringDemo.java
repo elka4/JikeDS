@@ -5,10 +5,9 @@ package com.java2novice.test;
  */
 
 
+import com.java2novice.beans.SpringFirstTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.java2novice.beans.SpringFirstTest;
 
 public class SpringDemo {
 

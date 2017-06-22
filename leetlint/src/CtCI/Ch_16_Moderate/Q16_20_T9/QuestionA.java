@@ -1,10 +1,9 @@
 package CtCI.Ch_16_Moderate.Q16_20_T9;
 
+import CtCILibrary.AssortedMethods;
+
 import java.util.ArrayList;
 import java.util.HashSet;
-
-import CtCILibrary.AssortedMethods;
-import CtCILibrary.TrieNode;
 
 public class QuestionA {
 	public static char[][] t9Letters = {

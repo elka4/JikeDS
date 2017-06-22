@@ -1,7 +1,10 @@
 package top100._1Linear;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * Created by tianhuizhu on 6/10/17.

@@ -1,10 +1,6 @@
 package java2novice.files;
- 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+
+import java.io.*;
  
 public class _23WriteToFile {
  

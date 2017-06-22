@@ -1,7 +1,8 @@
 package CtCI.Ch_04_Trees_and_Graphs.Q4_12_Paths_with_Sum;
-import java.util.HashMap;
 
 import CtCILibrary.TreeNode;
+
+import java.util.HashMap;
 
 public class QuestionB {
 	

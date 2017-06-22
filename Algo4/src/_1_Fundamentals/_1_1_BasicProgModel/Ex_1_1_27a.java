@@ -1,7 +1,7 @@
 package _1_Fundamentals._1_1_BasicProgModel;
 
 import StdLib.StdOut;
-import _1_Fundamentals._1_2_DataAbstraction.*;
+import _1_Fundamentals._1_2_DataAbstraction.Counter;
 public class Ex_1_1_27a
 {
     public static double binomial(int n, int k, double p, Counter c)

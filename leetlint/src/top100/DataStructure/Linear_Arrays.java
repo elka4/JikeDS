@@ -1,10 +1,10 @@
 package top100.DataStructure;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Linear_Arrays {
 	int[] A;

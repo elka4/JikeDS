@@ -1,6 +1,9 @@
 package ch9S.chapter2_DataStructure1;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class _10Number_of_Airplanes_in_the_Sky {
 

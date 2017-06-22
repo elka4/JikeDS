@@ -4,7 +4,7 @@ package jike;
 /**
  * 最小深度
  */
-public class Course17_3_111MinimumDepth {
+public class  Course17_3_111MinimumDepth {
 	public int min = Integer.MAX_VALUE / 2;
 	public int minDepth(Course17_TreeNode root) {
 		if (root == null) {

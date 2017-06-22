@@ -1,7 +1,7 @@
 package CtCI.Ch_17_Hard.Q17_08_Circus_Tower;
 
 import java.util.ArrayList;
-import java.util.*;
+import java.util.Collections;
 
 public class QuestionOld {
 

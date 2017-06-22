@@ -3,7 +3,6 @@ package Brother.Enumeration;
 import org.junit.Test;
 
 import java.util.EnumMap;
-import java.util.EnumSet;
 import java.util.Set;
 
 /**

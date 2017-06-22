@@ -1,15 +1,15 @@
-#Ô¶³Ì¿ØÖÆ¿ª¹Ø»úÏîÄ¿
-import time
+#Ô¶ï¿½Ì¿ï¿½ï¿½Æ¿ï¿½ï¿½Ø»ï¿½ï¿½ï¿½Ä¿
+import email
 import os
-import sys
 import poplib
 import smtplib
+import time
 from email.header import decode_header
 from email.mime.text import MIMEText
-import email
+
 
 def guanji():
-    #´Ëº¯Êý¸ºÔð·¢ËÍ¹Ø»úµÄ±êÌâ£¨¼´guan£©¸øÓÊÏä
+    #ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¹Ø»ï¿½ï¿½Ä±ï¿½ï¿½â£¨ï¿½ï¿½guanï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     sent=smtplib.SMTP('smtp.sina.com') 
     sent.login('weiweihappy321@sina.com','aA123456789')
     to=['weiweihappy321@sina.com']
@@ -21,7 +21,7 @@ def guanji():
     sent.close()
 
 def chongqi():
-    #´Ëº¯Êý¸ºÔð·¢ËÍÖØÆô£¨¼´chong£©µÄ±êÌâ¸øÓÊÏä
+    #ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½chongï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     sent=smtplib.SMTP('smtp.sina.com') 
     sent.login('weiweihappy321@sina.com','aA123456789')
     to=['weiweihappy321@sina.com']
@@ -34,14 +34,14 @@ def chongqi():
 
 
 def read():
-    #´Ëº¯Êý¸ºÔð¶ÁÈ¡ÓÊ¼þÖÐµÄÖ¸Áî£¬Ö¸ÁîÎªguan·µ»Ø0£¬Ö¸ÁîÎªchong·µ»Ø1
+    #ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½Ê¼ï¿½ï¿½Ðµï¿½Ö¸ï¿½î£¬Ö¸ï¿½ï¿½Îªguanï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½Ö¸ï¿½ï¿½Îªchongï¿½ï¿½ï¿½ï¿½1
     read=poplib.POP3('pop.sina.com')
     read.user('weiweihappy321@sina.com')
     read.pass_('aA123456789')
-    tongji=read.stat()#·µ»ØÓÊÏä»ù±¾Í³¼ÆÐÅÏ¢
-    str = read.top(tongji[0], 0)  #·µ»Ø×î½üµÄÓÊ¼þÐÅÏ¢
+    tongji=read.stat()#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í³ï¿½ï¿½ï¿½ï¿½Ï¢
+    str = read.top(tongji[0], 0)  #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Ï¢
     str2=[]
-    for x in str[1] : #±àÂëÓë½âÂë
+    for x in str[1] : #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 try:  
                     str2.append(x.decode())  
                 except:  
@@ -49,20 +49,20 @@ def read():
                         str2.append(x.decode('gbk'))  
                     except:  
                         str2.append((x.decode('big5')))
-    msg = email.message_from_string('\n'.join(str2))#°ÑStringµÄÓÊ¼þ×ª»»³Éemail.messageÊµÀý  
+    msg = email.message_from_string('\n'.join(str2))#ï¿½ï¿½Stringï¿½ï¿½ï¿½Ê¼ï¿½×ªï¿½ï¿½ï¿½ï¿½email.messageÊµï¿½ï¿½  
     biaoti = decode_header(msg['subject'])
-    if biaoti[0][1]:   #Èç¹ûÓÐµÚ¶þ¸öÔªËØ£¬ËµÃ÷ÓÐ±àÂëÐÅÏ¢
+    if biaoti[0][1]:   #ï¿½ï¿½ï¿½ï¿½ÐµÚ¶ï¿½ï¿½ï¿½Ôªï¿½Ø£ï¿½Ëµï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
            biaoti2 = biaoti[0][0].decode(biaoti[0][1])  
     else:  
            biaoti2= biaoti[0][0]
-    #OK,´ËÊ±³É¹¦»ñÈ¡µ½×î½üÒ»·âÓÊ¼þ±êÌâ£¬¼´biaoti2
+    #OK,ï¿½ï¿½Ê±ï¿½É¹ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½â£¬ï¿½ï¿½biaoti2
     if biaoti2=="guan":
         return 0
     if biaoti2=="chong":
         return 1
     read.quit()
 
-if __name__ == '__main__':  #µ±ÔËÐÐ´Ë³ÌÐòµÄÊ±ºò£¬¶ÁÈ¡ÓÊ¼þ
+if __name__ == '__main__':  #ï¿½ï¿½ï¿½ï¿½ï¿½Ð´Ë³ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ò£¬¶ï¿½È¡ï¿½Ê¼ï¿½
     while True:
         time.sleep(2)
         if read()==0:

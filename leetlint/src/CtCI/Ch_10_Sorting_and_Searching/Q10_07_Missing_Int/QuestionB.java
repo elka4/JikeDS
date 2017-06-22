@@ -1,7 +1,9 @@
 package CtCI.Ch_10_Sorting_and_Searching.Q10_07_Missing_Int;
 
-import java.io.*;
-import java.util.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class QuestionB {
 

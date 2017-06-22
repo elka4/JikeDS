@@ -2,7 +2,6 @@ package CtCI.Ch_16_Moderate.Q16_24_Pairs_With_Sum;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class QuestionB {
 	public static ArrayList<Pair> printPairSums(int[] array, int sum) {

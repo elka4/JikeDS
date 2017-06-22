@@ -1,5 +1,9 @@
 package top100._1Linear_Class;
-import java.util.*;
+
+import java.util.Deque;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Set;
 //Length of Longest substring -- Method 1
 public class _04LengthofLongestSubstring_1 {
 

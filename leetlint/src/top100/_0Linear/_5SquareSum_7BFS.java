@@ -1,7 +1,10 @@
 package top100._0Linear;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 
 class Perfect7{

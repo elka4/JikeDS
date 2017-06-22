@@ -1,6 +1,6 @@
 package ch9J.chapter3_BianryTree;
 
-import java.util.*;
+import java.util.ArrayList;
 
 //Version 1: Traditional Method， 如果有父亲节点
 @SuppressWarnings("all")

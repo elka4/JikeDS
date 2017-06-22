@@ -1,6 +1,7 @@
 package top100._2Tree_Class;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 //root to leaf, 所有node的value和为sum， 返回所有的path
 public class _6_PathSum1 {

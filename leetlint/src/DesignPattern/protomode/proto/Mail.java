@@ -1,8 +1,8 @@
 package DesignPattern.protomode.proto;
 
-import java.util.ArrayList;
-
 import DesignPattern.protomode.EventTemplate;
+
+import java.util.ArrayList;
 
 public class Mail implements Cloneable {
 	private String receiver;

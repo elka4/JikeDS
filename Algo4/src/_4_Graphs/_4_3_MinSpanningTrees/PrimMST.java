@@ -4,7 +4,7 @@ import StdLib.In;
 import StdLib.StdOut;
 import _1_Fundamentals._1_3_BagsQueuesStacks.Queue;
 import _1_Fundamentals._1_5_UnionFind.UF;
-import _2_Sorting._2_4_PriorityQueues.*;
+import _2_Sorting._2_4_PriorityQueues.IndexMinPQ;
 /******************************************************************************
  *  Compilation:  javac PrimMST.java
  *  Execution:    java PrimMST filename.txt

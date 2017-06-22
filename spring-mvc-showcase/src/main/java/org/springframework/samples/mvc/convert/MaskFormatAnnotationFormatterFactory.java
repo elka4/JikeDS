@@ -1,14 +1,14 @@
 package org.springframework.samples.mvc.convert;
 
-import java.text.ParseException;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Set;
-
 import org.springframework.format.AnnotationFormatterFactory;
 import org.springframework.format.Formatter;
 import org.springframework.format.Parser;
 import org.springframework.format.Printer;
+
+import java.text.ParseException;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Set;
 
 public class MaskFormatAnnotationFormatterFactory implements AnnotationFormatterFactory<MaskFormat> {
 

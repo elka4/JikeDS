@@ -1,7 +1,8 @@
 package jike;
 
-import java.util.HashSet;
 import org.junit.Test;
+
+import java.util.HashSet;
 
 
 public class Course10_2_160IntersectionOfTwoLinkedLists{

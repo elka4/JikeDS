@@ -1,10 +1,10 @@
 package jike;
 
-import java.util.Arrays;
-import java.util.Random;
-
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.Random;
 
 public class Course14_1_TestValid {
 	public static final int Max = 1 << 20;

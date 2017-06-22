@@ -1,7 +1,7 @@
 package com.myjava;
-import java.io.*;
-import java.util.*;
+
 import java.math.BigInteger;
+import java.util.Scanner;
 /**
  * Created by tzh on 3/2/17.
  */

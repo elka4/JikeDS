@@ -1,10 +1,6 @@
 package java2novice.jdbc;
- 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import java.sql.*;
 //import oracle.jdbc.OracleTypes;
  
 public class _14MyCursorCallableStmt {

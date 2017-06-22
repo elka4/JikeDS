@@ -1,6 +1,6 @@
 package ch9S.chapter4_TwoPointer;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class _08Longest_Substring_Without_Repeating_2016 {
 	public int lengthOfLongestSubstring(String s) {

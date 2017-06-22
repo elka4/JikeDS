@@ -13,7 +13,8 @@ package StdLib; /***************************************************************
  *  % java PictureDump 16 6 < abra.txt
  *
  *************************************************************************/
-import java.awt.Color;
+
+import java.awt.*;
 
 public class PictureDump {
 

@@ -1,8 +1,8 @@
 package jike;
 
-import java.util.Arrays;
-
 import org.junit.Test;
+
+import java.util.Arrays;
 
 public class Course14_3_034BinarySearch {
 	public int[] searchRange(int[] nums, int target) {

@@ -1,6 +1,7 @@
 package top100._3Graph_Class;
 
-import java.util.*;
+import java.util.Deque;
+import java.util.LinkedList;
 
 public class _7_WallAndGate {
 public void wallsAndGates_BFS(int[][] rooms) {

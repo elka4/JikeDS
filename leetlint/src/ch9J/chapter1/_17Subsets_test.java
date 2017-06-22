@@ -1,7 +1,9 @@
 package ch9J.chapter1;
+
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 /**
  * Created by tianhuizhu on 6/18/17.
  */

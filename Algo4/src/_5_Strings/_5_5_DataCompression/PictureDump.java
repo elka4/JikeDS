@@ -13,11 +13,12 @@ package _5_Strings._5_5_DataCompression; /**************************************
  *  % java PictureDump 16 6 < abra.txt
  *
  *************************************************************************/
+
 import StdLib.BinaryStdIn;
 import StdLib.Picture;
 import StdLib.StdOut;
 
-import java.awt.Color;
+import java.awt.*;
 
 public class PictureDump {
 

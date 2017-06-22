@@ -1,6 +1,9 @@
 package top100._2Tree;
-import java.io.*;
-import java.util.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
 
 
 public class VerticalTraversal_BFS {

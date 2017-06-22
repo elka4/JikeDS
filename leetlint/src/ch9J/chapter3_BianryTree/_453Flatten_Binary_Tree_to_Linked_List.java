@@ -1,5 +1,6 @@
 package ch9J.chapter3_BianryTree;
-import java.util.*;
+
+import java.util.Stack;
 /**
  * Created by tzh on 3/2/17.
  */

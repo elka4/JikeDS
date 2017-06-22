@@ -1,5 +1,7 @@
 package ch9J.chapter3_BianryTree;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Created by tzh on 3/2/17.
  */

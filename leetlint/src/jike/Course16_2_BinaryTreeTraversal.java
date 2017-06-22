@@ -1,9 +1,9 @@
 package jike;
 
+import org.junit.Test;
+
 import java.util.LinkedList;
 import java.util.Queue;
-
-import org.junit.Test;
 
 /**
  * 二叉树的遍历类

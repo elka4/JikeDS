@@ -1,9 +1,9 @@
 package DesignPattern.agentmode.candymachinermi;
 
+import DesignPattern.agentmode.candymachine.State;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-
-import DesignPattern.agentmode.candymachine.State;
 
 public interface CandyMachineRemote extends Remote{
 	public String  getLocation() throws RemoteException;

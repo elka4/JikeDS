@@ -1,6 +1,8 @@
 package top100._2Tree;
-import java.io.*;
-import java.util.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 class Quicker {
 	int select(int[] nums, int k) {
 		return select(nums, 0, nums.length - 1, k - 1);

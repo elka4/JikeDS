@@ -1,10 +1,9 @@
 package DesignPattern.hexter.internetweather.mode;
 
 import DesignPattern.hexter.internetweather.observer.Observer;
+import DesignPattern.hexter.internetweather.observer.Subject;
 
 import java.util.ArrayList;
-
-import DesignPattern.hexter.internetweather.observer.Subject;
 
 public class WeatherDataSt implements Subject{
 	

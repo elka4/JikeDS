@@ -1,8 +1,8 @@
 package DesignPattern.agentmode;
 
-import java.util.ArrayList;
-
 import DesignPattern.agentmode.candymachine.CandyMachine;
+
+import java.util.ArrayList;
 
 public class Monitor {
 	private ArrayList<CandyMachine> candyMachinelst;

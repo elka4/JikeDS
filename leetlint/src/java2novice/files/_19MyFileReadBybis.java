@@ -1,11 +1,6 @@
 package java2novice.files;
- 
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+
+import java.io.*;
  @SuppressWarnings("all")
 
 public class _19MyFileReadBybis {

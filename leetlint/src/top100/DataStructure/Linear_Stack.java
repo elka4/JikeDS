@@ -1,8 +1,8 @@
 package top100.DataStructure;
+
 import org.junit.Test;
 
 import java.util.Stack;
-import java.util.*;
 
 //extends vector
 public class Linear_Stack {

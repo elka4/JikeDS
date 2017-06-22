@@ -1,5 +1,7 @@
 package ch9S.chapter3_DataStructure2;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public class sliding_window_median {
 	

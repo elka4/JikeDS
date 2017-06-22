@@ -1,8 +1,8 @@
 package CtCI.Ch_16_Moderate.Q16_24_Pairs_With_Sum;
 
-import java.util.ArrayList;
-
 import CtCILibrary.AssortedMethods;
+
+import java.util.ArrayList;
 
 public class Tester {
 	

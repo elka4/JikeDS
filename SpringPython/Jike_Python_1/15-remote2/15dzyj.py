@@ -1,10 +1,8 @@
 # -*- coding:utf-8 -*-   x
 #电子邮件的操作
-import poplib
-import smtplib
-from email.header import decode_header
-from email.mime.text import MIMEText
 import email
+import poplib
+from email.header import decode_header
 
 '''
 #如何登录邮箱

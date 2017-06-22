@@ -1,8 +1,8 @@
 package CtCI.Ch_17_Hard.Q17_14_Smallest_K;
 
-import java.util.Arrays;
-
 import CtCILibrary.AssortedMethods;
+
+import java.util.Arrays;
 
 public class Tester {
 

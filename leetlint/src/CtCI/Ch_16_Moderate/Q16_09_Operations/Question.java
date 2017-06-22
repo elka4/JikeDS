@@ -1,7 +1,5 @@
 package CtCI.Ch_16_Moderate.Q16_09_Operations;
 
-import java.util.Random;
-
 import CtCILibrary.AssortedMethods;
 
 public class Question {

@@ -1,9 +1,11 @@
 package com.myjava;
 
 import org.junit.Test;
-import java.util.*;
-import java.text.*;
+
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 /**
  * Created by tzh on 3/2/17.
  */

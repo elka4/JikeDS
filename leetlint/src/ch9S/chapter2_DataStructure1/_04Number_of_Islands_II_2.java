@@ -1,6 +1,7 @@
 package ch9S.chapter2_DataStructure1;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class _04Number_of_Islands_II_2 {
 public List<Integer> numIslands2(int m, int n, int[][] positions) {

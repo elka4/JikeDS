@@ -4,7 +4,6 @@ import StdLib.StdIn;
 import StdLib.StdOut;
 import _1_Fundamentals._1_2_DataAbstraction.Transaction;
 import _1_Fundamentals._1_3_BagsQueuesStacks.Stack;
-import _2_Sorting._2_4_PriorityQueues.MinPQ;
 
 /*************************************************************************
  *  Compilation:  javac TopM.java

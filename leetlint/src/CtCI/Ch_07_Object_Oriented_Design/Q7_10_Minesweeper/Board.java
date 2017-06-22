@@ -1,10 +1,10 @@
 package CtCI.Ch_07_Object_Oriented_Design.Q7_10_Minesweeper;
 
+import CtCI.Ch_07_Object_Oriented_Design.Q7_10_Minesweeper.Game.GameState;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
-
-import CtCI.Ch_07_Object_Oriented_Design.Q7_10_Minesweeper.Game.GameState;
 
 public class Board {
 	private int nRows;

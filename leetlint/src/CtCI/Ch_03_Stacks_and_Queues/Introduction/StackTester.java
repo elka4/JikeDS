@@ -1,9 +1,9 @@
 package CtCI.Ch_03_Stacks_and_Queues.Introduction;
 
+import CtCILibrary.AssortedMethods;
+
 import java.util.EmptyStackException;
 import java.util.Stack;
-
-import CtCILibrary.AssortedMethods;
 
 public class StackTester {
 

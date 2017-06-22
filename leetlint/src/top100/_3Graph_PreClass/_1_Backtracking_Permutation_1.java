@@ -1,6 +1,7 @@
 package top100._3Graph_PreClass;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class _1_Backtracking_Permutation_1 {
 public List<List <Integer>> permute(int[] num) {

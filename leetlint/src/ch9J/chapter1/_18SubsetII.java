@@ -2,8 +2,8 @@ package ch9J.chapter1;
 
 import org.junit.Test;
 
-import java.util.Collections;
 import java.util.ArrayList;
+import java.util.Collections;
 
 //input有重复的数，result避免有重复结果。
 //实际上是问去重的问题，选代表

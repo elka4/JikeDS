@@ -1,12 +1,11 @@
 package CtCI.Ch_17_Hard.Q17_26_Sparse_Similarity;
 
+import CtCILibrary.AssortedMethods;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map.Entry;
-
-import CtCILibrary.AssortedMethods;
 
 public class QuestionC {
 	public static class Element implements Comparable<Element> {

@@ -1,7 +1,7 @@
 package DesignPattern.adaptermode.adapter;
 
-import DesignPattern.adaptermode.turkey.Turkey;
 import DesignPattern.adaptermode.duck.Duck;
+import DesignPattern.adaptermode.turkey.Turkey;
 
 public class TurkeyAdapter implements Duck {
 	private Turkey turkey;

@@ -1,6 +1,7 @@
 package top100._1Linear_Class;
 
-import java.util.*;
+import java.util.Deque;
+import java.util.LinkedList;
 
 public class _06SimplyPath_1 {
 	public String simplifyPath(String path) {

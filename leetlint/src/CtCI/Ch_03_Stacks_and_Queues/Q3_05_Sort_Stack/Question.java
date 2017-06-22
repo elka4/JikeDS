@@ -1,8 +1,8 @@
 package CtCI.Ch_03_Stacks_and_Queues.Q3_05_Sort_Stack;
 
-import java.util.Stack;
-
 import CtCILibrary.AssortedMethods;
+
+import java.util.Stack;
 
 public class Question {
 	public static Stack<Integer> mergesort(Stack<Integer> inStack) {

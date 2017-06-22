@@ -1,5 +1,7 @@
 package top100._3Graph_Class;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 public class _1_FactorCombination_1 {
 	public List<List<Integer>> getFactors (int n) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();

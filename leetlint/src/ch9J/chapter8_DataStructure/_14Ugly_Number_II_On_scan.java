@@ -1,6 +1,7 @@
 package ch9J.chapter8_DataStructure;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class _14Ugly_Number_II_On_scan {
 	/**

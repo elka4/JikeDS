@@ -1,15 +1,10 @@
 package DesignPattern.pizzastore;
 
-import DesignPattern.pizzastore.pizza.PepperPizza;
-import DesignPattern.pizzastore.pizza.Pizza;
+import DesignPattern.pizzastore.pizza.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-import DesignPattern.pizzastore.pizza.CheesePizza;
-import DesignPattern.pizzastore.pizza.ChinesePizza;
-import DesignPattern.pizzastore.pizza.GreekPizza;
 
 public class OrderPizza {
 

@@ -1,8 +1,7 @@
 package top100._1Linear_PreClass;
 
-import java.util.*;
-
 import java.util.Deque;
+import java.util.LinkedList;
 
 public class _1_Stack_2Medium_EvaluateReversePolishRotaion_1 {
 	public int evalRPN(String[] tokens) {

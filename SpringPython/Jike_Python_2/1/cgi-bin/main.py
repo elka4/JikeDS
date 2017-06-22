@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-import cgi,cgitb
+import cgi
+
 from jkxy import *
 
 form1 = cgi.FieldStorage()

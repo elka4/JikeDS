@@ -1,8 +1,8 @@
 package DesignPattern.agentmode.candymachinermi;
 
-import java.rmi.Naming;
-
 import DesignPattern.agentmode.candymachine.CandyMachine;
+
+import java.rmi.Naming;
 
 public class RemoteMainTest {
 	public static void main(String[] args) {

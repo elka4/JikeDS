@@ -1,7 +1,8 @@
 package lintcode._1strstr;
 
 import org.junit.Test;
-import java.util.*;
+
+import java.util.ArrayList;
 
 /**
  * Created by tzh on 1/14/17.

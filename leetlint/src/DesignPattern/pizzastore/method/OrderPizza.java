@@ -1,10 +1,10 @@
 package DesignPattern.pizzastore.method;
 
+import DesignPattern.pizzastore.pizza.Pizza;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-import DesignPattern.pizzastore.pizza.Pizza;
 
 public abstract class OrderPizza {
 

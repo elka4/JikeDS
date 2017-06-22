@@ -1,5 +1,8 @@
 package top100._1Linear_Class;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 //Three Sum -- Method 1
 public class _03ThreeSum_1 {
 

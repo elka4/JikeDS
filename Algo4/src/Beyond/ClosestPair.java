@@ -1,23 +1,23 @@
 package Beyond;
 
-import _1_Fundamentals._1_2_DataAbstraction.*;
-import _2_Sorting._2_2_Mergesort.*;
+import StdLib.StdIn;
+import StdLib.StdOut;
+import _1_Fundamentals._1_2_DataAbstraction.Point2D;
+import _2_Sorting._2_2_Mergesort.Merge;
+
+import java.util.Arrays;
+
 /*************************************************************************
  *  Compilation:  javac ClosestPair.java
  *  Execution:    java ClosestPair < input.txt
  *  Dependencies: Point2D.java
- *  
+ *
  *  Given N points in the plane, find the closest pair in N log N time.
  *
  *  Note: could speed it up by comparing square of Euclidean distances
  *  instead of Euclidean distances.
  *
  *************************************************************************/
-
-import StdLib.StdIn;
-import StdLib.StdOut;
-
-import java.util.Arrays;
 
 public class ClosestPair {
 

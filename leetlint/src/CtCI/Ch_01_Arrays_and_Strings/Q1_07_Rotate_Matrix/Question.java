@@ -1,6 +1,6 @@
 package CtCI.Ch_01_Arrays_and_Strings.Q1_07_Rotate_Matrix;
 
-import CtCILibrary.*;
+import CtCILibrary.AssortedMethods;
 
 public class Question {
 

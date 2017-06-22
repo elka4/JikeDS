@@ -1,6 +1,6 @@
 package ch9S.chapter4_TwoPointer;
 
-import java.util.*;
+import java.util.Arrays;
 
 public class _01Two_Sum_II {
 	/**

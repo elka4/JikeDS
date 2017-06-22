@@ -10,9 +10,9 @@ package _6_Context._6_1_EventDrivenSim; /***************************************
 
 import StdLib.StdDraw;
 import StdLib.StdIn;
+import _2_Sorting._2_4_PriorityQueues.MinPQ;
 
-import java.awt.Color;
-import _2_Sorting._2_4_PriorityQueues.*;
+import java.awt.*;
 
 public class CollisionSystem {
     private MinPQ<Event> pq;        // the priority queue

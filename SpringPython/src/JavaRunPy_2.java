@@ -1,9 +1,9 @@
 /**
  * Created by tzh on 1/29/17.
  */
-import org.python.util.PythonInterpreter;
+
 import org.python.core.PyInteger;
-import org.python.*;
+import org.python.util.PythonInterpreter;
 
 public class JavaRunPy_2 {
     public static void main(String[] args) {

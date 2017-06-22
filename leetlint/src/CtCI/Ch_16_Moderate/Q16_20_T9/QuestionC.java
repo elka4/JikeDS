@@ -1,10 +1,10 @@
 package CtCI.Ch_16_Moderate.Q16_20_T9;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import CtCILibrary.AssortedMethods;
 import CtCILibrary.HashMapList;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class QuestionC {
 	public static int numLetters = 26;

@@ -1,6 +1,6 @@
 package top100._2Tree_Class;
 
-import java.util.*;
+import java.util.List;
 
 public class _6_PathSum2_FollowUp_SubsectionOfCompletePathFromRootToLeaf {
 	private void check(int target, List<Integer> list, List<List<Integer>> res) {

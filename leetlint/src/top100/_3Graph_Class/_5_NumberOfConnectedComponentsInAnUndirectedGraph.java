@@ -1,6 +1,9 @@
 package top100._3Graph_Class;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
 
 public class _5_NumberOfConnectedComponentsInAnUndirectedGraph {
  public int countComponent_UnionFind(int n, int[][] edges) {

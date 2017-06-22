@@ -1,9 +1,9 @@
 package jike;
 
+import org.junit.Test;
+
 import java.util.LinkedList;
 import java.util.Queue;
-
-import org.junit.Test;
 
 public class Course12_5_264UglyNumber2{
   public boolean isUgly(int num) {

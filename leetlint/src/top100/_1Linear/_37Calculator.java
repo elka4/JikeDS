@@ -1,7 +1,8 @@
 package top100._1Linear;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.util.Scanner;
+import java.util.Stack;
 
 class Calculator{
 

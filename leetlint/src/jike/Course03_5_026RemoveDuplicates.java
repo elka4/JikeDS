@@ -1,8 +1,8 @@
 package jike;
 
-import java.util.ArrayList;
-
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 public class Course03_5_026RemoveDuplicates {
 /**

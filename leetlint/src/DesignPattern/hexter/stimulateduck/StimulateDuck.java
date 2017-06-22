@@ -1,9 +1,9 @@
 package DesignPattern.hexter.stimulateduck;
 
+import DesignPattern.hexter.stimulateduck.duck.Duck;
 import DesignPattern.hexter.stimulateduck.duck.GreenHeadDuck;
 import DesignPattern.hexter.stimulateduck.duck.RedHeadDuck;
 import DesignPattern.hexter.stimulateduck.flybehavior.NoFlyBehavior;
-import DesignPattern.hexter.stimulateduck.duck.Duck;
 import DesignPattern.hexter.stimulateduck.quackbehavior.NoQuackBehavior;
 
 

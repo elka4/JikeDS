@@ -1,8 +1,8 @@
 package DesignPattern.iteratormode.iterator;
 
-import java.util.ArrayList;
-
 import DesignPattern.iteratormode.MenuItem;
+
+import java.util.ArrayList;
 
 public class CakeHouseMenu {
 	private ArrayList<MenuItem> menuItems;

@@ -1,6 +1,7 @@
 package top100._3Graph_PreClass;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 public class _2_HeapAndBestFirstSearch_KthSmallestinSortedMatrix_1 {
 	public int kthSmallest(int[][] matrix, int k) {

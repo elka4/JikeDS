@@ -1,9 +1,9 @@
 package com.atguigu_Java20_13.java;
 
+import org.junit.Test;
+
 import java.util.Iterator;
 import java.util.LinkedList;
-
-import org.junit.Test;
 
 public class TestList {
 	@Test

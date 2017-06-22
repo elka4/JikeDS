@@ -1,11 +1,6 @@
 package DesignPattern.interpreter.cls;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Stack;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class RPN {
 

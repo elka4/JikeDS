@@ -1,7 +1,7 @@
 package java2novice.treemap;
 
-import java.util.TreeMap;
 import java.util.Comparator;
+import java.util.TreeMap;
  /*Program: How to sort keys in TreeMap by using Comparator?
 
 Description:

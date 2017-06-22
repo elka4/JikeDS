@@ -1,9 +1,11 @@
 package top100._1Linear;
 
 
-import java.io.*;
-import java.util.*;
-import javax.script.*;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class _38Calculater3 {
 

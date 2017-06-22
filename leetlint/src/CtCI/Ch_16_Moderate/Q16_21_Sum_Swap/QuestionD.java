@@ -1,7 +1,6 @@
 package CtCI.Ch_16_Moderate.Q16_21_Sum_Swap;
 
 import java.util.Arrays;
-import java.util.HashSet;
 
 public class QuestionD {
 	

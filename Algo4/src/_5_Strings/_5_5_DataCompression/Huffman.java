@@ -2,8 +2,7 @@ package _5_Strings._5_5_DataCompression;
 
 import StdLib.BinaryStdIn;
 import StdLib.BinaryStdOut;
-
-import _2_Sorting._2_4_PriorityQueues.*;
+import _2_Sorting._2_4_PriorityQueues.MinPQ;
 /*************************************************************************
  *  Compilation:  javac Huffman.java
  *  Execution:    java Huffman - < input.txt   (compress)

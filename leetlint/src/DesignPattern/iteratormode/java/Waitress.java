@@ -1,9 +1,9 @@
 package DesignPattern.iteratormode.java;
 
+import DesignPattern.iteratormode.MenuItem;
+
 import java.util.ArrayList;
 import java.util.Iterator;
-
-import DesignPattern.iteratormode.MenuItem;
 
 public class Waitress {
 	private ArrayList<Iterator> iterators=new ArrayList<Iterator>();

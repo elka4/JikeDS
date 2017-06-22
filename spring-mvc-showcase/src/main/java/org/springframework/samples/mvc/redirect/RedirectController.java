@@ -1,7 +1,5 @@
 package org.springframework.samples.mvc.redirect;
 
-import javax.inject.Inject;
-
 import org.joda.time.LocalDate;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Controller;
@@ -12,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
+
+import javax.inject.Inject;
 
 @Controller
 @RequestMapping("/redirect")

@@ -1,12 +1,12 @@
 package com.atguigu_Java8_1.java8;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Stream;
-
-import org.junit.Test;
 
 /*
  * 一、Stream API 的操作步骤：

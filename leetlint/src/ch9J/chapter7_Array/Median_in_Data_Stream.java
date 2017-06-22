@@ -1,5 +1,8 @@
 package ch9J.chapter7_Array;
-import java.util.*;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 /**
  * Created by tianhuizhu on 6/20/17.
  */

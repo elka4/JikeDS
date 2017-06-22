@@ -1,12 +1,8 @@
 package com.atguigu_Java20_12.java1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Date;
-import java.util.Iterator;
-
 import org.junit.Test;
+
+import java.util.*;
 
 /*
  * 1.存储对象可以考虑：①数组 ②集合

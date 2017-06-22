@@ -3,7 +3,9 @@ package ch9J.chapter1;
 //from leetcode discussion
 //https://discuss.leetcode.com/topic/52105/2ms-beat-99-46-java-solution
 // traditional backtracking way
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class _16Permutation2_backtracking {
     public List<List<Integer>> permuteUnique(int[] nums) {

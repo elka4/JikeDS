@@ -1,7 +1,10 @@
 package lintcode._1strstr;
+
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 /**
  * Created by tzh on 1/14/17.
  */

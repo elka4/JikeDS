@@ -4,7 +4,7 @@ package implementation;
 
 //hash table using separate hash table
 
-import java.util.*;
+import java.util.List;
 public class SeparateChainingHashTable<E>{
 	private static final int DEFAULT_SIZE = 101;
 	private LinkedList[] lists ;

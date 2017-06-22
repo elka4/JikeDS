@@ -8,7 +8,7 @@ package _6_Context._6_1_EventDrivenSim; /***************************************
 
 import StdLib.StdDraw;
 
-import java.awt.Color;
+import java.awt.*;
 
 public class Particle {
     private static final double INFINITY = Double.POSITIVE_INFINITY;

@@ -1,8 +1,8 @@
 package DesignPattern.bridgems.bridge;
 
-import DesignPattern.bridgems.control.SonyControl;
 import DesignPattern.bridgems.control.LGControl;
 import DesignPattern.bridgems.control.SharpControl;
+import DesignPattern.bridgems.control.SonyControl;
 
 
 public class MainTest {

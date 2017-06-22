@@ -1,10 +1,9 @@
 package CtCI.Ch_17_Hard.Q17_11_Word_Distance;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import CtCILibrary.AssortedMethods;
 import CtCILibrary.HashMapList;
+
+import java.util.ArrayList;
 
 public class QuestionB {
 	

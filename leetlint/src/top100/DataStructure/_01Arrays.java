@@ -2,7 +2,8 @@ package top100.DataStructure;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
 
 /**
  * Created by tzh on 1/18/17.

@@ -1,17 +1,10 @@
 package com.atguigu_Java8_2.java8;
 
-import java.util.Arrays;
-import java.util.DoubleSummaryStatistics;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
-
+import com.atguigu_Java8_2.java8.Employee.Status;
 import org.junit.Test;
 
-import com.atguigu_Java8_2.java8.Employee.Status;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class TestStreamAPI3 {
 	

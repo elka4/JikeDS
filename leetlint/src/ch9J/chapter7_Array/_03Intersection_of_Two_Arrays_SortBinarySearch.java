@@ -1,6 +1,7 @@
 package ch9J.chapter7_Array;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashSet;
 
 //version 3: sort & binary search
 //time O(nlogn + mlogn)

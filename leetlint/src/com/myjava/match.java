@@ -1,8 +1,5 @@
 package com.myjava;
-import org.junit.Test;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.Scanner;
 /**
  * Created by tzh on 3/2/17.

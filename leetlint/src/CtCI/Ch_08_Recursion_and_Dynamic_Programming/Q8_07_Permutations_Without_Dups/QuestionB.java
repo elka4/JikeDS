@@ -1,6 +1,6 @@
 package CtCI.Ch_08_Recursion_and_Dynamic_Programming.Q8_07_Permutations_Without_Dups;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class QuestionB {
 	public static ArrayList<String> getPerms(String remainder) {

@@ -1,10 +1,10 @@
 package com.atguigu_Java20_13.exer;
 
+import org.junit.Test;
+
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.TreeSet;
-
-import org.junit.Test;
 
 /*
  * 创建该类的 5 个对象，并把这些对象放入 TreeSet 集合中（下一章：TreeSet 需使用泛型来定义）

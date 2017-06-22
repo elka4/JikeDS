@@ -8,9 +8,9 @@ public class Course16_5_FoldPaper {
 	public static final String Right="Right";
 	public static void print(String flag){
 		if(flag.equals(Left)){
-			System.out.println("凸");
+			System.out.println("up");
 		}else{
-			System.out.println("凹");
+			System.out.println("down");
 		}
 	}
 	public static void inOrder(int level,String flag,int maxLevel){

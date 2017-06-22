@@ -1,10 +1,10 @@
 package com.jike.spring.chapter09.cglib;
 
-import java.lang.reflect.Method;
-
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
+
+import java.lang.reflect.Method;
 
 public class CGlibProxyFactory implements MethodInterceptor {
 	private Object object;

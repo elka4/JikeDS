@@ -1,8 +1,8 @@
 package jike;
 
-import java.util.Comparator;
-
 import org.junit.Test;
+
+import java.util.Comparator;
 
 public class Course07_TestList {
 	

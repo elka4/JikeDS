@@ -1,11 +1,11 @@
 package com.atguigu_Java20_12.java1;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
-
-import org.junit.Test;
 
 public class TestIterator {
 	//√Ê ‘Ã‚£∫

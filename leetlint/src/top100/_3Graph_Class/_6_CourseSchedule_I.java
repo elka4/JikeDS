@@ -1,6 +1,9 @@
 package top100._3Graph_Class;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
 
 public class _6_CourseSchedule_I {
     public boolean canFinish_DFS (int numCourses, int[][] prerequisites) {

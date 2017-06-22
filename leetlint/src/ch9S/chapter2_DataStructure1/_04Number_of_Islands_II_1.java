@@ -1,6 +1,8 @@
 package ch9S.chapter2_DataStructure1;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 class Point {
   int x;
   int y;

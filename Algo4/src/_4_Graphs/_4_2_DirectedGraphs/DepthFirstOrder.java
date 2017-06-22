@@ -4,7 +4,8 @@ import StdLib.In;
 import StdLib.StdOut;
 import _1_Fundamentals._1_3_BagsQueuesStacks.Queue;
 import _1_Fundamentals._1_3_BagsQueuesStacks.Stack;
-import _4_Graphs._4_4_ShortestPaths.*;
+import _4_Graphs._4_4_ShortestPaths.DirectedEdge;
+import _4_Graphs._4_4_ShortestPaths.EdgeWeightedDigraph;
 
 /*************************************************************************
  *  Compilation:  javac DepthFirstOrder.java

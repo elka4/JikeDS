@@ -1,6 +1,7 @@
 package ibeifeng2.ch01;
-import java.math.*;
-import java.util.*;
+
+import java.math.BigInteger;
+import java.util.Scanner;
   
 public class TestB {
 	  public static void main(String[] args){

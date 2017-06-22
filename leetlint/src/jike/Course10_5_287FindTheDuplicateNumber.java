@@ -1,8 +1,8 @@
 package jike;
 
-import java.util.HashSet;
-
 import org.junit.Test;
+
+import java.util.HashSet;
 
 /**
  * 寻找重复元素

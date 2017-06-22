@@ -1,6 +1,7 @@
 package top100._3Graph_PreClass;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class _4_BFS_WordLadder_2 {
 	private int biBFSHelper(String begin, String end, Set<String> dic) {        

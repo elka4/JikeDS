@@ -1,13 +1,8 @@
 package com.atguigu_Java20_13.java;
 
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TreeSet;
-
 import org.junit.Test;
+
+import java.util.*;
 
 /*
  * Collection½Ó¿Ú £º

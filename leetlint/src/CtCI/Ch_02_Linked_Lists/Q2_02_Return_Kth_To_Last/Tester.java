@@ -1,7 +1,5 @@
 package CtCI.Ch_02_Linked_Lists.Q2_02_Return_Kth_To_Last;
 
-import CtCILibrary.AssortedMethods;
-
 public class Tester {
 
 	

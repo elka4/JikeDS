@@ -1,7 +1,5 @@
 package jike;
 
-import org.junit.Test;
-
 /**
  * 递归调用普通函数，并捕获异常
  */

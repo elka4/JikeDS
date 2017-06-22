@@ -1,8 +1,9 @@
 package top100._4DP;
 
-import java.io.*;
-
-import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Scanner;
 //time: 3N
 class Street {
     int[] houses;

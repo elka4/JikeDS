@@ -1,7 +1,6 @@
 package ibeifeng2.ch01;
 
-import javax.swing.JFrame;
-import javax.swing.JTable;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class TestJTable {

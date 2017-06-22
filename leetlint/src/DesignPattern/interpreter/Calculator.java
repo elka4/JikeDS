@@ -1,11 +1,11 @@
 package DesignPattern.interpreter;
 
+import DesignPattern.interpreter.cls.RPN;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-
-import DesignPattern.interpreter.cls.RPN;
 
 public class Calculator {
 

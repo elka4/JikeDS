@@ -1,8 +1,8 @@
 package jike;
 
-import java.util.Stack;
-
 import org.junit.Test;
+
+import java.util.Stack;
 
 public class Course12_1_PushAndPop {
 	public boolean checkValid(Integer[] pushSequence,Integer[] popSequence){

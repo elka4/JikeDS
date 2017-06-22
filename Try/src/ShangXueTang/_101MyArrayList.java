@@ -1,7 +1,5 @@
 package ShangXueTang;
 
-import java.util.*;
-
 /**
  * Created by tzh on 1/19/17.
  * implement an arraylist by myself

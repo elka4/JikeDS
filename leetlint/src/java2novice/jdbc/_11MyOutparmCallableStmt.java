@@ -1,10 +1,6 @@
 package java2novice.jdbc;
- 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Types;
+
+import java.sql.*;
  
 public class _11MyOutparmCallableStmt {
  

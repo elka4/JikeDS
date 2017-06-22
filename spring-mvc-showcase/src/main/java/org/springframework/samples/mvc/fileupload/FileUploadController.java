@@ -1,7 +1,5 @@
 package org.springframework.samples.mvc.fileupload;
 
-import java.io.IOException;
-
 import org.springframework.mvc.extensions.ajax.AjaxUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @Controller
 @RequestMapping("/fileupload")

@@ -1,10 +1,10 @@
 package DesignPattern.pizzastore.simplefactory;
 
+import DesignPattern.pizzastore.pizza.Pizza;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-import DesignPattern.pizzastore.pizza.Pizza;
 
 public class OrderPizza {
 	SimplePizzaFactory mSimplePizzaFactory;

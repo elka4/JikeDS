@@ -1,7 +1,7 @@
 package CtCI.Ch_17_Hard.Q17_09_Kth_Multiple;
 
-import java.util.Queue;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class QuestionC {
 	public static void printQueue(Queue<Integer> q, int x) {

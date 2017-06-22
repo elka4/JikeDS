@@ -1,7 +1,7 @@
 package java2novice.treemap;
 
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.TreeMap;
  /*Program: How to get entry set from TreeMap?
 

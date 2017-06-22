@@ -1,8 +1,10 @@
 package top100._3Graph;
 
 
-import java.util.*;
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 class Snake{
 

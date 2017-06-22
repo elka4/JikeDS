@@ -1,8 +1,8 @@
 package jike;
 
-import java.util.Arrays;
-
 import org.junit.Test;
+
+import java.util.Arrays;
 
 public class Course03_3_TwoSum {
 public void printResult(int a,int b){

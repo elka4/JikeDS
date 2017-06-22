@@ -1,13 +1,12 @@
 package com.atguigu_Java8_2.java8;
 
+import com.atguigu_Java8_2.java8.Employee.Status;
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
-
-import org.junit.Test;
-
-import com.atguigu_Java8_2.java8.Employee.Status;
 
 /*
  * 一、 Stream 的操作步骤

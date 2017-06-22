@@ -35,6 +35,9 @@ public class Course04_3_009PalindromeNumber {
 			int half=wei/2;
 			int n=x;
 			for(int i=0;i<half;i++){
+				int a = x/t;
+				int b = a%10;
+				int c = n%10;
 				if(x/t%10==n%10){
 					t/=10;
 					n/=10;

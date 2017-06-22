@@ -1,8 +1,8 @@
 package CtCI.Ch_07_Object_Oriented_Design.Q7_01_Deck_of_Cards;
 
-import java.util.ArrayList;
-
 import CtCILibrary.AssortedMethods;
+
+import java.util.ArrayList;
 
 public class Deck <T extends Card> {
 	private ArrayList<T> cards;

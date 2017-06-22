@@ -1,5 +1,7 @@
 package ch9J.chapter3_BianryTree.mylint_3_Binary;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Stack;
 /**
  * Created by tzh on 3/2/17.
  */

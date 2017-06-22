@@ -1,10 +1,10 @@
 package com.atguigu_Java8_2.java8;
 
+import org.junit.Test;
+
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
 import java.util.stream.LongStream;
-
-import org.junit.Test;
 
 public class TestForkJoin {
 	

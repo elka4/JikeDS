@@ -1,10 +1,10 @@
 package CtCI.Ch_03_Stacks_and_Queues.Introduction;
 
+import CtCILibrary.AssortedMethods;
+
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 import java.util.Queue;
-
-import CtCILibrary.AssortedMethods;
 
 public class QueueTester {
 

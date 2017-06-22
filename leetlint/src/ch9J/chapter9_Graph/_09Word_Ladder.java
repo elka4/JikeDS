@@ -1,10 +1,6 @@
 package ch9J.chapter9_Graph;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 
 public class _09Word_Ladder {
 public int ladderLength(String start, String end, Set<String> dict) {

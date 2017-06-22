@@ -1,8 +1,8 @@
 package CtCI.Ch_10_Sorting_and_Searching.Q10_02_Group_Anagrams;
 
-import java.util.Arrays;
-
 import CtCILibrary.AssortedMethods;
+
+import java.util.Arrays;
 
 public class Question {
 	public static void main(String[] args) {

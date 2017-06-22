@@ -1,19 +1,9 @@
 package top100.DataStructure;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Stack;
-import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.*;
 
 
 @SuppressWarnings("unused")

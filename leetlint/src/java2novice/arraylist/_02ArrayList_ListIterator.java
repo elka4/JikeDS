@@ -1,10 +1,10 @@
 package java2novice.arraylist;
 
-import java.util.ArrayList;
-import java.util.ListIterator;
-
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.ListIterator;
  /*Here we can see example for reading all elements from ArrayList
 by using Iterator. Also you can iterate through the ArrayList based
  on index too. 

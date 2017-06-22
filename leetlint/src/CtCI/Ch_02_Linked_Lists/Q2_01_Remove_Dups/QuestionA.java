@@ -1,7 +1,8 @@
 package CtCI.Ch_02_Linked_Lists.Q2_01_Remove_Dups;
 
-import java.util.HashSet;
 import CtCILibrary.LinkedListNode;
+
+import java.util.HashSet;
 
 public class QuestionA {
 	public static void deleteDups(LinkedListNode n) {

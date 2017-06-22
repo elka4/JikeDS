@@ -1,9 +1,9 @@
 package DesignPattern.coffeebar;
 
-import DesignPattern.coffeebar.decorator.Milk;
 import DesignPattern.coffeebar.coffee.Decaf;
 import DesignPattern.coffeebar.coffee.LongBlack;
 import DesignPattern.coffeebar.decorator.Chocolate;
+import DesignPattern.coffeebar.decorator.Milk;
 
 public class CoffeeBar {
 

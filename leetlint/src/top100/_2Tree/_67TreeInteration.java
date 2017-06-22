@@ -1,8 +1,11 @@
 package top100._2Tree;
+
 import org.junit.Test;
 
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.Stack;
 
 
 

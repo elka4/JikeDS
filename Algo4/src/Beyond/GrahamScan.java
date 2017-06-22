@@ -1,22 +1,23 @@
 package Beyond;
-import _1_Fundamentals._1_2_DataAbstraction.*;
-import java.util.*;
+
+import StdLib.StdIn;
+import StdLib.StdOut;
+import _1_Fundamentals._1_2_DataAbstraction.Point2D;
+
+import java.util.Arrays;
+import java.util.Stack;
+
 /*************************************************************************
  *  Compilation:  javac GrahamaScan.java
  *  Execution:    java GrahamScan < input.txt
  *  Dependencies: Point2D.java
- * 
+ *
  *  Create points from standard input and compute the convex hull using
  *  Graham scan algorithm.
  *
  *  May be floating-point issues if x- and y-coordinates are not integers.
  *
  *************************************************************************/
-
-import StdLib.StdIn;
-import StdLib.StdOut;
-
-import java.util.Arrays;
 
 public class GrahamScan {
     private Stack<Point2D> hull = new Stack<Point2D>();

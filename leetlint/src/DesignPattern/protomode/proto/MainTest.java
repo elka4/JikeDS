@@ -1,8 +1,8 @@
 package DesignPattern.protomode.proto;
 
-import java.util.Random;
-
 import DesignPattern.protomode.EventTemplate;
+
+import java.util.Random;
 
 public class MainTest {
 	public static void main(String[] args) {

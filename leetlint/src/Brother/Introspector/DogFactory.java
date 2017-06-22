@@ -1,11 +1,12 @@
 package Brother.Introspector;
 
-import java.beans.*;
+import java.beans.BeanInfo;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
 import java.util.Properties;
-import java.beans.Introspector;
 
 /**工厂类
  * Created by tzh on 1/21/17.

@@ -1,6 +1,7 @@
 package ch9J.chapter8_DataStructure;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class _05Implement_Stack_by_Two_Queues {
 	private Queue<Integer> queue1;

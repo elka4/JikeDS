@@ -1,6 +1,7 @@
 package ch9J.chapter9_Graph;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 //version 2: two steps
 public class _01Clone_Graph_2steps {

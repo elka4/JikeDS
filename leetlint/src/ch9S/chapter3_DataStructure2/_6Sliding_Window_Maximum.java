@@ -1,6 +1,8 @@
 package ch9S.chapter3_DataStructure2;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
 
 public class _6Sliding_Window_Maximum {
     /**

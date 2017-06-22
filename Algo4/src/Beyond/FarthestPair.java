@@ -2,8 +2,7 @@ package Beyond;
 
 import StdLib.StdIn;
 import StdLib.StdOut;
-import _1_Fundamentals._1_2_DataAbstraction.*;
-import java.util.*;
+import _1_Fundamentals._1_2_DataAbstraction.Point2D;
 /*************************************************************************
  *  Compilation:  javac FarthestPair.java
  *  Execution:    java FarthestPair < input.txt

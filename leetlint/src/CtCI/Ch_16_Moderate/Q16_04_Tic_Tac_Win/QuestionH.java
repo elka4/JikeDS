@@ -1,8 +1,8 @@
 package CtCI.Ch_16_Moderate.Q16_04_Tic_Tac_Win;
 
-import java.util.ArrayList;
-
 import CtCILibrary.AssortedMethods;
+
+import java.util.ArrayList;
 
 public class QuestionH {	
 	public static Piece hasWon(Piece[][] board) {

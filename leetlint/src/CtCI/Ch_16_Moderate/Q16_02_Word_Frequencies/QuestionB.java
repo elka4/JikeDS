@@ -1,8 +1,8 @@
 package CtCI.Ch_16_Moderate.Q16_02_Word_Frequencies;
 
-import java.util.*;
-
 import CtCILibrary.AssortedMethods;
+
+import java.util.HashMap;
 
 public class QuestionB {
 	public static HashMap<String, Integer> setupDictionary(String[] book) {

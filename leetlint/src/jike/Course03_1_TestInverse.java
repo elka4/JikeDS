@@ -1,8 +1,8 @@
 package jike;
 
-import java.util.Random;
-
 import org.junit.Test;
+
+import java.util.Random;
 
 
 public class Course03_1_TestInverse {

@@ -1,9 +1,9 @@
 package jike;
 
+import org.junit.Test;
+
 import java.util.Collections;
 import java.util.LinkedList;
-
-import org.junit.Test;
 
 public class Course12_3_071SimplifyPath {
  public String simplifyPath(String path) {

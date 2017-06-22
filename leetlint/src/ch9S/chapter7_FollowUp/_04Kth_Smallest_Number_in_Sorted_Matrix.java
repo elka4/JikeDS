@@ -1,6 +1,7 @@
 package ch9S.chapter7_FollowUp;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 public class _04Kth_Smallest_Number_in_Sorted_Matrix {
 

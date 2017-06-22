@@ -3,7 +3,7 @@ package _4_Graphs._4_4_ShortestPaths;
 import StdLib.In;
 import StdLib.StdOut;
 import _1_Fundamentals._1_3_BagsQueuesStacks.Stack;
-import  _2_Sorting._2_4_PriorityQueues.*;
+import _2_Sorting._2_4_PriorityQueues.IndexMinPQ;
 
 /*************************************************************************
  *  Compilation:  javac DijkstraSP.java

@@ -1,5 +1,7 @@
 package _4_Graphs._4_2_DirectedGraphs;
-import _4_Graphs._4_4_ShortestPaths.*;
+
+import _4_Graphs._4_4_ShortestPaths.EdgeWeightedDigraph;
+import _4_Graphs._4_4_ShortestPaths.EdgeWeightedDirectedCycle;
 /*************************************************************************
  *  Compilation:  javac Topoological.java
  *  Dependencies: Digraph.java DepthFirstOrder.java DirectedCycle.java
