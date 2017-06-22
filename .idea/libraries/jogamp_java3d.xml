@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jogamp-java3d">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/Algo4/lib/jogamp-java3d.7z" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

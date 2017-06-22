@@ -1,0 +1,38 @@
+			      
+                      SWT OpenGL Build and installation information
+
+This codebase comes from many different sets of codebases that are under varying
+stages of beta quality. It's fairly tricky to get to build and have the right 
+dependencies in the correct place.
+
+Firstly, we use a modified version of Sun's JOGL reference implementation code.
+Many things have changed dues to incompatibilities between SWT and AWT, 
+particularly on Mac OSX. If you'd like to build the JOGL code from source, it can
+also be found in the j3d.org CVS repository under the module name jogl_ri. 
+
+Secondly, the SWT code uses the current beta release 3.2M7. This can be downloaded
+directly from http://www.eclipse.org/swt/
+
+To run the code, you'll need to download the SWT code and install that in your
+environment (you may have it already  if you're using Eclipse 3.2 builds).
+If you have the standard JOGL reference implementation code, you'll need to 
+remove that and the DLLs from your classpath. Place the versions that come 
+with this code in your classpath. If you don't remove the other versions, code
+will crash, guaranteed. They cannot co-exist in the same classpath. If you're
+on a Mac, most likely you'll lock the machine up.
+
+Once you have downloaded the archive for your platform, expand it out into
+your Eclipse plugins directory. You will see that it has created a new directory
+that has the platform-specific name on it. This sets up the Eclipse plugin 
+struture you'll need to use this as a direct plugin to any other part of your
+Eclipse environment. If you're writing standalone SWT 
+applications, then follow the same process but in whatever directory you chose.
+point your classpath at the JARs, and your path/library path environment 
+variables at this place you've located the extracted files. 
+
+To test the code, grab the examples and run. You should see some basic 
+primitives just sitting in front of your screen. After this, everything is 
+relatively trivial, using just the normal JOGL code. 
+
+Justin Couch
+6 June 2006

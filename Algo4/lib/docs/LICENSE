@@ -1,0 +1,12 @@
+			      
+                      SWT OpenGL Licensing information
+
+This codebase contains code under the BSD license. In addition, we also 
+reference code from Sun Microsystems JOGL Reference Implementation, which is 
+also under the BSD license.
+
+Documents under /docs are not currently assigned a license, thus
+redistributable under standard copyright terms.
+
+Files in /contrib each have their own license. Please consult the source
+to find out in each specific case.

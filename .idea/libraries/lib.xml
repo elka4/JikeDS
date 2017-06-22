@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/Algo4/lib" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/Algo4/lib/docs/javadoc" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/Algo4/lib" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/Algo4/lib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/Algo4/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>

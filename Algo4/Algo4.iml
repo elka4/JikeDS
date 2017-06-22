@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Osmorc" name="OSGi">
+      <configuration manifestGenerationMode="Manually" manifestLocation="lib/org.j3d.opengl.swt.carbon.macosx_0.7.0/META-INF/MANIFEST.MF" jarfileLocation="Algo4.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="" bundleVersion="1.0.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="false" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+        <additionalProperties />
+        <additionalJARContents />
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/out/classes" />
     <output-test url="file://$MODULE_DIR$/out/test-classes" />
@@ -61,5 +69,8 @@
     </orderEntry>
     <orderEntry type="library" name="algs4" level="project" />
     <orderEntry type="library" name="src" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="jogamp-java3d" level="project" />
+    <orderEntry type="library" name="src1" level="project" />
   </component>
 </module>
