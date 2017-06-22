@@ -1,0 +1,9 @@
+/usr/lib/jvm/java-1.8.0-openjdk-amd64/bin/java -javaagent:/home/b/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/171.4694.23/lib/idea_rt.jar=36917:/home/b/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/171.4694.23/bin -Dfile.encoding=UTF-8 -classpath /usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/charsets.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/icedtea-sound.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/java-atk-wrapper.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/jfxrt.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/jce.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/jfxswt.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/jsse.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/management-agent.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/resources.jar:/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar:/home/b/IdeaProjects/JikeDS/Algo4/out/classes:/home/b/IdeaProjects/JikeDS/Algo4/src/algs4.jar:/home/b/IdeaProjects/JikeDS/Algo4/src/j3dcore.jar:/home/b/IdeaProjects/JikeDS/Algo4/src/j3dutils.jar:/home/b/IdeaProjects/JikeDS/Algo4/src/stdlib.jar:/home/b/IdeaProjects/JikeDS/Algo4/src/vecmath.jar _1_Fundamentals._1_4_AnalysisOfAlgorithms.DoublingTest
+    250   0.0
+    500   0.1
+   1000   0.1
+   2000   0.7
+   4000   5.8
+   8000  42.9
+  16000 373.2
+  32000 2688.6
