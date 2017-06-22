@@ -36,6 +36,6 @@ public void addSum(int s){
 public void test(){
 	addSum(21);
 	System.out.println();
-	addSum(15);
+	addSum(150);
 }
 }

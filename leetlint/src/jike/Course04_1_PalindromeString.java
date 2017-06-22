@@ -3,26 +3,30 @@ package jike;
 import org.junit.Test;
 
 /**
- *�ж��ַ��Ƿ����
+ *
  */
 public class Course04_1_PalindromeString {
-public boolean isPalindrome(String str){
-	if(str==null||str.length()<=1){
+	/**
+	 *判断字符串是否回文
+	 */
+
+	public boolean isPalindrome(String str){
+		if(str==null||str.length()<=1){
+			return true;
+		}
+		for(int i=0,j=str.length()-1;i<j;i++,j--){
+			if(str.charAt(i)!=str.charAt(j)){
+				return false;
+			}
+		}
 		return true;
 	}
-	for(int i=0,j=str.length()-1;i<j;i++,j--){
-		if(str.charAt(i)!=str.charAt(j)){
-			return false;
-		}
+	@Test
+	public void test(){
+		System.out.println(isPalindrome("abcdcba"));
+		System.out.println(isPalindrome("abcdeba"));
+		System.out.println(isPalindrome("abccba"));
+		System.out.println(isPalindrome("abcd"));
+		System.out.println(isPalindrome("秋江楚雁宿沙洲 雁宿沙洲浅水流 流水浅洲沙宿雁 洲沙宿雁楚江秋"));
 	}
-	return true;
-}
-@Test
-public void test(){
-	System.out.println(isPalindrome("abcdcba"));
-	System.out.println(isPalindrome("abcdeba"));
-	System.out.println(isPalindrome("abccba"));
-	System.out.println(isPalindrome("abcd"));
-	System.out.println(isPalindrome("�ｭ������ɳ�� ����ɳ��ǳˮ�� ��ˮǳ��ɳ���� ��ɳ���������"));
-}
 }

@@ -3,9 +3,9 @@ package jike;
 import org.junit.Test;
 
 public class Course04_4_005LongestPalindromicSubstring {
-/**
- �ж��ַ��ĳһ�����Ƿ����
- */
+	/**
+	 判断字符串的某一部分是否回文
+	 */
 public boolean isPanlindrome(String s,int start,int end){
 	for(int i=start,j=end;i<j;i++,j--){
 		if(s.charAt(i)!=s.charAt(j)){
@@ -14,9 +14,9 @@ public boolean isPanlindrome(String s,int start,int end){
 	}
 	return true;
 }
-/**
-������ⷨ
- */
+	/**
+	 暴力求解法
+	 */
 public String longestPalindrome01(String s) {
     if(s==null||s.length()<=1){
     	return s;
@@ -39,20 +39,20 @@ public String longestPalindrome01(String s) {
     	return s.substring(from, to+1);
     }
 }
-/**
-������չ��
- */
+	/**
+	 中心扩展法
+	 */
 public String longestPalindrome02(String s){
 	int maxLeft=0;
 	int maxRight=0;
 	int max=1;
 	int n=s.length();
 	for(int i=0;i<n;i++){
-		//ż��ȵĻ����Ӵ�
+		//偶数长度的回文子串
 		int start=i;
 		int end=i+1;
 		int len=0;
-		//left��right��Ϊ�˷�ֹԽ��
+		//left、right是为了防止越界
 		int left=start;
 		int right=end;
 		while(start>=0&&end<n){
@@ -71,7 +71,7 @@ public String longestPalindrome02(String s){
 			maxRight=right;
 			max=len;
 		}
-		//����ȵĻ����Ӵ�
+		//奇数长度的回文子串
 		start=i-1;
 		end=i+1;
 		len=1;
