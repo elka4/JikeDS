@@ -13,28 +13,32 @@ public class _02Topological_Sorting {
 public ArrayList<DirectedGraphNode> topSort(ArrayList<DirectedGraphNode> graph) {
     // write your code here
     ArrayList<DirectedGraphNode> result = new ArrayList<DirectedGraphNode>();
-    HashMap<DirectedGraphNode, Integer> map = new HashMap<>();
+    HashMap<DirectedGraphNode, Integer> indegree = new HashMap<>();
+
+    //遍历图，统计每个node的入度
     for (DirectedGraphNode node : graph) {
         for (DirectedGraphNode neighbor : node.neighbors) {
-            if (map.containsKey(neighbor)) {
-                map.put(neighbor, map.get(neighbor) + 1);
+            if (indegree.containsKey(neighbor)) {
+                indegree.put(neighbor, indegree.get(neighbor) + 1);
             } else {
-                map.put(neighbor, 1); 
+                indegree.put(neighbor, 1);
             }
         }
     }
     Queue<DirectedGraphNode> q = new LinkedList<DirectedGraphNode>();
+    //将入度为0的node加进q，同时加入result
     for (DirectedGraphNode node : graph) {
-        if (!map.containsKey(node)) {
+        if (!indegree.containsKey(node)) {
             q.offer(node);
             result.add(node);
         }
     }
+    //
     while (!q.isEmpty()) {
         DirectedGraphNode node = q.poll();
         for (DirectedGraphNode n : node.neighbors) {
-            map.put(n, map.get(n) - 1);
-            if (map.get(n) == 0) {
+            indegree.put(n, indegree.get(n) - 1);
+            if (indegree.get(n) == 0) {
                 result.add(n);
                 q.offer(n);
             }

@@ -1,4 +1,5 @@
 package _1_Fundamentals._1_1_BasicProgModel;
+import StdLib.StdOut;
 
 public class Ex_1_1_19
 {
@@ -30,10 +31,10 @@ public class Ex_1_1_19
 
     public static void main(String[] args)
     {
-//        for (int N = 0; N < 100; N++)
-//            StdOut.println(N + " " + F(N));
         for (int N = 0; N < 100; N++)
-            StdLib.StdOut.println(N + " " + Fib(N));
+            StdOut.println(N + " " + F(N));
+//        for (int N = 0; N < 100; N++)
+//            StdLib.StdOut.println(N + " " + Fib(N));
     }
 
 }

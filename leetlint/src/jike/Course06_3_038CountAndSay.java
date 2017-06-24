@@ -34,8 +34,11 @@ public class Course06_3_038CountAndSay {
 	    }
 	 @Test
 	 public void test(){
+		 System.out.println(countAndSay(1));
+		 System.out.println(countAndSay(2));
+		 System.out.println(countAndSay(3));
+		 System.out.println(countAndSay(4));
 		 System.out.println(countAndSay(5));
 		 System.out.println(countAndSay(6));
-		 System.out.println(countAndSay(7));
 	 }
 }

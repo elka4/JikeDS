@@ -37,6 +37,7 @@ public class Stats {
         // compute standard deviation
         sum = 0.0;
         for (double x : numbers) {
+            StdOut.println(x);
             sum += (x - mean) * (x - mean);
         }
         double std = Math.sqrt(sum/(N-1));

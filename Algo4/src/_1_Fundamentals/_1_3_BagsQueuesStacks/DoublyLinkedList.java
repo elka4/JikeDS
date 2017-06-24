@@ -265,7 +265,7 @@ public class DoublyLinkedList<Item> implements Iterable<Item>
             }
         }
     }
-    
+
     
     /************
      * Unit tests

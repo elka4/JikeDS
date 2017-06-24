@@ -32,24 +32,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/j3dcore.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/j3dutils.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/src/stdlib.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -61,16 +43,16 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/vecmath.jar!/" />
+          <root url="file://$MODULE_DIR$/src" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/src" />
+          <root url="file://$MODULE_DIR$/src" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/src" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/src" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="algs4" level="project" />
-    <orderEntry type="library" name="src" level="project" />
-    <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="library" name="jogamp-java3d" level="project" />
-    <orderEntry type="library" name="src1" level="project" />
   </component>
 </module>
