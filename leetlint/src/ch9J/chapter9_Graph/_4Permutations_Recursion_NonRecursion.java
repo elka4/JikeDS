@@ -1,6 +1,9 @@
 package ch9J.chapter9_Graph;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 
 //Non-Recursion
 public class _4Permutations_Recursion_NonRecursion {
@@ -52,4 +55,11 @@ public class _4Permutations_Recursion_NonRecursion {
       
       return permutations;
   }
+
+    @Test
+    public void test01 (){
+        Integer[] nums = {new Integer(1), new Integer(2) , new Integer(3)};
+        ArrayList<Integer> input = new ArrayList<Integer>(Arrays.asList(nums));
+        System.out.println(permute(input));
+    }
 }

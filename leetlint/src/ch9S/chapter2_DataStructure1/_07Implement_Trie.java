@@ -3,25 +3,21 @@ package ch9S.chapter2_DataStructure1;
 import java.util.HashMap;
 
 public class _07Implement_Trie {
-
-}
-
-
 class Trie {
-	class TrieNode {
-		// Initialize your data structure here.
-		char c;
-		HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>();
-		boolean hasWord;
-		
-		public TrieNode(){
-			
-		}
-		
-		public TrieNode(char c){
-			this.c = c;
-		}
-	}
+    class TrieNode {
+        // Initialize your data structure here.
+        char c;
+        HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>();
+        boolean hasWord;
+
+        public TrieNode(){
+
+        }
+
+        public TrieNode(char c){
+            this.c = c;
+        }
+    }
     private TrieNode root;
 
     public Trie() {
@@ -53,9 +49,9 @@ class Trie {
     public boolean search(String word) {
         if(searchWordNodePos(word) == null){
             return false;
-        } else if(searchWordNodePos(word).hasWord) 
-          return true;
-          else return false;
+        } else if(searchWordNodePos(word).hasWord)
+            return true;
+        else return false;
     }
 
     // Returns if there is any word in the trie
@@ -65,7 +61,7 @@ class Trie {
             return false;
         } else return true;
     }
-    
+
     public TrieNode searchWordNodePos(String s){
         HashMap<Character, TrieNode> children = root.children;
         TrieNode cur = null;
@@ -82,6 +78,10 @@ class Trie {
         return cur;
     }
 }
+}
+
+
+
 /*Implement a trie with insert, search, and startsWith methods.
 
  Notice

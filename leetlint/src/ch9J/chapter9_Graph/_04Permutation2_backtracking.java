@@ -4,6 +4,8 @@ package ch9J.chapter9_Graph;
 //https://discuss.leetcode.com/topic/52105/2ms-beat-99-46-java-solution
 // traditional backtracking way
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,5 +46,11 @@ public class _04Permutation2_backtracking {
         int tmp = nums[i];
         nums[i] = nums[j];
         nums[j] = tmp;
+    }
+
+    @Test
+    public void test01 (){
+        int[] input = {1, 2 , 3};
+        System.out.println(permuteUnique(input));
     }
 }

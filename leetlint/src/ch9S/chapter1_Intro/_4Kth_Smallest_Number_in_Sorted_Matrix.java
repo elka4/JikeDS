@@ -5,11 +5,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class _4Kth_Smallest_Number_in_Sorted_Matrix {
-	 /**
-     * @param matrix: a matrix of integers
-     * @param k: an integer
-     * @return: the kth smallest number in the matrix
-     */
+
      
     public class Point {
         public int x, y, val;
@@ -25,7 +21,11 @@ public class _4Kth_Smallest_Number_in_Sorted_Matrix {
             return left.val - right.val;
         }
     };
-    
+    /**
+     * @param matrix: a matrix of integers
+     * @param k: an integer
+     * @return: the kth smallest number in the matrix
+     */
     public int kthSmallest(int[][] matrix, int k) {
         if (matrix == null 
         		|| matrix.length == 0 

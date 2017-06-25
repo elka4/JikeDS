@@ -4,24 +4,26 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 
-class Number {
-    public int x, y, val;
-    public Number(int x, int y, int val) {
-        this.x = x;
-        this.y = y;
-        this.val = val;
-    }
-}
-class NumComparator implements Comparator<Number> {
-    public int compare(Number a, Number b) {
-        return a.val - b.val;
-    }
-}
+
 
 public class _4Kth_Smallest_Number_in_Sorted_Matrix2 {
+    class Number {
+        public int x, y, val;
+        public Number(int x, int y, int val) {
+            this.x = x;
+            this.y = y;
+            this.val = val;
+        }
+    }
+    class NumComparator implements Comparator<Number> {
+        public int compare(Number a, Number b) {
+            return a.val - b.val;
+        }
+    }
+
     /**
      * @param matrix: a matrix of integers
-     * @param k: an integer
+     * @param x,y: an integer
      * @return: the kth smallest number in the matrix
      */
     private boolean valid(int x, int y, int[][] matrix, boolean[][] hash) {

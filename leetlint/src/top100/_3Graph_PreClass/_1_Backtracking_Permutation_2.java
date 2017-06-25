@@ -1,5 +1,7 @@
 package top100._3Graph_PreClass;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +36,14 @@ public class _1_Backtracking_Permutation_2 {
 }
 
 	private void swap(int[] nums, int pos, int i) {
-		// TODO Auto-generated method stub
-		
+        int temp = nums[pos];
+        nums[pos] = nums[i];
+        nums[i] = temp;
 	}
+
+    @Test
+    public void test01 (){
+        int[] input = {1, 2 , 3};
+        System.out.println(permute1(input));
+    }
 }

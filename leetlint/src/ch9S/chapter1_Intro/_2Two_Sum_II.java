@@ -1,5 +1,7 @@
 package ch9S.chapter1_Intro;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 
 public class _2Two_Sum_II {
@@ -22,6 +24,14 @@ public class _2Two_Sum_II {
             }
         }
         return ans;
+    }
+
+    @Test
+    public void test01(){
+        int[] inputArr = {2, 7, 11, 15};
+        int target = 24;
+        System.out.println(twoSum2(inputArr, target));
+
     }
 }
 

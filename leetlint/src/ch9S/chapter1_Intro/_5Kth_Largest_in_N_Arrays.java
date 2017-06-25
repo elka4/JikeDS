@@ -6,16 +6,18 @@ import java.util.PriorityQueue;
 import java.util.Queue; 
 
 
-class Node {
-    public int value, from_id, index;
-    public Node(int _v, int _id, int _i) {
-        this.value = _v;
-        this.from_id = _id;
-        this.index = _i;
-    }
-}
+
 
 public class _5Kth_Largest_in_N_Arrays {
+    class Node {
+        public int value, from_id, index;
+        public Node(int _v, int _id, int _i) {
+            this.value = _v;
+            this.from_id = _id;
+            this.index = _i;
+        }
+    }
+
     /**
      * @param arrays a list of array
      * @param k an integer

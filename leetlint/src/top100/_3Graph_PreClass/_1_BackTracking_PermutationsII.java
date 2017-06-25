@@ -1,5 +1,7 @@
 package top100._3Graph_PreClass;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -37,8 +39,15 @@ public class _1_BackTracking_PermutationsII {
         }
 }
 
-	private void swap(int[] nums, int i, int pos) {
-		// TODO Auto-generated method stub
-		
-	}
+    private void swap(int[] nums, int i, int pos) {
+        int temp = nums[pos];
+        nums[pos] = nums[i];
+        nums[i] = temp;
+    }
+
+    @Test
+    public void test01 (){
+        int[] input = {1, 2 , 3};
+        System.out.println(permuteUnique(input));
+    }
 }

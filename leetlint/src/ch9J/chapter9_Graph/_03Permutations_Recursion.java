@@ -1,5 +1,7 @@
 package ch9J.chapter9_Graph;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 
 public class _03Permutations_Recursion {
@@ -32,6 +34,12 @@ public class _03Permutations_Recursion {
        } 
        //return
    }
+
+    @Test
+    public void test01 (){
+        int[] input = {1, 2 , 3};
+        System.out.println(permute(input));
+    }
 }
 
 /*

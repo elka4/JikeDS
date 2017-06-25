@@ -1,6 +1,8 @@
 package ch9J.chapter9_Graph;
 //I need some deep understanding of the nature of permuation
 //especially when there is duplicate
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -47,6 +49,13 @@ public void helper(ArrayList<ArrayList<Integer>> result,
         visited[i] = 0;
     }
 }
+    @Test
+    public void test01 (){
+        int[] input = {1, 2 , 3};
+        System.out.println(permuteUnique(input));
+    }
+
+
 }
 
 

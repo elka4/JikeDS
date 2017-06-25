@@ -4,33 +4,36 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 
-class Cell{
-	  public int x,y, h;
-	  Cell(){}
-	  Cell(int xx,int yy, int hh){
-	    x= xx;
-	    y= yy;
-	    h =hh;
-	  }
-}
 
-class CellComparator implements Comparator<Cell> {
-  @Override
-  public int compare(Cell x, Cell y)
-  {
-    if(x.h > y.h)
-      return 1;
-    else if(x.h == y.h){
-     return 0;
-    }
-    else {
-      return -1;
-    }
-  }
-} 
 
 
 public class _2Trapping_Rain_Water_II {
+  class Cell{
+    public int x,y, h;
+    Cell(){}
+    Cell(int xx,int yy, int hh){
+      x= xx;
+      y= yy;
+      h =hh;
+    }
+  }
+
+  class CellComparator implements Comparator<Cell> {
+    @Override
+    public int compare(Cell x, Cell y)
+    {
+      if(x.h > y.h)
+        return 1;
+      else if(x.h == y.h){
+        return 0;
+      }
+      else {
+        return -1;
+      }
+    }
+  }
+
+
   int []dx = {1,-1,0,0};
   int []dy = {0,0,1,-1};
   public  int trapRainWater(int[][] heights) {
