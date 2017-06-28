@@ -18,6 +18,7 @@ class Trie {
             this.c = c;
         }
     }
+
     private TrieNode root;
 
     public Trie() {

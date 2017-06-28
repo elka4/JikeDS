@@ -18,7 +18,8 @@ private void removeBFS (int x, int y, char[][] grid, int m, int n) {
 
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
-                if (isValid(i, j, curX, curY, m, n)  && grid[curX + i][curY + j] == '1') {
+                if (isValid(i, j, curX, curY, m, n)
+                        && grid[curX + i][curY + j] == '1') {
                     queue.offer((curX + i) * n + (curY + j));
                     grid[curX + i][curY + j] = '0';
                 }

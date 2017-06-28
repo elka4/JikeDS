@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class _1_Backtracking_Permutation_1 {
-    public List<List <Integer>> permute(int[] num) {
+    private List<List <Integer>> permute(int[] num) {
         //Corner Case Checked
     List <List<Integer>> result = new ArrayList <List<Integer>>();
         List <Integer> list = new ArrayList <Integer>();

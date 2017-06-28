@@ -12,7 +12,8 @@ public class _2_HeapAndBestFirstSearch_KthSmallestinSortedMatrix_1 {
 	    int col = matrix[0].length;
 
 	    boolean[][] marked = new boolean[row][col];
-	    PriorityQueue<Point> minHeap = new PriorityQueue<Point>(k, new myComparator());
+	    PriorityQueue<Point> minHeap =
+				new PriorityQueue<Point>(k, new myComparator());
 
 	    minHeap.offer(new Point(0, 0, matrix[0][0]));
 	    marked[0][0] = true;

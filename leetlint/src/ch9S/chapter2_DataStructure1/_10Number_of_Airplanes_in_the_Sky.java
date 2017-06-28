@@ -8,12 +8,12 @@ import java.util.List;
 public class _10Number_of_Airplanes_in_the_Sky {
 
 }
-	  
+
 
 class Point_2{
 	int time;
 	int flag;
-	
+
 	Point_2(int t, int s){
 		this.time = t;
 		this.flag = s;
@@ -25,22 +25,22 @@ class Point_2{
 		}
 	};
 }
-  
+
 class Solution {
-	
-class Interval {
-	int start, end;
-	Interval(int start, int end) {
-		this.start = start;
-		this.end = end;
+
+	class Interval {
+		int start, end;
+		Interval(int start, int end) {
+			this.start = start;
+			this.end = end;
+		}
 	}
-}
 
     /**
-     * @param intervals: An interval array
+     * @param airplanes: An interval array
      * @return: Count of airplanes are in the sky.
      */
-  public int countOfAirplanes(List<Interval> airplanes) { 
+  public int countOfAirplanes(List<Interval> airplanes) {
     List<Point_2> list = new ArrayList<>(airplanes.size()*2);
     for(Interval i : airplanes){
       list.add(new Point_2(i.start, 1));
@@ -57,7 +57,7 @@ class Interval {
 
     return ans;
   }
-    
+
 }
 
 /*Given an interval list which are flying and landing time of 

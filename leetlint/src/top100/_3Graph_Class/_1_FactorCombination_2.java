@@ -1,5 +1,7 @@
 package top100._3Graph_Class;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,10 +28,15 @@ public class _1_FactorCombination_2 {
 				list.remove(list.size() - 1);
 			}
 		}
-		
+		//base case
 		list.add(n);
 		helper(res, list, 1, n);
 		list.remove(list.size() - 1);
 		
+	}
+
+	@Test
+	public void test01(){
+		System.out.println(getFactors(18));
 	}
 }

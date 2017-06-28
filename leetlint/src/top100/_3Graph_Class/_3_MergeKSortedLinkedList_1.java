@@ -34,15 +34,15 @@ public class _3_MergeKSortedLinkedList_1 {
 		}
 		return dummy.next;
 	}
-}
-
-class MyComparator implements Comparator<ListNode> {
-	@Override
-	public int compare(ListNode o1, ListNode o2) {
-		if (o1.val == o2.val) {
-			return 0;
-		} else {
-			return o1.val < o2.val ? -1 : 1;
+	class MyComparator implements Comparator<ListNode> {
+		@Override
+		public int compare(ListNode o1, ListNode o2) {
+			if (o1.val == o2.val) {
+				return 0;
+			} else {
+				return o1.val < o2.val ? -1 : 1;
+			}
 		}
 	}
 }
+

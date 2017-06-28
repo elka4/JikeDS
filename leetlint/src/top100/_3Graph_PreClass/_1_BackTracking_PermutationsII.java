@@ -26,7 +26,7 @@ public class _1_BackTracking_PermutationsII {
             res.add(list);
             return;
         }
-
+        //用这个hashset来去重
         Set <Integer> used = new HashSet <Integer>();
         for (int i = pos; i  < nums.length; i++) {
             if (used.add(nums[i])) {

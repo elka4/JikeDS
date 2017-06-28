@@ -30,8 +30,9 @@ public class _2_HeapAndBestFirstSearch_KthSmallestinSortedMatrix_2 {
 //                j�;//move to left col
                 j--;//move to left col
             } else {
-                count += j + 1;//All elems left in cur row are valid
+                //All elems left in cur row are valid
                 i++;
+                count += j + 1;
             }
         }
         return count;

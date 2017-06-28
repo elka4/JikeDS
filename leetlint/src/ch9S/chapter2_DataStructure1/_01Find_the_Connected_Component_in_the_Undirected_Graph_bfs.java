@@ -7,7 +7,8 @@ public class _01Find_the_Connected_Component_in_the_Undirected_Graph_bfs {
  * @param nodes a array of Undirected graph node
  * @return a connected set of a Undirected graph
  */
-public List<List<Integer>> connectedSet(ArrayList<UndirectedGraphNode> nodes) {
+public List<List<Integer>> connectedSet
+    (ArrayList<UndirectedGraphNode> nodes) {
     // Write your code here
     
     int m = nodes.size();
@@ -28,7 +29,8 @@ public List<List<Integer>> connectedSet(ArrayList<UndirectedGraphNode> nodes) {
     return result;
 }
 
-public void bfs(UndirectedGraphNode node, Map<UndirectedGraphNode, Boolean> visited, List<List<Integer>> result){
+public void bfs(UndirectedGraphNode node, Map<UndirectedGraphNode,
+        Boolean> visited, List<List<Integer>> result){
     List<Integer>row = new ArrayList<>();
     Queue<UndirectedGraphNode> queue = new LinkedList<>();
     visited.put(node, true);
