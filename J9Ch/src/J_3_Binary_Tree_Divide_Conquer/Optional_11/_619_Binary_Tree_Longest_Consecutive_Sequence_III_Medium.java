@@ -18,27 +18,28 @@ public class _619_Binary_Tree_Longest_Consecutive_Sequence_III_Medium {
      *     MultiTreeNode(int x) { val = x; }
      * }
      */
-    class MultiTreeNode {
-        int val;
-        List<TreeNode> children;
-        MultiTreeNode(int x) { val = x; }
-    }
-    class ResultType {
-        public int max_len, max_down, max_up;
-        ResultType(int len, int down, int up) {
-            max_len = len;
-            max_down = down;
-            max_up = up;
-        }
-    }
+
     class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
         TreeNode(int x) { val = x; }
     }
-
     public class Solution {
+        class MultiTreeNode {
+            int val;
+            List<TreeNode> children;
+            MultiTreeNode(int x) { val = x; }
+        }
+        class ResultType {
+            public int max_len, max_down, max_up;
+            ResultType(int len, int down, int up) {
+                max_len = len;
+                max_down = down;
+                max_up = up;
+            }
+        }
+
         /**
          * @param root the root of k-ary tree
          * @return the length of the longest consecutive sequence path

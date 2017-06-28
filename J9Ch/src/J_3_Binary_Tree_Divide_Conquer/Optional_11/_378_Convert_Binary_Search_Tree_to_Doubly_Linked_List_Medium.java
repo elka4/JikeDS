@@ -8,7 +8,12 @@ import java.util.*;
  * Created by tianhuizhu on 6/28/17.
  */
 public class _378_Convert_Binary_Search_Tree_to_Doubly_Linked_List_Medium {
-
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
     /**
      * Definition of TreeNode:
      * public class TreeNode {

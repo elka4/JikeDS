@@ -6,6 +6,12 @@ import java.util.*;
  * Created by tianhuizhu on 6/28/17.
  */
 public class _246_Binary_Tree_Path_Sum_II_Easy {
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
     public class Solution {
         /**
          * @param root the root of binary tree

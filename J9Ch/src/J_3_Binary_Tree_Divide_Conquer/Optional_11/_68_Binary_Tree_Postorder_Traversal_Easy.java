@@ -7,6 +7,12 @@ import java.util.*;
  * Created by tianhuizhu on 6/28/17.
  */
 public class _68_Binary_Tree_Postorder_Traversal_Easy {
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
 
     //Recursive
     public ArrayList<Integer> postorderTraversal(TreeNode root) {

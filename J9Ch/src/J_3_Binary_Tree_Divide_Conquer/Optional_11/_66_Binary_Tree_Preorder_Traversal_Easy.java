@@ -5,6 +5,12 @@ import java.util.*;
  * Created by tianhuizhu on 6/28/17.
  */
 public class _66_Binary_Tree_Preorder_Traversal_Easy {
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
 
     //Version 0: Non-Recursion (Recommend)
     /**
@@ -17,6 +23,7 @@ public class _66_Binary_Tree_Preorder_Traversal_Easy {
      * }
      */
     public class Solution1 {
+
         public List<Integer> preorderTraversal(TreeNode root) {
             Stack<TreeNode> stack = new Stack<TreeNode>();
             List<Integer> preorder = new ArrayList<Integer>();

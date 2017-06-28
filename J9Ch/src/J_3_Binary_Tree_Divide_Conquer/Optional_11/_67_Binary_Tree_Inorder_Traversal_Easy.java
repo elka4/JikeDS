@@ -7,6 +7,12 @@ Binary Tree Inorder Traversal
  * Created by tianhuizhu on 6/28/17.
  */
 public class _67_Binary_Tree_Inorder_Traversal_Easy {
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
     public class Solution {
         /**
          * @param root: The root of binary tree.

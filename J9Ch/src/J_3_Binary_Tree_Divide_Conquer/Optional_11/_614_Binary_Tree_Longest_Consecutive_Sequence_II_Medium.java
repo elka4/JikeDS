@@ -29,6 +29,12 @@ public class _614_Binary_Tree_Longest_Consecutive_Sequence_II_Medium {
     }
 
     public class Solution {
+        class TreeNode {
+            int val;
+            TreeNode left;
+            TreeNode right;
+            TreeNode(int x) { val = x; }
+        }
         /**
          * @param root the root of binary tree
          * @return the length of the longest consecutive sequence path
