@@ -22,12 +22,17 @@ public class _460_K_Closest_Numbers_In_Sorted_Array_Medium_MY {
             this.val = val;
             this.dif = dif;
         }
-
     }
     class comp implements Comparator<type>{
         @Override
         public int compare(type a, type b){
-           return a.dif - b.dif;
+            if(a == b){
+                return 0;
+            }
+            if(a.dif == b.dif){
+                return a.val - b.val;
+            }
+             return a.dif - b.dif;
         }
 
     }
@@ -54,6 +59,16 @@ public class _460_K_Closest_Numbers_In_Sorted_Array_Medium_MY {
 
         int[] input = new int[]{1,2,3};
         int[] result = kClosestNumbers(input, 2,3);
+        for (int i:result
+                ) {
+            System.out.println(i);
+        }
+    }
+    @Test
+    public void test02(){
+
+        int[] input = new int[]{1, 4, 6, 8};
+        int[] result = kClosestNumbers(input, 3,3);
         for (int i:result
                 ) {
             System.out.println(i);

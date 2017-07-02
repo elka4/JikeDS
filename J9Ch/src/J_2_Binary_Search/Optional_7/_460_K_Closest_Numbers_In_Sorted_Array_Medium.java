@@ -70,6 +70,45 @@ public class _460_K_Closest_Numbers_In_Sorted_Array_Medium {
     //Given A = [1, 2, 3], target = 2 and k = 3, return [2, 1, 3].
 
     //Given A = [1, 4, 6, 8], target = 3 and k = 3, return [4, 1, 6].
+//http://localhost:63342/JikeDS/LintCodeBook/_book/Two-Pointers/K-Closest-Numbers-In-Sorted-Array.html
+    public int[] kClosestNumbers2(int[] A, int target, int k) {
+        // Write your code here
+        if (A == null || A.length < k || k <= 0) {
+            return new int[0];
+        }
+
+        int[] result = new int[k];
+
+        int start = 0;
+        int end = A.length;
+
+        while (start < end - 1) {
+            int mid = start + (end - start) / 2;
+            if (A[mid] >= target) {
+                end = mid;
+            } else {
+                start = mid;
+            }
+        }
+
+        int startIndex = Math.max(0, start - k + 1);
+        int endIndex = Math.min(A.length - 1, end + k - 1);
+
+        for (int i = 0; i < k; i++) {
+            int startDiff = (start < 0) ? Integer.MAX_VALUE : Math.abs(A[start] - target);
+            int endDiff = (end >= A.length) ? Integer.MAX_VALUE : Math.abs(A[end] - target);
+            if (startDiff <= endDiff) {
+                result[i] = A[start];
+                start--;
+            } else {
+                result[i] = A[end];
+                end++;
+            }
+
+        }
+
+        return result;
+    }
     @Test
     public void test01(){
 
