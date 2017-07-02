@@ -4,31 +4,22 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-class Node{
-	int id;
-	Node left;
-	Node right;
-	Node(int id) {
-		left = null;
-		right = null;
-		this.id = id;
-	}
-}
-
-class Finder{
-	Node findFromRoot(Node a, Node b, Node root){
-		if(root == null || root == a || root == b) return root;
-		Node left = findFromRoot(a, b, root.left);
-		Node right = findFromRoot(a, b, root.right);
-		if(left != null && right != null) return root;
-		if(left != null) return left;
-		return right;
-	}
-}
 
 public class _63LowestCommonAncester {
+
+	static class Finder{
+		Node findFromRoot(Node a, Node b, Node root){
+			if(root == null || root == a || root == b) return root;
+			Node left = findFromRoot(a, b, root.left);
+			Node right = findFromRoot(a, b, root.right);
+			if(left != null && right != null) return root;
+			if(left != null) return left;
+			return right;
+		}
+	}
 	public static void main(String[] args) throws FileNotFoundException {
-		Scanner in = new Scanner(new File("/Users/tianhuizhu/Downloads/uber/code/JikeDS/leetlint/src/top100/HighFreq/_2Tree/input_63"));
+		Scanner in = new Scanner(new File(
+"/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_2Tree/input_63"));
 		int n = in.nextInt();
 		Finder finder = new Finder();
 		while (n != -1) {

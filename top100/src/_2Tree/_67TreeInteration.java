@@ -70,11 +70,17 @@ public class _67TreeInteration {
     public static void main(String[] args) throws FileNotFoundException {
 
     }
+/*
+        0
+     1    2
+    3 4  5
+     6 7
+ */
 
     @Test
     public void test01() throws FileNotFoundException{
         Scanner in = new Scanner(new File(
-                "/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/_2Tree/input_65"));
+"/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_2Tree/64_67"));
         int n = in.nextInt();
         Traverser traverser = new Traverser();
         while (n != -1) {
