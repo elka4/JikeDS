@@ -2,6 +2,7 @@
  * Easy*/
 
 
+
 class Solution {
 public:
     /**
@@ -9,25 +10,24 @@ public:
      * @param target an integer
      * @return an integer
      */
-    int lastPosition(vector<int>& A, int target) {
+    int closestNumber(vector<int>& A, int target) {
         // Write your code here
-        int n = A.size();
-        if (n == 0)
+        int l = 0, r = A.size() - 1;
+        if (r < 0)
             return -1;
-        if (A[n-1] < target || A[0] > target)
-            return -1;
-
-        int l = 0, r = n - 1;
-        int end = -1;
+        int ans = abs(A[0] - target);
+        int index = 0;
         while (l <= r) {
             int mid = (l + r) >> 1;
-            if (A[mid] == target)
-                end = mid;
-            if (A[mid] <= target) {
-                l = mid + 1;
-            } else
+            if (ans > abs(A[mid] - target)) {
+                ans = abs(A[mid] - target);
+                index = mid;
+            }
+            if (A[mid] >= target)
                 r = mid - 1;
+            else
+                l = mid + 1;
         }
-        return end;
+        return index;
     }
 };

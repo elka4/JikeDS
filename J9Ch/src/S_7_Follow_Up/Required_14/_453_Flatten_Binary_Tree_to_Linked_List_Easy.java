@@ -10,9 +10,15 @@ import java.util.Stack;
  * Created by tianhuizhu on 6/27/17.
  */
 public class _453_Flatten_Binary_Tree_to_Linked_List_Easy {
-
+    public class TreeNode {
+        int val;
+        S_7_Follow_Up.Required_14.TreeNode left;
+        S_7_Follow_Up.Required_14.TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
     // Version 1: Traverse
     public class Solution1 {
+
         private TreeNode lastNode = null;
 
         public void flatten(TreeNode root) {

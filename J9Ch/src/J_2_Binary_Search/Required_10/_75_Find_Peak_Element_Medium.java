@@ -31,4 +31,19 @@ public class _75_Find_Peak_Element_Medium {
             }
         }
     }
+
+    public int findPeak_MY(int[] A) {
+        // write your code here
+        int start = 0;
+        int end = A.length - 1;
+        while(start + 1 < end){
+            int mid = start + (end - start) / 2;
+            if(A[mid] < A[mid + 1]){
+                start = mid;
+            } else{
+                end = mid;
+            }
+        }
+        return A[start] > A[end] ? start : end;
+    }
 }

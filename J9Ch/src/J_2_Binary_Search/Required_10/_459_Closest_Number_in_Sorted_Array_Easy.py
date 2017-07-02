@@ -6,26 +6,25 @@ class Solution:
     # @param {int[]} A an integer array sorted in ascending order
     # @param {int} target an integer
     # @return {int} an integer
-    def lastPosition(self, A, target):
-        if not A or target is None:
+    def closestNumber(self, A, target):
+        if not A:
             return -1
-
-        start = 0
-        end = len(A) - 1
-
+        start, end = 0, len(A) - 1
         while start + 1 < end:
-            mid = start + (end - start) / 2
-
-            if A[mid] < target:
-                start = mid
+            mid = (start + end) / 2
+            if A[mid] == target:
+                return mid
             elif A[mid] > target:
                 end = mid
             else:
                 start = mid
-
-        if A[end] == target:
-            return end
-        elif A[start] == target:
+        if A[end] - target > target - A[start]:
             return start
         else:
-            return -1
+            return end
+
+A = [1,4,6,10,20]
+B = 21
+sol = Solution()
+print(sol.closestNumber(A, B))
+print(Solution().closestNumber(A, B))
