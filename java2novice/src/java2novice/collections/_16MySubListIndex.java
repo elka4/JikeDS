@@ -18,7 +18,7 @@ public class _16MySubListIndex {
         list.add("javascript");
         list.add("ruby");
         list.add(".net");
-        list.add("jdbc");
+        list.add("java2novice/jdbc");
         list.add("servlets");
         List<String> subList = new ArrayList<String>();
         subList.add("php");

@@ -18,7 +18,7 @@ public static void main(String a[]){
         list.add("javascript");
         list.add("ruby");
         list.add(".net");
-        list.add("jdbc");
+        list.add("java2novice/jdbc");
         list.add("php");
         list.add("javascript");
         list.add("ruby");

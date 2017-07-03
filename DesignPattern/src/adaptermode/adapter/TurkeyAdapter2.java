@@ -1,5 +1,4 @@
 package adaptermode.adapter;
-
 import adaptermode.duck.Duck;
 import adaptermode.turkey.WildTurkey;
 
