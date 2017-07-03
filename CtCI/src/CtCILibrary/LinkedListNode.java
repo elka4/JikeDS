@@ -1,11 +1,11 @@
-package CtCI.CtCILibrary;
+package CtCILibrary;
 
 public class LinkedListNode {
-	public LinkedListNode next;
-	public LinkedListNode prev;
-	public LinkedListNode last;
+	public CtCILibrary.LinkedListNode next;
+	public CtCILibrary.LinkedListNode prev;
+	public CtCILibrary.LinkedListNode last;
 	public int data;
-	public LinkedListNode(int d, LinkedListNode n, LinkedListNode p) {
+	public LinkedListNode(int d, CtCILibrary.LinkedListNode n, CtCILibrary.LinkedListNode p) {
 		data = d;
 		setNext(n);
 		setPrevious(p);
@@ -17,7 +17,7 @@ public class LinkedListNode {
 	
 	public LinkedListNode() { }
 
-	public void setNext(LinkedListNode n) {
+	public void setNext(CtCILibrary.LinkedListNode n) {
 		next = n;
 		if (this == last) {
 			last = n;
@@ -27,7 +27,7 @@ public class LinkedListNode {
 		}
 	}
 	
-	public void setPrevious(LinkedListNode p) {
+	public void setPrevious(CtCILibrary.LinkedListNode p) {
 		prev = p;
 		if (p != null && p.next != this) {
 			p.setNext(this);
@@ -42,12 +42,12 @@ public class LinkedListNode {
 		}
 	}
 	
-	public LinkedListNode clone() {
-		LinkedListNode next2 = null;
+	public CtCILibrary.LinkedListNode clone() {
+		CtCILibrary.LinkedListNode next2 = null;
 		if (next != null) {
 			next2 = next.clone();
 		}
-		LinkedListNode head2 = new LinkedListNode(data, next2, null);
+		CtCILibrary.LinkedListNode head2 = new CtCILibrary.LinkedListNode(data, next2, null);
 		return head2;
 	}
 }

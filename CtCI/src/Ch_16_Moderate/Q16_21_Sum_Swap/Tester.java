@@ -1,6 +1,6 @@
 package Ch_16_Moderate.Q16_21_Sum_Swap;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class Tester {
 	

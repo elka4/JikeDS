@@ -1,6 +1,6 @@
 package Ch_17_Hard.Q17_13_ReSpace;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.HashSet;
 public class QuestionA {	

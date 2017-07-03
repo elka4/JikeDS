@@ -1,7 +1,7 @@
 package Ch_10_Sorting_and_Searching.Q10_02_Group_Anagrams;
 
-import CtCI.CtCILibrary.AssortedMethods;
-import CtCI.CtCILibrary.HashMapList;
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.HashMapList;
 
 import java.util.ArrayList;
 import java.util.Arrays;

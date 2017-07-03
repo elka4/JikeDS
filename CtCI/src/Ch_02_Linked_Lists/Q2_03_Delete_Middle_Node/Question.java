@@ -1,7 +1,7 @@
 package Ch_02_Linked_Lists.Q2_03_Delete_Middle_Node;
 
-import CtCI.CtCILibrary.AssortedMethods;
-import CtCI.CtCILibrary.LinkedListNode;
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.LinkedListNode;
 
 public class Question {
 

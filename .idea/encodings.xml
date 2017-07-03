@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_01_Is_Unique/QuestionA.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_01_Is_Unique/QuestionB.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_01_Is_Unique/Tester.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_02_Check_Permutation/QuestionA.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_02_Check_Permutation/QuestionB.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_04_Palindrome_Permutation/Common.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_04_Palindrome_Permutation/QuestionA.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_04_Palindrome_Permutation/QuestionB.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_04_Palindrome_Permutation/QuestionC.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_04_Palindrome_Permutation/Tester.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_05_One_Away/QuestionA.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_05_One_Away/QuestionB.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_05_One_Away/Tester.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_06_String_Compression/QuestionA.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_06_String_Compression/QuestionB.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_06_String_Compression/QuestionC.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/Ch_01_Arrays_and_Strings/Q1_06_String_Compression/Tester.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/CtCILibrary/BTreePrinter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/CtCILibrary/BitVector.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/CtCILibrary/HashMapList.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/CtCILibrary/LinkedListNode.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/CtCILibrary/TreeNode.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/CtCILibrary/Trie.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CtCI/src/CtCILibrary/TrieNode.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter01/HelloChina.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter01/HelloWorld.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Jike_Spring/src/com/jike/spring/chapter01/IHelloMessage.java" charset="UTF-8" />
@@ -35,7 +59,7 @@
     <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/dsa/BFSDistance.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/dsa/BSTree.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/dsa/BSTreeNode.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/dsa/BestFS.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/dsa/BestFS.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/dsa/BestFSDijkstra.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/dsa/BestFSPrim.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/dsa/BinTree.java" charset="UTF-8" />
@@ -118,7 +142,6 @@
     <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/dsa/Vector_ExtArray.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/dsa/Vertex.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/dsa/Vertex_List.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/dsa/bestfs.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/_DS_java_tsinghua/testsequence.cmd" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jike/src/ss/Course04_1_PalindromeString.java" charset="GB18030" />
     <file url="PROJECT" charset="GB2312" />

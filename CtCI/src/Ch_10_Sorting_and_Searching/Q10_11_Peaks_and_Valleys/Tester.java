@@ -1,6 +1,6 @@
 package Ch_10_Sorting_and_Searching.Q10_11_Peaks_and_Valleys;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class Tester {
 	public static boolean confirmValleyPeak(int[] array) {

@@ -1,7 +1,7 @@
 package Ch_17_Hard.Q17_25_Word_Rectangle;
 
-import CtCI.CtCILibrary.AssortedMethods;
-import CtCI.CtCILibrary.Trie;
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.Trie;
 
 import java.util.ArrayList;
 

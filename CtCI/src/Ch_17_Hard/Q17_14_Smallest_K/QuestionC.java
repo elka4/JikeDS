@@ -1,6 +1,6 @@
 package Ch_17_Hard.Q17_14_Smallest_K;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.Random;
 

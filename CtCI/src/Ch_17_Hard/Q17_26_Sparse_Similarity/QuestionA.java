@@ -1,6 +1,6 @@
 package Ch_17_Hard.Q17_26_Sparse_Similarity;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.ArrayList;
 import java.util.HashMap;

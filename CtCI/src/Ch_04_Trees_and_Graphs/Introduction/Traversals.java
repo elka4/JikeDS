@@ -1,6 +1,6 @@
 package Ch_04_Trees_and_Graphs.Introduction;
 
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.TreeNode;
 
 
 public class Traversals {
@@ -39,6 +39,7 @@ public class Traversals {
 		
 		// We needed this code for other files, so check out the code in the library
 		TreeNode root = TreeNode.createMinimalBST(array);
+		root.print();
 		inOrderTraversal(root);
 	}
 

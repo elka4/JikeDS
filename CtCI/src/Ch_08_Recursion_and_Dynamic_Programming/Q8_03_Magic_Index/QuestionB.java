@@ -1,6 +1,6 @@
 package Ch_08_Recursion_and_Dynamic_Programming.Q8_03_Magic_Index;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.Arrays;
 

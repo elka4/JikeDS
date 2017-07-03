@@ -1,7 +1,7 @@
 package Ch_04_Trees_and_Graphs.Q4_12_Paths_with_Sum;
 
-import CtCI.CtCILibrary.AssortedMethods;
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.TreeNode;
 
 public class Tester {
 
@@ -12,7 +12,7 @@ public class Tester {
 			int max = 20;
 			int size = 20;
 			TreeNode root = AssortedMethods.randomBST(size, min, max);
-		
+
 			for (int targetSum = Math.min(-1, min * size - 10); targetSum <= Math.max(100, max * size + 10); targetSum++) {
 				int answerA = QuestionA.countPathsWithSum(root, targetSum);
 				int answerB = QuestionB.countPathsWithSum(root, targetSum);

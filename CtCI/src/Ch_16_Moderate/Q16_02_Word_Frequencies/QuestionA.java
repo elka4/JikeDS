@@ -1,6 +1,6 @@
 package Ch_16_Moderate.Q16_02_Word_Frequencies;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class QuestionA {
 	public static int getFrequency(String[] book, String word) {

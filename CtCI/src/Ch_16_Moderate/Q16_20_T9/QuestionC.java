@@ -1,7 +1,7 @@
 package Ch_16_Moderate.Q16_20_T9;
 
-import CtCI.CtCILibrary.AssortedMethods;
-import CtCI.CtCILibrary.HashMapList;
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.HashMapList;
 
 import java.util.ArrayList;
 import java.util.HashMap;

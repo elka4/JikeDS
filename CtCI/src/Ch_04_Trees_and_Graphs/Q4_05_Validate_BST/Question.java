@@ -1,6 +1,6 @@
 package Ch_04_Trees_and_Graphs.Q4_05_Validate_BST;
 
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.TreeNode;
 
 public class Question {
 	public static Integer last_printed = null;
@@ -46,6 +46,7 @@ public class Question {
 	public static void main(String[] args) {
 		int[] array = {Integer.MIN_VALUE, Integer.MAX_VALUE - 2, Integer.MAX_VALUE - 1, Integer.MAX_VALUE};
 		TreeNode node = TreeNode.createMinimalBST(array);
+		node.print();
 		//node.left.data = 5;
 		//node.left.right.data = 3;
 		System.out.println(checkBST(node));

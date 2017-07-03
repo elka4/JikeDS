@@ -1,6 +1,6 @@
 package Ch_05_Bit_Manipulation.Q5_07_Pairwise_Swap;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class Question {
 

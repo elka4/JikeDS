@@ -1,7 +1,7 @@
 package Ch_04_Trees_and_Graphs.Q4_10_Check_Subtree;
 
-import CtCI.CtCILibrary.AssortedMethods;
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.TreeNode;
 
 public class QuestionB {
 

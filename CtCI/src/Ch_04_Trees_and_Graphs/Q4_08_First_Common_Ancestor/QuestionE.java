@@ -1,6 +1,6 @@
 package Ch_04_Trees_and_Graphs.Q4_08_First_Common_Ancestor;
 
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.TreeNode;
 
 public class QuestionE {
 	public static class Result {
@@ -54,6 +54,7 @@ public class QuestionE {
 	public static void main(String[] args) {
 		int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		TreeNode root = TreeNode.createMinimalBST(array);
+		root.print();
 		TreeNode n3 = root.find(10);
 		TreeNode n7 = root.find(6);
 		TreeNode ancestor = commonAncestor(root, n3, n7);

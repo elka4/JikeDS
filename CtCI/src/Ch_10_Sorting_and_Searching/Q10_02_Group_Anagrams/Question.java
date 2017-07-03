@@ -1,6 +1,6 @@
 package Ch_10_Sorting_and_Searching.Q10_02_Group_Anagrams;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.Arrays;
 

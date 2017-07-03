@@ -1,6 +1,6 @@
 package Ch_16_Moderate.Q16_24_Pairs_With_Sum;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.ArrayList;
 

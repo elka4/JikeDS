@@ -1,6 +1,6 @@
 package Ch_08_Recursion_and_Dynamic_Programming.Q8_02_Robot_in_a_Grid;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.ArrayList;
 import java.util.HashSet;

@@ -1,6 +1,6 @@
 package Ch_16_Moderate.Q16_02_Word_Frequencies;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.HashMap;
 

@@ -1,6 +1,6 @@
 package Ch_03_Stacks_and_Queues.Q3_04_Queue_via_Stacks;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.LinkedList;
 import java.util.Queue;

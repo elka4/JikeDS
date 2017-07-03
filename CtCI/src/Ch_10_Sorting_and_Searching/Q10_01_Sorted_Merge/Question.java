@@ -1,6 +1,6 @@
 package Ch_10_Sorting_and_Searching.Q10_01_Sorted_Merge;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class Question {
 

@@ -1,6 +1,6 @@
 package Ch_17_Hard.Q17_17_Multi_Search;
 
-import CtCI.CtCILibrary.HashMapList;
+import CtCILibrary.HashMapList;
 
 import java.util.ArrayList;
 

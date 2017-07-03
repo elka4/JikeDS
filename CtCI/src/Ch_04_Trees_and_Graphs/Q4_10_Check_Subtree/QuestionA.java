@@ -1,7 +1,7 @@
 package Ch_04_Trees_and_Graphs.Q4_10_Check_Subtree;
 
-import CtCI.CtCILibrary.AssortedMethods;
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.TreeNode;
 
 public class QuestionA {
 	
@@ -32,7 +32,8 @@ public class QuestionA {
 		
 		TreeNode t1 = AssortedMethods.createTreeFromArray(array1);
 		TreeNode t2 = AssortedMethods.createTreeFromArray(array2);
-
+		t1.print();
+		t2.print();
 		if (containsTree(t1, t2)) {
 			System.out.println("t2 is a subtree of t1");
 		} else {

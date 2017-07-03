@@ -1,6 +1,6 @@
 package Ch_02_Linked_Lists.Q2_01_Remove_Dups;
 
-import CtCI.CtCILibrary.LinkedListNode;
+import CtCILibrary.LinkedListNode;
 
 import java.util.HashSet;
 

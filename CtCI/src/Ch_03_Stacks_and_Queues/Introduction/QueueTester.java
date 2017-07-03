@@ -1,6 +1,6 @@
 package Ch_03_Stacks_and_Queues.Introduction;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.LinkedList;
 import java.util.NoSuchElementException;

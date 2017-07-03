@@ -1,7 +1,7 @@
 package Ch_17_Hard.Q17_11_Word_Distance;
 
-import CtCI.CtCILibrary.AssortedMethods;
-import CtCI.CtCILibrary.HashMapList;
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.HashMapList;
 
 import java.util.ArrayList;
 

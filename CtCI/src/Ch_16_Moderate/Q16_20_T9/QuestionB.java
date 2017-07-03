@@ -1,8 +1,8 @@
 package Ch_16_Moderate.Q16_20_T9;
 
-import CtCI.CtCILibrary.AssortedMethods;
-import CtCI.CtCILibrary.Trie;
-import CtCI.CtCILibrary.TrieNode;
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.Trie;
+import CtCILibrary.TrieNode;
 
 import java.util.ArrayList;
 

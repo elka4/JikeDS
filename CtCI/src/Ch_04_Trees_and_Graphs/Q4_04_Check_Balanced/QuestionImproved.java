@@ -1,5 +1,5 @@
 package Ch_04_Trees_and_Graphs.Q4_04_Check_Balanced;
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.TreeNode;
 
 public class QuestionImproved {
 		
@@ -29,7 +29,7 @@ public class QuestionImproved {
 		// Create balanced tree
 		int[] array = {0, 1, 2, 3, 5, 6, 7, 8, 9, 10};
 		TreeNode root = TreeNode.createMinimalBST(array);
-
+		root.print();
 		
 		System.out.println("Is balanced? " + isBalanced(root));
 		

@@ -1,6 +1,6 @@
 package Ch_04_Trees_and_Graphs.Q4_08_First_Common_Ancestor;
 
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.TreeNode;
 
 import java.util.ArrayList;
 

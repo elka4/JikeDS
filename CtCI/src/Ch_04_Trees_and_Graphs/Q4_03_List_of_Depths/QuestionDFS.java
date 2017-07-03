@@ -1,7 +1,7 @@
 package Ch_04_Trees_and_Graphs.Q4_03_List_of_Depths;
 
-import CtCI.CtCILibrary.AssortedMethods;
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.TreeNode;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,13 +9,14 @@ import java.util.LinkedList;
 
 public class QuestionDFS {
 
-	public static void createLevelLinkedList(TreeNode root, ArrayList<LinkedList<TreeNode>> lists, int level) {
+	public static void createLevelLinkedList(TreeNode root,
+				 ArrayList<LinkedList<TreeNode>> lists, int level) {
 		if (root == null) return;
 		LinkedList<TreeNode> list = null;
 		if (lists.size() == level) { // Level not contained in list
 			list = new LinkedList<TreeNode>();
-			/* Levels are always traversed in order. So, if this is the first time we've visited level i,
-			 * we must have seen levels 0 through i - 1. We can therefore safely add the level at the end. */
+/* Levels are always traversed in order. So, if this is the first time we've visited level i,
+ * we must have seen levels 0 through i - 1. We can therefore safely add the level at the end. */
 			lists.add(list);  
 		} else {
 			list = lists.get(level);
@@ -48,6 +49,7 @@ public class QuestionDFS {
 	public static void main(String[] args) {
 		int[] nodes_flattened = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		TreeNode root = AssortedMethods.createTreeFromArray(nodes_flattened);
+		root.print();
 		ArrayList<LinkedList<TreeNode>> list = createLevelLinkedList(root);
 		printResult(list);
 	}

@@ -1,6 +1,6 @@
 package Ch_10_Sorting_and_Searching.Introduction;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class MergeSort {	
 	public static void mergesort(int[] array) {

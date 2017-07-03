@@ -1,6 +1,6 @@
 package Ch_17_Hard.Q17_03_Random_Set;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class Question {
 

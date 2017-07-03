@@ -1,6 +1,6 @@
 package Ch_04_Trees_and_Graphs.Q4_02_Minimal_Tree;
 
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.TreeNode;
 
 public class Question {	
 	public static void main(String[] args) {
@@ -8,6 +8,7 @@ public class Question {
 		
 		// We needed this code for other files, so check out the code in the library
 		TreeNode root = TreeNode.createMinimalBST(array);
+		root.print();
 		System.out.println("Root? " + root.data);
 		System.out.println("Created BST? " + root.isBST());
 		System.out.println("Height: " + root.height());

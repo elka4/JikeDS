@@ -1,4 +1,4 @@
-package CtCI.CtCILibrary;
+package CtCILibrary;
 
 import java.util.HashMap;
 
@@ -7,7 +7,7 @@ import java.util.HashMap;
  */
 public class TrieNode {
     /* The children of this node in the trie.*/
-    private HashMap<Character, TrieNode> children;
+    private HashMap<Character, CtCILibrary.TrieNode> children;
     private boolean terminates = false;
 
     // The character stored in this node as data.
@@ -16,7 +16,7 @@ public class TrieNode {
 	/* Constructs a trie node and stores this character as the node's value.
 	 * Initializes the list of child nodes of this node to an empty hash map. */
     public TrieNode() {
-    	children = new HashMap<Character, TrieNode>();
+    	children = new HashMap<Character, CtCILibrary.TrieNode>();
     }
 
     /* Constructs a trie node and stores in the node the char passed in
@@ -42,9 +42,9 @@ public class TrieNode {
     	
         char firstChar = word.charAt(0);
 
-        TrieNode child = getChild(firstChar);
+        CtCILibrary.TrieNode child = getChild(firstChar);
         if (child == null) {
-            child = new TrieNode(firstChar);
+            child = new CtCILibrary.TrieNode(firstChar);
             children.put(firstChar, child);
         } 
 
@@ -58,7 +58,7 @@ public class TrieNode {
     /* Find a child node of this node that has the char argument as its
      * data. Return null if no such child node is present in the trie.
      */
-    public TrieNode getChild(char c) {
+    public CtCILibrary.TrieNode getChild(char c) {
     	return children.get(c);
     }
 

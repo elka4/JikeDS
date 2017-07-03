@@ -1,6 +1,6 @@
 package Ch_07_Object_Oriented_Design.Q7_04_Parking_Lot;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class Question {
 

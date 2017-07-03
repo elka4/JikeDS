@@ -1,6 +1,6 @@
 package Ch_02_Linked_Lists.Q2_04_Partition;
 
-import CtCI.CtCILibrary.LinkedListNode;
+import CtCILibrary.LinkedListNode;
 
 public class Tester {
 	

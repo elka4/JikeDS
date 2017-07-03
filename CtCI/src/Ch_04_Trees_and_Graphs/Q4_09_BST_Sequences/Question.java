@@ -1,6 +1,6 @@
 package Ch_04_Trees_and_Graphs.Q4_09_BST_Sequences;
 
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -68,6 +68,7 @@ public class Question {
 		for (int a : array) {
 			node.insertInOrder(a);
 		}
+		node.print();
 		ArrayList<LinkedList<Integer>> allSeq = allSequences(node);
 		for (LinkedList<Integer> list : allSeq) {
 			System.out.println(list);

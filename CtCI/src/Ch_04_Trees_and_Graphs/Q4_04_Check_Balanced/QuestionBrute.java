@@ -1,7 +1,7 @@
 package Ch_04_Trees_and_Graphs.Q4_04_Check_Balanced;
 
-import CtCI.CtCILibrary.AssortedMethods;
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.TreeNode;
 
 public class QuestionBrute {
 	
@@ -29,6 +29,7 @@ public class QuestionBrute {
 		// Create balanced tree
 		int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		TreeNode root = TreeNode.createMinimalBST(array);
+		root.print();
 		System.out.println("Root? " + root.data);
 		System.out.println("Is balanced? " + isBalanced(root));
 		

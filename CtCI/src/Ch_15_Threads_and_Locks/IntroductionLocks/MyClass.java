@@ -1,6 +1,6 @@
 package Ch_15_Threads_and_Locks.IntroductionLocks;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

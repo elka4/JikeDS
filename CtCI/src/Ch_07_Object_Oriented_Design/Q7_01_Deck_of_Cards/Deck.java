@@ -1,6 +1,6 @@
 package Ch_07_Object_Oriented_Design.Q7_01_Deck_of_Cards;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.ArrayList;
 

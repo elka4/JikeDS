@@ -1,6 +1,6 @@
 package Ch_16_Moderate.Q16_14_Best_Line;
 
-import CtCI.CtCILibrary.HashMapList;
+import CtCILibrary.HashMapList;
 
 import java.util.ArrayList;
 import java.util.Set;

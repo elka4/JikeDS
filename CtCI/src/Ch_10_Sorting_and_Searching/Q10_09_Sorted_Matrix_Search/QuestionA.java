@@ -1,6 +1,6 @@
 package Ch_10_Sorting_and_Searching.Q10_09_Sorted_Matrix_Search;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class QuestionA {
 

@@ -1,6 +1,6 @@
 package Ch_02_Linked_Lists.Q2_01_Remove_Dups;
 
-import CtCI.CtCILibrary.LinkedListNode;
+import CtCILibrary.LinkedListNode;
 
 public class QuestionC {
 	public static void deleteDups(LinkedListNode head) {
@@ -48,5 +48,6 @@ public class QuestionC {
 		}
 		System.out.println(head.printForward());
 		deleteDups(head);
+		System.out.println(head.printForward());
 	}
 }

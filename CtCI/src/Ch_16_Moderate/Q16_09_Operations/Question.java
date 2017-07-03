@@ -1,6 +1,6 @@
 package Ch_16_Moderate.Q16_09_Operations;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class Question {
 	/* Flip a positive sign to negative, or a negative sign to pos */

@@ -1,6 +1,6 @@
 package Ch_04_Trees_and_Graphs.Q4_08_First_Common_Ancestor;
 
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.TreeNode;
 
 public class QuestionF {
 	
@@ -29,6 +29,7 @@ public class QuestionF {
 		for (int a : array) {
 			root.insertInOrder(a);
 		}
+		root.print();
 		TreeNode n1 = root.find(1);
 		TreeNode n9 = root.find(9);
 		TreeNode ancestor = commonAncestor(root, n1, n9);

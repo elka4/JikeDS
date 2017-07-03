@@ -1,6 +1,6 @@
 package Ch_17_Hard.Q17_02_Shuffle;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class Question {
 

@@ -1,6 +1,6 @@
 package Ch_05_Bit_Manipulation.Q5_06_Conversion;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class QuestionB {
 	public static int bitSwapRequired(int a, int b){

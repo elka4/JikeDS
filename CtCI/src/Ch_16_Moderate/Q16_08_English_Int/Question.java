@@ -1,6 +1,6 @@
 package Ch_16_Moderate.Q16_08_English_Int;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 import java.util.LinkedList;
 

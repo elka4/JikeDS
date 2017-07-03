@@ -1,6 +1,6 @@
 package Ch_16_Moderate.Q16_04_Tic_Tac_Win;
 
-import CtCI.CtCILibrary.AssortedMethods;
+import CtCILibrary.AssortedMethods;
 
 public class QuestionD {
 	public static boolean hasWinner(Piece p1, Piece p2, Piece p3) {

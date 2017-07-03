@@ -1,6 +1,6 @@
 package Ch_04_Trees_and_Graphs.Q4_12_Paths_with_Sum;
 
-import CtCI.CtCILibrary.TreeNode;
+import CtCILibrary.TreeNode;
 
 import java.util.HashMap;
 
@@ -78,6 +78,7 @@ public class QuestionB {
 		root.right.right = new TreeNode(0);
 		System.out.println(countPathsWithSum(root, 0));
 		System.out.println(countPathsWithSum(root, 4));
+		root.print();
 	}
 }
 
