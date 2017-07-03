@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExcludeFromValidation">
+    <file url="file://$PROJECT_DIR$/Algo4/lib/org.j3d.opengl.swt.carbon.macosx_0.7.0/META-INF/MANIFEST.MF" />
+  </component>
+</project>
