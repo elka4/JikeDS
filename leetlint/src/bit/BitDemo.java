@@ -170,7 +170,7 @@ public class BitDemo {
         System.out.println(Integer.toString(100,8));
         // prints 1100100 --binary representation
         System.out.println(Integer.toString(100,2));
-        //prints 64 --Hex representation
+//prints 64 --Hex representation
         System.out.println(Integer.toString(100,16));
     }
 }
