@@ -4,7 +4,8 @@ public class QuestionB {
 
 	public static boolean isPermutationOfPalindrome(String phrase) {
 		int countOdd = 0;
-		int[] table = new int[Character.getNumericValue('z') - Character.getNumericValue('a') + 1];
+		int[] table = new int[Character.getNumericValue('z')
+				- Character.getNumericValue('a') + 1];
 		for (char c : phrase.toCharArray()) {
 			int x = Common.getCharNumber(c);
 			if (x != -1) {

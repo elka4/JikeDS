@@ -9,7 +9,7 @@ import java.lang.reflect.Modifier;
  * Created by tzh on 1/20/17.
  */
 public class Reflection {
-    public static void main(String[] args)  {
+    /*public static void main(String[] args)  {
         Person p1 = new Person("XiaoBai", 18, 'M');
         Person p2 = new Person("XiaoHei", 19, 'F');
 
@@ -162,7 +162,7 @@ public class Reflection {
 
 
 
-
+*/
 
 }
 

@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.*;
-
+import java.util.Stack;
 /**
 460
  K Closest Numbers In Sorted Array
@@ -40,6 +40,7 @@ public class _460_K_Closest_Numbers_In_Sorted_Array_Medium_MY {
     public int[] kClosestNumbers(int[] A, int target, int k) {
         // Write your code here
         PriorityQueue<type> stack = new PriorityQueue<type>(new comp());
+        //Stack<type> stack = new Stack<>();
         for(int i = 0; i < A.length; i++){
             int diff = Math.abs(target - A[i]);
             stack.offer(new type(A[i], diff));

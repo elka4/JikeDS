@@ -17,7 +17,7 @@ public class QuestionB {
 	}
 	
 	public static void main(String[] args) {
-		String[] words = {"abcde", "hello", "apple", "kite", "padle"};
+		String[] words = {"abcde", "hhttps://www.youtube.com/watch?v=HhNhyynQY5k&t=1256sello", "apple", "kite", "padle"};
 		for (String word : words) {
 			System.out.println(word + ": " + isUniqueChars(word));
 		}

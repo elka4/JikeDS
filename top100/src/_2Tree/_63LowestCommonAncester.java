@@ -4,8 +4,17 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-
 public class _63LowestCommonAncester {
+	static  class Node {
+		int id;
+		Node left;
+		Node right;
+		Node(int id) {
+			left = null;
+			right = null;
+			this.id = id;
+		}
+	}
 
 	static class Finder{
 		Node findFromRoot(Node a, Node b, Node root){
@@ -17,6 +26,13 @@ public class _63LowestCommonAncester {
 			return right;
 		}
 	}
+
+	/*
+        0
+     1    2
+    3 4  5
+     6 7
+ */
 	public static void main(String[] args) throws FileNotFoundException {
 		Scanner in = new Scanner(new File(
 "/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_2Tree/input_63"));
