@@ -14,6 +14,8 @@
       <module fileurl="file://$PROJECT_DIR$/SpringPython/SpringPython.iml" filepath="$PROJECT_DIR$/SpringPython/SpringPython.iml" />
       <module fileurl="file://$PROJECT_DIR$/Try/Try.iml" filepath="$PROJECT_DIR$/Try/Try.iml" />
       <module fileurl="file://$PROJECT_DIR$/_DS_java_tsinghua/_DS_java_tsinghua.iml" filepath="$PROJECT_DIR$/_DS_java_tsinghua/_DS_java_tsinghua.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch9J/ch9J.iml" filepath="$PROJECT_DIR$/ch9J/ch9J.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch9S/ch9S.iml" filepath="$PROJECT_DIR$/ch9S/ch9S.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete.iml" filepath="$PROJECT_DIR$/.idea/modules/complete.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete_main.iml" filepath="$PROJECT_DIR$/.idea/modules/complete_main.iml" group="complete" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete_test.iml" filepath="$PROJECT_DIR$/.idea/modules/complete_test.iml" group="complete" />
