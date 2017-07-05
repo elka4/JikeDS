@@ -36,8 +36,11 @@ public class _13MyListToCsvString {
         List<String> li2 = new ArrayList<String>(){
             {
                 this.add("java");
+                System.out.println(this.toString());
                 this.add("unix");
+                System.out.println(this.toString());
                 this.add("c++");
+                System.out.println(this.toString());
             }
         };
         System.out.println(mtc.getListAsCsvString(li2));

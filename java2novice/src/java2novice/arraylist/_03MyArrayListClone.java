@@ -17,6 +17,8 @@ public class _03MyArrayListClone {
         arrl.add("Random");
         System.out.println("Actual ArrayList:"+arrl);
         ArrayList<String> copy = (ArrayList<String>) arrl.clone();
+        arrl = null;
+        System.out.println("Actual ArrayList:"+arrl);
         System.out.println("Cloned ArrayList:"+copy);
     }
 }

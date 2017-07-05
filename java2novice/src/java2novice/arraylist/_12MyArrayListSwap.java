@@ -17,11 +17,12 @@ public class _12MyArrayListSwap {
         list.add("Glass"); //4
         list.add("Movie"); //5
         list.add("Girl"); //6
-         
+
+        System.out.println(list);
         Collections.swap(list, 2, 5);
         System.out.println("Results after swap operation:");
         for(String str: list){
-            System.out.println(str);
+            System.out.print(str + ' ');
         }
     }
 }
