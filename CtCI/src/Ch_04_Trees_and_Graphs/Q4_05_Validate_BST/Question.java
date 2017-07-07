@@ -1,6 +1,7 @@
 package Ch_04_Trees_and_Graphs.Q4_05_Validate_BST;
 
 import CtCILibrary.TreeNode;
+import org.junit.Test;
 
 public class Question {
 	public static Integer last_printed = null;
@@ -44,7 +45,8 @@ public class Question {
 	}
 
 	public static void main(String[] args) {
-		int[] array = {Integer.MIN_VALUE, Integer.MAX_VALUE - 2, Integer.MAX_VALUE - 1, Integer.MAX_VALUE};
+		int[] array = {Integer.MIN_VALUE, Integer.MAX_VALUE - 2,
+                Integer.MAX_VALUE - 1, Integer.MAX_VALUE};
 		TreeNode node = TreeNode.createMinimalBST(array);
 		node.print();
 		//node.left.data = 5;
@@ -91,4 +93,34 @@ public class Question {
 		condition = checkBST(node);
 		System.out.println("should be false: " + condition);
 	}
+
+    @Test
+    public void test01(){
+        TreeNode node;
+        boolean condition;
+        System.out.println("test cases for equals condition.");
+
+        int[] array2 = {1, 2, 3, 4};
+        node = TreeNode.createMinimalBST(array2);
+
+        node.print();
+        last_printed = null;
+        condition = checkBST(node);
+        System.out.println("should be true: " + condition);
+    }
+
+    @Test
+    public void test02(){
+        TreeNode node;
+        boolean condition;
+        System.out.println("test cases for equals condition.");
+
+        int[] array2 = {1, 2, 3, 4, 5, 6, 7};
+        node = TreeNode.createMinimalBST(array2);
+
+        node.print();
+        last_printed = null;
+        condition = checkBST(node);
+        System.out.println("should be true: " + condition);
+    }
 }

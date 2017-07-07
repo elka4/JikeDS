@@ -5,9 +5,9 @@ package CtCILibrary;
  */
 public class TreeNode {
 	public int data;      
-	public CtCILibrary.TreeNode left;    
-	public CtCILibrary.TreeNode right; 
-	public CtCILibrary.TreeNode parent;
+	public TreeNode left;    
+	public TreeNode right; 
+	public TreeNode parent;
 	private int size = 0;
 
 	public TreeNode(int d) {
@@ -15,14 +15,14 @@ public class TreeNode {
 		size = 1;
 	}
 	
-	private void setLeftChild(CtCILibrary.TreeNode left) {
+	private void setLeftChild(TreeNode left) {
 		this.left = left;
 		if (left != null) {
 			left.parent = this;
 		}
 	}
 	
-	private void setRightChild(CtCILibrary.TreeNode right) {
+	private void setRightChild(TreeNode right) {
 		this.right = right;
 		if (right != null) {
 			right.parent = this;
@@ -32,13 +32,13 @@ public class TreeNode {
 	public void insertInOrder(int d) {
 		if (d <= data) {
 			if (left == null) {
-				setLeftChild(new CtCILibrary.TreeNode(d));
+				setLeftChild(new TreeNode(d));
 			} else {
 				left.insertInOrder(d);
 			}
 		} else {
 			if (right == null) {
-				setRightChild(new CtCILibrary.TreeNode(d));
+				setRightChild(new TreeNode(d));
 			} else {
 				right.insertInOrder(d);
 			}
@@ -72,7 +72,7 @@ public class TreeNode {
 		return 1 + Math.max(leftHeight, rightHeight);
 	}
 	
-	public CtCILibrary.TreeNode find(int d) {
+	public TreeNode find(int d) {
 		if (d == data) {
 			return this;
 		} else if (d <= data) {
@@ -83,18 +83,18 @@ public class TreeNode {
 		return null;
 	}
 	
-	private static CtCILibrary.TreeNode createMinimalBST(int arr[], int start, int end){
+	private static TreeNode createMinimalBST(int arr[], int start, int end){
 		if (end < start) {
 			return null;
 		}
 		int mid = (start + end) / 2;
-		CtCILibrary.TreeNode n = new CtCILibrary.TreeNode(arr[mid]);
+		TreeNode n = new TreeNode(arr[mid]);
 		n.setLeftChild(createMinimalBST(arr, start, mid - 1));
 		n.setRightChild(createMinimalBST(arr, mid + 1, end));
 		return n;
 	}
 	
-	public static CtCILibrary.TreeNode createMinimalBST(int array[]) {
+	public static TreeNode createMinimalBST(int array[]) {
 		return createMinimalBST(array, 0, array.length - 1);
 	}
 	

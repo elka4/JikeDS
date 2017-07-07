@@ -11,7 +11,8 @@ public class Trie
     // The root of this trie.
     private TrieNode root;
 
-    /* Takes a list of strings as an argument, and constructs a trie that stores these strings. */
+    /* Takes a list of strings as an argument,
+    and constructs a trie that stores these strings. */
     public Trie(ArrayList<String> list) {
         root = new TrieNode();
         for (String word : list) {
@@ -20,7 +21,8 @@ public class Trie
     }  
     
 
-    /* Takes a list of strings as an argument, and constructs a trie that stores these strings. */    
+    /* Takes a list of strings as an argument,
+    and constructs a trie that stores these strings. */
     public Trie(String[] list) {
         root = new TrieNode();
         for (String word : list) {
@@ -44,7 +46,8 @@ public class Trie
     }
     
     public boolean contains(String prefix) {
-    	return contains(prefix, false);
+
+        return contains(prefix, false);
     }
     
     public TrieNode getRoot() {

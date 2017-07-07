@@ -2,6 +2,7 @@ package Ch_04_Trees_and_Graphs.Q4_03_List_of_Depths;
 
 import CtCILibrary.AssortedMethods;
 import CtCILibrary.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -48,14 +49,54 @@ public class QuestionBFS {
 			depth++;
 		}
 	}
-	
 
-	public static void main(String[] args) {
+    public static void visit(CtCILibrary.TreeNode node) {
+        if (node != null) {
+            System.out.println(node.data);
+        }
+    }
+
+    public static void inOrderTraversal(CtCILibrary.TreeNode node) {
+        if (node != null) {
+            inOrderTraversal(node.left);
+            visit(node);
+            inOrderTraversal(node.right);
+        }
+    }
+
+    public static void preOrderTraversal(CtCILibrary.TreeNode node) {
+        if (node != null) {
+            visit(node);
+            inOrderTraversal(node.left);
+            inOrderTraversal(node.right);
+        }
+    }
+
+    public static void postOrderTraversal(CtCILibrary.TreeNode node) {
+        if (node != null) {
+            inOrderTraversal(node.left);
+            inOrderTraversal(node.right);
+            visit(node);
+        }
+    }
+    public static void main(String[] args) {
 		int[] nodes_flattened = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		TreeNode root = AssortedMethods.createTreeFromArray(nodes_flattened);
 		root.print();
 		ArrayList<LinkedList<TreeNode>> list = createLevelLinkedList(root);
 		printResult(list);
 	}
+
+    @Test
+    public void test01(){
+        int[] nodes_flattened = {5,2,7,1,3,6,8,9};
+        TreeNode root = AssortedMethods.createTreeFromArray(nodes_flattened);
+        root.print();
+        ArrayList<LinkedList<TreeNode>> list = createLevelLinkedList(root);
+        printResult(list);
+        preOrderTraversal(root);
+
+
+    }
 
 }

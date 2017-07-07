@@ -34,7 +34,7 @@ public class QuestionImproved {
 		System.out.println("Is balanced? " + isBalanced(root));
 		
 		root.insertInOrder(4); // Add 4 to make it unbalanced
-
+        root.print();
 		System.out.println("Is balanced? " + isBalanced(root));
 	}
 

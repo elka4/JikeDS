@@ -27,7 +27,8 @@ public class QuestionB {
 	}		
 
 	public static boolean checkBSTAlternate(TreeNode n, IntWrapper min, IntWrapper max) {
-		/* An alternate, less clean approach. This is not provided in the book, but is used to test the other method. */
+		/* An alternate, less clean approach. This is not provided in the book,
+		but is used to test the other method. */
 		if (n.left == null) {
 			min.data = n.data;
 		} else {
@@ -90,7 +91,8 @@ public class QuestionB {
 		boolean isBst = checkBST(node);
 		System.out.println(isBst);
 		
-		/* More elaborate test -- creates 100 trees (some BST, some not) and compares the outputs of various methods. */
+		/* More elaborate test -- creates 100 trees (some BST, some not) and
+		compares the outputs of various methods. */
 		/*for (int i = 0; i < 100; i++) {
 			TreeNode head = createTestTree();
 			

@@ -35,9 +35,10 @@ public class QuestionBrute {
 		
 		// Could be balanced, actually, but it's very unlikely...
 		TreeNode unbalanced = new TreeNode(10);
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 5; i++) {
 			unbalanced.insertInOrder(AssortedMethods.randomIntInRange(0, 100));
 		}
+        unbalanced.print();
 		System.out.println("Root? " + unbalanced.data);
 		System.out.println("Is balanced? " + isBalanced(unbalanced));
 	}
