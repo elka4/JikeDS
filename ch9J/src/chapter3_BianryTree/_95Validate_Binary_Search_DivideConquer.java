@@ -1,4 +1,4 @@
-package ch9J.chapter3_BianryTree;
+package chapter3_BianryTree;
 
 
 //version 2  Divide and Conquer

@@ -1,4 +1,4 @@
-package ch9J.chapter2_BinarySearch;
+package chapter2_BinarySearch;
 
 import org.junit.Test;
 
@@ -18,7 +18,7 @@ public class _458Last_Position_of_Target {
         }
         
         int start = 0, end = nums.length - 1;
-        //start + 1 == end就是相邻状况, 已经不满足以下循环条件，就不会遇到死循环情况
+        //start + 1 == end就�???��?��?��??, 已�?�?满足以�?�????�件�?就�?�????��?�循??????
         while (start + 1 < end) {
             int mid = start + (end - start) / 2;
             if (nums[mid] == target) {
@@ -31,8 +31,8 @@ public class _458Last_Position_of_Target {
              // or   end = mid - 1;
             }
         }
-        //以上循环结束时，start和end有可能是一个很数，也有可能是两个数
-        //因为是看last position，所以先看end，再看start
+        //以�?�???�????��?start??end?????��??�?�?�??��?�??????��??两个??
+        //??为�????last position�???以�????end�?????start
         if (nums[end] == target) {
             return end;
         }

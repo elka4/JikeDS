@@ -1,4 +1,4 @@
-package ch9J.chapter5_DP2;
+package chapter5_DP2;
 
 //9Ch summer 2016
 //大区间依赖于小区间

@@ -1,4 +1,4 @@
-package ch9J.chapter8_DataStructure;
+package chapter8_DataStructure;
 //Version 2: This cost O(nlogn)
 public class _13Heapify_nlogN {
 	/**

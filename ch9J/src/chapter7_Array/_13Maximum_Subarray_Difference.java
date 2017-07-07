@@ -1,4 +1,4 @@
-package ch9J.chapter7_Array;
+package chapter7_Array;
 
 public class _13Maximum_Subarray_Difference {
 /**

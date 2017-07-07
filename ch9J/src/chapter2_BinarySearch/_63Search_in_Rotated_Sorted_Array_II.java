@@ -1,4 +1,4 @@
-package ch9J.chapter2_BinarySearch;
+package chapter2_BinarySearch;
 
 public class _63Search_in_Rotated_Sorted_Array_II {
 // 这个问题在面试中不会让实现完整程序

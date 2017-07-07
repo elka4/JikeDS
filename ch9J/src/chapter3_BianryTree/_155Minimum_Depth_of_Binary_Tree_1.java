@@ -1,4 +1,4 @@
-package ch9J.chapter3_BianryTree;
+package chapter3_BianryTree;
 
 //技巧：求最小值，那就先都把默认设成无穷大。最后用Max.min（）来滤过无穷大的值。
 @SuppressWarnings("all")

@@ -1,4 +1,4 @@
-package ch9J.chapter2_BinarySearch;
+package chapter2_BinarySearch;
 
 //Search a 2D Matrix
 

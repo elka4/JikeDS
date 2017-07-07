@@ -1,4 +1,4 @@
-package ch9J.chapter6_LinkedList;
+package chapter6_LinkedList;
 
 public class _13Convert_Binary_Search_Tree_to_Doubly_Linked_List {
     /**

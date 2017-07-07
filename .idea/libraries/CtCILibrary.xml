@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="CtCILibrary">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/CtCI/src" />
+    </SOURCES>
+  </library>
+</component>

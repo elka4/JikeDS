@@ -1,4 +1,4 @@
-package ch9J.chapter4_DP1;
+package chapter4_DP1;
 
 public class _8Unique_Paths_II {
  public int uniquePathsWithObstacles(int[][] obstacleGrid) {

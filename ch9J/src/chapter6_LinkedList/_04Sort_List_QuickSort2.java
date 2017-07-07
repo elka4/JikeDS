@@ -1,4 +1,4 @@
-package ch9J.chapter6_LinkedList;
+package chapter6_LinkedList;
 
 //version 3: Quick Sort 2
 

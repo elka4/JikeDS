@@ -1,4 +1,4 @@
-package ch9J.chapter5_DP2;//背包类
+package chapter5_DP2;//背包类
 
 public class _12k_Sum {
     /**

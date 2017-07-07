@@ -1,4 +1,4 @@
-package ch9J.chapter6_LinkedList;
+package chapter6_LinkedList;
 
 
 public class _12Delete_Node_in_the_Middle_of_Singly_Linked_List {

@@ -1,4 +1,4 @@
-package ch9J.chapter1;
+package chapter1;
 //I need some deep understanding of the nature of permuation
 //especially when there is duplicate
 import java.util.ArrayList;

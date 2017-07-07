@@ -1,4 +1,4 @@
-package ch9J.chapter9_Graph;
+package chapter9_Graph;
 
 import java.util.ArrayList;
 

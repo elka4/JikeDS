@@ -16,14 +16,17 @@ public class _7FindTheCelebrity {
         }
         int candidate = 0;
         for(int i = 1; i < n; i++){
-            if (knows(candidate, i)){ //find a possible candidate who knows nobody else in his right hand
+//find a possible candidate who knows nobody else in his right hand
+            if (knows(candidate, i)){
                 candidate = i;
             }
         }
         for(int i = 0; i < n; i++){
+
             if (i < candidate && knows(candidate, i)) {
-                return  -1;                         //check the candidate: A. knows nobody in his left hand
-                                                    //known by everyone else
+//check the candidate: A. knows nobody in his left hand
+                return  -1;
+               //known by everyone else
             }
             if(!knows(i, candidate)) {
                 return -1;

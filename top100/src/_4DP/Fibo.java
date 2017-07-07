@@ -25,7 +25,7 @@ public class Fibo {
 
     public static void main(String[] args) throws  FileNotFoundException{
         Scanner in = new Scanner(new File(
-"/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/Public/_4DP/FiboInput"));
+"/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_4DP/FiboInput"));
         F1 f = new F1();
         int n = in.nextInt();
         while(n != -1){

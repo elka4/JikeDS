@@ -1,4 +1,4 @@
-package ch9J.chapter2_BinarySearch;
+package chapter2_BinarySearch;
 
 public class _17Total_Occurrence_of_Target {
 	 /**

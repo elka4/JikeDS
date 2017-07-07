@@ -1,4 +1,4 @@
-package ch9J.chapter5_DP2;
+package chapter5_DP2;
 //区间类
 
 public class _13Coins_in_a_Line_III_1 {

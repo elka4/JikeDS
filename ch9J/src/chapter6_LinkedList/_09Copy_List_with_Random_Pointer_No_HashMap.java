@@ -1,4 +1,4 @@
-package ch9J.chapter6_LinkedList;
+package chapter6_LinkedList;
 
 /*第一遍扫的时候巧妙运用next指针， 开始数组是1->2->3->4  。 
  * 然后扫描过程中 先建立copy节点 1->1`->2->2`->3->3`->4->4`, 

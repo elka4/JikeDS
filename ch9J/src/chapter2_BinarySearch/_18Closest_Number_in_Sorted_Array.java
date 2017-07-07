@@ -1,4 +1,4 @@
-package ch9J.chapter2_BinarySearch;
+package chapter2_BinarySearch;
 
 //Closest Number in Sorted Array
 

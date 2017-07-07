@@ -1,4 +1,4 @@
-package ch9J.chapter3_BianryTree;
+package chapter3_BianryTree;
 
 public class TreeNode {
 	int val;

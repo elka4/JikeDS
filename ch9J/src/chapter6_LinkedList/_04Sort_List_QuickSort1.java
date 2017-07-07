@@ -1,4 +1,4 @@
-package ch9J.chapter6_LinkedList;
+package chapter6_LinkedList;
 
 //version 2: Quick Sort 1
 public class _04Sort_List_QuickSort1 {

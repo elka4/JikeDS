@@ -1,4 +1,4 @@
-package ch9J.chapter3_BianryTree;
+package chapter3_BianryTree;
 
 public class _72Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal {
 	private int findPosition(int[] arr, int start, int end, int key) {

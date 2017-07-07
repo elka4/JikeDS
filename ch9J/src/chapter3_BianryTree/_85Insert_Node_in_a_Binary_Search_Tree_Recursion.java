@@ -1,4 +1,4 @@
-package ch9J.chapter3_BianryTree;
+package chapter3_BianryTree;
 
 public class _85Insert_Node_in_a_Binary_Search_Tree_Recursion {
     /**

@@ -1,4 +1,4 @@
-package ch9J.chapter5_DP2;
+package chapter5_DP2;
 
 import java.util.ArrayList;
 

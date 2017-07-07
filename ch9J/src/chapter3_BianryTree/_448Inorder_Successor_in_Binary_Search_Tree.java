@@ -1,4 +1,4 @@
-package ch9J.chapter3_BianryTree;
+package chapter3_BianryTree;
 
 public class _448Inorder_Successor_in_Binary_Search_Tree {
 	public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {

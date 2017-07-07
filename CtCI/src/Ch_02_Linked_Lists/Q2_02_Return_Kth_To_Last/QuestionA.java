@@ -15,6 +15,8 @@ public class QuestionA {
 		}
 		return index;
 	}
+
+
 	
 	public static void main(String[] args) {
 		int[] array = {0, 1, 2, 3, 4, 5, 6};

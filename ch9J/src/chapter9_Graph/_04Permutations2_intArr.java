@@ -1,4 +1,4 @@
-package ch9J.chapter9_Graph;
+package chapter9_Graph;
 //I need some deep understanding of the nature of permuation
 //especially when there is duplicate
 import org.junit.Test;

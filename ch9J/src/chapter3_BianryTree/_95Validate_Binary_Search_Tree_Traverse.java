@@ -1,4 +1,4 @@
-package ch9J.chapter3_BianryTree;
+package chapter3_BianryTree;
 
 //version 1 Traverse， 缺点：经常要用到全局变量
 public class _95Validate_Binary_Search_Tree_Traverse {

@@ -1,4 +1,4 @@
-package ch9J.chapter7_Array;
+package chapter7_Array;
 
 /**
 *	quickselect is a selection algorithm to find the kth smallest element in an 

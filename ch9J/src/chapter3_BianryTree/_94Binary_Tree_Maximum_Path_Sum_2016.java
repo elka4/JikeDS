@@ -1,4 +1,4 @@
-package ch9J.chapter3_BianryTree;
+package chapter3_BianryTree;
 
 //Ch9 2016summer code
 public class _94Binary_Tree_Maximum_Path_Sum_2016 {

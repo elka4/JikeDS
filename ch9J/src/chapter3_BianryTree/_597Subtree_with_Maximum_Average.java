@@ -1,4 +1,4 @@
-package ch9J.chapter3_BianryTree;
+package chapter3_BianryTree;
 // Subtree with Maximum Average
 /**
  * Created by tzh on 3/2/17.

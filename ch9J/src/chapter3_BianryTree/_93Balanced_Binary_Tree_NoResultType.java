@@ -1,4 +1,4 @@
-package ch9J.chapter3_BianryTree;
+package chapter3_BianryTree;
 
 //Version 2: without ResultType
 //coding style不好，不鼓励使用

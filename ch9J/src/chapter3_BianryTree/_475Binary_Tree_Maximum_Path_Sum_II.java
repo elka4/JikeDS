@@ -1,4 +1,4 @@
-package ch9J.chapter3_BianryTree;
+package chapter3_BianryTree;
 
 public class _475Binary_Tree_Maximum_Path_Sum_II {
     /**

@@ -1,4 +1,4 @@
-package ch9J.chapter6_LinkedList;
+package chapter6_LinkedList;
 
 public class _07Rotate_List {
     private int getLength(ListNode head) {

@@ -1,4 +1,4 @@
-package ch9J.chapter5_DP2;
+package chapter5_DP2;
 
 //version 2
 //9CH summer 2016 too

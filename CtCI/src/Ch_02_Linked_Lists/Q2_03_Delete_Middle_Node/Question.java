@@ -18,6 +18,7 @@ public class Question {
 	public static void main(String[] args) {
 		LinkedListNode head = AssortedMethods.randomLinkedList(10, 0, 10);
 		System.out.println(head.printForward());
+		System.out.println(head.next.next.next.next.printForward());
 		deleteNode(head.next.next.next.next); // delete node 4
 		System.out.println(head.printForward());
 	}

@@ -1,4 +1,4 @@
-package ch9J.chapter7_Array;
+package chapter7_Array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -58,7 +58,7 @@ Find all unique quadruplets in the array which gives the sum of target.
  Notice
 
 Elements in a quadruplet (a,b,c,d) must be in non-descending order. 
-(ie, a ² b ² c ² d)
+(ie, a ? b ? c ? d)
 The solution set must not contain duplicate quadruplets.
 
 Have you met this question in a real interview? Yes

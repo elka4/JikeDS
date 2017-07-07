@@ -1,4 +1,4 @@
-package ch9J.chapter6_LinkedList;
+package chapter6_LinkedList;
 
 public class _10Convert_Sorted_List_to_Balanced_BST {
     private ListNode current;

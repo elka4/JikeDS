@@ -2,6 +2,7 @@ package Ch_02_Linked_Lists.Q2_05_Sum_Lists;
 
 
 import CtCILibrary.LinkedListNode;
+import org.junit.Test;
 
 public class QuestionA {
 
@@ -57,5 +58,28 @@ public class QuestionA {
 		
 		System.out.print(l1 + " + " + l2 + " = " + l3 + "\n");
 		System.out.print(l1 + " + " + l2 + " = " + (l1 + l2));		
+	}
+	@Test
+	public void test01(){
+		LinkedListNode lA1 = new LinkedListNode(7, null, null);
+		LinkedListNode lA2 = new LinkedListNode(1, null, lA1);
+		LinkedListNode lA3 = new LinkedListNode(6, null, lA2);
+
+		LinkedListNode lB1 = new LinkedListNode(2, null, null);
+		LinkedListNode lB2 = new LinkedListNode(9, null, lB1);
+		LinkedListNode lB3 = new LinkedListNode(5, null, lB2);
+
+		LinkedListNode list3 = addLists(lA1, lB1, 0);
+
+		System.out.println("  " + lA1.printForward());
+		System.out.println("+ " + lB1.printForward());
+		System.out.println("= " + list3.printForward());
+
+		int l1 = linkedListToInt(lA1);
+		int l2 = linkedListToInt(lB1);
+		int l3 = linkedListToInt(list3);
+
+		System.out.print(l1 + " + " + l2 + " = " + l3 + "\n");
+		System.out.print(l1 + " + " + l2 + " = " + (l1 + l2));
 	}
 }

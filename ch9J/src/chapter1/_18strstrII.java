@@ -1,4 +1,4 @@
-package ch9J.chapter1;
+package chapter1;
 
 /**
  * Created by tianhuizhu on 6/18/17.

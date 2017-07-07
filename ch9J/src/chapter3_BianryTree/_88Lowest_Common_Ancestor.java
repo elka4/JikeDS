@@ -1,4 +1,4 @@
-package ch9J.chapter3_BianryTree;
+package chapter3_BianryTree;
 
 /**
  * Created by tianhuizhu on 6/19/17.

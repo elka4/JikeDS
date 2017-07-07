@@ -1,4 +1,4 @@
-package ch9J.chapter5_DP2;//划分类
+package chapter5_DP2;//划分类
 
 public class _15Best_Time_to_Buy_and_Sell_Stock_IV {
 /**

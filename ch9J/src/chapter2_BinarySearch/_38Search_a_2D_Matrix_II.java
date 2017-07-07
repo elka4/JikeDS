@@ -1,4 +1,4 @@
-package ch9J.chapter2_BinarySearch;
+package chapter2_BinarySearch;
 
 public class _38Search_a_2D_Matrix_II {
  /**

@@ -1,4 +1,4 @@
-package ch9J.chapter2_BinarySearch;
+package chapter2_BinarySearch;
 
 //First Position of Target
 
@@ -15,9 +15,9 @@ public class _14First_Position_of_Target {
         }
         
         int start = 0, end = nums.length - 1;
-        //æŠŠåŒºé—´å˜å°
-        //åªç¼©å°åŒºé—´ï¼Œä¸æ‰¾ç›®æ ‡
-        //æ¯æ¬¡é€šè¿‡O(1)æ—¶é—´çš„æ¯”è¾ƒ -> n => n / 2
+        //???ºé?´å??å°?
+        //??ç¼©å??ºé?´ï?ä¸??¾ç????
+        //æ¯?æ¬¡é??è¿?O(1)?¶é?´ç??æ¯?è¾? -> n => n / 2
         while (start + 1 < end) {
             int mid = start + (end - start) / 2;
             if (nums[mid] == target) {
@@ -30,7 +30,7 @@ public class _14First_Position_of_Target {
                 // or end = mid - 1
             }
         }
-        //åŒºé—´å·²ç»ç¼©å°åˆ°åªæœ‰2ä¸ªæ•°
+        //?ºé?´å·²ç»?ç¼©å??°å????2ä¸???
         if (nums[start] == target) {
             return start;
         }

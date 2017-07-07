@@ -1,6 +1,7 @@
 package Ch_02_Linked_Lists.Q2_04_Partition;
 
 import CtCILibrary.LinkedListNode;
+import org.junit.Test;
 
 public class QuestionB {
 
@@ -58,5 +59,20 @@ public class QuestionB {
 		LinkedListNode h = partition(head, 7);
 		System.out.println(h.printForward());
 	}
+	@Test
+	public void test01(){
+		int[] vals = {3,5,8,5,10,2,1};
+		LinkedListNode head = new LinkedListNode(vals[0], null, null);
+		LinkedListNode current = head;
+		for (int i = 1; i < vals.length; i++) {
+			current = new LinkedListNode(vals[i], null, current);
+		}
+		System.out.println(head.printForward());
 
+		/* Partition */
+		LinkedListNode h = partition(head, 5);
+
+		/* Print Result */
+		System.out.println(h.printForward());
+	}
 }

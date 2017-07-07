@@ -1,6 +1,7 @@
 package Ch_02_Linked_Lists.Q2_06_Palindrome;
 
 import CtCILibrary.LinkedListNode;
+import org.junit.Test;
 
 public class QuestionA {
 	public static boolean isPalindrome(LinkedListNode head) {
@@ -52,4 +53,27 @@ public class QuestionA {
 		System.out.println(isPalindrome(head));
 	}
 
+	@Test
+	public void test01(){
+		int length = 9;
+		LinkedListNode[] nodes = new LinkedListNode[length];
+		for (int i = 0; i < length; i++) {
+			nodes[i] = new LinkedListNode(i, null, null);
+		}
+
+		for (int i = 0; i < length; i++) {
+			if (i < length - 1) {
+				nodes[i].setNext(nodes[i + 1]);
+			}
+			if (i > 0) {
+				nodes[i].setPrevious(nodes[i - 1]);
+			}
+		}
+		// nodes[length - 2].data = 9; // Uncomment to ruin palindrome
+
+		LinkedListNode head = nodes[0];
+		System.out.println(head.printForward());
+		System.out.println(reverseAndClone(head).printForward());
+		System.out.println(head.printForward()); 
+	}
 }

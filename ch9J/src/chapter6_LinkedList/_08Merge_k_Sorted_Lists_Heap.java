@@ -1,4 +1,4 @@
-package ch9J.chapter6_LinkedList;
+package chapter6_LinkedList;
 
 import java.util.ArrayList;
 import java.util.Comparator;

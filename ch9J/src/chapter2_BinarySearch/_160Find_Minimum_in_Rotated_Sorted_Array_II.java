@@ -1,4 +1,4 @@
-package ch9J.chapter2_BinarySearch;
+package chapter2_BinarySearch;
 
 /**
  * Created by tianhuizhu on 6/18/17.

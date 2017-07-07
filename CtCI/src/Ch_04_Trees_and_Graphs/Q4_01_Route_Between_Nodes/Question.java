@@ -1,5 +1,7 @@
 package Ch_04_Trees_and_Graphs.Q4_01_Route_Between_Nodes;
 
+import org.junit.Test;
+
 import java.util.LinkedList;
 
 public class Question {
@@ -27,7 +29,11 @@ public class Question {
 		temp[3] = new Node("d", 1);
 		temp[4] = new Node("e", 1);
 		temp[5] = new Node("f", 0);
-
+        /*
+       1-0-3 3-4-5
+         |
+         2
+         */
 		temp[0].addAdjacent(temp[1]);
 		temp[0].addAdjacent(temp[2]);
 		temp[0].addAdjacent(temp[3]);
@@ -64,5 +70,14 @@ public class Question {
             }
         }
         return false;
+    }
+
+    @Test
+    public void test01(){
+        Graph g = createNewGraph();
+        Node[] n = g.getNodes();
+        Node start = n[3];
+        Node end = n[5];
+        System.out.println(search(g, start, end));
     }
 }

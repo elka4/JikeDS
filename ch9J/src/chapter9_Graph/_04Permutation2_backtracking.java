@@ -1,4 +1,4 @@
-package ch9J.chapter9_Graph;
+package chapter9_Graph;
 
 //from leetcode discussion
 //https://discuss.leetcode.com/topic/52105/2ms-beat-99-46-java-solution

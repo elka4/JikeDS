@@ -1,4 +1,4 @@
-package ch9J.chapter5_DP2;
+package chapter5_DP2;
 
 /*Interleaving String   问可行性
  * ￼• state: f[i][j]表示s1的前i个字符和s2的前j个字符能否交替组成s3的前i+j个字符 

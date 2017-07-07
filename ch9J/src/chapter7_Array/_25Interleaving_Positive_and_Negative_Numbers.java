@@ -1,4 +1,4 @@
-package ch9J.chapter7_Array;
+package chapter7_Array;
 
 public class _25Interleaving_Positive_and_Negative_Numbers {
 	/**

@@ -1,4 +1,4 @@
-package ch9J.chapter6_LinkedList;
+package chapter6_LinkedList;
 
 public class _02Reverse_Linked_List_II {
 	public ListNode reverseBetween(ListNode head, int m, int n) {

@@ -1,4 +1,4 @@
-package ch9J.chapter7_Array;
+package chapter7_Array;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -55,7 +55,7 @@ return rst;
  Notice
 
 Elements in a triplet (a,b,c) must be in non-descending order. 
-(ie, a ² b ² c)
+(ie, a ? b ? c)
 
 The solution set must not contain duplicate triplets.
 

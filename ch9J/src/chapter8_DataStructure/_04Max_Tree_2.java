@@ -1,4 +1,4 @@
-package ch9J.chapter8_DataStructure;
+package chapter8_DataStructure;
 
 public class _04Max_Tree_2 {
 	/**
