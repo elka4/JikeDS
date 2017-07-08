@@ -71,4 +71,35 @@ public class TreeNode {
 			return right.getIthNode(i - (leftSize + 1));
 		}
 	}
+
+
+
+
+    private void setLeftChild(TreeNode left) {
+        this.left = left;
+    }
+
+    private void setRightChild(TreeNode right) {
+        this.right = right;
+    }
+
+    private static TreeNode createMinimalBST(int arr[], int start, int end){
+        if (end < start) {
+            return null;
+        }
+        int mid = (start + end) / 2;
+        TreeNode n = new TreeNode(arr[mid]);
+        n.setLeftChild(createMinimalBST(arr, start, mid - 1));
+        n.setRightChild(createMinimalBST(arr, mid + 1, end));
+        return n;
+    }
+
+    public static TreeNode createMinimalBST(int array[]) {
+
+        return createMinimalBST(array, 0, array.length - 1);
+    }
+
+    public void print() {
+        BTreePrinter.printNode(this);
+    }
 } 

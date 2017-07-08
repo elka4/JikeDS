@@ -1,5 +1,7 @@
 package Ch_04_Trees_and_Graphs.Q4_11_Random_Node;
 
+import org.junit.Test;
+
 public class Question {
 
 	public static void main(String[] args) {
@@ -18,5 +20,22 @@ public class Question {
 			System.out.println(i + ": " + counts[i]);
 		}
 	}
+    @Test
+    public void test01(){
+        Tree tree = new Tree();
+        //int[] array = {1, 0, 6, 2, 3, 9, 4, 5, 8, 7};
+        int[] array = {5, 3, 8, 1, 4, 6, 10, 5, 8, 7};
+        for (int x : array) {
+            tree.insertInOrder(x);
+        }
+       // int d = tree.getRandomNode().data;
+        TreeNode randomNode = tree.returnRoot().getRandomNode();
+        int d = randomNode.data;
+        System.out.println(d);
+        TreeNode root = tree.returnRoot();
+        root.print();
+        randomNode.print();
+
+    }
 
 }

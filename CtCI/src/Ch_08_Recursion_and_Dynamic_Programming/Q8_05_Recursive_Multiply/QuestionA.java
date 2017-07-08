@@ -43,7 +43,8 @@ public class QuestionA {
 		if (product == minProduct) {
 			System.out.println("Success: " + a + " * " + b + " = " + product);
 		} else {
-			System.out.println("Failure: " + a + " * " + b + " = " + product + " instead of " + minProduct);
+			System.out.println("Failure: " + a + " * " + b + " = " + product
+                    + " instead of " + minProduct);
 		}
 		System.out.println("Adds: " + counter);
 	}

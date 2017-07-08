@@ -29,8 +29,8 @@ public class QuestionA {
 	}
 
 	public static void main(String[] args) {
-		int[] array1 = {1, 1, 1, 2, 2, 4};
-		int[] array2 = {3, 3, 3, 6};
+		int[] array1 = {1, 1, 1, 2, 2, 4}; //11
+		int[] array2 = {3, 3, 3, 6};       //15
 		int[] swaps = findSwapValues(array1, array2);
 		if (swaps == null) {
 			System.out.println("null");

@@ -2,6 +2,7 @@ package Ch_16_Moderate.Q16_20_T9;
 
 import CtCILibrary.AssortedMethods;
 import CtCILibrary.HashMapList;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,17 +64,29 @@ public class QuestionC {
 		return wordsToNumbers;
 	}
 	
-	public static ArrayList<String> getValidT9Words(String numbers, HashMapList<String, String> dictionary) {
+	public static ArrayList<String> getValidT9Words(String numbers,
+                                    HashMapList<String, String> dictionary) {
 		return dictionary.get(numbers);
 	}
 	
 	public static void main(String[] args) {
-		HashMapList<String, String> dictionary = initializeDictionary(AssortedMethods.getListOfWords());
+		HashMapList<String, String> dictionary =
+                initializeDictionary(AssortedMethods.getListOfWords());
 		ArrayList<String> words = getValidT9Words("8733", dictionary);
 		for (String w: words) {
 			System.out.println(w);
 		}	
 
 	}
+
+	@Test
+    public void test01(){
+        HashMapList<String, String> dictionary =
+                initializeDictionary(AssortedMethods.getListOfWords());
+        ArrayList<String> words = getValidT9Words("8379", dictionary);
+        for (String w: words) {
+            System.out.println(w);
+        }
+    }
 
 }

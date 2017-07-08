@@ -23,7 +23,7 @@ public class Question {
 			}
 		}
 		return linesBySlope;
-	}		
+	}
 	
 	/* Return the line with the most equivalent other lines. */
 	public static Line getBestLine(HashMapList<Double, Line> linesBySlope) {
@@ -50,10 +50,13 @@ public class Question {
 		return bestLine;
 	}
 	
-	/* Check hashmap for lines that are equivalent. Note that we need to check one epsilon above and below the actual slope
-	 * since we're defining two lines as equivalent if they're within an epsilon of each other.
+	/* Check hashmap for lines that are equivalent. Note that we need to check
+	one epsilon above and below the actual slope
+	 * since we're defining two lines as equivalent if they're within an
+	 * epsilon of each other.
 	 */
-	public static int countEquivalentLines(HashMapList<Double, Line> linesBySlope, Line line) {
+	public static int countEquivalentLines(HashMapList<Double, Line>
+                                                   linesBySlope, Line line) {
 		double key = Line.floorToNearestEpsilon(line.slope);
 		int count = countEquivalentLines(linesBySlope.get(key), line);
 		count += countEquivalentLines(linesBySlope.get(key - Line.epsilon), line);
@@ -61,7 +64,8 @@ public class Question {
 		return count;
 	}
 	
-	/* Count lines within an array of lines which are "equivalent" (slope and y-intercept are within an epsilon value) to a given line */
+	/* Count lines within an array of lines which are "equivalent"
+	(slope and y-intercept are within an epsilon value) to a given line */
 	public static int countEquivalentLines(ArrayList<Line> lines, Line line) {
 		if (lines == null) {
 			return 0;

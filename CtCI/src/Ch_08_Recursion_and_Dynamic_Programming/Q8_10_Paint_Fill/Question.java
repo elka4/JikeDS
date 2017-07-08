@@ -55,18 +55,18 @@ public class Question {
 	}
 	
 	public static void main(String[] args) {
-		int N = 10;
+		int N = 4;
 		Color[][] screen = new Color[N][N];
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < N; j++) {
 				screen[i][j] = Color.Black;
 			}			
 		}
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 8; i++) {
 			screen[randomInt(N)][randomInt(N)] = Color.Green;
 		}
 		PrintScreen(screen);
-		PaintFill(screen, 2, 2, Color.White);
+		PaintFill(screen, 1, 2, Color.White);
 		System.out.println();
 		PrintScreen(screen);
 	}

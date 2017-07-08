@@ -1,13 +1,15 @@
 package Ch_04_Trees_and_Graphs.Q4_09_BST_Sequences;
 
 import CtCILibrary.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Question {
 	
-	public static void weaveLists(LinkedList<Integer> first, LinkedList<Integer> second, ArrayList<LinkedList<Integer>> results, LinkedList<Integer> prefix) {
+	public static void weaveLists(LinkedList<Integer> first, LinkedList<Integer> second,
+          ArrayList<LinkedList<Integer>> results, LinkedList<Integer> prefix) {
 		/* One list is empty. Add the remainder to [a cloned] prefix and
 		 * store result. */
 		if (first.size() == 0 || second.size() == 0) {
@@ -75,5 +77,20 @@ public class Question {
 		}
 		System.out.println(allSeq.size());
 	}
+
+	@Test
+    public void test01(){
+        TreeNode node = new TreeNode(3);
+        int[] array = {1,2,4,5};
+        for (int a : array) {
+            node.insertInOrder(a);
+        }
+        node.print();
+        ArrayList<LinkedList<Integer>> allSeq = allSequences(node);
+        for (LinkedList<Integer> list : allSeq) {
+            System.out.println(list);
+        }
+        System.out.println(allSeq.size());
+    }
 
 }

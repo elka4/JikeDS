@@ -12,7 +12,8 @@ public class QuestionB {
 		return lengths;
 	}	
 	
-	public static void getAllLengths(int k, int total, int shorter, int longer, HashSet<Integer> lengths, HashSet<String> visited) {
+	public static void getAllLengths(int k, int total, int shorter, int longer,
+                             HashSet<Integer> lengths, HashSet<String> visited) {
 		counter++;
 		if (k == 0) {
 			lengths.add(total);

@@ -1,5 +1,7 @@
 package Ch_08_Recursion_and_Dynamic_Programming.Q8_07_Permutations_Without_Dups;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 
 public class QuestionA {
@@ -39,5 +41,13 @@ public class QuestionA {
 			System.out.println(s);
 		}
 	}
+	@Test
+    public void test01(){
+        ArrayList<String> list = getPerms("abc");
+        System.out.println("There are " + list.size() + " permutations.");
+        for (String s : list) {
+            System.out.println(s);
+        }
+    }
 
 }

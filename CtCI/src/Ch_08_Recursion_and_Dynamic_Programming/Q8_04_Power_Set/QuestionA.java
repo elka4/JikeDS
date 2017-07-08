@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 public class QuestionA {
 
-	public static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> set, int index) {
+	public static ArrayList<ArrayList<Integer>> getSubsets(
+	        ArrayList<Integer> set, int index) {
+
 		ArrayList<ArrayList<Integer>> allsubsets;
 		if (set.size() == index) { // Base case - add empty set
 			allsubsets = new ArrayList<ArrayList<Integer>>();

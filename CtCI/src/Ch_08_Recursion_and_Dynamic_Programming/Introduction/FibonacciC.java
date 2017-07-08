@@ -26,7 +26,7 @@ public class FibonacciC {
 		for (int j = 0; j < trials; j++) { // Run this 10 times to compute
 			for (int i = 0; i < max; i++) {
 				long start = System.currentTimeMillis();
-				System.out.println(fibonacci(i));
+				//System.out.println(fibonacci(i));
 				long end = System.currentTimeMillis();
 				long time = end - start;
 				times[i] += time; 
@@ -34,7 +34,7 @@ public class FibonacciC {
 		}
 		
 		for (int j = 0; j < max; j++) {
-			//System.out.println(j + ": " + times[j] / trials + "ms");
+			System.out.println(j + ": " + times[j] / trials + "ms");
 		}
 	}
 

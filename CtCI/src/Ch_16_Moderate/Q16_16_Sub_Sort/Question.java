@@ -76,7 +76,8 @@ public class Question {
 		}
 	}
 	
-	/* Validate that sorting between these indices will sort the array. Note that this is not a complete
+	/* Validate that sorting between these indices will sort the array.
+	Note that this is not a complete
 	 * validation, as it does not check if these are the best possible indices.
 	 */
 	public static boolean validate(int[] array, int left_index, int right_index) {

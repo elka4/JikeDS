@@ -1,5 +1,7 @@
 package Ch_08_Recursion_and_Dynamic_Programming.Q8_04_Power_Set;
 
+import CtCILibrary.AssortedMethods;
+
 import java.util.ArrayList;
 
 public class QuestionB {
@@ -8,6 +10,8 @@ public class QuestionB {
 		ArrayList<Integer> subset = new ArrayList<Integer>(); 
 		int index = 0;
 		for (int k = x; k > 0; k >>= 1) {
+            System.out.println(AssortedMethods.toFullBinaryString(k) + " k");
+            System.out.println(AssortedMethods.toFullBinaryString(k & 1) + " (k & 1)");
 			if ((k & 1) == 1) {
 				subset.add(set.get(index));
 			}
@@ -18,8 +22,11 @@ public class QuestionB {
 	
 	public static ArrayList<ArrayList<Integer>> getSubsets(ArrayList<Integer> set) {
 		ArrayList<ArrayList<Integer>> allsubsets = new ArrayList<ArrayList<Integer>>();
-		int max = 1 << set.size(); /* Compute 2^n */ 
-		for (int k = 0; k < max; k++) {
+		int max = 1 << set.size(); /* Compute 2^n */
+        System.out.println(set.size() + " set.size()");
+        System.out.println(AssortedMethods.toFullBinaryString(max) + " max " + max);
+
+        for (int k = 0; k < max; k++) {
 			ArrayList<Integer> subset = convertIntToSet(k, set);
 			allsubsets.add(subset);
 		}

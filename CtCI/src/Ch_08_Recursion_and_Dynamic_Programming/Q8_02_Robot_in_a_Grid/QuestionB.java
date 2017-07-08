@@ -10,13 +10,15 @@ public class QuestionB {
 		if (maze == null || maze.length == 0) return null;
 		ArrayList<Point> path = new ArrayList<Point>();
 		HashSet<Point> failedPoints = new HashSet<Point>();
-		if (getPath(maze, maze.length - 1, maze[0].length - 1, path, failedPoints)) {
+		if (getPath(maze, maze.length - 1,
+                maze[0].length - 1, path, failedPoints)) {
 			return path;
 		}
 		return null;
 	}
 	
-	public static boolean getPath(boolean[][] maze, int row, int col, ArrayList<Point> path, HashSet<Point> failedPoints) {
+	public static boolean getPath(boolean[][] maze, int row,
+      int col, ArrayList<Point> path, HashSet<Point> failedPoints) {
 		/* If out of bounds or not available, return.*/
 		if (col < 0 || row < 0 || !maze[row][col]) {
 			return false;
@@ -31,8 +33,10 @@ public class QuestionB {
 		
 		boolean isAtOrigin = (row == 0) && (col == 0);
 		
-		/* If there's a path from the start to my current location, add my location.*/
-		if (isAtOrigin || getPath(maze, row, col - 1, path, failedPoints) || getPath(maze, row - 1, col, path, failedPoints)) {
+		/* If there's a path from the start to my current location,
+		 add my location.*/
+		if (isAtOrigin || getPath(maze, row, col - 1, path, failedPoints)
+                || getPath(maze, row - 1, col, path, failedPoints)) {
 			path.add(p);
 			return true;
 		}
@@ -43,7 +47,8 @@ public class QuestionB {
 	
 	public static void main(String[] args) {
 		int size = 20;
-		boolean[][] maze = AssortedMethods.randomBooleanMatrix(size, size, 60);
+		boolean[][] maze = AssortedMethods.randomBooleanMatrix(size,
+                size, 80);
 		
 		AssortedMethods.printMatrix(maze);
 		

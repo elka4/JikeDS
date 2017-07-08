@@ -2,6 +2,9 @@ package Ch_04_Trees_and_Graphs.Q4_08_First_Common_Ancestor;
 
 import CtCILibrary.TreeNode;
 
+// Solution #3: Without Links to Parents
+
+
 public class QuestionD {
 	
 	public static TreeNode commonAncestor(TreeNode root, TreeNode p, TreeNode q) {

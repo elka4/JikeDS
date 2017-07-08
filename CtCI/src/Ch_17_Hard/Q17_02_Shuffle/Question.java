@@ -6,7 +6,8 @@ public class Question {
 
 	/* Random number between lower and higher, inclusive */
 	public static int rand(int lower, int higher) { 
-		return lower + (int)(Math.random() * (higher - lower + 1));
+
+	    return lower + (int)(Math.random() * (higher - lower + 1));
 	}	
 	
 	public static int[] shuffleArrayRecursively(int[] cards, int i) {

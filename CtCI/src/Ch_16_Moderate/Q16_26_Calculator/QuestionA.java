@@ -45,7 +45,8 @@ public class QuestionA {
 			
 			/* If next term is + or -, then this cluster is done 
 			 * and we should apply “processing” to “result”. */
-			if (next == null || next.getOperator() == Operator.ADD || next.getOperator() == Operator.SUBTRACT) {
+			if (next == null || next.getOperator() == Operator.ADD ||
+                    next.getOperator() == Operator.SUBTRACT) {
 				result = applyOp(result, processing.getOperator(), processing.getNumber());
 				processing = null;
 			}

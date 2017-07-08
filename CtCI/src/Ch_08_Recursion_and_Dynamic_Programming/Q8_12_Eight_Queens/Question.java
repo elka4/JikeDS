@@ -1,10 +1,12 @@
 package Ch_08_Recursion_and_Dynamic_Programming.Q8_12_Eight_Queens;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 
 public class Question {
-	public static int GRID_SIZE = 8;
-	
+	public static int GRID_SIZE = 4;
+
 	/* Check if (row1, column1) is a valid spot for a queen by checking if there
 	 * is a queen in the same column or diagonal. We don't need to check it for queens
 	 * in the same row because the calling placeQueen only attempts to place one queen at
@@ -91,4 +93,14 @@ public class Question {
 		printBoards(results);
 		System.out.println(results.size());
 	}
+
+	@Test
+    public void test01(){
+        ArrayList<Integer[]> results = new ArrayList<Integer[]>();
+        Integer[] columns = new Integer[GRID_SIZE];
+        clear(columns);
+        placeQueens(0, columns, results);
+        printBoards(results);
+        System.out.println(results.size());
+    }
 }

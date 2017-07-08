@@ -1,5 +1,7 @@
 package Ch_08_Recursion_and_Dynamic_Programming.Q8_09_Parens;
 
+import org.junit.Test;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,7 +19,8 @@ public class QuestionA {
 		} else {
 			Set<String> prev = generateParens(remaining - 1); 
 			for (String str : prev) {
-				for (int i = 0; i < str.length(); i++) {
+                System.out.println(str + "  for (String str : prev)");
+                for (int i = 0; i < str.length(); i++) {
 					if (str.charAt(i) == '(') {
 						String s = insertInside(str, i);
 						/* Add s to set if it is not already in there. Note: 	
@@ -40,4 +43,30 @@ public class QuestionA {
 		System.out.println(list.size());
 	}
 
+	@Test
+    public void test01(){
+        Set<String> list = generateParens(1);
+        for (String s : list) {
+            System.out.println(s);
+        }
+        System.out.println(list.size());
+    }
+    @Test
+    public void test02(){
+        Set<String> list = generateParens(2);
+        System.out.println("=======================");
+        for (String s : list) {
+            System.out.println(s);
+        }
+        System.out.println(list.size());
+    }
+    @Test
+    public void test03(){
+        Set<String> list = generateParens(3);
+        System.out.println("=======================");
+        for (String s : list) {
+            System.out.println(s);
+        }
+        System.out.println(list.size());
+    }
 }

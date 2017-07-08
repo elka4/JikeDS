@@ -18,7 +18,8 @@ public class QuestionB {
 		} else if (memo[n] > -1) {
 			return memo[n];
 		} else {
-			memo[n] = countWays(n - 1, memo) + countWays(n - 2, memo) + countWays(n - 3, memo);
+			memo[n] = countWays(n - 1, memo) + countWays(n - 2, memo)
+                    + countWays(n - 3, memo);
 			return memo[n];
 		}
 	}

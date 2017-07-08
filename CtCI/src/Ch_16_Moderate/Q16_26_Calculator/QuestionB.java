@@ -62,7 +62,8 @@ public class QuestionB {
 	 * Collapsing means to pop the top 2 numbers and apply the 
 	 * operator popped from the top of the operator stack, and then
 	 * push that onto the numbers stack.*/
-	public static void collapseTop(Operator futureTop, Stack<Double> numberStack, Stack<Operator> operatorStack) {
+	public static void collapseTop(Operator futureTop,
+                   Stack<Double> numberStack, Stack<Operator> operatorStack) {
 		while (operatorStack.size() >= 1 && numberStack.size() >= 2) {
 			if (priorityOfOperator(futureTop) <= priorityOfOperator(operatorStack.peek())) {
 				double second = numberStack.pop();

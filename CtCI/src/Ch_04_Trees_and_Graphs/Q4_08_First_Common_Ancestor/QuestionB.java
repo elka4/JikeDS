@@ -2,6 +2,8 @@ package Ch_04_Trees_and_Graphs.Q4_08_First_Common_Ancestor;
 
 import CtCILibrary.TreeNode;
 
+// Solution #1: WIth links to Parent
+
 public class QuestionB {
 	public static TreeNode commonAncestor(TreeNode p, TreeNode q) {
 		int delta = depth(p) - depth(q); // get difference in depths

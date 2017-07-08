@@ -7,10 +7,12 @@ import java.util.HashMap;
 public class QuestionB {
 	
 	public static int countPathsWithSum(TreeNode root, int targetSum) {
-		return countPathsWithSum(root, targetSum, 0, new HashMap<Integer, Integer>());
+		return countPathsWithSum(root, targetSum, 0,
+                new HashMap<Integer, Integer>());
 	}
 	
-	public static int countPathsWithSum(TreeNode node, int targetSum, int runningSum, HashMap<Integer, Integer> pathCount) {
+	public static int countPathsWithSum(TreeNode node, int targetSum,
+                        int runningSum, HashMap<Integer, Integer> pathCount) {
 		if (node == null) return 0; // Base case
 		
 		runningSum += node.data;
@@ -19,7 +21,8 @@ public class QuestionB {
 		int sum = runningSum - targetSum;
 		int totalPaths = pathCount.getOrDefault(sum, 0);
 		
-		/* If runningSum equals targetSum, then one additional path starts at root. Add in this path.*/
+		/* If runningSum equals targetSum, then one additional
+		path starts at root. Add in this path.*/
 		if (runningSum == targetSum) {
 			totalPaths++;
 		}
@@ -35,7 +38,8 @@ public class QuestionB {
 		return totalPaths;
 	}
 	
-	public static void incrementHashTable(HashMap<Integer, Integer> hashTable, int key, int delta) {
+	public static void incrementHashTable(HashMap<Integer, Integer> hashTable,
+                                          int key, int delta) {
 		int newCount = hashTable.getOrDefault(key, 0) + delta;
 		if (newCount == 0) { // Remove when zero to reduce space usage
 			hashTable.remove(key);

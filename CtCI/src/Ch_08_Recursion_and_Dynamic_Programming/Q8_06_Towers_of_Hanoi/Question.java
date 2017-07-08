@@ -3,7 +3,7 @@ package Ch_08_Recursion_and_Dynamic_Programming.Q8_06_Towers_of_Hanoi;
 public class Question {
 	public static void main(String[] args) {
 		// Set up code.
-		int n = 5;
+		int n = 2;
 		Tower[] towers = new Tower[3];
 		for (int i = 0; i < 3; i++) {
 			towers[i] = new Tower(i);

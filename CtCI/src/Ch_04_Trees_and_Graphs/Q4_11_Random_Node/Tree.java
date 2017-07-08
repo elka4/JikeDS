@@ -24,4 +24,7 @@ public class Tree {
 		int i = random.nextInt(size());
 		return root.getIthNode(i);
 	}
+	public TreeNode returnRoot(){
+	    return root;
+    }
 }

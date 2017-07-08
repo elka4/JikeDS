@@ -27,7 +27,8 @@ public class QuestionA {
 		return t9Letters[dig];
 	}
 	
-	public static void getValidWords(String number, int index, String prefix, HashSet<String> wordSet, ArrayList<String> results) {
+	public static void getValidWords(String number, int index, String prefix,
+                             HashSet<String> wordSet, ArrayList<String> results) {
 		/* If it's a complete word, print it. */
 		if (index == number.length() ) {
 			if (wordSet.contains(prefix)) {
@@ -55,7 +56,8 @@ public class QuestionA {
 	}
 	
 	public static void main(String[] args) {
-		ArrayList<String> words = getValidT9Words("33835676368", AssortedMethods.getWordListAsHashSet());
+		ArrayList<String> words = getValidT9Words("33835676368",
+                AssortedMethods.getWordListAsHashSet());
 		for (String w: words) {
 			System.out.println(w);
 		}

@@ -1,15 +1,17 @@
 package Ch_17_Hard.Q17_03_Random_Set;
 
 import CtCILibrary.AssortedMethods;
+import org.junit.Test;
 
 public class QuestionAlternate {
 
 	/* Random number between lower and higher, inclusive */
 	public static int rand(int lower, int higher) { 
-		return lower + (int)(Math.random() * (higher - lower + 1));
+
+	    return lower + (int)(Math.random() * (higher - lower + 1));
 	}
 	
-	/* pick M elements from original array, using only elements 0 through i (inclusive).*/
+/* pick M elements from original array, using only elements 0 through i (inclusive).*/
 	public static int[] pickMRecursively(int[] original, int m, int i) {
 		if (i + 1 < m) { // Not enough elements
 			return null; 
@@ -27,7 +29,11 @@ public class QuestionAlternate {
 			}
 			return set;
 		}
-	}	
+	}
+
+    public static int[] pickMRecursively(int[] original, int m) {
+        return pickMRecursively(original, m, original.length - 1);
+    }
 
 	/* pick M elements from original array.*/
 	public static int[] pickMIteratively(int[] original, int m) {
@@ -54,6 +60,15 @@ public class QuestionAlternate {
 		System.out.println(AssortedMethods.arrayToString(cards));
 		int[] set = pickMIteratively(cards, 4);
 		System.out.println(AssortedMethods.arrayToString(set));
-	}	
+	}
+
+	@Test
+    public void test01(){
+        int[] cards = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        System.out.println(AssortedMethods.arrayToString(cards));
+        int[] set = pickMRecursively(cards, 4);
+        System.out.println(AssortedMethods.arrayToString(set));
+
+    }
 
 }

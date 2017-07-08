@@ -28,12 +28,14 @@ public class Tower {
 	}
 	
 	public void print() {
-		System.out.println("Contents of Tower " + index() + ": " + disks.toString());
+	    System.out.println("Contents of Tower " + index() + ": " + disks.toString());
 	}
 	
     public void moveDisks(int n, Tower destination, Tower buffer){
 		if (n > 0) {
-			String tag = "move_" + n + "_disks_from_" + this.index + "_to_" + destination.index + "_with_buffer_" + buffer.index; 
+			String tag = "move_" + n + "_disks_from_" + this.index + "_to_"
+                    + destination.index + "_with_buffer_" + buffer.index;
+
 			System.out.println("<" + tag + ">");
 			moveDisks(n - 1, buffer, destination);
 			System.out.println("<move_top_from_" + this.index + "_to_" + destination.index + ">");

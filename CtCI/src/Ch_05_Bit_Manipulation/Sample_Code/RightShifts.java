@@ -25,8 +25,10 @@ public class RightShifts {
 		int x = -93242;
 		int resultArithmetic = repeatedArithmeticShift(x, 40);
 		int resultLogical = repeatedLogicalShift(x, 40);
-		System.out.println(AssortedMethods.toFullBinaryString(resultArithmetic) + ": " + resultArithmetic);
-		System.out.println(AssortedMethods.toFullBinaryString(resultLogical) + ": " + resultLogical);
+		System.out.println(AssortedMethods.toFullBinaryString(resultArithmetic)
+                + ": " + resultArithmetic);
+		System.out.println(AssortedMethods.toFullBinaryString(resultLogical)
+                + ": " + resultLogical);
 	}
 
 }

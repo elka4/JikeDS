@@ -1,6 +1,7 @@
 package Ch_04_Trees_and_Graphs.Q4_12_Paths_with_Sum;
 
 import CtCILibrary.TreeNode;
+import org.junit.Test;
 
 public class QuestionA {
 	
@@ -68,5 +69,22 @@ public class QuestionA {
 		System.out.println(countPathsWithSum(root, 4));
 		root.print();
 	}
+
+	@Test
+    public void test01(){
+        TreeNode root = new TreeNode(5);
+        root.left = new TreeNode(3);
+        root.right = new TreeNode(1);
+        root.left.left = new TreeNode(-8);
+        root.left.right = new TreeNode(8);
+        root.right.left = new TreeNode(2);
+        root.right.right = new TreeNode(6);
+        root.print();
+        System.out.println(countPathsWithSum(root, 0));
+        System.out.println(countPathsWithSum(root, 10));
+        System.out.println(countPathsWithSum(root, 7));
+        System.out.println(countPathsWithSum(root, 3));
+        System.out.println(countPathsWithSum(root, 8));
+    }
 }
 

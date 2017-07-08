@@ -28,7 +28,8 @@ public class QuestionB {
 		return t9Letters[dig];
 	}
 	
-	public static void getValidWords(String number, int index, String prefix, TrieNode trieNode, ArrayList<String> results) {
+	public static void getValidWords(String number, int index, String prefix,
+                                     TrieNode trieNode, ArrayList<String> results) {
 		/* If it's a complete word, print it. */
 		if (index == number.length()) {
 			if (trieNode.terminates()) { // Is complete word

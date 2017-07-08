@@ -1,6 +1,8 @@
 package Ch_08_Recursion_and_Dynamic_Programming.Q8_11_Coins;
 
-public class Question {	
+import org.junit.Test;
+
+public class Question {
 	public static int makeChange(int amount, int[] denoms, int index) {
 		if (index >= denoms.length - 1) return 1; // one denom remaining -> one way to do it
 		int denomAmount = denoms[index];
@@ -13,7 +15,8 @@ public class Question {
 	}
 	
 	public static int makeChange(int amount, int[] denoms) {
-		return makeChange(amount, denoms, 0);
+
+	    return makeChange(amount, denoms, 0);
 	}
 	
 	public static void main(String[] args) {
@@ -21,5 +24,12 @@ public class Question {
 		int ways = makeChange(300322, denoms);
 		System.out.println(ways);
 	}
+
+    @Test
+    public void test01(){
+        int[] denoms = {25, 10, 5, 1};
+        int ways = makeChange(10000, denoms);
+        System.out.println(ways);
+    }
 
 }

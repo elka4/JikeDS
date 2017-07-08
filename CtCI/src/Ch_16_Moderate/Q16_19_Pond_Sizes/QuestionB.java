@@ -20,7 +20,8 @@ public class QuestionB {
 	
 	public static int computeSize(int[][] land, boolean[][] visited, int row, int col) {
 		/* If out of bounds or already visited. */
-		if (row < 0 || col < 0 || row >= land.length || col >= land[row].length || visited[row][col] || land[row][col] != 0) {
+		if (row < 0 || col < 0 || row >= land.length ||
+                col >= land[row].length || visited[row][col] || land[row][col] != 0) {
 			return 0;
 		}
 		int size = 1;

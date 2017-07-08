@@ -1,5 +1,7 @@
 package Ch_05_Bit_Manipulation.Q5_03_Flip_Bit_to_Win;
 
+import org.junit.Test;
+
 public class QuestionA {
 	
 	public static int SEQUENCE_LENGTH = 32;
@@ -39,5 +41,21 @@ public class QuestionA {
 		System.out.println(Integer.toBinaryString(original_number));
 		System.out.println(new_number);			
 	}
+    @Test
+    public void test01(){
+        int original_number = 1775;
+        int new_number = longestSequence(original_number);
+
+        System.out.println(Integer.toBinaryString(original_number));
+        System.out.println(new_number);
+    }
+    @Test
+    public void test02(){
+        int original_number = 8;
+        int new_number = longestSequence(original_number);
+
+        System.out.println(Integer.toBinaryString(original_number));
+        System.out.println(new_number);
+    }
 
 }

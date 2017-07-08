@@ -15,7 +15,8 @@ public class Question {
 		return map;
 	}
 	
-	public static void printPerms(HashMap<Character, Integer> map, String prefix, int remaining, ArrayList<String> result) {
+	public static void printPerms(HashMap<Character, Integer> map,
+                  String prefix, int remaining, ArrayList<String> result) {
 		if (remaining == 0) {
 			result.add(prefix);
 			return;
@@ -39,7 +40,7 @@ public class Question {
 	}
 	
 	public static void main(String[] args) {
-		String s = "aabbccc";
+		String s = "abbc";
 		ArrayList<String> result = printPerms(s);
 		System.out.println("Count: " + result.size());
 		for (String r : result) {

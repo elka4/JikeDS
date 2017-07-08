@@ -2,6 +2,7 @@ package Ch_04_Trees_and_Graphs.Q4_10_Check_Subtree;
 
 import CtCILibrary.AssortedMethods;
 import CtCILibrary.TreeNode;
+import org.junit.Test;
 
 public class QuestionB {
 
@@ -64,5 +65,41 @@ public class QuestionB {
 			System.out.println("t4 is not a subtree of t3");
 		}
 	}
+
+    @Test
+    public void test01(){
+        // t2 is a subtree of t1
+        int[] array1 = {5, 2, 1, 3, 4, 6, 7};
+        int[] array2 = {2, 3, 1};
+
+        TreeNode t1 = AssortedMethods.createTreeFromArray(array1);
+        TreeNode t2 = AssortedMethods.createTreeFromArray(array2);
+        t1.print();
+        t2.print();
+        if (containsTree(t1, t2)) {
+            System.out.println("t2 is a subtree of t1");
+        } else {
+            System.out.println("t2 is not a subtree of t1");
+        }
+
+    }
+
+    @Test
+    public void test02(){
+        // t2 is a subtree of t1
+        int[] array1 = {1, 2, 1, 3, 1, 1, 5};
+        int[] array2 = {2, 3, 1};
+
+        TreeNode t1 = AssortedMethods.createTreeFromArray(array1);
+        TreeNode t2 = AssortedMethods.createTreeFromArray(array2);
+        t1.print();
+        t2.print();
+        if (containsTree(t1, t2)) {
+            System.out.println("t2 is a subtree of t1");
+        } else {
+            System.out.println("t2 is not a subtree of t1");
+        }
+
+    }
 
 }

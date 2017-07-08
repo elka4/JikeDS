@@ -1,5 +1,7 @@
 package Ch_08_Recursion_and_Dynamic_Programming.Q8_11_Coins;
 
+import org.junit.Test;
+
 public class QuestionB {
 
 	public static int makeChange(int n, int[] denoms) {
@@ -28,5 +30,11 @@ public class QuestionB {
 		int ways = makeChange(100000, denoms);
 		System.out.println(ways);
 	}
+	@Test
+    public void test01(){
+        int[] denoms = {25, 10, 5, 1};
+        int ways = makeChange(10000, denoms);
+        System.out.println(ways);
+    }
 
 }

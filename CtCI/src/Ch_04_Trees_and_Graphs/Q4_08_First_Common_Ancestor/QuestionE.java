@@ -2,6 +2,8 @@ package Ch_04_Trees_and_Graphs.Q4_08_First_Common_Ancestor;
 
 import CtCILibrary.TreeNode;
 
+// Optimized
+
 public class QuestionE {
 	public static class Result {
 		public TreeNode node;
