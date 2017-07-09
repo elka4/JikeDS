@@ -1,11 +1,7 @@
 package chapter3_BianryTree;
-
+import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
-
-
-
-
 
 
 /**

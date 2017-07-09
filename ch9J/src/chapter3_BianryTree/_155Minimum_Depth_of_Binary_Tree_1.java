@@ -1,5 +1,5 @@
 package chapter3_BianryTree;
-
+import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
 //技巧：求最小值，那就先都把默认设成无穷大。最后用Max.min（）来滤过无穷大的值。
 @SuppressWarnings("all")
 

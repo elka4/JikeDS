@@ -1,11 +1,11 @@
 package chapter3_BianryTree;
-
+import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public //version 4: BFS, queue with dummy node
-class _60Binary_Tree_Level_Order_Traversal_Q_DummyNode {
+//version 4: BFS, queue with dummy node
+public class _60Binary_Tree_Level_Order_Traversal_Q_DummyNode {
 	 /**
 	  * @param root: The root of binary tree.
 	  * @return: Level order a list of lists of integer

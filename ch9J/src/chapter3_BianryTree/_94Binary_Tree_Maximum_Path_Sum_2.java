@@ -1,12 +1,10 @@
 package chapter3_BianryTree;
+import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
 
 //Version 2:
 //SinglePath也定义为，至少包含一个点。
 class _94Binary_Tree_Maximum_Path_Sum_2 {
-    /**
-    * @param root: The root of binary tree.
-    * @return: An integer.
-    */
+
     private class ResultType {
      int singlePath, maxPath;
      ResultType(int singlePath, int maxPath) {
@@ -15,6 +13,10 @@ class _94Binary_Tree_Maximum_Path_Sum_2 {
      }
     }
 
+    /**
+     * @param root: The root of binary tree.
+     * @return: An integer.
+     */
     public int maxPathSum(TreeNode root) {
      ResultType result = helper(root);
      return result.maxPath;

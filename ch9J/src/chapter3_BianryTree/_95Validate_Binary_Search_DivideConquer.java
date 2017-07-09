@@ -1,5 +1,5 @@
 package chapter3_BianryTree;
-
+import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
 
 //version 2  Divide and Conquer
 public class _95Validate_Binary_Search_DivideConquer {
