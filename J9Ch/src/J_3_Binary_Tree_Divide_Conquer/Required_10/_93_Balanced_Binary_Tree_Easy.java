@@ -1,18 +1,13 @@
 package J_3_Binary_Tree_Divide_Conquer.Required_10;
-import J_3_Binary_Tree_Divide_Conquer.Related_2._155_Minimum_Depth_of_Binary_Tree_Easy;
-
 import java.util.*;
+import lib.TreeNode;
+import lib.AssortedMethods;
+import org.junit.Test;
 /**93. Balanced Binary Tree
  * Easy
  * Created by tianhuizhu on 6/27/17.
  */
 public class _93_Balanced_Binary_Tree_Easy {
-    class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
 
 // Version 1: with ResultType
     /**
@@ -35,54 +30,90 @@ public class _93_Balanced_Binary_Tree_Easy {
         }
     }
 
-    public class Solution1 {
-        /**
-         * @param root: The root of binary tree.
-         * @return: True if this Binary tree is Balanced, or false.
-         */
-        public boolean isBalanced(TreeNode root) {
-            return helper(root).isBalanced;
-        }
 
-        private ResultType helper(TreeNode root) {
-            if (root == null) {
-                return new ResultType(true, 0);
-            }
-
-            ResultType left = helper(root.left);
-            ResultType right = helper(root.right);
-
-            // subtree not balance
-            if (!left.isBalanced || !right.isBalanced) {
-                return new ResultType(false, -1);
-            }
-
-            // root not balance
-            if (Math.abs(left.maxDepth - right.maxDepth) > 1) {
-                return new ResultType(false, -1);
-            }
-
-            return new ResultType(true, Math.max(left.maxDepth, right.maxDepth) + 1);
-        }
+    /**
+     * @param root: The root of binary tree.
+     * @return: True if this Binary tree is Balanced, or false.
+     */
+    public boolean isBalanced_1(TreeNode root) {
+        return helper(root).isBalanced;
     }
 
+    private ResultType helper(TreeNode root) {
+        if (root == null) {
+            return new ResultType(true, 0);
+        }
+
+        ResultType left = helper(root.left);
+        ResultType right = helper(root.right);
+
+        // subtree not balance
+        if (!left.isBalanced || !right.isBalanced) {
+            return new ResultType(false, -1);
+        }
+
+        // root not balance
+        if (Math.abs(left.maxDepth - right.maxDepth) > 1) {
+            return new ResultType(false, -1);
+        }
+
+        return new ResultType(true,
+                Math.max(left.maxDepth, right.maxDepth) + 1);
+    }
+
+
     // Version 2: without ResultType
-    public class Solution2 {
-        public boolean isBalanced(TreeNode root) {
-            return maxDepth(root) != -1;
+    public boolean isBalanced_2(TreeNode root) {
+        return maxDepth(root) != -1;
+    }
+
+    private int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
         }
 
-        private int maxDepth(TreeNode root) {
-            if (root == null) {
-                return 0;
-            }
-
-            int left = maxDepth(root.left);
-            int right = maxDepth(root.right);
-            if (left == -1 || right == -1 || Math.abs(left-right) > 1) {
-                return -1;
-            }
-            return Math.max(left, right) + 1;
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        if (left == -1 || right == -1 || Math.abs(left-right) > 1) {
+            return -1;
         }
+        return Math.max(left, right) + 1;
+    }
+/*
+A)  3            B)    3
+   / \                  \
+  9  20                 20
+    /  \                / \
+   15   7              15  7
+ */
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20}; // A = {3,9,20,#,#,15,7}, B = {3,#,20,15,7}
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isBalanced_2(root));
+//        TreeNode result = findSubtree2(root);
+//        System.out.println("root: ");
+//        result.print();
+    }
+
+    @Test
+    public void test02(){
+        int[] arr = {3}; // A = {3,9,20,#,#,15,7}, B = {3,#,20,15,7}
+        TreeNode root = new TreeNode(3);
+        root.setRightChild(new TreeNode(20));
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
+
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isBalanced_2(root));
+//        TreeNode result = findSubtree2(root);
+//        System.out.println("root: ");
+//        result.print();
     }
 }
