@@ -51,17 +51,25 @@ public class _614_Binary_Tree_Longest_Consecutive_Sequence_II_Medium {
 
         return new ResultType(len, down, up);
     }
+    /*
+    1
+   / \
+  2   0
+ /
+3
+Return 4 // 0-1-2-3
+     */
 
     @Test
     public void test01(){
-        int[] arr = {3,9,20};
+        int[] arr = {1,2,0};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
 
-        TreeNode node20 = root.find(20);
-        node20.setLeftChild(new TreeNode(15));
-        node20.setRightChild(new TreeNode(7));
+        root.left.setLeftChild(new TreeNode(3));
+
         System.out.println("root: ");
         root.print();
+        System.out.println(longestConsecutive2(root));
 
     }
 

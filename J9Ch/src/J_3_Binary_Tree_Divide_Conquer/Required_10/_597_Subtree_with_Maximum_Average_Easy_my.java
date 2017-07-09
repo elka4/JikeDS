@@ -5,7 +5,7 @@ import lib.AssortedMethods;
 import org.junit.Test;
 /**
  * Created by tianhuizhu on 7/8/17.
- * ÇÐ¼ÇÒªÓÃdouble
+ * ?§Þ????double
  */
 public class _597_Subtree_with_Maximum_Average_Easy_my {
 

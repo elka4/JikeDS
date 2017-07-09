@@ -83,4 +83,62 @@ public class _596_Minimum_Subtree_Easy {
         return result;
     }
 
+/*
+Given a binary tree:
+
+     1
+   /   \
+ -5     2
+ / \   /  \
+0   2 -4  -5
+return the node 1.
+ */
+
+    @Test
+    public void test01(){
+        int[] arr = {1,-5,2,0,2,-4,-5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        TreeNode result = findSubtree(root);
+        System.out.println("root: ");
+        result.print();
+
+    }
+    @Test
+    public void test02(){
+        int[] arr = {1,-5,2,3,-2,7,-5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        TreeNode result = findSubtree(root);
+        System.out.println("root: ");
+        result.print();
+
+    }
+
+    @Test
+    public void test03(){
+        int[] arr = {1,-5,2,0,2,-4,-5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        TreeNode result = findSubtree_2(root);
+        System.out.println("root: ");
+        result.print();
+
+    }
+    @Test
+    public void test04(){
+        int[] arr = {1,-5,2,3,-2,7,-5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        TreeNode result = findSubtree_2(root);
+        System.out.println("root: ");
+        result.print();
+
+    }
+
+
 }

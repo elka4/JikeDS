@@ -21,7 +21,8 @@ public class _246_Binary_Tree_Path_Sum_II_Easy {
         return results;
     }
 
-    public void findSum(TreeNode head, int sum, ArrayList<Integer> buffer, int level, List<List<Integer>> results) {
+    public void findSum(TreeNode head, int sum, ArrayList<Integer> buffer,
+                        int level, List<List<Integer>> results) {
         if (head == null) return;
         int tmp = sum;
         buffer.add(head.val);
@@ -38,19 +39,54 @@ public class _246_Binary_Tree_Path_Sum_II_Easy {
         findSum(head.right, sum, buffer, level + 1, results);
         buffer.remove(buffer.size() - 1);
     }
+/*
+    1
+   / \
+  2   3
+ /   /
+4   2
+for target = 6, return
 
+[
+  [2, 4],
+  [1, 3, 2]
+]
+
+ */
     @Test
     public void test01(){
-        int[] arr = {3,9,20};
+        int[] arr = {1,2,3};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
 
-        TreeNode node20 = root.find(20);
-        node20.setLeftChild(new TreeNode(15));
-        node20.setRightChild(new TreeNode(7));
+        root.left.setLeftChild(new TreeNode(4));
+        root.right.setLeftChild(new TreeNode(2));
         System.out.println("root: ");
         root.print();
+        System.out.println(binaryTreePathSum2(root,6));
+    }
+    @Test
+    public void test02(){
+        int[] arr = {1,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+
+        root.left.setLeftChild(new TreeNode(4));
+        root.right.setLeftChild(new TreeNode(2));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePathSum2(root,3));
 
     }
+    @Test
+    public void test03(){
+        int[] arr = {1,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
 
+        root.left.setLeftChild(new TreeNode(4));
+        root.right.setLeftChild(new TreeNode(2));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePathSum2(root,4));
+
+    }
 
 }

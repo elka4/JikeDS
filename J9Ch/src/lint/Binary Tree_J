@@ -82,7 +82,7 @@ by title:
 97 Maximum Depth of Binary Tree
 155 Minimum Depth of Binary Tree
 
-596 Minimum Subtree
+
 11 Search Range in Binary Search Tree
 201 Segment Tree Build
 
@@ -92,5 +92,6 @@ by title:
 
 245 Subtree
 597 Subtree with Maximum Average
+596 Minimum Subtree
 
 95 Validate Binary Search Tree

@@ -1,6 +1,6 @@
 package S_7_Follow_Up.Required_14;
-
-import J_3_Binary_Tree_Divide_Conquer.Required_10.TreeNode;
+import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+import lib.TreeNode;
 
 import java.util.Stack;
 
@@ -10,12 +10,7 @@ import java.util.Stack;
  * Created by tianhuizhu on 6/27/17.
  */
 public class _453_Flatten_Binary_Tree_to_Linked_List_Easy {
-    public class TreeNode {
-        int val;
-        S_7_Follow_Up.Required_14.TreeNode left;
-        S_7_Follow_Up.Required_14.TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
+
     // Version 1: Traverse
     public class Solution1 {
 

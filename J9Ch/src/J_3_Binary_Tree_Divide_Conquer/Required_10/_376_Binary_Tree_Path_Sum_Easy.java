@@ -9,7 +9,7 @@ import org.junit.Test;
  * Created by tianhuizhu on 6/27/17.
  */
 public class _376_Binary_Tree_Path_Sum_Easy {
-    /**
+    /**A valid path is from root node to any of the leaf nodes.
      * @param root the root of binary tree
      * @param target an integer
      * @return all valid paths

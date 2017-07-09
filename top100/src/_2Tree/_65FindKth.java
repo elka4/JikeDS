@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class _65FindKth {
     static class Quicker {
         int select(int[] nums, int k) {
+
             return select(nums, 0, nums.length - 1, k - 1);
         }
 

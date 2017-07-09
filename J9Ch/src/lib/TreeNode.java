@@ -1,10 +1,10 @@
 package lib;
 
-
 public class TreeNode {
     public int val;
     public TreeNode left;
     public TreeNode right;
+    public TreeNode parent;
     public int size;
     public TreeNode(int x) { val = x;  size = 1;}
 

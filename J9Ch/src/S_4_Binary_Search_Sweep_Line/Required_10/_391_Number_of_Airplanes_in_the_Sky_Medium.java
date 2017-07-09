@@ -32,29 +32,27 @@ import java.util.*;
 
 public class _391_Number_of_Airplanes_in_the_Sky_Medium {
 
-    class Solution {
-        /**
-         * @param airplanes: An interval array
-         * @return: Count of airplanes are in the sky.
-         */
-        public int countOfAirplanes(List<Interval> airplanes) {
-            List<Point> list = new ArrayList<>(airplanes.size() * 2);
-            for (Interval i : airplanes) {
-                list.add(new Point(i.start, 1));
-                list.add(new Point(i.end, 0));
-            }
-
-            Collections.sort(list, Point.PointComparator);
-            int count = 0, ans = 0;
-            for (Point p : list) {
-                if (p.flag == 1) count++;
-                else count--;
-                ans = Math.max(ans, count);
-            }
-
-            return ans;
+    /**
+     * @param airplanes: An interval array
+     * @return: Count of airplanes are in the sky.
+     */
+    public int countOfAirplanes(List<Interval> airplanes) {
+        List<Point> list = new ArrayList<>(airplanes.size() * 2);
+        for (Interval i : airplanes) {
+            list.add(new Point(i.start, 1));
+            list.add(new Point(i.end, 0));
         }
 
+        Collections.sort(list, Point.PointComparator);
+        int count = 0, ans = 0;
+        for (Point p : list) {
+            if (p.flag == 1) count++;
+            else count--;
+            ans = Math.max(ans, count);
+        }
+
+        return ans;
     }
+
 }
 

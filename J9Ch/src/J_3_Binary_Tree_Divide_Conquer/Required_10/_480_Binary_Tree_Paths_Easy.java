@@ -64,11 +64,13 @@ public class _480_Binary_Tree_Paths_Easy {
         }
 
         if (root.left != null) {
-            helper(root.left, path + "->" + String.valueOf(root.left.val), result);
+            helper(root.left, path + "->"
+                    + String.valueOf(root.left.val), result);
         }
 
         if (root.right != null) {
-            helper(root.right, path + "->" + String.valueOf(root.right.val), result);
+            helper(root.right, path + "->"
+                    + String.valueOf(root.right.val), result);
         }
     }
 
@@ -84,6 +86,7 @@ public class _480_Binary_Tree_Paths_Easy {
         int[] arr = {1, 2, 3};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         root.left.setRightChild(new TreeNode(5));
+        root.left.setLeftChild(new TreeNode(4));
         System.out.println("root: ");
         root.print();
         System.out.println(binaryTreePaths(root));
