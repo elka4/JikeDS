@@ -1,5 +1,5 @@
 package J_3_Binary_Tree_Divide_Conquer.Optional_11;
-import java.util.*;
+import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
 /**
  68
  Binary Tree Postorder Traversal
@@ -7,13 +7,6 @@ import java.util.*;
  * Created by tianhuizhu on 6/28/17.
  */
 public class _68_Binary_Tree_Postorder_Traversal_Easy {
-    class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
-
     //Recursive
     public ArrayList<Integer> postorderTraversal(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
@@ -61,5 +54,18 @@ public class _68_Binary_Tree_Postorder_Traversal_Easy {
         }
 
         return result;
+    }
+
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+
     }
 }

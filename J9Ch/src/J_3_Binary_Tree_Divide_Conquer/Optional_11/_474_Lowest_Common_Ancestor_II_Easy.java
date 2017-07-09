@@ -1,5 +1,5 @@
 package J_3_Binary_Tree_Divide_Conquer.Optional_11;
-import java.util.*;
+import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
 /**
  * 474
  * Lowest Common Ancestor II
@@ -8,51 +8,57 @@ import java.util.*;
  */
 public class _474_Lowest_Common_Ancestor_II_Easy {
 
-    /**
-     * Definition of ParentTreeNode:
-     *
-     * class ParentTreeNode {
-     *     public ParentTreeNode parent, left, right;
-     * }
-     */
     class ParentTreeNode {
         public ParentTreeNode parent, left, right;
     }
-    public class Solution {
-        /**
-         * @param root: The root of the tree
-         * @param A, B: Two node in the tree
-         * @return: The lowest common ancestor of A and B
-         */
-        public ParentTreeNode lowestCommonAncestorII(ParentTreeNode root,
-                                                     ParentTreeNode A,
-                                                     ParentTreeNode B) {
-            ArrayList<ParentTreeNode> pathA = getPath2Root(A);
-            ArrayList<ParentTreeNode> pathB = getPath2Root(B);
 
-            int indexA = pathA.size() - 1;
-            int indexB = pathB.size() - 1;
+    /**
+     * @param root: The root of the tree
+     * @param A, B: Two node in the tree
+     * @return: The lowest common ancestor of A and B
+     */
+    public ParentTreeNode lowestCommonAncestorII(ParentTreeNode root,
+                                                 ParentTreeNode A,
+                                                 ParentTreeNode B) {
+        ArrayList<ParentTreeNode> pathA = getPath2Root(A);
+        ArrayList<ParentTreeNode> pathB = getPath2Root(B);
 
-            ParentTreeNode lowestAncestor = null;
-            while (indexA >= 0 && indexB >= 0) {
-                if (pathA.get(indexA) != pathB.get(indexB)) {
-                    break;
-                }
-                lowestAncestor = pathA.get(indexA);
-                indexA--;
-                indexB--;
+        int indexA = pathA.size() - 1;
+        int indexB = pathB.size() - 1;
+
+        ParentTreeNode lowestAncestor = null;
+        while (indexA >= 0 && indexB >= 0) {
+            if (pathA.get(indexA) != pathB.get(indexB)) {
+                break;
             }
-
-            return lowestAncestor;
+            lowestAncestor = pathA.get(indexA);
+            indexA--;
+            indexB--;
         }
 
-        private ArrayList<ParentTreeNode> getPath2Root(ParentTreeNode node) {
-            ArrayList<ParentTreeNode> path = new ArrayList<>();
-            while (node != null) {
-                path.add(node);
-                node = node.parent;
-            }
-            return path;
-        }
+        return lowestAncestor;
     }
+
+    private ArrayList<ParentTreeNode> getPath2Root(ParentTreeNode node) {
+        ArrayList<ParentTreeNode> path = new ArrayList<>();
+        while (node != null) {
+            path.add(node);
+            node = node.parent;
+        }
+        return path;
+    }
+
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+
+    }
+
 }

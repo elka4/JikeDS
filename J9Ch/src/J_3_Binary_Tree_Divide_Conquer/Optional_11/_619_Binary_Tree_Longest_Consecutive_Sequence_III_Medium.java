@@ -1,18 +1,13 @@
 package J_3_Binary_Tree_Divide_Conquer.Optional_11;
-import java.util.*;
+import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
 /**
  * 619
  * Binary Tree Longest Consecutive Sequence III
-
-
- *
  * Created by tianhuizhu on 6/28/17.
  */
 public class _619_Binary_Tree_Longest_Consecutive_Sequence_III_Medium {
 
-
     class MultiTreeNode {
-
         int val;
         List<MultiTreeNode> children;
         MultiTreeNode(int x) { val = x; }
@@ -25,7 +20,6 @@ public class _619_Binary_Tree_Longest_Consecutive_Sequence_III_Medium {
             max_up = up;
         }
     }
-
 
     public int longestConsecutive3(MultiTreeNode root) {
         // Write your code here
@@ -49,5 +43,19 @@ public class _619_Binary_Tree_Longest_Consecutive_Sequence_III_Medium {
 
         max_len = Math.max(down + 1 + up, max_len);
         return new ResultType(max_len, down, up);
+    }
+
+
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+
     }
 }

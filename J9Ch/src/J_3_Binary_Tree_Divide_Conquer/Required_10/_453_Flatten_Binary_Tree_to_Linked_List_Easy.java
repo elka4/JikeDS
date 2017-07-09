@@ -1,5 +1,8 @@
 package J_3_Binary_Tree_Divide_Conquer.Required_10;
-import java.util.*;
+import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+import lib.TreeNode;
+import lib.AssortedMethods;
+import org.junit.Test;
 /** 453. Flatten Binary Tree to Linked List
  * Easy
 
@@ -8,106 +11,112 @@ import java.util.*;
 public class _453_Flatten_Binary_Tree_to_Linked_List_Easy {
 
     // Version 1: Traverse
-    public class Solution1 {
-        private TreeNode lastNode = null;
+    private TreeNode lastNode = null;
 
-        public void flatten(TreeNode root) {
-            if (root == null) {
-                return;
-            }
-
-            if (lastNode != null) {
-                lastNode.left = null;
-                lastNode.right = root;
-            }
-
-            lastNode = root;
-            TreeNode right = root.right;
-            flatten(root.left);
-            flatten(right);
+    public void flatten(TreeNode root) {
+        if (root == null) {
+            return;
         }
+
+        if (lastNode != null) {
+            lastNode.left = null;
+            lastNode.right = root;
+        }
+
+        lastNode = root;
+        TreeNode right = root.right;
+        flatten(root.left);
+        flatten(right);
     }
+
 
     // version 2: Divide & Conquer
-    public class Solution2 {
-        /**
-         * @param root: a TreeNode, the root of the binary tree
-         * @return: nothing
-         */
-        public void flatten(TreeNode root) {
-            helper(root);
+    /**
+     * @param root: a TreeNode, the root of the binary tree
+     * @return: nothing
+     */
+    public void flatten_2(TreeNode root) {
+        helper(root);
+    }
+
+    // flatten root and return the last node
+    private TreeNode helper(TreeNode root) {
+        if (root == null) {
+            return null;
         }
 
-        // flatten root and return the last node
-        private TreeNode helper(TreeNode root) {
-            if (root == null) {
-                return null;
+        TreeNode leftLast = helper(root.left);
+        TreeNode rightLast = helper(root.right);
+
+        // connect leftLast to root.right
+        if (leftLast != null) {
+            leftLast.right = root.right;
+            root.right = root.left;
+            root.left = null;
+        }
+
+        if (rightLast != null) {
+            return rightLast;
+        }
+
+        if (leftLast != null) {
+            return leftLast;
+        }
+
+        return root;
+    }
+
+
+    // version 3: Non-Recursion
+    public void flatten_3(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.empty()) {
+            TreeNode node = stack.pop();
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+            if (node.left != null) {
+                stack.push(node.left);
             }
 
-            TreeNode leftLast = helper(root.left);
-            TreeNode rightLast = helper(root.right);
-
-            // connect leftLast to root.right
-            if (leftLast != null) {
-                leftLast.right = root.right;
-                root.right = root.left;
-                root.left = null;
+            // connect
+            node.left = null;
+            if (stack.empty()) {
+                node.right = null;
+            } else {
+                node.right = stack.peek();
             }
-
-            if (rightLast != null) {
-                return rightLast;
-            }
-
-            if (leftLast != null) {
-                return leftLast;
-            }
-
-            return root;
         }
     }
 
-// version 3: Non-Recursion
-    /**
-     * Definition of TreeNode:
-     * public class TreeNode {
-     *     public int val;
-     *     public TreeNode left, right;
-     *     public TreeNode(int val) {
-     *         this.val = val;
-     *         this.left = this.right = null;
-     *     }
-     * }
+    /*
+              1
+               \
+     1          2
+    / \          \
+   2   5    =>    3
+  / \   \          \
+ 3   4   6          4
+                     \
+                      5
+                       \
+                        6
      */
-    public class Solution3 {
-        /**
-         * @param root: a TreeNode, the root of the binary tree
-         * @return: nothing
-         */
-        public void flatten(TreeNode root) {
-            if (root == null) {
-                return;
-            }
+    @Test
+    public void test01() {
+        int[] arr = {1, 2, 5,3,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setRightChild(new TreeNode(6));
+        System.out.println("root: ");
+        root.print();
+        flatten(root);
+        root.print();
 
-            Stack<TreeNode> stack = new Stack<>();
-            stack.push(root);
-
-            while (!stack.empty()) {
-                TreeNode node = stack.pop();
-                if (node.right != null) {
-                    stack.push(node.right);
-                }
-                if (node.left != null) {
-                    stack.push(node.left);
-                }
-
-                // connect
-                node.left = null;
-                if (stack.empty()) {
-                    node.right = null;
-                } else {
-                    node.right = stack.peek();
-                }
-            }
-        }
     }
 }

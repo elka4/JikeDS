@@ -1,5 +1,5 @@
 package J_3_Binary_Tree_Divide_Conquer.Required_10;
-import java.util.*;
+import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
 import lib.TreeNode;
 import lib.AssortedMethods;
 import org.junit.Test;
@@ -47,6 +47,8 @@ public class _93_Balanced_Binary_Tree_Easy {
         ResultType left = helper(root.left);
         ResultType right = helper(root.right);
 
+        root.print();// I added
+
         // subtree not balance
         if (!left.isBalanced || !right.isBalanced) {
             return new ResultType(false, -1);
@@ -88,32 +90,24 @@ A)  3            B)    3
  */
     @Test
     public void test01(){
-        int[] arr = {3,9,20}; // A = {3,9,20,#,#,15,7}, B = {3,#,20,15,7}
+        int[] arr = {3,9,20};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         TreeNode node20 = root.find(20);
         node20.setLeftChild(new TreeNode(15));
         node20.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
-        System.out.println(isBalanced_2(root));
-//        TreeNode result = findSubtree2(root);
-//        System.out.println("root: ");
-//        result.print();
+        System.out.println(isBalanced_1(root));
     }
 
     @Test
     public void test02(){
-        int[] arr = {3}; // A = {3,9,20,#,#,15,7}, B = {3,#,20,15,7}
         TreeNode root = new TreeNode(3);
         root.setRightChild(new TreeNode(20));
         root.right.setLeftChild(new TreeNode(15));
         root.right.setRightChild(new TreeNode(7));
-
         System.out.println("root: ");
         root.print();
-        System.out.println(isBalanced_2(root));
-//        TreeNode result = findSubtree2(root);
-//        System.out.println("root: ");
-//        result.print();
+        System.out.println(isBalanced_1(root));
     }
 }
