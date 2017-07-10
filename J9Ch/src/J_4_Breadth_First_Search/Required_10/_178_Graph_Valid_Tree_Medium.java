@@ -71,6 +71,12 @@ Given n = 5 and edges = [[0, 1], [1, 2], [2, 3], [1, 3], [1, 4]], return false.
         validTree(5,edges);
         System.out.println(validTree(5,edges));
     }
+    @Test
+    public void test02(){
+        int[][] edges = {{0, 1}, {1, 2}, {2, 3}, {1, 3}, {1,4}};
+        validTree(5,edges);
+        System.out.println(validTree(5,edges));
+    }
 
 
 

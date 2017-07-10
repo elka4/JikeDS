@@ -1,5 +1,8 @@
 package J_4_Breadth_First_Search.Related_7;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+import java.util.*;
+
+import J_4_Breadth_First_Search.Optional_6._531_Six_Degrees_Medium;
+import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
 /**431 Connected Component in Undirected Graph
 
  * Created by tianhuizhu on 6/28/17.
@@ -12,52 +15,84 @@ public class _431_Connected_Component_in_Undirected_Graph_Medium {
      UndirectedGraphNode(int x) { label = x; neighbors = new ArrayList<UndirectedGraphNode>(); }
   }
 
+    /**
+     * @param nodes a array of Undirected graph node
+     * @return a connected set of a Undirected graph
+     */
+    public List<List<Integer>> connectedSet(ArrayList<UndirectedGraphNode> nodes) {
+        // Write your code here
 
-    public class Solution1 {
-        /**
-         * @param nodes a array of Undirected graph node
-         * @return a connected set of a Undirected graph
-         */
-        public List<List<Integer>> connectedSet(ArrayList<UndirectedGraphNode> nodes) {
-            // Write your code here
+        int m = nodes.size();
+        Map<UndirectedGraphNode, Boolean> visited = new HashMap<>();
 
-            int m = nodes.size();
-            Map<UndirectedGraphNode, Boolean> visited = new HashMap<>();
-
-            for (UndirectedGraphNode node : nodes){
-                visited.put(node, false);
-            }
-
-            List<List<Integer>> result = new ArrayList<>();
-
-            for (UndirectedGraphNode node : nodes){
-                if (visited.get(node) == false){
-                    bfs(node, visited, result);
-                }
-            }
-
-            return result;
+        for (UndirectedGraphNode node : nodes){
+            visited.put(node, false);
         }
 
-        public void bfs(UndirectedGraphNode node, Map<UndirectedGraphNode, Boolean> visited, List<List<Integer>> result){
-            List<Integer>row = new ArrayList<>();
-            Queue<UndirectedGraphNode> queue = new LinkedList<>();
-            visited.put(node, true);
-            queue.offer(node);
-            while (!queue.isEmpty()){
-                UndirectedGraphNode u = queue.poll();
-                row.add(u.label);
-                for (UndirectedGraphNode v : u.neighbors){
-                    if (visited.get(v) == false){
-                        visited.put(v, true);
-                        queue.offer(v);
-                    }
+        List<List<Integer>> result = new ArrayList<>();
+
+        for (UndirectedGraphNode node : nodes){
+            if (visited.get(node) == false){
+                bfs(node, visited, result);
+            }
+        }
+
+        return result;
+    }
+
+    public void bfs(UndirectedGraphNode node, Map<UndirectedGraphNode, Boolean> visited,
+                    List<List<Integer>> result){
+        List<Integer>row = new ArrayList<>();
+        Queue<UndirectedGraphNode> queue = new LinkedList<>();
+        visited.put(node, true);
+        queue.offer(node);
+        while (!queue.isEmpty()){
+            UndirectedGraphNode u = queue.poll();
+            row.add(u.label);
+            for (UndirectedGraphNode v : u.neighbors){
+                if (visited.get(v) == false){
+                    visited.put(v, true);
+                    queue.offer(v);
                 }
             }
-            Collections.sort(row);
-            result.add(row);
-
         }
+        Collections.sort(row);
+        result.add(row);
+
+    }
+
+/*
+A------B  C
+ \     |  | 
+  \    |  |
+   \   |  |
+    \  |  |
+      D   E
+Return {A,B,D}, {C,E}. Since there are two connected component which is {A,B,D}, {C,E}
+ */
+
+    @Test
+    public void test01(){
+        ArrayList<UndirectedGraphNode> graph = new ArrayList<>();
+        UndirectedGraphNode node1 = new UndirectedGraphNode(1);
+        UndirectedGraphNode node2 = new UndirectedGraphNode(2);
+        UndirectedGraphNode node3 = new UndirectedGraphNode(3);
+        UndirectedGraphNode node4 = new UndirectedGraphNode(4);
+        UndirectedGraphNode node5 = new UndirectedGraphNode(5);
+        graph.add(node1);
+        graph.add(node2);
+        graph.add(node3);
+        graph.add(node4);
+        graph.add(node5);
+
+        node1.neighbors.add(node2); node1.neighbors.add(node4);
+        node2.neighbors.add(node1); node2.neighbors.add(node4);
+        node3.neighbors.add(node5);
+        node4.neighbors.add(node1); node4.neighbors.add(node2);
+        node5.neighbors.add(node3);
+
+        System.out.println(connectedSet(graph));
+
     }
 
     //------------------------我是分割线--------------------------------------

@@ -1,5 +1,6 @@
-package J_4_Breadth_First_Search.other;
+package J_4_Breadth_First_Search.other.aaa;
 
+import J_4_Breadth_First_Search.other.aaa.TreeNode;
 import org.junit.Test;
 
 import java.util.ArrayList;

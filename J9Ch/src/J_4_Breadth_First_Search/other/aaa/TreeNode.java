@@ -1,5 +1,4 @@
-package J_4_Breadth_First_Search.other;
-import org.junit.Test;
+package J_4_Breadth_First_Search.other.aaa;
 
 import java.util.*;
 /**
