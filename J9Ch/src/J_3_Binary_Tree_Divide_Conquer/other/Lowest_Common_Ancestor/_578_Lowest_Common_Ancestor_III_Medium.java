@@ -6,9 +6,11 @@ import org.junit.Test;
 
 /** 578. Lowest Common Ancestor III
  * Medium
-
  * Created by tianhuizhu on 6/27/17.
  */
+
+//node A or node B may not exist in tree.
+//Return null if LCA does not exist.
 public class _578_Lowest_Common_Ancestor_III_Medium {
     class ResultType {
         public boolean a_exist, b_exist;
@@ -88,6 +90,17 @@ LCA(6, 7) = 7
         lowestCommonAncestor3(root, node3,node5).print();
         lowestCommonAncestor3(root, node5,node6).print();
         lowestCommonAncestor3(root, node6,node7).print();
+
+    }
+    @Test
+    public void test02(){
+        int[] arr = {4,3,7};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setLeftChild(new TreeNode(5));
+        root.right.setRightChild(new TreeNode(6));
+        System.out.println("root: ");
+        root.print();
+        lowestCommonAncestor3(root, new TreeNode(4), new TreeNode(7)).print();
 
     }
 }

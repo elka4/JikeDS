@@ -12,16 +12,12 @@ import java.util.List;
 /**
  472
  Binary Tree Path Sum III
-
  * Created by tianhuizhu on 6/28/17.
  */
+
+//  any to any
 public class _472_Binary_Tree_Path_Sum_III_Hard {
 
-    /**
-     * @param root the root of binary tree
-     * @param target an integer
-     * @return all valid paths
-     */
     public List<List<Integer>> binaryTreePathSum3( TreeNode root, int target) {
         // Write your code here
         List<List<Integer>> results = new ArrayList<>();

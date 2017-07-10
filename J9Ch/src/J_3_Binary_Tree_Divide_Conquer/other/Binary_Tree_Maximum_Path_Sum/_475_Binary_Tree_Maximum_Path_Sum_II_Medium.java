@@ -10,6 +10,7 @@ import org.junit.Test;
 
  * Created by tianhuizhu on 6/28/17.
  */
+// root to any
 public class _475_Binary_Tree_Maximum_Path_Sum_II_Medium {
 
     /**
@@ -26,17 +27,29 @@ public class _475_Binary_Tree_Maximum_Path_Sum_II_Medium {
         return root.val + Math.max(0, Math.max(left, right));
     }
 
+/*
+  1
+ / \
+2   3
+return 6.
+ */
+
     @Test
     public void test01(){
-        int[] arr = {3,9,20};
+        int[] arr = {1,2,3};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
-
-        TreeNode node20 = root.find(20);
-        node20.setLeftChild(new TreeNode(15));
-        node20.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
+        System.out.println(maxPathSum2(root));
+    }
 
+    @Test
+    public void test02(){
+        int[] arr = {1,-5,11,1,2,4,-2};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum2(root));
     }
 
 }

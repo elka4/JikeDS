@@ -7,10 +7,10 @@ import org.junit.Test;
 /**
  * 614
  * Binary Tree Longest Consecutive Sequence II
-
-
  * Created by tianhuizhu on 6/28/17.
  */
+
+// from any to any
 public class _614_Binary_Tree_Longest_Consecutive_Sequence_II_Medium {
     class ResultType {
         public int max_length, max_down, max_up;

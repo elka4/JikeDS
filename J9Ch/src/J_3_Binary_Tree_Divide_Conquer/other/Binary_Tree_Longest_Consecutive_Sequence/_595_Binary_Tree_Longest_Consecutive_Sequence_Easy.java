@@ -4,9 +4,10 @@ import org.junit.Test;
 
 /** 595. Binary Tree Longest Consecutive Sequence
  * Easy
-
  * Created by tianhuizhu on 6/27/17.
  */
+
+// from root to leaf
 public class _595_Binary_Tree_Longest_Consecutive_Sequence_Easy {
 
     // version 1: Traverse + Divide Conquer

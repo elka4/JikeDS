@@ -9,6 +9,8 @@ import org.junit.Test;
  Lowest Common Ancestor
  * Created by tianhuizhu on 6/28/17.
  */
+
+//Assume two nodes are exist in tree.
 public class _88_Lowest_Common_Ancestor_Medium {
     //Version : Divide & Conquer
 
@@ -17,7 +19,8 @@ public class _88_Lowest_Common_Ancestor_Medium {
     // 如果只碰到A，就返回A
     // 如果只碰到B，就返回B
     // 如果都没有，就返回null
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode node1, TreeNode node2) {
+    public TreeNode lowestCommonAncestor(TreeNode root,
+                         TreeNode node1, TreeNode node2) {
         if (root == null || root == node1 || root == node2) {
             return root;
         }
@@ -38,18 +41,32 @@ public class _88_Lowest_Common_Ancestor_Medium {
         }
         return null;
     }
+/*
+  4
+ / \
+3   7
+   / \
+  5   6
+LCA(3, 5) = 4
 
+LCA(5, 6) = 7
+
+LCA(6, 7) = 7
+ */
     @Test
     public void test01(){
-        int[] arr = {3,9,20};
+        int[] arr = {4,3,7};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
 
-        TreeNode node20 = root.find(20);
-        node20.setLeftChild(new TreeNode(15));
-        node20.setRightChild(new TreeNode(7));
+        root.right.setLeftChild(new TreeNode(5));
+        root.right.setRightChild(new TreeNode(6));
+
         System.out.println("root: ");
         root.print();
+        lowestCommonAncestor(root, root.right.left, root.right.right).print();
 
     }
+
+
 
 }

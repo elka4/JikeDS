@@ -8,10 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- 246
- Binary Tree Path Sum II
+ 246  Binary Tree Path Sum II
  * Created by tianhuizhu on 6/28/17.
  */
+
+// top to down
 public class _246_Binary_Tree_Path_Sum_II_Easy {
     /**
      * @param root the root of binary tree

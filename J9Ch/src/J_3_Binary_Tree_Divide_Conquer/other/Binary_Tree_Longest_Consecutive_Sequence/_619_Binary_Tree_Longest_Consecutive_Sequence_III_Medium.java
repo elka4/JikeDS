@@ -11,6 +11,7 @@ import java.util.List;
  * Binary Tree Longest Consecutive Sequence III
  * Created by tianhuizhu on 6/28/17.
  */
+// k-ary tree, any to any
 public class _619_Binary_Tree_Longest_Consecutive_Sequence_III_Medium {
 
     class MultiTreeNode {
