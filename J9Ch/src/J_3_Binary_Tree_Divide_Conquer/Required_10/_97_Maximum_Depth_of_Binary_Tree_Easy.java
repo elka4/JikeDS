@@ -44,19 +44,23 @@ public class _97_Maximum_Depth_of_Binary_Tree_Easy {
     }
 
     /*
-    1
-    / \
-   2   4
-  / \
- 2   3
+  1
+ / \
+2   3
+   / \
+  4   5
+The maximum depth is 3.
      */
 
     @Test
     public void test01() {
-        int[] arr = {1, 2, 4,2,3};
+        int[] arr = {1, 2, 3};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setLeftChild(new TreeNode(4));
+        root.right.setRightChild(new TreeNode(5));
         System.out.println("root: ");
         root.print();
+        System.out.println(maxDepth(root));
         System.out.println(maxDepth_2(root));
     }
 

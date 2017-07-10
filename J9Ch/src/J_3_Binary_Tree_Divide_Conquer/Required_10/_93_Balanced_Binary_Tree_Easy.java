@@ -10,17 +10,6 @@ import org.junit.Test;
 public class _93_Balanced_Binary_Tree_Easy {
 
 // Version 1: with ResultType
-    /**
-     * Definition of TreeNode:
-     * public class TreeNode {
-     *     public int val;
-     *     public TreeNode left, right;
-     *     public TreeNode(int val) {
-     *         this.val = val;
-     *         this.left = this.right = null;
-     *     }
-     * }
-     */
     class ResultType {
         public boolean isBalanced;
         public int maxDepth;
@@ -29,13 +18,12 @@ public class _93_Balanced_Binary_Tree_Easy {
             this.maxDepth = maxDepth;
         }
     }
-
-
     /**
      * @param root: The root of binary tree.
      * @return: True if this Binary tree is Balanced, or false.
      */
     public boolean isBalanced_1(TreeNode root) {
+
         return helper(root).isBalanced;
     }
 
@@ -66,6 +54,7 @@ public class _93_Balanced_Binary_Tree_Easy {
 
     // Version 2: without ResultType
     public boolean isBalanced_2(TreeNode root) {
+
         return maxDepth(root) != -1;
     }
 

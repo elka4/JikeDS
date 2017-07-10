@@ -1,5 +1,5 @@
 package J_5_Depth_First_Search.Optional_4;
-import java.util.*;
+import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
 /**52 Next Permutation
  * Created by tianhuizhu on 6/28/17.
  */
