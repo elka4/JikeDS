@@ -16,7 +16,6 @@ public class _433_Number_of_Islands_Easy {
         }
     }
 
-    public class Solution1 {
         /**
          * @param grid a boolean 2D matrix
          * @return an integer
@@ -76,7 +75,10 @@ public class _433_Number_of_Islands_Easy {
 
             return coor.x >= 0 && coor.x < n && coor.y >= 0 && coor.y < m;
         }
-    }
+
+
+
+
 
     // version 2: Union Find
     class UnionFind {

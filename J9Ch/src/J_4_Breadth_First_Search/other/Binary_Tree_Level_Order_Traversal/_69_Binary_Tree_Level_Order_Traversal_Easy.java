@@ -1,9 +1,19 @@
-package J_4_Breadth_First_Search.Required_10;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+package J_4_Breadth_First_Search.other.Binary_Tree_Level_Order_Traversal;
+
+import lib.AssortedMethods;
+import lib.TreeNode;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 /** 69. Binary Tree Level Order Traversal
  * Easy
  * Created by tianhuizhu on 6/27/17.
  */
+
+// top to bottom
 public class _69_Binary_Tree_Level_Order_Traversal_Easy {
 
     // version 1: BFS

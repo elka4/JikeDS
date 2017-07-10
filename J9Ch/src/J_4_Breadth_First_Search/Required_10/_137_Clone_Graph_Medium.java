@@ -1,5 +1,8 @@
 package J_4_Breadth_First_Search.Required_10;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+import java.util.*;
+
+import J_4_Breadth_First_Search.other.CloneGraph;
+import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
 /** 137. Clone Graph
  * Medium
 
@@ -9,7 +12,9 @@ public class _137_Clone_Graph_Medium {
     class UndirectedGraphNode {
         int label;
         ArrayList<UndirectedGraphNode> neighbors;
-        UndirectedGraphNode(int x) { label = x; neighbors = new ArrayList<UndirectedGraphNode>(); }
+        UndirectedGraphNode(int x) {
+            label = x; neighbors = new ArrayList<UndirectedGraphNode>();
+        }
     }
 
 
@@ -22,55 +27,101 @@ public class _137_Clone_Graph_Medium {
      *     UndirectedGraphNode(int x) { label = x; neighbors = new ArrayList<UndirectedGraphNode>(); }
      * };
      */
-    public class Solution1 {
-        /**
-         * @param node: A undirected graph node
-         * @return: A undirected graph node
-         */
-        public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-            if (node == null) {
-                return node;
-            }
 
-            // use bfs algorithm to traverse the graph and get all nodes.
-            ArrayList<UndirectedGraphNode> nodes = getNodes(node);
-
-            // copy nodes, store the old->new mapping information in a hash map
-            HashMap<UndirectedGraphNode, UndirectedGraphNode> mapping = new HashMap<>();
-            for (UndirectedGraphNode n : nodes) {
-                mapping.put(n, new UndirectedGraphNode(n.label));
-            }
-
-            // copy neighbors(edges)
-            for (UndirectedGraphNode n : nodes) {
-                UndirectedGraphNode newNode = mapping.get(n);
-                for (UndirectedGraphNode neighbor : n.neighbors) {
-                    UndirectedGraphNode newNeighbor = mapping.get(neighbor);
-                    newNode.neighbors.add(newNeighbor);
-                }
-            }
-
-            return mapping.get(node);
+    /**
+     * @param node: A undirected graph node
+     * @return: A undirected graph node
+     */
+    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+        if (node == null) {
+            return node;
         }
 
-        private ArrayList<UndirectedGraphNode> getNodes(UndirectedGraphNode node) {
-            Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
-            HashSet<UndirectedGraphNode> set = new HashSet<>();
+        // use bfs algorithm to traverse the graph and get all nodes.
+        ArrayList<UndirectedGraphNode> nodes = getNodes(node);
 
-            queue.offer(node);
-            set.add(node);
-            while (!queue.isEmpty()) {
-                UndirectedGraphNode head = queue.poll();
-                for (UndirectedGraphNode neighbor : head.neighbors) {
-                    if(!set.contains(neighbor)){
-                        set.add(neighbor);
-                        queue.offer(neighbor);
-                    }
+        // copy nodes, store the old->new mapping information in a hash map
+        HashMap<UndirectedGraphNode, UndirectedGraphNode> mapping = new HashMap<>();
+        for (UndirectedGraphNode n : nodes) {
+            mapping.put(n, new UndirectedGraphNode(n.label));
+        }
+
+        // copy neighbors(edges)
+        for (UndirectedGraphNode n : nodes) {
+            UndirectedGraphNode newNode = mapping.get(n);
+            for (UndirectedGraphNode neighbor : n.neighbors) {
+                UndirectedGraphNode newNeighbor = mapping.get(neighbor);
+                newNode.neighbors.add(newNeighbor);
+            }
+        }
+
+        return mapping.get(node);
+    }
+
+    private ArrayList<UndirectedGraphNode> getNodes(UndirectedGraphNode node) {
+        Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+        HashSet<UndirectedGraphNode> set = new HashSet<>();
+
+        queue.offer(node);
+        set.add(node);
+        while (!queue.isEmpty()) {
+            UndirectedGraphNode head = queue.poll();
+            for (UndirectedGraphNode neighbor : head.neighbors) {
+                if(!set.contains(neighbor)){
+                    set.add(neighbor);
+                    queue.offer(neighbor);
                 }
             }
-
-            return new ArrayList<UndirectedGraphNode>(set);
         }
+
+        return new ArrayList<UndirectedGraphNode>(set);
+    }
+
+    public  void print(UndirectedGraphNode node) {
+        if (null == node) return;
+        List<UndirectedGraphNode> nodes = new ArrayList<UndirectedGraphNode>();
+        int index = 0;
+        if (null != node)nodes.add(node);
+        while (index != nodes.size()) {
+            UndirectedGraphNode n = nodes.get(index);
+            System.out.print(n.label + "(");
+            for (UndirectedGraphNode neighbor : n.neighbors) {
+                if (!(nodes.contains(neighbor))) {
+                    nodes.add(neighbor);
+                }
+                System.out.print(neighbor.label + ",");
+            }
+            System.out.println(")");
+            index = index + 1;
+        }
+    }
+/*
+  1
+  / \
+ /   \
+0 --- 2
+     / \
+     \_/
+ */
+    @Test
+    public void test01(){
+       UndirectedGraphNode node0 = new UndirectedGraphNode(0);
+       UndirectedGraphNode node1 = new UndirectedGraphNode(1);
+       UndirectedGraphNode node2 = new UndirectedGraphNode(2);
+
+
+        node0.neighbors.add(node1);
+        node0.neighbors.add(node2);
+        node1.neighbors.add(node0);
+        node1.neighbors.add(node2);
+        node2.neighbors.add(node0);
+        node2.neighbors.add(node1);
+        node2.neighbors.add(node2);
+
+
+        print(node0);
+        UndirectedGraphNode r = cloneGraph(node0);
+        print(r);
     }
 
 
