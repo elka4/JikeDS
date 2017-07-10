@@ -1,9 +1,11 @@
-package J_5_Depth_First_Search.Related_7;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
-/** 190 Next Permutation II
- * Created by tianhuizhu on 6/28/17.
+package J_5_Depth_First_Search.Optional_4;
+
+import org.junit.Test;
+
+/**
+ * Created by tianhuizhu on 7/10/17.
  */
-public class _190_Next_Permutation_II_Medium {
+public class _109_Next_Permutation_II {
     /**
      * @param num: an array of integers
      * @return: return nothing (void), do not return anything, modify num in-place instead
@@ -48,13 +50,15 @@ public class _190_Next_Permutation_II_Medium {
         // reverse the last part
         reverse(num, index + 1, num.length - 1);
     }
-/*
-1,2,3 → 1,3,2
+
+    /*
+    1,2,3 → 1,3,2
 
 3,2,1 → 1,2,3
 
 1,1,5 → 1,5,1
- */
+     */
+
     @Test
     public void test01(){
         int[] nums = {1,2,3};
@@ -65,6 +69,25 @@ public class _190_Next_Permutation_II_Medium {
         }
     }
 
+    @Test
+    public void test02(){
+        int[] nums = {3,2,1};
+        nextPermutation(nums);
+        for (int i : nums
+                ) {
+            System.out.print(i + " ");
+        }
+    }
+
+    @Test
+    public void test03(){
+        int[] nums = {1,1,5};
+        nextPermutation(nums);
+        for (int i : nums
+                ) {
+            System.out.print(i + " ");
+        }
+    }
 
 
 }

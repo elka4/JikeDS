@@ -1,31 +1,34 @@
-package J_5_Depth_First_Search.Related_7;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
-/** 108 Palindrome Partitioning II
- * Created by tianhuizhu on 6/28/17.
- */
-public class _108_Palindrome_Partitioning_II_Medium {
+package J_5_Depth_First_Search.Required_7;
 
-    // version 1
-// f[i] 表示前i个字母，最少可以被分割为多少个回文串
-// 最后return f[n] - 1
+import org.junit.Test;
+
+/**
+ * Created by tianhuizhu on 7/10/17.
+ */
+public class _108_Palindrome_Partitioning_II {
+
+        // version 1
+    // f[i] 表示前i个字母，最少可以被分割为多少个回文串
+    // 最后return f[n] - 1
+    //
     private boolean[][] getIsPalindrome(String s) {
         boolean[][] isPalindrome = new boolean[s.length()][s.length()];
 
-        for (int i = 0; i < s.length(); i++) {
+                for (int i = 0; i < s.length(); i++) {
             isPalindrome[i][i] = true;
         }
-        for (int i = 0; i < s.length() - 1; i++) {
+                for (int i = 0; i < s.length() - 1; i++) {
             isPalindrome[i][i + 1] = (s.charAt(i) == s.charAt(i + 1));
         }
 
-        for (int length = 2; length < s.length(); length++) {
+                for (int length = 2; length < s.length(); length++) {
             for (int start = 0; start + length < s.length(); start++) {
                 isPalindrome[start][start + length]
                         = isPalindrome[start + 1][start + length - 1] && s.charAt(start) == s.charAt(start + length);
             }
         }
 
-        return isPalindrome;
+                return isPalindrome;
     }
 
     public int minCut(String s) {
@@ -52,12 +55,12 @@ public class _108_Palindrome_Partitioning_II_Medium {
 
         return f[s.length()] - 1;
     }
-
 /*
 Given s = "aab",
 
 Return 1 since the palindrome partitioning ["aa", "b"] could be produced using 1 cut.
  */
+
     @Test
     public void test01(){
         System.out.println(minCut("aab"));

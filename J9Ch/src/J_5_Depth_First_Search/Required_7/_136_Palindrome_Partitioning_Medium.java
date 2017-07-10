@@ -8,52 +8,65 @@ import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.jun
 public class _136_Palindrome_Partitioning_Medium {
 
     // version 1: shorter but slower
-    public class Solution1 {
-        /**
-         * @param s: A string
-         * @return: A list of lists of string
-         */
-        public List<List<String>> partition(String s) {
-            List<List<String>> results = new ArrayList<>();
-            if (s == null || s.length() == 0) {
-                return results;
-            }
-
-            List<String> partition = new ArrayList<String>();
-            helper(s, 0, partition, results);
-
+    /**
+     * @param s: A string
+     * @return: A list of lists of string
+     */
+    public List<List<String>> partition(String s) {
+        List<List<String>> results = new ArrayList<>();
+        if (s == null || s.length() == 0) {
             return results;
         }
 
-        private void helper(String s,
-                            int startIndex,
-                            List<String> partition,
-                            List<List<String>> results) {
-            if (startIndex == s.length()) {
-                results.add(new ArrayList<String>(partition));
-                return;
-            }
+        List<String> partition = new ArrayList<String>();
+        helper(s, 0, partition, results);
 
-            for (int i = startIndex; i < s.length(); i++) {
-                String subString = s.substring(startIndex, i + 1);
-                if (!isPalindrome(subString)) {
-                    continue;
-                }
-                partition.add(subString);
-                helper(s, i + 1, partition, results);
-                partition.remove(partition.size() - 1);
-            }
+        return results;
+    }
+
+    private void helper(String s,
+                        int startIndex,
+                        List<String> partition,
+                        List<List<String>> results) {
+        if (startIndex == s.length()) {
+            results.add(new ArrayList<String>(partition));
+            return;
         }
 
-        private boolean isPalindrome(String s) {
-            for (int i = 0, j = s.length() - 1; i < j; i++, j--) {
-                if (s.charAt(i) != s.charAt(j)) {
-                    return false;
-                }
+        for (int i = startIndex; i < s.length(); i++) {
+            String subString = s.substring(startIndex, i + 1);
+            if (!isPalindrome(subString)) {
+                continue;
             }
-            return true;
+            partition.add(subString);
+            helper(s, i + 1, partition, results);
+            partition.remove(partition.size() - 1);
         }
     }
+
+    private boolean isPalindrome(String s) {
+        for (int i = 0, j = s.length() - 1; i < j; i++, j--) {
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
+            }
+        }
+        return true;
+    }
+/*
+Given s = "aab", return:
+
+[
+  ["aa","b"],
+  ["a","a","b"]
+]
+ */
+    @Test
+    public void test01(){
+        System.out.println(partition("aab"));
+    }
+
+
+
 
     // version 2: longer but faster
     public class Solution2 {
