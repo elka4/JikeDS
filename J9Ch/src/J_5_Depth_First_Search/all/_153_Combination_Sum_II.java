@@ -8,9 +8,23 @@ import java.util.List;
 
 /** 153. Combination Sum II
  * Medium
-
+ C中每个数字在每个组合中只能使用一次。
  * Created by tianhuizhu on 6/27/17.
  */
+
+/*
+Given a collection of candidate numbers (C) and a target number (T),
+find all unique combinations in C where the candidate numbers sums to T.
+
+Each number in C may only be used once in the combination.
+
+All numbers (including target) will be positive integers.
+Elements in a combination (a1, a2, … , ak) must be in non-descending order.
+(ie, a1 ≤ a2 ≤ … ≤ ak).
+The solution set must not contain duplicate combinations.
+ */
+
+//
 public class _153_Combination_Sum_II {
     /**
      * @param candidates: Given the candidate numbers

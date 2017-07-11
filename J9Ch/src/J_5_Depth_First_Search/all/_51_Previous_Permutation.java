@@ -6,6 +6,11 @@ import java.util.ArrayList;
 
 /** 51 Previous Permutation
  * Created by tianhuizhu on 6/28/17.
+ * The list may contains duplicate integers.
+ Given a list of integers, which denote a permutation.
+ Find the previous permutation in ascending order.
+
+ Permutation
  */
 public class _51_Previous_Permutation {
     /**
@@ -57,6 +62,28 @@ For [1,2,3,4], the previous permutation is [4,3,2,1]
 
 
         System.out.println(previousPermuation(input));
+    }
+
+    @Test
+    public void test02(){
+        int[] nums = {1,2,3};
+        ArrayList<Integer> input = new ArrayList<>();
+        input.add(3);
+        input.add(1);
+        input.add(2);
+        System.out.println(input);
+        System.out.println(previousPermuation(input));
+        //[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+        //[1, 2, 3] [3, 2, 1]
+        //[1, 3, 2] [1, 2, 3]
+        //[2, 1, 3] [1, 3, 2]
+        //[3, 1, 2] [2, 3, 1]
+        //
+        //
+
+
+
+
     }
 
 }

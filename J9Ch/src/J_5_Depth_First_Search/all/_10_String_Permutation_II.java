@@ -7,13 +7,15 @@ import java.util.Arrays;
 import java.util.List;
 
 /** 10 String Permutation II
- * Created by tianhuizhu on 6/28/17.
+ * Permutation String Recursion
+ * Given a string, find all permutations of it without duplicates.
  */
 public class _10_String_Permutation_II {
     /**
      * @param str a string
      * @return all permutations
      */
+    //iterative
     public List<String> stringPermutation2(String str) {
         // Write your code here
         List<String> result = new ArrayList<String>();
@@ -57,15 +59,75 @@ public class _10_String_Permutation_II {
             num[j] = temp;
         }
     }
-/*
-Given "abb", return ["abb", "bab", "bba"].
 
-Given "aabb", return ["aabb", "abab", "baba", "bbaa", "abba", "baab"].
- */
+    public String reverse2(char[] num, int start, int end) {
+        for (int i = start, j = end; i < j; i++, j--) {
+            char temp = num[i];
+            num[i] = num[j];
+            num[j] = temp;
+        }
+        return String.valueOf(num);
+    }
+
+    /*
+    Given "abb", return ["abb", "bab", "bba"].
+
+    Given "aabb", return ["aabb", "abab", "baba", "bbaa", "abba", "baab"].
+     */
     @Test
-    public void test(){
+    public void test01(){
         System.out.println(stringPermutation2("abb"));
         System.out.println(stringPermutation2("aabb"));
+        System.out.println(stringPermutation2("ab"));
+        System.out.println(stringPermutation2("abc"));
+    }
+
+    @Test
+    public void test02(){
+        char[] num = "abcdef".toCharArray();//adcbef
+        System.out.println(reverse2(num, 1,3));
+    }
+
+/////////////////////////////////////////////////////////////////////////////
+    //recursive
+    public List<String> stringPermutation2_2(String str) {
+        // Write your code here
+        char[] string = str.toCharArray();
+        boolean[] isUsed = new boolean[string.length];
+        Arrays.sort(string);
+        List<String> result = new ArrayList<String>();
+        String temp = new String();
+        stringPermutation2Helper(result, temp, string, isUsed);
+        return result;
+    }
+
+    private void stringPermutation2Helper(List<String> result,
+                                          String temp,
+                                          char[] string,
+                                          boolean[] isUsed) {
+        if (temp.length() == string.length) {
+            result.add(temp);
+            return;
+        }
+        for (int i = 0; i < string.length; i++) {
+            if (isUsed[i] == true || i != 0 &&
+                    isUsed[i - 1] == false &&
+                    string[i] == string[i - 1]) {
+                continue;
+            }
+            isUsed[i] = true;
+            stringPermutation2Helper(result, temp + string[i], string, isUsed);
+            // backtracking
+            isUsed[i] = false;
+        }
+    }
+
+    @Test
+    public void test03(){
+        System.out.println(stringPermutation2("abb"));
+        System.out.println(stringPermutation2("aabb"));
+        System.out.println(stringPermutation2("ab"));
+        System.out.println(stringPermutation2("abc"));
     }
 
 }

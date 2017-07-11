@@ -4,6 +4,7 @@ import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.jun
  * Created by tianhuizhu on 6/28/17.
  */
 public class _107_Word_Break {
+    //version 1
     private int getMaxLength(Set<String> dict) {
         int maxLength = 0;
         for (String word : dict) {
