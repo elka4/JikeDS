@@ -5,6 +5,14 @@ import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.jun
 
  * Created by tianhuizhu on 6/28/17.
  */
+//All words have the same length.
+//All words contain only lowercase alphabetic characters.
+
+//  Backtracking
+// Depth First Search
+// Breadth First Search
+
+// word ladder is BFS
 public class _121_Word_Ladder_II {
     public List<List<String>> findLadders(String start, String end,
                                           Set<String> dict) {
