@@ -92,5 +92,8 @@ public class TreeNode {
     public void print() {
         BTreePrinter.printNode(this);
     }
+    public String toString(){
+        return val + " ";
+    }
 
 }

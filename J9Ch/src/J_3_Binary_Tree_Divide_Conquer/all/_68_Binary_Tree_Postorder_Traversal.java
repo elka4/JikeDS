@@ -24,6 +24,7 @@ public class _68_Binary_Tree_Postorder_Traversal {
 
         result.addAll(postorderTraversal(root.left));
         result.addAll(postorderTraversal(root.right));
+
         result.add(root.val);
 
         return result;

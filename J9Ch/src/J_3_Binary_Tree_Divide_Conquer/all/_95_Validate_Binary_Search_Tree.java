@@ -26,13 +26,14 @@ public class _95_Validate_Binary_Search_Tree {
         }
         firstNode = false;
         lastVal = root.val;
+
         if (!isValidBST(root.right)) {
             return false;
         }
         return true;
     }
 
-
+/////////////////////////////////////////////////////////////////////////////////
 
     // version 2  Divide and Conquer
     class ResultType {
@@ -79,6 +80,7 @@ public class _95_Validate_Binary_Search_Tree {
                 Math.min(root.val, left.minValue));
     }
 
+/////////////////////////////////////////////////////////////////////////////////
 
     // version 3  Divide and Conquer
     /**
@@ -100,6 +102,7 @@ public class _95_Validate_Binary_Search_Tree {
         return divConq(root.left, min, Math.min(max, root.val)) &&
                 divConq(root.right, Math.max(min, root.val), max);
     }
+/////////////////////////////////////////////////////////////////////////////////
 
 /*
   2

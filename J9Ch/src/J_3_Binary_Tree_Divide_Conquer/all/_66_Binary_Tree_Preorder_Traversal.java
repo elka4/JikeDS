@@ -38,6 +38,20 @@ public class _66_Binary_Tree_Preorder_Traversal {
         return preorder;
     }
 
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+
+        System.out.println(preorderTraversal(root));
+    }
+
 
     //Version 1: Traverse
     public ArrayList<Integer> preorderTraversal_2(TreeNode root) {
@@ -55,7 +69,18 @@ public class _66_Binary_Tree_Preorder_Traversal {
         traverse(root.left, result);
         traverse(root.right, result);
     }
+    @Test
+    public void test02(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
 
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(preorderTraversal_2(root));
+    }
 
     //Version 2: Divide & Conquer
     public ArrayList<Integer> preorderTraversal_3(TreeNode root) {
@@ -77,7 +102,7 @@ public class _66_Binary_Tree_Preorder_Traversal {
     }
 
     @Test
-    public void test01(){
+    public void test03(){
         int[] arr = {3,9,20};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
 
@@ -86,7 +111,7 @@ public class _66_Binary_Tree_Preorder_Traversal {
         node20.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
-
+        System.out.println(preorderTraversal_3(root));
     }
 
 }

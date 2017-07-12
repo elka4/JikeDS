@@ -35,7 +35,8 @@ public class _8_LargestBSTSubTree_2 {
             return new Result(-1, 0, 0);
         } else {
 
-            return new Result(left.size + right.size + 1, Math.min(left.min, root.val), Math.max(root.val, right.max));
+            return new Result(left.size + right.size + 1,
+                    Math.min(left.min, root.val), Math.max(root.val, right.max));
         }
     }
     private class TreeNode {

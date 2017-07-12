@@ -60,6 +60,7 @@ LCA(6, 7) = 7
         root.right.setRightChild(new TreeNode(6));
 
         System.out.println("root: ");
+        root.print();
         lowestCommonAncestor(root, root.right.left, root.right.right).print();
 
     }

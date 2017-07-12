@@ -14,25 +14,21 @@ import java.util.ArrayList;
  */
 public class _474_Lowest_Common_Ancestor_II {
 
-    class ParentTreeNode {
-        public ParentTreeNode parent, left, right;
-    }
-
     /**
      * @param root: The root of the tree
      * @param A, B: Two node in the tree
      * @return: The lowest common ancestor of A and B
      */
-    public ParentTreeNode lowestCommonAncestorII(ParentTreeNode root,
-                                                 ParentTreeNode A,
-                                                 ParentTreeNode B) {
-        ArrayList<ParentTreeNode> pathA = getPath2Root(A);
-        ArrayList<ParentTreeNode> pathB = getPath2Root(B);
+    public TreeNode lowestCommonAncestorII(TreeNode root,
+                                                 TreeNode A,
+                                                 TreeNode B) {
+        ArrayList<TreeNode> pathA = getPath2Root(A);
+        ArrayList<TreeNode> pathB = getPath2Root(B);
 
         int indexA = pathA.size() - 1;
         int indexB = pathB.size() - 1;
 
-        ParentTreeNode lowestAncestor = null;
+        TreeNode lowestAncestor = null;
         while (indexA >= 0 && indexB >= 0) {
             if (pathA.get(indexA) != pathB.get(indexB)) {
                 break;
@@ -45,8 +41,8 @@ public class _474_Lowest_Common_Ancestor_II {
         return lowestAncestor;
     }
 
-    private ArrayList<ParentTreeNode> getPath2Root(ParentTreeNode node) {
-        ArrayList<ParentTreeNode> path = new ArrayList<>();
+    private ArrayList<TreeNode> getPath2Root(TreeNode node) {
+        ArrayList<TreeNode> path = new ArrayList<>();
         while (node != null) {
             path.add(node);
             node = node.parent;
@@ -62,9 +58,18 @@ public class _474_Lowest_Common_Ancestor_II {
         TreeNode node20 = root.find(20);
         node20.setLeftChild(new TreeNode(15));
         node20.setRightChild(new TreeNode(7));
+
+        root.left.parent = root;
+        root.right.parent = root;
+        root.right.left.parent = root.right;
+        root.right.right.parent = root.right;
+
+
         System.out.println("root: ");
         root.print();
 
+
+        lowestCommonAncestorII(root, root.right.right, root.right.left).print();
     }
 
 }

@@ -29,13 +29,18 @@ public class _7_Binary_Tree_Serialization {
             if (node == null) {
                 continue;
             }
+
             queue.add(node.left);
             queue.add(node.right);
         }
 
+        System.out.println("queue " + queue);
+
         while (queue.get(queue.size() - 1) == null) {
             queue.remove(queue.size() - 1);
         }
+
+        System.out.println("queue " + queue);
 
         StringBuilder sb = new StringBuilder();
         sb.append("{");

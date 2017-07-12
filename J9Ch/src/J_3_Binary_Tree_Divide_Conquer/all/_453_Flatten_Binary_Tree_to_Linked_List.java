@@ -32,6 +32,7 @@ public class _453_Flatten_Binary_Tree_to_Linked_List {
         flatten(right);
     }
 
+///////////////////////////////////////////////////////////////
 
     // version 2: Divide & Conquer
     /**
@@ -69,6 +70,7 @@ public class _453_Flatten_Binary_Tree_to_Linked_List {
         return root;
     }
 
+///////////////////////////////////////////////////////////////
 
     // version 3: Non-Recursion
     public void flatten_3(TreeNode root) {
@@ -97,6 +99,8 @@ public class _453_Flatten_Binary_Tree_to_Linked_List {
             }
         }
     }
+
+///////////////////////////////////////////////////////////////
 
     /*
               1

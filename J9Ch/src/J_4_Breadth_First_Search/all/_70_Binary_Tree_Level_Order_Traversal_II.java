@@ -40,7 +40,7 @@ public class _70_Binary_Tree_Level_Order_Traversal_II {
             }
             result.add(level);
         }
-
+        System.out.println(result);
         Collections.reverse(result);
         return result;
     }

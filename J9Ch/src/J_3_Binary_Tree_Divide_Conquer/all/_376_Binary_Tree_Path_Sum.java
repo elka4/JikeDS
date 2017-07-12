@@ -9,9 +9,11 @@ import java.util.List;
 
 /** 376. Binary Tree Path Sum
  * Easy
-
  * Created by tianhuizhu on 6/27/17.
  */
+
+// root to leaf
+
 public class _376_Binary_Tree_Path_Sum {
     /**A valid path is from root node to any of the leaf nodes.
      * @param root the root of binary tree
@@ -25,13 +27,16 @@ public class _376_Binary_Tree_Path_Sum {
         // Put the whole path into result if the leaf has a sum equal to target.
 
         List<List<Integer>> result = new ArrayList<>();
+
         if (root == null) {
             return result;
         }
 
         ArrayList<Integer> path = new ArrayList<Integer>();
         path.add(root.val);
+
         helper(root, path, root.val, target, result);
+
         return result;
     }
 

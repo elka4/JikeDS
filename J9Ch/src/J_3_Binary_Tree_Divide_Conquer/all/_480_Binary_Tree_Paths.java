@@ -27,6 +27,7 @@ public class _480_Binary_Tree_Paths {
 
         List<String> leftPaths = binaryTreePaths(root.left);
         List<String> rightPaths = binaryTreePaths(root.right);
+
         for (String path : leftPaths) {
             paths.add(root.val + "->" + path);
         }
@@ -42,6 +43,7 @@ public class _480_Binary_Tree_Paths {
         return paths;
     }
 
+///////////////////////////////////////////////////////////////////////////
 
     // version 2: traverse
     /**
@@ -77,6 +79,8 @@ public class _480_Binary_Tree_Paths {
                     + String.valueOf(root.right.val), result);
         }
     }
+
+///////////////////////////////////////////////////////////////////////////
 
     /*
    1

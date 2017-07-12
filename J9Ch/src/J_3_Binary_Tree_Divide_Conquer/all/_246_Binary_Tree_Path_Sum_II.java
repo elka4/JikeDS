@@ -12,6 +12,9 @@ import java.util.List;
  Binary Tree Path Sum II
  * Created by tianhuizhu on 6/28/17.
  */
+
+// any to any, top to bottom
+
 public class _246_Binary_Tree_Path_Sum_II {
     /**
      * @param root the root of binary tree

@@ -9,6 +9,8 @@ import org.junit.Test;
  * Convert Binary Search Tree to Doubly Linked List
  * Created by tianhuizhu on 6/28/17.
  */
+
+//  in-order traversal. 这题的本质是双向链表
 public class _378_Convert_Binary_Search_Tree_to_Doubly_Linked_List {
 
     public class DoublyListNode {
@@ -17,6 +19,15 @@ public class _378_Convert_Binary_Search_Tree_to_Doubly_Linked_List {
         DoublyListNode(int val) {
             this.val = val;
             this.next = this.prev = null;
+        }
+        @Override
+        public String toString(){
+            String str = val + "";
+            while(next != null){
+                str += "<->" + next.val;
+                next = next.next;
+            }
+            return str += "<->null";
         }
 
     }
@@ -50,6 +61,7 @@ public class _378_Convert_Binary_Search_Tree_to_Doubly_Linked_List {
 
         ResultType left = helper(root.left);
         ResultType right = helper(root.right);
+
         DoublyListNode node = new DoublyListNode(root.val);
 
         ResultType result = new ResultType(null, null);
@@ -73,6 +85,15 @@ public class _378_Convert_Binary_Search_Tree_to_Doubly_Linked_List {
         return result;
     }
 
+    /*
+        4
+       / \
+      2   5
+     / \
+    1   3
+    return 1<->2<->3<->4<->5
+     */
+
     @Test
     public void test01(){
         int[] arr = {3,9,20};
@@ -84,6 +105,7 @@ public class _378_Convert_Binary_Search_Tree_to_Doubly_Linked_List {
         System.out.println("root: ");
         root.print();
 
+        System.out.println(bstToDoublyList(root));
     }
 
 

@@ -39,15 +39,16 @@ public class _448_Inorder_Successor_in_Binary_Search_Tree {
 
     @Test
     public void test01(){
-        int[] arr = {3,9,20};
+        int[] arr = {7,5,10};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
 
-        TreeNode node20 = root.find(20);
-        node20.setLeftChild(new TreeNode(15));
-        node20.setRightChild(new TreeNode(7));
+
+        root.right.setLeftChild(new TreeNode(8));
+        root.right.setRightChild(new TreeNode(12));
         System.out.println("root: ");
         root.print();
-
+        System.out.println(inorderSuccessor(root, root).val);
+        System.out.println(inorderSuccessor(root, root.right).val);
     }
 
 }

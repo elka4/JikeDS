@@ -27,8 +27,10 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         int length = (parent != null && parent.val + 1 == root.val)?
                 lengthWithoutRoot + 1
                 : 1;
+
         int left = helper(root.left, root, length);
         int right = helper(root.right, root, length);
+
         return Math.max(length, Math.max(left, right));
     }
 

@@ -81,7 +81,7 @@ public class _433_Number_of_Islands {
         return coor.x >= 0 && coor.x < n && coor.y >= 0 && coor.y < m;
     }
 
-
+///////////////////////////////////////////////////////////////////////////
 
 
 
@@ -127,6 +127,7 @@ public class _433_Number_of_Islands {
     }
 
 
+
     /**
      * @param grid a boolean 2D matrix
      * @return an integer
@@ -167,7 +168,7 @@ public class _433_Number_of_Islands {
         return union_find.query();
     }
 
-
+///////////////////////////////////////////////////////////////////////////
 
     // version 3: DFS (not recommended)
     /**
@@ -204,6 +205,9 @@ public class _433_Number_of_Islands {
         }
         return ans;
     }
+
+///////////////////////////////////////////////////////////////////////////
+
 
     /*
     [

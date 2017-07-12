@@ -10,12 +10,15 @@ import java.util.List;
  * Permutation String Recursion
  * Given a string, find all permutations of it without duplicates.
  */
+@SuppressWarnings("all")
+
 public class _10_String_Permutation_II {
     /**
      * @param str a string
      * @return all permutations
      */
     //iterative
+
     public List<String> stringPermutation2(String str) {
         // Write your code here
         List<String> result = new ArrayList<String>();
@@ -110,7 +113,8 @@ public class _10_String_Permutation_II {
             return;
         }
         for (int i = 0; i < string.length; i++) {
-            if (isUsed[i] == true || i != 0 &&
+            if (isUsed[i] == true ||
+                    i != 0 &&
                     isUsed[i - 1] == false &&
                     string[i] == string[i - 1]) {
                 continue;

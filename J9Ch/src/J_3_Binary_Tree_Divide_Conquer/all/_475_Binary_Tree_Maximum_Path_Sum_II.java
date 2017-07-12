@@ -36,7 +36,7 @@ public class _475_Binary_Tree_Maximum_Path_Sum_II {
         node20.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
-
+        System.out.println(maxPathSum2(root));
     }
 
 }

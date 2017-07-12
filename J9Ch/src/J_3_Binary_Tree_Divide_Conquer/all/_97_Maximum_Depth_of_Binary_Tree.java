@@ -18,9 +18,11 @@ public class _97_Maximum_Depth_of_Binary_Tree {
 
         int left = maxDepth(root.left);
         int right = maxDepth(root.right);
+
         return Math.max(left, right) + 1;
     }
 
+/////////////////////////////////////////////////////////////////////////////////
 
 // version 2: Traverse
     private int depth;
@@ -43,6 +45,8 @@ public class _97_Maximum_Depth_of_Binary_Tree {
         helper(node.left, curtDepth + 1);
         helper(node.right, curtDepth + 1);
     }
+
+/////////////////////////////////////////////////////////////////////////////////
 
     /*
   1

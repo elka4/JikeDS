@@ -42,7 +42,7 @@ public class _2_Recursion_1Easy_SymmetricTree {
 		while(!deque.isEmpty()){
 			//left polled from first, right polled from last
 			TreeNode left = deque.pollFirst();
-			TreeNode right = deque.peekLast();
+			TreeNode right = deque.pollLast();
 
 			//Tricky here: if list.add(null), list.isEmpty() == false
 			if(left == null && right == null){

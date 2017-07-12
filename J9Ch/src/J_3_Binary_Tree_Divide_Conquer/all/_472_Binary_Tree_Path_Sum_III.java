@@ -15,6 +15,16 @@ import java.util.List;
 
  * Created by tianhuizhu on 6/28/17.
  */
+
+/**
+ * Definition of ParentTreeNode:
+ *
+ * class ParentTreeNode {
+ *     public int val;
+ *     public ParentTreeNode parent, left, right;
+ * }
+ */
+
 public class _472_Binary_Tree_Path_Sum_III {
 
     /**
@@ -90,7 +100,7 @@ and target = 6. Return :
         System.out.println("root: ");
         root.print();
         List<List<Integer>> result = binaryTreePathSum3(root, 6);
-        System.out.println(result.size());
+
         System.out.println(result);
         //System.out.println(binaryTreePathSum3(root, 6));
     }
@@ -120,7 +130,8 @@ and target = 6. Return :
         return helper(root, 0, sum, preSum);
     }
 
-    public int helper(TreeNode root, int currSum, int target, HashMap<Integer, Integer> preSum) {
+    public int helper(TreeNode root, int currSum, int target,
+                      HashMap<Integer, Integer> preSum) {
         if (root == null) {
             return 0;
         }
