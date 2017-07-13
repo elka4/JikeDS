@@ -45,8 +45,9 @@ return 6.
 
     @Test
     public void test02(){
-        int[] arr = {1,-5,11,1,2,4,-2};
+        int[] arr = {-1,-5,11,1,2,4,-2};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.left.setLeftChild(new TreeNode(-8));
         System.out.println("root: ");
         root.print();
         System.out.println(maxPathSum2(root));
