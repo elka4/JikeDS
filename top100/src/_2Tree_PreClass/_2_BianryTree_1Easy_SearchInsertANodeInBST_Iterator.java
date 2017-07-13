@@ -1,5 +1,8 @@
 package _2Tree_PreClass;
-@SuppressWarnings("all")
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.BTreePrinter;
+import CtCILibrary.TreeNode;
+import org.junit.Test;
 
 public class _2_BianryTree_1Easy_SearchInsertANodeInBST_Iterator {
 	//Iteration
@@ -22,9 +25,9 @@ public class _2_BianryTree_1Easy_SearchInsertANodeInBST_Iterator {
 		if(root == null || root.val == val){
 			return root;
 		} else if (root.val < val){
-			return search(root.right, val);
+			return search2(root.right, val);
 		} else {
-			return search(root.left, val);
+			return search2(root.left, val);
 		}
 	}
 
@@ -62,11 +65,34 @@ public class _2_BianryTree_1Easy_SearchInsertANodeInBST_Iterator {
 
 		if(root.val > val) {
 			//Assume all nodes are handled in left subtree
-			root.left = insert(root.left, val);
+			root.left = insert2(root.left, val);
 		} else if (root.val < val) {
 			//assume all nodes are handled in right subtree
-			root.right = insert(root.right, val);
+			root.right = insert2(root.right, val);
 		}
 		return root;
 	}
+
+    @Test
+    public void test01() {
+        int[] arr = {3, 2, 5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        insert(root, 4);
+        insert2(root, 1);
+        root.print();
+    }
+
+    @Test
+    public void test02() {
+        int[] arr = {5, 3, 7,1,2,6,8};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        search(root, 3).print();
+        search2(root, 6).print();
+
+    }
+
 }

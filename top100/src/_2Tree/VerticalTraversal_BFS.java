@@ -22,7 +22,7 @@ public class VerticalTraversal_BFS {
 
     public static void main(String[] args) throws  FileNotFoundException{
         Scanner in = new Scanner(new File(
-"/Users/tzh/IdeaProjects/JikeDS/leetlint/src/top100/HighFreq/_2Tree/intpu_verticalTraversal"));
+"/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_2Tree/intpu_verticalTraversal"));
         //read input process
         int n = in.nextInt();
         while(n != -1){

@@ -13,13 +13,13 @@ public class _1_BackTracking_PermutationsII {
         //Corn Cases Checked
 
 		List <List <Integer>> res = new ArrayList<>();
-        //Method: DFS, and using a HashSet <Integer> in each pos to remove duplicates
+        //Method: DFS, and using a HashSet <Integer> in each
+        // pos to remove duplicates
         dfsHelper(res, nums, 0);
         return res;
     }
 
     private void dfsHelper(List <List <Integer>> res, int[] nums, int pos) {
-
         if (pos == nums.length) {
             List <Integer> list = new ArrayList <Integer>();
             for (int num : nums) {
@@ -28,6 +28,7 @@ public class _1_BackTracking_PermutationsII {
             res.add(list);
             return;
         }
+
         //用这个hashset来去重
         Set <Integer> used = new HashSet <Integer>();
         for (int i = pos; i  < nums.length; i++) {
@@ -39,7 +40,7 @@ public class _1_BackTracking_PermutationsII {
 
             }
         }
-}
+    }
 
     private void swap(int[] nums, int i, int pos) {
         int temp = nums[pos];

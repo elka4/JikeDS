@@ -2,6 +2,11 @@ package _2Tree_PreClass;
 
 import java.util.Deque;
 import java.util.LinkedList;
+
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.BTreePrinter;
+import CtCILibrary.TreeNode;
+import org.junit.Test;
 @SuppressWarnings("all")
 
 public class _2_Recursion_2Medium_BinaryTreeUpsideDown {
@@ -33,6 +38,17 @@ public class _2_Recursion_2Medium_BinaryTreeUpsideDown {
 		}
 		return newRoot;
 	}
+    @Test
+    public void test01() {
+        int[] arr = {5, 3, 7,1,2,6};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        upsideDownBinaryTree1(root).print();
+
+    }
+
+
 /////////////////////////////////////////////////////////
 	//recurtion
 	public TreeNode upsideDownBinaryTree2(TreeNode root) {
@@ -50,6 +66,16 @@ public class _2_Recursion_2Medium_BinaryTreeUpsideDown {
 		root.right = null;
 		return newRoot;
 	}
+
+    @Test
+    public void test02() {
+        int[] arr = {5, 3, 7,1,2,6};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        upsideDownBinaryTree2(root).print();
+
+    }
 }
 	
 /*

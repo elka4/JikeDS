@@ -1,5 +1,8 @@
 package _2Tree_PreClass;
-@SuppressWarnings("all")
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.BTreePrinter;
+import CtCILibrary.TreeNode;
+import org.junit.Test;
 
 public class _2_BinaryTree_2Medium_3ValidBinaryTree {
 	public boolean isValidBST(TreeNode root) {
@@ -17,4 +20,25 @@ public class _2_BinaryTree_2Medium_3ValidBinaryTree {
 		return isValidBST(root.left,  min, root.val) &&
 				isValidBST(root.right, root.val, max);
 	}
+
+    //////////////////////////////////////////////////
+
+    @Test
+    public void test01() {
+        int[] arr = {5, 3, 7,1,2,6,8};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isValidBST(root));
+
+    }
+    @Test
+    public void test02() {
+        int[] arr = {2,1,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isValidBST(root));
+
+    }
 }

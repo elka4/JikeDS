@@ -3,50 +3,65 @@ package _2Tree_Class;
 import java.util.ArrayList;
 import java.util.List;
 
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.BTreePrinter;
+import CtCILibrary.TreeNode;
+import org.junit.Test;
+
 //root to leaf, 所有node的value和为sum， 返回所有的path
 public class _6_PathSum1 {
-	private class TreeNode {
 
-		public int val ;
-		public TreeNode(int i) {
-		}
-		public TreeNode left;
-		public TreeNode right;
+  public List<List<Integer>> pathSum(TreeNode root, int sum) {
 
-	}
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        if (root == null) {
+            return res;
+        }
 
-	  public List<List<Integer>> pathSum(TreeNode root, int sum) {
+        List<Integer> list = new ArrayList<Integer>();
+        helper(root, sum, list, res);
 
-	        List<List<Integer>> res = new ArrayList<List<Integer>>();
-	        if (root == null) {
-	            return res;
-	        }
+        return res;
+    }
 
-	        List<Integer> list = new ArrayList<Integer>();
-	        helper(root, sum, list, res);
+    private void helper(TreeNode root, int sum, List<Integer> list,
+            List<List<Integer>> res) {
 
-	        return res;
-	    }
+        if (root == null) {
+            return;
+        }
 
-	    private void helper(TreeNode root, int sum, List<Integer> list, 
-	    		List<List<Integer>> res) {
-	    	
+        list.add(root.val);
 
-	        if (root == null) {
-	            return;
-	        }
+        //叶子节点，且叶子节点的value和剩余在sum中的值相等时，
+        // 将list生成新的list并加入到结果中
+        if (sum == root.val && root.left == null && root.right == null) {
+            res.add(new ArrayList<Integer>(list));
 
-	        list.add(root.val);
-//叶子节点，且叶子节点的value和剩余在sum中的值相等时，将list生成新的list并加入到结果中
-	        if (sum == root.val && root.left == null && root.right == null) {
-	            res.add(new ArrayList<Integer>(list));
+        } else {
+            helper(root.left, sum - root.val, list, res);
+            helper(root.right, sum - root.val, list, res);
+        }
 
-	        } else {
-	            helper(root.left, sum - root.val, list, res);
-	            helper(root.right, sum - root.val, list, res);
-	        }
+        list.remove(list.size() - 1);
+    }
 
-	        list.remove(list.size() - 1);
 
-	    }
+    @Test
+    public void test01(){
+        int[] arr = {1,3,5,6,7,8,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(pathSum(root, 11));
+    }
+
+    @Test
+    public void test02(){
+        int[] arr = {1,3,5,6,7,4,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(pathSum(root, 10));
+    }
 }

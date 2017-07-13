@@ -73,8 +73,12 @@ public class _2_SudokuSolver {
 	
 	
 	private boolean check(char[][] board, boolean[] rowChecker, 
-			boolean[] colChecker, boolean[] subChecker, int row, int col, int toFill) {
-		if (rowChecker[toFill - 1] || colChecker[toFill - 1] || subChecker[toFill - 1]){
+			boolean[] colChecker, boolean[] subChecker,
+                          int row, int col, int toFill) {
+
+		if (rowChecker[toFill - 1] || colChecker[toFill - 1]
+                || subChecker[toFill - 1]){
+
 			return false;
 		} else {
 			return true;

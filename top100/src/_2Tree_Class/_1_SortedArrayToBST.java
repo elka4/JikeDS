@@ -1,5 +1,10 @@
 package _2Tree_Class;
-@SuppressWarnings("all")
+
+import CtCILibrary.BTreePrinter;
+import CtCILibrary.TreeNode;
+import org.junit.Test;
+
+
 
 public class _1_SortedArrayToBST {
 //time O(n) space O(logn)
@@ -20,5 +25,13 @@ public TreeNode sortedArrayToBST(int[] num) {
         root.right = buildtree(num, mid + 1, end);
 
         return root;
+    }
+
+    @Test
+    public void test01(){
+        int[] arr = {1,3,5,6,7,8};
+        TreeNode root = sortedArrayToBST(arr);
+        System.out.println("root: ");
+        root.print();
     }
 }

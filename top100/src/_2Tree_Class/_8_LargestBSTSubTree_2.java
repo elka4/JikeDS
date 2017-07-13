@@ -1,6 +1,9 @@
 package _2Tree_Class;
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.BTreePrinter;
+import CtCILibrary.TreeNode;
+import org.junit.Test;
 
-//O(n) Time Solution
 public class _8_LargestBSTSubTree_2 {
 	class Result {
         int size;
@@ -18,9 +21,9 @@ public class _8_LargestBSTSubTree_2 {
         if (root == null) {
             return 0;
         }
-        int[] max = {0};
+        //int[] max = {0};
         Result res = helper(root);
-        return max[0];
+        return res.size;
     }
 
     private Result helper(TreeNode root) {
@@ -39,13 +42,14 @@ public class _8_LargestBSTSubTree_2 {
                     Math.min(left.min, root.val), Math.max(root.val, right.max));
         }
     }
-    private class TreeNode {
-    	
-		public int val ;
-		public TreeNode(int i) {
-		}
-		public TreeNode left;
-		public TreeNode right;
-	
-	}
+
+    @Test
+    public void test01(){
+        int[] arr = {5,3,7,1,4,6,8};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(largestBSTSubtree(root));
+    }
+
 }

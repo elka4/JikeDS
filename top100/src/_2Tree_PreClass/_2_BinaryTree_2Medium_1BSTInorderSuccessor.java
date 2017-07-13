@@ -1,5 +1,8 @@
 package _2Tree_PreClass;
-@SuppressWarnings("all")
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.BTreePrinter;
+import CtCILibrary.TreeNode;
+import org.junit.Test;
 //time O(logn) spaceO(1)
 public class _2_BinaryTree_2Medium_1BSTInorderSuccessor {
 
@@ -52,4 +55,16 @@ public class _2_BinaryTree_2Medium_1BSTInorderSuccessor {
 		return par;
 				
 	}
+
+    //////////////////////////////////////////////////
+    @Test
+    public void test01() {
+        int[] arr = {5, 3, 7,1,2,6,8};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        inorderSuccessor(root,root.left).print();
+        inorderSuccessor(root,root.right.left).print();
+
+    }
 }

@@ -6,7 +6,8 @@ import java.util.LinkedList;
 import java.util.Set;
 
 public class _4_BFS_WordLadder_1 {
-	private int bfsHelper(String beginWord, String endWord, Set<String> wordList) {
+	private int bfsHelper(String beginWord, String endWord,
+                          Set<String> wordList) {
 
         Deque<String> queue = new LinkedList<String>();
         Set<String> visited = new HashSet<String>();
@@ -39,20 +40,23 @@ public class _4_BFS_WordLadder_1 {
             }
 
         }
-
         return 0;
-}
-public int ladderLength(String start, String end, Set<String> dict) {
+    }
+
+
+    public int ladderLength(String start, String end, Set<String> dict) {
         if (start == null || end == null || dict == null)
             return 0;
         if (dict.size() == 0)
             return 0;
-
         return bfsHelper(start, end, dict);
-}
-private String replace(String str, int i, char c) {
+    }
+
+    private String replace(String str, int i, char c) {
         char[] chs = str.toCharArray();
         chs[i] = c;
         return new String(chs);
-}
+    }
+
+    ////////////////////////////////////////////////////////////////
 }

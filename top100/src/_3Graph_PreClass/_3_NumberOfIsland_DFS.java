@@ -23,7 +23,6 @@ public class _3_NumberOfIsland_DFS {
 }
 
 private void removeIsland(char[][] grid, int row, int col, int x, int y) {
-
         grid[x][y] = '0';
 
         for(int i = -1; i <= 1; i++) {
@@ -39,4 +38,6 @@ private boolean isValid(int di, int dj, int i, int j, int row, int col) {
         return Math.abs(di) != Math.abs(dj) && i + di >= 0 &&
         		i + di < row && j + dj >= 0 && j + dj < col;
 }
+
+
 }

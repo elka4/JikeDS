@@ -1,5 +1,8 @@
 package _2Tree_Class;
 
+import CtCILibrary.BTreePrinter;
+import CtCILibrary.TreeNode;
+import org.junit.Test;
 
 public class _6_PathSum4_FollowUp {
 	//Follow Up: Path � Any node to any other node
@@ -15,13 +18,5 @@ public class _6_PathSum4_FollowUp {
 	      return Math.max(left, right) + root.val;
 }
 */
-private class TreeNode {
 
-	public int val ;
-	public TreeNode(int i) {
-	}
-	public TreeNode left;
-	public TreeNode right;
-
-}
 }

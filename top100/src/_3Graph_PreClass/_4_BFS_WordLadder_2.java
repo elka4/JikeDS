@@ -44,13 +44,15 @@ public class _4_BFS_WordLadder_2 {
 
             beginSet = nextLevel;
         }
-
-
         return 0;
 	}
+
+
 	private String replace(String str, int i, char c) {
 	    char[] chs = str.toCharArray();
 	    chs[i] = c;
 	    return new String(chs);
 	}
+
+
 }

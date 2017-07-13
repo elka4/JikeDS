@@ -30,7 +30,7 @@ private void removeBFS (int x, int y, char[][] grid, int m, int n) {
 
 private boolean isValid(int di, int dj, int i, int j, int row, int col) {
     return Math.abs(di) != Math.abs(dj) && i + di >= 0 &&
-    		i + di < row && j + dj >= 0 && j + dj < col;
+            i + di < row && j + dj >= 0 && j + dj < col;
 }
 
 }

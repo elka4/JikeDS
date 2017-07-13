@@ -2,7 +2,10 @@ package _2Tree_PreClass;
 
 /**
  * Created by tzh on 1/27/17.
- */@SuppressWarnings("all")
+ */
+import CtCILibrary.BTreePrinter;
+import CtCILibrary.TreeNode;
+import org.junit.Test;
 
 public class _3_BinarySearch_2Medium_Search2DMatrix {
     public boolean searchMatrixI(int[][] matrix, int target){

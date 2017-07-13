@@ -2,9 +2,12 @@ package _2Tree_PreClass;
 
 // Symmetric Tree
 
-import java.util.Deque;
-import java.util.LinkedList;
-@SuppressWarnings("all")
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.BTreePrinter;
+import CtCILibrary.TreeNode;
+import CtCILibrary.LinkedListNode;
+import org.junit.Test;
+import java.util.*;
 
 public class _2_Recursion_1Easy_SymmetricTree {
 	//recursion
@@ -27,6 +30,22 @@ public class _2_Recursion_1Easy_SymmetricTree {
 		}
 		
 	}
+    @Test
+    public void test01() {
+        int[] arr = {1, 2, 2,3,3,3,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isSymetric_1(root));
+    }
+    @Test
+    public void test02() {
+        int[] arr = {1, 2, 2,3,3,3,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isSymetric_1(root));
+    }
 
 	/////////////////////////////////////////////////////////
 
@@ -55,38 +74,65 @@ public class _2_Recursion_1Easy_SymmetricTree {
 			//left offered from first, right offered from last
 			deque.offerFirst(left.right);
 			deque.offerFirst(left.left);
-			deque.offerLast(left.left);
-			deque.offerLast(left.right);
+			deque.offerLast(right.left);
+			deque.offerLast(right.right);
 		}
 		return true;
 	}
+    @Test
+    public void test03() {
+        int[] arr = {1, 2, 2,3,3,3,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isSymetric_2(root));
+    }
+    @Test
+    public void test04() {
+        int[] arr = {1, 2, 2,3,3,3,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isSymetric_2(root));
+    }
 
 	/////////////////////////////////////////
+    public boolean isSymmetric3(TreeNode root) {
+        // Write your code here
+        if (root == null) {
+            return true;
+        }
+        return check(root.left, root.right);
+    }
 
-	public class Solution_jiuzhang {
-		/**
-		 * @param root, the root of binary tree.
-		 * @return true if it is a mirror of itself, or false.
-		 */
-		public boolean isSymmetric(TreeNode root) {
-			// Write your code here
-			if (root == null) {
-				return true;
-			}
-			return check(root.left, root.right);
-		}
+    private boolean check(TreeNode root1, TreeNode root2) {
+        if (root1 == null && root2 == null) {
+            return true;
+        }
+        if (root1 == null || root2 == null) {
+            return false;
+        }
+        if (root1.val != root2.val) {
+            return false;
+        }
+        return check(root1.left, root2.right) && check(root1.right, root2.left);
+    }
+    @Test
+    public void test05() {
+        int[] arr = {1, 2, 2,3,3,3,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isSymmetric3(root));
+    }
+    @Test
+    public void test06() {
+        int[] arr = {1, 2, 2,3,3,3,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isSymmetric3(root));
+    }
 
-		private boolean check(TreeNode root1, TreeNode root2) {
-			if (root1 == null && root2 == null) {
-				return true;
-			}
-			if (root1 == null || root2 == null) {
-				return false;
-			}
-			if (root1.val != root2.val) {
-				return false;
-			}
-			return check(root1.left, root2.right) && check(root1.right, root2.left);
-		}
-	}
+
 }

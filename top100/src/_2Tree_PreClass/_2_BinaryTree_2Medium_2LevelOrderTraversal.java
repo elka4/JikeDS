@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
-@SuppressWarnings("all")
+
+import CtCILibrary.AssortedMethods;
+import CtCILibrary.BTreePrinter;
+import CtCILibrary.TreeNode;
+import org.junit.Test;
+
 
 public class _2_BinaryTree_2Medium_2LevelOrderTraversal {
 
@@ -34,5 +39,15 @@ public class _2_BinaryTree_2Medium_2LevelOrderTraversal {
 		}
 		return res;
 	}
-	
+
+    //////////////////////////////////////////////////
+    @Test
+    public void test01() {
+        int[] arr = {5, 3, 7,1,2,6,8};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(levelOrder(root));
+
+    }
 }
