@@ -32,6 +32,15 @@ public class _11Search_Range_in_Binary_Search_Tree {
             helper(root.right, k1, k2);
         }
     }
+
+    @Test
+    public void test01(){
+        int[] arr = {5,3,7,1,2,6,8};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(searchRange(root, 3,7));
+    }
 }
 
 
@@ -56,15 +65,3 @@ Related Problems
 Easy First Position of Target 32 %
 Medium Binary Tree Serialization 19 %
  * */
-
-/**
- * Definition of TreeNode:
- * public class TreeNode {
- *     public int val;
- *     public TreeNode left, right;
- *     public TreeNode(int val) {
- *         this.val = val;
- *         this.left = this.right = null;
- *     }
- * }
- */

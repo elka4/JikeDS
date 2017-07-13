@@ -36,12 +36,12 @@ public class _97_Maximum_Depth_of_Binary_Tree {
 
 
 /////////////////////////////////////////////////////////////////////////////////
-public int minDepth(TreeNode root) {
-    if (root == null) {
-        return 0;
+    public int minDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return getMin(root);
     }
-    return getMin(root);
-}
 
     public int getMin(TreeNode root){
         if (root == null) {

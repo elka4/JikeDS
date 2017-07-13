@@ -1,5 +1,7 @@
 package J_3_Binary_Tree_Divide_Conquer.other.Validate;
+import lib.AssortedMethods;
 import lib.TreeNode;
+import org.junit.Test;
 
 public class _469Identical_Binary_Tree {
 	/**

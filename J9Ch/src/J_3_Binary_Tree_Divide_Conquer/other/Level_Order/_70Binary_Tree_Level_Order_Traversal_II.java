@@ -1,5 +1,7 @@
 package J_3_Binary_Tree_Divide_Conquer.other.Level_Order;
+import lib.AssortedMethods;
 import lib.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,6 +40,19 @@ public class _70Binary_Tree_Level_Order_Traversal_II {
 	    Collections.reverse(result);
 	    return result;
 	}
+
+
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(levelOrderBottom(root));
+    }
 }
 
 
