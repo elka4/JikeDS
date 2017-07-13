@@ -1,4 +1,4 @@
-package J_3_Binary_Tree_Divide_Conquer.other.Successor_Iterator;
+package J_3_Binary_Tree_Divide_Conquer.other.Validate;
 
 import lib.AssortedMethods;
 import lib.TreeNode;
