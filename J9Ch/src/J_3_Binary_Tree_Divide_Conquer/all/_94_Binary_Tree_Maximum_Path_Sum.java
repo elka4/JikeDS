@@ -25,6 +25,7 @@ public class _94_Binary_Tree_Maximum_Path_Sum {
         ResultType result = helper(root);
         return result.maxPath;
     }
+
     private ResultType helper(TreeNode root) {
         if (root == null) {
             return new ResultType(0, Integer.MIN_VALUE);
@@ -43,15 +44,10 @@ public class _94_Binary_Tree_Maximum_Path_Sum {
         return new ResultType(singlePath, maxPath);
     }
 
-/*
-  1
- / \
-2   3
-return 6.
- */
+///////////////////////////////////////////////////////////////////////////
 
 // Version 2:
-// SinglePath也定义为，至少包含一个点。
+// SinglePath也定义为，至少包含一个点: root.val。
     private class ResultType2 {
         int singlePath, maxPath;
         ResultType2(int singlePath, int maxPath) {
@@ -79,11 +75,11 @@ return 6.
 
         int maxPath = Math.max(left.maxPath, right.maxPath);
         maxPath = Math.max(maxPath,
-                Math.max(left.singlePath, 0) +
-                        Math.max(right.singlePath, 0) + root.val);
+            Math.max(left.singlePath, 0) + Math.max(right.singlePath, 0) + root.val);
 
         return new ResultType2(singlePath, maxPath);
     }
+
 
     @Test
     public void test01(){
@@ -96,6 +92,24 @@ return 6.
 
     @Test
     public void test02(){
+        int[] arr = {1,-5,11,1,20,4,-2};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum2(root));
+    }
+
+    @Test
+    public void test03(){
+        int[] arr = {1,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum2(root));
+    }
+
+    @Test
+    public void test04(){
         int[] arr = {1,-5,11,1,20,4,-2};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         System.out.println("root: ");

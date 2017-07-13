@@ -35,7 +35,7 @@ public class _95_Validate_Binary_Search_Tree {
 
 /////////////////////////////////////////////////////////////////////////////////
 
-    // version 2  Divide and Conquer
+    // version 2  Divide and Conquer, with result type
     class ResultType {
         boolean is_bst;
         int maxValue, minValue;
@@ -46,7 +46,6 @@ public class _95_Validate_Binary_Search_Tree {
             this.minValue = minValue;
         }
     }
-
 
     /**
      * @param root: The root of binary tree.

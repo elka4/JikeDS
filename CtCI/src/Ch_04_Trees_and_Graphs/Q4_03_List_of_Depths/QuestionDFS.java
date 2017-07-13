@@ -9,28 +9,41 @@ import java.util.LinkedList;
 
 public class QuestionDFS {
 
-	public static void createLevelLinkedList(TreeNode root,
-				 ArrayList<LinkedList<TreeNode>> lists, int level) {
-		if (root == null) return;
-		LinkedList<TreeNode> list = null;
-		if (lists.size() == level) { // Level not contained in list
-			list = new LinkedList<TreeNode>();
-/* Levels are always traversed in order. So, if this is the first time we've visited level i,
- * we must have seen levels 0 through i - 1. We can therefore safely add the level at the end. */
-			lists.add(list);  
-		} else {
-			list = lists.get(level);
-		}
-		list.add(root);
-		createLevelLinkedList(root.left, lists, level + 1);
-		createLevelLinkedList(root.right, lists, level + 1);
-	}
-	
-	public static ArrayList<LinkedList<TreeNode>> createLevelLinkedList(TreeNode root) {
+	public static ArrayList<LinkedList<TreeNode>> createLevelLinkedList(
+	        TreeNode root) {
+
 		ArrayList<LinkedList<TreeNode>> lists = new ArrayList<LinkedList<TreeNode>>();
+
 		createLevelLinkedList(root, lists, 0);
+
 		return lists;
-	}	
+	}
+
+    public static void createLevelLinkedList(TreeNode root,
+                 ArrayList<LinkedList<TreeNode>> lists, int level) {
+
+        if (root == null) return;
+
+        LinkedList<TreeNode> list = null;
+
+        if (lists.size() == level) { // Level not contained in list
+            list = new LinkedList<TreeNode>();
+
+        /* Levels are always traversed in order.
+        So, if this is the first time we've visited level i,
+         * we must have seen levels 0 through i - 1.
+         * We can therefore safely add the level at the end. */
+
+            lists.add(list);
+        } else {
+            list = lists.get(level);
+        }
+
+        list.add(root);
+
+        createLevelLinkedList(root.left, lists, level + 1);
+        createLevelLinkedList(root.right, lists, level + 1);
+    }
 	
 	public static void printResult(ArrayList<LinkedList<TreeNode>> result){
 		int depth = 0;

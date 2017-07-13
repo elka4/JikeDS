@@ -21,8 +21,14 @@ public class QuestionBFS {
 		
 		while (current.size() > 0) {
 			result.add(current); // Add previous level
+            System.out.println("current " + current);
 			LinkedList<TreeNode> parents = current; // Go to next level
-			current = new LinkedList<TreeNode>(); 
+            System.out.println("parents " + parents);
+
+            current = new LinkedList<TreeNode>();
+            System.out.println("current2 " + current);
+            System.out.println("parents2 " + parents);
+
 			for (TreeNode parent : parents) {
 				/* Visit the children */
 				if (parent.left != null) {
@@ -85,7 +91,8 @@ public class QuestionBFS {
 		root.print();
 		ArrayList<LinkedList<TreeNode>> list = createLevelLinkedList(root);
 		printResult(list);
-	}
+        System.out.println(list);
+    }
 
     @Test
     public void test01(){

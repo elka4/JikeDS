@@ -12,6 +12,7 @@ public class _86_Binary_Search_Tree_Iterator {
     public class BSTIterator {
         private Stack<TreeNode> stack = new Stack<>();
         TreeNode next = null;
+
         void AddNodeToStack(TreeNode root) {
             while (root != null) {
                 stack.push(root);
@@ -41,6 +42,24 @@ public class _86_Binary_Search_Tree_Iterator {
             TreeNode cur = stack.pop();
             next = cur.right;
             return cur;
+        }
+    }
+
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+
+        BSTIterator itr = new BSTIterator(root);
+
+        while(itr.hasNext()){
+            TreeNode node = itr.next();
+            node.print();
         }
     }
 }

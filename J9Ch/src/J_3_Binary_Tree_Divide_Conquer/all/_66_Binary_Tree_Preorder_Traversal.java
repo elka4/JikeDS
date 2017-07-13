@@ -42,16 +42,14 @@ public class _66_Binary_Tree_Preorder_Traversal {
     public void test01(){
         int[] arr = {3,9,20};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
-
-        TreeNode node20 = root.find(20);
-        node20.setLeftChild(new TreeNode(15));
-        node20.setRightChild(new TreeNode(7));
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
-
         System.out.println(preorderTraversal(root));
     }
 
+////////////////////////////////////////////////////////////////////////////
 
     //Version 1: Traverse
     public ArrayList<Integer> preorderTraversal_2(TreeNode root) {
@@ -59,28 +57,29 @@ public class _66_Binary_Tree_Preorder_Traversal {
         traverse(root, result);
         return result;
     }
+
     // 把root为跟的preorder加入result里面
     private void traverse(TreeNode root, ArrayList<Integer> result) {
         if (root == null) {
             return;
         }
-
         result.add(root.val);
         traverse(root.left, result);
         traverse(root.right, result);
     }
+
     @Test
     public void test02(){
         int[] arr = {3,9,20};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
-
-        TreeNode node20 = root.find(20);
-        node20.setLeftChild(new TreeNode(15));
-        node20.setRightChild(new TreeNode(7));
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
         System.out.println(preorderTraversal_2(root));
     }
+
+////////////////////////////////////////////////////////////////////////////
 
     //Version 2: Divide & Conquer
     public ArrayList<Integer> preorderTraversal_3(TreeNode root) {
@@ -105,10 +104,8 @@ public class _66_Binary_Tree_Preorder_Traversal {
     public void test03(){
         int[] arr = {3,9,20};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
-
-        TreeNode node20 = root.find(20);
-        node20.setLeftChild(new TreeNode(15));
-        node20.setRightChild(new TreeNode(7));
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
         System.out.println(preorderTraversal_3(root));

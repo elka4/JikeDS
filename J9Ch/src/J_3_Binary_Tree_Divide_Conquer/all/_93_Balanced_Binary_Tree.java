@@ -43,7 +43,7 @@ public class _93_Balanced_Binary_Tree {
             return new ResultType(false, -1);
         }
 
-        // root not balance
+        // root not balance  能走到这一步说明subtree都是balanced
         if (Math.abs(left.maxDepth - right.maxDepth) > 1) {
             return new ResultType(false, -1);
         }
@@ -52,11 +52,30 @@ public class _93_Balanced_Binary_Tree {
                 Math.max(left.maxDepth, right.maxDepth) + 1);
     }
 
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isBalanced_1(root));
+    }
 
+    @Test
+    public void test02(){
+        TreeNode root = new TreeNode(3);
+        root.setRightChild(new TreeNode(20));
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isBalanced_1(root));
+    }
 
-    ////////////////////////////////////////////////////////////////////
-
-
+////////////////////////////////////////////////////////////////////
 
     // Version 2: without ResultType
     public boolean isBalanced_2(TreeNode root) {
@@ -84,25 +103,33 @@ A)  3            B)    3
    15   7              15  7
  */
     @Test
-    public void test01(){
+    public void test03(){
         int[] arr = {3,9,20};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        TreeNode node20 = root.find(20);
-        node20.setLeftChild(new TreeNode(15));
-        node20.setRightChild(new TreeNode(7));
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
-        System.out.println(isBalanced_1(root));
+        System.out.println(isBalanced_2(root));
     }
-
     @Test
-    public void test02(){
+    public void test04(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        //root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isBalanced_2(root));
+    }
+    @Test
+    public void test05(){
         TreeNode root = new TreeNode(3);
         root.setRightChild(new TreeNode(20));
         root.right.setLeftChild(new TreeNode(15));
         root.right.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
-        System.out.println(isBalanced_1(root));
+        System.out.println(isBalanced_2(root));
     }
 }

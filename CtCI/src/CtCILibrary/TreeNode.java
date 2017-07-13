@@ -101,4 +101,10 @@ public class TreeNode {
 	public void print() {
 		BTreePrinter.printNode(this);
 	}
+
+	@Override
+	public String toString(){
+	    return "Node " + data;
+
+    }
 } 
