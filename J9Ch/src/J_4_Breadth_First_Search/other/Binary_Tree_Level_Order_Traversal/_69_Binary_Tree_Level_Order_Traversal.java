@@ -12,9 +12,7 @@ import java.util.Queue;
  * Easy
  * Created by tianhuizhu on 6/27/17.
  */
-
-// top to bottom
-public class _69_Binary_Tree_Level_Order_Traversal_Easy {
+public class _69_Binary_Tree_Level_Order_Traversal {
 
     // version 1: BFS
     public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
@@ -45,6 +43,20 @@ public class _69_Binary_Tree_Level_Order_Traversal_Easy {
 
         return result;
     }
+
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(levelOrder(root));
+    }
+
+//////////////////////////////////////////////////////////////////////////
 
 
     // version 2:  DFS
@@ -87,7 +99,19 @@ public class _69_Binary_Tree_Level_Order_Traversal_Easy {
         dfs(root.right, level, curtLevel + 1, maxLevel);
     }
 
+    @Test
+    public void test02(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(levelOrder2(root));
+    }
 
+//////////////////////////////////////////////////////////////////////////
 
     // version 3: BFS. two queues
     public ArrayList<ArrayList<Integer>> levelOrder3(TreeNode root) {
@@ -126,6 +150,18 @@ public class _69_Binary_Tree_Level_Order_Traversal_Easy {
         return result;
     }
 
+    @Test
+    public void test03(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(levelOrder3(root));
+    }
+//////////////////////////////////////////////////////////////////////////
 
     // version 4: BFS, queue with dummy node
     public ArrayList<ArrayList<Integer>> levelOrder4(TreeNode root) {
@@ -164,7 +200,7 @@ public class _69_Binary_Tree_Level_Order_Traversal_Easy {
     }
 
     @Test
-    public void test01(){
+    public void test04(){
         int[] arr = {3,9,20};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         TreeNode node20 = root.find(20);

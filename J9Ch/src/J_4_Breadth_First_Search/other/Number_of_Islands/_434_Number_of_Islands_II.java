@@ -102,12 +102,6 @@ public class _434_Number_of_Islands_II {
         return ans;
     }
 
-
-    /*
-    Given n = 3, m = 3, array of pair A = [(0,0),(0,1),(2,2),(2,1)].
-
-return [1,1,2,2].
-     */
     @Test
     public void test01(){
         Point[] operators = {
@@ -116,4 +110,10 @@ return [1,1,2,2].
         };
         System.out.println(numIslands2(3, 3, operators));
     }
+
+        /*
+    Given n = 3, m = 3, array of pair A = [(0,0),(0,1),(2,2),(2,1)].
+
+    return [1,1,2,2].
+     */
 }

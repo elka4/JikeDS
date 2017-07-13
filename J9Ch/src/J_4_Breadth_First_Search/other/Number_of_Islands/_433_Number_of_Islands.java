@@ -81,8 +81,18 @@ public class _433_Number_of_Islands {
         return coor.x >= 0 && coor.x < n && coor.y >= 0 && coor.y < m;
     }
 
-
-
+    @Test
+    public void test01(){
+        boolean[][] edges = {
+                {true,true,false,false,false},
+                {false,true,false,false,false},
+                {false,false,false,true,true},
+                {false,false,false,false,false},
+                {false,false,false,false,true}
+        };
+        System.out.println(numIslands(edges));
+    }
+//////////////////////////////////////////////////////////////////////////////////
 
 
     // version 2: Union Find
@@ -167,7 +177,19 @@ public class _433_Number_of_Islands {
         return union_find.query();
     }
 
+    @Test
+    public void test02(){
+        boolean[][] edges = {
+                {true,true,false,false,false},
+                {false,true,false,false,false},
+                {false,false,false,true,true},
+                {false,false,false,false,false},
+                {false,false,false,false,true}
+        };
+        System.out.println(numIslands2(edges));
+    }
 
+////////////////////////////////////////////////////////////////////////////////////
 
     // version 3: DFS (not recommended)
     /**
@@ -205,6 +227,18 @@ public class _433_Number_of_Islands {
         return ans;
     }
 
+    @Test
+    public void test03(){
+        boolean[][] edges = {
+                {true,true,false,false,false},
+                {false,true,false,false,false},
+                {false,false,false,true,true},
+                {false,false,false,false,false},
+                {false,false,false,false,true}
+        };
+        System.out.println(numIslands2(edges));
+    }
+
     /*
     [
   [1, 1, 0, 0, 0],
@@ -216,16 +250,5 @@ public class _433_Number_of_Islands {
 return 3.
      */
 
-    @Test
-    public void test01(){
-        boolean[][] edges = {
-                {true,true,false,false,false},
-                {false,true,false,false,false},
-                {false,false,false,true,true},
-                {false,false,false,false,false},
-                {false,false,false,false,true}
-        };
-        System.out.println(numIslands2(edges));
-    }
 
 }

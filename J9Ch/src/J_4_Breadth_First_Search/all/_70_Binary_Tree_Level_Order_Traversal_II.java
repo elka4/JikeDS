@@ -45,6 +45,21 @@ public class _70_Binary_Tree_Level_Order_Traversal_II {
         return result;
     }
 
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+
+
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+
+        System.out.println(levelOrderBottom(root));
+    }
+
+
     /*
     3
    / \
@@ -62,18 +77,4 @@ return its bottom-up level order traversal as:
 ]
      */
 
-    @Test
-    public void test01(){
-        int[] arr = {3,9,20};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-
-
-        root.right.setLeftChild(new TreeNode(15));
-        root.right.setRightChild(new TreeNode(7));
-        System.out.println("root: ");
-        root.print();
-
-        System.out.println(levelOrderBottom(root));
-
-    }
 }

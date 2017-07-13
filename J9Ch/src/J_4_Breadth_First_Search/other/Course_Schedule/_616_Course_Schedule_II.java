@@ -61,13 +61,7 @@ public class _616_Course_Schedule_II {
 
         return new int[0];
     }
-    /*
-    Given n = 2, prerequisites = [[1,0]]
-Return [0,1]
 
-Given n = 4, prerequisites = [1,0],[2,0],[3,1],[3,2]]
-Return [0,1,2,3] or [0,2,1,3]
-     */
     @Test
     public void test01(){
         int numCourses = 4;
@@ -78,4 +72,12 @@ Return [0,1,2,3] or [0,2,1,3]
             System.out.println(i);
         }
     }
+
+    /*
+    Given n = 2, prerequisites = [[1,0]]
+    Return [0,1]
+
+    Given n = 4, prerequisites = [1,0],[2,0],[3,1],[3,2]]
+    Return [0,1,2,3] or [0,2,1,3]
+     */
 }

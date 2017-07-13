@@ -66,4 +66,11 @@ Return false
         int[][] prerequisites = {{1,0}};
         System.out.println(canFinish(2, prerequisites));
     }
+
+    @Test
+    public void test02(){
+        int numCourses = 4;
+        int[][] prerequisites = {{1,0}, {0,1}};
+        System.out.println(canFinish(2, prerequisites));
+    }
 }

@@ -12,10 +12,11 @@ import java.util.Queue;
 /** 70 Binary Tree Level Order Traversal II
  * Created by tianhuizhu on 6/28/17.
  */
-
-// bottom to top
-public class _70_Binary_Tree_Level_Order_Traversal_II_Medium {
-
+public class _70_Binary_Tree_Level_Order_Traversal_II {
+    /**
+     * @param root: The root of binary tree.
+     * @return: buttom-up level order a list of lists of integer
+     */
     public ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
         if (root == null) {
@@ -39,7 +40,7 @@ public class _70_Binary_Tree_Level_Order_Traversal_II_Medium {
             }
             result.add(level);
         }
-
+        System.out.println(result);
         Collections.reverse(result);
         return result;
     }
@@ -48,12 +49,32 @@ public class _70_Binary_Tree_Level_Order_Traversal_II_Medium {
     public void test01(){
         int[] arr = {3,9,20};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        TreeNode node20 = root.find(20);
-        node20.setLeftChild(new TreeNode(15));
-        node20.setRightChild(new TreeNode(7));
+
+
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
+
         System.out.println(levelOrderBottom(root));
     }
+
+
+    /*
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+
+return its bottom-up level order traversal as:
+
+[
+  [15,7],
+  [9,20],
+  [3]
+]
+     */
 
 }
