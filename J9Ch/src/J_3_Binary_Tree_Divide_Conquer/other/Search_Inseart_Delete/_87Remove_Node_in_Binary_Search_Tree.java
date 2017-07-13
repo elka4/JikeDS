@@ -1,5 +1,7 @@
 package J_3_Binary_Tree_Divide_Conquer.other.Search_Inseart_Delete;
+import lib.AssortedMethods;
 import lib.TreeNode;
+import org.junit.Test;
 
 public class _87Remove_Node_in_Binary_Search_Tree {
 	 /**
@@ -72,6 +74,20 @@ public class _87Remove_Node_in_Binary_Search_Tree {
             temp.left = node.left;
             temp.right = node.right;
         }
+    }
+
+    @Test
+    public void test03() {
+        int[] arr = {5, 3, 6};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.left = new TreeNode(2);
+        root.left.right = new TreeNode(4);
+
+        System.out.println("root: ");
+        root.print();
+
+        deleteNode(root, root.left);
+        root.print();
     }
 }
 

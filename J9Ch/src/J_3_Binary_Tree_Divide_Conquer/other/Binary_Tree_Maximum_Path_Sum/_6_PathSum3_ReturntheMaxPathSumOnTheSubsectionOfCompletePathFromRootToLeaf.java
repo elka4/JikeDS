@@ -1,4 +1,4 @@
-package J_3_Binary_Tree_Divide_Conquer.other.Binary_Tree_Path_Sum;
+package J_3_Binary_Tree_Divide_Conquer.other.Binary_Tree_Maximum_Path_Sum;
 
 import lib.AssortedMethods;
 import lib.TreeNode;

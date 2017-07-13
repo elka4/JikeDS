@@ -90,6 +90,7 @@ public class _93_Balanced_Binary_Tree {
 
         int left = maxDepth(root.left);
         int right = maxDepth(root.right);
+
         if (left == -1 || right == -1 || Math.abs(left-right) > 1) {
             return -1;
         }

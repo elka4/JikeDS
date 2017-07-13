@@ -33,6 +33,18 @@ public class _95_Validate_Binary_Search_Tree {
         return true;
     }
 
+    @Test
+    public void test01(){
+        int[] arr = {2,1,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.print();
+        root.right.setLeftChild(new TreeNode(3));
+        root.right.setRightChild(new TreeNode(5));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isValidBST(root));
+    }
+
 /////////////////////////////////////////////////////////////////////////////////
 
     // version 2  Divide and Conquer, with result type
@@ -45,6 +57,7 @@ public class _95_Validate_Binary_Search_Tree {
             this.maxValue = maxValue;
             this.minValue = minValue;
         }
+
     }
 
     /**
@@ -79,6 +92,18 @@ public class _95_Validate_Binary_Search_Tree {
                 Math.min(root.val, left.minValue));
     }
 
+    @Test
+    public void test02(){
+        int[] arr = {2,1,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.print();
+        root.right.setLeftChild(new TreeNode(3));
+        root.right.setRightChild(new TreeNode(5));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isValidBST2(root));
+    }
+
 /////////////////////////////////////////////////////////////////////////////////
 
     // version 3  Divide and Conquer
@@ -86,7 +111,7 @@ public class _95_Validate_Binary_Search_Tree {
      * @param root: The root of binary tree.
      * @return: True if the binary tree is BST, or false
      */
-    public boolean isValidBST_3(TreeNode root) {
+    public boolean isValidBST3(TreeNode root) {
         // write your code here
         return divConq(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
@@ -101,6 +126,18 @@ public class _95_Validate_Binary_Search_Tree {
         return divConq(root.left, min, Math.min(max, root.val)) &&
                 divConq(root.right, Math.max(min, root.val), max);
     }
+
+    @Test
+    public void test03(){
+        int[] arr = {2,1,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+
+        root.right.setLeftChild(new TreeNode(3));
+        root.right.setRightChild(new TreeNode(5));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isValidBST3(root));
+    }
 /////////////////////////////////////////////////////////////////////////////////
 
 /*
@@ -110,19 +147,5 @@ public class _95_Validate_Binary_Search_Tree {
    / \
   3   5
  */
-    @Test
-    public void test01(){
-        int[] arr = {2,1,4};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        root.print();
-        root.right.setLeftChild(new TreeNode(3));
-        root.right.setRightChild(new TreeNode(5));
-        System.out.println("root: ");
-        root.print();
-        System.out.println(isValidBST(root));
-//        TreeNode result = findSubtree2(root);
-//        System.out.println("root: ");
-//        result.print();
-    }
 
 }

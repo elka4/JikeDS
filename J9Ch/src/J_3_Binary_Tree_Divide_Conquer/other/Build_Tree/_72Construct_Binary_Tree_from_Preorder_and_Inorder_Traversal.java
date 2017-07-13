@@ -37,6 +37,14 @@ public class _72Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal {
 	    return myBuildTree(inorder, 0, inorder.length - 1, 
 	    					   preorder, 0, preorder.length - 1);
 	}
+
+	@Test
+    public void test01(){
+        int[] preorder = {2,1,3};
+        int[] inorder = {1,2,3};
+        buildTree(preorder, inorder).print();
+    }
+
 }
 
 /*Given preorder and inorder traversal of a tree, construct the binary tree.

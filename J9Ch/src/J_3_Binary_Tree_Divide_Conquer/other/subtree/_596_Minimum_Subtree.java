@@ -5,19 +5,22 @@ import lib.TreeNode;
 import org.junit.Test;
 
 /** 596. Minimum Subtree
+ *
+ * Given a binary tree, find the subtree with minimum sum.
+ * Return the root of the subtree.
  * Easy
 
  * Created by tianhuizhu on 6/27/17.
  */
+
+// subtree with minimum sum.
+
 public class _596_Minimum_Subtree {
 
     // version 1 : traverse + divide conquer
     private TreeNode subtree = null;
     private int subtreeSum = Integer.MAX_VALUE;
-    /**
-     * @param root the root of binary tree
-     * @return the root of the minimum subtree
-     */
+
     public TreeNode findSubtree(TreeNode root) {
         helper(root);
         return subtree;
@@ -36,8 +39,33 @@ public class _596_Minimum_Subtree {
         return sum;
     }
 
+    @Test
+    public void test01(){
+        int[] arr = {1,-5,2,0,2,-4,-5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        TreeNode result = findSubtree(root);
+        System.out.println("root: ");
+        result.print();
+
+    }
+
+    @Test
+    public void test02(){
+        int[] arr = {1,-5,2,3,-2,7,-5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        TreeNode result = findSubtree(root);
+        System.out.println("root: ");
+        result.print();
+    }
+
+///////////////////////////////////////////////////////////////////////////
 
     // version 2: Pure divide conquer
+
     class ResultType {
         public TreeNode minSubtree;
         public int sum, minSum;
@@ -48,10 +76,6 @@ public class _596_Minimum_Subtree {
         }
     }
 
-    /**
-     * @param root the root of binary tree
-     * @return the root of the minimum subtree
-     */
     public TreeNode findSubtree_2(TreeNode root) {
         ResultType result = helper_2(root);
         return result.minSubtree;
@@ -84,40 +108,6 @@ public class _596_Minimum_Subtree {
         return result;
     }
 
-/*
-Given a binary tree:
-
-     1
-   /   \
- -5     2
- / \   /  \
-0   2 -4  -5
-return the node 1.
- */
-
-    @Test
-    public void test01(){
-        int[] arr = {1,-5,2,0,2,-4,-5};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        TreeNode result = findSubtree(root);
-        System.out.println("root: ");
-        result.print();
-
-    }
-    @Test
-    public void test02(){
-        int[] arr = {1,-5,2,3,-2,7,-5};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        TreeNode result = findSubtree(root);
-        System.out.println("root: ");
-        result.print();
-
-    }
-
     @Test
     public void test03(){
         int[] arr = {1,-5,2,0,2,-4,-5};
@@ -140,6 +130,18 @@ return the node 1.
         result.print();
 
     }
+
+    /*
+Given a binary tree:
+
+     1
+   /   \
+ -5     2
+ / \   /  \
+0   2 -4  -5
+return the node 1.
+ */
+
 
 
 }

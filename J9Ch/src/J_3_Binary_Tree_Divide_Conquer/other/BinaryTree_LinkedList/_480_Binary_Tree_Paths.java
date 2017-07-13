@@ -43,6 +43,17 @@ public class _480_Binary_Tree_Paths {
         return paths;
     }
 
+    @Test
+    public void test02() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.setRightChild(new TreeNode(5));
+        root.left.setLeftChild(new TreeNode(4));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePaths(root));
+    }
+
 ///////////////////////////////////////////////////////////////////////////
 
     // version 2: traverse
@@ -80,6 +91,17 @@ public class _480_Binary_Tree_Paths {
         }
     }
 
+    @Test
+    public void test01() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.setRightChild(new TreeNode(5));
+        root.left.setLeftChild(new TreeNode(4));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePaths_2(root));
+    }
+
 ///////////////////////////////////////////////////////////////////////////
 
     /*
@@ -89,15 +111,5 @@ public class _480_Binary_Tree_Paths {
  \
   5
      */
-    @Test
-    public void test01() {
-        int[] arr = {1, 2, 3};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        root.left.setRightChild(new TreeNode(5));
-        root.left.setLeftChild(new TreeNode(4));
-        System.out.println("root: ");
-        root.print();
-        System.out.println(binaryTreePaths(root));
 
-    }
 }

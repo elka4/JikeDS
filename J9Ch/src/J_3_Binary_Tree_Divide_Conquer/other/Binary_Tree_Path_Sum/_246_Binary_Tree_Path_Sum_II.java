@@ -47,6 +47,44 @@ public class _246_Binary_Tree_Path_Sum_II {
         findSum(head.right, sum, buffer, level + 1, results);
         buffer.remove(buffer.size() - 1);
     }
+
+    @Test
+    public void test01(){
+        int[] arr = {1,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+
+        root.left.setLeftChild(new TreeNode(4));
+        root.right.setLeftChild(new TreeNode(2));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePathSum2(root,6));
+    }
+
+    @Test
+    public void test02(){
+        int[] arr = {1,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+
+        root.left.setLeftChild(new TreeNode(4));
+        root.right.setLeftChild(new TreeNode(2));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePathSum2(root,3));
+    }
+
+    @Test
+    public void test03(){
+        int[] arr = {1,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.setLeftChild(new TreeNode(4));
+        root.right.setLeftChild(new TreeNode(2));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePathSum2(root,4));
+    }
+
+}
+
 /*
     1
    / \
@@ -61,40 +99,3 @@ for target = 6, return
 ]
 
  */
-    @Test
-    public void test01(){
-        int[] arr = {1,2,3};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-
-        root.left.setLeftChild(new TreeNode(4));
-        root.right.setLeftChild(new TreeNode(2));
-        System.out.println("root: ");
-        root.print();
-        System.out.println(binaryTreePathSum2(root,6));
-    }
-    @Test
-    public void test02(){
-        int[] arr = {1,2,3};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-
-        root.left.setLeftChild(new TreeNode(4));
-        root.right.setLeftChild(new TreeNode(2));
-        System.out.println("root: ");
-        root.print();
-        System.out.println(binaryTreePathSum2(root,3));
-
-    }
-    @Test
-    public void test03(){
-        int[] arr = {1,2,3};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-
-        root.left.setLeftChild(new TreeNode(4));
-        root.right.setLeftChild(new TreeNode(2));
-        System.out.println("root: ");
-        root.print();
-        System.out.println(binaryTreePathSum2(root,4));
-
-    }
-
-}

@@ -55,14 +55,6 @@ public class _614_Binary_Tree_Longest_Consecutive_Sequence_II {
 
         return new ResultType(len, down, up);
     }
-    /*
-    1
-   / \
-  2   0
- /
-3
-Return 4 // 0-1-2-3
-     */
 
     @Test
     public void test01(){
@@ -76,5 +68,15 @@ Return 4 // 0-1-2-3
         System.out.println(longestConsecutive2(root));
 
     }
+
+/*
+        1
+       / \
+      2   0
+     /
+    3
+    Return 4 // 0-1-2-3
+*/
+
 
 }

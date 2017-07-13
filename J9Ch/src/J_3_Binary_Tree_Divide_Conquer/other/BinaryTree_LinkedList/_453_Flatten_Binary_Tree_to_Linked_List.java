@@ -32,6 +32,17 @@ public class _453_Flatten_Binary_Tree_to_Linked_List {
         flatten(right);
     }
 
+    @Test
+    public void test01() {
+        int[] arr = {1, 2, 5,3,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setRightChild(new TreeNode(6));
+        System.out.println("root: ");
+        root.print();
+        flatten(root);
+        root.print();
+    }
+
 ///////////////////////////////////////////////////////////////
 
     // version 2: Divide & Conquer
@@ -70,6 +81,17 @@ public class _453_Flatten_Binary_Tree_to_Linked_List {
         return root;
     }
 
+    @Test
+    public void test02() {
+        int[] arr = {1, 2, 5,3,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setRightChild(new TreeNode(6));
+        System.out.println("root: ");
+        root.print();
+        flatten_2(root);
+        root.print();
+    }
+
 ///////////////////////////////////////////////////////////////
 
     // version 3: Non-Recursion
@@ -100,6 +122,17 @@ public class _453_Flatten_Binary_Tree_to_Linked_List {
         }
     }
 
+    @Test
+    public void test03() {
+        int[] arr = {1, 2, 5,3,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setRightChild(new TreeNode(6));
+        System.out.println("root: ");
+        root.print();
+        flatten(root);
+        root.print();
+    }
+
 ///////////////////////////////////////////////////////////////
 
     /*
@@ -115,15 +148,5 @@ public class _453_Flatten_Binary_Tree_to_Linked_List {
                        \
                         6
      */
-    @Test
-    public void test01() {
-        int[] arr = {1, 2, 5,3,4};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        root.right.setRightChild(new TreeNode(6));
-        System.out.println("root: ");
-        root.print();
-        flatten(root);
-        root.print();
 
-    }
 }

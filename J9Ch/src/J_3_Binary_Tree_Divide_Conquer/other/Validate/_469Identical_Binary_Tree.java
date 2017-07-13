@@ -12,11 +12,47 @@ public class _469Identical_Binary_Tree {
         // Write your code here
         if (a == null && b == null)
             return true;
+
         if (a != null && b != null) {
             return a.val == b.val && isIdentical(a.left, b.left)
                     && isIdentical(a.right, b.right);
         }
         return false;
+    }
+
+
+    @Test
+    public void test01(){
+        int[] arr = {2,1,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode root2 = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isIdentical(root, root2));
+    }
+
+//////////////////////////////////////////////////////////
+
+    public boolean isIdentical2(TreeNode a, TreeNode b) {
+        // Write your code here
+        if (a == null && b == null)
+            return true;
+
+        if (a == null || b == null)
+            return false;
+
+        return a.val == b.val && isIdentical(a.left, b.left)
+                && isIdentical(a.right, b.right);
+    }
+
+    @Test
+    public void test02(){
+        int[] arr = {2,1,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode root2 = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isIdentical2(root, root2));
     }
 }
 

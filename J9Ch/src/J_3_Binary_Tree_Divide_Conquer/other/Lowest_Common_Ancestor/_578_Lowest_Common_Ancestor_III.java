@@ -11,6 +11,7 @@ import org.junit.Test;
 
 //node A or node B may not exist in tree.
 //Return null if LCA does not exist.
+
 public class _578_Lowest_Common_Ancestor_III {
     class ResultType {
         public boolean a_exist, b_exist;

@@ -74,6 +74,7 @@ public class _597_Subtree_with_Maximum_Average {
         }
         return result;
     }
+
     private void notNull(ResultType result, TreeNode root){
         if(subtree != null){
             System.out.println("subtreeResult.sum " + subtreeResult.sum);
@@ -93,8 +94,10 @@ public class _597_Subtree_with_Maximum_Average {
         TreeNode result = findSubtree2(root);
         System.out.println("root: ");
         result.print();
-
     }
+
+
+
     /*
     root:
    1

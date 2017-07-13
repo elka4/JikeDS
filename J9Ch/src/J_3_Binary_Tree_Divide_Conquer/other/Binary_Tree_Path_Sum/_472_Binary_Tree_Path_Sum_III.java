@@ -86,12 +86,10 @@ and target = 6. Return :
         System.out.println("root: ");
         root.print();
         List<List<Integer>> result = binaryTreePathSum3(root, 6);
-        System.out.println(result.size());
         System.out.println(result);
-        //System.out.println(binaryTreePathSum3(root, 6));
     }
 
-
+//////////////////////////////////////////////////////////////////////////////
 
     /*
     root = [10,5,-3,3,2,null,11,3,-2,null,1], sum = 8
@@ -116,7 +114,8 @@ and target = 6. Return :
         return helper(root, 0, sum, preSum);
     }
 
-    public int helper(TreeNode root, int currSum, int target, HashMap<Integer, Integer> preSum) {
+    public int helper(TreeNode root, int currSum, int target,
+                      HashMap<Integer, Integer> preSum) {
         if (root == null) {
             return 0;
         }
@@ -125,7 +124,9 @@ and target = 6. Return :
         int res = preSum.getOrDefault(currSum - target, 0);
         preSum.put(currSum, preSum.getOrDefault(currSum, 0) + 1);
 
-        res += helper(root.left, currSum, target, preSum) + helper(root.right, currSum, target, preSum);
+        res += helper(root.left, currSum, target, preSum)
+                + helper(root.right, currSum, target, preSum);
+
         preSum.put(currSum, preSum.get(currSum) - 1);
         return res;
     }
@@ -135,7 +136,7 @@ and target = 6. Return :
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         System.out.println("root: ");
         root.print();
-        System.out.println(pathSum(root, 6));
+        System.out.println(pathSum(root, 7));
     }
 
 

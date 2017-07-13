@@ -1,22 +1,10 @@
-package J_3_Binary_Tree_Divide_Conquer.other.Chage_Tree;
+package J_3_Binary_Tree_Divide_Conquer.other.Validate;
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
 public class _21Tweaked_Identical_Binary_Tree {
-	class TreeNode {
-		      public int val;
-		      public TreeNode left, right;
-		      public TreeNode(int val) {
-		          this.val = val;
-		          this.left = this.right = null;
-		      }
-	}
-	
-	/**
-	 * @param a, b, the root of binary trees.
-	 * @return true if they are tweaked identical, or false.
-	 */
+
 	public boolean isTweakedIdentical(TreeNode a, TreeNode b) {
 	    if (a == null && b == null) {
 	        return true;
@@ -40,6 +28,40 @@ public class _21Tweaked_Identical_Binary_Tree {
 	    
 	    return false;
 	}
+
+    @Test
+    public void test01() {
+        int[] arr = {1,2,3};
+        lib.TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.left = new TreeNode(4);
+
+        int[] arr2 = {1,3,2};
+        lib.TreeNode root2 = AssortedMethods.createTreeFromArray(arr2);
+        root2.right.right = new TreeNode(4);
+
+        System.out.println("root: ");
+        root.print();
+        root2.print();
+
+        System.out.println(isTweakedIdentical(root,root2));
+    }
+
+    @Test
+    public void test02() {
+        int[] arr = {1,2,3};
+        lib.TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.left = new TreeNode(4);
+
+        int[] arr2 = {1,3,2};
+        lib.TreeNode root2 = AssortedMethods.createTreeFromArray(arr2);
+        root2.right.right = new TreeNode(4);
+
+        System.out.println("root: ");
+        root.print();
+        root2.print();
+
+        System.out.println(isTweakedIdentical(root,root2));
+    }
 }
 
 /*Check two given binary trees are identical or not. Assuming any number of tweaks are allowed. A tweak is defined as a swap of the children of one node in the tree.

@@ -30,6 +30,7 @@ public class _448_Inorder_Successor_in_Binary_Search_Tree {
         }
 
         root = root.right;
+
         while (root.left != null) {
             root = root.left;
         }
@@ -42,13 +43,15 @@ public class _448_Inorder_Successor_in_Binary_Search_Tree {
         int[] arr = {7,5,10};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
 
-
         root.right.setLeftChild(new TreeNode(8));
         root.right.setRightChild(new TreeNode(12));
         System.out.println("root: ");
         root.print();
-        System.out.println(inorderSuccessor(root, root).val);
-        System.out.println(inorderSuccessor(root, root.right).val);
+        inorderSuccessor(root, root).print();
+        //System.out.println(inorderSuccessor(root, root).val);
+        //System.out.println(inorderSuccessor(root, root.right).val);
+        inorderSuccessor(root, root.left).print();
+        inorderSuccessor(root, root.right.left).print();
     }
 
 }

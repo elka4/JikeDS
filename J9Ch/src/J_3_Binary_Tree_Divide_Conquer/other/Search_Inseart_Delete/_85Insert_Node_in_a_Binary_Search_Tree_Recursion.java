@@ -1,5 +1,7 @@
 package J_3_Binary_Tree_Divide_Conquer.other.Search_Inseart_Delete;
+import lib.AssortedMethods;
 import lib.TreeNode;
+import org.junit.Test;
 
 public class _85Insert_Node_in_a_Binary_Search_Tree_Recursion {
     /**
@@ -17,6 +19,16 @@ public class _85Insert_Node_in_a_Binary_Search_Tree_Recursion {
             root.right = insertNode(root.right, node);
         }
         return root;
+    }
+
+    @Test
+    public void test03() {
+        int[] arr = {3, 2, 5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        insertNode(root, new TreeNode(4));
+        root.print();
     }
 }
 

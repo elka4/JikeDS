@@ -19,11 +19,13 @@ public class _376_Binary_Tree_Path_Sum {
      * @param target an integer
      * @return all valid paths
      */
+
+    // Algorithm: Traverse
+    // Use recursion to traverse the tree in preorder, pass with a parameter
+    // `sum` as the sum of each node from root to current node.
+    // Put the whole path into result if the leaf has a sum equal to target.
+
     public List<List<Integer>> binaryTreePathSum(TreeNode root, int target) {
-        // Algorithm: Traverse
-        // Use recursion to traverse the tree in preorder, pass with a parameter
-        // `sum` as the sum of each node from root to current node.
-        // Put the whole path into result if the leaf has a sum equal to target.
 
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
@@ -64,6 +66,26 @@ public class _376_Binary_Tree_Path_Sum {
             path.remove(path.size() - 1);
         }
     }
+
+    @Test
+    public void test01() {
+        int[] arr = {1, 2, 4,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePathSum(root, 5));
+    }
+
+    @Test
+    public void test02() {
+        int[] arr = {1, 2, 4,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePathSum(root, 6));
+    }
+}
+
 /*Given a binary tree, and target = 5:
 
      1
@@ -78,13 +100,6 @@ return
   [1, 4]
 ]
  */
-    @Test
-    public void test01() {
-        int[] arr = {1, 2, 4,2,3};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        System.out.println(binaryTreePathSum(root, 5));
-    }
 
-}
+
+

@@ -33,13 +33,40 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         return Math.max(length, Math.max(left, right));
     }
 
+    @Test
+    public void test01() {
+        TreeNode root = new TreeNode(1);
+
+        root.setRightChild(new TreeNode(3));
+        root.right.setLeftChild(new TreeNode(2));
+        root.right.setRightChild(new TreeNode(4));
+        root.right.right.setRightChild(new TreeNode(5));
+
+        root.print();
+        System.out.println(longestConsecutive(root));
+    }
+
+    @Test
+    public void test02() {
+        TreeNode root = new TreeNode(2);
+
+        root.setRightChild(new TreeNode(3));
+        root.right.setLeftChild(new TreeNode(5));
+        root.right.left.setRightChild(new TreeNode(1));
+
+        root.print();
+        System.out.println(longestConsecutive3(root));
+    }
+
+///////////////////////////////////////////////////////////////////////////////
+
     // version 2: Another Traverse + Divide Conquer
     /**
      * @param root the root of binary tree
      * @return the length of the longest consecutive sequence path
      */
     private int longest;
-    public int longestConsecutive_2(TreeNode root) {
+    public int longestConsecutive2(TreeNode root) {
         longest = 0;
         helper(root);
         return longest;
@@ -67,6 +94,32 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         return subtreeLongest;
     }
 
+    @Test
+    public void test03() {
+        TreeNode root = new TreeNode(1);
+
+        root.setRightChild(new TreeNode(3));
+        root.right.setLeftChild(new TreeNode(2));
+        root.right.setRightChild(new TreeNode(4));
+        root.right.right.setRightChild(new TreeNode(5));
+
+        root.print();
+        System.out.println(longestConsecutive2(root));
+    }
+
+    @Test
+    public void test04() {
+        TreeNode root = new TreeNode(2);
+
+        root.setRightChild(new TreeNode(3));
+        root.right.setLeftChild(new TreeNode(5));
+        root.right.left.setRightChild(new TreeNode(1));
+
+        root.print();
+        System.out.println(longestConsecutive2(root));
+    }
+
+///////////////////////////////////////////////////////////////////////////////
 
     // version 3: Divide Conquer
     private class ResultType {
@@ -81,7 +134,7 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
      * @param root the root of binary tree
      * @return the length of the longest consecutive sequence path
      */
-    public int longestConsecutive_3(TreeNode root) {
+    public int longestConsecutive3(TreeNode root) {
         System.out.println("maxInSubtree "+helper(root).maxInSubtree);
         System.out.println("maxFromRoot "+helper(root).maxFromRoot);
         return helper(root).maxInSubtree;
@@ -120,6 +173,31 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         return result;
     }
 
+    @Test
+    public void test05() {
+        TreeNode root = new TreeNode(1);
+
+        root.setRightChild(new TreeNode(3));
+        root.right.setLeftChild(new TreeNode(2));
+        root.right.setRightChild(new TreeNode(4));
+        root.right.right.setRightChild(new TreeNode(5));
+
+        root.print();
+        System.out.println(longestConsecutive3(root));
+    }
+
+    @Test
+    public void test06() {
+        TreeNode root = new TreeNode(2);
+
+        root.setRightChild(new TreeNode(3));
+        root.right.setLeftChild(new TreeNode(5));
+        root.right.left.setRightChild(new TreeNode(1));
+
+        root.print();
+        System.out.println(longestConsecutive3(root));
+    }
+
 /*
    1
     \
@@ -139,28 +217,5 @@ Longest consecutive sequence path is 3-4-5, so return 3.
  1
 Longest consecutive sequence path is 2-3,not3-2-1, so return 2.
  */
-    @Test
-    public void test01() {
-        TreeNode root = new TreeNode(1);
 
-        root.setRightChild(new TreeNode(3));
-        root.right.setLeftChild(new TreeNode(2));
-        root.right.setRightChild(new TreeNode(4));
-        root.right.right.setRightChild(new TreeNode(5));
-
-        root.print();
-        System.out.println(longestConsecutive_3(root));
-    }
-
-    @Test
-    public void test02() {
-        TreeNode root = new TreeNode(2);
-
-        root.setRightChild(new TreeNode(3));
-        root.right.setLeftChild(new TreeNode(5));
-        root.right.left.setRightChild(new TreeNode(1));
-
-        root.print();
-        System.out.println(longestConsecutive_3(root));
-    }
 }

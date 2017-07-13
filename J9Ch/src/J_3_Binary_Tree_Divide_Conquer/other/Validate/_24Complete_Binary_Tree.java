@@ -34,7 +34,8 @@ public class _24Complete_Binary_Tree {
             return new ResultType(-1, false, false);
         }
         
-// depth is the same, left should be full and right should be complete
+        // depth is the same, l
+        // eft should be full and right should be complete
         if (left.depth == right.depth) {
             if (!left.isFull || !right.isComplete) {
                 return new ResultType(-1, false, false);
@@ -42,7 +43,8 @@ public class _24Complete_Binary_Tree {
             return new ResultType(left.depth + 1, right.isFull, true);
         }
         
-// left.depth = right.depth + 1, left should be complete and right should be full
+        // left.depth = right.depth + 1,
+        // left should be complete and right should be full
         if (left.depth == right.depth + 1) {
             if (!left.isComplete || !right.isFull) {
                 return new ResultType(-1, false, false);
@@ -52,6 +54,27 @@ public class _24Complete_Binary_Tree {
         
         return new ResultType(-1, false, false);
     }
+
+    @Test
+    public void test01() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.left = new TreeNode(4);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isComplete(root));
+    }
+
+    @Test
+    public void test02() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.right = new TreeNode(4);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isComplete(root));
+    }
+
 }
 
 /*Check a binary tree is completed or not. A complete binary tree is a binary 

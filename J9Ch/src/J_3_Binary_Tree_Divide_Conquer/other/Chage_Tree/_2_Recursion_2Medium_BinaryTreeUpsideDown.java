@@ -74,7 +74,6 @@ public class _2_Recursion_2Medium_BinaryTreeUpsideDown {
         System.out.println("root: ");
         root.print();
         upsideDownBinaryTree2(root).print();
-
     }
 }
 	

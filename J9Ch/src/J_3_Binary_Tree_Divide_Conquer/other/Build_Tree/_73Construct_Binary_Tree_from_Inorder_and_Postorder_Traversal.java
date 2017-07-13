@@ -37,6 +37,13 @@ public class _73Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal {
         return myBuildTree(inorder, 0, inorder.length - 1, 
         					   postorder, 0, postorder.length - 1);
     }
+
+    @Test
+    public void test01(){
+        int[] postorder = {1,3,2};
+        int[] inorder = {1,2,3};
+        buildTree(postorder, inorder).print();
+    }
 }
 
 /*Given inorder and postorder traversal of a tree, construct the binary tree.

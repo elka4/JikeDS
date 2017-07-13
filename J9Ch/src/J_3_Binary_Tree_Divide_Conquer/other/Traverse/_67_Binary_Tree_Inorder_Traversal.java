@@ -36,6 +36,19 @@ public class _67_Binary_Tree_Inorder_Traversal {
         return result;
     }
 
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(inorderTraversal(root));
+    }
+
+/////////////////////////////////////////////////////////////////////
+
     //Version 0: Non-Recursion (Recommend)
     public List<Integer> preorderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -61,7 +74,7 @@ public class _67_Binary_Tree_Inorder_Traversal {
     }
 
     @Test
-    public void test01(){
+    public void test02(){
         int[] arr = {3,9,20};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         root.right.setLeftChild(new TreeNode(15));

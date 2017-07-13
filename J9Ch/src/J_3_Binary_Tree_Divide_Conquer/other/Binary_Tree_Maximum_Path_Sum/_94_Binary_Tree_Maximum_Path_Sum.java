@@ -41,6 +41,25 @@ public class _94_Binary_Tree_Maximum_Path_Sum {
         return new ResultType(singlePath, maxPath);
     }
 
+    @Test
+    public void test01(){
+        int[] arr = {1,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum2(root));
+    }
+
+    @Test
+    public void test02(){
+        int[] arr = {1,-5,11,1,20,4,-2};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum2(root));
+    }
+/////////////////////////////////////////////////////////////////////////////////////////
+
 /*
   1
  / \
@@ -84,7 +103,7 @@ return 6.
     }
 
     @Test
-    public void test01(){
+    public void test03(){
         int[] arr = {1,2,3};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         System.out.println("root: ");
@@ -93,7 +112,7 @@ return 6.
     }
 
     @Test
-    public void test02(){
+    public void test04(){
         int[] arr = {1,-5,11,1,20,4,-2};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         System.out.println("root: ");
