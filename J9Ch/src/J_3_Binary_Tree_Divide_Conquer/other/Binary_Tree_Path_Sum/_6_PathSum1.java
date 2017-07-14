@@ -36,14 +36,20 @@ public class _6_PathSum1 {
         //叶子节点，且叶子节点的value和剩余在sum中的值相等时，
         // 将list生成新的list并加入到结果中
         if (sum == root.val && root.left == null && root.right == null) {
+            System.out.println("sum == root.val " + sum );
             res.add(new ArrayList<Integer>(list));
 
         } else {
+            System.out.println("root.left " + root.left);
             helper(root.left, sum - root.val, list, res);
+            System.out.println("root.left " + root.left + " ||| "
+                    + "root.right " + root.right);
             helper(root.right, sum - root.val, list, res);
+            System.out.println("root.right " + root.right);
         }
-
+        System.out.println("list " + list);
         list.remove(list.size() - 1);
+        System.out.println("list " + list);
     }
 
 

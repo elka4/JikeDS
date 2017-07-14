@@ -24,12 +24,28 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         if (root == null) {
             return 0;
         }
-
+        //从上往下算，一开始给root为1，符合条件就加1，不符合条件就重设为1
         int length = (parent != null && parent.val + 1 == root.val)?
                 lengthWithoutRoot + 1
                 : 1;
+        System.out.println("root: " + root.val + ". length: " + length);
+
         int left = helper(root.left, root, length);
+
+        if(root.left != null ){
+            root.left.print();
+            System.out.println("left: " + left);
+        }
+        else System.out.println("root.left is null. " + "left " + left);
+
         int right = helper(root.right, root, length);
+
+        if(root.right != null ){
+            root.right.print();
+            System.out.println("right: " + right);
+        }
+        else System.out.println("root.right is null. " + "right " + right);
+
         return Math.max(length, Math.max(left, right));
     }
 

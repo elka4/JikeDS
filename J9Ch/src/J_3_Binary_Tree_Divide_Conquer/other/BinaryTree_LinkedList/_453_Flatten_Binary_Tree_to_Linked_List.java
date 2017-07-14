@@ -25,9 +25,10 @@ public class _453_Flatten_Binary_Tree_to_Linked_List {
             lastNode.left = null;
             lastNode.right = root;
         }
+        root.print();
 
         lastNode = root;
-        TreeNode right = root.right;
+        TreeNode right = root.right; //切记要把root.right 先存下来。
         flatten(root.left);
         flatten(right);
     }

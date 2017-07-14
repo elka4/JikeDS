@@ -31,6 +31,8 @@ public class _155_Minimum_Depth_of_Binary_Tree {
         return Math.min(getMin(root.left), getMin(root.right)) + 1;
     }
 
+//////////////////////////////////////////////////////////////////
+
     public int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
@@ -42,14 +44,6 @@ public class _155_Minimum_Depth_of_Binary_Tree {
         return Math.max(left, right) + 1;
     }
 
-    /*
-    1
-   / \
-  2   3
- / \
-4   5
-return [1,2,4,5,3]
-     */
 
     @Test
     public void test01(){
@@ -63,4 +57,13 @@ return [1,2,4,5,3]
         root.print();
 
     }
+
+    /*
+    1
+   / \
+  2   3
+ / \
+4   5
+return [1,2,4,5,3]
+     */
 }

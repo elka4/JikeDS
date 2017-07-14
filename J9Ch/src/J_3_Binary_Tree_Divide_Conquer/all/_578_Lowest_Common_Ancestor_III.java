@@ -49,8 +49,10 @@ public class _578_Lowest_Common_Ancestor_III {
 
         if (left_rt.node != null && right_rt.node != null)
             return new ResultType(a_exist, b_exist, root);
+
         if (left_rt.node != null)
             return new ResultType(a_exist, b_exist, left_rt.node);
+
         if (right_rt.node != null)
             return new ResultType(a_exist, b_exist, right_rt.node);
 

@@ -6,9 +6,9 @@ import org.junit.Test;
 
 /** 95. Validate Binary Search Tree
  * Medium
-
  * Created by tianhuizhu on 6/27/17.
  */
+
 public class _95_Validate_Binary_Search_Tree {
 
     // version 1 Traverse
@@ -48,6 +48,7 @@ public class _95_Validate_Binary_Search_Tree {
 /////////////////////////////////////////////////////////////////////////////////
 
     // version 2  Divide and Conquer, with result type
+
     class ResultType {
         boolean is_bst;
         int maxValue, minValue;
@@ -60,10 +61,6 @@ public class _95_Validate_Binary_Search_Tree {
 
     }
 
-    /**
-     * @param root: The root of binary tree.
-     * @return: True if the binary tree is BST, or false
-     */
     public boolean isValidBST2(TreeNode root) {
         ResultType r = validateHelper(root);
         return r.is_bst;
@@ -107,10 +104,7 @@ public class _95_Validate_Binary_Search_Tree {
 /////////////////////////////////////////////////////////////////////////////////
 
     // version 3  Divide and Conquer
-    /**
-     * @param root: The root of binary tree.
-     * @return: True if the binary tree is BST, or false
-     */
+
     public boolean isValidBST3(TreeNode root) {
         // write your code here
         return divConq(root, Long.MIN_VALUE, Long.MAX_VALUE);

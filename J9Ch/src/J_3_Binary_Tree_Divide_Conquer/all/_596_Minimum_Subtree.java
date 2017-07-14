@@ -36,6 +36,30 @@ public class _596_Minimum_Subtree {
         return sum;
     }
 
+    @Test
+    public void test01(){
+        int[] arr = {1,-5,2,0,2,-4,-5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        TreeNode result = findSubtree(root);
+        System.out.println("root: ");
+        result.print();
+
+    }
+    @Test
+    public void test02(){
+        int[] arr = {1,-5,2,3,-2,7,-5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        TreeNode result = findSubtree(root);
+        System.out.println("root: ");
+        result.print();
+
+    }
+
+/////////////////////////////////////////////////////////////////////////////
 
     // version 2: Pure divide conquer
     class ResultType {
@@ -84,6 +108,9 @@ public class _596_Minimum_Subtree {
         return result;
     }
 
+
+/////////////////////////////////////////////////////////////////////////////
+
 /*
 Given a binary tree:
 
@@ -95,28 +122,7 @@ Given a binary tree:
 return the node 1.
  */
 
-    @Test
-    public void test01(){
-        int[] arr = {1,-5,2,0,2,-4,-5};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        TreeNode result = findSubtree(root);
-        System.out.println("root: ");
-        result.print();
 
-    }
-    @Test
-    public void test02(){
-        int[] arr = {1,-5,2,3,-2,7,-5};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        TreeNode result = findSubtree(root);
-        System.out.println("root: ");
-        result.print();
-
-    }
 
     @Test
     public void test03(){

@@ -5,6 +5,7 @@ import lib.TreeNode;
 import org.junit.Test;
 import org.junit.Test;
 
+// top to down
 public class _6_PathSum3_ReturntheMaxPathSumOnTheSubsectionOfCompletePathFromRootToLeaf {
 
     public int maxPathSum(TreeNode root) {
@@ -39,6 +40,62 @@ public class _6_PathSum3_ReturntheMaxPathSumOnTheSubsectionOfCompletePathFromRoo
         System.out.println("root: ");
         root.print();
         System.out.println(maxPathSum(root));
+    }
+
+    @Test
+    public void test02(){
+        int[] arr = {-1,3,5,6,7,8,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.left.left = new TreeNode(-1);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum(root));
+    }
+
+
+/////////////////////////////////////////////////////////////////
+    int max = Integer.MIN_VALUE;
+
+    public int maxPathSum2(TreeNode root) {
+        if (root == null)
+            return Integer.MIN_VALUE;
+
+        helper2(root);
+        return max;
+    }
+
+    private int helper2(TreeNode root) {
+        if (root == null)
+            return 0;
+
+        int left = helper2(root.left);
+        int right = helper2(root.right);
+
+        left = Math.max(left, 0);
+        right = Math.max(right, 0);
+
+        max = Math.max(max, Math.max(left, right) + root.val);
+
+        return Math.max(left, right) + root.val;
+    }
+
+    @Test
+    public void test03(){
+        int[] arr = {1,3,5,6,7,8,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum2(root));
+    }
+
+    @Test
+    public void test04(){
+        int[] arr = {-1,3,5,6,7,8,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.left.left = new TreeNode(-1);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum2(root));
     }
 
 }

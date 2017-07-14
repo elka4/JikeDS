@@ -41,40 +41,37 @@ public class _578_Lowest_Common_Ancestor_III {
         if (root == null)
             return new ResultType(false, false, null);
 
+        // Divide
         ResultType left_rt = helper(root.left, A, B);
         ResultType right_rt = helper(root.right, A, B);
 
+        // Conquer
         boolean a_exist = left_rt.a_exist || right_rt.a_exist || root == A;
         boolean b_exist = left_rt.b_exist || right_rt.b_exist || root == B;
 
+
+        // if (root == null || root == node1 || root == node2) return root;
         if (root == A || root == B)
             return new ResultType(a_exist, b_exist, root);
 
+        // if (left != null && right != null) return root;
         if (left_rt.node != null && right_rt.node != null)
             return new ResultType(a_exist, b_exist, root);
+
+        // if (left != null)   return left;
         if (left_rt.node != null)
             return new ResultType(a_exist, b_exist, left_rt.node);
+
+        // if (right != null)  return right;
         if (right_rt.node != null)
             return new ResultType(a_exist, b_exist, right_rt.node);
 
         return new ResultType(a_exist, b_exist, null);
+
+
     }
 
-    /*
 
-  4
- / \
-3   7
-   / \
-  5   6
-LCA(3, 5) = 4
-
-LCA(5, 6) = 7
-
-LCA(6, 7) = 7
-
-
-     */
     @Test
     public void test01() {
         int[] arr = {4, 3, 7};
@@ -104,4 +101,18 @@ LCA(6, 7) = 7
         lowestCommonAncestor3(root, new TreeNode(4), new TreeNode(7)).print();
 
     }
+        /*
+
+  4
+ / \
+3   7
+   / \
+  5   6
+LCA(3, 5) = 4
+
+LCA(5, 6) = 7
+
+LCA(6, 7) = 7
+
+     */
 }

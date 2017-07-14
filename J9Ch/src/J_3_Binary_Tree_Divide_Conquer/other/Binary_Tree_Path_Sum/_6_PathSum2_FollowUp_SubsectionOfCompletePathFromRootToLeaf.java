@@ -34,6 +34,7 @@ public class _6_PathSum2_FollowUp_SubsectionOfCompletePathFromRootToLeaf {
 
         list.add(root.val);
 
+        // 每向下走到一个node，就从这里向上检查是否list sum为target
         check(sum, list, res);
 
         helper(root.left, sum - root.val, list, res);
@@ -42,8 +43,10 @@ public class _6_PathSum2_FollowUp_SubsectionOfCompletePathFromRootToLeaf {
         list.remove(list.size() - 1);
     }
 
+    // list从下往上逐个从target中减当前value，如果能得到0，将这个list加入result
 	private void check(int target, List<Integer> list,
                        List<List<Integer>> res) {
+
         for(int i = list.size() - 1; i >= 0; i--) {
             target -= list.get(i);
             System.out.println(" list " + list);
