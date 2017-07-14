@@ -76,4 +76,7 @@ public class _473_Add_and_Search_Word {
 // wordDictionary.addWord("word");
 // wordDictionary.search("pattern");
 
+
+
+
 }

@@ -99,12 +99,15 @@ public class _582_Word_Break_II {
         System.out.println(wordBreak(s, wordDict));
     }
 
-
+///////////////////////////////////////////////////////////////////////////////////
 
 
     // version 2:
+
     public ArrayList<String> wordBreak2(String s, Set<String> dict) {
-        // Note: The Solution object is instantiated only once and is reused by each test case.
+        // Note: The Solution object is instantiated
+        // only once and is reused by each test case.
+
         Map<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
         return wordBreakHelper(s,dict,map);
     }
@@ -153,7 +156,7 @@ public class _582_Word_Break_II {
         System.out.println(wordBreak2(s, wordDict));
     }
 
-
+///////////////////////////////////////////////////////////////////////////////
 
 
     //version3, leetcode, memorized DFS
@@ -162,7 +165,8 @@ public class _582_Word_Break_II {
     }
 
     // DFS function returns an array including all substrings derived from s.
-    List<String> DFS(String s, Set<String> wordDict, HashMap<String, LinkedList<String>>map) {
+    List<String> DFS(String s, Set<String> wordDict, HashMap<String,
+            LinkedList<String>>map) {
         if (map.containsKey(s))
             return map.get(s);
 
@@ -200,6 +204,8 @@ public class _582_Word_Break_II {
         wordDict.addAll(Arrays.asList(arr));
         System.out.println(wordBreak3(s, wordDict));
     }
+
+//////////////////////////////////////////////////////////////////////////////////
 
     //version 4
     public List<String> wordBreak4(String s, Set<String> dict) {

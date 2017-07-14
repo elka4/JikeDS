@@ -43,4 +43,7 @@ public class _601_Flatten_2D_Vector {
  * Vector2D i = new Vector2D(vec2d);
  * while (i.hasNext()) v[f()] = i.next();
  */
+
+
+
 }

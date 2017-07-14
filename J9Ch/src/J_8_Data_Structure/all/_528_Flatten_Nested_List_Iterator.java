@@ -26,6 +26,8 @@ import java.util.Stack;
          public List<NestedInteger> getList();
   }
 
+
+
 public class _528_Flatten_Nested_List_Iterator {
 
     public class NestedIterator implements Iterator<Integer> {

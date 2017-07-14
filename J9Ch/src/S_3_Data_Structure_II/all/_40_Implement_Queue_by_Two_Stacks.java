@@ -42,4 +42,8 @@ public class _40_Implement_Queue_by_Two_Stacks {
             return stack1.peek();
         }
     }
+
+
+
+
 }

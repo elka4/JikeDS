@@ -10,7 +10,6 @@ import java.util.Map;
  */
 public class _473_Add_and_Search_Word2 {
 
-
     // Version 2 use HashMap and dfs
     class TrieNode {
         // Initialize your data structure here.
@@ -91,5 +90,8 @@ public class _473_Add_and_Search_Word2 {
 // WordDictionary wordDictionary = new WordDictionary();
 // wordDictionary.addWord("word");
 // wordDictionary.search("pattern");
+
+
+
 
 }

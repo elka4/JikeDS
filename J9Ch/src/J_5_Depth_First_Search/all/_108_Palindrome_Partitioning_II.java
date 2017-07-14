@@ -67,13 +67,17 @@ Return 1 since the palindrome partitioning ["aa", "b"] could be produced using 1
         System.out.println(minCut("aab"));
     }
 
+    @Test
+    public void test02(){
+        System.out.println(minCut("aab"));
+    }
 
-
-
+///////////////////////////////////////////////////////////////////////////////////////
 
     // version 2 // version 2 // version 2 // version 2 // version 2 // version 2
     // f[i] 表示前i个字母，最少被切割几次可以切割为都是回文串。
     // 最后return f[n]
+
     private boolean isPalindrome(String s, int start, int end) {
         for (int i = start, j = end; i < j; i++, j--) {
             if (s.charAt(i) != s.charAt(j)) {
@@ -130,7 +134,15 @@ Return 1 since the palindrome partitioning ["aa", "b"] could be produced using 1
         return f[s.length()];
     }
 
+    @Test
+    public void test03(){
+        System.out.println(minCut("aab"));
+    }
 
+    @Test
+    public void test04(){
+        System.out.println(minCut("aab"));
+    }
 
 
 }

@@ -45,7 +45,8 @@ public class _121_Word_Ladder_II {
             Collections.reverse(path);
         } else {
             for (String next : map.get(crt)) {
-                if (distance.containsKey(next) && distance.get(crt) == distance.get(next) + 1) {
+                if (distance.containsKey(next) && distance.get(crt)
+                        == distance.get(next) + 1) {
                     dfs(ladders, path, next, start, distance, map);
                 }
             }
@@ -115,18 +116,20 @@ public class _121_Word_Ladder_II {
         System.out.println(findLadders(start, end, dict));
     }
 
+///////////////////////////////////////////////////////////////////////////////////////
 
+/*
+1). Use BFS to find the shortest distance between start and end,
+tracing the distance of crossing
+ nodes from start node to end node, and store node's next level neighbors to HashMap;
 
-    /*
-    1). Use BFS to find the shortest distance between start and end,
-    tracing the distance of crossing
-     nodes from start node to end node, and store node's next level neighbors to HashMap;
+2). Use DFS to output paths with the same distance as the shortest distance from
+distance HashMap: compare if the distance of the next level node equals the distance
+ of the current node + 1.
+ */
 
-    2). Use DFS to output paths with the same distance as the shortest distance from
-    distance HashMap: compare if the distance of the next level node equals the distance
-     of the current node + 1.
-     */
     //version 2, leetcode, DFS and BFS
+
     public List<List<String>> findLadders2(String start, String end, List<String> wordList) {
         HashSet<String> dict = new HashSet<String>(wordList);
         List<List<String>> res = new ArrayList<List<String>>();

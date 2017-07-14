@@ -7,15 +7,14 @@ import java.util.HashMap;
  */
 public class _442_Implement_Trie2 {
 
-
     // Version 2: HashMap Version
-/*
-Your Trie object will be instantiated and called as such:
-Trie trie = new Trie();
-trie.insert("lintcode");
-trie.search("lint"); will return false
-trie.startsWith("lint"); will return true
-*/
+    /*
+    Your Trie object will be instantiated and called as such:
+    Trie trie = new Trie();
+    trie.insert("lintcode");
+    trie.search("lint"); will return false
+    trie.startsWith("lint"); will return true
+    */
     class TrieNode {
         // Initialize your data structure here.
         char c;
@@ -91,6 +90,8 @@ trie.startsWith("lint"); will return true
             }
             return cur;
         }
-
     }
+
+
+
 }

@@ -36,6 +36,11 @@ public class _12_Min_Stack {
         }
     }
 
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+
     // version 2, save more space. but space complexity doesn't change.
     public class MinStack2 {
         private Stack<Integer> stack;
@@ -67,4 +72,8 @@ public class _12_Min_Stack {
             return minStack.peek();
         }
     }
+
+
+
+
 }

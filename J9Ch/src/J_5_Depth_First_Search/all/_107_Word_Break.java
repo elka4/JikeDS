@@ -71,6 +71,8 @@ Return true because "lintcode" can be break as "lint code".
         System.out.println(wordBreak(s, wordDict));
     }
 
+/////////////////////////////////////////////////////////////////////////
+
     // version 2, DP, from leetcode
     public boolean wordBreak2(String s, Set<String> dict) {
         boolean[] f = new boolean[s.length() + 1];
@@ -102,6 +104,8 @@ Return true because "lintcode" can be break as "lint code".
         System.out.println(wordBreak2(s, wordDict));
     }
 
+///////////////////////////////////////////////////////////////////////////
+
     // version 3, DP, from leet
     public boolean wordBreak3(String s, Set<String> dict) {
         boolean[] f = new boolean[s.length() + 1];
@@ -129,6 +133,7 @@ Return true because "lintcode" can be break as "lint code".
         System.out.println(wordBreak3(s, wordDict));
     }
 
+//////////////////////////////////////////////////////////////////////////
 
     // version 4, DFS with Path Memorizing Java Solution
     // from leetcode
@@ -138,7 +143,9 @@ Return true because "lintcode" can be break as "lint code".
         return dfs(s, 0, dict, set);
     }
 
-    private boolean dfs(String s, int index, Set<String> dict, Set<Integer> set){
+    private boolean dfs(String s, int index,
+                        Set<String> dict, Set<Integer> set){
+
         // base case
         if(index == s.length()) return true;
         // check memory
