@@ -7,10 +7,13 @@ import java.util.*;
 /**120 Word Ladder
  * Created by tianhuizhu on 6/28/17.
  */
-public class _120_Word_Ladder {
+public class _120_Word_Ladder2 {
 
-// version: LintCode ( Set<String> )
-    public int ladderLength(String start, String end, Set<String> dict) {
+    // version: LeetCode
+    public int ladderLength(String start, String end, List<String> wordList) {
+        Set<String> dict = new HashSet<>();
+        dict.addAll(wordList);
+
         if (dict == null) {
             return 0;
         }
@@ -28,26 +31,14 @@ public class _120_Word_Ladder {
         hash.add(start);
 
         int length = 1;
-        while(!queue.isEmpty()) {
+        while (!queue.isEmpty()) {
             length++;
-            System.out.println("length " + length);
-
             int size = queue.size();
-            System.out.println("queue.size() " + size);
-            System.out.println("queue: " + queue);
-
-            //每个queue就是一层，就是和上层单词只有一个char区别的所有单词
-            //hash就可以确保每个词只进queue一次
-
             for (int i = 0; i < size; i++) {
                 String word = queue.poll();
                 for (String nextWord: getNextWords(word, dict)) {
-
-                    System.out.println("word: " + word);
-                    System.out.println("nextWord: " + nextWord);
-
+                    System.out.println(nextWord);
                     if (hash.contains(nextWord)) {
-                        System.out.println("hash.contains(nextWord) " + nextWord);
                         continue;
                     }
                     if (nextWord.equals(end)) {
@@ -58,8 +49,8 @@ public class _120_Word_Ladder {
                     queue.offer(nextWord);
                 }
             }
-            System.out.println("====================");
         }
+
         return 0;
     }
 
@@ -90,18 +81,11 @@ public class _120_Word_Ladder {
         return nextWords;
     }
 
-    /*
-    start = "hit"
-    end = "cog"
-    dict = ["hot","dot","dog","lot","log"]
-    As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
-    return its length 5.
-     */
     @Test
-    public void test01(){
+    public void test02(){
         String start = "hit";
         String end = "cog";
-        Set<String> dict = new HashSet<>();
+        List<String> dict = new ArrayList<>();
         dict.add("hot");
         dict.add("dot");
         dict.add("dog");
@@ -109,7 +93,6 @@ public class _120_Word_Ladder {
         dict.add("log");
         System.out.println(ladderLength(start, end, dict));
     }
-
 
 
 }

@@ -7,6 +7,8 @@ import java.util.*;
 /**120 Word Ladder
  * Created by tianhuizhu on 6/28/17.
  */
+
+
 public class _120_Word_Ladder {
 
 // version: LintCode ( Set<String> )
@@ -97,11 +99,11 @@ return its length 5.
     }
 
 
-
+///////////////////////////////////////////////////////////////////////
 
 // version: LeetCode
-public class Solution2 {
-    public int ladderLength(String start, String end, List<String> wordList) {
+
+    public int ladderLength2(String start, String end, List<String> wordList) {
         Set<String> dict = new HashSet<>();
         for (String word : wordList) {
             dict.add(word);
@@ -122,7 +124,7 @@ public class Solution2 {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 String word = queue.poll();
-                for (String nextWord: getNextWords(word, dict)) {
+                for (String nextWord: getNextWords2(word, dict)) {
                     if (hash.contains(nextWord)) {
                         continue;
                     }
@@ -141,7 +143,7 @@ public class Solution2 {
 
     // replace character of a string at given index to a given character
     // return a new string
-    private String replace(String s, int index, char c) {
+    private String replace2(String s, int index, char c) {
         char[] chars = s.toCharArray();
         chars[index] = c;
         return new String(chars);
@@ -150,14 +152,14 @@ public class Solution2 {
     // get connections with given word.
     // for example, given word = 'hot', dict = {'hot', 'hit', 'hog'}
     // it will return ['hit', 'hog']
-    private ArrayList<String> getNextWords(String word, Set<String> dict) {
+    private ArrayList<String> getNextWords2(String word, Set<String> dict) {
         ArrayList<String> nextWords = new ArrayList<String>();
         for (char c = 'a'; c <= 'z'; c++) {
             for (int i = 0; i < word.length(); i++) {
                 if (c == word.charAt(i)) {
                     continue;
                 }
-                String nextWord = replace(word, i, c);
+                String nextWord = replace2(word, i, c);
                 if (dict.contains(nextWord)) {
                     nextWords.add(nextWord);
                 }
@@ -165,5 +167,20 @@ public class Solution2 {
         }
         return nextWords;
     }
-}
+
+    @Test
+    public void test02(){
+        String start = "hit";
+        String end = "cog";
+        List<String> dict = new ArrayList<>();
+        dict.add("hot");
+        dict.add("dot");
+        dict.add("dog");
+        dict.add("lot");
+        dict.add("log");
+        System.out.println(ladderLength2(start, end, dict));
+    }
+
+
+
 }

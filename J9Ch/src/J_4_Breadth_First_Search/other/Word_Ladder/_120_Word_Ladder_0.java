@@ -7,7 +7,7 @@ import java.util.*;
 /**120 Word Ladder
  * Created by tianhuizhu on 6/28/17.
  */
-public class _120_Word_Ladder {
+public class _120_Word_Ladder_0 {
 
 // version: LintCode ( Set<String> )
     public int ladderLength(String start, String end, Set<String> dict) {
@@ -22,13 +22,13 @@ public class _120_Word_Ladder {
         dict.add(start);
         dict.add(end);
 
-        HashSet<String> hash = new HashSet<String>();
         Queue<String> queue = new LinkedList<String>();
         queue.offer(start);
-        hash.add(start);
 
         int length = 1;
+
         while(!queue.isEmpty()) {
+            //只要queue还不空，就需要再走至少一步，length就++
             length++;
             System.out.println("length " + length);
 
@@ -36,27 +36,23 @@ public class _120_Word_Ladder {
             System.out.println("queue.size() " + size);
             System.out.println("queue: " + queue);
 
-            //每个queue就是一层，就是和上层单词只有一个char区别的所有单词
-            //hash就可以确保每个词只进queue一次
-
             for (int i = 0; i < size; i++) {
                 String word = queue.poll();
-                for (String nextWord: getNextWords(word, dict)) {
 
+                // word和dict里每个与word相差一个char的nextWord比较
+                //如果这个nextword和end相同，达成目标，return length
+                //否则将nextWord加入queue
+                for (String nextWord: getNextWords(word, dict)) {
                     System.out.println("word: " + word);
                     System.out.println("nextWord: " + nextWord);
 
-                    if (hash.contains(nextWord)) {
-                        System.out.println("hash.contains(nextWord) " + nextWord);
-                        continue;
-                    }
                     if (nextWord.equals(end)) {
                         return length;
                     }
 
-                    hash.add(nextWord);
                     queue.offer(nextWord);
                 }
+
             }
             System.out.println("====================");
         }
