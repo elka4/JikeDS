@@ -18,6 +18,9 @@ public class _127_Topological_Sorting {
           DirectedGraphNode(int x) {
               label = x; neighbors = new ArrayList<DirectedGraphNode>();
           }
+          public String toString(){
+              return "DirectedGraphNode " + label;
+          }
       }
 
 
@@ -29,6 +32,8 @@ public class _127_Topological_Sorting {
         // write your code here
         ArrayList<DirectedGraphNode> result = new ArrayList<DirectedGraphNode>();
         HashMap<DirectedGraphNode, Integer> map = new HashMap();
+
+        //计算入度(除了入度为0的)
         for (DirectedGraphNode node : graph) {
             for (DirectedGraphNode neighbor : node.neighbors) {
                 if (map.containsKey(neighbor)) {
@@ -38,13 +43,20 @@ public class _127_Topological_Sorting {
                 }
             }
         }
+
         Queue<DirectedGraphNode> q = new LinkedList<DirectedGraphNode>();
+
+        System.out.println(map);
+        //q和result加入入度为0的node
         for (DirectedGraphNode node : graph) {
             if (!map.containsKey(node)) {
                 q.offer(node);
                 result.add(node);
             }
         }
+
+        System.out.println("result " + result);
+
         while (!q.isEmpty()) {
             DirectedGraphNode node = q.poll();
             for (DirectedGraphNode n : node.neighbors) {
@@ -82,8 +94,7 @@ public class _127_Topological_Sorting {
 
 
         ArrayList<DirectedGraphNode> result = topSort(graph);
-        for (DirectedGraphNode node: result
-             ) {
+        for (DirectedGraphNode node: result ) {
             System.out.println(node.label);
         }
 

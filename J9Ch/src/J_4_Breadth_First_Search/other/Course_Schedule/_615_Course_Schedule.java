@@ -16,6 +16,8 @@ public class _615_Course_Schedule {
      * @param prerequisites a list of prerequisite pairs
      * @return true if can finish all courses or false
      */
+
+//to take course 0 you have to first take course 1, which is expressed as a pair: [0,1]
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         // Write your code here
         List[] edges = new ArrayList[numCourses];

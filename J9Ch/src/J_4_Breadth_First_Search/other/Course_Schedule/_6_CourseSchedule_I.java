@@ -1,4 +1,4 @@
-package _3Graph_Class;
+package J_4_Breadth_First_Search.other.Course_Schedule;
 
 import org.junit.Test;
 
@@ -15,9 +15,12 @@ public class _6_CourseSchedule_I {
 
         //Represent the graph
         List<List<Integer>> neighborList = new ArrayList<List<Integer>>();
+
         initLists(prerequisites, neighborList, numCourses);
+
         //Using status lable
         int[] status = new int[numCourses];
+
         //Depth First Search
         for (int i = 0; i < numCourses; i++) {
             //Find an entrance
@@ -27,6 +30,7 @@ public class _6_CourseSchedule_I {
         }
         return true;
     }
+
     private void initLists(int[][] prerequisites,
                         List<List<Integer>> neighborList, int numCourses) {
           //Create Lists
@@ -39,6 +43,7 @@ public class _6_CourseSchedule_I {
               neighborList.get(vector[1]).add(vector[0]);
           }
     }
+
     private boolean dfsHelper(List<List<Integer>> neighborList,
                                           int[] status, int cur) {
         status[cur] = -1;
