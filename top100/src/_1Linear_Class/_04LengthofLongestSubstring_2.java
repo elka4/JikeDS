@@ -12,6 +12,7 @@ public int lengthOfLongestSubstring2(String s) {
      int[] map = new int[128];
      int max = Integer.MIN_VALUE;
      char[] chS = s.toCharArray();
+     
      while(end  < chS.length){
          //PollFirst --  start++
          while (map[chS[end]]  > 0) {

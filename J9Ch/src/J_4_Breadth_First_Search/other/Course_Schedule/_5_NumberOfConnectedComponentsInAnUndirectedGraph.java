@@ -14,16 +14,26 @@ public class _5_NumberOfConnectedComponentsInAnUndirectedGraph {
             root[i] = i;
         }
         for (int[] edge : edges) {
+            System.out.println("edge " + edge[0] + " " + edge[1]);
+
             int par = findRoot(root, edge[0]);
             int child = findRoot(root, edge[1]);
             root[child] = par;
         }
+
+        for (int i = 0; i < root.length; i++) {
+            System.out.println("root " + i + " " + root[i]);
+        }
+
+
 
         int count = 0;
         for (int i = 0; i < n; i++) {
             if (root[i] == i)
                 count++;
         }
+
+
         return count;
     }
 
@@ -33,6 +43,29 @@ public class _5_NumberOfConnectedComponentsInAnUndirectedGraph {
             cur = root[cur];
         }
         return cur;
+    }
+
+    @Test
+    public void test_u1(){
+        int n = 6;
+        int[] root = new int[n];
+        for (int i = 0; i < n; i++) {
+            root[i] = i;
+        }
+
+        for (int i = 0; i < root.length; i++) {
+            System.out.println("root " + i + " " + root[i]);
+        }
+
+        int par = findRoot(root, 2);
+        int child = findRoot(root, 3);
+        root[child] = par;
+
+        for (int i = 0; i < root.length; i++) {
+            System.out.println("root " + i + " " + root[i]);
+        }
+
+
     }
 
     @Test

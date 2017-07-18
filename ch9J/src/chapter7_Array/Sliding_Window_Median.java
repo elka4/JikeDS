@@ -5,61 +5,60 @@ import java.util.*;
  */
 public class Sliding_Window_Median {
     // TreeMap Version
-    public class Solution {
-        /**
-         * @param nums
-         *            : A list of integers.
-         * @return: The median of the element inside the window at each moving.
-         */
-        public  ArrayList<Integer> medianSlidingWindow(int[] nums, int k) {
-            int n = nums.length;
-            TreeSet<Node> minheap = new TreeSet<Node>();
-            TreeSet<Node> maxheap = new TreeSet<Node>();
-            ArrayList<Integer> result = new ArrayList<Integer> ();
+    /**
+     * @param nums
+     *            : A list of integers.
+     * @return: The median of the element inside the window at each moving.
+     */
+    public  ArrayList<Integer> medianSlidingWindow(int[] nums, int k) {
+        int n = nums.length;
+        TreeSet<Node> minheap = new TreeSet<Node>();
+        TreeSet<Node> maxheap = new TreeSet<Node>();
+        ArrayList<Integer> result = new ArrayList<Integer> ();
 
-            if (k == 0)
-                return result;
-
-            int half = (k+1)/2;
-            for(int i=0; i<k-1; i++) {
-                add(minheap, maxheap, half, new Node(i, nums[i]));
-            }
-            for(int i=k-1; i<n; i++) {
-                add(minheap, maxheap, half, new Node(i, nums[i]));
-                result.add(minheap.last().val);
-                remove(minheap,maxheap, new Node(i-k+1, nums[i-k+1]));
-            }
+        if (k == 0)
             return result;
-        }
 
-        void add(TreeSet<Node>minheap, TreeSet<Node> maxheap, int size, Node node) {
-            if (minheap.size()<size) {
-                minheap.add(node);
-            }
-            else {
-                maxheap.add(node);
-            }
-            if (minheap.size()==size) {
-                if (maxheap.size()>0 && minheap.last().val>maxheap.first().val) {
-                    Node s = minheap.last();
-                    Node b = maxheap.first();
-                    minheap.remove(s);
-                    maxheap.remove(b);
-                    minheap.add(b);
-                    maxheap.add(s);
-                }
-            }
+        int half = (k+1)/2;
+        for(int i=0; i<k-1; i++) {
+            add(minheap, maxheap, half, new Node(i, nums[i]));
         }
+        for(int i=k-1; i<n; i++) {
+            add(minheap, maxheap, half, new Node(i, nums[i]));
+            result.add(minheap.last().val);
+            remove(minheap,maxheap, new Node(i-k+1, nums[i-k+1]));
+        }
+        return result;
+    }
 
-        void remove(TreeSet<Node>minheap, TreeSet<Node> maxheap, Node node) {
-            if (minheap.contains(node)) {
-                minheap.remove(node);
-            }
-            else {
-                maxheap.remove(node);
+    void add(TreeSet<Node>minheap, TreeSet<Node> maxheap, int size, Node node) {
+        if (minheap.size()<size) {
+            minheap.add(node);
+        }
+        else {
+            maxheap.add(node);
+        }
+        if (minheap.size()==size) {
+            if (maxheap.size()>0 && minheap.last().val>maxheap.first().val) {
+                Node s = minheap.last();
+                Node b = maxheap.first();
+                minheap.remove(s);
+                maxheap.remove(b);
+                minheap.add(b);
+                maxheap.add(s);
             }
         }
     }
+
+    void remove(TreeSet<Node>minheap, TreeSet<Node> maxheap, Node node) {
+        if (minheap.contains(node)) {
+            minheap.remove(node);
+        }
+        else {
+            maxheap.remove(node);
+        }
+    }
+
 
     class Node implements Comparable<Node>{
         int id;
@@ -77,68 +76,73 @@ public class Sliding_Window_Median {
         }
     }
 
+///////////////////////////////////////////////////////////////////////////////////
 
     // Normal heap Version
-    public class Solution2 {
-        /**
-         * @param nums: A list of integers.
-         * @return: The median of the element inside the window at each moving.
-         */
-        public ArrayList<Integer> medianSlidingWindow(int[] nums, int k) {
-            // write your code here
-            ArrayList<Integer> result = new ArrayList<Integer>();
-            int size = nums.length;
-            if (size == 0 || size < k) {
-                return result;
-            }
-
-            PriorityQueue<Integer> minPQ = new PriorityQueue<Integer>();
-            PriorityQueue<Integer> maxPQ = new PriorityQueue<Integer>(11, Collections.reverseOrder());
-
-            int median = nums[0];
-            int j = 0;
-            if (k == 1) {
-                result.add(median);
-            }
-
-            for (int i = 1; i < size; i++) {
-                if (nums[i] > median) {
-                    minPQ.offer(nums[i]);
-                } else {
-                    maxPQ.offer(nums[i]);
-                }
-
-                if (i > k - 1) {
-                    if (nums[j] > median) {
-                        minPQ.remove(nums[j]);
-                    } else if (nums[j] < median) {
-                        maxPQ.remove(nums[j]);
-                    } else {
-                        median = Integer.MIN_VALUE;
-                    }
-                    j++;
-                }
-
-                if (median == Integer.MIN_VALUE) {
-                    median = minPQ.size() > maxPQ.size() ? minPQ.poll() : maxPQ.poll();
-                } else {
-                    while (minPQ.size() >= maxPQ.size() + 2) {
-                        maxPQ.offer(median);
-                        median = minPQ.poll();
-                    }
-                    while (maxPQ.size() >= minPQ.size() + 1) {
-                        minPQ.offer(median);
-                        median = maxPQ.poll();
-                    }
-                }
-                if (i >= k - 1) {
-                    result.add(median);
-                }
-            }
-
+    /**
+     * @param nums: A list of integers.
+     * @return: The median of the element inside the window at each moving.
+     */
+    public ArrayList<Integer> medianSlidingWindow2(int[] nums, int k) {
+        // write your code here
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        int size = nums.length;
+        if (size == 0 || size < k) {
             return result;
         }
+
+        PriorityQueue<Integer> minPQ = new PriorityQueue<Integer>();
+        PriorityQueue<Integer> maxPQ = new PriorityQueue<Integer>(
+                11, Collections.reverseOrder());
+
+        int median = nums[0];
+        int j = 0;
+        if (k == 1) {
+            result.add(median);
+        }
+
+        for (int i = 1; i < size; i++) {
+            if (nums[i] > median) {
+                minPQ.offer(nums[i]);
+            } else {
+                maxPQ.offer(nums[i]);
+            }
+
+            if (i > k - 1) {
+                if (nums[j] > median) {
+                    minPQ.remove(nums[j]);
+                } else if (nums[j] < median) {
+                    maxPQ.remove(nums[j]);
+                } else {
+                    median = Integer.MIN_VALUE;
+                }
+                j++;
+            }
+
+            if (median == Integer.MIN_VALUE) {
+                median = minPQ.size() > maxPQ.size() ?
+                        minPQ.poll() : maxPQ.poll();
+            } else {
+                while (minPQ.size() >= maxPQ.size() + 2) {
+                    maxPQ.offer(median);
+                    median = minPQ.poll();
+                }
+                while (maxPQ.size() >= minPQ.size() + 1) {
+                    minPQ.offer(median);
+                    median = maxPQ.poll();
+                }
+            }
+            if (i >= k - 1) {
+                result.add(median);
+            }
+        }
+
+        return result;
     }
+
+
+
+/////////////////////////////////////////////////////////////////////////
 
 // Hash Heap Version
 
@@ -293,7 +297,8 @@ public class Sliding_Window_Median {
                 int leftId = lson(id);
                 int rightId = rson(id);
                 int son;
-                if (rightId >= heap.size() || (comparesmall(heap.get(leftId), heap.get(rightId)) == true)) {
+                if (rightId >= heap.size() ||
+                (comparesmall(heap.get(leftId), heap.get(rightId)) == true)) {
                     son = leftId;
                 } else {
                     son = rightId;
@@ -308,59 +313,60 @@ public class Sliding_Window_Median {
         }
     }
 
-    public class Solution3 {
-        /**
-         * @param nums
-         *            : A list of integers.
-         * @return: The median of the element inside the window at each moving.
-         */
-        public ArrayList<Integer> medianSlidingWindow(int[] nums, int k) {
-            // write your code here
+////////////////////////////////////////////////////////////////////////////////
+    /**
+     * @param nums
+     *            : A list of integers.
+     * @return: The median of the element inside the window at each moving.
+     */
+    public ArrayList<Integer> medianSlidingWindow4(int[] nums, int k) {
+        // write your code here
 
-            ArrayList<Integer> ans = new ArrayList<Integer>();
-            if (nums.length == 0)
-                return ans;
-            int median = nums[0];
-            HashHeap minheap = new HashHeap("min");
-            HashHeap maxheap = new HashHeap("max");
-            for (int i = 0; i < nums.length; i++) {
-                if (i != 0) {
-                    if (nums[i] > median) {
-                        minheap.add(nums[i]);
-                    } else {
-                        maxheap.add(nums[i]);
-                    }
-                }
-
-                if (i >= k) {
-                    if (median == nums[i - k]) {
-                        if (maxheap.size() > 0) {
-                            median = maxheap.poll();
-                        } else if (minheap.size() > 0) {
-                            median = minheap.poll();
-                        }
-
-                    } else if (median < nums[i - k]) {
-                        minheap.delete(nums[i - k]);
-                    } else {
-                        maxheap.delete(nums[i - k]);
-                    }
-                }
-
-                while (maxheap.size() > minheap.size()) {
-                    minheap.add(median);
-                    median = maxheap.poll();
-                }
-                while (minheap.size() > maxheap.size() + 1) {
-                    maxheap.add(median);
-                    median = minheap.poll();
-                }
-
-                if (i + 1 >= k) {
-                    ans.add(median);
+        ArrayList<Integer> ans = new ArrayList<Integer>();
+        if (nums.length == 0)
+            return ans;
+        int median = nums[0];
+        HashHeap minheap = new HashHeap("min");
+        HashHeap maxheap = new HashHeap("max");
+        for (int i = 0; i < nums.length; i++) {
+            if (i != 0) {
+                if (nums[i] > median) {
+                    minheap.add(nums[i]);
+                } else {
+                    maxheap.add(nums[i]);
                 }
             }
-            return ans;
+
+            if (i >= k) {
+                if (median == nums[i - k]) {
+                    if (maxheap.size() > 0) {
+                        median = maxheap.poll();
+                    } else if (minheap.size() > 0) {
+                        median = minheap.poll();
+                    }
+
+                } else if (median < nums[i - k]) {
+                    minheap.delete(nums[i - k]);
+                } else {
+                    maxheap.delete(nums[i - k]);
+                }
+            }
+
+            while (maxheap.size() > minheap.size()) {
+                minheap.add(median);
+                median = maxheap.poll();
+            }
+            while (minheap.size() > maxheap.size() + 1) {
+                maxheap.add(median);
+                median = minheap.poll();
+            }
+
+            if (i + 1 >= k) {
+                ans.add(median);
+            }
         }
+        return ans;
     }
+
+
 }

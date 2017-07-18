@@ -5,8 +5,8 @@ import java.util.*;
 //Three Sum -- Method 2
 public class _03ThreeSum_2 {
 
-public List <List <Integer>>   threeSum2(int[] array) {
-	List <List <Integer>>   res = new ArrayList <List <Integer>>  ();
+    public List <List <Integer>>   threeSum2(int[] array) {
+	    List <List <Integer>>   res = new ArrayList <List <Integer>>  ();
         if(array == null || array.length <  3) {
             return res;
         }

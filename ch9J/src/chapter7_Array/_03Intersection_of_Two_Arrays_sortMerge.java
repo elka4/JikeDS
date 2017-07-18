@@ -5,6 +5,8 @@ import java.util.Arrays;
 //merge two sorted arrays
 //Time O(nlogn + mlogm)
 //O(1)
+
+//双指针，分别在各自array向前
 public class _03Intersection_of_Two_Arrays_sortMerge {
 	/**
      * @param nums1 an integer array

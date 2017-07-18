@@ -1,5 +1,7 @@
 package chapter7_Array;
 
+import org.junit.Test;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -8,47 +10,60 @@ import java.util.PriorityQueue;
  */
 public class Median_in_Data_Stream {
     // LintCode Solution
-    public class Solution {
-        /**
-         * @param nums: A list of integers.
-         * @return: the median of numbers
-         */
-        public int[] medianII(int[] nums) {
-            // write your code here
-            if(nums == null)
-                return null;
-            int[] res = new int[nums.length];
+    /**
+     * @param nums: A list of integers.
+     * @return: the median of numbers
+     */
+    public int[] medianII(int[] nums) {
+        // write your code here
+        if(nums == null)
+            return null;
+        int[] res = new int[nums.length];
 
-            PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
-            PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(1, new Comparator<Integer>() {
-                @Override
-                public int compare(Integer x, Integer y) {
-                    return y - x;
-                }
-            });
+        PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
+        PriorityQueue<Integer> maxHeap =
+                new PriorityQueue<Integer>(1,
+                        new Comparator<Integer>() {
+                    @Override
+                    public int compare(Integer x, Integer y) {
+                        return y - x;
+                    }
+                });
 
-            res[0] = nums[0];
-            maxHeap.add(nums[0]);
+        res[0] = nums[0];
+        maxHeap.add(nums[0]);
 
-            for(int i = 1; i < nums.length; i++) {
-                int x = maxHeap.peek();
-                if(nums[i] <= x) {
-                    maxHeap.add(nums[i]);
-                } else {
-                    minHeap.add(nums[i]);
-                }
-                if(maxHeap.size() > minHeap.size()+1 ) {
-                    minHeap.add(maxHeap.poll());
-                } else if(maxHeap.size() < minHeap.size()) {
-                    maxHeap.add(minHeap.poll());
-                }
-                res[i] = maxHeap.peek();
+        for(int i = 1; i < nums.length; i++) {
+            int x = maxHeap.peek();
+            if(nums[i] <= x) {
+                maxHeap.add(nums[i]);
+            } else {
+                minHeap.add(nums[i]);
             }
-            return res;
+            if(maxHeap.size() > minHeap.size()+1 ) {
+                minHeap.add(maxHeap.poll());
+            } else if(maxHeap.size() < minHeap.size()) {
+                maxHeap.add(minHeap.poll());
+            }
+            res[i] = maxHeap.peek();
+        }
+        return res;
+    }
+
+    @Test
+    public void test01(){
+        int[] nums = {1, 2, 3, 4, 5};
+        int[] result = medianII(nums);
+        for (int i : result ) {
+            System.out.print(i + " ");
         }
     }
 
+
+//////////////////////////////////////////////////////////////////
+
     // 写法一 leetcode解
+
     class MedianFinder {
         public PriorityQueue<Integer> minheap, maxheap;
         public MedianFinder() {
@@ -74,6 +89,24 @@ public class Median_in_Data_Stream {
             }
         }
     }
+
+    @Test
+    public void test02(){
+        MedianFinder mf = new MedianFinder();
+        mf.addNum(1);
+        System.out.println(mf.findMedian());
+        mf.addNum(2);
+        System.out.println(mf.findMedian());
+        mf.addNum(3);
+        System.out.println(mf.findMedian());
+        mf.addNum(4);
+        System.out.println(mf.findMedian());
+        mf.addNum(5);
+        System.out.println(mf.findMedian());
+
+    }
+
+
 
 
 }

@@ -16,7 +16,7 @@ public class _03Intersection_of_Two_Arrays_SortBinarySearch {
         if (nums1 == null || nums2 == null) {
             return null;
         }
-        
+        //我觉得这是一个好办法，先把要的东西放进set，然后再把set内容导进[]
         HashSet<Integer> set = new HashSet<>();
         
         Arrays.sort(nums1);

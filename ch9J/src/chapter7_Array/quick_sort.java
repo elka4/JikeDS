@@ -6,6 +6,7 @@ public class quick_sort {
      * @return void
      */
     public void sortIntegers2(int[] A) {
+
         quickSort(A, 0, A.length - 1);
     }
     

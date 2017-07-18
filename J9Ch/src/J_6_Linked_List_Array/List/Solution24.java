@@ -2,10 +2,19 @@ package J_6_Linked_List_Array.List;
 
 import org.junit.Test;
 
-/** 96 Partition List
- * Created by tianhuizhu on 6/28/17.
+/**
+ * Created by Hao on 9/18/15.
  */
-public class _96_Partition_List {
+public class Solution24 {
+
+    public static void main(String[] args) {
+        Solution24 sol24 = new Solution24();
+        int[] values = {2, 1, 2, 2, 5, 3, 5, 15, 1, 8};
+        ListNode head = sol24.createList(values);
+        sol24.printList(head);
+        head = sol24.partitionList(head, 5);
+        sol24.printList(head);
+    }
 
     public ListNode partition(ListNode head, int x) {
         if (head == null) {
@@ -49,32 +58,7 @@ public class _96_Partition_List {
         curr1.next = dummy2.next;
         return dummy1.next;
     }
-
-    public ListNode partition3 (ListNode head, int x) {
-        if (head == null || head.next ==null) {
-            return head;
-        }
-        ListNode smallPre = new ListNode(0);
-        ListNode largePre = new ListNode(0);
-        ListNode largeDummy = largePre;
-        ListNode smallDummy = smallPre;
-        while (head != null) {
-            if (head.val < x) {
-                smallPre.next = head;
-                smallPre = smallPre.next;
-            } else {
-                largePre.next = head;
-                largePre = largePre.next;
-            }
-
-            head = head.next;
-        }
-        smallPre.next = largeDummy.next;
-        largePre.next = null;
-        return smallDummy.next;
-    }
-
-
+    
     // move nodes with values greater or equal than k to the tail
     public ListNode partitionList(ListNode head, int k) {
         if (head == null) {
@@ -112,69 +96,6 @@ public class _96_Partition_List {
         System.out.println();
     }
 
-    private class ListNode {
-        public ListNode(int i) {
-            this.val = i;
-        }
-        public ListNode next;
-        public int val;
-    }
-
-    /*
-    Given 1->4->3->2->5->2 and x = 3,
-return 1->2->2->4->3->5.
-     */
-
-    @Test
-    public void test01(){
-        //ListNode node0 = new ListNode(0);
-        ListNode node1 = new ListNode(1);
-        ListNode node2 = new ListNode(2);
-        ListNode node3 = new ListNode(3);
-        ListNode node4 = new ListNode(4);
-        ListNode node5 = new ListNode(5);
-        ListNode node6 = new ListNode(2);
-        ListNode node7 = new ListNode(2);
-        //node0.next = node1;
-        node1.next = node4;
-        node4.next = node3;
-        node3.next = node2;
-        node2.next = node5;
-        node5.next = node6;
-
-        printList(node1);
-        ListNode result = partitionList(node1, 2);
-
-        //printList(partitionList(node1, 2));
-        printList(result);
-
-    }
-
-    @Test
-    public void test02(){
-        //ListNode node0 = new ListNode(0);
-        ListNode node1 = new ListNode(1);
-        ListNode node2 = new ListNode(2);
-        ListNode node3 = new ListNode(3);
-        ListNode node4 = new ListNode(4);
-        ListNode node5 = new ListNode(5);
-        ListNode node6 = new ListNode(2);
-        ListNode node7 = new ListNode(2);
-        //node0.next = node1;
-        // 1,4,3,2,5,2
-        node1.next = node4;
-        node4.next = node3;
-        node3.next = node2;
-        node2.next = node5;
-        node5.next = node6;
-
-        printList(node1);
-        ListNode result = partition(node1, 3);
-        printList(result);
-        printList(node1);
-        //printList(partitionList(node1, 2));
-        printList(result);
-    }
     // create a linkedlist from an array of values.
     private ListNode createList(int[] values) {
         ListNode header = new ListNode(0);
@@ -185,29 +106,39 @@ return 1->2->2->4->3->5.
         }
         return header.next;
     }
+
+    private class ListNode {
+        ListNode(int val) {
+            this.val = val;
+            this.next = null;
+        }
+        int val;
+        ListNode next;
+                public String toString(){
+            String str = "" + val;
+            while(next != null){
+                str += "->" + next.val;
+                next = next.next;
+
+            }
+            return str;
+        }
+    }
+
+
     @Test
-    public void test03(){
+    public void test01(){
         //Solution24 sol24 = new Solution24();
         int[] values = {2, 1, 2, 2, 5, 3, 5, 15, 1, 8};
         ListNode head = createList(values);
         //System.out.println(head);
         printList(head);
         printList(head);
-        ListNode result = partition2(head, 5);
-        printList(result);
-        printList(head);
-    }
-    @Test
-    public void test04(){
-        //Solution24 sol24 = new Solution24();
-        int[] values = {1,4,3,2,5,2};
-        ListNode head = createList(values);
-        //System.out.println(head);
+        head = partitionList(head, 5);
         printList(head);
 
-        ListNode result = partition3(head, 3);
-        printList(result);
-        printList(head);
-    }
 
+
+
+    }
 }

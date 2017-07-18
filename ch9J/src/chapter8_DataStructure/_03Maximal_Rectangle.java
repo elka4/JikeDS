@@ -16,7 +16,8 @@ public int maximalRectangle(char[][] matrix) {
             if (i == 0)
                 height[i][j] = ((matrix[i][j] == '1') ? 1 : 0);
             else
-                height[i][j] += ((matrix[i][j] == '1') ? height[i-1][j] + 1 : 0);
+                height[i][j] += ((matrix[i][j] == '1') ?
+                        height[i-1][j] + 1 : 0);
         }
     }
 
@@ -27,14 +28,16 @@ public int maximalRectangle(char[][] matrix) {
             while (!S.empty() && height[i][j] < height[i][S.peek()]) {
                 int pos = S.peek();
                 S.pop();
-                answer = Math.max(answer, height[i][pos]*(S.empty()? j : j-S.peek()-1));
+                answer = Math.max(answer,
+                        height[i][pos]*(S.empty() ? j : j-S.peek()-1));
             }
             S.push(j);
         }
         while (!S.empty()) {
             int pos = S.peek();
             S.pop();
-            answer = Math.max(answer, height[i][pos]*(S.empty()? m : m-S.peek()-1));
+            answer = Math.max(answer, height[i][pos]*(S.empty()?
+                    m : m-S.peek()-1));
         }
     }
     return answer;

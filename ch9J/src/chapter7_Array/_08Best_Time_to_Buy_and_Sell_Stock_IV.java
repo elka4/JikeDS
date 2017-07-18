@@ -21,8 +21,10 @@ public int maxProfit(int k, int[] prices) {
         return profit;
     }
     int n = prices.length;
-    int[][] mustsell = new int[n + 1][n + 1];   // mustSell[i][j] 表示前i天，至多进行j次交易，第i天必须sell的最大获益
-    int[][] globalbest = new int[n + 1][n + 1];  // globalbest[i][j] 表示前i天，至多进行j次交易，第i天可以不sell的最大获益
+    // mustSell[i][j] 表示前i天，至多进行j次交易，第i天必须sell的最大获益
+    int[][] mustsell = new int[n + 1][n + 1];
+    // globalbest[i][j] 表示前i天，至多进行j次交易，第i天可以不sell的最大获益
+    int[][] globalbest = new int[n + 1][n + 1];
     
     mustsell[0][0] = globalbest[0][0] = 0;
     for (int i = 1; i <= k; i++) {

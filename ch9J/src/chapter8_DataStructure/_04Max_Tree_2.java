@@ -1,5 +1,5 @@
 package chapter8_DataStructure;
-
+import lib.*;
 public class _04Max_Tree_2 {
 	/**
      * @param A: Given an integer array with no duplicates.

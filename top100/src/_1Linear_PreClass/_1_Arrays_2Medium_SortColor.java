@@ -1,8 +1,10 @@
 package _1Linear_PreClass;
 
 //https://leetcode.com/problems/sort-colors/
-
+// two pointer, 从两侧向中央
 public class _1_Arrays_2Medium_SortColor {
+
+
 	public void sortColors(int[] arr) {
 		if(arr == null || arr.length <= 1) {
 			return;
@@ -10,8 +12,9 @@ public class _1_Arrays_2Medium_SortColor {
 		int left = 0;// represents the right boundary of processed '0'
 		int right = arr.length - 1; //represents the left boundary of processed '2'
 		int cur = 0; // scanner for unprocessed data
+
 		while (cur <= right){
-			if (arr[cur] == 0) {
+			if (arr[cur] == 0) {         // == 0 就和left swap，然后cur 和left ++
 				swap(arr, cur++, left++);
 			} else if(arr[cur] == 2) {
 				swap(arr, cur, right--);
