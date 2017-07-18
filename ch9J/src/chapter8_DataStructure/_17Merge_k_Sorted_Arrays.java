@@ -42,6 +42,7 @@ public class _17Merge_k_Sorted_Arrays {
         
         int[] result = new int[total_size];
         int index = 0;
+
         while (!Q.isEmpty()) {
             Element elem = Q.poll();
             result[index++] = elem.val;

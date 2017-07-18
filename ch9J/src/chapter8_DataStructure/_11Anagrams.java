@@ -14,7 +14,7 @@ public class _11Anagrams {
         }
         return hash;
     }
-    
+    //也就是两个或多个str必须包含相同char，才能有相同的hash
     public ArrayList<String> anagrams(String[] strs) {
         ArrayList<String> result = new ArrayList<String>();
         HashMap<Integer, ArrayList<String>> map = new HashMap<>();

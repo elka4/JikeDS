@@ -30,11 +30,14 @@ public class _13Heapify_n {
             siftdown(A, i);
         } // for
     }
+
+
 }
 /*Given an integer array, heapify it into a min-heap array.
 
 For a heap array A, A[0] is the root of heap, 
-and for each A[i], A[i * 2 + 1] is the left child of A[i] and A[i * 2 + 2] is the right child of A[i].
+and for each A[i], A[i * 2 + 1] is the left child of A[i] and
+A[i * 2 + 2] is the right child of A[i].
 Have you met this question in a real interview? Yes
 Clarification
 What is heap?

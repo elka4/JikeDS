@@ -3,6 +3,7 @@ package chapter8_DataStructure;
 import java.util.*;
 
 public class _21Building_Outline {
+
 class HashHeap {
     ArrayList<Integer> heap;
     String mode;
@@ -170,6 +171,9 @@ class HashHeap {
     }
   }
 
+  /////////////////////////////////////////////////////////////////////////
+
+
   class Edge {
     int pos;
     int height;
@@ -203,6 +207,8 @@ class HashHeap {
       return a <= b ? -1 : 1;
     }
   }
+
+
 
   ArrayList<ArrayList<Integer>> output(ArrayList<ArrayList<Integer>> res) {
     ArrayList<ArrayList<Integer>> ans = new ArrayList<ArrayList<Integer>>();

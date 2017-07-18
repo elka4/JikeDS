@@ -15,12 +15,14 @@ public class _04Max_Tree_1 {
         // write your code here
         Stack<TreeNode> stack = new Stack<TreeNode>();
 
-        //TreeNode root = null; //this line not used?
+        //TreeNode root = null;
         for (int i = 0; i <= A.length; i++) {
             TreeNode right = i == A.length ? new TreeNode(Integer.MAX_VALUE)
               : new TreeNode(A[i]);
 
+            //只要栈顶node比right node小，就弹出
             while (!stack.isEmpty()) {
+                System.out.println(stack);
                 if (right.val > stack.peek().val) {
                     TreeNode nodeNow = stack.pop();
 
@@ -37,6 +39,8 @@ public class _04Max_Tree_1 {
                 } else
                     break;
             }
+
+            right.print();
             stack.push(right);
         }
         return stack.peek().left;
