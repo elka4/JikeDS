@@ -7,7 +7,8 @@ package J_9_Dynamic_Programming.all;
  */
 public class _115_Unique_Paths_II {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
-        if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
+        if (obstacleGrid == null || obstacleGrid.length == 0
+                || obstacleGrid[0].length == 0) {
             return 0;
         }
 
@@ -95,7 +96,16 @@ public class _115_Unique_Paths_II {
         return f[now][n-1];
     }
 
+/*
+There is one obstacle in the middle of a 3x3 grid as illustrated below.
 
+[
+  [0,0,0],
+  [0,1,0],
+  [0,0,0]
+]
+The total number of unique paths is 2.
+ */
 
 
 }

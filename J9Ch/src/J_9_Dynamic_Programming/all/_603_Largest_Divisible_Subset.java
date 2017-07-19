@@ -1,5 +1,7 @@
 package J_9_Dynamic_Programming.all;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,7 +12,7 @@ import java.util.List;
 
  * Created by tianhuizhu on 6/28/17.
  */
-public class _603_Largest_Divisible_Subset {
+public class    _603_Largest_Divisible_Subset {
     public List<Integer> largestDivisibleSubset(int[] nums) {
         Arrays.sort(nums);
         int[] f = new int[nums.length];
@@ -47,6 +49,28 @@ public class _603_Largest_Divisible_Subset {
         return ans;
     }
 
+    @Test
+    public void test01(){
+        int[] nums = {1,2,3};
+        System.out.println(largestDivisibleSubset(nums));
+    }
 
+/*
+
+Given a set of distinct positive integers, find the largest subset such that every
+ pair (Si, Sj) of elements in this subset satisfies: Si % Sj = 0 or Sj % Si = 0.
+
+ Notice
+
+If there are multiple solutions, return any subset is fine.
+
+Have you met this question in a real interview? Yes
+Example
+Given nums = [1,2,3], return [1,2] or [1,3]
+
+Given nums = [1,2,4,8], return [1,2,4,8]
+
+
+ */
 
 }

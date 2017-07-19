@@ -25,41 +25,44 @@ public class _5Jump_Game {
 //               f[...] = false;
 //4.answer:      f[n - 1]    第n个数的坐标是 n － 1 ！！！！！
 */
-class Jump_Game1 {
- public boolean canJump(int[] A) {
-     boolean[] can = new boolean[A.length];
-     can[0] = true;
-     for (int i = 1; i < A.length; i++) {
-         for (int j = 0; j < i; j++) {
-        	 //OR操作解释：
-        	 //只要j<i范围内任何j满足can[j] && j + A[j] >= i这两个条件
-        	 //这个i就满足条件，can[i]设为true，break 退出循环 
-             if (can[j] && j + A[j] >= i) {
-                 can[i] = true;
-                 break;
-             }
-         }
-     }
-     return can[A.length - 1];
- }
-}
 
-//version 2: Greedy
-class Jump_Game2 {
- public boolean canJump(int[] A) {
-     // think it as merging n intervals
-     if (A == null || A.length == 0) {
-         return false;
-     }
-     int farthest = A[0];
-     for (int i = 1; i < A.length; i++) {
-         if (i <= farthest && A[i] + i >= farthest) {
-             farthest = A[i] + i;
-         }
-     }
-     return farthest >= A.length - 1;
- }
-}
+    public boolean canJump(int[] A) {
+        boolean[] can = new boolean[A.length];
+        can[0] = true;
+        for (int i = 1; i < A.length; i++) {
+            for (int j = 0; j < i; j++) {
+                //OR操作解释：
+                //只要j<i范围内任何j满足can[j] && j + A[j] >= i这两个条件
+                //这个i就满足条件，can[i]设为true，break 退出循环
+                if (can[j] && j + A[j] >= i) {
+                    can[i] = true;
+                    break;
+                }
+            }
+        }
+        return can[A.length - 1];
+    }
+
+
+
+
+    //version 2: Greedy
+    public boolean canJump2(int[] A) {
+        // think it as merging n intervals
+        if (A == null || A.length == 0) {
+            return false;
+        }
+        int farthest = A[0];
+        for (int i = 1; i < A.length; i++) {
+            if (i <= farthest && A[i] + i >= farthest) {
+                farthest = A[i] + i;
+            }
+        }
+        return farthest >= A.length - 1;
+    }
+
+
+
 
 /*
  * Given an array of non-negative integers, you are initially 

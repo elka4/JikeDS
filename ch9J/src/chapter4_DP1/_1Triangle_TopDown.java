@@ -6,26 +6,26 @@ public class _1Triangle_TopDown {
   * @param triangle: a list of lists of integers.
   * @return: An integer, minimum path sum.
   */
- public int minimumTotal(int[][] triangle) {
+    public int minimumTotal(int[][] triangle) {
      if (triangle == null || triangle.length == 0) {
          return -1;
      }
      if (triangle[0] == null || triangle[0].length == 0) {
          return -1;
      }
-     
+
      // state: f[x][y] = minimum path value from 0,0 to x,y
      int n = triangle.length;
      int[][] f = new int[n][n];
-     
-     // initialize 
+
+     // initialize
      f[0][0] = triangle[0][0];
-     //start from 1, becuase 0 is already 
+     //start from 1, becuase 0 is already
      for (int i = 1; i < n; i++) {
          f[i][0] = f[i - 1][0] + triangle[i][0];
          f[i][i] = f[i - 1][i - 1] + triangle[i][i];
      }
-     
+
      // top down
      //start from 1, because 0 is already initialized
      for (int i = 1; i < n; i++) {
@@ -33,14 +33,14 @@ public class _1Triangle_TopDown {
              f[i][j] = Math.min(f[i - 1][j], f[i - 1][j - 1]) + triangle[i][j];
          }
      }
-     
+
      // answer
      int best = f[n - 1][0];
      for (int i = 1; i < n; i++) {
          best = Math.min(best, f[n - 1][i]);
      }
      return best;
- }
+    }
 }
 
 /*

@@ -11,11 +11,11 @@ package chapter4_DP1;
  */
 
 public class _3Unique_Paths {
-	public int uniquePaths(int m, int n) {
+    public int uniquePaths(int m, int n) {
         if (m == 0 || n == 0) {
             return 0;
         }
-        
+
         int[][] sum = new int[m][n];
         for (int i = 0; i < m; i++) {
             sum[i][0] = 1;
@@ -30,8 +30,28 @@ public class _3Unique_Paths {
         }
         return sum[m - 1][n - 1];
     }
-}
 
+
+////////////////////////////////////////////////////////
+
+
+    public int uniquePaths2(int m, int n) {
+        int[][] f = new int[m][n];
+        int i, j;
+        for (i = 0; i < m; ++i) {
+            for (j = 0; j < n; ++j) {
+                if (i == 0 || j == 0) {
+                    f[i][j] = 1;
+                } else {
+                    f[i][j] = f[i - 1][j] + f[i][j - 1];
+                }
+            }
+        }
+
+        return f[m - 1][n - 1];
+
+    }
+}
 /*
  * A robot is located at the top-left corner of a m x n grid 
  * (marked 'Start' in the diagram below).

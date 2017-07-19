@@ -26,14 +26,14 @@ public class _1_Backtracking_Permutation_2 {
         for(int i = pos; i  < nums.length; i++){
             list.add(nums[i]);
             swap(nums, pos, i);
-//            helper(nums, res, list, level + 1);
+        //helper(nums, res, list, level + 1);
             helper(nums, res, list, pos + 1);//这样对不对？
             swap(nums, pos, i);
             list.remove(list.size() - 1);
         }
 
         return;
-}
+    }
 
 	private void swap(int[] nums, int pos, int i) {
         int temp = nums[pos];

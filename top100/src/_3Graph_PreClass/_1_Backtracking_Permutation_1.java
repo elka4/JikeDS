@@ -26,7 +26,7 @@ public class _1_Backtracking_Permutation_1 {
                 list.remove(list.size()-1);//Empty last position for next iteration
             }
         }
-}
+    }
     @Test
     public void test01 (){
         int[] input = {1, 2 , 3};

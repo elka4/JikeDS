@@ -1,5 +1,7 @@
 package Ch_08_Recursion_and_Dynamic_Programming.Q8_01_Triple_Step;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 
 public class QuestionB {
@@ -18,7 +20,8 @@ public class QuestionB {
 		} else if (memo[n] > -1) {
 			return memo[n];
 		} else {
-			memo[n] = countWays(n - 1, memo) + countWays(n - 2, memo)
+			memo[n] = countWays(n - 1, memo)
+                    + countWays(n - 2, memo)
                     + countWays(n - 3, memo);
 			return memo[n];
 		}
@@ -29,5 +32,16 @@ public class QuestionB {
 		int ways = countWays(n);
 		System.out.println(ways);
 	}
+
+    @Test
+    public void test01(){
+        long start = System.currentTimeMillis();
+        //System.out.println(fibonacci(i));
+        //System.out.println(countWays(20));
+        countWays(30);
+        long end = System.currentTimeMillis();
+        long time = end - start;
+        System.out.println(  ": " + time + "ms");
+    }
 
 }

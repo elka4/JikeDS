@@ -99,36 +99,87 @@ class Triangle2016_3AC{
 	//这个数组记录一个位置有没有记录数值，默认都是false
 	boolean[][] hasValue;
 
-public int minimumTotal(int[][] triangle){
-	 n = triangle.length;
-	 minPath = new int[n][n];
-	 hasValue = new boolean[n][n];
-	return divideConquer(triangle, 0, 0);
-}
+    public int minimumTotal(int[][] triangle){
+         n = triangle.length;
+         minPath = new int[n][n];
+         hasValue = new boolean[n][n];
+        return divideConquer(triangle, 0, 0);
+    }
 
-//1, 递归的定义：从x，y出发，走到最底层，所能得到的最短的路径长度
-//Version 2 : Memorize Search 用的是Integer.MAX_VALUE
-//这里用的是 boolean[][] hasValue;
-private int divideConquer(int[][] triangle, int x, int y){
-	//2, 递归的出口，当我走过了最后一层的时候
-	if(x == triangle.length){
-		return 0; //有负数也应该return 0
-	}
-	//如果有值，就直接返回数值，不再重复计算。就是在这里节省的时间。
-	if(hasValue[x][y]){
-		return minPath[x][y];
-	}
-	//3, 递归怎样变为更小的问题
-	int left = divideConquer(triangle, x + 1, y);
-	int right = divideConquer(triangle, x + 1, y + 1);
-	
-	hasValue[x][y] = true;
-	minPath[x][y] = Math.min(left, right) + triangle[x][y];
-	
-	return minPath[x][y];
-}
-}
+    //1, 递归的定义：从x，y出发，走到最底层，所能得到的最短的路径长度
+    //Version 2 : Memorize Search 用的是Integer.MAX_VALUE
+    //这里用的是 boolean[][] hasValue;
+    private int divideConquer(int[][] triangle, int x, int y){
+        //2, 递归的出口，当我走过了最后一层的时候
+        if(x == triangle.length){
+            return 0; //有负数也应该return 0
+        }
+        //如果有值，就直接返回数值，不再重复计算。就是在这里节省的时间。
+        if(hasValue[x][y]){
+            return minPath[x][y];
+        }
+        //3, 递归怎样变为更小的问题
+        int left = divideConquer(triangle, x + 1, y);
+        int right = divideConquer(triangle, x + 1, y + 1);
 
+        hasValue[x][y] = true;
+        minPath[x][y] = Math.min(left, right) + triangle[x][y];
+
+        return minPath[x][y];
+    }
+
+
+    // top to bottom code
+
+    public int minimumTotal4(int[][] triangle) {
+        // write your code here
+        if (triangle == null || triangle.length == 0 ||
+                triangle[0] == null || triangle[0].length == 0) {
+            return -1;
+        }
+
+        int n = triangle.length;
+        int[][] f = new int[n][n];
+        f[0][0] = triangle[0][0];
+
+        for (int i = 1; i < n; i++) {
+            f[i][0] = f[i - 1][0] + triangle[i][0];
+            f[i][i] = f[i - 1][i - 1] + triangle[i][i];
+        }
+
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < i; j++) {
+                f[i][j] = Math.min(f[i - 1][j], f[i - 1][j - 1]) + triangle[i][j];
+            }
+        }
+        int best = f[n - 1][0];
+        for (int i = 1; i < n; i++) {
+            best = Math.min(best, f[n - 1][i]);
+        }
+        return best;
+    }
+
+    //bottom to top code
+
+    public int minimumTotal5(int[][] triangle) {
+        // write your code here
+
+        int n = triangle.length;
+        int[][] f = new int[n][n];
+
+        for(int i = 0; i < n; i++){
+            f[n - 1][i] = triangle[n - 1][i];
+        }
+
+        //注意边界
+        for(int i = n - 2; i >= 0 ; i--){
+            for(int j = 0; j <= i; j++){
+                f[i][j] = Math.min(f[i + 1][j + 1], f[i + 1][j]) + triangle[i][j];
+            }
+        }
+        return f[0][0];
+    }
+}
 /*
 //时间复杂度：
 class DFS_Traverse{

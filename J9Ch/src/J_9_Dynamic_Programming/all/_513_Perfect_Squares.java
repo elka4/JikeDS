@@ -17,7 +17,9 @@ public class _513_Perfect_Squares {
     public int numSquares(int n) {
         // Write your code here
         int[] dp = new int[n + 1];
+
         Arrays.fill(dp, Integer.MAX_VALUE);
+
         for(int i = 0; i * i <= n; ++i) {
             dp[i * i] = 1;
         }

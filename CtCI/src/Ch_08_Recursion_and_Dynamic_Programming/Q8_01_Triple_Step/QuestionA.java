@@ -1,5 +1,7 @@
 package Ch_08_Recursion_and_Dynamic_Programming.Q8_01_Triple_Step;
 
+import org.junit.Test;
+
 public class QuestionA {
 	
 	public static int countWays(int n) {
@@ -17,5 +19,16 @@ public class QuestionA {
 		int ways = countWays(n);
 		System.out.println(ways);
 	}
+
+	@Test
+    public void test01(){
+        long start = System.currentTimeMillis();
+        //System.out.println(fibonacci(i));
+        //System.out.println(countWays(20));
+        countWays(30);
+        long end = System.currentTimeMillis();
+        long time = end - start;
+        System.out.println(  ": " + time + "ms");
+    }
 
 }
