@@ -1,4 +1,5 @@
 package J_5_Depth_First_Search.other.backtracking;
+import org.junit.Test;
 import java.util.*;
 
 //https://leetcode.com/problems/permutations/#/discuss
@@ -56,19 +57,27 @@ public class _1_Subsets {
         res.add(new ArrayList<Integer>());
 
         Arrays.sort(S);
+
         for(int i : S) {
             List<List<Integer>> tmp = new ArrayList<>();
             for(List<Integer> sub : res) {
                 List<Integer> a = new ArrayList<>(sub);
                 a.add(i);
                 tmp.add(a);
+                System.out.println("a : " + a);
+                System.out.println("tmp : " + tmp);
             }
             res.addAll(tmp);
+            System.out.println("res : " + res);
+            System.out.println("=================");
         }
         return res;
     }
-    public class Solution {
 
+    @Test
+    public void test_subsets2(){
+        int[] nums = {1,2,3};
+        System.out.println(subsets2(nums));
     }
 
 //////////////////////////////////////////////////////////////////
@@ -128,6 +137,12 @@ public class _1_Subsets {
         list.remove(list.size()-1);
     }
 
+    @Test
+    public void test_subsets4(){
+        int[] nums = {1,2,3};
+        System.out.println(subsets4(nums));
+    }
+
 //////////////////////////////////////////////////////////////////
 
     public List<List<Integer>> subsets5(int[] S) {
@@ -141,10 +156,20 @@ public class _1_Subsets {
                 newList1.add(S[i]);
                 newList1.addAll(res.get(j));
                 res.add(newList1);
+                System.out.println("newList1 " + newList1);
+                System.out.println("res " + res);
             }
+            System.out.println("=================");
         }
         return res;
     }
+
+    @Test
+    public void test_subsets5(){
+        int[] nums = {1,2,3};
+        System.out.println(subsets5(nums));
+    }
+
 
 //////////////////////////////////////////////////////////////////
 

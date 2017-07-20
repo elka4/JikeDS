@@ -33,7 +33,9 @@ If nums = [1,2,2], a solution is:
 
     private void backtrack(List<List<Integer>> list,
                    List<Integer> tempList, int [] nums, int start){
+
         list.add(new ArrayList<>(tempList));
+
         for(int i = start; i < nums.length; i++){
             // skip duplicates
             if(i > start && nums[i] == nums[i-1]) continue;
@@ -54,6 +56,7 @@ If nums = [1,2,2], a solution is:
         helper(res, each, 0, nums);
         return res;
     }
+
     public void helper(List<List<Integer>> res, List<Integer> each, int pos, int[] n) {
         if (pos <= n.length) {
             res.add(each);
@@ -87,7 +90,7 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
         return result;
     }
 
-    public void dfs(int[] nums,int index,List<Integer> path,List<List<Integer>> result){
+    public void dfs(int[] nums, int index, List<Integer> path, List<List<Integer>> result){
         result.add(path);
         for(int i=index;i<nums.length;i++){
             if(i>index&&nums[i]==nums[i-1]) continue;
@@ -104,10 +107,15 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
         Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         result.add(new ArrayList<Integer>());
+
         int begin = 0;
+
         for(int i = 0; i < nums.length; i++){
+
             if(i == 0 || nums[i] != nums[i - 1]) begin = 0;
+
             int size = result.size();
+
             for(int j = begin; j < size; j++){
                 List<Integer> cur = new ArrayList<Integer>(result.get(j));
                 cur.add(nums[i]);
@@ -160,8 +168,11 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
             res.add(new ArrayList<>());
 
             for (int num: nums) {
+
                 List<List<Integer>> resDup = new ArrayList<>(res);
+
                 for (List<Integer> list:resDup) {
+
                     List<Integer> tmpList = new ArrayList<>(list);
                     list.add(num);
                     res.add(tmpList);
@@ -176,6 +187,7 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
 //    Check duplicates when adding new list to res.
 //    Here is Subset II solution based on subset I solution:
     public class Solution2 {
+
         public List<List<Integer>> subsetsWithDup(int[] nums) {
             List<List<Integer>> res = new ArrayList<>();
             res.add(new ArrayList<Integer>());
@@ -183,9 +195,12 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
 
             for (int num: nums) {
                 List<List<Integer>> resDup = new ArrayList<>(res);
+
                 for (List<Integer> list: resDup) {
+
                     List<Integer> tmp = new ArrayList<>(list);
                     tmp.add(num);
+
                     if (!res.contains(tmp))  //check duplicates
                         res.add(tmp);
                 }
@@ -204,13 +219,17 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
         Arrays.sort(num);
         int numberSets = 1 << num.length;
         List<List<Integer>> solution = new LinkedList<>();
+
         for(int i = 0; i<numberSets; i++){
+
             List<Integer> subset = new LinkedList<Integer>();
+
             for(int j = 0; j< num.length; j++){
                 if((i & (1 << j)) > 0){
                     subset.add(num[j]);
                 }
             }
+
             if(!solution.contains(subset))
                 solution.add(subset);
         }
@@ -227,6 +246,7 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
         Arrays.sort(num);
         List<List<Integer>> lists = new ArrayList<>();
         int subsetNum = 1<<num.length;
+
         for(int i=0;i<subsetNum;i++){
             List<Integer> list = new ArrayList<>();
             boolean illegal=false;
@@ -254,13 +274,18 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
         Arrays.sort(num);
         List<List<Integer>> result = new LinkedList<List<Integer>>();
         LinkedList<Integer> temp = new LinkedList<Integer>();
+
         Rec(num,result,temp,0);
+
         return result;
     }
     private static void Rec(int[] a,List<List<Integer>> result, LinkedList<Integer> temp, int current){
         result.add(new LinkedList(temp));
+
         for(int i=current;i<a.length;i++){
+
             if(i==current || a[i]!=a[i-1]){
+
                 temp.add(a[i]);
                 Rec(a,result,temp,i+1);
                 temp.remove(temp.size()-1);

@@ -1,5 +1,6 @@
 package J_5_Depth_First_Search.other.backtracking;
 import java.util.*;
+import org.junit.Test;
 
 //https://leetcode.com/problems/permutations/#/discuss
 
@@ -44,6 +45,11 @@ A solution set is:
                 tempList.remove(tempList.size() - 1);
             }
         }
+    }
+    @Test
+    public void test01(){
+        int[] nums = {2, 3, 6, 7};
+        System.out.println(combinationSum(nums, 7));
     }
 
 ///////////////////////////////////////////////////////////////////////////
@@ -340,13 +346,16 @@ public List<List<Integer>> combinationSum10(int[] candidates, int target) {
 ////////////////////////////////////////////////////////////////////////////
 
     /*
-    Nice Solution! I solved this problem with the same idea. However, instead of using res as a field, i made it as a local variable in my program:
+    Nice Solution! I solved this problem with the same idea. However,
+    instead of using res as a field, i made it as a local variable in my program:
 
 if candidates[i] == target, add it and return;
 
-if candidates[i] > target, it means we can break this loop since no combination starting from this element could sum up to target;
+if candidates[i] > target, it means we can break this loop since no combination
+starting from this element could sum up to target;
 
-if candidates[i] < target, we can recursively find the solution starting from the same element but different target number (which is current target - candidates[i]).
+if candidates[i] < target, we can recursively find the solution starting from the
+same element but different target number (which is current target - candidates[i]).
 
 
      */
@@ -377,6 +386,8 @@ if candidates[i] < target, we can recursively find the solution starting from th
             return result;
         }
     }
+
+
 ////////////////////////////////////////////////////////////////////////////
 //https://discuss.leetcode.com/topic/7277/a-recursive-yet-efficient-java-solution-with-explanation
 public class Solution4 {

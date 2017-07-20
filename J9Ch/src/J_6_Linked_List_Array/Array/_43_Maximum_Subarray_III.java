@@ -13,6 +13,18 @@ import java.util.ArrayList;
  * @param k: An integer denote to find k non-overlapping subarrays
  * @return: An integer denote the sum of max k non-overlapping subarrays
  */
+
+/*
+Given an array of integers and a number k,
+find k non-overlapping subarrays which have the largest sum.
+The number in each subarray should be contiguous.
+Return the largest sum.
+The subarray should contain at least one number
+ */
+
+// Given [-1,4,-2,3,-2,3], k=2, return 8
+
+
 public class _43_Maximum_Subarray_III {
 
     // 方法一 划分类DP
