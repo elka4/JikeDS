@@ -1,4 +1,4 @@
-package ch9S.chapter4_TwoPointer;
+package chapter4_TwoPointer;
 
 public class _04Container_With_Most_Water_2 {
 // for any i, the maxium area will be the farthest j that has a[j] > a[i];

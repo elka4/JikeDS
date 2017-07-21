@@ -1,4 +1,4 @@
-package ch9S.chapter6_DP2;
+package chapter6_DP2;
 
 public class _02Stone_Game_MemorizeSearch {
 	/**

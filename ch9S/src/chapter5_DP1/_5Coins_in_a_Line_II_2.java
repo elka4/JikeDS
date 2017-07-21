@@ -1,4 +1,4 @@
-package ch9S.chapter5_DP1;
+package chapter5_DP1;
 
 public class _5Coins_in_a_Line_II_2 {
 	/**

@@ -1,4 +1,4 @@
-package ch9S.chapter2_DataStructure1;
+package chapter2_DataStructure1;
 
 public class _08Word_Search {
     // recursion

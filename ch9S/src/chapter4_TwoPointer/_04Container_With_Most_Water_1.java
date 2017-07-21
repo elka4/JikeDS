@@ -1,4 +1,4 @@
-package ch9S.chapter4_TwoPointer;
+package chapter4_TwoPointer;
 
 public class _04Container_With_Most_Water_1 {
 	/**

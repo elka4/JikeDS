@@ -1,4 +1,4 @@
-package ch9S.chapter5_DP1;
+package chapter5_DP1;
 @SuppressWarnings("all")
 public class Longest_Increasing_Continuous_Subsequence_II {
     /**

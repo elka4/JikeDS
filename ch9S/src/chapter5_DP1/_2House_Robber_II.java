@@ -1,4 +1,4 @@
-package ch9S.chapter5_DP1;
+package chapter5_DP1;
 
 public class _2House_Robber_II {
 	public int houseRobber2(int[] nums) {

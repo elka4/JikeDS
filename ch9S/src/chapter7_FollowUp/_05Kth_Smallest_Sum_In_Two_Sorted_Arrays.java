@@ -1,4 +1,4 @@
-package ch9S.chapter7_FollowUp;
+package chapter7_FollowUp;
 
 import java.util.HashSet;
 import java.util.PriorityQueue;

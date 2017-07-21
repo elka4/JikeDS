@@ -1,4 +1,4 @@
-package ch9S.chapter4_TwoPointer;
+package chapter4_TwoPointer;
 
 public class _06Nuts_Bolts_Problem {
 	/**

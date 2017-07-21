@@ -1,4 +1,4 @@
-package ch9S.chapter3_DataStructure2;
+package chapter3_DataStructure2;
 //Version2:
 public class _1Trapping_Rain_Water_2 {
 	/**

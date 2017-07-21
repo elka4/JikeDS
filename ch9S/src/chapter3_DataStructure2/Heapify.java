@@ -1,4 +1,4 @@
-package ch9S.chapter3_DataStructure2;
+package chapter3_DataStructure2;
 
 public class Heapify {
 	// Version 1: this cost O(n)

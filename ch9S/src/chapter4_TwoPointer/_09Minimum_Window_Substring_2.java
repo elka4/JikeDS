@@ -1,4 +1,4 @@
-package ch9S.chapter4_TwoPointer;
+package chapter4_TwoPointer;
 
 public class _09Minimum_Window_Substring_2 {
 //方法二:

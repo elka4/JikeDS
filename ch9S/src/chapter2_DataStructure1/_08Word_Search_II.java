@@ -1,4 +1,4 @@
-package ch9S.chapter2_DataStructure1;
+package chapter2_DataStructure1;
 
 import java.util.ArrayList;
 import java.util.HashMap;

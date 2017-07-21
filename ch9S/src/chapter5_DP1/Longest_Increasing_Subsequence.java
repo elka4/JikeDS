@@ -1,4 +1,4 @@
-package ch9S.chapter5_DP1; //不是动态规划
+package chapter5_DP1; //不是动态规划
 
 //1. 判断
 //2. 看是哪一类

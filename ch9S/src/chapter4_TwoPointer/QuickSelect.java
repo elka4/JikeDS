@@ -1,4 +1,4 @@
-package ch9S.chapter4_TwoPointer;
+package chapter4_TwoPointer;
 
 public class QuickSelect {
 	public int partition(int[] nums, int l, int r) {

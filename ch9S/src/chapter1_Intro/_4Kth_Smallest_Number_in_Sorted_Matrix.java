@@ -1,4 +1,4 @@
-package ch9S.chapter1_Intro;
+package chapter1_Intro;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

@@ -1,4 +1,4 @@
-package ch9S.chapter3_DataStructure2;
+package chapter3_DataStructure2;
 //Version 0: Two Pointers:
 public class _1Trapping_Rain_Water_0TwoPointers {
 	public int trapRainWater(int[] height) {

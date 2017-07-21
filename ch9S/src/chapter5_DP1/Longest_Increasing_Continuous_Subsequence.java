@@ -1,4 +1,4 @@
-package ch9S.chapter5_DP1;
+package chapter5_DP1;
 
 public class Longest_Increasing_Continuous_Subsequence {
 	public int longestIncreasingContinuousSubsequence(int[] A) {

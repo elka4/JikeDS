@@ -13,24 +13,29 @@ import java.util.stream.*;
  */
 
 /*
-Given an array of integers, find two non-overlapping subarrays which have the largest sum.
+Given an array of integers, find two non-overlapping subarrays
+ which have the largest sum.
+
 The number in each subarray should be contiguous.
+
 Return the largest sum.
 
- Notice
+ Notice: The subarray should contain at least one number
 
-The subarray should contain at least one number
-
-Have you met this question in a real interview? Yes
 Example
-For given [1, 3, -1, 2, -1, 2], the two subarrays are [1, 3]
-and [2, -1, 2] or [1, 3, -1, 2] and [2], they both have the largest sum 7.
+For given [1, 3, -1, 2, -1, 2], the two subarrays are [1, 3]and [2, -1, 2]
+or [1, 3, -1, 2] and [2], they both have the largest sum 7.
  */
 
 
 
 public class _42_Maximum_Subarray_II {
 
+/*
+就是做两轮Maximum Subarray, 一轮从左， 一轮从右
+left[i] 指的是从0到i这个范围内，以i为右边界的，maximum subarray
+right[i + 1] 指的是从i+1 到 right.length - 1 这个范围内，以i+1为起点到，maximum subarray
+ */
     public int maxTwoSubArrays(ArrayList<Integer> nums) {
         // write your code
         int size = nums.size();
@@ -47,6 +52,12 @@ public class _42_Maximum_Subarray_II {
             left[i] = max;
         }
 
+        //1, 3, -1, 2, -1, 2
+        for (int i : left){
+            System.out.print(i + " ");
+        }//1 4 4 5 5 6
+
+
         sum = 0;
         minSum = 0;
         max = Integer.MIN_VALUE;
@@ -56,6 +67,13 @@ public class _42_Maximum_Subarray_II {
             minSum = Math.min(sum, minSum);
             right[i] = max;
         }
+
+        //1, 3, -1, 2, -1, 2
+        System.out.println();
+        for (int i : right){
+            System.out.print(i + " ");
+        }//6 5 3 3 2 2
+        System.out.println();
 
         max = Integer.MIN_VALUE;
         for(int i = 0; i < size - 1; i++){

@@ -1,4 +1,4 @@
-package ch9S.chapter4_TwoPointer;
+package chapter4_TwoPointer;
 
 public class Window_pointer_template {
 /*	优化思想通过两层for循环改进算法

@@ -1,4 +1,4 @@
-package ch9S.chapter4_TwoPointer;
+package chapter4_TwoPointer;
 import java.util.Arrays;
 
 public class _02Triangle_Count {

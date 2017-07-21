@@ -1,4 +1,4 @@
-package ch9S.chapter7_FollowUp;
+package chapter7_FollowUp;
 
 public class _01Find_Peak_Element {
 	/**

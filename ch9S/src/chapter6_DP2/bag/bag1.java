@@ -1,4 +1,4 @@
-package ch9S.chapter6_DP2.bag;
+package chapter6_DP2.bag;
 
 /**
  * Created by tzh on 2/25/17.

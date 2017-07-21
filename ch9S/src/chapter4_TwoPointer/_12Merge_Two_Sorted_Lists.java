@@ -1,4 +1,4 @@
-package ch9S.chapter4_TwoPointer;
+package chapter4_TwoPointer;
 
 public class _12Merge_Two_Sorted_Lists {
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {

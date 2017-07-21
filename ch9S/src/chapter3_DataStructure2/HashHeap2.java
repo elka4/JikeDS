@@ -1,4 +1,4 @@
-package ch9S.chapter3_DataStructure2;
+package chapter3_DataStructure2;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package ch9S.chapter4_TwoPointer;
+package chapter4_TwoPointer;
 
 //Version 0: Two pointer
 public class _03Trapping_Rain_Water_0TwoPointers {

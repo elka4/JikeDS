@@ -1,4 +1,4 @@
-package ch9S.chapter4_TwoPointer;
+package chapter4_TwoPointer;
 //9Ch Quick Sort
 
 public class QuickSort {
