@@ -14,13 +14,23 @@ public class backtracking {
 
     private void backtrack(List<List<Integer>> list ,
                            List<Integer> tempList, int [] nums, int start){
-
+        //
         list.add(new ArrayList<>(tempList));
 
         for(int i = start; i < nums.length; i++){
+
             tempList.add(nums[i]);
             backtrack(list, tempList, nums, i + 1);
+
             tempList.remove(tempList.size() - 1);
+        }
+    }
+
+    @Test
+    public void test_subsets(){
+        int[] nums = {1,2,3};
+        for (List<Integer> list:subsets(nums)){
+            System.out.println(list);
         }
     }
 
@@ -36,7 +46,7 @@ public class backtracking {
 
     private void backtrack2(List<List<Integer>> list,
                            List<Integer> tempList, int [] nums, int start){
-
+        //
         list.add(new ArrayList<>(tempList));
 
         for(int i = start; i < nums.length; i++){
@@ -47,6 +57,14 @@ public class backtracking {
             tempList.add(nums[i]);
             backtrack2(list, tempList, nums, i + 1);
             tempList.remove(tempList.size() - 1);
+        }
+    }
+
+    @Test
+    public void test_subsetsWithDup(){
+        int[] nums = {1,2, 2, 3};
+        for (List<Integer> list:subsetsWithDup(nums)){
+            System.out.println(list);
         }
     }
 
@@ -77,6 +95,15 @@ public class backtracking {
             }
         }
     }
+
+    @Test
+    public void test_permute(){
+        int[] nums = {1,2,3};
+        for (List<Integer> list:permute(nums)){
+            System.out.println(list);
+        }
+    }
+
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -112,9 +139,17 @@ public class backtracking {
         }
     }
 
+    @Test
+    public void test_permuteUnique(){
+        int[] nums = {1,2,2,3};
+        for (List<Integer> list:permuteUnique(nums)){
+            System.out.println(list);
+        }
+    }
+
 ///////////////////////////////////////////////////////////////////////////////
 
-    //_5_Combination_Sum
+    //_5_Combination_Sum  Combination Sum
     public List<List<Integer>> combinationSum(int[] nums, int target) {
         List<List<Integer>> list = new ArrayList<>();
         Arrays.sort(nums);
@@ -137,9 +172,15 @@ public class backtracking {
         }
     }
 
+    @Test
+    public void test_combinationSum(){
+        int[] nums = {2, 3, 6, 7};
+        System.out.println(combinationSum(nums, 7));
+    }
+
 ///////////////////////////////////////////////////////////////////////////////
 
-    //_6_Combination_Sum_II
+    //_6_Combination_Sum_II  Combination Sum II
 
     public List<List<Integer>> combinationSum2(int[] nums, int target) {
         List<List<Integer>> list = new ArrayList<>();
@@ -163,9 +204,15 @@ public class backtracking {
         }
     }
 
+    @Test
+    public void test_combinationSumII(){
+        int[] nums = {10, 1, 2, 7, 6, 1, 5};
+        System.out.println(combinationSum2(nums, 8));
+    }
+
 ///////////////////////////////////////////////////////////////////////////////
 
-    //_7_Palindrome_Partitioning
+    //_7_Palindrome_Partitioning  Palindrome Partitioning
     public List<List<String>> partition(String s) {
         List<List<String>> list = new ArrayList<>();
         backtrack(list, new ArrayList<>(), s, 0);
@@ -192,6 +239,21 @@ public class backtracking {
         while(low < high)
             if(s.charAt(low++) != s.charAt(high--)) return false;
         return true;
+    }
+
+    /*
+    For example, given s = "aab",
+Return
+
+[
+  ["aa","b"],
+  ["a","a","b"]
+]
+     */
+    @Test
+    public void test_partition(){
+
+        System.out.println(partition("aab"));
     }
 
 ///////////////////////////////////////////////////////////////////////////////

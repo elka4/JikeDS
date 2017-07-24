@@ -60,7 +60,8 @@ The main idea reminds an approach for solving coins/knapsack problem - to store
 the result for all i < target and create the solution from them. For that for each
  t from 1 to our target we try every candidate which is less or equal to t in ascending
  order. For each candidate "c" we run through all combinations for target t-c starting
- with the value greater or equal than c to avoid duplicates and store only ordered combinations.
+ with the value greater or equal than c to avoid duplicates and store only ordered
+  combinations.
 
  */
 
@@ -123,7 +124,8 @@ the result for all i < target and create the solution from them. For that for ea
         dfs(result, new LinkedList<Integer>(), candidates, target);
         return result;
     }
-    private void dfs(List<List<Integer>> result, LinkedList<Integer> list, int[] arr, int target) {
+    private void dfs(List<List<Integer>> result, LinkedList<Integer> list,
+                     int[] arr, int target) {
         if (target == 0) {
             result.add(new LinkedList<Integer>(list));
             return;
@@ -131,7 +133,8 @@ the result for all i < target and create the solution from them. For that for ea
         for (int i = arr.length - 1; i >= 0; i--) {
             if (arr[i] <= target) {
                 list.addFirst(arr[i]);
-                dfs(result, list, Arrays.copyOfRange(arr, 0, i + 1), target - arr[i]);
+                dfs(result, list, Arrays.copyOfRange(arr, 0, i + 1),
+                        target - arr[i]);
                 list.removeFirst();
             }
         }
@@ -207,7 +210,8 @@ the result for all i < target and create the solution from them. For that for ea
         Arrays.sort(candidates);
         for (int i = start; i < candidates.length; i++) {
             if (candidates[i] <target) {
-                for (List<Integer> ar : combinationSum(candidates, target - candidates[i], i)) {
+                for (List<Integer> ar : combinationSum(candidates,
+                        target - candidates[i], i)) {
                     ar.add(0, candidates[i]);
                     res.add(ar);
                 }
@@ -229,7 +233,8 @@ the result for all i < target and create the solution from them. For that for ea
         return ans;
     }
 
-    private void dfs(List<List<Integer>> ans, List<Integer> list, int[] cand, int remain, int from) {
+    private void dfs(List<List<Integer>> ans, List<Integer> list,
+                     int[] cand, int remain, int from) {
         if (remain < 0) { return; }
         if (remain == 0) { ans.add(new ArrayList<Integer>(list)); return; }
         //cand[] sorted; from is the starting point of picking elements at this level
@@ -295,7 +300,8 @@ public List<List<Integer>> combinationSum10(int[] candidates, int target) {
                 result.add(new ArrayList<>(combi));
                 combi.pop();
             }
-            // indices stack and combination stack should have the same size all the time
+            // indices stack and combination stack should have the s
+            // ame size all the time
             if (!indices.empty()){
                 sum -= combi.pop();
                 i = indices.pop();
@@ -368,7 +374,8 @@ same element but different target number (which is current target - candidates[i
             return combinationSum(candidates, target, 0);
         }
 
-        private List<List<Integer>> combinationSum(int[] candidates, int target, int start) {
+        private List<List<Integer>> combinationSum(int[] candidates,
+                                                   int target, int start) {
             List<List<Integer>> result = new ArrayList<>();
             for (int i = start; i < candidates.length; i++) {
                 if (candidates[i] == target) {
@@ -378,7 +385,8 @@ same element but different target number (which is current target - candidates[i
                     return result;
                 }
                 if (candidates[i] > target) return result;
-                List<List<Integer>> next = combinationSum(candidates, target - candidates[i], i);
+                List<List<Integer>> next = combinationSum(candidates,
+                        target - candidates[i], i);
                 if (next.size() == 0) continue;
                 for (List<Integer> list : next) list.add(0, candidates[i]);
                 result.addAll(next);
@@ -402,7 +410,8 @@ public class Solution4 {
                 newVec.addAll(vec);
                 newVec.add(candidates[i]);
 
-                // Try a new combination, one could repeat itself again, so start from "i", instead of "i+1"
+                // Try a new combination, one could repeat itself again,
+                // so start from "i", instead of "i+1"
                 combinationSum(candidates, newVec, i, target-candidates[i]);
             }else if(candidates[i] == target){
 

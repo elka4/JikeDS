@@ -104,7 +104,9 @@ public class _7_Palindrome_Partitioning {
             for (int i = 0; i < s.length(); i++) {
                 result[i + 1] = new ArrayList<List<String>>();
                 for (int left = 0; left <= i; left++) {
-                    if (s.charAt(left) == s.charAt(i) && (i-left <= 1 || pair[left + 1][i - 1])) {
+                    if (s.charAt(left) == s.charAt(i) && (i-left <= 1
+                            || pair[left + 1][i - 1])) {
+
                         pair[left][i] = true;
                         String str = s.substring(left, i + 1);
                         for (List<String> r : result[left]) {
@@ -146,7 +148,8 @@ The result[i], is to store from beginng until current index i (Non inclusive),
             return res;
         }
 
-        private void helper(List<List<String>> res, List<String> path, boolean[][] dp, String s, int pos) {
+        private void helper(List<List<String>> res, List<String> path,
+                            boolean[][] dp, String s, int pos) {
             if(pos == s.length()) {
                 res.add(new ArrayList<>(path));
                 return;
@@ -227,6 +230,7 @@ The result[i], is to store from beginng until current index i (Non inclusive),
         }
 
         public boolean isPali(String s) {
+
             return s.equals(new StringBuilder(s).reverse().toString());
         }
     }
@@ -238,7 +242,8 @@ The result[i], is to store from beginng until current index i (Non inclusive),
 
 //Concise Java solution
 
-//DFS to find every combinations of the string, if the substring is not Palindrome,
+//DFS to find every combinations of the string,
+// if the substring is not Palindrome,
 // ignore it then go to the next.
 
     public class Solution6 {
@@ -248,7 +253,8 @@ The result[i], is to store from beginng until current index i (Non inclusive),
             return result;
         }
 
-        public void helper(String s, List<String> cur){ //DFS every combinations
+        //DFS every combinations
+        public void helper(String s, List<String> cur){
             if(s.length() == 0){result.add(cur); return;}
             for(int i = 1; i <= s.length(); i++){
                 String sub = s.substring(0,i);
@@ -257,7 +263,8 @@ The result[i], is to store from beginng until current index i (Non inclusive),
                     newList.add(sub);
                     helper(s.substring(i,s.length()), newList);
                 }
-                else continue;                 //not palindrome, ignore it
+                //not palindrome, ignore it
+                else continue;
             }
         }
 
@@ -330,7 +337,8 @@ public class Solution7 {
             ans.add(tmp);
         }
 
-        private void helper(String s, int start, int end, boolean[] cut, List<List<String>> ans, boolean[][] isPal) {
+        private void helper(String s, int start, int end, boolean[] cut,
+                            List<List<String>> ans, boolean[][] isPal) {
             if (start > end) construct(s, cut, ans);
             for (int i=start; i<=end; i++) {
                 if (isPal[start][i]) {

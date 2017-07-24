@@ -14,7 +14,9 @@ public class _1_Backtracking_Permutation_All {
         if(nums == null || nums.length == 0){
             return res;
         }
+
         res.add(new ArrayList<Integer>());
+
         for(int i = 0; i < nums.length; i++){
             List<List<Integer>> nextRes = new ArrayList<List<Integer>>();
             //for each list in res

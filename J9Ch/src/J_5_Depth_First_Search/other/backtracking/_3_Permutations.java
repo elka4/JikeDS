@@ -30,12 +30,14 @@ public class _3_Permutations {
         return list;
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums){
+    private void backtrack(List<List<Integer>> list,
+                           List<Integer> tempList, int [] nums){
         if(tempList.size() == nums.length){
             list.add(new ArrayList<>(tempList));
         } else{
             for(int i = 0; i < nums.length; i++){
-                if(tempList.contains(nums[i])) continue; // element already exists, skip
+                // element already exists, skip
+                if(tempList.contains(nums[i])) continue;
                 tempList.add(nums[i]);
                 backtrack(list, tempList, nums);
                 tempList.remove(tempList.size() - 1);
@@ -47,18 +49,24 @@ public class _3_Permutations {
 //My AC simple iterative java/python solution
 
 /*
-the basic idea is, to permute n numbers, we can add the nth number into the resulting
- List<List<Integer>> from the n-1 numbers, in every possible position.
+the basic idea is, to permute n numbers, we can add the nth number into the
+ resulting List<List<Integer>> from the n-1 numbers, in every possible position.
 
-For example, if the input num[] is {1,2,3}: First, add 1 into the initial List<List<Integer>>
+For example, if the input num[] is {1,2,3}: First, add 1 into the initial
+ List<List<Integer>>
  (let's call it "answer").
 
-Then, 2 can be added in front or after 1. So we have to copy the List<Integer> in answer
-(it's just {1}), add 2 in position 0 of {1}, then copy the original {1} again, and add 2 in
- position 1. Now we have an answer of {{2,1},{1,2}}. There are 2 lists in the current answer.
+Then, 2 can be added in front or after 1. So we have to copy the
+List<Integer> in answer
+(it's just {1}), add 2 in position 0 of {1}, then copy the original
+ {1} again, and add 2 in
+ position 1. Now we have an answer of {{2,1},{1,2}}. There are 2
+  lists in the current answer.
 
-Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then copy {2,1} and
-{1,2}, and add 3 into position 1, then do the same thing for position 3. Finally we have 2*3=6
+Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0;
+ then copy {2,1} and
+{1,2}, and add 3 into position 1, then do the same thing for position 3.
+ Finally we have 2*3=6
  lists in answer, which is what we want.
 
 
@@ -100,8 +108,9 @@ def permute(self, nums):
     return perms
  */
 
-////////////////////////////////////////////////////////////////////////////////////
-//I used your idea of adding each next value to every possible position of current list,
+//////////////////////////////////////////////////////////////////////
+//I used your idea of adding each next value to every
+// possible position of current list,
 // but have done it with recursion.
 
     public List<List<Integer>> permute3(int[] nums) {
@@ -133,8 +142,9 @@ def permute(self, nums):
 
 
 
-////////////////////////////////////////////////////////////////////////////////////
-//Very nice solution! you can simply a little bit by removing a couple of lines:
+////////////////////////////////////////////////////////////////////
+//Very nice solution! you can simply a little bit
+// by removing a couple of lines:
 
     public List<List<Integer>> permute4(int[] num) {
         List<List<Integer>> ans = new ArrayList<List<Integer>>();
@@ -160,8 +170,9 @@ def permute(self, nums):
 
 
 
-////////////////////////////////////////////////////////////////////////////////////
-//Good idea! I was thinking we can optimize the solution by adding on to a single
+/////////////////////////////////////////////////////////////////
+//Good idea! I was thinking we can optimize the solution by
+// adding on to a single
 // answer list instead of recreating a new list every time!
 
     public List<List<Integer>> permute5(int[] nums) {
@@ -189,9 +200,11 @@ def permute(self, nums):
 
 
 
-////////////////////////////////////////////////////////////////////////////////////
-//I used your idea, but have a slightly different starting point before getting into the loop.
-// I think it's logically more clear and don't need to handle corner case when num is empty.
+///////////////////////////////////////////////////////////////////
+//I used your idea, but have a slightly different starting point before
+// getting into the loop.
+// I think it's logically more clear and don't need to handle corner
+// case when num is empty.
 
     public List<List<Integer>> permute6(int[] num) {
 
@@ -218,7 +231,7 @@ def permute(self, nums):
     }
 
 
-////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
 //Share my short iterative JAVA solution
     public List<List<Integer>> permute7(int[] num) {
         LinkedList<List<Integer>> res = new LinkedList<List<Integer>>();
@@ -240,10 +253,13 @@ def permute(self, nums):
     }
 
     /*
-    就是遍历nums（第一个for loop），当开始进行nums[i]时，res中的结果是nums[0]至nums[i-1]的全排列。
-    每一次循环中，需要将nums[i]加入到res中的每一个结果中的每一个位置，然后开始下一次循环。
+    就是遍历nums（第一个for loop），当开始进行nums[i]时，
+    res中的结果是nums[0]至nums[i-1]的全排列。
+    每一次循环中，需要将nums[i]加入到res中的每一个结果中的每一个位置，
+    然后开始下一次循环。
     具体做法是，每一次循环开始，先记录当前res的大小（size），取出res中的第一个，
-    在每个位置添加nums[i]然后加到res末尾（第三个for loop，循环r.size()次），一共进行size次（第二个for loop）。
+    在每个位置添加nums[i]然后加到res末尾（第三个for loop，循环r.size()次），
+    一共进行size次（第二个for loop）。
      */
 
 
@@ -262,7 +278,8 @@ def permute(self, nums):
        return permutations;
    }
 
-    private void collectPermutations(int[] nums, int start, List<Integer> permutation,
+    private void collectPermutations(int[] nums, int start,
+                                     List<Integer> permutation,
                                      List<List<Integer>>  permutations) {
 
         if (permutation.size() == nums.length) {
@@ -382,7 +399,8 @@ def permute(self, nums):
 
 
 ////////////////////////////////////////////////////////////////////////////////////
-//If you want it to be in order, just sort the array before you go. It won't affect the complexity.
+//If you want it to be in order, just sort the array before you go.
+// It won't affect the complexity.
 
 
     public  List<List<Integer>> permute11(int[] num) {
@@ -491,7 +509,7 @@ public class Solution2 {
 
 
 
-////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 
    // A new ArrayList<Integer> newPerm is not necessary.
 
@@ -503,7 +521,8 @@ public class Solution2 {
         return res;
     }
 
-    private void permute(ArrayList<Integer> path, int index, int[] nums, List<List<Integer>> res){
+    private void permute(ArrayList<Integer> path, int index,
+                         int[] nums, List<List<Integer>> res){
         if(index == nums.length){
             res.add(new ArrayList<Integer>(path));
             return;
@@ -516,7 +535,7 @@ public class Solution2 {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 
     //Accepted Recursive Solution in Java
 
@@ -564,7 +583,8 @@ public class Solution2 {
             perm(result,nums,0,nums.length-1);
             return result;
         }
-        public  void perm(List<List<Integer>> result, int[] nums, int start, int end){
+        public  void perm(List<List<Integer>> result, int[] nums,
+                          int start, int end){
             if(start==end){
                 Integer[] ele = new Integer[nums.length];
                 for(int i=0; i<nums.length; i++){

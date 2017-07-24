@@ -51,7 +51,8 @@ public class _1_Subsets {
 ////////////////////////////////////////////////////////////////////
 
     // Simple Java Solution with For-Each loops
-    // No messy indexing. Avoid the ConcurrentModificationException by using a temp list.
+    // No messy indexing. Avoid the ConcurrentModificationException
+    // by using a temp list.
     public List<List<Integer>> subsets2(int[] S) {
         List<List<Integer>> res = new ArrayList<>();
         res.add(new ArrayList<Integer>());
@@ -129,11 +130,17 @@ public class _1_Subsets {
         return ans;
     }
 
-    private void dfs(List<List<Integer>> ans, int[] nums, List<Integer> list, int index) {
-        if (index == nums.length) { ans.add(new ArrayList<Integer>(list)); return; }
-        dfs(ans, nums, list, index+1);  // not pick the number at this index
+    private void dfs(List<List<Integer>> ans,
+                     int[] nums, List<Integer> list, int index) {
+        if (index == nums.length) {
+            ans.add(new ArrayList<Integer>(list));
+            return;
+        }
+        // not pick the number at this index
+        dfs(ans, nums, list, index+1);
         list.add(nums[index]);
-        dfs(ans, nums, list, index+1);  // pick the number at this index
+        // pick the number at this index
+        dfs(ans, nums, list, index+1);
         list.remove(list.size()-1);
     }
 
@@ -220,7 +227,8 @@ public class _1_Subsets {
         return res;
     }
 
-    public void search(List<List<Integer>> res,int[] nums,boolean[] seats,int N,int index){
+    public void search(List<List<Integer>> res, int[] nums,
+                       boolean[] seats,int N,int index){
         if(index==N){
 
             List<Integer> list=new ArrayList<>();

@@ -6,9 +6,11 @@ import java.util.*;
 
 public class _2_Subsets_II {
 
-    //Subsets II (contains duplicates) : https://leetcode.com/problems/subsets-ii/
-/*
-Given a collection of integers that might contain duplicates, nums, return all possible subsets.
+//Subsets II (contains duplicates) : https://leetcode.com/problems/subsets-ii/
+
+    /*
+Given a collection of integers that might contain duplicates, nums,
+ return all possible subsets.
 
 Note: The solution set must not contain duplicate subsets.
 
@@ -57,7 +59,8 @@ If nums = [1,2,2], a solution is:
         return res;
     }
 
-    public void helper(List<List<Integer>> res, List<Integer> each, int pos, int[] n) {
+    public void helper(List<List<Integer>> res, List<Integer> each,
+                       int pos, int[] n) {
         if (pos <= n.length) {
             res.add(each);
         }
@@ -72,12 +75,16 @@ If nums = [1,2,2], a solution is:
         return;
     }
     /*
-    The Basic idea is: use "while (i < n.length && n[i] == n[i - 1]) {i++;}" to avoid the duplicate.
-     For example, the input is 2 2 2 3 4. Consider the helper function. The process is:
+    The Basic idea is: use "while (i < n.length && n[i] == n[i - 1]) {i++;}" to
+     avoid the duplicate.
+     For example, the input is 2 2 2 3 4. Consider the helper function.
+     The process is:
 
 each.add(n[i]); --> add first 2 (index 0)
-helper(res, new ArrayList<>(each), i + 1, n); --> go to recursion part, list each is <2 (index 0)>
-while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the element as in subset I
+helper(res, new ArrayList<>(each), i + 1, n); --> go to recursion part,
+list each is <2 (index 0)>
+while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3,
+add the element as in subset I
      */
 
 ////////////////////////////////////////////////////////////////////////////
@@ -90,7 +97,8 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
         return result;
     }
 
-    public void dfs(int[] nums, int index, List<Integer> path, List<List<Integer>> result){
+    public void dfs(int[] nums, int index, List<Integer> path,
+                    List<List<Integer>> result){
         result.add(path);
         for(int i=index;i<nums.length;i++){
             if(i>index&&nums[i]==nums[i-1]) continue;
@@ -134,19 +142,22 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
         List<List<Integer>> ans = new ArrayList<List<Integer>>();
         int len = num.length;
         if (len == 0) return ans;
-
-        ans.add(new ArrayList<Integer>()); // first, need to add the subset of num[0]
+        // first, need to add the subset of num[0]
+        ans.add(new ArrayList<Integer>());
         ans.add(new ArrayList<Integer>());
         ans.get(1).add(num[0]);
 
-        int nprev = 1; // this is the number of lists that the previous number was added in.
+        // this is the number of lists that the previous number was added in.
+        int nprev = 1;
         // if the current number is same as the prev one, it'll be only added in the
         // lists that has the prev number.
 
         for (int i = 1; i < len ; ++i){
             int size = ans.size();
-            if (num[i]!=num[i-1])   // if different
-                nprev = size;        // this means add num[i] to all lists in ans;
+            // if different
+            if (num[i]!=num[i-1])
+                // this means add num[i] to all lists in ans;
+                nprev = size;
             for (int j = size-nprev; j < size; ++j){
                 List<Integer> l = new ArrayList<Integer>(ans.get(j));
                 l.add(num[i]);
@@ -183,7 +194,8 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
     }
 //    In this problem, we need to change two things:
 //
-//    Sort the input nums, so that we won't get lists such as [1,4] and [4, 1] at the same time.
+//    Sort the input nums, so that we won't get lists such as [1,4]
+// and [4, 1] at the same time.
 //    Check duplicates when adding new list to res.
 //    Here is Subset II solution based on subset I solution:
     public class Solution2 {
@@ -212,7 +224,7 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
 
 
 
-////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
     //My solution using bit masks
     public List<List<Integer>> subsetsWithDup6(int[] num) {
         //Sort the input
@@ -279,7 +291,8 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3, add the 
 
         return result;
     }
-    private static void Rec(int[] a,List<List<Integer>> result, LinkedList<Integer> temp, int current){
+    private static void Rec(int[] a,List<List<Integer>> result,
+                            LinkedList<Integer> temp, int current){
         result.add(new LinkedList(temp));
 
         for(int i=current;i<a.length;i++){

@@ -5,7 +5,8 @@ import java.util.*;
 
 
 /*
-Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+Given a collection of numbers that might contain duplicates,
+return all possible unique permutations.
 
 For example,
 [1,1,2] have the following unique permutations:
@@ -20,7 +21,8 @@ For example,
 //
 public class _4_Permutations_II {
 
-    //Permutations II (contains duplicates) : https://leetcode.com/problems/permutations-ii/
+    //Permutations II (contains duplicates) :
+    // https://leetcode.com/problems/permutations-ii/
 
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
@@ -29,12 +31,14 @@ public class _4_Permutations_II {
         return list;
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, boolean [] used){
+    private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+                           int [] nums, boolean [] used){
         if(tempList.size() == nums.length){
             list.add(new ArrayList<>(tempList));
         } else{
             for(int i = 0; i < nums.length; i++){
-                if(used[i] || i > 0 && nums[i] == nums[i-1] && !used[i - 1]) continue;
+                if(used[i] || i > 0 && nums[i] == nums[i-1] && !used[i - 1])
+                    continue;
                 used[i] = true;
                 tempList.add(nums[i]);
                 backtrack(list, tempList, nums, used);
@@ -50,11 +54,13 @@ public class _4_Permutations_II {
 //Really easy Java solution, much easier than the solutions with very high vote
 
 /*
-Use an extra boolean array " boolean[] used" to indicate whether the value is added to list.
+Use an extra boolean array " boolean[] used" to indicate whether the
+ value is added to list.
 
 Sort the array "int[] nums" to make sure we can skip the same value.
 
-when a number has the same value with its previous, we can use this number only if his previous is used
+when a number has the same value with its previous, we can use this
+ number only if his previous is used
  */
 
     public List<List<Integer>> permuteUnique2(int[] nums) {
@@ -67,7 +73,8 @@ when a number has the same value with its previous, we can use this number only 
         return res;
     }
 
-    public void dfs(int[] nums, boolean[] used, List<Integer> list, List<List<Integer>> res){
+    public void dfs(int[] nums, boolean[] used, List<Integer> list,
+                    List<List<Integer>> res){
         if(list.size()==nums.length){
             res.add(new ArrayList<Integer>(list));
             return;
@@ -141,7 +148,8 @@ At recursion level 0, current element at 1st index is 1, there are 3 possibiliti
 [1] + permute[2,3], [2] + permute[1,3], [3] + permute[2,1].
 
 Take "2+permute[1,3]" as the example at recursion level 0. At recursion level 1,
-current elemenet at 1st index is 1, there are 2 possibilities: [2,1] + permute[3], [2,3] + permute[1].
+current elemenet at 1st index is 1, there are 2 possibilities: [2,1] + permute[3],
+ [2,3] + permute[1].
 
 ... and so on.
 
@@ -150,8 +158,10 @@ Let's look at another example, permute[1,2,3,4,1].
 At recursion level 0, we have [1] + permute[2,3,4,1], [2] + permute[1,3,4,1],
 [3] + permute[2,1,4,1], [4] + permute[2,3,1,1], [1] + permute[2,3,4,1].
 
-1 has already been at the 1st index of current recursion level, so the last possibility is redundant.
-We can use a hash set to mark which elements have been at the 1st index of current recursion level,
+1 has already been at the 1st index of current recursion level, so the last
+possibility is redundant.
+We can use a hash set to mark which elements have been at the 1st index of
+current recursion level,
 so that if we meet the element again, we can just skip it.
  */
     public List<List<Integer>> permuteUnique4(int[] nums) {

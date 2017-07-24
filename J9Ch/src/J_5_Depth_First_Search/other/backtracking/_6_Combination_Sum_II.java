@@ -56,7 +56,8 @@ public class _6_Combination_Sum_II {
         dfs_com(cand, 0, target, path, res);
         return res;
     }
-    void dfs_com(int[] cand, int cur, int target, List<Integer> path, List<List<Integer>> res) {
+    void dfs_com(int[] cand, int cur, int target, List<Integer> path,
+                 List<List<Integer>> res) {
         if (target == 0) {
             res.add(new ArrayList(path));
             return ;
@@ -81,7 +82,8 @@ class solution1 {
         return list;
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] cand, int remain, int start) {
+    private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+                           int[] cand, int remain, int start) {
         if (remain < 0) return; /** no solution */
         else if (remain == 0) list.add(new ArrayList<>(tempList));
         else {
@@ -106,13 +108,15 @@ class solution1 {
             return list;
         }
 
-        private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] cand, int remain, int start) {
+        private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+                               int[] cand, int remain, int start) {
 
             if (remain < 0) return; /** no solution */
             else if (remain == 0) list.add(new ArrayList<>(tempList));
             else {
                 for (int i = start; i < cand.length; i++) {
-                    if (i > start && cand[i] == cand[i - 1]) continue; /** skip duplicates */
+                    /** skip duplicates */
+                    if (i > start && cand[i] == cand[i - 1]) continue;
                     tempList.add(cand[i]);
                     backtrack(list, tempList, cand, remain - cand[i], i + 1);
                     tempList.remove(tempList.size() - 1);
@@ -131,9 +135,12 @@ class solution1 {
             return list;
         }
 
-        private void backtrack(List<List<Integer>> list, List<Integer> tempList, int k, int remain, int start) {
+        private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+                               int k, int remain, int start) {
             if (tempList.size() > k) return; /** no solution */
-            else if (tempList.size() == k && remain == 0) list.add(new ArrayList<>(tempList));
+            else if (tempList.size() == k && remain == 0) {
+                list.add(new ArrayList<>(tempList));
+            }
             else {
                 for (int i = start; i <= 9; i++) {
                     tempList.add(i);
@@ -169,7 +176,8 @@ class solution1 {
                 //continue to look for the rest.
                 List<Integer> newComb = new ArrayList<>(comb);
                 newComb.add(candi[i]);
-                combination(candi, target - candi[i], i + 1, newComb, ans);
+                combination(candi, target - candi[i],
+                        i + 1, newComb, ans);
             } else
                 break; //invalid path, return nothing.
         }
@@ -184,7 +192,8 @@ public class Solution {
         return combos;
     }
 
-    private void combinationSum(int[] num, int target, List<Integer> list, int start, List<List<Integer>> combos) {
+    private void combinationSum(int[] num, int target, List<Integer> list,
+                                int start, List<List<Integer>> combos) {
         if (target == 0) {
             combos.add(list);
         } else {
@@ -204,8 +213,9 @@ public class Solution {
         }
     }
 }
-////////////////////////////////////////////////////////////////////////////////////
-//my version, similar, I think I ,managed to remove some of the code in the recursive find ,
+/////////////////////////////////////////////////////////////////////////
+//my version, similar, I think I ,managed to remove some of
+// the code in the recursive find ,
 // above the comment line, so the result looks cleaner
 
     public class Solution5 {
@@ -254,7 +264,7 @@ public class Solution {
         }
 
         private void calcCombinationSum2(int[] candidates, int cindex, int[] list,
-                                 int lindex, int target, List<List<Integer>> results) {
+                         int lindex, int target, List<List<Integer>> results) {
             if (target == 0) {
                 List<Integer> result = new ArrayList<>();
                 for (int i = 0; i < lindex; i++) {
@@ -272,8 +282,8 @@ public class Solution {
                     }
 
                     list[lindex] = candidates[i];
-                    calcCombinationSum2(candidates, i + 1, list, lindex + 1,
-                            target - candidates[i], results);
+                    calcCombinationSum2(candidates, i + 1, list,
+                    lindex + 1, target - candidates[i], results);
                     prev = candidates[i];
                 }
             }
@@ -282,7 +292,8 @@ public class Solution {
 
 /////////////////////////////////////////////////////////////////////
 
-    //Most people who use recursive backtrack to solve this question have code like:
+    //Most people who use recursive backtrack to solve
+    // this question have code like:
 
 
     /*
@@ -308,9 +319,14 @@ public class Solution {
     /*
     his is absolutely correct. However, we can do much more pruning by breaking much earlier.
 
-For example: the list is [1, 1, 2, 5, 6, 7, 10], target is 8 and the current list is [1, 1, 2]. Now we are at 5, and we know that [1, 1, 2, 5] will be greater than 8. The next to check is [1, 1, 2, 6]. However, we should already know that [1, 1, 2, 6] cannot work since [1, 1, 2, 5] already has a sum larger than 8. There is no need to check for [1, 1, 2, 6] or [1, 1, 2, 7] and so no.
+For example: the list is [1, 1, 2, 5, 6, 7, 10], target is 8 and the current list
+is [1, 1, 2]. Now we are at 5, and we know that [1, 1, 2, 5] will be greater than 8.
+ The next to check is [1, 1, 2, 6]. However, we should already know that [1, 1, 2, 6]
+  cannot work since [1, 1, 2, 5] already has a sum larger than 8. There is no need to
+  check for [1, 1, 2, 6] or [1, 1, 2, 7] and so no.
 
-Thus, when we find a match or the current sum is already larger than the target, we should not continue with the current list.
+Thus, when we find a match or the current sum is already larger than the target,
+we should not continue with the current list.
 
 The code is something like:
 
@@ -334,7 +350,8 @@ The code is something like:
             }
 
             list.add(candidates[i]);
-            boolean con = helper(candidates, target - candidates[i], res, list, i + 1);
+            boolean con = helper(candidates, target - candidates[i],
+                    res, list, i + 1);
             list.remove(list.size() - 1);
             if(con) {
                 break;
@@ -354,7 +371,8 @@ The code is something like:
         ch(candidates,target,0,new ArrayList<Integer>(),ans);
         return ans;
     }
-    public void ch(int[] candidates,int remain,int rindex,List<Integer> tmp,List<List<Integer>> ans)
+    public void ch(int[] candidates,int remain,int rindex,List<Integer> tmp,
+                   List<List<Integer>> ans)
     {
         if(remain==0)
         {
@@ -364,10 +382,10 @@ The code is something like:
         }
         int entered=0; // get rid of duplicate combinations
         for(int i=rindex;i<candidates.length;i++)
-        {
-            if(entered!=candidates[i]) // get rid of duplicate combinations
-            {
-                if(remain-candidates[i]<0) break; //This line of code can reduce 7ms from execution time!
+        {      // get rid of duplicate combinations
+            if(entered!=candidates[i])
+            {   //This line of code can reduce 7ms from execution time!
+                if(remain-candidates[i]<0) break;
                 tmp.add(candidates[i]);
                 entered=candidates[i];
                 ch(candidates,remain-candidates[i],i+1,tmp,ans);
