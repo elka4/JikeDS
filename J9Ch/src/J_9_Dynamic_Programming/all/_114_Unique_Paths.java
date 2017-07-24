@@ -5,6 +5,27 @@ package J_9_Dynamic_Programming.all;
 
  * Created by tianhuizhu on 6/28/17.
  */
+
+
+/*
+A robot is located at the top-left corner of a m x n grid.
+
+The robot can only move either down or right at any point in time.
+ The robot is trying to reach the bottom-right corner of the grid.
+
+How many possible unique paths are there?
+
+ Notice
+
+m and n will be at most 100.
+
+Have you met this question in a real interview? Yes
+Example
+Given m = 3 and n = 3, return 6.
+Given m = 4 and n = 5, return 35.
+
+
+ */
 public class _114_Unique_Paths {
     public int uniquePaths(int m, int n) {
         if (m == 0 || n == 0) {
@@ -36,6 +57,7 @@ public class _114_Unique_Paths {
      * @param n, m: positive integer (1 <= n ,m <= 100)
      * @return an integer
      */
+    //就是把初始化和计算都放进loop里
     public int uniquePaths2(int m, int n) {
         int[][] f = new int[m][n];
         int i, j;

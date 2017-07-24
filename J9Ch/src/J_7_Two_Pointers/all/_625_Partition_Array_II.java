@@ -31,6 +31,28 @@ public class _625_Partition_Array_II {
         }
     }
 
+    public void sortColors(int[] a) {
+        if (a == null || a.length <= 1) {
+            return;
+        }
+
+        int pl = 0;
+        int pr = a.length - 1;
+        int i = 0;
+        while (i <= pr) {
+            if (a[i] == 0) {
+                swap(a, pl, i);
+                pl++;
+                i++;
+            } else if(a[i] == 1) {
+                i++;
+            } else {
+                swap(a, pr, i);
+                pr--;
+            }
+        }
+    }
+
     private void swap(int[] nums, int i, int j) {
         int tmp = nums[i];
         nums[i] = nums[j];
@@ -85,6 +107,25 @@ public class _625_Partition_Array_II {
         }
     }
 
+/*
+Partition an unsorted integer array into three parts:
 
+The front part < low
+The middle part >= low & <= high
+The tail part > high
+Return any of the possible solutions.
+
+ Notice
+
+low <= high in all testcases.
+
+Have you met this question in a real interview? Yes
+Example
+Given [4,3,4,1,2,3,1,2], and low = 2 and high = 3.
+
+Change to [1,1,2,3,2,3,4,4].
+
+([1,1,2,2,3,3,4,4] is also a correct answer, but [1,2,1,2,3,3,4,4] is not)
+ */
 
 }

@@ -9,6 +9,8 @@ public class _116_Jump_Game {
 
     // version 1: Dynamic Programming
     // 这个方法，复杂度是 O(n^2) 可能会超时，但是依然需要掌握。
+
+    // OR操作，只要有一个满足就行
     public boolean canJump(int[] A) {
         boolean[] can = new boolean[A.length];
         can[0] = true;

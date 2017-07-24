@@ -1,5 +1,7 @@
 package J_6_Linked_List_Array.other;
 
+import org.junit.Test;
+
 public class _leet_287_Find_the_Duplicate_Number {
     /*
     Given an array nums containing n + 1 integers where each integer is between
@@ -46,6 +48,12 @@ Example：［1，3，4，3］return 3
         nums[j] = temp;
     }
 
+    @Test
+    public void test01(){
+        int[] nums  = {1,3,4,3};
+        System.out.println(findDupNumber(nums));
+
+    }
 ///////////////////////////////////////////////////////////////////
 //Java O(n) time and O(1) space solution. Similar to find loop in linkedlist.
 //https://haolin29.gitbooks.io/algorithm-collection/content/Array/missing_num.html
@@ -95,11 +103,13 @@ Now the problem is the same as find the cycle in linkedlist!
             slow = nums[slow-1];
             fast = nums[nums[fast-1]-1];
         }while(slow != fast);
+
         slow = n;
         while(slow != fast){
             slow = nums[slow-1];
             fast = nums[fast-1];
         }
+
         return slow;
     }
 ///////////////////////////////////////////////////////////////////

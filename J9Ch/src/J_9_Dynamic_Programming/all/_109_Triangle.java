@@ -5,6 +5,18 @@ package J_9_Dynamic_Programming.all;
 
  * Created by tianhuizhu on 6/28/17.
  */
+
+/*
+[
+     [2],
+    [3,4],
+   [6,5,7],
+  [4,1,8,3]
+]
+The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
+ */
+
+
 public class _109_Triangle {
 
     // version 0: top-down
@@ -34,7 +46,8 @@ public class _109_Triangle {
         // top down
         for (int i = 1; i < n; i++) {
             for (int j = 1; j < i; j++) {
-                f[i][j] = Math.min(f[i - 1][j], f[i - 1][j - 1]) + triangle[i][j];
+                f[i][j] = Math.min(f[i - 1][j],
+                        f[i - 1][j - 1]) + triangle[i][j];
             }
         }
 
@@ -49,7 +62,7 @@ public class _109_Triangle {
 
 
 
-////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
 
     //Version 1: Bottom-Up
     /**
@@ -76,7 +89,8 @@ public class _109_Triangle {
         // bottom up
         for (int i = n - 2; i >= 0; i--) {
             for (int j = 0; j <= i; j++) {
-                f[i][j] = Math.min(f[i + 1][j], f[i + 1][j + 1]) + triangle[i][j];
+                f[i][j] = Math.min(f[i + 1][j],
+                        f[i + 1][j + 1]) + triangle[i][j];
             }
         }
 
@@ -87,7 +101,7 @@ public class _109_Triangle {
 
 
 
-////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
     //Version 2 : Memorize Search
     private int n;
@@ -103,8 +117,9 @@ public class _109_Triangle {
             return minSum[x][y];
         }
 
-        minSum[x][y] = Math.min(search(x + 1, y), search(x + 1, y + 1))
-                + triangle[x][y];
+        minSum[x][y] = Math.min(search(x + 1, y),
+                search(x + 1, y + 1)) + triangle[x][y];
+
         return minSum[x][y];
     }
 
@@ -129,6 +144,6 @@ public class _109_Triangle {
         return search(0, 0);
     }
 
-
+//////////////////////////////////////////////////////////////
 
 }

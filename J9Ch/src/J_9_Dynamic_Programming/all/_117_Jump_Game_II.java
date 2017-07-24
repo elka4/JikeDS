@@ -5,6 +5,24 @@ package J_9_Dynamic_Programming.all;
 
  * Created by tianhuizhu on 6/28/17.
  */
+
+/*
+Given an array of non-negative integers,
+you are initially positioned at the first index of the array.
+
+Each element in the array represents your maximum jump length at that position.
+
+Your goal is to reach the last index in the minimum number of jumps.
+
+Have you met this question in a real interview? Yes
+Example
+Given array A = [2,3,1,1,4]
+
+The minimum number of jumps to reach the last index is 2.
+(Jump 1 step from index 0 to 1, then 3 steps to the last index.)
+ */
+
+
 public class _117_Jump_Game_II {
 
     // version 1: Dynamic Programming

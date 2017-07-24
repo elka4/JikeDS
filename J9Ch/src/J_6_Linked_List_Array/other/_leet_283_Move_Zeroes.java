@@ -14,6 +14,8 @@ package J_6_Linked_List_Array.other;
 //        You must do this in-place without making a copy of the array.
 //        Minimize the total number of operations.
 
+import org.junit.Test;
+
 public class _leet_283_Move_Zeroes {
 /*
 FB高频题，写入次数（Write times）
@@ -27,6 +29,7 @@ we can concatenate them at the end. Since we just need to traverse the array onc
   need two additional arrays.
 Apparently, time complexity can’t be improved as we need to traverse the array
  at least once. In order to use less space, we should look for modifying the array.
+ 
 // 先演一演，展示一个swap的做法，找到第一个0，然后和后面非0的元素进行swap
 // 一次 swap = 2次数组写入 + 1次 temp 写入，总写入次数为 O(3n)，总数组写入次数为 O(2n).
 //
@@ -50,6 +53,15 @@ Apparently, time complexity can’t be improved as we need to traverse the array
         nums[i] = nums[j];
         nums[j] = temp;
     }
+    
+    @Test
+    public void test01(){
+        int[] nums = {0, 1, 0, 3, 12};
+        moveZeroes(nums);
+        for (int i : nums) {
+            System.out.print(i + " ");
+        }
+    }
 
     /*
     然后 follow-up 肯定是如何减少写入次数 (aka 别用 swap)，后面的演技就是这样……
@@ -64,6 +76,9 @@ Quick sort的partition思想+
         // i维护的是有效数组的长度
         int i = 0, j = 0;
         int n = nums.length;
+        //双前向指针，同array
+        //j指向每一个元素，i指向非0数值位置
+        //j每轮都++向前，j非0都时候，就把j赋值给i，i++
         while(j < n) {
             if (nums[j] != 0) {
                 nums[i++] = nums[j];

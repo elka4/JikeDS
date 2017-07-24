@@ -1,5 +1,7 @@
 package J_6_Linked_List_Array.Array;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -8,6 +10,13 @@ import java.util.HashMap;
 
  * Created by tianhuizhu on 6/28/17.
  */
+
+/*
+Given an integer array, find a subarray where the sum of numbers is zero.
+Your code should return the index of the first number and the index of the last number.
+ */
+
+// [-3, 1, 2, -3, 4], return [0, 2] or [1, 3]
 public class _138_Subarray_Sum {
     /**
      * @param nums: A list of integers
@@ -38,6 +47,14 @@ public class _138_Subarray_Sum {
         }
 
         return ans;
+    }
+
+    @Test
+    public void test01(){
+        int[] nums = {-3, 1, 2, -3, 4};//[0, 2]
+        ArrayList<Integer> result = subarraySum(nums);
+        System.out.println(result);
+
     }
 
 }

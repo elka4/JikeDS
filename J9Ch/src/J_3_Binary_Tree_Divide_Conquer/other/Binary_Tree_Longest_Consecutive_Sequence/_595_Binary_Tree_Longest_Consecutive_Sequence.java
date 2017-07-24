@@ -74,7 +74,7 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         System.out.println(longestConsecutive3(root));
     }
 
-///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 
     // version 2: Another Traverse + Divide Conquer
     /**
@@ -135,7 +135,7 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         System.out.println(longestConsecutive2(root));
     }
 
-///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
 
     // version 3: Divide Conquer
     private class ResultType {
@@ -213,6 +213,106 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         root.print();
         System.out.println(longestConsecutive3(root));
     }
+
+///////////////////////////////////////////////////////////////////
+
+   // Approach #1 (Top Down Depth-first Search) [Accepted]
+/*
+Algorithm
+
+A top down approach is similar to an in-order traversal.
+ We use a variable length to store the current consecutive
+ path length and pass it down the tree. As we traverse,
+ we compare the current node with its parent node to determine
+ if it is consecutive.
+  If not, we reset the length.
+
+
+ */
+
+
+    private int maxLength4 = 0;
+    public int longestConsecutive4(TreeNode root) {
+        dfs(root, null, 0);
+        return maxLength4;
+    }
+
+    private void dfs(TreeNode p, TreeNode parent, int length) {
+        if (p == null) return;
+        length = (parent != null && p.val == parent.val + 1) ? length + 1 : 1;
+        maxLength4 = Math.max(maxLength4, length);
+        dfs(p.left, p, length);
+        dfs(p.right, p, length);
+    }
+/*
+@lightmark presents a neat approach without storing the maxLength
+ as a global variable.
+ */
+
+    public int longestConsecutive5(TreeNode root) {
+        return dfs5(root, null, 0);
+    }
+
+    private int dfs5(TreeNode p, TreeNode parent, int length) {
+        if (p == null) return length;
+        length = (parent != null && p.val == parent.val + 1) ? length + 1 : 1;
+        return Math.max(length, Math.max(dfs5(p.left, p, length),
+                dfs5(p.right, p, length)));
+    }
+
+    /*
+    Complexity analysis
+
+Time complexity : O(n)O(n). The time complexity is the same as an in-order
+traversal of a binary tree with nn nodes.
+
+Space complexity : O(n)O(n). The extra space comes from implicit stack
+space due to recursion. For a skewed binary tree, the recursion could go
+ up to nn levels deep.
+
+
+     */
+///////////////////////////////////////////////////////////////////
+
+//Approach #2 (Bottom Up Depth-first Search) [Accepted]
+
+ //   Algorithm The bottom-up approach is similar to a post-order traversal.
+// We return the consecutive path length starting at current node to its parent.
+// Then its parent can examine if its node value can be included in this
+// consecutive path.
+
+    private int maxLength = 0;
+    public int longestConsecutive6(TreeNode root) {
+        dfs6(root);
+        return maxLength;
+    }
+
+    private int dfs6(TreeNode p) {
+        if (p == null) return 0;
+        int L = dfs6(p.left) + 1;
+        int R = dfs6(p.right) + 1;
+        if (p.left != null && p.val + 1 != p.left.val) {
+            L = 1;
+        }
+        if (p.right != null && p.val + 1 != p.right.val) {
+            R = 1;
+        }
+        int length = Math.max(L, R);
+        maxLength = Math.max(maxLength, length);
+        return length;
+    }
+
+    /*
+    Complexity analysis
+
+Time complexity : O(n)O(n). The time complexity is the same as a post-order
+ traversal in a binary tree, which is O(n)O(n).
+
+Space complexity : O(n)O(n). The extra space comes from implicit stack
+ space due to recursion.
+For a skewed binary tree, the recursion could go up to nn levels deep.
+     */
+
 
 /*
    1

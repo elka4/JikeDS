@@ -23,8 +23,10 @@ public class _521_Remove_Duplicate_Numbers_in_Array {
             mp.put(nums[i], true);
 
         int result = 0;
+
         for (Map.Entry<Integer, Boolean> entry : mp.entrySet())
             nums[result++] = entry.getKey();
+
         return result;
     }
 
@@ -45,6 +47,7 @@ public class _521_Remove_Duplicate_Numbers_in_Array {
 
         Arrays.sort(nums);
         int len = 0;
+
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != nums[len]) {
                 nums[++len] = nums[i];

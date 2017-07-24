@@ -31,10 +31,42 @@ public class _96_Partition_List {
         left.next = rightDummy.next;
         return leftDummy.next;
     }
+        /*
+        Given 1->4->3->2->5->2 and x = 3,
+        return 1->2->2->4->3->5.
+         */
+
+    @Test
+    public void test00(){
+        //ListNode node0 = new ListNode(0);
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        ListNode node5 = new ListNode(5);
+        ListNode node6 = new ListNode(2);
+        ListNode node7 = new ListNode(2);
+        //node0.next = node1;
+        node1.next = node4;
+        node4.next = node3;
+        node3.next = node2;
+        node2.next = node5;
+        node5.next = node6;
+
+        printList(node1);
+        ListNode result = partition(node1, 3);
+
+        //printList(partitionList(node1, 2));
+        printList(result);
+
+    }
+///////////////////////////////////////////////////////////////////
 
     public ListNode partition2(ListNode head, int x) {
-        ListNode dummy1 = new ListNode(0), dummy2 = new ListNode(0);  //dummy heads of the 1st and 2nd queues
-        ListNode curr1 = dummy1, curr2 = dummy2;      //current tails of the two queues;
+        //dummy heads of the 1st and 2nd queues
+        ListNode dummy1 = new ListNode(0), dummy2 = new ListNode(0);
+        //current tails of the two queues;
+        ListNode curr1 = dummy1, curr2 = dummy2;
         while (head!=null){
             if (head.val<x) {
                 curr1.next = head;
@@ -45,10 +77,37 @@ public class _96_Partition_List {
             }
             head = head.next;
         }
-        curr2.next = null;          //important! avoid cycle in linked list. otherwise u will get TLE.
+        //important! avoid cycle in linked list. otherwise u will get TLE.
+        curr2.next = null;
         curr1.next = dummy2.next;
         return dummy1.next;
     }
+
+    @Test
+    public void test05(){
+        //ListNode node0 = new ListNode(0);
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        ListNode node5 = new ListNode(5);
+        ListNode node6 = new ListNode(2);
+        ListNode node7 = new ListNode(2);
+        //node0.next = node1;
+        node1.next = node4;
+        node4.next = node3;
+        node3.next = node2;
+        node2.next = node5;
+        node5.next = node6;
+
+        printList(node1);
+        ListNode result = partition2(node1, 3);
+
+        //printList(partitionList(node1, 2));
+        printList(result);
+
+    }
+/////////////////////////////////////////////////////////////////
 
     public ListNode partition3 (ListNode head, int x) {
         if (head == null || head.next ==null) {
@@ -73,6 +132,9 @@ public class _96_Partition_List {
         largePre.next = null;
         return smallDummy.next;
     }
+
+
+///////////////////////////////////////////////////////////////////
 
 
     // move nodes with values greater or equal than k to the tail
@@ -120,6 +182,7 @@ public class _96_Partition_List {
         public int val;
     }
 
+///////////////////////////////////////////////////////////////////
     /*
     Given 1->4->3->2->5->2 and x = 3,
 return 1->2->2->4->3->5.
@@ -143,10 +206,10 @@ return 1->2->2->4->3->5.
         node5.next = node6;
 
         printList(node1);
-        ListNode result = partitionList(node1, 2);
+        //ListNode result = partitionList(node1, 2);
 
         //printList(partitionList(node1, 2));
-        printList(result);
+        printList(partitionList(node1, 3));
 
     }
 

@@ -7,6 +7,19 @@ import java.util.Arrays;
 
  * Created by tianhuizhu on 6/28/17.
  */
+
+
+/*
+Given a positive integer n, find the least number of perfect square numbers
+ (for example, 1, 4, 9, 16, ...) which sum to n.
+
+Have you met this question in a real interview? Yes
+Example
+Given n = 12, return 3 because 12 = 4 + 4 + 4
+Given n = 13, return 2 because 13 = 4 + 9
+
+
+ */
 public class _513_Perfect_Squares {
 
     // version 0 DP

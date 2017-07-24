@@ -39,7 +39,7 @@ public class _110_Minimum_Path_Sum {
 
     // 方法二
     /**
-     * @param grid: a list of lists of integers.
+     * @param A: a list of lists of integers.
      * @return: An integer, minimizes the sum of all numbers along its path
      */
     public int minPathSum2(int[][] A) {

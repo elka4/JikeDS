@@ -11,13 +11,14 @@ public class _415_Valid_Palindrome {
 
         int front = 0;
         int end = s.length() - 1;
+
         while (front < end) {
             // nead to check range of a/b
             while (front < s.length() && !isvalid(s.charAt(front))){
                 front++;
             }
 
-            if (front == s.length()) { // for emtpy string “.,,,”
+            if (front == s.length()) { // for enmtpy string “.,,,”
                 return true;
             }
 
@@ -39,9 +40,28 @@ public class _415_Valid_Palindrome {
     }
 
     private boolean isvalid (char c) {
+
         return Character.isLetter(c) || Character.isDigit(c);
     }
 
+
+/*
+Given a string, determine if it is a palindrome, considering only
+alphanumeric characters and ignoring cases.
+
+ Notice
+
+Have you consider that the string might be empty? This is a good question
+ to ask during an interview.
+
+For the purpose of this problem, we define empty string as valid palindrome.
+
+Have you met this question in a real interview? Yes
+Example
+"A man, a plan, a canal: Panama" is a palindrome.
+
+"race a car" is not a palindrome.
+ */
 
 
 }
