@@ -5,7 +5,7 @@ import java.util.PriorityQueue;
 
 //time O(klogm)
 //space O(m)
-public class _2_HeapAndBestFirstSearch_KthSmallestinSortedMatrix_2 {
+public class _2_KthSmallestinSortedMatrix_2_Heap_BestFirstSearch {
     public int kthSmallest(int[][] matrix, int k){
         if(matrix == null){
             return Integer.MIN_VALUE;

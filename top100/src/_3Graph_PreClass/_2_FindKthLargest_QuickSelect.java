@@ -6,7 +6,7 @@ import java.util.List;
 
 // 如果用quick sort的话。O(k + nlogn) : sort is nlogn
 //这里用的是quick select O (n), space: recursion stack
-public class _2_HeapAndBestFirstSearch_FindKthLargest_QuickSelect {
+public class _2_FindKthLargest_QuickSelect {
 
 
     public int findKthLargest(int[] nums, int k) {

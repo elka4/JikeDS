@@ -4,7 +4,7 @@ package _3Graph_PreClass;
 // Time: O(mlog(max - min))
 // Space: O(1)
 
-public class _2_HeapAndBestFirstSearch_KthSmallestinSortedMatrix_3 {
+public class _2_KthSmallestinSortedMatrix_3_BinarySearch {
 	public int kthSmallest(int[][] matrix, int k) {
         if (matrix == null)
         return Integer.MIN_VALUE;

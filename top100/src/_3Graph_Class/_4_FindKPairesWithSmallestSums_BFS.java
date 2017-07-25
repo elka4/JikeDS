@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
-public class _4_FindKPairesWithSmallestSums {
+public class _4_FindKPairesWithSmallestSums_BFS {
 	class Sum {
 		int sum;
 		int a;

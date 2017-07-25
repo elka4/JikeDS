@@ -1,7 +1,7 @@
 package _3Graph_Class;
 
 
-public class _2_SudokuSolver {
+public class _2_SudokuSolver_Backtracking {
 	public void solveSudoku(char[][] board) {
 		if (board == null || board.length == 0) {
 			return;

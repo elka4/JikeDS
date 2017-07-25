@@ -5,13 +5,13 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
-public class _5_NumberOfConnectedComponentsInAnUndirectedGraph {
- public int countComponent_UnionFind(int n, int[][] edges) {
+public class _5_NumberOfConnectedComponents_BFS_DFS_UF {
+    public int countComponent_UnionFind(int n, int[][] edges) {
         int[] root = new int[n];
         for (int i = 0; i < n; i++) {
             root[i] = i;
         }
-        for (int[] edge : edges) {              
+        for (int[] edge : edges) {
             int par = findRoot(root, edge[0]);
             int child = findRoot(root, edge[1]);
             root[child] = par;
@@ -31,31 +31,47 @@ public class _5_NumberOfConnectedComponentsInAnUndirectedGraph {
         }
         return cur;
     }
+
+//////////////////////////////////////////////////////////////
+
     public int countComponents_DFS(int n, int[][] edges) {
-    int[] tag = new int[n];
-    for (int i = 0; i < n; i++) {
-        tag[i] = i;
-    }
-
-    for (int[] edge : edges) {
-        int start = edge[0];
-        int end = edge[1];
-        while (tag[start] != start) {
-            start = tag[start] = tag[tag[start]];
+        int[] tag = new int[n];
+        for (int i = 0; i < n; i++) {
+            tag[i] = i;
         }
 
-        while (tag[end] != end) {
-            end = tag[end] = tag[tag[end]];
+        for (int[] edge : edges) {
+            int start = edge[0];
+            int end = edge[1];
+            while (tag[start] != start) {
+                start = tag[start] = tag[tag[start]];
+            }
+
+            while (tag[end] != end) {
+                end = tag[end] = tag[tag[end]];
+            }
+
+            tag[start] = end;
+            if (start != end)
+                n--;
         }
-
-        tag[start] = end;
-        if (start != end)
-            n--;
+        return n;
     }
-    return n;
-  }
 
-  public int countComponents_BFS(int n, int[][] edges) {
+    private void dfsHelper(int cur, List<List<Integer>> neis,
+                           boolean[] isVisited) {
+        isVisited[cur] = true;
+        List<Integer> nei = neis.get(cur);
+        for (Integer i : nei) {
+            if (!isVisited[i]) {
+                dfsHelper(i, neis, isVisited);
+            }
+        }
+    }
+
+//////////////////////////////////////////////////////////////
+
+    public int countComponents_BFS(int n, int[][] edges) {
         if (edges == null || edges.length == 0) {
             return n;
         }
@@ -73,7 +89,7 @@ public class _5_NumberOfConnectedComponentsInAnUndirectedGraph {
             }
         }
         return count;
-  }
+    }
 
     private void constructGraph(int[][] edges, List<List<Integer>> neis, int n) {
         //1. Create List
@@ -88,18 +104,8 @@ public class _5_NumberOfConnectedComponentsInAnUndirectedGraph {
         }
     }
 
-    private void dfsHelper(int cur, List<List<Integer>> neis,
-                                          boolean[] isVisited) {
-        isVisited[cur] = true;
-        List<Integer> nei = neis.get(cur);
-        for (Integer i : nei) {
-            if (!isVisited[i]) {
-                dfsHelper(i, neis, isVisited);
-            }
-        }
-    }
     private void bfsHelper(int enter,
-                            List<List<Integer>> neis, boolean[] isVisited) {
+                           List<List<Integer>> neis, boolean[] isVisited) {
         isVisited[enter] = true;
         Deque<Integer> queue = new LinkedList<Integer>();
         queue.offerLast(enter);
@@ -108,10 +114,17 @@ public class _5_NumberOfConnectedComponentsInAnUndirectedGraph {
             for (Integer i: neis.get(cur)) {
                 if (!isVisited[i]) {
                     queue.offerLast(i);
-                    isVisited[i] = true;;
+                    isVisited[i] = true;
                 }
             }
         }
     }
+
+//////////////////////////////////////////////////////////////
+
+
+
+
+
 }
 

@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 
-public class _4_BFS_WordLadder_1 {
+public class _4_BFS_WordLadder_1_BFS {
 	private int bfsHelper(String beginWord, String endWord,
                           Set<String> wordList) {
 
@@ -30,15 +30,14 @@ public class _4_BFS_WordLadder_1 {
                         if (toStr.equals(endWord)) {
                             return ++steps;
                         }
-                        if (visited.add(toStr) && wordList.contains(toStr)) {
+
+                        if (visited.add(toStr)
+                                && wordList.contains(toStr)) {
                             queue.offerLast(toStr);
                         }    
                     }
-
                 }
-
             }
-
         }
         return 0;
     }

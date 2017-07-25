@@ -9,6 +9,8 @@ import java.util.Set;
 
 public class _1_Backtracking_Permutation_All {
 
+    //iterative
+    //element based
     public List<List<Integer>> permute(int[] nums){
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         if(nums == null || nums.length == 0){
@@ -34,6 +36,9 @@ public class _1_Backtracking_Permutation_All {
 
     ///////////////////////////////////////////////////////
 
+
+    //recursion
+    //position based
     private List<List <Integer>> permute2(int[] num) {
         //Corner Case Checked
         List <List<Integer>> result = new ArrayList <List<Integer>>();
@@ -62,7 +67,8 @@ public class _1_Backtracking_Permutation_All {
 
     ///////////////////////////////////////////////////////
 
-
+    //recursion
+    //swap
     public List <List <Integer>> permute3(int[] nums) {
         List <List <Integer>> res = new ArrayList <List <Integer>>();
         if(nums == null || nums.length == 0)
@@ -100,6 +106,9 @@ public class _1_Backtracking_Permutation_All {
     }
 
     ///////////////////////////////////////////////////////
+
+    //recursion
+    //duplicate elements
     public List <List <Integer>> permuteUnique(int[] nums) {
         //Corn Cases Checked
 
@@ -139,6 +148,7 @@ public class _1_Backtracking_Permutation_All {
     public void test01(){
         int[] nums = {1,2,3,4,5,6,7,8,9,0};
 
+        //2439ms
         long start = System.currentTimeMillis();
         List<List<Integer>> list = permute(nums);
         System.out.println("There are " + list.size() + " permutations.");
@@ -146,7 +156,7 @@ public class _1_Backtracking_Permutation_All {
         long time = end - start;
         System.out.println(  ": " + time + "ms");
 
-
+        //594ms
         start = System.currentTimeMillis();
         list = permute2(nums);
         System.out.println("There are " + list.size() + " permutations.");
@@ -154,7 +164,7 @@ public class _1_Backtracking_Permutation_All {
         time = end - start;
         System.out.println(  ": " + time + "ms");
 
-
+        //2551ms
         start = System.currentTimeMillis();
         list = permute3(nums);
         System.out.println("There are " + list.size() + " permutations.");

@@ -1,6 +1,6 @@
 package _3Graph_Class;
 
-public class _3_MergeKSortedLinkedList_2 {
+public class _3_MergeKSortedLinkedList_2_BinaryDeduction {
 	public ListNode mergeKLists(ListNode[] lists) {
 		if (lists == null || lists.length == 0) {
 			return null;

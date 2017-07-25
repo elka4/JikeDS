@@ -3,7 +3,7 @@ package _3Graph_PreClass;
 import java.util.HashSet;
 import java.util.Set;
 
-public class _4_BFS_WordLadder_2 {
+public class _4_BFS_WordLadder_2_MultiEnd_BFS {
 	private int biBFSHelper(String begin, String end, Set<String> dic) {        
         int steps = 0;
         Set<String> visited = new HashSet<String>();
@@ -35,7 +35,8 @@ public class _4_BFS_WordLadder_2 {
                             return steps + 1;
                         }
 
-                        if (dic.contains(toCheck) && visited.add(toCheck)) {
+                        if (dic.contains(toCheck)
+                                && visited.add(toCheck)) {
                             nextLevel.add(toCheck);
                         }
                     }

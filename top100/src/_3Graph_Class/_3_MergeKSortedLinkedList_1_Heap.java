@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 
-public class _3_MergeKSortedLinkedList_1 {
+public class _3_MergeKSortedLinkedList_1_Heap {
 	public ListNode mergeKLists(ListNode[] lists) {
 		if (lists == null || lists.length == 0) {
 			return null;

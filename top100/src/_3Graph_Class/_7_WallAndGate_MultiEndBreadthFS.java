@@ -3,7 +3,7 @@ package _3Graph_Class;
 import java.util.Deque;
 import java.util.LinkedList;
 
-public class _7_WallAndGate {
+public class _7_WallAndGate_MultiEndBreadthFS {
 public void wallsAndGates_BFS(int[][] rooms) {
     if (rooms == null || rooms.length == 0 || rooms[0] == null || rooms[0].length == 0) {
         return;

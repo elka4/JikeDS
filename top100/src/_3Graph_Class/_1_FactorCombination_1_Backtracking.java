@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-public class _1_FactorCombination_1 {
+public class _1_FactorCombination_1_Backtracking {
 
 	public List<List<Integer>> getFactors (int n) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();

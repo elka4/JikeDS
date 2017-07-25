@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 //mark visited needed
 //Poll top elem k times
 
-public class _2_HeapAndBestFirstSearch_KthSmallestinSortedMatrix_1 {
+public class _2_KthSmallestinSortedMatrix_1_Heap_BestFirstSearch {
 	public int kthSmallest(int[][] matrix, int k) {
 	    if (matrix == null)
 	      return Integer.MIN_VALUE;

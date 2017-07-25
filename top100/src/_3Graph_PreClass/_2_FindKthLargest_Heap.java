@@ -13,7 +13,7 @@ import java.util.PriorityQueue;
     //最后栈顶元素就是第k大的
 //O((n-k)logk + k ). heapify k, push/poll logk.
     //space O(k)
-public class _2_HeapAndBestFirstSearch_FindKthLargest_Heap {
+public class _2_FindKthLargest_Heap {
     public int findKthLargest(int[] nums, int k) {
         // if curVal <= heap.peek, skip
 
