@@ -85,6 +85,68 @@ public class _16_Permutations_II {
         int[] nums = {1,2,2};
         System.out.println(permuteUnique(nums));
     }
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+    //_4_Permutations_II
+
+    public List<List<Integer>> permuteUnique3(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+
+        //use cache, nused to record one position is used or not
+        backtrack(nums, result, new ArrayList<>(),  new boolean[nums.length]);
+        return result;
+    }
+
+    private void backtrack(int[] nums, List<List<Integer>> result,
+                           List<Integer> tempList, boolean [] used){
+
+        //退出条件就是 tempList已经达到nums.length
+        if(tempList.size() == nums.length){
+            result.add(new ArrayList<>(tempList));
+            return;
+        }
+
+        for(int i = 0; i < nums.length; i++){
+
+            //避免重复已使用元素
+            if(used[i] ||
+                    i > 0 && nums[i] == nums[i-1] && !used[i - 1]){
+                //不是第一个i > 0，而且和前一个相同nums[i] == nums[i-1]
+                continue;
+            }
+
+
+            // 1.把当前元素加入templist
+            tempList.add(nums[i]);
+
+            //进入下层recursion之前标记当前元素已被使用
+            used[i] = true;
+
+            // 2.进入下层的recursion，从下一个元素开始
+            backtrack(nums, result, tempList, used);
+
+            //走出下层recursion之后标记当前元素已未被使用
+            used[i] = false;
+
+            // 3.把当前元素从templist移除
+            tempList.remove(tempList.size() - 1);
+        }
+
+    }
+
+    @Test
+    public void test_permuteUnique(){
+        int[] nums = {1,2,2,3};
+        for (List<Integer> list:permuteUnique3(nums)){
+            System.out.println(list);
+        }
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+
     /*
 nums[i] 1
 list []
@@ -124,6 +186,7 @@ list.size() == nums.length [2, 2, 1]
 [[1, 2, 2], [2, 1, 2], [2, 2, 1]]
      */
 
+////////////////////////////////////////////////////////////////////////////////
 
     public List<List<Integer>> permuteUnique2(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
@@ -164,4 +227,14 @@ list.size() == nums.length [2, 2, 1]
         int[] nums = {1,2,2};
         System.out.println(permuteUnique2(nums));
     }
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+
+
 }

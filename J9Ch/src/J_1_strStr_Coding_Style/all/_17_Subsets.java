@@ -65,6 +65,22 @@ public class _17_Subsets {
         System.out.println(subsets(input));
     }
 
+    @Test
+    public void test(){
+        System.out.println(subsets(new int[]{1,2, 2}));
+    }
+
+    /*
+[[], [1], [1, 2], [1, 2, 2], [1, 2], [2], [2, 2], [2]]
+    /*
+    [[], [1], [1, 2], [1, 2, 2], [2], [2, 2]]
+
+     
+     */
+
+
+//////////////////////////////////////////////////////////
+
 // Non Recursion
     /**
      * @param nums: A set of numbers.

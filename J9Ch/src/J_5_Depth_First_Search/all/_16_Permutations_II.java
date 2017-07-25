@@ -140,6 +140,7 @@ list.size() == nums.length [2, 2, 1]
             return;
         }
         Set<Integer> appeared = new HashSet<>();
+
         for (int i=index; i<nums.length; ++i) {
             if (appeared.add(nums[i])) {
                 swap(nums, index, i);

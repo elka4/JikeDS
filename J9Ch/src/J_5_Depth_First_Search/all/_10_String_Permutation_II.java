@@ -24,10 +24,13 @@ public class _10_String_Permutation_II {
         List<String> result = new ArrayList<String>();
         char[] s = str.toCharArray();
         Arrays.sort(s);
+
         result.add(String.valueOf(s));
+
         while ((s = nextPermutation(s)) != null) {
             result.add(String.valueOf(s));
         }
+
         return result;
     }
 

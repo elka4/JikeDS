@@ -49,6 +49,7 @@ public class _1_Subsets {
      */
 
 ////////////////////////////////////////////////////////////////////
+    //iteration解法
 
     // Simple Java Solution with For-Each loops
     // No messy indexing. Avoid the ConcurrentModificationException
@@ -61,6 +62,7 @@ public class _1_Subsets {
 
         for(int i : S) {
             List<List<Integer>> tmp = new ArrayList<>();
+            //对于res里的每一个list，加入当前元素i，然后将此list加回到temp
             for(List<Integer> sub : res) {
                 List<Integer> a = new ArrayList<>(sub);
                 a.add(i);
@@ -80,6 +82,39 @@ public class _1_Subsets {
         int[] nums = {1,2,3};
         System.out.println(subsets2(nums));
     }
+
+//////////////////////////////////////////////////////////////////
+
+    public List<List<Integer>> subsets5(int[] S) {
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        res.add(new ArrayList<Integer>());
+        Arrays.sort(S);
+
+        for(int i = S.length - 1; i >= 0; i--){
+            int size = res.size() - 1;
+
+            for(int j = size; j >= 0; j--){
+                List<Integer> newList1 = new ArrayList<>();
+                newList1.add(S[i]);
+                newList1.addAll(res.get(j));
+                res.add(newList1);
+
+                System.out.println("newList1 " + newList1);
+                System.out.println("res " + res);
+            }
+            System.out.println("=================");
+        }
+        return res;
+    }
+
+    @Test
+    public void test_subsets5(){
+        int[] nums = {1,2,3};
+        System.out.println(subsets5(nums));
+    }
+
+
+
 
 //////////////////////////////////////////////////////////////////
 
@@ -138,9 +173,11 @@ public class _1_Subsets {
         }
         // not pick the number at this index
         dfs(ans, nums, list, index+1);
+
         list.add(nums[index]);
         // pick the number at this index
         dfs(ans, nums, list, index+1);
+
         list.remove(list.size()-1);
     }
 
@@ -152,33 +189,7 @@ public class _1_Subsets {
 
 //////////////////////////////////////////////////////////////////
 
-    public List<List<Integer>> subsets5(int[] S) {
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
-        res.add(new ArrayList<Integer>());
-        Arrays.sort(S);
-        for(int i = S.length - 1; i >= 0; i--){
-            int size = res.size() - 1;
-            for(int j = size; j >= 0; j--){
-                List<Integer> newList1 = new ArrayList<>();
-                newList1.add(S[i]);
-                newList1.addAll(res.get(j));
-                res.add(newList1);
-                System.out.println("newList1 " + newList1);
-                System.out.println("res " + res);
-            }
-            System.out.println("=================");
-        }
-        return res;
-    }
 
-    @Test
-    public void test_subsets5(){
-        int[] nums = {1,2,3};
-        System.out.println(subsets5(nums));
-    }
-
-
-//////////////////////////////////////////////////////////////////
 
     //Divide and conquer
     private List<List<Integer>> rec_subsets(int []S, int begin){
@@ -245,6 +256,7 @@ public class _1_Subsets {
         seats[index]=true;
         search(res,nums,seats,N,index+1);
         seats[index]=false;
+
         search(res,nums,seats,N,index+1);
     }
 

@@ -8,6 +8,11 @@ import java.util.PriorityQueue;
 /**
  * Created by tianhuizhu on 6/25/17.
  */
+
+//minheap, capacity k,碰到比栈顶更大的就弹栈并加入这个更大的元素
+    //最后栈顶元素就是第k大的
+//O((n-k)logk + k ). heapify k, push/poll logk.
+    //space O(k)
 public class _2_HeapAndBestFirstSearch_FindKthLargest_Heap {
     public int findKthLargest(int[] nums, int k) {
         // if curVal <= heap.peek, skip

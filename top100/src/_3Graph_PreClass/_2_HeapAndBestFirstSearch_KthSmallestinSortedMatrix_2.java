@@ -1,42 +1,63 @@
 package _3Graph_PreClass;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+//time O(klogm)
+//space O(m)
 public class _2_HeapAndBestFirstSearch_KthSmallestinSortedMatrix_2 {
-	public int kthSmallest(int[][] matrix, int k) {
-        if (matrix == null)
-        return Integer.MIN_VALUE;
+    public int kthSmallest(int[][] matrix, int k){
+        if(matrix == null){
+            return Integer.MIN_VALUE;
+        }
         int row = matrix.length;
         int col = matrix[0].length;
-        int start = matrix[0][0], end = matrix[row - 1][col - 1];
+        Point cur = null;
+        PriorityQueue<Point> minHeap = new PriorityQueue<Point>(
+                k, new myComparator()
+        );
 
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-            int count = notLarger(matrix, mid);
-            if (count < k) {
-                start = mid + 1;
-            } else {
-                end = mid - 1;
-            }
+        //offer the first col
+        for (int i = 0; i < row; i++) {
+            minHeap.offer(new Point(i, 0, matrix[i][0]));
         }
-        return start;
+
+
+        //Only go right for next node
+        while(k > 0){
+            cur = minHeap.poll();
+            if (cur.y + 1 < col){
+                minHeap.offer(new Point(cur.x, cur.y + 1,
+                        matrix[cur.x][cur.y + 1]));
+            }
+            k--;
+        }
+
+
+        return cur.val;
     }
-    private int notLarger(int[][] m, int cur) {
-        int count = 0;
-        int row = m.length;
-        int col = m[0].length;
-        int i = 0;
-        int j = col - 1;
-        while (i < row && j >= 0) {
-            if (cur < m[i][j]) {
-//                j�;//move to left col
-                j--;//move to left col
-            } else {
-                //All elems left in cur row are valid
-                i++;
-                count += j + 1;
-            }
+
+
+
+    class Point {
+        int x;
+        int y;
+        int val;
+
+        Point(int x, int y, int val) {
+            this.x = x;
+            this.y = y;
+            this.val = val;
         }
-        return count;
-  }
+    }
 
-
+    class myComparator implements Comparator<Point> {
+        @Override
+        public int compare (Point o1, Point o2) {
+            if (o1.val == o2.val)
+                return 0;
+            return o1.val - o2.val;
+        }
+    }
 }
+

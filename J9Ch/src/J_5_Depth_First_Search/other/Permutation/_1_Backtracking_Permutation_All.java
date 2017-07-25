@@ -6,9 +6,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
+// top100
 public class _1_Backtracking_Permutation_All {
-
+    // permutation, interative
+    //time O(n!)
+    //space O(n!)
     public List<List<Integer>> permute(int[] nums){
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         if(nums == null || nums.length == 0){
@@ -19,9 +21,11 @@ public class _1_Backtracking_Permutation_All {
 
         for(int i = 0; i < nums.length; i++){
             List<List<Integer>> nextRes = new ArrayList<List<Integer>>();
+
             //for each list in res
             for (List<Integer> list : res){
                 for (int j = 0; j < list.size() + 1; j++) {
+
                     //copy a list to nextList
                     List<Integer> nextList = new ArrayList<Integer>(list);
                     nextList.add(j, nums[i]);
@@ -36,6 +40,9 @@ public class _1_Backtracking_Permutation_All {
 
     ///////////////////////////////////////////////////////
 
+    // permutation, recursion
+    //time O(n!*n)
+    //space O(n)
     private List<List <Integer>> permute2(int[] num) {
         //Corner Case Checked
         List <List<Integer>> result = new ArrayList <List<Integer>>();
@@ -64,7 +71,9 @@ public class _1_Backtracking_Permutation_All {
 
     ///////////////////////////////////////////////////////
 
-
+    // permutation, recursion, swap
+    //因为用了swap，所以省了空间
+    //
     public List <List <Integer>> permute3(int[] nums) {
         List <List <Integer>> res = new ArrayList <List <Integer>>();
         if(nums == null || nums.length == 0)
@@ -85,10 +94,12 @@ public class _1_Backtracking_Permutation_All {
         //Main Cases:
         for(int i = pos; i  < nums.length; i++){
             list.add(nums[i]);
+
             swap(nums, pos, i);
             //helper(nums, res, list, level + 1);
             helper2(nums, res, list, pos + 1);//这样对不对？
             swap(nums, pos, i);
+
             list.remove(list.size() - 1);
         }
 
@@ -101,7 +112,8 @@ public class _1_Backtracking_Permutation_All {
         nums[i] = temp;
     }
 
-    ///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+    // permutationII, recursion, hashset
     public List <List <Integer>> permuteUnique(int[] nums) {
         //Corn Cases Checked
 

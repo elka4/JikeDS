@@ -62,8 +62,12 @@ public class _153_Combination_Sum_II {
             if (target < candidates[i]) {
                 break;
             }
+
             combination.add(candidates[i]);
-            helper(candidates, i + 1, combination, target - candidates[i], results);
+
+            helper(candidates, i + 1, combination,
+                    target - candidates[i], results);
+
             combination.remove(combination.size() - 1);
         }
     }

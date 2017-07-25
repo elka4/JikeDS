@@ -19,6 +19,7 @@ public class _109_Next_Permutation_II {
         }
     }
 
+    //in-place
     public void nextPermutation(int[] num) {
         // find the last increase index
         int index = -1;

@@ -107,7 +107,8 @@ Given s = "aab", return:
 
         for (int i = n - 3; i >= 0; i--) {
             for (int j = i + 2; j < n; j++) {
-                isPalindrome[i][j] = isPalindrome[i + 1][j - 1] && s.charAt(i) == s.charAt(j);
+                isPalindrome[i][j] = isPalindrome[i + 1][j - 1]
+                        && s.charAt(i) == s.charAt(j);
             }
         }
     }

@@ -9,40 +9,42 @@ Permutations
  * Created by tianhuizhu on 6/28/17.
  */
 public class _15_Permutations {
-    public class Solution1 {
-        public List<List<Integer>> permute(int[] nums) {
-            ArrayList<List<Integer>> rst = new ArrayList<List<Integer>>();
-            if (nums == null) {
-                return rst;
-            }
-
-            if (nums.length == 0) {
-                rst.add(new ArrayList<Integer>());
-                return rst;
-            }
-
-            ArrayList<Integer> list = new ArrayList<Integer>();
-            helper(rst, list, nums);
+    public List<List<Integer>> permute(int[] nums) {
+        ArrayList<List<Integer>> rst = new ArrayList<List<Integer>>();
+        if (nums == null) {
             return rst;
         }
 
-        public void helper(ArrayList<List<Integer>> rst, ArrayList<Integer> list, int[] nums){
-            if(list.size() == nums.length) {
-                rst.add(new ArrayList<Integer>(list));
-                return;
-            }
-
-            for(int i = 0; i < nums.length; i++){
-                if(list.contains(nums[i])){
-                    continue;
-                }
-                list.add(nums[i]);
-                helper(rst, list, nums);
-                list.remove(list.size() - 1);
-            }
-
+        if (nums.length == 0) {
+            rst.add(new ArrayList<Integer>());
+            return rst;
         }
+
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        //找到所有[]开头的所有排列
+        helper(rst, list, nums);
+        return rst;
     }
+
+    //递归定义：把以list开头的所有排列，放到rst里
+    public void helper(ArrayList<List<Integer>> rst, ArrayList<Integer> list, int[] nums){
+        if(list.size() == nums.length) {
+            rst.add(new ArrayList<Integer>(list));
+            return;
+        }
+        //
+        for(int i = 0; i < nums.length; i++){
+            if(list.contains(nums[i])){// O(n)
+                continue;
+            }
+            list.add(nums[i]);
+            helper(rst, list, nums);
+            list.remove(list.size() - 1);
+        }
+        //return;
+
+    }
+
 
     // Non-Recursion
     class Solution2 {

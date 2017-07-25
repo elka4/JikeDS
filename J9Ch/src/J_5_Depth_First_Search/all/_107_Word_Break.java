@@ -9,7 +9,8 @@ import java.util.Set;
 /** 107 Word Break
  * Created by tianhuizhu on 6/28/17.
  * Given a string s and a dictionary of words dict,
- * determine if s can be break into a space-separated sequence of one or more dictionary words.
+ * determine if s can be break into a space-separated sequence of
+ * one or more dictionary words.
  *
  * Dynamic Programming String
  */
@@ -17,7 +18,7 @@ import java.util.Set;
 //Dynamic Programming Backtracking
 
 public class _107_Word_Break {
-    // version 1
+    // version 1, this is DP I think
     private int getMaxLength(Set<String> dict) {
         int maxLength = 0;
         for (String word : dict) {

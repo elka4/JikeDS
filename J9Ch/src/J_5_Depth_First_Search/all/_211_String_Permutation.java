@@ -14,12 +14,15 @@ public class _211_String_Permutation {
         // Write your code here
         int[] cnt = new int[1000];
         for (int i = 0; i < A.length(); ++i)
-            cnt[(int)A.charAt(i)] += 1;
+            cnt[A.charAt(i)] += 1;
+
         for (int i = 0; i < B.length(); ++i)
-            cnt[(int)B.charAt(i)] -= 1;
+            cnt[B.charAt(i)] -= 1;
+
         for (int i = 0; i < 1000; ++i)
             if (cnt[i] != 0)
                 return false;
+
         return true;
     }
 

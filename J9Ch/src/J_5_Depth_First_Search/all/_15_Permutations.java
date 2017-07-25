@@ -27,6 +27,7 @@ public class _15_Permutations {
         return rst;
     }
     private int count = 0;
+
     public void helper(ArrayList<List<Integer>> rst, ArrayList<Integer> list, int[] nums){
         if(list.size() == nums.length) {
             rst.add(new ArrayList<Integer>(list));

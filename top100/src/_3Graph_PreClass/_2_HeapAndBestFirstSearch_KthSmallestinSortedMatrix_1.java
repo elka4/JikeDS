@@ -2,6 +2,10 @@ package _3Graph_PreClass;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
+//time O(klog(m,n))
+//space O(m*n)
+//mark visited needed
+//Poll top elem k times
 
 public class _2_HeapAndBestFirstSearch_KthSmallestinSortedMatrix_1 {
 	public int kthSmallest(int[][] matrix, int k) {
@@ -19,18 +23,28 @@ public class _2_HeapAndBestFirstSearch_KthSmallestinSortedMatrix_1 {
 	    marked[0][0] = true;
 	    int res = Integer.MIN_VALUE;
 
+	    //Poll current smallest k times
 	    while (k > 0) {
 	      Point cur = minHeap.poll();
+        //Poll current smallest k times
+
 	      int x = cur.x;
 	      int y = cur.y;
-	      if (x + 1 < row && !marked[x + 1][y]) {
-	        minHeap.offer(new Point(x + 1, y, matrix[x + 1][y]));
-	        marked[x + 1][y] = true;
-	      }
-	      if (y + 1 < col && !marked[x][y + 1]) {
-	        minHeap.offer(new Point(x, y + 1, matrix[x][y + 1]));
-	        marked[x][y + 1] = true;
-	      }
+
+
+        //Offer all possible smallest point into heap if unvisited
+        if (x + 1 < row && !marked[x + 1][y]) {
+            minHeap.offer(new Point(x + 1, y, matrix[x + 1][y]));
+            marked[x + 1][y] = true;
+        }
+        if (y + 1 < col && !marked[x][y + 1]) {
+            minHeap.offer(new Point(x, y + 1, matrix[x][y + 1]));
+            marked[x][y + 1] = true;
+        }
+        //Offer all possible smallest point into heap if unvisited
+
+
+
 	      res = cur.val;
 	      k--;
 	    }

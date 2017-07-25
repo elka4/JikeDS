@@ -41,6 +41,7 @@ If nums = [1,2,2], a solution is:
         for(int i = start; i < nums.length; i++){
             // skip duplicates
             if(i > start && nums[i] == nums[i-1]) continue;
+
             tempList.add(nums[i]);
             backtrack(list, tempList, nums, i + 1);
             tempList.remove(tempList.size() - 1);
@@ -102,6 +103,7 @@ add the element as in subset I
         result.add(path);
         for(int i=index;i<nums.length;i++){
             if(i>index&&nums[i]==nums[i-1]) continue;
+
             List<Integer> nPath= new ArrayList<>(path);
             nPath.add(nums[i]);
             dfs(nums,i+1,nPath,result);

@@ -35,7 +35,9 @@ public class _18_Subsets_II {
     }
     public void helper(int[] nums, int startIndex, ArrayList<Integer> subset,
                        ArrayList<ArrayList<Integer>> results){
+
         results.add(new ArrayList<Integer>(subset));
+
         for(int i=startIndex; i<nums.length; i++){
             if (i != startIndex && nums[i]==nums[i-1]) {
                 continue;

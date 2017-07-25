@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 /** 15. Permutations
  * Medium
@@ -11,7 +12,7 @@ import java.util.List;
  * Created by tianhuizhu on 6/28/17.
  */
 public class _15_Permutations {
-    public List<List<Integer>> permute(int[] nums) {
+    public List<List<Integer>> permute4(int[] nums) {
         ArrayList<List<Integer>> rst = new ArrayList<List<Integer>>();
         if (nums == null) {
             return rst;
@@ -169,7 +170,7 @@ list [3] contains 3
 
 ////////////////////////////////////////////////////////////////////////
 
-    // Non-Recursion
+    // Non-Recursion, stack
     /**
      * @param nums: A list of integers.
      * @return: A list of permutations.
@@ -227,4 +228,51 @@ list [3] contains 3
         return permutations;
     }
 
+
+///////////////////////////////////////////////////////////////////////////
+    // recursion, user cache
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+
+        //use cache, nused to record one position is used or not
+        backtrack(nums, result, new ArrayList<>(),  new boolean[nums.length]);
+        return result;
+    }
+
+    private void backtrack(int[] nums, List<List<Integer>> result,
+                           List<Integer> tempList, boolean [] used){
+
+        //退出条件就是 tempList已经达到nums.length
+        if(tempList.size() == nums.length){
+            result.add(new ArrayList<>(tempList));
+            return;
+        }
+
+        for(int i = 0; i < nums.length; i++){
+
+            //避免重复已使用元素
+            if(used[i]  ){
+                //不是第一个i > 0，而且和前一个相同nums[i] == nums[i-1]
+                continue;
+            }
+
+
+            // 1.把当前元素加入templist
+            tempList.add(nums[i]);
+
+            //进入下层recursion之前标记当前元素已被使用
+            used[i] = true;
+
+            // 2.进入下层的recursion，从下一个元素开始
+            backtrack(nums, result, tempList, used);
+
+            //走出下层recursion之后标记当前元素已未被使用
+            used[i] = false;
+
+            // 3.把当前元素从templist移除
+            tempList.remove(tempList.size() - 1);
+        }
+
+    }
 }

@@ -30,12 +30,21 @@ public class _51_Previous_Permutation {
     }
     public ArrayList<Integer> previousPermuation(ArrayList<Integer> nums) {
         int len = nums.size();
-        if ( len <= 1)
+        if ( len <= 1){
             return nums;
+        }
+
         int i = len - 1;
-        while ( i > 0 && nums.get(i) >= nums.get(i-1) )
+
+        while ( i > 0 && nums.get(i) >= nums.get(i-1) ){
             i --;
+        }
+        System.out.println("i : " + i);
+
         swapList(nums, i, len - 1);
+
+        System.out.println(nums);
+
         if ( i != 0) {
             int j = i;
             while ( nums.get(j) >= nums.get(i-1) ) j++;
@@ -43,6 +52,48 @@ public class _51_Previous_Permutation {
         }
 
         return nums;
+    }
+
+    @Test
+    public void test03(){
+        int[] nums = {1,3,2,3};
+        ArrayList<Integer> input = new ArrayList<>();
+        input.add(1);
+        input.add(3);
+        input.add(2);
+        input.add(3);
+
+
+        System.out.println(previousPermuation(input));
+    }
+
+///////////////////////////////////////////////
+
+    public int[] nextPermutation(int[] nums) {
+        int len = nums.length;
+        if ( len <= 1)
+            return nums;
+        int i = len - 1;
+        while (i > 0 && nums[i] <= nums[i - 1])
+            i --;
+        swapList(nums, i, len - 1);
+        if (i != 0) {
+            int j = i;
+            while (nums[j] <= nums[i - 1]) j++;
+            swapItem(nums, j, i-1);
+        }
+        return nums;
+    }
+    public void swapItem(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+    public void swapList(int[] nums, int i, int j) {
+        while (i < j) {
+            swapItem(nums, i, j);
+            i ++; j --;
+        }
     }
 
 /*

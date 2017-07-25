@@ -64,10 +64,12 @@ public class _197_Permutation_Index {
     }
 
 //Given [1,2,4], return 1.
-
+//[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
     @Test
     public void test01(){
-        int[] nums = {1,2,4};
+        int[] nums = {3,1,2};
+        System.out.println(permutationIndex(nums));
+        nums = new int[]{2, 1, 3};
         System.out.println(permutationIndex(nums));
     }
 
