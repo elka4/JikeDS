@@ -38,18 +38,20 @@ private void subsetsHelper(ArrayList<ArrayList<Integer>> result,
     for (int i = fromIndex; i < num.length; i++) {
     		subset.add(num[i]);
     		//当前选了第i个数，下一次就从i+1开始选
-
+        System.out.println("-------before------" + subset + "-----------");
         subsetsHelper(result, subset, num, i + 1); //注意这里是i不是position
         //以｛1｝开头的都找到了。下一层循环寻找以2开头的
-        
+        System.out.println("-------after------" + subset + "-----------");
+
         //移除刚刚在下一层循环中加入的元素
         subset.remove(subset.size() - 1);
     }
+    System.out.println("===========" + result +"============");
 }
     @Test
     public void test01(){
         _17Subsets sub = new _17Subsets();
-        int[] input = {};
+        int[] input = {1,2,3};
         ArrayList<ArrayList<Integer>> result = sub.subsets(input);
         System.out.println(result);
 
