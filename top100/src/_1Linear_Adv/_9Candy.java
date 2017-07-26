@@ -37,11 +37,13 @@ public class _9Candy {
         int[] right2left = new int[ratings.length];
         Arrays.fill(left2right, 1);
         Arrays.fill(right2left, 1);
+        //从左向右
         for (int i = 1; i < ratings.length; i++) {
             if (ratings[i] > ratings[i - 1]) {
                 left2right[i] = left2right[i - 1] + 1;
             }
         }
+        //从右向左
         for (int i = ratings.length - 2; i >= 0; i--) {
             if (ratings[i] > ratings[i + 1]) {
                 right2left[i] = right2left[i + 1] + 1;
@@ -66,6 +68,7 @@ public class _9Candy {
             }
         }
         int sum = candies[ratings.length - 1];
+        //结合上个方法的最后两步：从右向左和最后的总循环找结果
         for (int i = ratings.length - 2; i >= 0; i--) {
             if (ratings[i] > ratings[i + 1]) {
                 candies[i] = Math.max(candies[i], candies[i + 1] + 1);
@@ -113,4 +116,17 @@ public class _9Candy {
         return candies;
     }
 
+////////////////////////////////////////////////////////////////////////////
+
+
 }
+
+/*
+There are N children standing in a line. Each child is assigned a rating value.
+
+You are giving candies to these children subjected to the following requirements:
+
+Each child must have at least one candy.
+Children with a higher rating get more candies than their neighbors.
+What is the minimum candies you must give?
+ */

@@ -1,6 +1,10 @@
 package _1Linear_Adv;
+import org.junit.Test;
+
 import java.util.*;
 //summary ranges
+//类似于two pointer： pre, cur, gap
+//双前向型指针
 public class _7SummaryRanges {
     //editorial
     //https://leetcode.com/articles/summary-ranges/
@@ -21,6 +25,13 @@ public class _7SummaryRanges {
         return summary;
     }
 
+    @Test
+    public void test01(){
+        System.out.println(summaryRanges(new int[]{0,1,2,4,5,7}));
+    }
+
+/////////////////////////////////////////////////////////////////////
+
     public List<String> summaryRanges2(int[] nums) {
         List<String> summary = new ArrayList<>();
         for (int i, j = 0; j < nums.length; ++j){
@@ -37,9 +48,13 @@ public class _7SummaryRanges {
         return summary;
     }
 
+/////////////////////////////////////////////////////////////////////
+
 }
 /*
-Time complexity : O(n)O(n). Each element is visited constant times: either in comparison with neighbor or put in the result list.
+Time complexity : O(n)O(n). Each element is visited constant times:
+ either in comparison with neighbor or put in the result list.
 
-Space complexity : O(1)O(1). All the auxiliary space we need is the two indices, if we don't count the return list.
+Space complexity : O(1)O(1). All the auxiliary space we need is the two
+indices, if we don't count the return list.
  */

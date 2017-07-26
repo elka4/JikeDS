@@ -1,8 +1,6 @@
 package _1Linear_Adv;
-
-
 import org.junit.Test;
-
+//用本题学习找第二大，第三大
 //https://codereview.stackexchange.com/questions/109214/maximum-product-of-3-integers-in-an-int-array
 public class _2HighestProductOf3 {
     // Assume input array is of at least length 3.

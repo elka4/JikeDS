@@ -1,6 +1,8 @@
 package _1Linear_Adv;
+import org.junit.Test;
 import java.util.*;
 
+//基本上就是要先走一遍统计次数
 public class _6TopKFrequentElements {
     //Java O(n) Solution - Bucket Sort
     public List<Integer> topKFrequent(int[] nums, int k) {
@@ -74,18 +76,22 @@ public class _6TopKFrequentElements {
         for(int n: nums){
             map.put(n, map.getOrDefault(n,0)+1);
         }
-
+        //value是frequency
+        //要学习这种用lambda表示comparator的做法
         PriorityQueue<Map.Entry<Integer, Integer>> maxHeap =
                 new PriorityQueue<>((a,b)->(b.getValue()-a.getValue()));
+
         for(Map.Entry<Integer,Integer> entry: map.entrySet()){
             maxHeap.add(entry);
         }
 
         List<Integer> res = new ArrayList<>();
+
         while(res.size()<k){
             Map.Entry<Integer, Integer> entry = maxHeap.poll();
             res.add(entry.getKey());
         }
+
         return res;
     }
 
@@ -100,6 +106,8 @@ public class _6TopKFrequentElements {
         }
 
         TreeMap<Integer, List<Integer>> freqMap = new TreeMap<>();
+
+        //treemap key位置上放freq
         for(int num : map.keySet()){
             int freq = map.get(num);
             if(!freqMap.containsKey(freq)){
@@ -109,11 +117,35 @@ public class _6TopKFrequentElements {
         }
 
         List<Integer> res = new ArrayList<>();
+
         while(res.size()<k){
             Map.Entry<Integer, List<Integer>> entry = freqMap.pollLastEntry();
             res.addAll(entry.getValue());
         }
         return res;
+    }
+
+    /*
+    The pollLastEntry() method is used to remove and returns a key-value mapping
+    associated with the greatest key in this map, or null if the map is empty.
+     */
+
+    @Test
+    public void test01(){
+        // creating tree map
+        TreeMap<Integer, String> treemap = new TreeMap<Integer, String>();
+
+        // populating tree map
+        treemap.put(2, "two");
+        treemap.put(1, "one");
+        treemap.put(3, "three");
+        treemap.put(6, "six");
+        treemap.put(5, "five");
+
+        // polling last entry
+        System.out.println("Value before poll: "+ treemap);
+        System.out.println("Value returned: "+ treemap.pollLastEntry());
+        System.out.println("Value after poll: "+ treemap);
     }
 
 
@@ -136,6 +168,7 @@ iterate through the final heap and get the keys
 
         PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>(
                 (a, b) -> a.getValue()-b.getValue());
+
         for(Map.Entry<Integer, Integer> entry : counterMap.entrySet()) {
             pq.offer(entry);
             if(pq.size() > k) pq.poll();
