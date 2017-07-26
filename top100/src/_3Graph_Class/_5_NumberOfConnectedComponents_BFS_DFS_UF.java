@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class _5_NumberOfConnectedComponents_BFS_DFS_UF {
+
     public int countComponent_UnionFind(int n, int[][] edges) {
         int[] root = new int[n];
         for (int i = 0; i < n; i++) {
@@ -24,6 +25,7 @@ public class _5_NumberOfConnectedComponents_BFS_DFS_UF {
         }
         return count;
     }
+
     private int findRoot(int[] root, int cur) {
         while (cur != root[cur]) {
             root[cur] = root[root[cur]];

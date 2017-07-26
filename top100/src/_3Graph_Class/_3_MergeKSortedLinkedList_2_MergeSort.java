@@ -1,11 +1,51 @@
-package _2Tree_Class;
+package _3Graph_Class;
 
-public class _3_MergeSort {
+public class _3_MergeKSortedLinkedList_2_MergeSort {
+	public ListNode mergeKLists(ListNode[] lists) {
+		if (lists == null || lists.length == 0) {
+			return null;
+		}
+		return split(lists, 0, lists.length - 1);
+	}
+	
+	private ListNode split(ListNode[] lists, int start, int end) {
+		if (start == end) {
+			return lists[start];
+		}
+
+		int mid = start + (end - start) / 2;
+
+		ListNode head1 = split(lists, start, mid);
+		ListNode head2 = split(lists, mid + 1, end);
+
+		return mergeSort(head1, head2);
+	}
+
+	private ListNode mergeSort(ListNode head1, ListNode head2) {
+		if (head1 == null || head2 == null) {
+			return head1 == null ? head2 : head1;
+		}
+		if (head1.val <= head2.val) {
+			head1.next = mergeSort(head1.next, head2);
+			return head1;
+		} else {
+			head2.next = mergeSort(head1, head2.next);
+			return head2;
+		}
+	}
+
+
+/////////////////////////////////////////////////////////
+
+
     public int[] mergeSort(int[] arr) {
         if(arr == null)
             return arr;
+
         int[] helper = new int[arr.length];
+
         doSort(arr, helper, 0, arr.length - 1);
+
         return arr;
     }
 
@@ -15,8 +55,10 @@ public class _3_MergeSort {
             return ;
 
         int mid = start + (end - start) / 2;
+
         doSort(arr, helper, start, mid);
         doSort(arr, helper, mid + 1, end);
+
         merge(arr, helper, start, mid, end);
     }
 
@@ -42,4 +84,5 @@ public class _3_MergeSort {
             }
         }
     }
+
 }

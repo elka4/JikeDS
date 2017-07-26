@@ -6,6 +6,7 @@ public class _4_SearchInRotatedSortedArray_FollowUp {
             return -1;
         int start = 0;
         int end = nums.length - 1;
+
         while(start + 1 < end) {
             int mid = start + (end - start) / 2;
 
@@ -25,8 +26,8 @@ public class _4_SearchInRotatedSortedArray_FollowUp {
                     end = mid;
                 }
             } else {
-   start++;//Duplicates
- }
+               start++;//Duplicates
+             }
         }
 
         if(nums[start] == target)

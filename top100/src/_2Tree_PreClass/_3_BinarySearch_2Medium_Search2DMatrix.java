@@ -35,6 +35,8 @@ public class _3_BinarySearch_2Medium_Search2DMatrix {
         return false;
     }
 
+////////////////////////////////////////////////////////////////////
+
     //2D MatrixII
     //method
     public boolean searchMatrixII_1(int[][] matrix, int target){
@@ -60,6 +62,8 @@ public class _3_BinarySearch_2Medium_Search2DMatrix {
                     binarySearch(matrix, target, midX + 1, startY, endX, midY);
         }
     }
+
+////////////////////////////////////////////////////////////////////
 
     //method2   Time: O（m+n）
     public boolean searchMatrixII_2(int[][] matrix, int target){
@@ -91,5 +95,6 @@ public class _3_BinarySearch_2Medium_Search2DMatrix {
         return false;
     }
 
+////////////////////////////////////////////////////////////////////
 
 }

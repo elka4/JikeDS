@@ -24,16 +24,20 @@ public class _2_KthSmallestinSortedMatrix_3_BinarySearch {
         }
         return start;
     }
+
+
     // Get the count of elems not larger than mid
     private int notLarger(int[][] m, int cur) {
         int count = 0;
+
         int row = m.length;
         int col = m[0].length;
+
         int i = 0;
         int j = col - 1;
+
         while (i < row && j >= 0) {
             if (cur < m[i][j]) {
-//                j�;//move to left col
                 j--;//move to left col
             } else {
                 //All elems left in cur row are valid

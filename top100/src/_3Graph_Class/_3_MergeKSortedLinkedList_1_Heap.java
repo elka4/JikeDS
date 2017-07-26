@@ -17,12 +17,14 @@ public class _3_MergeKSortedLinkedList_1_Heap {
 				(lists.length, new MyComparator());
 		ListNode dummy = new ListNode(0);
 		ListNode prev = dummy;
+
 		//1.Put all first nodes into minHeap
 		for (ListNode n : lists) {
-			if (n != null) {
+			if (n != null) {//这一步很有必要，因为null可以加入collectoin
 				minHeap.add(n);
 			}
 		}
+
 		//2.find min elem in minHeap
 		while (!minHeap.isEmpty()) {
 			ListNode next = minHeap.poll();
@@ -32,8 +34,11 @@ public class _3_MergeKSortedLinkedList_1_Heap {
 			prev.next = next;
 			prev = prev.next;
 		}
+
 		return dummy.next;
 	}
+
+
 	class MyComparator implements Comparator<ListNode> {
 		@Override
 		public int compare(ListNode o1, ListNode o2) {
@@ -44,5 +49,8 @@ public class _3_MergeKSortedLinkedList_1_Heap {
 			}
 		}
 	}
+
+//////////////////////////////////////////////////////////////
+
 }
 

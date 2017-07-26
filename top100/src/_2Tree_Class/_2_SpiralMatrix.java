@@ -1,28 +1,28 @@
 package _2Tree_Class;
-
 import java.util.ArrayList;
 import java.util.List;
 import CtCILibrary.BTreePrinter;
 import CtCILibrary.TreeNode;
 import org.junit.Test;
+
 public class _2_SpiralMatrix {
 
-public List<Integer> spiralOrder(int[][] matrix) {
-        //Using recursion: print all boundary elem in spiral order in each level,
-        // using boundary size to move into next level
-        List<Integer> res = new ArrayList<Integer>();
-        if(matrix == null || matrix.length == 0)
-            return res;
-        if(matrix[0] == null || matrix[0].length == 0)
-            return res;
+    public List<Integer> spiralOrder(int[][] matrix) {
+            //Using recursion: print all boundary elem in spiral order in each level,
+            // using boundary size to move into next level
+            List<Integer> res = new ArrayList<Integer>();
+            if(matrix == null || matrix.length == 0)
+                return res;
+            if(matrix[0] == null || matrix[0].length == 0)
+                return res;
 
-        int row = matrix.length;
-        int col = matrix[0].length;
-        helper(res, matrix, row, col, 0);
-        return res;
-}
+            int row = matrix.length;
+            int col = matrix[0].length;
+            helper(res, matrix, row, col, 0);
+            return res;
+    }
 
-private void helper(List<Integer> res, int[][] m, int row, int col, int offset) {
+    private void helper(List<Integer> res, int[][] m, int row, int col, int offset) {
         //Base Cases:
         if(row == 0 || col == 0)
             return;

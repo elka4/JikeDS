@@ -7,7 +7,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
-public class _6_CourseSchedule_I_TopologicalSort {
+public class _6_CourseSchedule_I_TopologicalSort_DFS_BFS {
     public boolean canFinish_DFS (int numCourses, int[][] prerequisites) {
         if (prerequisites == null || prerequisites.length == 0
               || prerequisites[0] == null || prerequisites[0].length == 0)
@@ -101,6 +101,8 @@ public class _6_CourseSchedule_I_TopologicalSort {
             neighborList.get(vector[1]).add(vector[0]);
         }
     }
+
+////////////////////////////////////////////////////////////////////
 
     @Test
     public void test01(){

@@ -40,7 +40,8 @@ public class _2_BinaryTree_2Medium_2LevelOrderTraversal {
 		return res;
 	}
 
-    //////////////////////////////////////////////////
+//////////////////////////////////////////////////
+
     @Test
     public void test01() {
         int[] arr = {5, 3, 7,1,2,6,8};

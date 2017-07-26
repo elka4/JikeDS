@@ -12,29 +12,29 @@ public class _1_Backtracking_Permutation_All {
     //iterative
     //element based
     public List<List<Integer>> permute(int[] nums){
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
         if(nums == null || nums.length == 0){
-            return res;
+            return result;
         }
-        res.add(new ArrayList<Integer>());
+        result.add(new ArrayList<Integer>());
         for(int i = 0; i < nums.length; i++){
-            List<List<Integer>> nextRes = new ArrayList<List<Integer>>();
+            List<List<Integer>> nextResult = new ArrayList<List<Integer>>();
             //for each list in res
-            for (List<Integer> list : res){
+            for (List<Integer> list : result){
                 for (int j = 0; j < list.size() + 1; j++) {
                     //copy a list to nextList
                     List<Integer> nextList = new ArrayList<Integer>(list);
                     nextList.add(j, nums[i]);
-                    nextRes.add(nextList);
+                    nextResult.add(nextList);
                 }
             }
             // move to next level
-            res = nextRes;
+            result = nextResult;
         }
-        return res;
+        return result;
     }
 
-    ///////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
 
 
     //recursion
@@ -65,17 +65,19 @@ public class _1_Backtracking_Permutation_All {
     }
 
 
-    ///////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
 
     //recursion
     //swap
     public List <List <Integer>> permute3(int[] nums) {
-        List <List <Integer>> res = new ArrayList <List <Integer>>();
+        List <List <Integer>> result = new ArrayList <List <Integer>>();
         if(nums == null || nums.length == 0)
-            return res;
+            return result;
+        
         List <Integer> list = new ArrayList <Integer>();
-        helper2(nums, res, list, 0);
-        return res;
+        
+        helper2(nums, result, list, 0);
+        return result;
     }
 
     private void helper2(int[] nums, List <List <Integer>> res,
@@ -105,18 +107,19 @@ public class _1_Backtracking_Permutation_All {
         nums[i] = temp;
     }
 
-    ///////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
 
     //recursion
     //duplicate elements
     public List <List <Integer>> permuteUnique(int[] nums) {
         //Corn Cases Checked
 
-        List <List <Integer>> res = new ArrayList<>();
+        List <List <Integer>> result = new ArrayList<>();
+
         //Method: DFS, and using a HashSet <Integer> in each
         // pos to remove duplicates
-        dfsHelper(res, nums, 0);
-        return res;
+        dfsHelper(result, nums, 0);
+        return result;
     }
 
     private void dfsHelper(List <List <Integer>> res, int[] nums, int pos) {
@@ -130,7 +133,9 @@ public class _1_Backtracking_Permutation_All {
         }
 
         //用这个hashset来去重
+        //也就是说每个hashset只用在本层去除重复元素
         Set<Integer> used = new HashSet<Integer>();
+
         for (int i = pos; i  < nums.length; i++) {
             if (used.add(nums[i])) {
 

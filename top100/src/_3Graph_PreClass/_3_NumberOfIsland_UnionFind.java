@@ -3,14 +3,22 @@ package _3Graph_PreClass;
 public class _3_NumberOfIsland_UnionFind {
 
     public int numIslands(char[][] grid) {
+        if(grid == null || grid.length == 0)
+            return 0;
+        if(grid[0] == null || grid[0].length == 0)
+            return 0;
+
         int m = grid.length;//added by zhu
         int n = grid[0].length;//added by zhu
         int[] groupTag = new int[m * n];
+
+        //二维转一维
         for (int i = 0; i < m; i++) {
              for (int j = 0; j < n; j++) {
                  groupTag[i * n + j] = grid[i][j] == '1' ? i * n + j: -1;
              }
         }
+
         for (int i = 0; i < m; i++) {
              for (int j = 0; j < n; j++) {
                  if (grid[i][j] == '0') {
@@ -24,12 +32,15 @@ public class _3_NumberOfIsland_UnionFind {
                  }
             }
         }
+
         int count = 0;
+
         for (int i = 0; i < m * n; i++) {
             if (groupTag[i] == i) {
                 count++;
             }
         }
+
         return count;
     }
 

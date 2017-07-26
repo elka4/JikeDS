@@ -10,9 +10,9 @@ import java.util.PriorityQueue;
  */
 
 //minheap, capacity k,碰到比栈顶更大的就弹栈并加入这个更大的元素
-    //最后栈顶元素就是第k大的
+//最后栈顶元素就是第k大的
 //O((n-k)logk + k ). heapify k, push/poll logk.
-    //space O(k)
+//space O(k)
 public class _2_FindKthLargest_Heap {
     public int findKthLargest(int[] nums, int k) {
         // if curVal <= heap.peek, skip
@@ -24,10 +24,12 @@ public class _2_FindKthLargest_Heap {
         //Method: Maintain a min heap with size z
         PriorityQueue<Integer>  minHeap =
                 new PriorityQueue<Integer>(k, new MyComparator());
+
         //1.add first k elem
         for (int i = 0; i < k; i++) {
             minHeap.offer(nums[i]);
         }
+
         //2.add rest elems
         for (int i = k; i < nums.length; i++) {
             // if curVal > heap.peek, poll and add curVal

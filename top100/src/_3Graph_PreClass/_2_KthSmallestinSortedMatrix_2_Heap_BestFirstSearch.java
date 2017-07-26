@@ -13,6 +13,7 @@ public class _2_KthSmallestinSortedMatrix_2_Heap_BestFirstSearch {
         int row = matrix.length;
         int col = matrix[0].length;
         Point cur = null;
+
         PriorityQueue<Point> minHeap = new PriorityQueue<Point>(
                 k, new myComparator()
         );

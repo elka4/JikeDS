@@ -40,7 +40,8 @@ public class _2_BinaryTree_2Medium_4LongsetConsecutiveSequence {
     }
 
 
-	////////////////////////////
+////////////////////////////////////////////////////////////////////
+
 	//传统做法，但使用了全局变量
 	private int max = 0;//global变量
 
@@ -76,6 +77,9 @@ public class _2_BinaryTree_2Medium_4LongsetConsecutiveSequence {
 		helper2(root, Integer.MIN_VALUE, 1);
 		return max;
 	}
+
+////////////////////////////////////////////////////////////////////
+
 
     @Test
     public void test02() {

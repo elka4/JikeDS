@@ -42,8 +42,8 @@ public class _6_PathSum2_FollowUp_SubsectionOfCompletePathFromRootToLeaf {
         list.remove(list.size() - 1);
     }
 
-	private void check(int target, List<Integer> list,
-                       List<List<Integer>> res) {
+	private void check(int target, List<Integer> list, List<List<Integer>> res) {
+
         for(int i = list.size() - 1; i >= 0; i--) {
             target -= list.get(i);
             System.out.println(" list " + list);

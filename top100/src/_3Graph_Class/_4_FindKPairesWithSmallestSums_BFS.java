@@ -23,6 +23,7 @@ public class _4_FindKPairesWithSmallestSums_BFS {
 				nums1.length == 0 || nums2.length == 0 || k <= 0) {
 			return list;
 		}
+
 		PriorityQueue<int[]> minHeap = new PriorityQueue<int[]>(
 				new Comparator<int[]>() {
 				@Override
@@ -35,9 +36,11 @@ public class _4_FindKPairesWithSmallestSums_BFS {
 					return sum1 < sum2 ? -1 : 1;
 					}
 				}});
+
 		for (int i = 0; i < nums1.length; i++) {
 			minHeap.add(new int[]{i, 0});
 		}
+
 		while (!minHeap.isEmpty() && k > 0) {
 			int[] cur = minHeap.poll();
 			list.add(new int[]{nums1[cur[0]], nums2[cur[1]]});
@@ -46,6 +49,7 @@ public class _4_FindKPairesWithSmallestSums_BFS {
 			}
 			k--;
 		}
+
 		return list;
 	}
 }

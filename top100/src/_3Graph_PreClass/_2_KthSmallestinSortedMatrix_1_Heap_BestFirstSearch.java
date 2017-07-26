@@ -16,6 +16,7 @@ public class _2_KthSmallestinSortedMatrix_1_Heap_BestFirstSearch {
 	    int col = matrix[0].length;
 
 	    boolean[][] marked = new boolean[row][col];
+
 	    PriorityQueue<Point> minHeap =
 				new PriorityQueue<Point>(k, new myComparator());
 
@@ -23,33 +24,34 @@ public class _2_KthSmallestinSortedMatrix_1_Heap_BestFirstSearch {
 	    marked[0][0] = true;
 	    int res = Integer.MIN_VALUE;
 
-	    //Poll current smallest k times
+	    //Poll current smallest k times ！！！！
 	    while (k > 0) {
-	      Point cur = minHeap.poll();
-        //Poll current smallest k times
+	        Point cur = minHeap.poll();
+            //Poll current smallest k times
 
-	      int x = cur.x;
-	      int y = cur.y;
-
-
-        //Offer all possible smallest point into heap if unvisited
-        if (x + 1 < row && !marked[x + 1][y]) {
-            minHeap.offer(new Point(x + 1, y, matrix[x + 1][y]));
-            marked[x + 1][y] = true;
-        }
-        if (y + 1 < col && !marked[x][y + 1]) {
-            minHeap.offer(new Point(x, y + 1, matrix[x][y + 1]));
-            marked[x][y + 1] = true;
-        }
-        //Offer all possible smallest point into heap if unvisited
+	        int x = cur.x;
+	        int y = cur.y;
 
 
+            //Offer all possible smallest point into heap if unvisited
+            if (x + 1 < row && !marked[x + 1][y]) {
+                minHeap.offer(new Point(x + 1, y, matrix[x + 1][y]));
+                marked[x + 1][y] = true;
+            }
+            if (y + 1 < col && !marked[x][y + 1]) {
+                minHeap.offer(new Point(x, y + 1, matrix[x][y + 1]));
+                marked[x][y + 1] = true;
+            }
+            //Offer all possible smallest point into heap if unvisited
 
-	      res = cur.val;
-	      k--;
+
+	        res = cur.val;
+	        k--;
 	    }
+
 	    return res;
 	  }
+
 
 	  class Point {
 	    int x;

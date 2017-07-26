@@ -11,8 +11,7 @@ import org.junit.Test;
 //root to leaf, 所有node的value和为sum， 返回所有的path
 public class _6_PathSum1 {
 
-  public List<List<Integer>> pathSum(TreeNode root, int sum) {
-
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         if (root == null) {
             return res;
@@ -24,8 +23,9 @@ public class _6_PathSum1 {
         return res;
     }
 
+
     private void helper(TreeNode root, int sum, List<Integer> list,
-            List<List<Integer>> res) {
+        List<List<Integer>> res) {
 
         if (root == null) {
             return;
@@ -46,22 +46,23 @@ public class _6_PathSum1 {
         list.remove(list.size() - 1);
     }
 
+////////////////////////////////////////////////////////////////////
 
     @Test
     public void test01(){
-        int[] arr = {1,3,5,6,7,8,5};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        System.out.println(pathSum(root, 11));
+    int[] arr = {1,3,5,6,7,8,5};
+    TreeNode root = AssortedMethods.createTreeFromArray(arr);
+    System.out.println("root: ");
+    root.print();
+    System.out.println(pathSum(root, 11));
     }
 
     @Test
     public void test02(){
-        int[] arr = {1,3,5,6,7,4,5};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        System.out.println(pathSum(root, 10));
+    int[] arr = {1,3,5,6,7,4,5};
+    TreeNode root = AssortedMethods.createTreeFromArray(arr);
+    System.out.println("root: ");
+    root.print();
+    System.out.println(pathSum(root, 10));
     }
 }

@@ -15,6 +15,7 @@ public class _5_ZigZagLevelOrderTraversal {
 		List<List<Integer>>  res = new ArrayList<List<Integer>>();
         if (root == null)
             return res;
+
         //Method: Using a deque to maintain the current nodes in
         // the same level with the same order from left to right
         Deque<TreeNode> deque = new LinkedList<TreeNode>();

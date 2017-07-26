@@ -4,11 +4,9 @@ import CtCILibrary.BTreePrinter;
 import CtCILibrary.TreeNode;
 import org.junit.Test;
 
-
-
 public class _1_SortedArrayToBST {
-//time O(n) space O(logn)
-public TreeNode sortedArrayToBST(int[] num) {
+    //time O(n) space O(logn)
+    public TreeNode sortedArrayToBST(int[] num) {
         if (num == null || num.length == 0) {
             return null;
         }
