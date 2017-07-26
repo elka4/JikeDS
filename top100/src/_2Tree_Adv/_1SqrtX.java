@@ -25,6 +25,8 @@ public class _1SqrtX {
 ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     //https://www.sigmainfy.com/blog/leetcode-sqrtx.html
+    //还是binary search 的思想。
+    //
     int sqrt7(int x) {
         if (x <= 1)
             return x;
@@ -35,14 +37,28 @@ public class _1SqrtX {
         //"100" ^ 2 = 4 ^ 2 = 16 < 32
         //"101" ^ 2 = 5 ^ 2 = 25 < 32
         //"110" ^ 2 = 6 ^ 2 = 36 > 32
+
         System.out.println("bit = (1 << 15); " + Integer.toBinaryString( + bit));
 
+        //bit需要不断向右移动，对每个bit位置进行处理知道bit为0，就是对每个位置都处理过了
         while (bit != 0) {
             res |= bit;
             System.out.println("res |= bit;      " + Integer.toBinaryString(res));
             //也就是 res * res > x
-            //
-            if (res > x / res){
+            //这后res有两种情况，第一种是res还是太大（100000），这时候bit右移1位成为（10000）
+            //res通过 res ^= bit;被重置为0；
+            //那么在下一轮开始时res |= bit;就会将res重设为bit，就是10000。
+
+            //第二种情况，res在某个循环已经太小，不满足res > x / res，这时候就不会执行res ^= bit;
+            //不会重置res，那么下一轮执行res |= bit;的时候，res的一位就会被设为1，以增大res，
+            //试图接近正确结果。而res就用来存储当前结果，不会再为0。
+
+            //也就是每次不满足res > x / res， res就是太小，下一轮循环就要在下一位上0变为1，以增加res
+
+            //但是一旦进入if，就要从这个位置检查大小，如同以上描述。
+
+            //如果不满足res > x / res，也就是当前res太小，也就是说当前res都下一位应设为1以增大res
+            if (res > x / res){//16:10000
                 System.out.println("x / res          " + Integer.toBinaryString(x / res));
                 res ^= bit; // set it back
                 System.out.println("res ^= bit;      " + Integer.toBinaryString(res));
@@ -60,6 +76,38 @@ public class _1SqrtX {
     public void test01(){
         int a = 16;
         System.out.println(sqrt7(a));
+        System.out.println(Integer.toBinaryString(a));
+    }
+
+    @Test
+    public void test02(){
+        int a = 3;//11
+        System.out.println(Integer.toBinaryString(a));
+        int b = 4;//100
+        System.out.println(Integer.toBinaryString(b));
+        System.out.println("a |= b : " + Integer.toBinaryString(a |= b));//OR 111
+        System.out.println("a ^= b : " + Integer.toBinaryString(a ^= b));//XOR 11
+    }
+
+    @Test
+    public void test03(){
+        int a = 7;//111
+        System.out.println(Integer.toBinaryString(a));
+        int b = 9;//1001
+        System.out.println(Integer.toBinaryString(b));
+        System.out.println("a |= b : " + Integer.toBinaryString(a |= b));//OR 1111
+        System.out.println("a ^= b : " + Integer.toBinaryString(a ^= b));//XOR 110
+    }
+    @Test
+    public void stringToBinary(){
+        System.out.println(Integer.parseInt("10000",2));//16
+        System.out.println(Integer.parseInt("111",2));//7
+    }
+    @Test
+    public void test04(){
+        int a = 170;
+        System.out.println(sqrt7(a));
+        System.out.println(Integer.toBinaryString(a));
     }
 
 //////////////////////////////////
