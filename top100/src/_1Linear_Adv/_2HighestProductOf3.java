@@ -1,6 +1,8 @@
 package _1Linear_Adv;
 
 
+import org.junit.Test;
+
 //https://codereview.stackexchange.com/questions/109214/maximum-product-of-3-integers-in-an-int-array
 public class _2HighestProductOf3 {
     // Assume input array is of at least length 3.
@@ -53,4 +55,108 @@ public class _2HighestProductOf3 {
         if (prod_one > prod_two) return prod_one ;
         return prod_two;
     }
+
+    @Test
+    public void test01(){
+        int[] nums = {1,10,-5,1,-100};//5000
+        System.out.println(max_prod_three(nums));
+    }
+
+////////////////////////////////////////////////////////////
+    public int max_prod_three2(int[] A){
+        int[] maxThree = getMaxThree(A);
+        int[] minTwo = getMinTwo(A);
+
+        return Math.max(maxThree[0] * maxThree[1] * maxThree[2],
+                maxThree[0] * minTwo[0] * minTwo[1]);
+    }
+    //The helper methods could be something like the following:
+
+    private int[] getMaxThree(int[] arr){
+        int[] result = { Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE };
+        int len = arr.length;
+
+        for(int i = 0; i < len; i++){
+            if(arr[i] >= result[0]){
+                result[2] = result[1];
+                result[1] = result[0];
+                result[0] = arr[i];
+            } else if(arr[i] >= result[1]){
+                result[2] = result[1];
+                result[1] = arr[i];
+            } else if(arr[i] >= result[2]){
+                result[2] = arr[i];
+            }
+        }
+
+        return result;
+    }
+
+    private int[] getMinTwo(int[] arr){
+        int[] result = { Integer.MAX_VALUE, Integer.MAX_VALUE };
+        int len = arr.length;
+
+        for(int i = 0; i < len; i++){
+            if(arr[i] <= result[0]){
+                result[1] = result[0];
+                result[0] = arr[i];
+            } else if(arr[i] <= result[1]){
+                result[1] = arr[i];
+            }
+        }
+
+        return result;
+    }
+
+    @Test
+    public void test02(){
+        int[] nums = {1,10,-5,1,-100};//5000
+        System.out.println(max_prod_three2(nums));
+    }
+
+////////////////////////////////////////////////////////////
+
+    public int max_prod_three3(int[] A){
+        int maxOne = Integer.MIN_VALUE,
+                maxTwo = Integer.MIN_VALUE,
+                maxThree = Integer.MIN_VALUE,
+                minOne = Integer.MAX_VALUE,
+                minTwo = Integer.MAX_VALUE;
+        int len = A.length;
+
+        for(int i = 0; i < len; i++){
+            if(A[i] >= maxOne){
+                maxThree = maxTwo;
+                maxTwo = maxOne;
+                maxOne = A[i];
+            } else if(A[i] >= maxTwo){
+                maxThree = maxTwo;
+                maxTwo = A[i];
+            } else if(A[i] >= maxThree){
+                maxThree = A[i];
+            }
+
+            if(A[i] <= minOne){
+                minTwo = minOne;
+                minOne = A[i];
+            } else if(A[i] <= minTwo){
+                minTwo = A[i];
+            }
+        }
+
+        return Math.max(maxOne * maxTwo * maxThree,
+                maxOne * minOne * minTwo);
+    }
+
+    @Test
+    public void test03(){
+        int[] nums = {1,10,-5,1,-100};//5000
+        System.out.println(max_prod_three3(nums));
+    }
+
+////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////
+
+
 }

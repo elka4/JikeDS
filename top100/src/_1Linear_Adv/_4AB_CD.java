@@ -10,7 +10,7 @@ public class _4AB_CD {
         {
             first = f; second = s;
         }
-    };
+    }
 
     boolean findPairs(int arr[])
     {
