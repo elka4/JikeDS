@@ -9,18 +9,44 @@ public class a_169_Majority_Element {
     // Bit manipulation
     public int majorityElement04(int[] nums) {
         int[] bit = new int[32];
-        for (int num: nums)
-            for (int i=0; i<32; i++)
-                if ((num>>(31-i) & 1) == 1)
+
+        for (int num: nums){
+            for (int i=0; i<32; i++) {
+                if ((num >> (31 - i) & 1) == 1)
                     bit[i]++;
+            }
+        }
+
         int ret=0;
+
         for (int i=0; i<32; i++) {
-            bit[i]=bit[i]>nums.length/2?1:0;
+            bit[i] = bit[i] > nums.length/2 ? 1 : 0;
             ret += bit[i]*(1<<(31-i));
         }
+
         return ret;
     }
 
+    public int majorityElement5(int[] num) {
+
+        //Bit manipulation
+        int[] countsPerBit = new int[32];
+        int result = 0;
+        for (int i=0; i<32; i++) {
+            int count = 0;
+            for (int j=0; j<num.length; j++) {
+                if((num[j]>>i&1) ==1) {
+                    count++;
+                }
+            }
+            if (count > num.length/2) {
+                result |= (1<<i);
+            }
+        }
+        return result;
+    }
+
+///////////////////////////////////////////////////////////////////////////////
 
     // Sorting
     public int majorityElement01(int[] nums) {
