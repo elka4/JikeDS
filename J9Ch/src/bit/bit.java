@@ -150,6 +150,13 @@ public class bit {
 
     }
 
+    @Test
+    public void test06(){
+        System.out.println(largest_power(3));
+        System.out.println(largest_power(4));
+        System.out.println(largest_power(7));
+        System.out.println(largest_power(9));
+    }
 
 
 }
