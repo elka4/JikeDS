@@ -1,4 +1,7 @@
 package Ch_05_Bit_Manipulation.Q5_04_Next_Number;
+/*
+用和当前数字同样数目的1，能组成的最大和最小的数
+ */
 
 public class QuestionC {
 	public static int getNextArith(int n) {
@@ -65,10 +68,18 @@ public class QuestionC {
 	
 	public static void main(String[] args) {
 		int i = 13948;
-		int p1 = getPrevArith(i);
+        System.out.println(i+": " + Integer.toBinaryString(i));
+
+        int p1 = getPrevArith(i);
 		int n1 = getNextArith(i);
 		Tester.binPrint(p1);
 		Tester.binPrint(n1);
 	}
 
 }
+
+/*
+5.4
+Next Number: Given a positive integer, print the next smallest and the next
+largest number that have the same number of 1 bits in their binary representation.
+ */

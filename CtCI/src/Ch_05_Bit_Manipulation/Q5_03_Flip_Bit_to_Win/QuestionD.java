@@ -1,4 +1,7 @@
 package Ch_05_Bit_Manipulation.Q5_03_Flip_Bit_to_Win;
+/*
+给一个数，可以将这个数二进制形式的任意一个0转变为1。这种操作能得到的最长连续1是多长？
+ */
 
 public class QuestionD {
 
@@ -35,3 +38,11 @@ public class QuestionD {
 	}
 
 }
+
+/*
+5.3
+Flip Bit to Win: You have an integer and you can flip exactly one bit from a 0
+to a 1. Write code to find the length of the longest sequence of 1s you could create.
+EXAMPLE
+Input: 1775 ( o r : 1113111131111) Output: 8
+ */
