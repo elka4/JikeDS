@@ -33,7 +33,8 @@ public int hammingWeight(int n) {
     }
     return bits;
 }
-//    The run time depends on the number of bits in nn. Because nn in this piece of code is a 32-bit integer, the time complexity is O(1)O(1).
+//    The run time depends on the number of bits in nn. Because nn in this piece of code is
+// a 32-bit integer, the time complexity is O(1)O(1).
 //
 //    The space complexity is O(1)O(1), since no additional space is allocated.
 
@@ -42,6 +43,7 @@ public int hammingWeight(int n) {
 
 //https://leetcode.com/articles/number-1-bits/
 
+    // n &= (n - 1) 去掉n里的最后一个1
     public int hammingWeight2(int n) {
         int sum = 0;
         while (n != 0) {
@@ -51,7 +53,8 @@ public int hammingWeight(int n) {
         return sum;
     }
 
-//    The run time depends on the number of 11-bits in nn. In the worst case, all bits in nn are 11-bits. In case of a 32-bit integer, the run time is O(1)O(1).
+//    The run time depends on the number of 11-bits in nn. In the worst case,
+// all bits in nn are 11-bits. In case of a 32-bit integer, the run time is O(1)O(1).
 //
 //    The space complexity is O(1)O(1), since no additional space is allocated.
 /////////////////////////////////////////////////////

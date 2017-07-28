@@ -3,7 +3,9 @@ import java.util.*;
 
 public class a_461_Hamming_Distance {
     /*
-    What does come to your mind first when you see this sentence "corresponding bits are different"? Yes, XOR! Also, do not forget there is a decent function Java provided: Integer.bitCount() ~~~
+    What does come to your mind first when you see this sentence "corresponding bits
+    are different"? Yes, XOR! Also, do not forget there is a decent function Java
+     provided: Integer.bitCount() ~~~
 
 
      */
@@ -18,7 +20,8 @@ public int hammingDistance2(int x, int y) {
     return count;
 }
 ////////////////////////////////////////////////////////////////////////////
-//The problem is basically the same as counting the 1 bits in an integer, and the useful trick to do that is : xor & (xor - 1) will eliminate the last 1 bit in a integer.
+//The problem is basically the same as counting the 1 bits in an integer,
+// and the useful trick to do that is : xor & (xor - 1) will eliminate the last 1 bit in a integer.
 
     public int hammingDistance3(int x, int y) {
         int xor = x ^ y, count = 0;
@@ -35,7 +38,8 @@ public int hammingDistance2(int x, int y) {
 }
 
 /*
-The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
+The Hamming distance between two integers is the number of positions at which
+the corresponding bits are different.
 
 Given two integers x and y, calculate the Hamming distance.
 

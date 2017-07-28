@@ -46,7 +46,12 @@ public List<String> findRepeatedDnaSequences2(String s) {
 //    Short Java "rolling-hash" solution
 //    Hi guys!
 //
-//    The idea is to use rolling hash technique or in case of string search also known as Rabin-Karp algorithm. As our alphabet A consists of only 4 letters we can be not afraid of collisions. The hash for a current window slice could be found in a constant time by subtracting the former first character times size of the A in the power of 9 and updating remaining hash by the standard rule: hash = hash*A.size() + curr_char.
+//    The idea is to use rolling hash technique or in case of string search also
+// known as Rabin-Karp algorithm. As our alphabet A consists of only 4 letters we
+// can be not afraid of collisions. The hash for a current window slice could be
+// found in a constant time by subtracting the former first character times size
+// of the A in the power of 9 and updating remaining hash by the standard rule:
+// hash = hash*A.size() + curr_char.
 //
 //    Check out the Java code below.
 //
@@ -82,9 +87,12 @@ public List<String> findRepeatedDnaSequences2(String s) {
 }
 
 /*
-All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, for example: "ACGAATTCCG". When studying DNA, it is sometimes useful to identify repeated sequences within the DNA.
+All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T,
+for example: "ACGAATTCCG". When studying DNA, it is sometimes useful to identify
+ repeated sequences within the DNA.
 
-Write a function to find all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule.
+Write a function to find all the 10-letter-long sequences (substrings) that occur
+ more than once in a DNA molecule.
 
 For example,
 

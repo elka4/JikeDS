@@ -3,13 +3,16 @@ import java.util.*;
 
 
 public class a_231_Power_of_Two {
-//One line java solution using bitCount
-//This is kind of cheating, but the idea is that a power of two in binary form has and only has one "1".
-public boolean isPowerOfTwo(int n) {
-    return n>0 && Integer.bitCount(n) == 1;
-}
+    //One line java solution using bitCount
+    //This is kind of cheating, but the idea is that a power of two in binary
+    // form has and only has one "1".
+    public boolean isPowerOfTwo(int n) {
+        return n>0 && Integer.bitCount(n) == 1;
+    }
 
-
+    public boolean isPowerOfTwo6(int n) {
+        return ((n & (n-1))==0 && n>0);
+    }
 //////////////////////////////////////////////////////////////////////////
 
     /*
@@ -46,7 +49,8 @@ Time complexity = O(1)
 
 Method 4: Math derivation
 
-Because the range of an integer = -2147483648 (-2^31) ~ 2147483647 (2^31-1), the max possible power of two = 2^30 = 1073741824.
+Because the range of an integer = -2147483648 (-2^31) ~ 2147483647 (2^31-1),
+ the max possible power of two = 2^30 = 1073741824.
 
 (1) If n is the power of two, let n = 2^k, where k is an integer.
 
@@ -61,31 +65,6 @@ Time complexity = O(1)
      */
 
 
-
-
 //////////////////////////////////////////////////////////////////////////
-public boolean isPowerOfTwo6(int n) {
-    return ((n & (n-1))==0 && n>0);
-}
-
-//////////////////////////////////////////////////////////////////////////
-
-
-//////////////////////////////////////////////////////////////////////////
-
-
-//////////////////////////////////////////////////////////////////////////
-
-
-//////////////////////////////////////////////////////////////////////////
-
-
-//////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 
 }

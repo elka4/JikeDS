@@ -7,6 +7,8 @@ public class a_169_Majority_Element {
 //Java solutions (sorting, hashmap, moore voting, bit manipulation).
 
     // Bit manipulation
+    //想法和下个方法类似，不过是两个pass，并且使用额外space bit[]， O（n）
+    //bit[] 统计所有num在某个bit位上出现的次数
     public int majorityElement04(int[] nums) {
         int[] bit = new int[32];
 
@@ -27,24 +29,36 @@ public class a_169_Majority_Element {
         return ret;
     }
 
-    public int majorityElement5(int[] num) {
+
+    //这个比较好理解，要重点理解，对于32个bit的位置，外层循环对每个bit进行检查从0到31
+    //内层循环针对每个bit位置，设置一个count，然后对与nums里每个num检查这个bit位上的数是否为1
+    //如果count超过nums长度一半，result的这个bit位设为1，
+    // 也就是设为majority num在这个位置上的数值。（默认为0）
+    //
+    //也就是说，本算法就是逐个对nums每个num检查从小到大某个bit位置出现最多的bit（1 or 0）
+
+    //O(32n) ?
+
+    //
+    public int majorityElement5(int[] nums) {
 
         //Bit manipulation
-        int[] countsPerBit = new int[32];
         int result = 0;
         for (int i=0; i<32; i++) {
             int count = 0;
-            for (int j=0; j<num.length; j++) {
-                if((num[j]>>i&1) ==1) {
+            for (int j=0; j<nums.length; j++) {
+                //num[j]的第i位是1，count++
+                if((nums[j]>>i&1) ==1) {
                     count++;
                 }
             }
-            if (count > num.length/2) {
+            if (count > nums.length/2) {
                 result |= (1<<i);
             }
         }
         return result;
     }
+
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -73,11 +87,16 @@ public class a_169_Majority_Element {
     }
 
     // Moore voting algorithm
+    //这个算法很棒
+    //count == 0 就说明已经遍历过偶数次数。已经遍历过的数字，和ret相同的与不同的数量相等。
+    //这时把当前num设为ret，相当于重新开始循环
+    //到达循环结束的时候，最后一个被设为ret的数就是结果
     public int majorityElement03(int[] nums) {
         int count=0, ret = 0;
         for (int num: nums) {
             if (count==0)
                 ret = num;
+
             if (num!=ret)
                 count--;
             else
@@ -85,9 +104,6 @@ public class a_169_Majority_Element {
         }
         return ret;
     }
-
-///////////////////////////////////////////////////
-
 
     public int majorityElement(int[] num) {
 
@@ -103,6 +119,9 @@ public class a_169_Majority_Element {
         }
         return major;
     }
+
+
+
 
 ////////////////////////////////////////////////////////
 public int majorityElement2(int[] nums) {

@@ -1,4 +1,7 @@
 package Bit_Manipulation_26;
+//所有数字除向两次，找到只出现一次的数
+// 0 ^ N = N
+// N ^ N = 0
 
 public class a_136_Single_Number {
     int singleNumber(int A[], int n) {

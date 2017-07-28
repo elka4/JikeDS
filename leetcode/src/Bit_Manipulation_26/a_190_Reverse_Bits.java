@@ -2,11 +2,53 @@ package Bit_Manipulation_26;
 import java.util.*;
 
 public class a_190_Reverse_Bits {
+
+    //这个解法最简单明了
+    public int reverseBits4(int n) {
+        if (n == 0) return 0;
+
+        int result = 0;
+        for(int i=0; i<32; i++){
+            result = result << 1;
+
+            //其实这里只是对一个bit设置为0
+            //bitwise OR is cheaper than add
+            result = result | n&1;
+
+            n = n >> 1;
+        }
+        return result;
+    }
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+    //
+    public int reverseBits3(int n) {
+        if (n == 0) return 0;
+
+        int result = 0;
+        for (int i = 0; i < 32; i++) {
+            result <<= 1;
+            //其实这里只是对一个bit设置为0
+            if ((n & 1) == 1) result++;
+
+            n >>= 1;
+        }
+        return result;
+    }
+    ////////////////////////////////////////////////////////////////////////
     public int reverseBits(int n) {
         int result = 0;
         for (int i = 0; i < 32; i++) {
+            //如果n的最后一位为1，result这个位置设为1。
             result += n & 1;
+
+            //n右移一位，好在下轮处理这个bit
             n >>>= 1;   // CATCH: must do unsigned shift
+
+            //result左移一位。最后一次除外
             if (i < 31) // CATCH: for last digit, don't shift!
                 result <<= 1;
         }
@@ -138,37 +180,10 @@ public int reverseBits(int n) {
 }
 This is exactly what we expected to get
 "
-
-
      */
-public int reverseBits3(int n) {
-    if (n == 0) return 0;
-
-    int result = 0;
-    for (int i = 0; i < 32; i++) {
-        result <<= 1;
-        if ((n & 1) == 1) result++;
-        n >>= 1;
-    }
-    return result;
-}
-
-////////////////////////////////////////////////////////////////////////
-public int reverseBits4(int n) {
-    if (n == 0) return 0;
-
-    int result = 0;
-    for(int i=0; i<32; i++){
-        result = result << 1;
-//bitwise OR is cheaper than add
-        result = result | n&1;
-        n = n >> 1;
-    }
-    return result;
-}
 
 
-////////////////////////////////////////////////////////////////////////
+
 /*
 int res=0;
     for(int i=0;i<32;i++){
