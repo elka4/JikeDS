@@ -30,9 +30,12 @@ public class _2_SudokuSolver_Backtracking {
 		boolean[] rowChecker = new boolean[9];
 		boolean[] colChecker = new boolean[9];
 		boolean[] subChecker = new boolean[9];
+
 		fillCheckers(board, rowChecker, colChecker, subChecker, i, j);
+
 		for (int cur = 1; cur <= 9; cur++) {
 			board[i][j] = (char)(cur + '0');
+
 			if (check(board, rowChecker, colChecker, subChecker, i, j, cur) 
 					&& dfsHelper(board, i, j)) {
 				return true;
