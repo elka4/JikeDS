@@ -1,10 +1,24 @@
 package J_6_Linked_List_Array.Array;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.HashSet;
 
 /** 547 Intersection of Two Arrays
  * Created by tianhuizhu on 6/28/17.
+ */
+
+/*
+Given two arrays, write a function to compute their intersection.
+
+ Notice
+
+Each element in the result must be unique.
+The result can be in any order.
+Have you met this question in a real interview? Yes
+Example
+Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2].
  */
 public class _547_Intersection_of_Two_Arrays {
 
@@ -14,6 +28,7 @@ public class _547_Intersection_of_Two_Arrays {
      * @param nums2 an integer array
      * @return an integer array
      */
+    //双array双指针
     public int[] intersection(int[] nums1, int[] nums2) {
         Arrays.sort(nums1);
         Arrays.sort(nums2);
@@ -43,7 +58,10 @@ public class _547_Intersection_of_Two_Arrays {
         return result;
     }
 
+    @Test
+    public void test01(){
 
+    }
 ///////////////////////////////////////////////////////////////////////
 
     // version 2: hash map

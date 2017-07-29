@@ -149,6 +149,7 @@ public class _433_Number_of_Islands {
         int m = grid[0].length;
         if (m == 0)
             return 0;
+
         UnionFind union_find = new UnionFind(n * m);
 
         int total = 0;
@@ -158,6 +159,7 @@ public class _433_Number_of_Islands {
                     total ++;
 
         union_find.set_count(total);
+
         for(int i = 0;i < grid.length; ++i)
             for(int j = 0;j < grid[0].length; ++j)
                 if (grid[i][j]) {

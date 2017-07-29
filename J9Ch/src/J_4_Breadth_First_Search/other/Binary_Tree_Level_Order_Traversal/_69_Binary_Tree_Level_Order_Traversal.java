@@ -70,7 +70,9 @@ public class _69_Binary_Tree_Level_Order_Traversal {
         int maxLevel = 0;
         while (true) {
             ArrayList<Integer> level = new ArrayList<Integer>();
+
             dfs(root, level, 0, maxLevel);
+
             if (level.size() == 0) {
                 break;
             }
@@ -86,6 +88,7 @@ public class _69_Binary_Tree_Level_Order_Traversal {
                      ArrayList<Integer> level,
                      int curtLevel,
                      int maxLevel) {
+
         if (root == null || curtLevel > maxLevel) {
             return;
         }
@@ -124,9 +127,11 @@ public class _69_Binary_Tree_Level_Order_Traversal {
         ArrayList<TreeNode> Q2 = new ArrayList<TreeNode>();
 
         Q1.add(root);
+
         while (Q1.size() != 0) {
             ArrayList<Integer> level = new ArrayList<Integer>();
             Q2.clear();
+
             for (int i = 0; i < Q1.size(); i++) {
                 TreeNode node = Q1.get(i);
                 level.add(node.val);

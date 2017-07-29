@@ -7,7 +7,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
-public class _5_NumberOfConnectedComponentsInAnUndirectedGraph {
+public class _431_ConnectedComponentInUndirectedGraph {
     public int countComponent_UnionFind(int n, int[][] edges) {
         int[] root = new int[n];
         for (int i = 0; i < n; i++) {

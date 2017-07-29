@@ -17,6 +17,7 @@ Elements of the given array will be in the range [-10,000, 10,000].
 
 //https://leetcode.com/problems/maximum-average-subarray-i/#/solution
 
+//
 public class _leet_643_Maximum_Average_Subarray_I {
 
 //Approach #1 Brute Force [Time Limit Exceeded]

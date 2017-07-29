@@ -11,17 +11,18 @@ import java.util.List;
  */
 public class _434_Number_of_Islands_II {
     class Point {
-      int x;
-      int y;
-      Point() { x = 0; y = 0; }
-      Point(int a, int b) { x = a; y = b; }
-  }
-
-  int converttoId(int x, int y, int m){
+        int x;
+        int y;
+        Point() { x = 0; y = 0; }
+        Point(int a, int b) { x = a; y = b; }
+    }
+    int converttoId(int x, int y, int m){
         return x*m + y;
     }
+
     class UnionFind{
         HashMap<Integer, Integer> father = new HashMap<Integer, Integer>();
+
         UnionFind(int n, int m){
             for(int i = 0 ; i < n; i++) {
                 for(int j = 0 ; j < m; j++) {
@@ -35,6 +36,7 @@ public class _434_Number_of_Islands_II {
             while(parent!=father.get(parent)) {
                 parent = father.get(parent);
             }
+
             int temp = -1;
             int fa = x;
             while(fa!=father.get(fa)) {
@@ -77,15 +79,18 @@ public class _434_Number_of_Islands_II {
         for(int i = 0; i < operators.length; i++) {
             int x = operators[i].x;
             int y = operators[i].y;
+
             if(island[x][y] != 1) {
                 count ++;
                 island[x][y]  = 1;
                 int id = converttoId(x,y , m);
+
                 for(int j = 0 ; j < 4; j++) {
                     int nx = x + dx[j];
                     int ny = y + dy[j];
-                    if(0 <= nx && nx < n && 0 <= ny && ny < m && island[nx][ny] == 1)
-                    {
+                    if(0 <= nx && nx < n && 0 <= ny && ny < m
+                            && island[nx][ny] == 1) {
+
                         int nid = converttoId(nx, ny, m);
 
                         int fa = uf.compressed_find(id);
@@ -96,9 +101,11 @@ public class _434_Number_of_Islands_II {
                         }
                     }
                 }
+
             }
             ans.add(count);
         }
+
         return ans;
     }
 

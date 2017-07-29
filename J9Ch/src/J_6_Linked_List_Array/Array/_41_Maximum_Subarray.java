@@ -1,5 +1,7 @@
 package J_6_Linked_List_Array.Array;
 
+import org.junit.Test;
+
 /** 41 Maximum Subarray
  * Easy
  Find the contiguous subarray within an array (containing at least one number)
@@ -16,9 +18,7 @@ package J_6_Linked_List_Array.Array;
  * Created by tianhuizhu on 6/28/17.
  */
 
-@SuppressWarnings({"unused", "all"})
-
-
+@SuppressWarnings({"unused"})
 public class _41_Maximum_Subarray {
 
     // Version 1: Greedy
@@ -40,7 +40,7 @@ public class _41_Maximum_Subarray {
         return max;
     }
 
-/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
 
     // Version 2: Prefix Sum
     public int maxSubArray2(int[] A) {
@@ -56,15 +56,16 @@ public class _41_Maximum_Subarray {
 
             // sum - minSum 是以current为终点的最大的subarray
             //max是从0到current范围内最大subarray（终点不固定为current）
+            //minSum是以current-1为终点的最大的subarray
             max = Math.max(max, sum - minSum);
 
-            minSum = Math.min(minSum, sum);//simSum是到i为止到最小到presum
+            minSum = Math.min(minSum, sum);//simSum是到i为止到最小的presum
         }
 
         return max;
     }
 
-/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
 
     public int maxSubArray3(int[] nums) {
         // write your code
@@ -79,17 +80,85 @@ public class _41_Maximum_Subarray {
         local[0] = nums[0];
 
         for(int i = 1; i < n; i ++) {
+            System.out.println("nums[i] "+nums[i]);
+            System.out.println("local[(i - 1) % 2]  "+local[(i - 1) % 2]);
             local[i % 2] = Math.max(nums[i], local[(i - 1) % 2] + nums[i]);
+            System.out.println("local[i % 2]         "+local[i % 2]);
+
+
+            System.out.println("global[(i - 1) % 2] "+global[(i - 1) % 2]);
             global[i % 2] = Math.max(local[i % 2], global[(i - 1) % 2]);
+            System.out.println("global[i % 2]        "+global[i % 2]);
+
+            System.out.println("===================");
         }
         return global[(n-1) % 2];
     }
+
+    @Test
+    public void test01(){
+        int[] nums = {-2,2,-3,4,-1,2,1,-5,3};
+        System.out.println(maxSubArray3(nums));
+    }
+    /*
+    nums[i] 2
+    local[(i - 1) % 2]  -2
+    local[i % 2]         2
+    global[(i - 1) % 2] -2
+    global[i % 2]        2
+    ===================
+    nums[i] -3
+    local[(i - 1) % 2]  2
+    local[i % 2]         -1
+    global[(i - 1) % 2] 2
+    global[i % 2]        2
+    ===================
+    nums[i] 4
+    local[(i - 1) % 2]  -1
+    local[i % 2]         4
+    global[(i - 1) % 2] 2
+    global[i % 2]        4
+    ===================
+    nums[i] -1
+    local[(i - 1) % 2]  4
+    local[i % 2]         3
+    global[(i - 1) % 2] 4
+    global[i % 2]        4
+    ===================
+    nums[i] 2
+    local[(i - 1) % 2]  3
+    local[i % 2]         5
+    global[(i - 1) % 2] 4
+    global[i % 2]        5
+    ===================
+    nums[i] 1
+    local[(i - 1) % 2]  5
+    local[i % 2]         6
+    global[(i - 1) % 2] 5
+    global[i % 2]        6
+    ===================
+    nums[i] -5
+    local[(i - 1) % 2]  6
+    local[i % 2]         1
+    global[(i - 1) % 2] 6
+    global[i % 2]        6
+    ===================
+    nums[i] 3
+    local[(i - 1) % 2]  1
+    local[i % 2]         4
+    global[(i - 1) % 2] 6
+    global[i % 2]        6
+    ===================
+    6
+     */
+
+///////////////////////////////////////////////////////////////////
 
     //1. Dynamic Programming Solution
 //The changing condition for dynamic programming is "We should ignore the
 // sum of the previous n-1 elements if nth element is greater than the sum."
 
-
+    //也是用presum的思想了
     public int maxSubArray_DP(int[] A) {
         int max = A[0];
         int[] sum = new int[A.length];
@@ -183,6 +252,7 @@ public class _41_Maximum_Subarray {
 
 
 //////////////////////////////////////////////////////////////////
+//leet
 
     public int maxSubArray8(int[] A) {
         int n = A.length;
@@ -215,6 +285,19 @@ public class _41_Maximum_Subarray {
             if (sum < 0) { sum = nums[i]; }
             else {sum += nums[i]; }
             max = Math.max(max, sum);
+        }
+        return max;
+    }
+
+    public int maxSubArray99(int[] A) {
+        int max = Integer.MIN_VALUE, sum = 0;
+        for (int i = 0; i < A.length; i++) {
+            if (sum < 0)
+                sum = A[i];
+            else
+                sum += A[i];
+            if (sum > max)
+                max = sum;
         }
         return max;
     }
@@ -328,8 +411,10 @@ public int maxSubArray16(int[] A) {
 
 
     public int maxSubArray17(int[] nums) {
-    return Subarray(nums, 0 ,nums.length -1 );
-}
+
+        return Subarray(nums, 0 ,nums.length -1 );
+    }
+
     public int Subarray(int[] A,int left, int right){
         if(left == right){return A[left];}
         int mid = left + (right - left) / 2;
@@ -407,16 +492,21 @@ public int maxSubArray16(int[] A) {
                 return A[left];
             }
             int mid = left + (right-left)/2;
-            int leftsum = subArray(A, left, mid); //left part of the subarray sum, condition 1
-            int rightsum = subArray(A, mid+1, right); //right part of the subarray sum, condition 2
-            int middlesum = midSubArray(A, left, mid, right); //cross part of the subarray sum, condition 3
+            //left part of the subarray sum, condition 1
+            int leftsum = subArray(A, left, mid);
+            //right part of the subarray sum, condition 2
+            int rightsum = subArray(A, mid+1, right);
+            //cross part of the subarray sum, condition 3
+            int middlesum = midSubArray(A, left, mid, right);
             // System.out.println(leftsum);
             // System.out.println(rightsum);
             // System.out.println(middlesum);
 
 
-            //following if condition will return middlesum if lost the "=" under the conditon of
-            // leftsum = rightsum, which may be problematic if leftsum = rightsum < middlesum.
+            //following if condition will return middlesum
+            // if lost the "=" under the conditon of
+            // leftsum = rightsum, which may be problematic if
+            // leftsum = rightsum < middlesum.
             //for example: [-1, -1, -2, -2]
             if (leftsum >= rightsum && leftsum >= middlesum){
                 return leftsum;
@@ -463,7 +553,8 @@ if dp[i-1] >0, dp[i] = nums[i] + dp[i-1]
 
 then pick the max sum.
 
-We only need dp[i-1], so i use prev to record it, the space complexity is reduced to O(1).
+We only need dp[i-1], so i use prev to record it,
+the space complexity is reduced to O(1).
  */
 
 
@@ -510,8 +601,10 @@ We only need dp[i-1], so i use prev to record it, the space complexity is reduce
 
 
     /*
-    To calculate sum(0,i), you have 2 choices: either adding sum(0,i-1) to a[i],
-     or not. If sum(0,i-1) is negative, adding it to a[i] will only make a smaller sum,
+    To calculate sum(0,i), you have 2 choices:
+    either adding sum(0,i-1) to a[i],
+     or not. If sum(0,i-1) is negative,
+     adding it to a[i] will only make a smaller sum,
       so we add only if it's non-negative.
 
 sum(0,i) = a[i] + (sum(0,i-1) < 0 ? 0 : sum(0,i-1))
@@ -578,7 +671,11 @@ We can then use O(1) space to keep track of the max sum(0, i) so far.
 
 ////////////////////////////////////////////////////////////
 
+/*
+Given the array [−2,2,−3,4,−1,2,1,−5,3], the contiguous subarray [4,−1,2,1] has the largest sum = 6.
 
+
+ */
 
 
 }

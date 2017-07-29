@@ -17,6 +17,9 @@ Your code should return the index of the first number and the index of the last 
  */
 
 // [-3, 1, 2, -3, 4], return [0, 2] or [1, 3]
+
+    //presum
+    //区间为零意味着前后两个presum相等
 public class _138_Subarray_Sum {
     /**
      * @param nums: A list of integers
@@ -31,18 +34,21 @@ public class _138_Subarray_Sum {
         ArrayList<Integer> ans = new ArrayList<Integer>();
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
+        //注意这个
+        //针对起始位置为0的区间
         map.put(0, -1);
 
         int sum = 0;
         for (int i = 0; i < len; i++) {
+            //presum
             sum += nums[i];
-
+            //得到result
             if (map.containsKey(sum)) {
                 ans.add(map.get(sum) + 1);
                 ans.add(i);
                 return ans;
             }
-
+            //每轮存放结果
             map.put(sum, i);
         }
 

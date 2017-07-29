@@ -22,7 +22,10 @@ Credits:
 Special thanks to @Freezen for adding this problem and creating all test cases.
  */
 
-public class Minimum_Size_Subarray_Sum {
+
+// 406 Minimum Size Subarray Sum
+
+public class _406_Minimum_Size_Subarray_Sum {
     //Java Solution - two pointers
 //A simple sliding window solution.
 

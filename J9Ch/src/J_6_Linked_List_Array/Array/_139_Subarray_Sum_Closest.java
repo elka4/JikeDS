@@ -1,5 +1,7 @@
 package J_6_Linked_List_Array.Array;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -62,7 +64,17 @@ public class _139_Subarray_Sum_Closest {
         return res;
     }
 
+    @Test
+    public void test01(){
+        int[] nums = {-3, 1, 1, -3, 5};
+        int[] result = subarraySumClosest(nums);
+        for (int i:result
+             ) {
+            System.out.println(i);
+        }
+    }
 
+}
 
 /*
 问：为什么需要一个 (0,0) 的初始 Pair?
@@ -82,4 +94,12 @@ public class _139_Subarray_Sum_Closest {
 因为 这个 0,0 代表的就是前0个数之和为0
 一个 n 个数的数组， 变成了 prefix Sum 数组之后，会多一个数出来
 */
-}
+
+
+/*
+Given an integer array, find a subarray with sum closest to zero. Return the indexes of the first number and last number.
+
+Have you met this question in a real interview? Yes
+Example
+Given [-3, 1, 1, -3, 5], return [0, 2], [1, 3], [1, 1], [2, 2] or [0, 4].
+ */

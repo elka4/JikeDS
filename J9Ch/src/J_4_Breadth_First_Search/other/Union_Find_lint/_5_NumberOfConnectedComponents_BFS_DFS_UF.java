@@ -1,39 +1,29 @@
 package J_4_Breadth_First_Search.other.Union_Find_lint;
 
-import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
-public class _431_NumberOfConnectedComponents {
+//Top100 _3Graph_Class
+public class _5_NumberOfConnectedComponents_BFS_DFS_UF {
+
     public int countComponent_UnionFind(int n, int[][] edges) {
         int[] root = new int[n];
         for (int i = 0; i < n; i++) {
             root[i] = i;
         }
         for (int[] edge : edges) {
-            System.out.println("edge " + edge[0] + " " + edge[1]);
-
             int par = findRoot(root, edge[0]);
             int child = findRoot(root, edge[1]);
             root[child] = par;
         }
-
-        for (int i = 0; i < root.length; i++) {
-            System.out.println("root " + i + " " + root[i]);
-        }
-
-
 
         int count = 0;
         for (int i = 0; i < n; i++) {
             if (root[i] == i)
                 count++;
         }
-
-
         return count;
     }
 
@@ -45,70 +35,44 @@ public class _431_NumberOfConnectedComponents {
         return cur;
     }
 
-    @Test
-    public void test_u1(){
-        int n = 6;
-        int[] root = new int[n];
-        for (int i = 0; i < n; i++) {
-            root[i] = i;
-        }
-
-        for (int i = 0; i < root.length; i++) {
-            System.out.println("root " + i + " " + root[i]);
-        }
-
-        int par = findRoot(root, 2);
-        int child = findRoot(root, 3);
-        root[child] = par;
-
-        for (int i = 0; i < root.length; i++) {
-            System.out.println("root " + i + " " + root[i]);
-        }
-
-
-    }
-
-    @Test
-    public void test01(){
-        int[][] edges = {{0,1},{1,2},{2,3},{4,5}};
-        System.out.println(countComponent_UnionFind(7,edges));
-    }
-
-
-////////////////////////////////////////////////////////////////////
-
+//////////////////////////////////////////////////////////////
 
     public int countComponents_DFS(int n, int[][] edges) {
-    int[] tag = new int[n];
-    for (int i = 0; i < n; i++) {
-        tag[i] = i;
-    }
-
-    for (int[] edge : edges) {
-        int start = edge[0];
-        int end = edge[1];
-        while (tag[start] != start) {
-            start = tag[start] = tag[tag[start]];
+        int[] tag = new int[n];
+        for (int i = 0; i < n; i++) {
+            tag[i] = i;
         }
 
-        while (tag[end] != end) {
-            end = tag[end] = tag[tag[end]];
+        for (int[] edge : edges) {
+            int start = edge[0];
+            int end = edge[1];
+            while (tag[start] != start) {
+                start = tag[start] = tag[tag[start]];
+            }
+
+            while (tag[end] != end) {
+                end = tag[end] = tag[tag[end]];
+            }
+
+            tag[start] = end;
+            if (start != end)
+                n--;
         }
-
-        tag[start] = end;
-        if (start != end)
-            n--;
-    }
-    return n;
-  }
-
-    @Test
-    public void test02(){
-        int[][] edges = {{0,1},{1,2},{2,3},{4,5}};
-        System.out.println(countComponents_DFS(7,edges));
+        return n;
     }
 
-/////////////////////////////////////////////////////////////////
+    private void dfsHelper(int cur, List<List<Integer>> neis,
+                           boolean[] isVisited) {
+        isVisited[cur] = true;
+        List<Integer> nei = neis.get(cur);
+        for (Integer i : nei) {
+            if (!isVisited[i]) {
+                dfsHelper(i, neis, isVisited);
+            }
+        }
+    }
+
+//////////////////////////////////////////////////////////////
 
     public int countComponents_BFS(int n, int[][] edges) {
         if (edges == null || edges.length == 0) {
@@ -123,8 +87,7 @@ public class _431_NumberOfConnectedComponents {
         int count = 0;
         for (int i = 0; i < n; i++) {
             if (!isVisited[i]) {
-                //bfsHelper(i, neis, isVisited);
-                dfsHelper(i, neis, isVisited);
+                bfsHelper(i, neis, isVisited);
                 count++;
             }
         }
@@ -154,29 +117,13 @@ public class _431_NumberOfConnectedComponents {
             for (Integer i: neis.get(cur)) {
                 if (!isVisited[i]) {
                     queue.offerLast(i);
-                    isVisited[i] = true;;
+                    isVisited[i] = true;
                 }
             }
         }
     }
-    private void dfsHelper(int cur, List<List<Integer>> neis,
-                           boolean[] isVisited) {
-        isVisited[cur] = true;
-        List<Integer> nei = neis.get(cur);
-        for (Integer i : nei) {
-            if (!isVisited[i]) {
-                dfsHelper(i, neis, isVisited);
-            }
-        }
-    }
 
-    @Test
-    public void test03(){
-        int[][] edges = {{0,1},{1,2},{2,3},{4,5}};
-        System.out.println(countComponents_BFS(7,edges));
-    }
-
-/////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
 
 
 
