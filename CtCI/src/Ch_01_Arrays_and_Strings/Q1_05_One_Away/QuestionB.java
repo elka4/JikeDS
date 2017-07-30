@@ -1,7 +1,9 @@
 package Ch_01_Arrays_and_Strings.Q1_05_One_Away;
 
-public class QuestionB {	
-public static boolean oneEditAway(String first, String second) {
+public class QuestionB {
+
+    //本质上就是把上一个方法的两个method放在一个method里
+    public static boolean oneEditAway(String first, String second) {
 		/* Length checks. */
 		if (Math.abs(first.length() - second.length()) > 1) {
 			return false;
@@ -14,11 +16,14 @@ public static boolean oneEditAway(String first, String second) {
 		int index1 = 0;
 		int index2 = 0;
 		boolean foundDifference = false;
+
 		while (index2 < s2.length() && index1 < s1.length()) {
 			if (s1.charAt(index1) != s2.charAt(index2)) {
 				/* Ensure that this is the first difference found.*/
 				if (foundDifference) return false;
 				foundDifference = true;
+
+
 				if (s1.length() == s2.length()) { // On replace, move shorter pointer
 					index1++;
 				}

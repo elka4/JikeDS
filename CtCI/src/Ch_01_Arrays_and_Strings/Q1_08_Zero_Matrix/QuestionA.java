@@ -1,6 +1,9 @@
 package Ch_01_Arrays_and_Strings.Q1_08_Zero_Matrix;
-
 import CtCILibrary.AssortedMethods;
+
+/*
+Zero Matrix: Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are set to O.
+ */
 
 public class QuestionA {
 	public static void nullifyRow(int[][] matrix, int row) {

@@ -1,6 +1,7 @@
 package Ch_01_Arrays_and_Strings.Q1_06_String_Compression;
 
-public class QuestionB {	
+public class QuestionB {
+
 	public static String compress(String str) {
 		StringBuilder compressed = new StringBuilder();
 		int countConsecutive = 0;
