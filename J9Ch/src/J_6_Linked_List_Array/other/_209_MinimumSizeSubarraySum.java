@@ -1,9 +1,10 @@
 package J_6_Linked_List_Array.other;
+import org.junit.Test;
 
 // Array, Two Pointers, Binary Search
 //leetcode
 
-import org.junit.Test;
+//find the minimal length of a contiguous subarray of which the sum ≥ s.
 
 public class _209_MinimumSizeSubarraySum {
 
