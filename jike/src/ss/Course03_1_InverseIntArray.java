@@ -11,12 +11,14 @@ public class Course03_1_InverseIntArray {
         array[a]=array[b];
         array[b]=t;
     }
+
     public void printArray(int[] array){
         for(int i:array){
             System.out.print(i+" ");
         }
         System.out.println();
     }
+
     public void inverse01(int[] array){
         if(array==null||array.length<=1){
             return;
@@ -25,6 +27,7 @@ public class Course03_1_InverseIntArray {
             swap(array, i, j);
         }
     }
+
     public void inverse02(int[] array){
         if(array==null||array.length<=1){
             return;

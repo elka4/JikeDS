@@ -3,7 +3,8 @@ package Ch_09_Scalability_and_Memory_Limits.Q9_02_Social_Network;
 import java.util.*;
 
 public class QuestionA {
-	public static LinkedList<Person> findPathBFS(HashMap<Integer, Person> people, int source, int destination) {
+	public static LinkedList<Person> findPathBFS(HashMap<Integer, Person> people,
+                                                 int source, int destination) {
 		Queue<PathNode> toVisit = new LinkedList<PathNode>();
 		HashSet<Integer> visited = new HashSet<Integer>();
 		toVisit.add(new PathNode(people.get(source), null));
@@ -27,6 +28,8 @@ public class QuestionA {
 		}
 		return null;
 	}
+
+
 	
 	public static void main(String[] args) {
 		int nPeople = 11;
@@ -36,7 +39,8 @@ public class QuestionA {
 			people.put(i, p);
 		}
 		
-		int[][] edges = {{1, 4}, {1, 2}, {1, 3}, {3, 2}, {4, 6}, {3, 7}, {6, 9}, {9, 10}, {5, 10}, {2, 5}, {3, 7}};
+		int[][] edges = {{1, 4}, {1, 2}, {1, 3}, {3, 2}, {4, 6},
+                {3, 7}, {6, 9}, {9, 10}, {5, 10}, {2, 5}, {3, 7}};
 		
 		for (int[] edge : edges) {
 			Person source = people.get(edge[0]);

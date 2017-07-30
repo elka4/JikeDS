@@ -2,7 +2,18 @@ package Ch_01_Arrays_and_Strings.Q1_07_Rotate_Matrix;
 import CtCILibrary.AssortedMethods;
 
 /*
-Rotate Matrix: Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees. (an you do this in place?
+Rotate Matrix: Given an image represented by an NxN matrix,
+where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degrees.
+ (an you do this in place?
+ */
+/*
+    5    2    6
+    4    8    0
+    5    5    0
+
+    5    4    5
+    5    8    2
+    0    0    6
  */
 
 public class Question {
@@ -17,6 +28,8 @@ public class Question {
 		for (int layer = 0; layer < n / 2; layer++) {
 			int first = layer;
 			int last = n - 1 - layer;
+
+
 			for(int i = first; i < last; i++) {
 				int offset = i - first;
 				int top = matrix[first][i]; // save top

@@ -68,9 +68,11 @@ public class QuestionB {
 		if (colHasZero) {
 			nullifyColumn(matrix, 0);
 		}
-	}	
-	
-	public static boolean matricesAreEqual(int[][] m1, int[][] m2) {
+	}
+
+//////////////////////////////////////////////////////////////////////////////
+
+    public static boolean matricesAreEqual(int[][] m1, int[][] m2) {
 		if (m1.length != m2.length || m1[0].length != m2[0].length) {
 			return false;
 		}
@@ -94,8 +96,10 @@ public class QuestionB {
 		}
 		return c;
 	}
-	
-	public static void main(String[] args) {
+
+//////////////////////////////////////////////////////////////////////////////
+
+    public static void main(String[] args) {
 		int nrows = 10;
 		int ncols = 15;
 		int[][] matrix = AssortedMethods.randomMatrix(nrows, ncols, -10, 10);		

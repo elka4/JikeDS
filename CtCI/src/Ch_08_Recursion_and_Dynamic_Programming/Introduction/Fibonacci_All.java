@@ -15,6 +15,7 @@ public class Fibonacci_All {
 //////////////////////////////////////////////////////////////////////
 
     public static int fibonacci2(int n) {
+
         return fibonacci2(n, new int[n + 1]);
     }
 
