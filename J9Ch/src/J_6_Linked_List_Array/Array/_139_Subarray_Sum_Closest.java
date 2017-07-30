@@ -37,18 +37,22 @@ public class _139_Subarray_Sum_Closest {
             res[0] = res[1] = 0;
             return res;
         }
+
         Pair[] sums = new Pair[len+1];
         int prev = 0;
+
         sums[0] = new Pair(0, 0);
         for (int i = 1; i <= len; i++) {
             sums[i] = new Pair(prev + nums[i-1], i);
             prev = sums[i].sum;
         }
+
         Arrays.sort(sums, new Comparator<Pair>() {
             public int compare(Pair a, Pair b) {
                 return a.sum - b.sum;
             }
         });
+
         int ans = Integer.MAX_VALUE;
         for (int i = 1; i <= len; i++) {
 
@@ -82,7 +86,8 @@ public class _139_Subarray_Sum_Closest {
 我们首先需要回顾一下，在 subarray 这节课里，我们讲过一个重要的知识点，叫做 Prefix Sum
 比如对于数组 [1,2,3,4]，他的 Prefix Sum 是 [1,3,6,10]
 分别表示 前1个数之和，前2个数之和，前3个数之和，前4个数之和
-这个时候如果你想要知道 子数组 从下标  1 到下标 2 的这一段的和(2+3)，就用前 3个数之和 减去 前1个数之和 = PrefixSum[2] - PrefixSum[0] = 6 - 1 = 5
+这个时候如果你想要知道 子数组 从下标  1 到下标 2 的这一段的和(2+3)，就用前 3个数之和 减去 前1个数之和
+= PrefixSum[2] - PrefixSum[0] = 6 - 1 = 5
 你可以看到这里的 前 x 个数，和具体对应的下标之间，存在 +-1 的问题
 第 x 个数的下标是 x - 1，反之 下标 x 是第 x + 1 个数
 那么问题来了，如果要计算 下标从 0~2 这一段呢？也就是第1个数到第3个数，因为那样会访问到 PrefixSum[-1]
@@ -97,7 +102,8 @@ public class _139_Subarray_Sum_Closest {
 
 
 /*
-Given an integer array, find a subarray with sum closest to zero. Return the indexes of the first number and last number.
+Given an integer array, find a subarray with sum closest to zero.
+Return the indexes of the first number and last number.
 
 Have you met this question in a real interview? Yes
 Example

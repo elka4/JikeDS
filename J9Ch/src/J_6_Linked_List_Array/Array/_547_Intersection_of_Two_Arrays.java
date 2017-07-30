@@ -12,14 +12,14 @@ import java.util.HashSet;
 /*
 Given two arrays, write a function to compute their intersection.
 
- Notice
-
 Each element in the result must be unique.
 The result can be in any order.
 Have you met this question in a real interview? Yes
 Example
 Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2].
  */
+
+
 public class _547_Intersection_of_Two_Arrays {
 
     // version 1: sort & merge

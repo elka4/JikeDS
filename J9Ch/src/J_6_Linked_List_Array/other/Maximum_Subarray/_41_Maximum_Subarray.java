@@ -1,6 +1,7 @@
-package J_6_Linked_List_Array.Array;
+package J_6_Linked_List_Array.other.Maximum_Subarray;
 
 import org.junit.Test;
+
 @SuppressWarnings({"unused"})
 
 /** 41 Maximum Subarray

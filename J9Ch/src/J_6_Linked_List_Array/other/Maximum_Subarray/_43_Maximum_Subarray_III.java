@@ -1,11 +1,10 @@
-package J_6_Linked_List_Array.Array;
+package J_6_Linked_List_Array.other.Maximum_Subarray;
 
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.List;
 
 /** 43 Maximum Subarray III
 
