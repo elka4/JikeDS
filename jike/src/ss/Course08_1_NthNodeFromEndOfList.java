@@ -19,6 +19,9 @@ public class Course08_1_NthNodeFromEndOfList {
 		}
 		return m;
 	}
+
+///////////////////////////////////////////////////////
+
 	/**
 	 * 方法1
 	 */
@@ -34,7 +37,10 @@ public class Course08_1_NthNodeFromEndOfList {
 			return p;
 		}
 	}
-	/**
+
+///////////////////////////////////////////////////////
+
+    /**
 	 * 方法2，双指针，遍历一次
 	 */
 	public ListNode find02(ListNode head, int n) {
@@ -53,12 +59,16 @@ public class Course08_1_NthNodeFromEndOfList {
 			return p1;
 		}
 	}
-	@Test
+
+///////////////////////////////////////////////////////
+
+    @Test
 	public void test01() {
 		int[] array = {1, 2, 3, 4, 5, 6};
 		ListNode head = ListNode.arrayToList(array);
 		System.out.println(find01(head, 4));
 	}
+
 	@Test
 	public void test02() {
 		int[] array = {1, 2, 3, 4, 5, 6};

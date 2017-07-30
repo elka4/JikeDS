@@ -13,6 +13,7 @@ public class Course15_1_Maclaurin {
 		}
 		return e;
 	}
+
 	@Test
 	public void testE() {
 		double e = getE(10);
@@ -20,6 +21,7 @@ public class Course15_1_Maclaurin {
 		System.out.println(Math.E);
 		Assert.assertTrue(Math.abs(e - Math.E) <= 0.00001);
 	}
+
 	public double getPI(double n) {
 		double a = Math.sqrt(3) / 3;
 		double pi = a;
@@ -30,6 +32,7 @@ public class Course15_1_Maclaurin {
 		pi *= 6;
 		return pi;
 	}
+
 	@Test
 	public void testPI() {
 		double pi = getPI(20);

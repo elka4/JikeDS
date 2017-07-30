@@ -7,6 +7,7 @@ import org.junit.Test;
  *删除链表的倒数第N个节点
  */
 public class Course08_2_19RemoveNthNodeFromEndOfList {
+
 	public ListNode removeNthFromEnd(ListNode head, int n) {
 		if (head == null) {
 			return head;
@@ -28,6 +29,7 @@ public class Course08_2_19RemoveNthNodeFromEndOfList {
 			return head;
 		}
 	}
+
 	@Test
 	public void test() {
 		int[] array1 = {1, 2, 3, 4, 5, 6};

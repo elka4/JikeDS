@@ -16,6 +16,7 @@ public class Course16_3_CountNode<T> {
 			preOrder(node.right);
 		}
 	}
+
 	/**
 	 * 统计结点个数，后序遍历法
 	 */
@@ -28,6 +29,7 @@ public class Course16_3_CountNode<T> {
 			return leftCnt+rightCnt+1;
 		}
 	}
+
 	/**
 	 * 统计叶子节点个数，中序遍历法
 	 */
@@ -40,6 +42,7 @@ public class Course16_3_CountNode<T> {
 			inOrder(node.right);
 		}
 	}
+
 	/**
 	 * 统计叶子节点个数，先序遍历法
 	 */
@@ -54,6 +57,7 @@ public class Course16_3_CountNode<T> {
 			return leftLeaf+rightLeaf;
 		}
 	}
+
 	/**
 	 * 统计值为x的节点个数，层序遍历法
 	 */

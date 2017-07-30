@@ -6,6 +6,7 @@ import org.junit.Test;
 public class Course15_3_MySqrt {
 	public static final double d = 0.00001;
 	public int count = 0;
+
 	private double isSquare(double x, double mid) {
 		long a = Math.round(mid);
 		if (a * a == x) {
@@ -14,6 +15,7 @@ public class Course15_3_MySqrt {
 			return mid;
 		}
 	}
+
 	public double sqrtBinary(double x) {
 		if (x == 0 || x == 1) {
 			return x;
@@ -34,6 +36,7 @@ public class Course15_3_MySqrt {
 			}
 		}
 	}
+
 	@Test
 	public void testBinary() {
 		System.out.println(sqrtBinary(2));
@@ -44,6 +47,7 @@ public class Course15_3_MySqrt {
 		Assert.assertTrue(Math.abs(sqrtBinary(80) - Math.sqrt(80)) <= d);
 		System.out.println(count);
 	}
+
 	public double sqrtNewton(double y0) {
 		if (y0 == 0 || y0 == 1) {
 			return y0;
@@ -60,6 +64,7 @@ public class Course15_3_MySqrt {
 			}
 		}
 	}
+
 	@Test
 	public void testNewton() {
 		System.out.println(sqrtNewton(2));

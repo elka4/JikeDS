@@ -23,6 +23,7 @@ public class Course14_7_153FindMinimum {
 		}
 		return nums[0];
 	}
+
 	@Test
 	public void test() {
 		int[] nums1 = {4, 5, 6, 7, 8, 9, 0, 1, 2, 3};

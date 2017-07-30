@@ -21,6 +21,7 @@ public class Course14_2_035SearchInsertPosition {
 		}
 		return start;
 	}
+
 	@Test
 	public void test() {
 		int[] array = {7, 14, 18, 21, 23, 29, 31, 35};

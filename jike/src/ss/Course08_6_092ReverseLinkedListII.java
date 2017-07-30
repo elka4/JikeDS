@@ -37,6 +37,7 @@ public class Course08_6_092ReverseLinkedListII {
 			return newHead.next;
 		}
 	}
+
 	@Test
 	public void test() {
 		int[] array = {1, 2, 3, 4, 5, 6, 7};

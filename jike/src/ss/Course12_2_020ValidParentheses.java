@@ -52,6 +52,8 @@ public class Course12_2_020ValidParentheses {
 			return false;
 		}
 	}
+
+
 	@Test
 	public void test() {
 		String s1 = "{([]})";

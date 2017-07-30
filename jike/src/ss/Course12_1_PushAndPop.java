@@ -28,6 +28,8 @@ public class Course12_1_PushAndPop {
 		}
 		return true;
 	}
+
+
 	@Test
 	public void test(){
 		Integer[] pushSequence={1,2,3,4,5};

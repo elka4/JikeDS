@@ -13,6 +13,7 @@ public class Course16_1_HanoiTower {
 			hanoi(mid, start, end, n-1);
 		}
 	}
+
 	public static void main(String[] args) {
 		hanoi("A", "B", "C", 10);
 	}

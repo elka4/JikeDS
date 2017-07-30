@@ -7,31 +7,33 @@ public class Course10_4_142LinkedListCycle02 {
 	/**
 	 * 求链表环的开始位置
 	 */
-	public ListNode detectCycle(ListNode head) {
-	    if(head==null){
-	   	 return null;
-	    }else{
-	   	 ListNode slow=head;
-	   	 ListNode fast=head;
-	   	 while(fast!=null&&fast.next!=null){
-	   		 slow=slow.next;
-	   		 fast=fast.next.next;
-	   		 if(slow==fast){
-	   			 break;
-	   		 }
-	   	 }
-	   	 if(fast==null||fast.next==null){
-	   		 return null;
-	   	 }else{
-	   		 slow=head;
-	   		 while(fast!=slow){
-	   			 fast=fast.next;
-	   			 slow=slow.next;
-	   		 }
-	   		 return fast;
-	   	 }
-	    }
-	    }
+    public ListNode detectCycle(ListNode head) {
+        if(head==null){
+         return null;
+        }else{
+         ListNode slow=head;
+         ListNode fast=head;
+         while(fast!=null&&fast.next!=null){
+             slow=slow.next;
+             fast=fast.next.next;
+             if(slow==fast){
+                 break;
+             }
+         }
+         if(fast==null||fast.next==null){
+             return null;
+         }else{
+             slow=head;
+             while(fast!=slow){
+                 fast=fast.next;
+                 slow=slow.next;
+             }
+             return fast;
+         }
+        }
+    }
+
+
 	@Test
 	public void test(){
 		 int[] array={1,2,3,4,5,6,7};

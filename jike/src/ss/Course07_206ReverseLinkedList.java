@@ -33,6 +33,7 @@ public class Course07_206ReverseLinkedList {
 		}
 		System.out.println();
 	}
+
 	public ListNode arrayToList(int[] array){
 		ListNode head=new ListNode(0);
 		ListNode p=head;
@@ -42,6 +43,7 @@ public class Course07_206ReverseLinkedList {
 		}
 		return head.next;
 	}
+
 	/**
 	 * 链表反转，非递归算法
 	 */
@@ -62,6 +64,7 @@ public class Course07_206ReverseLinkedList {
 	    	return pre;
 	    }
 	}
+
 	/**
 	 * 链表反转，递归算法
 	 */
@@ -74,6 +77,7 @@ public class Course07_206ReverseLinkedList {
 		    return tail;
 		}
 	}
+
 	public ListNode recursive(ListNode p){
 		if(p.next==null){
 			return p;
@@ -84,6 +88,7 @@ public class Course07_206ReverseLinkedList {
 			return tail;
 		}
 	}
+
 	@Test
 	public void test01(){
 		int[] array={1,2,3,4,5,6};
@@ -92,6 +97,7 @@ public class Course07_206ReverseLinkedList {
 		head=reverseList(head);
 		printList(head);
 	}
+
 	@Test
 	public void test02(){
 		int[] array={1,2,3,4,5,6};

@@ -6,6 +6,8 @@ import java.util.Map;
 /** 386 Longest Substring with At Most K Distinct Characters
  * Created by tianhuizhu on 6/28/17.
  */
+
+
 public class _386_Longest_Substring_with_At_Most_K_Distinct_Characters {
     /**
      * @param s : A string
@@ -46,7 +48,7 @@ public class _386_Longest_Substring_with_At_Most_K_Distinct_Characters {
         }
         return maxLen;
     }
-
-
-
 }
+
+
+

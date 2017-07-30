@@ -14,6 +14,7 @@ public class Course04_3_009PalindromeNumber {
 		}
 		return count;
 	}
+
 	/**
 	 计算m的n次方
 	 */
@@ -24,6 +25,7 @@ public class Course04_3_009PalindromeNumber {
 		}
 		return multy;
 	}
+
 	public boolean isPalindrome(int x) {
 		if(x<0){
 			return false;
@@ -48,6 +50,7 @@ public class Course04_3_009PalindromeNumber {
 			return true;
 		}
 	}
+
 	@Test
 	public void test(){
 		System.out.println(isPalindrome(1245421));

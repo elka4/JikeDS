@@ -6,15 +6,18 @@ package ss;
 public class Course08_ListNode {
 	public int val;
 	public Course08_ListNode next;
+
 	public Course08_ListNode(int val) {
 		super();
 		this.val = val;
 	}
+
 	public Course08_ListNode(int val, Course08_ListNode next) {
 		super();
 		this.val = val;
 		this.next = next;
 	}
+
 	@Override
 	public String toString() {
 		return "ListNode [val=" + val + "]";

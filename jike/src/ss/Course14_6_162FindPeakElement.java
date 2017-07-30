@@ -21,6 +21,7 @@ public class Course14_6_162FindPeakElement {
 		}
 		return 0;
 	}
+
 	public int findPeakElement(int[] nums) {
 		int n = nums.length;
 		if (n == 1) {
@@ -39,6 +40,7 @@ public class Course14_6_162FindPeakElement {
 		}
 		return start;
 	}
+
 	@Test
 	public void test() {
 		int[] nums = {4, 3, 2, 1, 11, 5, 12, 1, 2, 3, 6, 10, 4, 3, 2, 1};

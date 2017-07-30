@@ -13,17 +13,21 @@ public class Course14_1_BinarySearchUtil<T> {
 			return c.compareTo(b);
 		}
 	}
+
 	public Course14_1_BinarySearchUtil(Comparator<T> comp) {
 		super();
 		this.comp = comp;
 	}
+
 	public Course14_1_BinarySearchUtil() {
 		super();
 	}
+
 	public int binarySearch(T[] array, int start, int end, T key) {
 		end--;
 		return recursion(array, start, end, key);
 	}
+
 	private int recursion(T[] array, int start, int end, T key) {
 		if (start > end) {
 			return -(start + 1);

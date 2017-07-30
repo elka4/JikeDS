@@ -6,7 +6,8 @@ import org.junit.Test;
  *暴力匹配算法
  */
 public class Course06_4_028BruteForce {
-public int strStr(String haystack, String needle) {
+
+    public int strStr(String haystack, String needle) {
         if(needle.length()==0){
         	return 0;
         }
@@ -27,6 +28,7 @@ public int strStr(String haystack, String needle) {
         }
         return -1;
     }
+
 	@Test
 	public void test(){
 		String s="aabbccagdbbccdec";

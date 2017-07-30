@@ -27,6 +27,7 @@ public class Course08_4_083RemoveDuplicatesFromSortedList {
 			return head;
 		}
 	}
+
 	@Test
 	public void test() {
 		int[] array1 = {1, 1, 2, 2, 2, 3, 4};

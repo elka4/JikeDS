@@ -1,10 +1,11 @@
 package S_1_Follow_up_in_CodeInterview.all;
 
 /** 406 Minimum Size Subarray Sum
-
-
  * Created by tianhuizhu on 6/28/17.
  */
+
+
+
 public class _406_Minimum_Size_Subarray_Sum {
     /**
      * @param nums: an array of integers
@@ -32,6 +33,14 @@ public class _406_Minimum_Size_Subarray_Sum {
     }
 
 
-
-
 }
+
+
+
+
+
+
+
+
+
+

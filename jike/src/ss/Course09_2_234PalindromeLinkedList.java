@@ -16,6 +16,7 @@ public class Course09_2_234PalindromeLinkedList {
 		}
 		return n;
 	}
+
 	/**
 	 * 链表反转
 	 */
@@ -32,32 +33,35 @@ public class Course09_2_234PalindromeLinkedList {
 		head.next=null;
 		return pre;
 	}
-	  public boolean isPalindrome(ListNode head) {
-	       if(head==null||head.next==null){
-	    	   return true;
-	       }
-	       int n=lengthOfList(head);
-	       int half=n/2;
-	       //1 2 3 4 3 2 1
-	       ListNode leftEnd=head;
-	       for(int i=0;i<half-1;i++){
-	    	   leftEnd=leftEnd.next;
-	       }
-	       ListNode rightStart=leftEnd.next;
-	       if(n%2!=0){
-	    	   rightStart=rightStart.next;
-	       }
-	       rightStart=reverseList(rightStart);
-	       ListNode leftStart=head;
-	       for(int i=1;i<=half;i++){
-	    	   if(leftStart.val!=rightStart.val){
-	    		   return false;
-	    	   }
-	    	   leftStart=leftStart.next;
-	    	   rightStart=rightStart.next;
-	       }
-	       return true;
-	    }
+
+    public boolean isPalindrome(ListNode head) {
+       if(head==null||head.next==null){
+           return true;
+       }
+       int n=lengthOfList(head);
+       int half=n/2;
+       //1 2 3 4 3 2 1
+       ListNode leftEnd=head;
+       for(int i=0;i<half-1;i++){
+           leftEnd=leftEnd.next;
+       }
+       ListNode rightStart=leftEnd.next;
+       if(n%2!=0){
+           rightStart=rightStart.next;
+       }
+       rightStart=reverseList(rightStart);
+       ListNode leftStart=head;
+       for(int i=1;i<=half;i++){
+           if(leftStart.val!=rightStart.val){
+               return false;
+           }
+           leftStart=leftStart.next;
+           rightStart=rightStart.next;
+       }
+       return true;
+    }
+
+
 	  @Test
 	  public void test(){
 		  int[] array1={1,2,3,4,3,2,1};

@@ -15,6 +15,7 @@ public class Course09_1_061RotateList {
 		}
 		return n;
 	}
+
 	/**
 	旋转链表
 	 */
@@ -46,6 +47,7 @@ public class Course09_1_061RotateList {
 	    	return newHead;
 	    }
 	}
+
 	@Test
 	public void test(){
 		int[] array1={1,2,3,4,5};

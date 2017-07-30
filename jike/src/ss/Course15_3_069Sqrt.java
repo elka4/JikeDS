@@ -23,6 +23,7 @@ public class Course15_3_069Sqrt {
 			}
 		}
 	}
+
 	@Test
 	public void test() {
 		System.out.println(mySqrt(9));

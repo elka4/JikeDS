@@ -11,6 +11,7 @@ public class Course15_2_050Pow {
 		}
 		return result;
 	}
+
 	public double myPowLinear(double x, int n) {
 		if (n == 0) {
 			return 1;
@@ -24,12 +25,15 @@ public class Course15_2_050Pow {
 			}
 		}
 	}
+
 	public static final double d = 0.00001;
+
 	@Test
 	public void testLinear() {
 		Assert.assertTrue(Math.pow(3, 5) == myPowLinear(3, 5));
 		Assert.assertTrue(Math.abs(Math.pow(3, -5) - myPowLinear(3, -5)) <= d);
 	}
+
 	private double logNTime(double x, int n) {
 		if (n == 1) {
 			return x;
@@ -42,6 +46,7 @@ public class Course15_2_050Pow {
 			}
 		}
 	}
+
 	public double myPowBinary(double x, int n) {
 		if (n == 0) {
 			return 1;
@@ -55,6 +60,7 @@ public class Course15_2_050Pow {
 			}
 		}
 	}
+
 	@Test
 	public void test() {
 		System.out.println(myPowBinary(1, -2147483648));

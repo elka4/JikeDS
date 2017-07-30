@@ -16,6 +16,7 @@ public class Course14_4_074SearchMatrix {
 			return searchCol(matrix, row, n, target);
 		}
 	}
+
 	private int searchRow(int[][] matrix, int m, int n, int target) {
 		int start = 0, end = m - 1;
 		int mid;
@@ -31,6 +32,7 @@ public class Course14_4_074SearchMatrix {
 		}
 		return start;
 	}
+
 	private boolean searchCol(int[][] matrix, int row, int n, int target) {
 		int start = 0, end = n - 1;
 		int mid;
@@ -46,6 +48,7 @@ public class Course14_4_074SearchMatrix {
 		}
 		return false;
 	}
+
 	@Test
 	public void test() {
 		int[][] matrix = {

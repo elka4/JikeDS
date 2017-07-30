@@ -6,6 +6,7 @@ import org.junit.Test;
 英语单词的"同分异构体"
  */
 public class Course06_1_242ValidAnagram {
+
 	 public boolean isAnagram(String s, String t) {
 	        if(s==null&&t==null){
 	        	return true;
@@ -33,6 +34,8 @@ public class Course06_1_242ValidAnagram {
 	        	return true;
 	        }
 	    }
+
+
 	 @Test
 	 public void test(){
 		 System.out.println(isAnagram("anagram", "nagaram"));

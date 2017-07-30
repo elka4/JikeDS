@@ -21,6 +21,8 @@ public class Course04_1_PalindromeString {
 		}
 		return true;
 	}
+
+
 	@Test
 	public void test(){
 		System.out.println(isPalindrome("abcdcba"));

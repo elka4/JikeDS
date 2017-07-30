@@ -8,6 +8,7 @@ public class Course15_4_MyLog {
 		return Math.log(b) / Math.log(a);
 	}
 	public int count = 0;
+
 	public double logBinary(double a, double b) {
 		if (b == 1) {
 			return 0;
@@ -29,6 +30,7 @@ public class Course15_4_MyLog {
 			}
 		}
 	}
+
 	public double isLog(double a, double mid, double b) {
 		long c = Math.round(mid);
 		if (Math.pow(a, c) == b) {
@@ -37,6 +39,7 @@ public class Course15_4_MyLog {
 			return mid;
 		}
 	}
+
 	public double logNewton(double a, double b, double init) {
 		if (b == 1) {
 			return 0;
@@ -55,11 +58,13 @@ public class Course15_4_MyLog {
 			}
 		}
 	}
+
 	@Test
 	public void testCommon() {
 		System.out.println(logCommon(2, 9));
 		System.out.println(logCommon(3, 243));
 	}
+
 	@Test
 	public void testBinary() {
 		System.out.println(logBinary(2, 9));
@@ -68,6 +73,7 @@ public class Course15_4_MyLog {
 		System.out.println(logCommon(3, 243));
 		System.out.println(count);
 	}
+
 	@Test
 	public void testNewton() {
 		System.out.println(logNewton(2, 9, 4));

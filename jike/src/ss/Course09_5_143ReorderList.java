@@ -16,6 +16,7 @@ public class Course09_5_143ReorderList {
 		}
 		return n;
 	}
+
 	public ListNode reverseList(ListNode head){
 		ListNode pre=head;
 		ListNode p=pre.next;
@@ -29,39 +30,48 @@ public class Course09_5_143ReorderList {
 		head.next=null;
 		return pre;
 	}
-	  public void reorderList(ListNode head) {
-	     if(head==null||head.next==null){
-	    	 return;
-	     }
-	     int n=lengthOfList(head);
-	     int half=n/2;
-	     if(n%2!=0){
-	    	 half++;
-	     }
-	     ListNode leftEnd=head;
-	     for(int i=1;i<half;i++){
-	    	 leftEnd=leftEnd.next;
-	     }
-	     ListNode rightStart=leftEnd.next;
-	     rightStart=reverseList(rightStart);
-	     leftEnd.next=null;
-	     ListNode left=head;
-	     ListNode right=rightStart;
-	     boolean flag=true;
-	     ListNode next=null;
-	     while(right!=null){
-	    	 if(flag){
-	    		 next=left.next;
-	    		 left.next=right;
-	    		 left=next;
-	    	 }else{
-	    		 next=right.next;
-	    		 right.next=left;
-	    		 right=next;
-	    	 }
-	    	 flag=!flag;
-	     }
-	    }
+
+    public void reorderList(ListNode head) {
+        if(head==null||head.next==null){
+           return;
+        }
+        int n=lengthOfList(head);
+        int half=n/2;
+
+        if(n%2!=0){
+           half++;
+        }
+
+        ListNode leftEnd=head;
+
+        for(int i=1;i<half;i++){
+           leftEnd=leftEnd.next;
+        }
+
+        ListNode rightStart=leftEnd.next;
+        rightStart=reverseList(rightStart);
+        leftEnd.next=null;
+        ListNode left=head;
+        ListNode right=rightStart;
+        boolean flag=true;
+        ListNode next=null;
+
+        while(right!=null){
+           if(flag){
+               next=left.next;
+               left.next=right;
+               left=next;
+         }else{
+             next=right.next;
+             right.next=left;
+             right=next;
+         }
+
+           flag=!flag;
+        }
+    }
+
+
 	  @Test
 	  public void test(){
 		  int[] array1={1,2,3,4,5,6};

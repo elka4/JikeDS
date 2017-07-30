@@ -27,6 +27,7 @@ public class Course08_3_203RemoveLinkedListElements {
 			return newHead.next;
 		}
 	}
+
 	@Test
 	public void test() {
 		int[] array1 = {1, 6, 6, 4, 6, 3, 5};

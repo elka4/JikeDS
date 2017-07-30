@@ -32,6 +32,7 @@ public class Course08_5_082RemoveDuplicatesFromSortedListII {
 			return newHead.next;
 		}
 	}
+
 	@Test
 	public void test() {
 		int[] array1 = {1, 2, 3, 3, 3, 4, 4, 5};
