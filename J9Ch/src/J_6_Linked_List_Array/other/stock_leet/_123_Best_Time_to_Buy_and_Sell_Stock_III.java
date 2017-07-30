@@ -5,12 +5,17 @@ package J_6_Linked_List_Array.other.stock_leet;
 /*
 Say you have an array for which the ith element is the price of a given stock on day i.
 
-Design an algorithm to find the maximum profit. You may complete at most two transactions.
+Design an algorithm to find the maximum profit.
+You may complete at most two transactions.
 
 Note:
-You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
+You may not engage in multiple transactions at the same time
+(ie, you must sell the stock before you buy again).
  */
 
+/*
+只许两次操作
+ */
 public class _123_Best_Time_to_Buy_and_Sell_Stock_III {
     //Is it Best Solution with O(n), O(1).
 
@@ -55,7 +60,8 @@ public class _123_Best_Time_to_Buy_and_Sell_Stock_III {
     //2ms Java DP Solution
 
     public int maxProfit3(int[] prices) {
-        // these four variables represent your profit after executing corresponding transaction
+        // these four variables represent your profit after
+        // executing corresponding transaction
         // in the beginning, your profit is 0.
         // when you buy a stock ,the profit will be deducted of the price of stock.
         int firstBuy = Integer.MIN_VALUE, firstSell = 0;
@@ -89,7 +95,8 @@ public class _123_Best_Time_to_Buy_and_Sell_Stock_III {
         int leftMin = prices[0];
         for (int i=0; i<lenght; i++) {
             if (prices[i] < leftMin) leftMin = prices[i];
-            if (prices[i] - leftMin > leftMaxProfit) leftMaxProfit = prices[i]-leftMin;
+            if (prices[i] - leftMin > leftMaxProfit)
+                leftMaxProfit = prices[i]-leftMin;
             leftProfit[i] = leftMaxProfit;
         }
 
@@ -98,7 +105,8 @@ public class _123_Best_Time_to_Buy_and_Sell_Stock_III {
         int rightMax = prices[lenght-1];
         for (int i=lenght-1; i>=0; i--) {
             if (prices[i] > rightMax) rightMax = prices[i];
-            if (rightMax - prices[i] > rightMaxProfit) rightMaxProfit = rightMax - prices[i];
+            if (rightMax - prices[i] > rightMaxProfit)
+                rightMaxProfit = rightMax - prices[i];
             int currentProfit = rightMaxProfit + (i>0 ? leftProfit[i-1] : 0);
             if (currentProfit > maxProfit) {
                 maxProfit = currentProfit;

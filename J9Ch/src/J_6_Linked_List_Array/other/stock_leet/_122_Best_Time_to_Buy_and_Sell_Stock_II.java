@@ -1,13 +1,16 @@
 package J_6_Linked_List_Array.other.stock_leet;
 
 //122 Best Time to Buy and Sell Stock II
-
+@SuppressWarnings({ "unused"})
 /*
 Say you have an array for which the ith element is the price of a given stock on day i.
 
 Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
 
+ */
 
+/*
+允许多次交易，每次只允许一个操作
  */
 public class _122_Best_Time_to_Buy_and_Sell_Stock_II {
 
@@ -21,8 +24,10 @@ public class _122_Best_Time_to_Buy_and_Sell_Stock_II {
         if (s >= prices.length)
             return 0;
         int max = 0;
+
         for (int start = s; start < prices.length; start++) {
             int maxprofit = 0;
+
             for (int i = start + 1; i < prices.length; i++) {
                 if (prices[start] < prices[i]) {
                     int profit = calculate(prices, i + 1) + prices[i] - prices[start];
@@ -33,6 +38,7 @@ public class _122_Best_Time_to_Buy_and_Sell_Stock_II {
             if (maxprofit > max)
                 max = maxprofit;
         }
+
         return max;
     }
 
@@ -45,12 +51,17 @@ public class _122_Best_Time_to_Buy_and_Sell_Stock_II {
         int peak = prices[0];
         int maxprofit = 0;
         while (i < prices.length - 1) {
+            //停止递减的时候得到的就是peak
             while (i < prices.length - 1 && prices[i] >= prices[i + 1])
                 i++;
             valley = prices[i];
+
+            //停止的递增的时候得到的是valley
             while (i < prices.length - 1 && prices[i] <= prices[i + 1])
                 i++;
             peak = prices[i];
+
+            //update maxprofit
             maxprofit += peak - valley;
         }
         return maxprofit;
@@ -59,7 +70,10 @@ public class _122_Best_Time_to_Buy_and_Sell_Stock_II {
 //////////////////////////////////////////////////////////////
 
     //Approach #3 (Simple One Pass) [Accepted]
-
+    /*
+    想法很简单，类似于微积分，就是把全部内容分化到每个小步骤
+    把所有递增的小步骤都加起来
+     */
     public int maxProfit3(int[] prices) {
         int maxprofit = 0;
         for (int i = 1; i < prices.length; i++) {

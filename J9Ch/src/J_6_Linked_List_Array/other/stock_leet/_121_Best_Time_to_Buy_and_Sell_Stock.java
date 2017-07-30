@@ -22,6 +22,8 @@ Output: 0
 In this case, no transaction is done, i.e. max profit = 0.
 
  */
+
+//找一个前面的最小和一个后面的最大
 public class _121_Best_Time_to_Buy_and_Sell_Stock {
 
     //Approach #1 (Brute Force) [Time Limit Exceeded]
@@ -40,6 +42,13 @@ public class _121_Best_Time_to_Buy_and_Sell_Stock {
 ///////////////////////////////////////////////////////////
 
     //Approach #2 (One Pass) [Accepted]
+
+    /*
+    每轮都重设minprice和maxprofit
+    minprice先设为Integer.MAX_VALUE
+    maxprofit先设为0
+
+     */
     public int maxProfit2(int prices[]) {
         int minprice = Integer.MAX_VALUE;
         int maxprofit = 0;
@@ -56,7 +65,10 @@ public class _121_Best_Time_to_Buy_and_Sell_Stock {
 
     //Kadane's Algorithm - Since no one has mentioned about
     // this so far :) (In case if interviewer twists the input)
-
+    /*
+    这个做法有意思，就是每对macCur都增加i位置的price和i-1位置的price。
+    是增加，不是重置！
+     */
     public int maxProfit3(int[] prices) {
         int maxCur = 0, maxSoFar = 0;
         for(int i = 1; i < prices.length; i++) {
@@ -70,6 +82,10 @@ public class _121_Best_Time_to_Buy_and_Sell_Stock {
 
 ///////////////////////////////////////////////////////////
     //A O(1*n) solution
+
+    /*
+    和solution第二种方法相同
+     */
     public int maxProfit4(int[] prices) {
         if (prices.length == 0){
             return 0;
@@ -95,6 +111,9 @@ public class _121_Best_Time_to_Buy_and_Sell_Stock {
 ///////////////////////////////////////////////////////////
 
     //My jave accepted solution with O(N) time and O(1) space
+    /*
+    和solution2第二种方法相同
+     */
     public int maxProfit5(int[] prices) {
         if (prices.length == 0) {
             return 0 ;

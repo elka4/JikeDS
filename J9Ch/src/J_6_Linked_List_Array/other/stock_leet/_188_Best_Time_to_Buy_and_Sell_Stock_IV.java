@@ -37,7 +37,8 @@ public class _188_Best_Time_to_Buy_and_Sell_Stock_IV {
         int len = prices.length, profit = 0;
         for (int i = 1; i < len; i++)
             // as long as there is a price gap, we gain a profit.
-            if (prices[i] > prices[i - 1]) profit += prices[i] - prices[i - 1];
+            if (prices[i] > prices[i - 1])
+                profit += prices[i] - prices[i - 1];
         return profit;
     }
 
