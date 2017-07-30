@@ -19,7 +19,63 @@ public class QuestionA {
 			n = n.next;
 		}
 	}
-	
+
+////////////////////////////////////////////////////////////////////
+
+    public static void deleteDups2(LinkedListNode head) {
+        LinkedListNode current = head;
+        while (current != null) {
+                /* Remove all future nodes that have the same value */
+            LinkedListNode runner = current;
+            while (runner.next != null) {
+                if (runner.next.data == current.data) {
+                    runner.next = runner.next.next;
+                } else {
+                    runner = runner.next;
+                }
+            }
+            current = current.next;
+        }
+    }
+
+////////////////////////////////////////////////////////////////////
+
+    public static void deleteDups3(LinkedListNode head) {
+        if (head == null) return;
+        LinkedListNode previous = head;
+        LinkedListNode current = previous.next;
+        while (current != null) {
+            // Look backwards for dups, and remove any that you see.
+            LinkedListNode runner = head;
+            while (runner != current) {
+                if (runner.data == current.data) {
+                    LinkedListNode tmp = current.next;
+                    previous.next = tmp;
+                    current = tmp;
+					/* We know we can't have more than one dup preceding
+					 * our element since it would have been removed
+					 * earlier. */
+                    break;
+                }
+                runner = runner.next;
+            }
+
+			/* If runner == current, then we didn't find any duplicate
+			 * elements in the previous for loop.  We then need to
+			 * increment current.
+			 * If runner != current, then we must have hit the �break�
+			 * condition, in which case we found a dup and current has
+			 * already been incremented.*/
+            if (runner == current) {
+                previous = current;
+                current = current.next;
+            }
+        }
+    }
+
+////////////////////////////////////////////////////////////////////
+
+
 	public static void main(String[] args) {
 		//AssortedMethods.randomLinkedList(1000, 0, 2);
 		LinkedListNode first = new LinkedListNode(0, null, null);
