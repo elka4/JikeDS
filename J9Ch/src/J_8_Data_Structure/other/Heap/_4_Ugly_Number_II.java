@@ -1,5 +1,5 @@
-package J_8_Data_Structure.all;
-import java.util.*;import lib.ListNode;
+package J_8_Data_Structure.other.Heap;
+import java.util.*;
 
 
 /** 4 Ugly Number II
@@ -7,7 +7,7 @@ import java.util.*;import lib.ListNode;
 
  * Created by tianhuizhu on 6/28/17.
  */
-public class    _4_Ugly_Number_II {
+public class _4_Ugly_Number_II {
 
     // version 1: O(n) scan
     /**
