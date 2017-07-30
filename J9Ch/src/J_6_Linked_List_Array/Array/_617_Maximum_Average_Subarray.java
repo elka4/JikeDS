@@ -3,6 +3,21 @@ package J_6_Linked_List_Array.Array;
 /** 617 Maximum Average Subarray
  * Created by tianhuizhu on 6/28/17.
  */
+
+/*
+Given an array with positive and negative numbers, find the maximum average
+subarray which length should be greater or equal to given length k.
+
+ Notice
+
+It's guaranteed that the size of the array is greater or equal to k.
+
+Given nums = [1, 12, -5, -6, 50, 3], k = 3
+
+Return 15.667 // (-6 + 50 + 3) / 3 = 15.667
+ */
+
+
 public class _617_Maximum_Average_Subarray {
     /**
      * @param nums an array with positive and negative numbers
@@ -48,18 +63,5 @@ public class _617_Maximum_Average_Subarray {
         }
         return false;
     }
-
-
 }
 
-/*
-Given an array with positive and negative numbers, find the maximum average subarray which length should be greater or equal to given length k.
-
- Notice
-
-It's guaranteed that the size of the array is greater or equal to k.
-
-Given nums = [1, 12, -5, -6, 50, 3], k = 3
-
-Return 15.667 // (-6 + 50 + 3) / 3 = 15.667
- */

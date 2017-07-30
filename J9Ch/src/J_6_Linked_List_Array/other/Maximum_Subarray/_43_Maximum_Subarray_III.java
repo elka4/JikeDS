@@ -12,49 +12,25 @@ import java.util.List;
  * Created by tianhuizhu on 6/28/17.
  */
 
-/**
- * @param nums: A list of integers
- * @param k: An integer denote to find k non-overlapping subarrays
- * @return: An integer denote the sum of max k non-overlapping subarrays
- */
-
-/*
-Given an array of integers and a number k,
-find k non-overlapping subarrays which have the largest sum.
-The number in each subarray should be contiguous.
-Return the largest sum.
-The subarray should contain at least one number
- */
-
-// Given [-1,4,-2,3,-2,3], k=2, return 8
-
+    /**
+     * @param nums: A list of integers
+     * @param k: An integer denote to find k non-overlapping subarrays
+     * @return: An integer denote the sum of max k non-overlapping subarrays
+     */
 
     /*
-    这是一题划分类型的题目, 划分类型的题目只关心划分位,而不关心区间里面的内容.针对这题来说,
-    我们只划分数组,并不是划分的区间内的所有数字形成的子数组就是我们在这个划分中要找的,
-    可能是子子数组, 和区间型DP(Scramble String,Burst Balloons)形成了比较大的区别.这点需要注意.
-     也是划分类DP这种特点, 导致我们直接用类似区间型DP的定义方式,复杂度会很高,子子数组怎么复杂度很高.
-
-    所以此类题目一个比较好的解法是采用local, global双状态. local保存当前位置为结尾的局部最优状态,
-     global保存全局最优状态.
-
-    如果采用传统解法:
-
-    state: f[i][j]表示前i个元素选了j次子数组，能够取得的最大值
-
-    function: f[i][j] = max{f[x][j-1] + subarray(x+1, i)} {x=0->i-1}
-
-    answer: f[n][k]
-
-    intialize: f[i][0] = 0, f[0][i] = -MAXINT (i>0)
-    其中转换状态中的subarray(x+1,i)需要求 x+1至i位置中的和最大的子数组.这个复杂度比较高.
-    需要提前求出来,本身又是一个O(n^2)的DP问题,总体的复杂度为O(kn^2).
-
-    如果采用local, global的方法:
-    state: local[i][j]定义为前i个元素中取j个子数组, 其中第i个元素一定会被取到的最大和.
-             global[i][j]定义为前i个元素取j个子数组,第i个元素不管取不取的最大值,
-             显然 global 是一个全局最优值.
+    Given an array of integers and a number k,
+    find k non-overlapping subarrays which have the largest sum.
+    The number in each subarray should be contiguous.
+    Return the largest sum.
+    The subarray should contain at least one number
      */
+
+    // Given [-1,4,-2,3,-2,3], k=2, return 8
+
+
+
+    //找k个不overlap的subarray，sum最大
 
 public class _43_Maximum_Subarray_III {
 
@@ -103,6 +79,33 @@ public class _43_Maximum_Subarray_III {
         System.out.println(maxSubArray(nums, 4));
     }
 
+
+    /*
+    这是一题划分类型的题目, 划分类型的题目只关心划分位,而不关心区间里面的内容.针对这题来说,
+    我们只划分数组,并不是划分的区间内的所有数字形成的子数组就是我们在这个划分中要找的,
+    可能是子子数组, 和区间型DP(Scramble String,Burst Balloons)形成了比较大的区别.这点需要注意.
+     也是划分类DP这种特点, 导致我们直接用类似区间型DP的定义方式,复杂度会很高,子子数组怎么复杂度很高.
+
+    所以此类题目一个比较好的解法是采用local, global双状态. local保存当前位置为结尾的局部最优状态,
+     global保存全局最优状态.
+
+    如果采用传统解法:
+
+    state: f[i][j]表示前i个元素选了j次子数组，能够取得的最大值
+
+    function: f[i][j] = max{f[x][j-1] + subarray(x+1, i)} {x=0->i-1}
+
+    answer: f[n][k]
+
+    intialize: f[i][0] = 0, f[0][i] = -MAXINT (i>0)
+    其中转换状态中的subarray(x+1,i)需要求 x+1至i位置中的和最大的子数组.这个复杂度比较高.
+    需要提前求出来,本身又是一个O(n^2)的DP问题,总体的复杂度为O(kn^2).
+
+    如果采用local, global的方法:
+    state: local[i][j]定义为前i个元素中取j个子数组, 其中第i个元素一定会被取到的最大和.
+             global[i][j]定义为前i个元素取j个子数组,第i个元素不管取不取的最大值,
+             显然 global 是一个全局最优值.
+     */
 //////////////////////////////////////////////////////////////////////////////////
 
 

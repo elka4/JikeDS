@@ -22,11 +22,11 @@ import org.junit.Test;
  */
 
 /*
-Given the array [−2,2,−3,4,−1,2,1,−5,3], the contiguous subarray [4,−1,2,1] has the largest sum = 6.
-
-
+Given the array [−2,2,−3,4,−1,2,1,−5,3], the contiguous subarray [4,−1,2,1]
+has the largest sum = 6.
  */
 
+//找sum最大的subarray
 
 public class _41_Maximum_Subarray {
 
@@ -75,6 +75,7 @@ public class _41_Maximum_Subarray {
     }
 
 /////////////////////////////////////////////////////////
+
 
     public int maxSubArray3(int[] nums) {
         // write your code

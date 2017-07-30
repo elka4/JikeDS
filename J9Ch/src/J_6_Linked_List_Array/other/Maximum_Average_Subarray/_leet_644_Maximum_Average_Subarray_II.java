@@ -1,4 +1,4 @@
-package J_6_Linked_List_Array.Array;
+package J_6_Linked_List_Array.other.Maximum_Average_Subarray;
 
 // 644. Maximum Average Subarray II
 

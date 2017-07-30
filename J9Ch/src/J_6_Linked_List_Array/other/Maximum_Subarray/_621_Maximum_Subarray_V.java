@@ -3,10 +3,26 @@ package J_6_Linked_List_Array.other.Maximum_Subarray;
 import java.util.LinkedList;
 
 /** 621  Maximum Subarray V
-
-
  * Created by tianhuizhu on 6/28/17.
  */
+
+/*
+Given an integer arrays, find a contiguous subarray which has the largest sum and
+ length should be between k1 and k2 (include k1 and k2).
+Return the largest sum, return 0 if there are fewer than k1 elements in the array.
+
+ Notice
+
+Ensure that the result is an integer type.
+
+Have you met this question in a real interview? Yes
+Example
+Given the array [-2,2,-3,4,-1,2,1,-5,3] and k1 = 2, k2 = 4, the contiguous subarray
+ [4,-1,2,1] has the largest sum = 6.
+ */
+
+// 长度在k1 and k2之间的subarray， sum最大
+
 public class _621_Maximum_Subarray_V {
     /**
      * @param nums an array of integers
@@ -51,17 +67,3 @@ public class _621_Maximum_Subarray_V {
 
 }
 
-/*
-Given an integer arrays, find a contiguous subarray which has the largest sum and
- length should be between k1 and k2 (include k1 and k2).
-Return the largest sum, return 0 if there are fewer than k1 elements in the array.
-
- Notice
-
-Ensure that the result is an integer type.
-
-Have you met this question in a real interview? Yes
-Example
-Given the array [-2,2,-3,4,-1,2,1,-5,3] and k1 = 2, k2 = 4, the contiguous subarray
- [4,-1,2,1] has the largest sum = 6.
- */

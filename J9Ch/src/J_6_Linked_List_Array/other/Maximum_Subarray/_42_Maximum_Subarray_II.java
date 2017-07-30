@@ -27,7 +27,7 @@ For given [1, 3, -1, 2, -1, 2], the two subarrays are [1, 3]and [2, -1, 2]
 or [1, 3, -1, 2] and [2], they both have the largest sum 7.
  */
 
-
+//两个不overlap的subarray，sum最大
 
 public class _42_Maximum_Subarray_II {
 

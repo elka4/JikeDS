@@ -3,6 +3,25 @@ package J_6_Linked_List_Array.other.Maximum_Subarray;
 /** 620 Maximum Subarray IV
  * Created by tianhuizhu on 6/28/17.
  */
+
+/*
+Given an integer arrays, find a contiguous subarray which has the largest sum
+ and length should be greater or equal to given length k.
+Return the largest sum, return 0 if there are fewer than k elements in the array.
+
+ Notice
+
+Ensure that the result is an integer type.
+
+Have you met this question in a real interview? Yes
+Example
+Given the array [-2,2,-3,4,-1,2,1,-5,3] and k = 5, the contiguous subarray
+ [2,-3,4,-1,2,1] has the largest sum = 5.
+ */
+
+
+//找长度大于等于k的subarray，其中sum最大
+
 public class _620_Maximum_Subarray_IV {
     /**
      * @param nums an array of integers
@@ -36,17 +55,3 @@ public class _620_Maximum_Subarray_IV {
     }
 
 }
-/*
-Given an integer arrays, find a contiguous subarray which has the largest sum
- and length should be greater or equal to given length k.
-Return the largest sum, return 0 if there are fewer than k elements in the array.
-
- Notice
-
-Ensure that the result is an integer type.
-
-Have you met this question in a real interview? Yes
-Example
-Given the array [-2,2,-3,4,-1,2,1,-5,3] and k = 5, the contiguous subarray
- [2,-3,4,-1,2,1] has the largest sum = 5.
- */
