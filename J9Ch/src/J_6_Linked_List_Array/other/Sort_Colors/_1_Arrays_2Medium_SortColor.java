@@ -1,6 +1,7 @@
 package J_6_Linked_List_Array.other.Sort_Colors;
 
 //https://leetcode.com/problems/sort-colors/
+
 // two pointer, 从两侧向中央
 public class _1_Arrays_2Medium_SortColor {
 
@@ -9,12 +10,19 @@ public class _1_Arrays_2Medium_SortColor {
 		if(arr == null || arr.length <= 1) {
 			return;
 		}
-		int left = 0;// represents the right boundary of processed '0'
-		int right = arr.length - 1; //represents the left boundary of processed '2'
-		int cur = 0; // scanner for unprocessed data
+
+        // represents the right boundary of processed '0'
+		int left = 0;
+
+        //represents the left boundary of processed '2'
+		int right = arr.length - 1;
+
+        // scanner for unprocessed data
+		int cur = 0;
 
 		while (cur <= right){
-			if (arr[cur] == 0) {         // == 0 就和left swap，然后cur 和left ++
+            // == 0 就和left swap，然后cur 和left ++
+			if (arr[cur] == 0) {
 				swap(arr, cur++, left++);
 			} else if(arr[cur] == 2) {
 				swap(arr, cur, right--);

@@ -36,7 +36,9 @@ public class _547_Intersection_of_Two_Arrays {
         int i = 0, j = 0;
         int[] temp = new int[nums1.length];
         int index = 0;
+
         while (i < nums1.length && j < nums2.length) {
+
             if (nums1[i] == nums2[j]) {
                 if (index == 0 || temp[index - 1] != nums1[i]) {
                     temp[index++] = nums1[i];
@@ -62,6 +64,7 @@ public class _547_Intersection_of_Two_Arrays {
     public void test01(){
 
     }
+
 ///////////////////////////////////////////////////////////////////////
 
     // version 2: hash map
@@ -151,5 +154,7 @@ public class _547_Intersection_of_Two_Arrays {
 
         return false;
     }
+
+//////////////////////////////////////////////////////////////////////////
 
 }

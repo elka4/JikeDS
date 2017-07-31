@@ -5,11 +5,18 @@ public class _23Sort_Colors {
         if (a == null || a.length <= 1) {
             return;
         }
-        
-        int pl = 0;//have only 0 on its left
-        int pr = a.length - 1;//have only 2 on its right
-        int i = 0;//have both 0 and 1 on its left
+
+        //have only 0 on its left
+        int pl = 0;
+
+        //have only 2 on its right
+        int pr = a.length - 1;
+
+        //have both 0 and 1 on its left
+        int i = 0;
+
         while (i <= pr) {
+
             if (a[i] == 0) {
                 swap(a, pl, i);
                 pl++;

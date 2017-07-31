@@ -19,8 +19,11 @@ public class merge_sort {
         int left = start, right = end;
         int mid = (start + end) / 2;
 
+
         mergeSort(A, start, mid, temp);
         mergeSort(A, mid+1, end, temp);
+
+
         merge(A, start, mid, end, temp);
     }
     

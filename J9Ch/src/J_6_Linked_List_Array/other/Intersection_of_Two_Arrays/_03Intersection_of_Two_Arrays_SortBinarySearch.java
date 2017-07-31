@@ -6,6 +6,11 @@ import java.util.HashSet;
 //version 3: sort & binary search
 //time O(nlogn + mlogn)
 //Space O(1)
+
+// Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2].
+
+
+
 public class _03Intersection_of_Two_Arrays_SortBinarySearch {
 	/**
      * @param nums1 an integer array
@@ -37,6 +42,7 @@ public class _03Intersection_of_Two_Arrays_SortBinarySearch {
         
         return result;
     }
+
     
     private boolean binarySearch(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
@@ -65,4 +71,9 @@ public class _03Intersection_of_Two_Arrays_SortBinarySearch {
         
         return false;
     }
+
+///////////////////////////////////////////////////////////////////////
+
+
+
 }

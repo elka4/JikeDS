@@ -1,26 +1,34 @@
 package J_6_Linked_List_Array.other.Sort_Colors;
 
 public class _22Sort_Letters_by_Case {
-/** 
- *@param chars: The letter array you should sort by Case
- *@return: void
- */
-public void sortLetters(char[] chars) {
-    int i = 0, j = chars.length - 1;
-	char tmp ;
-	while ( i <= j) {
-		while (i <= j && Character.isLowerCase(chars[i]) ) i++;
-		while (i <= j && Character.isUpperCase(chars[j]) ) j--;
-		if (i <= j) {
-			tmp = chars[i];
-			chars[i] = chars[j];
-			chars[j] = tmp;
-			i++; j--;
-		}
-	}
-    //write your code here
-	return ;
-}
+    /**
+     *@param chars: The letter array you should sort by Case
+     *@return: void
+     */
+
+    public void sortLetters(char[] chars) {
+        int i = 0, j = chars.length - 1;
+        char tmp ;
+        while ( i <= j) {
+
+            while (i <= j && Character.isLowerCase(chars[i]) ) i++;
+
+            while (i <= j && Character.isUpperCase(chars[j]) ) j--;
+
+            if (i <= j) {
+                swap(chars, i, j);
+                i++;
+                j--;
+            }
+        }
+        return ;
+    }
+
+    private void swap(char[] chars, int i, int j){
+        char temp = chars[i];
+        chars[i] = chars[j];
+        chars[j] = temp;
+    }
 }
 
 /*Given a string which contains only letters. 

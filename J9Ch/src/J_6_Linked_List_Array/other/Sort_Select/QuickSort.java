@@ -7,6 +7,7 @@ public class QuickSort {
      * @return void
      */
     public void sortIntegers2(int[] A) {
+
         quickSort(A, 0, A.length - 1);
     }
 
@@ -22,6 +23,7 @@ public class QuickSort {
         // key point 2: every time you compare left & right, it should be
         // left <= right not left < right
         while (left <= right) {
+
             // key point 3: A[left] < pivot not A[left] <= pivot
             while (left <= right && A[left] < pivot) {
                 left++;

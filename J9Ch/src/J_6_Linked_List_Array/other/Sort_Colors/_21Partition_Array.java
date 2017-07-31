@@ -1,6 +1,8 @@
  package J_6_Linked_List_Array.other.Sort_Colors;
 
-public class _21Partition_Array {
+ import org.junit.Test;
+
+ public class _21Partition_Array {
 	/** 
      *@param nums: The integer array you should partition
      *@param k: As description
@@ -12,6 +14,7 @@ public class _21Partition_Array {
         }
         
         int left = 0, right = nums.length - 1;
+
         while (left <= right) {
 
             while (left <= right && nums[left] < k) {
@@ -23,9 +26,7 @@ public class _21Partition_Array {
             }
 
             if (left <= right) {
-                int temp = nums[left];
-                nums[left] = nums[right];
-                nums[right] = temp;
+                swap(nums, left, right);
                 
                 left++;
                 right--;
@@ -33,6 +34,36 @@ public class _21Partition_Array {
         }
         return left;
     }
+
+    private void swap(int[] nums, int i, int j){
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
+
+    }
+
+    @Test
+     public void test01(){
+        int[] nums = {3,2,2,1};
+        int k = 2;
+        System.out.println(partitionArray(nums, k));
+        for (int i: nums
+             ) {
+            System.out.print(i + " ");
+        }
+    }
+
+
+     @Test
+     public void test02(){
+         int[] nums = {3,2,2,1};
+         int k = 3;
+         System.out.println(partitionArray(nums, k));
+         for (int i: nums
+                 ) {
+             System.out.print(i + " ");
+         }
+     }
 }
 
 /*Given an array nums of integers and an int k, partition the array

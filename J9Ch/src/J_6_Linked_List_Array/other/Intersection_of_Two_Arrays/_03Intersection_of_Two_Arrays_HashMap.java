@@ -5,6 +5,10 @@ import java.util.HashSet;
 //version 2: hash map
 //Time O(n+m)
 //Space O(min(n,m))
+
+// Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2].
+
+
 public class _03Intersection_of_Two_Arrays_HashMap {
 	/**
      * @param nums1 an integer array
@@ -31,10 +35,14 @@ public class _03Intersection_of_Two_Arrays_HashMap {
         int size = resultHash.size();
         int[] result = new int[size];
         int index = 0;
+
         for (Integer num : resultHash) {
             result[index++] = num;
         }
         
         return result;
     }
+
+///////////////////////////////////////////////////////////////////////
+
 }
