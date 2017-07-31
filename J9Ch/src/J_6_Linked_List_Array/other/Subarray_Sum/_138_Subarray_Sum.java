@@ -18,8 +18,11 @@ Your code should return the index of the first number and the index of the last 
 
 // [-3, 1, 2, -3, 4], return [0, 2] or [1, 3]
 
-    //presum
-    //区间为零意味着前后两个presum相等
+//presum
+//区间为零意味着前后两个presum相等
+
+//sum最接近0的subarray
+
 
 public class _138_Subarray_Sum {
     /**

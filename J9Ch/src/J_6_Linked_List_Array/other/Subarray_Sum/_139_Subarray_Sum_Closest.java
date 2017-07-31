@@ -10,6 +10,16 @@ import java.util.Comparator;
 
  * Created by tianhuizhu on 6/28/17.
  */
+
+/*
+Given an integer array, find a subarray with sum closest to zero.
+Return the indexes of the first number and last number.
+Example
+Given [-3, 1, 1, -3, 5], return [0, 2], [1, 3], [1, 1], [2, 2] or [0, 4].
+ */
+
+//sum最接近0的subarray
+
 public class _139_Subarray_Sum_Closest {
 
     class Pair {
@@ -101,11 +111,3 @@ public class _139_Subarray_Sum_Closest {
 */
 
 
-/*
-Given an integer array, find a subarray with sum closest to zero.
-Return the indexes of the first number and last number.
-
-Have you met this question in a real interview? Yes
-Example
-Given [-3, 1, 1, -3, 5], return [0, 2], [1, 3], [1, 1], [2, 2] or [0, 4].
- */

@@ -2,7 +2,6 @@ package J_6_Linked_List_Array.other.Maximum_Average_Subarray;
 
 // 644. Maximum Average Subarray II
 
-
 /*
 Given an array consisting of n integers, find the contiguous subarray whose
  length is greater than or equal to k that has the maximum average value.
@@ -21,7 +20,13 @@ Elements of the given array will be in range [-10,000, 10,000].
 The answer with the calculation error less than 10-5 will be accepted.
  */
 
+//ontiguous subarray whose length is
+// greater than or equal to k that has the maximum average value
+
 public class _leet_644_Maximum_Average_Subarray_II {
+
+    //https://leetcode.com/problems/maximum-average-subarray-ii/solution/
+
     //Approach #1 Iterative method [Time Limit Exceeded]
     public double findMaxAverage(int[] nums, int k) {
         double res = Integer.MIN_VALUE;
@@ -58,6 +63,8 @@ public class _leet_644_Maximum_Average_Subarray_II {
         }
         return min_val;
     }
+
+
     public boolean check(int[] nums, double mid, int k) {
         double sum = 0, prev = 0, min_sum = 0;
         for (int i = 0; i < k; i++)
@@ -74,6 +81,52 @@ public class _leet_644_Maximum_Average_Subarray_II {
         return false;
     }
 
+
+
 ////////////////////////////////////////////////////////////////
+
+    //Check whether we can find a subarray whose average is bigger than x
+    boolean check(int[] nums,int k,double x) {
+        int n=nums.length;
+        double[] a=new double[n];
+        //Transfer to a[i], find whether there is a subarray whose sum is bigger than 0
+        for (int i=0;i<n;i++) a[i]=nums[i]-x;
+
+        double now=0,last=0;
+
+        for (int i=0;i<k;i++) now+=a[i];
+
+        if (now>=0) return true;
+
+        for (int i=k;i<n;i++) {
+            now+=a[i];
+            last+=a[i-k];
+            if (last<0) {
+                now-=last;
+                last=0;
+            }
+            if (now>=0) return true;
+        }
+        return false;
+    }
+
+    public double findMaxAverage3(int[] nums, int k) {
+        double l=Integer.MIN_VALUE,r=Integer.MAX_VALUE;
+
+        //Binary search the answer
+        while (r-l>0.000004) {
+            double mid=(l+r)/2;
+            if (check(nums,k,mid)) l=mid; else r=mid;
+        }
+        return r;
+    }
+
+
+////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////
+
 
 }
