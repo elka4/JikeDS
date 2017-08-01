@@ -7,7 +7,7 @@ import org.junit.Test;
  * Created by tianhuizhu on 6/27/17.
  */
 
-// from root to leaf
+// from top to bottum
 public class _595_Binary_Tree_Longest_Consecutive_Sequence {
 
     // version 1: Traverse + Divide Conquer
@@ -18,6 +18,22 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
     public int longestConsecutive(TreeNode root) {
 
         return helper(root, null, 0);
+    }
+
+    private int helper00(TreeNode root, TreeNode parent, int lengthWithoutRoot) {
+        if (root == null) {
+            return 0;
+        }
+
+        //从上往下算，一开始给root为1，符合条件就加1，不符合条件就重设为1
+        int length = (parent != null && parent.val + 1 == root.val)?
+                lengthWithoutRoot + 1
+                : 1;
+
+        int left = helper(root.left, root, length);
+        int right = helper(root.right, root, length);
+
+        return Math.max(length, Math.max(left, right));
     }
 
     private int helper(TreeNode root, TreeNode parent, int lengthWithoutRoot) {
@@ -84,7 +100,7 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
     private int longest;
     public int longestConsecutive2(TreeNode root) {
         longest = 0;
-        helper(root);
+        helper_2(root);
         return longest;
     }
 
@@ -97,6 +113,7 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         int right = helper_2(root.right);
 
         int subtreeLongest = 1; // at least we have root
+
         if (root.left != null && root.val + 1 == root.left.val) {
             subtreeLongest = Math.max(subtreeLongest, left + 1);
         }
@@ -155,6 +172,7 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         System.out.println("maxFromRoot "+helper(root).maxFromRoot);
         return helper(root).maxInSubtree;
     }
+
 
     private ResultType helper(TreeNode root) {
         if (root == null) {
@@ -250,14 +268,17 @@ A top down approach is similar to an in-order traversal.
  */
 
     public int longestConsecutive5(TreeNode root) {
+
         return dfs5(root, null, 0);
     }
 
     private int dfs5(TreeNode p, TreeNode parent, int length) {
         if (p == null) return length;
+
         length = (parent != null && p.val == parent.val + 1) ? length + 1 : 1;
-        return Math.max(length, Math.max(dfs5(p.left, p, length),
-                dfs5(p.right, p, length)));
+
+        return Math.max(length,
+                Math.max(dfs5(p.left, p, length), dfs5(p.right, p, length)));
     }
 
     /*
@@ -289,16 +310,22 @@ space due to recursion. For a skewed binary tree, the recursion could go
 
     private int dfs6(TreeNode p) {
         if (p == null) return 0;
+
         int L = dfs6(p.left) + 1;
         int R = dfs6(p.right) + 1;
+
         if (p.left != null && p.val + 1 != p.left.val) {
             L = 1;
         }
+
         if (p.right != null && p.val + 1 != p.right.val) {
             R = 1;
         }
+
         int length = Math.max(L, R);
+
         maxLength = Math.max(maxLength, length);
+
         return length;
     }
 
