@@ -1,4 +1,5 @@
-package _4_Tree.dfs_bfs;
+package _4_Tree.BST;
+import lib.*;
 
 /*
 LeetCode – Balanced Binary Tree (Java)
@@ -12,6 +13,9 @@ This is a typical tree problem that can be solve by using recursion.
 
 
  */
+
+
+//Devide and Conquer
 public class Balanced_Binary_Tree {
     public boolean isBalanced(TreeNode root) {
         if (root == null)

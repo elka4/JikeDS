@@ -6,7 +6,9 @@ Twitter Codility Problem – Max Binary Gap
 Problem: Get maximum binary Gap.
 
 For example, 9's binary form is 1001, the gap is 2.
+ */
 
+/*
 
  */
 public class Maximum_Binary_Gap {
@@ -14,7 +16,14 @@ public class Maximum_Binary_Gap {
 //
 //    An integer x & 1 will get the last digit of the integer.
 
-    public static int getGap(int N) {
+    /*
+    每次检查最右位是1还是0，然后N右移一位
+    如果最右位是0则count++
+    如果最右位是1则update max，重设count为0
+
+    注意count设为-1，以及count >= 0的条件，好确保只找1和1之间的0，而不计算1。。。0的0
+     */
+    public int getGap(int N) {
         int max = 0;
         int count = -1;
         int r = 0;
@@ -23,6 +32,7 @@ public class Maximum_Binary_Gap {
             // get right most bit & shift right
             r = N & 1;
             N = N >> 1;
+
 
             if (0 == r && count >= 0) {
                 count++;
@@ -40,7 +50,10 @@ public class Maximum_Binary_Gap {
 
     //Java Solution 2
 
-    public static int getGap2(int N) {
+////////////////////////////////////////////////////////////////////
+
+
+    public int getGap2(int N) {
         int pre = -1;
         int len = 0;
 

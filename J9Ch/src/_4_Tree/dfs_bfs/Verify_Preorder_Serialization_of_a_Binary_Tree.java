@@ -1,5 +1,8 @@
 package _4_Tree.dfs_bfs;
 import java.util.*;
+import lib.*;
+
+
 /*
 LeetCode – Verify Preorder Serialization of a Binary Tree (Java)
 
@@ -16,6 +19,8 @@ For example, the above binary tree can be serialized to the string "9,3,4,#,#,1,
 
 Given a string of comma separated values, verify whether it is a correct preorder traversal serialization of a binary tree. Find an algorithm without reconstructing the tree.
  */
+
+
 public class Verify_Preorder_Serialization_of_a_Binary_Tree {
 
     /*
@@ -50,4 +55,34 @@ We can keep removing the leaf node until there is no one to remove. If a sequenc
         else
             return false;
     }
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
 }

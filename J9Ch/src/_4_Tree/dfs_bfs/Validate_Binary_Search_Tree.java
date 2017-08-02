@@ -1,5 +1,9 @@
 package _4_Tree.dfs_bfs;
 import java.util.*;
+import lib.*;
+
+
+
 /*
 LeetCode – Validate Binary Search Tree (Java)
 
@@ -11,7 +15,10 @@ The left subtree of a node contains only nodes with keys less than the node's ke
 The right subtree of a node contains only nodes with keys greater than the node's key.
 Both the left and right subtrees must also be binary search trees.
  */
+
+
 public class Validate_Binary_Search_Tree {
+
     /*Java Solution 1 - Recursive
 
     All values on the left sub tree must be less than root, and all values on the right sub tree must be greater than root. So we just check the boundaries for each node.*/
@@ -57,6 +64,8 @@ public class Validate_Binary_Search_Tree {
         return true;
     }
 
+/////////////////////////////////////////////////////////////////////
+
     //Java Solution 2 - Iterative
 
     public class Solution {
@@ -92,6 +101,35 @@ public class Validate_Binary_Search_Tree {
             this.right = right;
         }
     }
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
 
 
 }

@@ -1,5 +1,8 @@
 package _4_Tree.dfs_bfs;
 import java.util.*;
+import lib.*;
+
+
 /*
 LeetCode – Sum Root to Leaf Numbers (Java)
 
@@ -14,7 +17,10 @@ The root-to-leaf path 1->2 represents the number 12.
 The root-to-leaf path 1->3 represents the number 13.
 Return the sum = 12 + 13 = 25.
  */
+
+
 public class Sum_Root_to_Leaf_Numbers {
+
     //Java Solution - Recursive
 
     //This problem can be solved by a typical DFS approach.
@@ -63,7 +69,7 @@ public class Sum_Root_to_Leaf_Numbers {
     }
 
 
-/////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
     //Same approach, but simpler coding style.
 
@@ -71,10 +77,10 @@ public class Sum_Root_to_Leaf_Numbers {
         if(root == null)
             return 0;
 
-        return dfs(root, 0, 0);
+        return dfs2(root, 0, 0);
     }
 
-    public int dfs(TreeNode node, int num, int sum){
+    public int dfs2(TreeNode node, int num, int sum){
         if(node == null) return sum;
 
         num = num*10 + node.val;
@@ -86,8 +92,70 @@ public class Sum_Root_to_Leaf_Numbers {
         }
 
         // left subtree + right subtree
-        sum = dfs(node.left, num, sum) + dfs(node.right, num, sum);
+        sum = dfs2(node.left, num, sum) + dfs2(node.right, num, sum);
+
         return sum;
     }
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
 
 }
