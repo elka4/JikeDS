@@ -1,5 +1,7 @@
 package J_8_Data_Structure.other.Kth;
 
+
+
 public class _05Kth_Largest_Element {
 	/*
      * @param k : description of k
@@ -17,6 +19,7 @@ public class _05Kth_Largest_Element {
         return helper(nums, 0, nums.length - 1, nums.length - k + 1);
         
     }
+
     public int helper(int[] nums, int l, int r, int k) {
         if (l == r) {
             return nums[l];
@@ -30,6 +33,7 @@ public class _05Kth_Largest_Element {
             return helper(nums, l, position - 1, k);
         }
     }
+
     public int partition(int[] nums, int l, int r) {
         // 初始化左右指针和pivot
         int left = l, right = r;
@@ -51,4 +55,32 @@ public class _05Kth_Largest_Element {
         nums[left] = pivot;
         return left;         
     }
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 }

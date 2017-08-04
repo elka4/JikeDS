@@ -8,6 +8,15 @@ import java.util.List;
 
  * Created by tianhuizhu on 7/10/17.
  */
+
+/**
+ * Your ZigzagIterator2 object will be instantiated and called as such:
+ * ZigzagIterator2 solution = new ZigzagIterator2(vecs);
+ * while (solution.hasNext()) result.add(solution.next());
+ * Output result
+ */
+
+
 public class _541_Zigzag_Iterator_II {
 
     public class ZigzagIterator2 {
@@ -47,12 +56,36 @@ public class _541_Zigzag_Iterator_II {
         }
     }
 
-/**
- * Your ZigzagIterator2 object will be instantiated and called as such:
- * ZigzagIterator2 solution = new ZigzagIterator2(vecs);
- * while (solution.hasNext()) result.add(solution.next());
- * Output result
- */
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 

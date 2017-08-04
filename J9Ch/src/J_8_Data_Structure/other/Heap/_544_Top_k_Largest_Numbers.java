@@ -9,6 +9,15 @@ import java.util.Random;
  * Created by tianhuizhu on 6/28/17.
  */
 
+/*
+Given an integer array, find the top k largest numbers in it.
+
+Have you met this question in a real interview? Yes
+Example
+Given [3,10,1000,-99,4,100] and k = 3.
+Return [1000, 100, 10].
+ */
+
 public class _544_Top_k_Largest_Numbers {
 
     // base on heap
@@ -107,15 +116,27 @@ public class _544_Top_k_Largest_Numbers {
     }
 
 
-/*
-Given an integer array, find the top k largest numbers in it.
 
-Have you met this question in a real interview? Yes
-Example
-Given [3,10,1000,-99,4,100] and k = 3.
-Return [1000, 100, 10].
+//////////////////////////////////////////////////////////////////////////////////
 
 
- */
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 }

@@ -4,10 +4,10 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /** 401 Kth Smallest Number in Sorted Matrix
-
-
  * Created by tianhuizhu on 6/28/17.
  */
+
+
 public class _401_Kth_Smallest_Number_in_Sorted_Matrix {
 
     class Pair {
@@ -119,6 +119,30 @@ public class _401_Kth_Smallest_Number_in_Sorted_Matrix {
         }
         return left;
     }
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+
+
 
 
 

@@ -3,26 +3,41 @@ package J_8_Data_Structure.other.Kth;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+
+/*Find the kth smallest number in at row and column sorted matrix.
+
+Have you met this question in a real interview? Yes
+Example
+Given k = 4 and a matrix:
+
+[
+  [1 ,5 ,7],
+  [3 ,7 ,8],
+  [4 ,8 ,9],
+]
+return 5*/
+
+
+
 public class _04Kth_Smallest_Number_in_Sorted_Matrix {
 
-}
 
-class Number {
-    public int x, y, val;
-    public Number(int x, int y, int val) {
-        this.x = x;
-        this.y = y;
-        this.val = val;
+    class Number {
+        public int x, y, val;
+        public Number(int x, int y, int val) {
+            this.x = x;
+            this.y = y;
+            this.val = val;
+        }
     }
-}
 
-class NumComparator implements Comparator<Number> {
-    public int compare(Number a, Number b) {
-        return a.val - b.val;
+    class NumComparator implements Comparator<Number> {
+        public int compare(Number a, Number b) {
+            return a.val - b.val;
+        }
     }
-}
 
-class Solution {
+
     /**
      * @param matrix: a matrix of integers
      * @param k: an integer
@@ -34,7 +49,7 @@ class Solution {
         }
         return false;
     }
-    
+
     int dx[] = {0,1};
     int dy[] = {1,0};
     public int kthSmallest(int[][] matrix, int k) {
@@ -49,7 +64,7 @@ class Solution {
         boolean[][] hash = new boolean[matrix.length][matrix[0].length];
         heap.add(new Number(0, 0, matrix[0][0]));
         hash[0][0] = true;
-        
+
         for (int i = 0; i < k - 1; i ++) {
             Number smallest = heap.poll();
             for (int j = 0; j < 2; j++) {
@@ -63,17 +78,34 @@ class Solution {
         }
         return heap.peek().val;
     }
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 }
 
-/*Find the kth smallest number in at row and column sorted matrix.
-
-Have you met this question in a real interview? Yes
-Example
-Given k = 4 and a matrix:
-
-[
-  [1 ,5 ,7],
-  [3 ,7 ,8],
-  [4 ,8 ,9],
-]
-return 5*/

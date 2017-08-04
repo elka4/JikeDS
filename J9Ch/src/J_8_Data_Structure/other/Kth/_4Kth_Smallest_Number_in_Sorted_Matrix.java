@@ -4,6 +4,31 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/*
+ * Find the kth smallest number in at row and column sorted matrix.
+
+Have you met this question in a real interview? Yes
+Example
+Given k = 4 and a matrix:
+
+[
+  [1 ,5 ,7],
+  [3 ,7 ,8],
+  [4 ,8 ,9],
+]
+return 5
+
+Challenge
+O(k log n), n is the maximal number in width and height.
+
+Tags
+Heap Priority Queue Matrix
+Related Problems
+Hard Kth Smallest Sum In Two Sorted Arrays 19 %
+Medium Kth Largest Element 22 %
+ */
+
+
 public class _4Kth_Smallest_Number_in_Sorted_Matrix {
 
      
@@ -68,28 +93,38 @@ public class _4Kth_Smallest_Number_in_Sorted_Matrix {
         }
         return heap.peek().val;
     }
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 }
 
-/*
- * Find the kth smallest number in at row and column sorted matrix.
 
-Have you met this question in a real interview? Yes
-Example
-Given k = 4 and a matrix:
 
-[
-  [1 ,5 ,7],
-  [3 ,7 ,8],
-  [4 ,8 ,9],
-]
-return 5
 
-Challenge 
-O(k log n), n is the maximal number in width and height.
 
-Tags 
-Heap Priority Queue Matrix
-Related Problems 
-Hard Kth Smallest Sum In Two Sorted Arrays 19 %
-Medium Kth Largest Element 22 %
- */
+
+
+

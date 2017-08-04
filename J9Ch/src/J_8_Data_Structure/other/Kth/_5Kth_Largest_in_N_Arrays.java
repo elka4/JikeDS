@@ -6,7 +6,25 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 
+/*
+ * Find K-th largest element in N arrays.
+
+ Notice: You can swap elements in the array
+
+Example:
+
+In n=2 arrays [[9,3,2,4,7],[1,2,3,4,8]], the 3rd largest element is 7.
+
+In n=2 arrays [[9,3,2,4,8],[1,2,3,4,2]], the 1st largest element is 9,
+2nd largest element is 8, 3rd largest element is 7 and etc.
+
+Tags: Heap
+Related: Problems Medium Largest Number 18 %
+ */
+
+
 public class _5Kth_Largest_in_N_Arrays {
+
     class Node {
         public int value, from_id, index;
         public Node(int _v, int _id, int _i) {
@@ -37,6 +55,7 @@ public class _5Kth_Largest_in_N_Arrays {
 
         int n = arrays.length;
         int i;
+
         //N * Len * log(Len), Len is average array length
         //hehe, a little long to sort
         for (i = 0; i < n; ++i) {
@@ -50,8 +69,9 @@ public class _5Kth_Largest_in_N_Arrays {
                 queue.add(new Node(value, from_id, index));
             }
         }
-//pay attention to the heap use, poll one and add one each turn
-//O(K*logN)  kth so K turns, N elements in heap
+
+        //pay attention to the heap use, poll one and add one each turn
+        //O(K*logN)  kth so K turns, N elements in heap
         for (i  = 0; i < k; ++i) {
             Node temp = queue.poll();
             int from_id = temp.from_id;
@@ -73,18 +93,30 @@ public class _5Kth_Largest_in_N_Arrays {
 }
 
 
-/*
- * Find K-th largest element in N arrays.
 
- Notice: You can swap elements in the array
 
-Example:
+////////////////////////////////////////////////////////////////////////
 
-In n=2 arrays [[9,3,2,4,7],[1,2,3,4,8]], the 3rd largest element is 7.
 
-In n=2 arrays [[9,3,2,4,8],[1,2,3,4,2]], the 1st largest element is 9, 
-2nd largest element is 8, 3rd largest element is 7 and etc.
 
-Tags: Heap
-Related: Problems Medium Largest Number 18 %
- */
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////

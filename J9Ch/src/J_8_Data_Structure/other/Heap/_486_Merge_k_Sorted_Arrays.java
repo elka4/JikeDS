@@ -5,10 +5,10 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 
 /** 486 Merge k Sorted Arrays
-
-
  * Created by tianhuizhu on 6/28/17.
  */
+
+
 public class _486_Merge_k_Sorted_Arrays {
 
     class Element {
@@ -19,8 +19,10 @@ public class _486_Merge_k_Sorted_Arrays {
             this.val = val;
         }
     }
+
     private Comparator<Element> ElementComparator = new Comparator<Element>() {
         public int compare(Element left, Element right) {
+
             return left.val - right.val;
         }
     };
@@ -60,6 +62,63 @@ public class _486_Merge_k_Sorted_Arrays {
 
         return result;
     }
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
 
 
 

@@ -7,6 +7,14 @@ import java.util.List;
 
  * Created by tianhuizhu on 7/10/17.
  */
+
+/**
+ * Your ZigzagIterator object will be instantiated and called as such:
+ * ZigzagIterator solution = new ZigzagIterator(v1, v2);
+ * while (solution.hasNext()) result.add(solution.next());
+ * Output result
+ */
+
 public class _540_Zigzag_Iterator {
 
     public class ZigzagIterator {
@@ -42,12 +50,33 @@ public class _540_Zigzag_Iterator {
         }
     }
 
-/**
- * Your ZigzagIterator object will be instantiated and called as such:
- * ZigzagIterator solution = new ZigzagIterator(v1, v2);
- * while (solution.hasNext()) result.add(solution.next());
- * Output result
- */
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
 
 
 
