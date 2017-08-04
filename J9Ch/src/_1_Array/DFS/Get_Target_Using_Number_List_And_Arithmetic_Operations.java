@@ -14,7 +14,12 @@ Given a list of numbers and a target number, write a program to determine whethe
 
         This is a partition problem which can be solved by using depth first search.*/
 
+
+/*
+实际上是把所有结果都算出来，然后看target在不在里面
+ */
 public class Get_Target_Using_Number_List_And_Arithmetic_Operations {
+
     public static boolean isReachable(ArrayList<Integer> list, int target) {
         if (list == null || list.size() == 0)
             return false;
@@ -24,6 +29,7 @@ public class Get_Target_Using_Number_List_And_Arithmetic_Operations {
 
         ArrayList<Integer> results = getResults(list, i, j, target);
 
+        //是不是可以直接用contains方法
         for (int num : results) {
             if (num == target) {
                 return true;

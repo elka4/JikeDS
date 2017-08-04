@@ -37,6 +37,7 @@ public class Find_Leaves_of_Binary_Tree {
 
         int left = helper(list, root.left);
         int right = helper(list, root.right);
+
         int curr = Math.max(left, right)+1;
 
         // the first time this code is reached is when curr==0,

@@ -133,8 +133,10 @@ public class Flatten_Binary_Tree_to_Linked_List {
         public void flatten(TreeNode root) {
             if(root==null)
                 return;
+
             flatten(root.left);
             flatten(root.right);
+
             TreeNode left  = root.left;
             TreeNode right = root.right;
             root.left  = null;
