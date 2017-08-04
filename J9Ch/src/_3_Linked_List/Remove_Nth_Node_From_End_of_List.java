@@ -7,8 +7,12 @@ Given a linked list, remove the nth node from the end of list and return its hea
 
 For example, given linked list 1->2->3->4->5 and n = 2, the result is 1->2->3->5.
  */
+
+
 public class Remove_Nth_Node_From_End_of_List {
-/*    Java Solution 1 - Naive Two Passes
+
+
+    /*    Java Solution 1 - Naive Two Passes
 
     Calculate the length first, and then remove the nth from the beginning.*/
 
@@ -42,9 +46,15 @@ public class Remove_Nth_Node_From_End_of_List {
 
         return head;
     }
+
+
+
     /*Java Solution 2 - One Pass
 
-    Use fast and slow pointers. The fast pointer is n steps ahead of the slow pointer. When the fast reaches the end, the slow pointer points at the previous element of the target element.*/
+    Use fast and slow pointers.
+    The fast pointer is n steps ahead of the slow pointer.
+    When the fast reaches the end, the slow pointer points at the
+    previous element of the target element.*/
 
     public ListNode removeNthFromEnd2(ListNode head, int n) {
         if(head == null)
@@ -72,5 +82,32 @@ public class Remove_Nth_Node_From_End_of_List {
 
         return head;
     }
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 
 }

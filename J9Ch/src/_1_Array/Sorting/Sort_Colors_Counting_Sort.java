@@ -7,10 +7,12 @@ LeetCode – Sort Colors (Java)
 Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.
 
 Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
-
-
  */
+
+
 public class Sort_Colors_Counting_Sort {
+
+
 /*    Java Solution 1 - Counting Sort
 
     Check out this animation to understand how counting sort works.*/
@@ -40,9 +42,16 @@ public class Sort_Colors_Counting_Sort {
 
 
     }
+
+
+
    /* Java Solution 2 - Improved Counting Sort
 
-    In solution 1, two arrays are created. One is for counting, and the other is for storing the sorted array (space is O(n)). We can improve the solution so that it only uses constant space. Since we already get the count of each element, we can directly project them to the original array, instead of creating a new one.*/
+    In solution 1, two arrays are created. One is for counting, and the
+    other is for storing the sorted array (space is O(n)). We can improve
+    the solution so that it only uses constant space. Since we already get
+    the count of each element, we can directly project them to the original
+    array, instead of creating a new one.*/
 
     public void sortColors2(int[] nums) {
         if(nums==null||nums.length<2){
@@ -65,4 +74,50 @@ public class Sort_Colors_Counting_Sort {
             }
         }
     }
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 }

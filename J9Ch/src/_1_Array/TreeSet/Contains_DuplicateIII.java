@@ -1,13 +1,20 @@
 package _1_Array.TreeSet;
 import java.util.*;
+
+
 /*
 LeetCode – Contains Duplicate III (Java)
 
-Given an array of integers, find out whether there are two distinct indices i and j in the array such that the difference between nums[i] and nums[j] is at most t and the difference between i and j is at most k.
+Given an array of integers, find out whether there are two distinct
+indices i and j in the array such that the difference between nums[i]
+and nums[j] is at most t and the difference between i and j is at most k.
  */
-public class Contains_DuplicateIII {
-    //Java Solution 1 - Simple
 
+
+public class Contains_DuplicateIII {
+
+
+    //Java Solution 1 - Simple
     //This solution simple. Its time complexity is O(nlog(k)).
 
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
@@ -35,10 +42,12 @@ public class Contains_DuplicateIII {
     }
 
 
+
     //Java Solution 2 - Deprecated
 
-    /*The floor(x) method returns the greatest value that is less than x. The ceiling(x) methods returns the least value that is greater than x. The following is an example.
-            contains-duplicate-iii*/
+    /*The floor(x) method returns the greatest value that is less than x.
+    The ceiling(x) methods returns the least value that is greater than x.
+    The following is an example.  contains-duplicate-iii*/
 
     public boolean containsNearbyAlmostDuplicate2(int[] nums, int k, int t) {
         if (k < 1 || t < 0)
@@ -60,5 +69,48 @@ public class Contains_DuplicateIII {
 
         return false;
     }
-    //Related Posts:
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 }

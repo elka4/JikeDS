@@ -42,7 +42,8 @@ public class b_11_Container_With_Most_Water {
 /////////////////////////////////////
 
     //Approach #1 Brute Force [Time Limit Exceeded]
-    //In this case, we will simply consider the area for every possible pair of the lines and find out the maximum area out of those.
+    //In this case, we will simply consider the area for every possible
+    // pair of the lines and find out the maximum area out of those.
 
     public int maxArea2(int[] height) {
         int maxarea = 0;
@@ -69,6 +70,30 @@ public class b_11_Container_With_Most_Water {
         return maxarea;
     }
 
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 
 }

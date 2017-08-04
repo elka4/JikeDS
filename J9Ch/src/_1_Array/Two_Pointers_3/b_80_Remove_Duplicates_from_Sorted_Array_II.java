@@ -10,7 +10,8 @@ import java.util.*;
 
 Follow up for "Remove Duplicates": What if duplicates are allowed at most twice?
 
-For example, given sorted array A = [1,1,1,2,2,3], your function should return length = 5, and A is now [1,1,2,2,3].
+For example, given sorted array A = [1,1,1,2,2,3],
+your function should return length = 5, and A is now [1,1,2,2,3].
  */
 
 public class b_80_Remove_Duplicates_from_Sorted_Array_II {
@@ -42,7 +43,8 @@ public class b_80_Remove_Duplicates_from_Sorted_Array_II {
 /////////////////////////////////////?
     //Java Solution 1
 
-    //We can not change the given array's size, so we only change the first k elements of the array which has duplicates removed.
+    //We can not change the given array's size, so we only change the
+    // first k elements of the array which has duplicates removed.
 
     public int removeDuplicates2(int[] A) {
         if (A == null || A.length == 0)
@@ -105,9 +107,31 @@ public class b_80_Remove_Duplicates_from_Sorted_Array_II {
     }
 
 
+/////////////////////////////////////////////////////////////////
 
-/////////////////////////////////////?
 
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 
 
 }

@@ -12,17 +12,25 @@ Note: All numbers (including target) will be positive integers. Elements in a co
 [2, 2, 3]
 Thoughts
 
-The first impression of this problem should be depth-first search(DFS). To solve DFS problem, recursion is a normal implementation.
+The first impression of this problem should be depth-first search(DFS).
+To solve DFS problem, recursion is a normal implementation.
 
 Note that the candidates array is not sorted, we need to sort it first.
  */
+
+
 public class Combination_Sum {
+
     public ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 
-        if(candidates == null || candidates.length == 0) return result;
+        if(candidates == null || candidates.length == 0){
+            return result;
+        }
 
         ArrayList<Integer> current = new ArrayList<Integer>();
+
         Arrays.sort(candidates);
 
         combinationSum(candidates, target, 0, current, result);
@@ -30,7 +38,12 @@ public class Combination_Sum {
         return result;
     }
 
-    public void combinationSum(int[] candidates, int target, int j, ArrayList<Integer> curr, ArrayList<ArrayList<Integer>> result){
+
+
+
+    public void combinationSum(int[] candidates, int target, int j,
+                               ArrayList<Integer> curr,
+                               ArrayList<ArrayList<Integer>> result){
         if(target == 0){
             ArrayList<Integer> temp = new ArrayList<Integer>(curr);
             result.add(temp);
@@ -46,4 +59,30 @@ public class Combination_Sum {
             curr.remove(curr.size()-1);
         }
     }
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
 }

@@ -19,11 +19,14 @@ For example, consider the following matrix:
 ]
 Given target = 5, return true.
  */
+
+
 public class Search_a_2D_Matrix_II {
 
 //    Java Solution 1
 //
-//    In a naive approach, we can use the matrix boundary to reduce the search space. Here is a simple recursive implementation.
+//    In a naive approach, we can use the matrix boundary to
+// reduce the search space. Here is a simple recursive implementation.
 
     public boolean searchMatrix(int[][] matrix, int target) {
         int i1=0;
@@ -73,6 +76,10 @@ public class Search_a_2D_Matrix_II {
 
         return false;
     }
+
+
+
+
 //    Java Solution 2
 //
 //    Time Complexity: O(m + n)
@@ -96,5 +103,29 @@ public class Search_a_2D_Matrix_II {
 
         return false;
     }
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

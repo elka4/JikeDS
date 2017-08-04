@@ -2,7 +2,9 @@ package _2_Matrix.bfs_dfs;
 import java.util.*;
 //LeetCode – Sudoku Solver (Java)
 
+
 public class Sudoku_Solver {
+
     public void solveSudoku(char[][] board) {
         solve(board);
     }
@@ -26,6 +28,7 @@ public class Sudoku_Solver {
 
         return true; // does not matter
     }
+
 
     public boolean isValid(char[][] board, int i, int j){
         HashSet<Character> set = new HashSet<Character>();
@@ -67,5 +70,29 @@ public class Sudoku_Solver {
 
         return true;
     }
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

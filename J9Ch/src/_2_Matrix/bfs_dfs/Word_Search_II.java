@@ -16,13 +16,15 @@ For example, given words = ["oath","pea","eat","rain"] and board =
   ['i','f','l','v']
 ]
 Return ["eat","oath"].
-
-
  */
+
+
 public class Word_Search_II {
+
     /*Java Solution 1
 
-    Similar to Word Search, this problem can be solved by DFS. However, this solution exceeds time limit.*/
+    Similar to Word Search, this problem can be solved by DFS.
+    However, this solution exceeds time limit.*/
 
     public List<String> findWords(char[][] board, String[] words) {
         ArrayList<String> result = new ArrayList<String>();
@@ -52,6 +54,7 @@ public class Word_Search_II {
         return result;
     }
 
+
     public boolean dfs(char[][] board, String word, int i, int j, int k) {
         int m = board.length;
         int n = board[0].length;
@@ -80,9 +83,16 @@ public class Word_Search_II {
 
         return false;
     }
+
+
+
+
+
    /* Java Solution 2 - Trie
 
-    If the current candidate does not exist in all words' prefix, we can stop backtracking immediately. This can be done by using a trie structure.*/
+    If the current candidate does not exist in all words' prefix,
+    we can stop backtracking immediately.
+    This can be done by using a trie structure.*/
 
     public class Solution {
         Set<String> result = new HashSet<String>();
@@ -137,6 +147,7 @@ public class Word_Search_II {
             visited[i][j]=false;
         }
     }
+
     //Trie Node
     class TrieNode{
         public TrieNode[] children = new TrieNode[26];
@@ -182,4 +193,31 @@ public class Word_Search_II {
             return true;
         }
     }
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

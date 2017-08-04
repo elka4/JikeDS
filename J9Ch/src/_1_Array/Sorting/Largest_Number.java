@@ -5,14 +5,16 @@ LeetCode – Largest Number (Java)
 
 Given a list of non negative integers, arrange them such that they form the largest number.
 
-For example, given [3, 30, 34, 5, 9], the largest formed number is 9534330. (Note: The result may be very large, so you need to return a string instead of an integer.)
+For example, given [3, 30, 34, 5, 9], the largest formed number is 9534330.
+(Note: The result may be very large, so you need to return a string instead of an integer.)
 
 Analysis
 
-This problem can be solve by simply sorting strings, not sorting integer. Define a comparator to compare strings by concat() right-to-left or left-to-right.
-
-
+This problem can be solve by simply sorting strings, not sorting integer.
+Define a comparator to compare strings by concat() right-to-left or left-to-right.
  */
+
+
 public class Largest_Number {
     public String largestNumber(int[] nums) {
         String[] arr = new String[nums.length];
@@ -36,4 +38,49 @@ public class Largest_Number {
 
         return sb.toString();
     }
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 }

@@ -24,7 +24,8 @@ public class Number_of_Islands_II {
 
             int[] p = positions[k];
             int index = p[0]*n+p[1];
-            rootArray[index]=index;//set root to be itself for each node
+            //set root to be itself for each node
+            rootArray[index]=index;
 
             for(int r=0;r<4;r++){
                 int i=p[0]+directions[r][0];
@@ -34,7 +35,8 @@ public class Number_of_Islands_II {
                     //get neighbor's root
                     int thisRoot = getRoot(rootArray, i*n+j);
                     if(thisRoot!=index){
-                        rootArray[thisRoot]=index;//set previous root's root
+                        //set previous root's root
+                        rootArray[thisRoot]=index;
                         count--;
                     }
                 }
@@ -52,4 +54,30 @@ public class Number_of_Islands_II {
         }
         return i;
     }
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

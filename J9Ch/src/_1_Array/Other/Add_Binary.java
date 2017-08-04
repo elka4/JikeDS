@@ -1,5 +1,6 @@
 package _1_Array.Other;
 
+
 /*
 LeetCode – Add Binary (Java)
 
@@ -7,9 +8,11 @@ Given two binary strings, return their sum (also a binary string).
 
 For example, a = "11", b = "1", the return is "100".
  */
-public class Add_Binary {
-    //Very simple, nothing special. Note how to convert a character to an int.
 
+
+public class Add_Binary {
+
+    //Very simple, nothing special. Note how to convert a character to an int.
     public String addBinary(String a, String b) {
         if(a==null || a.length()==0)
             return b;
@@ -54,8 +57,8 @@ public class Add_Binary {
 
 
 //////////////////////////////////////////////////////////////////////
-    //UPDATE: we can simply the method above.
 
+    //UPDATE: we can simply the method above.
     public String addBinary2(String a, String b) {
         StringBuilder sb = new StringBuilder();
 
@@ -94,5 +97,48 @@ public class Add_Binary {
 
         return sb.toString();
     }
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 }

@@ -1,7 +1,11 @@
 package _1_Array.Word_break;
 import java.util.*;
 
+
+
 public class Word_breakII {
+
+
     //Java Solution 1 - Dynamic Programming
     public static List<String> wordBreak(String s, Set<String> dict) {
         //create an array of ArrayList<String>
@@ -37,7 +41,8 @@ public class Word_breakII {
         return result;
     }
 
-    public static void dfs(List<String> dp[],int end,List<String> result, ArrayList<String> tmp){
+    public static void dfs(List<String> dp[],int end,List<String> result,
+                           ArrayList<String> tmp){
         if(end <= 0){
             String path = tmp.get(tmp.size()-1);
             for(int i=tmp.size()-2; i>=0; i--){
@@ -89,7 +94,8 @@ public class Word_breakII {
         }
     }
 
-    public void dfs(ArrayList<String> [] pos, ArrayList<String> result, String curr, int i){
+    public void dfs(ArrayList<String> [] pos, ArrayList<String> result,
+                    String curr, int i){
         if(i==0){
             result.add(curr.trim());
             return;
@@ -101,7 +107,31 @@ public class Word_breakII {
         }
     }
 
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 
 
 

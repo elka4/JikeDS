@@ -17,11 +17,17 @@ Return the formatted lines as:
 
 Java Solution
 
-There is not a special algorithm required to solve this problem. To correctly solve this problem, the following situations should be taken care of:
-1. if a line has only one word and the word's length is less than max width, we need to fill the left part with spaces.
-2. how to distribute extra spaces for each words when the number of spaces can not be evenly distributed to each word.
+There is not a special algorithm required to solve this problem.
+To correctly solve this problem, the following situations should be taken care of:
+1. if a line has only one word and the word's length is less than max width,
+we need to fill the left part with spaces.
+2. how to distribute extra spaces for each words when the number of spaces can
+not be evenly distributed to each word.
  */
+
+
 public class Text_Justification {
+
     public List<String> fullJustify(String[] words, int maxWidth) {
         List<String> result = new ArrayList<String>();
 
@@ -94,4 +100,39 @@ public class Text_Justification {
 
         return result;
     }
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
 }

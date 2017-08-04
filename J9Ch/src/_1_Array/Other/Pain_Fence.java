@@ -15,7 +15,9 @@ Assuming there are 3 posts, if the first one and the second one has the same col
 If the first and the second do not have same color, the total is k * (k-1), then the third one has k options. Therefore, f(3) = (k-1)*k + k*(k-1)*k = (k-1)(k+k*k)
  */
 
+
 public class Pain_Fence {
+
     public int numWays(int n, int k) {
         int dp[] = {0, k , k*k, 0};
 
@@ -30,4 +32,30 @@ public class Pain_Fence {
 
         return dp[3];
     }
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

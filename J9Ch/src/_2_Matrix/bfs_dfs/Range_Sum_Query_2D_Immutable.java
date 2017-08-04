@@ -3,12 +3,17 @@ package _2_Matrix.bfs_dfs;
 /*
 LeetCode – Range Sum Query 2D – Immutable (Java)
 
-Given a 2D matrix matrix, find the sum of the elements inside the rectangle defined by its upper left corner (row1, col1) and lower right corner (row2, col2).
+Given a 2D matrix matrix, find the sum of the elements inside the rectangle
+defined by its upper left corner (row1, col1) and lower right corner (row2, col2).
 
 Analysis
 
-Since the assumption is that there are many calls to sumRegion method, we should use some extra space to store the intermediate results. Here we define an array sum[][] which stores the sum value from (0,0) to the current cell.
+Since the assumption is that there are many calls to sumRegion method,
+we should use some extra space to store the intermediate results.
+Here we define an array sum[][] which stores the sum value from (0,0) to the current cell.
  */
+
+
 public class Range_Sum_Query_2D_Immutable {
     public class NumMatrix {
         int [][] sum;
@@ -67,4 +72,30 @@ public class Range_Sum_Query_2D_Immutable {
             return result;
         }
     }
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

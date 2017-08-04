@@ -13,20 +13,20 @@ Given the list [[1,1],2,[1,1]], return 10. (four 1's at depth 2, one 2 at depth 
 
  */
 public class Nested_List_Weight_Sum {
+
     //Java Solution 1 - Recursive
     public interface NestedInteger {
+        // @return true if this NestedInteger holds a single integer, rather than a nested list.
+        public boolean isInteger();
 
-      // @return true if this NestedInteger holds a single integer, rather than a nested list.
-      public boolean isInteger();
+        // @return the single integer that this NestedInteger holds, if it holds a single integer
+        // Return null if this NestedInteger holds a nested list
+        public Integer getInteger();
 
-      // @return the single integer that this NestedInteger holds, if it holds a single integer
-      // Return null if this NestedInteger holds a nested list
-      public Integer getInteger();
-
-      // @return the nested list that this NestedInteger holds, if it holds a nested list
-      // Return null if this NestedInteger holds a single integer
-      public List<NestedInteger> getList();
-  }
+        // @return the nested list that this NestedInteger holds, if it holds a nested list
+        // Return null if this NestedInteger holds a single integer
+        public List<NestedInteger> getList();
+    }
 
 
     public int depthSum(List<NestedInteger> nestedList) {
@@ -49,7 +49,7 @@ public class Nested_List_Weight_Sum {
         return sum;
     }
 
-//////////////////////////////////////////////////?
+/////////////////////////////////////////////////////////////////
 
 
     //Java Solution 2 - Iterative
@@ -81,4 +81,42 @@ public class Nested_List_Weight_Sum {
 
         return sum;
     }
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
 }

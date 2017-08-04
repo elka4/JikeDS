@@ -17,6 +17,7 @@ Given a list of strings which contains only lowercase alphabets, group all strin
  */
 
 public class Group_Shifted_Strings {
+
     public List<List<String>> groupStrings(String[] strings) {
         List<List<String>> result = new ArrayList<List<String>>();
         HashMap<String, ArrayList<String>> map
@@ -54,5 +55,38 @@ public class Group_Shifted_Strings {
 
         return result;
     }
+
+
+////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 
 }

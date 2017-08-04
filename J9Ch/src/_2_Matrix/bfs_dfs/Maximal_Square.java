@@ -16,9 +16,9 @@ Analysis
 
 This problem can be solved by dynamic programming. The changing condition is:
 t[i][j] = min(t[i][j-1], t[i-1][j], t[i-1][j-1]) + 1. It means the square formed before this point.
-
-
  */
+
+
 public class Maximal_Square {
     public int maximalSquare(char[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
@@ -64,4 +64,30 @@ public class Maximal_Square {
 
         return max * max;
     }
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

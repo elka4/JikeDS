@@ -6,20 +6,21 @@ LeetCode – Copy List with Random Pointer
 A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
 
 Return a deep copy of the list.
-
-
  */
+
+
 public class Copy_List_with_Random_Pointer {
 
     /*
     Java Solution 1
 
-We can solve this problem by doing the following steps:
+    We can solve this problem by doing the following steps:
 
-copy every node, i.e., duplicate every node, and insert it to the list
-copy random pointers for all newly created nodes
-break the list to two
+    copy every node, i.e., duplicate every node, and insert it to the list
+    copy random pointers for all newly created nodes
+    break the list to two
      */
+
     public RandomListNode copyRandomList(RandomListNode head) {
 
         if (head == null)
@@ -56,13 +57,19 @@ break the list to two
 
         return newHead;
     }
-/*    The break list part above move pointer 2 steps each time, you can also move one at a time which is simpler, like the following:*/
+
+/*    The break list part above move pointer 2 steps each time,
+you can also move one at a time which is simpler, like the following:*/
+
 
 /*            while(p != null && p.next != null){
         RandomListNode temp = p.next;
         p.next = temp.next;
         p = temp;
     }*/
+
+
+
 
 //////////////////////////////////////////
 /*
@@ -103,5 +110,29 @@ break the list to two
 
         return newHead;
     }
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

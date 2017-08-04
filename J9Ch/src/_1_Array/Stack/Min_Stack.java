@@ -9,14 +9,15 @@ push(x) -- Push element x onto stack.
 pop() -- Removes the element on top of the stack.
 top() -- Get the top element.
 getMin() -- Retrieve the minimum element in the stack.
-
-
  */
+
+
 public class Min_Stack {
+
     /*
-    To make constant time of getMin(), we need to keep track of the minimum element for each element in the stack. Define an element class that holds element value, min value, and pointer to elements below it.
-
-
+    To make constant time of getMin(), we need to keep track of the minimum
+    element for each element in the stack. Define an element class that holds
+    element value, min value, and pointer to elements below it.
      */
     class Elem{
         public int value;
@@ -59,4 +60,48 @@ public class Min_Stack {
             return top.min;
         }
     }
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 }

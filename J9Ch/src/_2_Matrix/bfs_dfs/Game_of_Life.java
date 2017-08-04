@@ -12,10 +12,14 @@ Any dead cell with exactly three live neighbors becomes a live cell, as if by re
 
 Write a function to compute the next state (after one update) of the board given its current state.
  */
+
 public class Game_of_Life {
+
     /*Java Solution 1
 
-    Because we need to solve the problem in place, we can use the higher bit to record the next state. And at the end, shift right a bit to get the next state for each cell.*/
+    Because we need to solve the problem in place, we can use the higher
+    bit to record the next state. And at the end, shift right a bit to
+    get the next state for each cell.*/
 
     public void gameOfLife(int[][] board) {
         if(board==null || board.length==0||board[0].length==0)
@@ -67,4 +71,30 @@ public class Game_of_Life {
             }
         }
     }
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

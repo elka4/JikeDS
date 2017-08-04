@@ -15,7 +15,9 @@ Given word1 = "makes", word2 = "makes", return 3.
  */
 
 public class Shortest_Word_DistanceIII {
-    //In this problem, word1 and word2 can be the same. The two variables used to track indices should take turns to update.
+
+    //In this problem, word1 and word2 can be the same.
+    // The two variables used to track indices should take turns to update.
     public int shortestWordDistance(String[] words, String word1, String word2) {
         if(words==null || words.length<1 || word1==null || word2==null)
             return 0;
@@ -91,6 +93,30 @@ public class Shortest_Word_DistanceIII {
 
         return shortest;
     }
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 
 }

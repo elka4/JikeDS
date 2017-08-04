@@ -23,7 +23,12 @@ Reverse the order of the second list
 Merge two list back together
 The following code is a complete runnable class with testing.
  */
+
+
+
 public class Reorder_List {
+
+
     public static void reorderList(ListNode head) {
 
         if (head != null && head.next != null) {
@@ -87,6 +92,7 @@ public class Reorder_List {
         return pre;
     }
 
+
     public static void printList(ListNode n) {
         System.out.println("------");
         while (n != null) {
@@ -112,5 +118,32 @@ public class Reorder_List {
 
         printList(n1);
     }
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 
 }

@@ -5,7 +5,8 @@ LeetCode – Basic Calculator II (Java)
 
 Implement a basic calculator to evaluate a simple expression string.
 
-The expression string contains only non-negative integers, +, -, *, / operators and empty spaces . The integer division should truncate toward zero.
+The expression string contains only non-negative integers, +, -, *, /
+operators and empty spaces . The integer division should truncate toward zero.
 
 You may assume that the given expression is always valid.
 
@@ -14,6 +15,7 @@ Some examples:
  */
 
 public class Basic_Calculator_II {
+
     public int calculate(String s) {
         int md=-1; // 0 is m, 1 is d
         int sign=1; // 1 is +, -1 is -
@@ -54,4 +56,48 @@ public class Basic_Calculator_II {
         result = result + sign*prev;
         return result;
     }
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 }

@@ -17,12 +17,13 @@ matrix = [
 k = 8,
 
 return 13.
-
-
  */
+
+
 public class Kth_Smallest_Element_in_a_Sorted_Matrix {
 
-    //This problem is similar to Search a 2D Matrix II. The start point of such a sorted matrix is left-bottom corner.
+    //This problem is similar to Search a 2D Matrix II.
+    // The start point of such a sorted matrix is left-bottom corner.
 
     public int kthSmallest(int[][] matrix, int k) {
         int m=matrix.length;
@@ -60,4 +61,30 @@ public class Kth_Smallest_Element_in_a_Sorted_Matrix {
 
         return count;
     }
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

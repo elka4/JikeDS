@@ -3,11 +3,15 @@ import java.util.*;
 /*
 LeetCode – Contains Duplicate II (Java)
 
-Given an array of integers and an integer k, return true if and only if there are two distinct indices i and j in the array such that nums[i] = nums[j] and the difference between i and j is at most k.
+Given an array of integers and an integer k, return true if and only if
+there are two distinct indices i and j in the array such that
+nums[i] = nums[j] and the difference between i and j is at most k.
  */
-public class Contains_DuplicateII {
-    //Java Solution 1
 
+public class Contains_DuplicateII {
+
+
+    //Java Solution 1
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         int min = Integer.MAX_VALUE;
@@ -27,8 +31,10 @@ public class Contains_DuplicateII {
             return false;
         }
     }
-    //Java Solution 2 - Simplified
 
+
+
+    //Java Solution 2 - Simplified
     public boolean containsNearbyDuplicate2(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
@@ -66,5 +72,48 @@ public class Contains_DuplicateII {
 
         return false;
     }
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 }

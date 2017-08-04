@@ -12,49 +12,56 @@ Evaluate the value of an arithmetic expression in Reverse Polish Notation. Valid
 
 
 public class Longest_Valid_Parentheses {
-/*
-1. Naive Approach
 
-This problem can be solved by using a stack. We can loop through each element in the given array. When it is a number, push it to the stack. When it is an operator, pop two numbers from the stack, do the calculation, and push back the result.
- */
-public static int evalRPN(String[] tokens) {
-    int returnValue = 0;
-    String operators = "+-*/";
+    /*
+    1. Naive Approach
 
-    Stack<String> stack = new Stack<String>();
+    This problem can be solved by using a stack. We can loop through each
+    element in the given array. When it is a number, push it to the stack.
+    When it is an operator, pop two numbers from the stack, do the
+    calculation, and push back the result.
+     */
 
-    for (String t : tokens) {
-        if (!operators.contains(t)) { //push to stack if it is a number
-            stack.push(t);
-        } else {//pop numbers from stack if it is an operator
-            int a = Integer.valueOf(stack.pop());
-            int b = Integer.valueOf(stack.pop());
-            switch (t) {
-                case "+":
-                    stack.push(String.valueOf(a + b));
-                    break;
-                case "-":
-                    stack.push(String.valueOf(b - a));
-                    break;
-                case "*":
-                    stack.push(String.valueOf(a * b));
-                    break;
-                case "/":
-                    stack.push(String.valueOf(b / a));
-                    break;
+    public static int evalRPN(String[] tokens) {
+        int returnValue = 0;
+        String operators = "+-*/";
+
+        Stack<String> stack = new Stack<String>();
+
+        for (String t : tokens) {
+            if (!operators.contains(t)) { //push to stack if it is a number
+                stack.push(t);
+            } else {//pop numbers from stack if it is an operator
+                int a = Integer.valueOf(stack.pop());
+                int b = Integer.valueOf(stack.pop());
+                switch (t) {
+                    case "+":
+                        stack.push(String.valueOf(a + b));
+                        break;
+                    case "-":
+                        stack.push(String.valueOf(b - a));
+                        break;
+                    case "*":
+                        stack.push(String.valueOf(a * b));
+                        break;
+                    case "/":
+                        stack.push(String.valueOf(b / a));
+                        break;
+                }
             }
         }
+
+        returnValue = Integer.valueOf(stack.pop());
+
+        return returnValue;
     }
 
-    returnValue = Integer.valueOf(stack.pop());
-
-    return returnValue;
-}
-
 /////////////////////////////////////
+
 //2. Accepted Solution
 
-//    If you want to use switch statement, you can convert the above by using the following code which use the index of a string "+-*/".
+//    If you want to use switch statement, you can convert the above
+// by using the following code which use the index of a string "+-*/".
 
 
     public int evalRPN2(String[] tokens) {
@@ -94,6 +101,49 @@ public static int evalRPN(String[] tokens) {
         return returnValue;
 
     }
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 }
 

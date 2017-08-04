@@ -18,9 +18,14 @@ begin to intersect at node c1.
 
 Java Solution
 
-First calculate the length of two lists and find the difference. Then start from the longer list at the diff offset, iterate though 2 lists and find the node.
+First calculate the length of two lists and find the difference.
+Then start from the longer list at the diff offset,
+iterate though 2 lists and find the node.
  */
+
+
 public class Intersection_of_Two_Linked_Lists {
+
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int len1 = 0;
         int len2 = 0;
@@ -69,4 +74,36 @@ public class Intersection_of_Two_Linked_Lists {
 
         return null;
     }
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
 }

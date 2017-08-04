@@ -13,14 +13,15 @@ Example 1:
 00000
 
 Answer: 1
-
-
  */
+
+
 public class Number_of_Islands {
+
     /*Java Solution 1 - DFS
 
-    The basic idea of the following solution is merging adjacent lands, and the merging should be done recursively.
-
+    The basic idea of the following solution is merging adjacent lands,
+    and the merging should be done recursively.
     Each element is visited once only. So time is O(m*n).*/
 
     public int numIslands(char[][] grid) {
@@ -97,7 +98,8 @@ public class Number_of_Islands {
                             int cRoot = getRoot(root, i*n+j);
                             int nRoot = getRoot(root, x*n+y);
                             if(nRoot!=cRoot){
-                                root[cRoot]=nRoot; //update previous node's root to be current
+                                //update previous node's root to be current
+                                root[cRoot]=nRoot;
                                 count--;
                             }
 
@@ -117,5 +119,29 @@ public class Number_of_Islands {
 
         return i;
     }
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

@@ -7,10 +7,11 @@ Given two sparse matrices A and B, return the result of AB.
 
 You may assume that A's column number is equal to B's row number.
  */
+
+
 public class Sparse_Matrix_Multiplication {
 
     //1. Naive Method
-
     public int[][] multiply(int[][] A, int[][] B) {
         //validity check
 
@@ -30,7 +31,6 @@ public class Sparse_Matrix_Multiplication {
 
 
     //2. Optimized Method
-
     public int[][] multiply2(int[][] A, int[][] B) {
         //validity check
 
@@ -47,5 +47,29 @@ public class Sparse_Matrix_Multiplication {
 
         return C;
     }
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

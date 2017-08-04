@@ -37,14 +37,15 @@ public class Permutations {
 
 /////////////////////////////////////////////////////////////
 
-    //We can also recursively solve this problem. Swap each element with each element after it.
+    //We can also recursively solve this problem.
+    // Swap each element with each element after it.
 
 
     public ArrayList<ArrayList<Integer>> permute2(int[] num) {
-    ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-    permute(num, 0, result);
-    return result;
-}
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        permute(num, 0, result);
+        return result;
+    }
 
     void permute(int[] num, int start, ArrayList<ArrayList<Integer>> result) {
 
@@ -73,6 +74,49 @@ public class Permutations {
         a[i] = a[j];
         a[j] = temp;
     }
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 
 }

@@ -2,9 +2,11 @@ package _2_Matrix.bfs_dfs;
 import java.util.*;
 //LeetCode – Walls and Gates (Java)
 
-public class Walls_and_Gates {
-    //Java Solution 1 - DFS
 
+public class Walls_and_Gates {
+
+
+    //Java Solution 1 - DFS
     public void wallsAndGates(int[][] rooms) {
         if(rooms==null || rooms.length==0||rooms[0].length==0)
             return;
@@ -45,8 +47,11 @@ public class Walls_and_Gates {
 
         visited[i][j]=false;
     }
-    //The DFS solution can be simplified as the following:
 
+
+
+
+    //The DFS solution can be simplified as the following:
     public void wallsAndGates2(int[][] rooms) {
         if(rooms==null || rooms.length==0||rooms[0].length==0)
             return;
@@ -78,8 +83,12 @@ public class Walls_and_Gates {
         fill(rooms, i+1, j, distance+1);
         fill(rooms, i, j-1, distance+1);
     }
-    //Java Solution 2 - BFS
 
+
+
+
+
+    //Java Solution 2 - BFS
     public void wallsAndGates3(int[][] rooms) {
         if(rooms==null || rooms.length==0||rooms[0].length==0)
             return;
@@ -123,5 +132,29 @@ public class Walls_and_Gates {
             }
         }
     }
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

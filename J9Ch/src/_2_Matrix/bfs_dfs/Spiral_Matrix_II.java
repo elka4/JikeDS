@@ -12,7 +12,10 @@ Given an integer n, generate a square matrix filled with elements from 1 to n2 i
 [10,  9,  8, 7]
 ]
  */
+
+
 public class Spiral_Matrix_II {
+
     //Java Solution 1
 
     public int[][] generateMatrix(int n) {
@@ -61,6 +64,9 @@ public class Spiral_Matrix_II {
 
         return result;
     }
+
+
+
     //Java Solution 2
 
     public int[][] generateMatrix2(int n) {
@@ -100,4 +106,30 @@ public class Spiral_Matrix_II {
 
         return result;
     }
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

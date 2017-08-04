@@ -1,5 +1,7 @@
 package _1_Array.Other;
 import java.util.*;
+
+
 /*
 LeetCode – Pascal’s Triangle (Java)
 
@@ -14,7 +16,10 @@ Given numRows, generate the first numRows of Pascal's triangle. For example, giv
 ]
 
  */
+
+
 public class Pascals_Triangle {
+
     public ArrayList<ArrayList<Integer>> generate(int numRows) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
         if (numRows <= 0)
@@ -39,6 +44,36 @@ public class Pascals_Triangle {
 
         return result;
     }
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
 
 
 }

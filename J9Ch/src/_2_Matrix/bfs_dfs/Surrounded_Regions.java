@@ -19,10 +19,14 @@ X X X X
 X O X X
 Analysis
 
-This problem is similar to Number of Islands. In this problem, only the cells on the boarders can not be surrounded. So we can first merge those O's on the boarders like in Number of Islands and replace O's with '#', and then scan the board and replace all O's left (if any).
+This problem is similar to Number of Islands. In this problem,
+only the cells on the boarders can not be surrounded.
+So we can first merge those O's on the boarders like in Number of Islands
+and replace O's with '#', and then scan the board and replace all O's left (if any).
  */
 
 public class Surrounded_Regions {
+
     //1. Depth-first Search
 
     public void solve(char[][] board) {
@@ -80,7 +84,14 @@ public class Surrounded_Regions {
         merge(board, i, j-1);
         merge(board, i, j+1);
     }
-/*    This solution causes java.lang.StackOverflowError, because for a large board, too many method calls are pushed to the stack and causes the overflow.
+
+
+/*    This solution causes java.lang.StackOverflowError, because for a large board,
+too many method calls are pushed to the stack and causes the overflow.
+
+
+
+
 
 2. Breath-first Search
 
@@ -162,4 +173,30 @@ public class Surrounded_Regions {
             }
         }
     }
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

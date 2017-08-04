@@ -18,7 +18,9 @@ public class Spiral_Matrix {
 
     /*Java Solution 1
 
-    If more than one row and column left, it can form a circle and we process the circle. Otherwise, if only one row or column left, we process that column or row ONLY.*/
+    If more than one row and column left, it can form a circle and
+    we process the circle. Otherwise, if only one row or column left,
+    we process that column or row ONLY.*/
 
     public class Solution {
         public ArrayList<Integer> spiralOrder(int[][] matrix) {
@@ -78,6 +80,8 @@ public class Spiral_Matrix {
             return result;
         }
     }
+
+
     //Similarly, we can write the solution this way:
 
     public List<Integer> spiralOrder(int[][] matrix) {
@@ -125,9 +129,13 @@ public class Spiral_Matrix {
 
         return result;
     }
+
+
     /*Java Solution 2
 
-    We can also recursively solve this problem. The solution's performance is not better than Solution 1. Therefore, Solution 1 should be preferred.*/
+    We can also recursively solve this problem.
+    The solution's performance is not better than Solution 1.
+    Therefore, Solution 1 should be preferred.*/
 
     public class Solution2 {
         public ArrayList<Integer> spiralOrder(int[][] matrix) {
@@ -182,4 +190,30 @@ public class Spiral_Matrix {
             return result;
         }
     }
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

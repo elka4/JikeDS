@@ -5,8 +5,11 @@ LeetCode – Longest Increasing Path in a Matrix (Java)
 
 Given an integer matrix, find the length of the longest increasing path.
 
-From each cell, you can either move to four directions: left, right, up or down. You may NOT move diagonally or move outside of the boundary
+From each cell, you can either move to four directions: left, right, up or down.
+You may NOT move diagonally or move outside of the boundary
  */
+
+
 public class Longest_Increasing_Path_in_a_Matrix {
     //Java Solution 1 - DFS
 
@@ -87,5 +90,29 @@ public class Longest_Increasing_Path_in_a_Matrix {
             return ++mem[i][j];
         }
     }
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

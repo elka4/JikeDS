@@ -8,7 +8,10 @@ Assume that words = ["practice", "makes", "perfect", "coding", "makes"].
 Given word1 = “coding”, word2 = “practice”, return 3.
 Given word1 = "makes", word2 = "coding", return 1.
  */
+
+
 public class Shortest_Word_Distance {
+
     public int shortestDistance(String[] words, String word1, String word2) {
         int m=-1;
         int n=-1;
@@ -30,4 +33,30 @@ public class Shortest_Word_Distance {
 
         return min;
     }
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

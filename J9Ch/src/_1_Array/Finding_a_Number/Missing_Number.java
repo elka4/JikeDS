@@ -29,8 +29,8 @@ public String removeKdigits(String num, int k) {
  */
 
 public class Missing_Number {
-    //Java Solution 1 - Math
 
+    //Java Solution 1 - Math
     public int missingNumber(int[] nums) {
         int sum=0;
         for(int i=0; i<nums.length; i++){
@@ -40,8 +40,9 @@ public class Missing_Number {
         int n=nums.length;
         return n*(n+1)/2-sum;
     }
-    //Java Solution 2 - Bit
 
+
+    //Java Solution 2 - Bit
     public int missingNumber2(int[] nums) {
 
         int miss=0;
@@ -51,8 +52,9 @@ public class Missing_Number {
 
         return miss;
     }
-    //Java Solution 3 - Binary Search
 
+
+    //Java Solution 3 - Binary Search
     public int missingNumber3(int[] nums) {
         Arrays.sort(nums);
         int l=0, r=nums.length;
@@ -67,4 +69,55 @@ public class Missing_Number {
 
         return r;
     }
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
 }

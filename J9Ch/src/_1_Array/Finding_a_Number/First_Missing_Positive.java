@@ -18,6 +18,7 @@ For example, given an array {1,2,0,4}, the algorithm does the following:
  */
 
 public class First_Missing_Positive {
+
     int firstMissingPositiveAnd0(int A[]) {
         int n = A.length;
         for (int i = 0; i < n; i++) {
@@ -45,10 +46,13 @@ public class First_Missing_Positive {
         return n;
     }
 
-//////////////////////////////////
+////////////////////////////////////////////////////////////////////
+
+
 //Java Solution
 
-    //This problem only considers positive numbers, so we need to shift 1 offset. The ith element is i+1.
+    //This problem only considers positive numbers, so we need
+    // to shift 1 offset. The ith element is i+1.
 
     public int firstMissingPositive2(int[] A) {
         int n = A.length;
@@ -75,5 +79,34 @@ public class First_Missing_Positive {
 
         return n + 1;
     }
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 
 }

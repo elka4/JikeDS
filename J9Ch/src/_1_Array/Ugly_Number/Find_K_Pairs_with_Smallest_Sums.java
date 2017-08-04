@@ -26,6 +26,7 @@ This problem is similar to Super Ugly Number. The basic idea is using an array t
 The best way to understand this solution is using an example such as nums1={1,3,11} and nums2={2,4,8}.
  */
 
+
 public class Find_K_Pairs_with_Smallest_Sums {
 
     public List<int[]> kSmallestPairs(int[] nums1, int[] nums2, int k) {
@@ -58,5 +59,29 @@ public class Find_K_Pairs_with_Smallest_Sums {
 
         return result;
     }
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

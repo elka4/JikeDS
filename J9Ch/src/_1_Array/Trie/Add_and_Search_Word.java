@@ -4,7 +4,9 @@ import java.util.*;
 public class Add_and_Search_Word {
    // Java Solution 1
 
-    //This problem is similar with Implement Trie. The solution 1 below uses the same definition of a trie node. To handle the "." case for this problem, we need to search all possible paths, instead of one path.
+    //This problem is similar with Implement Trie. The solution 1 below
+    // uses the same definition of a trie node. To handle the "." case for
+    // this problem, we need to search all possible paths, instead of one path.
 
     //TrieNode
 
@@ -20,8 +22,8 @@ public class Add_and_Search_Word {
         }
     }
 
-    //WordDictionary
 
+    //WordDictionary
     public class WordDictionary {
         private TrieNode root;
 
@@ -94,4 +96,49 @@ public class Add_and_Search_Word {
             }
         }
     }
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 }

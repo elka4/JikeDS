@@ -12,10 +12,14 @@ Each 2 marks an obstacle which you cannot pass through.
 
 For example, given three buildings at (0,0), (0,4), (2,2), and an obstacle at (0,2). The point (1,2) is an ideal empty land to build a house, as the total travel distance of 3+3+1=7 is minimal. So return 7.
  */
+
+
 public class Shortest_Distance_from_All_Buildings {
 
     /*
-    This problem can be solve by BFS. We define one matrix for tracking the distance from each building, and another matrix for tracking the number of buildings which can be reached.
+    This problem can be solve by BFS. We define one matrix for
+    tracking the distance from each building, and another matrix
+    for tracking the number of buildings which can be reached.
      */
 
     int[][] numReach;
@@ -59,7 +63,8 @@ public class Shortest_Distance_from_All_Buildings {
     }
 
     public void dfs(int[][] grid, int ox, int oy, int i, int j,
-                    int distanceSoFar, boolean[][] visited, LinkedList<Integer> queue){
+                    int distanceSoFar, boolean[][] visited,
+                    LinkedList<Integer> queue){
 
         visit(grid, i, j, i, j, distanceSoFar, visited, queue);
         int n = grid[0].length;
@@ -82,7 +87,9 @@ public class Shortest_Distance_from_All_Buildings {
         }
     }
 
-    public void visit(int[][] grid, int ox, int oy,  int i, int j, int distanceSoFar, boolean[][] visited, LinkedList<Integer> queue){
+    public void visit(int[][] grid, int ox, int oy,  int i, int j,
+                      int distanceSoFar, boolean[][] visited,
+                      LinkedList<Integer> queue){
         int m = grid.length;
         int n = grid[0].length;
 
@@ -99,5 +106,32 @@ public class Shortest_Distance_from_All_Buildings {
         distance[i][j]+= distanceSoFar;
         queue.offer(i*n+j);
     }
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 
 }

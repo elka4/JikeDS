@@ -24,7 +24,11 @@ and gas[A] >= cost[A],
 Therefore, gas[B] < cost[B], i.e., B can not reach C.
 In the following solution, sumRemaining tracks the sum of remaining to the current index. If sumRemaining < 0, then every index between old start and current index is bad, and we need to update start to be the current index. You can use the following example to visualize the solution.  leetcode-gas-station-java
  */
+
+
 public class Gas_Station {
+
+
     public int canCompleteCircuit(int[] gas, int[] cost) {
         int sumRemaining = 0; // track current remaining
         int total = 0; // track total remaining
@@ -50,4 +54,49 @@ public class Gas_Station {
             return -1;
         }
     }
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 }

@@ -12,11 +12,11 @@ The sum of the entire nums array is guaranteed to fit within the 32-bit signed i
 Example 1:
 Given nums = [1, -1, 5, -2, 3], k = 3,
 return 4. (because the subarray [1, -1, 5, -2] sums to 3 and is the longest)
-
-
  */
 
+
 public class _325_Maximum_Size_Subarray_Sum_Equals_k {
+
     public int maxSubArrayLen(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
@@ -48,6 +48,7 @@ public class _325_Maximum_Size_Subarray_Sum_Equals_k {
 
 
 /////////////////////////////////////
+
     //O(n) super clean 9-line Java solution with HashMap
     public int maxSubArrayLen2(int[] nums, int k) {
         int sum = 0, max = 0;
@@ -55,9 +56,37 @@ public class _325_Maximum_Size_Subarray_Sum_Equals_k {
         for (int i = 0; i < nums.length; i++) {
             sum = sum + nums[i];
             if (sum == k) max = i + 1;
-            else if (map.containsKey(sum - k)) max = Math.max(max, i - map.get(sum - k));
+            else if (map.containsKey(sum - k)) {
+                max = Math.max(max, i - map.get(sum - k));
+            }
             if (!map.containsKey(sum)) map.put(sum, i);
         }
         return max;
     }
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

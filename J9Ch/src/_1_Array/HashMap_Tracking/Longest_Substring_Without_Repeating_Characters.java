@@ -7,6 +7,7 @@ Given a string, find the length of the longest substring without repeating chara
  */
 
 public class Longest_Substring_Without_Repeating_Characters {
+
     //Java Solution 1
 
     //The first solution is like the problem of "determine if a string has all unique characters" in CC 150. We can use a flag array to track the existing characters for the longest substring without repeating characters.
@@ -45,8 +46,8 @@ public class Longest_Substring_Without_Repeating_Characters {
         return result;
     }
 
-    //Java Solution 2 - HashSet
 
+    //Java Solution 2 - HashSet
     public int lengthOfLongestSubstring2(String s) {
         if(s==null || s.length()==0)
             return 0;
@@ -112,6 +113,30 @@ public class Longest_Substring_Without_Repeating_Characters {
 
         return max;
     }
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////
 
 
 

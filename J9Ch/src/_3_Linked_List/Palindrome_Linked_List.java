@@ -7,7 +7,8 @@ public class Palindrome_Linked_List {
 
     /*Java Solution 1 - Creat a new reversed list
 
-    We can create a new list in reversed order and then compare each node. The time and space are O(n).*/
+    We can create a new list in reversed order and then compare each node.
+    The time and space are O(n).*/
 
     public boolean isPalindrome(ListNode head) {
         if(head == null)
@@ -36,9 +37,17 @@ public class Palindrome_Linked_List {
 
         return true;
     }
+
+
+
+
+
+
     /*Java Solution 2 - Break and reverse second half
 
-    We can use a fast and slow pointer to get the center of the list, then reverse the second list and compare two sublists. The time is O(n) and space is O(1).*/
+    We can use a fast and slow pointer to get the center of the list,
+    then reverse the second list and compare two sublists.
+    The time is O(n) and space is O(1).*/
 
     public boolean isPalindrome2(ListNode head) {
 
@@ -85,6 +94,9 @@ public class Palindrome_Linked_List {
         return true;
     }
 
+
+
+
     //Java Solution 3 - Recursive
 
     public class Solution3 {
@@ -119,5 +131,29 @@ public class Palindrome_Linked_List {
     }
     //Time is O(n) and space is O(1).
 
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

@@ -20,7 +20,10 @@ A valid path is
 [0, 0, 0, 0, 1]
 [0, 0, 0, 0, 1]
  */
+
+
 public class Find_a_Path_in_a_Matrix {
+
     public int[][] findPath(int[][] matrix){
         int m = matrix.length;
 
@@ -41,6 +44,7 @@ public class Find_a_Path_in_a_Matrix {
 
         return result;
     }
+
 
     public void dfs(int[][] matrix, int i, int j,
                     ArrayList<int[]> temp,  ArrayList<int[]> list){
@@ -72,4 +76,31 @@ public class Find_a_Path_in_a_Matrix {
             }
         }
     }
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

@@ -3,13 +3,19 @@ import java.util.*;
 /*
 LeetCode – Letter Combinations of a Phone Number (Java)
 
-Given a digit string, return all possible letter combinations that the number could represent. (Check out your cellphone to see the mappings) Input:Digit string "23", Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+Given a digit string, return all possible letter combinations that
+the number could represent. (Check out your cellphone to see the mappings)
+Input:Digit string "23", Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 
 Analysis
 
-This problem can be solves by a typical DFS algorithm. DFS problems are very similar and can be solved by using a simple recursion. Check out the index page to see other DFS problems.
+This problem can be solves by a typical DFS algorithm.
+DFS problems are very similar and can be solved by using a simple recursion.
+Check out the index page to see other DFS problems.
  */
+
 public class Letter_Combinations_of_a_Phone_Number {
+
     public List<String> letterCombinations(String digits) {
         HashMap<Integer, String> map = new HashMap<Integer, String>();
         map.put(2, "abc");
@@ -33,7 +39,9 @@ public class Letter_Combinations_of_a_Phone_Number {
         return result;
     }
 
-    public void getString(String digits, ArrayList<Character> temp, ArrayList<String> result,  HashMap<Integer, String> map){
+    public void getString(String digits, ArrayList<Character> temp,
+                          ArrayList<String> result,
+                          HashMap<Integer, String> map){
         if(digits.length() == 0){
             char[] arr = new char[temp.size()];
             for(int i=0; i<temp.size(); i++){
@@ -75,7 +83,9 @@ public class Letter_Combinations_of_a_Phone_Number {
 
     }
 
-    public void helper(List<String> result, StringBuilder sb, String digits, int index, HashMap<Character, char[]> map){
+    public void helper(List<String> result, StringBuilder sb, String digits,
+                       int index, HashMap<Character, char[]> map){
+
         if(index>=digits.length()){
             result.add(sb.toString());
             return;
@@ -90,6 +100,49 @@ public class Letter_Combinations_of_a_Phone_Number {
             sb.deleteCharAt(sb.length()-1);
         }
     }
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 
 }

@@ -9,9 +9,11 @@ Given an integer array of size n, find all elements that appear more than ⌊ n/
 
 public class Majority_ElementII {
 
-/*    Java Solution 1 - Using a Counter
+    /*    Java Solution 1 - Using a Counter
 
-            Time = O(n) and Space = O(n)*/
+            Time = O(n) and Space = O(n)
+            最标准做法
+            */
 
     public List<Integer> majorityElement(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -81,4 +83,100 @@ public class Majority_ElementII {
         return result;
     }
     //A Linear Time Majority Vote Algorithm
+
+
+////////////////////////////////////////////////////////////////////
+
+    //JAVA-------------------Easy Version To Understand!!!!!!!!!!!!
+    public List<Integer> majorityElement3(int[] nums) {
+        if (nums == null || nums.length == 0)
+            return new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<Integer>();
+        int number1 = nums[0], number2 = nums[0], count1 = 0,
+                count2 = 0, len = nums.length;
+
+        /*
+            // Moore voting algorithm
+            public int majorityElement5(int[] nums) {
+                int count=0, ret = 0;
+                for (int num: nums) {
+                    if (count==0)
+                        ret = num;
+                    if (num!=ret)
+                        count--;
+                    else
+                        count++;
+                }
+                return ret;
+            }
+         */
+        for (int i = 0; i < len; i++) {
+            if (nums[i] == number1)
+                count1++;
+            else if (nums[i] == number2)
+                count2++;
+            else if (count1 == 0) {
+                number1 = nums[i];
+                count1 = 1;
+            } else if (count2 == 0) {
+                number2 = nums[i];
+                count2 = 1;
+            } else {
+                count1--;
+                count2--;
+            }
+        }
+
+        count1 = 0;
+        count2 = 0;
+        for (int i = 0; i < len; i++) {
+            if (nums[i] == number1)
+                count1++;
+            else if (nums[i] == number2)
+                count2++;
+        }
+
+        if (count1 > len / 3)
+            result.add(number1);
+        if (count2 > len / 3)
+            result.add(number2);
+        return result;
+    }
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
 }

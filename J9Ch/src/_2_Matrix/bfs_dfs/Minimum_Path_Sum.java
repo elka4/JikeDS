@@ -3,12 +3,15 @@ package _2_Matrix.bfs_dfs;
 /*
 LeetCode – Minimum Path Sum (Java)
 
-Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.
+Given a m x n grid filled with non-negative numbers,
+find a path from top left to bottom right which minimizes
+the sum of all numbers along its path.
  */
 public class Minimum_Path_Sum {
     /*Java Solution 1: Depth-First Search
 
-    A native solution would be depth-first search. It's time is too expensive and fails the online judgement.*/
+    A native solution would be depth-first search.
+    It's time is too expensive and fails the online judgement.*/
 
     public int minPathSum(int[][] grid) {
         return dfs(0,0,grid);
@@ -73,5 +76,29 @@ public class Minimum_Path_Sum {
 
         return dp[m-1][n-1];
     }
+/////////////////////////////////////////////////////////////////
 
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

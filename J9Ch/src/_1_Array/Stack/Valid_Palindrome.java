@@ -4,20 +4,29 @@ import java.util.*;
 /*
 LeetCode – Valid Palindrome (Java)
 
-Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+Given a string, determine if it is a palindrome,
+considering only alphanumeric characters and ignoring cases.
 
-For example, "Red rum, sir, is murder" is a palindrome, while "Programcreek is awesome" is not.
+For example, "Red rum, sir, is murder" is a palindrome,
+while "Programcreek is awesome" is not.
 
 Note:
-Have you consider that the string might be empty? This is a good question to ask during an interview.
+Have you consider that the string might be empty?
+This is a good question to ask during an interview.
 
 For the purpose of this problem, we define empty string as valid palindrome.
 
 Thoughts
 
-From start and end loop though the string, i.e., char array. If it is not alpha or number, increase or decrease pointers. Compare the alpha and numeric characters. The solution below is pretty straightforward.
+From start and end loop though the string, i.e., char array.
+If it is not alpha or number, increase or decrease pointers.
+Compare the alpha and numeric characters.
+The solution below is pretty straightforward.
  */
+
+
 public class Valid_Palindrome {
+
     //Java Solution 1 - Naive
     public  boolean isPalindrome(String s) {
 
@@ -144,6 +153,49 @@ public class Valid_Palindrome {
 
         return true;
     }
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 

@@ -12,11 +12,11 @@ You must use only constant, O(1) extra space.
 Your runtime complexity should be less than O(n2).
 There is only one duplicate number in the array, but it could be repeated more than once.
  */
+
 public class Find_the_duplicate_number {
+
     //Java Solution 1 - Wrong
-
     //This solution is wrong, but the same idea is used in Solution 3.
-
     public int findDuplicate(int[] arr) {
         for(int i=0; i<arr.length; i++){
             while(arr[i]!=i+1){
@@ -31,8 +31,9 @@ public class Find_the_duplicate_number {
 
         return -1;
     }
-    //Java Solution 2 - Binary Search
 
+
+    //Java Solution 2 - Binary Search
     public int findDuplicate2(int[] nums) {
         int l=1,r=nums.length-1;
         while(l<r){
@@ -55,7 +56,10 @@ public class Find_the_duplicate_number {
 
         return r;
     }
+
+    //
     //Java Solution 3 - Finding Cycle
+    //https://leetcode.com/problems/find-the-duplicate-number/discuss/
 
     public int findDuplicate3(int[] nums) {
         int slow = 0;
@@ -74,5 +78,55 @@ public class Find_the_duplicate_number {
         }
         return find;
     }
+
+    public int findDuplicate4(int[] nums) {
+        int n = nums.length;
+        int slow = n;
+        int fast = n;
+
+        do{
+            slow = nums[slow-1];
+            fast = nums[nums[fast-1]-1];
+        }while(slow != fast);
+
+        slow = n;
+
+        while(slow != fast){
+            slow = nums[slow-1];
+            fast = nums[fast-1];
+        }
+
+        return slow;
+    }
+
+////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////
+
+
+
+
 
 }

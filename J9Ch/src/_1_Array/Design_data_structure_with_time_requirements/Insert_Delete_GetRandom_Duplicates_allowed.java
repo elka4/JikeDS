@@ -12,7 +12,11 @@ remove(val): Removes an item val from the collection if present.
 getRandom(): Returns a random element from current collection of elements. The probability of each element being returned is linearly related to the number of same value the collection contains.
 Java Solution
 
-This problem is similar to Insert Delete GetRandom O(1). We can use two maps. One tracks the index of the element, so that we can quickly insert and remove. The other maps tracks the order of each inserted element, so that we can randomly access any element in time O(1).
+This problem is similar to Insert Delete GetRandom O(1).
+We can use two maps. One tracks the index of the element,
+so that we can quickly insert and remove. The other maps
+tracks the order of each inserted element, so that we can
+randomly access any element in time O(1).
  */
 public class Insert_Delete_GetRandom_Duplicates_allowed {
     public class RandomizedCollection {
@@ -27,7 +31,8 @@ public class Insert_Delete_GetRandom_Duplicates_allowed {
             r = new Random();
         }
 
-        /** Inserts a value to the collection. Returns true if the collection did not already contain the specified element. */
+        /** Inserts a value to the collection. Returns true if the
+         * collection did not already contain the specified element. */
         public boolean insert(int val) {
             //add to map2
             int size2 = map2.size();
@@ -44,7 +49,8 @@ public class Insert_Delete_GetRandom_Duplicates_allowed {
             }
         }
 
-        /** Removes a value from the collection. Returns true if the collection contained the specified element. */
+        /** Removes a value from the collection. Returns true if
+         * the collection contained the specified element. */
         public boolean remove(int val) {
             if(map1.containsKey(val)){
                 HashSet<Integer> set = map1.get(val);
@@ -91,8 +97,47 @@ public class Insert_Delete_GetRandom_Duplicates_allowed {
             if(map2.size()==1){
                 return map2.get(1);
             }
-
-            return map2.get(r.nextInt(map2.size())+1); // nextInt() returns a random number in [0, n).
+            // nextInt() returns a random number in [0, n).
+            return map2.get(r.nextInt(map2.size())+1);
         }
     }
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+
+
+
+
 }

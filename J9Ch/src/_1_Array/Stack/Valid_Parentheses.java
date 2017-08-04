@@ -4,16 +4,21 @@ import java.util.*;
 /*
 LeetCode – Valid Parentheses (Java)
 
-Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']',
+determine if the input string is valid.
 
-The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+The brackets must close in the correct order, "()" and "()[]{}" are all valid
+ but "(]" and "([)]" are not.
 
 Analysis
 
 A typical problem which can be solved by using a stack data structure.
  */
 
+
 public class Valid_Parentheses {
+
+
     public static boolean isValid(String s) {
         HashMap<Character, Character> map = new HashMap<Character, Character>();
         map.put('(', ')');
@@ -38,4 +43,48 @@ public class Valid_Parentheses {
 
         return stack.empty();
     }
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 }

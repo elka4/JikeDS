@@ -13,6 +13,7 @@ Given word1 = "makes", word2 = "coding", return 1.
  */
 
 public class Shortest_Word_DistanceII {
+
     public class WordDistance {
         HashMap<String, ArrayList<Integer>> map;
         public WordDistance(String[] words) {
@@ -42,7 +43,9 @@ public class Shortest_Word_DistanceII {
             return result;
         }
 
-        //The time complexity for shortest method is O(N^2), because there are two for loops. This should be improved. The following is the solution:
+        //The time complexity for shortest method is O(N^2), because there
+        // are two for loops. This should be improved.
+        // The following is the solution:
 
         public int shortest2(String word1, String word2) {
 
@@ -64,4 +67,30 @@ public class Shortest_Word_DistanceII {
             return result;
         }
     }
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////
 }

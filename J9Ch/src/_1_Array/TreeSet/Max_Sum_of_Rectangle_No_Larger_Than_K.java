@@ -12,7 +12,8 @@ Given matrix = [
   [0, -2, 3]
 ]
 k = 2
-The answer is 2. Because the sum of rectangle [[0, 1], [-2, 3]] is 2 and 2 is the max number no larger than k (k = 2).
+The answer is 2. Because the sum of rectangle [[0, 1], [-2, 3]] is 2 and 2 is
+the max number no larger than k (k = 2).
 
 Note:
 The rectangle inside the matrix must have an area > 0.
@@ -20,11 +21,15 @@ What if the number of rows is much larger than the number of columns?
 
 Analysis
 
-We can solve this problem by comparing each submatrix. This method is trivial and we need a better solution. The key to the optimal solution is using a tree set to calculate the maximum sum of subarray close to k.
+We can solve this problem by comparing each submatrix. This method is trivial and
+we need a better solution. The key to the optimal solution is using a tree set to
+calculate the maximum sum of subarray close to k.
  */
-public class Max_Sum_of_Rectangle_No_Larger_Than_K {
-    //Java Solution 1
 
+
+public class Max_Sum_of_Rectangle_No_Larger_Than_K {
+
+    //Java Solution 1
     public int maxSumSubmatrix(int[][] matrix, int k) {
         if(matrix==null||matrix.length==0||matrix[0].length==0)
             return 0;
@@ -49,6 +54,7 @@ public class Max_Sum_of_Rectangle_No_Larger_Than_K {
         return result;
     }
 
+
     public int getLargestSumCloseToK(int[] arr, int k){
         int sum=0;
         TreeSet<Integer> set = new TreeSet<Integer>();
@@ -68,12 +74,14 @@ public class Max_Sum_of_Rectangle_No_Larger_Than_K {
 
         return result;
     }
-/*    The time complexity is O(n*n*m*log(m)). If m is greater than n, this solution is fine. However, if m is less than n, then this solution is not optimal. In this case, we should reverse the row and column, like Solution 2.*/
+
+    /*    The time complexity is O(n*n*m*log(m)). If m is greater than n, this solution
+    is fine. However, if m is less than n, then this solution is not optimal.
+    In this case,  we should reverse the row and column, like Solution 2.*/
 
 
 
     //Java Solution 2
-
     public int maxSumSubmatrix2(int[][] matrix, int k) {
         if(matrix==null||matrix.length==0||matrix[0].length==0)
             return 0;
@@ -105,6 +113,7 @@ public class Max_Sum_of_Rectangle_No_Larger_Than_K {
         return result;
     }
 
+
     public int getLargestSumCloseToK2(int[] arr, int k){
         int sum=0;
         TreeSet<Integer> set = new TreeSet<Integer>();
@@ -124,5 +133,48 @@ public class Max_Sum_of_Rectangle_No_Larger_Than_K {
 
         return result;
     }
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 }
