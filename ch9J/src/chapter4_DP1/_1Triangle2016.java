@@ -12,7 +12,7 @@ public class _1Triangle2016 {
 class Triangle2016_1{
 	private int minPath;//用了全局变量，不好。
 	/**
-	 * @param triagle: a list of lists of integers
+	 * @param triangle: a list of lists of integers
 	 * @return An integer, minimum path sum.
 	 */
 	public int minimumTotal(int[][] triangle){
@@ -22,11 +22,13 @@ class Triangle2016_1{
 		traverse(triangle, 0, 0, 0);
 		return minPath;
 	}
+
 	//1, 递归的定义：递归的定义：我从0，0出发，
 	//走到x，y这个点，一路上（不包括x，y）得到的和是sum
 	//可以包括，看个人设计。这里老师觉得不包括比较好。
 	//比如说接下来的递归出口就很好设计，下面的x就是越界的点。
 	private void traverse(int[][] triangle, int x, int y, int sum){
+
 		//2, 递归的出口，当我走过了最后一层的时候
 		//如果包括x，y if(x == triangle.length － 1)  
 		if(x == triangle.length) {
@@ -41,7 +43,10 @@ class Triangle2016_1{
 		//traverse(triangle, x + 1, y, sum + triangle[x + 1][y]);
 		//traverse(triangle, x + 1, y + 1, sum + triangle[x + 1][y + 1]);
 	}
-}
+
+}//class Triangle2016_1
+
+///////////////////////////////////////////////////////////////////////////////////
 
 //Ch9 2016 summer //会超时
 //DFS， Divide and Conquer
@@ -50,7 +55,7 @@ class Triangle2016_1{
 
 class Triangle2016_2{
 	/**
-	 * @param triagle: a list of lists of integers
+	 * @param triangle: a list of lists of integers
 	 * @return An integer, minimum path sum.
 	 */
 	public int minimumTotal(int[][] triangle){
@@ -72,7 +77,9 @@ class Triangle2016_2{
 		
 		return Math.min(left, right) + triangle[x][y]; 
 	}
-}
+}//class Triangle2016_2
+
+///////////////////////////////////////////////////////////////////////////////////
 
 //Ch9 2016 summer
 //DFS， Divide Conquer + memorization
@@ -88,10 +95,8 @@ class Triangle2016_2{
  * 总之是要遍历一边每个点
  */
 
-/**
- * @param triagle: a list of lists of integers
- * @return An integer, minimum path sum.
- */
+
+
 class Triangle2016_3AC{
 	int n ;	
 	//这个数组记录一个位置的数值
@@ -128,7 +133,7 @@ class Triangle2016_3AC{
         return minPath[x][y];
     }
 
-
+///////////////////////////////////////////////////////////////////////////////////
     // top to bottom code
 
     public int minimumTotal4(int[][] triangle) {
@@ -158,6 +163,8 @@ class Triangle2016_3AC{
         }
         return best;
     }
+
+///////////////////////////////////////////////////////////////////////////////////
 
     //bottom to top code
 

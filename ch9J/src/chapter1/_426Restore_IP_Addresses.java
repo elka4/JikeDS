@@ -1,5 +1,7 @@
 package chapter1;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 
 public class _426Restore_IP_Addresses {
@@ -46,6 +48,11 @@ public class _426Restore_IP_Addresses {
         	return s.equals("0"); 
         int digit = Integer.valueOf(s);
         return digit >= 0 && digit <= 255;
+    }
+
+    @Test
+    public void test01(){
+        System.out.println(restoreIpAddresses("25525511135"));
     }
 }
 
