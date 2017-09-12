@@ -35,7 +35,7 @@ class Recursion {
 
 public class _3ReverseLinkedList_Recursion {
 	public static void main (String[] args) throws FileNotFoundException {
-		Scanner in = new Scanner(new File("_3ReverseLinkedList_Iteration.txt"));
+		Scanner in = new Scanner(new File("/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_0Linear/input/_3ReverseLinkedList.txt"));
 		int n = in.nextInt();
 		while (n != -1) {
 			Node head = null;

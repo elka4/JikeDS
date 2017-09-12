@@ -35,7 +35,7 @@ class Happiness2{
 
 public class _1Happy_SaveSpace {
 	public static void main(String[] args) throws FileNotFoundException {
-		Scanner in = new Scanner(new File("_1Happy_Iteration.txt"));
+		Scanner in = new Scanner(new File("/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_0Linear/input/_1Happy.txt"));
 		Happiness2 happiness = new Happiness2();
 		for (int i = 2; i <= 810; ++i) {
 			happiness.isHappy(i, 1);

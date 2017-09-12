@@ -26,7 +26,7 @@ class Happiness{
 
 public class _1Happy_Iteration {
 	public static void main (String[] args) throws FileNotFoundException{
-		Scanner in = new Scanner(new File("./leetlint/input/_1Happy_Iteration.txt"));
+		Scanner in = new Scanner(new File("/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_0Linear/input/_1Happy.txt"));
 		int n = in.nextInt();
 		Happiness  happiness = new Happiness();          
 		while (n != -1) {

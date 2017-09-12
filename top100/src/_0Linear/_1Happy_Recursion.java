@@ -34,7 +34,7 @@ class Happy {
 }
 public class _1Happy_Recursion {
 	public static void main(String[] args) throws FileNotFoundException{
-		Scanner in = new Scanner(new File("_1Happy_Iteration.txt"));
+		Scanner in = new Scanner(new File("/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_0Linear/input/_1Happy.txt"));
 		int n = in.nextInt();
 		Happy happy = new Happy();
 		while (n != -1) {
