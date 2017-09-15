@@ -1,4 +1,4 @@
-package atguigu.java8;
+package atguigu1.java8;
 
 public class FilterEmployeeForSalary implements MyPredicate<Employee> {
 

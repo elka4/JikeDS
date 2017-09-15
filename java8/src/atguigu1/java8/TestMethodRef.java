@@ -1,4 +1,4 @@
-package atguigu.java8;
+package atguigu1.java8;
 
 import java.io.PrintStream;
 import java.util.Comparator;

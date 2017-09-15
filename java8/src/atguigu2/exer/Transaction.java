@@ -1,4 +1,4 @@
-package atguigu.exer;
+package atguigu2.exer;
 //交易类
 public class Transaction {
 

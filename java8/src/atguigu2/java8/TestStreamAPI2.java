@@ -1,4 +1,4 @@
-package atguigu.java8;
+package atguigu2.java8;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 
-import atguigu.java8.Employee.Status;
+import atguigu2.java8.Employee.Status;
 
 /*
  * 一、 Stream 的操作步骤

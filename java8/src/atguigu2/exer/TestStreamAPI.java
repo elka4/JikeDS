@@ -1,10 +1,10 @@
-package atguigu.exer;
+package atguigu2.exer;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import atguigu.java8.Employee;
+import atguigu2.java8.Employee;
 import org.junit.Test;
 
 public class TestStreamAPI {

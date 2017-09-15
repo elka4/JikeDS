@@ -1,4 +1,4 @@
-package atguigu.exer;
+package atguigu1.exer;
 
 public interface MyFunction2<T, R> {
 

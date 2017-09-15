@@ -1,4 +1,4 @@
-package atguigu.java8;
+package atguigu2.java8;
 
 public class Man {
 

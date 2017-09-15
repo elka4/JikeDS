@@ -1,10 +1,10 @@
-package atguigu.exer;
+package atguigu1.exer;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import atguigu.java8.Employee;
+import atguigu1.java8.Employee;
 import org.junit.Test;
 
 public class TestLambda {

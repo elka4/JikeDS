@@ -1,4 +1,4 @@
-package atguigu.exer;
+package atguigu2.exer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
