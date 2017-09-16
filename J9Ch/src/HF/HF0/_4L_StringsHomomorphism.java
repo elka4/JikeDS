@@ -3,6 +3,84 @@ package HF.HF0;
 import java.util.*;
 
 public class _4L_StringsHomomorphism {
+    public class Solution {
+        /**
+         * @param s a string
+         * @param t a string
+         * @return true if the characters in s can be replaced to get t or false
+         */
+        public boolean isIsomorphic(String s, String t) {
+            // Write your code here
+            int[] m1 = new int[128];
+            int[] m2 = new int[128];
+            for (int i = 0; i < s.length(); ++i) {
+                int cs = (int) s.charAt(i);
+                int ts = (int) t.charAt(i);
+                if (m1[cs] == 0 && m2[ts] == 0) {
+                    m1[cs] = ts;
+                    m2[ts] = 1;
+                } else if (m1[cs] != ts) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    // version: 高频题班
+    public class Solution2 {
+        /**
+         * @param s a string
+         * @param t a string
+         * @return true if the characters in s can be replaced to get t or false
+         */
+        public boolean isIsomorphic(String s, String t) {
+            // Write your code here
+            int[] map = new int[256];
+            char[] sc = s.toCharArray();
+            char[] tc = t.toCharArray();
+
+            for (int i = 0; i < s.length(); i++) {
+                if (map[sc[i]] == 0) {
+                    map[sc[i]] = tc[i];
+                } else {
+                    if (map[sc[i]] != tc[i]) {
+                        return false;
+                    }
+                }
+            }
+
+        /*
+        ///////////////////////////////假设t的取值只有'a' - 'z' 时做t->s 映射的一种写法   （仅做演示使用）
+        int[] map2 = new int[26];
+        for (int i = 0; i < t.length(); i++) {
+            if (map2[tc[i] - 'a'] == 0) {
+                map2[tc[i] - 'a'] = sc[i];
+            } else {
+                if (map2[tc[i] - 'a'] != sc[i]) {
+                    return false;
+                }
+            }
+        }
+        */
+
+            int[] map2 = new int[256];
+            for (int i = 0; i < t.length(); i++) {
+                if (map2[tc[i]] == 0) {
+                    map2[tc[i]] = sc[i];
+                } else {
+                    if (map2[tc[i]] != sc[i]) {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+    }
+/////////////////////////////////////////////////////////////////
+
+
     //My 6 lines solution
     public boolean isIsomorphic(String s1, String s2) {
         int[] m = new int[512];
@@ -77,7 +155,7 @@ public class _4L_StringsHomomorphism {
 
 
     //http://www.cnblogs.com/lz87/p/6943163.html
-    public class Solution {
+    public class Solution3 {
         public boolean isIsomorphic(String s, String t) {
             if(s == null || t == null){
                 return false;
@@ -112,7 +190,7 @@ public class _4L_StringsHomomorphism {
     }
 
 
-    public class Solution2 {
+    public class Solution4 {
         public boolean isIsomorphic(String s, String t) {
             int[] m1 = new int[128];
             int[] m2 = new int[128];
