@@ -1,0 +1,17 @@
+ Sliding Window Average from Data Stream  小技巧总结:
+– 如何快速求和? 前缀和数组
+– 如何节省储存空间呢? 链表/滚动
+– 写滚动的技巧 先写程序最后加滚动
+ Edit Distance II
+ Read Characters From File - multiple calls  Strings Serialization
+
+
+
+ System Longest File Path
+ Roman to Integer
+ Integer to Roman  小技巧总结:
+– 如何数位分离?
+– (扩展)如何将一个数转成k进制? % k / k
+ Identify Celebrity  小技巧总结:
+– 降时间复杂度->找冗余
+– 思维上双向:true时候，false的时候? %10 /10
