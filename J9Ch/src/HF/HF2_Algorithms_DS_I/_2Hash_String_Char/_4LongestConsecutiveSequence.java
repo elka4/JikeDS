@@ -2,8 +2,46 @@ package HF.HF2_Algorithms_DS_I._2Hash_String_Char;
 
 import java.util.*;
 
-public class _4LongestConsecutiveSequence {
+/*
 
+思路:
+• 要在o(1)的时间内插入删除，只能hash。那hash可以getRandom吗?
+– 不太好做
+• 什么数据结构比较好getRandom?
+– 数组
+• 考虑hash与数组结合起来用，hash插入一个，数组也插入一个。那么问题
+来了，数组删除元素怎么办? – 与最后插入的一个元素交换
+• 那怎么o(1)时间在数组中找到要删除元素(要交换)的位置? – 用hash将元素的位置记下来
+ */
+
+/*
+算法:
+• 插入:
+– 数组末尾加入这个元素
+– Hash这个元素存下数组中的下标
+• 删除:
+– 通过hash找到这个元素在数组中的位置
+– 数数组中这个元素和数组的末尾元素交换，交换后删除
+– Hash中删除这个元素，更新数组原末尾元素现在在数组中的位置
+• Pick:
+– 数组中random一个返回
+ */
+
+/*
+• Company Tags: Google Amazon Facebook
+考点:
+• 两种数据结构的综合应用
+ */
+
+/*
+能力维度:
+1. 理解问题
+3. 基础数据结构/算法
+4. 逻辑思维/算法优化能力
+6. 算法分析(时间/空间复杂度)
+ */
+public class _4LongestConsecutiveSequence {
+    //jiuzhang
     public class Solution {
         /**
          * @param nums: A list of integers

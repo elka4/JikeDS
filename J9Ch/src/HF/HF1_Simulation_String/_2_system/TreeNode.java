@@ -1,4 +1,4 @@
-package HF.HF1_SimulationAlgorithms_StringManipulationSkills._2_system;
+package HF.HF1_Simulation_String._2_system;
 
 public class TreeNode {
           public int val;

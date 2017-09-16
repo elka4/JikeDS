@@ -1,6 +1,31 @@
 package HF.HF2_Algorithms_DS_I._2Hash_String_Char;
 
+/*
+• Given a string, find the first non-repeating character in it and return it's index. If it doesn't exist, return -1.
+• Examples:
+• s = "lintcode"
+• return 0.
+• s = "lovelintcode",
+• return 2.
+ */
+
+/*
+思路:
+• 扫一遍统计每个字符出现的次数(用什么统计?Hash) • 再扫一遍找出第一个出现次数=1的字符
+ */
+
+/*
+• Company Tags:Amazon
+ 考点:
+• Hash的应用
+ */
+
+/*
+能力维度:
+3. 基础数据结构/算法
+ */
 public class _1FirstPositionUniqueCharacter {
+    //jiuzhang
     public class Solution {
         /**
          * @param s a string

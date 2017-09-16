@@ -2,6 +2,23 @@ package HF.HF2_Algorithms_DS_I._1Interval;
 
 import java.util.*;
 
+/*
+Example:
+• Given intervals [1,3],[6,9], insert and merge [2,5] in as [1,5],[6,9].
+ 思路:
+• 做了merge interval 这一题就很简单了
+• 先插入，然后直接套用merge interval
+• 特殊输入?
+时间复杂度:O(n)
+ */
+
+/*
+
+能力维度:
+2. 代码基础功力
+3. 基础数据结构/算法 7. debug能力
+ */
+
 public class _3InsertInterval {
     public class Solution {
         public List<Interval> insert(List<Interval> intervals, Interval newInterval) {

@@ -2,8 +2,42 @@ package HF.HF2_Algorithms_DS_I._2Hash_String_Char;
 
 import java.util.*;
 
-public class _2SubstringAnagrams {
+/*
+• Input:
+– s: "cbaebabacd" p: “aabc"
+• Output: – [5]
+  • Anagrams 的充要条件?
+– 元素出现的次数一样就好了
+ */
 
+/*
+思路:
+• 基本的想法:
+– 假设p串的长度为l , s串长度为n
+– 那么就枚举出s中所有长度为l的子串，并用hash统计它们元素出现的个数
+• 基本想法的时间复杂度:
+– n个子串
+• 每次统计子串中元素出现的个数O(l)
+• 每次和p对比元素出现次数是否一样O(256)
+– 总体O( n * (l + 256)) = O(nl)
+ */
+
+/*
+• Company Tags:Amazon 考点:
+• Sliding window + hash
+相关题目:
+• Sliding window median
+• Sliding window maximum
+ */
+
+/*
+能力维度:
+1. 理解问题
+3. 基础数据结构/算法
+4. 逻辑思维/算法优化能力
+ */
+public class _2SubstringAnagrams {
+    //jiuzhang
     public class Solution {
         /**
          * @param s a string

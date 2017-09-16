@@ -1,9 +1,10 @@
-package HF.HF1_SimulationAlgorithms_StringManipulationSkills._2_system;
+package HF.HF1_Simulation_String._2_system;
 
 import java.util.*;
 
 
 public class _4BinaryTreeSerialization {
+    //in class
     private static final String spliter = ",";
     private static final String NN = "X";
 
@@ -40,6 +41,13 @@ public class _4BinaryTreeSerialization {
             return node;
         }
     }
+
+////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////
+
+
 }
 /*
 Design an algorithm and write code to serialize and deserialize a binary tree. Writing the tree to a file is called 'serialization' and reading back from the file to reconstruct the exact same binary tree is 'deserialization'.
