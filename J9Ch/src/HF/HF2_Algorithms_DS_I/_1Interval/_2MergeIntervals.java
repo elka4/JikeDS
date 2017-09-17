@@ -26,7 +26,8 @@ Example:
 /*
 能力维度:
 2. 代码基础功力
-3. 基础数据结构/算法 7. debug能力
+3. 基础数据结构/算法
+7. debug能力
  */
 
 public class _2MergeIntervals {
@@ -95,3 +96,21 @@ public class _2MergeIntervals {
         }
     }
 }
+
+/*
+Given a collection of intervals, merge all overlapping intervals.
+
+Have you met this question in a real interview? Yes
+Example
+Given intervals => merged intervals:
+
+[                     [
+  [1, 3],               [1, 6],
+  [2, 6],      =>       [8, 10],
+  [8, 10],              [15, 18]
+  [15, 18]            ]
+]
+Challenge
+Tags
+LinkedIn Sort Array Google
+ */
