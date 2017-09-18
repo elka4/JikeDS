@@ -1,6 +1,6 @@
 package DP.DP1;
 
-public class _1UniquePaths {
+public class _2UniquePaths {
     public class Solution {
         public int uniquePaths(int m, int n) {
             if (m == 0 || n == 0) {
@@ -47,3 +47,19 @@ public class _1UniquePaths {
         }
     }
 }
+/*
+A robot is located at the top-left corner of a m x n grid.
+
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid.
+
+How many possible unique paths are there?
+
+ Notice
+
+m and n will be at most 100.
+
+Have you met this question in a real interview? Yes
+Example
+Given m = 3 and n = 3, return 6.
+Given m = 4 and n = 5, return 35.
+ */

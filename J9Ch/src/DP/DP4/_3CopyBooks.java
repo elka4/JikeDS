@@ -108,8 +108,8 @@ public class _3CopyBooks {
     // verison 3 动态规划专题班版本
     public class Solution3 {
         /**
-         * @param pages: an array of integers
-         * @param k: an integer
+         * @param A: an array of integers
+         * @param K: an integer
          * @return: an integer
          */
         public int copyBooks(int[] A, int K) {
