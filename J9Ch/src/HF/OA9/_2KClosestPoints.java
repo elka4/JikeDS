@@ -1,5 +1,8 @@
 package HF.OA9;
 
+import org.junit.Before;
+import org.junit.Test;
+
 import java.util.*;
 
 //堆
@@ -10,7 +13,14 @@ public class _2KClosestPoints {
         public int x, y;
         public Point() { x = 0; y = 0; }
         public Point(int a, int b) { x = a; y = b; }
+
+        @Override
+        public String toString() {
+            return "[" + x + " " + y + "]";
+        }
     }
+
+/////////////////////////////////////////////////////////////////
 
     /**
      * @param points a list of points
@@ -19,6 +29,7 @@ public class _2KClosestPoints {
      * @return the k closest points
      */
     private Point global_origin = null;
+
     public Point[] kClosest(Point[] points, Point origin, int k) {
         // Write your code here
         global_origin = origin;
@@ -36,21 +47,49 @@ public class _2KClosestPoints {
 
         for (int i = 0; i < points.length; i++) {
             pq.offer(points[i]);
-            if (pq.size() > k)
+            if (pq.size() > k){             //用这一步来维护PQ的size
                 pq.poll();
+            }
         }
 
         k = pq.size();
         Point[] ret = new Point[k];
-        while (!pq.isEmpty())
+
+        while (!pq.isEmpty()) {
             ret[--k] = pq.poll();
+        }
+
         return ret;
     }
 
     private int getDistance(Point a, Point b) {
+
         return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
     }
 
+    Point[] points;
+    Point origin;
+    int k;
+    @Before
+    public void bef(){
+        points = new Point[5];
+        points[0] = new Point(4,6);
+        points[1] = new Point(4,7);
+        points[2] = new Point(4,4);
+        points[3] = new Point(2,5);
+        points[4] = new Point(1,1);
+
+        origin = new Point(0,0);
+        k = 3;
+    }
+
+    @Test
+    public void test01(){
+        Point[] result = kClosest(points, origin, k);
+        for ( Point p:result) {
+            System.out.print(p);
+        }
+    }
 
 /////////////////////////////////////////////////////////////////
 

@@ -1,5 +1,7 @@
 package HF.OA9;
 
+import org.junit.Test;
+
 import java.util.*;
 
 //堆
@@ -12,6 +14,10 @@ public class _8HighFive {
          public Record(int id, int score){
              this.id = id;
              this.score = score;
+         }
+         @Override
+         public String toString(){
+             return id + " " + score + " ";
          }
      }
 
@@ -54,6 +60,24 @@ public class _8HighFive {
 
 //////////////////////////////////////////////////////////////////
 
+    @Test
+    public void test01(){
+        Record[] records = new Record[10];
+        records[0] = new Record(1, 91);
+        records[1] = new Record(1, 92);
+        records[2] = new Record(2, 93);
+        records[3] = new Record(2, 99);
+        records[4] = new Record(2, 98);
+        records[5] = new Record(2, 97);
+        records[6] = new Record(1, 60);
+        records[7] = new Record(1, 58);
+        records[8] = new Record(2, 100);
+        records[9] = new Record(1, 61);
+
+        System.out.println(highFive(records));
+        //{1=72.4, 2=97.4}
+    }
+
 //////////////////////////////////////////////////////////////////
 
 }
@@ -65,5 +89,6 @@ Example
 Given results = [[1,91],[1,92],[2,93],[2,99],[2,98],[2,97],[1,60],[1,58],[2,100],[1,61]]
 
 Return
-
+1: 72.40
+2: 97.40
  */

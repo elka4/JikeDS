@@ -106,7 +106,7 @@ public class _3WordAbbreviationSet {
      * boolean param = obj.isUnique(word);
      */
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////
 
     // version: 高频题班
     public class ValidWordAbbr2 {
@@ -148,4 +148,10 @@ public class _3WordAbbreviationSet {
             return "" + str.charAt(0) + (str.length() - 2) + str.charAt(str.length() - 1);
         }
     }
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
 }
+/*
+
+ */

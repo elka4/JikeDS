@@ -1,5 +1,9 @@
 package HF.OA9;
 
+import org.junit.Test;
+import java.util.*;
+import java.util.stream.Collectors;
+
 //Sliding window类
 //Window Sum
 public class _3WindowSum {
@@ -9,17 +13,36 @@ public class _3WindowSum {
      */
     public int[] winSum(int[] nums, int k) {
         // write your code here
-        if (nums == null || nums.length < k || k <= 0)
-            return new int[0];
+        if (nums == null || nums.length < k || k <= 0) return new int[0];
+
 
         int[] sums = new int[nums.length - k + 1];
+
         for (int i = 0; i < k; i++)
             sums[0] += nums[i];
         for (int i = 1; i < sums.length; i++) {
             sums[i] = sums[i - 1] - nums[i - 1] + nums[i + k-1];
         }
+
         return sums;
     }
+
+    @Test
+    public void test01(){
+        int[] input = {1,2,7,8,5};
+        int k = 3;
+        int[] result = winSum(input, 3);
+
+        List<Integer> list =  Arrays.stream(result).boxed().collect(Collectors.toList());
+
+        list.forEach(System.out::println);
+
+    }
+
+
+/*    public List<Integer> myWork(int[] array) {
+        return Arrays.asList(ArrayUtils.toObject(array));
+    }*/
 
 //////////////////////////////////////////////////////////////
 

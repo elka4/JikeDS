@@ -1,4 +1,5 @@
 package HF.HF3_Algorithms_DS_II._2BST;
+import lib.*;
 
 //Validate binary search tree
 public class _3ValidateSearchTree {

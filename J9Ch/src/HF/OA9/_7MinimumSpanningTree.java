@@ -1,10 +1,13 @@
 package HF.OA9;
 
 import java.util.*;
+import lib.*;
+import org.junit.Test;
 
 //基础最小生成树
 //Minimum Spanning Tree
 public class _7MinimumSpanningTree {
+
     public class Connection {
         public String city1, city2;
         public int cost;
@@ -13,6 +16,11 @@ public class _7MinimumSpanningTree {
             this.city1 = city1;
             this.city2 = city2;
             this.cost = cost;
+        }
+
+        @Override
+        public String toString(){
+            return city1 + " " + city2 + " " + cost;
         }
     }
 
@@ -159,11 +167,23 @@ public class _7MinimumSpanningTree {
         }
     }
 
+    @Test
+    public void test01(){
+        List<Connection> connections = new ArrayList<>();
+        connections.add(new Connection("Acity","Bcity",1));
+        connections.add(new Connection("Acity","Ccity",2));
+        connections.add(new Connection("Bcity","Ccity",3));
 
+        List result = lowestCost2(connections);
+        System.out.println(result);
+        //[Acity Bcity 1, Acity Ccity 2]
+
+    }
 /////////////////////////////////////////////////////////////////
 }
 /*
 Given a list of Connections, which is the Connection class (the city name at both ends of the edge and a cost between them), find some edges, connect all the cities and spend the least amount.
+
 Return the connects if can connect all the cities, otherwise return empty list.
 
  Notice

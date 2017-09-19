@@ -1,5 +1,8 @@
 package HF.OA9;
 
+import lib.*;
+import org.junit.Test;
+
 //树上DFS
 //Maximum Subtree
 public class _9MaximumSubtree {
@@ -30,6 +33,22 @@ public class _9MaximumSubtree {
         }
 
         return left_weight + right_weight + root.val;
+    }
+
+    @Test
+    public void test01(){
+        int[] input = {0,-5,3,1,-4,2,-5};
+        TreeNode root = TreeNode.createMinimalBST(input);
+        root.print();
+        findSubtree(root).print();
+    }
+
+    @Test
+    public void test02(){
+        int[] input = {0,8,-5,1,-4,2,-5};
+        TreeNode root = TreeNode.createMinimalBST(input);
+        root.print();
+        findSubtree(root).print();
     }
 
 ////////////////////////////////////////////////////////////

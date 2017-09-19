@@ -1,12 +1,13 @@
 package HF.HF1_Simulation_String._2_system;
 
 import java.util.*;
-
+import lib.*;
+import org.junit.Test;
 
 public class _4BinaryTreeSerialization {
     //in class
     private static final String spliter = ",";
-    private static final String NN = "X";
+    private static final String NN = "#";
 
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
@@ -40,6 +41,24 @@ public class _4BinaryTreeSerialization {
             node.right = buildTree(nodes);
             return node;
         }
+    }
+
+    @Test
+    public void test01(){
+        int[] input = {9,3,20};
+        TreeNode root = TreeNode.createMinimalBST(input);
+        root.right.setRightChild(new TreeNode(7));
+        root.right.setLeftChild(new TreeNode(15));
+        root.print();
+
+        System.out.println(serialize(root));
+
+    }
+
+    @Test
+    public void test02(){
+        TreeNode root = deserialize("3,9,#,#,20,15,#,#,7,#,#,");
+        root.print();
     }
 
 ////////////////////////////////////////////////////////////////////////

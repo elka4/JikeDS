@@ -1,6 +1,7 @@
 package HF.HF3_Algorithms_DS_II._3BinaryTree;
 
 import java.util.*;
+import lib.*;
 
 //Binary Tree Vertical Order Traversal
 public class _3BinaryTreeVerticalOrderTraversal {

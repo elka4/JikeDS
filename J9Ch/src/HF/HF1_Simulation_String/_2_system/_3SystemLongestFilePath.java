@@ -15,12 +15,16 @@ package HF.HF1_Simulation_String._2_system;
 • 是否可以形象化的思考这个问题 • 是否可以熟练的处理字符串
  */
 
+import org.junit.Test;
+
 /*
 能力维度:
 1. 理解问题
 2. 代码基础功力
 5. 细节处理(corner case) 7. debug能力
  */
+
+// System Longest File Path
 public class _3SystemLongestFilePath {
     //in class
     /*
@@ -47,56 +51,67 @@ public class _3SystemLongestFilePath {
         return ans;
     }
 
+    @Test
+    public void test01(){
+        System.out.println(lengthLongestPath("dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext" ));
+    }
+
+
+    @Test
+    public void test02(){
+        System.out.println(lengthLongestPath("dir\n\tfile.ext" ));
+    }
+
+
 ////////////////////////////////////////////////////////////////////////
 
-    public class Solution1 {
-        /**
-         * @param input an abstract file system
-         * @return return the length of the longest absolute path to file
-         */
-        public int lengthLongestPath(String input) {
-            // Write your code here
-            int result = 0;
-            int[] path = new int[input.length() + 2];
-            String[] st = input.split("\n");
-            for (String line : st){
-                String name = line.replaceAll("(\t)+", "");
-                int depth = line.length() - name.length();
-                if(name.contains("."))
-                    result = Math.max(result, path[depth] + name.length());
-                else
-                    path[depth + 1] = path[depth] + name.length() + 1;
-            }
-            return result;
+    /**
+     * @param input an abstract file system
+     * @return return the length of the longest absolute path to file
+     */
+    public int lengthLongestPath2(String input) {
+        // Write your code here
+        int result = 0;
+        int[] path = new int[input.length() + 2];
+        String[] st = input.split("\n");
+        for (String line : st){
+            String name = line.replaceAll("(\t)+", "");
+            int depth = line.length() - name.length();
+            if(name.contains("."))
+                result = Math.max(result, path[depth] + name.length());
+            else
+                path[depth + 1] = path[depth] + name.length() + 1;
         }
+        return result;
     }
+
+////////////////////////////////////////////////////////////////////////
 
     // version: 高频题班
-    public class Solution2 {
-        /*
-        * @param input an abstract file system
-        * @return return the length of the longest absolute path to file
-        */
-        public int lengthLongestPath(String input) {
-            // Write your code here
-            if (input.length() == 0) {
-                return 0;
-            }
-            int ans = 0;
-            int[] level_size = new int[input.length() + 1];
-
-            for (String line : input.split("\n")) {
-                int level = line.lastIndexOf('\t') + 2;
-                int len = line.length() - (level - 1);
-                if (line.contains(".")) {
-                    ans = Math.max(ans, level_size[level - 1] + len);
-                } else {
-                    level_size[level] = level_size[level - 1] + len + 1;
-                }
-            }
-            return ans;
+    /*
+    * @param input an abstract file system
+    * @return return the length of the longest absolute path to file
+    */
+    public int lengthLongestPath3(String input) {
+        // Write your code here
+        if (input.length() == 0) {
+            return 0;
         }
+        int ans = 0;
+        int[] level_size = new int[input.length() + 1];
+
+        for (String line : input.split("\n")) {
+            int level = line.lastIndexOf('\t') + 2;
+            int len = line.length() - (level - 1);
+            if (line.contains(".")) {
+                ans = Math.max(ans, level_size[level - 1] + len);
+            } else {
+                level_size[level] = level_size[level - 1] + len + 1;
+            }
+        }
+        return ans;
     }
+
 
 ////////////////////////////////////////////////////////////////////////
 

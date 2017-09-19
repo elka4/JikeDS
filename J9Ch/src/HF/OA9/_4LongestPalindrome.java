@@ -1,5 +1,7 @@
 package HF.OA9;
 
+import org.junit.Test;
+
 import java.util.*;
 
 //模拟
@@ -15,16 +17,26 @@ public class _4LongestPalindrome {
         // Write your code here
         Set<Character> set = new HashSet<>();
         for (char c : s.toCharArray()) {
-            if (set.contains(c)) set.remove(c);
-            else set.add(c);
+            if (set.contains(c)) {
+                set.remove(c);
+            }
+            else {
+                set.add(c);
+            }
         }
 
         int remove = set.size();
-        if (remove > 0)
+        if (remove > 0){
             remove -= 1;
+        }
+
         return s.length() - remove;
     }
 
+    @Test
+    public void test01(){
+        System.out.println(longestPalindrome("abccccdd"));
+    }
 
 //////////////////////////////////////////////////////////////////
     // version 2
@@ -70,6 +82,10 @@ public class _4LongestPalindrome {
         return oneTimeOddCount > 0 ? 1 + evenCount : evenCount;
     }
 
+    @Test
+    public void test02(){
+        System.out.println(longestPalindrome2("abccccdd"));
+    }
 
 //////////////////////////////////////////////////////////////////
 

@@ -20,6 +20,8 @@ package HF.HF1_Simulation_String._4_Intelegent;
 • 降时间复杂度 - > 找冗余
 • 思维上双向:true时候，false的时候?
  */
+
+//Identify Celebrity
 public class _1IdentifyCelebrity {
     /**
      * @param n a party with n people
@@ -46,36 +48,37 @@ public class _1IdentifyCelebrity {
         return ans;
     }
 
+////////////////////////////////////////////////////////////
     boolean knows(int a, int b){
         return a > b;
     }
-
 ////////////////////////////////////////////////////////////
+
     //jiuzhang
-    public class Solution  {
-        /**
-         * @param n a party with n people
-         * @return the celebrity's label or -1
-         */
-        public int findCelebrity(int n) {
-            // Write your code here
-            int candidate = 0;
-            for(int i = 1; i < n; i++) {
-                if (knows(candidate, i)) {
-                    candidate = i;
-                }
+    /**
+     * @param n a party with n people
+     * @return the celebrity's label or -1
+     */
+    public int findCelebrity2(int n) {
+        // Write your code here
+        int candidate = 0;
+        for(int i = 1; i < n; i++) {
+            if (knows(candidate, i)) {
+                candidate = i;
             }
-            for(int i = 0; i < candidate; i++) {
-                if(knows(candidate, i) || !knows(i, candidate)) {
-                    return -1;
-                }
-            }
-            for(int i = candidate + 1; i < n; i++) {
-                if(!knows(i, candidate)) {
-                    return -1;
-                }
-            }
-            return candidate;
         }
+        for(int i = 0; i < candidate; i++) {
+            if(knows(candidate, i) || !knows(i, candidate)) {
+                return -1;
+            }
+        }
+        for(int i = candidate + 1; i < n; i++) {
+            if(!knows(i, candidate)) {
+                return -1;
+            }
+        }
+        return candidate;
     }
+////////////////////////////////////////////////////////////
+
 }

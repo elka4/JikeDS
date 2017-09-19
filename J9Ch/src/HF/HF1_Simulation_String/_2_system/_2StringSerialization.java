@@ -1,5 +1,7 @@
 package HF.HF1_Simulation_String._2_system;
 
+import org.junit.Test;
+
 import java.util.*;
 
 /*
@@ -17,8 +19,10 @@ import java.util.*;
 4. 逻辑思维/算法优化能力
  */
 
+// String Serialization
 public class _2StringSerialization {
     //in class
+    //有错误，不能AC
     /**
      * @param strs a list of strings
      * @return encodes a list of strings to a single string.
@@ -67,94 +71,151 @@ public class _2StringSerialization {
         return ans;
     }
 
+    @Test
+    public void test01(){
+        List<String> list = new ArrayList<>();
+        list.add("lint");
+        list.add("code");
+        list.add("love");
+        list.add("you");
+        System.out.println(encode(list));
+        //lint:;code:;love:;you:;
+        //System.out.println(decode("lint;code;love;you;"));
+
+    }
+
+    @Test
+    public void test02(){
+
+        System.out.println(decode("lint:;code:;love:;you:;"));
+
+    }
+
 ////////////////////////////////////////////////////////////////////
 
     //jiuzhang
-
-    public class Solution1 {
-        /**
-         * @param strs a list of strings
-         * @return encodes a list of strings to a single string.
-         */
-        public String encode(List<String> strs) {
-            // Write your code here
-            StringBuilder result = new StringBuilder();
-            for(String str : strs){
-                result.append(String.valueOf(str.length()) + "$");
-                result.append(str);
-            }
-            return result.toString();
+    /**
+     * @param strs a list of strings
+     * @return encodes a list of strings to a single string.
+     */
+    public String encode2(List<String> strs) {
+        // Write your code here
+        StringBuilder result = new StringBuilder();
+        for(String str : strs){
+            result.append(String.valueOf(str.length()) + "$");
+            result.append(str);
         }
-
-        /**
-         * @param str a string
-         * @return dcodes a single string to a list of strings
-         */
-        public List<String> decode(String str) {
-            // Write your code here
-            List<String> result = new LinkedList<String>();
-            int start = 0;
-            while(start < str.length()){
-                int idx = str.indexOf('$', start);
-                int size = Integer.parseInt(str.substring(start, idx));
-                result.add(str.substring(idx + 1, idx + size + 1));
-                start = idx + size + 1;
-            }
-            return result;
-        }
+        return result.toString();
     }
+
+    /**
+     * @param str a string
+     * @return dcodes a single string to a list of strings
+     */
+    public List<String> decode2(String str) {
+        // Write your code here
+        List<String> result = new LinkedList<String>();
+        int start = 0;
+        while(start < str.length()){
+            int idx = str.indexOf('$', start);
+            int size = Integer.parseInt(str.substring(start, idx));
+            result.add(str.substring(idx + 1, idx + size + 1));
+            start = idx + size + 1;
+        }
+        return result;
+    }
+
+    @Test
+    public void test03(){
+        List<String> list = new ArrayList<>();
+        list.add("lint");
+        list.add("code");
+        list.add("love");
+        list.add("you");
+        System.out.println(encode2(list));
+        //lint:;code:;love:;you:;
+        //System.out.println(decode("lint;code;love;you;"));
+
+    }
+
+    @Test
+    public void test04(){
+
+        System.out.println(decode2("4$lint4$code4$love3$you"));
+
+    }
+
+///////////////////////////////////////////////////////////////////
 
     // version: 高频题班
-    public class Solution2 {
-        /**
-         * @param strs a list of strings
-         * @return encodes a list of strings to a single string.
-         */
-        public String encode(List<String> strs) {
-            // Write your code here
-            String ans = "";
-            for (String s : strs) {
-                for (char c : s.toCharArray()) {
-                    if (c == ':') {            // : itself
-                        ans += "::";
-                    } else {                   //ordinary character
-                        ans += c;
-                    }
-                }
-                ans += ":;";                   // ; connector
-            }
-            return ans;
-        }
-
-        /**
-         * @param str a string
-         * @return dcodes a single string to a list of strings
-         */
-        public List<String> decode(String str) {
-            // Write your code here
-            List<String> ans = new ArrayList<>();
-            char[] sc = str.toCharArray();
-            String item = "";
-            int i = 0;
-            while (i < str.length()) {
-                if (sc[i] == ':') {            //escape
-                    if (sc[i + 1] == ';') {    // ; connector
-                        ans.add(item);
-                        item = "";
-                        i += 2;
-                    } else {                   // : itself
-                        item += sc[i + 1];
-                        i += 2;
-                    }
-                } else {                       //ordinary character
-                    item += sc[i];
-                    i += 1;
+    /**
+     * @param strs a list of strings
+     * @return encodes a list of strings to a single string.
+     */
+    public String encode3(List<String> strs) {
+        // Write your code here
+        String ans = "";
+        for (String s : strs) {
+            for (char c : s.toCharArray()) {
+                if (c == ':') {            // : itself
+                    ans += "::";
+                } else {                   //ordinary character
+                    ans += c;
                 }
             }
-            return ans;
+            ans += ":;";                   // ; connector
         }
+        return ans;
     }
 
+    /**
+     * @param str a string
+     * @return dcodes a single string to a list of strings
+     */
+    public List<String> decode3(String str) {
+        // Write your code here
+        List<String> ans = new ArrayList<>();
+        char[] sc = str.toCharArray();
+        String item = "";
+        int i = 0;
+        while (i < str.length()) {
+            if (sc[i] == ':') {            //escape
+                if (sc[i + 1] == ';') {    // ; connector
+                    ans.add(item);
+                    item = "";
+                    i += 2;
+                } else {                   // : itself
+                    item += sc[i + 1];
+                    i += 2;
+                }
+            } else {                       //ordinary character
+                item += sc[i];
+                i += 1;
+            }
+        }
+        return ans;
+    }
+
+
+    @Test
+    public void test05(){
+        List<String> list = new ArrayList<>();
+        list.add("lint");
+        list.add("code");
+        list.add("love");
+        list.add("you");
+        System.out.println(encode3(list));
+        //lint:;code:;love:;you:;
+        //System.out.println(decode("lint;code;love;you;"));
+
+    }
+
+    @Test
+    public void test06(){
+
+        System.out.println(decode3("lint:;code:;love:;you:;"));
+
+    }
 
 ////////////////////////////////////////////////////////////////////
 

@@ -1,6 +1,9 @@
 package HF.OA9;
 
+import org.junit.Test;
+
 import java.util.*;
+import java.util.stream.Collectors;
 
 //拓扑排序
 //Course Schedule II
@@ -52,6 +55,25 @@ public class _6CourseScheduleII {
         return new int[0];
     }
 
+    @Test
+    public void test01(){
+        int[][] prerequisites = {{1,0}};
+        int[] result = findOrder(2,prerequisites);
+
+        List<Integer> list =  Arrays.stream(result).boxed().collect(Collectors.toList());
+
+        list.forEach(System.out::println);
+    }
+
+    @Test
+    public void test02(){
+        int[][] prerequisites = {{1,0}, {2,0}, {3,1}, {3,2}};
+        int[] result = findOrder(4,prerequisites);
+
+        List<Integer> list =  Arrays.stream(result).boxed().collect(Collectors.toList());
+
+        list.forEach(System.out::println);
+    }
 
 /////////////////////////////////////////////////////////////////////
 

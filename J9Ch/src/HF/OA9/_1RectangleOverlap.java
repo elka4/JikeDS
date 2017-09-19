@@ -1,6 +1,6 @@
 package HF.OA9;
 
-import HF.HF0._5A_RectangleOverlap;
+import org.junit.Test;
 
 import java.util.Comparator;
 import java.util.HashSet;
@@ -34,6 +34,32 @@ public class _1RectangleOverlap {
 
         return true;
     }
+
+    /*
+    Given l1 = [0, 8], r1 = [8, 0], l2 = [6, 6], r2 = [10, 0], return true
+
+Given l1 = [0, 8], r1 = [8, 0], l2 = [9, 6], r2 = [10, 0], return `false
+     */
+
+
+    @Test
+    public void test01(){
+        Point l1 = new Point(0, 8);
+        Point r1 = new Point(8, 0);
+        Point l2 = new Point(6, 6);
+        Point r2 = new Point(10, 0);
+        System.out.println(doOverlap(l1, r1, l2, r2));
+    }
+
+    @Test
+    public void test02(){
+        Point l1 = new Point(0, 8);
+        Point r1 = new Point(8, 0);
+        Point l2 = new Point(9, 6);
+        Point r2 = new Point(10, 0);
+        System.out.println(doOverlap(l1, r1, l2, r2));
+    }
+
 
 //////////////////////////////////////////////////////////////
 

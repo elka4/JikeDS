@@ -25,6 +25,8 @@ Example:
 2. 代码基础功力
 5. 细节处理(corner case)
  */
+
+//Missing Interval
 public class _1MissingInterval {
     /**
      * @param nums a sorted integer array
@@ -61,51 +63,52 @@ public class _1MissingInterval {
     }
 
 ///////////////////////////////////////////////////////////////
-    //jiuzhang
-    public class Solution {
-        /**
-         * @param nums a sorted integer array
-         * @param lower an integer
-         * @param upper an integer
-         * @return a list of its missing ranges
-         */
-        public List<String> findMissingRanges(int[] nums, int lower, int upper) {
-            // Write your code here
-            List<String> results = new ArrayList<String>();
 
-            int n = nums.length;
-            for (int i = 0; i < n; ++i) {
-                if (nums[i] == Integer.MIN_VALUE) {
-                    lower = nums[i] + 1;
-                    continue;
-                }
-                if (lower == nums[i] - 1) {
-                    results.add(lower + "");
-                } else if (lower < nums[i] - 1) {
-                    results.add(lower + "->" + (nums[i] - 1));
-                }
-                if (nums[i] == Integer.MAX_VALUE) {
-                    return results;
-                }
+    //jiuzhang
+    /**
+     * @param nums a sorted integer array
+     * @param lower an integer
+     * @param upper an integer
+     * @return a list of its missing ranges
+     */
+    public List<String> findMissingRanges2(int[] nums, int lower, int upper) {
+        // Write your code here
+        List<String> results = new ArrayList<String>();
+
+        int n = nums.length;
+        for (int i = 0; i < n; ++i) {
+            if (nums[i] == Integer.MIN_VALUE) {
                 lower = nums[i] + 1;
+                continue;
             }
-            if (lower == upper) {
+            if (lower == nums[i] - 1) {
                 results.add(lower + "");
-            } else if (lower < upper) {
-                results.add(lower + "->" + upper);
+            } else if (lower < nums[i] - 1) {
+                results.add(lower + "->" + (nums[i] - 1));
             }
-            return results;
+            if (nums[i] == Integer.MAX_VALUE) {
+                return results;
+            }
+            lower = nums[i] + 1;
         }
+        if (lower == upper) {
+            results.add(lower + "");
+        } else if (lower < upper) {
+            results.add(lower + "->" + upper);
+        }
+        return results;
     }
 
+///////////////////////////////////////////////////////////////
+
+
     // version: 高频题班
-    public class Solution2 {
-        /**
-         * @param nums  a sorted integer array
-         * @param lower an integer
-         * @param upper an integer
-         * @return a list of its missing ranges
-         */
+    /**
+     * @param nums  a sorted integer array
+     * @param lower an integer
+     * @param upper an integer
+     * @return a list of its missing ranges
+     */
 
     /*
     public List<String> findMissingRanges(int[] nums, int lower, int upper) {
@@ -134,36 +137,36 @@ public class _1MissingInterval {
     }*/
 
 
-        public List<String> findMissingRanges(int[] nums, int lower, int upper) {
-            // Write your code here
-            List<String> ans = new ArrayList<>();
-            if (nums.length == 0) {
-                addRange(ans, lower, upper);
-                return ans;
-            }
-
-            addRange(ans, lower, (long) nums[0] - 1);
-
-            for (int i = 1; i < nums.length; i++) {
-                addRange(ans, (long) nums[i - 1] + 1, (long) nums[i] - 1);
-            }
-            addRange(ans, (long) nums[nums.length - 1] + 1, upper);
-
+    public List<String> findMissingRanges3(int[] nums, int lower, int upper) {
+        // Write your code here
+        List<String> ans = new ArrayList<>();
+        if (nums.length == 0) {
+            addRange(ans, lower, upper);
             return ans;
         }
 
-        void addRange(List<String> ans, long st, long ed) {
-            if (st > ed) {
-                return;
-            }
-            if (st == ed) {
-                ans.add(st + "");
-                return;
-            }
-            ans.add(st + "->" + ed);
-        }
+        addRange(ans, lower, (long) nums[0] - 1);
 
+        for (int i = 1; i < nums.length; i++) {
+            addRange(ans, (long) nums[i - 1] + 1, (long) nums[i] - 1);
+        }
+        addRange(ans, (long) nums[nums.length - 1] + 1, upper);
+
+        return ans;
     }
+
+    void addRange(List<String> ans, long st, long ed) {
+        if (st > ed) {
+            return;
+        }
+        if (st == ed) {
+            ans.add(st + "");
+            return;
+        }
+        ans.add(st + "->" + ed);
+    }
+
+///////////////////////////////////////////////////////////////
 }
 /*
 Given a sorted integer array where the range of elements are in the inclusive range [lower, upper], return its missing ranges.

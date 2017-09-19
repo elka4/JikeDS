@@ -1,4 +1,5 @@
 package HF.HF3_Algorithms_DS_II._2BST;
+import lib.*;
 
 /*
 • DFS的两种理解方式:

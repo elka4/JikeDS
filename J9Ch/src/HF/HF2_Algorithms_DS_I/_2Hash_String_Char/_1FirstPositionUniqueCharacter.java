@@ -24,53 +24,55 @@ package HF.HF2_Algorithms_DS_I._2Hash_String_Char;
 能力维度:
 3. 基础数据结构/算法
  */
+
+//First Position Unique Character
 public class _1FirstPositionUniqueCharacter {
     //jiuzhang
-    public class Solution {
-        /**
-         * @param s a string
-         * @return it's index
-         */
-        public int firstUniqChar(String s) {
-            // Write your code here
-            int[] alp = new int[256];
-            char[] arr =s.toCharArray();
+    /**
+     * @param s a string
+     * @return it's index
+     */
+    public int firstUniqChar(String s) {
+        // Write your code here
+        int[] alp = new int[256];
+        char[] arr =s.toCharArray();
 
-            for(char c : arr ){
-                alp[c]++;
-            }
-
-            for(int i = 0; i < arr.length; i++){
-                if (alp[arr[i]]==1) return i;
-            }
-
-            return -1;
+        for(char c : arr ){
+            alp[c]++;
         }
+
+        for(int i = 0; i < arr.length; i++){
+            if (alp[arr[i]]==1) return i;
+        }
+
+        return -1;
     }
+
+//////////////////////////////////////////////////////////////
 
     // version: 高频题班
-    public class Solution2 {
-        /**
-         * @param s a string
-         * @return it's index
-         */
-        public int firstUniqChar(String s) {
-            // Write your code here
-            int[] cnt = new int[256];
+    /**
+     * @param s a string
+     * @return it's index
+     */
+    public int firstUniqChar2(String s) {
+        // Write your code here
+        int[] cnt = new int[256];
 
-            for (char c : s.toCharArray()) {
-                cnt[c]++;
-            }
-
-            for (int i = 0; i < s.length(); i++) {
-                if (cnt[s.charAt(i)] == 1) {
-                    return i;
-                }
-            }
-            return -1;
+        for (char c : s.toCharArray()) {
+            cnt[c]++;
         }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (cnt[s.charAt(i)] == 1) {
+                return i;
+            }
+        }
+        return -1;
     }
 
+
+//////////////////////////////////////////////////////////////
 
 }
 

@@ -1,5 +1,7 @@
 package HF.HF0;
 
+import org.junit.Test;
+
 //https://leetcode.com/articles/regular-expression-matching/
 public class _2F_RegularExpressionMatching {
 
@@ -15,6 +17,11 @@ public class _2F_RegularExpressionMatching {
         } else {
             return first_match && isMatch(text.substring(1), pattern.substring(1));
         }
+    }
+
+    @Test
+    public void test01(){
+        System.out.println(isMatch("ab", ".*"));
     }
 
 ///////////////////////////////////////////////////////////////

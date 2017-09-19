@@ -2,6 +2,7 @@ package HF.HF2_Algorithms_DS_I._3;
 
 import java.util.*;
 
+// Load Balancer
 public class _1LoadBalancer {
 
     public class LoadBalancer {
@@ -99,5 +100,62 @@ public class _1LoadBalancer {
 }
 /*
 
+Implement a load balancer for web servers. It provide the following functionality:
 
+Add a new server to the cluster => add(server_id).
+Remove a bad server from the cluster => remove(server_id).
+Pick a server in the cluster randomly with equal probability => pick().
+Have you met this question in a real interview? Yes
+Example
+At beginning, the cluster is empty => {}.
+
+add(1)
+add(2)
+add(3)
+pick()
+>> 1         // the return value is random, it can be either 1, 2, or 3.
+pick()
+>> 2
+pick()
+>> 1
+pick()
+>> 3
+remove(1)
+pick()
+>> 2
+pick()
+>> 3
+pick()
+>> 3
+ */
+
+
+/*
+为网站实现一个负载均衡器，提供如下的 3 个功能：
+
+添加一台新的服务器到整个集群中 => add(server_id)。
+从集群中删除一个服务器 => remove(server_id)。
+在集群中随机（等概率）选择一个有效的服务器 => pick()。
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+最开始时，集群中一台服务器都没有。
+
+add(1)
+add(2)
+add(3)
+pick()
+>> 1         // 返回值是随机的，这里是 1 或者 2 或者 3 都正确。
+pick()
+>> 2
+pick()
+>> 1
+pick()
+>> 3
+remove(1)
+pick()
+>> 2
+pick()
+>> 3
+pick()
+>> 3
  */
