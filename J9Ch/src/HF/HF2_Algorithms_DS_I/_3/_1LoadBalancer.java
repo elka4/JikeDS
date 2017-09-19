@@ -46,6 +46,8 @@ public class _1LoadBalancer {
         }
     }
 
+/////////////////////////////////////////////////////////////
+
     // version: 高频题班
     public class LoadBalancer2 {
         int n = 0;
@@ -91,4 +93,11 @@ public class _1LoadBalancer {
             return array.get(rand.nextInt(n));
         }
     }
+
+/////////////////////////////////////////////////////////////
+
 }
+/*
+
+
+ */

@@ -1,0 +1,22 @@
+• Surrounded Regions
+    – BFS的三个比喻
+ 小技巧总结:
+• 在网格图、矩阵图、棋盘上做多个方向扩展时，用dx dy数组会让程序写起 来更方便
+
+• Nearest Exit
+ 小技巧总结:
+    – 多源点单终点单源点多终点，最短路常用转化套路
+    – 多源多终点单源多终点 (增加超级源，最短路常用转化套路) – BFS可以求边长=1的图的最短路(如此题的棋盘图)
+
+
+
+• Letter Combinations of a Phone Number – 先写扩展，再写退出情况
+    – 三种记录状态的方法
+
+• Factorization
+
+• Word Squares
+    – DFS剪枝的方法
+
+• Add Operators
+
