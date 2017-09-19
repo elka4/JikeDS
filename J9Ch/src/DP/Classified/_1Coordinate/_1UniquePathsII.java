@@ -1,6 +1,22 @@
 package DP.Classified._1Coordinate;
 
 //Unique PathsII
+/*
+最后一步一定是从左边(i, j-1)或上边(i-1, j)过来
+状态f[i][j]表示从左上角有多少种方式走到格子(i, j)
+坐标型动态规划:数组下标[i][j]即坐标(i, j):
+
+f[i][j] = f[i-1][j] + f[i][j-1]
+机器人有多少种方式 走到(i, j)
+机器人有多少种 方式走到(i-1, j)
+机器人有多少种方 式走到(i, j-1)
+ */
+
+/*
+ 初始条件:f[0][0] = 1
+ 
+ */
+
 public class _1UniquePathsII {
 
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {

@@ -7,6 +7,29 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/*
+f[i] = f[i-1] | S[i-1]对应一个字母 +
+f[i]
+数字串S前i个数字解 密成字母串的方式数
+
+f[i-1] | S[i-1]对应一个字母
+数字串S前i-1个数字解 密成字母串的方式数
+
+f[i-2] | S[i-2]S[i-1]对应一个字母
+数字串S前i-2个数字解密 成字母串的方式数
+ */
+
+/*
+• 设数字串S前i个数字解密成字母串有f[i]种方式
+• 初始条件:f[0] = 1，即空串有1种方式解密 – 解密成空串
+• 边界情况:如果i = 1, 只看最后一个数字
+ */
+/*
+• f[0], f[1], ..., f[N]
+• 答案是f[N]
+• 时间复杂度O(N), 空间复杂度O(N)
+ */
+
 //Decode Ways
 public class _3DecodeWays {
 

@@ -1,5 +1,27 @@
 package DP.Classified._1Coordinate;
 
+/*
+• 设从(0, 0)走到格子(i, j)的路径的最小数字总和是f[i][j]
+f[i][j] = min{f[i-1][j], f[i][j-1]} + A[i][j]
+
+f[i][j]
+从(0, 0)走到格子(i, j) 的最小路径数字总和
+
+f[i-1][j]
+从(0, 0)走到格子(i-1, j) 的最小路径数字总和
+
+f[i][j-1]}
+从(0, 0)走到格子(i, j-1) 的最小路径数字总和
+
+A[i][j]
+格子(i, j) 的数字
+ */
+
+/*
+ 初始条件:f[0][0] = A[0][0]
+• 边界情况:i = 0 或 j = 0，则前一步只能有一个方向过来
+ */
+
 //Minimum Path Sum
 public class _5MinimumPathSum {
     public int minPathSum(int[][] grid) {

@@ -1,5 +1,35 @@
 package DP.Classified._1Coordinate;
 
+
+/*
+• 题意:
+• 给定a[0], ..., a[n-1]
+• 找到最长的连续子序列i, i+1, i+2, ..., j, 使得a[i]<a[i+1]<...<a[j]，或者 a[i]>a[i+1]>...>a[j]，输出长度j-i+1
+• 例子:
+• 输入:[5, 1, 2, 3, 4]
+• 输出:4 (子序列1, 2, 3, 4)
+ */
+
+/*
+• 状态:设f[j] =以a[j]结尾的最长连续上升子序列的长度
+
+• f[j] =以a[j]结尾的最长连续上升子序列的长度
+f[j] = max{ 1, f[j–1]+1| j>0 and a[j-1] < a[j]}
+
+f[j]
+以a[j]结尾的最长连续 上升子序列的长度
+
+1
+情况1:子序列 就是a[j]本身
+
+f[j–1]+1| j>0 and a[j-1] < a[j]
+情况2:以a[j-1]结尾的最长连续 上升子序列的长度，加上a[j]
+
+ 情况2必须满足:
+– j>0, 即a[j]前面至少还有一个元素 – a[j] > a[j-1], 满足单调性
+• 初始条件:空
+ */
+
 //Longest Increasing Continuous Subsequence
 public class _4LongestIncreasingContinuousSubsequence {
 
