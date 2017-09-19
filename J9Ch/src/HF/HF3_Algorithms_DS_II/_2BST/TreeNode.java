@@ -1,0 +1,10 @@
+package HF.HF3_Algorithms_DS_II._2BST;
+
+public class TreeNode {
+          public int val;
+      public TreeNode left, right;
+      public TreeNode(int val) {
+          this.val = val;
+          this.left = this.right = null;
+      }
+}

@@ -1,0 +1,22 @@
+• Convert BST to Greater Tree
+ 小技巧总结:
+– DFS的两种理解方式:
+1. 按照实际执行顺序模拟 (适合枚举型DFS，下节课内容)
+2. 按照DFS的定义宏观理解 (适合分治型DFS，本节课内容)
+
+
+• Inorder Successor in Binary Search Tree
+ 小技巧总结:
+– 遇到BST上操作的问题，可以拿给定的节点(区间)与root做比较，分类 讨论、分而治之
+
+
+
+• Binary Tree Flipping
+• Binary Tree Leaves Order Traversal
+• Binary Tree Vertical Order Traversal
+
+
+
+
+
+
