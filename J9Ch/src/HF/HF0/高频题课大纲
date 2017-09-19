@@ -1,0 +1,124 @@
+
+高频题课大纲:
+第一节 Google/Facebook 大公司高频题风格解析
+第二节 模拟算法和字符串处理技巧
+第三节 基础算法和数据结构高频题 I
+第四节 基础算法和数据结构高频题 II
+第五节 搜索类题目如何高效实现
+第六节 数学、计算几何、位运算常见问题详解
+
+/////////////////////////////////////////////////////////
+
+课程大纲
+每节课资料提前5天发放
+
+第1章
+
+本节大纲
+
+Google/Facebook 大公司高频题风格解析 Interview Style of Google/Facebook etc.
+
+高频题是啥？
+为什么自己刷高频题面试还是挂？
+Google/Facebook等大公司高频题各有什么特点？
+通过四道题目举例详解Google/Facebook/Linkedin/Amazon各公司面试特点
+剖析各大It企业面试算法类型分布情况
+9/9/2017, 7:00:00 PM
+
+/////////////////////////////////////////////////////////
+
+第2章
+
+本节大纲
+
+模拟算法和字符串处理技巧 Simulation Algorithms & String Manipulation Skills
+
+模拟算法详细解析
+左序和数组
+数组滚动
+边界条件应对技巧
+字符串处理技巧
+Longest Absolute File Path
+Decode & Encode String
+数位分离 && 进制转换技巧
+罗马数字转换
+简单智力类问题
+如何优化时间复杂度
+9/15/2017, 7:00:00 PM
+
+/////////////////////////////////////////////////////////
+
+第3章
+
+本节大纲
+
+基础算法和数据结构高频题 I Basic Algorithms & Data Structure High Frequency Problems I
+
+深入分析为什么基础算法这么重要？
+下面这些算法你能够bug free的写出来么？
+用Hash 做字符/字符串统计
+利用栈做括号匹配验证
+如果灵活运用基础的数据结构
+Valid Parentheses - Stack
+Surrounded Region - Queue
+区间类问题 interval problem
+如何快速处理合并区间
+9/16/2017, 7:00:00 PM
+
+/////////////////////////////////////////////////////////
+
+第4章
+
+本节大纲
+
+基础算法和数据结构高频题 II Basic Algorithms & Data Structure High Frequency Problems II
+
+剖析为什么面试遇到基础算法还是会挂？大公司考察基础算法目的？
+二分搜索及其变形 binary search
+二分搜索和二叉搜索树（BST）有什么关系？
+怎样快速实现在二叉树的上的DFS？
+二叉树上的搜索有哪些变种？search on binary tree
+20分钟学会最小生成树算法 MST
+9/22/2017, 7:00:00 PM
+
+/////////////////////////////////////////////////////////
+
+第5章
+
+本节大纲
+
+搜索类题目如何高效实现 How to Implement Search Problem Effectively
+
+BFS有哪些应用？
+万金油的DFS
+哪些题目要用DFS？
+怎样写DFS的程序比较舒服？
+DFS中的剪枝
+什么时候要剪枝？
+怎样剪枝？
+详细讲解搜索类问题代码的技巧。
+9/23/2017, 7:00:00 PM
+
+/////////////////////////////////////////////////////////
+
+第6章
+
+本节大纲
+
+数学、计算几何、位运算常见问题详解 High Frequency Problems of Math, Computational Graphic, Bit Operation
+
+详解矩阵问题
+Search a 2D Matrix
+Sparse Matrix Multiplication
+Rotate Image
+高精度运算
+Add Strings
+Add Binary
+Add Two Numbers
+Multiply Strings
+快速幂
+Pow(x, n)
+计算几何运用
+Max Point On a Line
+位运算
+9/29/2017, 7:00:00 PM

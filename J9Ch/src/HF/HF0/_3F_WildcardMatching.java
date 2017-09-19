@@ -34,6 +34,7 @@ public class _3F_WildcardMatching {
         return p == pattern.length();
     }
 
+///////////////////////////////////////////////////////////////
 
     //My java DP solution using 2D table
     public boolean isMatch2(String s, String p) {
@@ -58,6 +59,7 @@ public class _3F_WildcardMatching {
         return match[0][0];
     }
 
+///////////////////////////////////////////////////////////////
 
 }
 

@@ -3,75 +3,75 @@ package HF.HF0;
 import java.util.*;
 
 public class _6G_WordsAbbreviation {
-    public class Solution {
-        /**
-         * @param word a non-empty string
-         * @param abbr an abbreviation
-         * @return true if string matches with the given abbr or false
-         */
-        public boolean validWordAbbreviation(String word, String abbr) {
-            // Write your code here
-            int number = 0;
-            int i = 0, j = 0;
-            while (i < word.length() && j < abbr.length()) {
-                if (Character.isDigit(abbr.charAt(j))) {
-                    number = number * 10 + abbr.charAt(j) - '0';
-                    if (number == 0)
-                        return false;
-                    j ++;
-                } else {
-                    i += number;
-                    if (i >= word.length() ||
-                            word.charAt(i) != abbr.charAt(j))
-                        return false;
-                    number = 0;
-                    i ++;
-                    j ++;
-                }
+    /**
+     * @param word a non-empty string
+     * @param abbr an abbreviation
+     * @return true if string matches with the given abbr or false
+     */
+    public boolean validWordAbbreviation(String word, String abbr) {
+        // Write your code here
+        int number = 0;
+        int i = 0, j = 0;
+        while (i < word.length() && j < abbr.length()) {
+            if (Character.isDigit(abbr.charAt(j))) {
+                number = number * 10 + abbr.charAt(j) - '0';
+                if (number == 0)
+                    return false;
+                j ++;
+            } else {
+                i += number;
+                if (i >= word.length() ||
+                        word.charAt(i) != abbr.charAt(j))
+                    return false;
+                number = 0;
+                i ++;
+                j ++;
             }
-            i += number;
-            return i == word.length() && j == abbr.length();
         }
+        i += number;
+        return i == word.length() && j == abbr.length();
     }
 
-// version: 高频题班
 
-    public class Solution2 {
-        /**
-         * @param word a non-empty string
-         * @param abbr an abbreviation
-         * @return true if string matches with the given abbr or false
-         */
-        public boolean validWordAbbreviation(String word, String abbr) {
-            // Write your code here
-            int i = 0, j = 0;
-            char[] s = word.toCharArray();
-            char[] t = abbr.toCharArray();
+///////////////////////////////////////////////////////////////
 
-            while (i < s.length && j < t.length) {
-                if (Character.isDigit(t[j])) {
-                    if (t[j] == '0') {
-                        return false;
-                    }
-                    int val = 0;
-                    while (j < t.length && Character.isDigit(t[j])) {
-                        val = val * 10 + t[j] - '0';
-                        j++;
-                    }
-                    i += val;
-                } else {
-                    if (s[i++] != t[j++]) {
-                        return false;
-                    }
+    // version: 高频题班
+    /**
+     * @param word a non-empty string
+     * @param abbr an abbreviation
+     * @return true if string matches with the given abbr or false
+     */
+    public boolean validWordAbbreviation2(String word, String abbr) {
+        // Write your code here
+        int i = 0, j = 0;
+        char[] s = word.toCharArray();
+        char[] t = abbr.toCharArray();
+
+        while (i < s.length && j < t.length) {
+            if (Character.isDigit(t[j])) {
+                if (t[j] == '0') {
+                    return false;
+                }
+                int val = 0;
+                while (j < t.length && Character.isDigit(t[j])) {
+                    val = val * 10 + t[j] - '0';
+                    j++;
+                }
+                i += val;
+            } else {
+                if (s[i++] != t[j++]) {
+                    return false;
                 }
             }
-            return i == s.length && j == t.length;
         }
+        return i == s.length && j == t.length;
     }
+
+
 ///////////////////////////////////////////////////////////////////////
 
     //Really simple and straightforward Java solution
-    public List<String> wordsAbbreviation(List<String> dict) {
+    public List<String> wordsAbbreviation3(List<String> dict) {
         int len=dict.size();
         String[] ans=new String[len];
         int[] prefix=new int[len];
@@ -106,7 +106,7 @@ public class _6G_WordsAbbreviation {
 ////////////////////////////////////////////////////////////////
 
     //Verbose Java Solution, HashMap(s)
-    public List<String> wordsAbbreviation2(List<String> dict) {
+    public List<String> wordsAbbreviation4(List<String> dict) {
         Map<String, String> wordToAbbr = new HashMap<>();
         Map<Integer, List<String>> groups = new HashMap<>();
 
@@ -179,6 +179,8 @@ public class _6G_WordsAbbreviation {
 
         return res;
     }
+///////////////////////////////////////////////////////////////
+
 }
 /*
 Given an array of n distinct non-empty strings, you need to generate minimal possible abbreviations for every word following rules below.

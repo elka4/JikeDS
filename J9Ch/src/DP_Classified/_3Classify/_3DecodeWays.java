@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+//• 划分性动态规划
+
 /*
 f[i] = f[i-1] | S[i-1]对应一个字母 +
 f[i]

@@ -1,0 +1,29 @@
+FLAG 高频题有什么特点——四道题目举例
+• LinkedIn: 基础算法、数据结构的快速实现、难度适中
+• Facebook: OJ (Online Judge)上的原题 DP (Dynamic Programming)
+• Amazon: 题库比较固定、OA老9题等
+• Google: 网上原题少、原题变种、实现麻烦、代码功底
+
+• Strings Homomorphism
+1. 理解问题
+3. 基础数据结构/算法
+
+• Decode Ways
+4. 逻辑思维/算法优化能力
+5. 细节处理(corner case)
+7. debug能力
+
+• Rectangle Overlap
+1. 理解问题
+4. 逻辑思维/算法优化能力
+
+• Check Word Abbreviation
+2. 代码基础功力
+5. 细节处理(corner case)
+7. debug能力
+
+• Words Abbreviation
+1. 理解问题
+2. 代码基础功力
+3. 基础数据结构/算法
+7. debug能力
