@@ -1,9 +1,5 @@
 • 坐标型动态规划
 _1UniquePathsII 02:00
-_4LongestIncreasingContinuousSubsequence    53:29
-_5MinimumPathSum    01:05:41
-_6BombEnemy 01:20:43
-
 
 • 序列型动态规划
 _2PaintHouse    09:09
@@ -12,5 +8,13 @@ _2PaintHouse    09:09
 _3DecodeWays    31:41
 
 
-序列+位操作型动态规划
+• 坐标型动态规划
+_4LongestIncreasingContinuousSubsequence    53:29
+_5MinimumPathSum    01:05:41
+_6BombEnemy 01:20:43
+
+
+• 序列+位操作型动态规划
 _7CountingBits  01:41:20
+
+

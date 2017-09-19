@@ -1,5 +1,6 @@
 package DP.DP5;
 
+//Longest Palindromic Subsequence
 public class _3LongestPalindromicSubsequence {
 
     // 动态规划专题班非递归版：
@@ -53,6 +54,8 @@ public class _3LongestPalindromicSubsequence {
             return res;
         }
     }
+
+////////////////////////////////////////////////////////////////////
 
     // 动态规划专题班递归版：
     public class Solution2 {
@@ -121,6 +124,7 @@ public class _3LongestPalindromicSubsequence {
         }
     }
 
+////////////////////////////////////////////////////////////////////
 
     public class Solution3 {
         /**
@@ -146,4 +150,9 @@ public class _3LongestPalindromicSubsequence {
             return dp[0][length - 1];
         }
     }
+////////////////////////////////////////////////////////////////////
+
 }
+/*
+Given a string s, find the longest palindromic subsequence's length in s. You may assume that the maximum length of s is 1000.
+ */

@@ -1,36 +1,8 @@
 package DP.DP7;
 
 import java.util.*;
-class TrieNode {
-    // Initialize your data structure here.
-    public TrieNode[] children;
-    public boolean hasWord;
-    public String str;
 
-    // Initialize your data structure here.
-    public TrieNode() {
-        children = new TrieNode[26];
-        for (int i = 0; i < 26; ++i)
-            children[i] = null;
-        hasWord = false;
-    }
-
-    // Adds a word into the data structure.
-    public static void addWord(TrieNode root, String word) {
-        TrieNode now = root;
-        for(int i = 0; i < word.length(); i++) {
-            Character c = word.charAt(i);
-            if (now.children[c - 'a'] == null) {
-                now.children[c - 'a'] = new TrieNode();
-            }
-            now = now.children[c - 'a'];
-        }
-        now.str = word;
-        now.hasWord = true;
-    }
-}
-
-
+//K Edit Distance
 public class _2KEditDistance {
     /**
      * @param words a set of stirngs
@@ -80,4 +52,13 @@ public class _2KEditDistance {
             }
     }
 
+///////////////////////////////////////////////////////////////////////////
+
 }
+/*
+Given a set of strings which just has lower case letters and a target string, output all the strings for each the edit distance with the target no greater than k.
+You have the following 3 operations permitted on a word:
+Insert a character
+Delete a character
+Replace a character
+ */

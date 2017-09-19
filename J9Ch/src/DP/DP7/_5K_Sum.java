@@ -1,5 +1,6 @@
 package DP.DP7;
 
+//K Sum
 public class _5K_Sum {
     /**
      * @param A: an integer array.
@@ -26,4 +27,20 @@ public class _5K_Sum {
         } // for i
         return f[n][k][target];
     }
+
+///////////////////////////////////////////////////////////////////////
+
 }
+/*
+Given n distinct positive integers, integer k (k <= n) and a number target.
+
+Find k numbers where sum is target. Calculate how many solutions there are?
+
+Have you met this question in a real interview? Yes
+Example
+Given [1,2,3,4], k = 2, target = 5.
+
+There are 2 solutions: [1,4] and [2,3].
+
+Return 2.
+ */

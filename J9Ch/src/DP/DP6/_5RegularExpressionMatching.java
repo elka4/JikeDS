@@ -1,5 +1,6 @@
 package DP.DP6;
 
+//Regular Expression Matching
 public class _5RegularExpressionMatching {
     public boolean isMatch(String s, String p) {
         //Java note: s.substring(n) will be "" if n == s.length(), but if n > s.length(), index oob error
@@ -61,3 +62,23 @@ public class _5RegularExpressionMatching {
         return true;
     }
 }
+/*
+Implement regular expression matching with support for '.' and '*'.
+
+'.' Matches any single character.
+'*' Matches zero or more of the preceding element.
+
+The matching should cover the entire input string (not partial).
+
+The function prototype should be:
+bool isMatch(string s, string p)
+Have you met this question in a real interview? Yes
+Example
+isMatch("aa","a") → false
+isMatch("aa","aa") → true
+isMatch("aaa","aa") → false
+isMatch("aa", "a*") → true
+isMatch("aa", ".*") → true
+isMatch("ab", ".*") → true
+isMatch("aab", "c*a*b") → true
+ */

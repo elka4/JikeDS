@@ -1,5 +1,6 @@
 package DP.DP6;
 
+//Distinct Subsequences
 public class _4DistinctSubsequences {
     public int numDistinct(String S, String T) {
         if (S == null || T == null) {
@@ -22,3 +23,12 @@ public class _4DistinctSubsequences {
         return nums[S.length()][T.length()];
     }
 }
+/*
+Given a string S and a string T, count the number of distinct subsequences of T in S.
+
+A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, "ACE" is a subsequence of "ABCDE" while "AEC" is not).
+
+Have you met this question in a real interview? Yes
+Example
+Given S = "rabbbit", T = "rabbit", return 3.
+ */

@@ -1,59 +1,58 @@
 package DP.DP3;
 
+//Best Time To Buy And Sell Stock III
 public class _6BestTimeToBuyAndSellStockIII {
     // 动态规划专题班版本 verison 1
-    class Solution {
-
-
-        private int update(int a, int b, int delta) {
-            if (b == Integer.MIN_VALUE) {
-                return a;
-            }
-
-            if (b + delta > a) {
-                return b + delta;
-            }
-
+    private int update(int a, int b, int delta) {
+        if (b == Integer.MIN_VALUE) {
             return a;
         }
-        /**
-         * @param prices: Given an integer array
-         * @return: Maximum profit
-         */
 
-        public int maxProfit(int[] prices) {
-            int K = 2;
-            int n = prices.length;
-            int i, j, k;
-
-            int[][] f = new int[n+1][2*K+1+1];
-            for (i = 0; i <= n; ++i) {
-                for (j = 1; j <= 2*K+1; ++j) {
-                    f[i][j] = Integer.MIN_VALUE;
-                }
-            }
-
-            f[0][1] = 0;
-            for (i = 1; i <= n; ++i) {
-                for (j = 1; j <= 2 * K + 1; j += 2) {
-                    f[i][j] = update(f[i][j], f[i-1][j], 0);
-                    if (j > 1 && i > 1) f[i][j] = update(f[i][j], f[i - 1][j - 1], prices[i - 1] - prices[i - 2]);
-                }
-
-                for (j = 2; j <= 2 * K; j += 2) {
-                    if (i > 1) f[i][j] = update(f[i][j], f[i-1][j], prices[i - 1] - prices[i - 2]);
-                    if (j > 1) f[i][j] = update(f[i][j], f[i-1][j-1], 0);
-                }
-            }
-
-            int res = Integer.MIN_VALUE;
-            for (j = 1; j <= 2 * K + 1; j += 2) {
-                res = update(res, f[n][j], 0);
-            }
-
-            return res;
+        if (b + delta > a) {
+            return b + delta;
         }
-    };
+
+        return a;
+    }
+    /**
+     * @param prices: Given an integer array
+     * @return: Maximum profit
+     */
+
+    public int maxProfit(int[] prices) {
+        int K = 2;
+        int n = prices.length;
+        int i, j, k;
+
+        int[][] f = new int[n+1][2*K+1+1];
+        for (i = 0; i <= n; ++i) {
+            for (j = 1; j <= 2*K+1; ++j) {
+                f[i][j] = Integer.MIN_VALUE;
+            }
+        }
+
+        f[0][1] = 0;
+        for (i = 1; i <= n; ++i) {
+            for (j = 1; j <= 2 * K + 1; j += 2) {
+                f[i][j] = update(f[i][j], f[i-1][j], 0);
+                if (j > 1 && i > 1) f[i][j] = update(f[i][j], f[i - 1][j - 1], prices[i - 1] - prices[i - 2]);
+            }
+
+            for (j = 2; j <= 2 * K; j += 2) {
+                if (i > 1) f[i][j] = update(f[i][j], f[i-1][j], prices[i - 1] - prices[i - 2]);
+                if (j > 1) f[i][j] = update(f[i][j], f[i-1][j-1], 0);
+            }
+        }
+
+        int res = Integer.MIN_VALUE;
+        for (j = 1; j <= 2 * K + 1; j += 2) {
+            res = update(res, f[n][j], 0);
+        }
+
+        return res;
+    }
+
+/////////////////////////////////////////////////////////////////////
 
 
     // version 2
@@ -91,6 +90,8 @@ public class _6BestTimeToBuyAndSellStockIII {
         }
     }
 
+/////////////////////////////////////////////////////////////////////
+
     // 方法二
     class Solution3 {
 
@@ -106,7 +107,7 @@ public class _6BestTimeToBuyAndSellStockIII {
             return a;
         }
         /**
-         * @param k: An integer
+         * @param K: An integer
          * @param prices: Given an integer array
          * @return: Maximum profit
          */
@@ -166,4 +167,7 @@ public class _6BestTimeToBuyAndSellStockIII {
             return res;
         }
     }
+
+/////////////////////////////////////////////////////////////////////
+
 }

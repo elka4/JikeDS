@@ -1,5 +1,6 @@
 package DP.DP6;
 
+//Interleaving String
 public class _2InterleavingString {
     public boolean isInterleave(String s1, String s2, String s3) {
         if (s1.length() + s2.length() != s3.length()) {
@@ -30,3 +31,14 @@ public class _2InterleavingString {
         return interleaved[s1.length()][s2.length()];
     }
 }
+/*
+Given three strings: s1, s2, s3, determine whether s3 is formed by the interleaving of s1 and s2.
+
+Have you met this question in a real interview? Yes
+Example
+For s1 = "aabcc", s2 = "dbbca"
+
+When s3 = "aadbbcbcac", return true.
+When s3 = "aadbbbaccc", return false.
+
+ */

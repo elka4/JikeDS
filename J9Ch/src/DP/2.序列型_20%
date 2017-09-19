@@ -1,0 +1,35 @@
+• 序列型动态规划
+_2PaintHouse    09:09
+
+序列+位操作型动态规划
+_7CountingBits  01:41:20
+
+• 需要辅助数据结构/算法(字母树，哈希表，二分查找)的动态规划
+序列+哈希表
+_3FrogJump  01:30:58
+
+
+• 有状态的序列型动态规划
+_1PaintHouseII  01:39
+_2HouseRobber   18:58
+_3HouseRobberII 27:11
+_6BestTimeToBuyAndSellStockIII  31:38
+_7BestTimeToBuyAndSellStockIV   01:17:13
+
+• 最长序列型动态规划
+_8LongestIncreasingSubsequence 01:35:35
+_9RussianDollEnvelopes  01:44:58
+
+
+• 双序列型动态规划
+_1LongestCommonSubsequence  02:45
+_2InterleavingString    25:53
+_3EditDistance  37:00
+_4DistinctSubsequences  55:50
+_5RegularExpressionMatching 01:08:08
+_6WildcardMatching  01:26:57
+_7OnesandZeroes 01:39:55
+
+
+
+

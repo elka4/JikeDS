@@ -1,6 +1,7 @@
 package DP.DP5;
 import java.util.*;
 
+//Coins In A Line III
 public class _4CoinsInALineIII {
 
     // Linpz verision
@@ -38,9 +39,9 @@ public class _4CoinsInALineIII {
         }
     }
 
+////////////////////////////////////////////////////////////////////
+
 // 方法一
-
-
     public class Solution2 {
         /**
          * @param values: an array of integers
@@ -77,6 +78,8 @@ public class _4CoinsInALineIII {
             return dp[left][right];
         }
     }
+
+////////////////////////////////////////////////////////////////////
 
 // 方法二
 
@@ -120,5 +123,16 @@ public class _4CoinsInALineIII {
             return dp[left][right];
         }
     }
-
+////////////////////////////////////////////////////////////////////
 }
+/*
+There are n coins in a line. Two players take turns to take a coin from one of the ends of the line until there are no more coins left. The player with the larger amount of money wins.
+Could you please decide the first player will win or lose?
+Example
+Given array A = [3,2,2], return true.
+Given array A = [1,2,4], return true.
+Given array A = [1,20,4], return false.
+Challenge
+Follow Up Question:
+If n is even. Is there any hacky algorithm that can decide whether first player will win or lose in O(1) memory and O(n) time?
+ */
