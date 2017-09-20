@@ -1,5 +1,7 @@
 package DP_Classified._2Sequence;
 
+import org.junit.Test;
+
 //Counting Bits
 public class _7CountingBits {
     //leetcode
@@ -10,6 +12,15 @@ public class _7CountingBits {
         return f;
     }
 
+    @Test
+    public void test01(){
+        int[] result = countBits(5);
+        for (int i:result
+             ) {
+            System.out.println(i);
+        }
+
+    }
 
 //////////////////////////////////////
     //DP
@@ -30,56 +41,64 @@ public class _7CountingBits {
 
     //leetcode
     //Approach #1 Pop Count [Accepted]
-    public class Solution {
-        public int[] countBits(int num) {
-            int[] ans = new int[num + 1];
-            for (int i = 0; i <= num; ++i)
-                ans[i] = popcount(i);
-            return ans;
-        }
-        private int popcount(int x) {
-            int count;
-            for (count = 0; x != 0; ++count)
-                x &= x - 1; //zeroing out the least significant nonzero bit
-            return count;
-        }
+    public int[] countBits3(int num) {
+        int[] ans = new int[num + 1];
+        for (int i = 0; i <= num; ++i)
+            ans[i] = popcount3(i);
+        return ans;
     }
+    private int popcount3(int x) {
+        int count;
+        for (count = 0; x != 0; ++count)
+            x &= x - 1; //zeroing out the least significant nonzero bit
+        return count;
+    }
+
+
+
+/////////////////////////////////////////////////////////////
+
     //Approach #2 DP + Most Significant Bit [Accepted]
-    public class Solution2 {
-        public int[] countBits(int num) {
-            int[] ans = new int[num + 1];
-            int i = 0, b = 1;
-            // [0, b) is calculated
-            while (b <= num) {
-                // generate [b, 2b) or [b, num) from [0, b)
-                while(i < b && i + b <= num){
-                    ans[i + b] = ans[i] + 1;
-                    ++i;
-                }
-                i = 0;   // reset i
-                b <<= 1; // b = 2b
+    public int[] countBits4(int num) {
+        int[] ans = new int[num + 1];
+        int i = 0, b = 1;
+        // [0, b) is calculated
+        while (b <= num) {
+            // generate [b, 2b) or [b, num) from [0, b)
+            while(i < b && i + b <= num){
+                ans[i + b] = ans[i] + 1;
+                ++i;
             }
-            return ans;
+            i = 0;   // reset i
+            b <<= 1; // b = 2b
         }
+        return ans;
     }
+
+
+/////////////////////////////////////////////////////////////
+
     //Approach #3 DP + Least Significant Bit [Accepted]
-    public class Solution3 {
-        public int[] countBits(int num) {
-            int[] ans = new int[num + 1];
-            for (int i = 1; i <= num; ++i)
-                ans[i] = ans[i >> 1] + (i & 1); // x / 2 is x >> 1 and x % 2 is x & 1
-            return ans;
-        }
+    public int[] countBits5(int num) {
+        int[] ans = new int[num + 1];
+        for (int i = 1; i <= num; ++i)
+            ans[i] = ans[i >> 1] + (i & 1); // x / 2 is x >> 1 and x % 2 is x & 1
+        return ans;
     }
+
+
+
+/////////////////////////////////////////////////////////////
+
     //Approach #4 DP + Last Set Bit [Accepted]
-    public class Solution4 {
-        public int[] countBits(int num) {
-            int[] ans = new int[num + 1];
-            for (int i = 1; i <= num; ++i)
-                ans[i] = ans[i & (i - 1)] + 1;
-            return ans;
-        }
+    public int[] countBits6(int num) {
+        int[] ans = new int[num + 1];
+        for (int i = 1; i <= num; ++i)
+            ans[i] = ans[i & (i - 1)] + 1;
+        return ans;
     }
+
+
 
 /////////////////////////////////////////////////////////////
 
@@ -88,7 +107,7 @@ public class _7CountingBits {
 Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.
 
 Example:
-For num = 5 you should return [0,1,1,2,1,2].
+For num = c you should return [0,1,1,2,1,2].
 
 Follow up:
 

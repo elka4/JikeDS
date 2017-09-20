@@ -1,5 +1,7 @@
 package HF.HF2_Algorithms_DS_I._2Hash_String_Char;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -50,6 +52,8 @@ isUnique("make") -> true
 4. 逻辑思维/算法优化能力
 6. 算法分析(时间/空间复杂度)
  */
+
+// Word Abbreviation Set
 public class _3WordAbbreviationSet {
     //jiuzhang
     public class ValidWordAbbr {
@@ -151,10 +155,43 @@ public class _3WordAbbreviationSet {
             return "" + str.charAt(0) + (str.length() - 2) + str.charAt(str.length() - 1);
         }
     }
+
+    @Test
+    public void test(){
+        String[] dictionary = {"deer", "door", "cake", "card" };
+        ValidWordAbbr2 vwa = new ValidWordAbbr2(dictionary);
+
+        System.out.println(vwa.isUnique("dear"));
+        System.out.println(vwa.isUnique("cart"));
+        System.out.println(vwa.isUnique("cane"));
+        System.out.println(vwa.isUnique("make"));
+    }
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 
 }
 /*
+An abbreviation of a word follows the form . Below are some examples of word abbreviations:
 
+a) it                      --> it    (no abbreviation)
+
+     1
+b) d|o|g                   --> d1g
+
+              1    1  1
+     1---5----0----5--8
+c) i|nternationalizatio|n  --> i18n
+
+              1
+     1---5----0
+d) l|ocalizatio|n          --> l10n
+Assume you have a dictionary and given a word, find whether its abbreviation is unique in the dictionary. A word's abbreviation is unique if no other word from the dictionary has the same abbreviation.
+
+Have you met this question in a real interview? Yes
+Example
+Given dictionary = [ "deer", "door", "cake", "card" ]
+isUnique("dear") // return false
+isUnique("cart") // return true
+isUnique("cane") // return false
+isUnique("make") // return true
  */

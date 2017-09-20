@@ -22,6 +22,9 @@ public class _2HouseRobber {
         }
         return res[n];
     }
+
+///////////////////////////////////////////////////////////////////////
+
     //---方法二---
     public long houseRobber2(int[] A) {
         // write your code here

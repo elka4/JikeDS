@@ -158,6 +158,7 @@ public class _6NumberofIslands {
         }
     }
 //////////////////////////////////////////////////////////////////////////////////
+
     // version 3: DFS (not recommended)
     public class Solution3 {
         /**

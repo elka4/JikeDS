@@ -69,6 +69,7 @@ public class _1UniquePathsII {
         if (m == 0) {
             return 0;
         }
+
         int n = A[0].length;
         if (n == 0) {
             return 0;

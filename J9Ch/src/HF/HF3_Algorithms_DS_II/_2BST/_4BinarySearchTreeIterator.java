@@ -1,6 +1,7 @@
 package HF.HF3_Algorithms_DS_II._2BST;
 
 import lib.TreeNode;
+import org.junit.Test;
 
 import java.util.Stack;
 
@@ -38,6 +39,22 @@ public class _4BinarySearchTreeIterator {
             TreeNode cur = stack.pop();
             next = cur.right;
             return cur;
+        }
+    }
+
+    @Test
+    public void test(){
+        int[] arr = {1,10,11};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.left.setRightChild(new TreeNode(6));
+        root.right.setRightChild(new TreeNode(12));
+        root.print();
+
+        BSTIterator itr = new BSTIterator(root);
+//        itr.AddNodeToStack(root);
+
+        while(itr.hasNext()){
+            System.out.println(itr.next());
         }
     }
 }

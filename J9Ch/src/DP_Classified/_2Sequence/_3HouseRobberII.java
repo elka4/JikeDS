@@ -30,6 +30,40 @@ public class _3HouseRobberII {
 
 ////////////////////////////////////////////////////////////////////
 
+    //Simple AC solution in Java in O(n) with explanation
+    private int rob(int[] num, int lo, int hi) {
+        int include = 0, exclude = 0;
+        for (int j = lo; j <= hi; j++) {
+            int i = include, e = exclude;
+            include = e + num[j];
+            exclude = Math.max(e, i);
+        }
+        return Math.max(include, exclude);
+    }
+
+////////////////////////////////////////////////////////////////////
+
+    //Java clean short solution DP
+    public int rob3(int[] nums) {
+        return Math.max(rob3(nums, 0, nums.length-2), rob3(nums, 1, nums.length-1));
+    }
+
+    public int rob3(int[] nums, int lo, int hi) {
+        int preRob = 0, preNotRob = 0, rob = 0, notRob = 0;
+        for (int i = lo; i <= hi; i++) {
+            rob = preNotRob + nums[i];
+            notRob = Math.max(preRob, preNotRob);
+
+            preNotRob = notRob;
+            preRob = rob;
+        }
+        return Math.max(rob, notRob);
+    }
+////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////
+
 
 }
 /*

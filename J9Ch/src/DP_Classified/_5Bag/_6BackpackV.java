@@ -22,5 +22,5 @@ public class _6BackpackV {
 }
 
 /*
-
+Given n items with size nums[i] which an integer array and all positive numbers. An integer target denotes the size of a backpack. Find the number of possible fill the backpack.
  */

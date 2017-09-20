@@ -87,6 +87,137 @@ public class _1PaintHouseII {
 
 /////////////////////////////////////////////////////////////
 
+    //AC Java solution without extra space
+    public int minCostII2(int[][] costs) {
+        if (costs == null || costs.length == 0) return 0;
+
+        int n = costs.length, k = costs[0].length;
+        // min1 is the index of the 1st-smallest cost till previous house
+        // min2 is the index of the 2nd-smallest cost till previous house
+        int min1 = -1, min2 = -1;
+
+        for (int i = 0; i < n; i++) {
+            int last1 = min1, last2 = min2;
+            min1 = -1; min2 = -1;
+
+            for (int j = 0; j < k; j++) {
+                if (j != last1) {
+                    // current color j is different to last min1
+                    costs[i][j] += last1 < 0 ? 0 : costs[i - 1][last1];
+                } else {
+                    costs[i][j] += last2 < 0 ? 0 : costs[i - 1][last2];
+                }
+
+                // find the indices of 1st and 2nd smallest cost of painting current house i
+                if (min1 < 0 || costs[i][j] < costs[i][min1]) {
+                    min2 = min1; min1 = j;
+                } else if (min2 < 0 || costs[i][j] < costs[i][min2]) {
+                    min2 = j;
+                }
+            }
+        }
+
+        return costs[n - 1][min1];
+    }
+
+/////////////////////////////////////////////////////////////
+
+    //Fast DP Java solution Runtime O(nk) space O(1)
+    //Explanation: dp[i][j] represents the min paint cost from house 0 to house i when house i use color j;
+    // The formula will be dp[i][j] = Math.min(any k!= j| dp[i-1][k]) + costs[i][j].
+    public int minCostII3(int[][] costs) {
+        if(costs == null || costs.length == 0 || costs[0].length == 0) return 0;
+
+        int n = costs.length, k = costs[0].length;
+        if(k == 1) return (n==1? costs[0][0] : -1);
+
+        int prevMin = 0, prevMinInd = -1, prevSecMin = 0;//prevSecMin always >= prevMin
+        for(int i = 0; i<n; i++) {
+            int min = Integer.MAX_VALUE, minInd = -1, secMin = Integer.MAX_VALUE;
+            for(int j = 0; j<k;  j++) {
+                int val = costs[i][j] + (j == prevMinInd? prevSecMin : prevMin);
+                if(minInd< 0) {min = val; minInd = j;}//when min isn't initialized
+                else if(val < min) {//when val < min,
+                    secMin = min;
+                    min = val;
+                    minInd = j;
+                } else if(val < secMin) { //when min<=val< secMin
+                    secMin = val;
+                }
+            }
+            prevMin = min;
+            prevMinInd = minInd;
+            prevSecMin = secMin;
+        }
+        return prevMin;
+    }
+
+/////////////////////////////////////////////////////////////
+
+    //Easiest O(1) space JAVA solution
+    /*
+    To solve this DP problem:
+
+    If there's no constraint, we choose min cost for each house.
+    Since house[i] and house[i - 1] cannot have the same color j, we should choose 2nd min color for house[i - 1].
+    If we choose the 3rd min color for house[i - 1], we might miss potential min cost.
+    min(i) = min(cost[i][j] + 1st min / 2nd min), 0 < j < n.
+    Since current row only relies on last row for getting mins and avoiding same color, O(1) space is enough.
+     */
+    public int minCostII4(int[][] costs) {
+        if (costs.length == 0) {
+            return 0;
+        }
+        int min1 = 0, min2 = 0, index1 = -1;
+
+        for (int i = 0; i < costs.length; i++) {
+            int m1 = Integer.MAX_VALUE, m2 = Integer.MAX_VALUE, idx1 = -1;
+
+            for (int j = 0; j < costs[0].length; j++) {
+                int cost = costs[i][j] + (j != index1 ? min1 : min2);
+
+                if (cost < m1) {           // cost < m1 < m2
+                    m2 = m1; m1 = cost; idx1 = j;
+
+                } else if (cost < m2) {    // m1 < cost < m2
+                    m2 = cost;
+                }
+            }
+
+            min1 = m1; min2 = m2; index1 = idx1;
+        }
+        return min1;
+    }
+/////////////////////////////////////////////////////////////
+
+    //Accepted Simple JAVA O(NK) solution
+
+    public int minCostII5(int[][] costs) {
+        if (costs.length == 0 || costs[0].length == 0) {
+            return 0;
+        }
+        int m = costs.length, n = costs[0].length, m1 = 0, m2 = 0;
+        int[] dp = new int[n];
+        for (int i = 0; i < m; i++) {
+            int t1 = m1, t2 = m2;
+            m1 = Integer.MAX_VALUE;
+            m2 = Integer.MAX_VALUE;
+            for (int j = 0; j < n; j++) {
+                dp[j] = (dp[j] == t1 ? t2 : t1) + costs[i][j];
+                if (m1 <= dp[j]) {
+                    m2 = Math.min(dp[j], m2);
+                }
+                else {
+                    m2 = m1;
+                    m1 = dp[j];
+                }
+            }
+        }
+
+        return m1;
+    }
+/////////////////////////////////////////////////////////////
+
 
 }
 /*
@@ -103,4 +234,23 @@ Example
 Given n = 3, k = 3, costs = [[14,2,11],[11,14,5],[14,3,10]] return 10
 
 house 0 is color 2, house 1 is color 3, house 2 is color 2, 2 + 5 + 3 = 10
+ */
+
+/*
+这里有n个房子在一列直线上，现在我们需要给房屋染色，共有k种颜色。每个房屋染不同的颜色费用也不同，
+你需要设计一种染色方案使得相邻的房屋颜色不同，并且费用最小。
+
+费用通过一个nxk 的矩阵给出，比如cost[0][0]表示房屋0染颜色0的费用，cost[1][2]表示房屋1染颜色2的费用。
+
+ 注意事项
+
+所有费用都是正整数
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+costs = [[14,2,11],[11,14,5],[14,3,10]] return 10
+
+房屋 0 颜色 1, 房屋 1 颜色 2, 房屋 2 颜色 1， 2 + 5 + 3 = 10
+
+
  */

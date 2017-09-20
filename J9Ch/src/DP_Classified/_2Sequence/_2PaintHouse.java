@@ -43,6 +43,45 @@ public class _2PaintHouse {
     }
 
 ////////////////////////////////////////////////////////////////////////////
+    //leetcode
+
+    /*
+    The 1st row is the prices for the 1st house, we can change the matrix to present sum of prices from the 2nd row. i.e, the costs[1][0] represent minimum price to paint the second house red plus the 1st house.
+     */
+
+    public int minCost2(int[][] costs) {
+        if(costs==null||costs.length==0){
+            return 0;
+        }
+        for(int i=1; i<costs.length; i++){
+            costs[i][0] += Math.min(costs[i-1][1],costs[i-1][2]);
+            costs[i][1] += Math.min(costs[i-1][0],costs[i-1][2]);
+            costs[i][2] += Math.min(costs[i-1][1],costs[i-1][0]);
+        }
+        int n = costs.length-1;
+        return Math.min(Math.min(costs[n][0], costs[n][1]), costs[n][2]);
+    }
+////////////////////////////////////////////////////////////////////////////
+
+    //Share my very simple Java solution with explanation.
+    //paintCurrentRed = min(paintPreviousGreen,paintPreviousBlue) + costs[i+1][0]
+
+    public int minCost3(int[][] costs) {
+        if(costs.length==0) return 0;
+        int lastR = costs[0][0];
+        int lastG = costs[0][1];
+        int lastB = costs[0][2];
+        for(int i=1; i<costs.length; i++){
+            int curR = Math.min(lastG,lastB)+costs[i][0];
+            int curG = Math.min(lastR,lastB)+costs[i][1];
+            int curB = Math.min(lastR,lastG)+costs[i][2];
+            lastR = curR;
+            lastG = curG;
+            lastB = curB;
+        }
+        return Math.min(Math.min(lastR,lastG),lastB);
+    }
+////////////////////////////////////////////////////////////////////////////
 
 }
 /*

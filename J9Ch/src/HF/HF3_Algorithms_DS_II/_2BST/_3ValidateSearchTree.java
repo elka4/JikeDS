@@ -1,6 +1,7 @@
 package HF.HF3_Algorithms_DS_II._2BST;
 
 import lib.TreeNode;
+import org.junit.Test;
 
 //Validate binary search tree
 public class _3ValidateSearchTree {
@@ -24,6 +25,17 @@ public class _3ValidateSearchTree {
             return false;
         }
         return true;
+    }
+
+    @Test
+    public void test01(){
+        int[] arr = {1,10,11};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.left.setRightChild(new TreeNode(6));
+        root.right.setRightChild(new TreeNode(12));
+        root.print();
+
+        System.out.println(isValidBST(root));
     }
 
 //////////////////////////////////////////////////////////////

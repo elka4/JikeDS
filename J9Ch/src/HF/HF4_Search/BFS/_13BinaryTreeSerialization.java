@@ -1,6 +1,8 @@
 package HF.HF4_Search.BFS;
 
 import lib.*;
+import org.junit.Test;
+
 import java.util.*;
 
 //Binary Tree Serialization
@@ -79,6 +81,19 @@ public class _13BinaryTreeSerialization {
             isLeftChild = !isLeftChild;
         }
         return root;
+    }
+
+    @Test
+    public void test(){
+        int[] arr = {9,3,20};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
+        root.print();
+        System.out.println(serialize(root));
+
+        deserialize("{3,9,20,#,#,15,7}").print();
+
     }
 }
 /*

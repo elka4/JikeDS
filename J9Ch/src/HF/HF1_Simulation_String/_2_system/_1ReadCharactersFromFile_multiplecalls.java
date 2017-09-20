@@ -68,6 +68,7 @@ public class _1ReadCharactersFromFile_multiplecalls {
 /////////////////////////////////////////////////////////////////////
 
     //jiuzhang
+
      class Solution {
         /**
          * @param buf destination buffer
@@ -85,6 +86,7 @@ public class _1ReadCharactersFromFile_multiplecalls {
         int i4 = 0, n4 = 0;
     }
 
+/////////////////////////////////////////////////////////////////////
 
     // version: 高频题班
      class Solution2 {

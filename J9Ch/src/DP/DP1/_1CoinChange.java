@@ -22,6 +22,8 @@ package DP.DP1;
 • 消除冗余，加速计算
  */
 
+import org.junit.Test;
+
 //Coin Change
 public class _1CoinChange {
     public int coinChange(int[] A, int M) {
@@ -30,6 +32,7 @@ public class _1CoinChange {
 
         f[0] = 0;
         int i, j;
+
         for (i = 1; i <= M; ++i) {
             f[i] = -1;
             for (j = 0; j < n; ++j) {
@@ -40,9 +43,23 @@ public class _1CoinChange {
                 }
             }
         }
-
         return f[M];
     }
+
+    @Test
+    public void test01(){
+        int[] A = {1, 2, 5};
+        int M = 11;
+        System.out.println(coinChange(A,M));
+    }
+
+    @Test
+    public void test02(){
+        int[] A = {1, 2, 5};
+        int M = 11;
+        System.out.println(coinChange(A,M));
+    }
+
 }
 
 /*

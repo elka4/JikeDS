@@ -2,6 +2,7 @@ package HF.HF4_Search.BFS;
 
 import java.util.*;
 import lib.*;
+import org.junit.Test;
 
 //Binary Tree Level Order Traversal
 public class _7BinaryTreeLevelOrderTraversal {
@@ -33,6 +34,14 @@ public class _7BinaryTreeLevelOrderTraversal {
         }
 
         return result;
+    }
+
+    @Test
+    public void test(){
+        int[] arr = {1,2,3,4,5,6,7};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.print();
+        System.out.println(levelOrder(root));
     }
 
 //////////////////////////////////////////////////////////////////////////

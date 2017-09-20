@@ -71,6 +71,11 @@ public class _10KnightShortestPath {
         }
         return (grid[point.x][point.y] == false);
     }
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+
 }
 /*
 Given a knight in a chessboard (a binary matrix with 0 as empty and 1 as barrier) with a source position, find the shortest path to a destination position, return the length of the route. Return -1 if knight can not reached.

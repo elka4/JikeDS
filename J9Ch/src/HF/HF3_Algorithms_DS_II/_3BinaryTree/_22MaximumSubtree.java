@@ -1,6 +1,9 @@
 package HF.HF3_Algorithms_DS_II._3BinaryTree;
 
 import lib.TreeNode;
+import org.junit.Test;
+
+import java.util.List;
 
 
 public class _22MaximumSubtree {
@@ -31,6 +34,21 @@ public class _22MaximumSubtree {
         }
 
         return left_weight + right_weight + root.val;
+    }
+
+
+    @Test
+    public void test(){
+        int[] arr = {0,-5,3,1,-4,2,-5};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+//        root.right.setLeftChild(new TreeNode(15));
+//        root.right.setRightChild(new TreeNode(7));
+        root.print();
+        findSubtree(root).print();
+
+//        List<List<Integer>> result = verticalOrder2(root);
+
+//        System.out.println(result);
     }
 }
 /*

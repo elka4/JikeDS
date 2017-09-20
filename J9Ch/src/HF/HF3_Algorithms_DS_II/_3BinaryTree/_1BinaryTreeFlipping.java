@@ -1,6 +1,7 @@
 package HF.HF3_Algorithms_DS_II._3BinaryTree;
 
 import lib.TreeNode;
+import org.junit.Test;
 
 //Binary Tree Flipping
 public class _1BinaryTreeFlipping {
@@ -46,7 +47,16 @@ public class _1BinaryTreeFlipping {
         return newRoot;
     }
 
+    @Test
+    public void test(){
+        int[] arr = {2,1,3};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.left.setLeftChild(new TreeNode(4));
+        root.left.setRightChild(new TreeNode(5));
+        root.print();
+        upsideDownBinaryTree2(root).print();
 
+    }
 
 ///////////////////////////////////////////////////////////////
 

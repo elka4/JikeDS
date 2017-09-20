@@ -1,6 +1,7 @@
 package HF.HF3_Algorithms_DS_II._3BinaryTree;
 
 import lib.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -59,6 +60,19 @@ public class _2BinaryTreeOrderTraversal {
             ans.add(depth.get(i));
         }
         return ans;
+    }
+
+    @Test
+    public void test(){
+        int[] arr = {2,1,3};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.left.setLeftChild(new TreeNode(4));
+        root.left.setRightChild(new TreeNode(5));
+        root.print();
+
+        List<List<Integer>> result = findLeaves2(root);
+
+        System.out.println(result);
     }
 
 ////////////////////////////////////////////////////////////////

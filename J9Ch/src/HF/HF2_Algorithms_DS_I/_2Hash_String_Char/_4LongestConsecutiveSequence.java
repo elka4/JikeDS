@@ -1,5 +1,7 @@
 package HF.HF2_Algorithms_DS_I._2Hash_String_Char;
 
+import org.junit.Test;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -109,6 +111,12 @@ public class _4LongestConsecutiveSequence {
         }
         return ans;
     }
+
+    @Test
+    public void test(){
+        int[] arr = {100, 4, 200, 1, 3, 2};
+        System.out.println(longestConsecutive2(arr));
+    }
 //////////////////////////////////////////////////////////////
 
 
@@ -117,5 +125,13 @@ public class _4LongestConsecutiveSequence {
 
 }
 /*
+Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
 
+Have you met this question in a real interview? Yes
+Clarification
+Your algorithm should run in O(n) complexity.
+
+Example
+Given [100, 4, 200, 1, 3, 2],
+The longest consecutive elements sequence is [1, 2, 3, 4]. Return its length: 4.
  */

@@ -1,6 +1,7 @@
 package HF.HF3_Algorithms_DS_II._3BinaryTree;
 
 import lib.TreeNode;
+import org.junit.Test;
 
 import java.util.*;
 
@@ -80,6 +81,20 @@ public class _3BinaryTreeVerticalOrderTraversal {
             ans.add(col.get(i));
         }
         return ans;
+    }
+
+
+    @Test
+    public void test(){
+        int[] arr = {9,3,20};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
+        root.print();
+
+        List<List<Integer>> result = verticalOrder2(root);
+
+        System.out.println(result);
     }
 
 }

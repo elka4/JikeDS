@@ -1,5 +1,7 @@
 package HF.HF1_Simulation_String._1_phone_interview;
 
+import org.junit.Test;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -37,27 +39,42 @@ Example:
  */
 
 public class _1SlidingWindowAveragefromDataStream {
+
+
     //in class
-    double[] sum;
-    int id, size;
+    class MovingAverage{
+        double[] sum;
+        int id, size;
 
-    _1SlidingWindowAveragefromDataStream(int s){
-        sum = new double[1000000];
-        id = 0;
-        size = s;
-    }
+        MovingAverage(int s){
+            sum = new double[1000000];
+            id = 0;
+            size = s;
+        }
 
-    public double next(int val){
-        id++;
-        sum[id] = sum[id - 1] + val;
-        if (id - size >= 0) {
-            return (sum[id] - sum[id - size]) / size;
-        } else {
-            return sum[id] / id;
+        public double next(int val){
+            id++;
+            sum[id] = sum[id - 1] + val;
+            if (id - size >= 0) {
+                return (sum[id] - sum[id - size]) / size;
+            } else {
+                return sum[id] / id;
+            }
         }
     }
 
-////////////////////////////////////////////
+
+    @Test
+    public void test01(){
+        MovingAverage m = new MovingAverage(3);
+        System.out.println(m.next(1));
+        System.out.println(m.next(10));
+        System.out.println(m.next(3));
+        System.out.println(m.next(5));
+    }
+
+//////////////////////////////////////////////////////////////////
+
     //jiuzhang
     public class MovingAverage2 {
 
@@ -88,6 +105,8 @@ public class _1SlidingWindowAveragefromDataStream {
      * double param = obj.next(val);
      */
 
+//////////////////////////////////////////////////////////////////
+
 // version: 高频题班
 //非滚动
     public class MovingAverage3 {
@@ -114,6 +133,8 @@ public class _1SlidingWindowAveragefromDataStream {
             }
         }
     }
+
+//////////////////////////////////////////////////////////////////
 
     //滚动
     public class MovingAverage4 {
@@ -145,7 +166,8 @@ public class _1SlidingWindowAveragefromDataStream {
 
         }
     }
-////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////
 
     class MovingAverage5{
         double[] sum;
@@ -172,7 +194,7 @@ public class _1SlidingWindowAveragefromDataStream {
         }
     }
 
-
+//////////////////////////////////////////////////////////////////
 
 
 }

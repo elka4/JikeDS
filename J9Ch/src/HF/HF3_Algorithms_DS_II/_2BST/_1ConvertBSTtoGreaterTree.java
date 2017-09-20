@@ -39,7 +39,7 @@ public class _1ConvertBSTtoGreaterTree {
 
     @Test
     public void test01(){
-        int[] input = {5,2,13};
+        int[] input = {2,5,13};
         TreeNode root = TreeNode.createMinimalBST(input);
         root.print();
         convertBST(root).print();
@@ -83,7 +83,7 @@ public class _1ConvertBSTtoGreaterTree {
 
     @Test
     public void test02(){
-        int[] input = {5,2,13};
+        int[] input = {2,5,13};
         TreeNode root = TreeNode.createMinimalBST(input);
         root.print();
         convertBST2(root).print();

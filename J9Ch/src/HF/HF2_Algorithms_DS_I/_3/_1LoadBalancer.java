@@ -1,5 +1,7 @@
 package HF.HF2_Algorithms_DS_I._3;
 
+import org.junit.Test;
+
 import java.util.*;
 
 // Load Balancer
@@ -93,6 +95,19 @@ public class _1LoadBalancer {
             // Write your code here
             return array.get(rand.nextInt(n));
         }
+    }
+
+    @Test
+    public void test01(){
+        LoadBalancer2 lb = new LoadBalancer2();
+
+        lb.add(1);
+        lb.add(2);
+        lb.add(3);
+        System.out.println(lb.pick());
+        System.out.println(lb.pick());
+        System.out.println(lb.pick());
+
     }
 
 /////////////////////////////////////////////////////////////

@@ -1,5 +1,7 @@
 package DP_Classified._2Sequence;
 
+//两笔交易
+
 //Best Time To Buy And Sell Stock III
 public class _6BestTimeToBuyAndSellStockIII {
     // 动态规划专题班版本 verison 1
@@ -171,3 +173,28 @@ public class _6BestTimeToBuyAndSellStockIII {
 /////////////////////////////////////////////////////////////////////
 
 }
+
+/*
+Say you have an array for which the ith element is the price of a given stock on day i.
+
+Design an algorithm to find the maximum profit. You may complete at most two transactions.
+
+ Notice
+
+You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
+
+Have you met this question in a real interview? Yes
+Example
+Given an example [4,4,6,1,1,4,2,5], return 6.
+
+
+ */
+
+
+/*
+假设你有一个数组，它的第i个元素是一支给定的股票在第i天的价格。设计一个算法来找到最大的利润。你最多可以完成两笔交易。
+
+ 注意事项
+
+你不可以同时参与多笔交易(你必须在再次购买前出售掉之前的股票)
+ */

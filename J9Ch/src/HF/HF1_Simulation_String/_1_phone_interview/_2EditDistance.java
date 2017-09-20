@@ -36,6 +36,8 @@ Company Tags: Facebook
 5. 细节处理(corner case)
  */
 
+import org.junit.Test;
+
 public class _2EditDistance {
     //in class
     public boolean isOneEditDistance(String s, String t){
@@ -64,72 +66,75 @@ public class _2EditDistance {
     }
 
 ///////////////////////////////////////////////////////////////////
-    //jiuzhang
-    public class Solution1 {
-        /**
-         * @param s a string
-         * @param t a string
-         * @return true if they are both one edit distance apart or false
-         */
-        public boolean isOneEditDistance(String s, String t) {
-            // Write your code here
-            int m = s.length();
-            int n = t.length();
-            if (Math.abs(m - n) > 1)
-                return false;
 
-            if (m > n)
-                return isOneEditDistance(t, s);
-            for (int i = 0; i < m; i++) {
-                if (s.charAt(i) != t.charAt(i)) {
-                    if (m == n) {
-                        return s.substring(i + 1).equals(t.substring(i + 1));
-                    }
-                    return s.substring(i).equals(t.substring(i + 1));
+    //jiuzhang
+    /**
+     * @param s a string
+     * @param t a string
+     * @return true if they are both one edit distance apart or false
+     */
+    public boolean isOneEditDistance2(String s, String t) {
+        // Write your code here
+        int m = s.length();
+        int n = t.length();
+        if (Math.abs(m - n) > 1)
+            return false;
+
+        if (m > n)
+            return isOneEditDistance(t, s);
+        for (int i = 0; i < m; i++) {
+            if (s.charAt(i) != t.charAt(i)) {
+                if (m == n) {
+                    return s.substring(i + 1).equals(t.substring(i + 1));
                 }
+                return s.substring(i).equals(t.substring(i + 1));
             }
-            return m != n;
         }
+        return m != n;
     }
+
+///////////////////////////////////////////////////////////////////
 
     // version: 高频题班
-    public class Solution2 {
-        /**
-         * @param s a string
-         * @param t a string
-         * @return true if they are both one edit distance apart or false
-         */
-        public boolean isOneEditDistance(String s, String t) {
-            // Write your code here
-            if (s.length() > t.length()) {
-                return isOneEditDistance(t, s);
-            }
-            int diff = t.length() - s.length();
-
-            if (diff > 1) {
-                return false;
-            }
-            if (diff == 0) {
-                int cnt = 0;
-                for (int i = 0; i < s.length(); i++) {
-                    if (t.charAt(i) != s.charAt(i)) {
-                        cnt++;
-                    }
-                }
-                return (cnt == 1);
-            }
-            if (diff == 1) {
-                for (int i = 0; i < s.length(); i++) {
-                    if (t.charAt(i) != s.charAt(i)) {
-                        return (s.substring(i).equals(t.substring(i + 1)));
-                    }
-                }
-            }
-            return true;
+    /**
+     * @param s a string
+     * @param t a string
+     * @return true if they are both one edit distance apart or false
+     */
+    public boolean isOneEditDistance3(String s, String t) {
+        // Write your code here
+        if (s.length() > t.length()) {
+            return isOneEditDistance(t, s);
         }
+        int diff = t.length() - s.length();
+
+        if (diff > 1) {
+            return false;
+        }
+        if (diff == 0) {
+            int cnt = 0;
+            for (int i = 0; i < s.length(); i++) {
+                if (t.charAt(i) != s.charAt(i)) {
+                    cnt++;
+                }
+            }
+            return (cnt == 1);
+        }
+        if (diff == 1) {
+            for (int i = 0; i < s.length(); i++) {
+                if (t.charAt(i) != s.charAt(i)) {
+                    return (s.substring(i).equals(t.substring(i + 1)));
+                }
+            }
+        }
+        return true;
     }
 
-
+    @Test
+    public void test03(){
+        String s = "aDb", t = "adb";
+        System.out.println(isOneEditDistance3(s,t));
+    }
 
 
 ///////////////////////////////////////////////////////////////////

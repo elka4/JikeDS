@@ -79,11 +79,11 @@ public class _4LongestIncreasingContinuousSubsequence {
         int[] f = new int[n];
         int i, res = 0;
         for (i = 0; i < n; ++i) {
-            f[i] = 1;
-            if (i > 0 && A[i-1] < A[i]) {
+            f[i] = 1;                       //init f[i]
+            if (i > 0 && A[i-1] < A[i]) {   //update f[i]
                 f[i] = f[i-1] + 1;
             }
-            if (f[i] > res) {
+            if (f[i] > res) {               //update res
                 res = f[i];
             }
         }
@@ -93,7 +93,9 @@ public class _4LongestIncreasingContinuousSubsequence {
 
     public int longestIncreasingContinuousSubsequence2(int[] A) {
         int n = A.length;
+
         int r1 = LIS(A);
+
         int i = 0, j = n-1, t;
         while (i < j) {
             t = A[i];

@@ -1,5 +1,7 @@
 package HF.HF4_Search.BFS;
 
+import org.junit.Test;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -59,6 +61,50 @@ public class _2NearestExit {
                 }
             }
         }
+    }
+    int[][] rooms;
+    @Test
+    public void test01(){
+        rooms = new int[4][4];
+        rooms[0][0] = INF;
+        rooms[0][1] = -1;
+        rooms[0][2] = 0;
+        rooms[0][3] = INF;
+
+        rooms[1][0] = INF;
+        rooms[1][1] = INF;
+        rooms[1][2] = INF;
+        rooms[1][3] = -1;
+
+        rooms[2][0] = INF;
+        rooms[2][1] = -1;
+        rooms[2][2] = INF;
+        rooms[2][3] = -1;
+
+        rooms[3][0] = 0;
+        rooms[3][1] = -1;
+        rooms[3][2] = INF;
+        rooms[3][3] = INF;
+
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(rooms[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        wallsAndGates(rooms);
+
+        System.out.println();
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(rooms[i][j] + " ");
+            }
+            System.out.println();
+        }
+
     }
 
 ////////////////////////////////////////////////////////////
