@@ -1,9 +1,7 @@
 package S_2_Data_Structure_I.Required_12;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
-import java.util.Queue;
 
 /** 473 Add and Search Word
 

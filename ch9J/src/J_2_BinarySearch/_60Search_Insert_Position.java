@@ -1,4 +1,4 @@
-package chapter2_BinarySearch;
+package J_2_BinarySearch;
 
 //version 1: find the first position >= target
 //So that is similar to find first position.

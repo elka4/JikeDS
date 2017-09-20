@@ -1,7 +1,7 @@
 package J_3_Binary_Tree_Divide_Conquer.Required_10;
 
-import lib.TreeNode;
 import lib.AssortedMethods;
+import lib.TreeNode;
 import org.junit.Test;
 /**
  * Created by tianhuizhu on 7/8/17.

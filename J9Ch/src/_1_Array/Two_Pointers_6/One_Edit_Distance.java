@@ -1,6 +1,4 @@
 package _1_Array.Two_Pointers_6;
-import java.util.*;
-
 //Given two strings S and T, determine if they are both one edit distance apart.
 
 

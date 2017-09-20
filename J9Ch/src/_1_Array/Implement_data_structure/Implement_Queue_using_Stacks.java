@@ -1,5 +1,6 @@
 package _1_Array.Implement_data_structure;
-import java.util.*;
+
+import java.util.Stack;
 
 public class Implement_Queue_using_Stacks {
     class MyQueue {

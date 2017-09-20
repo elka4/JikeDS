@@ -1,5 +1,9 @@
 package _1_Array.Caching;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /*
 LeetCode – Majority Element II (Java)

@@ -1,6 +1,7 @@
 package DP.DP7;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
 
 //Frog Jump
 public class _3FrogJump {

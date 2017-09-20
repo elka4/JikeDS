@@ -1,6 +1,6 @@
 package J_6_Linked_List_Array.List;
 
-import lib.*;
+import lib.ListNode;
 //https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
 public class _1_LinkedList_1Easy_RemoveNthNodeFromTail {

@@ -1,5 +1,7 @@
 package _1_Array.Heap;
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.PriorityQueue;
 
 /*
 Merge K Sorted Arrays in Java

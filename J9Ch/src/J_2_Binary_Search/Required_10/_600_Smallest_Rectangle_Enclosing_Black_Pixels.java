@@ -1,5 +1,5 @@
 package J_2_Binary_Search.Required_10;
-import java.util.*;
+
 /**600. Smallest Rectangle Enclosing Black Pixels
  * Hard
  * Created by tianhuizhu on 6/27/17.

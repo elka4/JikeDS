@@ -1,6 +1,4 @@
 package _4_Tree.dfs_bfs;
-import lib.*;
-
 /*
 LeetCode – Unique Binary Search Trees (Java)
 

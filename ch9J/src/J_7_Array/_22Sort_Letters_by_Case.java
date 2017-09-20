@@ -1,4 +1,4 @@
-package chapter7_Array;
+package J_7_Array;
 
 public class _22Sort_Letters_by_Case {
 /** 

@@ -1,6 +1,4 @@
 package _1_Array.Two_Pointers_4;
-import java.util.*;
-
 /*
 1. Each child must have at least one candy.
 2. Children with a higher rating get more candies than their neighbors.

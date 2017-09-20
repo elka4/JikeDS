@@ -1,5 +1,6 @@
-package chapter3_BianryTree;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+package J_3_BianryTree;
+
+import lib.TreeNode;
 //Version 1: with ResultType
 
 public class _93Balanced_Binary_Tree_ResultType {

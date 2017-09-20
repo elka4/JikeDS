@@ -1,7 +1,8 @@
 package HF.HF3_Algorithms_DS_II._2BST;
 
-import java.util.*;
-import lib.*;
+import lib.TreeNode;
+
+import java.util.Stack;
 
 //Binary search tree iterator
 public class _4BinarySearchTreeIterator {

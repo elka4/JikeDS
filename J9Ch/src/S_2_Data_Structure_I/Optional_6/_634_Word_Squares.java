@@ -1,5 +1,7 @@
 package S_2_Data_Structure_I.Optional_6;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 /** 634
  * Created by tianhuizhu on 6/28/17.
  */

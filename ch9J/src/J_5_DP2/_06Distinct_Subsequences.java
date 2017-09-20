@@ -1,4 +1,4 @@
-package chapter5_DP2;
+package J_5_DP2;
 
 /* 求方案总数
  * Distinct Subsequence

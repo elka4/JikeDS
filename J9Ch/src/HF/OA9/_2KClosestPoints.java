@@ -3,7 +3,8 @@ package HF.OA9;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 //堆
 //K Closest Points
@@ -66,6 +67,8 @@ public class _2KClosestPoints {
 
         return (a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y);
     }
+
+////////////////////////////////////////////////////////////////////////
 
     Point[] points;
     Point origin;

@@ -1,4 +1,4 @@
-package chapter8_DataStructure;
+package J_8_DataStructure;
 
 public class _07Rehashing {
 /**

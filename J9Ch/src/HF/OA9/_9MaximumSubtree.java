@@ -1,6 +1,6 @@
 package HF.OA9;
 
-import lib.*;
+import lib.TreeNode;
 import org.junit.Test;
 
 //树上DFS

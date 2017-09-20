@@ -1,5 +1,6 @@
 package HF.HF3_Algorithms_DS_II._3BinaryTree;
-import lib.*;
+
+import lib.TreeNode;
 
 
 public class _22MaximumSubtree {

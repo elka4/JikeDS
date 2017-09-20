@@ -1,6 +1,7 @@
 package HF.HF4_Search.BFS;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /*
 能力维度:

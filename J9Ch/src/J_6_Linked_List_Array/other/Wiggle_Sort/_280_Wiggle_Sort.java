@@ -1,5 +1,6 @@
 package J_6_Linked_List_Array.other.Wiggle_Sort;
-import java.util.*;
+
+import java.util.Arrays;
 
 /*
 Given an unsorted array nums, reorder it in-place such that

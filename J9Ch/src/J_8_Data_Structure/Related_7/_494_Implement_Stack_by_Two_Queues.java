@@ -1,5 +1,7 @@
 package J_8_Data_Structure.Related_7;
-import java.util.*;import lib.ListNode;
+
+import java.util.LinkedList;
+import java.util.Queue;
 /** 494 Implement Stack by Two Queues
  Stack Queue
  * Created by tianhuizhu on 7/10/17.

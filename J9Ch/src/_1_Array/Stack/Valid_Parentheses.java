@@ -1,5 +1,7 @@
 package _1_Array.Stack;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Stack;
 
 /*
 LeetCode – Valid Parentheses (Java)

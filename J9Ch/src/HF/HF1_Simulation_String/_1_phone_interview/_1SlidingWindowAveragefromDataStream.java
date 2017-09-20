@@ -1,6 +1,7 @@
 package HF.HF1_Simulation_String._1_phone_interview;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /*
 Example:

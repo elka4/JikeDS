@@ -1,6 +1,4 @@
 package J_6_Linked_List_Array.Array;
-import java.util.*;
-
 /*
 Given an array consisting of n integers, find the contiguous subarray of
  given length k that has the maximum average value.

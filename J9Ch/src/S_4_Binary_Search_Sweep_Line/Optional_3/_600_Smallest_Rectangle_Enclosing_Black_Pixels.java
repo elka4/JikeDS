@@ -1,5 +1,5 @@
 package S_4_Binary_Search_Sweep_Line.Optional_3;
-import java.util.*;
+
 /** 600 Smallest Rectangle Enclosing Black Pixels
  * Created by tianhuizhu on 6/28/17.
  */

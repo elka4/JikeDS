@@ -1,5 +1,7 @@
 package J_6_Linked_List_Array.List;
 
+import lib.ListNode;
+
 import java.util.List;
 
 public class _08Merge_k_Sorted_Lists_DivideConquer {

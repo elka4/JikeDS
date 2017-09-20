@@ -1,7 +1,6 @@
 package J_2_Binary_Search.Required_10;
-import org.junit.Test;
 
-import java.util.*;
+import org.junit.Test;
 /**459. Closest Number in Sorted Array
  * Easy
  * Created by tianhuizhu on 6/27/17.

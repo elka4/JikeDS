@@ -1,4 +1,4 @@
-package chapter5_DP2;//区间类
+package J_5_DP2;//区间类
 
 import java.util.Arrays;
 

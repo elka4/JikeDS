@@ -1,5 +1,5 @@
 package S_5_Dynamic_Problem_I.Required_10;
-import java.util.*;
+
 /** 392 House Robber
  * Created by tianhuizhu on 6/28/17.
  */

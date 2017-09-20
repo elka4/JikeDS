@@ -1,5 +1,5 @@
 package S_7_Follow_Up.Optional_9;
-import java.util.*;
+
 /** 553 Bomb Enemy
  * Created by tianhuizhu on 6/28/17.
  */

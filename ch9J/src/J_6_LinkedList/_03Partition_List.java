@@ -1,4 +1,4 @@
-package chapter6_LinkedList;
+package J_6_LinkedList;
 
 public class _03Partition_List {
 	public ListNode partition(ListNode head, int x) {

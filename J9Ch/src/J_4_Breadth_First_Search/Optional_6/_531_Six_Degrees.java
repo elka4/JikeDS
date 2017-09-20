@@ -1,5 +1,8 @@
 package J_4_Breadth_First_Search.Optional_6;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+
+import org.junit.Test;
+
+import java.util.*;
 /** 531 Six Degrees
  * Created by tianhuizhu on 6/28/17.
  */

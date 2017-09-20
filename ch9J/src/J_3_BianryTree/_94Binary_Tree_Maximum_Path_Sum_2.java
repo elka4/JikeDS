@@ -1,5 +1,6 @@
-package chapter3_BianryTree;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+package J_3_BianryTree;
+
+import lib.TreeNode;
 
 //Version 2:
 //SinglePath也定义为，至少包含一个点。

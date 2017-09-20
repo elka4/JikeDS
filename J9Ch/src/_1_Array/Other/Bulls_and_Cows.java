@@ -1,5 +1,6 @@
 package _1_Array.Other;
-import java.util.*;
+
+import java.util.HashMap;
 
 /*
 LeetCode – Bulls and Cows (Java)

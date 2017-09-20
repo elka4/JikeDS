@@ -1,5 +1,4 @@
 package _1_Array.Other;
-import java.util.*;
 
 public class Implement_strStr {
 

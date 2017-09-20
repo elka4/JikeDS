@@ -1,6 +1,6 @@
 package J_8_Data_Structure.all;
+
 import lib.ListNode;
-import java.util.*;
 /** 129 Rehashing
  * Medium
 

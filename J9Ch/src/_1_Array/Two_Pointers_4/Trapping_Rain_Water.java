@@ -1,6 +1,4 @@
 package _1_Array.Two_Pointers_4;
-import java.util.*;
-
 
 public class Trapping_Rain_Water {
     public int trap(int[] height) {

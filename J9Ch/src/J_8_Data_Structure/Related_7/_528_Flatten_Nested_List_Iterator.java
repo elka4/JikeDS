@@ -1,5 +1,8 @@
 package J_8_Data_Structure.Related_7;
-import java.util.*;import lib.ListNode;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Stack;
 /**528 Flatten Nested List Iterator
 
  * Created by tianhuizhu on 7/10/17.

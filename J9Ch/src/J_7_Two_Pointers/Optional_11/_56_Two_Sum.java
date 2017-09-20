@@ -1,5 +1,6 @@
 package J_7_Two_Pointers.Optional_11;
-import java.util.*;
+
+import java.util.HashMap;
 /** 56 Two Sum
  * Created by tianhuizhu on 6/28/17.
  */

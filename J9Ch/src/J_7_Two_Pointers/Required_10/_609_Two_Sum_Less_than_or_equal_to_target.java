@@ -1,5 +1,6 @@
 package J_7_Two_Pointers.Required_10;
-import java.util.*;
+
+import java.util.Arrays;
 /** 609 Two Sum - Less than or equal to target
  * Medium
 

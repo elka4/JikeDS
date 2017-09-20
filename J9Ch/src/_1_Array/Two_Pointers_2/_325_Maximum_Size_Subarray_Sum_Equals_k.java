@@ -1,5 +1,6 @@
 package _1_Array.Two_Pointers_2;
-import java.util.*;
+
+import java.util.HashMap;
 
 /*
 LeetCode – Maximum Size Subarray Sum Equals k (Java)

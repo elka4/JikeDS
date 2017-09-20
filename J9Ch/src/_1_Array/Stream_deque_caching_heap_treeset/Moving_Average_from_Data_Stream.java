@@ -1,5 +1,6 @@
 package _1_Array.Stream_deque_caching_heap_treeset;
-import java.util.*;
+
+import java.util.LinkedList;
 
 /*
 Given a stream of integers and a window size, calculate the moving

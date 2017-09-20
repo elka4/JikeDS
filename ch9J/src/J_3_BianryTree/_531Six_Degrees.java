@@ -1,5 +1,5 @@
-package chapter3_BianryTree;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+package J_3_BianryTree;
+
 import java.util.*;
 
 public class _531Six_Degrees {

@@ -1,4 +1,4 @@
-package chapter5_DP2;
+package J_5_DP2;
 //version 1
 //f[i] 表示前i个字母，最少可以被分割为多少个回文串，最后return几个回文串-1，就是需要划分的次数
 /* 1, f[i] 表示第i个字符，组成的前缀，最少能分割为几个回文串

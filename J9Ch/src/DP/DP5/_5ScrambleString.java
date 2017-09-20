@@ -1,6 +1,7 @@
 package DP.DP5;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
 
 //Scramble String
 public class _5ScrambleString {

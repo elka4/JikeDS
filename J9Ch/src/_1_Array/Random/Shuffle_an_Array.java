@@ -1,5 +1,7 @@
 package _1_Array.Random;
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.Random;
 
 //Shuffle a set of numbers without duplicates.
 

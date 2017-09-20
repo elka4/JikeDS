@@ -1,4 +1,4 @@
-package chapter2_BinarySearch;
+package J_2_BinarySearch;
 
 /**
  * Created by tianhuizhu on 6/21/17.

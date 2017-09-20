@@ -1,5 +1,7 @@
 package S_7_Follow_Up.Optional_9;
-import java.util.*;
+
+import java.util.Iterator;
+import java.util.List;
 /** 540 Zigzag Iterator
  * Created by tianhuizhu on 6/28/17.
  */

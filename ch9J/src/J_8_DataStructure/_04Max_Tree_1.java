@@ -1,6 +1,6 @@
-package chapter8_DataStructure;
+package J_8_DataStructure;
 
-import lib.*;
+import lib.TreeNode;
 import org.junit.Test;
 
 import java.util.Stack;

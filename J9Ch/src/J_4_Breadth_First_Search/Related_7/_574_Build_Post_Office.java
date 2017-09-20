@@ -1,5 +1,8 @@
 package J_4_Breadth_First_Search.Related_7;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 /** 597 Build Post Office
  * Created by tianhuizhu on 6/28/17.
  */

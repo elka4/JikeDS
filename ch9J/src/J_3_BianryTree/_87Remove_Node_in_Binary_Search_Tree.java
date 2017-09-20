@@ -1,5 +1,6 @@
-package chapter3_BianryTree;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+package J_3_BianryTree;
+
+import lib.TreeNode;
 
 public class _87Remove_Node_in_Binary_Search_Tree {
 	 /**

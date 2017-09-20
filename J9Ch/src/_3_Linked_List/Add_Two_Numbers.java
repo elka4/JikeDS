@@ -1,5 +1,4 @@
 package _3_Linked_List;
-import java.util.*;
 /*
 Leetcode – Add Two Numbers (Java)
 

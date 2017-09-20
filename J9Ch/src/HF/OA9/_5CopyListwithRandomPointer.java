@@ -1,6 +1,6 @@
 package HF.OA9;
 
-import java.util.*;
+import java.util.HashMap;
 
 //链表操作
 //Copy List with Random Pointer

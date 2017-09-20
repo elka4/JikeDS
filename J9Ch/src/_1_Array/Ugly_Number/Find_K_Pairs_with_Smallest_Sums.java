@@ -1,5 +1,7 @@
 package _1_Array.Ugly_Number;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 LeetCode – Find K Pairs with Smallest Sums (Java)

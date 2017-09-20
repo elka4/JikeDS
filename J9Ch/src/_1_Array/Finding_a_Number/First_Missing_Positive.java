@@ -1,6 +1,4 @@
 package _1_Array.Finding_a_Number;
-import java.util.*;
-
 /*
 LeetCode – First Missing Positive (Java)
 

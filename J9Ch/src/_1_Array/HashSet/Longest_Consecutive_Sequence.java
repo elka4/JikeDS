@@ -1,5 +1,7 @@
 package _1_Array.HashSet;
-import java.util.*;
+
+import java.util.HashSet;
+import java.util.Set;
 /*
 LeetCode – Longest Consecutive Sequence (Java)
 

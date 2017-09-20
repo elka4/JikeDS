@@ -1,5 +1,6 @@
 package _1_Array.Random;
-import java.util.*;
+
+import java.util.Random;
 /*
 LeetCode – Linked List Random Node (Java)
 

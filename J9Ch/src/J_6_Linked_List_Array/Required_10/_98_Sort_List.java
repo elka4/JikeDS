@@ -1,5 +1,5 @@
 package J_6_Linked_List_Array.Required_10;
-import java.util.*;
+
 /** 98 Sort List
  * Medium
 

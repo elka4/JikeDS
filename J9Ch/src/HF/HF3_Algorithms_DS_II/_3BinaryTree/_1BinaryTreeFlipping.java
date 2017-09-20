@@ -1,6 +1,6 @@
 package HF.HF3_Algorithms_DS_II._3BinaryTree;
 
-import lib.*;
+import lib.TreeNode;
 
 //Binary Tree Flipping
 public class _1BinaryTreeFlipping {

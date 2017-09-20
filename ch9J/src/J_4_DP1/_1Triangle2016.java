@@ -1,4 +1,4 @@
-package chapter4_DP1;
+package J_4_DP1;
 //
 public class _1Triangle2016 {
 

@@ -1,5 +1,7 @@
 package _1_Array.Two_Pointers_12;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 LeetCode – Binary Watch (Java)

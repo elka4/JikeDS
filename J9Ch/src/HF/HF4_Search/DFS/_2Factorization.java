@@ -1,6 +1,7 @@
 package HF.HF4_Search.DFS;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 //Factorization
 public class _2Factorization {

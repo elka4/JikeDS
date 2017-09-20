@@ -1,6 +1,6 @@
 package J_4_Breadth_First_Search.other.aaa;
 
-import java.util.*;
+import java.util.List;
 /**
  * Created by tianhuizhu on 7/9/17.
  */

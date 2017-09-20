@@ -1,5 +1,8 @@
 package J_8_Data_Structure.Related_7;
-import java.util.*;import lib.ListNode;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 /**551 Nested List Weight Sum
 
  * Created by tianhuizhu on 7/10/17.

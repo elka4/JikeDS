@@ -4,8 +4,8 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 // k  colors

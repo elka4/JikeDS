@@ -1,4 +1,4 @@
-package chapter6_LinkedList;
+package J_6_LinkedList;
 
 public class _11Reverse_Nodes_in_k_Group {
 	/**

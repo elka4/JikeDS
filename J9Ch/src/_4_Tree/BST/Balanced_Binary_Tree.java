@@ -1,5 +1,6 @@
 package _4_Tree.BST;
-import lib.*;
+
+import lib.TreeNode;
 
 /*
 LeetCode – Balanced Binary Tree (Java)

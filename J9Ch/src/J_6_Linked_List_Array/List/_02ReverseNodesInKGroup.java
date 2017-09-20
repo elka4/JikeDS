@@ -1,5 +1,6 @@
 package J_6_Linked_List_Array.List;
 
+import lib.ListNode;
 
 public class _02ReverseNodesInKGroup {
 

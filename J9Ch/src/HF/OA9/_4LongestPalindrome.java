@@ -2,7 +2,8 @@ package HF.OA9;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 //模拟
 //Longest Palindrome
@@ -39,6 +40,7 @@ public class _4LongestPalindrome {
     }
 
 //////////////////////////////////////////////////////////////////
+
     // version 2
     public int longestPalindrome2(String s) {
         int[] charStatArray = new int[52];

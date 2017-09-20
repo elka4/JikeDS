@@ -1,6 +1,6 @@
 package DP.DP4;
 
-import java.util.*;
+import java.util.Arrays;
 
 //Perfect Squares
 public class _1PerfectSquares {

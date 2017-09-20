@@ -1,4 +1,4 @@
-package chapter7_Array;
+package J_7_Array;
 
 public class _05Best_Time_to_Buy_and_Sell_Stock {
 	public int maxProfit(int[] prices) {

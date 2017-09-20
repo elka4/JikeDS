@@ -1,5 +1,7 @@
 package J_7_Two_Pointers.Optional_11;
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.Comparator;
 /** 610 Two Sum - Difference equals to target
 
 

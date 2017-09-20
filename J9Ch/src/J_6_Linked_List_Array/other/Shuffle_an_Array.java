@@ -1,5 +1,7 @@
 package J_6_Linked_List_Array.other;
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.Random;
 
 public class Shuffle_an_Array {
     /*

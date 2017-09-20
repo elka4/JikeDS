@@ -1,7 +1,10 @@
 package _5_Bit_Manipulation;
+
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 /*
 LeetCode – Gray Code
 

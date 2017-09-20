@@ -1,5 +1,7 @@
 package _1_Array.Other;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 /*
 LeetCode – Text Justification (Java)
 

@@ -3,7 +3,6 @@ package J_3_Binary_Tree_Divide_Conquer.other.Binary_Tree_Path_Sum;
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
-import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;

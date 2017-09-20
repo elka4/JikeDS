@@ -3,7 +3,6 @@ package J_3_Binary_Tree_Divide_Conquer.other.Binary_Tree_Maximum_Path_Sum;
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
-import org.junit.Test;
 
 // top to down
 public class _6_PathSum3_ReturntheMaxPathSumOnTheSubsectionOfCompletePathFromRootToLeaf {

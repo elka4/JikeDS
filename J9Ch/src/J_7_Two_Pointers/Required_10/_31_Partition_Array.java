@@ -1,5 +1,5 @@
 package J_7_Two_Pointers.Required_10;
-import java.util.*;
+
 /** 31 Partition Array
  * Medium
 

@@ -1,6 +1,8 @@
 package J_6_Linked_List_Array.other.Merge_List;
-import java.util.*;
 
+import lib.ListNode;
+
+import java.util.*;
 public class _16Merge_k_Sorted_Lists {
 // version 1: Divide & Conquer
     /**

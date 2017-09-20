@@ -1,5 +1,9 @@
 package _1_Array.Design_data_structure_with_time_requirements;
-import java.util.*;
+
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Set;
 /*
 LeetCode – Design Phone Directory (Java)
 

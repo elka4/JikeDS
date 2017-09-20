@@ -1,4 +1,4 @@
-package chapter7_Array;
+package J_7_Array;
 
 public class _04Median_of_two_Sorted_Arrays {
 	public double findMedianSortedArrays(int A[], int B[]) {

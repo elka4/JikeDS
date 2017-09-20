@@ -1,5 +1,7 @@
 package _1_Array.Design_data_structure_with_time_requirements;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Random;
 /*
 LeetCode – Insert Delete GetRandom O(1) (Java)
 

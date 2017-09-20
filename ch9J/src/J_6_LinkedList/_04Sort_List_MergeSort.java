@@ -1,4 +1,4 @@
-package chapter6_LinkedList;
+package J_6_LinkedList;
 
 
 //version 1: Merge Sort

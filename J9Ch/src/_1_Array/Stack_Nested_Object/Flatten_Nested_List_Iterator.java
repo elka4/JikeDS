@@ -1,5 +1,5 @@
 package _1_Array.Stack_Nested_Object;
-import java.util.*;
+
 /*
 LeetCode – Flatten Nested List Iterator (Java)
 

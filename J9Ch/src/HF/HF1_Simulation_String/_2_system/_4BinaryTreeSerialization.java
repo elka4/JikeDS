@@ -1,8 +1,11 @@
 package HF.HF1_Simulation_String._2_system;
 
-import java.util.*;
-import lib.*;
+import lib.TreeNode;
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
 
 public class _4BinaryTreeSerialization {
     //in class

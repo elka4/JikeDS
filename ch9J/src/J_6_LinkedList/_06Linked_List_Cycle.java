@@ -1,4 +1,4 @@
-package chapter6_LinkedList;
+package J_6_LinkedList;
 
 public class _06Linked_List_Cycle {
 	public Boolean hasCycle(ListNode head) {

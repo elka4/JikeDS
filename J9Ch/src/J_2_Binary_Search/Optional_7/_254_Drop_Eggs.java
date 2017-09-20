@@ -1,5 +1,5 @@
 package J_2_Binary_Search.Optional_7;
-import java.util.*;
+
 /**
 254
  Drop Eggs

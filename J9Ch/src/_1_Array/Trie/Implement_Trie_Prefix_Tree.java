@@ -1,5 +1,7 @@
 package _1_Array.Trie;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Implement_Trie_Prefix_Tree {
 

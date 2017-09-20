@@ -1,5 +1,7 @@
 package J_8_Data_Structure.Related_7;
-import java.util.*;import lib.ListNode;
+
+import java.util.Iterator;
+import java.util.List;
 /**540 Zigzag Iterator
 
  * Created by tianhuizhu on 7/10/17.

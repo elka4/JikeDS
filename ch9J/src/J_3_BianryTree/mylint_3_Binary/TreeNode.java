@@ -1,4 +1,4 @@
-package chapter3_BianryTree.mylint_3_Binary;
+package J_3_BianryTree.mylint_3_Binary;
 
 /**
  * Created by tzh on 3/2/17.

@@ -1,4 +1,4 @@
-package chapter5_DP2;
+package J_5_DP2;
 
 public class _04Longest_Common_Substring {
 	/**

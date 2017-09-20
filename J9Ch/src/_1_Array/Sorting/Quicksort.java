@@ -1,5 +1,6 @@
 package _1_Array.Sorting;
-import java.util.*;
+
+import java.util.Arrays;
 /*
 Quicksort Array in Java
 

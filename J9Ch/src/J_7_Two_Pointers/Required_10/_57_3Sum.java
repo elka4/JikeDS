@@ -1,5 +1,7 @@
 package J_7_Two_Pointers.Required_10;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 /** 57 3Sum
  * Medium
 

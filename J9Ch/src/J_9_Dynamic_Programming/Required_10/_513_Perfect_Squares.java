@@ -1,5 +1,6 @@
 package J_9_Dynamic_Programming.Required_10;
-import java.util.*;
+
+import java.util.Arrays;
 /** 513 Perfect Squares
  * Medium
 

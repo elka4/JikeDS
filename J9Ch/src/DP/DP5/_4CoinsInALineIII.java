@@ -1,5 +1,4 @@
 package DP.DP5;
-import java.util.*;
 
 //Coins In A Line III
 public class _4CoinsInALineIII {

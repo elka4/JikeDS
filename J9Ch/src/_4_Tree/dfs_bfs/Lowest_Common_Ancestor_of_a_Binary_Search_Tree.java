@@ -1,5 +1,6 @@
 package _4_Tree.dfs_bfs;
-import lib.*;
+
+import lib.TreeNode;
 
 /*
 LeetCode – Lowest Common Ancestor of a Binary Search Tree (Java)

@@ -1,5 +1,7 @@
 package J_8_Data_Structure.Optional_6;
-import java.util.*;import lib.ListNode;
+
+import java.util.Iterator;
+import java.util.List;
 /** 601 Flatten 2D Vector
  * Created by tianhuizhu on 6/28/17.
  */

@@ -1,5 +1,6 @@
-package chapter3_BianryTree;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+package J_3_BianryTree;
+
+import lib.TreeNode;
 
 //version 1 Traverse， 缺点：经常要用到全局变量
 public class _95Validate_Binary_Search_Tree_Traverse {

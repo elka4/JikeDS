@@ -1,7 +1,8 @@
 package J_4_Breadth_First_Search.Related_7;
-import java.util.*;
 
 import org.junit.Test;
+
+import java.util.*;
 /**431 Connected Component in Undirected Graph
 
  * Created by tianhuizhu on 6/28/17.

@@ -1,5 +1,6 @@
 package _2_Matrix.queue;
-import java.util.*;
+
+import java.util.LinkedList;
 /*
 LeetCode – Design Snake Game (Java)
 

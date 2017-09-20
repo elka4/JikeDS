@@ -1,5 +1,9 @@
 package J_8_Data_Structure.Related_7;
-import java.util.*;import lib.ListNode;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Map;
 /** 24 LFU Cache
  Hard
  * Created by tianhuizhu on 7/10/17.

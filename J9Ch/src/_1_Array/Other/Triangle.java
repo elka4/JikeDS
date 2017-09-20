@@ -1,5 +1,6 @@
 package _1_Array.Other;
-import java.util.*;
+
+import java.util.ArrayList;
 /*
 LeetCode – Triangle (Java)
 

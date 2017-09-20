@@ -1,4 +1,6 @@
-package chapter1;
+package J_1;
+
+import org.junit.Test;
 
 import java.util.ArrayList;
 
@@ -32,6 +34,11 @@ public class _15Permutations_Recursion {
            helper(rst, list, num);
            list.remove(list.size() - 1);
        }
+   }
+
+   @Test
+   public void test(){
+
    }
 }
 

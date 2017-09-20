@@ -1,4 +1,4 @@
-package chapter6_LinkedList;
+package J_6_LinkedList;
 
 public class _01Remove_Duplicates_from_Sorted_List_II {
 	public ListNode deleteDuplicates(ListNode head) {

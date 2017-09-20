@@ -1,5 +1,6 @@
 package J_8_Data_Structure.Required_10;
-import java.util.*;import lib.ListNode;
+
+import lib.ListNode;
 /** 129 Rehashing
  * Medium
 

@@ -1,7 +1,4 @@
 package J_3_Binary_Tree_Divide_Conquer.other.Binary_Tree_Path_Sum;
-import lib.AssortedMethods;
-import lib.TreeNode;
-import org.junit.Test;
 
 public class _6_PathSum4_FollowUp {
 	//Follow Up: Path � Any node to any other node

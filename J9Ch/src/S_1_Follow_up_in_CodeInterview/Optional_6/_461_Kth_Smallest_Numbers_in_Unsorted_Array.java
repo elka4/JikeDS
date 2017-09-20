@@ -1,7 +1,6 @@
 package S_1_Follow_up_in_CodeInterview.Optional_6;
-import org.junit.Test;
 
-import java.util.*;
+import org.junit.Test;
 
 /** 461 Kth Smallest Numbers in Unsorted Array
 

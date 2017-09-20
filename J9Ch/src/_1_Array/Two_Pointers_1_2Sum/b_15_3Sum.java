@@ -1,5 +1,8 @@
 package _1_Array.Two_Pointers_1_2Sum;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by tianhuizhu on 6/21/17.

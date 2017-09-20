@@ -1,5 +1,6 @@
 package HF.HF3_Algorithms_DS_II._2BST;
-import lib.*;
+
+import lib.TreeNode;
 
 /*
  小技巧总结:

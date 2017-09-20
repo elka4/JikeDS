@@ -1,6 +1,6 @@
 package DP.DP7;
 
-import java.util.*;
+import java.util.ArrayList;
 
 //Minimum Adjustment Cost
 public class _4MinimumAdjustmentCost {

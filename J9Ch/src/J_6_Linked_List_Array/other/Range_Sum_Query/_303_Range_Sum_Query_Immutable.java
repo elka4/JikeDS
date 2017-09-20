@@ -1,6 +1,4 @@
 package J_6_Linked_List_Array.other.Range_Sum_Query;
-import java.util.*;
-
 /* 303. Range Sum Query - Immutable
 
 Given an integer array nums, find the sum of the elements

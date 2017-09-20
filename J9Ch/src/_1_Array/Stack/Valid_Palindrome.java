@@ -1,5 +1,6 @@
 package _1_Array.Stack;
-import java.util.*;
+
+import java.util.Stack;
 
 /*
 LeetCode – Valid Palindrome (Java)

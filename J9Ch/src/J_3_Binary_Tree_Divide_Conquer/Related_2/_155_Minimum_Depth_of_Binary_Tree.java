@@ -1,5 +1,8 @@
 package J_3_Binary_Tree_Divide_Conquer.Related_2;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+
+import lib.AssortedMethods;
+import lib.TreeNode;
+import org.junit.Test;
 /**
 155
 Minimum Depth of Binary Tree

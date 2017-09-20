@@ -1,5 +1,7 @@
 package _1_Array.DFS;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
 /*
 LeetCode – Word Pattern (Java)
 

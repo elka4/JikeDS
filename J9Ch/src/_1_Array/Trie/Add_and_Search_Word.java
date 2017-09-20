@@ -1,5 +1,7 @@
 package _1_Array.Trie;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Add_and_Search_Word {
    // Java Solution 1

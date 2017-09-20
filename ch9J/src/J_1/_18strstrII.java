@@ -1,4 +1,4 @@
-package chapter1;
+package J_1;
 
 /**
  * Created by tianhuizhu on 6/18/17.

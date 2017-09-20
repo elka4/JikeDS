@@ -1,4 +1,4 @@
-package chapter4_DP1;
+package J_4_DP1;
 
 //version 0: top-down
 public class _1Triangle_TopDown {

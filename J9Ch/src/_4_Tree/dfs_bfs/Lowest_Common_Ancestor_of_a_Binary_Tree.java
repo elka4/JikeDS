@@ -1,5 +1,6 @@
 package _4_Tree.dfs_bfs;
-import lib.*;
+
+import lib.TreeNode;
 //Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
 
 

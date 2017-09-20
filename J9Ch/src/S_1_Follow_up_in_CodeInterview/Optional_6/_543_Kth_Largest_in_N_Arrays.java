@@ -1,5 +1,6 @@
 package S_1_Follow_up_in_CodeInterview.Optional_6;
-import java.util.*;
+
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;

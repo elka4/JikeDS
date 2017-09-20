@@ -1,4 +1,4 @@
-package chapter6_LinkedList;
+package J_6_LinkedList;
 
 public class _05Reorder_List {
     private ListNode reverse(ListNode head) {

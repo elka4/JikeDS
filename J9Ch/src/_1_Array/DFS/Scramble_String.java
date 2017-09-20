@@ -1,5 +1,6 @@
 package _1_Array.DFS;
-import java.util.*;
+
+import java.util.Arrays;
 
 /* 87. Scramble String
 Given two strings s1 and s2 of the same length, determine if s2 is a scrambled string of s1.

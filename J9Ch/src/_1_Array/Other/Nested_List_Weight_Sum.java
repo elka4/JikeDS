@@ -1,5 +1,7 @@
 package _1_Array.Other;
-import java.util.*;
+
+import java.util.LinkedList;
+import java.util.List;
 /*
 LeetCode – Nested List Weight Sum (Java)
 

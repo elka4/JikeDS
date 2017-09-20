@@ -1,8 +1,9 @@
 package J_9_Dynamic_Programming.all;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.Comparator;
-import org.junit.Test;
 
 /** 602 Russian Doll Envelopes
 

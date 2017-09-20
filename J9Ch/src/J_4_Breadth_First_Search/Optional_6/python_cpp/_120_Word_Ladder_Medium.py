@@ -2,7 +2,6 @@
 
 
 # version: LintCode
-import collections
 class Solution:
     # @param start, a string
     # @param end, a string

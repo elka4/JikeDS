@@ -1,7 +1,11 @@
 package HF.HF0;
 
 import org.junit.Test;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 //• 划分性动态规划
 
@@ -171,11 +175,13 @@ public class _1F_DecodeWays {
 
         int numWays = 0;
         if ((start + 1 <= str. length()) &&
-                symbols.contains(str.substring(start, start + 1)) && symbols.contains(str.substring(start, start + 1)))
+                symbols.contains(str.substring(start, start + 1)) &&
+                symbols.contains(str.substring(start, start + 1)))
             numWays += numDec(str, start + 1, map, symbols);
 
         if ((start + 2 <= str. length()) &&
-                symbols.contains(str.substring(start, start + 2)) && symbols.contains(str.substring(start, start + 2)))
+                symbols.contains(str.substring(start, start + 2)) &&
+                symbols.contains(str.substring(start, start + 2)))
             numWays += numDec(str, start + 2, map, symbols);
 
         map.put(start, numWays);

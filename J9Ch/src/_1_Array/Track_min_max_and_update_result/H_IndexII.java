@@ -1,7 +1,4 @@
 package _1_Array.Track_min_max_and_update_result;
-import java.util.*;
-
-
 /*
 Follow up for H-Index: What if the citations array is sorted in ascending order? Could you optimize your algorithm?
 

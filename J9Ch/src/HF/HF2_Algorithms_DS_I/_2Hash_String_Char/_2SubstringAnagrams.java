@@ -1,6 +1,7 @@
 package HF.HF2_Algorithms_DS_I._2Hash_String_Char;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 • Input:

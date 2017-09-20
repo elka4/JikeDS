@@ -1,4 +1,4 @@
-package chapter7_Array;
+package J_7_Array;
 
 public class _11Maximum_Subarray_III_DP {
 /**

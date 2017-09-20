@@ -1,5 +1,6 @@
 package J_8_Data_Structure.Optional_6;
-import java.util.*;import lib.ListNode;
+
+import java.util.HashSet;
 /** 124 Longest Consecutive Sequence
 
  * Created by tianhuizhu on 6/28/17.

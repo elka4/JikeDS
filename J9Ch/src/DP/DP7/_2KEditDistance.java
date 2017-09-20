@@ -1,6 +1,7 @@
 package DP.DP7;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 //K Edit Distance
 public class _2KEditDistance {

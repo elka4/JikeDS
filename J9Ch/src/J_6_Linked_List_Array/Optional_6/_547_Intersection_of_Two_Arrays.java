@@ -1,5 +1,7 @@
 package J_6_Linked_List_Array.Optional_6;
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.HashSet;
 /** 547 Intersection of Two Arrays
  * Created by tianhuizhu on 6/28/17.
  */

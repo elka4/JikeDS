@@ -1,5 +1,8 @@
 package S_7_Follow_Up.Optional_9;
-import java.util.*;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 /** 551 Nested List Weight Sum
  * Created by tianhuizhu on 6/28/17.
  */

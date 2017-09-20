@@ -1,4 +1,4 @@
-package chapter2_BinarySearch;
+package J_2_BinarySearch;
 
 //Binary Search Once
 public class _28Search_a_2D_Matrix_Once {

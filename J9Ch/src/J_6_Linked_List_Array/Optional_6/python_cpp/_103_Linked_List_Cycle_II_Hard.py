@@ -1,7 +1,5 @@
 # /**103 Linked List Cycle II
 
-from lintcode import ListNode
-
 """
 Definition of ListNode
 class ListNode(object):

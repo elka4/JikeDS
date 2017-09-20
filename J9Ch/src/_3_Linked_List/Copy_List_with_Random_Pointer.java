@@ -1,5 +1,6 @@
 package _3_Linked_List;
-import java.util.*;
+
+import java.util.HashMap;
 /*
 LeetCode – Copy List with Random Pointer
 

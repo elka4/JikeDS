@@ -8,19 +8,19 @@ Zero Matrix: Write an algorithm such that if an element in an MxN matrix is 0,
  */
 
 public class QuestionA {
-	public  void nullifyRow(int[][] matrix, int row) {
+	public static void nullifyRow(int[][] matrix, int row) {
 		for (int j = 0; j < matrix[0].length; j++) {
 			matrix[row][j] = 0;
 		}		
 	}
 
-	public  void nullifyColumn(int[][] matrix, int col) {
+	public static void nullifyColumn(int[][] matrix, int col) {
 		for (int i = 0; i < matrix.length; i++) {
 			matrix[i][col] = 0;
 		}		
 	}			
 	
-	public  void setZeros(int[][] matrix) {
+	public static void setZeros(int[][] matrix) {
 		boolean[] row = new boolean[matrix.length];	
 		boolean[] column = new boolean[matrix[0].length];
 

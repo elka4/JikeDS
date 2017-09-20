@@ -1,5 +1,5 @@
 package J_2_Binary_Search.Related_8;
-import java.util.*;
+
 /**
 457
 Classical Binary Search

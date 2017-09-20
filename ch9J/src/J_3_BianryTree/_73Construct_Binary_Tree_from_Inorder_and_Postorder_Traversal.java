@@ -1,5 +1,6 @@
-package chapter3_BianryTree;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+package J_3_BianryTree;
+
+import lib.TreeNode;
 
 public class _73Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal {
 	private int findPosition(int[] arr, int start, int end, int key) {

@@ -1,7 +1,8 @@
 package _4_Tree.BST;
-import lib.*;
 
-import java.util.*;
+import lib.TreeNode;
+
+import java.util.Stack;
 
 public class Binary_Search_Tree_Iterator {
     public class BSTIterator {

@@ -1,4 +1,4 @@
-package chapter5_DP2;//背包类
+package J_5_DP2;//背包类
 
 import java.util.ArrayList;
 

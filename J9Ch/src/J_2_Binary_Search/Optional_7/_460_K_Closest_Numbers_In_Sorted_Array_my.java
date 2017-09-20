@@ -2,12 +2,8 @@ package J_2_Binary_Search.Optional_7;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.*;
-import java.util.Stack;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 /**
 460
  K Closest Numbers In Sorted Array

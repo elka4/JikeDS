@@ -1,6 +1,7 @@
 package J_3_Binary_Tree_Divide_Conquer.other.Binary_Tree_Maximum_Path_Sum;
-import lib.TreeNode;
+
 import lib.AssortedMethods;
+import lib.TreeNode;
 import org.junit.Test;
 /** 94 Binary Tree Maximum Path Sum
  * Created by tianhuizhu on 7/9/17.

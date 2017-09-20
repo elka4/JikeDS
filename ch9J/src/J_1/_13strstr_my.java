@@ -1,4 +1,4 @@
-package chapter1;
+package J_1;
 
 import org.junit.Test;
 

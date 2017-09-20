@@ -1,6 +1,9 @@
 package HF.HF2_Algorithms_DS_I._2Hash_String_Char;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /*
 • • • •

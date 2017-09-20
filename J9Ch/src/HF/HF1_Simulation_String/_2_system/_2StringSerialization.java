@@ -2,7 +2,9 @@ package HF.HF1_Simulation_String._2_system;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /*
 思路:

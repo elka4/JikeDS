@@ -1,4 +1,4 @@
-package chapter3_BianryTree.mylint_3_Binary;
+package J_3_BianryTree.mylint_3_Binary;
 
 import java.util.ArrayList;
 import java.util.Stack;

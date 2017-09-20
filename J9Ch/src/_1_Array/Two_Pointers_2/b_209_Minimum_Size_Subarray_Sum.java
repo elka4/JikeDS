@@ -1,5 +1,4 @@
 package _1_Array.Two_Pointers_2;
-import java.util.*;
 
 /**
  * Created by tianhuizhu on 6/21/17.

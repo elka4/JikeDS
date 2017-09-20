@@ -1,5 +1,8 @@
 package _1_Array.HashMap;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /*
 LeetCode – Palindrome Pairs (Java)

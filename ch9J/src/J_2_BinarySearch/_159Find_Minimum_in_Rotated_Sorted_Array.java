@@ -1,4 +1,4 @@
-package chapter2_BinarySearch;
+package J_2_BinarySearch;
 
 // Find Minimum in Rotated Sorted Array
 

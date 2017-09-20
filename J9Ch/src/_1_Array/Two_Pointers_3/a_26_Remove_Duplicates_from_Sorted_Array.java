@@ -1,5 +1,6 @@
 package _1_Array.Two_Pointers_3;
-import java.util.*;
+
+import java.util.Arrays;
 /**
  * Created by tianhuizhu on 6/21/17.
  */

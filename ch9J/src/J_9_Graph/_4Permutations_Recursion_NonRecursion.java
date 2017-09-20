@@ -1,4 +1,4 @@
-package chapter9_Graph;
+package J_9_Graph;
 
 import org.junit.Test;
 

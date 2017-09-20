@@ -1,4 +1,4 @@
-package chapter4_DP1;
+package J_4_DP1;
 
 /*
  * Unique Path

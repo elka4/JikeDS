@@ -9,7 +9,8 @@ class TreeNode:
         this.val = val
         this.left, this.right = None, None
 """
-import copy
+
+
 class Solution:
     """
     @param {TreeNode} root The root of the binary tree.

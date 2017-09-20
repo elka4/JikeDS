@@ -1,7 +1,9 @@
 package _1_Array.Design_data_structure_with_time_requirements;
+
 import org.junit.Test;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /*
 Design a Data Structure with Insert & Delete & GetMostFrequent of O(1)

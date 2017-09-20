@@ -1,5 +1,6 @@
 package _1_Array.HashSet;
-import java.util.*;
+
+import java.util.HashMap;
 /*
 LeetCode – Isomorphic Strings (Java)
 

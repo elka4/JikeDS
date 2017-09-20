@@ -1,5 +1,7 @@
 package _1_Array.DP;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 /*
 LeetCode – Palindrome Partitioning (Java)
 

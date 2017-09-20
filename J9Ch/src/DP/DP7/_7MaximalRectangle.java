@@ -1,6 +1,6 @@
 package DP.DP7;
 
-import java.util.*;
+import java.util.Stack;
 
 //Maximal Rectangle
 public class _7MaximalRectangle {

@@ -1,5 +1,6 @@
 package J_8_Data_Structure.all;
-import java.util.*;import lib.ListNode;
+
+import java.util.*;
 
 /** 104 Merge k Sorted Lists
  * Medium

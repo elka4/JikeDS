@@ -1,5 +1,4 @@
 package _1_Array.classic_array_problem;
-import java.util.*;
 
 /*
 LeetCode – Remove K Digits (Java)

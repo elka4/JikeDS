@@ -1,5 +1,13 @@
 package J_4_Breadth_First_Search.Optional_6;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+
+import lib.AssortedMethods;
+import lib.TreeNode;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 /** 242 Convert Binary Tree to Linked Lists by Depth
  * Created by tianhuizhu on 6/28/17.
  */

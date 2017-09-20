@@ -1,5 +1,6 @@
 package _1_Array.Other_dbf_bfs;
-import java.util.*;
+
+import java.util.ArrayList;
 
 public class Permutations {
     public ArrayList<ArrayList<Integer>> permute(int[] num) {

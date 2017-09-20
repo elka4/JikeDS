@@ -1,5 +1,7 @@
 package S_7_Follow_Up.Required_14;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 /** 22 Flatten List
 
 

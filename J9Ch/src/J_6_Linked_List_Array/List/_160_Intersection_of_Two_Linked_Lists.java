@@ -1,5 +1,6 @@
 package J_6_Linked_List_Array.List;
-import lib.*;
+
+import lib.ListNode;
 /*
 Write a program to find the node at which the intersection of two singly linked lists begins.
 

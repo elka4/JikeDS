@@ -1,8 +1,12 @@
 package J_3_Binary_Tree_Divide_Conquer.Optional_11;
-import java.util.*;
-import lib.TreeNode;
+
 import lib.AssortedMethods;
+import lib.TreeNode;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 /**66 Binary Tree Preorder Traversal
 
  * Created by tianhuizhu on 6/28/17.

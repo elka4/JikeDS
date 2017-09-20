@@ -1,5 +1,6 @@
 package _1_Array.Ugly_Number;
-import java.util.*;
+
+import java.util.ArrayList;
 /*
 LeetCode – Ugly Number II (Java)
 

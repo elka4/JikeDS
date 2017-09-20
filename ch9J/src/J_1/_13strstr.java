@@ -1,4 +1,4 @@
-package chapter1;
+package J_1;
 
 import org.junit.Test;
 
@@ -32,12 +32,28 @@ public class _13strstr {
     }
     
     @Test
-    public void testStrstr() {
+    public void test1() {
     		String source = "";
     		String target = "";
     		System.out.println(strStr(source, target));
     		
-    } 
+    }
+
+    @Test
+    public void test2() {
+        String source = "source";
+        String target = "target";
+        System.out.println(strStr(source, target));
+
+    }
+
+    @Test
+    public void test3() {
+        String source = "abcdabcdefg";
+        String target = "bcd";
+        System.out.println(strStr(source, target));
+
+    }
 }
 
 /*

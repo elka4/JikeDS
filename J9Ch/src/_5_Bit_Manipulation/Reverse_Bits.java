@@ -1,5 +1,7 @@
 package _5_Bit_Manipulation;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
 /*
 LeetCode – Reverse Bits (Java)
 

@@ -1,5 +1,9 @@
 package J_7_Two_Pointers.Required_10;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 /** 607 Two Sum - Data structure design
  * Easy
 

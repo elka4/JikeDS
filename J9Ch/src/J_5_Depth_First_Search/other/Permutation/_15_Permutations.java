@@ -3,8 +3,8 @@ package J_5_Depth_First_Search.other.Permutation;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
+import java.util.List;
 
 /** 15. Permutations
  * Medium

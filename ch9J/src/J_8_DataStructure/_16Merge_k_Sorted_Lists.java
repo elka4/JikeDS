@@ -1,4 +1,4 @@
-package chapter8_DataStructure;
+package J_8_DataStructure;
 import java.util.*;
 public class _16Merge_k_Sorted_Lists {
 // version 1: Divide & Conquer

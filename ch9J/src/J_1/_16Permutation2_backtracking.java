@@ -1,4 +1,4 @@
-package chapter1;
+package J_1;
 
 //from leetcode discussion
 //https://discuss.leetcode.com/topic/52105/2ms-beat-99-46-java-solution

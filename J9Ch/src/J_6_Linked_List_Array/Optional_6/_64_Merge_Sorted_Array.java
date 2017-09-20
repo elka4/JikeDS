@@ -1,5 +1,5 @@
 package J_6_Linked_List_Array.Optional_6;
-import java.util.*;
+
 /** 64 Merge Sorted Array
  * Created by tianhuizhu on 6/28/17.
  */

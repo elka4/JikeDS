@@ -1,4 +1,4 @@
-package chapter7_Array;
+package J_7_Array;
 
 import java.util.Arrays;
 

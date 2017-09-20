@@ -1,5 +1,7 @@
 package _1_Array.TreeSet;
-import java.util.*;
+
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 
 /*

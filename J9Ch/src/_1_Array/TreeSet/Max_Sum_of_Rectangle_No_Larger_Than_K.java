@@ -1,5 +1,6 @@
 package _1_Array.TreeSet;
-import java.util.*;
+
+import java.util.TreeSet;
 /*
 LeetCode – Max Sum of Rectangle No Larger Than K (Java)
 

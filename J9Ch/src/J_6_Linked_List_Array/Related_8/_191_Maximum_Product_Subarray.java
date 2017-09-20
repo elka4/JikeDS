@@ -1,5 +1,6 @@
 package J_6_Linked_List_Array.Related_8;
-import java.util.*;
+
+import java.util.List;
 /** 191 Maximum Product Subarray
  * Created by tianhuizhu on 6/28/17.
  */

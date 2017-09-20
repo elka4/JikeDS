@@ -1,5 +1,7 @@
 package J_6_Linked_List_Array.other;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class _leet_325_Maximum_Size_Subarray_Sum_Equals_k {
 

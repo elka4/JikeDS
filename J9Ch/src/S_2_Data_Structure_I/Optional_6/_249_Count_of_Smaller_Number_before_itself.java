@@ -1,5 +1,6 @@
 package S_2_Data_Structure_I.Optional_6;
-import java.util.*;
+
+import java.util.ArrayList;
 /** 249 Count of Smaller Number before itself
 
 

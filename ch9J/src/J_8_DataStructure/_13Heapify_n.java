@@ -1,4 +1,4 @@
-package chapter8_DataStructure;
+package J_8_DataStructure;
 //Version 1: this cost O(n)
 public class _13Heapify_n {
 	/**

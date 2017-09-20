@@ -1,8 +1,10 @@
 package J_3_Binary_Tree_Divide_Conquer.Required_10;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
-import lib.TreeNode;
+
 import lib.AssortedMethods;
+import lib.TreeNode;
 import org.junit.Test;
+
+import java.util.Stack;
 /** 453. Flatten Binary Tree to Linked List
  * Easy
 

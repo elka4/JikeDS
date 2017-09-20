@@ -1,6 +1,8 @@
 package _4_Tree.dfs_bfs;
-import java.util.*;
-import lib.*;
+
+import lib.TreeNode;
+
+import java.util.LinkedList;
 
 /*
 LeetCode – Minimum Depth of Binary Tree (Java)

@@ -1,8 +1,8 @@
 package HF.OA9;
 
-import java.util.*;
-import lib.*;
 import org.junit.Test;
+
+import java.util.*;
 
 //基础最小生成树
 //Minimum Spanning Tree

@@ -1,7 +1,5 @@
 package HF.HF1_Simulation_String._1_phone_interview;
 
-import java.util.*;
-
 /*
 Example:
 • s=“abcd” t=“abce”

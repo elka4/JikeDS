@@ -1,5 +1,6 @@
 package J_7_Two_Pointers.Required_10;
-import java.util.*;
+
+import java.util.Arrays;
 /** 587 Two Sum - Unique pairs
  * Medium
 

@@ -1,5 +1,8 @@
 package J_5_Depth_First_Search.Related_7;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+
+import org.junit.Test;
+
+import java.util.HashMap;
 /** 197 Permutation Index
  * Created by tianhuizhu on 6/28/17.
  */

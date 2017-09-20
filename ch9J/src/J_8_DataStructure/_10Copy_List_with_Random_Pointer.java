@@ -1,5 +1,6 @@
-package chapter8_DataStructure;
-import java.util.*;
+package J_8_DataStructure;
+
+import java.util.HashMap;
 
 public class _10Copy_List_with_Random_Pointer {
     class RandomListNode {

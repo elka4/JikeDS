@@ -1,4 +1,6 @@
-import collections, sys
+import collections
+import sys
+
 
 class Solution:
     # @param {int[][]} grid a 2D grid

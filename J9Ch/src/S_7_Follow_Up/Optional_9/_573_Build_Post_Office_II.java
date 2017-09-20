@@ -1,5 +1,9 @@
 package S_7_Follow_Up.Optional_9;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 /** 573 Build Post Office II
  * Created by tianhuizhu on 6/28/17.
  */

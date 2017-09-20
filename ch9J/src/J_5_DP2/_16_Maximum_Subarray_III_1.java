@@ -1,4 +1,4 @@
-package chapter5_DP2;//划分类
+package J_5_DP2;//划分类
 
 //方法一 划分类DP
 public class _16_Maximum_Subarray_III_1 {

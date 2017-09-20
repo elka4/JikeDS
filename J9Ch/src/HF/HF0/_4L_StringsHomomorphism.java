@@ -2,7 +2,8 @@ package HF.HF0;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class _4L_StringsHomomorphism {
 
@@ -86,6 +87,11 @@ public class _4L_StringsHomomorphism {
         return true;
     }
 
+    @Test
+    public void test2(){
+        System.out.println(isIsomorphic2("abb", "xyy"));
+    }
+
 /////////////////////////////////////////////////////////////////
 
 
@@ -97,6 +103,11 @@ public class _4L_StringsHomomorphism {
             m[s1.charAt(i)] = m[s2.charAt(i)+256] = i+1;
         }
         return true;
+    }
+
+    @Test
+    public void test3(){
+        System.out.println(isIsomorphic3("abb", "xyy"));
     }
 
 ///////////////////////////////////////////////////////////////

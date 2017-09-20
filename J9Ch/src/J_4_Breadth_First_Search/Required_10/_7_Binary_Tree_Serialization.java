@@ -1,5 +1,10 @@
 package J_4_Breadth_First_Search.Required_10;
-import java.util.*;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;import lib.TreeNode;import lib.AssortedMethods;import org.junit.Test;
+
+import lib.AssortedMethods;
+import lib.TreeNode;
+import org.junit.Test;
+
+import java.util.ArrayList;
 /** 7. Binary Tree Serialization
  * Medium
  * Created by tianhuizhu on 6/27/17.

@@ -1,5 +1,6 @@
 package _6_Math;
-import java.util.*;
+
+import java.util.HashMap;
 /*
 LeetCode – Excel Sheet Column Number (Java)
 

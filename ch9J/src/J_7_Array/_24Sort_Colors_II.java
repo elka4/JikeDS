@@ -1,4 +1,4 @@
-package chapter7_Array;
+package J_7_Array;
 
 public class _24Sort_Colors_II {
 public void sortColors2(int[] colors, int k) {

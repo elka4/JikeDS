@@ -1,4 +1,4 @@
-package chapter8_DataStructure;
+package J_8_DataStructure;
 
 import java.util.HashSet;
 import java.util.PriorityQueue;

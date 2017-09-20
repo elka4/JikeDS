@@ -1,5 +1,7 @@
 package _1_Array.Other;
-import java.util.*;
+
+import java.util.LinkedList;
+import java.util.Stack;
 /*
 LeetCode – Simplify Path (Java)
 

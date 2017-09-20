@@ -1,4 +1,4 @@
-package chapter5_DP2;
+package J_5_DP2;
 
 public class Decode_Ways {
  public int numDecodings(String s) {

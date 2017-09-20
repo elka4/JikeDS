@@ -1,5 +1,6 @@
 package J_6_Linked_List_Array.other.Subarray_Sum;
-import java.util.*;
+
+import java.util.HashMap;
 /*
 Given an array of integers and an integer k, you need to find the
  total number of continuous subarrays whose sum equals to k.

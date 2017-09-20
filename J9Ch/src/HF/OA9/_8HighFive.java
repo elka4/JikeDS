@@ -2,7 +2,9 @@ package HF.OA9;
 
 import org.junit.Test;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 //堆
 //High Five

@@ -1,12 +1,9 @@
 package J_3_Binary_Tree_Divide_Conquer.Optional_11;
 
-import lib.AssortedMethods;
-import lib.TreeNode;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 public class _472_Binary_Tree_Path_Sum_III_clone {
