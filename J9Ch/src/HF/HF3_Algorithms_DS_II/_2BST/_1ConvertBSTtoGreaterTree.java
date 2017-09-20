@@ -1,6 +1,8 @@
 package HF.HF3_Algorithms_DS_II._2BST;
 
+import a.h.T;
 import lib.TreeNode;
+import org.junit.Test;
 
 /*
 • DFS的两种理解方式:
@@ -35,6 +37,24 @@ public class _1ConvertBSTtoGreaterTree {
         return root;
     }
 
+    @Test
+    public void test01(){
+        int[] input = {5,2,13};
+        TreeNode root = TreeNode.createMinimalBST(input);
+        root.print();
+        convertBST(root).print();
+
+        /*
+         2
+        / \
+        5 13
+
+         15
+        / \
+        20 13
+         */
+    }
+
 //////////////////////////////////////////////////////////
 
     // version: 高频题班
@@ -60,6 +80,15 @@ public class _1ConvertBSTtoGreaterTree {
         return root;
     }
 ///////////////////////////////////////////////////////
+
+    @Test
+    public void test02(){
+        int[] input = {5,2,13};
+        TreeNode root = TreeNode.createMinimalBST(input);
+        root.print();
+        convertBST2(root).print();
+
+    }
 
 }
 /*

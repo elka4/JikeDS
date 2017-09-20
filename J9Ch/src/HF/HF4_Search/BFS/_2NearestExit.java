@@ -12,6 +12,7 @@ import java.util.Queue;
 
 //Nearest Exit
 public class _2NearestExit {
+
     // version: 高频题班
     /**
      * @param rooms m x n 2D grid

@@ -6,93 +6,82 @@ import java.util.*;
 
 //Binary Tree Vertical Order Traversal
 public class _3BinaryTreeVerticalOrderTraversal {
-
-    public class Solution {
-        /**
-         * @param root the root of binary tree
-         * @return the vertical order traversal
-         */
-        public List<List<Integer>> verticalOrder(TreeNode root) {
-            // Write your code here
-            List<List<Integer>> results = new ArrayList<>();
-            if (root == null) {
-                return results;
-            }
-            Map<Integer, List<Integer>> map = new TreeMap<Integer, List<Integer>>();
-            Queue<Integer> qCol = new LinkedList<>();
-            Queue<TreeNode> queue = new LinkedList<>();
-            queue.offer(root);
-            qCol.offer(0);
-
-            while(!queue.isEmpty()) {
-                TreeNode curr = queue.poll();
-                int col = qCol.poll();
-                if(!map.containsKey(col)) {
-                    map.put(col, new ArrayList<Integer>(Arrays.asList(curr.val)));
-                } else {
-                    map.get(col).add(curr.val);
-                }
-                if(curr.left != null) {
-                    queue.offer(curr.left);
-                    qCol.offer(col - 1);
-                }
-                if(curr.right != null) {
-                    queue.offer(curr.right);
-                    qCol.offer(col + 1);
-                }
-            }
-            for(int n : map.keySet()) {
-                results.add(map.get(n));
-            }
+    public List<List<Integer>> verticalOrder(TreeNode root) {
+        // Write your code here
+        List<List<Integer>> results = new ArrayList<>();
+        if (root == null) {
             return results;
         }
+        Map<Integer, List<Integer>> map = new TreeMap<Integer, List<Integer>>();
+        Queue<Integer> qCol = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        qCol.offer(0);
+
+        while(!queue.isEmpty()) {
+            TreeNode curr = queue.poll();
+            int col = qCol.poll();
+            if(!map.containsKey(col)) {
+                map.put(col, new ArrayList<Integer>(Arrays.asList(curr.val)));
+            } else {
+                map.get(col).add(curr.val);
+            }
+            if(curr.left != null) {
+                queue.offer(curr.left);
+                qCol.offer(col - 1);
+            }
+            if(curr.right != null) {
+                queue.offer(curr.right);
+                qCol.offer(col + 1);
+            }
+        }
+        for(int n : map.keySet()) {
+            results.add(map.get(n));
+        }
+        return results;
     }
+
 
 ////////////////////////////////////////////////////////////
 
     // version: 高频题班
-    public class Solution2 {
-        /**
-         * @param root the root of binary tree
-         * @return the vertical order traversal
-         */
-        public List<List<Integer>> verticalOrder(TreeNode root) {
-            // Write your code here
-            List<List<Integer>> ans = new ArrayList<>();
-            if (root == null) {
-                return ans;
-            }
-
-            Map<Integer, List<Integer>> col = new HashMap<>();
-            Queue<Integer> qCol = new LinkedList<>();
-            Queue<TreeNode> qNode = new LinkedList<>();
-
-            qCol.offer(0);
-            qNode.offer(root);
-
-            while (!qCol.isEmpty()) {                      // bfs
-                int c = qCol.poll();
-                TreeNode node = qNode.poll();
-
-                col.putIfAbsent(c, new ArrayList<>());
-                col.get(c).add(node.val);
-
-                if (node.left != null) {
-                    qCol.offer(c - 1);
-                    qNode.offer(node.left);
-                }
-                if (node.right != null) {
-                    qCol.offer(c + 1);
-                    qNode.offer(node.right);
-                }
-            }
-
-            for (int i = Collections.min(col.keySet()); i <= Collections.max(col.keySet()); i++) {
-                ans.add(col.get(i));
-            }
+    public List<List<Integer>> verticalOrder2(TreeNode root) {
+        // Write your code here
+        List<List<Integer>> ans = new ArrayList<>();
+        if (root == null) {
             return ans;
         }
+
+        Map<Integer, List<Integer>> col = new HashMap<>();
+        Queue<Integer> qCol = new LinkedList<>();
+        Queue<TreeNode> qNode = new LinkedList<>();
+
+        qCol.offer(0);
+        qNode.offer(root);
+
+        while (!qCol.isEmpty()) {                      // bfs
+            int c = qCol.poll();
+            TreeNode node = qNode.poll();
+
+            col.putIfAbsent(c, new ArrayList<>());
+            col.get(c).add(node.val);
+
+            if (node.left != null) {
+                qCol.offer(c - 1);
+                qNode.offer(node.left);
+            }
+            if (node.right != null) {
+                qCol.offer(c + 1);
+                qNode.offer(node.right);
+            }
+        }
+
+        for (int i = Collections.min(col.keySet()); i <= Collections.max(col.keySet()); i++) {
+            ans.add(col.get(i));
+        }
+        return ans;
     }
+
 }
 /*
 Given a binary tree, return the vertical order traversal of its nodes' values. (ie, from top to bottom, column by column).

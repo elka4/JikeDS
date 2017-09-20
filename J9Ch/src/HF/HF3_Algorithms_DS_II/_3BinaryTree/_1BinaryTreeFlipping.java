@@ -4,56 +4,49 @@ import lib.TreeNode;
 
 //Binary Tree Flipping
 public class _1BinaryTreeFlipping {
-    public class Solution {
-        /**
-         * @param root the root of binary tree
-         * @return the new root
-         */
-        public TreeNode upsideDownBinaryTree(TreeNode root) {
-            // Write your code here
-            if (root == null || root.left == null) {
-                return root;
-            }
-            TreeNode new_root = upsideDownBinaryTree(root.left);
-            root.left.left = root.right;
-            root.left.right = root;
-            root.right = null;
-            root.left = null;
-            return new_root;
+
+    public TreeNode upsideDownBinaryTree(TreeNode root) {
+        // Write your code here
+        if (root == null || root.left == null) {
+            return root;
         }
+        TreeNode new_root = upsideDownBinaryTree(root.left);
+        root.left.left = root.right;
+        root.left.right = root;
+        root.right = null;
+        root.left = null;
+        return new_root;
     }
+
+
 
 //////////////////////////////////////////////////////////////
 
     // version: 高频题班
-    public class Solution2 {
-        /**
-         * @param root the root of binary tree
-         * @return the new root
-         */
-        TreeNode newRoot;
+    TreeNode newRoot;
 
-        void dfs(TreeNode cur) {
-            if (cur.left == null) {
-                newRoot = cur;
-                return;
-            }
-            dfs(cur.left);
-            cur.left.right = cur;
-            cur.left.left = cur.right;
-            cur.left = null;            // important
-            cur.right = null;
+    void dfs(TreeNode cur) {
+        if (cur.left == null) {
+            newRoot = cur;
+            return;
         }
-
-        public TreeNode upsideDownBinaryTree(TreeNode root) {
-            // Write your code here
-            if (root == null) {
-                return null;
-            }
-            dfs(root);
-            return newRoot;
-        }
+        dfs(cur.left);
+        cur.left.right = cur;
+        cur.left.left = cur.right;
+        cur.left = null;            // important
+        cur.right = null;
     }
+
+    public TreeNode upsideDownBinaryTree2(TreeNode root) {
+        // Write your code here
+        if (root == null) {
+            return null;
+        }
+        dfs(root);
+        return newRoot;
+    }
+
+
 
 ///////////////////////////////////////////////////////////////
 

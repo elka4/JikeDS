@@ -1,6 +1,7 @@
 package HF.HF3_Algorithms_DS_II._2BST;
 
 import lib.TreeNode;
+import org.junit.Test;
 
 /*
  小技巧总结:
@@ -56,6 +57,24 @@ public class _2InorderSuccessorinBinarySearchTree {
             TreeNode left = inorderSuccessor2(root.left, p);
             return (left != null) ? left : root;
         }
+    }
+
+    @Test
+    public void test02(){
+        int[] input = {1,2};
+        TreeNode root = TreeNode.createMinimalBST(input);
+        root.print();
+        inorderSuccessor2(root, new TreeNode(1)).print();
+
+    }
+
+    @Test
+    public void test02_2(){
+        int[] input = {1,2,3};
+        TreeNode root = TreeNode.createMinimalBST(input);
+        root.print();
+        inorderSuccessor2(root, new TreeNode(2)).print();
+
     }
 //////////////////////////////////////////////////////////////
 
