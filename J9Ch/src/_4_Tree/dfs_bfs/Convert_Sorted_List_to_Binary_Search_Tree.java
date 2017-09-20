@@ -1,7 +1,7 @@
 package _4_Tree.dfs_bfs;
 
 import lib.ListNode;
-import lib.TreeNode;
+import lib.*;
 
 public class Convert_Sorted_List_to_Binary_Search_Tree {
     static ListNode h;

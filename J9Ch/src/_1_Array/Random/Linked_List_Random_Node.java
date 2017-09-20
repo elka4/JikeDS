@@ -1,6 +1,7 @@
 package _1_Array.Random;
 
 import java.util.Random;
+import lib.*;
 /*
 LeetCode – Linked List Random Node (Java)
 
@@ -23,31 +24,32 @@ public class Linked_List_Random_Node {
         int val;
 
     }
+    /** @param head The linked list's head.
+     * Note that the head is guanranteed to be not null, so it contains at least one node.
+     */
+    Random r=null;
+    ListNode h=null;
 
-    public class Solution {
-
-        /** @param head The linked list's head. Note that the head is guanranteed to be not null, so it contains at least one node. */
-        Random r=null;
-        ListNode h=null;
-        public Solution(ListNode head) {
-            r = new Random();
-            h = head;
-        }
-
-        /** Returns a random node's value. */
-        public int getRandom() {
-            int count=1;
-            ListNode p = h;
-            int result = 0;
-            while(p!=null){
-                if(r.nextInt(count)==0)
-                    result= p.val;
-                count++;
-                p = p.next;
-            }
-            return result;
-        }
+    public Linked_List_Random_Node(ListNode head) {
+        r = new Random();
+        h = head;
     }
+
+    /** Returns a random node's value. */
+    public int getRandom() {
+        int count=1;
+        ListNode p = h;
+        int result = 0;
+        while(p!=null){
+            if(r.nextInt(count)==0)
+                result= p.val;
+            count++;
+            p = p.next;
+        }
+        return result;
+    }
+
+
 
 ///////////////////////////////////////////////////////////////////////
 

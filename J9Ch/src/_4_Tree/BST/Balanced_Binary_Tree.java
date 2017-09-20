@@ -1,6 +1,7 @@
 package _4_Tree.BST;
 
-import lib.TreeNode;
+import lib.*;
+import org.junit.Test;
 
 /*
 LeetCode – Balanced Binary Tree (Java)
@@ -44,6 +45,15 @@ public class Balanced_Binary_Tree {
 
         return Math.max(left, right) + 1;
 
+    }
+
+    @Test
+    public void test(){
+        int[] arr = {1,2,3,4,5,6,7};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.print();
+
+        System.out.println(isBalanced(root));
     }
 
 

@@ -1,6 +1,6 @@
 package _4_Tree.dfs_bfs;
 
-import lib.TreeNode;
+import lib.*;
 
 import java.util.LinkedList;
 import java.util.Stack;

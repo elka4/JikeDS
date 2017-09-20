@@ -1,6 +1,7 @@
 package _4_Tree.BST;
 
-import lib.TreeNode;
+import lib.*;
+import org.junit.Test;
 
 import java.util.Stack;
 
@@ -31,6 +32,19 @@ public class Binary_Search_Tree_Iterator {
                 }
             }
             return result;
+        }
+    }
+
+    @Test
+    public void test(){
+        int[] arr = {1,2,3,4,5,6,7};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.print();
+
+        BSTIterator itr = new BSTIterator(root);
+
+        while(itr.hasNext()){
+            System.out.println(itr.next());
         }
     }
 

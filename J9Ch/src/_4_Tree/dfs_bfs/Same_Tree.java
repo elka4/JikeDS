@@ -1,6 +1,6 @@
 package _4_Tree.dfs_bfs;
 
-import lib.TreeNode;
+import lib.*;
 
 /*
 Leetcode – Same Tree

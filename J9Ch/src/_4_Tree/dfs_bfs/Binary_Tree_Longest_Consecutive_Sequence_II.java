@@ -1,6 +1,6 @@
 package _4_Tree.dfs_bfs;
 
-import lib.TreeNode;
+import lib.*;
 
 /*
 Given a binary tree, you need to find the length of Longest Consecutive Path in Binary Tree.

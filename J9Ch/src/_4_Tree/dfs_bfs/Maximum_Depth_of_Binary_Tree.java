@@ -1,6 +1,6 @@
 package _4_Tree.dfs_bfs;
 
-import lib.TreeNode;
+import lib.*;
 
 /*
 LeetCode – Maximum Depth of Binary Tree (Java)
