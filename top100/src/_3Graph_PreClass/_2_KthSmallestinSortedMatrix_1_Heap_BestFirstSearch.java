@@ -63,6 +63,7 @@ public class _2_KthSmallestinSortedMatrix_1_Heap_BestFirstSearch {
 	      this.val = val;
 	    }
 	  }
+
 	  class myComparator implements Comparator<Point> {
 	    @Override
 	    public int compare (Point o1, Point o2) {

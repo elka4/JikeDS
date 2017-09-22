@@ -24,6 +24,7 @@ public class _1_LinkedList_3Hard_CopyLinkedList {
         }
         Map<RandomNode, RandomNode> map = new HashMap<>();
         RandomNode cur = head;
+
         while(cur != null){
             // 1.Create nodes of cur, next, ran
             if (!map.containsKey(cur)) {

@@ -26,8 +26,10 @@ public class _1_Backtracking_Permutation_2 {
         for(int i = pos; i  < nums.length; i++){
             list.add(nums[i]);
             swap(nums, pos, i);
+            print(nums);
         //helper(nums, res, list, level + 1);
             helper(nums, res, list, pos + 1);//这样对不对？
+            //print(nums);
             swap(nums, pos, i);
             list.remove(list.size() - 1);
         }
@@ -45,5 +47,14 @@ public class _1_Backtracking_Permutation_2 {
     public void test01 (){
         int[] input = {1, 2 , 3};
         System.out.println(permute1(input));
+    }
+
+    private void print(int[] nums){
+        System.out.print("nums: ");
+        for (int i:nums
+             ) {
+            System.out.print(i + ", ");
+        }
+        System.out.println();
     }
 }

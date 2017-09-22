@@ -196,3 +196,18 @@ Gievn the connections = ["Acity","Bcity",1], ["Acity","Ccity",2], ["Bcity","Ccit
 
 Return ["Acity","Bcity",1], ["Acity","Ccity",2]
  */
+
+/*
+给出一些Connections，即Connections类，找到一些能够将所有城市都连接起来并且花费最小的边。
+如果说可以将所有城市都连接起来，则返回这个连接方法；不然的话返回一个空列表。
+
+ 注意事项
+
+返回cost最小的连接方法，如果cost相同就按照city1进行排序，如果city1也相同那么就按照city2进行排序。
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给出 connections = ["Acity","Bcity",1], ["Acity","Ccity",2], ["Bcity","Ccity",3]
+
+返回 ["Acity","Bcity",1], ["Acity","Ccity",2]
+ */

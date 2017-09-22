@@ -9,6 +9,24 @@ import java.util.Set;
 //Longest Palindrome
 public class _4LongestPalindrome {
 
+    public int longestPalindromeMy(String s) {
+        // write your code here
+        HashSet<Character> set = new HashSet<>();
+
+        for(char c:s.toCharArray()) {
+            if(set.contains(c)){
+                set.remove(c);
+            } else {
+                set.add(c);
+            }
+        }
+
+
+        return set.size() > 0 ? s.length() - set.size() + 1:s.length() - set.size();
+    }
+
+///////////////////////////////////////////////////////
+
     // version 1
     /**
      * @param s a string which consists of lowercase or uppercase letters
@@ -106,4 +124,22 @@ Example
 Given s = "abccccdd" return 7
 
 One longest palindrome that can be built is "dccaccd", whose length is 7.
+ */
+
+/*
+给出一个包含大小写字母的字符串。求出由这些字母构成的最长的回文串的长度是多少。
+
+数据是大小写敏感的，也就是说，"Aa" 并不会被认为是一个回文串。
+
+ 注意事项
+
+假设字符串的长度不会超过 1010。
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给出 s = "abccccdd" 返回 7
+
+一种可以构建出来的最长回文串方案是 "dccaccd"。
+
+
  */

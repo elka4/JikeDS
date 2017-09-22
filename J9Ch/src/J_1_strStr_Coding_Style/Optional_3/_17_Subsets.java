@@ -2,7 +2,7 @@ package J_1_strStr_Coding_Style.Optional_3;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Arrays;
 /**
  17
@@ -63,6 +63,45 @@ public class _17_Subsets {
         int[] input = {1,2};
         System.out.println(subsets(input));
     }
+
+
+////////////////////////////////////////////////////////////////////////
+
+public List<List<Integer>> subsetsX(int[] nums) {
+    // write your code here
+    List<List<Integer>> result = new ArrayList<>();
+    if(nums == null ){
+        return result;
+    }
+    List<Integer> list = new ArrayList<>();
+    if(nums.length == 0){
+        result.add(list);
+        return result;
+    }
+
+    Arrays.sort(nums);
+    helperX(nums, result, list, 0);
+    return result;
+}
+
+    private void helperX(int[] nums,  List<List<Integer>> result, List<Integer> list, int index){
+        result.add(new ArrayList(list));
+
+        for(int i = index; i < nums.length; i++){
+            list.add(nums[i]);
+            System.out.println("list.add(nums[i]); " + nums[i]);
+            helperX(nums, result, list, i + 1);
+            list.remove(list.size() - 1);
+        }
+    }
+
+    @Test
+    public void test0X(){
+        int[] input = {1,2};
+        System.out.println(subsetsX(input));
+    }
+
+////////////////////////////////////////////////////////////////////////
 
 // Non Recursion
     /**

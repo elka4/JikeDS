@@ -2,7 +2,7 @@ package HF.OA9;
 
 import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -48,6 +48,113 @@ public class _3WindowSum {
         return Arrays.asList(ArrayUtils.toObject(array));
     }*/
 
+//////////////////////////////////////////////////////////////
+    public int[] winSum2(int[] nums, int k) {
+        // write your code here
+        if (k <= 0){
+            return new int[]{};
+        }
+
+        Deque<Integer> deque = new LinkedList<>();
+        int sum = 0;
+        int[] result = new int[nums.length - k + 1];;
+
+
+        for(int i = 0; i < k; i++){
+            deque.offerFirst(nums[i]);
+            sum += nums[i];
+        }
+        result[0] = sum;
+
+        System.out.println("nums.length: " + nums.length);
+        int j = 1;
+//        int z = k;
+//        while (z < nums.length){
+//            deque.offerFirst(nums[z]);
+//            sum -= deque.pollLast();
+//            sum += nums[z];
+//            result[j++] = sum;
+//            z++;
+//        }
+
+        for(int z = k; z < nums.length; z++){
+
+            System.out.println("i: " + z);
+//            System.out.println("nums[z]: " + nums[z]);
+
+//            System.out.println("sum: " + sum);
+            deque.offerFirst(nums[z]);
+            sum -= deque.pollLast();
+//            System.out.println("sum: " + sum);
+
+            sum += nums[z];
+
+//            System.out.println("sum: " + sum);
+
+            result[j++] = sum;
+
+        }
+        return result;
+
+    }
+
+    @Test
+    public void test03(){
+        int[] nums = {1,2,7,8,5};
+        int k = 3;
+        int[] result = winSum2(nums, k);
+        for (int i : result
+             ) {
+            System.out.println(i);
+        }
+    }
+//////////////////////////////////////////////////////////////
+
+    public int[] winSumMy(int[] nums, int k) {
+        // write your code here
+
+
+        Deque<Integer> deque = new LinkedList<>();
+        int sum = 0;
+        int[] result = new int[nums.length - k + 1];
+
+        if ( nums.length == 0 || k <= 0){
+            return new int[]{};
+        }
+
+        for(int i = 0; i < k; i++){
+            deque.offerFirst(nums[i]);
+            sum += nums[i];
+        }
+        result[0] = sum;
+
+        System.out.println("nums.length: " + nums.length);
+        int j = 1;
+
+        for(int z = k; k < nums.length; z++){
+
+//            System.out.println("i: " + z);
+//            System.out.println("nums[z]: " + nums[z]);
+
+//            System.out.println("sum: " + sum);
+            deque.offerFirst(nums[z]);
+            sum -= deque.pollLast();
+//            System.out.println("sum: " + sum);
+
+            sum += nums[z];
+
+//            System.out.println("sum: " + sum);
+
+            result[j++] = sum;
+            if (z == nums.length - 1){
+                break;
+            }
+        }
+        return result;
+
+
+
+    }
 //////////////////////////////////////////////////////////////
 
 

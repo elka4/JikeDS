@@ -10,10 +10,12 @@ public class _5K_Sum {
      */
     public int  kSum(int A[], int k, int target) {
         int n = A.length;
+
         int[][][] f = new int[n + 1][k + 1][target + 1];
         for (int i = 0; i < n + 1; i++) {
             f[i][0][0] = 1;
         }
+
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= k && j <= i; j++) {
                 for (int t = 1; t <= target; t++) {
@@ -25,6 +27,7 @@ public class _5K_Sum {
                 } // for t
             } // for j
         } // for i
+
         return f[n][k][target];
     }
 

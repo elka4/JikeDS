@@ -14,6 +14,7 @@ public class _1_Stack_1Easy_ValidParentheses {
 		}
 		char[] str = s.toCharArray();
 		Deque<Character> stack = new LinkedList<Character>();
+
 		for (char ch : str) {
 			//Case 1: left -->put into stack
 			if (ch == '(' || ch == '[' || ch =='{') {
@@ -33,6 +34,7 @@ public class _1_Stack_1Easy_ValidParentheses {
 				}
 			}
 		}
+
 		return stack.isEmpty();
 	}
 	

@@ -22,7 +22,8 @@ public class _6MaximalSquare {
             for(int j = 1; j < m; j++) {
                 if(i > 0) {
                     if(matrix[i][j] > 0) {
-                        res[i][j] = Math.min(res[i - 1][j],Math.min(res[i][j-1], res[i-1][j-1])) + 1;
+                        res[i][j] = Math.min(res[i - 1][j],
+                                Math.min(res[i][j-1], res[i-1][j-1])) + 1;
                     } else {
                         res[i][j] = 0;
                     }

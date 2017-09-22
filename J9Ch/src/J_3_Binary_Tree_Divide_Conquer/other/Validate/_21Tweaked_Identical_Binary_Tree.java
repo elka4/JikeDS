@@ -3,6 +3,7 @@ import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
+// Tweaked Identical Binary Tree
 public class _21Tweaked_Identical_Binary_Tree {
 
 	public boolean isTweakedIdentical(TreeNode a, TreeNode b) {
@@ -17,12 +18,12 @@ public class _21Tweaked_Identical_Binary_Tree {
 	    }
 	    
 	    if (isTweakedIdentical(a.left, b.left) &&
-	    		isTweakedIdentical(a.right, b.right)) {
+	    	isTweakedIdentical(a.right, b.right)) {
 	        return true;
 	    }
 	    
 	    if (isTweakedIdentical(a.left, b.right) &&
-	    		isTweakedIdentical(a.right, b.left)) {
+            isTweakedIdentical(a.right, b.left)) {
 	        return true;
 	    }
 	    
@@ -54,7 +55,7 @@ public class _21Tweaked_Identical_Binary_Tree {
 
         int[] arr2 = {1,3,2};
         lib.TreeNode root2 = AssortedMethods.createTreeFromArray(arr2);
-        root2.right.right = new TreeNode(4);
+        root2.left.left = new TreeNode(4);
 
         System.out.println("root: ");
         root.print();
@@ -93,3 +94,37 @@ Tags
 Binary Tree
 Related Problems 
 Easy Identical Binary Tree 45 %*/
+
+/*
+原题
+
+检查两棵二叉树是否在经过若干次扭转后可以等价。扭转的定义是，交换任意节点的左右子树。
+等价的定义是，两棵二叉树必须为相同的结构，并且对应位置上的节点的值要相等。
+注意：你可以假设二叉树中不会有重复的节点值。
+样例
+
+    1             1
+   / \           / \
+  2   3   and   3   2
+ /                   \
+4                     4
+是扭转后可等价的二叉树。
+
+    1             1
+   / \           / \
+  2   3   and   3   2
+ /             /
+4             4
+就不是扭转后可以等价的二叉树。
+
+解题思路
+
+Recursion - 递归求解，分治的思路。
+注意，题目中说的是经过若干次扭转后可以等价，所以不要忘记考虑完全identical的情况，
+某一个节点的左右子树翻转一次对称，反转两次还原。
+
+作者：Jason_Yuan
+链接：http://www.jianshu.com/p/0623cf8ad71b
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+ */

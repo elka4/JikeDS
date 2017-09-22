@@ -57,6 +57,8 @@ public class _4CoinsInALineIII {
 
         return sum < 2*MemorySearch2(0,values.length - 1, dp, flag, values);
     }
+
+
     int MemorySearch2(int left, int right, int [][]dp, boolean [][]flag, int []values) {
 
         if(flag[left][right])
@@ -71,8 +73,10 @@ public class _4CoinsInALineIII {
         } else {
             int  pick_left = Math.min(MemorySearch2(left + 2, right, dp, flag, values),
                     MemorySearch2(left + 1, right - 1, dp, flag, values)) + values[left];
+
             int  pick_right = Math.min(MemorySearch2(left, right - 2, dp, flag, values),
                     MemorySearch2(left + 1, right - 1, dp, flag, values)) + values[right];
+
             dp[left][right] = Math.max(pick_left, pick_right);
         }
         return dp[left][right];
@@ -105,7 +109,10 @@ public class _4CoinsInALineIII {
 
         return allsum < 2*MemorySearch3(0,values.length - 1, dp, flag, values, sum);
     }
-    int MemorySearch3(int left, int right, int [][]dp, boolean [][]flag, int []values, int [][]sum) {
+
+    int MemorySearch3(int left, int right, int [][]dp, boolean [][]flag,
+                      int []values, int [][]sum) {
+
         if(flag[left][right])
             return dp[left][right];
 

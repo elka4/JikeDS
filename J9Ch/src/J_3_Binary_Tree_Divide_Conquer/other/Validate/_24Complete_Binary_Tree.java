@@ -30,6 +30,7 @@ public class _24Complete_Binary_Tree {
         
         ResultType left = helper(root.left);
         ResultType right = helper(root.right);
+
         if (!left.isComplete) {
             return new ResultType(-1, false, false);
         }

@@ -118,6 +118,14 @@ public void test01(){
 		return minLen == Integer.MAX_VALUE ? 
 				new String() : new String(chS, startIndex, minLen);
 	}
+
+    @Test
+    public void test02(){
+        String s = "abcdefg";
+        String t = "bce";
+        System.out.println(minWindwo(s,t));
+    }
+
 }
 //follow up: longest Substring without repeating character
 //https://leetcode.com/problems/longest-substring-without-repeating-characters/

@@ -6,6 +6,76 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class _4L_StringsHomomorphism {
+    public boolean isIsomorphic0(String s, String t) {
+        // write your code here
+        char[] sc = s.toCharArray();
+        char[] tc = t.toCharArray();
+
+        if(s.length() != t.length()){
+            return false;
+        }
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for(int i = 0; i < s.length(); i++){
+            Integer sChar = (int)s.charAt(i);
+            Integer tChar = (int)t.charAt(i);
+
+            if(map.containsKey(sChar)){
+                if (!tChar.equals(map.get(sChar))){
+                    return false;
+                }
+            } else {
+                map.put(sChar, tChar);
+            }
+
+        }
+
+
+        HashMap<Integer, Integer> map2 = new HashMap<>();
+
+        for(int i = 0; i < s.length(); i++){
+            Integer sChar = (int)s.charAt(i);
+            Integer tChar = (int)t.charAt(i);
+
+            if(map2.containsKey(tChar)){
+                if (!sChar.equals(map2.get(tChar))){
+                    return false;
+                }
+            } else {
+                map2.put(tChar, sChar);
+            }
+
+        }
+        return true;
+    }
+
+    @Test
+    public void test0(){
+        String s = "\"a`%ii,VEZQc_BSU%ObO5<sX81B/bOw+CNUd#Uav*P!Ax!#>hh,k#b/|>4ixFQZl+l!?bJjakbQbGglEb<g>Hf81m@A9GIvbd]qh?y__t+E(Iyv7zUEfZF{81VaM-0u?]tG=_fFR/XJ=X{-,oRpxE9u*VNYlM\"";
+        String t = "\"b`%ii-WE[Qc_BSV%OcO5<sX82B/cOw+CNVd#Vbv*P!Bx!#?hh-k#c/|?4ixFQ[l+l!?cJkbkcQcGhlEc<h?Hf82m@B9GIvcd]rh?y__t+E(Iyv7{VEf[F{82WbN/0u?]tG=_fFR/XJ=X{/-oRpxE9u*WNYlN\"";
+
+        System.out.println(isIsomorphic0(s,t));
+    }
+////////////////////////////////////////////////////
+    public boolean isIsomorphicMy(String s, String t) {
+        // write your code here
+        int[] m1 = new int[256];
+        int[] m2 = new int[256];
+
+        for (int i = 0; i < s.length(); i++) {
+            char sChar = s.charAt(i);
+            char tChar = t.charAt(i);
+            if(m1[sChar] == 0 && m2[tChar] == 0) {
+                m1[sChar] = tChar;
+                m2[tChar] = sChar;
+            } else if (m1[sChar] != tChar){
+                return false;
+            }
+        }
+        return true;
+    }
+////////////////////////////////////////////////////
 
     /**
      * @param s a string
@@ -34,6 +104,13 @@ public class _4L_StringsHomomorphism {
         System.out.println(isIsomorphic("abb", "xyy"));
     }
 
+    @Test
+    public void test11(){
+        String s = "\"a`%ii,VEZQc_BSU%ObO5<sX81B/bOw+CNUd#Uav*P!Ax!#>hh,k#b/|>4ixFQZl+l!?bJjakbQbGglEb<g>Hf81m@A9GIvbd]qh?y__t+E(Iyv7zUEfZF{81VaM-0u?]tG=_fFR/XJ=X{-,oRpxE9u*VNYlM\"";
+        String t = "\"b`%ii-WE[Qc_BSV%OcO5<sX82B/cOw+CNVd#Vbv*P!Bx!#?hh-k#c/|?4ixFQ[l+l!?cJkbkcQcGhlEc<h?Hf82m@B9GIvcd]rh?y__t+E(Iyv7{VEf[F{82WbN/0u?]tG=_fFR/XJ=X{/-oRpxE9u*WNYlN\"";
+
+        System.out.println(isIsomorphic(s,t));
+    }
 
 ///////////////////////////////////////////////////////////////
 

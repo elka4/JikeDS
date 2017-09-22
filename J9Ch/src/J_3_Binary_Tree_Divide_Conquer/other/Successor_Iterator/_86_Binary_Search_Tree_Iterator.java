@@ -62,7 +62,8 @@ public class _86_Binary_Search_Tree_Iterator {
 
         while(itr.hasNext()){
             TreeNode node = itr.next();
-            node.print();
+//            node.print();
+            System.out.println(node);
         }
     }
 }

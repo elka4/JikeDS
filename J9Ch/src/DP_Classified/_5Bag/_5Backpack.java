@@ -1,6 +1,8 @@
 package DP_Classified._5Bag;
 
-//包最多能装多少
+//包最多能装多少™
+
+import org.junit.Test;
 
 //Backpack
 public class _5Backpack {
@@ -33,6 +35,20 @@ public class _5Backpack {
         }
 
         return 0;
+    }
+
+    @Test
+    public void test01(){
+        int m = 11;
+        int[] A = {2, 3, 5, 7};
+        System.out.println(backPack(m, A));
+    }
+
+    @Test
+    public void test02(){
+        int m = 12;
+        int[] A = {2, 3, 5, 7};
+        System.out.println(backPack(m, A));
     }
 //////////////////////////////////////////////////////////////////
 }

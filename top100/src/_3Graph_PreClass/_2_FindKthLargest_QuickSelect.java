@@ -40,7 +40,8 @@ public class _2_FindKthLargest_QuickSelect {
         if (pos == k) {// Found
             return nums[pos];
         } else {
-            return pos < k ? findKthLargest(nums, pos + 1, end, k)
+            return pos < k ?
+                      findKthLargest(nums, pos + 1, end, k)
                     : findKthLargest(nums, start, pos - 1, k);
         }
     }

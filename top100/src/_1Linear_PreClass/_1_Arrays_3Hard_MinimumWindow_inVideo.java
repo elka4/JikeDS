@@ -47,8 +47,10 @@ public class _1_Arrays_3Hard_MinimumWindow_inVideo {
 				}
 				left++;
 			}
-		}
+    }
 		return minLen == Integer.MAX_VALUE ?  new String() : new String(chS, startIndex, minLen);
 		
 	}
+
+
 }

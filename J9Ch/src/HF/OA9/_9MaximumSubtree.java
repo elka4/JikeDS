@@ -52,7 +52,27 @@ public class _9MaximumSubtree {
     }
 
 ////////////////////////////////////////////////////////////
+    int max2 = Integer.MAX_VALUE;
+    public TreeNode result2 = null;
+    public TreeNode findSubtreeMy(TreeNode root) {
+        // write your code here
+        helper2(root);
+        return result2;
+    }
 
+    private int helper2(TreeNode root){
+        if(root == null) {
+            return 0;
+        }
+        int left = helper(root.left);
+        int right = helper(root.right);
+        int currentTotal = root.val + left + right;
+        if(result == null || currentTotal > max2){
+            result = root;
+            max2 = currentTotal;
+        }
+        return currentTotal;
+    }
 
 ////////////////////////////////////////////////////////////
 
@@ -76,4 +96,27 @@ Given a binary tree:
  / \   /  \
 0   3 -4  -5
 return the node with value 3.
+ */
+
+/*
+给你一棵二叉树，找二叉树中的一棵子树，他的所有节点之和最大。
+
+返回这棵子树的根节点。
+
+ 注意事项
+
+LintCode 会把你返回的节点作为最优子树来打印。
+
+数据保证有且仅有唯一的解。
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给出如下二叉树
+
+     1
+   /   \
+ -5     2
+ / \   /  \
+0   3 -4  -5
+返回值为 3 的节点。
  */

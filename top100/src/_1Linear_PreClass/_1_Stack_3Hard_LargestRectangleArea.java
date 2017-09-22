@@ -10,19 +10,23 @@ public int largestRectangleArea(int[] array) {
       return 0;
     Deque<Integer> stack = new LinkedList<Integer>();//store the index
     int max = 0;
-  //Each elem will be push once and poll once
+
+    //Each elem will be push once and poll once
     for(int i = 0; i <= array.length; i++) {
       //1. Check whether this elem can be pushed into the stack
       int curVal = i == array.length ? 0 : array[i];
+
       while(!stack.isEmpty() && array[stack.peekLast()] >= curVal) {
           int height = array[stack.pollLast()];
           int leftBound = stack.isEmpty() ? 0 : stack.peekLast() + 1;
           int rightBound = i;
           max = Math.max(max, height * (rightBound - leftBound));
       }
+
       //2. Push the elem into the stack
       stack.addLast(i);
     }
+
     return max;
     } 
 }

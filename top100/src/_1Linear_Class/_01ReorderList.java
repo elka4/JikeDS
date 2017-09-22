@@ -30,7 +30,8 @@ public class _01ReorderList {
         }
         return newHead;
     }
-//Key Point: finally slow is pointing to the last node of first half 
+
+    //Key Point: finally slow is pointing to the last node of first half
     private ListNode findMid (ListNode head) { 
 
         //fast is one step ahead at the beginning
@@ -44,6 +45,7 @@ public class _01ReorderList {
         }
         return slow;
     }
+
     private ListNode merge (ListNode head, ListNode secHead) {
     ListNode cur = head;
     while (secHead != null) {
