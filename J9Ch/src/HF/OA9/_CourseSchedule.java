@@ -1,10 +1,11 @@
 package HF.OA9;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import org.junit.Test;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
+// Course Schedule
 public class _CourseSchedule {
     /**
      * @param numCourses a total of n courses
@@ -47,6 +48,24 @@ public class _CourseSchedule {
 
         return count == numCourses;
     }
+
+    @Test
+    public void test01(){
+        int[][] prerequisites = {{1,0}};
+        boolean result = canFinish(2,prerequisites);
+
+        System.out.println(result);
+    }
+
+    @Test
+    public void test02(){
+        int[][] prerequisites = {{1,0}, {2,0}, {3,1}, {3,2}};
+        boolean result = canFinish(4,prerequisites);
+
+
+        System.out.println(result);
+    }
+
 }
 /*
 There are a total of n courses you have to take, labeled from 0 to n - 1.

@@ -83,7 +83,7 @@ public class _7MinimumSpanningTree {
     }
 
 
-/////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
     // version: 高频题班
     /**
@@ -135,7 +135,7 @@ public class _7MinimumSpanningTree {
             return n - 1;
         }
     }
-
+/////////////////////////////////////////////////////////////////
     public class UFS {
         int[] f;          // father
 
@@ -180,6 +180,11 @@ public class _7MinimumSpanningTree {
 
     }
 /////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+
 }
 /*
 Given a list of Connections, which is the Connection class (the city name at both ends of the edge and a cost between them), find some edges, connect all the cities and spend the least amount.
@@ -210,4 +215,10 @@ Return ["Acity","Bcity",1], ["Acity","Ccity",2]
 给出 connections = ["Acity","Bcity",1], ["Acity","Ccity",2], ["Bcity","Ccity",3]
 
 返回 ["Acity","Bcity",1], ["Acity","Ccity",2]
+ */
+
+/*
+Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.
+
+Note: You can only move either down or right at any point in time.
  */

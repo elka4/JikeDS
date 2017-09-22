@@ -1,5 +1,7 @@
 package HF.HF4_Search.DFS;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,6 +80,11 @@ public class _2Factorization {
         // write your code here
         dfs(2, n);
         return ans;
+    }
+
+    @Test
+    public void test02(){
+        System.out.println(getFactors2(8));
     }
 ////////////////////////////////////////////////////////////
 }

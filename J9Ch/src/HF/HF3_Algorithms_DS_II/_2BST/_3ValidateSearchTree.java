@@ -73,7 +73,7 @@ public class _3ValidateSearchTree {
         }
 
         if (root.left != null && left.maxValue >= root.val ||
-                root.right != null && right.minValue <= root.val) {
+            root.right != null && right.minValue <= root.val) {
             return new ResultType(false, 0, 0);
         }
 
@@ -99,7 +99,7 @@ public class _3ValidateSearchTree {
             return false;
         }
         return divConq(root.left, min, Math.min(max, root.val)) &&
-                divConq(root.right, Math.max(min, root.val), max);
+               divConq(root.right, Math.max(min, root.val), max);
     }
 //////////////////////////////////////////////////////////////
 }

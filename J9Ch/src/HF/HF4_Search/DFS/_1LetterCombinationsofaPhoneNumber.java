@@ -1,5 +1,7 @@
 package HF.HF4_Search.DFS;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -81,7 +83,11 @@ public class _1LetterCombinationsofaPhoneNumber {
     }
 
 
-
+    @Test
+    public void test03() {
+        String digits = "23";
+        System.out.println(letterCombinations2(digits));
+    }
 /////////////////////////////////////////////////////////
 
 

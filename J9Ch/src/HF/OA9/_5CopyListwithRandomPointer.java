@@ -22,6 +22,7 @@ public class _5CopyListwithRandomPointer {
         HashMap<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
         RandomListNode dummy = new RandomListNode(0);
         RandomListNode pre = dummy, newNode;
+
         while (head != null) {
             if (map.containsKey(head)) {
                 newNode = map.get(head);

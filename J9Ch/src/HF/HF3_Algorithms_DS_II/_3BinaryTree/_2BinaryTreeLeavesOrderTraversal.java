@@ -10,7 +10,7 @@ import java.util.Map;
 
 
 //Binary Tree Leaves Order Traversal
-public class _2BinaryTreeOrderTraversal {
+public class _2BinaryTreeLeavesOrderTraversal {
     public List<List<Integer>> findLeaves(TreeNode root) {
         // Write your code here
         List<List<Integer>> results = new ArrayList<List<Integer>>();

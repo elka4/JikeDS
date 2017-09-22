@@ -1,8 +1,10 @@
 package HF.HF4_Search.DFS;
 
+import org.junit.Test;
+
 import java.util.*;
 
-//Word Break II
+// Word Break II
 public class _12WordBreakII {
     // version 1:
     private void search(int index, String s, List<Integer> path,
@@ -73,7 +75,7 @@ public class _12WordBreakII {
         return wordBreakHelper(s,dict,map);
     }
 
-        public ArrayList<String> wordBreakHelper(String s, Set<String> dict, Map<String, ArrayList<String>> memo){
+    public ArrayList<String> wordBreakHelper(String s, Set<String> dict, Map<String, ArrayList<String>> memo){
             if(memo.containsKey(s)) return memo.get(s);
             ArrayList<String> result = new ArrayList<String>();
             int n = s.length();
@@ -97,6 +99,22 @@ public class _12WordBreakII {
             return result;
         }
 
+    @Test
+    public void test02(){
+        Set<String> dict = new HashSet<>();
+
+
+        dict.add("cat");
+        dict.add("cats");
+        dict.add("and");
+        dict.add("sand");
+        dict.add("dog");
+
+        String s = "catsanddog";
+
+        System.out.println(wordBreak(s, dict));
+    }
+
 }
 /*
 Given a string s and a dictionary of words dict, add spaces in s to construct a sentence where each word is a valid dictionary word.
@@ -104,3 +122,4 @@ Return all such possible sentences.
 For example, given s = "catsanddog", dict = ["cat", "cats", "and", "sand", "dog"].
 A solution is ["cats and dog", "cat sand dog"].
  */
+

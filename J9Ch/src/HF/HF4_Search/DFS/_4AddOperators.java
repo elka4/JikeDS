@@ -1,5 +1,7 @@
 package HF.HF4_Search.DFS;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,6 +91,13 @@ public class _4AddOperators {
         dfs(0, "", 0, 0);
         return ans;
     }
+
+    @Test
+    public void test01(){
+        System.out.println(addOperators2("123", 6));
+        System.out.println(addOperators2("232", 8));
+    }
+
 
 
 

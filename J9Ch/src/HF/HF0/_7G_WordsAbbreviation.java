@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.*;
 
+// Words Abbreviation
 public class _7G_WordsAbbreviation {
     /**
      * @param dict an array of n distinct non-empty strings
@@ -112,7 +113,7 @@ public class _7G_WordsAbbreviation {
         String[] strs = {"like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"};
         String[] result = wordsAbbreviation2(strs);
         for (String s:result) {
-            System.out.println();
+            System.out.println(s);
         }
     }
 

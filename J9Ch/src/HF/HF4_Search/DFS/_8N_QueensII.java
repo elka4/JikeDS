@@ -1,5 +1,7 @@
 package HF.HF4_Search.DFS;
 
+import org.junit.Test;
+
 public class _8N_QueensII {
     public static int sum;
     public int totalNQueens(int n) {
@@ -33,6 +35,11 @@ public class _8N_QueensII {
             }
         }
         return true;
+    }
+
+    @Test
+    public void test01(){
+        System.out.println(totalNQueens(4));
     }
 
 }

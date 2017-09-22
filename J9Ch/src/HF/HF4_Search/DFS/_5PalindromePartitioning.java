@@ -1,5 +1,7 @@
 package HF.HF4_Search.DFS;
 
+import org.junit.Test;
+
 import java.util.*;
 
 //Palindrome Partitioning
@@ -49,6 +51,11 @@ public class _5PalindromePartitioning {
         }
         return true;
     }
+
+    @Test
+    public void test01(){
+        System.out.println(partition2("aab"));
+    }
 //////////////////////////////////////////////////////////////////////////////////
 
     // version 2: longer but faster
@@ -68,7 +75,7 @@ public class _5PalindromePartitioning {
 
         getIsPalindrome(s);
 
-        helper(s, 0, new ArrayList<Integer>());
+        helper2(s, 0, new ArrayList<Integer>());
 
         return results;
     }
@@ -91,7 +98,7 @@ public class _5PalindromePartitioning {
         }
     }
 
-    private void helper(String s,
+    private void helper2(String s,
                         int startIndex,
                         List<Integer> partition) {
         if (startIndex == s.length()) {
@@ -104,7 +111,7 @@ public class _5PalindromePartitioning {
                 continue;
             }
             partition.add(i);
-            helper(s, i + 1, partition);
+            helper2(s, i + 1, partition);
             partition.remove(partition.size() - 1);
         }
     }
@@ -118,6 +125,11 @@ public class _5PalindromePartitioning {
         }
         results.add(result);
     }
+
+    @Test
+    public void test02(){
+        System.out.println(partition2("aab"));
+    }
 //////////////////////////////////////////////////////////////////////////////////
 
 }
@@ -126,4 +138,19 @@ Given a string s, partition s such that every substring of the partition is a pa
 Return all possible palindrome partitioning of s.
 For example, given s = "aab", Return
 [ ["aa","b"], ["a","a","b"] ]
+ */
+
+/*
+给定一个字符串s，将s分割成一些子串，使每个子串都是回文串。
+
+返回s所有可能的回文串分割方案。
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给出 s = "aab"，返回
+
+[
+  ["aa", "b"],
+  ["a", "a", "b"]
+]
  */

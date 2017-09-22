@@ -1,5 +1,7 @@
 package HF.HF4_Search.DFS;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -171,6 +173,12 @@ public class _3WordSquares {
         wordLen = words[0].length();
         dfs(0);
         return ans;
+    }
+
+    @Test
+    public void test02(){
+        String[] words = {"abat","baba","atan","atal"};
+        System.out.println(wordSquares2(words));
     }
 
 /////////////////////////////////////////////////////////////
