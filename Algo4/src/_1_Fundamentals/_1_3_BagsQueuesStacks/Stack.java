@@ -1,6 +1,6 @@
 package _1_Fundamentals._1_3_BagsQueuesStacks; /*************************************************************************
  *  Compilation:  javac Stack.java
- *  Execution:    java Stack < input.txt
+ *  Execution:    java Stack < tobe.txt
  *
  *  A generic stack, implemented using a linked list. Each stack
  *  element is of type Item.
