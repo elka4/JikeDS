@@ -1,4 +1,4 @@
-package HF.HF5_Math_Graphic_Bit;
+package HF.HF5_Math_Graphic_Bit._3Calc;
 
 public class _5Pow {
     public class Solution {
