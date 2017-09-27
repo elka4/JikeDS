@@ -1,4 +1,4 @@
-package DP_Classified._2Sequence;
+package DP_Classified._1Coordinate;
 
 import java.util.Arrays;
 import java.util.Comparator;

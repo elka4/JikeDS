@@ -1,4 +1,4 @@
-package DP_Classified._2Sequence;
+package DP_Classified._1Coordinate;
 
 //Longest Increasing Subsequence
 public class _8LongestIncreasingSubsequence {

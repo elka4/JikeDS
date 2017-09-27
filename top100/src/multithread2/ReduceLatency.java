@@ -1,4 +1,4 @@
-package multithread;
+package multithread2;
 
 
 public class ReduceLatency {

@@ -1,5 +1,10 @@
 package DP.DP4;
 
+/*
+加起来等于target有几种方式
+
+ */
+
 //Backpack V
 public class _6BackpackV {
     /**
@@ -18,7 +23,21 @@ public class _6BackpackV {
         return f[target];
     }
 /////////////////////////////////////////////////////////////////
+    /**
+     * @param nums an integer array and all positive numbers
+     * @param target an integer
+     * @return an integer
+     */
+    public int backPackV2(int[] nums, int target) {
+        // Write your code here
+        int[] f = new int[target + 1];
+        f[0] = 1;
+        for (int i = 0; i < nums.length; ++i)
+            for (int  j = target; j >= nums[i]; --j)
+                f[j] += f[j - nums[i]];
 
+        return f[target];
+    }
 }
 
 /*

@@ -1,4 +1,4 @@
-package HF.HF5_Math_Graphic_Bit._2;
+package HF.HF5_Math_Graphic_Bit._2Calc;
 
 public class _2AddBinary {
     public String addBinary(String a, String b) {

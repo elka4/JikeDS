@@ -1,6 +1,7 @@
-package multithread;
+package multithread2;
 
 import java.util.concurrent.Semaphore;
+
 //Motivation
 //Multithreading can be used to reduce latency. Reading 8 files from ~8s to ~1s.
 public class ReduceLatency2 {
