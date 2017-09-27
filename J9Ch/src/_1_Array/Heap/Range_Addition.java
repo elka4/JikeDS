@@ -1,5 +1,7 @@
 package _1_Array.Heap;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -13,6 +15,9 @@ Each operation is represented as a triplet: [startIndex, endIndex, inc] which in
 
 Return the modified array after all k operations were executed.
  */
+
+
+// Range Addition
 public class Range_Addition {
     //Java Solution 1 - Using a heap
 
@@ -60,6 +65,37 @@ public class Range_Addition {
     }
     //Time complexity is O(nlog(n)).
 
+    /*
+    Given:
+
+    length = 5,
+    updates = [
+        [1,  3,  2],
+        [2,  4,  3],
+        [0,  2, -2]
+    ]
+
+Output:
+
+    [-2, 0, 3, 5, 3]
+     */
+
+    @Test
+    public void test01(){
+        int  length = 5;
+        int[][] updates = {
+                {1,  3,  2},
+                {2,  4,  3},
+                {0,  2, -2}
+        };
+        int[] result = getModifiedArray(length, updates);
+        for (int i : result) {
+            System.out.print(i + ", ");
+        }
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
     //Java Solution 2
 
     public int[] getModifiedArray2(int length, int[][] updates) {
@@ -84,5 +120,55 @@ public class Range_Addition {
     }
     //Time complexity is O(n).
 
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 }
+/*
+Assume you have an array of length n initialized with all 0's and are given k update operations.
+
+Each operation is represented as a triplet: [startIndex, endIndex, inc] which increments each element of subarray A[startIndex ... endIndex] (startIndex and endIndex inclusive) with inc.
+
+Return the modified array after all k operations were executed.
+
+Example:
+
+Given:
+
+    length = 5,
+    updates = [
+        [1,  3,  2],
+        [2,  4,  3],
+        [0,  2, -2]
+    ]
+
+Output:
+
+    [-2, 0, 3, 5, 3]
+Explanation:
+
+Initial state:
+[ 0, 0, 0, 0, 0 ]
+
+After applying operation [1, 3, 2]:
+[ 0, 2, 2, 2, 0 ]
+
+After applying operation [2, 4, 3]:
+[ 0, 2, 5, 5, 3 ]
+
+After applying operation [0, 2, -2]:
+[-2, 0, 3, 5, 3 ]
+ */
