@@ -22,6 +22,7 @@ public class Implement_queue_by_interface {
         int top();
     }
 
+
     public class MyQueue implements InterfaceQueue {
         /* you can declare your private attributes here */
         public Node first, last;
@@ -31,7 +32,7 @@ public class Implement_queue_by_interface {
         }
 
         // implement the push method
-    /* write your code here */
+        /* write your code here */
         @Override
         public void push(int val) {
             if (last == null) {
