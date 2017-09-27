@@ -1,0 +1,43 @@
+
+#
+Title
+Acceptance
+Difficulty
+367	Valid Perfect Square	38.0%	Easy
+270	Closest Binary Search Tree Value 	39.1%	Easy
+167	Two Sum II - Input array is sorted	47.2%	Easy
+441	Arranging Coins	36.3%	Easy
+35	Search Insert Position	39.5%	Easy
+374	Guess Number Higher or Lower	34.8%	Easy
+69	Sqrt(x)	27.6%	Easy
+278	First Bad Version	25.0%	Easy
+475	Heaters	29.5%	Easy
+350	Intersection of Two Arrays II	44.4%	Easy
+349	Intersection of Two Arrays	47.0%	Easy
+436	Find Right Interval	41.0%	Medium
+300	Longest Increasing Subsequence	38.1%	Medium
+287	Find the Duplicate Number	42.9%	Medium
+275	H-Index II	34.1%	Medium
+240	Search a 2D Matrix II	38.2%	Medium
+230	Kth Smallest Element in a BST	43.3%	Medium
+378	Kth Smallest Element in a Sorted Matrix	44.2%	Medium
+162	Find Peak Element	37.0%	Medium
+454	4Sum II	46.0%	Medium
+153	Find Minimum in Rotated Sorted Array	39.5%	Medium
+81	Search in Rotated Sorted Array II	32.8%	Medium
+74	Search a 2D Matrix	35.2%	Medium
+50	Pow(x, n)	26.5%	Medium
+34	Search for a Range	31.2%	Medium
+33	Search in Rotated Sorted Array	32.1%	Medium
+29	Divide Two Integers	16.0%	Medium
+222	Count Complete Tree Nodes	27.3%	Medium
+209	Minimum Size Subarray Sum	30.1%	Medium
+392	Is Subsequence	44.3%	Medium
+4	Median of Two Sorted Arrays	21.4%	Hard
+363	Max Sum of Rectangle No Larger Than K	32.6%	Hard
+354	Russian Doll Envelopes	31.9%	Hard
+410	Split Array Largest Sum	36.0%	Hard
+302	Smallest Rectangle Enclosing Black Pixels 	45.0%	Hard
+174	Dungeon Game	23.5%	Hard
+154	Find Minimum in Rotated Sorted Array II	36.9%	Hard
+483	Smallest Good Base	31.7%	Hard

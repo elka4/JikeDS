@@ -1,0 +1,63 @@
+110	Balanced Binary Tree	37.1%	Easy
+235	Lowest Common Ancestor of a Binary Search Tree	38.7%	Easy
+572	Subtree of Another Tree	41.6%	Easy
+563	Binary Tree Tilt	46.9%	Easy
+543	Diameter of Binary Tree	43.0%	Easy
+104	Maximum Depth of Binary Tree	52.2%	Easy
+226	Invert Binary Tree	51.3%	Easy
+257	Binary Tree Paths	37.5%	Easy
+112	Path Sum	33.7%	Easy
+111	Minimum Depth of Binary Tree	32.9%	Easy
+606	Construct String from Binary Tree	53.3%	Easy
+108	Convert Sorted Array to Binary Search Tree	41.7%	Easy
+107	Binary Tree Level Order Traversal II	39.5%	Easy
+270	Closest Binary Search Tree Value 	39.1%	Easy
+404	Sum of Left Leaves	46.8%	Easy
+617	Merge Two Binary Trees	71.4%	Easy
+437	Path Sum III	39.4%	Easy
+501	Find Mode in Binary Search Tree	38.0%	Easy
+101	Symmetric Tree	38.3%	Easy
+100	Same Tree	46.2%	Easy
+337	House Robber III	42.9%	Medium
+333	Largest BST Subtree 	30.3%	Medium
+298	Binary Tree Longest Consecutive Sequence 	40.6%	Medium
+95	Unique Binary Search Trees II	31.1%	Medium
+285	Inorder Successor in BST 	36.0%	Medium
+582	Kill Process 	47.0%	Medium
+106	Construct Binary Tree from Inorder and Postorder Traversal	31.8%	Medium
+113	Path Sum II	33.0%	Medium
+255	Verify Preorder Sequence in Binary Search Tree 	39.9%	Medium
+250	Count Univalue Subtrees 	41.5%	Medium
+236	Lowest Common Ancestor of a Binary Tree	29.7%	Medium
+114	Flatten Binary Tree to Linked List	34.6%	Medium
+230	Kth Smallest Element in a BST	43.3%	Medium
+116	Populating Next Right Pointers in Each Node	37.0%	Medium
+222	Count Complete Tree Nodes	27.3%	Medium
+199	Binary Tree Right Side View	40.2%	Medium
+173	Binary Search Tree Iterator	40.7%	Medium
+156	Binary Tree Upside Down 	44.0%	Medium
+96	Unique Binary Search Trees	40.6%	Medium
+144	Binary Tree Preorder Traversal	44.5%	Medium
+129	Sum Root to Leaf Numbers	36.2%	Medium
+98	Validate Binary Search Tree	23.0%	Medium
+117	Populating Next Right Pointers in Each Node II	33.7%	Medium
+623	Add One Row to Tree	50.2%	Medium
+549	Binary Tree Longest Consecutive Sequence II 	38.8%	Medium
+545	Boundary of Binary Tree 	29.7%	Medium
+94	Binary Tree Inorder Traversal	45.9%	Medium
+538	Convert BST to Greater Tree	52.9%	Medium
+536	Construct Binary Tree from String 	39.7%	Medium
+515	Find Largest Value in Each Tree Row	54.7%	Medium
+513	Find Bottom Left Tree Value	55.8%	Medium
+508	Most Frequent Subtree Sum	52.1%	Medium
+102	Binary Tree Level Order Traversal	38.9%	Medium
+450	Delete Node in a BST	36.2%	Medium
+449	Serialize and Deserialize BST	42.0%	Medium
+103	Binary Tree Zigzag Level Order Traversal	33.9%	Medium
+105	Construct Binary Tree from Preorder and Inorder Traversal	31.8%	Medium
+366	Find Leaves of Binary Tree 	59.0%	Medium
+297	Serialize and Deserialize Binary Tree	32.9%	Hard
+124	Binary Tree Maximum Path Sum	25.7%	Hard
+145	Binary Tree Postorder Traversal	39.7%	Hard
+272	Closest Binary Search Tree Value II 	38.5%	Hard
+99	Recover Binary Search Tree	29.6%	Hard
