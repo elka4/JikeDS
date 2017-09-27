@@ -1,5 +1,7 @@
 package _1_Array.Two_Pointers_2;
 
+import org.junit.Test;
+
 /**
  * Created by tianhuizhu on 6/21/17.
  */
@@ -60,6 +62,13 @@ A simple sliding window solution.
             return 0;
     }
 
+
+    @Test
+    public void test01(){
+        int s = 7;
+        int[] nums = {2,3,1,2,4,3};
+        System.out.println(minSubArrayLen(7, nums));
+    }
 //////////////////////////////////////?
 
     //Similarly, we can also write it in a more readable way.
@@ -97,6 +106,12 @@ A simple sliding window solution.
         return minLen==Integer.MAX_VALUE? 0: minLen;
     }
 
+    @Test
+    public void test02(){
+        int s = 7;
+        int[] nums = {2,3,1,2,4,3};
+        System.out.println(minSubArrayLen2(7, nums));
+    }
 /////////////////////////////////////////////////////////////////
 
 

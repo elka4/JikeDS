@@ -1,7 +1,7 @@
 package DP_Classified._2Sequence;
 
-//House Robber
-public class _2HouseRobber {
+//  House Robber
+public class _3HouseRobber {
     /**
      * @param A: An array of non-negative integers.
      * return: The maximum amount of money you can rob tonight

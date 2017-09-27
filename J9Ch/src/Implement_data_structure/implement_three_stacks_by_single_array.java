@@ -1,4 +1,4 @@
-package _1_Array.Implement_data_structure;
+package Implement_data_structure;
 
 public class implement_three_stacks_by_single_array {
     public class ThreeStacks {

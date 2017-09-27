@@ -1,5 +1,7 @@
 package _1_Array.Two_Pointers_3;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 /**
  * Created by tianhuizhu on 6/21/17.
@@ -32,6 +34,12 @@ public class a_26_Remove_Duplicates_from_Sorted_Array {
             }
         }
         return i + 1;
+    }
+
+    @Test
+    public void test01(){
+        int[] nums = {1,1,1, 2};
+        System.out.println(removeDuplicates(nums));
     }
 
 //////////////////////////////////???

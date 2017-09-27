@@ -130,6 +130,7 @@ public class _3CopyBooks {
         }
 
         f[now][0] = 0;
+
         for (i = 1; i <= K; ++i) {
             old = now;
             now = 1 - now;

@@ -25,7 +25,7 @@ f[i][2] = min{f[i-1][0] + cost[i-1][2], f[i-1][1] + cost[i-1][2]}
 • 序列+状态
  */
 
-//Paint HouseII
+//  Paint House II
 public class _1PaintHouseII {
     //jiuzhang
     /**

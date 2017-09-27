@@ -7,6 +7,8 @@ package DP_Classified._2Sequence;
 线性，累加所有增长
  */
 
+import org.junit.Test;
+
 //Best Time To Buy And Sell Stock II
 public class _5BestTimeToBuyAndSellStockII {
     public int maxProfit(int[] prices) {
@@ -18,6 +20,12 @@ public class _5BestTimeToBuyAndSellStockII {
             }
         }
         return profit;
+    }
+
+    @Test
+    public void test(){
+        int[] prices = {2,1,2,0,1};
+        System.out.println(maxProfit(prices));
     }
 }
 /*

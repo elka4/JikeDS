@@ -1,7 +1,10 @@
 package DP_Classified._2Sequence;
+import org.junit.Test;
+import java.util.*;
 
-//Paint House
-public class _2PaintHouse {
+
+//  Paint House
+public class _1PaintHouse {
 
     /**
      * @param costs n x 3 cost matrix
@@ -14,9 +17,11 @@ public class _2PaintHouse {
         }
         int[][] f = new int[2][3];
         int old, now = 0;
-        f[now][0] = f[now][1] = f[now][2] = 0;
+//        f[now][0] = f[now][1] = f[now][2] = 0;
 
         int i, j, k;
+
+
         for (i = 1; i <= n; ++i) {
             old = now;
             now = 1 - now;
@@ -30,17 +35,18 @@ public class _2PaintHouse {
             }
         }
 
-        int res = f[now][0];
-        if (f[now][1] < res) {
-            res = f[now][1];
-        }
-
-        if (f[now][2] < res) {
-            res = f[now][2];
-        }
-
-        return res;
+        return Math.min(f[now][0], Math.min(f[now][1], f[now][2]));
     }
+
+
+    //Given costs = [[14,2,11],[11,14,5],[14,3,10]] return 10
+    @Test
+    public void test01(){
+        int[][] costs = {{14,2,11}, {11,14,5}, {14,3,10}};
+        System.out.println(minCost(costs));
+
+    }
+
 
 ////////////////////////////////////////////////////////////////////////////
     //leetcode
@@ -61,6 +67,15 @@ public class _2PaintHouse {
         int n = costs.length-1;
         return Math.min(Math.min(costs[n][0], costs[n][1]), costs[n][2]);
     }
+
+    //Given costs = [[14,2,11],[11,14,5],[14,3,10]] return 10
+    @Test
+    public void test02(){
+        int[][] costs = {{14,2,11}, {11,14,5}, {14,3,10}};
+        System.out.println(minCost2(costs));
+
+    }
+
 ////////////////////////////////////////////////////////////////////////////
 
     //Share my very simple Java solution with explanation.

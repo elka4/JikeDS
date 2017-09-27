@@ -1,6 +1,9 @@
 package DP_Classified._1Coordinate;
 
-//Longest Increasing Subsequence
+import org.junit.Test;
+import java.util.*;
+
+//  Longest Increasing Subsequence
 public class _8LongestIncreasingSubsequence {
 
     /**
@@ -10,6 +13,7 @@ public class _8LongestIncreasingSubsequence {
     public int longestIncreasingSubsequence(int[] nums) {
         int []f = new int[nums.length];
         int max = 0;
+
         for (int i = 0; i < nums.length; i++) {
             f[i] = 1;
             for (int j = 0; j < i; j++) {
@@ -21,9 +25,22 @@ public class _8LongestIncreasingSubsequence {
                 max = f[i];
             }
         }
+
         return max;
     }
 
+    /*
+    For [5, 4, 1, 2, 3], the LIS is [1, 2, 3], return 3
+    For [4, 2, 4, 5, 3, 7], the LIS is [2, 4, 5, 7], return 4
+     */
+
+    @Test
+    public void test01(){
+        int[] nums1 = {5, 4, 1, 2, 3};
+        int[] nums2 = {4, 2, 4, 5, 3, 7};
+        System.out.println(longestIncreasingSubsequence(nums1));
+        System.out.println(longestIncreasingSubsequence(nums2));
+    }
 
 ///////////////////////////////////////////////////////////////////////////
 
@@ -71,6 +88,195 @@ public class _8LongestIncreasingSubsequence {
 
 
 ///////////////////////////////////////////////////////////////////////////
+    // leetcode
+    /*
+    Given [10, 9, 2, 5, 3, 7, 101, 18],
+The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4. Note that there
+     */
+
+    //Approach #1 Brute Force [Time Limit Exceeded]
+
+    public int lengthOfLIS3(int[] nums) {
+        return lengthofLIS3(nums, Integer.MIN_VALUE, 0);
+    }
+
+    public int lengthofLIS3(int[] nums, int prev, int curpos) {
+        if (curpos == nums.length) {
+            return 0;
+        }
+        int taken = 0;
+        if (nums[curpos] > prev) {
+            taken = 1 + lengthofLIS3(nums, nums[curpos], curpos + 1);
+        }
+        int nottaken = lengthofLIS3(nums, prev, curpos + 1);
+        return Math.max(taken, nottaken);
+    }
+
+    @Test
+    public void test03(){
+        int[] nums1 = {10, 9, 2, 5, 3, 7, 101, 18};
+        System.out.println(lengthOfLIS3(nums1));
+    }
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //Approach #2 Recursion with memorization [Memory Limit Exceeded]
+    public int lengthOfLIS4(int[] nums) {
+        int memo[][] = new int[nums.length + 1][nums.length];
+        for (int[] l : memo) {
+            Arrays.fill(l, -1);
+        }
+        return lengthofLIS4(nums, -1, 0, memo);
+    }
+    public int lengthofLIS4(int[] nums, int previndex, int curpos, int[][] memo) {
+        if (curpos == nums.length) {
+            return 0;
+        }
+        if (memo[previndex + 1][curpos] >= 0) {
+            return memo[previndex + 1][curpos];
+        }
+        int taken = 0;
+        if (previndex < 0 || nums[curpos] > nums[previndex]) {
+            taken = 1 + lengthofLIS4(nums, curpos, curpos + 1, memo);
+        }
+
+        int nottaken = lengthofLIS4(nums, previndex, curpos + 1, memo);
+        memo[previndex + 1][curpos] = Math.max(taken, nottaken);
+        return memo[previndex + 1][curpos];
+    }
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+
+    //Approach #3 Dynamic Programming [Accepted]
+    public int lengthOfLIS5(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        int[] dp = new int[nums.length];
+        dp[0] = 1;
+        int maxans = 1;
+
+        for (int i = 1; i < dp.length; i++) {
+            int maxval = 0;
+            for (int j = 0; j < i; j++) {
+                if (nums[i] > nums[j]) {
+                    maxval = Math.max(maxval, dp[j]);
+                }
+            }
+            dp[i] = maxval + 1;
+
+            maxans = Math.max(maxans, dp[i]);
+        }
+        return maxans;
+    }
+
+
+    public int lengthOfLIS55(int[] nums) {
+        // Base case
+        if(nums.length <= 1)
+            return nums.length;
+
+        // This will be our array to track longest sequence length
+        int T[] = new int[nums.length];
+
+        // Fill each position with value 1 in the array
+        for(int i=0; i < nums.length; i++)
+            T[i] = 1;
+
+
+        // Mark one pointer at i. For each i, start from j=0.
+        for(int i=1; i < nums.length; i++) {
+            for(int j=0; j < i; j++) {
+                // It means next number contributes to increasing sequence.
+                if(nums[j] < nums[i]) {
+                    // But increase the value only if it results in a
+                    // larger value of the sequence than T[i]
+
+                    // It is possible that T[i] already has larger value
+                    // from some previous j'th iteration
+                    if(T[j] + 1 > T[i]) {
+                        T[i] = T[j] + 1;
+                    }
+                }
+            }
+        }
+
+        // Find the maximum length from the array that we just generated
+        int longest = 0;
+        for(int i=0; i < T.length; i++)
+            longest = Math.max(longest, T[i]);
+
+        return longest;
+    }
+
+
+
+    public int lengthOfLIS555(int[] nums) {
+        if(nums.length <= 1)
+            return nums.length;
+
+        int T[] = new int[nums.length];
+
+        for(int i=0; i < nums.length; i++)
+            T[i] = 1;
+
+        for(int i=1; i < nums.length; i++) {
+            for(int j=0; j < i; j++) {
+                if(nums[j] < nums[i]) {
+                    if(T[j] + 1 > T[i]) {
+                        T[i] = T[j] + 1;
+                    }
+                }
+            }
+        }
+
+        int longest = 0;
+        for(int i=0; i < T.length; i++)
+            longest = Math.max(longest, T[i]);
+        return longest;
+    }
+
+///////////////////////////////////////////////////////////////////////////
+
+    //Approach #4 Dynamic Programming with Binary Search[Accepted]:
+    public int lengthOfLIS6(int[] nums) {
+        int[] dp = new int[nums.length];
+        int len = 0;
+
+        for (int num : nums) {
+            int i = Arrays.binarySearch(dp, 0, len, num);
+
+            if (i < 0) {
+                i = -(i + 1);
+            }
+            dp[i] = num;
+            if (i == len) {
+                len++;
+            }
+        }
+
+        return len;
+    }
+
+
+///////////////////////////////////////////////////////////////////////////
+
+
+
+
+///////////////////////////////////////////////////////////////////////////
+
+
+
+///////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 }
 /*

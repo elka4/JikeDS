@@ -8,15 +8,16 @@ public class _7CountingBits {
     //Three-Line Java Solution
     public int[] countBits(int num) {
         int[] f = new int[num + 1];
-        for (int i=1; i<=num; i++) f[i] = f[i >> 1] + (i & 1);
+        for (int i=1; i<=num; i++) {
+            f[i] = f[i >> 1] + (i & 1);
+        }
         return f;
     }
 
     @Test
     public void test01(){
         int[] result = countBits(5);
-        for (int i:result
-             ) {
+        for (int i:result) {
             System.out.println(i);
         }
 

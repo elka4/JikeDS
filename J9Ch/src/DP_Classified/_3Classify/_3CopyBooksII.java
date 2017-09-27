@@ -1,6 +1,6 @@
 package DP_Classified._3Classify;
 
-public class _33CopyBooksII {
+public class _3CopyBooksII {
     /**
      * @param n: an integer
      * @param times: an array of integers

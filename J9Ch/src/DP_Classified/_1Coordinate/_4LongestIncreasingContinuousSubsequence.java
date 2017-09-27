@@ -30,7 +30,9 @@ f[j–1]+1| j>0 and a[j-1] < a[j]
 • 初始条件:空
  */
 
-//Longest Increasing Continuous Subsequence
+import org.junit.Test;
+
+//  Longest Increasing Continuous Subsequence
 public class _4LongestIncreasingContinuousSubsequence {
 
     public int longestIncreasingContinuousSubsequence(int[] A) {
@@ -66,6 +68,21 @@ public class _4LongestIncreasingContinuousSubsequence {
         return answer;
     }
 
+    /*
+    For [5, 4, 2, 1, 3], the LICS is [5, 4, 2, 1], return 4.
+
+    For [5, 1, 2, 3, 4], the LICS is [1, 2, 3, 4], return 4.
+     */
+
+    @Test
+    public void test01(){
+        int[] A1 = {5, 4, 2, 1, 3};
+        int[] A2 = {5, 1, 2, 3, 4};
+        System.out.println(longestIncreasingContinuousSubsequence(A1));
+        System.out.println(longestIncreasingContinuousSubsequence(A2));
+
+    }
+
 /////////////////////////////////////////////////////////////////////////
 
     //  方法二
@@ -78,6 +95,7 @@ public class _4LongestIncreasingContinuousSubsequence {
         int n = A.length;
         int[] f = new int[n];
         int i, res = 0;
+
         for (i = 0; i < n; ++i) {
             f[i] = 1;                       //init f[i]
             if (i > 0 && A[i-1] < A[i]) {   //update f[i]
@@ -93,30 +111,54 @@ public class _4LongestIncreasingContinuousSubsequence {
 
     public int longestIncreasingContinuousSubsequence2(int[] A) {
         int n = A.length;
+        int i = 0, j = n-1, t;
 
         int r1 = LIS(A);
+        reverse(A, i, j);
+        int r2 = LIS(A);
 
-        int i = 0, j = n-1, t;
+        return Math.max(r1, r2);
+    }
+
+    private void reverse(int[] A, int i, int j){
+
         while (i < j) {
-            t = A[i];
+           int t = A[i];
             A[i] = A[j];
             A[j] = t;
             ++i;
             --j;
         }
-
-        int r2 = LIS(A);
-
-        if (r1 > r2) {
-            return r1;
-        }
-        else {
-            return r2;
-        }
     }
+
+    @Test
+    public void test02(){
+        int[] A1 = {5, 4, 2, 1, 3};
+        int[] A2 = {5, 1, 2, 3, 4};
+        System.out.println(longestIncreasingContinuousSubsequence2(A1));
+        System.out.println(longestIncreasingContinuousSubsequence2(A2));
+
+    }
+
+/////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////
+
 
 
 /////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+/////////////////////////////////////////////////////////////////////////
+
+
+
+
 }
 /*
 Give an integer array，find the longest increasing continuous subsequence in this array.

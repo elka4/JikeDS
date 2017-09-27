@@ -1,5 +1,7 @@
 package _1_Array.Two_Pointers_2;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 
 /*
@@ -46,6 +48,12 @@ public class _325_Maximum_Size_Subarray_Sum_Equals_k {
         return max;
     }
 
+    @Test
+    public void test01(){
+        int[] nums = {1, -1, 5, -2, 3};
+        int k = 3;
+        System.out.println(maxSubArrayLen(nums, k));
+    }
 
 
 /////////////////////////////////////
@@ -64,6 +72,14 @@ public class _325_Maximum_Size_Subarray_Sum_Equals_k {
         }
         return max;
     }
+
+    @Test
+    public void test02(){
+        int[] nums = {1, -1, 5, -2, 3};
+        int k = 3;
+        System.out.println(maxSubArrayLen2(nums, k));
+    }
+
 
 /////////////////////////////////////////////////////////////////
 

@@ -1,4 +1,4 @@
-package _1_Array.Implement_data_structure;
+package Implement_data_structure;
 
 public class Implement_Queue_by_Linked_List_II {
     class Node {

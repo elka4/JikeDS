@@ -1,4 +1,5 @@
 package DP_Classified._2Sequence;
+import org.junit.Test;
 
 //一次买卖股票
 
@@ -22,6 +23,13 @@ public class _4BestTimeToBuyAndSellStock {
         }
 
         return profit;
+    }
+
+    @Test
+    public void test(){
+        int[] prices = {4,4,6,1,1,4,2,5};
+        int k = 2;
+        System.out.println(maxProfit(prices));
     }
 
 }

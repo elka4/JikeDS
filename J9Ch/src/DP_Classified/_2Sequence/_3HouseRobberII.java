@@ -12,6 +12,7 @@ public class _3HouseRobberII {
         }
         return Math.max(robber1(nums, 0, nums.length - 2), robber1(nums, 1, nums.length - 1));
     }
+
     public int robber1(int[] nums, int st, int ed) {
         int []res = new int[2];
         if(st == ed)
@@ -45,6 +46,7 @@ public class _3HouseRobberII {
 
     //Java clean short solution DP
     public int rob3(int[] nums) {
+
         return Math.max(rob3(nums, 0, nums.length-2), rob3(nums, 1, nums.length-1));
     }
 

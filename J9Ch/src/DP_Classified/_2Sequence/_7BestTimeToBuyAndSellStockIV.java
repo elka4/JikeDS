@@ -53,11 +53,13 @@ public class _7BestTimeToBuyAndSellStockIV {
         for (i = 1; i <= n; ++i) {
             for (j = 1; j <= 2 * K + 1; j += 2) {
                 f[i][j] = update(f[i][j], f[i-1][j], 0);
-                if (j > 1 && i > 1) f[i][j] = update(f[i][j], f[i - 1][j - 1], prices[i - 1] - prices[i - 2]);
+                if (j > 1 && i > 1) f[i][j] = update(f[i][j], f[i - 1][j - 1],
+                        prices[i - 1] - prices[i - 2]);
             }
 
             for (j = 2; j <= 2 * K; j += 2) {
-                if (i > 1) f[i][j] = update(f[i][j], f[i-1][j], prices[i - 1] - prices[i - 2]);
+                if (i > 1) f[i][j] = update(f[i][j], f[i-1][j],
+                        prices[i - 1] - prices[i - 2]);
                 if (j > 1) f[i][j] = update(f[i][j], f[i-1][j-1], 0);
             }
         }
