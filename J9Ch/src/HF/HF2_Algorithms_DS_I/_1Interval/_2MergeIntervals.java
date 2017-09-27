@@ -1,5 +1,7 @@
 package HF.HF2_Algorithms_DS_I._1Interval;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -68,6 +70,19 @@ public class _2MergeIntervals {
     }
 
 
+    @Test
+    public void test01(){
+        List<Interval> intervals = new ArrayList<>();
+        intervals.add(new Interval(1, 3));
+        intervals.add(new Interval(2, 6));
+        intervals.add(new Interval(8, 10));
+        intervals.add(new Interval(15, 18));
+
+        List<Interval> result = merge(intervals);
+        System.out.println(result);
+    }
+
+
 ////////////////////////////////////////////////////////////////
 
 
@@ -97,6 +112,18 @@ public class _2MergeIntervals {
             }
         }
         return ans;
+    }
+
+    @Test
+    public void test02(){
+        List<Interval> intervals = new ArrayList<>();
+        intervals.add(new Interval(1, 3));
+        intervals.add(new Interval(2, 6));
+        intervals.add(new Interval(8, 10));
+        intervals.add(new Interval(15, 18));
+
+        List<Interval> result = merge2(intervals);
+        System.out.println(result);
     }
 
 ////////////////////////////////////////////////////////////////

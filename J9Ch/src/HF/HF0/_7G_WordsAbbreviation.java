@@ -61,7 +61,30 @@ public class _7G_WordsAbbreviation {
         return res;
     }
 
+    /*
+    Given dict = ["like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"]
+          return ["l2e","god","internal","me","i6t","interval","inte4n","f2e","intr4n"]
+     */
+    @Test
+    public void test1(){
+        String[] strs = {"like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"};
+        String[] result = wordsAbbreviation(strs);
+        for (String s:result) {
+            System.out.println(s);
+        }
+        /*
+        l2e
+        god
+        internal
+        me
+        i6t
+        interval
+        inte4n
+        f2e
+        intr4n
 
+         */
+    }
 //////////////////////////////////////////////////////////////////////////////////////
 
 // version: 高频题班
@@ -109,7 +132,7 @@ public class _7G_WordsAbbreviation {
     }
 
     @Test
-    public void test(){
+    public void test2(){
         String[] strs = {"like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"};
         String[] result = wordsAbbreviation2(strs);
         for (String s:result) {
@@ -158,7 +181,7 @@ public class _7G_WordsAbbreviation {
     }
 
     @Test
-    public void test2(){
+    public void test3(){
         List<String> list = Arrays.asList("like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion");
         System.out.println(wordsAbbreviation3(list));
     }
@@ -238,6 +261,15 @@ public class _7G_WordsAbbreviation {
         }
 
         return res;
+    }
+
+    @Test
+    public void test4(){
+        String[] strs = {"like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"};
+        String[] result = wordsAbbreviation2(strs);
+        for (String s:result) {
+            System.out.println(s);
+        }
     }
 ///////////////////////////////////////////////////////////////
 }

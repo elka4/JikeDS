@@ -1,5 +1,7 @@
 package HF.HF2_Algorithms_DS_I._2Hash_String_Char;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +40,7 @@ import java.util.List;
 4. 逻辑思维/算法优化能力
  */
 
-//Substring Anagrams
+// Substring Anagrams
 public class _2SubstringAnagrams {
     //jiuzhang
     /**
@@ -136,12 +138,8 @@ public class _2SubstringAnagrams {
     }
 
 /////////////////////////////////////////////////////////////////////
-/*
 //clean version
-
-public class Solution {
-
-    public List<Integer> findAnagrams(String s, String p) {
+    public List<Integer> findAnagrams3(String s, String p) {
         // Write your code here
         List<Integer> ans = new ArrayList<>();
         if (s.length() < p.length()) {
@@ -180,11 +178,36 @@ public class Solution {
         }
         return ans;
     }
-}
-*/
 
+    @Test
+    public void test03(){
+        String s = "cbaebabacd";
+        String p = "abc";
+
+        List<Integer> result = findAnagrams3(s, p);
+
+        System.out.println(result);
+    }
 ///////////////////////////////////////////////////////////////////
 }
+/*
+Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.
+
+Strings consists of lowercase English letters only and the length of both strings s and p will not be larger than 40,000.
+
+The order of output does not matter.
+
+Have you met this question in a real interview? Yes
+Example
+Given s = "cbaebabacd" p = "abc"
+
+return [0, 6]
+
+The substring with start index = 0 is "cba", which is an anagram of "abc".
+The substring with start index = 6 is "bac", which is an anagram of "abc".
+
+ */
+
 /*
 
  */

@@ -1,5 +1,7 @@
 package HF.HF2_Algorithms_DS_I._1Interval;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,6 +65,14 @@ public class _1MissingInterval {
         return results;
     }
 
+    @Test
+    public void test01(){
+        int[] nums = {0, 1, 3, 50, 75};
+        int lower = 0;
+        int upper = 99;
+        System.out.println(findMissingRanges(nums, lower, upper));
+    }
+
 ///////////////////////////////////////////////////////////////
 
     //jiuzhang
@@ -98,6 +108,14 @@ public class _1MissingInterval {
             results.add(lower + "->" + upper);
         }
         return results;
+    }
+
+    @Test
+    public void test02(){
+        int[] nums = {0, 1, 3, 50, 75};
+        int lower = 0;
+        int upper = 99;
+        System.out.println(findMissingRanges2(nums, lower, upper));
     }
 
 ///////////////////////////////////////////////////////////////
@@ -165,6 +183,14 @@ public class _1MissingInterval {
             return;
         }
         ans.add(st + "->" + ed);
+    }
+
+    @Test
+    public void test03(){
+        int[] nums = {0, 1, 3, 50, 75};
+        int lower = 0;
+        int upper = 99;
+        System.out.println(findMissingRanges3(nums, lower, upper));
     }
 
 ///////////////////////////////////////////////////////////////

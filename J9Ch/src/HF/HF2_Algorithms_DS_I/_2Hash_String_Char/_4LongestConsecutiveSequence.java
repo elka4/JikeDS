@@ -77,6 +77,12 @@ public class _4LongestConsecutiveSequence {
         return longest;
     }
 
+    @Test
+    public void test01(){
+        int[] arr = {100, 4, 200, 1, 3, 2};
+        System.out.println(longestConsecutive(arr));
+    }
+
 //////////////////////////////////////////////////////////////
 
     // version: 高频题班
@@ -113,7 +119,7 @@ public class _4LongestConsecutiveSequence {
     }
 
     @Test
-    public void test(){
+    public void test02(){
         int[] arr = {100, 4, 200, 1, 3, 2};
         System.out.println(longestConsecutive2(arr));
     }

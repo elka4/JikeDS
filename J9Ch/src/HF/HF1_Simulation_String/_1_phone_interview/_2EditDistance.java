@@ -1,4 +1,5 @@
 package HF.HF1_Simulation_String._1_phone_interview;
+import org.junit.Test;
 
 /*
 Example:
@@ -36,7 +37,7 @@ Company Tags: Facebook
 5. 细节处理(corner case)
  */
 
-import org.junit.Test;
+
 
 public class _2EditDistance {
     //in class
@@ -65,6 +66,12 @@ public class _2EditDistance {
         return true;
     }
 
+    @Test
+    public void test01(){
+        String s = "aDb", t = "adb";
+        System.out.println(isOneEditDistance(s,t));
+    }
+
 ///////////////////////////////////////////////////////////////////
 
     //jiuzhang
@@ -91,6 +98,12 @@ public class _2EditDistance {
             }
         }
         return m != n;
+    }
+
+    @Test
+    public void test02(){
+        String s = "aDb", t = "adb";
+        System.out.println(isOneEditDistance2(s,t));
     }
 
 ///////////////////////////////////////////////////////////////////

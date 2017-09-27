@@ -107,6 +107,19 @@ public class _3WordAbbreviationSet {
         }
     }
 
+
+    @Test
+    public void test1(){
+        String[] dictionary = {"deer", "door", "cake", "card" };
+        ValidWordAbbr vwa = new ValidWordAbbr(dictionary);
+
+        System.out.println(vwa.isUnique("dear"));
+        System.out.println(vwa.isUnique("cart"));
+        System.out.println(vwa.isUnique("cane"));
+        System.out.println(vwa.isUnique("make"));
+    }
+
+
     /**
      * Your ValidWordAbbr object will be instantiated and called as such:
      * ValidWordAbbr obj = new ValidWordAbbr(dictionary);
@@ -157,7 +170,7 @@ public class _3WordAbbreviationSet {
     }
 
     @Test
-    public void test(){
+    public void test2(){
         String[] dictionary = {"deer", "door", "cake", "card" };
         ValidWordAbbr2 vwa = new ValidWordAbbr2(dictionary);
 

@@ -25,7 +25,7 @@ package HF.HF2_Algorithms_DS_I._2Hash_String_Char;
 3. 基础数据结构/算法
  */
 
-//First Position Unique Character
+// First Position Unique Character
 public class _1FirstPositionUniqueCharacter {
     //jiuzhang
     /**

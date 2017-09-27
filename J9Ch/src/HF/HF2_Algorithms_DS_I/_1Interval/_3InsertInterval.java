@@ -1,5 +1,7 @@
 package HF.HF2_Algorithms_DS_I._1Interval;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +50,37 @@ public class _3InsertInterval {
         return results;
     }
 
+    /*
+    Insert [2, 5] into [[1,2], [5,9]], we get [[1,9]].
+
+Insert [3, 4] into [[1,2], [5,9]], we get [[1,2], [3,4], [5,9]].
+     */
+
+    @Test
+    public void test01(){
+        List<Interval> intervals = new ArrayList<>();
+        intervals.add(new Interval(1,2));
+        intervals.add(new Interval(5,9));
+        Interval newInterval = new Interval(2,5);
+
+        List<Interval> result = insert(intervals, newInterval);
+
+        System.out.println(result);
+    }
+
+
+    @Test
+    public void test011(){
+        List<Interval> intervals = new ArrayList<>();
+        intervals.add(new Interval(1,2));
+        intervals.add(new Interval(5,9));
+        Interval newInterval = new Interval(3,4);
+
+        List<Interval> result = insert(intervals, newInterval);
+
+        System.out.println(result);
+    }
+
 //////////////////////////////////////////////////////////////////////
 
 
@@ -79,6 +112,31 @@ public class _3InsertInterval {
             }
         }
         return ans;
+    }
+
+    @Test
+    public void test02(){
+        List<Interval> intervals = new ArrayList<>();
+        intervals.add(new Interval(1,2));
+        intervals.add(new Interval(5,9));
+        Interval newInterval = new Interval(2,5);
+
+        List<Interval> result = insert2(intervals, newInterval);
+
+        System.out.println(result);
+    }
+
+
+    @Test
+    public void test022(){
+        List<Interval> intervals = new ArrayList<>();
+        intervals.add(new Interval(1,2));
+        intervals.add(new Interval(5,9));
+        Interval newInterval = new Interval(3,4);
+
+        List<Interval> result = insert2(intervals, newInterval);
+
+        System.out.println(result);
     }
 //////////////////////////////////////////////////////////////////////
 

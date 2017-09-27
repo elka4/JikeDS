@@ -99,6 +99,15 @@ public class _1SlidingWindowAveragefromDataStream {
         }
     }
 
+    @Test
+    public void test02(){
+        MovingAverage2 m = new MovingAverage2(3);
+        System.out.println(m.next(1));
+        System.out.println(m.next(10));
+        System.out.println(m.next(3));
+        System.out.println(m.next(5));
+    }
+
     /**
      * Your MovingAverage object will be instantiated and called as such:
      * MovingAverage obj = new MovingAverage(size);
@@ -134,6 +143,15 @@ public class _1SlidingWindowAveragefromDataStream {
         }
     }
 
+    @Test
+    public void test03(){
+        MovingAverage3 m = new MovingAverage3(3);
+        System.out.println(m.next(1));
+        System.out.println(m.next(10));
+        System.out.println(m.next(3));
+        System.out.println(m.next(5));
+    }
+
 //////////////////////////////////////////////////////////////////
 
     //滚动
@@ -167,6 +185,15 @@ public class _1SlidingWindowAveragefromDataStream {
         }
     }
 
+    @Test
+    public void test04(){
+        MovingAverage4 m = new MovingAverage4(3);
+        System.out.println(m.next(1));
+        System.out.println(m.next(10));
+        System.out.println(m.next(3));
+        System.out.println(m.next(5));
+    }
+
 //////////////////////////////////////////////////////////////////
 
     class MovingAverage5{
@@ -192,6 +219,15 @@ public class _1SlidingWindowAveragefromDataStream {
                 return sum[mod(id)] / id;
             }
         }
+    }
+
+    @Test
+    public void test05(){
+        MovingAverage m = new MovingAverage(3);
+        System.out.println(m.next(1));
+        System.out.println(m.next(10));
+        System.out.println(m.next(3));
+        System.out.println(m.next(5));
     }
 
 //////////////////////////////////////////////////////////////////

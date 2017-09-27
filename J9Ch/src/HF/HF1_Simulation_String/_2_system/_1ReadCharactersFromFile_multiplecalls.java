@@ -89,6 +89,8 @@ public class _1ReadCharactersFromFile_multiplecalls {
 /////////////////////////////////////////////////////////////////////
 
     // version: 高频题班
+
+
      class Solution2 {
         /**
          * @param buf destination buffer
