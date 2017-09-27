@@ -43,13 +43,14 @@ public class _2F_RegularExpressionMatching {
         if (memo[i][j] != null) {
             return memo[i][j] == Result.TRUE;
         }
+
         boolean ans;
+
         if (j == pattern.length()){
             ans = i == text.length();
         } else{
             boolean first_match = (i < text.length() &&
-                    (pattern.charAt(j) == text.charAt(i) ||
-                            pattern.charAt(j) == '.'));
+                    (pattern.charAt(j) == text.charAt(i) || pattern.charAt(j) == '.'));
 
             if (j + 1 < pattern.length() && pattern.charAt(j+1) == '*'){
                 ans = (dp(i, j+2, text, pattern) ||
@@ -58,6 +59,7 @@ public class _2F_RegularExpressionMatching {
                 ans = first_match && dp(i+1, j+1, text, pattern);
             }
         }
+
         memo[i][j] = ans ? Result.TRUE : Result.FALSE;
         return ans;
     }
@@ -74,8 +76,8 @@ public class _2F_RegularExpressionMatching {
         for (int i = text.length(); i >= 0; i--){
             for (int j = pattern.length() - 1; j >= 0; j--){
                 boolean first_match = (i < text.length() &&
-                        (pattern.charAt(j) == text.charAt(i) ||
-                                pattern.charAt(j) == '.'));
+                        (pattern.charAt(j) == text.charAt(i) || pattern.charAt(j) == '.'));
+
                 if (j + 1 < pattern.length() && pattern.charAt(j+1) == '*'){
                     dp[i][j] = dp[i][j+2] || first_match && dp[i+1][j];
                 } else {

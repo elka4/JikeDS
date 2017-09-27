@@ -1,5 +1,7 @@
 package HF.HF_QA;
 
+import org.junit.Test;
+
 // Maximum Average Subarray
 public class Maximum_Average_Subarray {
     /**
@@ -46,6 +48,14 @@ public class Maximum_Average_Subarray {
                 min_pre = Math.min(min_pre, sum[i - k + 1]);
         }
         return false;
+    }
+
+    @Test
+    public void test(){
+        int[] nums = {1, 12, -5, -6, 50, 3};
+        int k = 3;
+
+        System.out.println(maxAverage(nums, k));
     }
 }
 /*

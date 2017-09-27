@@ -13,6 +13,8 @@ public class _5A_RectangleOverlap {
           public Point(int a, int b) { x = a; y = b; }
       }
 
+//////////////////////////////////////////////////////////////
+
     /**
      * @param l1 top-left coordinate of first rectangle
      * @param r1 bottom-right coordinate of first rectangle
@@ -30,6 +32,14 @@ public class _5A_RectangleOverlap {
 
         return true;
     }
+
+    /*
+    Given l1 = [0, 8], r1 = [8, 0], l2 = [6, 6], r2 = [10, 0], return true
+
+Given l1 = [0, 8], r1 = [8, 0], l2 = [9, 6], r2 = [10, 0], return `false
+     */
+
+
 
 //////////////////////////////////////////////////////////////
 

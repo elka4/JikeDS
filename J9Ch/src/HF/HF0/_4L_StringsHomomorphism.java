@@ -57,7 +57,9 @@ public class _4L_StringsHomomorphism {
 
         System.out.println(isIsomorphic0(s,t));
     }
+
 ////////////////////////////////////////////////////
+
     public boolean isIsomorphicMy(String s, String t) {
         // write your code here
         int[] m1 = new int[256];
@@ -75,6 +77,7 @@ public class _4L_StringsHomomorphism {
         }
         return true;
     }
+
 ////////////////////////////////////////////////////
 
     /**

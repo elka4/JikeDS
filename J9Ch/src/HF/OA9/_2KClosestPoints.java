@@ -106,3 +106,20 @@ Example
 Given points = [[4,6],[4,7],[4,4],[2,5],[1,1]], origin = [0, 0], k = 3
 return [[1,1],[2,5],[4,4]]
  */
+
+
+/*
+K个最近的点
+
+ Description
+ Notes
+ Testcase
+ Judge
+给定一些 points 和一个 origin，从 points 中找到 k 个离 origin 最近的点。
+按照距离由小到大返回。如果两个点有相同距离，则按照x值来排序；若x值也相同，就再按照y值排序。
+
+Have you met this question in a real interview? Yes
+Example
+给出 points = [[4,6],[4,7],[4,4],[2,5],[1,1]], origin = [0, 0], k = 3
+返回 [[1,1],[2,5],[4,4]]
+ */

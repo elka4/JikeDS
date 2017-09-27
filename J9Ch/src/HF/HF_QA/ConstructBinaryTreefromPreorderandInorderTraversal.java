@@ -1,6 +1,7 @@
 package HF.HF_QA;
 
 import lib.TreeNode;
+import org.junit.Test;
 
 // Construct Binary Tree from Preorder and Inorder Traversal
 public class ConstructBinaryTreefromPreorderandInorderTraversal {
@@ -35,6 +36,13 @@ public class ConstructBinaryTreefromPreorderandInorderTraversal {
             return null;
         }
         return myBuildTree(inorder, 0, inorder.length - 1, preorder, 0, preorder.length - 1);
+    }
+
+    @Test
+    public void test(){
+        int[] preorder = {2,1,3};
+        int[] inorder = {1,2,3};
+        buildTree(preorder, inorder).print();
     }
 }
 /*

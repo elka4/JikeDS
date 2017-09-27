@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 // Course Schedule
-public class _CourseSchedule {
+public class _6CourseSchedule {
     /**
      * @param numCourses a total of n courses
      * @param prerequisites a list of prerequisite pairs
@@ -49,6 +49,8 @@ public class _CourseSchedule {
         return count == numCourses;
     }
 
+//////////////////////////////////////////////////////////////////////
+
     @Test
     public void test01(){
         int[][] prerequisites = {{1,0}};
@@ -65,6 +67,7 @@ public class _CourseSchedule {
 
         System.out.println(result);
     }
+//////////////////////////////////////////////////////////////////////
 
 }
 /*

@@ -105,7 +105,7 @@ public class _6_CourseSchedule_I_TopologicalSort_DFS_BFS {
 ////////////////////////////////////////////////////////////////////
 
     @Test
-    public void test01(){
+    public void test03(){
         int numCourses = 4;
         int[][] prerequisites = {{1,0}};
         System.out.println(canFinish_DFS(2, prerequisites));
@@ -113,7 +113,7 @@ public class _6_CourseSchedule_I_TopologicalSort_DFS_BFS {
     }
 
     @Test
-    public void test02(){
+    public void test04(){
         int numCourses = 4;
         int[][] prerequisites = {{1,0}, {0,1}};
         System.out.println(canFinish_DFS(2, prerequisites));

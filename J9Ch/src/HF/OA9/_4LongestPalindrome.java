@@ -25,6 +25,11 @@ public class _4LongestPalindrome {
         return set.size() > 0 ? s.length() - set.size() + 1:s.length() - set.size();
     }
 
+    @Test
+    public void test01(){
+        System.out.println(longestPalindrome("abccccdd"));
+    }
+
 ///////////////////////////////////////////////////////
 
     // version 1
@@ -53,7 +58,7 @@ public class _4LongestPalindrome {
     }
 
     @Test
-    public void test01(){
+    public void test02(){
         System.out.println(longestPalindrome("abccccdd"));
     }
 
@@ -103,7 +108,7 @@ public class _4LongestPalindrome {
     }
 
     @Test
-    public void test02(){
+    public void test03(){
         System.out.println(longestPalindrome2("abccccdd"));
     }
 

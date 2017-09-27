@@ -44,7 +44,7 @@ public class _9MaximumSubtree {
     }
 
     @Test
-    public void test02(){
+    public void test011(){
         int[] input = {0,8,-5,1,-4,2,-5};
         TreeNode root = TreeNode.createMinimalBST(input);
         root.print();
@@ -52,8 +52,10 @@ public class _9MaximumSubtree {
     }
 
 ////////////////////////////////////////////////////////////
+
     int max2 = Integer.MAX_VALUE;
     public TreeNode result2 = null;
+
     public TreeNode findSubtreeMy(TreeNode root) {
         // write your code here
         helper2(root);
@@ -74,6 +76,21 @@ public class _9MaximumSubtree {
         return currentTotal;
     }
 
+    @Test
+    public void test02(){
+        int[] input = {0,-5,3,1,-4,2,-5};
+        TreeNode root = TreeNode.createMinimalBST(input);
+        root.print();
+        findSubtreeMy(root).print();
+    }
+
+    @Test
+    public void test022(){
+        int[] input = {0,8,-5,1,-4,2,-5};
+        TreeNode root = TreeNode.createMinimalBST(input);
+        root.print();
+        findSubtreeMy(root).print();
+    }
 ////////////////////////////////////////////////////////////
 
 

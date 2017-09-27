@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 //Sliding window类
-//Window Sum
+
+
+// Window Sum
 public class _3WindowSum {
     /**
      * @param nums a list of integers.
@@ -99,7 +101,7 @@ public class _3WindowSum {
     }
 
     @Test
-    public void test03(){
+    public void test02(){
         int[] nums = {1,2,7,8,5};
         int k = 3;
         int[] result = winSum2(nums, k);
@@ -151,13 +153,21 @@ public class _3WindowSum {
             }
         }
         return result;
+    }
 
-
-
+    @Test
+    public void test03(){
+        int[] nums = {1,2,7,8,5};
+        int k = 3;
+        int[] result = winSum2(nums, k);
+        for (int i : result
+                ) {
+            System.out.println(i);
+        }
     }
 //////////////////////////////////////////////////////////////
 
-
+//////////////////////////////////////////////////////////////
 }
 /*
 Given an array of n integer, and a moving window(size k), move the window at each iteration from the start of the array, find the sum of the element inside the window at each moving.
@@ -169,4 +179,25 @@ For array [1,2,7,8,5], moving window size k = 3.
 2 + 7 + 8 = 17
 7 + 8 + 5 = 20
 return [10,17,20]
+ */
+
+
+
+/*
+滑动窗口内数的和
+
+ Description
+ Notes
+ Testcase
+ Judge
+给你一个大小为n的整型数组和一个大小为k的滑动窗口，将滑动窗口从头移到尾，
+输出从开始到结束每一个时刻滑动窗口内的数的和。
+
+Have you met this question in a real interview? Yes
+Example
+对于数组 [1,2,7,8,5] ，滑动窗口大小k= 3 。
+1 + 2 + 7 = 10
+2 + 7 + 8 = 17
+7 + 8 + 5 = 20
+返回 [10,17,20]
  */
