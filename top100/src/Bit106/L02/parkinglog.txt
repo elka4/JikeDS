@@ -1,0 +1,71 @@
+
+Object:
+ParkingLot
+Slot 			// - small, medium, large
+Vehicle			// - Car, Bus, MotorBike
+			// Ticket
+
+isFull?
+
+Park
+unPark
+
+
+
+class ParkingLot {
+	int numTotalSlots;
+	int currentAvailableSlots;
+
+	Slot[] slots;
+	
+
+	bool isFull() {
+		// iterate slots
+		// currentAvailableSlots
+	}
+
+	// return slot id
+	int findEmptySlot() {
+		
+	}
+
+	// return slot id
+	int park(Vehicle v) {
+		if (isFull()) {
+			return -1; // throw Exception?
+		}
+
+		int id = findEmptySlot();
+		// slots[id]
+		slots[id].setVehicle(v);
+		return id;
+	}
+
+	Vehicle unPark(int id) {
+		return slots[id].getVehicle();
+	}
+}
+
+
+class Slot {
+	Vehicle parkedVehicle;
+
+	bool isEmpty() {
+		return parkedVehicle == null;
+	}
+
+	Vehicle getVehicle() {
+
+	}
+
+	void setVehicle(Vehicle v) {
+
+	}
+}
+
+
+class Vehicle {
+
+}
+
+
