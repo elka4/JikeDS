@@ -22,7 +22,7 @@ A[i][j]
 • 边界情况:i = 0 或 j = 0，则前一步只能有一个方向过来
  */
 
-//Minimum Path Sum
+//  Minimum Path Sum
 public class _5MinimumPathSum {
     public int minPathSum(int[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {

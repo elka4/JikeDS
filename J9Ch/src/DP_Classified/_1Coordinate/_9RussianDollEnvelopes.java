@@ -3,7 +3,7 @@ package DP_Classified._1Coordinate;
 import java.util.Arrays;
 import java.util.Comparator;
 
-//Russian Doll Envelopes
+//  Russian Doll Envelopes
 public class _9RussianDollEnvelopes {
     /**
      * @param envelopes a number of envelopes with widths and heights
@@ -14,6 +14,7 @@ public class _9RussianDollEnvelopes {
         if(envelopes == null || envelopes.length == 0
                 || envelopes[0] == null || envelopes[0].length != 2)
             return 0;
+
         Arrays.sort(envelopes, new Comparator<int[]>(){
             public int compare(int[] arr1, int[] arr2){
                 if(arr1[0] == arr2[0])
