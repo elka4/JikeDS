@@ -1,4 +1,4 @@
-package src.array.three;
+package ss.array.three;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package src.array.two;
+package ss.array.two;
 
 import org.junit.Test;
 

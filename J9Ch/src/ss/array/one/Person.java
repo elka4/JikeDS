@@ -1,4 +1,4 @@
-package src.array.one;
+package ss.array.one;
 
 /**
  * Created by Student on 12/28/16.
