@@ -37,6 +37,7 @@ public class _143_Sort_Colors_II {
 
         int colorMid = (colorFrom + colorTo) / 2;
         int l = left, r = right;
+
         while (l <= r) {
             while (l <= r && colors[l] <= colorMid) {
                 l++;
@@ -45,12 +46,7 @@ public class _143_Sort_Colors_II {
                 r--;
             }
             if (l <= r) {
-                int temp = colors[l];
-                colors[l] = colors[r];
-                colors[r] = temp;
-
-                l++;
-                r--;
+                swap(colors, l++, r--);
             }
         }
 
@@ -60,6 +56,12 @@ public class _143_Sort_Colors_II {
 
 
 
+//////////////////////////////////////////////////////////////////////////////
+void swap(int[] colors, int left, int right) {
+    int tmp = colors[left];
+    colors[left] = colors[right];
+    colors[right] = tmp;
+}
 //////////////////////////////////////////////////////////////////////////////
 
 // version 2: O(nk), not efficient, will get Time Limit Exceeded error.
@@ -87,14 +89,14 @@ public class _143_Sort_Colors_II {
 
             while (cur <= right) {
                 if (colors[cur] == min) {
-                    swap(left, cur, colors);
+                    swap(colors, left, cur);
                     cur++;
                     left++;
                 } else if (colors[cur] > min && colors[cur] < max) {
                     cur++;
                 } else {
                     int tmp = colors[cur];
-                    swap(cur, right, colors);
+                    swap(colors, cur, right );
                     right--;
                 }
             }
@@ -104,11 +106,7 @@ public class _143_Sort_Colors_II {
 
     }
 
-    void swap(int left, int right, int[] colors) {
-        int tmp = colors[left];
-        colors[left] = colors[right];
-        colors[right] = tmp;
-    }
+
 
 /*
 Given an array of n objects with k different colors (numbered from 1 to k),

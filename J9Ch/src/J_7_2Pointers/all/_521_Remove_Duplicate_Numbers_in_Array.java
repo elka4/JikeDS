@@ -9,6 +9,7 @@ import java.util.Map;
 
  * Created by tianhuizhu on 6/28/17.
  */
+
 public class _521_Remove_Duplicate_Numbers_in_Array {
 
     // O(n) time, O(n) space
@@ -56,6 +57,6 @@ public class _521_Remove_Duplicate_Numbers_in_Array {
         return len + 1;
     }
 
-
+/////////////////////////////////////////////////////////////////////
 
 }

@@ -26,7 +26,7 @@ If all elements in nums are smaller than k, then return nums.length
 
 //If nums = [3,2,2,1] and k=2, a valid answer is 1.
 
-
+// Partition Array
 public class _31_Partition_Array {
     /**
      *@param nums: The integer array you should partition
@@ -49,18 +49,34 @@ public class _31_Partition_Array {
             while (left <= right && nums[right] >= k) {
                 right--;
             }
-
             if (left <= right) {
+                swap(nums, left++, right--);
+            }
+
+/*            if (left <= right) {
                 int temp = nums[left];
                 nums[left] = nums[right];
                 nums[right] = temp;
 
                 left++;
                 right--;
-            }
+            }*/
         }
         return left;
     }
+
+    private void swap(int[] nums, int i, int j){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
+//    private int reverse(int[] nums, int i, int j){
+//        while(i <= j){
+//            swap(nums, i++, j--);
+//        }
+//        return i;
+//    }
 
     @Test
     public void test01(){

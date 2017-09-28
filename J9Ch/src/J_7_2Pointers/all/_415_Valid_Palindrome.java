@@ -27,8 +27,8 @@ public class _415_Valid_Palindrome {
                 end--;
             }
 
-            if (Character.toLowerCase(s.charAt(front))
-                    != Character.toLowerCase(s.charAt(end))) {
+            if (Character.toLowerCase(s.charAt(front)) !=
+                Character.toLowerCase(s.charAt(end))) {
                 break;
             } else {
                 front++;
@@ -44,7 +44,10 @@ public class _415_Valid_Palindrome {
         return Character.isLetter(c) || Character.isDigit(c);
     }
 
+/////////////////////////////////////////////////////////////////////
 
+
+}
 /*
 Given a string, determine if it is a palindrome, considering only
 alphanumeric characters and ignoring cases.
@@ -62,6 +65,3 @@ Example
 
 "race a car" is not a palindrome.
  */
-
-
-}
