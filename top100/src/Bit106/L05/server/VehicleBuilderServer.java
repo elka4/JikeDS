@@ -12,6 +12,7 @@ public class VehicleBuilderServer implements Runnable {
     private SocketConnector connector;
 
     public VehicleBuilderServer(String host, int serverPort) {
+
         connector = new SocketConnectorImpl(host, serverPort);
     }
 
