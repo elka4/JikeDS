@@ -1,5 +1,7 @@
 package DP.DP4;
 
+//• 划分型动态规划
+
 //Palindrome Partitioning II
 public class _2PalindromePartitioningII {
     // version 1

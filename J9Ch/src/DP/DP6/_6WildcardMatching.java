@@ -1,6 +1,7 @@
 package DP.DP6;
 
 import java.util.TreeSet;
+//双序列型动态规划
 
 //Wildcard Matching
 public class _6WildcardMatching {

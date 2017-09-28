@@ -1,4 +1,5 @@
 package DP.DP3;
+//• 最长序列型动态规划
 
 //Longest Increasing Subsequence
 public class _8LongestIncreasingSubsequence {

@@ -7,6 +7,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+//• 划分性动态规划
+
 //Decode Ways
 public class _3DecodeWays {
 
@@ -18,6 +20,7 @@ public class _3DecodeWays {
         int[] nums = new int[s.length() + 1];
         nums[0] = 1;
         nums[1] = s.charAt(0) != '0' ? 1 : 0;
+
         for (int i = 2; i <= s.length(); i++) {
             if (s.charAt(i - 1) != '0') {
                 nums[i] = nums[i - 1];
@@ -38,6 +41,7 @@ public class _3DecodeWays {
     }
 
 ////////////////////////////////////////////////////////////
+
     // version: 高频题班
     //jiuzhang
     /**

@@ -1,5 +1,7 @@
 package DP.DP5;
 
+//• 区间型动态规划
+
 //Longest Palindromic Subsequence
 public class _3LongestPalindromicSubsequence {
 

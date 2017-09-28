@@ -1,5 +1,7 @@
 package DP.DP2;
 
+//• 序列+位操作型动态规划
+
 //Counting Bits
 public class _7CountingBits {
     //leetcode

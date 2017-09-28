@@ -3,6 +3,8 @@ package DP.DP3;
 import java.util.Arrays;
 import java.util.Comparator;
 
+//• 最长序列型动态规划
+
 //Russian Doll Envelopes
 public class _9RussianDollEnvelopes {
     /**

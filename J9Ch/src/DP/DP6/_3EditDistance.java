@@ -1,5 +1,7 @@
 package DP.DP6;
 
+//双序列型动态规划
+
 //Edit Distance
 public class _3EditDistance {
     public int minDistance(String word1, String word2) {

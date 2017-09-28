@@ -1,5 +1,7 @@
 package DP.DP2;
 
+//• 坐标型动态规划
+
 //Bomb Enemy
 public class _6BombEnemy {
     /**
@@ -13,6 +15,7 @@ public class _6BombEnemy {
 
         int result = 0, rows = 0;
         int[] cols = new int[n];
+
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
                 if (j == 0 || grid[i][j-1] == 'W') {

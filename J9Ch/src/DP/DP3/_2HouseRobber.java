@@ -1,5 +1,8 @@
 package DP.DP3;
 
+//_2HouseRobber   18:58
+//• 有状态的序列型动态规划
+
 //House Robber
 public class _2HouseRobber {
     /**

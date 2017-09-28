@@ -3,6 +3,8 @@ package DP.DP5;
 import java.util.Arrays;
 import java.util.HashMap;
 
+//• 区间型动态规划
+
 //Scramble String
 public class _5ScrambleString {
     // 记忆化搜索
@@ -166,12 +168,14 @@ public class _5ScrambleString {
                 String s23 = s2.substring(0, s2.length() - i);
                 String s24 = s2.substring(s2.length() - i, s2.length());
 
-                if (checkScramble(s11,start1, s21, start2, i, visit) && checkScramble(s12, start1+i, s22, start2+i,k-i, visit))  {
+                if (checkScramble(s11,start1, s21, start2, i, visit) && checkScramble(s12,
+                        start1+i, s22, start2+i,k-i, visit))  {
                     visit[start1][start2][k] = 1;
                     return true;
                 }
 
-                if (checkScramble(s11,start1, s24, start2+k-i, i, visit) && checkScramble(s12,start1+i, s23,start2, k-i, visit))
+                if (checkScramble(s11,start1, s24, start2+k-i, i, visit) && checkScramble(s12,
+                        start1+i, s23,start2, k-i, visit))
                 {
                     visit[start1][start2][k] = 1;
                     return true;

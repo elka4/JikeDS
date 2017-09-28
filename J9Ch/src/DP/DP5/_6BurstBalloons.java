@@ -1,5 +1,7 @@
 package DP.DP5;
 
+//• 区间型动态规划
+
 //Burst Balloons
 public class _6BurstBalloons {
     //记忆化

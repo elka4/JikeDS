@@ -1,4 +1,5 @@
 package DP.DP6;
+//双序列型动态规划
 
 //Ones and Zeroes
 public class _7OnesandZeroes {

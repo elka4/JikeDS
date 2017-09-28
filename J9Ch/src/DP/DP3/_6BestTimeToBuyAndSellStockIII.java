@@ -1,5 +1,8 @@
 package DP.DP3;
 
+//_6BestTimeToBuyAndSellStockIII  31:38
+//• 有状态的序列型动态规划
+
 //Best Time To Buy And Sell Stock III
 public class _6BestTimeToBuyAndSellStockIII {
     // 动态规划专题班版本 verison 1

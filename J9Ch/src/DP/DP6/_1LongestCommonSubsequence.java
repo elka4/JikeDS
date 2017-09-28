@@ -1,5 +1,7 @@
 package DP.DP6;
 
+//双序列型动态规划
+
 //Longest Common Subsequence
 public class _1LongestCommonSubsequence {
     /**

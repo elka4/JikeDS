@@ -1,6 +1,8 @@
 package DP.DP2;
 
-//Unique PathsII
+//• 坐标型动态规划
+
+//  Unique PathsII
 public class _1UniquePathsII {
 
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {

@@ -1,5 +1,7 @@
 package DP.DP4;
 
+//• 区间型动态规划
+
 //Coins in A Line
 public class _4CoinsinALine {
     // 方法一

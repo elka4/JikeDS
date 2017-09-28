@@ -1,5 +1,7 @@
 package DP.DP6;
 
+//双序列型动态规划
+
 //Distinct Subsequences
 public class _4DistinctSubsequences {
     public int numDistinct(String S, String T) {

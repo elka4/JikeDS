@@ -1,5 +1,7 @@
 package DP.DP6;
 
+//双序列型动态规划
+
 //Interleaving String
 public class _2InterleavingString {
     public boolean isInterleave(String s1, String s2, String s3) {
