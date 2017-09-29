@@ -1,4 +1,4 @@
-package multithread;
+package multithread._5condition_variable;
 
 
 public class ConditionVariableExample {

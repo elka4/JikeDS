@@ -1,4 +1,4 @@
-package multithread;
+package multithread._7atomic_example;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

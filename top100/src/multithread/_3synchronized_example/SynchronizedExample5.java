@@ -1,4 +1,4 @@
-package multithread;
+package multithread._3synchronized_example;
 
 
 public class SynchronizedExample5 {

@@ -1,4 +1,4 @@
-package multithread;
+package multithread._6volatile_example;
 //race needs to be an atomic variable. 
 //Volatile can only guarantee that when reading race, 
 //the value is up to date.

@@ -1,4 +1,4 @@
-package multithread;
+package multithread._3synchronized_example;
 
 //Synchronized on a method for all instances of a class.
 public class SynchronizedExample3 {

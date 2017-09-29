@@ -1,4 +1,4 @@
-package multithread;
+package multithread._4lock_example;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

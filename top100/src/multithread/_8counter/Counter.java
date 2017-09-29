@@ -1,4 +1,4 @@
-package multithread;
+package multithread._8counter;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

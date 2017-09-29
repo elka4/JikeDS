@@ -1,4 +1,4 @@
-package multithread;
+package multithread._3synchronized_example;
 //Synchronized
 //synchronized method is equivalent to synchronized(this).
 /*Synchronized is reentrant to the same thread. 

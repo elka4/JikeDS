@@ -1,4 +1,4 @@
-package multithread;
+package multithread._6volatile_example;
 
 import java.util.concurrent.TimeUnit;
 //Volatile Variable

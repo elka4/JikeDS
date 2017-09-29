@@ -1,4 +1,4 @@
-package multithread;
+package multithread._5condition_variable;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
