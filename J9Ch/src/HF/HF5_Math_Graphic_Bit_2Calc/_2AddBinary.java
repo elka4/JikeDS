@@ -1,5 +1,8 @@
 package HF.HF5_Math_Graphic_Bit_2Calc;
 
+import org.junit.Test;
+
+// Add Binary
 public class _2AddBinary {
     public String addBinary(String a, String b) {
         if(a.length() < b.length()){
@@ -33,6 +36,12 @@ public class _2AddBinary {
         return rst;
     }
 
+    @Test
+    public void test01(){
+        String a = "11", b = "1";
+        System.out.println(addBinary(a,b));
+    }
+
 ///////////////////////////////////////////////////////////////////////////
 
     // version: 高频题班
@@ -61,15 +70,17 @@ public class _2AddBinary {
     }
 }
 /*
-Given two non-negative integers num1 and num2 represented as string, return the sum of num1 and num2.
 
- 注意事项
+ */
 
-The length of both num1 and num2 is < 5100.
-Both num1 and num2 contains only digits 0-9.
-Both num1 and num2 does not contain any leading zero.
-You must not use any built-in BigInteger library or convert the inputs to integer directly.
+/*
+给定两个二进制字符串，返回他们的和（用二进制表示）。
+
 样例
-Given num1 = "123", num2 = "45"
-return "168"
+a = 11
+
+b = 1
+
+返回 100
+
  */

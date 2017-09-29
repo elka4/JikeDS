@@ -1,5 +1,8 @@
 package HF.HF5_Math_Graphic_Bit_2Calc;
 
+import org.junit.Test;
+
+//  Big Integer Addition
 public class _1BigIntegerAddition {
     /**
      * @param num1 a non-negative integers
@@ -10,8 +13,10 @@ public class _1BigIntegerAddition {
         // Write your code here
         int i = num1.length() - 1;
         int j = num2.length() - 1;
+
         int carry = 0;
         String result = "";
+
         while (i >= 0 || j >= 0) {
             if (i >= 0) {
                 carry += num1.charAt(i--) - '0';
@@ -23,6 +28,12 @@ public class _1BigIntegerAddition {
             carry /= 10;
         }
         return carry > 0 ? "1" + result : result;
+    }
+
+    @Test
+    public void test01(){
+        String num1 = "123", num2 = "45";
+        System.out.println(addStrings(num1, num2));
     }
 
 ////////////////////////////////////////////////////////////////////
@@ -39,18 +50,32 @@ public class _1BigIntegerAddition {
         String ans = "";
 
         int carry = 0;
-        for (int i = num1.length() - 1, j = num2.length() - 1; i >= 0 || j >= 0; i--, j--) {
+
+        for (int i = num1.length() - 1, j = num2.length() - 1;
+             i >= 0 || j >= 0; i--, j--) {
+
             int sum = carry;
             sum += (i >= 0) ? num1.charAt(i) - '0' : 0;
             sum += (j >= 0) ? num2.charAt(j) - '0' : 0;
             ans = (sum % 10) + ans;
             carry = sum / 10;
         }
+
         if (carry != 0) {
             ans = carry + ans;
         }
         return ans;
     }
+
+    @Test
+    public void test02(){
+        String num1 = "123", num2 = "45";
+        System.out.println(addStrings2(num1, num2));
+    }
+
+
+////////////////////////////////////////////////////////////////////
+
 }
 /*
 Given two non-negative integers num1 and num2 represented as string, return the sum of num1 and num2.

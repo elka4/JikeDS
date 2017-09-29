@@ -1,7 +1,9 @@
 package HF.HF5_Math_Graphic_Bit_2Calc;
 
 import lib.*;
+import org.junit.Test;
 
+//  Add Two Numbers
 public class _3AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if(l1 == null && l2 == null) {
@@ -41,6 +43,22 @@ public class _3AddTwoNumbers {
         }
         return head.next;
     }
+
+    @Test
+    public void test01(){
+//        给出两个链表 3->1->5->null 和 5->9->2->null，返回 8->0->8->null
+
+
+        ListNode l1 = ListNode.create(new int[]{3,1,5});
+        l1.print();
+
+        ListNode l2 = ListNode.create(new int[]{5,9,2});
+        l2.print();
+
+        addTwoNumbers(l1, l2).print();
+
+    }
+
 ///////////////////////////////////////////////////////////////////////////
 
 
@@ -75,7 +93,25 @@ public class _3AddTwoNumbers {
         return dummy.next;
     }
 
+    @Test
+    public void test02(){
+//        给出两个链表 3->1->5->null 和 5->9->2->null，返回 8->0->8->null
+
+
+        ListNode l1 = ListNode.create(new int[]{3,1,5});
+        l1.print();
+
+        ListNode l2 = ListNode.create(new int[]{5,9,2});
+        l2.print();
+
+        addLists(l1, l2).print();
+
+    }
+
+///////////////////////////////////////////////////////////////////////////
+
 }
+
 /*
 Add Two Numbers
 

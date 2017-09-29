@@ -14,8 +14,11 @@ public class MergeSort {
             return;
         }
         int middle = (leftStart + rightEnd) / 2;
+
         mergesort(array, temp, leftStart, middle);
+
         mergesort(array, temp, middle + 1, rightEnd);
+
         mergeHalves(array, temp, leftStart, rightEnd);
     }
 

@@ -1,5 +1,8 @@
 package HF.HF5_Math_Graphic_Bit_2Calc;
 
+import org.junit.Test;
+
+//  Big Integer multiplication
 public class _4BigIntegermultiplication {
 
     /**
@@ -44,6 +47,12 @@ public class _4BigIntegermultiplication {
         return sb.toString();
     }
 
+    @Test
+    public void test01(){
+        String num1 = "23",  num2 = "3";
+        System.out.println(multiply(num1, num2));
+    }
+
 //////////////////////////////////////////////////////////////////////////////////
 
     // version: 高频题班
@@ -60,7 +69,8 @@ public class _4BigIntegermultiplication {
         int[] ans = new int[l1 + l2 + 1];
         for (int i = 0; i < l1; i++) {
             for (int j = 0; j < l2; j++) {
-                ans[i + j] += (num1.charAt(l1 - 1 - i) - '0') * (num2.charAt(l2 - 1 - j) - '0');
+                ans[i + j] += (num1.charAt(l1 - 1 - i) - '0')
+                            * (num2.charAt(l2 - 1 - j) - '0');
             }
         }
 
@@ -79,8 +89,9 @@ public class _4BigIntegermultiplication {
         }
         return str;
     }
-
+//////////////////////////////////////////////////////////////////////////////////
 }
+
 /*
 Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2
 

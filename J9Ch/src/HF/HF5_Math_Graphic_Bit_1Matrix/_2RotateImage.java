@@ -1,5 +1,7 @@
 package HF.HF5_Math_Graphic_Bit_1Matrix;
 
+import org.junit.Test;
+
 public class _2RotateImage {
     public void rotate(int[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
@@ -19,7 +21,28 @@ public class _2RotateImage {
         }
     }
 
-    /////////////////////////////////////////////////////////////////////////////
+    private void print(int[][] matrix){
+        for (int[] i:matrix
+                ) {
+            for (int j:i
+                    ) {
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("-------------------------");
+    }
+
+    @Test
+    public void test01(){
+        int[][] matrix = {{1,2}, {3,4}};
+        print(matrix);
+        rotate(matrix);
+        print(matrix);
+    }
+
+/////////////////////////////////////////////////////////////////////////////
+
     // version: 高频题班
 //方法一
 

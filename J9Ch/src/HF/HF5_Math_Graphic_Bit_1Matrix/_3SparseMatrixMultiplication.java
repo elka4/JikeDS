@@ -2,6 +2,7 @@ package HF.HF5_Math_Graphic_Bit_1Matrix;
 
 import java.util.*;
 
+//  Sparse Matrix Multiplication
 public class _3SparseMatrixMultiplication {
 
 
@@ -25,9 +26,11 @@ public class _3SparseMatrixMultiplication {
                         C[i][l] += A[i][j] * B[j][l];
         return C;
     }
+
 //////////////////////////////////////////////////////////////////////
+
     // version: 高频题班
-//常规做法
+    //常规做法
     /**
      * @param A a sparse matrix
      * @param B a sparse matrix
@@ -119,4 +122,36 @@ public class _3SparseMatrixMultiplication {
         }
         return C;
     }
+
+////////////////////////////////////////////////////////////////////
+
+
 }
+
+/*
+Given two Sparse Matrix A and B, return the result of AB.
+
+You may assume that A's column number is equal to B's row number.
+
+Have you met this question in a real interview? Yes
+Example
+A = [
+  [ 1, 0, 0],
+  [-1, 0, 3]
+]
+
+B = [
+  [ 7, 0, 0 ],
+  [ 0, 0, 0 ],
+  [ 0, 0, 1 ]
+]
+
+
+     |  1 0 0 |   | 7 0 0 |   |  7 0 0 |
+AB = | -1 0 3 | x | 0 0 0 | = | -7 0 3 |
+                  | 0 0 1 |
+ */
+
+/*
+
+ */

@@ -1,4 +1,4 @@
-package bit;
+package HF.HF_extra;
 
 public class _02AB_Problem {
     /*

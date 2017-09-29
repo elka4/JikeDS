@@ -6,6 +6,7 @@ package Bit106.L06;
  */
 public class QuickSort {
     public static void sort(int[] array) {
+
         quicksort(array, 0, array.length - 1);
     }
 
@@ -13,10 +14,15 @@ public class QuickSort {
         if (left >= right) {
             return;
         }
-        int pivot = array[(left + right)/2]; //you can also define a random index here
+
+        //you can also define a random index here
+        int pivot = array[(left + right)/2];
+
         // partition will return the dividing index
         int index = partition(array, left, right, pivot);
+
         quicksort(array, left, index - 1);
+
         quicksort(array, index, right);
     }
 
