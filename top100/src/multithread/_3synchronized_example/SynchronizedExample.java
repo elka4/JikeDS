@@ -20,9 +20,12 @@ public class SynchronizedExample {
 	public synchronized void bar() {
 		System.out.println("Inside bar");
 	}
+
 	public void foobar() {
 		System.out.println("Inside foobar");
 	}
+
+
 	public static void main(String[] args) throws InterruptedException{
 		final SynchronizedExample s = new SynchronizedExample();
 		

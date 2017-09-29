@@ -1,4 +1,4 @@
-package multithread.motivation;
+package multithread._1motivation;
 
 import java.util.concurrent.Semaphore;
 //Motivation

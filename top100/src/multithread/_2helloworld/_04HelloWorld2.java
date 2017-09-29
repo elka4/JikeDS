@@ -1,4 +1,4 @@
-package multithread.helloworld;
+package multithread._2helloworld;
 
 public class _04HelloWorld2 {
 	public static void main(String[] args) throws InterruptedException{

@@ -12,11 +12,13 @@ public class StopThread {
 				int i = 0;
 				while (!stopRequested) {
 					//syso
-					//Thread.sleep(1000);
+                    System.out.println("i: " + i);
+                    //Thread.sleep(1000);
 					i++;
 				}
 			}
 		});
+
 		backgroundThread.start();
 		TimeUnit.SECONDS.sleep(1);
 		stopRequested = true;

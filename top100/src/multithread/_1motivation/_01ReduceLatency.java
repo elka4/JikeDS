@@ -1,4 +1,4 @@
-package multithread.motivation;
+package multithread._1motivation;
 
 
 public class _01ReduceLatency {

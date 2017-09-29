@@ -60,7 +60,7 @@ public class Scheduler {
 		}
 	}
 	
-	public void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException {
 		Scheduler scheduler = new Scheduler();
 		scheduler.schedule(new Task(), 1000000l);
 		scheduler.schedule(new Task(), 1000l);
