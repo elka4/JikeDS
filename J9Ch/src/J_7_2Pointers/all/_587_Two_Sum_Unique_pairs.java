@@ -21,25 +21,34 @@ public class _587_Two_Sum_Unique_pairs {
         Arrays.sort(nums);
         int cnt = 0;
         int left = 0, right = nums.length - 1;
+
         while (left < right) {
             int v = nums[left] + nums[right];
             if (v == target) {
                 cnt ++;
                 left ++;
                 right --;
+
                 while (left < right && nums[right] == nums[right + 1])
                     right --;
+
                 while (left < right && nums[left] == nums[left - 1])
                     left ++;
+
             } else if (v > target) {
                 right --;
             } else {
                 left ++;
             }
         }
+
         return cnt;
     }
 
+//////////////////////////////////////////////////////////////////////////////////
 
 
 }
+/*
+Given an array of integers, find how many unique pairs in the array such that their sum is equal to a specific target number. Please return the number of pairs.
+ */

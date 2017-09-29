@@ -31,6 +31,8 @@ public class _625_Partition_Array_II {
         }
     }
 
+////////////////////////////////////////////////////////////////////////
+
     public void sortColors(int[] a) {
         if (a == null || a.length <= 1) {
             return;
@@ -107,6 +109,11 @@ public class _625_Partition_Array_II {
         }
     }
 
+////////////////////////////////////////////////////////////////////////
+
+
+}
+
 /*
 Partition an unsorted integer array into three parts:
 
@@ -127,5 +134,3 @@ Change to [1,1,2,3,2,3,4,4].
 
 ([1,1,2,2,3,3,4,4] is also a correct answer, but [1,2,1,2,3,3,4,4] is not)
  */
-
-}

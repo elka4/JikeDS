@@ -53,15 +53,8 @@ public class _31_Partition_Array {
                 swap(nums, left++, right--);
             }
 
-/*            if (left <= right) {
-                int temp = nums[left];
-                nums[left] = nums[right];
-                nums[right] = temp;
-
-                left++;
-                right--;
-            }*/
         }
+
         return left;
     }
 
