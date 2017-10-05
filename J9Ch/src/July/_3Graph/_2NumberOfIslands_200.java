@@ -195,6 +195,7 @@ public class _2NumberOfIslands_200 {
      * @return an integer
      */
     private int m, n;
+
     public void dfs(boolean[][] grid, int i, int j) {
         if (i < 0 || i >= m || j < 0 || j >= n) return;
 
@@ -215,6 +216,7 @@ public class _2NumberOfIslands_200 {
         if (n == 0) return 0;
 
         int ans = 0;
+
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (!grid[i][j]) continue;

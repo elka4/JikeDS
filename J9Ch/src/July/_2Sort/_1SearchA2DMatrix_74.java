@@ -78,9 +78,12 @@ public class _1SearchA2DMatrix_74 {
         int column = matrix[0].length;
 
         int start = 0, end = row * column - 1;
+
         while(start <= end){
             int mid = start + (end - start) / 2;
+
             int number = matrix[mid / column][mid % column];
+
             if(number == target){
                 return true;
             }else if(number > target){

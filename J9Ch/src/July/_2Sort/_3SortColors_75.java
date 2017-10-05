@@ -9,6 +9,7 @@ public class _3SortColors_75 {
         int pl = 0;//have only 0 on its left
         int pr = a.length - 1;//have only 2 on its right
         int i = 0;//have both 0 and 1 on its left
+
         while (i <= pr) {
             if (a[i] == 0) {
                 swap(a, pl, i);

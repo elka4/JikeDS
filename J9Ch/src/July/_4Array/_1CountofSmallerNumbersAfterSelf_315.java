@@ -1,14 +1,13 @@
 package July._4Array;
 
+import org.junit.Test;
+
 import java.util.*;
 
+//  Count of Smaller Numbers After Self
 public class _1CountofSmallerNumbersAfterSelf_315 {
     //jiuzhang
-    /**
-     * @param A: An integer array
-     * @return: The number of element in the array that
-     *          are smaller that the given integer
-     */
+
     class SegmentTreeNode {
         public int start, end;
         public int count;
@@ -20,7 +19,9 @@ public class _1CountofSmallerNumbersAfterSelf_315 {
             this.left = this.right = null;
         }
     }
+
     SegmentTreeNode root;
+
     public SegmentTreeNode build(int start, int end) {
         // write your code here
         if(start > end) {  // check core case
@@ -38,6 +39,7 @@ public class _1CountofSmallerNumbersAfterSelf_315 {
         }
         return root;
     }
+
     public int querySegmentTree(SegmentTreeNode root, int start, int end) {
         // write your code here
         if(start == root.start && root.end == end) { // 相等
@@ -66,6 +68,7 @@ public class _1CountofSmallerNumbersAfterSelf_315 {
         // else 就是不相交
         return leftcount + rightcount;
     }
+
     public void modifySegmentTree(SegmentTreeNode root, int index, int value) {
         // write your code here
         if(root.start == index && root.end == index) { // 查找到
@@ -85,14 +88,24 @@ public class _1CountofSmallerNumbersAfterSelf_315 {
         //更新
         root.count = root.left.count + root.right.count;
     }
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * @param A: An integer array
+     * @return: The number of element in the array that
+     *          are smaller that the given integer
+     */
+
     public ArrayList<Integer> countOfSmallerNumber(int[] A, int[] queries) {
         // write your code here
         root = build(0, 10000);
         ArrayList<Integer> ans = new ArrayList<Integer>();
         int res;
+
         for(int i = 0; i < A.length; i++) {
             modifySegmentTree(root, A[i], 1);
         }
+
         for(int i = 0; i < queries.length; i++) {
             res = 0;
             if(queries[i] > 0)
@@ -101,4 +114,37 @@ public class _1CountofSmallerNumbersAfterSelf_315 {
         }
         return ans;
     }
+
+    @Test
+    public void test02(){
+        int[] A = new int[]{1,2,7,8,5};
+        int[] queries = new int[]{1,8,5};
+        System.out.println(countOfSmallerNumber(A, queries));
+        // [0, 4, 2]
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 }
+/*
+给定一个整数数组 （下标由 0 到 n-1，其中 n 表示数组的规模，数值范围由 0 到 10000），以及一个 查询列表。
+对于每一个查询，将会给你一个整数，请你返回该数组中小于给定整数的元素的数量。
+
+ 注意事项
+
+在做此题前，最好先完成 线段树的构造 and 线段树查询 II 这两道题目。
+
+样例
+对于数组 [1,2,7,8,5] ，查询 [1,8,5]，返回 [0,4,2]
+
+
+
+ */

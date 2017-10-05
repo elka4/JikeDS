@@ -118,8 +118,8 @@ Return true because "lintcode" can be break as "lint code".
         //wordBreak(String s, Set<String> wordDict)
         String s = "lintcode";
         String[] arr = {"code", "lint"};
-        Set<String> wordDict =  new HashSet<>();
-        wordDict.addAll(Arrays.asList(arr));
+        Set<String> wordDict =  new HashSet<>(Arrays.asList(arr));
+//        wordDict.addAll(Arrays.asList(arr));
         //System.out.println(Arrays.asList(arr).getClass());
         System.out.println(wordBreak3(s, wordDict));
     }
@@ -164,6 +164,20 @@ Return true because "lintcode" can be break as "lint code".
         System.out.println(wordBreak4(s, wordDict));
     }
 
+//////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////////////////////
 
 }
+/*
+给出一个字符串s和一个词典，判断字符串s是否可以被空格切分成一个或多个出现在字典中的单词。
+
+样例
+给出
+
+s = "lintcode"
+
+dict = ["lint","code"]
+
+返回 true 因为"lintcode"可以被空格切分成"lint code"
+ */
