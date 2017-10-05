@@ -68,3 +68,15 @@ public class _41_Maximum_Subarray {
         }
     }
 }
+/*
+Maximum Subarray
+Given an array of integers, find a contiguous subarray which has the largest sum.
+
+ Notice
+
+The subarray should contain at least one number.
+
+Have you met this question in a real interview? Yes
+Example
+Given the array [−2,2,−3,4,−1,2,1,−5,3], the contiguous subarray [4,−1,2,1] has the largest sum = 6.
+ */
