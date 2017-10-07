@@ -24,8 +24,10 @@ public class _3BurstBalloons_312 {
 
         for (int k = left; k <= right; ++k) {
             int midValue =  arr[left - 1] * arr[k] * arr[right + 1];
+
             int leftValue = search(arr, dp, visit, left, k - 1);
             int rightValue = search(arr, dp, visit, k + 1, right);
+
             res = Math.max(res, leftValue + midValue + rightValue);
         }
 
@@ -33,6 +35,19 @@ public class _3BurstBalloons_312 {
         dp[left][right] = res;
         return res;
     }
+
+//////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////////
+
+
 }
 /*死胡同:容易想到的一个思路从小往大,枚举第一次在哪吹爆气球?
 • 记忆化搜索的思路,从大到小,先考虑最后的0-n-1 合并的总价值 • State:

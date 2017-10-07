@@ -26,14 +26,20 @@ public class SegmentTreeBuildII {
         if (start == end) {
             return new SegmentTreeNode(start, end, A[start]);
         }
+
         SegmentTreeNode node = new SegmentTreeNode(start, end, A[start]);
+
         int mid = (start + end) / 2;
+
         node.left = this.buildTree(start, mid, A);
         node.right = this.buildTree(mid + 1, end, A);
+
         if (node.left != null && node.left.max > node.max)
             node.max = node.left.max;
+
         if (node.right != null && node.right.max > node.max)
             node.max = node.right.max;
+
         return node;
     }
 }

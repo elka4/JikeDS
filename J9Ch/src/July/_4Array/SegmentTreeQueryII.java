@@ -28,6 +28,7 @@ public class SegmentTreeQueryII {
 
         int mid = (root.start + root.end)/2;
         int leftsum = 0, rightsum = 0;
+
         // 左子区
         if(start <= mid) {
             if( mid < end) { // 分裂
@@ -36,6 +37,7 @@ public class SegmentTreeQueryII {
                 leftsum = query(root.left, start, end);
             }
         }
+
         // 右子区
         if(mid < end) { // 分裂 3
             if(start <= mid) {
@@ -44,6 +46,7 @@ public class SegmentTreeQueryII {
                 rightsum = query(root.right, start, end);
             }
         }
+
         // else 就是不相交
         return leftsum + rightsum;
     }

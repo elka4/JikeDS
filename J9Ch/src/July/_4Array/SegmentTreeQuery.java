@@ -28,6 +28,7 @@ public class SegmentTreeQuery {
 
         int mid = (root.start + root.end)/2;
         int leftmax = Integer.MIN_VALUE, rightmax = Integer.MIN_VALUE;
+
         // 左子区
         if(start <= mid) {
             if( mid < end) { // 分裂
@@ -37,6 +38,7 @@ public class SegmentTreeQuery {
             }
             // leftmax = query(root.left, start, Math.min(mid,end));
         }
+
         // 右子区
         if(mid < end) { // 分裂 3
             if(start <= mid) {
@@ -46,6 +48,7 @@ public class SegmentTreeQuery {
             }
             //rightmax = query(root.right, Math.max(mid+1,start), end);
         }
+
         // else 就是不相交
         return Math.max(leftmax, rightmax);
     }

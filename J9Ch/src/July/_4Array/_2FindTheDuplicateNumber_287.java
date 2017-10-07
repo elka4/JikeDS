@@ -1,5 +1,7 @@
 package July._4Array;
 
+import org.junit.Test;
+
 public class _2FindTheDuplicateNumber_287 {
     // 二分法
     /**
@@ -34,6 +36,15 @@ public class _2FindTheDuplicateNumber_287 {
         }
         return cnt;
     }
+
+    @Test
+    public void test01(){
+        int[] nums1 = new int[]{5,5,4,3,2,1};
+        int[] nums2 = new int[]{5,4,4,3,2,1};
+        System.out.println(findDuplicate(nums1));
+        System.out.println(findDuplicate(nums2));
+
+    }
 ///////////////////////////////////////////////////////////////////////////////////////////
     // 映射法
     /**
@@ -62,5 +73,16 @@ public class _2FindTheDuplicateNumber_287 {
 ///////////////////////////////////////////////////////////////////////////////////////////
 }
 /*
+Given an array nums containing n + 1 integers where each integer is between 1 and n (inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one.
 
+ 注意事项
+
+You must not modify the array (assume the array is read only).
+You must use only constant, O(1) extra space.
+Your runtime complexity should be less than O(n^2).
+There is only one duplicate number in the array, but it could be repeated more than once.
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+Given nums = [5,5,4,3,2,1] return 5
+Given nums = [5,4,4,3,2,1] return 4
  */
