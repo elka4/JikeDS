@@ -2,11 +2,33 @@ package DP.DP2;
 
 //• 序列+位操作型动态规划
 
+/*
+f[i] = f[i>>1] + (i mod 2)
+f[i] : i的二进制表示中有多少个1
+f[i>>1]: i的二进制表示中去掉最后一位，剩下的1的个数
+(i mod 2): i的二进制表示中最后一位
+
+如果求有多少个0，就用（i + 1） % 2
+ */
 //Counting Bits
 public class _7CountingBits {
+    // 9Ch DP
+    public int[] countBits(int num) {
+        int[] f = new int[num + 1];
+        f[0] = 0;
+
+        for (int i = 1; i <= num; ++i) {
+            f[i] = f[i >> 1] + (i % 2);
+        }
+        return f;
+    }
+
+
+
+/////////////////////////////////////////////////////////////
     //leetcode
     //Three-Line Java Solution
-    public int[] countBits(int num) {
+    public int[] countBits1(int num) {
         int[] f = new int[num + 1];
         for (int i=1; i<=num; i++) f[i] = f[i >> 1] + (i & 1);
         return f;

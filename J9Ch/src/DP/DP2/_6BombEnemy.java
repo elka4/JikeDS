@@ -2,13 +2,144 @@ package DP.DP2;
 
 //• 坐标型动态规划
 
+
+import org.junit.Test;
+
+/*
+Up[i][j]表示（i，j）格放一个炸弹向上能炸死的敌人数
+Up[i][j] = Up[i - 1][j], 如果（i，j）格是空地
+Up[i][j] = Up[i - 1][j] + 1, 如果（i，j）格是敌人
+Up[i][j] = 0, 如果（i，j）格是墙
+
+初始条件：第0行的Up值和格子内容有关
+Up[i][j] = 0, 如果（0， j）格不是敌人
+Up[i][j] = 1, 如果 (0， j）格是敌人
+
+
+ */
 //Bomb Enemy
 public class _6BombEnemy {
+
+    // 9Ch DP
+    public int maxKilledEnemies(char[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+
+        int m = grid.length;
+        int n = grid[0].length;
+        int [][] f  = new int[m][n];
+        int [][] res = new int[m][n];
+//        int i, j;
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                // how many enemies can be killed by a bomb put at grid(i, j)
+                res[i][j] = 0;
+            }
+        }
+
+        // Up
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == 'W') {
+                    f[i][j]  = 0;
+                } else {
+                    f[i][j] = 0;
+                    if (grid[i][j] == 'E') {
+                        f[i][j] = 1;
+                    }
+                    if (i > 0) {
+                        f[i][j] += f[i - 1][j];
+                    }
+                }
+                res[i][j] += f[i][j];
+
+            }
+        }
+
+        // Down
+        for (int i = m - 1; i >= 0; --i) {
+            for (int j = 0; j < n; ++j) {
+                if (grid[i][j] == 'W') {
+                    f[i][j]  = 0;
+                } else {
+                    f[i][j] = 0;
+                    if (grid[i][j] == 'E') {
+                        f[i][j] = 1;
+                    }
+                    if (i + 1 < m) {
+                        f[i][j] += f[i + 1][j];
+                    }
+                }
+                res[i][j] += f[i][j];
+
+            }
+        }
+
+        // left
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (grid[i][j] == 'W') {
+                    f[i][j]  = 0;
+                } else {
+                    f[i][j] = 0;
+                    if (grid[i][j] == 'E') {
+                        f[i][j] = 1;
+                    }
+                    if (j - 1 >= 0) {
+                        f[i][j] += f[i][j - 1];
+                    }
+                }
+                res[i][j] += f[i][j];
+
+            }
+        }
+
+        // right
+        for (int i = 0; i < m; ++i) {
+            for (int j = n - 1; j >= 0; --j) {
+                if (grid[i][j] == 'W') {
+                    f[i][j]  = 0;
+                } else {
+                    f[i][j] = 0;
+                    if (grid[i][j] == 'E') {
+                        f[i][j] = 1;
+                    }
+                    if (j + 1 < n) {
+                        f[i][j] += f[i][j + 1];
+                    }
+                }
+                res[i][j] += f[i][j];
+
+            }
+        }
+
+        int result = 0;
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                if (grid[i][j] == '0') {
+                    if (res[i][j] > result) {
+                        result = res[i][j];
+                    }
+                }
+            }
+        }
+
+        return result;
+    }
+
+    @Test
+    public void test01(){
+        char[][] grid = {{'0', 'E', '0', '0'}, {'E', '0', 'W', 'E'}, {'0', 'E', '0', '0'}};
+        System.out.println(maxKilledEnemies(grid));
+    }
+
+////////////////////////////////////////////////////////////////////////
     /**
      * @param grid Given a 2D grid, each cell is either 'W', 'E' or '0'
      * @return an integer, the maximum enemies you can kill using one bomb
      */
-    public int maxKilledEnemies(char[][] grid) {
+    public int maxKilledEnemies1(char[][] grid) {
         // Write your code here
         int m = grid.length;
         int n = m > 0 ? grid[0].length : 0;
@@ -43,16 +174,16 @@ public class _6BombEnemy {
 
     // 方法二
     /**
-     * @param A Given a 2D grid, each cell is either 'W', 'E' or '0'
+     * @param grid Given a 2D grid, each cell is either 'W', 'E' or '0'
      * @return an integer, the maximum enemies you can kill using one bomb
      */
-    public int maxKilledEnemies2(char[][] A) {
-        if (A == null || A.length == 0 || A[0].length == 0) {
+    public int maxKilledEnemies2(char[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
         }
 
-        int m = A.length;
-        int n = A[0].length;
+        int m = grid.length;
+        int n = grid[0].length;
         int[][] up = new int[m][n];
         int[][] down = new int[m][n];
         int[][] left = new int[m][n];
@@ -62,8 +193,8 @@ public class _6BombEnemy {
         for (i = 0; i < m; ++i) {
             for (j = 0; j < n; ++j) {
                 up[i][j] = 0;
-                if (A[i][j] != 'W') {
-                    if (A[i][j] == 'E') {
+                if (grid[i][j] != 'W') {
+                    if (grid[i][j] == 'E') {
                         up[i][j] = 1;
                     }
 
@@ -77,8 +208,8 @@ public class _6BombEnemy {
         for (i = m - 1; i >= 0; --i) {
             for (j = 0; j < n; ++j) {
                 down[i][j] = 0;
-                if (A[i][j] != 'W') {
-                    if (A[i][j] == 'E') {
+                if (grid[i][j] != 'W') {
+                    if (grid[i][j] == 'E') {
                         down[i][j] = 1;
                     }
 
@@ -92,8 +223,8 @@ public class _6BombEnemy {
         for (i = 0; i < m; ++i) {
             for (j = 0; j < n; ++j) {
                 left[i][j] = 0;
-                if (A[i][j] != 'W') {
-                    if (A[i][j] == 'E') {
+                if (grid[i][j] != 'W') {
+                    if (grid[i][j] == 'E') {
                         left[i][j] = 1;
                     }
 
@@ -107,8 +238,8 @@ public class _6BombEnemy {
         for (i = 0; i < m; ++i) {
             for (j = n - 1; j >= 0; --j) {
                 right[i][j] = 0;
-                if (A[i][j] != 'W') {
-                    if (A[i][j] == 'E') {
+                if (grid[i][j] != 'W') {
+                    if (grid[i][j] == 'E') {
                         right[i][j] = 1;
                     }
 
@@ -122,7 +253,7 @@ public class _6BombEnemy {
         int res = 0;
         for (i = 0; i < m; ++i) {
             for (j = 0; j < n; ++j) {
-                if (A[i][j] == '0') {
+                if (grid[i][j] == '0') {
                     t = up[i][j] + down[i][j] + left[i][j] + right[i][j];
                     if (t > res) {
                         res = t;

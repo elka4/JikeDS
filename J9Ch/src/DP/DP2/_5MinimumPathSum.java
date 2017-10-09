@@ -14,11 +14,61 @@ f[i][j-1]:  从(0, 0)走到格子(i, j-1)的最小路径数字总和
 A[i][j]:    格子（i，j）的数字
 
 初始条件：f[0][0] = A[0][0]
+边界情况：i = 0 或者 j = 0， 则前一步只能有一个方向过来
+
+• f[i][j] = f[i-1][j] + f[i][j-1]
+所以， 计算第i行时，只需要第i行和第i-1行。
+
+空间优化：
+
 
  */
 //Minimum Path Sum
 public class _5MinimumPathSum {
+    // DP
+    public int minPathSum(int[][] A) {
+        if (A == null || A.length == 0 || A[0].length == 0){
+            return 0;
+        }
 
+        int m = A.length;
+        int n = A[0].length;
+        int[][] f = new int[2][n];
+        int old = 1, now = 0;
+        int i, j, t1, t2;
+        for (i = 0; i < m; ++i) {
+            old = now;
+            now = 1 - now;
+            for (j = 0; j < n; ++j) {
+                if (i == 0 && j == 0) {
+                    f[now][j] = A[i][j];
+                    continue;
+                }
+
+                f[now][j] = A[i][j];
+                if (i > 0) {
+                    t1 = f[old][j];
+
+                } else {
+                    t1 = Integer.MAX_VALUE;
+                }
+
+                if (j > 0) {
+                    t2 = f[now][j - 1];
+                } else {
+                    t2 = Integer.MAX_VALUE;
+                }
+
+                if (t1 < t2) {
+                    f[now][j] += t1;
+                } else {
+                    f[now][j] += t2;
+                }
+            }
+        }
+
+        return f[now][n - 1];
+    }
 
 /////////////////////////////////////////////////////////////////////////////
 

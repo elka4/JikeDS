@@ -3,9 +3,15 @@ package DP.DP3;
 //_7BestTimeToBuyAndSellStockIV   01:17:13
 //• 有状态的序列型动态规划
 
+/*
+k次交易
+
+ */
+
 //Best Time To Buy And Sell Stock IV
 public class _7BestTimeToBuyAndSellStockIV {
 
+//////////////////////////////////////////////////////////////////////////////
     // 动态规划专题班版本 Version 1
     private int update(int a, int b, int delta) {
         if (b == Integer.MIN_VALUE) {
@@ -51,11 +57,14 @@ public class _7BestTimeToBuyAndSellStockIV {
         for (i = 1; i <= n; ++i) {
             for (j = 1; j <= 2 * K + 1; j += 2) {
                 f[i][j] = update(f[i][j], f[i-1][j], 0);
-                if (j > 1 && i > 1) f[i][j] = update(f[i][j], f[i - 1][j - 1], prices[i - 1] - prices[i - 2]);
+                if (j > 1 && i > 1) f[i][j] = update(f[i][j],
+                        f[i - 1][j - 1], prices[i - 1] - prices[i - 2]);
             }
 
             for (j = 2; j <= 2 * K; j += 2) {
-                if (i > 1) f[i][j] = update(f[i][j], f[i-1][j], prices[i - 1] - prices[i - 2]);
+                if (i > 1) f[i][j] = update(f[i][j], f[i-1][j],
+                        prices[i - 1] - prices[i - 2]);
+
                 if (j > 1) f[i][j] = update(f[i][j], f[i-1][j-1], 0);
             }
         }
@@ -94,7 +103,9 @@ public class _7BestTimeToBuyAndSellStockIV {
                 return profit;
             }
             int n = prices.length;
+
             int[][] mustsell = new int[n + 1][n + 1];   // mustSell[i][j] 表示前i天，至多进行j次交易，第i天必须sell的最大获益
+
             int[][] globalbest = new int[n + 1][n + 1];  // globalbest[i][j] 表示前i天，至多进行j次交易，第i天可以不sell的最大获益
 
             mustsell[0][0] = globalbest[0][0] = 0;
@@ -194,6 +205,9 @@ public class _7BestTimeToBuyAndSellStockIV {
     }
 //////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////
 }
 /*
 Say you have an array for which the ith element is the price of a given stock on day i.
@@ -207,6 +221,19 @@ You may not engage in multiple transactions at the same time (i.e., you must sel
 Have you met this question in a real interview? Yes
 Example
 Given prices = [4,4,6,1,1,4,2,5], and k = 2, return 6.
+ */
+
+/*
+假设你有一个数组，它的第i个元素是一支给定的股票在第i天的价格。
+
+设计一个算法来找到最大的利润。你最多可以完成 k 笔交易。
+
+ 注意事项
+
+你不可以同时参与多笔交易(你必须在再次购买前出售掉之前的股票)
+
+样例
+给定价格 = [4,4,6,1,1,4,2,5], 且 k = 2, 返回 6.
 
 
  */
