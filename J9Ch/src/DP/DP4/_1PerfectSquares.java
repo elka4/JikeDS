@@ -77,6 +77,25 @@ public class _1PerfectSquares {
         return 3;
     }
 /////////////////////////////////////////////////////////////////////////
+
+    // 9Ch DP class
+    public int numSquares4(int n){
+        int[] f = new int[n + 1];
+        f[0] = 0;
+//        int i, j;
+        for (int i = 0; i <= n; i++) {
+            f[i] = Integer.MAX_VALUE;
+            for (int j = 0; j * j <= i; j++) {
+//                if(f[i - j * j] != Integer.MAX_VALUE && f[i - j * j] + 1 < f[i]){
+                if(f[i - j * j] + 1 < f[i]){
+                    f[i] = f[i - j * j] + 1;
+                }
+
+            }
+        }
+        return f[n];
+    }
+/////////////////////////////////////////////////////////////////////////
 }
 /*
 Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.

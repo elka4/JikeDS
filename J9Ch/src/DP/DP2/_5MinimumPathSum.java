@@ -2,9 +2,27 @@ package DP.DP2;
 
 //• 坐标型动态规划
 
+/*
+
+•   设从(0, 0)走到格子(i, j)的路径的最小数字综合是f[i][j]
+
+f[i][j] = min{f[i-1][j], f[i][j-1]} + A[i][j]
+
+f[i][j]:    从(0, 0)走到格子(i, j)的最小路径数字总和
+f[i-1][j]:  从(0, 0)走到格子(i-1, j)的最小路径数字总和
+f[i][j-1]:  从(0, 0)走到格子(i, j-1)的最小路径数字总和
+A[i][j]:    格子（i，j）的数字
+
+初始条件：f[0][0] = A[0][0]
+
+ */
 //Minimum Path Sum
 public class _5MinimumPathSum {
-    public int minPathSum(int[][] grid) {
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+    public int minPathSum1(int[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
         }

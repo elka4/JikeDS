@@ -2,6 +2,24 @@ package DP.DP2;
 
 //• 序列型动态规划
 
+// 带状态
+
+/*
+f[i][0] = min{f[i-1][1] + cost[i-1][0], f[i-1][2] + cost[i-1][0]}
+
+f[i][0]:                        油漆前i栋房子 并且 房子i - 1是红色的最小花费
+min{f[i-1][1] + cost[i-1][0]:   油漆前i - 1 栋房子 并且 房子i-2是蓝色的最小花费，加上i-1油漆房子i-1的花费
+f[i-1][2] + cost[i-1][0]:       油漆前i - 1 栋房子 并且 房子i-2是绿色的最小花费，加上i-1油漆房子i-1的花费
+
+f[i][0] = min{f[i-1][1] + cost[i-1][0], f[i-1][2] + cost[i-1][0]}
+f[i][1] = min{f[i-1][0] + cost[i-1][1], f[i-1][2] + cost[i-1][1]}
+f[i][2] = min{f[i-1][0] + cost[i-1][2], f[i-1][1] + cost[i-1][2]}
+
+•  初始条件    f[0][0] = f[0][1] = f[0][2] = 0
+
+ */
+
+
 //  Paint House
 public class _2PaintHouse {
 
@@ -77,6 +95,54 @@ public class _2PaintHouse {
         }
         return Math.min(Math.min(lastR,lastG),lastB);
     }
+////////////////////////////////////////////////////////////////////////////
+
+    // 9Ch DP
+
+    public int minCost4(int[][] costs) {
+        int n = costs.length;
+        if (n == 0) {
+            return 0;
+        }
+
+        // n + 1 f[0], .... f[n]
+        int[][] f = new int[n + 1][3];
+        int i, j, k, res;
+        //init
+        f[0][0] = f[0][1] = f[0][2] = 0;
+
+        // 从没有房子到第n个房子
+        for (i = 0; i <= n; ++i) {
+            // j is the color of house i - 1， 也就是前1个房子
+            for (j = 0; j < 3; ++j) {
+                f[i][j] = Integer.MAX_VALUE;
+                // k is the color of house i - 2， 也就是前2个房子
+                for (k = 0; k < 3; ++k) {
+                    // cannot be the same color
+                    if(j == k){
+                        continue;
+                    }
+                     // f[i - 1][k]    前i - 1栋房子并且i - 1染成k的颜色的最小花费，
+                    // costs[i - 1][j] 第i栋房子染成j这个颜色的花费
+                    if (f[i - 1][k] + costs[i - 1][j] < f[i][j]){
+                        f[i][j] = f[i - 1][k] + costs[i - 1][j];
+                    }
+                }
+            }
+        }
+/*        res = f[n][0];
+        if (f[n][1] < res) {
+            res = f[n][1];
+        }
+        if (f[n][2] < res) {
+            res = f[n][2];
+        }
+        return res;*/
+        return Math.min(Math.min(f[n][0],f[n][1]),f[n][2]);
+
+
+    }
+
 ////////////////////////////////////////////////////////////////////////////
 
 }

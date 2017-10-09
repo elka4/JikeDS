@@ -9,6 +9,26 @@ import java.util.Set;
 
 //• 划分性动态规划
 
+/*
+f[i] = f[i-1] | S[i-1]       + f[i-2] | S[i-2]S[i-1]
+
+f[i]:                   数字串S前i个数字解密成字母串的方式数
+f[i-1] | S[i-1]:        数字串S前i-1个数字解密成字母串的方式数
+f[i-2] | S[i-2]S[i-1]:  数字串S前i-2个数字解密成字母串的方式数
+
+设数字串S前i个数字解密成字母串有f[i]种方式
+
+初始条件： f[0] = 1, 即空串有1种方式解密
+
+边界条件：如果i = 1， 只看最后哦一个数字
+
+f[0], f[1], .... f[N]
+所以初始化设为f[N + 1]
+答案是 f[N]
+时间复杂度 O(N), 空间复杂度O(N)
+ */
+
+
 //Decode Ways
 public class _3DecodeWays {
 
@@ -72,6 +92,38 @@ public class _3DecodeWays {
         return f[l];
     }
 
+    // 9Ch DP
+    public int numDecodings22(String ss){
+        char[] s  = ss.toCharArray();
+        int n = s.length;
+        if (n == 0) {
+            return 0;
+        }
+
+        // n + 1
+        int[] f = new int[n + 1];
+        f[0] = 1;
+
+        // first i digits
+        for (int i = 0; i <= n; i++) {
+            f[i] = 0;
+            // last digit
+            int t = s[i - 1] - '0';
+            if (t >= 1 && t <= 9) {
+                f[i] += f[i - 1];
+            }
+
+            // length must be greater than 1
+            if (i >= 2) {
+                // last two digits
+                t = (s[i - 2] - '0') * 10 + (s[i - 1] - '0');
+                if (t >= 10 && t <= 26) {
+                    f[i] += f[i - 2];
+                }
+            }
+        }
+        return f[n];
+    }
 
 
 /////////////////////////////////////////////////////////
@@ -142,11 +194,13 @@ public class _3DecodeWays {
 
         int numWays = 0;
         if ((start + 1 <= str. length()) &&
-                symbols.contains(str.substring(start, start + 1)) && symbols.contains(str.substring(start, start + 1)))
+                symbols.contains(str.substring(start, start + 1))
+                && symbols.contains(str.substring(start, start + 1)))
             numWays += numDec(str, start + 1, map, symbols);
 
         if ((start + 2 <= str. length()) &&
-                symbols.contains(str.substring(start, start + 2)) && symbols.contains(str.substring(start, start + 2)))
+                symbols.contains(str.substring(start, start + 2))
+                && symbols.contains(str.substring(start, start + 2)))
             numWays += numDec(str, start + 2, map, symbols);
 
         map.put(start, numWays);
