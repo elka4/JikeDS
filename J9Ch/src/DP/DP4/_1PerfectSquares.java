@@ -4,8 +4,50 @@ import java.util.Arrays;
 
 //• 划分型动态规划
 
+/*
+• 设f[i]表示i最少被分成几个完全平方数之和
+
+f[i] = min 1<=j*j<=i {f[i-j*j] + 1}
+f[i]        i最少被分成几个完全平方数之和
+1<=j*j<=i 最后一个完全平方数是j*j
+f[i-j*j]   i-j*j 最少被分成几个完全平方数之和
+
+• 设f[i]表示i最少被分成几个完全平方数之和
+• f[i] = min1<=j*j<=i{f[i-j2] + 1}
+• 初始条件:0被分成0个完全平方数之和 – f[0] = 0
+
+
+• 初始化f[0]
+• 计算f[1], ..., f[N]
+• 答案是f[N]
+
+
+
+
+ */
 //Perfect Squares
 public class _1PerfectSquares {
+
+    // 9Ch DP class
+    public int numSquares4(int n){
+        int[] f = new int[n + 1];
+        f[0] = 0;
+//        int i, j;
+        for (int i = 0; i <= n; i++) {
+            f[i] = Integer.MAX_VALUE;
+            for (int j = 0; j * j <= i; j++) {
+//                if(f[i - j * j] != Integer.MAX_VALUE && f[i - j * j] + 1 < f[i]){
+                if(f[i - j * j] + 1 < f[i]){
+                    f[i] = f[i - j * j] + 1;
+                }
+
+            }
+        }
+        return f[n];
+    }
+
+/////////////////////////////////////////////////////////////////////////
+
     // version 0 DP
     /**
      * @param n a positive integer
@@ -78,24 +120,7 @@ public class _1PerfectSquares {
     }
 /////////////////////////////////////////////////////////////////////////
 
-    // 9Ch DP class
-    public int numSquares4(int n){
-        int[] f = new int[n + 1];
-        f[0] = 0;
-//        int i, j;
-        for (int i = 0; i <= n; i++) {
-            f[i] = Integer.MAX_VALUE;
-            for (int j = 0; j * j <= i; j++) {
-//                if(f[i - j * j] != Integer.MAX_VALUE && f[i - j * j] + 1 < f[i]){
-                if(f[i - j * j] + 1 < f[i]){
-                    f[i] = f[i - j * j] + 1;
-                }
 
-            }
-        }
-        return f[n];
-    }
-/////////////////////////////////////////////////////////////////////////
 }
 /*
 Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.

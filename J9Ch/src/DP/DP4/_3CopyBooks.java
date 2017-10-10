@@ -2,6 +2,15 @@ package DP.DP4;
 
 //• 划分型动态规划
 
+/*
+• 设f[k][i]为k个抄写员最少需要多少时间抄完前i本书
+f[k][i] = minj=0,...,i{max{f[k-1][j], A[j] +... +A[i-1]}}
+
+f[k][i]: k个抄写员最少需要多少时间抄完前i本书
+f[k-1][j]: k-1个抄写员最少需要多少时间抄完前j本书
+A[j] +... +A[i-1]: 第k个抄写员抄完第j至第i-1 本书的时间
+ */
+
 //Copy Books
 public class _3CopyBooks {
     // version 1: Binary Search

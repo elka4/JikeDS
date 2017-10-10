@@ -5,6 +5,22 @@ package DP.DP3;
 
 /*
 k次交易
+• f[i][j]:前i天(第i-1天)结束后，处在阶段j,最大获利
+
+阶段1, 3, 5, ...., 2K+1 --- 手中无股票状态:
+f[i][j] = max{f[i-1][j], f[i-1][j-1] + Pi-1 – Pi-2}
+
+f[i-1][j]:                 昨天没有持有股票
+f[i-1][j-1] + Pi-1 – Pi-2: 昨天持有股票，今天卖出清仓
+
+
+
+阶段2, 4, ...., 2K --- 手中有股票状态:
+f[i][j] = max{f[i-1][j] + Pi-1 – Pi-2, f[i-1][j-1], f[i-1][j-2] + Pi-1 – Pi-2}
+
+f[i-1][j] + Pi-1 – Pi-2:   昨天就持有股票，继续持有并获利
+f[i-1][j-1]:               昨天没有持有股票，今天买入
+f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出并立即买入
 
  */
 
@@ -57,13 +73,13 @@ public class _7BestTimeToBuyAndSellStockIV {
         for (i = 1; i <= n; ++i) {
             for (j = 1; j <= 2 * K + 1; j += 2) {
                 f[i][j] = update(f[i][j], f[i-1][j], 0);
-                if (j > 1 && i > 1) f[i][j] = update(f[i][j],
-                        f[i - 1][j - 1], prices[i - 1] - prices[i - 2]);
+                if (j > 1 && i > 1) f[i][j] =
+                        update(f[i][j], f[i - 1][j - 1], prices[i - 1] - prices[i - 2]);
             }
 
             for (j = 2; j <= 2 * K; j += 2) {
-                if (i > 1) f[i][j] = update(f[i][j], f[i-1][j],
-                        prices[i - 1] - prices[i - 2]);
+                if (i > 1) f[i][j] =
+                        update(f[i][j], f[i-1][j], prices[i - 1] - prices[i - 2]);
 
                 if (j > 1) f[i][j] = update(f[i][j], f[i-1][j-1], 0);
             }
@@ -104,9 +120,11 @@ public class _7BestTimeToBuyAndSellStockIV {
             }
             int n = prices.length;
 
-            int[][] mustsell = new int[n + 1][n + 1];   // mustSell[i][j] 表示前i天，至多进行j次交易，第i天必须sell的最大获益
+            // mustSell[i][j] 表示前i天，至多进行j次交易，第i天必须sell的最大获益
+            int[][] mustsell = new int[n + 1][n + 1];
 
-            int[][] globalbest = new int[n + 1][n + 1];  // globalbest[i][j] 表示前i天，至多进行j次交易，第i天可以不sell的最大获益
+            // globalbest[i][j] 表示前i天，至多进行j次交易，第i天可以不sell的最大获益
+            int[][] globalbest = new int[n + 1][n + 1];
 
             mustsell[0][0] = globalbest[0][0] = 0;
             for (int i = 1; i <= k; i++) {

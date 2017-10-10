@@ -16,15 +16,18 @@ public class _3HouseRobberII {
         if (nums.length == 1) {
             return nums[0];
         }
-        return Math.max(robber1(nums, 0, nums.length - 2), robber1(nums, 1, nums.length - 1));
+        return Math.max(robber1(nums, 0, nums.length - 2),
+                        robber1(nums, 1, nums.length - 1));
     }
 
     public int robber1(int[] nums, int st, int ed) {
         int []res = new int[2];
+
         if(st == ed)
             return nums[ed];
         if(st+1 == ed)
             return Math.max(nums[st], nums[ed]);
+
         res[st%2] = nums[st];
         res[(st+1)%2] = Math.max(nums[st], nums[st+1]);
 
@@ -41,7 +44,8 @@ public class _3HouseRobberII {
     // Simple AC solution in Java in O(n) with explanation
     public int rob(int[] nums) {
         if (nums.length == 1) return nums[0];
-        return Math.max(rob(nums, 0, nums.length - 2), rob(nums, 1, nums.length - 1));
+        return Math.max(rob(nums, 0, nums.length - 2),
+                    rob(nums, 1, nums.length - 1));
     }
 
     private int rob(int[] num, int lo, int hi) {
@@ -56,7 +60,9 @@ public class _3HouseRobberII {
 ////////////////////////////////////////////////////////////////////
 
     public int rob3(int[] nums) {
-        return Math.max(rob3(nums, 0, nums.length-2), rob3(nums, 1, nums.length-1));
+
+        return Math.max(rob3(nums, 0, nums.length-2),
+                rob3(nums, 1, nums.length-1));
     }
 
     public int rob3(int[] nums, int lo, int hi) {

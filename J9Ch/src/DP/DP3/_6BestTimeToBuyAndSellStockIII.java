@@ -24,7 +24,6 @@ f[i-1][j-1]:               昨天没有持有股票，今天买入
 f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出并立即买入
 
 
-
  */
 
 
@@ -46,13 +45,16 @@ public class _6BestTimeToBuyAndSellStockIII {
         f[0][2] = f[0][3] = f[0][4] = f[0][5] = Integer.MIN_VALUE;
 
         for (i = 1; i <= n; i++) {
+            // 1, 3, 5
             for (j = 1; j <= 5 ; j += 2) {
                 f[i][j] = f[i - 1][j];
+                // 判断j i，为了之后f[i - 1][j - 1] index 不越界
                 if (j > 1 && i > 1 && f[i - 1][j - 1] != Integer.MIN_VALUE) {
                     f[i][j] = Math.max(f[i][j], f[i - 1][j - 1] + prices[i - 1] - prices[i - 2]);
                 }
             }
 
+            // 2, 4
             for (j = 2; j <= 5; j += 2) {
                 //max
                 f[i][j] = f[i - 1][j - 1];
@@ -60,7 +62,7 @@ public class _6BestTimeToBuyAndSellStockIII {
                     f[i][j] = Math.max(f[i][j], f[i - 1][j] + prices[i - 1] - prices[i - 2]);
                 }
 
-                if (i > 2 && i > 1 && f[i - 1][j - 2] != Integer.MIN_VALUE) {
+                if (j > 2 && i > 1 && f[i - 1][j - 2] != Integer.MIN_VALUE) {
                     f[i][j] = Math.max(f[i][j], f[i - 1][j - 2] + prices[i - 1] - prices[i - 2]);
                 }
             }

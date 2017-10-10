@@ -2,6 +2,10 @@ package DP.DP3;
 
 // 一次交易
 
+/*
+每次用i update min，然后用新的min和i去update profit
+ */
+
 //Best Time To Buy And Sell Stock
 public class _4BestTimeToBuyAndSellStock {
     public int maxProfit(int[] prices) {
@@ -11,6 +15,7 @@ public class _4BestTimeToBuyAndSellStock {
 
         int min = Integer.MAX_VALUE;  //just remember the smallest price
         int profit = 0;
+
         for (int i : prices) {
             min = i < min ? i : min;
             profit = (i - min) > profit ? i - min : profit;
