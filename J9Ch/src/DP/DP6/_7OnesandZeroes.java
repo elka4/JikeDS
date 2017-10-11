@@ -1,8 +1,37 @@
 package DP.DP6;
 //双序列型动态规划
 
-//Ones and Zeroes
+/*
+• 题意:
+• 给定T个01串S0, S2, ..., ST-1
+• 现有m个0，n个1
+• 问最多能组成多少个给定01串 • 每个串最多组成一次
+• 例子:
+• 输入:["10", "0001", "111001", "1", "0”], m = 5, n = 3 • 输出:4 (“10”, “0001”, “1”, “0”)
+
+• 设f[i][j][k]为前i个01串最多能有多少个被j个0和k个1组成
+• 设Si中有ai个0， bi个1
+f[i][j][k] = max{f[i-1][j][k], f[i-1][j-ai-1][k-bi-1] + 1| j>=ai-1 AND k>=bi-1}
+
+f[i][j][k]                  前i个01串最多能有多 少个被j个0和k个1组成
+
+f[i-1][j][k]                前i-1个01串最多能有多少 个被j个0和k个1组成
+
+f[i-1][j-ai-1][k-bi-1] + 1 前i-1个01串最多能有多少 个被j-ai-1个0和k-bi-1个1组 成，再加上Si-1
+
+
+• 设f[i][j][k]为前i个01串最多能有多少个被j个0和k个1组成
+• 设Si中有ai个0， bi个1
+• f[i][j][k] = max{f[i-1][j][k], f[i-1][j-ai-1][k-bi-1] + 1| j>=ai-1 AND k>=bi-1}
+• 初始条件:f[0][0~m][0~n] = 0
+– 无论有多少0和1，前0个01串中最多能组成0个
+• 边界情况: f[i-1][j-ai-1][k-bi-1] +1必须j>=ai-1 AND k>=bi-1
+ */
+
+// Ones and Zeroes
 public class _7OnesandZeroes {
+
+///////////////////////////////////////////////////////////////////////
     //方法一 未进行空间复杂度优化：
     public int findMaxForm(String[] strs, int m, int n) {
         int[][][] dp = new int[strs.length + 1][m + 1][n + 1];
@@ -237,7 +266,8 @@ Input: Array = {"10", "0", "1"}, m = 1, n = 1
 Output: 2
 
 Explanation: You could form "10", but then you'd have nothing left. Better form "0" and "1".
+ */
 
-
+/*
 
  */

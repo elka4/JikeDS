@@ -3,8 +3,20 @@ package DP.DP6;
 import java.util.TreeSet;
 //双序列型动态规划
 
-//Wildcard Matching
+
+/*
+• 设f[i][j]为A前i个字符A[0..i-1]和B前j个字符B[0..j-1]能否匹配
+
+f[i][j] = f[i-1][j-1]，如果B[j-1]=‘?’或者A[i-1]=B[j-1]
+
+f[i][j] = f[i-1][j] OR f[i][j-1]，如果B[j-1]=‘*’
+ */
+
+
+//  Wildcard Matching
 public class _6WildcardMatching {
+
+//////////////////////////////////////////////////////////////////////////
     // Time: O(|s||p|*log|s|), Space: O(|s|)
     // Time can also optimize to O(|s||p|)
     public boolean isMatch(String s, String p) {
@@ -48,6 +60,7 @@ public class _6WildcardMatching {
 
 //////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////////////////////
 }
 /*
 

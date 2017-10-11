@@ -21,10 +21,41 @@ a[i] * a[k] * a[j]: 最后扎破k号气球 获得的金币数
 
 //  Burst Balloons
 public class _6BurstBalloons {
+    // 9CH DP
+    public int maxCoins(int[] B) {
+        int n = B.length;
+        if (n == 0) {
+            return 0;
+        }
+
+        int i, j, k, len;
+        int[] A = new int[n + 2];
+        A[0] = A[n + 1] = 1;
+        for (i = 1; i <= n; i++) {
+            A[i] = B[i - 1];
+        }
+
+        // A[0] = 1, A[1], ...., A[n], A[n + 1] = 1
+        int[][] f = new int[n + 2][n + 2];
+        for (i = 0; i < n + 1; i++) {
+            f[i][i + 1] = 0;
+        }
+
+        for (len = 3; len <= n + 2; len++) {
+            for (i = 0; i <= n - len + 2; i++) {
+                j = i + len - 1;
+                f[i][j] = 0;
+                for (k = i + 1; k < j; k++) {
+                    f[i][j] = Math.max(f[i][j], f[i][k] + f[k][j] + A[i] * A[k] * A[j]);
+                }
+            }
+        }
+        return f[0][n + 1];
+    }
 
 ///////////////////////////////////////////////////////////////////////
     //记忆化
-    public int maxCoins(int[] nums) {
+    public int maxCoins1(int[] nums) {
         int n = nums.length;
         int [][]dp = new int [n+2][n+2];
         int [][]visit = new int[n+2][n+2];

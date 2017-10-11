@@ -38,7 +38,7 @@ public class _4CoinsInALineIII {
         for (len = 2; len <= n; len++) {
             for (i = 0; i <= n - len; i++) {
                 j = i + len - 1;
-                f[i][j] = Math.max(A[i] - f[i + 1][j], A[j] -f[i][j - 1]);
+                f[i][j] = Math.max(A[i] - f[i + 1][j], A[j] - f[i][j - 1]);
             }
         }
         return f[0][n - 1] >= 0;

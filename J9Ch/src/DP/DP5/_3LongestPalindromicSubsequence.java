@@ -62,6 +62,7 @@ public class _3LongestPalindromicSubsequence {
         }
 
         int len;
+        // 按照区间长度计算
         for (len = 3; len <= n; len++) {
             // -----len-------
             // n - len ----- n - 1

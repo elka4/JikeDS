@@ -1,6 +1,20 @@
 package DP.DP6;
 //双序列型动态规划
 
+/*
+• 设f[i][j]为A前i个字符A[0..i-1]和B前j个字符B[0..j-1]能否匹配
+
+f[i][j] = f[i-1][j-1]，如果B[j-1]=‘.’或者A[i-1]=B[j-1]
+
+f[i][j] = f[i][j-2] OR (f[i-1][j] AND (B[j-2]=‘.’ OR B[j-2]=A[i-1]))，如果B[j-1]=‘*’
+
+• 设f[i][j]为A前i个字符A[0..i-1]和B前j个字符B[0..j-1]能否匹配
+• 空串和空正则表达式匹配:f[0][0] = TRUE • 空的正则表达式不能匹配长度>0的串
+– f[1][0] = ... = f[m][0] = FALSE
+• 注意:f[0][1..n]也用动态规划计算，但是因为没有A[-1]，所以只能用第 二种情况中的f[i][j-2]
+
+ */
+
 //Regular Expression Matching
 public class _5RegularExpressionMatching {
     public boolean isMatch(String s, String p) {
