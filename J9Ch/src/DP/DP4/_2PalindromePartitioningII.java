@@ -44,6 +44,7 @@ public class _2PalindromePartitioningII {
         }
 
         //generate palindrome
+        // t 是中心点，枚举中心点t
         for (t = 0; t < n; t++) {
             // odd length
             i = j = t;

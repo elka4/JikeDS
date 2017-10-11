@@ -1,9 +1,74 @@
 package DP.DP4;
 
-//• 区间型动态规划
+//• 博弈型
 
+/*
+•  f[i]表示面对i个狮子，是否限售必胜(f[i] = TRUE / FALSE)
+
+
+f[i] = f[i-1] == FALSE OR f[i-2] == FALSE
+ */
 //Coins in A Line
 public class _4CoinsinALine {
+
+    // 9Ch DP
+    public boolean firstWillWin(int n) {
+        if (n == 0){
+            return false;
+        }
+
+        if (n <= 2) {
+            return  true;
+        }
+
+        boolean[] f = new boolean[n + 1];
+        f[0] = false;
+        f[1] = f[2] = true;
+        for (int i = 3; i <= n ; i++) {
+            /*
+            f[i - 1] == false 对手上一步拿1个石头必败
+            f[i - 2] == false 对手上一步拿2个石头必败
+            以上情况下我必胜
+
+             */
+            f[i] = (f[i - 1] == false) || (f[i - 2] == false);
+        }
+        return f[n];
+
+//        return n % 3 != 0;
+
+    }
+
+
+/////////////////////////////////////////////////////////
+
+    // 9Ch DP 更好理解的版本
+    public boolean firstWillWin2(int n) {
+        if (n == 0){
+            return false;
+        }
+
+        if (n <= 2) {
+            return  true;
+        }
+
+        boolean[] f = new boolean[n + 1];
+        f[0] = false;
+        f[1] = f[2] = true;
+        for (int i = 3; i <= n ; i++) {
+
+            if (f[i - 1] == false ||f[i - 2] == false){
+                f[i] = true;
+            };
+        }
+        return f[n];
+
+//        return n % 3 != 0;
+
+    }
+
+//////////////////////////////////////////////////////////////////////
+
     // 方法一
     public class Solution {
         /**
@@ -126,4 +191,22 @@ n = 4, return true.
 n = 5, return true.
 
 
+ */
+
+/*
+有 n 个硬币排成一条线。两个参赛者轮流从右边依次拿走 1 或 2 个硬币，直到没有硬币为止。拿到最后一枚硬币的人获胜。
+
+请判定 第一个玩家 是输还是赢？
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+n = 1, 返回 true.
+
+n = 2, 返回 true.
+
+n = 3, 返回 false.
+
+n = 4, 返回 true.
+
+n = 5, 返回 true.
  */

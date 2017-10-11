@@ -1,5 +1,40 @@
 package DP.DP5;
 
+/*
+
+ */
+
+/*
+Backpack II:
+http://www.lintcode.com/en/problem/backpack-ii/#
+
+题中加入了value元素，基本没有变化。dp[i][j] 为前i个，组成size <= j的最大value值，所以通项改为
+dp[i][j] = max(dp[i-1][j] + dp[i-1][j-A[i]] + V[i])
+
+int backPackII(int m, vector<int> A, vector<int> V) {
+        // write your code here
+        if(m <= 0 || A.empty() || A.size() != V.size()) return 0;
+        int n = A.size();
+        vector<vector<int>> dp(n+1, vector<int>(m+1, 0));
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=m; j++){
+                if(j < A[i-1]){
+                    dp[i][j] = dp[i-1][j];
+                }else{
+                    dp[i][j] = max(dp[i-1][j], dp[i-1][j-A[i-1]] + V[i-1]);
+                }
+            }
+        }
+        return dp[n][m];
+    }
+
+作者：stepsma
+链接：http://www.jianshu.com/p/7f192e75d734
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+ */
+
+
 //Backpack II
 public class _1BackpackII {
     public class Solution {
@@ -57,4 +92,15 @@ public class _1BackpackII {
 V1, ..., VN-1
 • 一个背包最大承重是正整数M
 • 最多能带走多大价值的物品
+
+
+给出n个物品的体积A[i]和其价值V[i]，将他们装入一个大小为m的背包，最多能装入的总价值有多大？
+
+ 注意事项
+
+A[i], V[i], n, m均为整数。你不能将物品进行切分。你所挑选的物品总体积需要小于等于给定的m。
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+对于物品体积[2, 3, 5, 7]和对应的价值[1, 5, 2, 4], 假设背包大小为10的话，最大能够装入的价值为9。
  */

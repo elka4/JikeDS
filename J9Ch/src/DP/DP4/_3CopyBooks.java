@@ -11,8 +11,71 @@ f[k-1][j]: k-1个抄写员最少需要多少时间抄完前j本书
 A[j] +... +A[i-1]: 第k个抄写员抄完第j至第i-1 本书的时间
  */
 
+import a.j.A;
+import org.junit.Test;
+
 //Copy Books
 public class _3CopyBooks {
+
+    // 9Ch DP
+    public int copyBooks(int[] A, int K) {
+        int n = A.length;
+        if (n == 0) {
+            return 0;
+        }
+
+        if (K > n) {
+            K = n;
+        }
+
+        int[][] f = new int[K + 1][n + 1];
+        int i, j, k;
+        f[0][0] = 0;
+        for (j = 1; j <= n; ++j) {
+            f[0][j] = Integer.MAX_VALUE;
+        }
+
+        int sum = 0;
+        for (k = 1; k <= K ; k++) {
+            // k copiers, 0 books, takes 0 time
+            f[k][0] = 0;
+            // 从第1本到第n本
+            for (i = 1; i <= n; ++i) {
+                f[k][i] = Integer.MAX_VALUE;
+                sum = 0;
+                // f[k][i] = minj=0,...,i{max{f[k-1][j], A[j] +... +A[i-1]}}
+                // important
+                // sum是前方最后一段，这样倒着做最方便， 这是一个看最后一段的好办法
+                // j = i 表示最后一个抄写员什么都不抄
+                for (j = i; j >= 0; --j) {
+                    f[k][i] = Math.min(f[k][i], Math.max(f[k - 1][j], sum));
+                    if (j > 0) {
+                        sum += A[j - 1];
+                    }
+                }
+            }
+        }
+        return  f[K][n];
+    }
+
+    /*
+    给出一个数组A包含n个元素，表示n本书以及各自的页数。现在有个k个人复印书籍，每个人只能复印连续一段编号的书，比如A[1],A[2]由第一个人复印，但是不能A[1],A[3]由第一个人复印，求最少需要的时间复印所有书。
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+A = [3,2,4],k = 2
+
+返回5，第一个人复印前两本书
+     */
+
+    @Test
+    public void test01() {
+        int[] A = new int[]{3,2,4};
+        int k = 2;
+        System.out.println(copyBooks(A, k));
+    }
+
+////////////////////////////////////////////////////////////////////////
     // version 1: Binary Search
     // this version cost O(n log m) where n is the number of books and m is the sum of the pages.
     /**
@@ -20,7 +83,7 @@ public class _3CopyBooks {
      * @param k: an integer
      * @return: an integer
      */
-    public int copyBooks(int[] pages, int k) {
+    public int copyBooks1(int[] pages, int k) {
         if (pages.length == 0) {
             return 0;
         }
