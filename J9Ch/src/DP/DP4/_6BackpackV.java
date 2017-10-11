@@ -98,7 +98,8 @@ public class _6BackpackV {
         for (i = 1; i <= n; i++) {
             // importan, T downto 0
             for (j = T; j >= 0; --j) {
-                //
+                // f'[j]
+                // cover f[j]
                 if (j >= A[i - 1]) {
                     f[j] += f[j - A[i - 1]];
                 }

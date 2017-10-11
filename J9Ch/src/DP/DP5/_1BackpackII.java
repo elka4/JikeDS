@@ -1,7 +1,23 @@
 package DP.DP5;
 
 /*
+• 设f[i][w] = 用前i个物品拼出重量w时最大总价值 (-1表示不能拼出w)
+f[i][w] = max{f[i-1][w], f[i-1][w-Ai-1] + Vi-1 | w≥Ai-1 且f[i-1][w-Ai-1] ≠-1}
 
+f[i][w]:                用前i个物品拼出重量 w时最大总价值
+f[i-1][w]:              用前i-1个物品拼出 重量w时最大总价值
+f[i-1][w-Ai-1] + Vi-1:  用前i-1个物品拼出重量w-Ai-1
+
+• 设f[i][w] = 用前i个物品拼出重量w时最大总价值 (-1表示不能拼出w)
+• f[i][w] = max{f[i-1][w], f[i-1][w-Ai-1] + Vi-1 | w≥Ai-1 且f[i-1][w-Ai-1] ≠-1}
+• 初始条件:
+– f[0][0] = 0: 0个物品可以拼出重量0，最大总价值是0
+– f[0][1..M] = -1: 0个物品不能拼出大于0的重量
+• 边界情况:
+– f[i-1][w-Ai-1]只能在w≥Ai-1，并且f[i-1][w-Ai-1] ≠-1时使用
+
+• 答案:max0<=j<=M{f[N][j] | f[N][j] ≠-1}
+• 时间复杂度(计算步数):O(MN)，空间复杂度(数组大小):优化后 可以达到O(M)
  */
 
 /*
@@ -37,52 +53,82 @@ int backPackII(int m, vector<int> A, vector<int> V) {
 
 //Backpack II
 public class _1BackpackII {
-    public class Solution {
-        /**
-         * @param m: An integer m denotes the size of a backpack
-         * @param A & V: Given n items with size A[i] and value V[i]
-         * @return: The maximum value
-         */
+    // 9Ch DP
+    public int backPackII(int m, int[] A, int V[]) {
+        int n = A.length;
+        if (n == 0) {
+            return 0;
+        }
 
-        public int backPackII(int m, int[] A, int V[]) {
-            // write your code here
-            int[][] dp = new int[A.length + 1][m + 1];
-            for(int i = 0; i <= A.length; i++){
-                for(int j = 0; j <= m; j++){
-                    if(i == 0 || j == 0){
-                        dp[i][j] = 0;
-                    }
-                    else if(A[i-1] > j){
-                        dp[i][j] = dp[(i-1)][j];
-                    }
-                    else{
-                        dp[i][j] = Math.max(dp[(i-1)][j], dp[(i-1)][j-A[i-1]] + V[i-1]);
-                    }
+        int[] f = new int[m + 1];
+        int i, w;
+        f[0] = 0;
+        for (i = 1; i <= m; i++) {
+            f[i] = -1;
+        }
+
+        for (i = 1; i <= n; i++) {
+
+            for (w = m; w >= 0; --w) {
+
+                if (w >= A[i - 1] && f[w - A[i - 1]] != -1) {
+                    f[w] = Math.max(f[w], f[w - A[i - 1]] + V[i - 1]);
                 }
             }
-            return dp[A.length][m];
         }
+
+        int res = 0;
+        for (i = 0; i <= m; i++) {
+            if (f[i] != -1) {
+                res = Math.max(res, f[i]);
+            }
+        }
+        return  res;
     }
 
-    // 方法二
-    public class Solution2 {
-        /**
-         * @param m: An integer m denotes the size of a backpack
-         * @param A & V: Given n items with size A[i] and value V[i]
-         */
-        public int backPackII(int m, int[] A, int V[]) {
-            // write your code here
-            int[] f = new int[m+1];
-            for (int i = 0; i <=m ; ++i) f[i] = 0;
-            int n = A.length , i, j;
-            for(i = 0; i < n; i++){
-                for(j = m; j >= A[i]; j--){
-                    if (f[j] < f[j - A[i]] + V[i])
-                        f[j] = f[j - A[i]] + V[i];
+////////////////////////////////////////////////////////////////////////////
+    /**
+     * @param m: An integer m denotes the size of a backpack
+     * @param A & V: Given n items with size A[i] and value V[i]
+     * @return: The maximum value
+     */
+
+    public int backPackII1(int m, int[] A, int V[]) {
+        // write your code here
+        int[][] dp = new int[A.length + 1][m + 1];
+        for(int i = 0; i <= A.length; i++){
+            for(int j = 0; j <= m; j++){
+                if(i == 0 || j == 0){
+                    dp[i][j] = 0;
+                }
+                else if(A[i-1] > j){
+                    dp[i][j] = dp[(i-1)][j];
+                }
+                else{
+                    dp[i][j] = Math.max(dp[(i-1)][j], dp[(i-1)][j-A[i-1]] + V[i-1]);
                 }
             }
-            return f[m];
         }
+        return dp[A.length][m];
+    }
+////////////////////////////////////////////////////////////////////////////
+    // 方法二
+    /**
+     * @param m: An integer m denotes the size of a backpack
+     * @param A & V: Given n items with size A[i] and value V[i]
+     */
+    public int backPackII2(int m, int[] A, int V[]) {
+        // write your code here
+        int[] f = new int[m+1];
+        for (int i = 0; i <=m ; ++i) f[i] = 0;
+        int n = A.length , i, j;
+        for(i = 0; i < n; i++){
+            for(j = m; j >= A[i]; j--){
+                if (f[j] < f[j - A[i]] + V[i])
+                    f[j] = f[j - A[i]] + V[i];
+            }
+        }
+        return f[m];
     }
 ////////////////////////////////////////////////////////////////////////////
 }

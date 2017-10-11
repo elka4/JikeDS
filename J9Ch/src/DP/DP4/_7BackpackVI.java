@@ -38,16 +38,97 @@ int backPackVI(vector<int>& nums, int target) {
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
  */
 
+import com.intellij.codeInsight.template.postfix.templates.SoutPostfixTemplate;
+import org.junit.Test;
+
 //Backpack VI
 public class _7BackpackVI {
+    // 9CH DP, 不记录状态
+    public int backPackVI (int[] A, int T) {
+        int[] f = new int[T + 1];
+        f[0] = 1;
+        int i, j;
+        for (i = 1; i <= T; i++) {
+            f[i] = 0;
+            for (j = 0; j < A.length; j++) {
+                if (i >= A[j]) {
+                    f[i] += f[i - A[j]];
+                }
+            }
+        }
+        return f[T];
+    }
+    /*
+    Given nums = [1, 2, 4], target = 4 return 6
+                   5, 7, 13, 17   32 return 22
+     */
+    @Test
+    public void test01(){
+        int[] A = {1, 2, 4};
+        int T = 4;
+        System.out.println(backPackVI(A, T));
 
+        A = new int[]{5, 7, 13, 17};
+        T = 32;
+        System.out.println(backPackVI(A, T));
+
+    }
+//////////////////////////////////////////////////////////////////
+
+    // 9Ch DP, 记录状态
+    public int backPackVI2 (int[] A, int T) {
+        int[] f = new int[T + 1];
+
+        // pai[i]: if f[i] >= 1, 最后一个数字可以是pai[i]
+        int[] pai = new int[T + 1];
+
+        f[0] = 1;
+        int i, j;
+        for (i = 1; i <= T; i++) {
+            f[i] = 0;
+            for (j = 0; j < A.length; j++) {
+                if (i >= A[j]) {
+                    f[i] += f[i - A[j]];
+                    if (f[i - A[j]] > 0) {
+                        pai[i] = A[j];
+                    }
+                }
+            }
+        }
+
+        if (f[T] > 0) {
+            i = T;
+            System.out.println(i + "=");
+            while (i != 0) {
+                System.out.println(pai[i]);
+                // sum is i now
+                // last number CAN be pai[i]
+                // previous sum is i - pai[i]
+                i -= pai[i];
+            }
+
+        }
+        return f[T];
+
+    }
+
+    @Test
+    public void test02(){
+        int[] A = {1, 2, 4};
+        int T = 4;
+        System.out.println(backPackVI2(A, T));
+
+        A = new int[]{5, 7, 13, 17};
+        T = 32;
+        System.out.println(backPackVI2(A, T));
+    }
 //////////////////////////////////////////////////////////////////
     /**
      * @param nums an integer array and all positive numbers, no duplicates
      * @param target an integer
      * @return an integer
      */
-    public int backPackVI(int[] nums, int target) {
+    public int backPackVI3(int[] nums, int target) {
         // Write your code here
         int[] f = new int[target + 1];
         f[0] = 1;
@@ -57,6 +138,12 @@ public class _7BackpackVI {
                     f[i] += f[i - nums[j]];
 
         return f[target];
+    }
+    @Test
+    public void test03(){
+        int[] A = {1, 2, 4};
+        int T = 4;
+        System.out.println(backPackVI3(A, T));
     }
 //////////////////////////////////////////////////////////////////
 

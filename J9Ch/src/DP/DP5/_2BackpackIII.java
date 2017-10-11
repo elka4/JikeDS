@@ -1,6 +1,29 @@
 package DP.DP5;
 
 
+
+
+
+/*
+• 和上一题唯一的不同是:每种物品都有无穷多个
+• 一个背包最大承重是M
+• BackpackII的转移方程
+• 设f[i][w] = 用前i个物品拼出重量w时最大总价值 (-1表示不能拼出w)
+
+f[i][w] = max{f[i-1][w], f[i-1][w-Ai-1] + Vi-1}
+f[i][w]:                用前i个物品拼出重量 w时最大总价值
+f[i-1][w]:              用前i-1个物品拼出 重量w时最大总价值
+f[i-1][w-Ai-1] + Vi-1:  用前i-1个物品拼出重量w-Ai-1 时最大总价值，加上第i个物品
+
+• 设f[i][w] = 用前i个物品拼出重量w时最大总价值 (-1表示不能拼出w)
+
+
+
+ */
+
+
+
+
 /*
 Backpack III:
 http://www.lintcode.com/en/problem/backpack-iii/#
@@ -34,47 +57,79 @@ int backPackIII(vector<int>& A, vector<int>& V, int m) {
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
  */
 
+import StdLib.In;
+
 //Backpack III
 public class _2BackpackIII {
-    public class Solution {
-        /**
-         * @param A an integer array
-         * @param V an integer array
-         * @param m an integer
-         * @return an array
-         */
-        public int backPackIII(int[] A, int[] V, int m) {
-            // Write your code here
-            int n = A.length;
-            int[] f = new int[m+1];
-            for (int i = 0; i < n; ++i)
-                for (int j = A[i]; j <= m; ++j)
-                    if (f[j - A[i]] + V[i] > f[j])
-                        f[j] = f[j - A[i]] + V[i];
-            return f[m];
+    public int backPackIII(int[] A, int[] V, int m) {
+        int n = A.length;
+        if (n == 0) {
+            return 0;
         }
+
+        int[] f = new int[m + 1];
+        int i, j;
+        for (i = 0; i <= m; i++) {
+            f[i] = Integer.MIN_VALUE;
+        }
+
+        f[0] = 0;
+        for (i = 0; i < n; i++) {
+            // f[0] f[1]
+            for (j = 0; j <= m - A[i]; j++) {
+                // updated f[w]: slides f[i][w]
+                // original f[w]: slides f[i-1][w]
+                // max{f[i - 1][w], f[i-1][w-Ai-1] + Vi-1 | w >= Ai-1 且f[i-1][w-Ai-1] != -1}
+
+                if (f[j] != Integer.MIN_VALUE) {
+                    f[j + A[j]] = Math.max(f[j + A[i]], f[j] + V[i]);
+                }
+            }
+        }
+
+        int res = Integer.MIN_VALUE;
+        for (i = 0; i <= m; i++) {
+            res = Math.max(res, f[i]);
+        }
+        return  res;
     }
 
+////////////////////////////////////////////////////////////////////////
+    /**
+     * @param A an integer array
+     * @param V an integer array
+     * @param m an integer
+     * @return an array
+     */
+    public int backPackIII1(int[] A, int[] V, int m) {
+        // Write your code here
+        int n = A.length;
+        int[] f = new int[m+1];
+        for (int i = 0; i < n; ++i)
+            for (int j = A[i]; j <= m; ++j)
+                if (f[j - A[i]] + V[i] > f[j])
+                    f[j] = f[j - A[i]] + V[i];
+        return f[m];
+    }
+////////////////////////////////////////////////////////////////////////
     // 2D version, 如果你无法理解一维的solution, 可以从二维的solution入手,然后思考空间的优化
-    public class Solution2 {
-        /**
-         * @param A an integer array
-         * @param V an integer array
-         * @param m an integer
-         * @return an array
-         */
-        public int backPackIII(int[] A, int[] V, int m) {
-            // Write your code here
-            int n = A.length;
-            int[][] f = new int[n + 1][m + 1];
-            for (int i = 1; i <= n; ++i)
-                for (int j = 0; j <= m; ++j) {
-                    f[i][j] = f[i - 1][j];
-                    if (j >= A[i - 1])
-                        f[i][j] = Math.max(f[i][j - A[i - 1]] + V[i - 1], f[i][j]);
-                }
-            return f[n][m];
-        }
+    /**
+     * @param A an integer array
+     * @param V an integer array
+     * @param m an integer
+     * @return an array
+     */
+    public int backPackIII2(int[] A, int[] V, int m) {
+        // Write your code here
+        int n = A.length;
+        int[][] f = new int[n + 1][m + 1];
+        for (int i = 1; i <= n; ++i)
+            for (int j = 0; j <= m; ++j) {
+                f[i][j] = f[i - 1][j];
+                if (j >= A[i - 1])
+                    f[i][j] = Math.max(f[i][j - A[i - 1]] + V[i - 1], f[i][j]);
+            }
+        return f[n][m];
     }
 ////////////////////////////////////////////////////////////////////////
 }
