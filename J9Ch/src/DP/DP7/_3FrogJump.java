@@ -3,6 +3,17 @@ package DP.DP7;
 import java.util.HashMap;
 import java.util.HashSet;
 
+/*
+• 设f[i][j]表示是否能最后一跳j跳到石头ai
+• 设上一块石头是ak=ai-j，可以通过一个哈希表(akàk)快速找到k
+f[i][j] = f[k][j-1] OR f[k][j] OR f[k][j+1]
+f[k][j-1] 能最后一跳j-1跳到石头ak
+f[k][j]   能最后一跳j跳到石头ak
+f[k][j+1] 能最后一跳j+1跳到石头ak
+
+
+ */
+
 //Frog Jump
 public class _3FrogJump {
     /**

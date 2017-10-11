@@ -3,8 +3,25 @@ package DP.DP7;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+• 设f[sP][j]为前缀sP(即节点P对应的字符串)和Target前j个字符Target[0..j-1] 的最小编辑距离
+• 设P的父亲是Q
+f[sP][j] = min{f[sP][j-1]+1, f[sQ][j-1]+1, f[sQ][j]+1, f[sQ][j-1]|sP[last]=Target[j-1]}
+
+f[sP][j-1]+1 情况一:SP在最后插 入Target[j-1]
+f[sQ][j-1]+1 情况二: SP最后一个字符 替换成Target[j-1]
+f[sQ][j]+1   情况三: SP删掉最后一 个字符
+f[sQ][j-1]   情况四:SP和Target最后 一个字符相等
+
+• 设f[sP][j]为前缀sP(即节点P对应的字符串)和Target前j个字符Target[0..j-1] 的最小编辑距离
+• 初始条件:一个空串和一个长度为L的串的最小编辑距离是L – f[sroot][j] = f[""][j] = j (j = 0, 1, 2, ..., n)
+– f[sp][0] = length(sp)
+ */
+
 //K Edit Distance
 public class _2KEditDistance {
+
+///////////////////////////////////////////////////////////////////////////
     /**
      * @param words a set of stirngs
      * @param target a target string
@@ -53,6 +70,7 @@ public class _2KEditDistance {
             }
     }
 
+///////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
 
 }

@@ -1,7 +1,19 @@
 package DP.DP7;
 
-//Longest Increasing Subsequence
+
+/*
+• 例子:
+• 输入:[4, 2, 4, 5, 3, 7]
+• 输出:4 (子序列2, 4, 5, 7)
+
+•转移方程:f[j]=max{1, f[i]+1|i<janda[i]<a[j]}
+
+ */
+
+//  Longest Increasing Subsequence
 public class _1LongestIncreasingSubsequence {
+
+//////////////////////////////////////////////////////////////////
     /**
      * @param nums: The integer array
      * @return: The length of LIS (longest increasing subsequence)
@@ -73,6 +85,7 @@ public class _1LongestIncreasingSubsequence {
             return end;
         }
     }
+//////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 
 }

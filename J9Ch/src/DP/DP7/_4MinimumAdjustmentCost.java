@@ -2,8 +2,18 @@ package DP.DP7;
 
 import java.util.ArrayList;
 
+/*
+• 设f[i][j]表示将A前i个元素改成B的最小代价，确保前i个改好的元素中 任意两个相邻的元素的差不超过Target，并且A[i-1]改成j
+f[i][j] = minj-Target<=k<=j+Target, 1<=k<=100{f[i-1][k] + |j-A[i-1]|}
+
+f[i][j]   将A前i个元素改成B的最 小代价，A[i-1]改成j
+f[i-1][k] 将A前i-1个元素改成B的 最小代价，A[i-2]改成k
+j-A[i-1]  A[i-1]改成j的代价
+ */
+
 //Minimum Adjustment Cost
 public class _4MinimumAdjustmentCost {
+//////////////////////////////////////////////////////////////////////////
     /**
      * @param A: An integer array.
      * @param target: An integer.
@@ -31,6 +41,7 @@ public class _4MinimumAdjustmentCost {
         return ans;
     }
 
+//////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 
 }

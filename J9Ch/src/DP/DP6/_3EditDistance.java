@@ -2,9 +2,34 @@ package DP.DP6;
 
 //双序列型动态规划
 
+
+/*
+• 要求A[0..m-1]和B[0..n-2]的最小编辑距离，A[0..m-2]和B[0..n-1]的最小
+编辑距离和A[0..m-2]和B[0..n-2]的最小编辑距离
+• 原来是求A[0..m-1]和B[0..n-1]的最小编辑距离
+• 子问题
+• 状态:设f[i][j]为A前i个字符A[0..i-1]和B前j个字符B[0..j-1]的最小编辑距离
+
+• 设f[i][j]为A前i个字符A[0..i-1]和B前j个字符B[0..j-1]的最小编辑距离
+• 要求f[m][n]
+f[i][j] = min{f[i][j-1]+1, f[i-1][j-1]+1, f[i-1][j]+1, f[i-1][j-1]|A[i-1]=B[j-1]}
+f[i][j-1]+1   情况一:A在最后插入 B[j-1]
+f[i-1][j-1]+1 情况二:A最后一个字符 替换成B[j-1]
+f[i-1][j]+1   情况三:A删掉最后一个 字符
+f[i-1][j-1]   情况四:A和B最后一个 字符相等
+
+
+• 设f[i][j]为A前i个字符A[0..i-1]和B前j个字符B[0..j-1]的最小编辑距离
+• 转移方程: f[i][j] = min{f[i][j-1]+1, f[i-1][j-1]+1, f[i-1][j]+1, f[i-1][j-1]|A[i- 1]=B[j-1]}
+• 初始条件:一个空串和一个长度为L的串的最小编辑距离是L – f[0][j] = j (j = 0, 1, 2, ..., n)
+– f[i][0] = i (i = 0, 1, 2, ..., m)
+
+
+
+ */
 //  Edit Distance
 public class _3EditDistance {
-    // 9Ch DP 不能通过
+    // 9Ch DP 动态规划版本去掉注释
     public int minDistance(String word1, String word2) {
         char[] s1 = word1.toCharArray();
         char[] s2 = word2.toCharArray();
@@ -79,7 +104,7 @@ public int minDistance00(String word1, String word2) {
     return f[now][n];
 }
 
-    //////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
     public int minDistance0(String word1, String word2) {
         // write your code here
         int n = word1.length();
@@ -220,6 +245,64 @@ public int minDistance00(String word1, String word2) {
 
         return f[m][n];
     }
+//////////////////////////////////////////////////////////////
+    // leet
+    //Java DP solution - O(nm)
+
+    public int minDistance3(String word1, String word2) {
+        int m = word1.length();
+        int n = word2.length();
+
+        int[][] cost = new int[m + 1][n + 1];
+        for(int i = 0; i <= m; i++)
+            cost[i][0] = i;
+        for(int i = 1; i <= n; i++)
+            cost[0][i] = i;
+
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                if(word1.charAt(i) == word2.charAt(j))
+                    cost[i + 1][j + 1] = cost[i][j];
+                else {
+                    int a = cost[i][j];
+                    int b = cost[i][j + 1];
+                    int c = cost[i + 1][j];
+                    cost[i + 1][j + 1] = a < b ? (a < c ? a : c) : (b < c ? b : c);
+                    cost[i + 1][j + 1]++;
+                }
+            }
+        }
+        return cost[m][n];
+    }
+//////////////////////////////////////////////////////////////
+    // My Accepted Java Solution
+
+    public int minDistance4(String word1, String word2) {
+        if (word1.equals(word2)) {
+            return 0;
+        }
+        if (word1.length() == 0 || word2.length() == 0) {
+            return Math.abs(word1.length() - word2.length());
+        }
+        int[][] dp = new int[word1.length() + 1][word2.length() + 1];
+        for (int i = 0; i <= word1.length(); i++) {
+            dp[i][0] = i;
+        }
+        for (int i = 0; i <= word2.length(); i++) {
+            dp[0][i] = i;
+        }
+        for (int i = 1; i <= word1.length(); i++) {
+            for (int j = 1; j <= word2.length(); j++) {
+                if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.min(dp[i-1][j-1], Math.min(dp[i-1][j], dp[i][j-1])) + 1;
+                }
+            }
+        }
+        return dp[word1.length()][word2.length()];
+    }
+//////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
 
 }
