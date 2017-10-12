@@ -1,4 +1,4 @@
-package j_5_DP2;
+package DP.j_5_DP2;
 
 import java.util.*;
 

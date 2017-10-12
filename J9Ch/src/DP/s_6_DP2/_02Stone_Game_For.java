@@ -1,4 +1,4 @@
-package s_6_DP2;
+package DP.s_6_DP2;
 
     public class _02Stone_Game_For {
 
