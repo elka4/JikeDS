@@ -143,7 +143,11 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
         return max;
     }
 
-
+    @Test
+    public void test02() {
+        int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
+        System.out.println(longestIncreasingSubsequence(nums));
+    }
 
 //////////////////////////////////////////////////////////////////
 
@@ -211,4 +215,19 @@ https://en.wikipedia.org/wiki/Longest_increasing_subsequence
 Example
 For [5, 4, 1, 2, 3], the LIS is [1, 2, 3], return 3
 For [4, 2, 4, 5, 3, 7], the LIS is [2, 4, 5, 7], return 4
+ */
+
+/*
+给定一个整数序列，找到最长上升子序列（LIS），返回LIS的长度。
+
+您在真实的面试中是否遇到过这个题？ Yes
+说明
+最长上升子序列的定义：
+
+最长上升子序列问题是在一个无序的给定序列中找到一个尽可能长的由低到高排列的子序列，这种子序列不一定是连续的或者唯一的。
+https://en.wikipedia.org/wiki/Longest_increasing_subsequence
+
+样例
+给出 [5,4,1,2,3]，LIS 是 [1,2,3]，返回 3
+给出 [4,2,4,5,3,7]，LIS 是 [2,4,5,7]，返回 4
  */
