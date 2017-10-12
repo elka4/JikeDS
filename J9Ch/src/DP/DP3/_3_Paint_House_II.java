@@ -1,4 +1,4 @@
-package DP.DP2;
+package DP.DP3;
 
 public class _3_Paint_House_II {
 	public int minCostII(int[][] costs) {

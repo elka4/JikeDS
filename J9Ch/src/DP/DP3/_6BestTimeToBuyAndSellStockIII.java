@@ -105,6 +105,7 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
  */
 
 
+import org.junit.Test;
 
 //Best Time To Buy And Sell Stock III
 public class _6BestTimeToBuyAndSellStockIII {
@@ -182,12 +183,15 @@ public class _6BestTimeToBuyAndSellStockIII {
         for (i = 1; i <= n; ++i) {
             for (j = 1; j <= 2 * K + 1; j += 2) {
                 f[i][j] = update(f[i][j], f[i-1][j], 0);
-                if (j > 1 && i > 1) f[i][j] = update(f[i][j], f[i - 1][j - 1], prices[i - 1] - prices[i - 2]);
+                if (j > 1 && i > 1) f[i][j] =
+                        update(f[i][j], f[i - 1][j - 1], prices[i - 1] - prices[i - 2]);
             }
 
             for (j = 2; j <= 2 * K; j += 2) {
-                if (i > 1) f[i][j] = update(f[i][j], f[i-1][j], prices[i - 1] - prices[i - 2]);
-                if (j > 1) f[i][j] = update(f[i][j], f[i-1][j-1], 0);
+                if (i > 1) f[i][j] =
+                        update(f[i][j], f[i-1][j], prices[i - 1] - prices[i - 2]);
+                if (j > 1) f[i][j] =
+                        update(f[i][j], f[i-1][j-1], 0);
             }
         }
 
@@ -203,38 +207,79 @@ public class _6BestTimeToBuyAndSellStockIII {
 
 
     // version 2
-    public class Solution2 {
-        public int maxProfit(int[] prices) {
-            if (prices == null || prices.length <= 1) {
-                return 0;
-            }
-
-            int[] left = new int[prices.length];
-            int[] right = new int[prices.length];
-
-            // DP from left to right;
-            left[0] = 0;
-            int min = prices[0];
-            for (int i = 1; i < prices.length; i++) {
-                min = Math.min(prices[i], min);
-                left[i] = Math.max(left[i - 1], prices[i] - min);
-            }
-
-            //DP from right to left;
-            right[prices.length - 1] = 0;
-            int max = prices[prices.length - 1];
-            for (int i = prices.length - 2; i >= 0; i--) {
-                max = Math.max(prices[i], max);
-                right[i] = Math.max(right[i + 1], max - prices[i]);
-            }
-
-            int profit = 0;
-            for (int i = 0; i < prices.length; i++){
-                profit = Math.max(left[i] + right[i], profit);
-            }
-
-            return profit;
+    public int maxProfit2(int[] prices) {
+        if (prices == null || prices.length <= 1) {
+            return 0;
         }
+
+        int[] left = new int[prices.length];
+        int[] right = new int[prices.length];
+
+        // DP from left to right;
+        left[0] = 0;
+        int min = prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            min = Math.min(prices[i], min);
+            System.out.println("min: " + min);
+            left[i] = Math.max(left[i - 1], prices[i] - min);
+            System.out.println("left[i]: " + left[i]);
+
+        }
+
+        //DP from right to left;
+        right[prices.length - 1] = 0;
+        int max = prices[prices.length - 1];
+        for (int i = prices.length - 2; i >= 0; i--) {
+            max = Math.max(prices[i], max);
+            System.out.println("max: " + max);
+            right[i] = Math.max(right[i + 1], max - prices[i]);
+            System.out.println("right[i]: " + right[i]);
+
+        }
+
+        int profit = 0;
+        for (int i = 0; i < prices.length; i++){
+            profit = Math.max(left[i] + right[i], profit);
+        }
+
+        return profit;
+    }
+/*
+min: 4
+left[i]: 0
+min: 4
+left[i]: 2
+min: 1
+left[i]: 2
+min: 1
+left[i]: 2
+min: 1
+left[i]: 3
+min: 1
+left[i]: 3
+min: 1
+left[i]: 4
+
+max: 5
+right[i]: 3
+max: 5
+right[i]: 3
+max: 5
+right[i]: 4
+max: 5
+right[i]: 4
+max: 6
+right[i]: 4
+max: 6
+right[i]: 4
+max: 6
+right[i]: 4
+ */
+    @Test
+    public void test03() {
+        //给出一个样例数组 [4,4,6,1,1,4,2,5], 返回 6
+        int[] prices = {4,4,6,1,1,4,2,5};
+        System.out.println(maxProfit2(prices));
     }
 
 /////////////////////////////////////////////////////////////////////

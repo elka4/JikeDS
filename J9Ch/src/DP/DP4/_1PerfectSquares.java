@@ -1,5 +1,7 @@
 package DP.DP4;
 
+import org.junit.Test;
+
 import java.util.Arrays;
 
 //• 划分型动态规划
@@ -85,6 +87,28 @@ public class _1PerfectSquares {
         return dp[n];
     }
 
+    @Test
+    public void testFill() {
+        int[][] dp = new int[3][3];
+        Arrays.fill(dp, 4);
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(dp[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+    }
+    @Test
+    public void testFill2() {
+        int[] dp = new int[3];
+        Arrays.fill(dp, 4);
+        for (int i = 0; i < 3; i++) {
+            System.out.print(dp[i] + " ");
+
+        }
+
+    }
 
 /////////////////////////////////////////////////////////////////////////
 

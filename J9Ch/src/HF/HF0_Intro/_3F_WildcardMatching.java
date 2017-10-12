@@ -1,4 +1,4 @@
-package HF.HF0;
+package HF.HF0_Intro;
 
 public class _3F_WildcardMatching {
     //Linear runtime and constant space solution

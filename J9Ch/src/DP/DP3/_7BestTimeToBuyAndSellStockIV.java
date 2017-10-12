@@ -66,8 +66,75 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
 
  */
 
+import StdLib.In;
+import org.junit.Test;
+
 //Best Time To Buy And Sell Stock IV
 public class _7BestTimeToBuyAndSellStockIV {
+    // 9Ch DP
+    public int maxProfit(int K, int[] A) {
+        int n = A.length;
+        if (n == 0) {
+            return 0;
+        }
+
+        int i, j, k;
+        if (K > n / 2) {
+            int result = 0;
+            for (i = 0; i < n - 1; i++) {
+                result += Math.max(A[i + 1] - A[i], 0);
+            }
+            return result;
+        }
+
+        int[][] f = new int[n + 1][2 * K + 1 + 1];
+
+        //init
+        //first 0 days, phase 1, max profit = 0
+        f[0][1] = 0;
+        for (k = 2; k <= 2 * K + 1; k++) {
+            f[0][k] = Integer.MIN_VALUE;
+        }
+
+
+        for (i = 1; i <= n; i++) {
+            // 1, 3, 5
+            for (j = 1; j <= 2 * K + 1; j += 2) {
+                f[i][j] = f[i - 1][j];
+                // 判断j i，为了之后f[i - 1][j - 1] index 不越界
+                if (j > 1 && i > 1 && f[i - 1][j - 1] != Integer.MIN_VALUE) {
+                    f[i][j] = Math.max(f[i][j], f[i - 1][j - 1] + A[i - 1] - A[i - 2]);
+                }
+            }
+
+            // 2, 4
+            for (j = 2; j <= 2 * K + 1; j += 2) {
+                //max
+                f[i][j] = f[i - 1][j - 1];
+                if (i > 1 && f[i - 1][j] != Integer.MIN_VALUE) {
+                    f[i][j] = Math.max(f[i][j], f[i - 1][j] + A[i - 1] - A[i - 2]);
+                }
+
+                if (j > 2 && i > 1 && f[i - 1][j - 2] != Integer.MIN_VALUE) {
+                    f[i][j] = Math.max(f[i][j], f[i - 1][j - 2] + A[i - 1] - A[i - 2]);
+                }
+            }
+        }
+
+        int res = Integer.MIN_VALUE;
+        for (i = 1; i <= 2 * K + 1 ; i += 2) {
+            res = Math.max(res, f[n][i]);
+        }
+        return res;
+    }
+
+    @Test
+    public void test01() {
+//        给定价格 = [4,4,6,1,1,4,2,5], 且 k = 2, 返回 6.
+        int[] A = {4,4,6,1,1,4,2,5};
+        int k = 2;
+        System.out.println(maxProfit(k, A));
+    }
 
 //////////////////////////////////////////////////////////////////////////////
     // 动态规划专题班版本 Version 1
@@ -86,7 +153,7 @@ public class _7BestTimeToBuyAndSellStockIV {
      * @param prices: Given an integer array
      * @return: Maximum profit
      */
-    public int maxProfit(int K, int[] prices) {
+    public int maxProfit2(int K, int[] prices) {
         int n = prices.length;
         int i, j, k;
         if (K == 0) {
@@ -264,7 +331,49 @@ public class _7BestTimeToBuyAndSellStockIV {
         }
     }
 //////////////////////////////////////////////////////////////////////////////
+    // 9Ch J DP
+    public int maxProfit5(int k, int[] prices) {
+        // write your code here
+        if (k == 0) {
+            return 0;
+        }
+        if (k >= prices.length / 2) {
+            int profit = 0;
+            for (int i = 1; i < prices.length; i++) {
+                if (prices[i] > prices[i - 1]) {
+                    profit += prices[i] - prices[i - 1];
+                }
+            }
+            return profit;
+        }
+        int n = prices.length;
+        // mustSell[i][j] 表示前i天，至多进行j次交易，第i天必须sell的最大获益
+        int[][] mustsell = new int[n + 1][n + 1];
+        // globalbest[i][j] 表示前i天，至多进行j次交易，第i天可以不sell的最大获益
+        int[][] globalbest = new int[n + 1][n + 1];
 
+        mustsell[0][0] = globalbest[0][0] = 0;
+        for (int i = 1; i <= k; i++) {
+            mustsell[0][i] = globalbest[0][i] = 0;
+        }
+
+        for (int i = 1; i < n; i++) {
+
+            int gainorlose = prices[i] - prices[i - 1];
+            mustsell[i][0] = 0;
+
+            for (int j = 1; j <= k; j++) {
+
+                mustsell[i][j] = Math.max(
+                        globalbest[(i - 1)][j - 1] + gainorlose,
+                        mustsell[(i - 1)][j] + gainorlose);
+
+                globalbest[i][j] = Math.max(
+                        globalbest[(i - 1)][j], mustsell[i ][j]);
+            }
+        }
+        return globalbest[(n - 1)][k];
+    }
 //////////////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////////////
