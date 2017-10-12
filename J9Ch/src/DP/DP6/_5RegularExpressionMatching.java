@@ -71,8 +71,54 @@ f[i][j] = f[i][j-2] OR (f[i-1][j] AND (B[j-2]=‘.’ OR B[j-2]=A[i-1]))，如�
 -----------------------------------------------------------------------------------------------
  */
 
-//Regular Expression Matching
+//  Regular Expression Matching
 public class _5RegularExpressionMatching {
+//////////////////////////////////////////////////////////////////////////////////
+    // 9CH DP
+    public boolean isMatch1(String s, String p) {
+        char[] c1 = s.toCharArray();
+        char[] c2 = p.toCharArray();
+        int m = c1.length;
+        int n = c2.length;
+
+        boolean[][] f = new boolean[m + 1][n + 1];
+        int i, j;
+        for (i = 0; i <= m; i++) {
+            for (j = 0; j <= n; j++) {
+                if (i == 0 && j == 0) {
+                    f[i][j] = true;
+                    continue;
+                }
+
+                if (j == 0) {
+                    f[i][j] = false;
+                    continue;
+                }
+
+                f[i][j] = false;
+                if (c2[j - 1] != '*') {
+                    if (i >0 && (c2[j - 1] == '.' || c1[i - 1] == c2[j - 1])) {
+                        f[i][j] = f[i - 1][j - 1];
+                    }
+                } else {
+                    // c2[j - 1] == '*'
+                    if (j - 2 >= 0) {
+                        f[i][j] |= f[i][j - 2];
+                    }
+
+                    if (i >= 1 && j >= 2) {
+                        f[i][j] |= f[i - 1][j] && (c2[j - 2] == '.' || c2[j - 2] == c1[i - 1]);
+                    }
+                }
+            }
+        }
+        return  f[m][n];
+    }
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
     public boolean isMatch(String s, String p) {
         //Java note: s.substring(n) will be "" if n == s.length(), but if n > s.length(), index oob error
 
@@ -114,6 +160,7 @@ public class _5RegularExpressionMatching {
                 return false;
             }
         }
+
     }
 
     public boolean compare(char c1, char d1){
@@ -132,6 +179,9 @@ public class _5RegularExpressionMatching {
         }
         return true;
     }
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
 }
 /*
 Implement regular expression matching with support for '.' and '*'.

@@ -78,10 +78,52 @@ f[i][j] = f[i-1][j] OR f[i][j-1]，如果B[j-1]=‘*’
 //  Wildcard Matching
 public class _6WildcardMatching {
 
+    // 9Ch DP
+    public boolean isMatch(String s, String p) {
+        char[] s1 = s.toCharArray();
+        char[] s2 = p.toCharArray();
+        int m = s1.length;
+        int n = s2.length;
+
+        boolean[][] f = new boolean[m + 1][n + 1];
+        int i, j;
+        for (i = 0; i <= m; i++) {
+            for (j = 0; j <= n; j++) {
+                if (i == 0 && j== 0) {
+                    f[i][j] = true;
+                    continue;
+                }
+
+                // i > 0
+                if (j == 0) {
+                    f[i][j] = false;
+                    continue;
+                }
+
+                // i = 0, j = 10
+                f[i][j] = false;
+                if (s2[j - 1] != '*') {
+                    if (i >= 1 && (s2[j - 1] == '?' || s2[j - 1] == s1[i - 1])) {
+                        f[i][j] |= f[i - 1][j - 1];
+                    }
+                } else {
+                    // not care *
+                    f[i][j] = f[i][j - 1];
+                    //important!
+                    if (i > 0) {
+                        // care *
+                        f[i][j] |= f[i - 1][j];
+                    }
+                }
+            }
+        }
+        return f[m][n];
+    }
+
 //////////////////////////////////////////////////////////////////////////
     // Time: O(|s||p|*log|s|), Space: O(|s|)
     // Time can also optimize to O(|s||p|)
-    public boolean isMatch(String s, String p) {
+    public boolean isMatch2(String s, String p) {
         // without this optimization, it will fail for large data set
         int plenNoStar = 0;
         for (char c : p.toCharArray())
@@ -125,5 +167,24 @@ public class _6WildcardMatching {
 //////////////////////////////////////////////////////////////////////////
 }
 /*
+判断两个可能包含通配符“？”和“*”的字符串是否匹配。匹配规则如下：
 
+'?' 可以匹配任何单个字符。
+'*' 可以匹配任意字符串（包括空字符串）。
+
+两个串完全匹配才算匹配成功。
+
+函数接口如下:
+bool isMatch(const char *s, const char *p)
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+一些例子：
+
+isMatch("aa","a") → false
+isMatch("aa","aa") → true
+isMatch("aaa","aa") → false
+isMatch("aa", "*") → true
+isMatch("aa", "a*") → true
+isMatch("ab", "?*") → true
+isMatch("aab", "c*a*b") → false
  */

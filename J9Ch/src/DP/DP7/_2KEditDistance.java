@@ -1,5 +1,7 @@
 package DP.DP7;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,8 +90,92 @@ f[sQ][j-1]   情况四:SP和Target最后 一个字符相等
 -----------------------------------------------------------------------------------------------
  */
 
-//K Edit Distance
+// K Edit Distance
 public class _2KEditDistance {
+
+    // 9Ch DP
+    char[] target = null;
+    int K = 0;
+    int[] f = null;
+    int n = 0;
+    List<String> res = null;
+
+    // at node p, prefix Sp
+    // f now means f[Sp][0~n]
+    // todo: Sp-->(Sp, 'a')...,(Sp, 'z')
+
+    private void dfs(Trienode2 p, int[] f) {
+        int[] nf = new int[n + 1];
+        // whether p has word
+        if (p.hasWord) {
+            if (f[n] <= K) {
+                res.add(p.word);
+            }
+        }
+
+        int i, j, c;
+        // next char is i
+        for (i = 0; i < 26; i++) {
+            if (p.sons[i] == null) {
+                continue;
+            }
+
+            // f[i][0] = i
+            // f[0] = f[Sp][0] = |Sp|
+            nf[0] = f[0] + 1;
+            for (j = 1; j <= n; j++) {
+                // f[i][j] = min(f[i-1][j]+1, f[i-1][j-1]+1, f[i][j-1]+1)
+                nf[j] = Math.min(Math.min(nf[j - 1] + 1, f[j] + 1), f[j - 1] + 1);
+                c = target[j - 1] - 'a'; // - 'a'
+                if (c == i) {
+                    // f[i][j] = min(f[i][j], f[i-1][j-1]) | A[i-1]==target[j-1]
+                    nf[j] = Math.min(nf[j], f[j - 1]);
+                }
+            }
+            dfs(p.sons[i], nf);
+        }
+    }
+
+    public List<String> kDistance(String[] words, String targetStr, int k) {
+        target = targetStr.toCharArray();
+        n = target.length;
+        K = k;
+        res = new ArrayList<String>();
+
+        // init trie
+        // root
+        Trienode2 root = new Trienode2();
+        for (int i = 0; i < words.length; i++) {
+            Trienode2.Insert(root, words[i]);
+        }
+
+        // init f
+        // f[""][0 ~ n]
+        f = new int[n + 1];
+        for (int i = 0; i <= n; i++) {
+            f[i] = i;
+        }
+
+        // dfs
+        dfs(root, f);
+
+        // return
+        return res;
+    }
+
+    /*
+    {"abc", "abd", "abcd", "adc"}
+target = "ac"  k = 1
+return"abc" "adc"
+     */
+
+    @Test
+    public void  test01() {
+        String[] words = {"abc", "abd", "abcd", "adc"};
+        String targetStr = "ac" ;
+        int k = 1;
+        System.out.println(kDistance(words, targetStr, 1));
+    }
 
 ///////////////////////////////////////////////////////////////////////////
     /**
@@ -98,7 +184,7 @@ public class _2KEditDistance {
      * @param k an integer
      * @return output all the strings that meet the requirements
      */
-    public List<String> kDistance(String[] words, String target, int k) {
+    public List<String> kDistance2(String[] words, String target, int k) {
         // Write your code here
         TrieNode root = new TrieNode();
         for (int i = 0; i < words.length; i++)
@@ -150,4 +236,8 @@ You have the following 3 operations permitted on a word:
 Insert a character
 Delete a character
 Replace a character
+
+{"abc", "abd", "abcd", "adc"}
+target = "ac"  k = 1
+return"abc" "adc"
  */

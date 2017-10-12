@@ -61,8 +61,55 @@ f[i-1][k-1][s-Ai-1] 有多少种方法可以 在前i-1个数中选出k- 1个，�
 -----------------------------------------------------------------------------------------------
  */
 
+import org.junit.Test;
+
 //K Sum
 public class _5K_Sum {
+    // 9CH DP
+    public int  kSum(int A[], int K, int target) {
+        int n = A.length;
+        int old, now = 0;
+        int[][][] f = new int[2][K + 1][target + 1];
+        int i, k, s;
+        //init
+        for (k = 0; k <= K; k++) {
+            for (s = 0; s <= target; s++) {
+                f[now][k][s] = 0;
+            }
+        }
+
+        f[now][0][0] = 1;
+
+        for (i = 1; i <= n; i++) {
+            old = now;
+            now = 1 - now;
+            for (k = 0; k <= K; k++) {
+                for (s = 0; s <= target; s++) {
+                    // do not select A[i-1]
+                    f[now][k][s] = f[old][k][s];
+
+                    // select A[i-1]
+                    if (k >= 1 && s >= A[i - 1]) {
+                        f[now][k][s] += f[old][k - 1][s - A[i - 1]];
+                    }
+                }
+            }
+        }
+
+        return f[now][K][target];
+    }
+
+    //给出[1,2,3,4]，k=2， target=5，[1,4] and [2,3]是2个符合要求的方案
+
+    @Test
+    public void test01() {
+        int A[] = {1,2,3,4};
+        int K = 2;
+        int target = 5;
+        System.out.println(kSum(A, K, 5));
+    }
+
+
 ///////////////////////////////////////////////////////////////////////
     /**
      * @param A: an integer array.
@@ -70,7 +117,7 @@ public class _5K_Sum {
      * @param target: a integer
      * @return an integer
      */
-    public int  kSum(int A[], int k, int target) {
+    public int  kSum2(int A[], int k, int target) {
         int n = A.length;
         int[][][] f = new int[n + 1][k + 1][target + 1];
         for (int i = 0; i < n + 1; i++) {
@@ -90,6 +137,15 @@ public class _5K_Sum {
         return f[n][k][target];
     }
 
+    @Test
+    public void test02() {
+        int A[] = {1,2,3,4};
+        int K = 2;
+        int target = 5;
+        System.out.println(kSum2(A, K, 5));
+    }
+
+
 ///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
@@ -106,4 +162,14 @@ Given [1,2,3,4], k = 2, target = 5.
 There are 2 solutions: [1,4] and [2,3].
 
 Return 2.
+ */
+
+/*
+给定n个不同的正整数，整数k（k < = n）以及一个目标数字。　
+
+在这n个数里面找出K个数，使得这K个数的和等于目标数字，求问有多少种方案？
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给出[1,2,3,4]，k=2， target=5，[1,4] and [2,3]是2个符合要求的方案
  */

@@ -63,12 +63,57 @@ f[i-1][j-ai-1][k-bi-1] + 1 前i-1个01串最多能有多少 个被j-ai-1个0和k
 -----------------------------------------------------------------------------------------------
  */
 
+import a.j.A;
+
 // Ones and Zeroes
 public class _7OnesandZeroes {
+    // 9Ch DP
+    public int findMaxForm(String[] strs, int m, int n) {
+        int T = strs.length;
+        int[] cnt0 = new int[T];
+        int[] cnt1 = new int[T];
+        int i, j;
+        for (i = 0; i < T; i++) {
+            cnt0[i] = cnt1[i] = 0;
+            char[] s = strs[i].toCharArray();
+            for (j = 0; j < s.length; j++) {
+                if (s[j] == '0') {
+                    ++cnt0[i];
+                } else {
+                    ++cnt1[i];
+                }
+            }
+        }
+        int[][][] f = new int[T + 1][m + 1][n + 1];
+        int k;
+
+        // init
+        for (j = 0; j<= m; ++j) {
+            for (k = 0; k <= n; ++k) {
+                f[0][j][k] = 0;
+            }
+        }
+
+        for (i = 1; i <= T; ++i) {
+            for (j = 0;j <= m; ++j) {
+                for (k = 0; k <= n; k++) {
+                    // A[i - 1] not selected
+                    f[i][j][k] = f[i - 1][j][k];
+
+                    // A[i - 1] selected
+                    if (j >= cnt0[i - 1] && k >= cnt1[i - 1]) {
+                        f[i][j][k] = Math.max(f[i][j][k], f[i - 1][j - cnt0[i - 1]][k - cnt1[i - 1]] + 1);
+                    }
+
+                }
+            }
+        }
+        return f[T][m][n];
+    }
 
 ///////////////////////////////////////////////////////////////////////
     //方法一 未进行空间复杂度优化：
-    public int findMaxForm(String[] strs, int m, int n) {
+    public int findMaxForm2(String[] strs, int m, int n) {
         int[][][] dp = new int[strs.length + 1][m + 1][n + 1];
         for (int i = 1; i <= strs.length; i++) {
             int[] cost = count(strs[i - 1]);

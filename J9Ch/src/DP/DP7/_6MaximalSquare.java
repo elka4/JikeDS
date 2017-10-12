@@ -67,14 +67,63 @@ f[i][j] = min{f[i-1][j], f[i][j-1], f[i-1][j-1]} + 1，如果(i, j)格是1
 -----------------------------------------------------------------------------------------------
  */
 
+import a.j.A;
+import org.junit.Test;
+
 //Maximal Square
 public class _6MaximalSquare {
+
+    // 9Ch DP
+    public int maxSquare(int[][] matrix) {
+        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+            return 0;
+        }
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        int[][] f = new int[m][n];
+        int i, j, t, res = 0;
+        for (i = 0; i < m; i++) {
+            for (j = 0; j < n; j++) {
+                if (matrix[i][j] == 0) {
+                    f[i][j] = 0;
+                    continue;
+                }
+
+                //A[i][j] = -1
+                if (i == 0 || j == 0) {
+                    f[i][j] = 1;
+                    res = Math.max(1, res);
+                    continue;
+                }
+
+                f[i][j] = Math.min(Math.min(f[i - 1][j], f[i - 1][j - 1]), f[i][j-1]) + 1;
+                res = Math.max(f[i][j] * f[i][j], res);
+            }
+        }
+        return res;
+    }
+
+    @Test
+    public void test01() {
+        /*
+        1 0 1 0 0
+1 0 1 1 1
+1 1 1 1 1
+1 0 0 1 0
+         */
+        int[][] matrix = {{1, 0, 1, 0, 0}, {1, 0, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 0, 0, 1, 0}};
+        System.out.println(maxSquare(matrix));
+
+    }
+
+
 /////////////////////////////////////////////////////////////////////////
     /**
      * @param matrix: a matrix of 0 and 1
      * @return: an integer
      */
-    public int maxSquare(int[][] matrix) {
+    public int maxSquare2(int[][] matrix) {
         // write your code here
         int ans = 0;
         int n = matrix.length;
@@ -103,6 +152,19 @@ public class _6MaximalSquare {
             }
         }
         return ans*ans;
+    }
+
+    @Test
+    public void test02() {
+        /*
+        1 0 1 0 0
+1 0 1 1 1
+1 1 1 1 1
+1 0 0 1 0
+         */
+        int[][] matrix = {{1, 0, 1, 0, 0}, {1, 0, 1, 1, 1}, {1, 1, 1, 1, 1}, {1, 0, 0, 1, 0}};
+        System.out.println(maxSquare2(matrix));
+
     }
 
 /////////////////////////////////////////////////////////////////////////

@@ -60,14 +60,45 @@ j-A[i-1]  A[i-1]改成j的代价
 -----------------------------------------------------------------------------------------------
  */
 
-//Minimum Adjustment Cost
+//  Minimum Adjustment Cost
 public class _4MinimumAdjustmentCost {
+
+    // 9Ch DP
+    public int MinAdjustmentCost(ArrayList<Integer> A, int target) {
+        int n = A.size();
+        int[][] f = new int[n + 1][100 + 1];
+        int i, j, k, res;
+        // init
+        for (i = 0; i <= 100; i++) {
+            f[1][i] = Math.abs(A.get(0) - i);
+        }
+
+        for (i = 2; i <= n; i++) {
+            for (j = 1; j <= 100; j++) {
+                f[i][j] = Integer.MAX_VALUE;
+                for (k = j - target; k <= j + target; k++) {
+                    if (k < 1 || k > 100) {
+                        continue;
+                    }
+                    f[i][j] = Math.min(f[i][j], f[i - 1][k] + Math.abs(A.get(i - 1) - j));
+                }
+            }
+        }
+        res = Integer.MAX_VALUE;
+        for (i = 1; i <= 100; i++) {
+            res = Math.min(res, f[n][i]);
+
+        }
+        return res;
+    }
+
+
 //////////////////////////////////////////////////////////////////////////
     /**
      * @param A: An integer array.
      * @param target: An integer.
      */
-    public int MinAdjustmentCost(ArrayList<Integer> A, int target) {
+    public int MinAdjustmentCost2(ArrayList<Integer> A, int target) {
         // write your code here
         int n = A.size();
         int[][] f = new int[n + 1][101];

@@ -69,7 +69,7 @@ f[i][j-1] AND X[i+j-1]==B[j-1]  : 情况二:X前i+j-1个字符由A前i个 字符
 
 -----------------------------------------------------------------------------------------------
 
-
+bitwise inclusive OR and assignment operator.	C |= 2 is same as C = C | 2
 
 
  */
@@ -103,11 +103,11 @@ public class _2InterleavingString {
 
                 f[i][j] = false;
                 if (j > 0 && c3[i + j - 1] == c1[i - 1]) {
-                    f[i][j] = f[i - 1][j];//true
+                    f[i][j] |= f[i - 1][j];//true
                 }
 
                 if (j > 0 && c3[i + j - 1] == c2[j - 1]) {
-                    f[i][j] = f[i][j - 1]; //false
+                    f[i][j] |= f[i][j - 1]; //false
                 }
             }
         }

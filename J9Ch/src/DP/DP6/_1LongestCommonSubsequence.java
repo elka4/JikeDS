@@ -27,6 +27,7 @@ B=“liji ang”
 • 状态:设f[i][j]为A前i个字符A[0..i-1]和B前j个字符[0..j-1]的最长公共子串 的长度
 -----------------------------------------------------------------------------------------------
 动态规划组成部分二:转移方程
+
 • 设f[i][j]为A前i个字符A[0..i-1]和B前j个字符[0..j-1]的最长公共子串的长度
 • 要求f[m][n]
 
@@ -39,6 +40,7 @@ f[i][j] = max{f[i-1][j], f[i][j-1], f[i-1][j-1]+1|A[i-1]=B[j-1]}
 情况三:A[0..i-2]和B[0..j-2]的最长 公共子串+A[i-1]
 -----------------------------------------------------------------------------------------------
 动态规划组成部分三:初始条件和边界情况
+
 • f[i][j]为A前i个字符A[0..i-1]和B前j个字符[0..j-1]的最长公共子串的长度
 • 转移方程:f[i][j] = max{f[i-1][j], f[i][j-1], f[i-1][j-1]+1|A[i-1]=B[j-1]}
 • 初始条件:空串和任何串的最长公共子串长度是0
@@ -46,6 +48,7 @@ f[i][j] = max{f[i-1][j], f[i][j-1], f[i-1][j-1]+1|A[i-1]=B[j-1]}
     – f[i][0] = 0, i=0..m
 -----------------------------------------------------------------------------------------------
 动态规划组成部分四:计算顺序
+
 • f[0][0], f[0][1], ..., f[0][n]
 • f[1][0], f[1][1], ..., f[1][n]
 •...
@@ -125,7 +128,7 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
                 f[i][j] = Math.max(f[i - 1][j], f[i][j - 1]);
 
                 if (f[i][j] == f[i - 1][j]) {
-                    pai[i][j] = -1;
+                    pai[i][j] = 1;
                 } else {
                     pai[i][j] = 2;
                 }
@@ -169,8 +172,8 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
 
     @Test
     public void test02() {
-        System.out.println(longestCommonSubsequence1("ABCD", "EDCA"));
-        System.out.println(longestCommonSubsequence1("ABCD" , "EACB"));
+        System.out.println(longestCommonSubsequence1("jiuzhang", "lijiang"));
+//        System.out.println(longestCommonSubsequence1("ABCD" , "EACB"));
     }
 
 ////////////////////////////////////////////////////////////////

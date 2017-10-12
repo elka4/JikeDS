@@ -1,5 +1,8 @@
 package DP.DP7;
 
+import groovy.transform.ToString;
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -87,11 +90,47 @@ f[k][j+1] 能最后一跳j+1跳到石头ak
 
 //Frog Jump
 public class _3FrogJump {
+    // 9Ch DP
+    public boolean canCross(int[] stones) {
+
+        int n = stones.length;
+        HashMap<Integer, HashSet<Integer>> f = new HashMap<>();
+
+        int i, j;
+
+        for (i = 0; i < n; i++) {
+            f.put(stones[i], new HashSet<Integer>());
+        }
+
+        f.get(stones[0]).add(0);
+
+        for (i = 0; i < n - 1; i++) {
+            HashSet<Integer> tmp = new HashSet<Integer>(f.get(stones[i]));
+            for (int k :tmp) {
+                for (int delta = -1; delta <= 1; delta++) {
+                    int t = stones[i] + (k + delta);
+                    if (f.containsKey(t)) {
+                        f.get(t).add(k + delta);
+                    }
+                }
+            }
+        }
+        return !f.get(stones[n - 1]).isEmpty();
+    }
+
+    @Test
+    public void test01() {
+        int[] stones = {0,1,2,3,4,8,9,11};
+        System.out.println(canCross(stones));
+    }
+
+
+////////////////////////////////////////////////////////////////////////
     /**
      * @param stones a list of stones' positions in sorted ascending order
      * @return true if the frog is able to cross the river or false
      */
-    public boolean canCross(int[] stones) {
+    public boolean canCross2(int[] stones) {
         // Write your code here
         HashMap<Integer, HashSet<Integer>> dp =
                 new HashMap<Integer, HashSet<Integer>>(stones.length);
@@ -120,7 +159,7 @@ public class _3FrogJump {
 
 ////////////////////////////////////////////////////////////////////////
 
-
+////////////////////////////////////////////////////////////////////////
 }
 /*
 A frog is crossing a river. The river is divided into x units and at each unit there may or may not exist a stone. The frog can jump on a stone, but it must not jump into the water.

@@ -109,7 +109,7 @@ public class _3EditDistance {
 // 9Ch DP 不能通过
 public int minDistance00(String word1, String word2) {
     char[] c1 = word1.toCharArray();
-    char[] c2 = word1.toCharArray();
+    char[] c2 = word2.toCharArray();
     int m = c1.length;
     int n = c2.length;
 
