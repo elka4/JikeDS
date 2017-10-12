@@ -24,7 +24,6 @@ import java.util.List;
 // String Serialization
 public class _2StringSerialization {
     //in class
-    //有错误，不能AC
     /**
      * @param strs a list of strings
      * @return encodes a list of strings to a single string.
@@ -56,7 +55,7 @@ public class _2StringSerialization {
         String item = "";
         int i = 0;
         while (i < str.length()) {
-            if (sc[i] == ';') {             //escape
+            if (sc[i] == ':') {             //escape
                 if (sc[i + 1] == ';') {     // ; connector
                     ans.add(item);
                     item = "";

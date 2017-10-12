@@ -17,9 +17,10 @@ Example : 1 2 3 4 5 6 7 8 9
 思路:
 • 类似内存从磁盘读数据
 • 做一个buffer， buffer是一个队列:
-– 队列先进先出可以保持顺序不变
-– 队列为空时就进队(read4)
-– 队列不为空时就满足内存的请求，也就是出队
+    – 队列先进先出可以保持顺序不变
+    – 队列为空时就进队(read4)
+    – 队列不为空时就满足内存的请求，也就是出队
+
 • Example : 1 2 3 4 5 6 7 8 9
 • 每次读的个数 6 1 4
 • 具体实现
@@ -39,6 +40,8 @@ Example : 1 2 3 4 5 6 7 8 9
 5. 细节处理(corner case)
 7. debug能力
  */
+
+ // Read Characters From File _multiplecalls
 public class _1ReadCharactersFromFile_multiplecalls {
     //in class
     char[] buffer = new char[4];
@@ -54,7 +57,7 @@ public class _1ReadCharactersFromFile_multiplecalls {
                     break;
                 }
             }
-            while(i < n && head < tail) {
+            while(i < n && head < tail) {  //queue is NOT empty
                 buf[i++] = buffer[head++];   //dequeue
             }
         }

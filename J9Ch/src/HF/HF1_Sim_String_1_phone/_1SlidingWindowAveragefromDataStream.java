@@ -2,7 +2,7 @@ package HF.HF1_Sim_String_1_phone;
 
 import org.junit.Test;
 
-import java.util.LinkedList;
+import java.util.*;
 import java.util.Queue;
 
 /*
@@ -21,6 +21,10 @@ Example:
 – for 循环最近size 个数求和取平均返回
 • 时间复杂度是多少呢? – 每次O(size)
 • 怎样优化算法——如何快速求和? – 前缀和数组
+
+• 方便快速求a数组中某一段的和
+– a[k] + a[k + 1] +... + a[j] = s[j] - s[k -1] 时间复杂度o(1)
+• 怎样快求s数组? – s[i] = s[i - 1] + a[i]        时间复杂度o(n)
  */
 
 /*
@@ -38,6 +42,7 @@ Example:
 5. 细节处理(corner case)
  */
 
+// Sliding Window Average from Data Stream
 public class _1SlidingWindowAveragefromDataStream {
 
 
@@ -55,6 +60,10 @@ public class _1SlidingWindowAveragefromDataStream {
         public double next(int val){
             id++;
             sum[id] = sum[id - 1] + val;
+            /*
+            如果当前数组中含有超出或等于s个数字，取s个数字计算平均值
+            如果当前数组中少于s个数字，有多少取多少
+             */
             if (id - size >= 0) {
                 return (sum[id] - sum[id - size]) / size;
             } else {
@@ -155,6 +164,7 @@ public class _1SlidingWindowAveragefromDataStream {
 //////////////////////////////////////////////////////////////////
 
     //滚动
+    // 只要是mod比 s+1 大的就行
     public class MovingAverage4 {
         /**
          * Initialize your data structure here.
@@ -228,6 +238,132 @@ public class _1SlidingWindowAveragefromDataStream {
         System.out.println(m.next(10));
         System.out.println(m.next(3));
         System.out.println(m.next(5));
+    }
+
+//////////////////////////////////////////////////////////////////
+    // Java O(1) time solution.
+    //The idea is to keep the sum so far and update the sum just by
+    // replacing the oldest number with the new entry.
+
+    public class MovingAverage6 {
+        private int [] window;
+        private int n, insert;
+        private long sum;
+
+        /** Initialize your data structure here. */
+        public MovingAverage6(int size) {
+            window = new int[size];
+            insert = 0;
+            sum = 0;
+        }
+
+        public double next(int val) {
+            if (n < window.length)  n++;
+            sum -= window[insert];
+            sum += val;
+            window[insert] = val;
+            insert = (insert + 1) % window.length;
+
+            return (double)sum / n;
+        }
+    }
+
+    public class MovingAverage7 {
+        Queue<Integer> q;
+        double sum = 0;
+        int size;
+
+        public MovingAverage7(int s) {
+            q = new LinkedList();
+            size = s;
+        }
+
+        public double next(int val) {
+            if(q.size() == size){
+                sum = sum - q.poll();
+            }
+            q.offer(val);
+            sum += val;
+            return sum/q.size();
+        }
+    }
+//////////////////////////////////////////////////////////////////
+public class MovingAverage8 {
+    private double previousSum = 0.0;
+    private int maxSize;
+    private Queue<Integer> currentWindow;
+
+    public MovingAverage8(int size) {
+        currentWindow = new LinkedList<Integer>();
+        maxSize = size;
+    }
+
+    public double next(int val) {
+        if (currentWindow.size() == maxSize)
+        {
+            previousSum -= currentWindow.remove();
+        }
+
+        previousSum += val;
+        currentWindow.add(val);
+        return previousSum / currentWindow.size();
+    }
+}
+//////////////////////////////////////////////////////////////////
+//JAVA O(1) using Deque
+
+    public class MovingAverage9 {
+
+        Deque<Integer> dq;
+        int size;
+        int sum;
+        public MovingAverage9(int size) {
+            dq = new LinkedList<>();
+            this.size = size;
+            this.sum = 0;
+        }
+
+        public double next(int val) {
+            if (dq.size() < size) {
+                sum += val;
+                dq.addLast(val);
+                return (double) (sum / dq.size());
+            } else {
+                int temp = dq.pollFirst();
+                sum -= temp;
+                dq.addLast(val);
+                sum += val;
+                return (double) (sum / size);
+            }
+        }
+
+    }
+
+//////////////////////////////////////////////////////////////////
+
+    //Simple Java LinkedList Solution
+    public class MovingAverage10 {
+        private LinkedList<Integer> nums;
+        private int total;
+        private int windowSize;
+
+        /** Initialize your data structure here. */
+        public MovingAverage10(int size) {
+            nums = new LinkedList<>();
+            windowSize = size;
+            total = 0;
+        }
+
+        public double next(int val) {
+            if (nums.size() < windowSize) {
+                total += val;
+                nums.add(val);
+            } else {
+                total = total - nums.pollLast() + val;
+                nums.add(val);
+            }
+            return total / nums.size();
+        }
     }
 
 //////////////////////////////////////////////////////////////////

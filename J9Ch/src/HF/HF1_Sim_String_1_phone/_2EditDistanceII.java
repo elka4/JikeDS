@@ -2,6 +2,8 @@ package HF.HF1_Sim_String_1_phone;
 import org.junit.Test;
 
 /*
+One Edit Distance
+
 Example:
 • s=“abcd” t=“abce”
 • s=“abcd” t=“abcef”
@@ -39,7 +41,7 @@ Company Tags: Facebook
 
 
 
-public class _2EditDistance {
+public class _2EditDistanceII {
     //in class
     public boolean isOneEditDistance(String s, String t){
         if (s.length() > t.length()) {

@@ -40,13 +40,18 @@ public class _3SystemLongestFilePath {
         int[] level_size = new int[input.length() + 1];
 
         for (String line : input.split("\n")) {
+            System.out.println("line: " + line);
+            System.out.println("lastIndexOf t: " + line.lastIndexOf('\t'));
             int level = line.lastIndexOf('\t') + 2;
             int len = line.length() - (level - 1);
+            System.out.println("len: " + len);
+
             if (line.contains(".")) {
                 ans = Math.max(ans, level_size[level - 1] + len);
             } else {
-                level_size[level] = level_size[level - 1] + len + 1;
+                level_size[level] = level_size[level - 1] + len + 1; // 1 is /
             }
+            System.out.println("------------------------");
         }
         return ans;
     }
