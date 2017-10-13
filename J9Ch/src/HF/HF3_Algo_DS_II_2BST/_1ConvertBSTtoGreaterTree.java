@@ -44,11 +44,11 @@ public class _1ConvertBSTtoGreaterTree {
         convertBST(root).print();
 
         /*
-         2
+         5
         / \
-        5 13
+        2 13
 
-         15
+         18
         / \
         20 13
          */

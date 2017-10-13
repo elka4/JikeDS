@@ -19,7 +19,16 @@ public class _1BinaryTreeFlipping {
         return new_root;
     }
 
+    @Test
+    public void test01(){
+        int[] arr = {2,1,3};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.left.setLeftChild(new TreeNode(4));
+        root.left.setRightChild(new TreeNode(5));
+        root.print();
+        upsideDownBinaryTree(root).print();
 
+    }
 
 //////////////////////////////////////////////////////////////
 
@@ -48,7 +57,7 @@ public class _1BinaryTreeFlipping {
     }
 
     @Test
-    public void test(){
+    public void test02(){
         int[] arr = {2,1,3};
         TreeNode root = TreeNode.createMinimalBST(arr);
         root.left.setLeftChild(new TreeNode(4));

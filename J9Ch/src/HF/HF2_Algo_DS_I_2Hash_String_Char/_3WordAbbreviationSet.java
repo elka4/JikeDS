@@ -106,7 +106,13 @@ public class _3WordAbbreviationSet {
             return "" + w.charAt(0) + len + w.charAt(w.length() - 1);
         }
     }
-
+    private String getAbbr(String w){
+        int len = w.length() - 2;
+        if (len <= 0) {
+            return w;
+        }
+        return "" + w.charAt(0) + len + w.charAt(w.length() - 1);
+    }
 
     @Test
     public void test1(){
@@ -119,6 +125,15 @@ public class _3WordAbbreviationSet {
         System.out.println(vwa.isUnique("make"));
     }
 
+    @Test
+    public void test11(){
+        System.out.println(getAbbr("deer"));
+        System.out.println(getAbbr("door"));
+        System.out.println(getAbbr("cake"));
+        System.out.println(getAbbr("card" ));
+        System.out.println(getAbbr("internationalization" ));
+//        System.out.println(getAbbr("card" ));
+    }
 
     /**
      * Your ValidWordAbbr object will be instantiated and called as such:

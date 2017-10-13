@@ -39,6 +39,7 @@ public class _3SystemLongestFilePath {
         int ans = 0;
         int[] level_size = new int[input.length() + 1];
 
+        // 运行起来是个栈，因为每次level都是新得到的
         for (String line : input.split("\n")) {
             System.out.println("line: " + line);
             System.out.println("lastIndexOf t: " + line.lastIndexOf('\t'));
@@ -48,9 +49,13 @@ public class _3SystemLongestFilePath {
 
             if (line.contains(".")) {
                 ans = Math.max(ans, level_size[level - 1] + len);
+                System.out.println("ans: " + ans);
             } else {
-                level_size[level] = level_size[level - 1] + len + 1; // 1 is /
+                // presum
+                level_size[level] = level_size[level - 1] + len + 1; // 1 is length of /
+                System.out.println("level_size[level]: " + level_size[level]);
             }
+            System.out.println();
             System.out.println("------------------------");
         }
         return ans;
@@ -61,7 +66,34 @@ public class _3SystemLongestFilePath {
         System.out.println(lengthLongestPath("dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext" ));
     }
 
+/*
+line: dir
+lastIndexOf t: -1
+len: 3
+level_size[level]: 4
 
+------------------------
+line: 	subdir1
+lastIndexOf t: 0
+len: 7
+level_size[level]: 12
+
+------------------------
+line: 	subdir2
+lastIndexOf t: 0
+len: 7
+level_size[level]: 12
+
+------------------------
+line: 		file.ext
+lastIndexOf t: 1
+len: 8
+ans: 20
+
+------------------------
+20
+
+ */
     @Test
     public void test02(){
         System.out.println(lengthLongestPath("dir\n\tfile.ext" ));

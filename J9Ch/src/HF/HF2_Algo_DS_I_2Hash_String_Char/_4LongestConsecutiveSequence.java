@@ -100,16 +100,16 @@ public class _4LongestConsecutiveSequence {
         int ans = 0;
         for (int item : num) {
             if (set.contains(item)) {
-                set.remove(item);
+                set.remove(item); //防止以后再次访问
 
                 int pre = item - 1;
                 int next = item + 1;
                 while (set.contains(pre)) {
-                    set.remove(pre);
+                    set.remove(pre); //防止以后再次访问
                     pre--;
                 }
                 while (set.contains(next)) {
-                    set.remove(next);
+                    set.remove(next); //防止以后再次访问
                     next++;
                 }
                 ans = Math.max(ans, next - pre - 1);

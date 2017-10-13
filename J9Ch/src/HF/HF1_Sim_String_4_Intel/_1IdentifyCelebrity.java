@@ -33,6 +33,10 @@ public class _1IdentifyCelebrity {
     public int findCelebrity(int n) {
         // Write your code here
         int ans = 0;
+        /*
+        A 认识 B， 就是A肯定不不是名人，而B有可能是名人
+        所以排除A，并且把B设为candidate
+         */
         for (int i = 1; i < n; i++) {
             if (knows(ans, i)) {
                 ans = i;
@@ -40,6 +44,7 @@ public class _1IdentifyCelebrity {
         }
 
         // 可能存在没有名人
+
         for (int i = 0; i < n; i++) {
             if (ans != i && knows(ans, i)) {
                 return -1;
