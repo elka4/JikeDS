@@ -23,7 +23,7 @@ LintCode 76 Longest Increasing Subsequence
 -----------------------------------------------------------------------------------------------
 分析方程f的值
 
-•转移方程:f[j]=max{1, f[i]+1|i<janda[i]<a[j]}
+•转移方程:f[j]=max{1, f[i]+1 | i<j and a[i]<a[j]}
 • 每个f[j]都在寻找前面比自己小的a[i]里，最大的f[i]
 
 -----------------------------------------------------------------------------------------------
@@ -66,9 +66,62 @@ f[i]，f[j] = f[i] + 1
 import org.junit.Test;
 
 //  Longest Increasing Subsequence
-public class _1LongestIncreasingSubsequence {
+public class _3LongestIncreasingSubsequence {
+    //9CH DP
+    // nlogn
+    public int LongestIncreasingSubsequence(int[] nums) {
+        int n = nums.length;
+        if (n == 0) {
+            return 0;
+        }
+        int[] b = new int[n + 1];
+        // b[i]: when f value is i, smallest a value (ending value)
 
-    // 9Ch DP
+        int top = 0;
+        b[0] = Integer.MIN_VALUE;
+
+        for (int i = 0; i < n; i++) {
+            // b[0] ~ b[top]
+            // last value b[j] which is smaller than A[i]
+            int start = 0, stop = top;
+            int mid;
+            int j = -1;
+
+            while (start <= stop) {
+                mid = (start + stop) / 2;
+                if (b[mid] < nums[i]) {
+                    j = mid;
+                    start = mid + 1;
+                } else {
+                    stop = mid - 1;
+                }
+            }
+
+            b[j + 1] = nums[i];
+            if (j + 1 > top) {
+                top = j + 1;
+            }
+        }
+
+        // b[0] ... b[top]
+        // b[top] stores the smallest ending value for an increasing sequence with length top
+        return top;
+    }
+
+
+    /*
+Given [10, 9, 2, 5, 3, 7, 101, 18],
+The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
+ */
+    @Test
+    public void test0() {
+        int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
+        System.out.println(LongestIncreasingSubsequence(nums));
+    }
+
+
+//////////////////////////////////////////////////////////////////
+    // jiuzhang
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
         if (n == 0) {
@@ -78,6 +131,7 @@ public class _1LongestIncreasingSubsequence {
         int[] f = new int[n];
         int[] b = new int[n + 1];
         // b[i]: when f value is i, smallest a value (ending value)
+
         int top = 0;
         b[0] = Integer.MIN_VALUE;
 
@@ -126,7 +180,7 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
      */
 
 
-    public int longestIncreasingSubsequence(int[] nums) {
+    public int longestIncreasingSubsequence1(int[] nums) {
         int []f = new int[nums.length];
         int max = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -146,55 +200,58 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
     @Test
     public void test02() {
         int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
-        System.out.println(longestIncreasingSubsequence(nums));
+        System.out.println(longestIncreasingSubsequence1(nums));
     }
 
 //////////////////////////////////////////////////////////////////
 
     // O(nlogn) Binary Search
-
-    public class Solution2 {
-        /**
-         * @param nums: The integer array
-         * @return: The length of LIS (longest increasing subsequence)
-         */
-        public int longestIncreasingSubsequence(int[] nums) {
-            int[] minLast = new int[nums.length + 1];
-            minLast[0] = Integer.MIN_VALUE;
-            for (int i = 1; i <= nums.length; i++) {
-                minLast[i] = Integer.MAX_VALUE;
-            }
-
-            for (int i = 0; i < nums.length; i++) {
-                // find the first number in minLast >= nums[i]
-                int index = binarySearch(minLast, nums[i]);
-                minLast[index] = nums[i];
-            }
-
-            for (int i = nums.length; i >= 1; i--) {
-                if (minLast[i] != Integer.MAX_VALUE) {
-                    return i;
-                }
-            }
-
-            return 0;
+    /**
+     * @param nums: The integer array
+     * @return: The length of LIS (longest increasing subsequence)
+     */
+    public int longestIncreasingSubsequence2(int[] nums) {
+        int[] minLast = new int[nums.length + 1];
+        minLast[0] = Integer.MIN_VALUE;
+        for (int i = 1; i <= nums.length; i++) {
+            minLast[i] = Integer.MAX_VALUE;
         }
 
-        // find the first number > num
-        private int binarySearch(int[] minLast, int num) {
-            int start = 0, end = minLast.length - 1;
-            while (start + 1 < end) {
-                int mid = (end - start) / 2 + start;
-                if (minLast[mid] < num) {
-                    start = mid;
-                } else {
-                    end = mid;
-                }
-            }
-
-            return end;
+        for (int i = 0; i < nums.length; i++) {
+            // find the first number in minLast >= nums[i]
+            int index = binarySearch(minLast, nums[i]);
+            minLast[index] = nums[i];
         }
+
+        for (int i = nums.length; i >= 1; i--) {
+            if (minLast[i] != Integer.MAX_VALUE) {
+                return i;
+            }
+        }
+
+        return 0;
     }
+
+    // find the first number > num
+    private int binarySearch(int[] minLast, int num) {
+        int start = 0, end = minLast.length - 1;
+        while (start + 1 < end) {
+            int mid = (end - start) / 2 + start;
+            if (minLast[mid] < num) {
+                start = mid;
+            } else {
+                end = mid;
+            }
+        }
+
+        return end;
+    }
+    @Test
+    public void test03() {
+        int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
+        System.out.println(longestIncreasingSubsequence2(nums));
+    }
+
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
 

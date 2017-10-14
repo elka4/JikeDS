@@ -89,7 +89,7 @@ f[k][j+1] 能最后一跳j+1跳到石头ak
  */
 
 //Frog Jump
-public class _3FrogJump {
+public class _5FrogJump {
     // 9Ch DP
     public boolean canCross(int[] stones) {
 
@@ -105,6 +105,7 @@ public class _3FrogJump {
         f.get(stones[0]).add(0);
 
         for (i = 0; i < n - 1; i++) {
+            // tmp: f[A[i]]
             HashSet<Integer> tmp = new HashSet<Integer>(f.get(stones[i]));
             for (int k :tmp) {
                 for (int delta = -1; delta <= 1; delta++) {

@@ -91,8 +91,9 @@ f[sQ][j-1]   情况四:SP和Target最后 一个字符相等
  */
 
 // K Edit Distance
-public class _2KEditDistance {
+public class _4KEditDistance {
 
+///////////////////////////////////////////////////////////////////////////
     // 9Ch DP
     char[] target = null;
     int K = 0;
@@ -136,30 +137,30 @@ public class _2KEditDistance {
         }
     }
 
-    public List<String> kDistance(String[] words, String targetStr, int k) {
+    public List<String> kDistance1(String[] words, String targetStr, int k) {
         target = targetStr.toCharArray();
         n = target.length;
         K = k;
         res = new ArrayList<String>();
 
-        // init trie
+        // 1 init trie
         // root
         Trienode2 root = new Trienode2();
         for (int i = 0; i < words.length; i++) {
             Trienode2.Insert(root, words[i]);
         }
 
-        // init f
+        // 2 init f
         // f[""][0 ~ n]
         f = new int[n + 1];
         for (int i = 0; i <= n; i++) {
             f[i] = i;
         }
 
-        // dfs
+        // 3 dfs
         dfs(root, f);
 
-        // return
+        // 4 return
         return res;
     }
 
@@ -174,7 +175,7 @@ return"abc" "adc"
         String[] words = {"abc", "abd", "abcd", "adc"};
         String targetStr = "ac" ;
         int k = 1;
-        System.out.println(kDistance(words, targetStr, 1));
+        System.out.println(kDistance1(words, targetStr, 1));
     }
 
 ///////////////////////////////////////////////////////////////////////////
