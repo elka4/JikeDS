@@ -102,7 +102,7 @@ public class _2InterleavingString {
                 }
 
                 f[i][j] = false;
-                if (j > 0 && c3[i + j - 1] == c1[i - 1]) {
+                if (i > 0 && c3[i + j - 1] == c1[i - 1]) {
                     f[i][j] |= f[i - 1][j];//true
                 }
 
@@ -195,8 +195,10 @@ public class Solution2 {
             return memo[i][j] == 1 ? true : false;
         }
         boolean ans = false;
-        if (s3.charAt(k) == s1.charAt(i) && is_Interleave(s1, i + 1, s2, j, s3, k + 1, memo)
-                || s3.charAt(k) == s2.charAt(j) && is_Interleave(s1, i, s2, j + 1, s3, k + 1, memo)) {
+        if (s3.charAt(k) == s1.charAt(i)
+                && is_Interleave(s1, i + 1, s2, j, s3, k + 1, memo)
+                || s3.charAt(k) == s2.charAt(j)
+                && is_Interleave(s1, i, s2, j + 1, s3, k + 1, memo)) {
             ans = true;
         }
         memo[i][j] = ans ? 1 : 0;
