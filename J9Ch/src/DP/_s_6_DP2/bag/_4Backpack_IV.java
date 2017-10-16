@@ -1,4 +1,4 @@
-package DP._s_6_DP2;
+package DP._s_6_DP2.bag;
 
 public class _4Backpack_IV {
 	

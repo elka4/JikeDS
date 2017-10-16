@@ -59,6 +59,7 @@ public class _6BurstBalloons {
             for (i = 0; i <= n - len + 2; i++) {
                 j = i + len - 1;
                 f[i][j] = 0;
+                // k is the index of last balloon burst
                 for (k = i + 1; k < j; k++) {
                     f[i][j] = Math.max(f[i][j], f[i][k] + f[k][j] + A[i] * A[k] * A[j]);
                 }
