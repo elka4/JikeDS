@@ -1,4 +1,4 @@
-package _4_Tree;
+package _4_Tree.Longest_Consecutive_Sequence;
 
 import lib.*;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package _4_Tree;
+package _4_Tree.Traverse;
 
 import lib.TreeNode;
 
