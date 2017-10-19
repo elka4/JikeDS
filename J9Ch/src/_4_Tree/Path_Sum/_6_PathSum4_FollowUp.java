@@ -1,4 +1,4 @@
-package _4_Tree._2Tree_Class;
+package _4_Tree.Path_Sum;
 
 public class _6_PathSum4_FollowUp {
 	//Follow Up: Path � Any node to any other node

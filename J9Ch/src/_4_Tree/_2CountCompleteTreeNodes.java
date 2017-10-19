@@ -1,4 +1,4 @@
-package _4_Tree._2Tree_Adv;
+package _4_Tree;
 import lib.TreeNode;
 
 //

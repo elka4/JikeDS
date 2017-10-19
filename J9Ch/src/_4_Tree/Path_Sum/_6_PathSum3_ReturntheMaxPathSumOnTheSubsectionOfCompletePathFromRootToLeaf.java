@@ -1,4 +1,4 @@
-package _4_Tree._2Tree_Class;
+package _4_Tree.Path_Sum;
 
 import lib.*;
 import org.junit.Test;

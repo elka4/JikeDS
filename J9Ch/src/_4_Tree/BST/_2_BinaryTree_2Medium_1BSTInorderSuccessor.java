@@ -1,4 +1,4 @@
-package _4_Tree._2Tree_PreClass;
+package _4_Tree.BST;
 
 import lib.*;
 import org.junit.Test;
