@@ -1,4 +1,4 @@
-package _4_Tree._2Tree;
+package _4_Tree.traveral;
 
 import org.junit.Test;
 

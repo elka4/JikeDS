@@ -1,7 +1,6 @@
 package _4_Tree._2Tree_Class;
 
-import CtCILibrary.AssortedMethods;
-import CtCILibrary.TreeNode;
+import lib.*;
 import org.junit.Test;
 
 public class _7_DeleteANodeinBST {

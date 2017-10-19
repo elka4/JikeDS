@@ -1,4 +1,4 @@
-package _4_Tree._2Tree;
+package _4_Tree.traveral;
 
 import java.io.File;
 import java.io.FileNotFoundException;

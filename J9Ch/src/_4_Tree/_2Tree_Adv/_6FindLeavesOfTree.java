@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import lib.*;
 
 // Find Leaves Of Tree
 public class _6FindLeavesOfTree {

@@ -1,7 +1,6 @@
 package _4_Tree._2Tree_Adv;
 
-import CtCILibrary.TreeNode;
-
+import lib.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

@@ -1,7 +1,7 @@
 package _4_Tree._2Tree_PreClass;
 
-import CtCILibrary.AssortedMethods;
-import CtCILibrary.TreeNode;
+import lib.AssortedMethods;
+import lib.TreeNode;
 import org.junit.Test;
 
 import java.util.Deque;

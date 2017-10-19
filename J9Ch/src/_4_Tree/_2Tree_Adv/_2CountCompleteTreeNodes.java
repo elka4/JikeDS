@@ -1,5 +1,5 @@
 package _4_Tree._2Tree_Adv;
-import CtCILibrary.TreeNode;
+import lib.TreeNode;
 
 //
 // Count Complete Tree Nodes

@@ -1,7 +1,6 @@
 package _4_Tree._2Tree_PreClass;
 
-import CtCILibrary.AssortedMethods;
-import CtCILibrary.TreeNode;
+import lib.*;
 import org.junit.Test;
 
 public class _2_BianryTree_1Easy_SearchInsertANodeInBST_Iterator {

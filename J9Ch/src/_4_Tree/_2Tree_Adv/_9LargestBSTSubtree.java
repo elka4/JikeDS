@@ -1,7 +1,6 @@
 package _4_Tree._2Tree_Adv;
 
-import CtCILibrary.TreeNode;
-
+import lib.*;
 // leetcode 333
 
 // Largest BST Subtree
