@@ -1,6 +1,6 @@
-package j_3_BianryTree;
+package _4_Tree;
 
-import lib.*;
+import lib.TreeNode;
 
 public class BinaryTreeMaximumNode {
     int max = Integer.MIN_VALUE;
