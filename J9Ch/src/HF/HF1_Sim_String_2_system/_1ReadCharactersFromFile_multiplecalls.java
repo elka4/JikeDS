@@ -64,6 +64,7 @@ public class _1ReadCharactersFromFile_multiplecalls {
         return i;
     }
 
+ /////////////////////////////////////////////////////////////////////
     int read4(char[] buffer){
         return 1;
     }

@@ -62,6 +62,7 @@ public class _2PaintHouse {
                         continue;
                     }
                     // f[i - 1][k]    前i - 1栋房子并且i - 1染成k的颜色的最小花费，
+
                     // costs[i - 1][j] 第i栋房子染成j这个颜色的花费
                     if (f[i - 1][k] + costs[i - 1][j] < f[i][j]){
                         f[i][j] = f[i - 1][k] + costs[i - 1][j];
@@ -124,6 +125,33 @@ public class _2PaintHouse {
         return res;
     }
 
+////////////////////////////////////////////////////////////////////////////
+    // mine on lint
+    public int minCostX(int[][] costs) {
+        // write your code here
+        int n = costs.length;
+
+        int[][] f = new int[2][3];
+
+        int now = 0;
+        int old = 0;
+        f[now][0] = f[now][1] = f[now][2] = 0;
+
+        for (int i = 1; i <= n; i++) {
+            old = now;
+            now = 1 - now;
+            for (int j = 0; j < 3; j++) {
+                f[now][j] = Integer.MAX_VALUE;
+                for (int k = 0; k < 3; k++) {
+                    if (j != k) {
+                        f[now][j] = Math.min(f[now][j], f[old][k] + costs[i - 1][j]);
+                    }
+                }
+            }
+        }
+        return Math.min(f[now][0], Math.min(f[now][1], f[now][2 ]));
+
+    }
 ////////////////////////////////////////////////////////////////////////////
 
     public int minCost2(int[][] costs) {

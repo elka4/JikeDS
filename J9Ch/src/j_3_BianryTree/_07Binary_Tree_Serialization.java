@@ -1,6 +1,7 @@
 package j_3_BianryTree;
 
 import lib.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 
@@ -45,7 +46,7 @@ public class _07Binary_Tree_Serialization {
         sb.append("}");
         return sb.toString();
     }
-
+///////////////////////////////////////////////////////////////////////////////////
     /**
      * This method will be invoked second, the argument data is what exactly
      * you serialized at method "serialize", that means the data is not given by
@@ -80,6 +81,19 @@ public class _07Binary_Tree_Serialization {
         }
         return root;
     }
+
+    @Test
+    public void test02() {
+        TreeNode root = deserialize("{3,9,20,#,#,15,7}");
+        root.print();
+    }
+////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+
 }
 
 /*Design an algorithm and write code to serialize and deserialize a binary tree. 

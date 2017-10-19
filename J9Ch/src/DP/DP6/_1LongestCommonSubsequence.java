@@ -83,6 +83,7 @@ public class _1LongestCommonSubsequence {
 
                 // normal transiton function
                 f[i][j] = Math.max(f[i - 1][j], f[i][j - 1]);
+
                 if (A[i - 1] == B[j - 1]) {
                     f[i][j] = Math.max(f[i][j], f[i - 1][j - 1] + 1);
                 }

@@ -98,8 +98,9 @@ public class _3LongestPalindromicSubsequence {
 
     @Test
     public void test01 () {
-        System.out.println(longestPalindromeSubseq("bbbab"));//4
-        System.out.println(longestPalindromeSubseq("cbbd"));//2
+        System.out.println(longestPalindromeSubseq("bbbab"));//4 bbbb
+        System.out.println(longestPalindromeSubseq("cbbd"));//2  bb
+        System.out.println(longestPalindromeSubseq("bbbafbb"));//2  bb
     }
 ////////////////////////////////////////////////////////////////////
     // 动态规划专题班非递归版：
@@ -151,7 +152,12 @@ public class _3LongestPalindromicSubsequence {
 
         return res;
     }
-
+    @Test
+    public void test02 () {
+        System.out.println(longestPalindromeSubseq1("bbbab"));//4 bbbb
+        System.out.println(longestPalindromeSubseq1("cbbd"));//2  bb
+        System.out.println(longestPalindromeSubseq1("bbbafbb"));//2  bb
+    }
 ////////////////////////////////////////////////////////////////////
 
     // 动态规划专题班递归版：

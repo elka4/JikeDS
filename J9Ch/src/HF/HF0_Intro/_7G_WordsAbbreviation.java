@@ -85,6 +85,7 @@ public class _7G_WordsAbbreviation {
 
          */
     }
+
 //////////////////////////////////////////////////////////////////////////////////////
 
 // version: 高频题班
@@ -139,6 +140,15 @@ public class _7G_WordsAbbreviation {
             System.out.println(s);
         }
     }
+
+    @Test
+    public void test22(){
+        System.out.println(getAbbr("internal", 1));
+        System.out.println(getAbbr("internal", 2));
+        System.out.println(getAbbr("internal", 3));
+        System.out.println(getAbbr("internal", 4));
+    }
+
 
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -265,7 +275,7 @@ public class _7G_WordsAbbreviation {
 
     @Test
     public void test4(){
-        String[] strs = {"like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"};
+        String[] strs = {"like", "lcce", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"};
         String[] result = wordsAbbreviation2(strs);
         for (String s:result) {
             System.out.println(s);

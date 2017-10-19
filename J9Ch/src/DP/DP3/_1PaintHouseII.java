@@ -106,6 +106,7 @@ public class _1PaintHouseII {
 
         int n = costs.length;
         int K = costs[0].length;
+
         int[][] f = new int[n + 1][K];
         int min1, min2;
         int j1 = 0, j2 = 0; //最小值和次小值对应的坐标

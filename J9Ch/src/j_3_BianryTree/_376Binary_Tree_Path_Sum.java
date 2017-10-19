@@ -3,13 +3,14 @@ package j_3_BianryTree;
 import lib.TreeNode;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 
 /**
  * Created by tzh on 3/2/17.
  */
 public class _376Binary_Tree_Path_Sum {
+    // jiuzhang
     /**
      * @param root the root of binary tree
      * @param target an integer
@@ -60,5 +61,186 @@ public class _376Binary_Tree_Path_Sum {
             path.remove(path.size() - 1);
         }
     }
+//////////////////////////////////////////////////////////////////////////////////////////
+
+    // DFS with one LinkedList , accepted java solution
+    public List<List<Integer>> pathSum(TreeNode root, int sum){
+        List<List<Integer>> result  = new LinkedList<List<Integer>>();
+        List<Integer> currentResult  = new LinkedList<Integer>();
+        pathSum(root,sum,currentResult,result);
+        return result;
+    }
+
+    public void pathSum(TreeNode root, int sum, List<Integer> currentResult,
+                        List<List<Integer>> result) {
+
+        if (root == null)
+            return;
+        currentResult.add(new Integer(root.val));
+        if (root.left == null && root.right == null && sum == root.val) {
+            result.add(new LinkedList(currentResult));
+            currentResult.remove(currentResult.size() - 1);//don't forget to remove the last integer
+            return;
+        } else {
+            pathSum(root.left, sum - root.val, currentResult, result);
+            pathSum(root.right, sum - root.val, currentResult, result);
+        }
+        currentResult.remove(currentResult.size() - 1);
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+    //Simple DFS Java Solution
+    // Save intermediate result into stack and save the stack into result array once its sum == required sum.
+
+    public class Solution {
+        private List<List<Integer>> resultList = new ArrayList<List<Integer>>();
+
+        public void pathSumInner(TreeNode root, int sum, Stack<Integer>path) {
+            path.push(root.val);
+            if(root.left == null && root.right == null)
+                if(sum == root.val) resultList.add(new ArrayList<Integer>(path));
+            if(root.left!=null) pathSumInner(root.left, sum-root.val, path);
+            if(root.right!=null)pathSumInner(root.right, sum-root.val, path);
+            path.pop();
+        }
+
+        public List<List<Integer>> pathSum(TreeNode root, int sum) {
+            if(root==null) return resultList;
+            Stack<Integer> path = new Stack<Integer>();
+            pathSumInner(root, sum, path);
+            return resultList;
+        }
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////////
+    // Java Solution: iterative and recursive
+
+//1. iterative: Using a stack to implement DFS
+//2. Recursive:
+
+    public class Solution2 {
+        public List<List<Integer>> pathSum(TreeNode root, int sum) {
+            List<List<Integer>> res = new ArrayList<>();
+            List<Integer> path = new ArrayList<>();
+            Stack<TreeNode> stack = new Stack<TreeNode>();
+            int SUM = 0;
+            TreeNode cur = root;
+            TreeNode pre = null;
+            while(cur!=null || !stack.isEmpty()){
+                while(cur!=null){
+                    stack.push(cur);
+                    path.add(cur.val);
+                    SUM+=cur.val;
+                    cur=cur.left;
+                }
+                cur = stack.peek();
+                if(cur.right!=null && cur.right!=pre){
+                    cur = cur.right;
+                    continue;
+                }
+                if(cur.left==null && cur.right==null && SUM==sum)
+                    res.add(new ArrayList<Integer>(path));
+
+                pre = cur;
+                stack.pop();
+                path.remove(path.size()-1);
+                SUM-=cur.val;
+                cur = null;
+
+            }
+            return res;
+        }
+    }
+
+
+    // I like this one
+    public class Solution3 {
+        public List<List<Integer>> pathSum(TreeNode root, int sum) {
+            List<List<Integer>> res = new ArrayList<>();
+            List<Integer> path = new ArrayList<>();
+            dfs(root, sum, res, path);
+            return res;
+        }
+
+        public void dfs(TreeNode root, int sum, List<List<Integer>> res, List<Integer> path){
+            if(root==null) return;
+            path.add(root.val);
+
+            if(root.left==null && root.right==null ){
+                if(root.val==sum)
+                    res.add(new ArrayList<Integer>(path));
+                return;
+            }
+            if(root.left!=null) {
+                dfs(root.left,sum-root.val,res,path);
+                path.remove(path.size()-1);
+            }
+            if(root.right!=null) {
+                dfs(root.right,sum-root.val,res,path);
+                path.remove(path.size()-1);
+            }
+
+        }
+    }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+    //Another accepted Java solution
+    public class Solution4 {
+        public List<List<Integer>> pathSum(TreeNode root, int sum) {
+            List<List<Integer>> res = new ArrayList<List<Integer>>();
+            pathSum(root, sum, new ArrayList<Integer>(), res);
+            return res;
+        }
+
+        void pathSum(TreeNode root, int sum, List<Integer> sol, List<List<Integer>> res) {
+            if (root == null) {
+                return;
+            }
+
+            sol.add(root.val);
+
+            if (root.left == null && root.right == null && sum == root.val) {
+                res.add(new ArrayList<Integer>(sol));
+            } else {
+                pathSum(root.left, sum - root.val, sol, res);
+                pathSum(root.right, sum - root.val, sol, res);
+            }
+
+            sol.remove(sol.size() - 1);
+        }
+    }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+    //My simple java solution
+    class solution5 {
+        private List<List<Integer>> result = new ArrayList<List<Integer>>();
+
+        public List<List<Integer>> pathSum(TreeNode root, int sum) {
+            helper(new ArrayList<Integer>(), root, sum);
+            return result;
+        }
+
+        private void helper(List<Integer> list, TreeNode root, int sum) {
+            if (root == null) return;
+            list.add(root.val);
+            sum -= root.val;
+            if (root.left == null && root.right == null) {
+                if (sum == 0) result.add(list);
+                return;
+            }
+            helper(new ArrayList<Integer>(list), root.left, sum);
+            helper(new ArrayList<Integer>(list), root.right, sum);
+        }
+    }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 }

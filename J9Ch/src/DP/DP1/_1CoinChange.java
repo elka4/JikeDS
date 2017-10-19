@@ -106,7 +106,8 @@ f[X] = min{f[X-2]+1, f[X-5]+1, f[X-7]+1}
 • 两个问题:X-2, X-5 或者X-7小于0怎么办?什么时候停下来?
 • 如果不能拼出Y，就定义f[Y]=正无穷
     – 例如f[-1]=f[-2]=...=正无穷
-• 所以f[1] =min{f[-1]+1, f[-4]+1,f[-6]+1}=正无穷, 表示拼不出来1 • 初始条件:f[0] = 0
+• 所以f[1] =min{f[-1]+1, f[-4]+1,f[-6]+1}=正无穷, 表示拼不出来1
+• 初始条件:f[0] = 0
 -----------------------------------------------------------------------------------------------
 动态规划组成部分四:计算顺序
 
@@ -171,11 +172,39 @@ public class _1CoinChange {
         return f[M];
     }
 
+    public int coinChange111(int[] coins, int amount) {
+        int[] f = new int[amount + 1];
+        int n = coins.length;
+
+        f[0] = 0;
+        int i, j;
+
+        for (i = 1; i <= amount; ++i) {
+            f[i] = -1;
+            for (j = 0; j < n; ++j) {
+                if (i >= coins[j] && f[i - coins[j]] != -1) {
+                    if (f[i] == -1 || f[i - coins[j]] + 1 < f[i]) {
+                        f[i] = f[i - coins[j]] + 1;
+                    }
+                }
+            }
+        }
+        return f[amount];
+    }
+
+
     @Test
     public void test01(){
         int[] A = {1, 2, 5};
         int M = 89;
-        System.out.println(coinChange(A,M));
+        System.out.println(coinChange111(A,M));
+    }
+
+    @Test
+    public void test011(){
+        int[] A = {1};
+        int M = 1;
+        System.out.println(coinChange111(A,M));
     }
 
 
@@ -214,13 +243,15 @@ public class _1CoinChange {
             f[i] = Integer.MAX_VALUE;
             //select last coin
             for (j = 0; j < n; ++j) {
-                if (i >= coins[j] && f[i - coins[j]] != Integer.MAX_VALUE && f[i - coins[j]] + 1 < f[i]) {
+                if (i >= coins[j] && f[i - coins[j]] != Integer.MAX_VALUE
+                        && f[i - coins[j]] + 1 < f[i]) {
                     f[i] = f[i - coins[j]] + 1;
                 }
             }
         }
         return f[amount] == Integer.MAX_VALUE ? -1 : f[amount];
     }
+
 /////////////////////////////////////////////////////////////////
 
     int f(int X) {
@@ -264,7 +295,8 @@ public class _1CoinChange {
             int minCost = Integer.MAX_VALUE;
             for (int x = 0; x <= maxVal; x++) {
                 if (amount >= x * coins[idxCoin]) {
-                    int res = coinChange11(idxCoin + 1, coins, amount - x * coins[idxCoin]);
+                    int res = coinChange11(idxCoin + 1, coins,
+                            amount - x * coins[idxCoin]);
                     if (res != -1)
                         minCost = Math.min(minCost, res + x);
                 }

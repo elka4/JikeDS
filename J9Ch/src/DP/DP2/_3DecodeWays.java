@@ -71,8 +71,8 @@ public class _3DecodeWays {
 
     @Test
     public void test01(){
-        System.out.println(numDecodings("2526"));
-        System.out.println(numDecodings("12"));
+        System.out.println(numDecodings("2526")); //4
+        System.out.println(numDecodings("12"));   //2
     }
 
 ////////////////////////////////////////////////////////////
@@ -107,6 +107,12 @@ public class _3DecodeWays {
         return f[l];
     }
 
+    @Test
+    public void test02(){
+        System.out.println(numDecodings2("2526")); //4
+        System.out.println(numDecodings2("12"));   //2
+    }
+
     // 9Ch DP
     public int numDecodings22(String ss){
         char[] s  = ss.toCharArray();
@@ -120,7 +126,7 @@ public class _3DecodeWays {
         f[0] = 1;
 
         // first i digits
-        for (int i = 0; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             f[i] = 0;
             // last digit
             int t = s[i - 1] - '0';
@@ -138,6 +144,12 @@ public class _3DecodeWays {
             }
         }
         return f[n];
+    }
+
+    @Test
+    public void test022(){
+        System.out.println(numDecodings22("2526")); //4
+        System.out.println(numDecodings22("12"));   //2
     }
 
 

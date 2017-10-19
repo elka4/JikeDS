@@ -65,8 +65,10 @@ public class _1SlidingWindowAveragefromDataStream {
             如果当前数组中少于s个数字，有多少取多少
              */
             if (id - size >= 0) {
+                System.out.println("id - size >= 0");
                 return (sum[id] - sum[id - size]) / size;
             } else {
+                System.out.println("else");
                 return sum[id] / id;
             }
         }
@@ -76,10 +78,14 @@ public class _1SlidingWindowAveragefromDataStream {
     @Test
     public void test01(){
         MovingAverage m = new MovingAverage(3);
-        System.out.println(m.next(1));
-        System.out.println(m.next(10));
-        System.out.println(m.next(3));
-        System.out.println(m.next(5));
+        System.out.println("result: " + m.next(1));        System.out.println("------------------------");
+
+        System.out.println("result: " + m.next(10));        System.out.println("------------------------");
+
+        System.out.println("result: " + m.next(3));        System.out.println("------------------------");
+
+        System.out.println("result: " + m.next(5));        System.out.println("------------------------");
+
     }
 
 //////////////////////////////////////////////////////////////////

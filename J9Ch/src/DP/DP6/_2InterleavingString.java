@@ -79,7 +79,7 @@ import org.junit.Test;
 
 // Interleaving String
 public class _2InterleavingString {
-    //9Ch DP  ??? 有些通不过
+    //9Ch DP
     public boolean isInterleave(String s1, String s2, String s3) {
         char[] c1 = s1.toCharArray();
         char[] c2 = s2.toCharArray();
@@ -96,7 +96,7 @@ public class _2InterleavingString {
         for (i = 0; i <= m; i++) {
             for (j = 0; j <= n; j++) {
                 //init
-                if (i == 0 || j == 0) {
+                if (i == 0 && j == 0) {
                     f[i][j] = true;
                     continue;
                 }
@@ -125,6 +125,39 @@ When s3 = "aadbbbaccc", return false.
         System.out.println(isInterleave("aabcc", "dbbca", "aadbbcbcac"));
         System.out.println(isInterleave("aabcc", "dbbca", "aadbbbaccc"));
 
+    }
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+    // mine
+    public boolean isInterleave11(String s1, String s2, String s3) {
+        char[] c1 = s1.toCharArray();
+        char[] c2 = s2.toCharArray();
+        char[] c3 = s3.toCharArray();
+
+        int m = c1.length;
+        int n = c2.length;
+        if (c3.length != m + n) {
+            return false;
+        }
+
+        boolean[][] f = new boolean[m + 1][n + 1];
+        f[0][0] = true;
+
+        for (int i = 0; i <= m; i++) {
+            for (int j = 0; j <= n; j++) {
+
+                if (i > 0 && c3[i + j - 1] == c1[i - 1]) {
+                    f[i][j] = f[i][j] | f[i - 1][j];//true
+                }
+
+                if (j > 0 && c3[i + j - 1] == c2[j - 1]) {
+                    f[i][j] = f[i][j] | f[i][j - 1]; //false
+                }
+            }
+        }
+        return f[m][n];
     }
 
 

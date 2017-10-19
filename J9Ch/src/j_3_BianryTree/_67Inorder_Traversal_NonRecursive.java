@@ -2,7 +2,7 @@ package j_3_BianryTree;
 
 import lib.TreeNode;
 
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Stack;
 
 public class _67Inorder_Traversal_NonRecursive {
@@ -26,6 +26,48 @@ public class _67Inorder_Traversal_NonRecursive {
 	    }
 	    return result;
 	}
+////////////////////////////////////////////////////////
+
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        // write your code here
+        Stack<TreeNode> stack = new Stack<>();
+        List<Integer> result = new ArrayList<>();
+        TreeNode cur = root;
+        while (cur != null || !stack.isEmpty()) {
+            while (cur != null) {
+                stack.add(cur);
+                cur = cur.left;
+            }
+            cur = stack.pop();
+
+            result.add(cur.val);
+            cur = cur.right;
+        }
+        return result;
+    }
+
+////////////////////////////////////////////////////////
+
+    public List<Integer> inorderTraversal3(TreeNode root) {
+        // write your code here
+        List<Integer> list = new ArrayList<>();
+        // if (root == null) {
+        //     return list;
+        // }
+        helper(root, list);
+        return list;
+    }
+
+    private void helper (TreeNode root, List<Integer> list) {
+        if (root == null) {
+            return;
+        }
+        helper(root.left, list);
+        list.add(root.val);
+        helper(root.right, list);
+    }
+
+////////////////////////////////////////////////////////
 }
 
 /*
