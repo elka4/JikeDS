@@ -29,6 +29,7 @@ public class Flatten_Binary_Tree_to_Linked_List {
 
         lastNode = root;
         TreeNode right = root.right; //切记要把root.right 先存下来。
+
         flatten(root.left);
         flatten(right);
     }
@@ -134,7 +135,6 @@ public class Flatten_Binary_Tree_to_Linked_List {
         root.print();
     }
 
-///////////////////////////////////////////////////////////////
 
     /*
               1
@@ -149,5 +149,144 @@ public class Flatten_Binary_Tree_to_Linked_List {
                        \
                         6
      */
+///////////////////////////////////////////////////////////////
+//    My short post order traversal Java solution for share
+    private TreeNode prev = null;
+
+    public void flatten4(TreeNode root) {
+        if (root == null)
+            return;
+        flatten(root.right);
+        flatten(root.left);
+        root.right = prev;
+        root.left = null;
+        prev = root;
+    }
+
+///////////////////////////////////////////////////////////////
+
+//    Straightforward Java Solution
+    public void flatten5(TreeNode root) {
+        if (root == null) return;
+
+        TreeNode left = root.left;
+        TreeNode right = root.right;
+
+        root.left = null;
+
+        flatten(left);
+        flatten(right);
+
+        root.right = left;
+        TreeNode cur = root;
+        while (cur.right != null) cur = cur.right;
+        cur.right = right;
+    }
+///////////////////////////////////////////////////////////////
+//Accepted simple Java solution , iterative
+//    it is DFS so u need a stack. Dont forget to set the left child to null, or u'll get TLE. (tricky!)
+
+    public void flatten6(TreeNode root) {
+        if (root == null) return;
+        Stack<TreeNode> stk = new Stack<TreeNode>();
+        stk.push(root);
+        while (!stk.isEmpty()){
+            TreeNode curr = stk.pop();
+            if (curr.right!=null)
+                stk.push(curr.right);
+            if (curr.left!=null)
+                stk.push(curr.left);
+            if (!stk.isEmpty())
+                curr.right = stk.peek();
+            curr.left = null;  // dont forget this!!
+        }
+    }
+
+///////////////////////////////////////////////////////////////
+//The idea is very simple:
+//
+//    flatten left subtree
+//
+//    flatten right subtree
+//
+//    concatenate root -> left flatten subtree -> right flatten subtree
+
+    public void flatten7(TreeNode root) {
+        if(root == null)
+            return;
+
+        flatten(root.left);
+        flatten(root.right);
+
+        // save current right for concatination
+        TreeNode right = root.right;
+
+        if(root.left != null) {
+
+            // step 1: concatinate root with left flatten subtree
+            root.right = root.left;
+            root.left = null; // set left to null
+
+            // step 2: move to the end of new added flatten subtree
+            while(root.right != null)
+                root = root.right;
+
+            // step 3: contatinate left flatten subtree with flatten right subtree
+            root.right = right;
+        }
+    }
+///////////////////////////////////////////////////////////////
+
+    // Java Solution Recursive & Non-Recursive
+    /**
+     * Move from root down,
+     * for each node,
+     *  attach original right as the right child of the rigthmost node of left subtree,
+     *  set original left as new right child.
+     * repeat with next right child.
+     */
+    /// SOLUTION II: non-recursive ///
+    public void flatten8(TreeNode root) {
+        TreeNode node = root;
+        while (node != null) {
+            TreeNode left = node.left;
+            TreeNode right = node.right;
+            if (left != null) {
+                TreeNode temp = left;
+                while (temp.right != null)
+                    temp = temp.right;
+                temp.right = right;
+                node.right = left;
+                node.left = null;
+            }
+            node = node.right;
+        }
+    }
+
+    /// SOLUTION I: accepted, recursion ///
+    public void flatten9(TreeNode root) {
+        if (root == null)
+            return;
+        TreeNode left = root.left;
+        TreeNode right = root.right;
+        if (left != null) {
+            TreeNode rightmost = getRightmost(left);
+            rightmost.right = right;
+            root.left = null; // CATCH: must set left to null explicitly
+            root.right = left;
+        }
+        flatten(root.right);
+    }
+
+    // return the rightmost node of a subtree;
+    // node must not be null.
+        private TreeNode getRightmost(TreeNode node) {
+            while (node.right != null)
+                node = node.right;
+            return node;
+        }
+///////////////////////////////////////////////////////////////
+
+
 
 }

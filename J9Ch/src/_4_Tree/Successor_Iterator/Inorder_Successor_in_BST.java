@@ -114,7 +114,38 @@ public class Inorder_Successor_in_BST {
 
 ////////////////////////////////////////////////////////////////////////////////
 
+    // version: 高频题班
+    public TreeNode inorderSuccessorX(TreeNode root, TreeNode p) {
+        // write your code here
+        if (root == null || p == null) {
+            return null;
+        }
 
+        if (root.val <= p.val) {
+            return inorderSuccessorX(root.right, p);
+        } else {
+            TreeNode left = inorderSuccessorX(root.left, p);
+            return (left != null) ? left : root;
+        }
+    }
+
+    @Test
+    public void test02(){
+        int[] input = {1,2};
+        TreeNode root = TreeNode.createMinimalBST(input);
+        root.print();
+        inorderSuccessorX(root, new TreeNode(1)).print();
+
+    }
+
+    @Test
+    public void test02_2(){
+        int[] input = {1,2,3};
+        TreeNode root = TreeNode.createMinimalBST(input);
+        root.print();
+        inorderSuccessorX(root, new TreeNode(2)).print();
+
+    }
 ////////////////////////////////////////////////////////////////////////////////
 
 

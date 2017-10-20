@@ -25,6 +25,7 @@ public class _1ConvertBSTtoGreaterTree {
         }
 
         root.val = (sum += root.val);
+
         if (root.left != null) {
             helper(root.left);
         }
