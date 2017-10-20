@@ -8,7 +8,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 
-public class Recursion_2Medium_BinaryTreeUpsideDown {
+public class BinaryTree_Up_Side_Down {
    //time O(n) space O(n)
 	public TreeNode upsideDownBinaryTree1(TreeNode root) {
 		if (root == null) {

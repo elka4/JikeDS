@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 
-public class _67TreeInteration {
+public class Tree_Interation {
     class Node{
         int value;
         Node left;

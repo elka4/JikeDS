@@ -3,7 +3,7 @@ import lib.TreeNode;
 
 //
 // Count Complete Tree Nodes
-public class _2CountCompleteTreeNodes {
+public class Count_Complete_TreeNodes {
     int height(TreeNode root) {
         return root == null ? -1 : 1 + height(root.left);
     }

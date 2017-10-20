@@ -2,7 +2,7 @@ package _4_Tree;
 
 import lib.TreeNode;
 
-public class BinaryTreeMaximumNode {
+public class BinaryTree_Maximum_Node {
     int max = Integer.MIN_VALUE;
     public TreeNode maxNode(TreeNode root) {
         // write your code here

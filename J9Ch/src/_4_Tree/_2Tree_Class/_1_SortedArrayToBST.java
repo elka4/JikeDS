@@ -1,6 +1,6 @@
 package _4_Tree._2Tree_Class;
 
-import CtCILibrary.TreeNode;
+import lib.TreeNode;
 import org.junit.Test;
 
 public class _1_SortedArrayToBST {

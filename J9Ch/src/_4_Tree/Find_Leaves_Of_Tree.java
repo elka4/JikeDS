@@ -7,7 +7,7 @@ import java.util.List;
 import lib.*;
 
 // Find Leaves Of Tree
-public class _6FindLeavesOfTree {
+public class Find_Leaves_Of_Tree {
 
     //366. Find Leaves of Binary Tree
     //10 lines simple Java solution using recursion with explanation

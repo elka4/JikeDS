@@ -1,4 +1,4 @@
-package _4_Tree.traveral;
+package _4_Tree.Traverse;
 
 import java.util.ArrayList;
 import java.util.Stack;

@@ -1,4 +1,4 @@
-package _4_Tree.traveral;
+package _4_Tree.Traverse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ Find the relation between the previously visited node and the current node
 Use a stack to track nodes
 As we go down the tree to the lft, check the previously visited node. If the current node is the left or right child of the previous node, then keep going down the tree, and add left/right node to stack when applicable. When there is no children for current node, i.e., the current node is a leaf, pop it from the stack. Then the previous node become to be under the current node for next loop. You can using an example to walk through the code.
  */
-public class Postorder {
+public class Postorder0 {
 
     public ArrayList<Integer> postorderTraversal(TreeNode root) {
 

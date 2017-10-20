@@ -4,7 +4,7 @@ import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
-public class BianryTree_1Easy_SearchInsertANodeInBST_Iterator {
+public class SearchInsertANodeInBST {
 	//Iteration
 	public TreeNode search (TreeNode root, int val) {
 		if(root == null || root.val == val)

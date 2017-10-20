@@ -3,7 +3,7 @@ package _4_Tree.Validate;
 import lib.*;
 import org.junit.Test;
 
-public class _2_BinaryTree_2Medium_3ValidBinaryTree {
+public class BinaryTree_2Medium_3ValidBinaryTree {
 	public boolean isValidBST(TreeNode root) {
 		if(root == null)
 			return true;

@@ -132,4 +132,121 @@ root:
 / \
 4 -2
      */
+    
+///////////////////////////////////////////////////////////////////////////
+
+    public class Solution {
+        /**
+         * @param root the root of binary tree
+         * @return the root of the maximum average of subtree
+         */
+
+        class ResultType {
+            TreeNode node;
+            int sum;
+            int size;
+            public ResultType(TreeNode node, int sum, int size) {
+                this.node = node;
+                this.sum = sum;
+                this.size = size;
+            }
+        }
+
+        private ResultType result = null;
+
+        public TreeNode findSubtree2(TreeNode root) {
+            // Write your code here
+            if (root == null) {
+                return null;
+            }
+
+            ResultType rootResult = helper(root);
+            return result.node;
+        }
+
+        public ResultType helper(TreeNode root) {
+            if (root == null) {
+                return new ResultType(null, 0, 0);
+            }
+
+            ResultType leftResult = helper(root.left);
+            ResultType rightResult = helper(root.right);
+
+            ResultType currResult = new ResultType(
+                    root,
+                    leftResult.sum + rightResult.sum + root.val,
+                    leftResult.size + rightResult.size + 1);
+
+            if (result == null
+                    || currResult.sum * result.size > result.sum * currResult.size) {
+                result = currResult;
+            }
+
+            return currResult;
+        }
+
+    }
+///////////////////////////////////////////////////////////////////////////
+
+    class Subtree_with_Maximum_Average_my {
+
+        private class ResultType{
+            int sum;
+            int size;
+            ResultType(int sum, int size){
+                this.sum = sum;
+                this.size = size;
+            }
+        }
+        private TreeNode subTree;
+        private ResultType subType;
+        /**
+         * @param root the root of binary tree
+         * @return the root of the maximum average of subtree
+         */
+        public TreeNode findSubtree2(TreeNode root) {
+            // Write your code here
+            // subType = new ResultType(0,0);
+            helper(root);
+            return subTree;
+        }
+        private ResultType helper(TreeNode root){
+            if(root == null){
+                return new ResultType(0,0);
+            }
+            ResultType left = helper(root.left);
+            ResultType right = helper(root.right);
+            int currentSum = left.sum + right.sum + root.val;
+            int currentSize = left.size + right.size + 1;
+            double avg = (currentSum * 1.0) / currentSize;
+            ResultType currentType = new ResultType(currentSum, currentSize);
+
+            //不能提前计算subType.sum * 1.0， 因为subType一开始是null
+            //
+            if(subTree == null || avg > subType.sum * 1.0 / subType.size){
+                subType = currentType;
+                subTree = root;
+            }
+            return new ResultType(currentSum, currentSize);
+        }
+
+        @Test
+        public void test01(){
+            int[] arr = {1,-5,11,1,2,4,-2};
+            TreeNode root = AssortedMethods.createTreeFromArray(arr);
+            System.out.println("root: ");
+            root.print();
+            TreeNode result = findSubtree2(root);
+            System.out.println("root: ");
+            result.print();
+
+        }
+    }
+///////////////////////////////////////////////////////////////////////////
+    
+    
+///////////////////////////////////////////////////////////////////////////
+    
+    
+
 }

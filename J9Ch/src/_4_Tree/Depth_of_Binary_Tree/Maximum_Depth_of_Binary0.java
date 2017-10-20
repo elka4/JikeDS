@@ -1,4 +1,4 @@
-package _4_Tree;
+package _4_Tree.Depth_of_Binary_Tree;
 
 import lib.TreeNode;
 
@@ -8,7 +8,7 @@ import java.util.LinkedList;
 //root -> depth Divide & Conquer
 @SuppressWarnings("all")
 
-public class Maximum_Depth_of_Binary {
+public class Maximum_Depth_of_Binary0 {
   public int maxDepth(TreeNode root) {
 	  //出口
         if (root == null) {

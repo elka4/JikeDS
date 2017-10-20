@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-public class Search_Range_in_Binary_Search_Tree {
+public class Search_Range_in_BST {
     private ArrayList<Integer> results;
     /**
      * @param root: The root of the binary search tree.

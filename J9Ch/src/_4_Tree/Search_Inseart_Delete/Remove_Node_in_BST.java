@@ -3,7 +3,7 @@ import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
-public class Remove_Node_in_Binary_Search_Tree {
+public class Remove_Node_in_BST {
 	 /**
      * @param root: The root of the binary search tree.
      * @param value: Remove the node with given value.
