@@ -1,45 +1,29 @@
 package _4_Tree.Traverse;
 
+import lib.AssortedMethods;
 import lib.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-//Version 2: Divide & Conquer
-@SuppressWarnings("all")
+/**66 Binary Tree Preorder Traversal
 
-//递归的定义：找到root为根的preorder并return
+ * Created by tianhuizhu on 6/28/17.
+ */
 public class Preorder_Traversal {
-	public ArrayList<Integer> preorderTraversal(TreeNode root) {
-	    ArrayList<Integer> result = new ArrayList<>();
-	    // 递归的出口  // null or leaf? null!
-	    if (root == null) {
-	        return result;
-	    }
-	    // 递归的拆解：left，right // 先divide，再想每个具体做什么
-	    // Divide
-	    ArrayList<Integer> left = preorderTraversal(root.left);
-	    ArrayList<Integer> right = preorderTraversal(root.right);
-	
-	    // Conquer
-	    result.add(root.val);
-	    result.addAll(left);
-	    result.addAll(right);
-	    return result;
-	}
-
 
     //Version 0: Non-Recursion (Recommend)
-    public List<Integer> preorderTraversal2(TreeNode root) {
-        List<Integer> preorder = new ArrayList<>();
+    public List<Integer> preorderTraversal(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        List<Integer> preorder = new ArrayList<Integer>();
+
         if (root == null) {
             return preorder;
         }
 
-        Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
-
         while (!stack.empty()) {
             TreeNode node = stack.pop();
             preorder.add(node.val);
@@ -53,14 +37,27 @@ public class Preorder_Traversal {
 
         return preorder;
     }
-//////////////////////////////////////////////////////
-//Version 1: Traverse
 
-    public ArrayList<Integer> preorderTraversal3(TreeNode root) {
-        ArrayList<Integer> result = new ArrayList<>();
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(preorderTraversal(root));
+    }
+
+////////////////////////////////////////////////////////////////////////////
+
+    //Version 1: Traverse
+    public ArrayList<Integer> preorderTraversal_2(TreeNode root) {
+        ArrayList<Integer> result = new ArrayList<Integer>();
         traverse(root, result);
         return result;
     }
+
     // 1递归定义：把root为根的preorder加入result里面
     private void traverse(TreeNode root, ArrayList<Integer> result) {
         // 3.递归的出口：极端小的问题
@@ -85,6 +82,49 @@ traverse(root.left, result);
 traverse(root.right, result);
 result.add(root.val);
  */
+
+    @Test
+    public void test02(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(preorderTraversal_2(root));
+    }
+
+////////////////////////////////////////////////////////////////////////////
+
+    //Version 2: Divide & Conquer
+    public ArrayList<Integer> preorderTraversal_3(TreeNode root) {
+        ArrayList<Integer> result = new ArrayList<>();
+        // 递归的出口  // null or leaf? null!
+        if (root == null) {
+            return result;
+        }
+        // 递归的拆解：left，right // 先divide，再想每个具体做什么
+        // Divide
+        ArrayList<Integer> left = preorderTraversal_3(root.left);
+        ArrayList<Integer> right = preorderTraversal_3(root.right);
+
+        // Conquer
+        result.add(root.val);
+        result.addAll(left);
+        result.addAll(right);
+        return result;
+    }
+
+    @Test
+    public void test03(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(preorderTraversal_3(root));
+    }
 
 //////////////////////////////////////////////////////
     /**
@@ -150,7 +190,29 @@ result.add(root.val);
 
 ////////////////////////////////////////////////////////
 
+    public ArrayList<Integer> preorderTraversal7(TreeNode root) {
+        ArrayList<Integer> returnList = new ArrayList<Integer>();
 
+        if(root == null)
+            return returnList;
+
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        stack.push(root);
+
+        while(!stack.empty()){
+            TreeNode n = stack.pop();
+            returnList.add(n.val);
+
+            if(n.right != null){
+                stack.push(n.right);
+            }
+            if(n.left != null){
+                stack.push(n.left);
+            }
+
+        }
+        return returnList;
+    }
 //////////////////////////////////////////////////////
 
 

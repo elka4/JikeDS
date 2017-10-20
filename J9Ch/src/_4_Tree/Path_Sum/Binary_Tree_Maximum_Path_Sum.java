@@ -1,6 +1,8 @@
 package _4_Tree.Path_Sum;
 
+import lib.AssortedMethods;
 import lib.TreeNode;
+import org.junit.Test;
 
 public class Binary_Tree_Maximum_Path_Sum {
     private class ResultType {
@@ -35,49 +37,85 @@ public class Binary_Tree_Maximum_Path_Sum {
 
         return new ResultType(singlePath, maxPath);
     }
+
+    @Test
+    public void test01(){
+        int[] arr = {1,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum(root));
+    }
+
+    @Test
+    public void test02(){
+        int[] arr = {1,-5,11,1,20,4,-2};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum(root));
+    }
     
 ///////////////////////////////////////////////////////
-    //Version 2:
-//SinglePath也定义为，至少包含一个点。
 
-    class _94Binary_Tree_Maximum_Path_Sum_2 {
+/*
+  1
+ / \
+2   3
+return 6.
+ */
 
-        private class ResultType {
-            int singlePath, maxPath;
-            ResultType(int singlePath, int maxPath) {
-                this.singlePath = singlePath;
-                this.maxPath = maxPath;
-            }
+    // Version 2:
+// SinglePath也定义为，至少包含一个点。
+    private class ResultType2 {
+        int singlePath, maxPath;
+        ResultType2(int singlePath, int maxPath) {
+            this.singlePath = singlePath;
+            this.maxPath = maxPath;
         }
+    }
 
-        /**
-         * @param root: The root of binary tree.
-         * @return: An integer.
-         */
-        public int maxPathSum(TreeNode root) {
-            ResultType result = helper(root);
-            return result.maxPath;
+    public int maxPathSum2(TreeNode root) {
+        ResultType2 result = helper2(root);
+        return result.maxPath;
+    }
+
+    private ResultType2 helper2(TreeNode root) {
+        if (root == null) {
+            return new ResultType2(Integer.MIN_VALUE, Integer.MIN_VALUE);
         }
+        // Divide
+        ResultType2 left = helper2(root.left);
+        ResultType2 right = helper2(root.right);
 
-        private ResultType helper(TreeNode root) {
-            if (root == null) {
-                return new ResultType(Integer.MIN_VALUE, Integer.MIN_VALUE);
-            }
-            // Divide
-            ResultType left = helper(root.left);
-            ResultType right = helper(root.right);
+        // Conquer
+        int singlePath =
+                Math.max(0, Math.max(left.singlePath, right.singlePath)) + root.val;
 
-            // Conquer
-            int singlePath =
-                    Math.max(0, Math.max(left.singlePath, right.singlePath)) + root.val;
+        int maxPath = Math.max(left.maxPath, right.maxPath);
+        maxPath = Math.max(maxPath,
+                Math.max(left.singlePath, 0) +
+                        Math.max(right.singlePath, 0) + root.val);
 
-            int maxPath = Math.max(left.maxPath, right.maxPath);
-            maxPath = Math.max(maxPath,
-                    Math.max(left.singlePath, 0) +
-                            Math.max(right.singlePath, 0) + root.val);
+        return new ResultType2(singlePath, maxPath);
+    }
 
-            return new ResultType(singlePath, maxPath);
-        }
+    @Test
+    public void test03(){
+        int[] arr = {1,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum2(root));
+    }
+
+    @Test
+    public void test04(){
+        int[] arr = {1,-5,11,1,20,4,-2};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum2(root));
     }
 ////////////////////////////////////////////////////////////////////////////////
     //Ch9 2016summer code

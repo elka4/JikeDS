@@ -1,50 +1,52 @@
 package _4_Tree.Lowest_Common_Ancestor;
 
-public class Lowest_Common_Ancestor_II {
-class ParentTreeNode {
-	      public ParentTreeNode parent, left, right;
-}
+import lib.AssortedMethods;
+import lib.TreeNode;
+import org.junit.Test;
 
- /**
- * @param root: The root of the tree
- * @param A, B: Two node in the tree
- * @return: The lowest common ancestor of A and B
+import java.util.ArrayList;
+
+/**
+ * 474
+ * Lowest Common Ancestor II
+ * Created by tianhuizhu on 6/28/17.
  */
-public ParentTreeNode lowestCommonAncestorII(ParentTreeNode root,
-                                             ParentTreeNode A,
-                                             ParentTreeNode B) {
-    // Write your code here
-    if (root == null) {
-        return null;
+
+// node has parent
+public class Lowest_Common_Ancestor_II {
+
+
+    public TreeNode lowestCommonAncestorII(TreeNode root,
+                                                 TreeNode A,
+                                                 TreeNode B) {
+        ArrayList<TreeNode> pathA = getPath2Root(A);
+        ArrayList<TreeNode> pathB = getPath2Root(B);
+
+        int indexA = pathA.size() - 1;
+        int indexB = pathB.size() - 1;
+
+        TreeNode lowestAncestor = null;
+        while (indexA >= 0 && indexB >= 0) {
+            if (pathA.get(indexA) != pathB.get(indexB)) {
+                break;
+            }
+            lowestAncestor = pathA.get(indexA);
+            indexA--;
+            indexB--;
+        }
+
+        return lowestAncestor;
     }
-    if (root == A || root == B) {
-        return root;
+
+    private ArrayList<TreeNode> getPath2Root(TreeNode node) {
+        ArrayList<TreeNode> path = new ArrayList<>();
+        while (node != null) {
+            path.add(node);
+            node = node.parent;
+        }
+        return path;
     }
-
-    ParentTreeNode left = lowestCommonAncestorII(root.left, A, B);
-    ParentTreeNode right = lowestCommonAncestorII(root.right, A, B);
-    if (left != null && right != null) {
-        return root;
-    } else if (left != null) {
-        return left;
-    } else if (right != null) {
-        return right;
-    } else {
-        return null;
-    }        
-}
-}
-
-/*Given the root and two nodes in a Binary Tree. Find the lowest common ancestor(LCA) of the two nodes.
-
-The lowest common ancestor is the node with largest depth which is the ancestor of both nodes.
-
-The node has an extra attribute parent which point to the father of itself. The root's parent is null.
-
-Have you met this question in a real interview? Yes
-Example
-For the following binary tree:
-
+/*
   4
  / \
 3   7
@@ -55,8 +57,26 @@ LCA(3, 5) = 4
 LCA(5, 6) = 7
 
 LCA(6, 7) = 7
+ */
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
 
-Tags 
-LintCode Copyright Binary Tree
-Related Problems 
-Medium Lowest Common Ancestor 36 %*/
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+
+        root.left.parent = root;
+        root.right.parent = root;
+        root.right.left.parent = root.right;
+        root.right.right.parent = root.right;
+
+        System.out.println("root: ");
+        root.print();
+
+        lowestCommonAncestorII(root, root.right.left, root.right.right).print();
+
+    }
+
+}

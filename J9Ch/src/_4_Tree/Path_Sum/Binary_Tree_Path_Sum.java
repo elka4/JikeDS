@@ -1,6 +1,8 @@
 package _4_Tree.Path_Sum;
 
+import lib.AssortedMethods;
 import lib.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -62,6 +64,24 @@ public class Binary_Tree_Path_Sum {
             helper(root.right, path, sum + root.right.val, target, result);
             path.remove(path.size() - 1);
         }
+    }
+
+    @Test
+    public void test01() {
+        int[] arr = {1, 2, 4,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePathSum(root, 5));
+    }
+
+    @Test
+    public void test02() {
+        int[] arr = {1, 2, 4,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePathSum(root, 6));
     }
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -246,3 +266,20 @@ public class Binary_Tree_Path_Sum {
 
 
 }
+
+/*Given a binary tree, and target = 5:
+
+     1
+    / \
+   2   4
+  / \
+ 2   3
+return
+
+[
+  [1, 2, 2],
+  [1, 4]
+]
+ */
+
+

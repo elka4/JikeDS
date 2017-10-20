@@ -1,6 +1,7 @@
 package _4_Tree.BST;
 
 import lib.TreeNode;
+import org.junit.Test;
 //Version 2: without ResultType
 //coding style不好，不鼓励使用
 
@@ -23,7 +24,7 @@ public class Balanced_Binary_Tree {
 	   }
 	   return Math.max(left, right) + 1;
 	}
-
+////////////////////////////////////////////////////////////////////////////////
 
 //Version 1: with ResultType
 //为了包含两个信息
@@ -64,6 +65,49 @@ public class Balanced_Binary_Tree {
 
         return new ResultType(true, Math.max(left.maxDepth, right.maxDepth) + 1);
     }
+////////////////////////////////////////////////////////////////////////////
+
+    //Devide and Conquer
+        public boolean isBalanced3(TreeNode root) {
+            if (root == null)
+                return true;
+
+            if (getHeight(root) == -1)
+                return false;
+
+            return true;
+        }
+
+        public int getHeight(TreeNode root) {
+            if (root == null)
+                return 0;
+
+            int left = getHeight(root.left);
+            int right = getHeight(root.right);
+
+            if (left == -1 || right == -1)
+                return -1;
+
+            if (Math.abs(left - right) > 1) {
+                return -1;
+            }
+
+            return Math.max(left, right) + 1;
+
+        }
+
+        @Test
+        public void test(){
+            int[] arr = {1,2,3,4,5,6,7};
+            TreeNode root = TreeNode.createMinimalBST(arr);
+            root.print();
+
+            System.out.println(isBalanced(root));
+        }
+
+////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////
 }
 
 /*

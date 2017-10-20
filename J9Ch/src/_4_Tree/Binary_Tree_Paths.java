@@ -1,14 +1,19 @@
 package _4_Tree;
 
+import lib.AssortedMethods;
 import lib.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by tzh on 3/2/17.
+/**480. Binary Tree Paths
+ * Easy
+
+ * Created by tianhuizhu on 6/27/17.
  */
 public class Binary_Tree_Paths {
+
     // version 1: Divide Conquer
     /**
      * @param root the root of the binary tree
@@ -22,6 +27,7 @@ public class Binary_Tree_Paths {
 
         List<String> leftPaths = binaryTreePaths(root.left);
         List<String> rightPaths = binaryTreePaths(root.right);
+
         for (String path : leftPaths) {
             paths.add(root.val + "->" + path);
         }
@@ -37,13 +43,25 @@ public class Binary_Tree_Paths {
         return paths;
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @Test
+    public void test02() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.setRightChild(new TreeNode(5));
+        root.left.setLeftChild(new TreeNode(4));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePaths(root));
+    }
+
+///////////////////////////////////////////////////////////////////////////
+
     // version 2: traverse
     /**
      * @param root the root of the binary tree
      * @return all root-to-leaf paths
      */
-    public List<String> binaryTreePaths2(TreeNode root) {
+    public List<String> binaryTreePaths_2(TreeNode root) {
         List<String> result = new ArrayList<String>();
         if (root == null) {
             return result;
@@ -63,15 +81,35 @@ public class Binary_Tree_Paths {
         }
 
         if (root.left != null) {
-            helper(root.left, path + "->" + String.valueOf(root.left.val), result);
+            helper(root.left, path + "->"
+                    + String.valueOf(root.left.val), result);
         }
 
         if (root.right != null) {
-            helper(root.right, path + "->" + String.valueOf(root.right.val), result);
+            helper(root.right, path + "->"
+                    + String.valueOf(root.right.val), result);
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @Test
+    public void test01() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.setRightChild(new TreeNode(5));
+        root.left.setLeftChild(new TreeNode(4));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePaths_2(root));
+    }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+    /*
+   1
+ /   \
+2     3
+ \
+  5
+     */
+
 }

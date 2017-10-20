@@ -45,6 +45,18 @@ public class Insert_Node_in_a_BST {
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
+    public TreeNode insertNode2(TreeNode root, TreeNode node) {
+        if (root == null) {
+            return node;
+        }
+        if (root.val > node.val) {
+            root.left = insertNode2(root.left, node);
+        } else {
+            root.right = insertNode2(root.right, node);
+        }
+        return root;
+    }
+//////////////////////////////////////////////////////////////////////////////////////
 
     /**
      * @param root: The root of the binary search tree.
