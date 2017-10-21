@@ -1,4 +1,4 @@
-package HF.HF_extra;
+package HF.HF_bit;
 
 public class _03O1_CheckPowerof2 {
     /*

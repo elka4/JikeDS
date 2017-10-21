@@ -1,6 +1,8 @@
-package HF.HF_extra;
+package _8_Bit.HF_bit;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class _06Subsets {
     /**

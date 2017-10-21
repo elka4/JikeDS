@@ -104,15 +104,3 @@ The maximum depth is 3.
 Tags: Divide and Conquer, Recursion, Binary Tree, Uber
 Related Problems: Easy Minimum Depth of Binary Tree 31 %
  * */
-
-/**
- * Definition of TreeNode:
- * public class TreeNode {
- *     public int val;
- *     public TreeNode left, right;
- *     public TreeNode(int val) {
- *         this.val = val;
- *         this.left = this.right = null;
- *     }
- * }
- */

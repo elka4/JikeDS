@@ -37,8 +37,9 @@ public class _07Binary_Tree_Maximum_Path_Sum {
     }
     
 ///////////////////////////////////////////////////////
+
     //Version 2:
-//SinglePath也定义为，至少包含一个点。
+    //SinglePath也定义为，至少包含一个点。
 
     class _94Binary_Tree_Maximum_Path_Sum_2 {
 
@@ -80,6 +81,7 @@ public class _07Binary_Tree_Maximum_Path_Sum {
         }
     }
 ////////////////////////////////////////////////////////////////////////////////
+
     //Ch9 2016summer code
     public class _94Binary_Tree_Maximum_Path_Sum_2016 {
         private class ResultType3{

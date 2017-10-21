@@ -27,13 +27,6 @@ public class Binary_Tree_Maximum_Path_Sum_II {
       //any node -> any node
     }
 
-    /*
-  1
- / \
-2   3
-return 6.
- */
-
     @Test
     public void test01(){
         int[] arr = {1,2,3};
@@ -41,7 +34,16 @@ return 6.
         System.out.println("root: ");
         root.print();
         System.out.println(maxPathSum2(root));
+        /*
+        root:
+             1
+            / \
+            2 3
+
+            4
+         */
     }
+
 
     @Test
     public void test02(){
@@ -52,6 +54,17 @@ return 6.
         root.print();
         System.out.println(maxPathSum2(root));
     }
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+
 }
 
 /*

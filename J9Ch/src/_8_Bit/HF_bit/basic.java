@@ -1,4 +1,4 @@
-package HF.HF_extra;
+package _8_Bit.HF_bit;
 
 import org.junit.Test;
 

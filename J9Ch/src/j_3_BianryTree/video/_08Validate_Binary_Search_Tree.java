@@ -47,52 +47,62 @@ public class _08Validate_Binary_Search_Tree {
     }
 
 ///////////////////////////////////////////////////////////
-//version 1 Traverse， 缺点：经常要用到全局变量
- class _95Validate_Binary_Search_Tree_Traverse {
-    private int lastVal = Integer.MIN_VALUE;
-    private boolean firstNode = true;
-    public boolean isValidBST(TreeNode root) {
-        if (root == null) {
+
+    //version 1 Traverse， 缺点：经常要用到全局变量
+    class _95Validate_Binary_Search_Tree_Traverse {
+        private int lastVal = Integer.MIN_VALUE;
+        private boolean firstNode = true;
+        public boolean isValidBST(TreeNode root) {
+            if (root == null) {
+                return true;
+            }
+            if (!isValidBST(root.left)) {
+                return false;
+            }
+            if (!firstNode && lastVal >= root.val) {
+                return false;
+            }
+            firstNode = false;
+            lastVal = root.val;
+            if (!isValidBST(root.right)) {
+                return false;
+            }
             return true;
         }
-        if (!isValidBST(root.left)) {
-            return false;
+
+
+        ///////
+        //this is a better solution
+        //就是中序遍历一遍，看看是不是每个左边的比右边的小。
+        private TreeNode lastNode = null;
+        public boolean isValidBST2(TreeNode root) {
+            //先判断不正常情况
+            if (root == null) {
+                return true;
+            }
+            if (!isValidBST(root.left)) {
+                return false;
+            }
+            if (lastNode != null && lastNode.val >= root.val) {
+                return false;
+            }
+            lastNode = root;
+            if (!isValidBST(root.right)) {
+                return false;
+            }
+            return true;
         }
-        if (!firstNode && lastVal >= root.val) {
-            return false;
-        }
-        firstNode = false;
-        lastVal = root.val;
-        if (!isValidBST(root.right)) {
-            return false;
-        }
-        return true;
     }
 
 
-    ///////
-    //this is a better solution
-    //就是中序遍历一遍，看看是不是每个左边的比右边的小。
-    private TreeNode lastNode = null;
-    public boolean isValidBST2(TreeNode root) {
-        //先判断不正常情况
-        if (root == null) {
-            return true;
-        }
-        if (!isValidBST(root.left)) {
-            return false;
-        }
-        if (lastNode != null && lastNode.val >= root.val) {
-            return false;
-        }
-        lastNode = root;
-        if (!isValidBST(root.right)) {
-            return false;
-        }
-        return true;
-    }
+///////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////
+
+
 }
-
 
 /*
 Given a binary tree, determine if it is a valid binary search tree (BST).
@@ -119,10 +129,3 @@ Tags: Divide and Conquer Recursion Binary Search Tree Binary Tree
 Related Problems:Medium Inorder Successor in Binary Search Tree 30 %
 				 Easy Balanced Binary Tree 38 %
  * */
-
-///////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////
-
-
-}
