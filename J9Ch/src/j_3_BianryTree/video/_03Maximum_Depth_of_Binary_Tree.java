@@ -8,7 +8,7 @@ import java.util.LinkedList;
 //root -> depth Divide & Conquer
 @SuppressWarnings("all")
 
-public class _02Maximum_Depth_of_Binary_Tree {
+public class _03Maximum_Depth_of_Binary_Tree {
   public int maxDepth(TreeNode root) {
 	  //出口
         if (root == null) {

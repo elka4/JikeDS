@@ -5,7 +5,7 @@ import lib.TreeNode;
 //技巧：求最小值，那就先都把默认设成无穷大。最后用Max.min（）来滤过无穷大的值。
 @SuppressWarnings("all")
 
-public class _03Minimum_Depth_of_Binary_Tree {
+public class _04Minimum_Depth_of_Binary_Tree {
 	public int minDepth1(TreeNode root) {
 	    if (root == null) {
 	        return 0;

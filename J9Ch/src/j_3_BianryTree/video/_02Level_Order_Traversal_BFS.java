@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 //version 1: BFS
-public class _01Level_Order_Traversal_BFS {
+public class _02Level_Order_Traversal_BFS {
  public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
      ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 
