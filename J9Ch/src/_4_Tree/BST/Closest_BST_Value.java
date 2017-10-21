@@ -8,7 +8,7 @@ LeetCode – Closest Binary Search Tree Value (Java)
 Given a non-empty binary search tree and a target value, find the value in the BST that is closest to the target
  */
 
-public class Closest_Binary_Search_Tree_Value {
+public class Closest_BST_Value {
     /*Java Solution 1 - Recursion
 
     Recursively traverse down the root. When target is less than root, go left; when target is greater than root, go right.*/

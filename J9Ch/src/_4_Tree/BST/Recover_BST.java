@@ -12,7 +12,7 @@ Inorder traveral will return values in an increasing order. So if an element is 
  */
 
 
-public class Recover_Binary_Search_Tree {
+public class Recover_BST {
 
     TreeNode first;
     TreeNode second;

@@ -18,7 +18,7 @@ Follow up:
 Assume that the BST is balanced, could you solve it in less than O(n) runtime (where n = total nodes)?
  */
 
-public class Closest_Binary_Search_Tree_Value_II {
+public class Closest_BST_Value_II {
 
 
     /*

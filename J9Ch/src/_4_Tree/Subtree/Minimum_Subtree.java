@@ -1,4 +1,4 @@
-package _4_Tree.subtree;
+package _4_Tree.Subtree;
 
 import lib.AssortedMethods;
 import lib.TreeNode;

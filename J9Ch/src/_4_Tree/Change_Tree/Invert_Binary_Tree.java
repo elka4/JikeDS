@@ -1,4 +1,4 @@
-package _4_Tree.Chage_Tree;
+package _4_Tree.Change_Tree;
 
 import lib.*;
 

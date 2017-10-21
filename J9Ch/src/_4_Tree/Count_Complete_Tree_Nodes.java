@@ -20,7 +20,7 @@ Time complexity is O(h^2).
  */
 public class Count_Complete_Tree_Nodes {
 
-    public int countNodes(TreeNode root) {
+    public int countNodes0(TreeNode root) {
         if(root==null)
             return 0;
 
@@ -30,7 +30,7 @@ public class Count_Complete_Tree_Nodes {
         if(left==right){
             return (2<<(left-1))-1;
         }else{
-            return countNodes(root.left)+countNodes(root.right)+1;
+            return countNodes0(root.left)+countNodes0(root.right)+1;
         }
     }
 
@@ -143,6 +143,135 @@ Since I halve the tree in every recursive step, I have O(log(n)) steps. Finding 
        /* That would be O(n). But... the actual solution has a gigantic optimization. It first walks all the way left and right to determine the height and whether it's a full tree, meaning the last row is full. If so, then the answer is just 2^height-1. And since always at least one of the two recursive calls is such a full tree, at least one of the two calls immediately stops. Again we have runtime O(log(n)^2).*/
 
 //////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+int height(TreeNode root) {
+    return root == null ? -1 : 1 + height(root.left);
+}
+    public int countNodes(TreeNode root) {
+        int h = height(root);
+        return h < 0 ? 0 :
+                height(root.right) == h-1 ? (1 << h) + countNodes(root.right)
+                        : (1 << h-1) + countNodes(root.left);
+    }
+
+
+/////////////////////////////////////////////////////////////////////////
+
+    int height2(TreeNode root) {
+        return root == null ? -1 : 1 + height(root.left);
+    }
+    public int countNodes2(TreeNode root) {
+        int nodes = 0, h = height2(root);
+        while (root != null) {
+            if (height2(root.right) == h - 1) {
+                nodes += 1 << h;
+                root = root.right;
+            } else {
+                nodes += 1 << h-1;
+                root = root.left;
+            }
+            h--;
+        }
+        return nodes;
+    }
+
+/////////////////////////////////////////////////////////////////////////
+
+
+    public int countNodes3(TreeNode root) {
+        if (root == null)
+            return 0;
+        TreeNode left = root, right = root;
+        int height = 0;
+        while (right != null) {
+            left = left.left;
+            right = right.right;
+            height++;
+        }
+        if (left == null)
+            return (1 << height) - 1;
+        return 1 + countNodes3(root.left) + countNodes3(root.right);
+    }
+
+/////////////////////////////////////////////////////////////////////////
+
+
+    public int countNodes4(TreeNode root) {
+        if (root == null)
+            return 0;
+        return 1 + countNodes4(root.left) + countNodes4(root.right);
+    }
+
+/////////////////////////////////////////////////////////////////////////
+
+
+    public int countNodes5(TreeNode root) {
+
+        int leftDepth = leftDepth(root);
+        int rightDepth = rightDepth(root);
+
+        if (leftDepth == rightDepth)
+            return (1 << leftDepth) - 1;
+        else
+            return 1+countNodes5(root.left) + countNodes5(root.right);
+
+    }
+
+    private int rightDepth(TreeNode root) {
+        // TODO Auto-generated method stub
+        int dep = 0;
+        while (root != null) {
+            root = root.right;
+            dep++;
+        }
+        return dep;
+    }
+
+    private int leftDepth(TreeNode root) {
+        // TODO Auto-generated method stub
+        int dep = 0;
+        while (root != null) {
+            root = root.left;
+            dep++;
+        }
+        return dep;
+    }
+
+//////////////////////////////////////////////////////////////////
+
+    public int countNodes6(TreeNode root) {
+        if (root==null) return 0;
+        if (root.left==null) return 1;
+        int height = 0;
+        int nodesSum = 0;
+        TreeNode curr = root;
+        while(curr.left!=null) {
+            nodesSum += (1<<height);
+            height++;
+            curr = curr.left;
+        }
+        return nodesSum + countLastLevel(root, height);
+    }
+
+    private int countLastLevel(TreeNode root, int height) {
+        if(height==1)
+            if (root.right!=null) return 2;
+            else if (root.left!=null) return 1;
+            else return 0;
+        TreeNode midNode = root.left;
+        int currHeight = 1;
+        while(currHeight<height) {
+            currHeight++;
+            midNode = midNode.right;
+        }
+        if (midNode==null) return countLastLevel(root.left, height-1);
+        else return (1<<(height-1)) + countLastLevel(root.right, height-1);
+    }
+
+//////////////////////////////////////////////////////////////////
+
 
 
 

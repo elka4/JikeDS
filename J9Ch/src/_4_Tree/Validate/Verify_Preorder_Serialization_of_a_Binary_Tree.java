@@ -34,7 +34,7 @@ Given a string of comma separated values, verify whether it is a correct preorde
  */
 
 
-public class Verify_Preorder_Serialization_of_a_Binary_Tree0 {
+public class Verify_Preorder_Serialization_of_a_Binary_Tree {
 
     /*
     Java Solution - Stack
