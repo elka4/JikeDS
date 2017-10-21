@@ -39,6 +39,21 @@ public class Maximum_Depth_of_Binary_Tree {
 
 
 /////////////////////////////////////////////////////////////////////////////////
+    class sol{
+    public int maxDepth0(TreeNode root) {
+        if(root==null)
+            return 0;
+
+        int leftDepth = maxDepth0(root.left);
+        int rightDepth = maxDepth0(root.right);
+
+        int bigger = Math.max(leftDepth, rightDepth);
+
+        return bigger+1;
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////
     public int minDepth(TreeNode root) {
         if (root == null) {
             return 0;
@@ -97,7 +112,7 @@ public class Maximum_Depth_of_Binary_Tree {
 /////////////////////////////////////////////////////////////////////////////////
     //non-recursion
     @SuppressWarnings("all")
-    public int maxDepth2(TreeNode root) {
+    public int maxDepth3(TreeNode root) {
         if (root == null){
             return 0;
         }
@@ -165,6 +180,7 @@ class _155Minimum_Depth_of_Binary_Tree_1 {
 
         return Math.min(left, right) + 1;
     }
+/////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
 /*

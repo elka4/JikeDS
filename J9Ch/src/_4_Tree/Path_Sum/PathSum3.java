@@ -5,7 +5,7 @@ import lib.TreeNode;
 import org.junit.Test;
 
 // top to down
-// ReturntheMaxPathSumOnTheSubsectionOfCompletePathFromRootToLeaf
+// Return the Max PathSum On The Subsection Of Complete Path From Root To Leaf
 public class PathSum3 {
 
     public int maxPathSum(TreeNode root) {
@@ -97,5 +97,11 @@ public class PathSum3 {
         root.print();
         System.out.println(maxPathSum2(root));
     }
+/////////////////////////////////////////////////////////////////
 
+
+/////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////
 }

@@ -10,9 +10,7 @@ import java.util.List;
 import java.util.Stack;
 
 
-/**
- * Created by tzh on 3/2/17.
- */
+// binary tree path sum
 public class Binary_Tree_Path_Sum {
     // jiuzhang
     /**
