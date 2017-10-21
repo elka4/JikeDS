@@ -675,7 +675,7 @@ Longest consecutive sequence path is 2-3,not3-2-1, so return 2.
 
 
 
-    ///////////////////////////////////////////////////////////////////
+
     @Test
     public void test0111(){
         TreeNode root = new TreeNode(1);
@@ -684,14 +684,14 @@ Longest consecutive sequence path is 2-3,not3-2-1, so return 2.
         root.right.left = new TreeNode(2);
         root.right.right.right = new TreeNode(5);
         root.print();
-        System.out.println(longestConsecutive6(root));
+        System.out.println(longestConsecutive66(root));
 
         TreeNode root2 = new TreeNode(2);
         root2.right = new TreeNode(3);
         root2.right.left = new TreeNode(2);
         root2.right.left.left = new TreeNode(1);
         root2.print();
-        System.out.println(longestConsecutive6(root2));
+        System.out.println(longestConsecutive66(root2));
     }
 
 
