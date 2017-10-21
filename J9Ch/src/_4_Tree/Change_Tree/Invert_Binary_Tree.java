@@ -1,6 +1,7 @@
 package _4_Tree.Change_Tree;
 
 import lib.*;
+import org.junit.Test;
 
 import java.util.LinkedList;
 /*
@@ -32,6 +33,32 @@ public class Invert_Binary_Tree {
             helper(p.right);
     }
 
+    @Test
+    public void test01() {
+        int[] arr = {5, 3, 7,1,2,6};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        invertTree(root).print();
+
+    }
+/*
+root:
+   5
+  / \
+ /   \
+ 3   7
+/ \ /
+1 2 6
+
+   5
+  / \
+ /   \
+ 7   3
+  \ / \
+  6 2 1
+
+ */
 
 //////////////////////////////////////////////////////////////////////////
 

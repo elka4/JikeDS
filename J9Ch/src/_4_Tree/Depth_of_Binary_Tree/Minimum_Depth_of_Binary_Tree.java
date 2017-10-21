@@ -43,7 +43,7 @@ public class Minimum_Depth_of_Binary_Tree {
         System.out.println(minDepth(root));
     }
 ////////////////////////////////////////////////////////////////////////
-    public int minDepth(TreeNode root) {
+    public int minDepth22(TreeNode root) {
         if(root == null){
             return 0;
         }

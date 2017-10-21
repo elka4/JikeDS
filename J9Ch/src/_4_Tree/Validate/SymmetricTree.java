@@ -7,7 +7,28 @@ import org.junit.Test;
 
 import java.util.Deque;
 import java.util.LinkedList;
+/*
+LeetCode – Symmetric Tree (Java)
 
+Problem
+
+Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+
+For example, this binary tree is symmetric:
+
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+But the following is not:
+
+    1
+   / \
+  2   2
+   \   \
+   3    3
+ */
 public class SymmetricTree {
 	//recursion
 	public boolean isSymetric_1 (TreeNode root) {
@@ -133,6 +154,88 @@ public class SymmetricTree {
         root.print();
         System.out.println(isSymmetric3(root));
     }
+///////////////////////////////////////////////////////////////////////////////
+        /*Java Solution - Recursion
+
+    This problem can be solve by using a simple recursion. The key is finding the conditions that return false, such as value is not equal, only one node(left or right) has value.*/
+
+    public boolean isSymmetric(TreeNode root) {
+        if (root == null)
+            return true;
+        return isSymmetric(root.left, root.right);
+    }
+
+
+    public boolean isSymmetric(TreeNode l, TreeNode r) {
+        if (l == null && r == null) {
+            return true;
+        } else if (r == null || l == null) {
+            return false;
+        }
+
+        if (l.val != r.val)
+            return false;
+
+        if (!isSymmetric(l.left, r.right))
+            return false;
+        if (!isSymmetric(l.right, r.left))
+            return false;
+
+        return true;
+    }
+/////////////////////////////////////////////////////////////////////////////
+
+    public boolean isSymmetric11(TreeNode root) {
+        // Write your code here
+        if (root == null) {
+            return true;
+        }
+        return check1(root.left, root.right);
+    }
+
+    private boolean check1(TreeNode root1, TreeNode root2) {
+        if (root1 == null && root2 == null) {
+            return true;
+        }
+        if (root1 == null || root2 == null) {
+            return false;
+        }
+        if (root1.val != root2.val) {
+            return false;
+        }
+        return check1(root1.left, root2.right) && check1(root1.right, root2.left);
+    }
+/////////////////////////////////////////////////////////////////////////////
+
+
 
 
 }
+
+/*Given a binary tree, check whether it is a mirror of itself
+ * (i.e., symmetric around its center).
+
+Have you met this question in a real interview? Yes
+Example
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+is a symmetric binary tree.
+
+    1
+   / \
+  2   2
+   \   \
+   3    3
+is not a symmetric binary tree.
+
+Challenge
+Can you solve it both recursively and iteratively?
+
+Tags
+Binary Tree
+Related Problems
+Easy Identical Binary Tree 45 %
+Easy Complete Binary Tree 25 %*/

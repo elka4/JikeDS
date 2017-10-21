@@ -140,6 +140,41 @@ public class Validate_Binary_Search_Tree {
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
+    public boolean isValidBST11(TreeNode root) {
+        if(root == null)
+            return true;
+        return isValidBST(root, Long.MAX_VALUE, Long.MAX_VALUE);
+    }
+    private boolean isValidBST(TreeNode root,  long min, long max) {
+        if(root == null)
+            return true;
+        //current level: check root.val
+        if(root.val >= max || root.val <= min)
+            return false;
+        //recurse down
+        return isValidBST(root.left,  min, root.val) &&
+                isValidBST(root.right, root.val, max);
+    }
+
+    @Test
+    public void test011() {
+        int[] arr = {5, 3, 7,1,2,6,8};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isValidBST(root));
+
+    }
+    @Test
+    public void test022() {
+        int[] arr = {2,1,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isValidBST(root));
+
+    }
+/////////////////////////////////////////////////////////////////////////////////
         /*Java Solution 1 - Recursive
 
     All values on the left sub tree must be less than root, and all values on the
