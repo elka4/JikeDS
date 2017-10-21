@@ -88,12 +88,23 @@ public class Inorder_Successor_in_BST {
     //mehtod 2
     public TreeNode inorderSuccessor3(TreeNode root, TreeNode p) {
         TreeNode par = null;
+        /*
+        退出条件就是root == null, 也就是在上一次循环中root.left或者root.rigth为null，
+        如果是"p.val < root.val", 说明当前root太大了，要变小，所以 root = root.left;
+        这时候记录当前root为parent。
+
+        如果是"else" 说明当前root太小了，要变大，所以 root = root.right;
+         */
         while (root != null){
             if (p.val < root.val) {
                 par = root;
+                System.out.println("p.val < root.val: ");
+                root.print();
                 root = root.left;
 
             } else {
+                System.out.println("else: ");
+                root.print();
                 root = root.right;
             }
         }
@@ -107,9 +118,82 @@ public class Inorder_Successor_in_BST {
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         System.out.println("root: ");
         root.print();
-        inorderSuccessor(root,root.left).print();
-        inorderSuccessor(root,root.right.left).print();
+        /*
+           5
+          / \
+         /   \
+         3   7
+        / \ / \
+        1 2 6 8
+         */
+        inorderSuccessor3(root,root.left).print();
+        /*     root.left is 3
 
+                p.val < root.val:
+                   5
+                  / \
+                 /   \
+                 3   7
+                / \ / \
+                1 2 6 8
+
+                else:
+                 3
+                / \
+                1 2
+
+                else:
+                2
+
+                   5
+                  / \
+                 /   \
+                 3   7
+                / \ / \
+                1 2 6 8
+         */
+        inorderSuccessor3(root,root.right.left).print();
+        /*  root.right.left is 6
+            else:
+               5
+              / \
+             /   \
+             3   7
+            / \ / \
+            1 2 6 8
+
+            p.val < root.val:
+             7
+            / \
+            6 8
+
+            else:
+            6
+
+             7
+            / \
+            6 8
+         */
+        inorderSuccessor3(root,root.right).print();
+        /*   root.right is 7
+                else:
+                   5
+                  / \
+                 /   \
+                 3   7
+                / \ / \
+                1 2 6 8
+
+                else:
+                 7
+                / \
+                6 8
+
+                p.val < root.val:  5 < 8
+                8
+
+                8
+         */
     }
 
 ////////////////////////////////////////////////////////////////////////////////

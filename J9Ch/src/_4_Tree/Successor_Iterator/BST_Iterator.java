@@ -1,5 +1,6 @@
 package _4_Tree.Successor_Iterator;
 
+import _4_Tree.HF3_Algo_DS_II_2BST._4BinarySearchTreeIterator;
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
@@ -36,7 +37,21 @@ public class BST_Iterator {
             return node;
         }
     }
-    
+    @Test
+    public void test01(){
+        int[] arr = {1,10,11};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.left.setRightChild(new TreeNode(6));
+        root.right.setRightChild(new TreeNode(12));
+        root.print();
+
+        BSTIterator itr = new BSTIterator(root);
+//        itr.AddNodeToStack(root);
+
+        while(itr.hasNext()){
+            System.out.println(itr.next());
+        }
+    }
 /////////////////////////////////////////////////////////////////////
     public class BSTIterator2 {
         Stack<TreeNode> stack;
@@ -68,7 +83,7 @@ public class BST_Iterator {
     }
 
     @Test
-    public void test() {
+    public void test2() {
         int[] arr = {1, 2, 3, 4, 5, 6, 7};
         TreeNode root = TreeNode.createMinimalBST(arr);
         root.print();
@@ -118,7 +133,7 @@ public class BST_Iterator {
     }
 
     @Test
-    public void test01(){
+    public void test03(){
         int[] arr = {3,9,20};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         TreeNode node20 = root.find(20);
@@ -133,6 +148,57 @@ public class BST_Iterator {
             TreeNode node = itr.next();
 //            node.print();
             System.out.println(node);
+        }
+    }
+/////////////////////////////////////////////////////////////////////
+    public class BSTIterator4 {
+        private Stack<TreeNode> stack = new Stack<>();
+        TreeNode next = null;
+        void AddNodeToStack(TreeNode root) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+        }
+
+        // @param root: The root of binary tree.
+        public BSTIterator4(TreeNode root) {
+            next = root;
+        }
+
+        //@return: True if there has next node, or false
+        public boolean hasNext() {
+            if (next != null) {
+                AddNodeToStack(next);
+                next = null;
+            }
+            return !stack.isEmpty();
+        }
+
+        //@return: return next node
+        public TreeNode next() {
+            if (!hasNext()) {
+                return null;
+            }
+            TreeNode cur = stack.pop();
+            next = cur.right;
+            return cur;
+        }
+    }
+
+    @Test
+    public void test04(){
+        int[] arr = {1,10,11};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.left.setRightChild(new TreeNode(6));
+        root.right.setRightChild(new TreeNode(12));
+        root.print();
+
+        BSTIterator itr = new BSTIterator(root);
+//        itr.AddNodeToStack(root);
+
+        while(itr.hasNext()){
+            System.out.println(itr.next());
         }
     }
 /////////////////////////////////////////////////////////////////////

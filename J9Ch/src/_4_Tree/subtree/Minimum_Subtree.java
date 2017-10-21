@@ -144,7 +144,44 @@ return the node 1.
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public TreeNode result = null;
+    public int maximum_weight = Integer.MIN_VALUE;
 
+    public TreeNode findSubtree3(TreeNode root) {
+        // Write your code here
+        helper3(root);
+
+        return result;
+    }
+
+    public int helper3(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int left_weight = helper3(root.left);
+        int right_weight = helper3(root.right);
+
+        if (result == null || left_weight + right_weight + root.val > maximum_weight) {
+            maximum_weight = left_weight + right_weight + root.val;
+            result = root;
+        }
+
+        return left_weight + right_weight + root.val;
+    }
+
+    @Test
+    public void test3(){
+        int[] arr = {0,-5,3,1,-4,2,-5};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+//        root.right.setLeftChild(new TreeNode(15));
+//        root.right.setRightChild(new TreeNode(7));
+        root.print();
+        findSubtree3(root).print();
+
+//        List<List<Integer>> result = verticalOrder2(root);
+
+//        System.out.println(result);
+    }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 // root to bottom
-
-public class PathSum2_FollowUp_SubsectionOfCompletePathFromRootToLeaf {
+// FollowUp_SubsectionOfCompletePathFromRootToLeaf
+public class PathSum2 {
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
 

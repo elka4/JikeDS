@@ -117,9 +117,10 @@ LCA(6, 7) = 7
      */
         
 /////////////////////////////////////////////////////////////////////////////
-class ParentTreeNode {
-    public ParentTreeNode parent, left, right;
-}
+
+    class ParentTreeNode {
+        public ParentTreeNode parent, left, right;
+    }
 
     /**
      * @param root: The root of the tree

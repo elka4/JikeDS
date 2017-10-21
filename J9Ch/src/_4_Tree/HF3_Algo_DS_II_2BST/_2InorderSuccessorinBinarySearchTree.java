@@ -11,7 +11,7 @@ import org.junit.Test;
 • BST上求一段的和
  */
 
-//Inorder Successor in Binary Search Tree
+//  Inorder Successor in Binary Search Tree
 public class _2InorderSuccessorinBinarySearchTree {
 
         public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
