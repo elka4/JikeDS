@@ -1,6 +1,7 @@
 package _04_Tree;
 
 import lib.*;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -57,6 +58,17 @@ public class Binary_Tree_Right_Side_View {
         }
 
         return result;
+    }
+
+    @Test
+    public void test01() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.setRightChild(new TreeNode(5));
+        root.left.setLeftChild(new TreeNode(4));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(rightSideView(root));
     }
 
 
