@@ -1,4 +1,4 @@
-package Implement_data_structure;
+package _10_DS.Implement;
 
 public class Implement_queue_by_interface {
     class Node {

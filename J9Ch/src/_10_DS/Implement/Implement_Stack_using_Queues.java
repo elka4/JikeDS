@@ -1,4 +1,4 @@
-package Implement_data_structure;
+package _10_DS.Implement;
 
 import java.util.LinkedList;
 

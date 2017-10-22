@@ -1,4 +1,4 @@
-package Implement_data_structure; /****************************************************************************
+package _10_DS.Implement; /****************************************************************************
  *  Compilation:  javac UF.java
  *  Execution:    java UF < input.txt
  *  Dependencies: StdIn.java StdOut.java
