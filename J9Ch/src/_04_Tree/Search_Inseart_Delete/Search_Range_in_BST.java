@@ -41,6 +41,18 @@ public class Search_Range_in_BST {
         root.print();
         System.out.println(searchRange(root, 3,7));
     }
+
+    /*
+    root:
+   5
+  / \
+ /   \
+ 3   7
+/ \ / \
+1 2 6 8
+
+[3, 5, 6, 7]
+     */
 }
 
 

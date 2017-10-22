@@ -22,7 +22,7 @@ public class _2_Recursion_1Easy_SymmetricTree {
 			else return false;
 		}
 
-		if (one.data != two.data) {//curretn level
+		if (one.val != two.val) {//curretn level
 			return false;
 		}else {//return left && right
 			return isSymetric(one.left, two.right) &&
@@ -67,7 +67,7 @@ public class _2_Recursion_1Easy_SymmetricTree {
 			if(left == null && right == null){
 				continue;
 			}
-			if(left == null || right == null || left.data != right.data){
+			if(left == null || right == null || left.val != right.val){
 				return false;
 			}
 
@@ -113,7 +113,7 @@ public class _2_Recursion_1Easy_SymmetricTree {
         if (root1 == null || root2 == null) {
             return false;
         }
-        if (root1.data != root2.data) {
+        if (root1.val != root2.val) {
             return false;
         }
         return check(root1.left, root2.right) && check(root1.right, root2.left);

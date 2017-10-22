@@ -94,6 +94,28 @@ public class Binary_Tree_Paths {
         }
     }
 
+    @Test
+    public void test02() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.setRightChild(new TreeNode(5));
+        root.left.setLeftChild(new TreeNode(4));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePaths2(root));
+    }
+    /*
+    root:
+   1
+  / \
+ /   \
+ 2   3
+/ \
+4 5
+
+[1->2->4, 1->2->5, 1->3]
+     */
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public boolean isBalanced(TreeNode root) {

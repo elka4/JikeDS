@@ -9,6 +9,7 @@ import java.util.List;
 
 // root to bottom
 // FollowUp_SubsectionOfCompletePathFromRootToLeaf
+// 从根向下加和， 到中间某点是否等于sum
 public class PathSum2 {
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
@@ -19,6 +20,7 @@ public class PathSum2 {
         }
 
         List<Integer> list = new ArrayList<Integer>();
+
         helper(root, sum, list, res);
 
         return res;
@@ -43,15 +45,14 @@ public class PathSum2 {
     }
 
     // list从下往上逐个从target中减当前value，如果能得到0，将这个list加入result
-	private void check(int target, List<Integer> list,
-                       List<List<Integer>> res) {
+	private void check(int target, List<Integer> list, List<List<Integer>> res) {
 
         for(int i = list.size() - 1; i >= 0; i--) {
             target -= list.get(i);
-            System.out.println(" list " + list);
-            System.out.println(" sum " + target);
+//            System.out.println(" list " + list);
+//            System.out.println(" sum " + target);
             if(target == 0){
-                System.out.println(" sum == 0 ");
+//                System.out.println(" sum == 0 ");
                 res.add(new ArrayList<Integer>(list));
             }
         }
@@ -134,6 +135,7 @@ public class PathSum2 {
  3   5
 / \ / \
 6 7 8 5
+
 [[1, 5]]
      */
 
@@ -143,8 +145,9 @@ public class PathSum2 {
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         System.out.println("root: ");
         root.print();
-        System.out.println(pathSum(root, 3));
+        System.out.println(pathSum(root, 4));
     }
+    // [[1, 3]]
 /////////////////////////////////////////////////////////////////////////////
 
 

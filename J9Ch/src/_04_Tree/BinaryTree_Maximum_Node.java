@@ -2,68 +2,13 @@ package _04_Tree;
 
 import lib.TreeNode;
 
+
+// lintcode     BinaryTree Maximum Node
 public class BinaryTree_Maximum_Node {
-    int max = Integer.MIN_VALUE;
-    public TreeNode maxNode(TreeNode root) {
-        // write your code here
-        // Not AC
-        if (root == null) {
-            return null;
-        }
-        if (root.left == null && root.right == null) {
-            return root;
-        }
-        if (root.left == null) {
-            if (root.val > root.right.val) {
-                return root;
-            } else {
-                return root.right;
-            }
-        }
-
-        if (root.right == null) {
-            if (root.val > root.left.val) {
-                return root;
-            } else {
-                return root.left;
-            }
-        }
 
 
 
-        TreeNode left = maxNode(root.left);
-        TreeNode right = maxNode(root.right);
 
-        int curMax = Integer.MIN_VALUE;
-
-        if (left != null && right != null) {
-            int tmp = Math.max(root.val, Math.max(left.val, right.val));
-            curMax = Math.max(tmp, curMax);
-        }
-        if (left == null) {
-            int tmp = Math.max(root.val, right.val);
-            curMax = Math.max(tmp, curMax);
-
-        }
-        if (right == null) {
-            int tmp  = Math.max(curMax, left.val);
-            curMax = Math.max(tmp, curMax);
-        }
-
-        if (curMax > max) {
-            max = curMax;
-        }
-
-        if (curMax == left.val) {
-            return left;
-        } else if (curMax == right.val) {
-            return right;
-        } else  {
-            return root;
-        }
-
-
-    }
 ////////////////////////////////////////////////////////???
     // jiuzhang
 
@@ -87,4 +32,23 @@ public class BinaryTree_Maximum_Node {
         }
         return b;
     }
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
 }
+/*
+在二叉树中寻找值最大的节点并返回。
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给出如下一棵二叉树：
+
+     1
+   /   \
+ -5     2
+ / \   /  \
+0   3 -4  -5
+返回值为 3 的节点。
+
+
+ */

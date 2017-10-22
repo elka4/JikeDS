@@ -72,7 +72,17 @@ public class Binary_Tree_Path_Sum {
         root.print();
         System.out.println(binaryTreePathSum(root, 5));
     }
+/*
+root:
+   1
+  / \
+ /   \
+ 2   4
+/ \
+2 3
 
+[[1, 2, 2], [1, 4]]
+ */
     @Test
     public void test02() {
         int[] arr = {1, 2, 4,2,3};
@@ -81,6 +91,53 @@ public class Binary_Tree_Path_Sum {
         root.print();
         System.out.println(binaryTreePathSum(root, 6));
     }
+    /*
+    root:
+   1
+  / \
+ /   \
+ 2   4
+/ \
+2 3
+
+[[1, 2, 3]]
+     */
+
+    @Test
+    public void test03() {
+        int[] arr = {1, 2, 4,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePathSum(root, 4));
+    }
+//////////////////////////////////////////////////////////////////////////////////////////
+//My simple java solution
+    /*
+    这个方法每次传到下一层的都是一个new出来的新的list，所以不需要在回到某一层时remove！！！！
+     */
+class solution5 {
+    private List<List<Integer>> result = new ArrayList<List<Integer>>();
+
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
+        helper(new ArrayList<Integer>(), root, sum);
+        return result;
+    }
+
+    private void helper(List<Integer> list, TreeNode root, int sum) {
+        if (root == null) return;
+        list.add(root.val);
+        sum -= root.val;
+        if (root.left == null && root.right == null) {
+            if (sum == 0) result.add(list);
+            return;
+        }
+        helper(new ArrayList<Integer>(list), root.left, sum);
+        helper(new ArrayList<Integer>(list), root.right, sum);
+    }
+}
+
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
     // DFS with one LinkedList , accepted java solution
@@ -96,7 +153,9 @@ public class Binary_Tree_Path_Sum {
 
         if (root == null)
             return;
+
         currentResult.add(new Integer(root.val));
+
         if (root.left == null && root.right == null && sum == root.val) {
             result.add(new LinkedList(currentResult));
             currentResult.remove(currentResult.size() - 1);//don't forget to remove the last integer
@@ -105,6 +164,7 @@ public class Binary_Tree_Path_Sum {
             pathSum(root.left, sum - root.val, currentResult, result);
             pathSum(root.right, sum - root.val, currentResult, result);
         }
+
         currentResult.remove(currentResult.size() - 1);
     }
 
@@ -118,10 +178,13 @@ public class Binary_Tree_Path_Sum {
 
         public void pathSumInner(TreeNode root, int sum, Stack<Integer>path) {
             path.push(root.val);
+
             if(root.left == null && root.right == null)
                 if(sum == root.val) resultList.add(new ArrayList<Integer>(path));
+
             if(root.left!=null) pathSumInner(root.left, sum-root.val, path);
             if(root.right!=null)pathSumInner(root.right, sum-root.val, path);
+
             path.pop();
         }
 
@@ -185,6 +248,7 @@ public class Binary_Tree_Path_Sum {
 
         public void dfs(TreeNode root, int sum, List<List<Integer>> res, List<Integer> path){
             if(root==null) return;
+
             path.add(root.val);
 
             if(root.left==null && root.right==null ){
@@ -192,6 +256,7 @@ public class Binary_Tree_Path_Sum {
                     res.add(new ArrayList<Integer>(path));
                 return;
             }
+
             if(root.left!=null) {
                 dfs(root.left,sum-root.val,res,path);
                 path.remove(path.size()-1);
@@ -234,30 +299,7 @@ public class Binary_Tree_Path_Sum {
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
-    //My simple java solution
-    class solution5 {
-        private List<List<Integer>> result = new ArrayList<List<Integer>>();
 
-        public List<List<Integer>> pathSum(TreeNode root, int sum) {
-            helper(new ArrayList<Integer>(), root, sum);
-            return result;
-        }
-
-        private void helper(List<Integer> list, TreeNode root, int sum) {
-            if (root == null) return;
-            list.add(root.val);
-            sum -= root.val;
-            if (root.left == null && root.right == null) {
-                if (sum == 0) result.add(list);
-                return;
-            }
-            helper(new ArrayList<Integer>(list), root.left, sum);
-            helper(new ArrayList<Integer>(list), root.right, sum);
-        }
-    }
-
-
-//////////////////////////////////////////////////////////////////////////////////////////
 
 
 

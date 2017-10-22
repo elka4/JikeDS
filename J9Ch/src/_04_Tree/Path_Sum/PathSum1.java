@@ -5,9 +5,11 @@ import lib.TreeNode;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 //root to leaf, 所有node的value和为sum， 返回所有的path
+// 从根到底 加和 是否等于sum
+
 public class PathSum1 {
 
   public List<List<Integer>> pathSum(TreeNode root, int sum) {
@@ -18,7 +20,8 @@ public class PathSum1 {
         }
 
         List<Integer> list = new ArrayList<Integer>();
-        helper(root, sum, list, res);
+
+        helper00(root, sum, list, res);
 
         return res;
     }
@@ -30,18 +33,22 @@ public class PathSum1 {
             return;
         }
 
-        list.add(root.val);
+        list.add(root.val);         // 经典的recursion开始结构
 
         //叶子节点，且叶子节点的value和剩余在sum中的值相等时，
         // 将list生成新的list并加入到结果中
+
+        // 注意这个条件，必须左右都为null就是走到leaf，而且root.val就是sum
+        // 注意必须要new 一个list
         if (sum == root.val && root.left == null && root.right == null) {
             res.add(new ArrayList<Integer>(list));
 
         } else {
-            helper(root.left, sum - root.val, list, res);
-            helper(root.right, sum - root.val, list, res);
+            helper00(root.left, sum - root.val, list, res);
+            helper00(root.right, sum - root.val, list, res);
         }
-        list.remove(list.size() - 1);
+
+        list.remove(list.size() - 1); // 经典的recursion结束结构
     }
 
 
@@ -82,6 +89,17 @@ public class PathSum1 {
         root.print();
         System.out.println(pathSum(root, 11));
     }
+    /*
+    root:
+           1
+          / \
+         /   \
+         3   5
+        / \ / \
+        6 7 8 5
+
+        [[1, 3, 7], [1, 5, 5]]
+     */
 
     @Test
     public void test02(){
@@ -91,6 +109,17 @@ public class PathSum1 {
         root.print();
         System.out.println(pathSum(root, 10));
     }
+    /*
+    root:
+               1
+              / \
+             /   \
+             3   5
+            / \ / \
+            6 7 4 5
+
+            [[1, 3, 6], [1, 5, 4]]
+     */
 
     @Test
     public void test03(){
@@ -100,7 +129,17 @@ public class PathSum1 {
         root.print();
         System.out.println(pathSum(root, 5));
     }
+/*         5
+        root:
+           1
+          / \
+         /   \
+         2   4
+        / \
+        2 3
 
+        [[1, 2, 2], [1, 4]]
+ */
 
 /////////////////////////////////////////////////////////////////////////
 
@@ -119,7 +158,9 @@ public class PathSum1 {
 
         ArrayList<Integer> path = new ArrayList<Integer>();
         path.add(root.val);
+
         helper(root, path, root.val, target, result);
+
         return result;
     }
 
@@ -194,6 +235,26 @@ public class PathSum1 {
     }
 
 
+/////////////////////////////////////////////////////////////////////////
+public class Solution {
+    private List<List<Integer>> resultList = new ArrayList<List<Integer>>();
+
+    public void pathSumInner(TreeNode root, int sum, Stack<Integer>path) {
+        path.push(root.val);
+        if(root.left == null && root.right == null)
+            if(sum == root.val) resultList.add(new ArrayList<Integer>(path));
+        if(root.left!=null) pathSumInner(root.left, sum-root.val, path);
+        if(root.right!=null)pathSumInner(root.right, sum-root.val, path);
+        path.pop();
+    }
+
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
+        if(root==null) return resultList;
+        Stack<Integer> path = new Stack<Integer>();
+        pathSumInner(root, sum, path);
+        return resultList;
+    }
+}
 /////////////////////////////////////////////////////////////////////////
 
 

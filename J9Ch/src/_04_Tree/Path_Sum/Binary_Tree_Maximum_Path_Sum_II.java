@@ -3,7 +3,7 @@ package _04_Tree.Path_Sum;
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
-
+// root to any
 public class Binary_Tree_Maximum_Path_Sum_II {
     /**
      * @param root the root of binary tree.
@@ -54,7 +54,22 @@ public class Binary_Tree_Maximum_Path_Sum_II {
         root.print();
         System.out.println(maxPathSum2(root));
     }
+    /*
+                root:
+                   -1
+                  / \
+                 /   \
+                /     \
+               /       \
+               -5       11
+              / \     / \
+             /   \   /   \
+             1   2   4   -2
+                    /
+                    -8
 
+            14
+     */
 /////////////////////////////////////////////////////////////////////////////
 
 

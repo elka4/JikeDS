@@ -1,6 +1,8 @@
 package _04_Tree;
 
 import lib.*;
+import org.junit.Test;
+
 /*
 LeetCode – Count Complete Tree Nodes (Java)
 
@@ -54,6 +56,27 @@ public class Count_Complete_Tree_Nodes {
             n = n.right;
         }
         return height;
+    }
+    @Test
+    public void test01() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.setRightChild(new TreeNode(5));
+        root.left.setLeftChild(new TreeNode(4));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(countNodes0(root));
+    }
+
+    @Test
+    public void test02() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.setRightChild(new TreeNode(5));
+        root.left.setRightChild(new TreeNode(4));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(countNodes0(root));
     }
 
 
