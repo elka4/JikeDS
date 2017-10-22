@@ -11,6 +11,8 @@ import java.util.Stack;
 
 
 // binary tree path sum
+// 113
+// Path Sum II
 public class Binary_Tree_Path_Sum {
     // jiuzhang
     /**
@@ -138,6 +140,27 @@ class solution5 {
 }
 
 
+//////////////////////////////////////////////////////////////////////////////////////////
+    // the result does not have to be global
+    class Solution55 {
+        public List<List<Integer>> pathSum(TreeNode root, int sum) {
+            List<List<Integer>> result = new ArrayList<List<Integer>>();
+            helper(new ArrayList<Integer>(), root, sum, result);
+            return result;
+        }
+
+        private void helper(List<Integer> list, TreeNode root, int sum, List<List<Integer>> result) {
+            if (root == null) return;
+            list.add(root.val);
+            sum -= root.val;
+            if (root.left == null && root.right == null) {
+                if (sum == 0) result.add(list);
+                return;
+            }
+            helper(new ArrayList<Integer>(list), root.left, sum, result);
+            helper(new ArrayList<Integer>(list), root.right, sum, result);
+        }
+    }
 //////////////////////////////////////////////////////////////////////////////////////////
 
     // DFS with one LinkedList , accepted java solution

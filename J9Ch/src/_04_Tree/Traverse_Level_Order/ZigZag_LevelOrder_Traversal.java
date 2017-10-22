@@ -96,9 +96,11 @@ public class ZigZag_LevelOrder_Traversal {
             }
 
             result.add(currLevelResult);
+
             tmp = currLevel;
             currLevel = nextLevel;
             nextLevel = tmp;
+
             normalOrder = !normalOrder;
         }
 

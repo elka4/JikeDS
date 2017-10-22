@@ -39,5 +39,36 @@ public class _6_PathSum3_ReturntheMaxPathSumOnTheSubsectionOfCompletePathFromRoo
         root.print();
         System.out.println(maxPathSum(root));
     }
+    /*
+    root:
+   1
+  / \
+ /   \
+ 3   5
+/ \ / \
+6 7 8 5
 
+14
+
+     */
+
+    @Test
+    public void test02(){
+        int[] arr = {-11,3,5,6,7,8,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxPathSum(root));
+    }
+/*
+root:
+   -11
+  / \
+ /   \
+ 3   5
+/ \ / \
+6 7 8 5
+
+13
+ */
 }

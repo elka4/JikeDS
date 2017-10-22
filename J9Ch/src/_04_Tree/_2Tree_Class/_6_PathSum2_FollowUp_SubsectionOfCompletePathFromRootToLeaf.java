@@ -63,4 +63,41 @@ public class _6_PathSum2_FollowUp_SubsectionOfCompletePathFromRootToLeaf {
         //ystem.out.println(pathSum(root, 10));
         System.out.println(pathSum(root, 12));
     }
+    /*
+                    root:
+                       1
+                      / \
+                     /   \
+                    /     \
+                   /       \
+                   3       5
+                  / \     / \
+                 /   \   /   \
+                 6   7   8   5
+                / \ / \ / \ / \
+                1 1 1 1 1 1 1 1
+        [[1, 3, 7, 1], [1, 3, 7, 1], [1, 5, 5, 1], [1, 5, 5, 1]]
+
+     */
+
+    @Test
+    public void test02(){
+        int[] arr = {1,3,5,6,7,8,5,1,1,1,1,1,1,1,1};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        //ystem.out.println(pathSum(root, 10));
+        System.out.println(pathSum(root, 11));
+    }
+    // [[1, 3, 6, 1], [1, 3, 6, 1], [1, 3, 7], [1, 5, 5]]
+
+    @Test
+    public void test03(){
+        int[] arr = {1,3,5,6,7,8,5,1,1,1,1,1,1,1,1};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        //ystem.out.println(pathSum(root, 10));
+        System.out.println(pathSum(root, 10));
+    }//[[1, 3, 6]]
 }

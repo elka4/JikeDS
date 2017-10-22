@@ -120,6 +120,18 @@ root:
 
             [[4], [1, 3]]
      */
+
+    @Test
+    public void test04(){
+        int[] arr = {1,2,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.left.setLeftChild(new TreeNode(4));
+        root.right.setLeftChild(new TreeNode(2));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePathSum2(root,5));
+    }
+    //[[3, 2]]
 //////////////////////////////////////////////////////////////////////////
 
 

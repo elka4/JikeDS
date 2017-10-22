@@ -38,7 +38,22 @@ public class _2_BinaryTree_2Medium_4LongsetConsecutiveSequence {
         System.out.println(longestConsecutive(root));
     }
 
+/*
+root:
+       5
+      / \
+     /   \
+    /     \
+   /       \
+   3       7
+  / \     / \
+ /   \   /   \
+ 1   2   6   8
+              \
+              9
 
+3
+ */
 ////////////////////////////////////////////////////////////////////
 
 	//传统做法，但使用了全局变量
@@ -77,7 +92,6 @@ public class _2_BinaryTree_2Medium_4LongsetConsecutiveSequence {
 		return max;
 	}
 
-////////////////////////////////////////////////////////////////////
 
 
     @Test
@@ -89,6 +103,11 @@ public class _2_BinaryTree_2Medium_4LongsetConsecutiveSequence {
         root.print();
         System.out.println(longestConsecutive2(root));
     }
+////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////
 
 
 }
