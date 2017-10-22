@@ -1,7 +1,6 @@
 package _04_Tree.Ch_04_Trees_and_Graphs.Q4_08_First_Common_Ancestor;
 
-import lib.TreeNode;
-
+import CtCILibrary.*;
 // Solution #3: Without Links to Parents
 
 
@@ -43,7 +42,7 @@ public class QuestionD {
 		TreeNode n3 = root.find(1);
 		TreeNode n7 = root.find(7);
 		TreeNode ancestor = commonAncestor(root, n3, n7);
-		System.out.println(ancestor.val);
+		System.out.println(ancestor.data);
 	}
 
 }

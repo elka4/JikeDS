@@ -136,7 +136,7 @@ root:
 ///////////////////////////////////////////////////////////////////////////
 
     public class Solution {
-        /**
+        /*
          * @param root the root of binary tree
          * @return the root of the maximum average of subtree
          */

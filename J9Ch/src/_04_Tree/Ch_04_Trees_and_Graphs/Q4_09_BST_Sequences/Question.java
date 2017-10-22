@@ -1,6 +1,6 @@
 package _04_Tree.Ch_04_Trees_and_Graphs.Q4_09_BST_Sequences;
 
-import lib.TreeNode;
+import CtCILibrary.*;
 import org.junit.Test;
 
 import java.util.ArrayList;

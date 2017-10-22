@@ -6,7 +6,7 @@ import org.junit.Test;
 
 /**
  * Created by tianhuizhu on 7/8/17.
- * ?§Þ????double
+ * ?Ð¼????double
  */
 public class _597_Subtree_with_Maximum_Average_my {
 
@@ -41,7 +41,7 @@ public class _597_Subtree_with_Maximum_Average_my {
         double avg = (currentSum * 1.0) / currentSize;
         ResultType currentType = new ResultType(currentSum, currentSize);
 
-        //²»ÄÜÌáÇ°¼ÆËãsubType.sum * 1.0£¬ ÒòÎªsubTypeÒ»¿ªÊ¼ÊÇnull
+        //ä¸èƒ½æå‰è®¡ç®—subType.sum * 1.0ï¼Œ å› ä¸ºsubTypeä¸€å¼€å§‹æ˜¯null
         //
         if(subTree == null || avg > subType.sum * 1.0 / subType.size){
             subType = currentType;

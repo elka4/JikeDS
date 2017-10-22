@@ -1,4 +1,4 @@
-package lib;
+package CtCILibrary;
 
 import java.awt.*;
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package _04_Tree.Ch_04_Trees_and_Graphs.Q4_12_Paths_with_Sum;
 
-import lib.TreeNode;
+import CtCILibrary.*;
 
 import java.util.HashMap;
 

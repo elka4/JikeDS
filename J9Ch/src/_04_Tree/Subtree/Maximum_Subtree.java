@@ -1,4 +1,4 @@
-package _04_Tree.HF3_Algo_DS_II_3BinaryTree;
+package _04_Tree.Subtree;
 
 import lib.TreeNode;
 import org.junit.Test;
@@ -90,12 +90,101 @@ public class Maximum_Subtree {
     // leetcode
     // 333. Largest BST Subtree
 
+    //Share my O(n) Java code with brief explanation and comments
+    class Solution1 {
+
+        class Result {  // (size, rangeLower, rangeUpper) -- size of current tree, range of current tree [rangeLower, rangeUpper]
+            int size;
+            int lower;
+            int upper;
+
+            Result(int size, int lower, int upper) {
+                this.size = size;
+                this.lower = lower;
+                this.upper = upper;
+            }
+        }
+
+        int max = 0;
+
+        public int largestBSTSubtree(TreeNode root) {
+            if (root == null) { return 0; }
+            traverse(root);
+            return max;
+        }
+
+        private Result traverse(TreeNode root) {
+            if (root == null) { return new Result(0, Integer.MAX_VALUE, Integer.MIN_VALUE); }
+            Result left = traverse(root.left);
+            Result right = traverse(root.right);
+            if (left.size == -1 || right.size == -1 || root.val <= left.upper || root.val >= right.lower) {
+                return new Result(-1, 0, 0);
+            }
+            int size = left.size + 1 + right.size;
+            max = Math.max(size, max);
+            return new Result(size, Math.min(left.lower, root.val), Math.max(right.upper, root.val));
+        }
+    }
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////
+    //Clean and easy to understand Java Solution
+    class Solution2 {
+        public int largestBSTSubtree(TreeNode root) {
+            if (root == null) return 0;
+            if (root.left == null && root.right == null) return 1;
+            if (isValid(root, null, null)) return countNode(root);
+            return Math.max(largestBSTSubtree(root.left), largestBSTSubtree(root.right));
+        }
 
+        public boolean isValid(TreeNode root, Integer min, Integer max) {
+            if (root == null) return true;
+            if (min != null && min >= root.val) return false;
+            if (max != null && max <= root.val) return false;
+            return isValid(root.left, min, root.val) && isValid(root.right, root.val, max);
+        }
+
+        public int countNode(TreeNode root) {
+            if (root == null) return 0;
+            if (root.left == null && root.right == null) return 1;
+            return 1 + countNode(root.left) + countNode(root.right);
+        }
+    }
 /////////////////////////////////////////////////////////////////////////////////////////////
+    //Java 1ms solution, by passing a three-element array up to parent
+    class Solution3 {
+        private int largestBSTSubtreeSize = 0;
 
+        public int largestBSTSubtree(TreeNode root) {
+            helper(root);
+            return largestBSTSubtreeSize;
+        }
+
+        private int[] helper(TreeNode root) {
+            // return 3-element array:
+            // # of nodes in the subtree, leftmost value, rightmost value
+            // # of nodes in the subtree will be -1 if it is not a BST
+            int[] result = new int[3];
+            if (root == null) {
+                return result;
+            }
+            int[] leftResult = helper(root.left);
+            int[] rightResult = helper(root.right);
+            if ((leftResult[0] == 0 || leftResult[0] > 0 && leftResult[2] <= root.val) &&
+                    (rightResult[0] == 0 || rightResult[0] > 0 && rightResult[1] >= root.val)) {
+                int size = 1 + leftResult[0] + rightResult[0];
+                largestBSTSubtreeSize = Math.max(largestBSTSubtreeSize, size);
+                int leftBoundary = leftResult[0] == 0 ? root.val : leftResult[1];
+                int rightBoundary = rightResult[0] == 0 ? root.val : rightResult[2];
+                result[0] = size;
+                result[1] = leftBoundary;
+                result[2] = rightBoundary;
+            } else {
+                result[0] = -1;
+            }
+            return result;
+        }
+    }
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 

@@ -1,7 +1,6 @@
 package _04_Tree.Ch_04_Trees_and_Graphs.Q4_03_List_of_Depths;
 
-import lib.AssortedMethods;
-import lib.TreeNode;
+import CtCILibrary.*;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -56,13 +55,13 @@ public class QuestionBFS {
 		}
 	}
 
-    public static void visit(lib.TreeNode node) {
+    public static void visit(TreeNode node) {
         if (node != null) {
             System.out.println(node.data);
         }
     }
 
-    public static void inOrderTraversal(lib.TreeNode node) {
+    public static void inOrderTraversal(TreeNode node) {
         if (node != null) {
             inOrderTraversal(node.left);
             visit(node);
@@ -70,7 +69,7 @@ public class QuestionBFS {
         }
     }
 
-    public static void preOrderTraversal(lib.TreeNode node) {
+    public static void preOrderTraversal(TreeNode node) {
         if (node != null) {
             visit(node);
             inOrderTraversal(node.left);
@@ -78,7 +77,7 @@ public class QuestionBFS {
         }
     }
 
-    public static void postOrderTraversal(lib.TreeNode node) {
+    public static void postOrderTraversal(TreeNode node) {
         if (node != null) {
             inOrderTraversal(node.left);
             inOrderTraversal(node.right);

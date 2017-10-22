@@ -1,6 +1,6 @@
 package _04_Tree.Ch_04_Trees_and_Graphs.Q4_06_Successor;
 
-import lib.TreeNode;
+import CtCILibrary.*;
 
 public class Question {
 

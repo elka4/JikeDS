@@ -1,6 +1,6 @@
 package _04_Tree.Ch_04_Trees_and_Graphs.Q4_05_Validate_BST;
 
-import lib.TreeNode;
+import CtCILibrary.*;
 import org.junit.Test;
 
 public class Question {

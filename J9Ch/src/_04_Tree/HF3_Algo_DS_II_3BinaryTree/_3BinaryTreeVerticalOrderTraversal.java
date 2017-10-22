@@ -59,7 +59,7 @@ public class _3BinaryTreeVerticalOrderTraversal {
 
         qCol.offer(0);
         qNode.offer(root);
-        // 以qCol为主，同时操作qNode
+        // 以qCol为主，同时平行操作qNode
         //
         while (!qCol.isEmpty()) {                      // bfs
             int c = qCol.poll();

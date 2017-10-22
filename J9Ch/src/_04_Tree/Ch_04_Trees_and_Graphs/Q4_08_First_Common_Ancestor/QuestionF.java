@@ -1,6 +1,6 @@
 package _04_Tree.Ch_04_Trees_and_Graphs.Q4_08_First_Common_Ancestor;
 
-import lib.TreeNode;
+import CtCILibrary.*;
 
 public class QuestionF {
 	

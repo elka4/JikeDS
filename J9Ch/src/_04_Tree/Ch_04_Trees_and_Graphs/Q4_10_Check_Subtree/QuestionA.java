@@ -1,7 +1,6 @@
 package _04_Tree.Ch_04_Trees_and_Graphs.Q4_10_Check_Subtree;
 
-import lib.AssortedMethods;
-import lib.TreeNode;
+import CtCILibrary.*;
 import org.junit.Test;
 
 public class QuestionA {

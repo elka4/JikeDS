@@ -1,7 +1,6 @@
 package _04_Tree.Ch_04_Trees_and_Graphs.Q4_03_List_of_Depths;
 
-import lib.AssortedMethods;
-import lib.TreeNode;
+import CtCILibrary.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
