@@ -2,6 +2,8 @@ package _05_DFS._Backtracking;
 import java.util.*;
 import org.junit.Test;
 public class _291_BackTracking_Word_Pattern_II_H {
+    //Share my Java backtracking solution
+    //https://leetcode.com/problems/word-pattern-ii/discuss/
     public class Solution {
 
         public boolean wordPatternMatch(String pattern, String str) {
@@ -61,7 +63,7 @@ public class _291_BackTracking_Word_Pattern_II_H {
     }
 
 
-
+    //20 lines JAVA clean solution, easy to understand
     public class Solution2 {
         Map<Character,String> map =new HashMap();
         Set<String> set =new HashSet();
@@ -84,4 +86,70 @@ public class _291_BackTracking_Word_Pattern_II_H {
             return false;
         }
     }
+
+    //*Java* HashSet + backtracking (2ms beats 100%)
+    class Solution3{
+        public boolean wordPatternMatch(String pattern, String str) {
+            String[] map = new String[26]; // mapping of characters 'a' - 'z'
+            HashSet<String> set = new HashSet<>(); // mapped result of 'a' - 'z'
+            return wordPatternMatch(pattern, str, map, set, 0, str.length()-1, 0, pattern.length()-1);
+        }
+        private boolean wordPatternMatch(String pattern, String str, String[] map, HashSet<String> set, int start, int end, int startP, int endP) {
+            if(startP==endP+1 && start==end+1) return true; // both pattern and str are exhausted
+            if((startP>endP && start<=end) || (startP<endP && start>end)) return false; // either of pattern or str is exhausted
+
+            char ch = pattern.charAt(startP);
+            String matched = map[ch-'a'];
+            if(matched!=null) { // ch is already mapped, then continue
+                int count = matched.length();
+                return start+count<=end+1 && matched.equals(str.substring(start, start+count)) // substring equals previously mapped string
+                        && wordPatternMatch(pattern, str, map, set, start+matched.length(), end, startP+1, endP); // moving forward
+            }
+            else {
+                int endPoint = end;
+                for(int i=endP; i>startP; i--) {
+                    endPoint -= map[pattern.charAt(i)-'a']==null ? 1 : map[pattern.charAt(i)-'a'].length();
+                }
+                for(int i=start; i<=endPoint; i++) { // try every possible mapping, from 1 character to the end
+                    matched = str.substring(start, i+1);
+                    if(set.contains(matched)) continue; // different pattern cannot map to same substring
+
+                    map[ch-'a'] = matched; // move forward, add corresponding mapping and set content
+                    set.add(matched);
+
+                    if(wordPatternMatch(pattern, str, map, set, i+1, end, startP+1, endP)) return true;
+
+                    else { // backtracking, remove corresponding mapping and set content
+                        map[ch-'a'] = null;
+                        set.remove(matched);
+                    }
+                }
+            }
+            return false; // exhausted
+        }
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 }
+/*
+Given a pattern and a string str, find if str follows the same pattern.
+
+Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty substring in str.
+
+Examples:
+pattern = "abab", str = "redblueredblue" should return true.
+pattern = "aaaa", str = "asdasdasdasd" should return true.
+pattern = "aabb", str = "xyzabcxzyabc" should return false.
+Notes:
+You may assume both pattern and str contains only lowercase letters.
+
+
+ */
