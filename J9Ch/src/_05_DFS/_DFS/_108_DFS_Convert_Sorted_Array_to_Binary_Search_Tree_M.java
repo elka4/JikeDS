@@ -1,6 +1,9 @@
 package _05_DFS._DFS;
 import java.util.*;import lib.*;
 import org.junit.Test;
+
+//108. Convert Sorted Array to Binary Search Tree
+
 public class _108_DFS_Convert_Sorted_Array_to_Binary_Search_Tree_M {
     class Solution{
         public TreeNode sortedArrayToBST(int[] num) {
@@ -118,6 +121,7 @@ public class _108_DFS_Convert_Sorted_Array_to_Binary_Search_Tree_M {
 
     public class Solution7 {
         public TreeNode sortedArrayToBST(int[] nums) {
+
             return findNextInsert(nums, 0, nums.length - 1, null);
         }
 
@@ -170,7 +174,25 @@ public class _108_DFS_Convert_Sorted_Array_to_Binary_Search_Tree_M {
     }
 //////////////////////////////////////////////////////////////////////////////////////
 
+    public class Jiuzhang {
+        private TreeNode buildTree(int[] num, int start, int end) {
+            if (start > end) {
+                return null;
+            }
 
+            TreeNode node = new TreeNode(num[(start + end) / 2]);
+            node.left = buildTree(num, start, (start + end) / 2 - 1);
+            node.right = buildTree(num, (start + end) / 2 + 1, end);
+            return node;
+        }
+
+        public TreeNode sortedArrayToBST(int[] num) {
+            if (num == null) {
+                return null;
+            }
+            return buildTree(num, 0, num.length - 1);
+        }
+    }
 
 
 //////////////////////////////////////////////////////////////////////////////////////

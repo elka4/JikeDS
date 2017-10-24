@@ -1,9 +1,14 @@
 package _05_DFS._DFS;
 import java.util.*;import lib.*;
 import org.junit.Test;
+//  106. Construct Binary Tree from Inorder and Postorder Traversal
+
 public class _106_DFS_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal_M {
 
     //My recursive Java code with O(n) time and O(n) space
+    /*
+    The the basic idea is to take the last element in postorder array as the root, find the position of the root in the inorder array; then locate the range for left sub-tree and right sub-tree and do recursion. Use a HashMap to record the index of root in the inorder array.
+     */
     class Solution{
         public TreeNode buildTreePostIn(int[] inorder, int[] postorder) {
             if (inorder == null || postorder == null || inorder.length != postorder.length)
@@ -63,8 +68,77 @@ public class _106_DFS_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
 
+//    Java iterative solution with explanation
+    class Solution3{
+        public TreeNode buildTree(int[] inorder, int[] postorder) {
+            if (inorder.length == 0 || postorder.length == 0) return null;
+            int ip = inorder.length - 1;
+            int pp = postorder.length - 1;
+
+            Stack<TreeNode> stack = new Stack<TreeNode>();
+            TreeNode prev = null;
+            TreeNode root = new TreeNode(postorder[pp]);
+            stack.push(root);
+            pp--;
+
+            while (pp >= 0) {
+                while (!stack.isEmpty() && stack.peek().val == inorder[ip]) {
+                    prev = stack.pop();
+                    ip--;
+                }
+                TreeNode newNode = new TreeNode(postorder[pp]);
+                if (prev != null) {
+                    prev.left = newNode;
+                } else if (!stack.isEmpty()) {
+                    TreeNode currTop = stack.peek();
+                    currTop.right = newNode;
+                }
+                stack.push(newNode);
+                prev = null;
+                pp--;
+            }
+
+            return root;
+        }
+    }
+
+
+    //////////////////////////////////////////////////////////////////////////////////////
+public class Jiuzhang {
+    private int findPosition(int[] arr, int start, int end, int key) {
+        int i;
+        for (i = start; i <= end; i++) {
+            if (arr[i] == key) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private TreeNode myBuildTree(int[] inorder, int instart, int inend,
+                                 int[] postorder, int poststart, int postend) {
+        if (instart > inend) {
+            return null;
+        }
+
+        TreeNode root = new TreeNode(postorder[postend]);
+        int position = findPosition(inorder, instart, inend, postorder[postend]);
+
+        root.left = myBuildTree(inorder, instart, position - 1,
+                postorder, poststart, poststart + position - instart - 1);
+        root.right = myBuildTree(inorder, position + 1, inend,
+                postorder, poststart + position - instart, postend - 1);
+        return root;
+    }
+
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        if (inorder.length != postorder.length) {
+            return null;
+        }
+        return myBuildTree(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
+    }
+}
 
 
 
