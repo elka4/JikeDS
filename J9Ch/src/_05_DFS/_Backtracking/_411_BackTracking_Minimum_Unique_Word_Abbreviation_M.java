@@ -2,6 +2,226 @@ package _05_DFS._Backtracking;
 import java.util.*;
 import org.junit.Test;
 public class _411_BackTracking_Minimum_Unique_Word_Abbreviation_M {
+    //Trie + Bruteforce
+
+
+    class Solution{
+        class Trie{
+            Trie[] next = new Trie[26];
+            boolean isEnd = false;
+        }
+        Trie root = new Trie();
+        List<String> abbrs;
+        public String minAbbreviation(String target, String[] dictionary) {
+            for(String s:dictionary) {
+                addTrie(s);
+            }
+            for(int i=0; i<target.length(); i++) {
+                abbrs = new ArrayList<>();
+                abbrGenerator(target, 0, "", 0, i+1);
+                for(String s:abbrs) {
+                    if(search(s, root, 0, 0)==false) return s;
+                }
+            }
+            return "";
+        }
+        public void addTrie(String s) {
+            Trie cur = root;
+            for(int i=0; i<s.length(); i++) {
+                char c = s.charAt(i);
+                if(cur.next[c-'a']==null) {
+                    cur.next[c-'a']=new Trie();
+                }
+                cur = cur.next[c-'a'];
+            }
+            cur.isEnd = true;
+        }
+        public boolean search(String target, Trie root, int i, int loop) {
+            if(root==null) return false;
+
+            if(loop!=0) {
+                for(int a=0; a<26; a++) {
+                    if(search(target, root.next[a], i, loop-1)) return true;
+                }
+                return false;
+            }
+            if(i==target.length()) {
+                if(root.isEnd) return true;
+                return false;
+            }
+            if(Character.isDigit(target.charAt(i))) {
+                int tmp = 0;
+                while(i<target.length()&&Character.isDigit(target.charAt(i))) {
+                    tmp = tmp*10 + target.charAt(i)-'0';
+                    i++;
+                }
+                return search(target, root, i, tmp);
+            } else {
+                return search(target, root.next[target.charAt(i)-'a'], i+1, 0);
+            }
+        }
+        public void abbrGenerator(String target, int i, String tmp, int abbr, int num) {
+            if(i==target.length()) {
+                if(num==0&&abbr==0) abbrs.add(tmp);
+                if(num==1&&abbr!=0) abbrs.add(tmp+abbr);
+                return;
+            }
+            if(num<=0) return;
+            char cur = target.charAt(i);
+            abbrGenerator(target, i+1, abbr==0?tmp+cur:tmp+abbr+cur, 0, abbr==0?num-1:num-2);
+            abbrGenerator(target, i+1, tmp, abbr+1, num);
+        }
+    }
+
+
+    public class Solution2 {
+        public String minAbbreviation(String target, String[] dictionary) {
+            TrieNode root = new TrieNode();
+            // add all words in the dictionary into the Trie
+            for (String word : dictionary) {
+                if (word.length() == target.length()) {
+                    insert(root, word);
+                }
+            }
+
+//         // find the abbr. with shortest length & doesn't conflict with words in the Trie
+//         // linear search ver.
+//         for (int len = 1; len <= target.length(); len++) {
+//             List<String> abbrs = new ArrayList<String>();
+//             getAbbrs(0, len, new StringBuilder(), abbrs, target);
+
+//             for (String abbr : abbrs) {
+//                 if (!conflict(abbr, root, 0)) return abbr;
+//             }
+//         }
+
+
+            // find the abbr. with shortest length & doesn't conflict with words in the Trie
+            // binary search ver.         above commented code is linear search ver.
+            int min = 1, max = target.length();
+            String res = null;
+            while (min <= max) {
+                boolean conflicted = true;
+                int mid = min + (max - min) / 2;
+                List<String> abbrs = new ArrayList<String>();
+                getAbbrs(0, mid, new StringBuilder(), abbrs, target);
+                for (String abbr : abbrs) {
+                    if (!conflict(abbr, root, 0)) {
+                        conflicted = false;
+                        res = abbr;
+                        break;
+                    }
+                }
+                if (conflicted) {
+                    min = mid + 1;
+                } else {
+                    max = mid - 1;
+                }
+            }
+
+            return res;
+        }
+
+        /**
+         * To check if a String "abbr" can be an abbreviation of a word in the Trie starting at TrieNode "node"
+         * "abbr" can be a substring of the entire abbr. as we go from root to leave in the trie.
+         * This method is called recursively with "abbr" and "node" both changing while we go down the trie.
+         *
+         * @param abbr - current substring of the entire abbreviation. (must be a latter portion)
+         * @param node - current node we are at
+         * @param num - current number to be skipped as we go through the trie. If "num" is not 0, we need to go to
+         * the next level of the trie while decrementing the "num". If "num" is 0, then we can check if the first
+         * char in "abbr" is in the current node.
+         */
+        boolean conflict(String abbr, TrieNode node, int num) {
+            if (num > 0) { // we need to skip this char, and try all possible children TrieNodes
+                for (TrieNode next : node.nodes) {
+                    if (next != null && conflict(abbr, next, num - 1)) return true;
+                }
+                return false;
+            } else { // num == 0, check the start of the "abbr" string
+                if (abbr.length() == 0) return node.isEnd;
+                int i = 0;
+                for (; i < abbr.length() && abbr.charAt(i) >= '0' && abbr.charAt(i) <= '9';i++) {
+                    num = num * 10 + (abbr.charAt(i) - '0');
+                }
+                if (i != 0) { // "abbr" starts with a number
+                    return conflict(abbr.substring(i), node, num);
+                } else { // "abbr" starts with a char
+                    TrieNode next = node.nodes[abbr.charAt(0) - 'a'];
+                    if (next == null) return false;
+                    return conflict(abbr.substring(1), next, num);
+                }
+            }
+        }
+
+        /**
+         * Insert a word to the tree
+         */
+        void insert (TrieNode root, String word) {
+            TrieNode curr = root;
+            for (int i = 0; i < word.length(); i++) {
+                char c = word.charAt(i);
+                if (curr.nodes[c - 'a'] == null) curr.nodes[c - 'a'] = new TrieNode();
+                curr = curr.nodes[c - 'a'];
+                if (i == word.length() - 1) curr.isEnd = true;
+            }
+        }
+
+        /**
+         * Get all the abbreviations of length "len" starting from index "s" of String "target"
+         * (i.e. targer.substring(s, target.length)), and store all the abbr.s in the List "abbrs"
+         *
+         * @param len - the length of abbr, defined in the problem
+         * @param s - start index
+         *            the method gets the abbr of target.substring(s, target.length()).
+         *            Notice the previous part of the String, i.e. target.substring(0, s), has been dealt with
+         *            in lower depth recursion calls of this method and the abbr. for that part has been stored
+         *            in the StringBuilder "sb".
+         *
+         * The other 3 parameters can just be passed into deeper recursions
+         */
+        void getAbbrs(int s, int len, StringBuilder sb, List<String> abbrs, String target) {
+            if (s >= target.length()) return;  // bad condition. No valid abbr.
+
+            // if the previous position is a number (true), or a char (false)
+            boolean prevNum = (sb.length() > 0 && sb.charAt(sb.length() - 1) >= '0' && sb.charAt(sb.length() - 1) <= '9');
+
+            if (len == 1) { // this is the last position for this abbr.
+                // if "s" is at the last index of the string, then it's valid to just append this last char.
+                // if not, we have to abbreviate the following chars as a single number. (because there's only 1 position available)
+                if (s == target.length() - 1) abbrs.add(sb.append(target.charAt(s)).toString());
+                else if (!prevNum) { // if prevNum, then we cannot append another number here.
+                    abbrs.add(sb.append(target.length() - s).toString());
+                }
+            } else { // len > 1
+                int endIdx = sb.length(); // actually is end index + 1. But works because of the "last index exclusive" rule
+
+                // append the char at position "s", and call deeper recursions;
+                sb.append(target.charAt(s));
+                getAbbrs(s + 1, len - 1, sb, abbrs, target);
+                sb.delete(endIdx, sb.length());
+
+                for (int i = s + 1; i < target.length(); i++) {
+                    if (!prevNum) { // abbr. the substring from s to i into a number
+                        sb.append(i - s);
+                        getAbbrs(i, len - 1, sb, abbrs, target);
+                        sb.delete(endIdx, sb.length());
+                    }
+                }
+            }
+        }
+
+        class TrieNode {
+            TrieNode[] nodes;
+            boolean isEnd;
+
+            TrieNode() {
+                nodes = new TrieNode[26];
+                isEnd = false;
+            }
+        }
+    }
 
 
 }
