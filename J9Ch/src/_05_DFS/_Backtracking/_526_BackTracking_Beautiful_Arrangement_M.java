@@ -115,7 +115,8 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         private int dfs(int n, boolean[] used, int k) {
             if (k == n + 1) return 1;
             int cnt = 0;
-            for (int i = 1; i <= n; i++) { // If not used and "beautiful", put number i in position k
+            // If not used and "beautiful", put number i in position k
+            for (int i = 1; i <= n; i++) {
                 if (used[i] || !(i % k == 0 || k % i == 0)) continue;
                 used[i] = true;
                 cnt += dfs(n, used, k + 1);
@@ -194,7 +195,13 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
             }
         }
     }
+///////////////////////////////////////////////////////////////////////////////////////////
 
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
 
 
 

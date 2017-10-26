@@ -2,7 +2,7 @@ package _05_DFS._Backtracking;
 import java.util.*;
 import org.junit.Test;
 
-//
+// 216. Combination Sum III
 public class _216_BackTracking_Combination_Sum_III_M {
     class Solution{
         //Simple and clean Java code, backtracking.
@@ -25,8 +25,7 @@ public class _216_BackTracking_Combination_Sum_III_M {
             }
         }
 
-//        To make this faster, you can quit the for loop early and avoid unnecessary work.
-
+        // To make this faster, you can quit the for loop early and avoid unnecessary work.
         private void combination2(List<List<Integer>> ans, List<Integer> comb, int k,  int start, int n) {
             if (comb.size() > k) {
                 return;
@@ -44,8 +43,8 @@ public class _216_BackTracking_Combination_Sum_III_M {
 
             }
         }
-//if you think for loop with multiple conditions is complex, you can add an if condition inside the for loop instead.
 
+        //if you think for loop with multiple conditions is complex, you can add an if condition inside the for loop instead.
         private void combination3(List<List<Integer>> ans, List<Integer> comb, int k,  int start, int n) {
             if (comb.size() > k) {
                 return;
@@ -80,7 +79,8 @@ public class _216_BackTracking_Combination_Sum_III_M {
 
 }
 /*
-Find all possible combinations of k numbers that add up to a number n, given that only numbers from 1 to 9 can be used and each combination should be a unique set of numbers.
+Find all possible combinations of k numbers that add up to a number n, given that only numbers
+ from 1 to 9 can be used and each combination should be a unique set of numbers.
 
 
 Example 1:
@@ -90,6 +90,9 @@ Input: k = 3, n = 7
 Output:
 
 [[1,2,4]]
+
+
+
 
 Example 2:
 

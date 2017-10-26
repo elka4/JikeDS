@@ -7,7 +7,6 @@ import org.junit.Test;
 public class _254_BackTracking_Factor_Combinations_M {
 
 //My Recursive DFS Java Solution
-
     class Solution{
         public List<List<Integer>> getFactors(int n) {
             List<List<Integer>> result = new ArrayList<List<Integer>>();

@@ -3,6 +3,37 @@ import java.util.*;
 import org.junit.Test;
 public class _044_BackTracking_Wildcard_Matching_H {
 
+    //I like this one.
+    //Java DP Accepted
+    public class Solution3 {
+        public boolean isMatch(String s, String p) {
+            int m = s.length(), n = p.length();
+            char[] ws = s.toCharArray();
+            char[] wp = p.toCharArray();
+
+            boolean[][] dp = new boolean[m+1][n+1];
+            dp[0][0] = true;
+
+            for (int j = 1; j <= n; j++)
+                dp[0][j] = dp[0][j-1] && wp[j-1] == '*';
+
+            for (int i = 1; i <= m; i++)
+                dp[i][0] = false;
+
+            for (int i = 1; i <= m; i++) {
+                for (int j = 1; j <= n; j++) {
+                    if (wp[j-1] == '?' || ws[i-1] == wp[j-1])
+                        dp[i][j] = dp[i-1][j-1];
+                    else if (wp[j-1] == '*')
+                        dp[i][j] = dp[i-1][j] || dp[i][j-1];
+                }
+            }
+            return dp[m][n];
+        }
+    }
+
+
+
 /*    dp[n] means the substring s[:n] if match the pattern i
 
     dp[0] means the empty string '' or s[:0] which only match the pattern '*'
@@ -19,11 +50,14 @@ public class _044_BackTracking_Wildcard_Matching_H {
         }
         if (p.length() - count > s.length())
             return false;
+
         boolean[][] dp = new boolean[p.length() + 1][s.length() + 1];
         dp[0][0] = true;
+
         for (int j = 1; j <= p.length(); j++) {
             char pattern = p.charAt(j - 1);
             dp[j][0] = dp[j - 1][0] && pattern == '*';
+
             for (int i = 1; i <= s.length(); i++) {
                 char letter = s.charAt(i - 1);
                 if (pattern != '*') {
@@ -62,29 +96,6 @@ public class _044_BackTracking_Wildcard_Matching_H {
         }
     }
 
-    //Java DP Accepted
-    public class Solution3 {
-        public boolean isMatch(String s, String p) {
-            int m = s.length(), n = p.length();
-            char[] ws = s.toCharArray();
-            char[] wp = p.toCharArray();
-            boolean[][] dp = new boolean[m+1][n+1];
-            dp[0][0] = true;
-            for (int j = 1; j <= n; j++)
-                dp[0][j] = dp[0][j-1] && wp[j-1] == '*';
-            for (int i = 1; i <= m; i++)
-                dp[i][0] = false;
-            for (int i = 1; i <= m; i++) {
-                for (int j = 1; j <= n; j++) {
-                    if (wp[j-1] == '?' || ws[i-1] == wp[j-1])
-                        dp[i][j] = dp[i-1][j-1];
-                    else if (wp[j-1] == '*')
-                        dp[i][j] = dp[i-1][j] || dp[i][j-1];
-                }
-            }
-            return dp[m][n];
-        }
-    }
 
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -134,6 +145,51 @@ public class _044_BackTracking_Wildcard_Matching_H {
                 }
             }
             return dp[slen - 1];
+        }
+    }
+
+
+    class JiuzhangDP{
+        // 9Ch DP
+        public boolean isMatch(String s, String p) {
+            char[] s1 = s.toCharArray();
+            char[] s2 = p.toCharArray();
+            int m = s1.length;
+            int n = s2.length;
+
+            boolean[][] f = new boolean[m + 1][n + 1];
+            int i, j;
+            for (i = 0; i <= m; i++) {
+                for (j = 0; j <= n; j++) {
+                    if (i == 0 && j== 0) {
+                        f[i][j] = true;
+                        continue;
+                    }
+
+                    // i > 0
+                    if (j == 0) {
+                        f[i][j] = false;
+                        continue;
+                    }
+
+                    // i = 0, j = 10
+                    f[i][j] = false;
+                    if (s2[j - 1] != '*') {
+                        if (i >= 1 && (s2[j - 1] == '?' || s2[j - 1] == s1[i - 1])) {
+                            f[i][j] |= f[i - 1][j - 1];
+                        }
+                    } else {
+                        // not care *
+                        f[i][j] = f[i][j - 1];
+                        //important!
+                        if (i > 0) {
+                            // care *
+                            f[i][j] |= f[i - 1][j];
+                        }
+                    }
+                }
+            }
+            return f[m][n];
         }
     }
 

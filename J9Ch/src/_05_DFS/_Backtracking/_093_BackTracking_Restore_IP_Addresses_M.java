@@ -16,7 +16,9 @@ In isValid, strings whose length greater than 3 or equals to 0 is not valid; or 
             for(int i = 1; i<4 && i<len-2; i++){
                 for(int j = i+1; j<i+4 && j<len-1; j++){
                     for(int k = j+1; k<j+4 && k<len; k++){
-                        String s1 = s.substring(0,i), s2 = s.substring(i,j), s3 = s.substring(j,k), s4 = s.substring(k,len);
+                        String s1 = s.substring(0,i), s2 = s.substring(i,j),
+                                s3 = s.substring(j,k), s4 = s.substring(k,len);
+
                         if(isValid(s1) && isValid(s2) && isValid(s3) && isValid(s4)){
                             res.add(s1+"."+s2+"."+s3+"."+s4);
                         }
@@ -26,7 +28,10 @@ In isValid, strings whose length greater than 3 or equals to 0 is not valid; or 
             return res;
         }
         public boolean isValid(String s){
-            if(s.length()>3 || s.length()==0 || (s.charAt(0)=='0' && s.length()>1) || Integer.parseInt(s)>255)
+            if(s.length()>3 ||
+                s.length()==0 ||
+                (s.charAt(0)=='0' && s.length()>1) ||
+                Integer.parseInt(s)>255)
                 return false;
             return true;
         }
@@ -47,7 +52,10 @@ In isValid, strings whose length greater than 3 or equals to 0 is not valid; or 
             for (int i=1; i<4; i++) {
                 if (idx+i > ip.length()) break;
                 String s = ip.substring(idx,idx+i);
-                if ((s.startsWith("0") && s.length()>1) || (i==3 && Integer.parseInt(s) >= 256)) continue;
+
+                if ((s.startsWith("0") && s.length()>1)
+                || (i==3 && Integer.parseInt(s) >= 256)) continue;
+
                 restoreIp(ip, solutions, idx+i, restored+s+(count==3?"" : "."), count+1);
             }
         }
@@ -58,7 +66,9 @@ In isValid, strings whose length greater than 3 or equals to 0 is not valid; or 
 the basic idea is to make three cuts into the string, separating it into four parts, each part contains 1~3 digits and it must be <255.
      */
     class Solution3{
-        List<String> restoreIpAddresses(String s) { List<String> ans = new ArrayList<String>(); int len = s.length();
+        List<String> restoreIpAddresses(String s) {
+            List<String> ans = new ArrayList<String>();
+            int len = s.length();
             for (int i = 1; i <=3; ++i){ // first cut
                 if (len-i > 9) continue;
                 for (int j = i+1; j<=i+3; ++j){ //second cut

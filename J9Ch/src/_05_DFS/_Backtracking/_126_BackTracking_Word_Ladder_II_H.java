@@ -30,8 +30,8 @@ public class _126_BackTracking_Word_Ladder_II_H {
             while (!queue.isEmpty()) {
 
                 String word = queue.poll();
-
-                int step = ladder.get(word)+1;//'step' indicates how many steps are needed to travel to one word.
+                //'step' indicates how many steps are needed to travel to one word.
+                int step = ladder.get(word)+1;
 
                 if (step>min) break;
 
@@ -41,8 +41,8 @@ public class _126_BackTracking_Word_Ladder_II_H {
                         builder.setCharAt(i,ch);
                         String new_word=builder.toString();
                         if (ladder.containsKey(new_word)) {
-
-                            if (step>ladder.get(new_word))//Check if it is the shortest path to one word.
+                            //Check if it is the shortest path to one word.
+                            if (step>ladder.get(new_word))
                                 continue;
                             else if (step<ladder.get(new_word)){
                                 queue.add(new_word);
@@ -91,7 +91,85 @@ public class _126_BackTracking_Word_Ladder_II_H {
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//jiuzhang
+public class Jiuzhang {
+    public List<List<String>> findLadders(String start, String end,
+                                          Set<String> dict) {
+        List<List<String>> ladders = new ArrayList<List<String>>();
+        Map<String, List<String>> map = new HashMap<String, List<String>>();
+        Map<String, Integer> distance = new HashMap<String, Integer>();
 
+        dict.add(start);
+        dict.add(end);
+
+        bfs(map, distance, start, end, dict);
+
+        List<String> path = new ArrayList<String>();
+
+        dfs(ladders, path, end, start, distance, map);
+
+        return ladders;
+    }
+
+    void dfs(List<List<String>> ladders, List<String> path, String crt,
+             String start, Map<String, Integer> distance,
+             Map<String, List<String>> map) {
+        path.add(crt);
+        if (crt.equals(start)) {
+            Collections.reverse(path);
+            ladders.add(new ArrayList<String>(path));
+            Collections.reverse(path);
+        } else {
+            for (String next : map.get(crt)) {
+                if (distance.containsKey(next) && distance.get(crt) == distance.get(next) + 1) {
+                    dfs(ladders, path, next, start, distance, map);
+                }
+            }
+        }
+        path.remove(path.size() - 1);
+    }
+
+    void bfs(Map<String, List<String>> map, Map<String, Integer> distance,
+             String start, String end, Set<String> dict) {
+        Queue<String> q = new LinkedList<String>();
+        q.offer(start);
+        distance.put(start, 0);
+        for (String s : dict) {
+            map.put(s, new ArrayList<String>());
+        }
+
+        while (!q.isEmpty()) {
+            String crt = q.poll();
+
+            List<String> nextList = expand(crt, dict);
+            for (String next : nextList) {
+                map.get(next).add(crt);
+                if (!distance.containsKey(next)) {
+                    distance.put(next, distance.get(crt) + 1);
+                    q.offer(next);
+                }
+            }
+        }
+    }
+
+    List<String> expand(String crt, Set<String> dict) {
+        List<String> expansion = new ArrayList<String>();
+
+        for (int i = 0; i < crt.length(); i++) {
+            for (char ch = 'a'; ch <= 'z'; ch++) {
+                if (ch != crt.charAt(i)) {
+                    String expanded = crt.substring(0, i) + ch
+                            + crt.substring(i + 1);
+                    if (dict.contains(expanded)) {
+                        expansion.add(expanded);
+                    }
+                }
+            }
+        }
+
+        return expansion;
+    }
+}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -122,4 +200,45 @@ You may assume no duplicates in the word list.
 You may assume beginWord and endWord are non-empty and are not the same.
 UPDATE (2017/1/20):
 The wordList parameter had been changed to a list of strings (instead of a set of strings). Please reload the code definition to get the latest changes.
+ */
+
+
+/*
+word ladder II
+
+
+
+给出两个单词（start和end）和一个字典，找出所有从start到end的最短转换序列
+
+比如：
+
+    每次只能改变一个字母。
+    变换过程中的中间单词必须在字典中出现。
+
+注意事项
+
+    所有单词具有相同的长度。
+    所有单词都只包含小写字母。
+
+您在真实的面试中是否遇到过这个题？
+样例
+
+给出数据如下：
+
+start = "hit"
+
+end = "cog"
+
+dict = ["hot","dot","dog","lot","log"]
+
+返回
+
+[
+
+    ["hit","hot","dot","dog","cog"],
+
+    ["hit","hot","lot","log","cog"]
+
+  ]
+
  */

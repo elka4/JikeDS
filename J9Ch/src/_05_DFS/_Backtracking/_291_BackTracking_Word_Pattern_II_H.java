@@ -92,18 +92,25 @@ public class _291_BackTracking_Word_Pattern_II_H {
         public boolean wordPatternMatch(String pattern, String str) {
             String[] map = new String[26]; // mapping of characters 'a' - 'z'
             HashSet<String> set = new HashSet<>(); // mapped result of 'a' - 'z'
-            return wordPatternMatch(pattern, str, map, set, 0, str.length()-1, 0, pattern.length()-1);
+            return wordPatternMatch(pattern, str, map, set, 0,
+                    str.length()-1, 0, pattern.length()-1);
         }
-        private boolean wordPatternMatch(String pattern, String str, String[] map, HashSet<String> set, int start, int end, int startP, int endP) {
-            if(startP==endP+1 && start==end+1) return true; // both pattern and str are exhausted
-            if((startP>endP && start<=end) || (startP<endP && start>end)) return false; // either of pattern or str is exhausted
+        private boolean wordPatternMatch(String pattern, String str, String[] map,
+                                         HashSet<String> set, int start, int end, int startP, int endP) {
+            // both pattern and str are exhausted
+            if(startP==endP+1 && start==end+1) return true;
+            // either of pattern or str is exhausted
+            if((startP>endP && start<=end) || (startP<endP && start>end)) return false;
 
             char ch = pattern.charAt(startP);
             String matched = map[ch-'a'];
-            if(matched!=null) { // ch is already mapped, then continue
+            // ch is already mapped, then continue
+            if(matched!=null) {
                 int count = matched.length();
-                return start+count<=end+1 && matched.equals(str.substring(start, start+count)) // substring equals previously mapped string
-                        && wordPatternMatch(pattern, str, map, set, start+matched.length(), end, startP+1, endP); // moving forward
+                // substring equals previously mapped string
+                return start+count<=end+1 && matched.equals(str.substring(start, start+count))
+                        && wordPatternMatch(pattern, str, map, set,
+                        start+matched.length(), end, startP+1, endP); // moving forward
             }
             else {
                 int endPoint = end;

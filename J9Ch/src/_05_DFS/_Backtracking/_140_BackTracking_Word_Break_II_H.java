@@ -2,6 +2,8 @@ package _05_DFS._Backtracking;
 import java.util.*;
 import org.junit.Test;
 
+// backtracking, DP
+
 //
 public class _140_BackTracking_Word_Break_II_H {
 
@@ -88,35 +90,6 @@ public class _140_BackTracking_Word_Break_II_H {
     //Jiuzhang
     // version 1:
     public class Jiuzhang1 {
-        private void search(int index, String s, List<Integer> path,
-                            boolean[][] isWord, boolean[] possible,
-                            List<String> result) {
-            if (!possible[index]) {
-                return;
-            }
-
-            if (index == s.length()) {
-                StringBuilder sb = new StringBuilder();
-                int lastIndex = 0;
-                for (int i = 0; i < path.size(); i++) {
-                    sb.append(s.substring(lastIndex, path.get(i)));
-                    if (i != path.size() - 1) sb.append(" ");
-                    lastIndex = path.get(i);
-                }
-                result.add(sb.toString());
-                return;
-            }
-
-            for (int i = index; i < s.length(); i++) {
-                if (!isWord[index][i]) {
-                    continue;
-                }
-                path.add(i + 1);
-                search(i + 1, s, path, isWord, possible, result);
-                path.remove(path.size() - 1);
-            }
-        }
-
         public List<String> wordBreak(String s, Set<String> wordDict) {
             ArrayList<String> result = new ArrayList<String>();
             if (s.length() == 0) {
@@ -146,6 +119,37 @@ public class _140_BackTracking_Word_Break_II_H {
             search(0, s, path, isWord, possible, result);
             return result;
         }
+
+        private void search(int index, String s, List<Integer> path,
+                            boolean[][] isWord, boolean[] possible,
+                            List<String> result) {
+            if (!possible[index]) {
+                return;
+            }
+
+            if (index == s.length()) {
+                StringBuilder sb = new StringBuilder();
+                int lastIndex = 0;
+                for (int i = 0; i < path.size(); i++) {
+                    sb.append(s.substring(lastIndex, path.get(i)));
+                    if (i != path.size() - 1) sb.append(" ");
+                    lastIndex = path.get(i);
+                }
+                result.add(sb.toString());
+                return;
+            }
+
+            for (int i = index; i < s.length(); i++) {
+                if (!isWord[index][i]) {
+                    continue;
+                }
+                path.add(i + 1);
+                search(i + 1, s, path, isWord, possible, result);
+                path.remove(path.size() - 1);
+            }
+        }
+
+
     }
 
 // version 2:
@@ -157,7 +161,8 @@ public class _140_BackTracking_Word_Break_II_H {
             return wordBreakHelper(s,dict,map);
         }
 
-        public ArrayList<String> wordBreakHelper(String s, Set<String> dict, Map<String, ArrayList<String>> memo){
+        public ArrayList<String> wordBreakHelper(String s, Set<String> dict,
+                                                 Map<String, ArrayList<String>> memo){
             if(memo.containsKey(s)) return memo.get(s);
             ArrayList<String> result = new ArrayList<String>();
             int n = s.length();
@@ -199,4 +204,15 @@ A solution is ["cats and dog", "cat sand dog"].
 
 UPDATE (2017/1/4):
 The wordDict parameter had been changed to a list of strings (instead of a set of strings). Please reload the code definition to get the latest changes.
+ */
+
+/*
+给一字串s和单词的字典dict,在字串中增加空格来构建一个句子，并且所有单词都来自字典。
+返回所有有可能的句子。
+您在真实的面试中是否遇到过这个题？
+样例
+
+给一字串lintcode,字典为["de", "ding", "co", "code", "lint"]
+则结果为["lint code", "lint co de"]。
+
  */

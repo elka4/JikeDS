@@ -41,15 +41,15 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
     /*
     For each char c[i], either abbreviate it or not.
 
-Abbreviate: count accumulate num of abbreviating chars, but don't append it yet.
-Not Abbreviate: append accumulated num as well as current char c[i].
-In the end append remaining num.
-Using StringBuilder can decrease 36.4% time.
-This comes to the pattern I find powerful:
+    Abbreviate: count accumulate num of abbreviating chars, but don't append it yet.
+    Not Abbreviate: append accumulated num as well as current char c[i].
+    In the end append remaining num.
+    Using StringBuilder can decrease 36.4% time.
+    This comes to the pattern I find powerful:
 
-int len = sb.length(); // decision point
-... backtracking logic ...
-sb.setLength(len);     // reset to decision point
+    int len = sb.length(); // decision point
+    ... backtracking logic ...
+    sb.setLength(len);     // reset to decision point
      */
     class Solution3{
         public List<String> generateAbbreviations(String word) {
@@ -72,6 +72,7 @@ sb.setLength(len);     // reset to decision point
             sb.setLength(len);
         }
     }
+
 
     //https://leetcode.com/problems/generalized-abbreviation/solution/
     //Approach #1 (Backtracking) [Accepted]
@@ -132,10 +133,10 @@ sb.setLength(len);     // reset to decision point
         }
     }
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 /*
 Write a function to generate the generalized abbreviations of a word.
