@@ -149,3 +149,14 @@ Topological Sort via DFS - A great video tutorial (21 minutes) on Coursera expla
 Topological sort could also be done via BFS.
 
  */
+
+/*
+现在你总共有 n 门课需要选，记为 0 到 n - 1.
+一些课程在修之前需要先修另外的一些课程，比如要学习课程 0 你需要先学习课程 1 ，表示为[0,1]
+给定n门课以及他们的先决条件，判断是否可能完成所有课程？
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给定 n = 2，先决条件为 [[1,0]] 返回 true
+给定 n = 2，先决条件为 [[1,0],[0,1]] 返回 false
+ */

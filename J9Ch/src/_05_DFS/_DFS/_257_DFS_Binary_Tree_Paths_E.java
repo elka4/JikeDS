@@ -54,6 +54,7 @@ public class _257_DFS_Binary_Tree_Paths_E {
 
             List<String> leftPaths = binaryTreePaths(root.left);
             List<String> rightPaths = binaryTreePaths(root.right);
+
             for (String path : leftPaths) {
                 paths.add(root.val + "->" + path);
             }
