@@ -44,6 +44,36 @@ f[i-1][j] + f[i][j-1]， 其他
 //  Unique PathsII
 public class _1UniquePathsII {
 
+    // 这个是目前看最好的解法， 从下面复制来
+    public int uniquePathsWithObstaclesXX(int[][] obstacleGrid) {
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
+        int[][] s = new int[2][n];
+        //s[0][0] = obstacleGrid[0][0]==0 ? 1:0;
+        // if(s[0][0] == 0) return 0;
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(obstacleGrid[i][j] == 1){
+                    s[i%2][j] = 0;
+                } else if (i == 0 && j == 0) {
+                    if (obstacleGrid[0][0] == 0){
+                        s[i][j] = 1;
+                    }else {
+                        return 0;
+                    }
+                }
+                else if(i==0){
+                    if(j>0) s[i%2][j] = s[i%2][j-1];
+                }
+                else if(j==0){
+                    if(i>0) s[i%2][j] = s[(i-1)%2][j];
+                }
+                else s[i%2][j] = s[(i-1)%2][j] + s[i%2][j-1];
+            }
+        }
+        return s[(m-1)%2][n-1];
+    }
+//////////////////////////////////////////////////////////////////////////////////////////////////
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
             return 0;
@@ -82,6 +112,145 @@ public class _1UniquePathsII {
         return paths[n - 1][m - 1];
     }
 
+    public int uniquePathsWithObstaclesX(int[][] obstacleGrid) {
+        if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
+            return 0;
+        }
+
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
+        int[][] paths = new int[2][n];
+        int old;
+        int now = 0;
+
+        if (obstacleGrid[0][0] == 1 || obstacleGrid[m-1][n-1] == 1) {
+            return 0;
+        }
+
+
+        for (int i = 0; i < m; i++) {
+            old = now;
+            now = 1 - now;
+            for (int j = 0; j < n; j++) {
+                paths[now][j] = 0;
+                if (obstacleGrid[i][j] == 1) {
+                    paths[now][j] = 0;
+                }
+                else {
+                    if (i == 0 && j == 0) {
+                        paths[now][j] = 1;
+                    }else{
+                        if (i == 0 && j == 0) {
+                            paths[now][j] = 1;
+                        }
+                        if (i > 0) {
+                            paths[now][j] += paths[old][j];
+                        }
+                        if (j > 0) {
+                            paths[now][j] += paths[now][j-1];
+                        }
+                    }
+                }
+            }
+        }
+
+        return paths[now][n - 1];
+    }
+//                        paths[now][j] = paths[old][j] + paths[now][j - 1];
+
+
+    //Simple Java DP solution
+    public class Solution {
+        public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+            int m = obstacleGrid.length;
+            int n = obstacleGrid[0].length;
+            int[][] s = new int[m][n];
+            s[0][0] = obstacleGrid[0][0]==0 ? 1:0;
+            if(s[0][0] == 0) return 0;
+            for(int i=0;i<m;i++){
+                for(int j=0;j<n;j++){
+                    if(obstacleGrid[i][j] == 1) s[i][j] = 0;
+                    else if(i==0){
+                        if(j>0) s[i][j] = s[i][j-1];
+                    }
+                    else if(j==0){
+                        if(i>0) s[i][j] = s[i-1][j];
+                    }
+                    else s[i][j] = s[i-1][j] + s[i][j-1];
+                }
+            }
+            return s[m-1][n-1];
+        }
+
+
+        public int uniquePathsWithObstaclesX(int[][] obstacleGrid) {
+            int m = obstacleGrid.length;
+            int n = obstacleGrid[0].length;
+            int[][] s = new int[2][n];
+            s[0][0] = obstacleGrid[0][0]==0 ? 1:0;
+            if(s[0][0] == 0) return 0;
+
+            for(int i=0;i<m;i++){
+                for(int j=0;j<n;j++){
+                    if(obstacleGrid[i][j] == 1) s[i%2][j] = 0;
+                    else if(i==0){
+                        if(j>0) s[i%2][j] = s[i%2][j-1];
+                    }
+                    else if(j==0){
+                        if(i>0) s[i%2][j] = s[(i-1)%2][j];
+                    }
+                    else s[i%2][j] = s[(i-1)%2][j] + s[i%2][j-1];
+                }
+            }
+            return s[(m-1)%2][n-1];
+        }
+
+        // 这个是目前看最好的解法
+        public int uniquePathsWithObstaclesXX(int[][] obstacleGrid) {
+            int m = obstacleGrid.length;
+            int n = obstacleGrid[0].length;
+            int[][] s = new int[2][n];
+            //s[0][0] = obstacleGrid[0][0]==0 ? 1:0;
+            // if(s[0][0] == 0) return 0;
+            for(int i=0;i<m;i++){
+                for(int j=0;j<n;j++){
+                    if(obstacleGrid[i][j] == 1) s[i%2][j] = 0;
+                    else if (i == 0 && j == 0) {
+                        if (obstacleGrid[0][0] == 0){
+                            s[i][j] = 1;
+                        }else {
+                            return 0;
+                        }
+                    }
+                    else if(i==0){
+                        if(j>0) s[i%2][j] = s[i%2][j-1];
+                    }
+                    else if(j==0){
+                        if(i>0) s[i%2][j] = s[(i-1)%2][j];
+                    }
+                    else s[i%2][j] = s[(i-1)%2][j] + s[i%2][j-1];
+                }
+            }
+            return s[(m-1)%2][n-1];
+        }
+    }
+
+//////////////////////////////////////////////////////////////////////////
+    //  Short JAVA solution
+    public int uniquePathsWithObstacles4(int[][] obstacleGrid) {
+        int width = obstacleGrid[0].length;
+        int[] dp = new int[width];
+        dp[0] = 1;
+        for (int[] row : obstacleGrid) {
+            for (int j = 0; j < width; j++) {
+                if (row[j] == 1)
+                    dp[j] = 0;
+                else if (j > 0)
+                    dp[j] += dp[j - 1];
+            }
+        }
+        return dp[width - 1];
+    }
 //////////////////////////////////////////////////////////////////////////
 
     // 方法二
@@ -147,6 +316,7 @@ public class _1UniquePathsII {
             return 0;
         }
         int[][] f = new int[m][n];
+
         int i, j;
         for (i = 0; i < m; ++i) {
             for (j = 0; j < n; ++j) {

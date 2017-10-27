@@ -44,9 +44,33 @@ f[0], f[1], .... f[N]
  */
 
 
-//Decode Ways
+//leet 91. Decode Ways
+//lint
 public class _3DecodeWays {
+    public int numDecodings2222(String s) {
+        char[] sc  = s.toCharArray();
+        int n = sc.length;
+        if (n == 0) {
+            return 0;
+        }
 
+        int[] f = new int[n + 1];
+        f[0] = 1;
+        f[1] = sc[0] != '0' ? 1 : 0;
+
+        for(int i = 2; i <= n; i++) {
+            int first = sc[i - 1] - '0';
+            int second = (sc[i - 2] - '0') * 10 + (sc[i - 1] - '0');
+            if(first >= 1 && first <= 9) {
+                f[i] += f[i-1];
+            }
+            if(second >= 10 && second <= 26) {
+                f[i] += f[i-2];
+            }
+        }
+        return f[n];
+    }
+//////////////////////////////////////////////////////////////////////////
     //jiuzhang
     public int numDecodings(String s) {
         if (s == null || s.length() == 0) {
@@ -145,6 +169,36 @@ public class _3DecodeWays {
         }
         return f[n];
     }
+
+    public int numDecodings222(String ss){
+        char[] s  = ss.toCharArray();
+        int n = s.length;
+        if (n == 0) {
+            return 0;
+        }
+
+        int[] f = new int[n + 1];
+        f[0] = 1;
+
+        for (int i = 1; i <= n; i++) {
+            f[i] = 0;
+            int t = s[i - 1] - '0';
+            if (t >= 1 && t <= 9) {
+                f[i] += f[i - 1];
+            }
+
+            if (i >= 2) {
+                t = (s[i - 2] - '0') * 10 + (s[i - 1] - '0');
+                if (t >= 10 && t <= 26) {
+                    f[i] += f[i - 2];
+                }
+            }
+        }
+        return f[n];
+    }
+
+
+
 
     @Test
     public void test022(){
@@ -249,4 +303,18 @@ Given encoded message 12, it could be decoded as AB (1 2) or L (12).
 The number of ways decoding 12 is 2.
 
 
+ */
+
+/*
+有一个消息包含A-Z通过以下规则编码
+
+'A' -> 1
+'B' -> 2
+...
+'Z' -> 26
+现在给你一个加密过后的消息，问有几种解码的方式
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给你的消息为12，有两种方式解码 AB(12) 或者 L(12). 所以返回 2
  */

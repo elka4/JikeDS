@@ -242,10 +242,11 @@ public class _1CoinChange {
         for (i = 1; i <= amount; ++i) {
             f[i] = Integer.MAX_VALUE;
             //select last coin
+            //i >= A[j] 最后一枚硬币必须 小于等于 总面值。 为了下面 i - A[j] 不等于负数
+            //f[i - coins[j]] != Integer.MAX_VALUE 上一枚能选择
             for (j = 0; j < n; ++j) {
-                if (i >= coins[j] && f[i - coins[j]] != Integer.MAX_VALUE
-                        && f[i - coins[j]] + 1 < f[i]) {
-                    f[i] = f[i - coins[j]] + 1;
+                if (i >= coins[j] && f[i - coins[j]] != Integer.MAX_VALUE) {
+                    f[i] = Math.min(f[i], f[i - coins[j]] + 1);
                 }
             }
         }

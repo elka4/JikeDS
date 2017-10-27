@@ -36,6 +36,77 @@ f[i][2] = min{f[i-1][0] + cost[i-1][2], f[i-1][1] + cost[i-1][2]}
 
 //  Paint House
 public class _2PaintHouse {
+    //最原始做法
+    public int minCost444(int[][] costs) {
+        int n = costs.length;
+        if (n == 0) {
+            return 0;
+        }
+        int[][] f = new int[n + 1][3];
+        f[0][0] = f[0][1] = f[0][2] = 0;
+
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                f[i][j] = Integer.MAX_VALUE;
+                for (int k = 0; k < 3; ++k) {
+                    if(j == k) continue;
+                    f[i][j] = Math.min(f[i][j], f[i - 1][k] + costs[i - 1][j]);
+                }
+            }
+        }
+        return Math.min(Math.min(f[n][0],f[n][1]),f[n][2]);
+    }
+
+    //用mod做空间优化
+    public int minCost4444(int[][] costs) {
+        int n = costs.length;
+        if (n == 0) {
+            return 0;
+        }
+        int[][] f = new int[2][3];
+        f[0][0] = f[0][1] = f[0][2] = 0;
+
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                f[i % 2][j] = Integer.MAX_VALUE;
+                for (int k = 0; k < 3; ++k) {
+                    if(j == k) continue;
+                    f[i % 2][j] = Math.min(f[i % 2][j], f[(i - 1) % 2][k] + costs[i - 1][j]);
+                }
+            }
+        }
+        return Math.min(Math.min(f[n % 2][0],f[n % 2][1]),f[n % 2][2]);
+    }
+
+    //直接用now old 做空间优化
+    // mine on lint
+    public int minCostX(int[][] costs) {
+        // write your code here
+        int n = costs.length;
+
+        int[][] f = new int[2][3];
+
+        int now = 0;
+        int old = 0;
+        f[now][0] = f[now][1] = f[now][2] = 0;
+
+        for (int i = 1; i <= n; i++) {
+            old = now;
+            now = 1 - now;
+            for (int j = 0; j < 3; j++) {
+                f[now][j] = Integer.MAX_VALUE;
+                for (int k = 0; k < 3; k++) {
+                    if (j != k) {
+                        f[now][j] = Math.min(f[now][j], f[old][k] + costs[i - 1][j]);
+                    }
+                }
+            }
+        }
+        return Math.min(f[now][0], Math.min(f[now][1], f[now][2]));
+
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////
     // 9Ch DP
 
     public int minCost4(int[][] costs) {
@@ -51,7 +122,7 @@ public class _2PaintHouse {
         f[0][0] = f[0][1] = f[0][2] = 0;
 
         // 从没有房子到第n个房子
-        for (i = 0; i <= n; ++i) {
+        for (i = 1; i <= n; ++i) {
             // j is the color of house i - 1， 也就是前1个房子
             for (j = 0; j < 3; ++j) {
                 f[i][j] = Integer.MAX_VALUE;
@@ -83,6 +154,30 @@ public class _2PaintHouse {
 
 
     }
+
+    public int minCost44(int[][] costs) {
+        int n = costs.length;
+        if (n == 0) {
+            return 0;
+        }
+        int[][] f = new int[n + 1][3];
+        f[0][0] = f[0][1] = f[0][2] = 0;
+
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                f[i][j] = Integer.MAX_VALUE;
+                for (int k = 0; k < 3; ++k) {
+                    if(j == k) continue;
+                    if (f[i - 1][k] + costs[i - 1][j] < f[i][j]){
+                        f[i][j] = f[i - 1][k] + costs[i - 1][j];
+                    }
+                }
+            }
+        }
+        return Math.min(Math.min(f[n][0],f[n][1]),f[n][2]);
+    }
+
+
 
 ////////////////////////////////////////////////////////////////////////////
     /**
@@ -126,32 +221,7 @@ public class _2PaintHouse {
     }
 
 ////////////////////////////////////////////////////////////////////////////
-    // mine on lint
-    public int minCostX(int[][] costs) {
-        // write your code here
-        int n = costs.length;
 
-        int[][] f = new int[2][3];
-
-        int now = 0;
-        int old = 0;
-        f[now][0] = f[now][1] = f[now][2] = 0;
-
-        for (int i = 1; i <= n; i++) {
-            old = now;
-            now = 1 - now;
-            for (int j = 0; j < 3; j++) {
-                f[now][j] = Integer.MAX_VALUE;
-                for (int k = 0; k < 3; k++) {
-                    if (j != k) {
-                        f[now][j] = Math.min(f[now][j], f[old][k] + costs[i - 1][j]);
-                    }
-                }
-            }
-        }
-        return Math.min(f[now][0], Math.min(f[now][1], f[now][2 ]));
-
-    }
 ////////////////////////////////////////////////////////////////////////////
 
     public int minCost2(int[][] costs) {
@@ -184,6 +254,49 @@ public class _2PaintHouse {
         }
         return Math.min(Math.min(lastR,lastG),lastB);
     }
+////////////////////////////////////////////////////////////////////////////
+
+//    Simple 15 line code with O(n) time and O(1) memory solution(Java)
+    public class Solution5 {
+        public int minCost(int[][] costs) {
+
+            if(costs==null || costs.length==0) return 0;
+            int[] prevRow = costs[0];
+            for(int i=1;i<costs.length;i++)
+            {
+                int[] currRow = new int[3];
+                for(int j=0;j<3;j++)
+                    currRow[j]=costs[i][j]+Math.min(prevRow[(j+1)%3],prevRow[(j+2)%3]);
+                prevRow = currRow;
+            }
+            return Math.min(prevRow[0],Math.min(prevRow[1],prevRow[2]));
+        }
+    }
+////////////////////////////////////////////////////////////////////////////
+public class Solution6 {
+    public int minCost(int[][] costs) {
+        if (costs == null || costs.length == 0) return 0;
+        int n = costs.length;
+        int nColors = costs[0].length;
+        int[][] cached = new int[n][nColors];
+        return worker(n, nColors, 0, -1,costs, cached);
+    }
+    public int worker(int n, int nColors, int index, int preColor, int[][]costs, int[][] cached) {
+        if (index == n) return 0;
+        int cost = Integer.MAX_VALUE;
+        for (int i = 0; i < nColors; i++) {
+            if (i != preColor) {
+                if (cached[index][i] == 0) {
+                    cached[index][i] = costs[index][i] + worker(n, nColors, index+1, i, costs, cached);
+                }
+                cost = Math.min(cost, cached[index][i]);
+            }
+        }
+        return cost;
+    }
+}
+
+
 ////////////////////////////////////////////////////////////////////////////
 
 
