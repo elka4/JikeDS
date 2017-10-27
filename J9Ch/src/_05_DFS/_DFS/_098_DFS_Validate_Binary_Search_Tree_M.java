@@ -1,10 +1,18 @@
 package _05_DFS._DFS;
 import java.util.*;import lib.*;
 import org.junit.Test;
+
+//
 public class _098_DFS_Validate_Binary_Search_Tree_M {
+    //My simple Java solution in 3 lines
+    /*
+    Basically what I am doing is recursively iterating over the tree while defining
+    interval <minVal, maxVal> for each node which value must fit in.
+     */
     public class Solution {
         public boolean isValidBST(TreeNode root) {
-            return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+
+             return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
         }
 
         public boolean isValidBST(TreeNode root, long minVal, long maxVal) {
@@ -16,6 +24,7 @@ public class _098_DFS_Validate_Binary_Search_Tree_M {
 
     public class Solution2 {
         public boolean isValidBST(TreeNode root) {
+
             return isValidBST(root, Optional.empty(), Optional.empty());
         }
 
@@ -31,7 +40,7 @@ public class _098_DFS_Validate_Binary_Search_Tree_M {
         }
     }
 
-    class SOlution3{
+    class Solution3{
         Integer min = null;
         public boolean isValidBST(TreeNode root) {
             if(root == null){
@@ -48,11 +57,78 @@ public class _098_DFS_Validate_Binary_Search_Tree_M {
     class Solution4{
         private boolean help(TreeNode p, Integer low, Integer high) {
             if (p == null) return true;
-            return (low == null || p.val > low) && (high == null || p.val < high) && help(p.left, low, p.val) && help(p.right, p.val, high);
+            return (low == null || p.val > low) && (high == null || p.val < high) &&
+                    help(p.left, low, p.val) && help(p.right, p.val, high);
         }
 
         public boolean isValidBST(TreeNode root) {
             return help(root, null, null);
+        }
+    }
+
+
+    //Learn one iterative inorder traversal, apply it to multiple tree questions (Java Solution)
+    class SolutionX{
+
+/*        I will show you all how to tackle various tree questions using iterative inorder traversal.
+First one is the standard iterative inorder traversal using stack. Hope everyone agrees with this solution.
+
+
+        Question : Binary Tree Inorder Traversal
+*/
+        public List<Integer> inorderTraversal(TreeNode root) {
+            List<Integer> list = new ArrayList<>();
+            if(root == null) return list;
+            Stack<TreeNode> stack = new Stack<>();
+            while(root != null || !stack.empty()){
+                while(root != null){
+                    stack.push(root);
+                    root = root.left;
+                }
+                root = stack.pop();
+                list.add(root.val);
+                root = root.right;
+
+            }
+            return list;
+        }
+/*        Now, we can use this structure to find the Kth smallest element in BST.
+
+                Question : Kth Smallest Element in a BST
+*/
+        public int kthSmallest(TreeNode root, int k) {
+            Stack<TreeNode> stack = new Stack<>();
+            while(root != null || !stack.isEmpty()) {
+                while(root != null) {
+                    stack.push(root);
+                    root = root.left;
+                }
+                root = stack.pop();
+                if(--k == 0) break;
+                root = root.right;
+            }
+            return root.val;
+        }
+
+/*        We can also use this structure to solve BST validation question.
+
+        Question : Validate Binary Search Tree
+*/
+        public boolean isValidBST(TreeNode root) {
+            if (root == null) return true;
+            Stack<TreeNode> stack = new Stack<>();
+            TreeNode pre = null;
+            while (root != null || !stack.isEmpty()) {
+                while (root != null) {
+                    stack.push(root);
+                    root = root.left;
+                }
+                root = stack.pop();
+                if(pre != null && root.val <= pre.val) return false;
+                pre = root;
+                root = root.right;
+            }
+            return true;
         }
     }
 //////////////////////////////////////////////////////////////////////////////////////

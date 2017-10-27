@@ -138,7 +138,8 @@ public class _113_DFS_Path_Sum_II_M {
             return rst;
         }
 
-        private void findSum(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> solution, TreeNode root, int sum){
+        private void findSum(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> solution,
+                             TreeNode root, int sum){
             if (root == null) {
                 return;
             }

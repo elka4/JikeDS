@@ -60,6 +60,7 @@ public class _100_DFS_Same_Tree_E {
             return b;
         } else return false;
     }
+
     public class Solution {
         public boolean isSameTree(TreeNode p, TreeNode q) {
             if(p!=null && q!=null){
@@ -91,7 +92,23 @@ public class _100_DFS_Same_Tree_E {
     }
 //////////////////////////////////////////////////////////////////////////////////////
 
-
+//jiuzhang
+public class Jiuzhang{
+    /**
+     * @param a, b, the root of binary trees.
+     * @return true if they are identical, or false.
+     */
+    public boolean isIdentical(TreeNode a, TreeNode b) {
+        // Write your code here
+        if (a == null && b == null)
+            return true;
+        if (a != null && b != null) {
+            return a.val == b.val && isIdentical(a.left, b.left)
+                                  && isIdentical(a.right, b.right);
+        }
+        return false;
+    }
+}
 
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -102,6 +119,36 @@ public class _100_DFS_Same_Tree_E {
 
 
 }
+
 /*
+Given two binary trees, write a function to check if they are equal or not.
+
+Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
+ */
+
+
+/*
+lint
+
+
+检查两棵二叉树是否等价。等价的意思是说，首先两棵二叉树必须拥有相同的结构，并且每个对应位置上的节点上的数都相等。
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+    1             1
+   / \           / \
+  2   2   and   2   2
+ /             /
+4             4
+就是两棵等价的二叉树。
+
+    1             1
+   / \           / \
+  2   3   and   2   3
+ /               \
+4                 4
+就不是等价的。
+
+
 
  */

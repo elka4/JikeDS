@@ -30,8 +30,10 @@ public class _111_DFS_Minimum_Depth_of_Binary_Tree_E {
 
     public int minDepth4(TreeNode root) {
         if(root==null) return 0;
-        else if(root.left!=null && root.right!=null) return 1+Math.min(minDepth4(root.left), minDepth4(root.right));
-        else return 1+minDepth4(root.right)+minDepth4(root.left); // either minDepth(root.left) or minDepth(root.right) is 0 in this case
+        else if(root.left!=null && root.right!=null)
+            return 1+Math.min(minDepth4(root.left), minDepth4(root.right));
+            // either minDepth(root.left) or minDepth(root.right) is 0 in this case
+        else return 1+minDepth4(root.right)+minDepth4(root.left);
     }
 
     public int minDepth5(TreeNode root) {

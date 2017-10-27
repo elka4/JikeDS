@@ -7,7 +7,10 @@ public class _106_DFS_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal
 
     //My recursive Java code with O(n) time and O(n) space
     /*
-    The the basic idea is to take the last element in postorder array as the root, find the position of the root in the inorder array; then locate the range for left sub-tree and right sub-tree and do recursion. Use a HashMap to record the index of root in the inorder array.
+    The the basic idea is to take the last element in postorder array as the root,
+    find the position of the root in the inorder array; then locate the range for
+    left sub-tree and right sub-tree and do recursion.
+    Use a HashMap to record the index of root in the inorder array.
      */
     class Solution{
         public TreeNode buildTreePostIn(int[] inorder, int[] postorder) {
@@ -104,7 +107,8 @@ public class _106_DFS_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal
     }
 
 
-    //////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
+
 public class Jiuzhang {
     private int findPosition(int[] arr, int start, int end, int key) {
         int i;
@@ -127,6 +131,7 @@ public class Jiuzhang {
 
         root.left = myBuildTree(inorder, instart, position - 1,
                 postorder, poststart, poststart + position - instart - 1);
+
         root.right = myBuildTree(inorder, position + 1, inend,
                 postorder, poststart + position - instart, postend - 1);
         return root;
@@ -136,7 +141,8 @@ public class Jiuzhang {
         if (inorder.length != postorder.length) {
             return null;
         }
-        return myBuildTree(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
+        return myBuildTree(inorder, 0, inorder.length - 1,
+                postorder, 0, postorder.length - 1);
     }
 }
 
@@ -152,4 +158,24 @@ public class Jiuzhang {
 }
 /*
 
+ */
+
+/*
+根据中序遍历和后序遍历树构造二叉树
+
+ 注意事项
+
+你可以假设树中不存在相同数值的节点
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给出树的中序遍历： [1,2,3] 和后序遍历： [1,3,2]
+
+返回如下的树：
+
+  2
+
+ /  \
+
+1    3
  */

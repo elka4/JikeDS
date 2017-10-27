@@ -28,23 +28,29 @@ public class _133_DFS_Clone_Graph_M {
     public class Solution2 {
         public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
             if (node == null) return null;
-
-            UndirectedGraphNode newNode = new UndirectedGraphNode(node.label); //new node for return
-            HashMap<Integer, UndirectedGraphNode> map = new HashMap(); //store visited nodes
+            //new node for return
+            UndirectedGraphNode newNode = new UndirectedGraphNode(node.label);
+            //store visited nodes
+            HashMap<Integer, UndirectedGraphNode> map = new HashMap();
 
             map.put(newNode.label, newNode); //add first node to HashMap
+            //to store **original** nodes need to be visited
+            LinkedList<UndirectedGraphNode> queue = new LinkedList();
+            //add first **original** node to queue
+            queue.add(node);
 
-            LinkedList<UndirectedGraphNode> queue = new LinkedList(); //to store **original** nodes need to be visited
-            queue.add(node); //add first **original** node to queue
-
-            while (!queue.isEmpty()) { //if more nodes need to be visited
-                UndirectedGraphNode n = queue.pop(); //search first node in the queue
+            //if more nodes need to be visited
+            while (!queue.isEmpty()) {
+                //search first node in the queue
+                UndirectedGraphNode n = queue.pop();
                 for (UndirectedGraphNode neighbor : n.neighbors) {
-                    if (!map.containsKey(neighbor.label)) { //add to map and queue if this node hasn't been searched before
+                    //add to map and queue if this node hasn't been searched before
+                    if (!map.containsKey(neighbor.label)) {
                         map.put(neighbor.label, new UndirectedGraphNode(neighbor.label));
                         queue.add(neighbor);
                     }
-                    map.get(n.label).neighbors.add(map.get(neighbor.label)); //add neighbor to new created nodes
+                    //add neighbor to new created nodes
+                    map.get(n.label).neighbors.add(map.get(neighbor.label));
                 }
             }
 
@@ -116,17 +122,15 @@ public class Jiuzhang1 {
 
 
 //////////////////////////////////////////////////////////////////////////////////////
-class StackElement {
-    public UndirectedGraphNode node;
-    public int neighborIndex;
-    public StackElement(UndirectedGraphNode node, int neighborIndex) {
-        this.node = node;
-        this.neighborIndex = neighborIndex;
+    class StackElement {
+        public UndirectedGraphNode node;
+        public int neighborIndex;
+        public StackElement(UndirectedGraphNode node, int neighborIndex) {
+            this.node = node;
+            this.neighborIndex = neighborIndex;
+        }
     }
-}
-//用非递归版本的DFS来遍历所有的点。
-
-
+    //用非递归版本的DFS来遍历所有的点。
 
     public class Jiuzhang2 {
         /**
