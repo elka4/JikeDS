@@ -204,8 +204,7 @@ public class _1SurroundedRegions {
             for (int i = 0; i < 4; i++) {
                 int nx = cx + dx[i];
                 int ny = cy + dy[i];
-                if (0 <= nx && nx < n && 0 <= ny && ny < m
-                        && board[nx][ny] == 'O') {
+                if (0 <= nx && nx < n && 0 <= ny && ny < m && board[nx][ny] == 'O') {
                     board[nx][ny] = 'W';              // 'W' ->  Water
                     qx.offer(nx);
                     qy.offer(ny);
@@ -213,6 +212,10 @@ public class _1SurroundedRegions {
             }
         }
     }
+
+
+
+
     char[][] board;
     @Before
     public void before(){

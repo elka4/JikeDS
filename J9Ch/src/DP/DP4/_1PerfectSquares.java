@@ -49,11 +49,9 @@ public class _1PerfectSquares {
     public int numSquares4(int n){
         int[] f = new int[n + 1];
         f[0] = 0;
-//        int i, j;
-        for (int i = 0; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             f[i] = Integer.MAX_VALUE;
-            for (int j = 0; j * j <= i; j++) {
-//                if(f[i - j * j] != Integer.MAX_VALUE && f[i - j * j] + 1 < f[i]){
+            for (int j = 1; j * j <= i; j++) {
                 if(f[i - j * j] + 1 < f[i]){
                     f[i] = f[i - j * j] + 1;
                 }
@@ -62,6 +60,23 @@ public class _1PerfectSquares {
         }
         return f[n];
     }
+
+    public int numSquares44(int n){
+        int[] f = new int[n + 1];
+        f[0] = 0;
+        for (int i = 1; i <= n; i++) {
+            f[i] = Integer.MAX_VALUE;
+            for (int j = 1; j * j <= i; j++) {
+                f[i] = Math.min(f[i], f[i - j * j] + 1);
+
+            }
+        }
+        return f[n];
+    }
+
+
+
+
 
 /////////////////////////////////////////////////////////////////////////
 
@@ -168,4 +183,13 @@ Have you met this question in a real interview? Yes
 Example
 Given n = 12, return 3 because 12 = 4 + 4 + 4
 Given n = 13, return 2 because 13 = 4 + 9
+ */
+
+/*
+给一个正整数 n, 找到若干个完全平方数(比如1, 4, 9, ... )使得他们的和等于 n。你需要让平方数的个数最少。
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给出 n = 12, 返回 3 因为 12 = 4 + 4 + 4。
+给出 n = 13, 返回 2 因为 13 = 4 + 9。
  */

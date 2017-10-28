@@ -53,8 +53,7 @@ public class _2NearestExit {
             for (int i = 0; i < 4; i++) {
                 int nx = cx + dx[i];
                 int ny = cy + dy[i];
-                if (0 <= nx && nx < n && 0 <= ny && ny < m
-                        && rooms[nx][ny] == INF) {
+                if (0 <= nx && nx < n && 0 <= ny && ny < m && rooms[nx][ny] == INF) {
                     qx.offer(nx);
                     qy.offer(ny);
                     rooms[nx][ny] = rooms[cx][cy] + 1;
@@ -62,8 +61,10 @@ public class _2NearestExit {
             }
         }
     }
-    int[][] rooms;
 
+
+
+    int[][] rooms;
 
     @Test
     public void test01(){
