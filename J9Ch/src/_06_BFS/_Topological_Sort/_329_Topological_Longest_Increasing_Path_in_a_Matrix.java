@@ -58,20 +58,90 @@ public class Solution2 {
 
     //Approach #3 (Peeling Onion) [Accepted]
     // Topological Sort Based Solution // An Alternative Solution
-/*    public class Solution {
-        private static final int[][] dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}; private int m, n;
+/*
+Intuition
+
+The result of each cell only related to the result of its neighbors. Can we use dynamic programming?
+
+Algorithm
+
+If we define the longest increasing path starting from cell (i, j)(i,j) as a function
+
+f(i, j) f(i,j)
+
+then we have the following transition function
+
+f(i, j) = max\{f(x, y)| (x, y)~\mathrm{is~a~neighbor~of} (i, j)~\mathrm{and} ~\mathrm{matrix}[x][y] \gt \mathrm{matrix}[i][j]\} + 1 f(i,j)=max{f(x,y)∣(x,y) is a neighbor of(i,j) and matrix[x][y]>matrix[i][j]}+1
+
+This formula is the same as used in the previous approaches. With such transition function, one may think that it is possible to use dynamic programming to deduce all the results without employing DFS!
+
+That is right with one thing missing: we don't have the dependency list.
+
+For dynamic programming to work, if problem B depends on the result of problem A, then we must make sure that problem A is calculated before problem B. Such order is natural and obvious for many problems. For example the famous Fibonacci sequence:
+
+F(0) = 1, F(1) = 1, F(n) = F(n - 1) + F(n - 2) F(0)=1,F(1)=1,F(n)=F(n−1)+F(n−2)
+
+The subproblem F(n)F(n) depends on its two predecessors. Therefore, the natural order from 0 to n is the correct order. The dependent is always behind the dependee.
+
+The terminology of such dependency order is "Topological order" or "Topological sorting":
+
+Topological sorting for Directed Acyclic Graph (DAG) is a linear ordering of vertices such that for every directed edge (u, v)(u,v), vertex uu comes before vv in the ordering.
+In our problem, the topological order is not natural. Without the value in the matrix, we couldn't know the dependency relation of any two neighbors A and B. We have to perform the topological sort explicitly as a preprocess. After that, we can solve the problem dynamically using our transition function following the stored topological order.
+
+There are several ways to perform the topological sorting. Here we employ one of them called "Peeling Onion".
+
+The idea is that in a DAG, we will have some vertex who doesn't depend on others which we call "leaves". We put these leaves in a list (their internal ordering does matter), and then we remove them from the DAG. After the removal, there will be new leaves. We do the same repeatedly as if we are peeling an onion layer by layer. In the end, the list will have a valid topological ordering of our vertices.
+
+In out problem, since we want the longest path in the DAG, which equals to the total number of layers of the "onion". Thus, we can count the number of layers during "peeling" and return the counts in the end without invoking dynamic programming.
+ */
+    class Solution3 {
+        private final int[][] dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        private int m, n;
+
         public int longestIncreasingPath(int[][] grid) {
             int m = grid.length;
             if (m == 0) return 0;
             int n = grid[0].length;
-// padding the matrix with zero as boundaries
-// assuming all positive integer, otherwise use INT_MIN as boundaries int[][] matrix = new int[m + 2][n + 2];
+            // padding the matrix with zero as boundaries
+            // assuming all positive integer, otherwise use INT_MIN as boundaries
+            int[][] matrix = new int[m + 2][n + 2];
             for (int i = 0; i < m; ++i)
                 System.arraycopy(grid[i], 0, matrix[i + 1], 1, n);
-// calculate outdegrees
-            int[][] outdegree = new int[m + 2][n + 2];*/
 
+            // calculate outdegrees
+            int[][] outdegree = new int[m + 2][n + 2];
+            for (int i = 1; i <= m; ++i)
+                for (int j = 1; j <= n; ++j)
+                    for (int[] d : dir)
+                        if (matrix[i][j] < matrix[i + d[0]][j + d[1]])
+                            outdegree[i][j]++;
 
+            // find leaves who have zero out degree as the initial level
+            n += 2;
+            m += 2;
+            List<int[]> leaves = new ArrayList<>();
+            for (int i = 1; i < m - 1; ++i)
+                for (int j = 1; j < n - 1; ++j)
+                    if (outdegree[i][j] == 0) leaves.add(new int[]{i, j});
+
+            // remove leaves level by level in topological order
+            int height = 0;
+            while (!leaves.isEmpty()) {
+                height++;
+                List<int[]> newLeaves = new ArrayList<>();
+                for (int[] node : leaves) {
+                    for (int[] d : dir) {
+                        int x = node[0] + d[0], y = node[1] + d[1];
+                        if (matrix[node[0]][node[1]] > matrix[x][y])
+                            if (--outdegree[x][y] == 0)
+                                newLeaves.add(new int[]{x, y});
+                    }
+                }
+                leaves = newLeaves;
+            }
+            return height;
+        }
+    }
 /////////////////////////////////////////////////////////////////////////////////////////////
 /*15ms Concise Java Solution
     To get max length of increasing sequences:

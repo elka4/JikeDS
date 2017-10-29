@@ -38,7 +38,9 @@ public class _207_Topological_Course_Schedule {
 
 /*
     Java DFS and BFS solution
-    According to my code test, BFS is much faster than DFS. From my perspective DFS searches more branches. EX: 1->3->4 //1->5->3 the first branch we need search 3's children, in second we still need to do so.
+    According to my code test, BFS is much faster than DFS.
+    From my perspective DFS searches more branches.
+    EX: 1->3->4 //1->5->3 the first branch we need search 3's children, in second we still need to do so.
 
     BFS:
 */
@@ -153,9 +155,11 @@ public class _207_Topological_Course_Schedule {
 
 /*    BFS Solution: (Topological sorting)
 
-    The basic idea is to use Topological algorithm: put NODE with 0 indgree into the queue, then make indegree of NODE's successor dereasing 1. Keep the above steps with BFS.
+    The basic idea is to use Topological algorithm: put NODE with 0 indgree into the queue,
+    then make indegree of NODE's successor dereasing 1. Keep the above steps with BFS.
 
-    Finally, if each node' indgree equals 0, then it is validated DAG (Directed Acyclic Graph), which means the course schedule can be finished.*/
+    Finally, if each node' indgree equals 0, then it is validated DAG (Directed Acyclic Graph),
+    which means the course schedule can be finished.*/
     class Solution5{
         public boolean canFinish(int numCourses, int[][] prerequisites) {
             if (numCourses == 0 || prerequisites.length == 0) return true;
@@ -190,38 +194,48 @@ public class _207_Topological_Course_Schedule {
     }
 /*    DFS Solution:
 
-    The basic idea is using DFS to check if the current node was already included in the traveling path. In this case, we need to convert graph presentation from edge list to adjacency list first, and then check if there's cycle existing in any subset. Because tree is a connected graph, we can start from any node.
+    The basic idea is using DFS to check if the current node was already included in the traveling path.
+    In this case, we need to convert graph presentation from edge list to adjacency list first,
+    and then check if there's cycle existing in any subset. Because tree is a connected graph,
+    we can start from any node.
 
     The graph is possibly not connected, so need to check every node.
 
-            To do memorization and pruning, a HashMap is used to save the previous results for the specific node.*/
+    To do memorization and pruning, a HashMap is used to save the previous results for the specific node.*/
     class Slution6{
         HashMap<Integer, Boolean>memo = new HashMap<Integer, Boolean>();//Memorization HashMap for DFS pruning
         public boolean canFinish(int n, int[][] edges) {
             if (edges.length != 0) {
-                HashMap<Integer, HashSet<Integer>> neighbors = new HashMap<Integer, HashSet<Integer>>(); // Neighbors of each node
-                HashSet<Integer>curPath = new HashSet<Integer>(); // Nodes on the current path
-                for (int i = 0; i < edges.length; i++) {// Convert graph presentation from edge list to adjacency list
+                // Neighbors of each node
+                HashMap<Integer, HashSet<Integer>> neighbors = new HashMap<Integer, HashSet<Integer>>();
+                // Nodes on the current path
+                HashSet<Integer>curPath = new HashSet<Integer>();
+                // Convert graph presentation from edge list to adjacency list
+                for (int i = 0; i < edges.length; i++) {
                     if (!neighbors.containsKey(edges[i][1]))
                         neighbors.put(edges[i][1], new HashSet<Integer>());
                     neighbors.get(edges[i][1]).add(edges[i][0]);
                 }
-
-                for (int a[] : edges) // The graph is possibly not connected, so need to check every node.
-                    if (hasCycle(neighbors, a[0], -1, curPath))// Use DFS method to check if there's cycle in any curPath
+                // The graph is possibly not connected, so need to check every node.
+                for (int a[] : edges)
+                    // Use DFS method to check if there's cycle in any curPath
+                    if (hasCycle(neighbors, a[0], -1, curPath))
                         return false;
             }
             return true;
         }
 
-        boolean hasCycle(HashMap<Integer, HashSet<Integer>> neighbors, int kid, int parent, HashSet<Integer>curPath) {
+        boolean hasCycle(HashMap<Integer, HashSet<Integer>> neighbors,
+                         int kid, int parent, HashSet<Integer>curPath) {
             if (memo.containsKey(kid)) return memo.get(kid);
-            if (curPath.contains(kid)) return true;// The current node is already in the set of the current path
+            // The current node is already in the set of the current path
+            if (curPath.contains(kid)) return true;
             if (!neighbors.containsKey(kid)) return false;
 
             curPath.add(kid);
             for (Integer neighbor : neighbors.get(kid)) {
-                boolean hasCycle = hasCycle(neighbors, neighbor, kid, curPath);// DFS
+                // DFS
+                boolean hasCycle = hasCycle(neighbors, neighbor, kid, curPath);
                 memo.put(kid, hasCycle);
                 if (hasCycle) return true;
             }
@@ -361,6 +375,7 @@ public class _207_Topological_Course_Schedule {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
     //jiuzhang
 public class Jiuzhang {
+
     /**
      * @param numCourses a total of n courses
      * @param prerequisites a list of prerequisite pairs
@@ -371,14 +386,21 @@ public class Jiuzhang {
         List[] edges = new ArrayList[numCourses];
         int[] degree = new int[numCourses];
 
+        Arrays.fill(edges, new ArrayList<Integer>());
+//        Arrays.fill(edges, new ArrayList<>()); 不行
         for (int i = 0;i < numCourses; i++)
             edges[i] = new ArrayList<Integer>();
 
+        /*
+        如果没有出现在prerequisites里，就是不需要任何先修课程，
+        那么degree[prerequisites[i][0]]就保持为0，就是不需要任何先修课程
+         */
         for (int i = 0; i < prerequisites.length; i++) {
             degree[prerequisites[i][0]] ++ ;
-            edges[prerequisites[i][1]].add(prerequisites[i][0]);
+            edges[prerequisites[i][1]].add(prerequisites[i][0]); // 1 决定 0
         }
 
+        //上一步忽略的，也就是没有先修课程的课程（degree为0）入Queue
         Queue queue = new LinkedList();
         for(int i = 0; i < degree.length; i++){
             if (degree[i] == 0) {
@@ -388,9 +410,10 @@ public class Jiuzhang {
 
         int count = 0;
         while(!queue.isEmpty()){
-            int course = (int)queue.poll();
+            int course = (int)queue.poll(); //没有先修课程的出列
             count ++;
-            int n = edges[course].size();
+            int n = edges[course].size(); // course这门课能决定的课程数量
+            //对于课程course能决定的每一门课，degree--，如果degree为0就入列
             for(int i = 0; i < n; i++){
                 int pointer = (int)edges[course].get(i);
                 degree[pointer]--;
