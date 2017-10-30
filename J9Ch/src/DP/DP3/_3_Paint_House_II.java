@@ -28,6 +28,7 @@ public class _3_Paint_House_II {
         }
         return findMin(last, last.length);
     }
+
     private int findMin(int[] arr, int except) {
         int min = Integer.MAX_VALUE;
         for(int i = 0; i < arr.length; i++) {
