@@ -207,8 +207,18 @@ public class _60Binary_Tree_Level_Order_Traversal_BFS_2Q {
         System.out.println("root: ");
         root.print();
         System.out.println(levelOrder5(root));
-
     }
+    /*
+            root:
+                       5
+                      / \
+                     /   \
+                     3   7
+                    / \ / \
+                    1 2 6 8
+
+                    [[5], [3, 7], [1, 2, 6, 8]]
+     */
 //////////////////////////////////////////////////////////////////////
     public ArrayList<ArrayList<Integer>> levelOrderX(TreeNode root) {
         ArrayList<ArrayList<Integer>> al = new ArrayList<ArrayList<Integer>>();

@@ -31,6 +31,7 @@ public class Lowest_Common_Ancestor_III {
     public TreeNode lowestCommonAncestor3(TreeNode root, TreeNode A, TreeNode B) {
         // write your code here
         ResultType rt = helper(root, A, B);
+
         if (rt.a_exist && rt.b_exist)
             return rt.node;
         else
@@ -98,7 +99,7 @@ public class Lowest_Common_Ancestor_III {
         root.right.setRightChild(new TreeNode(6));
         System.out.println("root: ");
         root.print();
-        lowestCommonAncestor3(root, new TreeNode(4), new TreeNode(7)).print();
+        lowestCommonAncestor3(root, root.right.right, new TreeNode(4)).print();
 
     }
         /*
@@ -118,36 +119,13 @@ LCA(6, 7) = 7
         
 /////////////////////////////////////////////////////////////////////////////
 
-    class ParentTreeNode {
-        public ParentTreeNode parent, left, right;
-    }
-
-    /**
-     * @param root: The root of the tree
-     * @param A, B: Two node in the tree
-     * @return: The lowest common ancestor of A and B
-     */
-    public ParentTreeNode lowestCommonAncestorII(ParentTreeNode root,
-                                                                           ParentTreeNode A,
-                                                                           ParentTreeNode B) {
-        // Write your code here
-        if (root == null) {
-            return null;
-        }
-        if (root == A || root == B) {
-            return root;
-        }
-
-        ParentTreeNode left = lowestCommonAncestorII(root.left, A, B);
-        ParentTreeNode right = lowestCommonAncestorII(root.right, A, B);
-        if (left != null && right != null) {
-            return root;
-        } else if (left != null) {
-            return left;
-        } else if (right != null) {
-            return right;
-        } else {
-            return null;
-        }
-    }
 }
+/*
+给一棵二叉树和二叉树中的两个节点，找到这两个节点的最近公共祖先LCA。
+
+两个节点的最近公共祖先，是指两个节点的所有父亲节点中（包括这两个节点），离这两个节点最近的公共的节点。
+
+返回 null 如果两个节点在这棵树上不存在最近公共祖先的话。
+
+
+ */

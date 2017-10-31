@@ -4,6 +4,8 @@ import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
+//   leetcode   124. Binary Tree Maximum Path Sum
+
 public class Binary_Tree_Maximum_Path_Sum {
     private class ResultType {
         // singlePath: 从root往下走到任意点的最大路径，这条路径可以不包含任何点
@@ -47,6 +49,14 @@ public class Binary_Tree_Maximum_Path_Sum {
         System.out.println(maxPathSum(root));
     }
 
+/*
+                root:
+                 1
+                / \
+                2 3
+
+                6
+ */
     @Test
     public void test02(){
         int[] arr = {1,-5,11,1,20,4,-2};
@@ -55,8 +65,19 @@ public class Binary_Tree_Maximum_Path_Sum {
         root.print();
         System.out.println(maxPathSum(root));
     }
+    /*
+                root:
+               1
+              / \
+             /   \
+             -5   11
+            / \ / \
+            1 20 4 -2
+
+            31
+     */
     
-///////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
 
 /*
   1
@@ -209,7 +230,7 @@ return 6.
     }
 
 
-    ///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
     //Elegant Java solution
     public class Solution3 {
         int max = Integer.MIN_VALUE;

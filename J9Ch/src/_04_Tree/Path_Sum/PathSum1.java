@@ -7,6 +7,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.*;
 
+//  leetcode        113. Path Sum II
+
 //root to leaf, 所有node的value和为sum， 返回所有的path
 // 从根到底 加和 是否等于sum
 
@@ -194,24 +196,54 @@ public class PathSum1 {
     }
 
 
+    public class Jiuzhang {
+        public ArrayList<ArrayList<Integer>> pathSum(TreeNode root, int sum) {
+            ArrayList<ArrayList<Integer>> rst = new ArrayList<ArrayList<Integer>>();
+            ArrayList<Integer> solution = new ArrayList<Integer>();
 
+            findSum(rst, solution, root, sum);
+            return rst;
+        }
+
+        private void findSum(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> solution, TreeNode root, int sum){
+            if (root == null) {
+                return;
+            }
+
+            sum -= root.val;
+
+            if (root.left == null && root.right == null) {
+                if (sum == 0){
+                    solution.add(root.val);
+                    result.add(new ArrayList<Integer>(solution));
+                    solution.remove(solution.size()-1);
+                }
+                return;
+            }
+
+            solution.add(root.val);
+            findSum(result, solution, root.left, sum);
+            findSum(result, solution, root.right, sum);
+            solution.remove(solution.size()-1);
+        }
+    }
 
 /////////////////////////////////////////////////////////////////////////
 
-    public List<ArrayList<Integer>> pathSum3(TreeNode root, int sum) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+    public List<List<Integer>> pathSum4(TreeNode root, int sum) {
+        List<List<Integer>> result = new ArrayList<>();
         if(root == null)
             return result;
 
-        ArrayList<Integer> l = new ArrayList<Integer>();
+        List<Integer> l = new ArrayList<Integer>();
         l.add(root.val);
         dfs(root, sum-root.val, result, l);
         return result;
     }
 
 
-    public void dfs(TreeNode t, int sum, ArrayList<ArrayList<Integer>> result,
-                    ArrayList<Integer> l){
+    public void dfs(TreeNode t, int sum, List<List<Integer>> result,
+                    List<Integer> l){
 
         if(t.left==null && t.right==null && sum==0){
             ArrayList<Integer> temp = new ArrayList<Integer>();

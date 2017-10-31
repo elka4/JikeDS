@@ -8,14 +8,14 @@ leetcode    623. Add One Row to Tree
 public class Add_One_Row_to_Tree {
     //Approach #1 Using Recursion(DFS) [Accepted]
     public class Solution1 {
-        public TreeNode addOneRow(TreeNode t, int v, int d) {
+        public TreeNode addOneRow(TreeNode root, int v, int d) {
             if (d == 1) {
                 TreeNode n = new TreeNode(v);
-                n.left = t;
+                n.left = root;
                 return n;
             }
-            insert(v, t, 1, d);
-            return t;
+            insert(v, root, 1, d);
+            return root;
         }
 
         public void insert(int val, TreeNode node, int depth, int n) {
@@ -45,14 +45,14 @@ public class Add_One_Row_to_Tree {
             TreeNode node;
             int depth;
         }
-        public TreeNode addOneRow(TreeNode t, int v, int d) {
+        public TreeNode addOneRow(TreeNode root, int v, int d) {
             if (d == 1) {
                 TreeNode n = new TreeNode(v);
-                n.left = t;
+                n.left = root;
                 return n;
             }
             Stack<Node> stack=new Stack<>();
-            stack.push(new Node(t,1));
+            stack.push(new Node(root,1));
             while(!stack.isEmpty())
             {
                 Node n=stack.pop();
@@ -71,7 +71,7 @@ public class Add_One_Row_to_Tree {
                     stack.push(new Node(n.node.right, n.depth + 1));
                 }
             }
-            return t;
+            return root;
         }
 }
 
@@ -80,14 +80,14 @@ public class Add_One_Row_to_Tree {
     //Approach #3 Using queue(BFS) [Accepted]
 
     public class Solution3 {
-        public TreeNode addOneRow(TreeNode t, int v, int d) {
+        public TreeNode addOneRow(TreeNode root, int v, int d) {
             if (d == 1) {
                 TreeNode n = new TreeNode(v);
-                n.left = t;
+                n.left = root;
                 return n;
             }
             Queue < TreeNode > queue = new LinkedList < > ();
-            queue.add(t);
+            queue.add(root);
             int depth = 1;
             while (depth < d - 1) {
                 Queue < TreeNode > temp = new LinkedList < > ();
@@ -108,7 +108,7 @@ public class Add_One_Row_to_Tree {
                 node.right = new TreeNode(v);
                 node.right.right = temp;
             }
-            return t;
+            return root;
         }
     }
 

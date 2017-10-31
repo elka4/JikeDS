@@ -55,7 +55,7 @@ public class Search_Inseart {
     }
 ///////////////////////////////////////////////////////////////
 
-	//Recursion
+
 	public TreeNode insert(TreeNode root, int val) {
 		if(root == null){
 			return new TreeNode(val);
@@ -81,6 +81,7 @@ public class Search_Inseart {
 
 	}
 
+    //Recursion
 	public TreeNode insert2(TreeNode root, int val) {
 		//Base Case
 		if(root == null) return new TreeNode(val);

@@ -10,7 +10,8 @@ import java.util.LinkedList;
  * Easy
  * Created by tianhuizhu on 6/27/17.
  */
-/*
+/*  leet 298. Binary Tree Longest Consecutive Sequence
+
 LeetCode – Binary Tree Longest Consecutive Sequence (Java)
 
 Given a binary tree, find the length of the longest consecutive sequence path.
@@ -20,18 +21,21 @@ The path refers to any sequence of nodes from some starting node to any node in 
 
 // from top to bottum
 public class Binary_Tree_Longest_Consecutive_Sequence {
-
+    //jiuzhang
     // version 1: Traverse + Divide Conquer
-    /**
-     * @param root the root of binary tree
-     * @return the length of the longest consecutive sequence path
-     */
+    class Jiuzhang1{
+        /**
+         * @param root the root of binary tree
+         * @return the length of the longest consecutive sequence path
+         */
+
+    }
     public int longestConsecutive(TreeNode root) {
 
         return helper(root, null, 0);
     }
 
-    private int helper00(TreeNode root, TreeNode parent, int lengthWithoutRoot) {
+    private int helper(TreeNode root, TreeNode parent, int lengthWithoutRoot) {
         if (root == null) {
             return 0;
         }
@@ -47,7 +51,7 @@ public class Binary_Tree_Longest_Consecutive_Sequence {
         return Math.max(length, Math.max(left, right));
     }
 
-    private int helper(TreeNode root, TreeNode parent, int lengthWithoutRoot) {
+/*    private int helper(TreeNode root, TreeNode parent, int lengthWithoutRoot) {
         if (root == null) {
             return 0;
         }
@@ -74,7 +78,7 @@ public class Binary_Tree_Longest_Consecutive_Sequence {
         else System.out.println("root.right is null. " + "right " + right);
 
         return Math.max(length, Math.max(left, right));
-    }
+    }*/
 
     @Test
     public void test01() {
@@ -102,7 +106,7 @@ public class Binary_Tree_Longest_Consecutive_Sequence {
     }
 
 ////////////////////////////////////////////////////////////////
-
+    //jiuzhang
     // version 2: Another Traverse + Divide Conquer
     /**
      * @param root the root of binary tree
@@ -164,7 +168,7 @@ public class Binary_Tree_Longest_Consecutive_Sequence {
     }
 
 ///////////////////////////////////////////////////////////////////
-
+    //jiuzhang
     // version 3: Divide Conquer
     private class ResultType {
         int maxInSubtree;
@@ -693,7 +697,35 @@ Longest consecutive sequence path is 2-3,not3-2-1, so return 2.
         root2.print();
         System.out.println(longestConsecutive66(root2));
     }
+    /*
+           1
+        \
+         \
+          \
+           \
+           3
+          / \
+         /   \
+         2   4
+              \
+              5
 
+3
+       2
+        \
+         \
+          \
+           \
+           3
+          /
+         /
+         2
+        /
+        1
+
+2
+
+     */
 
 ///////////////////////////////////////////////////////////////////
 
@@ -703,3 +735,26 @@ Longest consecutive sequence path is 2-3,not3-2-1, so return 2.
 ////////////////////////////////////////////////////////////////////
 
 }
+/*
+Given a binary tree, find the length of the longest consecutive sequence path.
+
+The path refers to any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The longest consecutive path need to be from parent to child (cannot be the reverse).
+
+For example,
+   1
+    \
+     3
+    / \
+   2   4
+        \
+         5
+Longest consecutive sequence path is 3-4-5, so return 3.
+   2
+    \
+     3
+    /
+   2
+  /
+ 1
+Longest consecutive sequence path is 2-3,not3-2-1, so return 2.
+ */

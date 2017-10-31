@@ -1,7 +1,10 @@
 package _04_Tree.Subtree;
 import lib.*;
+import org.junit.Test;
+
 import java.util.*;
 
+// 652. Find Duplicate Subtrees
 public class Find_Duplicate_Subtrees {
     //Java Concise Postorder Traversal Solution
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
@@ -17,29 +20,34 @@ public class Find_Duplicate_Subtrees {
         map.put(serial, map.getOrDefault(serial, 0) + 1);
         return serial;
     }
-/////////////////////////////////////////////////////////////////////////////////
-    //Clean and easy to understand Java Solution
-    class solution2{
-        public int largestBSTSubtree(TreeNode root) {
-            if (root == null) return 0;
-            if (root.left == null && root.right == null) return 1;
-            if (isValid(root, null, null)) return countNode(root);
-            return Math.max(largestBSTSubtree(root.left), largestBSTSubtree(root.right));
-        }
 
-        public boolean isValid(TreeNode root, Integer min, Integer max) {
-            if (root == null) return true;
-            if (min != null && min >= root.val) return false;
-            if (max != null && max <= root.val) return false;
-            return isValid(root.left, min, root.val) && isValid(root.right, root.val, max);
-        }
-
-        public int countNode(TreeNode root) {
-            if (root == null) return 0;
-            if (root.left == null && root.right == null) return 1;
-            return 1 + countNode(root.left) + countNode(root.right);
-        }
+    @Test
+    public void test01(){
+        TreeNode root = TreeNode.createMinimalBST(new int[]{2,1,3});
+        root.left.left  = new TreeNode(4);
+        root.right.right = new TreeNode(4);
+        root.right.left = new TreeNode(2);
+        root.right.left.left = new TreeNode(4);
+        root.print();
+        System.out.println(findDuplicateSubtrees(root));
     }
+    /*
+       1
+      / \
+     /   \
+    /     \
+   /       \
+   2       3
+  /       / \
+ /       /   \
+ 4       2   4
+        /
+        4
+
+[4 , 2 ]
+     */
+/////////////////////////////////////////////////////////////////////////////////
+
 
 /////////////////////////////////////////////////////////////////////////////////
     //Java 1ms solution, by passing a three-element array up to parent
@@ -75,6 +83,45 @@ public class Find_Duplicate_Subtrees {
             return result;
         }
     }
+
+/////////////////////////////////////////////////////////////////////////////////
+    // [C++] [Java] Clean Code
+class Solution4 {
+    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        Map<String, List<TreeNode>> map = new HashMap<String, List<TreeNode>>();
+        List<TreeNode> dups = new ArrayList<TreeNode>();
+
+        serialize(root, map);
+
+        for (List<TreeNode> group : map.values()) {
+            if (group.size() > 1) dups.add(group.get(0));
+        }
+        return dups;
+    }
+
+    private String serialize(TreeNode node, Map<String, List<TreeNode>> map) {
+        if (node == null) return "";
+        String s = "(" + serialize(node.left, map) + node.val + serialize(node.right, map) + ")";
+        if (!map.containsKey(s)) map.put(s, new ArrayList<TreeNode>());
+        map.get(s).add(node);
+        return s;
+    }
+}
+
+    @Test
+    public void test04(){
+        TreeNode root = TreeNode.createMinimalBST(new int[]{2,1,3});
+        root.left.left  = new TreeNode(4);
+        root.right.right = new TreeNode(4);
+        root.right.left = new TreeNode(2);
+        root.right.left.left = new TreeNode(4);
+        root.print();
+        System.out.println(new Solution4().findDuplicateSubtrees(root));
+    }
+
+/////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////
 

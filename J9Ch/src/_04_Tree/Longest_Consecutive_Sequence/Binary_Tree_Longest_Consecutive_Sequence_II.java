@@ -99,8 +99,18 @@ public class Binary_Tree_Longest_Consecutive_Sequence_II {
         System.out.println("root: ");
         root.print();
         System.out.println(longestConsecutive2(root));
-
     }
+    /*
+    root:
+   1
+  / \
+ /   \
+ 2   0
+/
+3
+
+4
+     */
 
 ///////////////////////////////////////////////////////////////////////
 
@@ -148,7 +158,28 @@ public class Binary_Tree_Longest_Consecutive_Sequence_II {
         return new int[] {inr, dcr};
     }
 
+    @Test
+    public void test02(){
+        int[] arr = {1,2,0};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
 
+        root.left.setLeftChild(new TreeNode(3));
+
+        System.out.println("root: ");
+        root.print();
+        System.out.println(longestConsecutive22(root));
+    }
+    /*root:
+   1
+  / \
+ /   \
+ 2   0
+/
+3
+
+4
+
+     */
 
 ///////////////////////////////////////////////////////////////////////
 

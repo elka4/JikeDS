@@ -4,7 +4,7 @@ import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
-/** 597. Subtree with Maximum Average
+/* 597. Subtree with Maximum Average
  * Easy
  *
  * http://lintcode.com/en/problem/subtree-with-maximum-average/

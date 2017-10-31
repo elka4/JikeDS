@@ -2,7 +2,7 @@ package _04_Tree.HF3_Algo_DS_II_2BST;
 
 import lib.TreeNode;
 import org.junit.Test;
-
+import java.util.*;
 /*
 • DFS的两种理解方式:
 1. 按照实际执行顺序模拟 (适合枚举型DFS，下节课内容) 2. 按照DFS的定义宏观理解 (适合分治型DFS，本节课内容)
@@ -89,7 +89,97 @@ public class _1ConvertBSTtoGreaterTree {
         convertBST2(root).print();
 
     }
+////////////////////////////////////////////////////////////////////////////
+/*The basic idea is to do a reversed inorder traversal. When we visit a node we add the sum of all previous nodes (to the right) to its value and also update the sum.
 
+    recursive method*/
+
+    private int sum3 = 0;
+    public TreeNode convertBST3(TreeNode root) {
+        if (root == null) return null;
+        convertBST(root.right);
+        int tmp = root.val;
+        root.val += sum3;
+        sum3 += tmp;
+        convertBST(root.left);
+        return root;
+    }
+
+//    iterative method using stack
+
+    public TreeNode convertBST4(TreeNode root) {
+        if (root == null) return null;
+        int sum = 0;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while (!stack.isEmpty() || cur != null) {
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.right;
+            }
+            cur = stack.pop();
+            int tmp = cur.val;
+            cur.val += sum;
+            sum += tmp;
+            cur = cur.left;
+        }
+        return root;
+    }
+
+//    Morris Traversal
+
+    public TreeNode convertBST5(TreeNode root) {
+        TreeNode cur= root;
+        int sum = 0;
+        while (cur != null) {
+            if (cur.right == null) {
+                int tmp = cur.val;
+                cur.val += sum;
+                sum += tmp;
+                cur = cur.left;
+            } else {
+                TreeNode prev = cur.right;
+                while (prev.left != null && prev.left != cur)
+                    prev = prev.left;
+                if (prev.left == null) {
+                    prev.left = cur;
+                    cur = cur.right;
+                } else {
+                    prev.left = null;
+                    int tmp = cur.val;
+                    cur.val += sum;
+                    sum += tmp;
+                    cur = cur.left;
+                }
+            }
+        }
+        return root;
+    }
+
+
+////////////////////////////////////////////////////////////////////////////
+
+//    Reversed inorder traversal.
+
+    public class Solution {
+        public TreeNode convertBST(TreeNode root) {
+            if(root == null) return null;
+            DFS(root, 0);
+            return root;
+        }
+
+        public int DFS(TreeNode root, int preSum){
+            if(root.right != null) {
+                preSum = DFS(root.right, preSum);
+            }
+            root.val = root.val + preSum;
+
+            return (root.left != null) ? DFS(root.left, root.val) : root.val;
+        }
+    }
+
+
+////////////////////////////////////////////////////////////////////////////
 }
 /*
 Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.

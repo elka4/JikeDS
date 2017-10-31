@@ -3,7 +3,8 @@ package _04_Tree.HF3_Algo_DS_II_3BinaryTree;
 import lib.TreeNode;
 import org.junit.Test;
 
-//Binary Tree Flipping
+//  Binary Tree Flipping
+//
 public class _1BinaryTreeFlipping {
 
     public TreeNode upsideDownBinaryTree(TreeNode root) {
@@ -29,8 +30,22 @@ public class _1BinaryTreeFlipping {
         root.left.setRightChild(new TreeNode(5));
         root.print();
         upsideDownBinaryTree(root).print();
-
     }
+    /*
+                   1
+                  / \
+                 /   \
+                 2   3
+                / \
+                4 5
+
+                   4
+                  / \
+                 /   \
+                 5   2
+                    / \
+                    3 1
+     */
 
 //////////////////////////////////////////////////////////////
 
@@ -69,6 +84,21 @@ public class _1BinaryTreeFlipping {
         upsideDownBinaryTree2(root).print();
 
     }
+    /*
+               1
+              / \
+             /   \
+             2   3
+            / \
+            4 5
+
+               4
+              / \
+             /   \
+             5   2
+                / \
+                3 1
+     */
 
 ///////////////////////////////////////////////////////////////
 
