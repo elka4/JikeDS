@@ -1,0 +1,2 @@
+Missing Number: An array A contains all the integers from 0 to n, except for one number which is missing. In this problem, we cannot access an entire integer in A with a single operation. The elements of A are represented in binary, and the only operation we can use to access them is "fetch t h e j t h b i t o f A [ i ] ," w h i c h t a k e s c o n s t a n t t i m e . W r i t e c o d e t o f i n d t h e m i s s i n g i n t e g e r . C a n y o u d o itinO(n) time?
+Hints: #610, #659, #683

@@ -6,7 +6,11 @@ import org.junit.Test;
 
 import java.util.Stack;
 
-/** 453. Flatten Binary Tree to Linked List
+/*
+leet  114. Flatten Binary Tree to Linked List
+
+
+453. Flatten Binary Tree to Linked List
  * Easy
 
  * Created by tianhuizhu on 6/27/17.
@@ -25,7 +29,7 @@ public class Flatten_Binary_Tree_to_Linked_List {
             lastNode.left = null;
             lastNode.right = root;
         }
-        root.print();
+//        root.print();
 
         lastNode = root;
         TreeNode right = root.right; //切记要把root.right 先存下来。
@@ -44,6 +48,15 @@ public class Flatten_Binary_Tree_to_Linked_List {
         flatten(root);
         root.print();
     }
+    /*
+                    root:
+                   1
+                  / \
+                 /   \
+                 2   5
+                / \   \
+                3 4   6
+     */
 
 ///////////////////////////////////////////////////////////////
 
@@ -290,3 +303,30 @@ public class Flatten_Binary_Tree_to_Linked_List {
 
 
 }
+/*
+ Given a binary tree, flatten it to a linked list in-place.
+
+For example,
+Given
+
+         1
+        / \
+       2   5
+      / \   \
+     3   4   6
+
+The flattened tree should look like:
+
+   1
+    \
+     2
+      \
+       3
+        \
+         4
+          \
+           5
+            \
+             6
+
+ */

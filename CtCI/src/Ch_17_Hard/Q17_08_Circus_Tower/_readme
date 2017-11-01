@@ -1,0 +1,4 @@
+Circus Tower: A circus is designing a tower routine consisting of people standing atop one anoth- er's shoulders. For practical and aesthetic reasons, each person must be both shorter and lighter than the person below him or her. Given the heights and weights of each person in the circus, write a method to compute the largest possible number of people in such a tower.
+EXAMPLE
+Input (ht, wt): (65J 100) (70J 150) (56J 90) (75J 190) (60J 95) (68J 110) Output: The longest tower is length 6 and includes from top to bottom:
+(56J 90) (60J 95) (65J 100) (68J l10) (70J 150) (75J 190) Hints:#638, #657, #666, #682, #699

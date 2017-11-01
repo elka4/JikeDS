@@ -14,7 +14,7 @@ import java.util.List;
 
     // top to down
     // 从上向下的任意一段
-public class Binary_Tree_Path_Sum_II {
+public class Binary_Tree_Path_Sum_II_Interval {
     /**
      * @param root the root of binary tree
      * @param target an integer
@@ -36,6 +36,7 @@ public class Binary_Tree_Path_Sum_II {
                         int level, List<List<Integer>> results) {
         if (head == null) return;
         int tmp = sum;
+
         buffer.add(head.val);
 
         for (int i = level;i >= 0; i--) {
@@ -52,6 +53,7 @@ public class Binary_Tree_Path_Sum_II {
 
         findSum(head.left, sum, buffer, level + 1, results);
         findSum(head.right, sum, buffer, level + 1, results);
+
         buffer.remove(buffer.size() - 1);
     }
 

@@ -33,3 +33,10 @@ public class Question {
 	}
 
 }
+/*
+Number Swapper: Write a function to swap a number in place (that is, without temporary vari- ables) .
+Hints:
+#492 Try picturing the two numbers, a and b, on a number line.,
+#716,
+#737
+ */

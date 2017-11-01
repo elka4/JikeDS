@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 //  any to any
-public class Binary_Tree_Path_Sum_III {
+public class Binary_Tree_Path_Sum_III_any2any {
 
     public List<List<Integer>> binaryTreePathSum3( TreeNode root, int target) {
         // Write your code here

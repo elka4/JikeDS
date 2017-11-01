@@ -1,5 +1,8 @@
 package _04_Tree.Path_Sum;
+import lib.AssortedMethods;
 import lib.TreeNode;
+import org.junit.Test;
+
 import java.util.*;
 
 // leetcode 437. Path Sum III
@@ -42,11 +45,9 @@ public class PathSum_III_interval {
             count += preSum.get(currSum - target);
         }
 
-        if (!preSum.containsKey(currSum)) {
-            preSum.put(currSum, 1);
-        } else {
-            preSum.put(currSum, preSum.get(currSum)+1);
-        }
+        //经典dfs的包围。用hashmap记录状态
+        preSum.put(currSum, preSum.getOrDefault(currSum, 0) + 1); // 死死记住这个做法
+
 
         helper(root.left, currSum, target, preSum);
         helper(root.right, currSum, target, preSum);
@@ -54,12 +55,49 @@ public class PathSum_III_interval {
         preSum.put(currSum, preSum.get(currSum) - 1);
     }
 
+/*        if (!preSum.containsKey(currSum)) {
+            preSum.put(currSum, 1);
+        } else {
+            preSum.put(currSum, preSum.get(currSum) + 1);
+        }*/
 
+    @Test
+    public void test01(){
+        int[] arr = {1,3,5,6,7,8,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(pathSum(root, 11));
+    }
+/*
+            root:
+               1
+              / \
+             /   \
+             3   5
+            / \ / \
+            6 7 8 5
+
+            2
+ */
+
+    @Test
+    public void test02(){
+        int[] arr = {1,3,5,6,7,8,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(pathSum(root, 10));
+
+    }
+
+/////////////////////////////////////////////////////////////////////////////////
 
 //    Thanks for your advice, @StefanPochmann . Here is the modified version, concise and shorter:
     /*
     Runtime: 20 ms   Your runtime beats 75.90 % of java submissions.
 
+这个做法比上面更好看一些，因为不用全局变量，而是利用method的返回值来记录到当前node的，也没有浪费使用这个参数
      */
     class Solution{
         public int pathSum(TreeNode root, int sum) {
@@ -74,19 +112,23 @@ public class PathSum_III_interval {
             }
 
             currSum += root.val;
-            int res = preSum.getOrDefault(currSum - target, 0);
-            preSum.put(currSum, preSum.getOrDefault(currSum, 0) + 1);
 
-            res += helper(root.left, currSum, target, preSum)
-                    + helper(root.right, currSum, target, preSum);
-            preSum.put(currSum, preSum.get(currSum) - 1);
+            int res = preSum.getOrDefault(currSum - target, 0);
+
+            preSum.put(currSum, preSum.getOrDefault(currSum, 0) + 1);  //头
+
+            res += helper(root.left, currSum, target, preSum) +
+                    helper(root.right, currSum, target, preSum);
+
+            preSum.put(currSum, preSum.get(currSum) - 1);                          //尾
+
             return res;
         }
     }
 
 /////////////////////////////////////////////////////////////////////////////////
 
-/*    Simple Java DFS
+/*    Simple Java DFS 和Solution2一样
 Runtime: 31 ms           Your runtime beats 34.90 % of java submissions.
     Typical recursive DFS.
             Space: O(n) due to recursion.
@@ -110,7 +152,7 @@ Runtime: 31 ms           Your runtime beats 34.90 % of java submissions.
 
 /////////////////////////////////////////////////////////////////////////////////
 
-/*    Simple AC Java Solution DFS
+/*    Simple AC Java Solution DFS  和Solution1一样
 Runtime: 29 ms       Your runtime beats 59.80 % of java submissions.
     Each time find all the path start from current node
     Then move start node to the child and repeat.
@@ -127,8 +169,10 @@ Runtime: 29 ms       Your runtime beats 59.80 % of java submissions.
             int res = 0;
             if(root == null)
                 return res;
+
             if(sum == root.val)
                 res++;
+
             res += findPath(root.left, sum - root.val);
             res += findPath(root.right, sum - root.val);
             return res;
@@ -152,19 +196,25 @@ subarray sum to the target, add with some comments:*/
         public int backtrack(TreeNode root, int sum, int target, Map<Integer, Integer> map){
             if(root == null)
                 return 0;
+
             sum += root.val;
+
             //See if there is a subarray sum equals to target
             int res = map.getOrDefault(sum - target, 0);
+
             map.put(sum, map.getOrDefault(sum, 0)+1);
+
             //Extend to left and right child
             res += backtrack(root.left, sum, target, map) + backtrack(root.right, sum, target, map);
+
             map.put(sum, map.get(sum)-1);   //Remove the current node so it wont affect other path
+
             return res;
         }
 
     }
 
-    //Easy to understand Java solution with comment.
+    //Easy to understand Java solution with comment.  性能极差
 
 
     /*  Runtime: 97 ms   Your runtime beats 4.33 % of java submissions.
@@ -192,24 +242,30 @@ subarray sum to the target, add with some comments:*/
     public class Solution4 {
         int target;
         Set<TreeNode> visited;
+
         public int pathSum(TreeNode root, int sum) {
             target = sum;
+
             // to store the nodes that have already tried to start path by themselves.
             visited = new HashSet<TreeNode>();
+
             return pathSumHelper(root, sum, false);
         }
 
         public int pathSumHelper(TreeNode root, int sum, boolean hasParent) {
             if(root == null) return 0;
+
             //the hasParent flag is used to handle the case when parent path sum is 0.
             //in this case we still want to explore the current node.
             if(sum == target && visited.contains(root) && !hasParent) return 0;
             if(sum == target && !hasParent) visited.add(root);
+
             int count = (root.val == sum)?1:0;
             count += pathSumHelper(root.left, sum - root.val, true);
             count += pathSumHelper(root.right, sum - root.val, true);
             count += pathSumHelper(root.left, target , false);
             count += pathSumHelper(root.right, target, false);
+
             return count;
         }
     }
@@ -225,19 +281,25 @@ subarray sum to the target, add with some comments:*/
     Space Complexity: O(1): we don't store nodes.*/
     class Solution5{
         public int pathSum(TreeNode root, int sum) {
+
             return helper(root, sum, false);
         }
+
+
         // Either the path has not started, or it has to go all the way to the end.
         private int helper(TreeNode root, int sum, boolean hasStarted) {
             if (root == null) return 0;
+
             // if the path has not started, we start now or not.
             if (!hasStarted) {
                 return helper(root, sum, true) +
-                        helper(root.left, sum, false) + helper(root.right, sum, false);
+                        helper(root.left, sum, false) +
+                        helper(root.right, sum, false);
             }
 
             // if the path has started
             sum -= root.val;
+
             return helper(root.left, sum, true) +
                     helper(root.right, sum, true) + (sum == 0? 1 : 0);
         }
@@ -252,6 +314,7 @@ subarray sum to the target, add with some comments:*/
             if (root != null) count += pathSum(root.left, sum) + pathSum(root.right, sum);
             return count;
         }
+
         //Must contain root.val when calculating sum.
         private int findPathWithRoot(TreeNode root, int sum) {
             if (root == null) return 0;

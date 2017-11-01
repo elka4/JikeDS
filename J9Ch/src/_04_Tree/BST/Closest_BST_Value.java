@@ -2,16 +2,19 @@ package _04_Tree.BST;
 
 import lib.*;
 
-/*
+/*  LeetCode 270. Closest Binary Search Tree Value
+
 LeetCode – Closest Binary Search Tree Value (Java)
 
-Given a non-empty binary search tree and a target value, find the value in the BST that is closest to the target
+Given a non-empty binary search tree and a target value,
+find the value in the BST that is closest to the target
  */
 
 public class Closest_BST_Value {
     /*Java Solution 1 - Recursion
 
-    Recursively traverse down the root. When target is less than root, go left; when target is greater than root, go right.*/
+    Recursively traverse down the root.
+    When target is less than root, go left; when target is greater than root, go right.*/
     int goal;
     double min = Double.MAX_VALUE;
 
@@ -25,7 +28,7 @@ public class Closest_BST_Value {
             return;
 
         if(Math.abs(root.val - target) < min){
-            min = Math.abs(root.val-target);
+            min = Math.abs(root.val - target);
             goal = root.val;
         }
 
@@ -88,7 +91,8 @@ public class Closest_BST_Value {
     }
 
     //Iterative
-    //Walk the path down the tree close to the target, return the closest value on the path. Inspired by yd, I wrote these after reading "while loop".
+    //Walk the path down the tree close to the target, return the closest value on the path.
+    // Inspired by yd, I wrote these after reading "while loop".
 
 
 
@@ -166,29 +170,12 @@ public class Closest_BST_Value {
 
 
 
-/////////////////////////////////////////////////////////////////
-
-
-
-
-/////////////////////////////////////////////////////////////////
-
-
-
-
-/////////////////////////////////////////////////////////////////
-
-
-
-
-/////////////////////////////////////////////////////////////////
-
-
-
-
-/////////////////////////////////////////////////////////////////
-
-
-
-
 }
+/*
+Given a non-empty binary search tree and a target value, find the value in the BST that is closest to the target.
+
+Note:
+Given target value is a floating point.
+You are guaranteed to have only one unique value in the BST that is closest to the target.
+
+ */
