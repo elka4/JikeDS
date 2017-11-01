@@ -10,7 +10,7 @@ import java.util.List;
 // root to bottom
 // FollowUp_SubsectionOfCompletePathFromRootToLeaf
 // 从根向下加和， 到中间某点是否等于sum
-public class PathSum2 {
+public class PathSum2_rootToMid {
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
 

@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.*;
 
 // 从上向下求和， 中间一段和最大
 
-public class PathSum3 {
+public class PathSum3_max_interval {
 
     public int maxPathSum(TreeNode root) {
         if (root == null)

@@ -15,11 +15,16 @@ public class PathSum_I {
     /*
     Java Solution 1 - Using Queue
 
-    Add all node to a queue and store sum value of each node to another queue. When it is a leaf node, check the stored sum value.
+    Add all node to a queue and store sum value of each node to another queue.
+    When it is a leaf node, check the stored sum value.
 
-    For the tree above, the queue would be: 5 - 4 - 8 - 11 - 13 - 4 - 7 - 2 - 1. It will check node 13, 7, 2 and 1. This is a typical breadth first search(BFS) problem.
+    For the tree above, the queue would be: 5 - 4 - 8 - 11 - 13 - 4 - 7 - 2 - 1.
+    It will check node 13, 7, 2 and 1. This is a typical breadth first search(BFS) problem.
      */
 
+    /*
+        平行操作两个stack，一个放node，一个放到这个node为止的sum
+     */
     public boolean hasPathSum(TreeNode root, int sum) {
         if(root == null) return false;
 
@@ -33,18 +38,18 @@ public class PathSum_I {
             TreeNode curr = nodes.poll();
             int sumValue = values.poll();
 
-            if(curr.left == null && curr.right == null && sumValue==sum){
+            if(curr.left == null && curr.right == null && sumValue == sum){
                 return true;
             }
 
             if(curr.left != null){
                 nodes.add(curr.left);
-                values.add(sumValue+curr.left.val);
+                values.add(sumValue + curr.left.val);
             }
 
             if(curr.right != null){
                 nodes.add(curr.right);
-                values.add(sumValue+curr.right.val);
+                values.add(sumValue + curr.right.val);
             }
         }
 
@@ -58,9 +63,11 @@ public class PathSum_I {
 /*The basic idea is to subtract the value of current node from sum until it reaches
 a leaf node and the subtraction equals 0, then we know that we got a hit. O
 therwise the subtraction at the end could not be 0.*/
+
     public boolean hasPathSum2(TreeNode root, int sum) {
         if (root == null)
             return false;
+
         if (root.left == null && root.right == null)
             return root.val == sum;
 
@@ -81,12 +88,15 @@ therwise the subtraction at the end could not be 0.*/
             Stack<Integer> sub = new Stack<>();
             path.push(root);
             sub.push(root.val);
+
             while (!path.isEmpty()) {
                 TreeNode temp = path.pop();
                 int tempVal = sub.pop();
+
                 if (temp.left == null && temp.right == null) {
                     if (tempVal == sum) return true;
                 }
+
                 if (temp.left != null) {
                     path.push(temp.left);
                     sub.push(temp.left.val + tempVal);

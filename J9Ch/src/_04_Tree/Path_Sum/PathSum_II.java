@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.*;
 
 //  leetcode        113. Path Sum II
+//Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
 
 //root to leaf, 所有node的value和为sum， 返回所有的path
 // 从根到底 加和 是否等于sum
-
-public class PathSum1 {
+public class PathSum_II {
 
   public List<List<Integer>> pathSum(TreeNode root, int sum) {
 
@@ -54,7 +54,7 @@ public class PathSum1 {
     }
 
 
-    private void helper(TreeNode root, int sum, List<Integer> list,
+/*    private void helper(TreeNode root, int sum, List<Integer> list,
             List<List<Integer>> res) {
 
         if (root == null) {
@@ -80,7 +80,7 @@ public class PathSum1 {
         System.out.println("list " + list);
         list.remove(list.size() - 1);
         System.out.println("list " + list);
-    }
+    }*/
 
 
     @Test
@@ -159,6 +159,7 @@ public class PathSum1 {
         }
 
         ArrayList<Integer> path = new ArrayList<Integer>();
+
         path.add(root.val);
 
         helper(root, path, root.val, target, result);
@@ -205,7 +206,8 @@ public class PathSum1 {
             return rst;
         }
 
-        private void findSum(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> solution, TreeNode root, int sum){
+        private void findSum(ArrayList<ArrayList<Integer>> result,
+                             ArrayList<Integer> solution, TreeNode root, int sum){
             if (root == null) {
                 return;
             }
@@ -268,22 +270,30 @@ public class PathSum1 {
 
 
 /////////////////////////////////////////////////////////////////////////
+
 public class Solution {
+
     private List<List<Integer>> resultList = new ArrayList<List<Integer>>();
 
     public void pathSumInner(TreeNode root, int sum, Stack<Integer>path) {
+
         path.push(root.val);
+
         if(root.left == null && root.right == null)
             if(sum == root.val) resultList.add(new ArrayList<Integer>(path));
+
         if(root.left!=null) pathSumInner(root.left, sum-root.val, path);
         if(root.right!=null)pathSumInner(root.right, sum-root.val, path);
+
         path.pop();
     }
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         if(root==null) return resultList;
         Stack<Integer> path = new Stack<Integer>();
+
         pathSumInner(root, sum, path);
+
         return resultList;
     }
 }
