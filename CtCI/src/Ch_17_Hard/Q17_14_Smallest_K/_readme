@@ -1,1 +1,13 @@
-Smallest K: Design an algorithm to find the smallest K numbers in an array. Hints: #470, #530, #552, #593, #625, #647, #661, #678
+Smallest K: Design an algorithm to find the smallest K numbers in an array.
+
+Hints: #470, #530, #552, #593, #625, #647, #661, #678
+
+
+17.14	There are actually several approaches. Brainstorm these. It's okay to start off with a naive approach.
+17.14	Consider thinking about reorganizing the data in some way or using additional data structures.
+17.14 Can you sort the numbers?
+17.14	What about using a heap or tree of some sort?
+17.14	If you picked an arbitrary element, how long would it take you to figure out the rank of this element (the number of elements bigger or smaller than it)?
+17.14 If you picked an arbitrary element, you would, on average, wind up with an element around the 50th percentile mark (half the elements above it and half the elements below). What if you did this repeatedly?
+17.14	Think about the previous hint some more, particularly in the context of quicksort.
+17.14	What if, when you picked an element, you swapped elements around (as you do in quicksort) so that the elements below it would be located before the elements above it? If you did this repeatedly, could you find the smallest one million numbers?

@@ -13,3 +13,12 @@ Input: 8733
 Output: tree, used
 
 Hints: #471, #487, #654, #703, #726, #744
+
+
+
+16.20	Consider recursion.
+16.20	Can you recursively try all possibilities?
+16.20	In the real world, we should know that some prefixes/substrings won't work. For example, consider the number 33835676368. Although 3383 does correspond to fftf, there are no words that start with fftf. Is there a way we can short-circuit in cases like this?
+16.20	A trie might help us short-circuit. What if you stored the whole list of words in the trie?
+16.20	We're probably going to run this algorithm many times. If we did more preprocessing, is there a way we could optimize this?
+16.20	With preprocessing, we can actually get the lookup time down to 0(1).

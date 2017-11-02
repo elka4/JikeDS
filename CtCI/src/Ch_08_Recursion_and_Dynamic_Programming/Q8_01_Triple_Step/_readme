@@ -1,0 +1,8 @@
+8.1	Triple Step: A child is running up a staircase with n steps and can hop either 1 step, 2 steps, or 3 steps at a time. Implement a method to count how many possible ways the child can run up the stairs.
+Hints: #152, #178, #217, #237, #262, #359
+
+8.1	Approach this from the top down. What is the very last hop the child made?
+8.1	If we knew the number of paths to each of the steps before step 100, could we compute the number of steps to 100?
+8.1	We multiply the values when it's "we do this then this." We add them when it’s "we do this or this."
+8.1	What is the runtime of this method? Think carefully. Can you optimize it?
+8.1	Try memoization as a way to optimize an inefficient recursive program.

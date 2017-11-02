@@ -1,0 +1,8 @@
+2.1	Remove Dups: Write code to remove duplicates from an unsorted linked list.
+FOLLOW UP
+How would you solve this problem if a temporary buffer is not allowed?
+Hints: #9, #40
+
+
+2.1	Without extra space, you'll need 0(NJ) time. Try using two pointers, where the second one searches ahead of the first one.
+2.2	If you don't know the linked list size, can you compute it? How does this impact the runtime?

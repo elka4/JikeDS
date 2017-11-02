@@ -1,0 +1,10 @@
+5.7	Pairwise Swap: Write a program to swap odd and even bits in an integer with as few instructions as possible (e.g., bit 0 and bit 1 are swapped, bit 2 and bit 3 are swapped, and so on).
+Hints: #145, #248, #328, #355
+
+
+5.7 Swapping each pair means moving the even bits to the left and the odd bits to the right. Can you break this problem into parts?
+5.7	Can you create a number that represents just the even bits? Then can you shift the even bits over by one?
+5.7	Try masks Oxaaaaaaaa and 0x55555555 to select the even and odd bits. Then try shifting the even and odd bits around to create the right number.
+
+5.7	The value 1010 in binary is 10 in decimal or OxA in hex. What will a sequence of 101010... be in hex? That is, how do you represent an alternating sequence of 1 s and Os with 1 s in the odd places? How do you do this for the reverse (1 s in the even spots)?
+2->3->6->7 (representing 7632), and a function that operates on the rema inder of the lists {5->9 and 3->6->7). Could you use this to create the sum method? What is the relationship between sum(l->5->9, 2->3->6->7) and sum(5->9j 3->6->7)?

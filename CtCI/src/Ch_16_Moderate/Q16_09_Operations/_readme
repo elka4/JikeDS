@@ -1,2 +1,7 @@
 Operations: Write methods to implement the multiply, subtract, and divide operations for integers. The results of all of these are integers. Use only the add operator.
 Hints: #572, #600, #613, #648
+
+16.9	Approach these one by one, starting with subtraction. Once you've completed one function, you can use it to implement the others.
+16.9	Subtraction: Would a negate function (which converts a positive integer to negative) help? Can you implement this using the add operator?
+16.9	Multiply: it’s easy enough to implement multiply using add. But how do you handle negative numbers?
+16.9	Divide: If you’re trying to compute, where X = *A,, remember that a = bx. Can you find the closest value for x? Remember that this is integer division and x should be an integer.

@@ -1,0 +1,4 @@
+15.4	Deadlock-Free Class: Design a class which provides a lock only if there are no possible deadlocks. Hints: #422, #434
+
+15.4	If every thread had to declare upfront what processes it might need, could we detect possible deadlocks in advance?
+15.4	Think about the order of requests as a graph. What does a deadlock look like within this graph?

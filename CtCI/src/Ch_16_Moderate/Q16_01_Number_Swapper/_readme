@@ -1,0 +1,6 @@
+16.1	Number Swapper: Write a function to swap a number in place (that is, without temporary vari¬ables).
+Hints: #492, #716, #737
+
+16.1	Try picturing the two numbers, a and b, on a number line.
+16.1	Let diff be the difference between a and b. Can you use diff in some way?Then can you get rid of this temporary variable?
+16.1	You could also try using X0R.

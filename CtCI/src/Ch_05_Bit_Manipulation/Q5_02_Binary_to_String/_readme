@@ -1,0 +1,15 @@
+5.2	Binary to String: Given a real number between 0 and 1 (e.g., 0.72) that is passed in as a double, print the binary representation. If the number cannot be represented accurately in binary with at most 32 characters, print "ERROR."
+
+Hints:#143,#167,#173, if269, #297
+
+
+
+
+
+5.2	To wrap your head around the problem, try thinking about how you’d do it for integers. 8.6 Try the Base Case and Build approach.
+
+5.2	Think about what happens for values that can't be represented accurately in binary.
+
+5.2	How would you get the first digit in .893? If you multiplied by 10, you'd shift the values over to get 8.93. What happens if you multiply by 2?
+
+5.2	In a number like . 893 (in base 10), what does each digit signify? What then does each digit in . 10010 signify in base 2?

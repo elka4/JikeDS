@@ -1,0 +1,5 @@
+7.12	Hash Table: Design and implement a hash table which uses chaining (linked lists) to handle colli¬sions.
+Hints: #287, #307
+
+7.12 In order to handle collisions, the hash table should be an array of linked lists.
+7.12	Think carefully about what information the linked list node needs to contain.

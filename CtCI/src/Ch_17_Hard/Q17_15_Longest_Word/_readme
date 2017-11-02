@@ -2,3 +2,8 @@ Longest Word: Given a list of words, write a program to find the longest word ma
 EXAMPLE
 Inputcat, banana, dog, nana, walk, walker, dogwalker Output: dogwalker
 Hints: #475, #499, #543, #589
+
+17.15	Try simplifying this problem: What if you just needed to know the longest word made up of two other words in the list?
+17.15	If we wanted to know just the longest word made up of other words in the list, then we could iterate over all words, from longest to shortest, checking if each could be made up of other words. To check this, we split the string in all possible locations.
+17.15	Extend the earlier idea to multiple words. Can we just break each word up in all possible ways?
+17.15	When you get recursive algorithms that are very inefficient, try looking for repeated subproblems.

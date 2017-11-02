@@ -1,2 +1,10 @@
 Rand7 from RandS: Implement a method rand7() given rand5 (). That is, given a method that generates a random number between 0 and 4 (inclusive), write a method that generates a random number between 0 and 6 (inclusive).
+
 Hints: #505, #574, #637, #668, #697, #720
+
+16.23	8e very careful that your solution actually returns each value from 0 through 6 with equal probability.
+16.23	Start with a brute force solution. How many times does it call rand5() in the worst case?
+16.23	Make a table indicating how each possible sequence of calls to rand5() would map to the result of rand7(). For example, if you were implementing rand3() with (rand2() + rand2()) % 3, then the table would look like the below. Analyze this table. What can it tell you?
+16.23	Looking at this table again, note that the number of rows will be 5\ where k is the max number of calls to rand5(). In order to make each value between 0 and 6 have equal probability, Yi th of the rows must map to 0, x/t th to 1, and so on. Is this possible?
+16.23	It is not possible to divide 5k evenly by 7. Does this mean that you can't implement rand7() with rand5()?
+16.23	You can implement rand7() with rand5(), you just can't do it deterministically (such that you know it will definitely terminate after a certain number of calls). Given this, write a solution that works.

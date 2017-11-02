@@ -21,3 +21,6 @@ Becomes:
 
 W r i t e c o d e t o p r i n t t h e e n c o d e d v e r s i o n o f a n XML e l e m e n t ( p a s s e d i n E l e m e n t a n d A t t r i b u t e objects) .
 Hints: #466
+
+
+16.12	Consider a recursive or tree-like approach.

@@ -11,3 +11,9 @@ Input:
 Output: 2, 4, 1 (in any order)
 
 Hints: #674, #687, #706, #723
+
+
+16.19	If you were given the row and column of a water cell, how can you find all connected spaces?
+16.19	Try recursion to count the number of water cells.
+16.19	How can you make sure that you're not revisiting the same cells? Think about how breadth-first search or depth-first search on a graph works.
+16.19	You should have an algorithm that's 0(N2) on an NxN matrix. If your algorithm isn't, consider if you’ve miscomputed the runtime or if your algorithm is suboptimal.

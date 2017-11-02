@@ -1,4 +1,16 @@
 Word Transformer: Given two words of equal length that are in a dictionary, write a method to transform one word into another word by changing only one letter at a time.The new word you get in each step must be in the dictionary.
 EXAMPLE
 Input: DAMP, LIKE
-Output: DAMP -> LAMP -> LIMP -> LIME -> LIKE Hints: #506, #535, #556, #580, #598, #618, #738
+Output: DAMP -> LAMP -> LIMP -> LIME -> LIKE
+
+Hints: #506, #535, #556, #580, #598, #618, #738
+
+
+
+17.22	Start with a brute force, recursive solution. Just create all words that are one edit away, check if they are in the dictionary, and then attempt that path.
+17.22	Once you have a brute force solution, try to find a faster way of getting all valid words that are one edit away. You don't want to create all strings that are one edit away when the vast majority of them are not valid dictionary words.
+17.22	To quickly get the valid words that are one edit away, try to group the words in the dictionary in a useful way. Observe that all words in the form b_ll (such as bill, ball, bell, and bull) will be one edit away. However, those aren't the only words that are one edit away from bill.
+17.22	Create a mapping from a wildcard form (like b_ll) to all words in that form. Then, when you want to find all words that are one edit away from bill, you can look up _ill, b_ll, bi_l, and bil_ in the mapping.
+17.22	Your previous algorithm probably resembles a depth-first search. Can you make this faster?
+17.22	A breadth-first search will often be faster than a depth-first search—not necessarily in the worst case, but in many cases. Why? Can you do something even faster than this?
+17.22	What if you did a breadth-first search starting from both the source word and the desti¬nation word?

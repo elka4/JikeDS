@@ -1,0 +1,3 @@
+13.1	Private Constructor: In terms of inheritance, what is the effect of keeping a constructor private? Hints: #404
+
+13.1	Think about who can access private methods.

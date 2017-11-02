@@ -1,2 +1,9 @@
 Letters and Numbers: Given an array filled with letters and numbers, find the longest subarray with an equal number of letters and numbers.
 Hints: #485, #515, #619, #671, #7 13
+
+
+17.5	It doesn't really matter which letter or number it is. You can simplify this problem to just having an array of As and Bs. You would then be looking for the longest subarray with an equal number of As and Bs.
+17.5	Start with a brute force solution.
+17.5	What if you just started from the beginning, counting the number of As and the number of Bs you've seen so far? (Try making a table of the array and the number of As and Bs thus far.)
+17.5	When the above tables have equal values for the number of As and Bs, the entire subarray (starting from index 0) has an equal number of As and Bs. How could you use this table to find qualifying subarrays that don't start at index 0?
+17.5	Suppose, in this table, index i has count (A, 0->i) = 3andcount(B, 0->i)	=

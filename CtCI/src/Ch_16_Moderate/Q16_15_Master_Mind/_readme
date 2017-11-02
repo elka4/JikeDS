@@ -6,3 +6,6 @@ For exam ple, if the actual solution is RGBY and you guess GGRR, you have one hi
 Write a method that, given a guess and a solution, returns the number of hits and pseudo-hits.
 
 Hints: #639, #730
+
+16.15 Try first creating an array with the frequency that each item occurs.
+16.15	For ease and clarity in implementation, you might want to use other methods and classes.

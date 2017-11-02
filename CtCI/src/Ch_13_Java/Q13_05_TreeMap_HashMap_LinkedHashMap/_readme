@@ -1,0 +1,8 @@
+13.5	TreeMap, HashMap, LinkedHashMap: Explain the differences between TreeMap, HashMap, and LinkedHashMap. Provide an example of when each one would be best.
+Hints: #420, #424, #430, #454
+
+
+13.5	Think about the underlying data structure.
+13.5	HashMap uses an array of linked lists. TreeMap uses a red-black tree. LinkedHashMap uses doubly-linked buckets. What is the implication of this?
+13.5	Consider how they might differ in terms of the order of iteration through the keys. Why might you want one option instead of the others?
+13.5	What would the runtime of the common operations be?

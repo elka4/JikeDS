@@ -4,3 +4,12 @@ matches the pattern aabab (where cat is a and go is b). It also matches patterns
 Write a method to determine if value matches pattern .
 
 Hints: #631, #643, #653, #663, #685, #718, #727
+
+
+16.18	Start with a brute force approach. Can you try all possibilities for a and b?
+16.18	Observe that one of the substrings, either a or b, must start at the beginning of the string. That cuts down the number of possibilities.
+16.18	Don't forget to handle the possibility that the first character in the pattern is b.
+16.18	Be careful with how you analyze the runtime. If you iterate through 0(n2) substrings and each one does an 0(n) string comparison, then the total runtime is 0(n3).
+16.18	Suppose you decide on a specific value for the "a" part of a pattern. How many possibili¬ties are there for b?
+16.18	Since the value of a determines the value of b (and vice versa) and either a or b must start at the beginning of the value, you should have only 0(n) possibilities for how to split up the pattern.
+16.18	You should be able to have an 0(n3) algorithm.

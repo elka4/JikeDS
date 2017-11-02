@@ -1,2 +1,7 @@
 Pairs with Sum: Design an algorithm to find all pairs of integers within an array which sum to a specified value.
 Hints: #548, #597, #644, #673
+
+16.24	Start with a brute force solution. What is the runtime? What is the best conceivable runtime for this problem?
+16.24	Can we make this faster with a hash table?
+16.24	What if the array were sorted?
+16.24	If we sorted the array, we could do repeated binary searches for the complement of a number. What if, instead, the array is given to us sorted? Could we then solve the problem in 0(N) time and 0(1) space?

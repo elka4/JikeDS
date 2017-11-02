@@ -1,0 +1,15 @@
+8.9	Parens: Implement an algorithm to print all valid (e.g., properly opened and closed) combinations of n pairs of parentheses.
+EXAMPLE Input: 3
+Output: ((())), (()()>, (())(), ()(()), 000
+
+Hints: #138, #174, #187, #209, #243, #265, #295
+
+
+
+8.9 Try the Base Case and Build approach.
+8.9	Suppose we had all valid ways of writing two pairs of parentheses. How could we use this to get all valid ways of writing three pairs?
+8.9	We could try generating the solution for three pairs by taking the list of two pairs of parentheses and adding a third pair. We'd have to add the third paren before, around, and after. That is: ()<SOLUTION>, (<SOLUTION>), <S0LUTI0N>( ). Will this work?
+8.9	The problem with the solution suggested by the earlier hint is that it might have dupli¬cate values. We could eliminate this by using a hash table.
+8.9	Alternatively, we could think about doing this by moving through the string and adding left and right parens at each step. Will this eliminate duplicates? How do we know if we can add a left or right paren?
+8.9	Adding a left or right paren at each step will eliminate duplicates. Each substring will be unique at each step. Therefore, the total string will be unique.
+8.9	We can ensure that this string is valid by counting the number of left and right parens. It is always valid to add a left paren, up until the total number of pairs of parens. We can add a right paren as long as count (left parens) <= count(right parens).
