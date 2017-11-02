@@ -11,4 +11,8 @@ public class Question {
 		Arrays.sort(array, new AnagramComparator());
 		System.out.println(AssortedMethods.stringArrayToString(array));
 	}
+	/*
+            apple, banana, carrot, ele, duck, papel, tarroc, cudk, eel, lee,
+            banana, carrot, tarroc, apple, papel, duck, cudk, ele, eel, lee,
+	 */
 }

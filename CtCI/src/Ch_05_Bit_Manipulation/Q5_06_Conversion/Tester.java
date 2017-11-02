@@ -28,4 +28,9 @@ public class Tester {
 		int nbits2 = QuestionB.bitSwapRequired(a, b);
 		System.out.println("Required number of bits: " + nbits + " " + nbits2);
 	}
+	/*
+                -23432: 11111111111111111010010001111000
+                512132: 00000000000001111101000010000100
+                Required number of bits: 23 23
+	 */
 }

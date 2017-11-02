@@ -1,7 +1,25 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 13.8	Lambda Random: Using Lambda expressions, write a function Lists Integer> getRandomSubset(List<Integer> list) that returns a random subset of arbitrary size. All subsets (including the empty set) should be equally likely to be chosen.
+
+
 Hints: #443, #450, #457
 
 
 13.8	A naive approach is to pick a ra ndom subset size z and then iterate th rough the elements, putting it in the set with probability z/list_size. Why would this not work?
+
 13.8	Pick the list of all the subsets of an n-element set. For any given item x, half of the subsets contain x and half do not.
+
 13.8	Do not pick the length of the subset in advance. You don't need to. Instead, think about this as picking whether each element will be put into the set.

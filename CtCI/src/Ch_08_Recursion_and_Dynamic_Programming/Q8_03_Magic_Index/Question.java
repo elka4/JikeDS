@@ -80,5 +80,14 @@ public class Question {
         System.out.println("v2: " + v2);
 
     }
-
+/*
+                        0 -4
+                        1 -3
+                        2 -2
+                        3 -1
+                        4 0
+                        5 3
+                        6 6
+                        v2: 6
+ */
 }

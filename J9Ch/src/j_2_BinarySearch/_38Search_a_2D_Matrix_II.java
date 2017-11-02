@@ -1,4 +1,4 @@
-package j_2_BinarySearch;
+package j_2_BinarySearch; import org.junit.Test;
 
 public class _38Search_a_2D_Matrix_II {
  /**

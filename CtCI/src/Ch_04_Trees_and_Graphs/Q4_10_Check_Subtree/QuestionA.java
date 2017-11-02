@@ -60,6 +60,33 @@ public class QuestionA {
 			System.out.println("t4 is not a subtree of t3");
 		}
 	}
+
+	/*
+                           1
+                          / \
+                         /   \
+                         2   1
+                        / \ / \
+                        3 1 1 5
+
+                         2
+                        / \
+                        3 1
+
+                        t2 is a subtree of t1
+                           1
+                          / \
+                         /   \
+                         2   1
+                        / \ / \
+                        3 1 1 5
+
+                         1
+                        / \
+                        2 3
+
+                        t4 is not a subtree of t3
+	 */
     @Test
     public void test01(){
         // t2 is a subtree of t1
@@ -79,5 +106,21 @@ public class QuestionA {
         System.out.println(nodeToString(t1));
         System.out.println(nodeToString(t2));
     }
+    /*
+                               5
+                              / \
+                             /   \
+                             2   1
+                            / \ / \
+                            3 4 6 7
+
+                             2
+                            / \
+                            3 1
+
+                            t2 is not a subtree of t1
+                            523##4##16##7##
+                            23##1##
+     */
 
 }

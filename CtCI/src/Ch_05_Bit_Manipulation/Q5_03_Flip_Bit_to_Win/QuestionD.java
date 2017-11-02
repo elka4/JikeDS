@@ -36,6 +36,15 @@ public class QuestionD {
 		}
 
 	}
+	/*
+                    -1: 32, 32 true
+                    2147483647: 32, 32 true
+                    -10: 31, 31 true
+                    0: 1, 1 true
+                    1: 2, 2 true
+                    15: 5, 5 true
+                    1775: 8, 8 true
+	 */
 
 }
 

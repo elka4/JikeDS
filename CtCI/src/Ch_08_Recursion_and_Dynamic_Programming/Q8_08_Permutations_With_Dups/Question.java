@@ -47,5 +47,19 @@ public class Question {
 			System.out.println(r);
 		}
 	}
-
+/*
+                Count: 12
+                abbc
+                abcb
+                acbb
+                babc
+                bacb
+                bbac
+                bbca
+                bcab
+                bcba
+                cabb
+                cbab
+                cbba
+ */
 }

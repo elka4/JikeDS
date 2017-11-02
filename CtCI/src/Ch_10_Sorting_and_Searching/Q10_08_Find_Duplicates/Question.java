@@ -22,5 +22,18 @@ public class Question {
 		System.out.println(AssortedMethods.arrayToString(array));
 		checkDuplicates(array);
 	}
+/*
+22, 14, 22, 15, 11, 15, 22, 25, 13, 22, 1, 6, 9, 5, 3, 6, 27, 3, 4, 19, 19, 30, 10, 18, 26, 24, 25, 11, 16, 4,
 
+22
+15
+22
+22
+6
+3
+19
+25
+11
+4
+ */
 }

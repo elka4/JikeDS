@@ -49,5 +49,19 @@ public class QuestionC {
 		TreeNode ancestor = commonAncestor(root, n3, n7);
 		System.out.println(ancestor.data);
 	}
+/*
+                                   5
+                                  / \
+                                 /   \
+                                /     \
+                               /       \
+                               2       8
+                              / \     / \
+                             /   \   /   \
+                             1   3   6   9
+                                  \   \   \
+                                  4   7   10
 
+                            5
+ */
 }

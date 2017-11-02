@@ -34,22 +34,27 @@ public class Question {
         System.out.println(AssortedMethods.toFullBinaryString(allOnes) + " allOnes; int allOnes = ~0;");
 
 		int left = allOnes << (j + 1); // 1s through position j, then 0s. left = 11100000
-        System.out.println(AssortedMethods.toFullBinaryString(left) + " left;   int left = allOnes << (j + 1); 1s through position j");
+        System.out.println(AssortedMethods.toFullBinaryString(left) +
+                " left;   int left = allOnes << (j + 1); 1s through position j");
 
         int right = ((1 << i) - 1); // 1�s after position i.  right = 00000011
         //int k = i;
         System.out.println(AssortedMethods.toFullBinaryString(1 << i) + " 1 << i");
-        System.out.println(AssortedMethods.toFullBinaryString(right) + " right;   int right = ((1 << i) - 1); // 1�s after position i.");
+        System.out.println(AssortedMethods.toFullBinaryString(right) +
+                " right;   int right = ((1 << i) - 1); // 1�s after position i.");
 
         int mask = left | right; // All 1s, except for 0s between i and j. mask = 11100011
-        System.out.println(AssortedMethods.toFullBinaryString(mask) + " mask;   int mask = left | right; // All 1s, except for 0s between i and j.");
+        System.out.println(AssortedMethods.toFullBinaryString(mask) +
+                " mask;   int mask = left | right; // All 1s, except for 0s between i and j.");
 
 		/* Clear i through j, then put m in there */
 		int n_cleared = n & mask; // Clear bits j through i.
-        System.out.println(AssortedMethods.toFullBinaryString(n_cleared) + " n_cleared; int n_cleared = n & mask; // Clear bits j through i.");
+        System.out.println(AssortedMethods.toFullBinaryString(n_cleared) +
+                " n_cleared; int n_cleared = n & mask; // Clear bits j through i.");
 
         int m_shifted = m << i; // Move m into correct position.
-        System.out.println(AssortedMethods.toFullBinaryString(m_shifted) + " m_shifted; int m_shifted = m << i; // Move m into correct position.");
+        System.out.println(AssortedMethods.toFullBinaryString(m_shifted) +
+                " m_shifted; int m_shifted = m << i; // Move m into correct position.");
 
 		/* OR them, and we're done! */
         System.out.println("========================");
@@ -86,12 +91,27 @@ public class Question {
         00000000000000011000000011010001 c
 		 */
 	}
+	/*
+        11111111111111111111111111111111 allOnes; int allOnes = ~0;
+        11111111111111111110000000000000 left;   int left = allOnes << (j + 1); 1s through position j
+        00000000000000000000000000010000 1 << i
+        00000000000000000000000000001111 right;   int right = ((1 << i) - 1); // 1�s after position i.
+        11111111111111111110000000001111 mask;   int mask = left | right; // All 1s, except for 0s between i and j.
+        00000000000000011000000000000001 n_cleared; int n_cleared = n & mask; // Clear bits j through i.
+        00000000000000000000000011010000 m_shifted; int m_shifted = m << i; // Move m into correct position.
+        ========================
+        00000000000000011001001100110001 a
+        00000000000000000000000000001101 b
+        00000000000000011000000011010001 c
+	 */
 
 	@Test
     public void test01(){
         int a = 103217;
         System.out.println(Integer.toBinaryString(a));
     }
+//  11001001100110001
+
 	@Test
     public void test02(){
         int a = Integer.MIN_VALUE;
@@ -107,6 +127,24 @@ public class Question {
         System.out.println("ccccccccccccccccccc");
 
     }
+/*
+        10000000000000000000000000000000
+        aaaaaaaaaaaaaaa
+        11111111111111111111111111111111
+        bbbbbbbbbbbbbbbbbb
+        11111111111111111111111111111111 allOnes; int allOnes = ~0;
+        11111111000000000000000000000000 left;   int left = allOnes << (j + 1); 1s through position j
+        00000000000000000000010000000000 1 << i
+        00000000000000000000001111111111 right;   int right = ((1 << i) - 1); // 1�s after position i.
+        11111111000000000000001111111111 mask;   int mask = left | right; // All 1s, except for 0s between i and j.
+        10000000000000000000000000000000 n_cleared; int n_cleared = n & mask; // Clear bits j through i.
+        11111111111111111111110000000000 m_shifted; int m_shifted = m << i; // Move m into correct position.
+        ========================
+        11111111111111111111110000000000
+        ccccccccccccccccccc
+
+ */
+
     @Test
     public void test03(){
         int a = Integer.MIN_VALUE;
@@ -154,7 +192,19 @@ ccccccccccccccccccc
         00000000000000011000000011010001 c
 		 */
     }
-
+    /*
+            11111111111111111111111111111111 allOnes; int allOnes = ~0;
+            11111111111111111111111111000000 left;   int left = allOnes << (j + 1); 1s through position j
+            00000000000000000000000000000010 1 << i
+            00000000000000000000000000000001 right;   int right = ((1 << i) - 1); // 1�s after position i.
+            11111111111111111111111111000001 mask;   int mask = left | right; // All 1s, except for 0s between i and j.
+            00000000000000000000000000000000 n_cleared; int n_cleared = n & mask; // Clear bits j through i.
+            00000000000000000110011001101110 m_shifted; int m_shifted = m << i; // Move m into correct position.
+            ========================
+            00000000000000000000000000000000 a
+            00000000000000000011001100110111 b
+            00000000000000000110011001101110 c
+     */
 
 }
 

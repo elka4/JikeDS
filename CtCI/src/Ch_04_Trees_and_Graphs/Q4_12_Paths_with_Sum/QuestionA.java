@@ -36,17 +36,26 @@ public class QuestionA {
 	}	
 
 	public static void main(String [] args) {
-		/*
-		TreeNode root = new TreeNode(5);
+/*		TreeNode root = new TreeNode(5);
 		root.left = new TreeNode(3);		
 		root.right = new TreeNode(1);
 		root.left.left = new TreeNode(-8);
 		root.left.right = new TreeNode(8);
 		root.right.left = new TreeNode(2);
 		root.right.right = new TreeNode(6);	
-		System.out.println(countPathsWithSum(root, 0));*/
-		
-		/*TreeNode root = new TreeNode(-7);
+		System.out.println(countPathsWithSum(root, 0));
+        root.print();*/
+
+        /*
+                                1
+                           5
+                          / \
+                         /   \
+                         3   1
+                        / \ / \
+                        -8 8 2 6
+         */
+/*		TreeNode root = new TreeNode(-7);
 		root.left = new TreeNode(-7);
 		root.left.right = new TreeNode(1);
 		root.left.right.left = new TreeNode(2);
@@ -57,9 +66,10 @@ public class QuestionA {
 		root.right.right.left.left = new TreeNode(-3);
 		root.right.right.left.left.right = new TreeNode(2);
 		root.right.right.left.left.right.left = new TreeNode(1);
-		System.out.println(countPathsWithSum(root, -14));*/
+		System.out.println(countPathsWithSum(root, -14));
+		root.print();*/
 		
-		TreeNode root = new TreeNode(0);
+/*		TreeNode root = new TreeNode(0);
 		root.left = new TreeNode(0);
 		root.right = new TreeNode(0);
 		root.right.left = new TreeNode(0);
@@ -67,8 +77,25 @@ public class QuestionA {
 		root.right.right = new TreeNode(0);
 		System.out.println(countPathsWithSum(root, 0));
 		System.out.println(countPathsWithSum(root, 4));
-		root.print();
+		root.print();*/
 	}
+
+	/*
+                            15
+                        0
+                               0
+                              / \
+                             /   \
+                            /     \
+                           /       \
+                           0       0
+                                  / \
+                                 /   \
+                                 0   0
+                                  \
+                                  0
+
+	 */
 
 	@Test
     public void test01(){
@@ -86,5 +113,19 @@ public class QuestionA {
         System.out.println(countPathsWithSum(root, 3));
         System.out.println(countPathsWithSum(root, 8));
     }
+    /*
+                       5
+                      / \
+                     /   \
+                     3   1
+                    / \ / \
+                    -8 8 2 6
+
+                    1
+                    0
+                    1
+                    2
+                    3
+     */
 }
 

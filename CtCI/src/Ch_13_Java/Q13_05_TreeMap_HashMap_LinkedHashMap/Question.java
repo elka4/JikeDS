@@ -31,5 +31,12 @@ public class Question {
 		System.out.println("\nTreeMap - Natural Order:");
 		insertAndPrint(treeMap);
 	}
-
+/*
+                HashMap - Arbitrary Order:
+                -1, 0, 1,
+                LinkedHashMap - Insertion Order:
+                1, -1, 0,
+                TreeMap - Natural Order:
+                -1, 0, 1,
+ */
 }

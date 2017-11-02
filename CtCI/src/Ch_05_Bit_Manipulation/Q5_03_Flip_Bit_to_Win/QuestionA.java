@@ -45,6 +45,11 @@ public class QuestionA {
 		System.out.println(Integer.toBinaryString(original_number));
 		System.out.println(new_number);			
 	}
+	/*
+                    1111111111111111111111111111111
+                    32
+
+	 */
     @Test
     public void test01(){
         int original_number = 1775;
@@ -53,6 +58,10 @@ public class QuestionA {
         System.out.println(Integer.toBinaryString(original_number));
         System.out.println(new_number);
     }
+    /*
+                    11011101111
+                    8
+     */
     @Test
     public void test02(){
         int original_number = 8;
@@ -61,6 +70,10 @@ public class QuestionA {
         System.out.println(Integer.toBinaryString(original_number));
         System.out.println(new_number);
     }
+    /*
+                1000
+                2
+     */
 
 }
 

@@ -93,6 +93,29 @@ public class Question {
 		printBoards(results);
 		System.out.println(results.size());
 	}
+	/*
+                    ---------
+                    | |Q| | |
+                    ---------
+                    | | | |Q|
+                    ---------
+                    |Q| | | |
+                    ---------
+                    | | |Q| |
+                    ---------
+
+                    ---------
+                    | | |Q| |
+                    ---------
+                    |Q| | | |
+                    ---------
+                    | | | |Q|
+                    ---------
+                    | |Q| | |
+                    ---------
+
+                    2
+	 */
 
 	@Test
     public void test01(){

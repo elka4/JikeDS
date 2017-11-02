@@ -1,7 +1,31 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 16.8	English Int: Given any integer, print an English phrase that describes the integer (e.g., "One Thou¬sand, Two Hundred Thirty Four").
+
 Hints: #502, #588, #688
 
 
 16.8	Try thinking about the number in terms of chunks of three digits.
+
 16.8	Have you considered negative numbers? Does your solution work for values like 100,030,000?
+
 16.8	Consider dividing up a number into sequences of three digits.

@@ -27,5 +27,5 @@ public class QuestionC {
  		List<Integer> subset = getRandomSubset(list);
  		System.out.println(subset.toString());
  	}
-
+    // [1, 3]
 }

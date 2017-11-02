@@ -1,3 +1,20 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Master Mind: The Game of Master Mind is played as follows:
 The computer has four slots, and each slot will contain a ball that is red (R), yellow (V), green (G) or blue (B). For example, the computer might have RGGB (Slot #1 is red, Slots #2 and #3 are green, Slot #4 is blue).
 You, the user, are trying to guess the solution.You might, for example, guess YRGB.
@@ -8,4 +25,5 @@ Write a method that, given a guess and a solution, returns the number of hits an
 Hints: #639, #730
 
 16.15 Try first creating an array with the frequency that each item occurs.
+
 16.15	For ease and clarity in implementation, you might want to use other methods and classes.

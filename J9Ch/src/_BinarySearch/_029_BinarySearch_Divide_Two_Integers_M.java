@@ -1,6 +1,8 @@
 package _BinarySearch;
 import java.util.*;
 import org.junit.Test;
+
+// leetcode 29. Divide Two Integers
 public class _029_BinarySearch_Divide_Two_Integers_M {
     //Clean Java solution with some comment.
     class Solution {
@@ -45,44 +47,82 @@ public class _029_BinarySearch_Divide_Two_Integers_M {
             return multiple + ldivide(ldividend - sum, ldivisor);
         }
     }
-////////////////////////////////////////////////////////////////////////////////
-    //jiuzhang
-public class Jiuzhang {
-    /**
-     * @param dividend the dividend
-     * @param divisor the divisor
-     * @return the result
-     */
-    public int divide(int dividend, int divisor) {
-        if (divisor == 0) {
-            return dividend >= 0? Integer.MAX_VALUE : Integer.MIN_VALUE;
-        }
 
-        if (dividend == 0) {
-            return 0;
-        }
+    //  JAVA----------------Easy Version To Understand!!!!!!!!!!!
+    class Solution2{
+        public int divide(int dividend, int divisor) {
 
-        if (dividend == Integer.MIN_VALUE && divisor == -1) {
-            return Integer.MAX_VALUE;
-        }
-
-        boolean isNegative = (dividend < 0 && divisor > 0) ||
-                (dividend > 0 && divisor < 0);
-
-        long a = Math.abs((long)dividend);
-        long b = Math.abs((long)divisor);
-        int result = 0;
-        while(a >= b){
-            int shift = 0;
-            while(a >= (b << shift)){
-                shift++;
+            if(dividend==0)
+                return 0;
+            int signal;
+            if((dividend<0&&divisor>0)||(dividend>0&&divisor<0))
+                signal=-1;
+            else
+                signal=1;
+            //Math.abs(最小负数) 结果还是其本身. 在进行该运算前，要将其转化为long类型。
+            long absDividend=Math.abs((long)dividend);
+            long absDivisor=Math.abs((long)divisor);//
+            long result=0;
+            while(absDividend>=absDivisor){
+                long tmp=absDivisor,count=1;;
+                while(tmp<=absDividend){
+                    tmp=tmp<<1;//这里可能溢出！！超出int表示的范围
+                    count=count<<1;//这里可能溢出！！超出int表示的范围
+                }
+                tmp=tmp>>1;
+                count=count>>1;
+                result+=count;
+                absDividend-=tmp;
             }
-            a -= b << (shift - 1);
-            result += 1 << (shift - 1);
+            if(signal==-1)
+                return (int)(signal*result);
+            else{
+                if(result>Integer.MAX_VALUE)//溢出
+                    return Integer.MAX_VALUE;
+                else
+                    return (int)result;
+            }
         }
-        return isNegative? -result: result;
     }
-}
+////////////////////////////////////////////////////////////////////////////////
+
+    //jiuzhang
+    public class Jiuzhang {
+        /**
+         * @param dividend the dividend
+         * @param divisor the divisor
+         * @return the result
+         */
+        public int divide(int dividend, int divisor) {
+            if (divisor == 0) {
+                return dividend >= 0? Integer.MAX_VALUE : Integer.MIN_VALUE;
+            }
+
+            if (dividend == 0) {
+                return 0;
+            }
+
+            if (dividend == Integer.MIN_VALUE && divisor == -1) {
+                return Integer.MAX_VALUE;
+            }
+
+            boolean isNegative = (dividend < 0 && divisor > 0) ||
+                    (dividend > 0 && divisor < 0);
+
+            long a = Math.abs((long)dividend);
+            long b = Math.abs((long)divisor);
+            int result = 0;
+            while(a >= b){
+                int shift = 0;
+                while(a >= (b << shift)){
+                    shift++;
+                }
+                a -= b << (shift - 1);
+                result += 1 << (shift - 1);
+            }
+            return isNegative? -result: result;
+        }
+    }
 
 }
 /*

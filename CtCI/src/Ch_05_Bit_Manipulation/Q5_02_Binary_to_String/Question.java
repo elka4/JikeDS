@@ -69,6 +69,16 @@ public class Question {
 			}
 		}
 	}
+	/*
+            .001
+            0.125 : .001 .001
+            0.25 : .01 .01
+            0.375 : .011 .011
+            0.5 : .1 .1
+            0.625 : .101 .101
+            0.75 : .11 .11
+            0.875 : .111 .111
+	 */
 
 	@Test
     public void test01(){
@@ -77,7 +87,14 @@ public class Question {
         System.out.println(printBinary(0.125));
         System.out.println(printBinary(0.7));
     }
+    /*
+                .1
+                .01
+                .001
+                ERROR
+     */
 }
+
 /*
 5.2
 

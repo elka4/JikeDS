@@ -1,19 +1,27 @@
 Please note that because virtually all the solutions in this book are implemented with Java, we have selected only a small number of questions for this chapter. Moreover, most of these questions deal with the "trivia" of the languages, since the rest of the book is filled with Java programming questions.
+
 13.1	Private Constructor: In terms of inheritance, what is the effect of keeping a constructor private? Hints: #404
 |5(j 433
+
 13.2	Return from Finally: In Java, does the finally block get executed if we insert a return state¬ment inside the try block ofatry-catch-finally?
 Hints: tt409
 pg 133
+
 13.3	Final, etc.: What is the difference between final, finally, and finalize?
 Hints: Ml 2
 pg 433
+
 13.4	Generics vs. Templates: Explain the difference between templates in C++ and generics in Java. Hints: #416, #425
+
 13.5	TreeMap, HashMap, LinkedHashMap: Explain the differences between TreeMap, HashMap, and LinkedHashMap. Provide an example of when each one would be best.
 Hints: #420, #424, #430, #454
 PS 436
+
 13.6	Object Reflection: Explain what object reflection is in Java and why it is useful.
 Hints: it435
+
 13.7	Lambda Expressions: There is a class Country that has methods getContinent() and getPopulation(). Write a function int getPopulation(List<Country> countries, String continent) that computes the total population of a given continent, given a list of all countries and the name of a continent.
 Hints: #448, #461, #464
+
 13.8	Lambda Random: Using Lambda expressions, write a function Lists Integer> getRandomSubset(List<Integer> list) that returns a random subset of arbitrary size. All subsets (including the empty set) should be equally likely to be chosen.
 Hints: #443, #450, #457

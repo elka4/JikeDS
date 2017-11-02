@@ -32,7 +32,7 @@ public class Question {
 	public static void main(String[] args) {
 		double ratio = runNFamilies(10000000);
 		System.out.println(ratio);
-
-	}
+        //0.5000835639635383
+    }
 
 }

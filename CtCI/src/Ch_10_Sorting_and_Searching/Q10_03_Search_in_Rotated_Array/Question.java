@@ -56,5 +56,11 @@ public class Question {
 		System.out.println(search(a, 1));
 		System.out.println(search(a, 8));
 	}
-
+/*
+            4
+            1
+            -1
+            2
+            -1
+ */
 }

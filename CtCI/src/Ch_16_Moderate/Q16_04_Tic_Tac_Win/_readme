@@ -1,6 +1,11 @@
+
+
+
 16.4	TicTac Win: Design an algorithm to figure out if someone has won a game of tic-tac-toe.
+
 Hints: #710, #732
 
 
 16.4	If you were calling hasWon multiple times, how might your solution change?
+
 16.4	If you were designing this for an NxN board, how might your solution change?

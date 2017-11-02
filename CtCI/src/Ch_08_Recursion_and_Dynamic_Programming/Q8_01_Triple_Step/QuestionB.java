@@ -32,6 +32,7 @@ public class QuestionB {
 		int ways = countWays(n);
 		System.out.println(ways);
 	}
+    //  906045778
 
     @Test
     public void test01(){

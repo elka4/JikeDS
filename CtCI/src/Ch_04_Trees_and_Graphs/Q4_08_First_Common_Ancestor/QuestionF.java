@@ -35,5 +35,28 @@ public class QuestionF {
 		TreeNode ancestor = commonAncestor(root, n1, n9);
 		System.out.println(ancestor.data);
 	}
+/*
+               20
+              /
+             /
+            /
+           /
+          /
+         /
+        /
+       /
+       5
+      / \
+     /   \
+    /     \
+   /       \
+   3       6
+  /         \
+ /           \
+ 1           9
+              \
+              11
 
+5
+ */
 }

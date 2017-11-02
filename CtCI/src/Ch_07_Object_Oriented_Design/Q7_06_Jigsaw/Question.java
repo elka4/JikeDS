@@ -18,16 +18,20 @@ public class Question {
 	public static Edge[] createEdges(Piece[][] puzzle, int column, int row) {
 		String key = column + ":" + row + ":";
 		/* Get left edge */
-		Edge left = column == 0 ? new Edge(Shape.FLAT, key + "h|e") : puzzle[row][column - 1].getEdgeWithOrientation(Orientation.RIGHT)._createMatchingEdge();
+		Edge left = column == 0 ? new Edge(Shape.FLAT, key + "h|e") :
+                puzzle[row][column - 1].getEdgeWithOrientation(Orientation.RIGHT)._createMatchingEdge();
 		
 		/* Get top edge */
-		Edge top = row == 0 ? new Edge(Shape.FLAT, key + "v|e") : puzzle[row - 1][column].getEdgeWithOrientation(Orientation.BOTTOM)._createMatchingEdge();
+		Edge top = row == 0 ? new Edge(Shape.FLAT, key + "v|e") :
+                puzzle[row - 1][column].getEdgeWithOrientation(Orientation.BOTTOM)._createMatchingEdge();
 		
 		/* Get right edge */
-		Edge right = column == puzzle[row].length - 1 ? new Edge(Shape.FLAT, key + "h|e") : createRandomEdge(key + "h");
+		Edge right = column == puzzle[row].length - 1 ?
+                new Edge(Shape.FLAT, key + "h|e") : createRandomEdge(key + "h");
 		
 		/* Get bottom edge */
-		Edge bottom = row == puzzle.length - 1 ? new Edge(Shape.FLAT, key + "v|e") : createRandomEdge(key + "v");
+		Edge bottom = row == puzzle.length - 1 ?
+                new Edge(Shape.FLAT, key + "v|e") : createRandomEdge(key + "v");
 		
 		Edge[] edges = {left, top, right, bottom};
 		return edges;
@@ -85,25 +89,29 @@ public class Question {
 				if (piece == null) return false;
 				if (c > 0) { /* match left */
 					Piece left = solution[r][c-1];
-					if (!left.getEdgeWithOrientation(Orientation.RIGHT).fitsWith(piece.getEdgeWithOrientation(Orientation.LEFT))) {
+					if (!left.getEdgeWithOrientation(Orientation.RIGHT).
+                            fitsWith(piece.getEdgeWithOrientation(Orientation.LEFT))) {
 						return false;
 					}
 				}
 				if (c < solution[r].length - 1) { /* match right */
 					Piece right = solution[r][c+1];
-					if (!right.getEdgeWithOrientation(Orientation.LEFT).fitsWith(piece.getEdgeWithOrientation(Orientation.RIGHT))) {
+					if (!right.getEdgeWithOrientation(Orientation.LEFT).
+                            fitsWith(piece.getEdgeWithOrientation(Orientation.RIGHT))) {
 						return false;
 					}					
 				}
 				if (r > 0) { /* match top */
 					Piece top = solution[r-1][c];
-					if (!top.getEdgeWithOrientation(Orientation.BOTTOM).fitsWith(piece.getEdgeWithOrientation(Orientation.TOP))) {
+					if (!top.getEdgeWithOrientation(Orientation.BOTTOM).
+                            fitsWith(piece.getEdgeWithOrientation(Orientation.TOP))) {
 						return false;
 					}
 				}
 				if (r < solution.length - 1) { /* match bottom */
 					Piece bottom = solution[r+1][c];
-					if (!bottom.getEdgeWithOrientation(Orientation.TOP).fitsWith(piece.getEdgeWithOrientation(Orientation.BOTTOM))) {
+					if (!bottom.getEdgeWithOrientation(Orientation.TOP).
+                            fitsWith(piece.getEdgeWithOrientation(Orientation.BOTTOM))) {
 						return false;
 					}					
 				}

@@ -49,5 +49,14 @@ public class QuestionA {
             System.out.println(s);
         }
     }
+    /*
+            There are 6 permutations.
+            abc
+            bac
+            bca
+            acb
+            cab
+            cba
+     */
 
 }

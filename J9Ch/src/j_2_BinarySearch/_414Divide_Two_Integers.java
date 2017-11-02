@@ -1,4 +1,4 @@
-package j_2_BinarySearch;
+package j_2_BinarySearch; import org.junit.Test;
 
 /**
  * Created by tianhuizhu on 6/19/17.

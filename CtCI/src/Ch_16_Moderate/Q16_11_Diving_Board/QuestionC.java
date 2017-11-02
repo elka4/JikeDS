@@ -20,5 +20,6 @@ public class QuestionC {
 		HashSet<Integer> lengths = allLengths(12, 1, 3);
 		System.out.println(lengths.toString());
 	}
+//  [32, 34, 36, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30]
 
 }

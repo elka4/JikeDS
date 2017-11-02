@@ -55,5 +55,8 @@ public class QuestionB {
 		System.out.println(countEval(expression, result));
 		System.out.println(count);
 	}
-
+/*
+        104
+        417
+ */
 }

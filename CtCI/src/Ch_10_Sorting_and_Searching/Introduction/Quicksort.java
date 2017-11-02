@@ -49,5 +49,8 @@ public class Quicksort {
 		quickSort(arr, 0, arr.length - 1);
 		AssortedMethods.printIntArray(arr);
 	}
-
+/*
+        6 1 1 0 6 1 3 3 0 1 5 0 5 5 2 1 4 3 1 5
+        0 0 0 1 1 1 1 1 1 2 3 3 3 4 5 5 5 5 6 6
+ */
 }

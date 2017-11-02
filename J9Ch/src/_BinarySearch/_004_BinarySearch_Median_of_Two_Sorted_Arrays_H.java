@@ -8,19 +8,24 @@ public class _004_BinarySearch_Median_of_Two_Sorted_Arrays_H {
 
 
     ////Approach #1 Recursive Approach [Accepted]
-
+    //  Your runtime beats 25.30 % of java submissions.
     class Solution_leet{
         public double findMedianSortedArrays(int nums1[], int nums2[]) {
             int m = nums1.length;
             int n = nums2.length;
+
             if (m > n) { // do ensure m <= n
                 int[] temp = nums1; nums1 = nums2; nums2 = temp;
                 int tmp = m; m = n; n = tmp;
             }
+
             int iMin = 0, iMax = m, halfLen = (m + n + 1) / 2;
+
             while (iMin <= iMax) {
                 int i = (iMin + iMax) / 2;
+
                 int j = halfLen - i;
+
                 if (i < iMax && nums2[j - 1] > nums1[i]) {
                     iMin = iMin + 1; //i is too small
                 }
@@ -79,7 +84,8 @@ public class _004_BinarySearch_Median_of_Two_Sorted_Arrays_H {
 /*    Concise JAVA solution based on Binary Search
             Explanation
 
-    The key point of this problem is to ignore half part of A and B each step recursively by comparing the median of remaining A and B:
+    The key point of this problem is to ignore half part of A and B each
+     step recursively by comparing the median of remaining A and B:
 
             if (aMid < bMid) Keep [aRight + bLeft]
             else Keep [bRight + aLeft]
@@ -126,7 +132,7 @@ Here is the code:
 
 
      */
-class Solution5{
+    class Solution5{
         public double findMedianSortedArrays(int nums1[], int nums2[]) {
             int n = nums1.length;
             int m = nums2.length;

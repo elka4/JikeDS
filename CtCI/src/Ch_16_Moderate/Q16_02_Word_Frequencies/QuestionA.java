@@ -22,7 +22,15 @@ public class QuestionA {
 			System.out.println(word + ": " + getFrequency(wordlist, word));
 		}
 	}
-	
+	/*
+                    the: 18
+                    Lara: 3
+                    and: 4
+                    outcropping: 1
+                    career: 0
+                    it: 0
+
+	 */
 }
 /*
 Word Frequencies: Design a method to find the frequency of occurrences of any given word in a book. What if we were running this algorithm multiple times?

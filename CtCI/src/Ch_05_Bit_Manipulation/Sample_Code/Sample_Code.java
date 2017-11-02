@@ -82,5 +82,24 @@ public class Sample_Code {
 		int num4 = clearBitsIthrough0(number, clearToLSB);
 		System.out.println(AssortedMethods.toFullBinaryString(num4));
 	}
+/*
+Testing with number: 59
+Get Bit
+00000000000000000000000000111011
+00000000000000000000000000111011
 
+Update Bit
+59
+
+Set and Clear Bit
+59
+
+Clear bits MSB through 4
+00000000110010100000111111110000
+00000000000000000000000000000000
+
+Clear bits 2 through 0
+11111111111111111111111111111111
+11111111111111111111111111111000
+ */
 }

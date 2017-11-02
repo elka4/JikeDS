@@ -28,7 +28,7 @@ public class QuestionA {
 
 ////////////////////////////////////////////////////////////////
 
-    public static boolean isPermutationOfPalindrome2(String phrase) {
+    public static boolean isPermutationOfPalindromeB(String phrase) {
         int countOdd = 0;
         int[] table = new int[Character.getNumericValue('z')
                 - Character.getNumericValue('a') + 1];
@@ -90,7 +90,7 @@ public class QuestionA {
         return (bitVector & (bitVector - 1)) == 0;
     }
 
-    public static boolean isPermutationOfPalindrome3(String phrase) {
+    public static boolean isPermutationOfPalindromeC(String phrase) {
         int bitVector = createBitVector(phrase);
         return bitVector == 0 || checkExactlyOneBitSet(bitVector);
     }

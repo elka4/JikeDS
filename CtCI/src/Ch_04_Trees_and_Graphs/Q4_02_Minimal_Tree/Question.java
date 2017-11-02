@@ -1,5 +1,6 @@
 package Ch_04_Trees_and_Graphs.Q4_02_Minimal_Tree;
 
+import CtCILibrary.BTreePrinter;
 import CtCILibrary.TreeNode;
 
 public class Question {	
@@ -13,5 +14,24 @@ public class Question {
 		System.out.println("Created BST? " + root.isBST());
 		System.out.println("Height: " + root.height());
 	}
+
+/*
+       5
+      / \
+     /   \
+    /     \
+   /       \
+   2       8
+  / \     / \
+ /   \   /   \
+ 1   3   6   9
+      \   \   \
+      4   7   10
+
+Root? 5
+Created BST? true
+Height: 4
+
+ */
 
 }

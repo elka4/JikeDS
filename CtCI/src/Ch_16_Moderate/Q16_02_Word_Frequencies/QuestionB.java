@@ -38,7 +38,14 @@ public class QuestionB {
 			System.out.println(word + ": " + getFrequency(dictionary, word));
 		}
 	}
-	
+/*
+                    the: 18
+                    Lara: 3
+                    and: 4
+                    outcropping: 1
+                    career: 0
+                    it: 0
+ */
 }
 /*
 

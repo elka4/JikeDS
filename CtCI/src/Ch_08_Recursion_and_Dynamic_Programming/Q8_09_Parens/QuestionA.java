@@ -42,6 +42,32 @@ public class QuestionA {
 		}
 		System.out.println(list.size());
 	}
+/*
+            for (String str : prev)
+            ()  for (String str : prev)
+            ()()  for (String str : prev)
+            (())  for (String str : prev)
+            ()()()  for (String str : prev)
+            ()(())  for (String str : prev)
+            (()())  for (String str : prev)
+            (())()  for (String str : prev)
+            ((()))  for (String str : prev)
+            ()()()()
+            (()(()))
+            (()())()
+            ()()(())
+            (())()()
+            (((())))
+            (())(())
+            ()((()))
+            ()(())()
+            ()(()())
+            (()()())
+            ((()()))
+            ((()))()
+            ((())())
+14
+ */
 
 	@Test
     public void test01(){
@@ -51,6 +77,11 @@ public class QuestionA {
         }
         System.out.println(list.size());
     }
+    /*
+             for (String str : prev)
+            ()
+            1
+     */
     @Test
     public void test02(){
         Set<String> list = generateParens(2);
@@ -60,6 +91,15 @@ public class QuestionA {
         }
         System.out.println(list.size());
     }
+    /*
+                  for (String str : prev)
+                ()  for (String str : prev)
+                =======================
+                ()()
+                (())
+                2
+
+     */
     @Test
     public void test03(){
         Set<String> list = generateParens(3);
@@ -69,4 +109,18 @@ public class QuestionA {
         }
         System.out.println(list.size());
     }
+    /*
+                  for (String str : prev)
+                ()  for (String str : prev)
+                ()()  for (String str : prev)
+                (())  for (String str : prev)
+                =======================
+                ()()()
+                ()(())
+                (()())
+                (())()
+                ((()))
+                5
+
+     */
 }

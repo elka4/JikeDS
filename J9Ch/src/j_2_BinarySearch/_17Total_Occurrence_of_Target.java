@@ -1,5 +1,7 @@
-package j_2_BinarySearch;
+package j_2_BinarySearch; import org.junit.Test;
 
+
+// lintcode total occurrence of target
 public class _17Total_Occurrence_of_Target {
 	 /**
      * @param A an integer array sorted in ascending order
@@ -48,19 +50,21 @@ public class _17Total_Occurrence_of_Target {
         // Write your code here
         int start = 0;
         int end = A.length - 1;
+
         int first = 0;
         int last = A.length - 1;
+
         while (start + 1 < end) {
             int mid = start + (end - start) / 2;
             if  (A[mid] == target) {
-                end = mid;
+                end = mid;                  //找start向前移动end
             } else if (target < A[mid]) {
                 end = mid;
             } else {
                 start = mid;
             }
         }
-        if (A[start] == target) {
+        if (A[start] == target) {           //找start先看start
             first = start;
         } else if (A[end] == target){
             first = end;
@@ -73,14 +77,14 @@ public class _17Total_Occurrence_of_Target {
         while(start + 1 < end) {
             int mid = start + (end - start) / 2;
             if (A[mid] == target) {
-                start = mid;
+                start = mid;                //找end向后移动start
             } else if (target < A[mid]) {
                 end = mid;
             } else {
                 start = mid;
             }
         }
-        if (A[end] == target) {
+        if (A[end] == target) {             //找end先看end
             last = end;
         } else if (A[start] == target) {
             last = start;

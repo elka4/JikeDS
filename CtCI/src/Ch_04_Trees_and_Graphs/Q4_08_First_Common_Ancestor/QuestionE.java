@@ -66,5 +66,19 @@ public class QuestionE {
 			System.out.println("null");
 		}
 	}
+/*
+                                       5
+                                      / \
+                                     /   \
+                                    /     \
+                                   /       \
+                                   2       8
+                                  / \     / \
+                                 /   \   /   \
+                                 1   3   6   9
+                                      \   \   \
+                                      4   7   10
 
+                                8
+ */
 }

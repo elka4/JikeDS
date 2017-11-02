@@ -27,10 +27,26 @@ public class QuestionA {
 		int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		TreeNode root = TreeNode.createMinimalBST(array);
 		root.print();
-		TreeNode n3 = root.find(8);
-		TreeNode n7 = root.find(8);
+		TreeNode n3 = root.find(3);
+		TreeNode n7 = root.find(7);
 		TreeNode ancestor = commonAncestor(n3, n7);
 		System.out.println(ancestor.data);
 	}
+
+	/*
+                               5
+                              / \
+                             /   \
+                            /     \
+                           /       \
+                           2       8
+                          / \     / \
+                         /   \   /   \
+                         1   3   6   9
+                              \   \   \
+                              4   7   10
+
+                        5
+	 */
 
 }

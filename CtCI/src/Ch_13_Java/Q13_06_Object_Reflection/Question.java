@@ -38,4 +38,6 @@ public class Question {
 			e.printStackTrace();
 		}
 	}
+	//java.lang.ClassNotFoundException: Question14_5.Rectangle
+
 }

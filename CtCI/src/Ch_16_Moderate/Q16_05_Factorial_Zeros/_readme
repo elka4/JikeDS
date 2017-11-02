@@ -1,9 +1,28 @@
-16.5	Factorial Zeros: Write an algorithm which computes the number of trailing zeros in n factorial. Hints: #585, #711, #729, #733, #745
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16.5	Factorial Zeros: Write an algorithm which computes the number of trailing zeros in n factorial.
+
+Hints: #585, #711, #729, #733, #745
 
 16.5	Can you count the number of factors of 5 and 2? Do you need to count both?
 
 16.5	Have you considered that 25 actually accounts for two factors of 5?
-10th floor, then the 20th floor, then the 30th floor, and so on. The worst case here will be 19 drops (10, 20, ..„ 100, 91,92,..., 99). Can you beat that? Try not randomly guessing at different solutions. Rather, think deeper. Flow is the worst case defined? How does the number of drops of each egg factor into that? 
+
+16.5    10th floor, then the 20th floor, then the 30th floor, and so on. The worst case here will be 19 drops (10, 20, ..„ 100, 91,92,..., 99). Can you beat that? Try not randomly guessing at different solutions. Rather, think deeper. Flow is the worst case defined? How does the number of drops of each egg factor into that? 
 
 
 16.5	How does a zero get into the result of n! ? What does it mean? optimal (ri+2, 	, r,), optimal(rul, 	, rn)). You can solve this iteratively by working backwards.

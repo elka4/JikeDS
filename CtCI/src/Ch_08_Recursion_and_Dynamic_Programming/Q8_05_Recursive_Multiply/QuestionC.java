@@ -44,5 +44,8 @@ public class QuestionC {
 		}
 		System.out.println("Adds: " + counter);
 	}
-
+/*
+                    Success: 13494 * 22323 = 301226562
+                    Adds: 20
+ */
 }

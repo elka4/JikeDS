@@ -77,7 +77,12 @@ public class QuestionB {
 			String value = test[1];
 			System.out.println(pattern + ", " + value + ": " + doesMatch(pattern, value));
 		}
-
 	}
-
+/*
+            back, bat
+            ababb, backbatbackbatbat: true
+            abab, backsbatbackbats: false
+            , backsbatbacksbat
+            aba, backsbatbacksbat: true
+ */
 }

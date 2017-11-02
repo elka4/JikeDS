@@ -44,4 +44,37 @@ public class Question {
 		}
 	}
 
+	/*
+            null
+            null
+            null
+            null
+            null
+            null
+            null
+            null
+            (Tim, 35)
+            0: (John,(John, 45))->(Jim,(Jim, 25))
+            1: (Julie,(Julie, 50))->(Maxwell,(Maxwell, 40))->(Tim,(Tim, 100))->(Alex,(Alex, 30))
+            2: (Christy,(Christy, 55))->(Bob,(Bob, 20))
+            Dummy named Bob: (Bob, 20)
+            Dummy removed named Bob: (Bob, 20)
+            Dummy named Jim: (Jim, 25)
+            Dummy removed named Jim: (Jim, 25)
+            Dummy named Alex: (Alex, 30)
+            Dummy removed named Alex: (Alex, 30)
+            Dummy named Tim: (Tim, 100)
+            Dummy removed named Tim: (Tim, 100)
+            Dummy named Maxwell: (Maxwell, 40)
+            Dummy removed named Maxwell: (Maxwell, 40)
+            Dummy named John: (John, 45)
+            Dummy removed named John: (John, 45)
+            Dummy named Julie: (Julie, 50)
+            Dummy removed named Julie: (Julie, 50)
+            Dummy named Christy: (Christy, 55)
+            Dummy removed named Christy: (Christy, 55)
+            Dummy named Tim: null
+            Dummy removed named Tim: null
+	 */
+
 }

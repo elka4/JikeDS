@@ -23,5 +23,5 @@ public class QuestionA {
  		
  		System.out.println(getPopulation(countries, "Asia"));
  	}
-
+    //  9
 }

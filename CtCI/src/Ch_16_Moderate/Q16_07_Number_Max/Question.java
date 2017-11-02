@@ -50,5 +50,10 @@ public class Question {
 		System.out.println("max_naive(" + a + ", " + b + ") = " + getMaxNaive(a, b));
 		System.out.println("max(" + a + ", " + b + ") = " + getMax(a, b));
 	}
-
+/*
+            max_naive(26, -15) = 26
+            max(26, -15) = 26
+            max_naive(-15, 2147483647) = -15
+            max(-15, 2147483647) = 2147483647
+ */
 }

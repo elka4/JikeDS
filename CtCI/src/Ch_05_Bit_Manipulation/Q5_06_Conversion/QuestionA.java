@@ -30,7 +30,11 @@ public class QuestionA {
 		System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
 		System.out.println("Required number of bits: " + bitSwapRequired(a, b));
 	}
-
+/*
+                    -23432: 11111111111111111010010001111000
+                    512132: 00000000000001111101000010000100
+                    Required number of bits: 23
+ */
 	@Test
     public void test01(){
         int a = -23432;
@@ -39,6 +43,11 @@ public class QuestionA {
         System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
         System.out.println("Required number of bits: " + bitSwapRequired(a, b));
     }
+    /*
+                    -23432: 11111111111111111010010001111000
+                    -23432: 11111111111111111010010001111000
+                    Required number of bits: 0
+     */
 }
 /*
 Conversion: Write a function to determine the number of bits you would need to

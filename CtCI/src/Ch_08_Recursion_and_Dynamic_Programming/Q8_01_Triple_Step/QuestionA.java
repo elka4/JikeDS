@@ -19,6 +19,7 @@ public class QuestionA {
 		int ways = countWays(n);
 		System.out.println(ways);
 	}
+    //  121415
 
 	@Test
     public void test01(){
@@ -30,5 +31,6 @@ public class QuestionA {
         long time = end - start;
         System.out.println(  ": " + time + "ms");
     }
+    //: 365ms
 
 }

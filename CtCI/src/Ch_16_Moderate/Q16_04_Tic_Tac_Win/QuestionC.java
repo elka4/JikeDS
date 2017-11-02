@@ -51,5 +51,10 @@ public class QuestionC {
 		System.out.println(p1);
 		AssortedMethods.printMatrix(board_t);
 	}
-
+/*
+Empty
+    0    0    0
+    0    1    2
+    2    1    1
+ */
 }

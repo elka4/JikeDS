@@ -38,4 +38,5 @@ public class QuestionB {
 		sort(array);
 		System.out.println(AssortedMethods.stringArrayToString(array));
 	}
+    //  duck, cudk, carrot, tarroc, banana, ele, eel, lee, apple, papel,
 }

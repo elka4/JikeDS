@@ -27,5 +27,9 @@ public class QuestionC {
 		System.out.println(AssortedMethods.arrayToString(array));
 		System.out.println(Tester.confirmValleyPeak(array));
 	}
-
+/*
+                5, 3, 1, 2, 3,
+                5, 1, 3, 2, 3,
+                true
+ */
 }

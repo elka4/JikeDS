@@ -25,5 +25,9 @@ public class QuestionA {
 		System.out.println(AssortedMethods.arrayToString(array));
 		System.out.println(Tester.confirmValleyPeak(array));
 	}
-
+/*
+                48, 40, 31, 62, 28, 21, 64, 40, 23, 17,
+                21, 17, 28, 23, 40, 31, 48, 40, 64, 62,
+                true
+ */
 }

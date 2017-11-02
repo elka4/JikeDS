@@ -2,6 +2,7 @@ package Ch_04_Trees_and_Graphs.Q4_05_Validate_BST;
 
 import CtCILibrary.AssortedMethods;
 import CtCILibrary.TreeNode;
+import org.junit.Test;
 
 public class QuestionB {
 	public static boolean checkBST(TreeNode n, Integer min, Integer max) {
@@ -110,4 +111,41 @@ public class QuestionB {
 			}
 		}*/
 	}
+	/*
+                                       6
+                                      / \
+                                     /   \
+                                    /     \
+                                   /       \
+                                   3       13
+                                  / \     / \
+                                 /   \   /   \
+                                 -   5   10   15
+                                              \
+                                              +
+	 */
+
+	@Test
+    public void test(){
+        int[] array = {1, 3, 5, 6, 10, 13, 15, 0};
+        TreeNode node = TreeNode.createMinimalBST(array);
+        //node.left.data = 6; // "ruin" the BST property by changing one of the elements
+        node.print();
+        boolean isBst = checkBST(node);
+        System.out.println(isBst);
+    }
+    /*
+                                       6
+                                      / \
+                                     /   \
+                                    /     \
+                                   /       \
+                                   3       13
+                                  / \     / \
+                                 /   \   /   \
+                                 1   5   10   15
+                                              \
+                                              0
+
+     */
 }

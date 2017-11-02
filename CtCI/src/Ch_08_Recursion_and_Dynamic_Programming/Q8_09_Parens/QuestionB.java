@@ -44,6 +44,11 @@ public class QuestionB {
         }
         System.out.println(list.size());
     }
+    /*
+            ()
+            1
+
+     */
     @Test
     public void test02(){
         ArrayList<String> list = generateParens(2);
@@ -53,6 +58,12 @@ public class QuestionB {
         }
         System.out.println(list.size());
     }
+    /*
+            =======================
+            (())
+            ()()
+            2
+     */
     @Test
     public void test03(){
         ArrayList<String> list = generateParens(3);
@@ -62,4 +73,14 @@ public class QuestionB {
         }
         System.out.println(list.size());
     }
+    /*
+            =======================
+            ((()))
+            (()())
+            (())()
+            ()(())
+            ()()()
+            5
+
+     */
 }

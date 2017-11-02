@@ -60,7 +60,10 @@ public class QuestionC {
 		System.out.println(Integer.toBinaryString(original_number));
 		System.out.println(new_number);		
 	}
-
+/*
+        1111111111111111111111111111111
+        32
+ */
 }
 
 /*

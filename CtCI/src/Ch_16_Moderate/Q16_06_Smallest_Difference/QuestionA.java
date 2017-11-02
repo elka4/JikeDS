@@ -22,5 +22,5 @@ public class QuestionA {
 		int difference = findSmallestDifference(array1, array2);
 		System.out.println(difference);
 	}
-
+//3
 }

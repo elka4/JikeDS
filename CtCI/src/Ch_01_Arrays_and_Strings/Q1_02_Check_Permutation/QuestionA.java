@@ -7,7 +7,7 @@ public class QuestionA {
 		return new String(content);
 	}
 	
-	public static boolean permutation(String s, String t) {
+	public static boolean permutationA(String s, String t) {
 
 	    return sort(s).equals(sort(t));
 	}
@@ -15,7 +15,7 @@ public class QuestionA {
 
 /////////////////////////////////////////////////////////////
 
-    public static boolean permutation2(String s, String t) {
+    public static boolean permutationB(String s, String t) {
         // Permutations must be same length
         if (s.length() != t.length()) return false;
 
@@ -45,7 +45,7 @@ public class QuestionA {
 		for (String[] pair : pairs) {
 			String word1 = pair[0];
 			String word2 = pair[1];
-			boolean anagram = permutation(word1, word2);
+			boolean anagram = permutationA(word1, word2);
 			System.out.println(word1 + ", " + word2 + ": " + anagram);
 		}
 	}

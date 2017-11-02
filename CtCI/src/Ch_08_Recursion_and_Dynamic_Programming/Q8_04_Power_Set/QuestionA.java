@@ -34,5 +34,6 @@ public class QuestionA {
 		ArrayList<ArrayList<Integer>> subsets = getSubsets(list, 0);
 		System.out.println(subsets.toString());	
 	}
+//  [[], [2], [1], [2, 1], [0], [2, 0], [1, 0], [2, 1, 0]]
 
 }

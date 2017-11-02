@@ -50,5 +50,13 @@ public class QuestionA {
 			System.out.println("No path found.");
 		}
 	}
+	/*
+                01011
+                11111
+                11101
+                11010
+                01101
+                No path found.
+	 */
 
 }

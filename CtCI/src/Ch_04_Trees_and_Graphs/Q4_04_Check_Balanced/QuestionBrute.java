@@ -42,5 +42,45 @@ public class QuestionBrute {
 		System.out.println("Root? " + unbalanced.data);
 		System.out.println("Is balanced? " + isBalanced(unbalanced));
 	}
+	/*
+                       5
+                      / \
+                     /   \
+                    /     \
+                   /       \
+                   2       8
+                  / \     / \
+                 /   \   /   \
+                 1   3   6   9
+                      \   \   \
+                      4   7   10
+
+                Root? 5
+                Is balanced? true
+                               10
+                                \
+                                 \
+                                  \
+                                   \
+                                    \
+                                     \
+                                      \
+                                       \
+                                       84
+                                      / \
+                                     /   \
+                                    /     \
+                                   /       \
+                                   57       86
+                                            \
+                                             \
+                                             96
+                                            /
+                                            93
+
+                Root? 10
+                Is balanced? false
+
+	 */
 
 }

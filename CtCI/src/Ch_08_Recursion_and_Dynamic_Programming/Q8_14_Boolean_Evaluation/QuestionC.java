@@ -71,5 +71,8 @@ public class QuestionC {
 		System.out.println(countEval(expression, result));
 		System.out.println(count);
 	}
-
+/*
+        10
+        1099
+ */
 }

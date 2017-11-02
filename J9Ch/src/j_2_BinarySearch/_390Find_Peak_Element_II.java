@@ -1,4 +1,4 @@
-package j_2_BinarySearch;
+package j_2_BinarySearch; import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -36,5 +36,13 @@ public class QuestionB {
 			System.out.println(s);
 		}
 	}
-
+/*
+            There are 6 permutations.
+            abc
+            acb
+            bac
+            bca
+            cab
+            cba
+ */
 }

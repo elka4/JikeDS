@@ -121,4 +121,34 @@ public class Question {
 			System.out.println(value + ": " + s);
 		}			
 	}
+	/*
+            -1: Negative One
+            -10: Negative Ten
+            -100: Negative One Hundred
+            -1000: Negative One Thousand
+            -10000: Negative Ten Thousand
+            -100000: Negative One Hundred Thousand
+            -1000000: Negative One Million
+            -10000000: Negative Ten Million
+            92: Ninety Two
+            75: Seventy Five
+            70: Seventy
+            31: Thirty One
+            17: Seventeen
+            91: Ninety One
+            19: Nineteen
+            52: Fifty Two
+            31: Thirty One
+            41: Forty One
+            417: Four Hundred Seventeen
+            665: Six Hundred Sixty Five
+            233: Two Hundred Thirty Three
+            296: Two Hundred Ninety Six
+            698: Six Hundred Ninety Eight
+            662: Six Hundred Sixty Two
+            622: Six Hundred Twenty Two
+            860: Eight Hundred Sixty
+            479: Four Hundred Seventy Nine
+            510: Five Hundred Ten
+	 */
 }

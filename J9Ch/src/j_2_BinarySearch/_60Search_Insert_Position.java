@@ -1,4 +1,4 @@
-package j_2_BinarySearch;
+package j_2_BinarySearch; import org.junit.Test;
 
 //version 1: find the first position >= target
 //So that is similar to find first position.

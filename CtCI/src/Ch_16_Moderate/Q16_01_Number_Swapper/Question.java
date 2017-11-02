@@ -31,7 +31,14 @@ public class Question {
 		swap(a, b);
 		swap_opt(a, b);
 	}
-
+/*
+                    a: 1672
+                    b: 9332
+                    a: 9332
+                    b: 1672
+                    a: 9332
+                    b: 1672
+ */
 }
 /*
 Number Swapper: Write a function to swap a number in place (that is, without temporary vari- ables) .

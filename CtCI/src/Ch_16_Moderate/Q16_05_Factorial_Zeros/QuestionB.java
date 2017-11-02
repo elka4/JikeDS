@@ -29,4 +29,17 @@ public class QuestionB {
                     + countFactZeros(i) + " zeros");
 		}
 	}
+	/*
+                1! (or 1) has 0 zeros
+                2! (or 2) has 0 zeros
+                3! (or 6) has 0 zeros
+                4! (or 24) has 0 zeros
+                5! (or 120) has 1 zeros
+                6! (or 720) has 1 zeros
+                7! (or 5040) has 1 zeros
+                8! (or 40320) has 1 zeros
+                9! (or 362880) has 1 zeros
+                10! (or 3628800) has 2 zeros
+                11! (or 39916800) has 2 zeros
+	 */
 }

@@ -20,6 +20,10 @@ public class Question {
         222114: 00000000000000110110001110100010
 		 */
 	}
+	/*
+                10101010101010101010101010101010
+                01010101010101010101010101010101
+	 */
     @Test
     public void test00(){
 	    //10101010101010101010101010101010
@@ -27,6 +31,10 @@ public class Question {
         //01010101010101010101010101010101
         System.out.println(Integer.toBinaryString(0x55555555));
     }
+    /*
+                10101010101010101010101010101010
+                01010101010101010101010101010101
+     */
 
 
 	@Test
@@ -36,6 +44,10 @@ public class Question {
         int b = swapOddEvenBits(a);
         System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
     }
+    /*
+                1: 00000000000000000000000000000001
+                2: 00000000000000000000000000000010
+     */
     @Test
     public void test02(){
         int a = 2;
@@ -43,6 +55,10 @@ public class Question {
         int b = swapOddEvenBits(a);
         System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
     }
+    /*
+                2: 00000000000000000000000000000010
+                1: 00000000000000000000000000000001
+     */
     @Test
     public void test03(){
         int a = 3;
@@ -50,6 +66,10 @@ public class Question {
         int b = swapOddEvenBits(a);
         System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
     }
+    /*
+                3: 00000000000000000000000000000011
+                3: 00000000000000000000000000000011
+     */
     @Test
     public void test04(){
         int a = 4;
@@ -57,6 +77,10 @@ public class Question {
         int b = swapOddEvenBits(a);
         System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
     }
+    /*
+                4: 00000000000000000000000000000100
+                8: 00000000000000000000000000001000
+     */
     @Test
     public void test05(){
         int a = 5;
@@ -64,6 +88,10 @@ public class Question {
         int b = swapOddEvenBits(a);
         System.out.println(b + ": " + AssortedMethods.toFullBinaryString(b));
     }
+    /*
+                5:  00000000000000000000000000000101
+                10: 00000000000000000000000000001010
+     */
 }
 
 /*

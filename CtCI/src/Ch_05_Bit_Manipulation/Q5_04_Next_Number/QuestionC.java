@@ -75,7 +75,11 @@ public class QuestionC {
 		Tester.binPrint(p1);
 		Tester.binPrint(n1);
 	}
-
+/*
+                    13948: 11011001111100
+                    13946: 11011001111010
+                    13967: 11011010001111
+ */
 }
 
 /*

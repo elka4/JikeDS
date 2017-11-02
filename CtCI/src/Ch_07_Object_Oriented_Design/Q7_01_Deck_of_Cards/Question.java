@@ -44,5 +44,20 @@ public class Question {
 			}
 		}
 	}
+/*
+            -- Initial --
+            Hand 0 (15): 6d 9c
+            Hand 1 (11): 5h 6c
+            Hand 2 (19): 9d Kc
+            Hand 3 (7): 4c 3h
+            Hand 4 (17): 7c Qs
 
+            -- Completed Game --
+            Hand 0 (20): 6d 9c 5s
+            Hand 1 (23): 5h 6c 2d Ks
+            Hand 2 (19): 9d Kc
+            Hand 3 (25): 4c 3h 8h Jd
+            Hand 4 (17): 7c Qs
+            Winners: 0,
+ */
 }

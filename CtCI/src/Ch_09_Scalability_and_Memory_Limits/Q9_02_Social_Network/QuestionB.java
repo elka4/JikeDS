@@ -106,5 +106,10 @@ public class QuestionB {
 		LinkedList<Person> path1 = findPathBiBFS(people, i, j);
 		Tester.printPeople(path1);
 	}
-
+/*
+            1
+            2
+            5
+            10
+ */
 }

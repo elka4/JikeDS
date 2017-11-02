@@ -77,5 +77,10 @@ public class QuestionB {
 		System.out.println(p1);
 		AssortedMethods.printMatrix(board_t);
 	}
-
+/*
+Red
+    2    1    2
+    1    2    0
+    2    0    0
+ */
 }

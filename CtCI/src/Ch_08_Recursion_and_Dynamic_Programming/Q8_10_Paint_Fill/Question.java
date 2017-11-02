@@ -70,5 +70,16 @@ public class Question {
 		System.out.println();
 		PrintScreen(screen);
 	}
+/*
+                                BGBG
+                                BGBB
+                                BGBB
+                                GBBG
 
+                                BGWG
+                                BGWW
+                                BGWW
+                                GWWG
+
+ */
 }

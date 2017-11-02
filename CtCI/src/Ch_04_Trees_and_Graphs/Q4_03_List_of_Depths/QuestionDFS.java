@@ -67,4 +67,23 @@ public class QuestionDFS {
 		printResult(list);
 	}
 
+	/*
+                       1
+                      / \
+                     /   \
+                    /     \
+                   /       \
+                   2       3
+                  / \     / \
+                 /   \   /   \
+                 4   5   6   7
+                / \ /
+                8 9 10
+
+                Link list at depth 0: 1
+                Link list at depth 1: 2 3
+                Link list at depth 2: 4 5 6 7
+                Link list at depth 3: 8 9 10
+	 */
+
 }

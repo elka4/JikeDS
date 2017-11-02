@@ -22,5 +22,5 @@ public class QuestionA {
 		int v = convertBoardToInt(board);
 		System.out.println(v);
 	}
-
+//  26
 }

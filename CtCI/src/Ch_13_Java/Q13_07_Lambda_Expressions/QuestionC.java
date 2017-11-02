@@ -18,5 +18,5 @@ public class QuestionC {
  		countries.add(new Country("India", "Asia", 30));
  		System.out.println(getPopulation(countries, "North America"));
  	}
-
+    //  15
 }

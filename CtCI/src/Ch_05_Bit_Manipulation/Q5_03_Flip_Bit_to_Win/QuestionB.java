@@ -64,7 +64,10 @@ public class QuestionB {
 		System.out.println(Integer.toBinaryString(original_number));
 		System.out.println(new_number);				
 	}
-
+    /*
+                11011101111
+                8
+     */
 }
 /*
 5.3

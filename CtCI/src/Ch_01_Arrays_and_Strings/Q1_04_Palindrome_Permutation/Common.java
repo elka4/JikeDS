@@ -17,7 +17,8 @@ public class Common {
 	
 	public static int[] buildCharFrequencyTable(String phrase) {
 		int[] table = new int[Character.getNumericValue('z')
-				- Character.getNumericValue('a') + 1];
+				            - Character.getNumericValue('a') + 1];
+
 		for (char c : phrase.toCharArray()) {
 			int x = getCharNumber(c);
 			if (x != -1) {
@@ -29,15 +30,15 @@ public class Common {
 
 	@Test
 	public void test01(){
-		System.out.println(Character.getNumericValue('a'));
-		System.out.println(Character.getNumericValue('z'));
-		System.out.println(Character.getNumericValue('A'));
-		System.out.println(Character.getNumericValue('Z'));
+		System.out.println(Character.getNumericValue('a'));//10
+		System.out.println(Character.getNumericValue('z'));//35
+		System.out.println(Character.getNumericValue('A'));//10
+		System.out.println(Character.getNumericValue('Z'));//35
 	}
 	@Test
 	public void test02(){
-		System.out.println((int)('a'));
-		System.out.println((int)('A'));
+		System.out.println((int)('a'));//97
+		System.out.println((int)('A'));//65
 
 	}
 }
