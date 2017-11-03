@@ -47,3 +47,20 @@ public class _254drop_eggs {
     }
 
 }
+/*
+There is a building of 100 floors. If an egg drops from the Nth floor or above, it will break. If it's dropped from any floor below, it will not break. You're given two eggs. Find N, while minimizing the number of drops for the worst case.
+
+Let us check the DP solution , Thanks to @zhouyangnk
+
+sub-problem def.
+
+dp[n][m] : the minimal max drops we need if we have n-floor building and m eggs.
+
+base case def.
+
+dp[0][m] = 0 (m >= 1)
+
+dp[n][1] = n (n >= 1)
+
+dp[n][m] = min { max { dp[i-1][m-1], dp[n-i][m] } } + 1 ( n >= i >= 1 )
+ */

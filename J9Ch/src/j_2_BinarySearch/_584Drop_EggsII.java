@@ -1,8 +1,6 @@
 package j_2_BinarySearch; import org.junit.Test;
 
-/**
- * Created by tianhuizhu on 6/19/17.
- */
+//
 public class _584Drop_EggsII {
     /**
      * @param m the number of eggs
@@ -35,3 +33,10 @@ public class _584Drop_EggsII {
     }
 
 }
+/*
+有一个n层的建筑。如果一个鸡蛋从第k层及以上落下，它会碎掉。如果从低于这一层的任意层落下，都不会碎。
+
+有m个鸡蛋，用最坏的情况下实验次数最少的方法去找到k, 返回最坏情况下所需的实验次数。
+
+
+ */

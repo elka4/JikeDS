@@ -1,4 +1,4 @@
-package j_2_BinarySearch; import org.junit.Test;
+package _10_DS.SegmentTree;
 
 import java.util.ArrayList;
 

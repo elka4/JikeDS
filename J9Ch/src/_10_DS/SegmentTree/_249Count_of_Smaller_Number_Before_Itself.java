@@ -1,4 +1,4 @@
-package j_2_BinarySearch; import org.junit.Test;
+package _10_DS.SegmentTree;
 
 import java.util.ArrayList;
 
@@ -104,7 +104,7 @@ public class _249Count_of_Smaller_Number_Before_Itself {
         }
         return ans;
     }
-////////////////////////////////////////////////////////////////////////////////////////////////
+
 }
 
 /*

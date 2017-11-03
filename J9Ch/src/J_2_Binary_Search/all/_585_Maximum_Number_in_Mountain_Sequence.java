@@ -1,12 +1,13 @@
-package j_2_BinarySearch; import org.junit.Test;
+package J_2_Binary_Search.all;
 
-import org.junit.Test;
-
-//
-public class _585Maximum_Number_in_Mountain_Sequence {
+/**585. Maximum Number in Mountain Sequence
+ * Medium
+ * Created by tianhuizhu on 6/27/17.
+ */
+public class _585_Maximum_Number_in_Mountain_Sequence {
 
     // version 1：二分法
-    public class _Maximum_Number_in_Mountain_Sequence1 {
+    public class Solution1 {
         /**
          * @param nums a mountain sequence which increase firstly and then decrease
          * @return then mountain top
@@ -31,7 +32,7 @@ public class _585Maximum_Number_in_Mountain_Sequence {
     }
 
     // version 2: 一个比较啰嗦的版本，本质也是2分法，每次取两个点
-    public class _Maximum_Number_in_Mountain_Sequence2 {
+    public class Solution2 {
         /**
          * @param nums a mountain sequence which increase firstly and then decrease
          * @return then mountain top
@@ -54,49 +55,4 @@ public class _585Maximum_Number_in_Mountain_Sequence {
             return nums[left] > nums[right] ? nums[left] : nums[right];
         }
     }
-
-    public int mountainSequence_mine1(int[] nums) {
-        // Write your code here
-        int start = 0;
-        int end = nums.length - 1;
-        while (start + 1 < end) {
-            int mid = start + (end - start) / 2;
-            if (nums[mid - 1] < nums[mid]) {
-                start = mid;
-            } else if (nums[mid] > nums[mid + 1]) {
-                end = mid;
-            } else {
-                end =  mid;
-            }
-        }
-        return Math.max(nums[start], nums[end]);
-    }
-
-    public int mountainSequence_mine2(int[] nums) {
-        // Write your code here
-        int start = 0;
-        int end = nums.length - 1;
-        while (start + 1 < end) {
-            int mid = start + (end - start) / 2;
-            if (nums[mid - 1] < nums[mid]) {
-                start = mid;
-            }
-            if (nums[mid + 1] < nums[mid]){
-                end = mid;
-            }
-        }
-        return Math.max(nums[start], nums[end]);
-    }
-
-    @Test
-    public void test01(){
-        int[] input1 = {1, 2, 4, 8, 6, 3};
-        int[] input2 = {10, 9, 8, 7};
-
-        System.out.println(mountainSequence_mine1(input1));
-        System.out.println(mountainSequence_mine1(input2));
-    }
 }
-//  给 n 个整数的山脉数组，即先增后减的序列，找到山顶（最大值）
-
-

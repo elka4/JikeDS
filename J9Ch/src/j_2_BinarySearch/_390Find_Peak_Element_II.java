@@ -3,9 +3,9 @@ package j_2_BinarySearch; import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-/**
- * Created by tianhuizhu on 6/18/17.
- */
+
+
+//
 public class _390Find_Peak_Element_II {
 
     // O(m + n) 算法
@@ -90,3 +90,14 @@ public class _390Find_Peak_Element_II {
     }
 
 }
+/*
+一个整数矩阵有如下一些特性：
+
+相邻的整数都是不同的
+矩阵有 n 行 m 列。
+对于所有的 i < m, 都有 A[0][i] < A[1][i] && A[n - 2][i] > A[n - 1][i].
+对于所有的 j < n, 都有 A[j][0] < A[j][1] && A[j][m - 2] > A[j][m - 1].
+我们定义一个位置 P 是一个峰，如果有 A[j][i] > A[j+1][i] && A[j][i] > A[j-1][i] && A[j][i] > A[j][i+1] && A[j][i] > A[j][i-1]。
+
+找出该矩阵的一个峰值元素，返回他的坐标。
+ */

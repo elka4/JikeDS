@@ -1,12 +1,11 @@
-package j_2_BinarySearch; import org.junit.Test;
+package J_2_Binary_Search.all;
 
-//  Copy Books
-
-//  http://lintcode.com/en/problem/copy-books/
-public class _437Copy_Book {
-
-//////////////////////////////////////////////////////////////////////////////
-    //jiuzhang
+/**
+437
+Copy Books
+ * Created by tianhuizhu on 6/28/17.
+ */
+public class _437_Copy_Books {
     // version 1: Binary Search
 // this version cost O(n log m) where n is the number of books and m is the sum of the pages.
     public class Solution1 {
@@ -111,13 +110,4 @@ public class _437Copy_Book {
         }
     }
 
-
 }
-/*
-给出一个数组A包含n个元素，表示n本书以及各自的页数。现在有个k个人复印书籍，每个人只能复印连续一段编号的书，比如A[1],A[2]由第一个人复印，但是不能A[1],A[3]由第一个人复印，求最少需要的时间复印所有书。
-
-样例
-A = [3,2,4],k = 2
-
-返回5，第一个人复印前两本书
- */

@@ -1,10 +1,14 @@
-package j_2_BinarySearch; import org.junit.Test;
+package J_2_Binary_Search.all;
 
-//
-public class _586Sqrtx_II {
+/**
+586
+Sqrt(x) II
+ * Created by tianhuizhu on 6/28/17.
+ */
+public class _586_Sqrtx_II {
 
     //Solution1 : 二分法
-    public class _09Sqrtx_II_1 {
+    public class Solution1 {
         /**
          * @param x a double
          * @return the square root of x
@@ -40,7 +44,7 @@ public class _586Sqrtx_II {
     }
 
     //Solution2 : 牛顿法
-    public class _09Sqrtx_II_2 {
+    public class Solution2 {
         /**
          * @param x a double
          * @return the square root of x
@@ -58,8 +62,3 @@ public class _586Sqrtx_II {
         }
     }
 }
-/*
-Implement double sqrt(double x) and x >= 0.
-
-Compute and return the square root of x.
- */

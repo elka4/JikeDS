@@ -1,8 +1,8 @@
 package j_2_BinarySearch; import org.junit.Test;
 
-/**
- * Created by tianhuizhu on 6/21/17.
- */
+
+
+//
 public class _Minimum_Subtree_596 {
 
   public class TreeNode {
@@ -91,3 +91,5 @@ public class _Minimum_Subtree_596 {
         }
     }
 }
+//给一棵二叉树, 找到和为最小的子树, 返回其根节点。
+

@@ -1,11 +1,14 @@
-package j_2_BinarySearch; import org.junit.Test;
+package J_2_Binary_Search.all;
 
-
-
-public class _160Find_Minimum_in_Rotated_Sorted_Array_II {
+/**
+160
+Find Minimum in Rotated Sorted Array II
+ * Created by tianhuizhu on 6/28/17.
+ */
+public class _160_Find_Minimum_in_Rotated_Sorted_Array_II {
 
     // version 1: just for loop is enough
-    class _07Find_Minimum_in_Rotated_Sorted_Array_II_1 {
+    public class Solution1 {
         public int findMin(int[] num) {
             //  这道题目在面试中不会让写完整的程序
             //  只需要知道最坏情况下 [1,1,1....,1] 里有一个0
@@ -23,7 +26,7 @@ public class _160Find_Minimum_in_Rotated_Sorted_Array_II {
     }
 
     // version 2: use *fake* binary-search
-    class _07Find_Minimum_in_Rotated_Sorted_Array_II_2 {
+    public class Solution2 {
         /**
          * @param nums: a rotated sorted array
          * @return: the minimum number in the array
@@ -55,5 +58,4 @@ public class _160Find_Minimum_in_Rotated_Sorted_Array_II {
             return nums[end];
         }
     }
-
 }

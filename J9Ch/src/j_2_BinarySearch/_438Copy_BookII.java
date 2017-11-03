@@ -1,8 +1,7 @@
 package j_2_BinarySearch; import org.junit.Test;
 
-/**
- * Created by tianhuizhu on 6/19/17.
- */
+//
+//
 public class _438Copy_BookII {
     public class Solution {
         /**
@@ -57,3 +56,8 @@ public class _438Copy_BookII {
         }
     }
 }
+/*
+你有* n 本书，每本书页数一样现在有 k 个人，每个人复印一本书需要花费时间 times[i] *，
+
+现在一个人只能复印连续一段编号的书，比如第一个人可以复印第一本第二本，但是不能复印第一本第三本。求最少花费时间
+ */
