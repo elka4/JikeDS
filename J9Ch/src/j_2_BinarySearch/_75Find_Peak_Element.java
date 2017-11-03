@@ -1,8 +1,16 @@
 package j_2_BinarySearch; import org.junit.Test;
 
-//Find Peak Element
-
+// leetcode 162 Find Peak Element
 public class _75Find_Peak_Element {
+    //Approach #1 Linear Scan [Accepted]
+    class Solution1{
+
+    }
+    //Approach #2 Recursive Binary Search [Accepted]
+
+    //Approach #3 Iterative Binary Search [Accepted]
+
+/////////////////////////////////////////////////////////////
 	/**
 	 * @param A: An integers array.
 	 * @return: return any of peek positions.

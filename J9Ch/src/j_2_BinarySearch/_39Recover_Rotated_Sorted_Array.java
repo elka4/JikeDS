@@ -1,7 +1,10 @@
 package j_2_BinarySearch; import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.*;
+import java.util.stream.*;
 
+//
 public class _39Recover_Rotated_Sorted_Array {
 	/**
 	 * @param nums: The rotated sorted array
@@ -25,6 +28,18 @@ public class _39Recover_Rotated_Sorted_Array {
 	        }
 	    }
 	}
+	@Test
+    public void test01(){
+	    int[] arr = {4, 5, 1, 2, 3};
+        ArrayList<Integer> nums = (ArrayList)Arrays.stream(arr).boxed().collect(Collectors.toList());
+        System.out.println(nums);
+        recoverRotatedSortedArray(nums);
+        System.out.println(nums);
+    }
+    /*
+            [4, 5, 1, 2, 3]
+            [1, 2, 3, 4, 5]
+     */
 }
 
 /*Given a rotated sorted array, recover it to sorted array in-place.

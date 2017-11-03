@@ -4,6 +4,10 @@ package j_2_BinarySearch; import org.junit.Test;
 
 //Binary Search Twice
 public class _28Search_a_2D_Matrix_BSTwice {
+
+
+///////////////////////////////////////////////////////////////////////
+ //jiuzhang
  public boolean searchMatrix(int[][] matrix, int target) {
     if (matrix == null || matrix.length == 0) {
         return false;
@@ -71,8 +75,7 @@ in an m x n matrix.
 This matrix has the following properties:
 
 Integers in each row are sorted from left to right.
-The first integerof each row is greater than the last
- integer of the previous row.
+The first integerof each row is greater than the last integer of the previous row.
  
 Example: Consider the following matrix:
 

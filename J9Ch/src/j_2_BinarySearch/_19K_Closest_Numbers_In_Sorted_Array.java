@@ -168,6 +168,85 @@ In the following code, arr[index] is the first number which is euqal to or geate
             return arr.subList(i+1, j);
         }
     }
+
+
+    //Java O(logn + klogk) solution with PriorityQueue and Binary Search
+/*
+Search for x in the array. Take a slice of elements starting from searchPos - k to searchPos + klogk
+and store the absolute differences in the priority queue. If two abs values match, give the one with
+the lower index a higher priority (since lower index implies lower value since arr is sorted)
+ */
+    class Solution6{
+        class Pair implements Comparable<Pair> {
+            int abs;
+            int i;
+            public Pair(int abs, int i) {
+                super();
+                this.abs = abs;
+                this.i = i;
+            }
+            @Override
+            public int compareTo(Pair o) {
+                return abs < o.abs ? -1 : (abs == o.abs ? Integer.valueOf(i).compareTo(Integer.valueOf(o.i)) : 1);
+            }
+
+        }
+        public List<Integer> findClosestElements(List<Integer> arr, int k, int x) {
+            int index = Collections.binarySearch(arr, x);
+            index = (index < 0) ? - (index + 1) : index;
+
+            int lo = index - k;
+            int hi = index + k;
+            lo = (lo < 0) ? 0 : lo;
+            hi = (hi >= arr.size()) ? arr.size() - 1 : hi;
+
+            PriorityQueue<Pair> pq = new PriorityQueue<>();
+            for(int i = lo; i <= hi; i++) {
+                pq.add(new Pair(Math.abs(arr.get(i) - x), i));
+            }
+
+            List<Integer> result = new ArrayList<>();
+            for(int n = 1; n <= k; n++) {
+                result.add(arr.get(pq.poll().i));
+            }
+
+            Collections.sort(result);
+
+            return result;
+        }
+    }
+
+
+    //  Binary Search and Two Pointers - 18 ms
+    /*
+    Noticing the array is sorted, so we can using binary search to get a rough area of target numbers, and then expand it to the left k-1 more and right k-1 more elements, then searching from the left to right. If the left element is more close or equal to the target number x than the right element, then move the right index to the left one step. Otherwise, move the left index to right one step. Once, the element between the left and right is k, then return the result.
+     */
+    class Solution7{
+        public List<Integer> findClosestElements(List<Integer> arr, int k, int x) {
+            int index = Collections.binarySearch(arr, x);
+            if (index == -1)
+                return arr.subList(0, k);
+            else if (index >= arr.size())
+                return arr.subList(arr.size() - k, arr.size());
+            else {
+                if (index < 0)
+                    index = -index - 1;
+                int left = Math.max(0, index - k - 1), right = Math.min(arr.size() - 1, index + k - 1);
+
+                while (right - left > k - 1) {
+                    if (left < 0 || (x - arr.get(left)) <= (arr.get(right) - x))
+                        right--;
+                    else if (right > arr.size() - 1 || (x - arr.get(left)) > (arr.get(right) - x))
+                        left++;
+                    else
+                        System.out.println("unhandled case: " + left + " " + right);
+                }
+
+                return arr.subList(left, right + 1);
+            }
+        }
+    }
+
 ///////////////////////////////////////////////////////////////////////////////
 	 /*    这个是lintcode解法，result 按照差大小排序，然后按照数字大小排序
      * @param arr an integer array

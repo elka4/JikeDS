@@ -1,34 +1,36 @@
 package j_2_BinarySearch; import org.junit.Test;
 
-// Search in Rotated Sorted Array
+// Search in Rotated Sorted numsrray
+//
+//  33. Search in Rotated Sorted numsrray
 
 public class _62Search_in_Rotated_Sorted_Array {
-	 public int search(int[] A, int target) {
-	    if (A == null || A.length == 0) {
+	 public int search(int[] nums, int target) {
+	    if (nums == null || nums.length == 0) {
 	        return -1;
 	    }
 	
 	    int start = 0;
-	    int end = A.length - 1;
+	    int end = nums.length - 1;
 	    int mid;
 	    
 	    while (start + 1 < end) {
 	        mid = start + (end - start) / 2;
-	        if (A[mid] == target) {
+	        if (nums[mid] == target) {
 	            return mid;
 	        }
 	        
-	        // USE START TO COMPARE !!!!
-	        if (A[start] < A[mid]) {
+	        // USE STnumsRT TO COMPnumsRE !!!!
+	        if (nums[start] < nums[mid]) {
 	            // situation 1, red line
-	            if (A[start] <= target && target <= A[mid]) {
+	            if (nums[start] <= target && target <= nums[mid]) {
 	                end = mid;
 	            } else {
 	                start = mid;
 	            }
 	        } else {
 	            // situation 2, green line
-	            if (A[mid] <= target && target <= A[end]) {
+	            if (nums[mid] <= target && target <= nums[end]) {
 	                start = mid;
 	            } else {
 	                end = mid;
@@ -36,46 +38,46 @@ public class _62Search_in_Rotated_Sorted_Array {
 	        }
 	    } // while
 	    
-	    if (A[start] == target) {
+	    if (nums[start] == target) {
 	        return start;
 	    }
-	    if (A[end] == target) {
+	    if (nums[end] == target) {
 	        return end;
 	    }
 	    return -1;
 	  }
 
 
-	public int search_mine1(int[] A, int target) {
+	public int search_mine1(int[] nums, int target) {
 		// write your code here
-		if (A == null || A.length == 0) {
+		if (nums == null || nums.length == 0) {
 			return -1;
 		}
 		int start = 0;
-		int end = A.length - 1;
+		int end = nums.length - 1;
 
 		while(start + 1 < end){
 			int mid = start + (end - start) / 2;
 
-			if (A[mid] > A[start]){
-				if(A[start] <= target && target <= A[mid]){
+			if (nums[mid] > nums[start]){
+				if(nums[start] <= target && target <= nums[mid]){
 					end = mid;
 				} else {
 					start = mid;
 				}
-			} else if (A[mid] < A[start]){
-				if(A[mid] <= target && target <= A[end]){
+			} else if (nums[mid] < nums[start]){
+				if(nums[mid] <= target && target <= nums[end]){
 					start = mid;
 				} else {
 					end = mid;
 				}
 			} else {
-				start = mid; // end also AC
+				start = mid; // end also numsC
 			}
 		}
-		if (A[start] == target){
+		if (nums[start] == target){
 			return start;
-		} else if (A[end] == target){
+		} else if (nums[end] == target){
 			return end;
 		} else {
 			return -1;
@@ -104,9 +106,9 @@ Challenge
 O(logN) time
 
 Tags 
-Binary Search Sorted Array Array LinkedIn Uber Facebook
+Binary Search Sorted numsrray numsrray LinkedIn Uber Facebook
 Related Problems 
-Medium Search in Rotated Sorted Array II 39 %
+Medium Search in Rotated Sorted numsrray II 39 %
 Easy Search a 2D Matrix 27 %
  * 
  * */

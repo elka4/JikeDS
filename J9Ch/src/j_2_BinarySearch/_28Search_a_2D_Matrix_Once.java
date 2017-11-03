@@ -2,7 +2,31 @@ package j_2_BinarySearch; import org.junit.Test;
 
 //Binary Search Once
 public class _28Search_a_2D_Matrix_Once {
-	public boolean searchMatrix(int[][] matrix, int target) {
+
+    //Don't treat it as a 2D matrix, just treat it as a sorted list
+    public class Solution {
+        public boolean searchMatrix(int[][] matrix, int target) {
+            if (matrix == null || matrix.length == 0) {
+                return false;
+            }
+            int start = 0, rows = matrix.length, cols = matrix[0].length;
+            int end = rows * cols - 1;
+            while (start <= end) {
+                int mid = (start + end) / 2;
+                if (matrix[mid / cols][mid % cols] == target) {
+                    return true;
+                }
+                if (matrix[mid / cols][mid % cols] < target) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
+            }
+            return false;
+        }
+    }
+
+    public boolean searchMatrix(int[][] matrix, int target) {
 	   if (matrix == null || matrix.length == 0) {
 	       return false;
 	   }
