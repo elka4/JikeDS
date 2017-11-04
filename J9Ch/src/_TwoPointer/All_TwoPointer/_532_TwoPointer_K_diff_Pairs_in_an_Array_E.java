@@ -12,6 +12,7 @@ public class Solution1 {
 
         Set<Integer> starters = new HashSet<Integer>();
         Set<Integer> uniqs = new HashSet<Integer>();
+
         for (int i = 0; i < nums.length; i++) {
             if (uniqs.contains(nums[i] - k)) starters.add(nums[i] - k);
             if (uniqs.contains(nums[i] + k)) starters.add(nums[i]);
@@ -22,7 +23,8 @@ public class Solution1 {
     }
 }
 
-//    Thanks for your concise code. Here's my java solution, but it is really slow, O(n*n) complexity :--(
+//    Thanks for your concise code. Here's my java solution,
+// but it is really slow, O(n*n) complexity :--(
 
     public static int findPairs2(int []nums, int k){
 
@@ -84,7 +86,9 @@ public class Solution1 {
                     // [1, 1, ...., 8, 8]
                     //              |
                     //             end
-                    while (start < nums.length && nums[start] == nums[start - 1]) start++;
+                    while (start < nums.length && nums[start] == nums[start - 1])
+                        start++;
+
                     end = Math.max(end + 1, start + 1);
                 }
             }
@@ -343,14 +347,20 @@ Input: [3, 1, 4, 1, 5], k = 2
 Output: 2
 Explanation: There are two 2-diff pairs in the array, (1, 3) and (3, 5).
 Although we have two 1s in the input, we should only return the number of unique pairs.
+
+
 Example 2:
 Input:[1, 2, 3, 4, 5], k = 1
 Output: 4
 Explanation: There are four 1-diff pairs in the array, (1, 2), (2, 3), (3, 4) and (4, 5).
+
+
 Example 3:
 Input: [1, 3, 1, 5, 4], k = 0
 Output: 1
 Explanation: There is one 0-diff pair in the array, (1, 1).
+
+
 Note:
 The pairs (i, j) and (j, i) count as the same pair.
 The length of the array won't exceed 10,000.

@@ -6,6 +6,7 @@ import java.util.*;
 
 //  http://www.lintcode.com/zh-cn/problem/intersection-of-two-arrays-ii/
 public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
+
     //Use ArrayList to dynamic increase size
     class Solution1 {
         public int[] intersect(int[] nums1, int[] nums2) {
@@ -39,13 +40,16 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
         }
     }
 
-//        Given the range of the test case is not that massive, I used counting sort instead of HashMap. Beats 96%
-//        https://discuss.leetcode.com/topic/107558/optimal-2ms-java-solution-beats-96
+    //  Given the range of the test case is not that massive,
+    // I used counting sort instead of HashMap. Beats 96%
+
+    //  https://discuss.leetcode.com/topic/107558/optimal-2ms-java-solution-beats-96
     class Solution2{
 
         public int[] intersect(int[] nums1, int[] nums2) {
             //skip a stupid corner case:)
-            if(nums1.length>0&&nums1[0]==Integer.MIN_VALUE) return new int[]{1,Integer.MIN_VALUE};
+            if(nums1.length>0&&nums1[0]==Integer.MIN_VALUE)
+                return new int[]{1,Integer.MIN_VALUE};
 
             int max = Integer.MIN_VALUE, min = Integer.MAX_VALUE;
             for (int i = 0; i < nums1.length; i++) {
@@ -161,11 +165,12 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
         }
     }
 
-/*    Using a List.
-1.) Add Elements of nums1 array in a List l1.
-2.) check if elements of nums2 array are in list l1.
-            3.) if l1 contains an element of nums2, add that element in list2(result list) and remove that element from l1.
-            4.) Convert this list l2 to array*/
+    /*    Using a List.
+    1.) Add Elements of nums1 array in a List l1.
+    2.) check if elements of nums2 array are in list l1.
+    3.) if l1 contains an element of nums2,
+    add that element in list2(result list) and remove that element from l1.
+    4.) Convert this list l2 to array*/
 
     public class Solution6 {
         public int[] intersect(int[] nums1, int[] nums2) {
@@ -190,7 +195,7 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
     }
 
 
-//    Use ArrayList and two poiters .
+    //    Use ArrayList and two poiters .
 
     public class Solution7 {
         public int[] intersect(int[] nums1, int[] nums2) {
@@ -217,11 +222,13 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
             return answer;
         }
     }
+
 ////////////////////////////////////////////////////////////////////////////////////
+
 /*Great solution without sorting two arrays, thank you! The solution using java hashmap has O(m + n) time complexity and O(min(m, n)) space complexity. In theory, they are faster than sorted arrays in terms of time complexity, at the expense of extra space. However, tests show that the 1st solution(85.83%) > 2nd solution(67.33%) > your solution(48.29%). The difference between theory and practice may lie in the fact that the frequent get/put operations on HashMap and final for-loop to convert a List<Integer> to an int array.
 
     Here are two other solutions based on sorted arrays:
-            (1) linear search : O(n*log n + m*log m) time complexity.*/
+    (1) linear search : O(n*log n + m*log m) time complexity.*/
 
     public int[] intersect8(int[] nums1, int[] nums2) {
         // Write your code here
@@ -283,7 +290,8 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
             if (upper != -1 && lower != -1) {
                 freq1 = upper - lower + 1;
                 // calculate the frequency of the number in "nums2"
-                for (freq2 = 1; j < nums2.length - 1 && nums2[j] == nums2[j + 1]; j++) freq2++;
+                for (freq2 = 1; j < nums2.length - 1 && nums2[j] == nums2[j + 1]; j++)
+                    freq2++;
                 // add the number multiple time to the result
                 freq = (freq1 > freq2) ? freq2 : freq1;
                 for (int k = 0; k < freq; k++) {
@@ -339,8 +347,10 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
         }
         return bound;
     }
+
 ////////////////////////////////////////////////////////////////////////////////////
-//    @VanillaCoke yes,we are same,as I just use ArrayList:
+
+    //  @VanillaCoke yes,we are same,as I just use ArrayList:
 
     public class Solution10 {
         public int[] intersect(int[] nums1, int[] nums2) {
@@ -391,40 +401,42 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
             return res;
         }
     }
-    ////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////
+
     //jiuzhang
-public class Jiuzhang {
-    /**
-     * @param nums1 an integer array
-     * @param nums2 an integer array
-     * @return an integer array
-     */
-    public int[] intersection(int[] nums1, int[] nums2) {
-        // Write your code here
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for(int i = 0; i < nums1.length; ++i) {
-            if (map.containsKey(nums1[i]))
-                map.put(nums1[i], map.get(nums1[i]) + 1);
-            else
-                map.put(nums1[i], 1);
-        }
-
-        List<Integer> results = new ArrayList<Integer>();
-
-        for (int i = 0; i < nums2.length; ++i)
-            if (map.containsKey(nums2[i]) &&
-                    map.get(nums2[i]) > 0) {
-                results.add(nums2[i]);
-                map.put(nums2[i], map.get(nums2[i]) - 1);
+    public class Jiuzhang {
+        /**
+         * @param nums1 an integer array
+         * @param nums2 an integer array
+         * @return an integer array
+         */
+        public int[] intersection(int[] nums1, int[] nums2) {
+            // Write your code here
+            Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+            for(int i = 0; i < nums1.length; ++i) {
+                if (map.containsKey(nums1[i]))
+                    map.put(nums1[i], map.get(nums1[i]) + 1);
+                else
+                    map.put(nums1[i], 1);
             }
 
-        int result[] = new int[results.size()];
-        for(int i = 0; i < results.size(); ++i)
-            result[i] = results.get(i);
+            List<Integer> results = new ArrayList<Integer>();
 
-        return result;
+            for (int i = 0; i < nums2.length; ++i)
+                if (map.containsKey(nums2[i]) &&
+                        map.get(nums2[i]) > 0) {
+                    results.add(nums2[i]);
+                    map.put(nums2[i], map.get(nums2[i]) - 1);
+                }
+
+            int result[] = new int[results.size()];
+            for(int i = 0; i < results.size(); ++i)
+                result[i] = results.get(i);
+
+            return result;
+        }
     }
-}
 
 }
 /*

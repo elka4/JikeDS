@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class _360_TwoPointer_Sort_Transformed_Array_M {
 //Java O(n) incredibly short yet easy to understand AC solution
+//  https://discuss.leetcode.com/topic/48424/java-o-n-incredibly-short-yet-easy-to-understand-ac-solution/18
 
 /*    the problem seems to have many cases a>0, a=0,a<0, (when a=0, b>0, b<0). However, they can be combined into just 2 cases: a>0 or a<0
 
@@ -25,9 +26,11 @@ public class _360_TwoPointer_Sort_Transformed_Array_M {
             int index = a >= 0 ? n - 1 : 0;
             while (i <= j) {
                 if (a >= 0) {
-                    sorted[index--] = quad(nums[i], a, b, c) >= quad(nums[j], a, b, c) ? quad(nums[i++], a, b, c) : quad(nums[j--], a, b, c);
+                    sorted[index--] = quad(nums[i], a, b, c) >= quad(nums[j], a, b, c) ?
+                            quad(nums[i++], a, b, c) : quad(nums[j--], a, b, c);
                 } else {
-                    sorted[index++] = quad(nums[i], a, b, c) >= quad(nums[j], a, b, c) ? quad(nums[j--], a, b, c) : quad(nums[i++], a, b, c);
+                    sorted[index++] = quad(nums[i], a, b, c) >= quad(nums[j], a, b, c) ?
+                            quad(nums[j--], a, b, c) : quad(nums[i++], a, b, c);
                 }
             }
             return sorted;
@@ -280,7 +283,9 @@ if a < 0, the max value is at its vertex. So our sort goes the opposite way.*/
 
 }
 /*
-Given a sorted array of integers nums and integer values a, b and c. Apply a quadratic function of the form f(x) = ax2 + bx + c to each element x in the array.
+Given a sorted array of integers nums and integer values a, b and c.
+
+Apply a quadratic function of the form f(x) = ax2 + bx + c to each element x in the array.
 
 The returned array must be in sorted order.
 

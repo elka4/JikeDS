@@ -17,7 +17,8 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
                 if (set.contains(str))
                     if (str.length() > max_str.length() ||
                             (str.length() == max_str.length() &&
-                                    str.compareTo(max_str) < 0)) max_str = str;
+                                    str.compareTo(max_str) < 0))
+                        max_str = str;
             }
             return max_str;
         }
@@ -25,7 +26,8 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
             if (i == s.length())
                 l.add(str);
             else {
-                generate(s, str + s.charAt(i), i + 1, l); generate(s, str, i + 1, l);
+                generate(s, str + s.charAt(i), i + 1, l);
+                generate(s, str, i + 1, l);
             }
         }
     }
@@ -55,17 +57,12 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
 
     //Approach #3 Sorting and checking Subsequence [Accepted]
     public class Solution33 {
-        public boolean isSubsequence(String x, String y) {
-            int j = 0;
-            for (int i = 0; i < y.length() && j < x.length(); i++)
-                if (x.charAt(j) == y.charAt(i))
-                    j++;
-            return j == x.length();
-        }
+
         public String findLongestWord(String s, List < String > d) {
             Collections.sort(d, new Comparator<String>() {
-                public int compare(String sl, String s2) {
-                    return s2.length() != sl.length() ? s2 .length() - sl.length() :sl.compareTo(s2);
+                public int compare(String s1, String s2) {
+                    return s2.length() != s1.length() ?
+                            s2 .length() - s1.length() :s1.compareTo(s2);
                 }
             });
             for (String str : d) {
@@ -73,10 +70,7 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
             }
             return "";
         }
-    }
 
-        // Approach #4 Without Sorting [Accepted]:
-    public class Solution44 {
         public boolean isSubsequence(String x, String y) {
             int j = 0;
             for (int i = 0; i < y.length() && j < x.length(); i++)
@@ -84,22 +78,37 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
                     j++;
             return j == x.length();
         }
+    }
+
+        // Approach #4 Without Sorting [Accepted]:
+    public class Solution44 {
+
         public String findLongestWord(String s, List < String > d) {
             String max_str = "";
             for (String str : d) {
                 if (isSubsequence(str, s)) {
-                    if (str.length() > max_str.length() || (str.length() == max_str.length() && str.compareTo(max_str) < 0))
+                    if (str.length() > max_str.length() ||
+                        (str.length() == max_str.length() && str.compareTo(max_str) < 0))
                         max_str = str;
                 }
             }
             return max_str;
+        }
+
+        public boolean isSubsequence(String x, String y) {
+            int j = 0;
+            for (int i = 0; i < y.length() && j < x.length(); i++)
+                if (x.charAt(j) == y.charAt(i))
+                    j++;
+            return j == x.length();
         }
     }
 
 
 //////////////////////////////////////////////////////////////////////////////
     //  Easy Java Solution, isSubSequence
-//Idea is sort the dictionary d first by length DESC then lexicographical ASC and test if p is SubSequence of s. The first match is the answer.
+//Idea is sort the dictionary d first by length DESC then lexicographical
+// ASC and test if p is SubSequence of s. The first match is the answer.
 
     public class Solution1 {
         public String findLongestWord(String s, List<String> d) {
@@ -246,6 +255,206 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
         }
     }
 
+    //Java Two Point Solution after Sorting the Dictionary
+    class Solution5{
+        private class MyCompare implements Comparator<String> {
+            public int compare(String s1, String s2) {
+                return s2.length() == s1.length() ? s1.compareTo(s2)
+                        : s2.length() - s1.length();
+            }
+        }
+
+        public String findLongestWord(String s, List<String> d) {
+            Collections.sort(d, new MyCompare());
+            for (String str : d) {
+                if (check(s, str))
+                    return str;
+            }
+            return "";
+        }
+
+        private boolean check(String s1, String s2) {
+            char[] cs1 = s1.toCharArray();
+            char[] cs2 = s2.toCharArray();
+            int i = 0, j = 0;
+            while (i < cs1.length && j < cs2.length) {
+                if (cs1[i] == cs2[j])
+                    j++;
+                i++;
+            }
+            if(j == cs2.length){
+                return true;
+            }
+            return false;
+        }
+    }
+
+    //  My 13ms Java Solution beats 99% (using indexOf)
+    class Solution6{
+        public String findLongestWord(String s, List<String> d) {
+            int max = 0;
+            String ret = "";
+            for (String t: d) {
+                int index = -1;
+                int len = t.length();
+                if (len < max)
+                    continue;
+                for (char c: t.toCharArray()) {
+                    index = s.indexOf(c, index + 1);
+                    if (index == -1)
+                        break;
+                }
+                if (index != -1 && len >= max) {
+                    if (len == max)
+                        ret = t.compareTo(ret) < 0 ? t : ret;
+                    else
+                        ret = t;
+                    max = len;
+                }
+            }
+            return ret;
+        }
+    }
+
+    //Share my java solution (without sorting)
+    class Solution7{
+        public String findLongestWord(String s, List<String> d) {
+            String res = "";
+            if (s.length() == 0 || d.size() == 0)
+                return "";
+            int maxLen = 0;
+            for (String tmp : d) {
+                if (checkWord(s, tmp)) {
+                    int len = tmp.length();
+                    if (len > maxLen) {
+                        maxLen = len;
+                        res = tmp;
+                    } else if (len == maxLen)
+                        if (tmp.compareTo(res) < 0)
+                            res = tmp;
+                }
+            }
+            return res;
+        }
+
+        private boolean checkWord(String s, String d) {
+            int sP = 0;
+            int dP = 0;
+            while (sP < s.length() && dP < d.length()) {
+                if (s.charAt(sP) == d.charAt(dP)) {
+                    sP++;
+                    dP++;
+                } else
+                    sP++;
+            }
+            if (dP == d.length())
+                return true;
+            else
+                return false;
+        }
+    }
+
+
+    //Java Solution with HashMap and TreeSet
+    public class Solution8 {
+        private boolean canFormat(Map<Character, TreeSet<Integer>> map, String s){
+            int ind = 0;
+            for(char ch : s.toCharArray()){
+                TreeSet<Integer> set = map.get(ch);
+                if(set==null) return false;
+                Integer pos = set.ceiling(ind);
+                if(pos==null) return false;
+                ind = pos + 1;
+            }
+            return true;
+        }
+        public String findLongestWord(String s, List<String> d) {
+            Map<Character, TreeSet<Integer>> map = new HashMap<>();
+            for(int i=0;i<s.length();i++){
+                char ch = s.charAt(i);
+                TreeSet<Integer> set = map.getOrDefault(ch, new TreeSet<>());
+                set.add(i);
+                map.put(ch, set);
+            }
+            String res = "";
+            for(String str : d){
+                if((res.equals("") || str.length()>res.length() ||
+                        (str.length()==res.length() && str.compareTo(res)<0)) && canFormat(map, str)){
+                    res = str;
+                }
+            }
+            return res;
+        }
+    }
+
+    //Java O(nlogn) solution using TreeSet
+    public class Solution9 {
+        public String findLongestWord(String s, List<String> d) {
+            Collections.sort(d);
+            TreeSet<String> res = new TreeSet<String>();
+            for(String t:d)
+            {
+                if(isSubseq(t,s))
+                {
+                    if(res.size() > 0 && res.first().length() < t.length())
+                    {
+                        res = new TreeSet<>();
+                        res.add(t);
+                    }
+                    else
+                    {
+                        res.add(t);
+                    }
+                }
+            }
+            if(res.size() > 0) return res.first();
+            return "";
+        }
+        private boolean isSubseq(String t, String s)
+        {
+            if(t.length() > s.length()) return false;
+            char cur;
+            int sPtr = 0;
+            for(int i = 0; i < t.length(); ++i)
+            {
+                cur = t.charAt(i);
+                while(sPtr < s.length())
+                {
+                    if(s.charAt(sPtr) == cur) break;
+                    ++sPtr;
+                }
+                if(sPtr == s.length()) return false;
+                ++sPtr;
+            }
+            return true;
+        }
+    }
+
+    //Java simple and fast solution
+    public class Solution10 {
+        public String findLongestWord(String s, List<String> dictionary) {
+            String longest = "";
+            for (String word : dictionary) {
+                if (word.length() < longest.length() ||
+                        (word.length() == longest.length() && word.compareTo(longest) > 0)) {
+                    continue;
+                }
+                int i = 0;
+                int j = 0;
+                while (i < s.length() && j < word.length() &&
+                        s.length() - i >= word.length() - j) { // last condition short circuit the loop
+                    if (s.charAt(i) == word.charAt(j)) {
+                        j++;
+                    }
+                    i++;
+                }
+                if (j == word.length()) {
+                    longest = word;
+                }
+            }
+            return longest;
+        }
+    }
 
 }
 /*

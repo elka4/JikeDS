@@ -124,6 +124,7 @@ public class _349_TwoPointer_Intersection_of_Two_Arrays_E {
             int i = 0, j = 0;
             int[] temp = new int[nums1.length];
             int index = 0;
+
             while (i < nums1.length && j < nums2.length) {
                 if (nums1[i] == nums2[j]) {
                     if (index == 0 || temp[index - 1] != nums1[i]) {

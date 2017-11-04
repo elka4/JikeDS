@@ -1,7 +1,9 @@
-package _TwoPointer.All_TwoPointer;
+package _TwoPointer.Duplicate;
 
 //  283. Move Zeroes
 //  https://leetcode.com/problems/move-zeroes/description/
+
+import org.junit.Test;
 
 //  http://www.lintcode.com/zh-cn/problem/move-zeroes/
 public class _283_TwoPointer_Move_Zeroes_E {
@@ -95,26 +97,71 @@ public class _283_TwoPointer_Move_Zeroes_E {
         }
     }
 /////////////////////////////////////////////////////////
+    private void print(int[] nums){
+        for (int i:nums
+                ) {
+            System.out.print(i + " ");
+
+        }
+        System.out.println();
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
+    }
+    private void printArr(int[] nums){
+//        System.out.print("nums[]: ");
+        for (int i:nums
+                ) {
+            System.out.print(i + " ");
+        }
+//        System.out.print(" | ");
+//        System.out.println();
+    }
+
+
+/////////////////////////////////////////////////////////
     //jiuzhang
-public class Jiuzhang {
     /**
      * @param nums an integer array
      * @return nothing, do this in-place
      */
     public void moveZeroes(int[] nums) {
-        // Write your code here
         int left = 0, right = 0;
+
         while (right < nums.length) {
+            printArr(nums);
+            System.out.print("| " + "left: " + left + " | " + "right: " + right);
+
             if (nums[right] != 0) {
-                int temp = nums[left];
-                nums[left] = nums[right];
-                nums[right] = temp;
+                System.out.print(" | nums[right] " + nums[right]);
+                swap(nums, left, right);
                 left++;
             }
             right++;
+            System.out.println();
         }
     }
-}
+
+
+    @Test
+    public void test(){
+        int[] nums = {0, 1, 0, 3, 12};
+//        print(nums);
+        moveZeroes(nums);
+//        print(nums);
+    }
+/*
+        0 1 0 3 12 | left: 0 | right: 0
+        0 1 0 3 12 | left: 0 | right: 1 | nums[right] 1
+        1 0 0 3 12 | left: 1 | right: 2
+        1 0 0 3 12 | left: 1 | right: 3 | nums[right] 3
+        1 3 0 0 12 | left: 2 | right: 4 | nums[right] 12
+ */
+
+
 }
 /*
 给一个数组 nums 写一个函数将 0 移动到数组的最后面，非零元素保持原数组的顺序

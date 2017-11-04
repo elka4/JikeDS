@@ -87,7 +87,8 @@ public class _125_TwoPointer_Valid_Palindrome_E {
             while(i<=j){
                 while(i<j && !Character.isLetterOrDigit(s.charAt(i)))	i++;
                 while(i<j && !Character.isLetterOrDigit(s.charAt(j)))	j--;
-                if( Character.toLowerCase(s.charAt(i))!=Character.toLowerCase(s.charAt(j)) )	return false;
+                if( Character.toLowerCase(s.charAt(i))!=Character.toLowerCase(s.charAt(j)) )
+                    return false;
                 i++; j--;
             }
             return true;
@@ -98,10 +99,19 @@ public class _125_TwoPointer_Valid_Palindrome_E {
         public boolean isPalindrome(String s) {
             s = s.toLowerCase();
             int l = 0, r = s.length()-1;
-            while(l < r)
-                if((s.charAt(l) > 'z' || s.charAt(l) < 'a') && (s.charAt(l) > '9' || s.charAt(l) < '0')) l++;
-                else if((s.charAt(r) > 'z' || s.charAt(r) < 'a') && (s.charAt(r) > '9' || s.charAt(r) < '0')) r--;
-                else if(s.charAt(l++) != s.charAt(r--)) return false;
+            while(l < r) {
+                if((s.charAt(l) > 'z' || s.charAt(l) < 'a') &&
+                   (s.charAt(l) > '9' || s.charAt(l) < '0')){
+                    l++;
+                }
+                else if((s.charAt(r) > 'z' || s.charAt(r) < 'a') &&
+                        (s.charAt(r) > '9' || s.charAt(r) < '0')) {
+                    r--;
+                }
+                else if(s.charAt(l++) != s.charAt(r--)) {
+                    return false;
+                }
+            }
             return true;
         }
     }
@@ -122,16 +132,18 @@ public class _125_TwoPointer_Valid_Palindrome_E {
         }
     }
 
-//    Used the same approach, but instead of reversing and comparing, I checked characters from both ends using one pointer.
+//    Used the same approach, but instead of reversing and comparing,
+//      I checked characters from both ends using one pointer.
 //
-//            Also, converting to lower case in not always necessary, For example : "Coding rocks"
+// Also, converting to lower case in not always necessary, For example : "Coding rocks"
 
     public static boolean isPalindrome8(String s) {
         String regex = "([^A-Za-z0-9])";
         String replacement = "";
         s = s.replaceAll(regex, replacement);
         for(int i =0;i<s.length()/2;i++){
-            if(Character.toLowerCase(s.charAt(i))==Character.toLowerCase(s.charAt(s.length()-1-i)))
+            if(Character.toLowerCase(s.charAt(i)) ==
+               Character.toLowerCase(s.charAt(s.length()-1-i)))
                 continue;
             else
                 return false;
@@ -186,7 +198,8 @@ public class _125_TwoPointer_Valid_Palindrome_E {
                 while(start <= end && !Character.isLetterOrDigit(s.charAt(end))) {
                     end--;
                 }
-                if(start <= end && Character.toLowerCase(s.charAt(start)) != Character.toLowerCase(s.charAt(end))) {
+                if(start <= end && Character.toLowerCase(s.charAt(start)) !=
+                        Character.toLowerCase(s.charAt(end))) {
                     return false;
                 }
                 start++;
@@ -206,25 +219,24 @@ public class Jiuzhang {
 
         int front = 0;
         int end = s.length() - 1;
+
         while (front < end) {
             while (front < s.length() && !isvalid(s.charAt(front))){ // nead to check range of a/b
                 front++;
+            }
+            while (end >= 0 && ! isvalid(s.charAt(end))) { // same here, need to check border of a,b
+                end--;
             }
 
             if (front == s.length()) { // for emtpy string “.,,,”
                 return true;
             }
 
-            while (end >= 0 && ! isvalid(s.charAt(end))) { // same here, need to check border of a,b
-                end--;
-            }
-
             if (Character.toLowerCase(s.charAt(front)) != Character.toLowerCase(s.charAt(end))) {
                 break;
-            } else {
-                front++;
-                end--;
             }
+            front++;
+            end--;
         }
 
         return end <= front;

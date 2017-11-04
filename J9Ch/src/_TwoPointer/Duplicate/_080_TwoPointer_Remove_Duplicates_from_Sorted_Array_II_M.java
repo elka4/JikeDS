@@ -6,14 +6,15 @@ package _TwoPointer.Duplicate;
 
 //http://www.lintcode.com/zh-cn/problem/remove-duplicates-from-sorted-array-ii/
 public class _080_TwoPointer_Remove_Duplicates_from_Sorted_Array_II_M {
+
 //Same simple solution written in several languages. Just go through the numbers and include those in the result that haven't been included twice already.
-public int removeDuplicates(int[] nums) {
-    int i = 0;
-    for (int n : nums)
-        if (i < 2 || n > nums[i-2])
-            nums[i++] = n;
-    return i;
-}
+    public int removeDuplicates(int[] nums) {
+        int i = 0;
+        for (int n : nums)
+            if (i < 2 || n > nums[i-2])
+                nums[i++] = n;
+        return i;
+    }
 
 
 //Share my O(N) time and O(1) solution when duplicates are allowed at most K times
@@ -21,28 +22,28 @@ public int removeDuplicates(int[] nums) {
 
  */
 
-//https://www.sigmainfy.com/blog/leetcode-remove-duplicates-from-sorted-array-i-and-ii.html
-int removeDuplicates2(int A[], int n, int k) {
+    //https://www.sigmainfy.com/blog/leetcode-remove-duplicates-from-sorted-array-i-and-ii.html
+    int removeDuplicates2(int A[], int n, int k) {
 
-    if (n <= k) return n;
+        if (n <= k) return n;
 
-    int i = 1, j = 1;
-    int cnt = 1;
-    while (j < n) {
-        if (A[j] != A[j-1]) {
-            cnt = 1;
-            A[i++] = A[j];
-        }
-        else {
-            if (cnt < k) {
+        int i = 1, j = 1;
+        int cnt = 1;
+        while (j < n) {
+            if (A[j] != A[j-1]) {
+                cnt = 1;
                 A[i++] = A[j];
-                cnt++;
             }
+            else {
+                if (cnt < k) {
+                    A[i++] = A[j];
+                    cnt++;
+                }
+            }
+            ++j;
         }
-        ++j;
+        return i;
     }
-    return i;
-}
 
 //O(N) Time and O(1) Java Solution When Allowed at Most K times of Duplicates
 //Share my general solution for "Remove Duplicates Problem".
