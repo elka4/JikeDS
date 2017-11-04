@@ -1,4 +1,4 @@
-package _Bit;
+package _08_Bit;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package _5_Bit;
+package _08_Bit;
 
 /*
 Leetcode – Single Number (Java)

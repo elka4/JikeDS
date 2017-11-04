@@ -1,4 +1,4 @@
-package _5_Bit;
+package _08_Bit;
 
 /* 这个方法没有下面leetcode官方给的好
 LeetCode – Number of 1 Bits (Java)
