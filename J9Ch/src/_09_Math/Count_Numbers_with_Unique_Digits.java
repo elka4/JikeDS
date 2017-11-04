@@ -1,4 +1,4 @@
-package _06_Math;
+package _09_Math;
 
 /*
 LeetCode – Count Numbers with Unique Digits (Java)

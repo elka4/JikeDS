@@ -1,4 +1,4 @@
-package _06_Math.mod;
+package _09_Math.mod;
 
 /*
 LeetCode – Palindrome Number (Java)

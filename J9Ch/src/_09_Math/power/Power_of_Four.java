@@ -1,4 +1,4 @@
-package _06_Math.power;
+package _09_Math.power;
 
 /*
 LeetCode – Power of Four (Java)

@@ -1,4 +1,4 @@
-package _03_List.all;
+package _03_List.Other;
 
 import lib.ListNode;
 import lib.TreeNode;
