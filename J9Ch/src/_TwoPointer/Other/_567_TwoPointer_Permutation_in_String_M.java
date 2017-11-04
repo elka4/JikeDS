@@ -1,4 +1,4 @@
-package _TwoPointer.All_TwoPointer;
+package _TwoPointer.Other;
 
 import java.util.Arrays;
 import java.util.HashMap;

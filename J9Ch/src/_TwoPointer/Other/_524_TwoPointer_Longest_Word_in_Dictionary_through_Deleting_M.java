@@ -1,4 +1,4 @@
-package _TwoPointer.All_TwoPointer;
+package _TwoPointer.Other;
 import java.util.*;
 
 //  524. Longest Word in Dictionary through Deleting

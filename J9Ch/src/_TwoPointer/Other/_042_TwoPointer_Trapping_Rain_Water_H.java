@@ -1,4 +1,4 @@
-package _TwoPointer.All_TwoPointer;
+package _TwoPointer.Other;
 
 
 //  42. Trapping Rain Water

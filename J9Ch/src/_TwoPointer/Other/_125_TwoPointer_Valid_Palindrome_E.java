@@ -1,4 +1,4 @@
-package _TwoPointer.All_TwoPointer;
+package _TwoPointer.Other;
 
 //  125. Valid Palindrome
 //  https://leetcode.com/problems/valid-palindrome/description/

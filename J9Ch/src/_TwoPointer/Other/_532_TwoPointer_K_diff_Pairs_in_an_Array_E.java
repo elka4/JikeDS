@@ -1,4 +1,4 @@
-package _TwoPointer.All_TwoPointer;
+package _TwoPointer.Other;
 import java.util.*;
 
 //  532. K-diff Pairs in an Array
