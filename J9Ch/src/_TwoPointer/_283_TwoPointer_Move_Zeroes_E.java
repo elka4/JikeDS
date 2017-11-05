@@ -103,6 +103,7 @@ public class Jiuzhang {
      * @param nums an integer array
      * @return nothing, do this in-place
      */
+    //双前向型指针
     public void moveZeroes(int[] nums) {
         // Write your code here
         int left = 0, right = 0;
@@ -119,6 +120,8 @@ public class Jiuzhang {
 }
 }
 /*
+移动零
+
 给一个数组 nums 写一个函数将 0 移动到数组的最后面，非零元素保持原数组的顺序
 
  注意事项
