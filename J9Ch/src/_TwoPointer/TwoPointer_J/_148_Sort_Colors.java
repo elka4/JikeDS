@@ -8,25 +8,27 @@ import org.junit.Test;
 
  * Created by tianhuizhu on 6/28/17.
  */
+
+//  http://www.lintcode.com/zh-cn/problem/sort-colors/
 public class _148_Sort_Colors {
     public void sortColors(int[] a) {
         if (a == null || a.length <= 1) {
             return;
         }
 
-        int pl = 0;
-        int pr = a.length - 1;
+        int left = 0;
+        int right = a.length - 1;
         int i = 0;
-        while (i <= pr) {
+        while (i <= right) {
             if (a[i] == 0) {
-                swap(a, pl, i);
-                pl++;
+                swap(a, left, i);
+                left++;
                 i++;
             } else if(a[i] == 1) {
                 i++;
             } else if(a[i] == 2) {
-                swap(a, pr, i);
-                pr--;
+                swap(a, right, i);
+                right--;
             }
         }
     }
@@ -45,6 +47,7 @@ public class _148_Sort_Colors {
             System.out.print(i + " ");
         }
     }
+//////////////////////////////////////////////////////////////
 
 }
 
@@ -58,7 +61,13 @@ public class _148_Sort_Colors {
 不能使用代码库中的排序函数来解决这个问题。
 排序需要在原数组中进行。
 
-您在真实的面试中是否遇到过这个题？ Yes
 样例
 给你数组 [1, 0, 1, 2], 需要将该数组原地排序为 [0, 1, 1, 2]。
+
+挑战
+一个相当直接的解决方案是使用计数排序扫描2遍的算法。
+
+首先，迭代数组计算 0,1,2 出现的次数，然后依次用 0,1,2 出现的次数去覆盖数组。
+
+你否能想出一个仅使用常数级额外空间复杂度且只扫描遍历一遍数组的算法？
  */

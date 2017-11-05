@@ -8,8 +8,8 @@ import lib.ListNode;
 //  https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
 //  http://www.lintcode.com/zh-cn/problem/remove-duplicates-from-sorted-list-ii/
 public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
-//    My accepted Java code
 
+    //    My accepted Java code
     public ListNode deleteDuplicates1(ListNode head) {
         if(head==null) return null;
         ListNode FakeHead=new ListNode(0);
@@ -32,8 +32,7 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
     }
 
 
-//    My Recursive Java Solution
-
+    //    My Recursive Java Solution
     public ListNode deleteDuplicates2(ListNode head) {
         if (head == null) return null;
 
@@ -51,8 +50,7 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
 //    If current node is unique, link it to the result of next list made by recursive call. Any improvement?
 
 
-//    Another java version
-
+    //    Another java version
     public ListNode deleteDuplicates3(ListNode head) {
         if(head == null || head.next == null){
             return head;
@@ -69,8 +67,8 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
             return deleteDuplicates3(next);
         }
     }
-//    recursive without while loop:
 
+    //    recursive without while loop:
     public class Solution4 {
         public ListNode deleteDuplicates(ListNode head) {
             if(head == null || head.next == null) return head;
@@ -87,8 +85,7 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
         }
     }
 
-//    Java simple and clean code with comment
-
+    //    Java simple and clean code with comment
     public class Solution5 {
         public ListNode deleteDuplicates(ListNode head) {
             //use two pointers, slow - track the node before the dup nodes,
@@ -111,9 +108,9 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
             return dummy.next;
         }
     }
+
+
     //can be further simplified as:
-
-
     class Solution6 {
         public ListNode deleteDuplicates(ListNode head) {
             ListNode dummy = new ListNode(0), fast = head, slow = dummy;
@@ -157,8 +154,7 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
     }
 
 
-//    A short and simple Java solution
-
+    //    A short and simple Java solution
     public ListNode deleteDuplicates8(ListNode head) {
         ListNode dummy = new ListNode(0);
         ListNode d = dummy;
@@ -175,25 +171,17 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
         d.next = null;
         return dummy.next;
     }
-/*1->1->1->2->2->3
+    /*1->1->1->2->2->3
 
-    we skip all the 1's and start the loop from 2
+        we skip all the 1's and start the loop from 2
 
-    and also skip all the 2's, and now head.val == 3;
+        and also skip all the 2's, and now head.val == 3;
 
-    ponit d.next to the tail, end the loop*/
+        ponit d.next to the tail, end the loop*/
 /////////////////////////////////////////////////////////////////////////////////////
 
-
 /////////////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////////////
-//jiuzhang
-public class Juizhang {
+    //jiuzhang
     public ListNode deleteDuplicates(ListNode head) {
         if(head == null || head.next == null)
             return head;
@@ -215,7 +203,6 @@ public class Juizhang {
 
         return dummy.next;
     }
-}
 
 
 /////////////////////////////////////////////////////////////////////////////////////

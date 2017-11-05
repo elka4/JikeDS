@@ -205,12 +205,6 @@ public class Solution3 {
 
     // version 2: Heap
     public class Jiuzhang2 {
-        private Comparator<ListNode> ListNodeComparator = new Comparator<ListNode>() {
-            public int compare(ListNode left, ListNode right) {
-                return left.val - right.val;
-            }
-        };
-
         public ListNode mergeKLists(List<ListNode> lists) {
             if (lists == null || lists.size() == 0) {
                 return null;
@@ -235,6 +229,13 @@ public class Solution3 {
             }
             return dummy.next;
         }
+        private Comparator<ListNode> ListNodeComparator = new Comparator<ListNode>() {
+            public int compare(ListNode left, ListNode right) {
+
+                return left.val - right.val;
+            }
+        };
+
     }
 
 // Version 3: merge two by two

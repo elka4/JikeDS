@@ -3,20 +3,24 @@ package _TwoPointer.TwoPointer_J;
 import java.util.Arrays;
 
 /** 382 Triangle Count
-
-
  * Created by tianhuizhu on 6/28/17.
  */
+
+//  http://lintcode.com/zh-cn/problem/triangle-count/
 public class _382_Triangle_Count {
     /**
      * @param S: A list of integers
      * @return: An integer
+     */
+    /*
+    和sort color类似的三指针
      */
     public int triangleCount(int S[]) {
         // write your code here
         int left = 0, right = S.length - 1;
         int ans = 0;
         Arrays.sort(S);
+
         for(int i = 0; i < S.length; i++) {
             left = 0;
             right = i - 1;

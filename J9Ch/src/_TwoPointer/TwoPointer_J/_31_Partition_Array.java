@@ -88,8 +88,40 @@ public class _31_Partition_Array {
             System.out.print(i + ", ");//3, 2, 2, 1,
         }
     }
+
+/////////////////////////////////////////////////////////////////
+
+    /*
+        三指针。left，right两个是对撞型指针，i是前向型指针。
+        left针对0
+        i针对1
+        right针对2
+     */
+    public void sortColors(int[] a) {
+        if (a == null || a.length <= 1) {
+            return;
+        }
+
+        int left = 0;
+        int right = a.length - 1;
+        int i = 0;
+        while (i <= right) {
+            if (a[i] == 0) {
+                swap(a, left, i);
+                left++;
+                i++;
+            } else if(a[i] == 1) {
+                i++;
+            } else if(a[i] == 2) {
+                swap(a, right, i);
+                right--;
+            }
+        }
+    }
+        
 /////////////////////////////////////////////////////////////////
     //jiuzhang
+    // 对撞型指针
 public class Jiuzhang {
     /**
      *@param nums: The integer array you should partition
@@ -102,6 +134,7 @@ public class Jiuzhang {
         }
 
         int left = 0, right = nums.length - 1;
+
         while (left <= right) {
 
             while (left <= right && nums[left] < k) {

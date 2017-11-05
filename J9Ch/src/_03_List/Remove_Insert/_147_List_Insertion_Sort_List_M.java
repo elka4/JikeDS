@@ -1,14 +1,12 @@
 package _03_List.Remove_Insert;
-
 import lib.ListNode;
 
-
 //  147. Insertion Sort List
-
 //  https://leetcode.com/problems/insertion-sort-list/description/
 //  http://www.lintcode.com/zh-cn/problem/insertion-sort-list/
 public class _147_List_Insertion_Sort_List_M {
-//    An easy and clear way to sort ( O(1) space )
+
+    //    An easy and clear way to sort ( O(1) space )
     public ListNode insertionSortList1(ListNode head) {
         if( head == null ){
             return head;
@@ -36,7 +34,7 @@ public class _147_List_Insertion_Sort_List_M {
     }
 
 
-//    Accepted Solution using JAVA
+    //    Accepted Solution using JAVA
     public class Solution2 {
         public ListNode insertionSortList(ListNode head) {
             ListNode helper=new ListNode(0);
@@ -57,7 +55,7 @@ public class _147_List_Insertion_Sort_List_M {
     }
 
 
-//    Clean Java solution using a fake head
+    //    Clean Java solution using a fake head
     public ListNode insertionSortList3(ListNode head) {
         ListNode curr = head, next = null;
         // l is a fake head
@@ -131,9 +129,8 @@ public class _147_List_Insertion_Sort_List_M {
     }
 
 
-//    Java 34ms solution, clear logic with separate insert method
-//    using insertion sort logic. Insert each new node into a sorted linked list with dummy head.
-
+    //    Java 34ms solution, clear logic with separate insert method
+    //    using insertion sort logic. Insert each new node into a sorted linked list with dummy head.
     public class Solution5 {
         public ListNode insertionSortList(ListNode head) {
             ListNode sortedHeadDummy = new ListNode(0);
@@ -157,7 +154,7 @@ public class _147_List_Insertion_Sort_List_M {
         }
     }
 
-//    Simple and clean java code
+    //    Simple and clean java code
 
     public ListNode insertionSortList6(ListNode head) {
         ListNode cur = head;
@@ -310,8 +307,7 @@ public class _147_List_Insertion_Sort_List_M {
 
 
 /////////////////////////////////////////////////////////////////////////////////////
-//jiuzhang
-public class Jiuzhang {
+    //jiuzhang
     public ListNode insertionSortList(ListNode head) {
         ListNode dummy = new ListNode(0);
         // 这个dummy的作用是，把head开头的链表一个个的插入到dummy开头的链表里
@@ -330,7 +326,6 @@ public class Jiuzhang {
 
         return dummy.next;
     }
-}
 
 /////////////////////////////////////////////////////////////////////////////////////
 

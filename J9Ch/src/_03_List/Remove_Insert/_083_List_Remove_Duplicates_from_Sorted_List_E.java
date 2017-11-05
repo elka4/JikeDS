@@ -24,8 +24,7 @@ public class _083_List_Remove_Duplicates_from_Sorted_List_E {
     }
 
 
-//    Easy understand Java solution
-
+    //    Easy understand Java solution
     public ListNode deleteDuplicates2(ListNode head) {
 
         ListNode temp = head;
@@ -43,10 +42,6 @@ public class _083_List_Remove_Duplicates_from_Sorted_List_E {
     }
 
 /*    3 Line JAVA recursive solution
-
-138
-    W wen587sort
-    Reputation:  219
     This solution is inspired by renzid https://leetcode.com/discuss/33043/3-line-recursive-solution*/
 
     public ListNode deleteDuplicates3(ListNode head) {
@@ -54,14 +49,14 @@ public class _083_List_Remove_Duplicates_from_Sorted_List_E {
         head.next = deleteDuplicates3(head.next);
         return head.val == head.next.val ? head.next : head;
     }
+
     public ListNode removeElements4(ListNode head, int val) {
         if (head == null) return null;
         head.next = removeElements4(head.next, val);
         return head.val == val ? head.next : head;
     }
 
-//    My pretty solution. Java.
-
+    //    My pretty solution. Java.
     public class Solution5 {
         public ListNode deleteDuplicates(ListNode head) {
             ListNode list = head;
@@ -81,8 +76,7 @@ public class _083_List_Remove_Duplicates_from_Sorted_List_E {
         }
     }
 
-//    recursive version
-
+    //    recursive version
     public class Solution6 {
         public ListNode deleteDuplicates(ListNode head) {
             if(head == null)
@@ -98,8 +92,7 @@ public class _083_List_Remove_Duplicates_from_Sorted_List_E {
         }
     }
 
-//    I did some garbage collection thing, not sure if this is good or not.
-
+    //    I did some garbage collection thing, not sure if this is good or not.
     public static ListNode deleteDuplicates7(ListNode head){
         if( head == null ) return null;
         ListNode prev = head, cur = head.next;
@@ -117,8 +110,9 @@ public class _083_List_Remove_Duplicates_from_Sorted_List_E {
     }
 
 
-//    I agree, this solution is really pretty. One pointer. No nonsense approach. You can remove some of the redundant code in your solution like this. It becomes more efficient.
-
+//    I agree, this solution is really pretty. One pointer.
+// No nonsense approach. You can remove some of the redundant code in your
+// solution like this. It becomes more efficient.
     public ListNode deleteDuplicates8(ListNode head) {
         if(head == null || head.next == null) return head;
 

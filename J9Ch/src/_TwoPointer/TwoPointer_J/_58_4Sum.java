@@ -6,7 +6,11 @@ import java.util.Arrays;
 /** 58 4Sum
  * Created by tianhuizhu on 6/28/17.
  */
+//
+//  http://www.lintcode.com/zh-cn/problem/4sum/
 public class _58_4Sum {
+
+    //jiuzhang
     public ArrayList<ArrayList<Integer>> fourSum(int[] num, int target) {
         ArrayList<ArrayList<Integer>> rst = new ArrayList<ArrayList<Integer>>();
         Arrays.sort(num);
@@ -22,6 +26,7 @@ public class _58_4Sum {
 
                 int left = j + 1;
                 int right = num.length - 1;
+
                 while (left < right) {
                     int sum = num[i] + num[j] + num[left] + num[right];
                     if (sum < target) {
@@ -51,5 +56,28 @@ public class _58_4Sum {
         return rst;
     }
 
+/////////////////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 }
+/*
+给一个包含n个数的整数数组S，在S中找到所有使得和为给定整数target的四元组(a, b, c, d)。
+
+ 注意事项
+
+四元组(a, b, c, d)中，需要满足a <= b <= c <= d
+
+答案中不可以包含重复的四元组。
+
+样例
+例如，对于给定的整数数组S=[1, 0, -1, 0, -2, 2] 和 target=0. 满足要求的四元组集合为：
+
+(-1, 0, 0, 1)
+
+(-2, -1, 1, 2)
+
+(-2, 0, 0, 2)
+
+
+ */

@@ -49,8 +49,8 @@ public class _018_TwoPointer_1_4Sum_M {
      * add all of them into the ArrayList fourSumList, using
      * fourSumList.add(Arrays.asList(z1, the three numbers))
      */
-    public void threeSumForFourSum(int[] nums, int target, int low, int high, ArrayList<List<Integer>> fourSumList,
-                                   int z1) {
+    public void threeSumForFourSum(int[] nums, int target, int low, int high,
+                                   ArrayList<List<Integer>> fourSumList, int z1) {
         if (low + 1 >= high)
             return;
 
@@ -86,7 +86,8 @@ public class _018_TwoPointer_1_4Sum_M {
      * add all of them into the ArrayList fourSumList, using
      * fourSumList.add(Arrays.asList(z1, z2, the two numbers))
      */
-    public void twoSumForFourSum(int[] nums, int target, int low, int high, ArrayList<List<Integer>> fourSumList,
+    public void twoSumForFourSum(int[] nums, int target, int low, int high,
+                                 ArrayList<List<Integer>> fourSumList,
                                  int z1, int z2) {
 
         if (low >= high)

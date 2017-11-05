@@ -65,7 +65,9 @@ public class _38_Search_a_2D_Matrix_II {
 
 /*  240. Search a 2D Matrix II
 
-Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
+Write an efficient algorithm that searches for a value in an m x n matrix.
+
+This matrix has the following properties:
 
 Integers in each row are sorted in ascending from left to right.
 Integers in each column are sorted in ascending from top to bottom.

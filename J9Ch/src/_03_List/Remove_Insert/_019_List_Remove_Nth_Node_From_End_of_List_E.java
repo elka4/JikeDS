@@ -2,51 +2,51 @@ package _03_List.Remove_Insert;
 
 import lib.ListNode;
 
-
 //  19. Remove Nth Node From End of List
 
 //  https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
 //  http://www.lintcode.com/zh-cn/problem/remove-nth-node-from-end-of-list/
 public class _019_List_Remove_Nth_Node_From_End_of_List_E {
-//https://leetcode.com/problems/remove-nth-node-from-end-of-list/solution/
-    //Approach #1 (Two pass algorithm)
-    public ListNode removeNthFromEnd1(ListNode head, int n) {
-    ListNode dummy = new ListNode(0);
-    dummy.next = head;
-    int length  = 0;
-    ListNode first = head;
-    while (first != null) {
-        length++;
-        first = first.next;
-    }
-    length -= n;
-    first = dummy;
-    while (length > 0) {
-        length--;
-        first = first.next;
-    }
-    first.next = first.next.next;
-    return dummy.next;
-}
 
-//Approach #2 (One pass algorithm)
-public ListNode removeNthFromEnd2(ListNode head, int n) {
-    ListNode dummy = new ListNode(0);
-    dummy.next = head;
-    ListNode first = dummy;
-    ListNode second = dummy;
-    // Advances first pointer so that the gap between first and second is n nodes apart
-    for (int i = 1; i <= n + 1; i++) {
-        first = first.next;
+    //https://leetcode.com/problems/remove-nth-node-from-end-of-list/solution/
+        //Approach #1 (Two pass algorithm)
+        public ListNode removeNthFromEnd1(ListNode head, int n) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        int length  = 0;
+        ListNode first = head;
+        while (first != null) {
+            length++;
+            first = first.next;
+        }
+        length -= n;
+        first = dummy;
+        while (length > 0) {
+            length--;
+            first = first.next;
+        }
+        first.next = first.next.next;
+        return dummy.next;
     }
-    // Move first to the end, maintaining the gap
-    while (first != null) {
-        first = first.next;
-        second = second.next;
+
+    //Approach #2 (One pass algorithm)
+    public ListNode removeNthFromEnd2(ListNode head, int n) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode first = dummy;
+        ListNode second = dummy;
+        // Advances first pointer so that the gap between first and second is n nodes apart
+        for (int i = 1; i <= n + 1; i++) {
+            first = first.next;
+        }
+        // Move first to the end, maintaining the gap
+        while (first != null) {
+            first = first.next;
+            second = second.next;
+        }
+        second.next = second.next.next;
+        return dummy.next;
     }
-    second.next = second.next.next;
-    return dummy.next;
-}
 
 /////////////////////////////////////////////////////////////////////////////////////
 
@@ -59,7 +59,6 @@ public ListNode removeNthFromEnd2(ListNode head, int n) {
 
 /////////////////////////////////////////////////////////////////////////////////////
 //jiuzhang
-public class Jiuzhang {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if (n <= 0) {
             return null;
@@ -82,7 +81,7 @@ public class Jiuzhang {
         preDelete.next = preDelete.next.next;
         return dummy.next;
     }
-}
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////

@@ -293,6 +293,15 @@ Use a horizontal line, to jump to the bottommost black pixel, in the range of [x
         return end;
     }
 
+    private boolean isEmptyColumn(char[][] image, int col) {
+        for (int i = 0; i < image.length; i++) {
+            if (image[i][col] == '1') {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private int findTop(char[][] image, int start, int end) {
         while (start + 1 < end) {
             int mid = start + (end - start) / 2;
@@ -325,15 +334,6 @@ Use a horizontal line, to jump to the bottommost black pixel, in the range of [x
         }
 
         return end;
-    }
-
-    private boolean isEmptyColumn(char[][] image, int col) {
-        for (int i = 0; i < image.length; i++) {
-            if (image[i][col] == '1') {
-                return false;
-            }
-        }
-        return true;
     }
 
     private boolean isEmptyRow(char[][] image, int row) {

@@ -223,6 +223,28 @@ class Jiuzhang {
     }
 }
 }
+
+/*
+给定一个包含红，白，蓝且长度为 n 的数组，将数组元素进行分类使相同颜色的元素相邻，并按照红、白、蓝的顺序进行排序。
+
+我们可以使用整数 0，1 和 2 分别代表红，白，蓝。
+
+ 注意事项
+
+不能使用代码库中的排序函数来解决这个问题。
+排序需要在原数组中进行。
+
+样例
+给你数组 [1, 0, 1, 2], 需要将该数组原地排序为 [0, 1, 1, 2]。
+
+挑战
+一个相当直接的解决方案是使用计数排序扫描2遍的算法。
+
+首先，迭代数组计算 0,1,2 出现的次数，然后依次用 0,1,2 出现的次数去覆盖数组。
+
+你否能想出一个仅使用常数级额外空间复杂度且只扫描遍历一遍数组的算法？
+ */
+
 /*
 Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.
 
@@ -238,20 +260,4 @@ nums rather straight forward solution is a two-pass algorithm using counting sor
 First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
 
 Could you come up with an one-pass algorithm using only constant space?
- */
-
-/*
-给定一个包含红，白，蓝且长度为 n 的数组，将数组元素进行分类使相同颜色的元素相邻，并按照红、白、蓝的顺序进行排序。
-
-我们可以使用整数 0，1 和 2 分别代表红，白，蓝。
-
- 注意事项
-
-不能使用代码库中的排序函数来解决这个问题。
-排序需要在原数组中进行。
-
-样例
-给你数组 [1, 0, 1, 2], 需要将该数组原地排序为 [0, 1, 1, 2]。
-
-
  */

@@ -350,6 +350,17 @@ public class _143_List_Reorder_List_M {
 /////////////////////////////////////////////////////////////////////////////////////
 //jiuzhang
 public class Jiuzhang {
+    public void reorderList(ListNode head) {
+        if (head == null || head.next == null) {
+            return;
+        }
+
+        ListNode mid = findMiddle(head);
+        ListNode tail = reverse(mid.next);
+        mid.next = null;
+
+        merge(head, tail);
+    }
     private ListNode reverse(ListNode head) {
         ListNode newHead = null;
         while (head != null) {
@@ -391,17 +402,6 @@ public class Jiuzhang {
         return slow;
     }
 
-    public void reorderList(ListNode head) {
-        if (head == null || head.next == null) {
-            return;
-        }
-
-        ListNode mid = findMiddle(head);
-        ListNode tail = reverse(mid.next);
-        mid.next = null;
-
-        merge(head, tail);
-    }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////

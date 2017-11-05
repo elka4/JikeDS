@@ -14,6 +14,7 @@ public class _092_List_Reverse_Linked_List_II_M {
         if(head == null) return null;
         ListNode dummy = new ListNode(0); // create a dummy node to mark the head of this list
         dummy.next = head;
+
         ListNode pre = dummy; // make a pointer pre as a marker for the node before reversing
         for(int i = 0; i<m-1; i++) pre = pre.next;
 
@@ -210,9 +211,10 @@ public class Jiuzhang {
             head = head.next;
         }
 
-        ListNode premNode = head;
         ListNode mNode = head.next;
-        ListNode nNode = mNode, postnNode = mNode.next;
+        ListNode nNode = mNode;
+        ListNode premNode = head;
+        ListNode postnNode = mNode.next;
         for (int i = m; i < n; i++) {
             if (postnNode == null) {
                 return null;
