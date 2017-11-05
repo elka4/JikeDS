@@ -20,9 +20,11 @@ public class _475_BinarySearch_Heaters_E {
 
             for (int house : houses) {
                 int index = Arrays.binarySearch(heaters, house);
+
                 if (index < 0) {
                     index = -(index + 1);
                 }
+
                 int dist1 = index - 1 >= 0 ? house - heaters[index - 1] : Integer.MAX_VALUE;
                 int dist2 = index < heaters.length ? heaters[index] - house : Integer.MAX_VALUE;
 
@@ -35,7 +37,8 @@ public class _475_BinarySearch_Heaters_E {
 
 /*
     Simple Java Solution with 2 Pointers
-    Based on 2 pointers, the idea is to find the nearest heater for each house, by comparing the next heater with the current heater.
+    Based on 2 pointers, the idea is to find the nearest heater for each house,
+    by comparing the next heater with the current heater.
 */
 
     public class Solution2 {
@@ -71,6 +74,45 @@ public class _475_BinarySearch_Heaters_E {
             }
 
             return res;
+        }
+    }
+
+
+
+//    My Java Binary Search Solution, Concise and Easy to Understand
+    public class Solution4 {
+        public int findRadius(int[] houses, int[] heaters) {
+            int m = houses.length;
+            int n = heaters.length;
+            Arrays.sort(houses);
+            Arrays.sort(heaters);
+
+            int left = 0;
+            int right = Math.max(Math.abs(houses[0] - heaters[n - 1]),
+                                 Math.abs(houses[m - 1] - heaters[0]));
+
+            while (left <= right) {
+                int mid = left + (right - left) / 2;
+                if (cover(mid, houses, heaters))
+                    right = mid - 1;
+                else
+                    left = mid + 1;
+            }
+            return left;
+        }
+
+        public boolean cover(int radius, int[] houses, int[] heaters) {
+            int m = houses.length;
+            int n = heaters.length;
+            int j = 0;
+
+            for (int i = 0; i < n; i++) {
+                long low = heaters[i] - radius;
+                long high = heaters[i] + radius;
+                while (j < m && low <= (long)houses[j] && (long)houses[j] <= high)
+                    j++;
+            }
+            return j == m;
         }
     }
 }

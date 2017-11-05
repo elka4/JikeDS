@@ -1,5 +1,8 @@
 package _BinarySearch.H_Index;
 
+//  275. H-Index II
+
+//  https://leetcode.com/problems/h-index-ii/description/
 public class _275_BinarySearch_HIndex_II_M {
 //O(logN)-time O(1)-space Easy Solution with Detailed Explanations (C++/Java/Python)
     public class Solution {

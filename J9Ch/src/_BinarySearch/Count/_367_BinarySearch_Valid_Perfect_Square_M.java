@@ -1,5 +1,8 @@
 package _BinarySearch.Count;
 
+//  367. Valid Perfect Square
+//  https://leetcode.com/problems/valid-perfect-square/description/
+//
 public class _367_BinarySearch_Valid_Perfect_Square_M {
 //    A square number is 1+3+5+7+..., JAVA code
     public boolean isPerfectSquare(int num) {
@@ -14,6 +17,7 @@ public class _367_BinarySearch_Valid_Perfect_Square_M {
 
     public boolean isPerfectSquare2(int num) {
         int low = 1, high = num;
+
         while (low <= high) {
             long mid = (low + high) >>> 1;
             if (mid * mid == num) {
@@ -36,7 +40,27 @@ public class _367_BinarySearch_Valid_Perfect_Square_M {
         }
         return x * x == num;
     }
-
+////////////////////////////////////////////////////////////////////////
+class Zhu {
+    public boolean isPerfectSquare(int num) {
+        int low = 1, high = num;
+        if (num == 1) {
+            return true;
+        }
+        while (low + 1 < high) {
+            long mid = low + (high - low) / 2;
+            if (mid * mid == num) {
+                return true;
+            } else if (mid * mid < num) {
+                low = (int) mid ;
+            } else {
+                high = (int) mid ;
+            }
+        }
+        return false;
+    }
+}
+////////////////////////////////////////////////////////////////////////
 }
 /*
 Given a positive integer num, write a function which returns True if num is a perfect square else False.
@@ -44,12 +68,10 @@ Given a positive integer num, write a function which returns True if num is a pe
 Note: Do not use any built-in library function such as sqrt.
 
 Example 1:
-
 Input: 16
 Returns: True
-Example 2:
 
+Example 2:
 Input: 14
 Returns: False
-Credits:
  */

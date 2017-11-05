@@ -1,12 +1,245 @@
 package _BinarySearch.Intersection;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.*;
 
+//  350. Intersection of Two Arrays II
+//  https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
+//  http://www.lintcode.com/zh-cn/problem/intersection-of-two-arrays-ii/
 public class _350_BinarySearch_Intersection_of_Two_Arrays_II_E {
+//AC solution using Java HashMap
+public class Solution1 {
+    public int[] intersect(int[] nums1, int[] nums2) {
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        for(int i = 0; i < nums1.length; i++)
+        {
+            if(map.containsKey(nums1[i])) map.put(nums1[i], map.get(nums1[i])+1);
+            else map.put(nums1[i], 1);
+        }
 
+        for(int i = 0; i < nums2.length; i++)
+        {
+            if(map.containsKey(nums2[i]) && map.get(nums2[i]) > 0)
+            {
+                result.add(nums2[i]);
+                map.put(nums2[i], map.get(nums2[i])-1);
+            }
+        }
+
+        int[] r = new int[result.size()];
+        for(int i = 0; i < result.size(); i++)
+        {
+            r[i] = result.get(i);
+        }
+
+        return r;
+    }
+}
+
+    public class Solution2 {
+        public int[] intersect(int[] nums1, int[] nums2) {
+            List<Integer> res = new ArrayList<Integer>();
+            Arrays.sort(nums1);
+            Arrays.sort(nums2);
+            for(int i = 0, j = 0; i< nums1.length && j<nums2.length;){
+                if(nums1[i]<nums2[j]){
+                    i++;
+                }
+                else if(nums1[i] == nums2[j]){
+                    res.add(nums1[i]);
+                    i++;
+                    j++;
+                }
+                else{
+                    j++;
+                }
+            }
+            int[] result = new int[res.size()];
+            for(int i = 0; i<res.size();i++){
+                result[i] = res.get(i);
+            }
+            return result;
+        }
+    }
+
+//    using stream
+
+    public class Solution3 {
+        public int[] intersect(int[] nums1, int[] nums2) {
+
+            Map<Integer, Integer> map = new HashMap();
+            List<Integer> list = new ArrayList();
+            for (int n : nums1) {
+                map.put(n, map.getOrDefault(n, 0) + 1);
+            }
+
+            for (int n : nums2) {
+                Integer intersection = map.get(n);
+
+                if (intersection != null && intersection > 0) {
+                    list.add(n);
+                    map.put(n, map.get(n) - 1);
+                }
+            }
+
+            return list.stream().mapToInt(i -> i).toArray();
+        }
+    }
+
+
+/*    Using a List.
+1.) Add Elements of nums1 array in a List l1.
+2.) check if elements of nums2 array are in list l1.
+            3.) if l1 contains an element of nums2, add that element in list2(result list) and remove that element from l1.
+            4.) Convert this list l2 to array*/
+
+    public class Solution4 {
+        public int[] intersect(int[] nums1, int[] nums2) {
+            List<Integer> l1 =new ArrayList<Integer>();
+            List<Integer> l2 =new ArrayList<Integer>();
+            for(int i:nums1){
+                l1.add(i);
+            }
+            for(int j:nums2){
+                if(l1.contains(j)){
+                    l2.add(j);
+                    l1.remove((Integer)j);
+                }
+            }
+            int[] a=new int[l2.size()];
+            int count=0;
+            for(int k:l2){
+                a[count++]=k;
+            }
+            return a;
+        }
+    }
+
+
+/*    Great solution without sorting two arrays, thank you! The solution using java hashmap has O(m + n) time complexity and O(min(m, n)) space complexity. In theory, they are faster than sorted arrays in terms of time complexity, at the expense of extra space. However, tests show that the 1st solution(85.83%) > 2nd solution(67.33%) > your solution(48.29%). The difference between theory and practice may lie in the fact that the frequent get/put operations on HashMap and final for-loop to convert a List<Integer> to an int array.
+
+    Here are two other solutions based on sorted arrays:
+            (1) linear search : O(n*log n + m*log m) time complexity.*/
+
+    public int[] intersect5(int[] nums1, int[] nums2) {
+        // Write your code here
+        int[] res = nums1.length < nums2.length ? new int[nums1.length] : new int[nums2.length];
+        if (res.length == 0) {
+            return res;
+        }
+
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+
+        int pt1 = 0;
+        int pt2 = 0;
+        int pt = 0;
+        while(pt1 < nums1.length && pt2 < nums2.length) {
+            int n1 = nums1[pt1];
+            int n2 = nums2[pt2];
+            if (n1 == n2) {
+                res[pt++] = n1;
+                pt1++;
+                pt2++;
+            } else if (n1 > n2) {
+                pt2++;
+            } else {
+                pt1++;
+            }
+        }
+        return Arrays.copyOfRange(res, 0, pt);
+    }
+
+
+/*    (2) binary search : O((m+n)log n)
+    STEP 1: determine the frequency of one number in "nums1", f1
+    STEP 2: determine the frequency of the same number in "nums2", f2
+    STEP 3: add this number in result array for min(f1, f2) times.*/
+
+    public int[] intersect6(int[] nums1, int[] nums2) {
+        // Write your code here
+        if (nums1.length > nums2.length) {
+            return intersect6(nums2, nums1);
+        }
+        int[] res = new int[nums1.length];
+        if (res.length == 0) {
+            return res;
+        }
+
+        // binary search version
+        int i = 0;
+        int j = 0;
+        int freq1, freq2, freq, num, lower, upper;
+        int[] bound;
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        while (j < nums2.length) {
+            num = nums2[j];
+            // determine the frequency of the number in "nums1"
+            bound = searchRange(num, nums1);
+            upper = bound[1];
+            lower = bound[0];
+            if (upper != -1 && lower != -1) {
+                freq1 = upper - lower + 1;
+                // calculate the frequency of the number in "nums2"
+                for (freq2 = 1; j < nums2.length - 1 && nums2[j] == nums2[j + 1]; j++) freq2++;
+                // add the number multiple time to the result
+                freq = (freq1 > freq2) ? freq2 : freq1;
+                for (int k = 0; k < freq; k++) {
+                    res[i++] = num;
+                }
+            }
+            j++;
+        }
+        return Arrays.copyOfRange(res, 0, i);
+    }
+
+    private int[] searchRange(int target, int[] a) {
+        int[] bound = new int[]{-1, -1};
+
+        if (a.length == 0) return bound;
+        // search lower bound
+        int low = 0;
+        int high = a.length -1;
+        while (low + 1 < high) {
+            int mid = low + (high - low) / 2;
+            if (a[mid] == target) {
+                high = mid;
+            } else if (a[mid] > target) {
+                high = mid;
+            } else {
+                low = mid;
+            }
+        }
+        if (a[low] == target) {
+            bound[0] = low;
+        } else if (a[high] == target) {
+            bound[0] = high;
+        } else {
+            return bound;
+        }
+        // search upper bound
+        low = 0;
+        high = a.length - 1;
+        while (low + 1 < high) {
+            int mid = low + (high - low) / 2;
+            if (a[mid] == target) {
+                low = mid;
+            } else if (a[mid] > target) {
+                high = mid;
+            } else {
+                low = mid;
+            }
+        }
+        if (a[high] == target) {
+            bound[1] = high;
+        } else if (a[low] == target) {
+            bound[1] = low;
+        }
+        return bound;
+    }
 //////////////////////////////////////////////////////////
     //jiuzhang
 public class Jiuzhang{

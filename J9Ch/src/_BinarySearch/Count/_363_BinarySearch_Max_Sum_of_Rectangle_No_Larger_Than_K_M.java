@@ -1,9 +1,13 @@
 package _BinarySearch.Count;
-
 import java.util.TreeSet;
 
+//  363. Max Sum of Rectangle No Larger Than K
+
+//  https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/description/
+//
 public class _363_BinarySearch_Max_Sum_of_Rectangle_No_Larger_Than_K_M {
-//    Java Binary Search solution time complexity min(m,n)^2*max(m,n)*log(max(m,n))
+
+    //    Java Binary Search solution time complexity min(m,n)^2*max(m,n)*log(max(m,n))
     /* first  consider the situation matrix is 1D
         we can save every sum of 0~i(0<=i<len) and binary search previous sum to find
         possible result for every index, time complexity is O(NlogN).
@@ -21,6 +25,7 @@ public class _363_BinarySearch_Max_Sum_of_Rectangle_No_Larger_Than_K_M {
         //indicating sum up in every row or every column
         boolean colIsBig = col>row;
         int res = Integer.MIN_VALUE;
+
         for(int i = 0;i<m;i++){
             int[] array = new int[n];
             // sum from row j to row i
@@ -99,6 +104,7 @@ public class _363_BinarySearch_Max_Sum_of_Rectangle_No_Larger_Than_K_M {
             return 0;
         int rows = matrix.length, cols = matrix[0].length;
         int[][] areas = new int[rows][cols];
+
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
                 int area = matrix[r][c];
@@ -111,7 +117,9 @@ public class _363_BinarySearch_Max_Sum_of_Rectangle_No_Larger_Than_K_M {
                 areas[r][c] = area;
             }
         }
+
         int max = Integer.MIN_VALUE;
+
         for (int r1 = 0; r1 < rows; r1++) {
             for (int r2 = r1; r2 < rows; r2++) {
                 TreeSet<Integer> tree = new TreeSet<>();

@@ -1,4 +1,4 @@
-package _0BinarySearch.binary;
+package _BinarySearch.binary;
 
 /**
  * Created by tzh on 1/16/17.

@@ -1,11 +1,80 @@
 package _BinarySearch.Count_of_Smaller_Numbers_J;
+import org.junit.Test;
 
-import java.util.ArrayList;
+import java.util.*;
 
 // Count of Smaller Number
 // lint:    http://lintcode.com/zh-cn/problem/count-of-smaller-number/
 
 public class _248_Count_of_Smaller_Number {
+    //  http://blog.csdn.net/sunday0904/article/details/72721803
+    public class Solution1 {
+        /**
+         * @param A: An integer array
+         * @return: The number of element in the array that
+         *          are smaller that the given integer
+         */
+        public ArrayList<Integer> countOfSmallerNumber(int[] A, int[] queries) {
+            // write your code here
+            ArrayList<Integer> result = new ArrayList<Integer>();
+            Arrays.sort(A);
+
+            for(int i = 0;i<queries.length;i++){
+                int count = 0;
+                for(int j = 0;j<A.length;j++){
+                    if(A[j] >= queries[i]){
+                        count = j;
+                        break;
+                    }
+                }
+                result.add(count);
+            }
+            return result;
+        }
+    }
+
+///////////////////////////////////////////////////////////////////////////
+
+    //  https://github.com/Silocean/LintCode/blob/master/248%20%E7%BB%9F%E8%AE%A1%E6%AF%94%E7%BB%99%E5%AE%9A%E6%95%B4%E6%95%B0%E5%B0%8F%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0/CountOfSmallerNumber.java
+    public class Solution2 {
+        /**
+         * @param A: An integer array
+         * @return: The number of element in the array that
+         * are smaller that the given integer
+         */
+        public ArrayList<Integer> countOfSmallerNumber(int[] A, int[] queries) {
+            ArrayList<Integer> result = new ArrayList<>();
+            Arrays.sort(A);
+            for (int i = 0; i < queries.length; i++) {
+                result.add(helper(A, queries[i]));
+            }
+
+            return result;
+        }
+
+        private int helper(int[] A, int num) {
+            int count = 0;
+            for (int i = 0; i < A.length; i++) {
+                if (A[i] < num) {
+                    count++;
+                } else {
+                    break;
+                }
+            }
+
+            return count;
+        }
+    }
+
+    @Test
+    public void test02(){
+        ArrayList<Integer> result = countOfSmallerNumber(new int[]{1, 2, 7, 8, 5}, new int[]{1, 8, 5});
+        for (int i = 0; i < result.size(); i++) {
+            System.out.println(result.get(i));
+        }
+    }
+
+///////////////////////////////////////////////////////////////////////////
 	/*
      * @param nums: An integer array
      * @return: The number of element in the array that 
