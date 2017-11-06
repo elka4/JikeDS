@@ -36,8 +36,8 @@ public class _03_Trapping_Rain_Water {
                     while (!stack.isEmpty() && height[i] > height[stack.peek()]) {
                         int pre = stack.pop();
                         if (!stack.isEmpty()) {
-                            res += (Math.min(height[i], height[stack.peek()]) - height[pre]) *
-                                    (i - stack.peek() - 1);
+                            res += (Math.min(height[i],
+                                    height[stack.peek()]) - height[pre]) * (i - stack.peek() - 1);
                         }
                     }
                     stack.push(i);
