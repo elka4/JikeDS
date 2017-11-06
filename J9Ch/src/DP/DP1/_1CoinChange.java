@@ -285,6 +285,7 @@ public class _1CoinChange {
 /////////////////////////////////////////////////////////////////
     //Approach #1 (Brute force) [Time Limit Exceeded]
     public int coinChange11(int[] coins, int amount) {
+
         return coinChange11(0, coins, amount);
     }
 
@@ -318,7 +319,9 @@ public class _1CoinChange {
     private int coinChange2(int[] coins, int rem, int[] count) {
         if (rem < 0) return -1;
         if (rem == 0) return 0;
-        if (count[rem - 1] != 0) return count[rem - 1];
+
+        if (count[rem - 1] != 0)
+            return count[rem - 1];
         int min = Integer.MAX_VALUE;
 
         for (int coin : coins) {
