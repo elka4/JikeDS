@@ -28,7 +28,7 @@ This problem can be solved by recursively forming left and right subtrees. The d
  */
 
 
-public class Unique_Binary_Search_Trees_II {
+public class _95_Unique_Binary_Search_Trees_II {
 
     public List<TreeNode> generateTrees(int n) {
         if(n==0){

@@ -17,7 +17,7 @@ Let count[i] be the number of unique binary search trees for i. The number of tr
  */
 
 
-public class Unique_Binary_Search_Trees {
+public class _96_Unique_Binary_Search_Trees {
 
     //DP
     public int numTrees(int n) {

@@ -1,11 +1,11 @@
-package _04_Tree._Subtree;
+package _04_Tree._Build;
 import lib.*;
 
 /*
 654
 Maximum Binary Tree
  */
-public class Maximum_Binary_Tree {
+public class _654_Maximum_Binary_Tree {
 //Approach #1 Recursive Solution[Accepted]
 
     public class Solution {

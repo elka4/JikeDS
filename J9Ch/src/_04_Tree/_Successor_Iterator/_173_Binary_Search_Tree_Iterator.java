@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import java.util.Stack;
 
-public class BST_Iterator {
+public class _173_Binary_Search_Tree_Iterator {
     //it is the same as the nonrecursive inorder traversal
     class BSTIterator {
         private Stack<TreeNode> stack = new Stack<>();

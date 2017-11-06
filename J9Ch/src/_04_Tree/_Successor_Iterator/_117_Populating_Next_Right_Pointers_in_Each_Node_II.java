@@ -13,7 +13,7 @@ Similar to Populating Next Right Pointers in Each Node, we have 4 pointers at 2 
 
  */
 
-public class Populating_Next_Right_Pointers_in_Each_Node_II {
+public class _117_Populating_Next_Right_Pointers_in_Each_Node_II {
 
     class TreeLinkNode{
         int val;

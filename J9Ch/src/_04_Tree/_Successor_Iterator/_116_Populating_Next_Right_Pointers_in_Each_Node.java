@@ -21,7 +21,7 @@ After calling your function, the tree should look like:
  */
 
 
-public class Populating_Next_Right_Pointers_in_Each_Node {
+public class _116_Populating_Next_Right_Pointers_in_Each_Node {
 
     class TreeLinkNode{
         int val;

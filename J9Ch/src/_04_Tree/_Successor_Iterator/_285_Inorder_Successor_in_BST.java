@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.util.Stack;
 
-public class Inorder_Successor_in_BST {
+public class _285_Inorder_Successor_in_BST {
 	public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
         TreeNode successor = null;
         while (root != null && root != p) {
