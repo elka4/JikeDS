@@ -16,7 +16,7 @@ Java Solution
 
 For each node, its left child's degree is -1 and is right child's degree is +1. We can do a level order traversal and save the degree information.
  */
-public class Vertical_Order {
+public class _314_Binary_Tree_Vertical_Order_Traversal {
     public List<List<Integer>> verticalOrder(TreeNode root) {
         // Write your code here
         List<List<Integer>> results = new ArrayList<>();

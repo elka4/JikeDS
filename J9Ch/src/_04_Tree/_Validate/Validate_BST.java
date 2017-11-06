@@ -1,4 +1,4 @@
-package _04_Tree._BST;
+package _04_Tree._Validate;
 
 import lib.TreeNode;
 

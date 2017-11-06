@@ -207,3 +207,37 @@ public class GenerateCodeTable {
         return "";
     }
 }
+/*
+ * Given a binary tree, find its maximum depth.
+The maximum depth is the number of nodes along the longest
+ path from the root node down to the farthest leaf node.
+
+Example: Given a binary tree as follow:
+  1
+ / \
+2   3
+   / \
+  4   5
+The maximum depth is 3.
+Tags: Divide and Conquer, Recursion, Binary Tree, Uber
+Related Problems: Easy Minimum Depth of Binary Tree 31 %
+ * */
+
+/*
+ * Given a binary tree, find its minimum depth.
+
+The minimum depth is the number of nodes along the shortest
+path from the root node down to the nearest leaf node.
+
+Example: Given a binary tree as follow:
+
+  1
+ / \
+2   3
+   / \
+  4   5
+The minimum depth is 2.
+
+Tags: Binary Tree Depth First Search
+Related Problems: Easy Maximum Depth of Binary Tree 55 %
+ * */

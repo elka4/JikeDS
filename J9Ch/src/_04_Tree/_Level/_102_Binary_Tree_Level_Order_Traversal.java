@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.*;
 
 //version 1: BFS
-public class Binary_Tree_Level_Order_Traversal {
+public class _102_Binary_Tree_Level_Order_Traversal {
  public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
      ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 
