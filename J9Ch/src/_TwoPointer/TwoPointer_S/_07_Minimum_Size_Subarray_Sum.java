@@ -1,6 +1,6 @@
 package _TwoPointer.TwoPointer_S;
 
-public class _07Minimum_Size_Subarray_Sum {
+public class _07_Minimum_Size_Subarray_Sum {
 	/**
      * @param nums: an array of integers
      * @param s: an integer

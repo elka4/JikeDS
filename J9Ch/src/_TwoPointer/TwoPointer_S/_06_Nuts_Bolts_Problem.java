@@ -1,6 +1,6 @@
 package _TwoPointer.TwoPointer_S;
 
-public class _06Nuts_Bolts_Problem {
+public class _06_Nuts_Bolts_Problem {
 	/**
      * @param nuts: an array of integers
      * @param bolts: an array of integers

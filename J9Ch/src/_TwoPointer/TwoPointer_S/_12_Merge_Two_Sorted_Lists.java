@@ -1,6 +1,6 @@
 package _TwoPointer.TwoPointer_S;
 
-public class _12Merge_Two_Sorted_Lists {
+public class _12_Merge_Two_Sorted_Lists {
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
         ListNode lastNode = dummy;

@@ -3,7 +3,7 @@ package _TwoPointer.TwoPointer_S;
 import java.util.HashMap;
 import java.util.Map;
 
-public class _10Longest_Substring_with_At_Most_K_Distinct_Characters {
+public class _10_Longest_Substring_with_At_Most_K_Distinct_Characters {
 	/**
      * @param s : A string
      * @return : The length of the longest substring 

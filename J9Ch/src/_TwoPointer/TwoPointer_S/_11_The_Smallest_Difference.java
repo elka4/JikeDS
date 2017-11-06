@@ -2,7 +2,7 @@ package _TwoPointer.TwoPointer_S;
 
 import java.util.Arrays;
 
-public class _11The_Smallest_Difference {
+public class _11_The_Smallest_Difference {
 	/**
      * @param A, B: Two integer arrays.
      * @return: Their smallest difference.

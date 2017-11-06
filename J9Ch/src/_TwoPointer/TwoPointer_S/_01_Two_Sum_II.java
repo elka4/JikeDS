@@ -2,7 +2,8 @@ package _TwoPointer.TwoPointer_S;
 
 import java.util.Arrays;
 
-public class _01Two_Sum_II {
+//
+public class _01_Two_Sum_II {
 	/**
      * @param nums: an array of integer
      * @param target: an integer
