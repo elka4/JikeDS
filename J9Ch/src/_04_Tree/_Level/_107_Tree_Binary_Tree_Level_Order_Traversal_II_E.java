@@ -1,15 +1,13 @@
 package _04_Tree._Level;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
 import java.util.*;
 
-
-//
-//
-//
+//  107. Binary Tree Level Order Traversal II
+//  https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
+//  http://www.lintcode.com/zh-cn/problem/binary-tree-level-order-traversal-ii/
 public class _107_Tree_Binary_Tree_Level_Order_Traversal_II_E {
 
 //    DFS solution:
@@ -55,6 +53,7 @@ public class _107_Tree_Binary_Tree_Level_Order_Traversal_II_E {
         }
     }
 ////////////////////////////////////////////////////////////////////////
+    //jiuzhang
     /**
      * @param root: The root of binary tree.
      * @return: buttom-up level order a list of lists of integer
@@ -147,31 +146,45 @@ public class _107_Tree_Binary_Tree_Level_Order_Traversal_II_E {
 ////////////////////////////////////////////////////////////////////////
 }
 /*
+二叉树的层次遍历 II
 
- */
-/*
- * Given a binary tree, return the bottom-up level order
- *  traversal of its nodes' values. (ie, from left to right,
- *  level by level from leaf to root).
+ 描述
+ 笔记
+ 数据
+ 评测
+给出一棵二叉树，返回其节点值从底向上的层次序遍历（按从叶节点所在层到根节点所在的层遍历，然后逐层从左往右遍历）
 
-Example
-Given binary tree {3,9,20,#,#,15,7},
+样例
+给出一棵二叉树 {3,9,20,#,#,15,7},
 
     3
    / \
   9  20
     /  \
    15   7
-
-
-return its bottom-up level order traversal as:
+按照从下往上的层次遍历为：
 
 [
   [15,7],
   [9,20],
   [3]
 ]
+ */
 
-Tags
-Queue Binary Tree Binary Tree Traversal Breadth First Search
- * */
+/*
+Given a binary tree, return the bottom-up level order traversal of its nodes' values. (ie, from left to right, level by level from leaf to root).
+
+For example:
+Given binary tree [3,9,20,null,null,15,7],
+    3
+   / \
+  9  20
+    /  \
+   15   7
+return its bottom-up level order traversal as:
+[
+  [15,7],
+  [9,20],
+  [3]
+]
+ */

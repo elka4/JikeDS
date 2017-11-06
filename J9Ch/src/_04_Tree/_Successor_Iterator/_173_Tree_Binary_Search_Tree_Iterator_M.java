@@ -1,13 +1,16 @@
 package _04_Tree._Successor_Iterator;
 
-import _04_Tree.HF3_Algo_DS_II_2BST._4BinarySearchTreeIterator;
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
 import java.util.Stack;
 
-public class _173_Binary_Search_Tree_Iterator {
+
+//  173. Binary Search Tree Iterator
+//  https://leetcode.com/problems/binary-search-tree-iterator/
+//  http://wiki.ruihan.org/index.php/All_algorithm_problems/linked_list
+public class _173_Tree_Binary_Search_Tree_Iterator_M {
     //it is the same as the nonrecursive inorder traversal
     class BSTIterator {
         private Stack<TreeNode> stack = new Stack<>();
@@ -52,7 +55,10 @@ public class _173_Binary_Search_Tree_Iterator {
             System.out.println(itr.next());
         }
     }
+
 /////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////
+
     public class BSTIterator2 {
         Stack<TreeNode> stack;
 
@@ -94,8 +100,9 @@ public class _173_Binary_Search_Tree_Iterator {
             System.out.println(itr.next());
         }
     }
-/////////////////////////////////////////////////////////////////////
 
+    /////////////////////////////////////////////////////////////////////
+    //jiuzhang
     public class BSTIterator3 {
         private Stack<TreeNode> stack = new Stack<>();
         TreeNode next = null;
@@ -150,7 +157,9 @@ public class _173_Binary_Search_Tree_Iterator {
             System.out.println(node);
         }
     }
+
 /////////////////////////////////////////////////////////////////////
+
     public class BSTIterator4 {
         private Stack<TreeNode> stack = new Stack<>();
         TreeNode next = null;
@@ -202,17 +211,83 @@ public class _173_Binary_Search_Tree_Iterator {
         }
     }
 /////////////////////////////////////////////////////////////////////
+
+    public class BSTIterator6 {
+        private Stack<TreeNode> stack = new Stack<TreeNode>();
+        public BSTIterator6(TreeNode root) { pushAll(root);
+        }
+        /** @return whether we have a next smallest number */
+        public boolean hasNext() { return !stack.isEmpty();
+        }
+        /** @return the next smallest number */
+        public int next() {
+            TreeNode tmpNode = stack.pop(); pushAll(tmpNode.right);
+            return tmpNode.val;
+        }
+        private void pushAll(TreeNode node) {
+
+            for (; node != null; stack.push(node), node = node.left);
+        }
+    }
+
+
+    public class BSTIterator22 {
+
+        private Stack<TreeNode> stack;
+        public BSTIterator22(TreeNode root) {
+            stack = new Stack<>();
+            TreeNode cur = root;
+            while(cur != null){
+                stack.push(cur);
+                if(cur.left != null)
+                    cur = cur.left;
+                else
+                    break;
+            }
+        }
+
+        /** @return whether we have a next smallest number */
+        public boolean hasNext() {
+            return !stack.isEmpty();
+        }
+
+        /** @return the next smallest number */
+        public int next() {
+            TreeNode node = stack.pop();
+            TreeNode cur = node;
+            // traversal right branch
+            if(cur.right != null){
+                cur = cur.right;
+                while(cur != null){
+                    stack.push(cur);
+                    if(cur.left != null)
+                        cur = cur.left;
+                    else
+                        break;
+                }
+            }
+            return node.val;
+        }
+    }
+
 }
+/* leetcode
+Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
+
+Calling next() will return the next smallest number in the BST.
+
+Note: next() and hasNext() should run in average O(1) time and uses O(h) memory, where h is the height of the tree.
+ */
 
 
-/*
+/* lintcode
  * Design an iterator over a binary search tree with the following rules:
 
 Elements are visited in ascending order (i.e. an in-order traversal)
 next() and hasNext() queries run in O(1) time in average.
 Have you met this question in a real interview? Yes
 Example
-For the following binary search tree, in-order traversal by using 
+For the following binary search tree, in-order traversal by using
 iterator is [1, 6, 10, 11, 12]
 
    10
@@ -220,15 +295,42 @@ iterator is [1, 6, 10, 11, 12]
 1      11
  \       \
   6       12
-Challenge 
+Challenge
 Extra memory usage O(h), h is the height of the tree.
 
 Super Star: Extra memory usage O(1)
 
-Tags 
-Binary Tree LintCode Copyright Non Recursion Binary Search Tree 
+Tags
+Binary Tree LintCode Copyright Non Recursion Binary Search Tree
 Google LinkedIn Facebook
 
-Related Problems 
+Related Problems
 Medium Inorder Successor in Binary Search Tree 30 %
  * */
+
+/*  lintcode
+二叉查找树迭代器
+
+ 描述
+ 笔记
+ 数据
+ 评测
+设计实现一个带有下列属性的二叉查找树的迭代器：
+
+元素按照递增的顺序被访问（比如中序遍历）
+next()和hasNext()的询问操作要求均摊时间复杂度是O(1)
+样例
+对于下列二叉查找树，使用迭代器进行中序遍历的结果为 [1, 6, 10, 11, 12]
+
+   10
+ /    \
+1      11
+ \       \
+  6       12
+挑战
+额外空间复杂度是O(h)，其中h是这棵树的高度
+
+Super Star：使用O(1)的额外空间复杂度
+
+
+ */

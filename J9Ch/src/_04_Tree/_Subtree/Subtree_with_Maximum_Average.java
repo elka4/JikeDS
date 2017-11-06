@@ -29,7 +29,7 @@ import org.junit.Test;
  * Created by tianhuizhu on 6/27/17.
  */
 public class Subtree_with_Maximum_Average {
-
+    //Jiuzhang
     // version 1: Traverse + Divide Conquer
     private class ResultType {
         public int sum, size;
@@ -250,3 +250,8 @@ root:
     
 
 }
+/*
+ 具有最大平均数的子树 · Subtree with Maximum Average
+
+ 给一棵二叉树，找到有最大平均值的子树。返回子树的根结点。
+ */

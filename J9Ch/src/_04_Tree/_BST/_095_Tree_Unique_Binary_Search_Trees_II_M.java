@@ -7,9 +7,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-//
-//
-//
+//  95. Unique Binary Search Trees II
+//  https://leetcode.com/problems/unique-binary-search-trees-ii/description/
+//  http://www.lintcode.com/zh-cn/problem/unique-binary-search-trees-ii/
 public class _095_Tree_Unique_Binary_Search_Trees_II_M {
 
 
@@ -92,11 +92,73 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
             }
             return res; }
     }
+/////////////////////////////////////////////////////////////////////////
+
+    //jiuzhang
+    public class Jiuzhang {
+        public ArrayList<TreeNode> generateTrees(int n) {
+            return generate(1, n);
+        }
+
+        private ArrayList<TreeNode> generate(int start, int end){
+            ArrayList<TreeNode> rst = new ArrayList<TreeNode>();
+
+            if(start > end){
+                rst.add(null);
+                return rst;
+            }
+
+            for(int i=start; i<=end; i++){
+                ArrayList<TreeNode> left = generate(start, i-1);
+                ArrayList<TreeNode> right = generate(i+1, end);
+                for(TreeNode l: left){
+                    for(TreeNode r: right){
+                        // should new a root here because it need to
+                        // be different for each tree
+                        TreeNode root = new TreeNode(i);
+                        root.left = l;
+                        root.right = r;
+                        rst.add(root);
+                    }
+                }
+            }
+            return rst;
+        }
+    }
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 
 }
 /*
+不同的二叉查找树 II
 
+ 描述
+ 笔记
+ 数据
+ 评测
+给出n，生成所有由1...n为节点组成的不同的二叉查找树
+
+样例
+给出n = 3，生成所有5种不同形态的二叉查找树：
+
+1         3     3       2    1
+ \       /     /       / \    \
+  3     2     1       1   3    2
+ /     /       \                \
+2     1         2                3
+标签
+动态规划 深度优先搜索
  */
-/*
 
+/*
+Given an integer n, generate all structurally unique BST's (binary search trees) that store values 1...n.
+
+For example,
+Given n = 3, your program should return all 5 unique BST's shown below.
+
+   1         3     3      2      1
+    \       /     /      / \      \
+     3     2     1      1   3      2
+    /     /       \                 \
+   2     1         2                 3
  */

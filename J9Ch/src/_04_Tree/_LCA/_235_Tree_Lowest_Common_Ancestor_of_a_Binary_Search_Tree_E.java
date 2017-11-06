@@ -2,10 +2,8 @@ package _04_Tree._LCA;
 
 import lib.TreeNode;
 
-
-//
-//  leetcode    235. Lowest Common Ancestor of a Binary Search Tree
-//
+//  235. Lowest Common Ancestor of a Binary Search Tree
+//  https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
 public class _235_Tree_Lowest_Common_Ancestor_of_a_Binary_Search_Tree_E {
 
 
@@ -31,11 +29,39 @@ public class _235_Tree_Lowest_Common_Ancestor_of_a_Binary_Search_Tree_E {
                 return root;
             } }
     }
-    //////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+    //3 lines with O(1) space, 1-Liners, Alternatives
+    public TreeNode lowestCommonAncestor11(TreeNode root, TreeNode p, TreeNode q) {
+        while ((root.val - p.val) * (root.val - q.val) > 0)
+            root = p.val < root.val ? root.left : root.right;
+        return root;
+    }
+
+//    My Java Solution
+    public class Solution22 {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+            if(root.val > p.val && root.val > q.val){
+                return lowestCommonAncestor(root.left, p, q);
+            }else if(root.val < p.val && root.val < q.val){
+                return lowestCommonAncestor(root.right, p, q);
+            }else{
+                return root;
+            }
+        }
+    }
+//    11ms java solution, 3 lines
+    public TreeNode lowestCommonAncestor33(TreeNode root, TreeNode p, TreeNode q) {
+        if(root.val<Math.min(p.val,q.val)) return lowestCommonAncestor33(root.right,p,q);
+        if(root.val>Math.max(p.val,q.val)) return lowestCommonAncestor33(root.left,p,q);
+        return root;
+    }
+//////////////////////////////////////////////////////////////////////////////
     public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
-        if(root.val > p.val && root.val > q.val){        //root比p，q都大，那就是root太大了，那么把比较小的root.left代入method
+        //root比p，q都大，那就是root太大了，那么把比较小的root.left代入method
+        if(root.val > p.val && root.val > q.val){
             return lowestCommonAncestor1(root.left, p, q);
-        }else if(root.val < p.val && root.val < q.val){  //root比p，q都小，那就是root太小了，那么把比较大的root.right代入method
+            //root比p，q都小，那就是root太小了，那么把比较大的root.right代入method
+        }else if(root.val < p.val && root.val < q.val){
             return lowestCommonAncestor1(root.right, p, q);
         }else{
             return root;

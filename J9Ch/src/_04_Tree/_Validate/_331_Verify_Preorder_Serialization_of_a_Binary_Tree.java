@@ -1,39 +1,10 @@
 package _04_Tree._Validate;
-
 import java.util.LinkedList;
 import java.util.Stack;
 
-
-/*
-LeetCode – Verify Preorder Serialization of a Binary Tree (Java)
-
-One way to serialize a binary tree is to use pre-order traversal. When we encounter a non-null node, we record the node's value. If it is a null node, we record using a sentinel value such as #.
-
-      9
-    /   \
-   3     2
-  / \   / \
- 4   1  #  6
-/ \ / \   / \
-# # # #   # #
-
-Example 1:
-"9,3,4,#,#,1,#,#,2,#,6,#,#"
-Return true
-
-Example 2:
-"1,#"
-Return false
-
-Example 3:
-"9,#,#,1"
-Return false
-
-
-Given a string of comma separated values, verify whether it is a correct preorder traversal serialization of a binary tree. Find an algorithm without reconstructing the tree.
- */
-
-
+//  331. Verify Preorder Serialization of a Binary Tree
+//  https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/description/
+//
 public class _331_Verify_Preorder_Serialization_of_a_Binary_Tree {
 
     /*
@@ -121,10 +92,6 @@ We can keep removing the leaf node until there is no one to remove. If a sequenc
         return st.size() == 1 && st.peek().equals("#");
     }
 
-
-
-
-
 /////////////////////////////////////////////////////////////////////
 
     //JAVA, Counting Indegree and Outdegree, SIMPLE & CLEAR!
@@ -189,10 +156,6 @@ We can keep removing the leaf node until there is no one to remove. If a sequenc
         return next == -1 ? -1 : next;
     }
 
-
-
-
-
 /////////////////////////////////////////////////////////////////////
 
     //lean sample JAVA solution with explain
@@ -226,20 +189,63 @@ Each time when adding a node to the tree, one more sentinel must be added some w
 browse the string backward follow rule 1 and 2.
      */
 /////////////////////////////////////////////////////////////////////
-
-
-
-
+    //Jiuzhang
+    public class Jiuzhang {
+        public boolean isValidSerialization(String preorder) {
+            String s = preorder;
+            boolean flag = true;
+            while (s.length() > 1) {
+                int index = s.indexOf(",#,#");
+                if (index < 0) {
+                    flag = false;
+                    break;
+                }
+                int start = index;
+                while (start > 0 && s.charAt(start - 1) != ',')
+                {
+                    start --;
+                }
+                if (s.charAt(start) == '#') {
+                    flag = false;
+                    break;
+                }
+                s = s.substring(0, start) + s.substring(index + 3);
+            }
+            if (s.equals("#") && flag)
+                return true;
+            else
+                return false;
+        }
+    }
 
 /////////////////////////////////////////////////////////////////////
-
-
-
-
-
-/////////////////////////////////////////////////////////////////////
-
-
-
-
 }
+/*
+LeetCode – Verify Preorder Serialization of a Binary Tree (Java)
+
+One way to serialize a binary tree is to use pre-order traversal. When we encounter a non-null node, we record the node's value. If it is a null node, we record using a sentinel value such as #.
+
+      9
+    /   \
+   3     2
+  / \   / \
+ 4   1  #  6
+/ \ / \   / \
+# # # #   # #
+
+Example 1:
+"9,3,4,#,#,1,#,#,2,#,6,#,#"
+Return true
+
+Example 2:
+"1,#"
+Return false
+
+Example 3:
+"9,#,#,1"
+Return false
+
+
+Given a string of comma separated values, verify whether it is a correct preorder traversal serialization of a binary tree. Find an algorithm without reconstructing the tree.
+ */
+

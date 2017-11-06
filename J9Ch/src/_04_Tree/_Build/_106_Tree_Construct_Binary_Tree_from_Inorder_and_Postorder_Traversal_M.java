@@ -4,10 +4,11 @@ import lib.TreeNode;
 import org.junit.Test;
 import java.util.*;
 
-// Construct Binary Tree
-//
-//
+//  106. Construct Binary Tree from Inorder and Postorder Traversal
+//  https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/
+//  http://www.lintcode.com/zh-cn/problem/construct-binary-tree-from-inorder-and-postorder-traversal/
 public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal_M {
+    //jiuzhang
 	private int findPosition(int[] arr, int start, int end, int key) {
         int i;
         for (i = start; i <= end; i++) {
@@ -324,6 +325,34 @@ public TreeNode buildTree11(int[] inorder, int[] postorder) {
 
 
 }
+/*
+中序遍历和后序遍历树构造二叉树
+
+ 描述
+ 笔记
+ 数据
+ 评测
+根据中序遍历和后序遍历树构造二叉树
+
+ 注意事项
+
+你可以假设树中不存在相同数值的节点
+
+样例
+给出树的中序遍历： [1,2,3] 和后序遍历： [1,3,2]
+
+返回如下的树：
+
+  2
+
+ /  \
+
+1    3
+
+标签
+二叉树
+ */
+
 
 /*Given inorder and postorder traversal of a tree, construct the binary tree.
 

@@ -5,11 +5,18 @@ import lib.TreeNode;
 import java.util.*;
 
 
-//
-//
+//  545. Boundary of Binary Tree
+//  https://leetcode.com/problems/boundary-of-binary-tree
 //
 public class _545_Tree_Boundary_of_Binary_Tree_M {
     class Solution{
+
+        //https://leetcode.com/articles/boundary-of-binary-tree/
+
+//        Approach #1 Simple Solution [Accepted]
+//        Approach #2 Using PreOrder Traversal [Accepted]
+//////////////////////////////////////////////////////////////////////////////////////
+        //Java(12ms) - left boundary, left leaves, right leaves, right boundary
         List<Integer> nodes = new ArrayList<>(1000);
         public List<Integer> boundaryOfBinaryTree(TreeNode root) {
 
@@ -47,7 +54,36 @@ public class _545_Tree_Boundary_of_Binary_Tree_M {
     }
 
 
-    class Solution2{
+
+//    [Java] [C++] Clean Code (1 Pass perorder postorder hybrid)
+
+    public class Solution4 {
+        public List<Integer> boundaryOfBinaryTree(TreeNode root) {
+            List<Integer> res = new ArrayList<Integer>();
+            if (root != null) {
+                res.add(root.val);
+                getBounds(root.left, res, true, false);
+                getBounds(root.right, res, false, true);
+            }
+            return res;
+        }
+
+        private void getBounds(TreeNode node, List<Integer> res, boolean lb, boolean rb) {
+            if (node == null) return;
+            if (lb) res.add(node.val);
+            if (!lb && !rb && node.left == null && node.right == null) res.add(node.val);
+            getBounds(node.left, res, lb, rb && node.right == null);
+            getBounds(node.right, res, lb && node.left == null, rb);
+            if (rb) res.add(node.val);
+        }
+    }
+
+    /*
+    Java Preorder Single Pass O(n) Solution
+We perform a single preorder traversal of the tree, keeping tracking of the left boundary and middle leaf nodes and the right boundary nodes in the process. A single flag is used to designate the type of node during the preorder traversal. Its values are:
+0 - root, 1 - left boundary node, 2 - right boundary node, 3 - middle node.
+     */
+    class Solution5{
         public List<Integer> boundaryOfBinaryTree(TreeNode root) {
             List<Integer> left = new LinkedList<>(), right = new LinkedList<>();
             preorder(root, left, right, 0);
@@ -65,7 +101,7 @@ public class _545_Tree_Boundary_of_Binary_Tree_M {
     }
 
 
-    public class Solution3 {
+    public class Solution6 {
 
         private List<Integer> bound = new ArrayList<>();
 
@@ -110,10 +146,54 @@ public class _545_Tree_Boundary_of_Binary_Tree_M {
             return bound;
         }
     }
+//////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////
 }
 /*
 
  */
 /*
+Given a binary tree, return the values of its boundary in anti-clockwise direction starting from root. Boundary includes left boundary, leaves, and right boundary in order without duplicate nodes.
 
+Left boundary is defined as the path from root to the left-most node. Right boundary is defined as the path from root to the right-most node. If the root doesn't have left subtree or right subtree, then the root itself is left boundary or right boundary. Note this definition only applies to the input binary tree, and not applies to any subtrees.
+
+The left-most node is defined as a leaf node you could reach when you always firstly travel to the left subtree if exists. If not, travel to the right subtree. Repeat until you reach a leaf node.
+
+The right-most node is also defined by the same way with left and right exchanged.
+
+Example 1
+Input:
+  1
+   \
+    2
+   / \
+  3   4
+
+Ouput:
+[1, 3, 4, 2]
+
+Explanation:
+The root doesn't have left subtree, so the root itself is left boundary.
+The leaves are node 3 and 4.
+The right boundary are node 1,2,4. Note the anti-clockwise direction means you should output reversed right boundary.
+So order them in anti-clockwise without duplicates and we have [1,3,4,2].
+Example 2
+Input:
+    ____1_____
+   /          \
+  2            3
+ / \          /
+4   5        6
+   / \      / \
+  7   8    9  10
+
+Ouput:
+[1,2,4,7,8,9,10,6,3]
+
+Explanation:
+The left boundary are node 1,2,4. (4 is the left-most node according to definition)
+The leaves are node 4,7,8,9,10.
+The right boundary are node 1,3,6,10. (10 is the right-most node).
+So order them in anti-clockwise without duplicate nodes we have [1,2,4,7,8,9,10,6,3].
  */

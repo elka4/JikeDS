@@ -7,10 +7,11 @@ import java.util.Queue;
 import java.util.Stack;
 
 
-//  leetcode    623. Add One Row to Tree
-//
+//  623. Add One Row to Tree
+//  https://leetcode.com/problems/add-one-row-to-tree/description/
 //
 public class _623_Tree_Add_One_Row_to_Tree_M {
+    //https://leetcode.com/problems/add-one-row-to-tree/solution/
 
     //Approach #1 Using Recursion(DFS) [Accepted]
     public class Solution1 {
@@ -40,7 +41,7 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
             }
         }
     }
-    /////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
     //Approach #2 Using stack(DFS) [Accepted]
     public class Solution2 {
         class Node{

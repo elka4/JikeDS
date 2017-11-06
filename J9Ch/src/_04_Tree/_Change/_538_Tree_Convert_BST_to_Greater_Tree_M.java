@@ -3,8 +3,8 @@ package _04_Tree._Change;
 import lib.TreeNode;
 
 
-//
-//
+//  538. Convert BST to Greater Tree
+//  https://leetcode.com/problems/convert-bst-to-greater-tree/description/
 //
 public class _538_Tree_Convert_BST_to_Greater_Tree_M {
 /*
@@ -69,5 +69,17 @@ Idea: Reversely traverse the tree and keep a sum of all previously visited value
 
  */
 /*
+Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.
 
+Example:
+
+Input: The root of a Binary Search Tree like this:
+              5
+            /   \
+           2     13
+
+Output: The root of a Greater Tree like this:
+             18
+            /   \
+          20     13
  */

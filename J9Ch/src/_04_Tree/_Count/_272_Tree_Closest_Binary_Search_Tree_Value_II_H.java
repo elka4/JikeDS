@@ -5,8 +5,8 @@ import lib.TreeNode;
 import java.util.*;
 
 
-//
-//
+//  272. Closest Binary Search Tree Value II
+//  https://leetcode.com/problems/closest-binary-search-tree-value-ii/description/
 //
 public class _272_Tree_Closest_Binary_Search_Tree_Value_II_H {
 
@@ -577,9 +577,6 @@ Space complexity is O(klogn), since each traversal brings O(logn) new nodes to t
 
 }
 /*
-leetcode 272. Closest Binary Search Tree Value II
-
-
 Given a non-empty binary search tree and a target value, find k values in the BST that are closest to the target.
 
 Note:

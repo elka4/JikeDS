@@ -10,9 +10,9 @@ import java.util.Queue;
 import java.util.Stack;
 
 
-//
-//
-//
+//  104. Maximum Depth of Binary Tree
+//  https://leetcode.com/problems/maximum-depth-of-binary-tree/
+//  http://www.lintcode.com/zh-cn/problem/maximum-depth-of-binary-tree/
 public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
 
 
@@ -41,7 +41,7 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
     }
 
 
-    /////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
     class sol{
         public int maxDepth0(TreeNode root) {
             if(root==null)
@@ -56,7 +56,7 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
         }
     }
 
-    /////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
     public int minDepth2(TreeNode root) {
         if (root == null) {
             return 0;
@@ -257,7 +257,28 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
 // 3ms
 }
 /*
+二叉树的最大深度
 
+ 描述
+ 笔记
+ 数据
+ 评测
+给定一个二叉树，找出其最大深度。
+
+二叉树的深度为根节点到最远叶子节点的距离。
+
+样例
+给出一棵如下的二叉树:
+
+  1
+ / \
+2   3
+   / \
+  4   5
+这个二叉树的最大深度为3.
+
+标签
+分治法 递归 二叉树 优步
  */
 /*
 

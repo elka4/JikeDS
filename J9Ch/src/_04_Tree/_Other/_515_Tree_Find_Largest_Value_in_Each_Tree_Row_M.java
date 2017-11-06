@@ -1,5 +1,4 @@
 package _04_Tree._Other;
-
 import lib.TreeNode;
 
 import java.util.ArrayList;
@@ -7,15 +6,14 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-
-//
-//
+//  515. Find Largest Value in Each Tree Row
+//  https://leetcode.com/problems/find-largest-value-in-each-tree-row/description/
 //
 public class _515_Tree_Find_Largest_Value_in_Each_Tree_Row_M {
+    //9ms JAVA DFS solution
     /*
-    Just a simple pre-order traverse idea. Use depth to expand result list size and put the max value in the appropriate position.
-
-
+    Just a simple pre-order traverse idea.
+    Use depth to expand result list size and put the max value in the appropriate position.
      */
     public class Solution {
         public List<Integer> largestValues(TreeNode root) {
@@ -39,12 +37,33 @@ public class _515_Tree_Find_Largest_Value_in_Each_Tree_Row_M {
             helper(root.right, res, d+1);
         }
     }
-
+/////////////////////////////////////////////////////////////////////////////////////////////
+    //Java BFS
+    public int[] findValueMostElement(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        List<Integer> res = new ArrayList<Integer>();
+        queue.add(root);
+        int queueSize = root == null ? 0 : 1;
+        while (queueSize > 0) {
+            int largestElement = Integer.MIN_VALUE;
+            for (int i=0;i<queueSize;i++) {
+                TreeNode cur = queue.poll();
+                largestElement = Math.max(cur.val, largestElement);
+                if (cur.left != null) queue.add(cur.left);
+                if (cur.right != null) queue.add(cur.right);
+            }
+            res.add(largestElement);
+            queueSize = queue.size();
+        }
+        int[] resArray = new int[res.size()];
+        for (int i=0;i<res.size();i++) resArray[i] = res.get(i);
+        return resArray;
+    }
+/////////////////////////////////////////////////////////////////////////////////////////////
     //Alright, two binary tree level order traversal problems in one contest.
     // This time, mission is to find the max of each level...
 
-
-    public class Solution2 {
+    public class Solution3 {
         public int[] findValueMostElement(TreeNode root) {
             List<Integer> res = new ArrayList<>();
             if (root == null) return new int[0];
@@ -72,10 +91,21 @@ public class _515_Tree_Find_Largest_Value_in_Each_Tree_Row_M {
             return result;
         }
     }
+/////////////////////////////////////////////////////////////////////////////////////////////
 }
 /*
 
- */
-/*
+You need to find the largest value in each row of a binary tree.
+
+Example:
+Input:
+
+          1
+         / \
+        3   2
+       / \   \
+      5   3   9
+
+Output: [1, 3, 9]
 
  */

@@ -1,17 +1,15 @@
 package _04_Tree._Traverse;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
-
 import java.util.*;
 
-
-//
-//
-//
+//  144. Binary Tree Preorder Traversal
+//  https://leetcode.com/problems/binary-tree-preorder-traversal/description/
+//  http://www.lintcode.com/zh-cn/problem/binary-tree-preorder-traversal/
 public class _144_Tree_Binary_Tree_Preorder_Traversal_M {
-
+    //Accepted iterative solution in Java using stack.
+    //Note that in this solution only right children are stored to stack.
     public List<Integer> preorderTraversal(TreeNode node) {
         List<Integer> list = new LinkedList<Integer>();
         Stack<TreeNode> rights = new Stack<TreeNode>();
@@ -27,6 +25,48 @@ public class _144_Tree_Binary_Tree_Preorder_Traversal_M {
         }
         return list;
     }
+
+////////////////////////////////////////////////////////////////////////////
+//    3 Different Solutions
+//    Recursive method with List as returning value:
+    public List<Integer> preorderTraversal01(TreeNode root) {
+        List<Integer> pre = new LinkedList<Integer>();
+        if(root==null) return pre;
+        pre.add(root.val);
+        pre.addAll(preorderTraversal01(root.left));
+        pre.addAll(preorderTraversal01(root.right));
+        return pre;
+    }
+
+//    Recursive method with Helper method to have a List as paramater,
+// so we can modify the parameter and don't have to instantiate a new List at each recursive call:
+    public List<Integer> preorderTraversal02(TreeNode root) {
+        List<Integer> pre = new LinkedList<Integer>();
+        preHelper(root,pre);
+        return pre;
+    }
+    public void preHelper(TreeNode root, List<Integer> pre) {
+        if(root==null) return;
+        pre.add(root.val);
+        preHelper(root.left,pre);
+        preHelper(root.right,pre);
+    }
+
+    //    Iterative method with Stack:
+    public List<Integer> preorderIt03(TreeNode root) {
+        List<Integer> pre = new LinkedList<Integer>();
+        if(root==null) return pre;
+        Stack<TreeNode> tovisit = new Stack<TreeNode>();
+        tovisit.push(root);
+        while(!tovisit.empty()) {
+            TreeNode visiting = tovisit.pop();
+            pre.add(visiting.val);
+            if(visiting.right!=null) tovisit.push(visiting.right);
+            if(visiting.left!=null) tovisit.push(visiting.left);
+        }
+        return pre;
+    }
+////////////////////////////////////////////////////////////////////////////
 
     public List<Integer> preorderTraversal2(TreeNode root) {
         List<Integer> result = new LinkedList<>();
@@ -60,6 +100,7 @@ public class _144_Tree_Binary_Tree_Preorder_Traversal_M {
     }
 
 ////////////////////////////////////////////////////////////////////////////
+    //Jiuzhang
 //Version 0: Non-Recursion (Recommend)
 public List<Integer> preorderTraversal0(TreeNode root) {
     Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -96,7 +137,7 @@ public List<Integer> preorderTraversal0(TreeNode root) {
     }
 
 ////////////////////////////////////////////////////////////////////////////
-
+    //Jiuzhang
     //Version 1: Traverse
     public ArrayList<Integer> preorderTraversal_2(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
@@ -117,17 +158,17 @@ public List<Integer> preorderTraversal0(TreeNode root) {
         traverse(root.right, result);
     }
 
-/* inorder
-traverse(root.left, result);
-result.add(root.val);
-traverse(root.right, result);
- */
+    /* inorder
+    traverse(root.left, result);
+    result.add(root.val);
+    traverse(root.right, result);
+     */
 
-/* postorder
-traverse(root.left, result);
-traverse(root.right, result);
-result.add(root.val);
- */
+    /* postorder
+    traverse(root.left, result);
+    traverse(root.right, result);
+    result.add(root.val);
+     */
 
     @Test
     public void test02(){
@@ -141,7 +182,7 @@ result.add(root.val);
     }
 
 ////////////////////////////////////////////////////////////////////////////
-
+    //Jiuzhang
     //Version 2: Divide & Conquer
     public ArrayList<Integer> preorderTraversal_3(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<>();
@@ -259,7 +300,8 @@ result.add(root.val);
         }
         return returnList;
     }
-//////////////////////////////////////////////////////
+
+
 ////////////////////////////////////////////////////////////////////////////
 }
 /* inorder
@@ -271,6 +313,41 @@ result.addAll(right);*/
 result.addAll(left);
 result.addAll(right);
 result.add(root.val);*/
-/*
 
+/*
+二叉树的前序遍历
+
+ 描述
+ 笔记
+ 数据
+ 评测
+给出一棵二叉树，返回其节点值的前序遍历。
+
+样例
+给出一棵二叉树 {1,#,2,3},
+
+   1
+    \
+     2
+    /
+   3
+ 返回 [1,2,3].
+
+挑战
+你能使用非递归实现么？
+ */
+
+/*
+Given a binary tree, return the preorder traversal of its nodes' values.
+
+For example:
+Given binary tree [1,null,2,3],
+   1
+    \
+     2
+    /
+   3
+return [1,2,3].
+
+Note: Recursive solution is trivial, could you do it iteratively?
  */

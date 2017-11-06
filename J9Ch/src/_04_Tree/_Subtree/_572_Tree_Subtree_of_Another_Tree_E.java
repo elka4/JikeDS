@@ -1,16 +1,24 @@
 package _04_Tree._Subtree;
-
 import lib.TreeNode;
 
 import java.util.Stack;
 
-
-//
-//
+//  572. Subtree of Another Tree
+//  https://leetcode.com/problems/subtree-of-another-tree/description/
 //
 public class _572_Tree_Subtree_of_Another_Tree_E {
+    //https://leetcode.com/problems/subtree-of-another-tree/solution/
 
-//    For each node during pre-order traversal of s, use a recursive function isSame to validate if sub-tree started with this node is the same with t.
+//    Approach #1 Using Preorder Traversal [Accepted]
+
+//    Approach #2 By Comparison of Nodes [Accepted]
+    //need to do type in
+
+/////////////////////////////////////////////////////////////////////////////
+    //Java Solution, tree traversal
+
+    //    For each node during pre-order traversal of s, use a recursive function
+    // isSame to validate if sub-tree started with this node is the same with t.
 
     public class Solution {
         public boolean isSubtree(TreeNode s, TreeNode t) {
@@ -29,6 +37,7 @@ public class _572_Tree_Subtree_of_Another_Tree_E {
         }
     }
 
+
     //Easy O(n) java solution using preorder traversal
     public class Solution2 {
         public boolean isSubtree(TreeNode s, TreeNode t) {
@@ -44,7 +53,8 @@ public class _572_Tree_Subtree_of_Another_Tree_E {
             while(!stacktree.isEmpty()){
                 TreeNode popelem = stacktree.pop();
                 if(popelem==null)
-                    sb.append(",#"); // Appending # inorder to handle same values but not subtree cases
+                    // Appending # inorder to handle same values but not subtree cases
+                    sb.append(",#");
                 else
                     sb.append(","+popelem.val);
                 if(popelem!=null){
@@ -56,12 +66,12 @@ public class _572_Tree_Subtree_of_Another_Tree_E {
         }
     }
 
-//Java Concise O(n+m) Time O(n+m) Space
 
-
+    //Java Concise O(n+m) Time O(n+m) Space
     class Solution3{
         public boolean isSubtree(TreeNode s, TreeNode t) {
-            return serialize(s).contains(serialize(t)); // Java uses a naive contains algorithm so to ensure linear time,
+            // Java uses a naive contains algorithm so to ensure linear time,
+            return serialize(s).contains(serialize(t));
             // replace with KMP algorithm
         }
 
@@ -78,11 +88,39 @@ public class _572_Tree_Subtree_of_Another_Tree_E {
             serialize(cur.right, res);
         }
     }
-
+/////////////////////////////////////////////////////////////////////////////
 }
 /*
 
- */
-/*
+Given two non-empty binary trees s and t, check whether tree t has exactly the same structure and node values with a subtree of s. A subtree of s is a tree consists of a node in s and all of this node's descendants. The tree s could also be considered as a subtree of itself.
+
+Example 1:
+Given tree s:
+
+     3
+    / \
+   4   5
+  / \
+ 1   2
+Given tree t:
+   4
+  / \
+ 1   2
+Return true, because t has the same structure and node values with a subtree of s.
+Example 2:
+Given tree s:
+
+     3
+    / \
+   4   5
+  / \
+ 1   2
+    /
+   0
+Given tree t:
+   4
+  / \
+ 1   2
+Return false.
 
  */

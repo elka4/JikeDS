@@ -1,5 +1,4 @@
 package _04_Tree._Validate;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
@@ -8,14 +7,14 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Stack;
 
-
-//
-//
+//  101. Symmetric Tree
+//  https://leetcode.com/problems/symmetric-tree/description/
 //
 public class _101_Tree_Symmetric_Tree_E {
 
 ///////////////////////////////////////////////////////////////////////
     public boolean isSymmetric(TreeNode root) {
+
         return root==null || isSymmetricHelp(root.left, root.right);
     }
     private boolean isSymmetricHelp(TreeNode left, TreeNode right){ if(left==null || right==null)
@@ -68,12 +67,15 @@ public class _101_Tree_Symmetric_Tree_E {
 
         return true;
     }
+
 ///////////////////////////////////////////////////////////////////////
-//recursion
-public boolean isSymetric_1 (TreeNode root) {
-    if (root == null) return true;
-    return isSymetric(root.left, root.right);
-}
+
+    //recursion
+    public boolean isSymetric_1 (TreeNode root) {
+        if (root == null) return true;
+        return isSymetric(root.left, root.right);
+    }
+
     public boolean isSymetric (TreeNode one, TreeNode two) {
         //base case
         if (one == null || two == null) {
@@ -87,8 +89,8 @@ public boolean isSymetric_1 (TreeNode root) {
             return isSymetric(one.left, two.right) &&
                     isSymetric(one.right, two.left);
         }
-
     }
+
     @Test
     public void test01() {
         int[] arr = {1, 2, 2,3,3,3,3};
@@ -97,6 +99,7 @@ public boolean isSymetric_1 (TreeNode root) {
         root.print();
         System.out.println(isSymetric_1(root));
     }
+
     @Test
     public void test02() {
         int[] arr = {1, 2, 2,3,3,3,4};
@@ -196,7 +199,9 @@ public boolean isSymetric_1 (TreeNode root) {
 ///////////////////////////////////////////////////////////////////////////////
         /*Java Solution - Recursion
 
-    This problem can be solve by using a simple recursion. The key is finding the conditions that return false, such as value is not equal, only one node(left or right) has value.*/
+    This problem can be solve by using a simple recursion.
+    The key is finding the conditions that return false, such as value is not equal,
+    only one node(left or right) has value.*/
 
     public boolean isSymmetric99(TreeNode root) {
         if (root == null)
@@ -222,6 +227,7 @@ public boolean isSymetric_1 (TreeNode root) {
 
         return true;
     }
+
 /////////////////////////////////////////////////////////////////////////////
 
     public boolean isSymmetric11(TreeNode root) {
@@ -253,6 +259,29 @@ public boolean isSymetric_1 (TreeNode root) {
 
  */
 
+
+/*
+LeetCode – Symmetric Tree (Java)
+
+Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+
+For example, this binary tree [1,2,2,3,4,4,3] is symmetric:
+
+    1
+   / \
+  2   2
+ / \ / \
+3  4 4  3
+But the following [1,2,2,null,3,null,3] is not:
+    1
+   / \
+  2   2
+   \   \
+   3    3
+Note:
+Bonus points if you could solve it both recursively and iteratively.
+ */
+
 /*Given a binary tree, check whether it is a mirror of itself
  * (i.e., symmetric around its center).
 
@@ -280,26 +309,3 @@ Binary Tree
 Related Problems
 Easy Identical Binary Tree 45 %
 Easy Complete Binary Tree 25 %*/
-
-/*
-LeetCode – Symmetric Tree (Java)
-
-Problem
-
-Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
-
-For example, this binary tree is symmetric:
-
-    1
-   / \
-  2   2
- / \ / \
-3  4 4  3
-But the following is not:
-
-    1
-   / \
-  2   2
-   \   \
-   3    3
- */

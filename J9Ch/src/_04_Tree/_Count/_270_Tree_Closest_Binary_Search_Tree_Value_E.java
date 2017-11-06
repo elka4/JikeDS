@@ -3,8 +3,8 @@ package _04_Tree._Count;
 import lib.TreeNode;
 
 
-//
-//
+//  270. Closest Binary Search Tree Value
+//  https://leetcode.com/problems/closest-binary-search-tree-value/description/
 //
 public class _270_Tree_Closest_Binary_Search_Tree_Value_E {
     /*Java Solution 1 - Recursion
@@ -185,13 +185,6 @@ public class _270_Tree_Closest_Binary_Search_Tree_Value_E {
         return closestVal;
     }
 }
-/*  LeetCode 270. Closest Binary Search Tree Value
-
-LeetCode – Closest Binary Search Tree Value (Java)
-
-Given a non-empty binary search tree and a target value,
-find the value in the BST that is closest to the target
- */
 
 /*
 Given a non-empty binary search tree and a target value, find the value in the BST that is closest to the target.
@@ -202,10 +195,3 @@ You are guaranteed to have only one unique value in the BST that is closest to t
 
  */
 
-/*  LeetCode 270. Closest Binary Search Tree Value
-
-LeetCode – Closest Binary Search Tree Value (Java)
-
-Given a non-empty binary search tree and a target value,
-find the value in the BST that is closest to the target
- */

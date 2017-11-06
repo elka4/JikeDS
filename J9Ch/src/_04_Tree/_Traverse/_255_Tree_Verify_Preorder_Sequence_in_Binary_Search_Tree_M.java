@@ -3,11 +3,15 @@ package _04_Tree._Traverse;
 import java.util.Stack;
 
 
-//
-//
-//
+//  255. Verify Preorder Sequence in Binary Search Tree
+//  https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/description/
 public class _255_Tree_Verify_Preorder_Sequence_in_Binary_Search_Tree_M {
+    /*
+    Java O(n) and O(1) extra space
+Solution 1
 
+Kinda simulate the traversal, keeping a stack of nodes (just their values) of which we're still in the left subtree. If the next number is smaller than the last stack value, then we're still in the left subtree of all stack nodes, so just push the new one onto the stack. But before that, pop all smaller ancestor values, as we must now be in their right subtrees (or even further, in the right subtree of an ancestor). Also, use the popped values as a lower bound, since being in their right subtree means we must never come across a smaller number anymore.
+     */
     public boolean verifyPreorder(int[] preorder) {
         int low = Integer.MIN_VALUE;
         Stack<Integer> path = new Stack();
@@ -20,10 +24,10 @@ public class _255_Tree_Verify_Preorder_Sequence_in_Binary_Search_Tree_M {
         }
         return true;
     }
-//    Solution 2 ... O(1) extra space
 
-//    Same as above, but abusing the given array for the stack.
 
+    //    Solution 2 ... O(1) extra space
+    //    Same as above, but abusing the given array for the stack.
     public boolean verifyPreorder2(int[] preorder) {
         int low = Integer.MIN_VALUE, i = -1;
         for (int p : preorder) {
@@ -37,8 +41,8 @@ public class _255_Tree_Verify_Preorder_Sequence_in_Binary_Search_Tree_M {
     }
 
 
-//    A BST's left child is always < root and right child is always > root.
-
+    //Divide Conquer Java Solution
+    //A BST's left child is always < root and right child is always > root.
     public boolean verifyPreorder3(int[] preorder) {
         if(preorder == null || preorder.length == 0) return true;
         return verify(preorder, 0, preorder.length - 1);
@@ -62,7 +66,11 @@ public class _255_Tree_Verify_Preorder_Sequence_in_Binary_Search_Tree_M {
 }
 /*
 
- */
-/*
+Given an array of numbers, verify whether it is the correct preorder traversal sequence of a binary search tree.
+
+You may assume each number in the sequence is unique.
+
+Follow up:
+Could you do it using only constant space complexity?
 
  */

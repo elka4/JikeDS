@@ -9,13 +9,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 
-//
-//
-/*
-LeetCode – Invert Binary Tree (Java)
-
-Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.
- */
+//  226. Invert Binary Tree
+//  https://leetcode.com/problems/invert-binary-tree/description/
+//  http://www.lintcode.com/zh-cn/problem/invert-binary-tree/
 public class _226_Tree_Invert_Binary_Tree_E {
 
 
@@ -154,8 +150,38 @@ root:
 
 }
 /*
+翻转二叉树
 
+ 描述
+ 笔记
+ 数据
+ 评测
+翻转一棵二叉树
+
+样例
+  1         1
+ / \       / \
+2   3  => 3   2
+   /       \
+  4         4
+挑战
+递归固然可行，能否写个非递归的？
  */
 /*
+Invert a binary tree.
 
+     4
+   /   \
+  2     7
+ / \   / \
+1   3 6   9
+to
+     4
+   /   \
+  7     2
+ / \   / \
+9   6 3   1
+Trivia:
+This problem was inspired by this original tweet by Max Howell:
+Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.
  */

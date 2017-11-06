@@ -1,14 +1,12 @@
 package _04_Tree._LCS;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
-
-//
-//
-//
+//  549. Binary Tree Longest Consecutive Sequence II
+//  https://leetcode.com/problems/binary-tree-longest-consecutive-sequence-ii/description/
 public class _549_Tree_Binary_Tree_Longest_Consecutive_Sequence_II_M {
+
     public class Solution {
         int maxval = 0;
         public int longestConsecutive(TreeNode root) {
@@ -618,8 +616,10 @@ Space complexity : O(n)O(n). The recursion goes upto a depth of nn in the worst 
 /////////////////////////////////////////////////////////////
 }
 /*
-
+给定一棵二叉树，找到最长连续序列路径的长度。
+路径起点跟终点可以为二叉树的任意节点。
  */
+
 /*
 Given a binary tree, you need to find the length of Longest Consecutive Path in Binary Tree.
 

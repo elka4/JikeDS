@@ -1,9 +1,9 @@
 package _04_Tree._Build;
 import lib.*;
 
-//
-//
-//
+//  109. Convert Sorted List to Binary Search Tree
+//  https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/description/
+//  http://www.lintcode.com/zh-cn/problem/convert-sorted-list-to-balanced-bst/
 public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
     // jiuzhang
     private ListNode current;
@@ -184,6 +184,22 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
 
 
 }
+/*
+排序列表转换为二分查找树
+
+ 描述
+ 笔记
+ 数据
+ 评测
+给出一个所有元素以升序排序的单链表，将它转换成一棵高度平衡的二分查找树
+
+样例
+               2
+1->2->3  =>   / \
+             1   3
+标签
+链表 递归
+ */
 /*
 Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
 

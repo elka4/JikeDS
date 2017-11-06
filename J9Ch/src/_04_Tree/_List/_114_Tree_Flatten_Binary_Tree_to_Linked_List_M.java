@@ -1,15 +1,13 @@
 package _04_Tree._List;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
 import java.util.Stack;
 
-
-//  leet  114. Flatten Binary Tree to Linked List
-//
-//  453. Flatten Binary Tree to Linked List
+//  114. Flatten Binary Tree to Linked List
+//  https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+//  http://www.lintcode.com/zh-cn/problem/flatten-binary-tree-to-linked-list/
 public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
     // Version 1: Traverse
     private TreeNode lastNode = null;
@@ -477,7 +475,7 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
 
  */
 /*
- Given a binary tree, flatten it to a linked list in-place.
+Given a binary tree, flatten it to a linked list in-place.
 
 For example,
 Given
@@ -487,9 +485,7 @@ Given
        2   5
       / \   \
      3   4   6
-
 The flattened tree should look like:
-
    1
     \
      2
@@ -501,5 +497,9 @@ The flattened tree should look like:
            5
             \
              6
+click to show hints.
+
+Hints:
+If you notice carefully in the flattened tree, each node's right child points to the next node of a pre-order traversal.
 
  */

@@ -1,22 +1,12 @@
 package _04_Tree._Subtree;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
 
-//333. Largest BST Subtree
-//Maximum Subtree
+//  333. Largest BST Subtree
+//  https://leetcode.com/problems/largest-bst-subtree/description/
 //
-//
-
-//find the number of nodes of the largest BST subtree
-/*  333. Largest BST Subtree
-
-LeetCode – Largest BST Subtree (Java)
-
-Given a binary tree, find the largest subtree which is a Binary Search Tree (BST), where largest means subtree with largest number of nodes in it.
- */
 public class _333_Tree_Largest_BST_Subtree_M {
     public class Solution {
 
@@ -52,13 +42,16 @@ public class _333_Tree_Largest_BST_Subtree_M {
             return new Result(size, Math.min(left.lower, root.val), Math.max(right.upper, root.val));
         }
     }
+
+
     /*
         in brute-force solution, we get information in a top-down manner.
         for O(n) solution, we do it in bottom-up manner, meaning we collect information during backtracking.
     */
     public class Solution2 {
-
-        class Result {  // (size, rangeLower, rangeUpper) -- size of current tree, range of current tree [rangeLower, rangeUpper]
+        // (size, rangeLower, rangeUpper) -- size of current tree,
+        // range of current tree [rangeLower, rangeUpper]
+        class Result {
             int size;
             int lower;
             int upper;
@@ -115,12 +108,16 @@ public class _333_Tree_Largest_BST_Subtree_M {
             Result left = BSTSubstree(root.left);
             Result right = BSTSubstree(root.right);
             if (left.res < 0 || right.res < 0 || root.val < left.max || root.val > right.min) {
-                return new Result(Math.max(Math.abs(left.res), Math.abs(right.res)) * -1, 0, 0);
+                return new Result(Math.max(Math.abs(left.res),
+                        Math.abs(right.res)) * -1, 0, 0);
             } else {
-                return new Result(left.res + right.res + 1, Math.min(root.val, left.min), Math.max(root.val, right.max));
+                return new Result(left.res + right.res + 1,
+                        Math.min(root.val, left.min), Math.max(root.val, right.max));
             }
         }
     }
+
+
 
     public class Solution4 {
         public int largestBSTSubtree(TreeNode root) {
@@ -230,7 +227,7 @@ public class _333_Tree_Largest_BST_Subtree_M {
             return 1 + countNode(root.left) + countNode(root.right);
         }
     }
-    ////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
     //jiuhang
     public class Jiuzhang{
         private class Type {
@@ -274,7 +271,48 @@ public class _333_Tree_Largest_BST_Subtree_M {
             return now;
         }
     }
-    //////////////////////////////////////////////////////////////////////
+
+    public class Jiuzhang2 {
+        public class SuperNode {
+            int ans;
+            int small, large;
+            boolean isBST;
+            public SuperNode() {
+                ans = 0;
+                isBST = true;
+                small = Integer.MAX_VALUE;
+                large = -Integer.MAX_VALUE;
+            }
+        }
+        public int largestBSTSubtree(TreeNode root) {
+            return dfs(root).ans;
+        }
+        public SuperNode dfs(TreeNode node) {
+            if (node == null) {
+                return new SuperNode();
+            }
+            SuperNode now = new SuperNode();
+            SuperNode left = dfs(node.left);
+            SuperNode right = dfs(node.right);
+            if (left.small < node.val) {
+                now.small = left.small;
+            } else {
+                now.small = node.val;
+            }
+            now.large = Math.max(right.large,node.val);
+            if (left.isBST && right.isBST && left.large <= node.val && right.small >= node.val) {
+                now.ans = left.ans + right.ans +1;
+                now.isBST = true;
+            } else {
+                now.ans=Math.max(left.ans,right.ans);
+                now.isBST = false;
+            }
+            return now;
+        }
+    }
+
+
+//////////////////////////////////////////////////////////////////////
     public int largestBSTSubtree(TreeNode root) {
         if (root == null) {
             return 0;
@@ -427,7 +465,7 @@ public class _333_Tree_Largest_BST_Subtree_M {
         System.out.println("largestBSTSubtree2 " + largestBSTSubtree2(root));
     }
 
-    ///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
     class Node {
         boolean isBST;
         int min;
@@ -640,9 +678,6 @@ public class _333_Tree_Largest_BST_Subtree_M {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
     /**
      * @param root the root of binary tree
      * @return the maximum weight node
@@ -698,7 +733,7 @@ public class _333_Tree_Largest_BST_Subtree_M {
                 3
      */
 
-    /////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
     int max = Integer.MAX_VALUE;
     public TreeNode result2 = null;
     public TreeNode findSubtree2(TreeNode root) {
@@ -761,7 +796,7 @@ public class _333_Tree_Largest_BST_Subtree_M {
     }
 
 
-    /////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
     //Clean and easy to understand Java Solution
     class Solution22 {
         public int largestBSTSubtree(TreeNode root) {
@@ -784,7 +819,7 @@ public class _333_Tree_Largest_BST_Subtree_M {
             return 1 + countNode(root.left) + countNode(root.right);
         }
     }
-    /////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
     //Java 1ms solution, by passing a three-element array up to parent
     class Solution33 {
         private int largestBSTSubtreeSize = 0;
@@ -820,9 +855,6 @@ public class _333_Tree_Largest_BST_Subtree_M {
         }
     }
 /////////////////////////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
 
 
 

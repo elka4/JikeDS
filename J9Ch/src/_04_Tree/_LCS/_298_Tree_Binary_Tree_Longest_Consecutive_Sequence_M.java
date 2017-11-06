@@ -7,8 +7,8 @@ import org.junit.Test;
 import java.util.LinkedList;
 
 
-//
-//
+//  298. Binary Tree Longest Consecutive Sequence
+//  https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/description/
 //
 public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
 
@@ -234,7 +234,7 @@ class Jiuzhang1{
         System.out.println(longestConsecutive2(root));
     }
 
-    ///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
     //jiuzhang
     // version 3: Divide Conquer
     private class ResultType {
@@ -797,7 +797,8 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
 
 }
 /*
-
+给一棵二叉树，找到最长连续路径的长度。
+这条路径是指 任何的节点序列中的起始节点到树中的任一节点都必须遵循 父-子 联系。最长的连续路径必须是从父亲节点到孩子节点（不能逆序）。
  */
 
 /*  leet 298. Binary Tree Longest Consecutive Sequence

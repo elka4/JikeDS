@@ -3,9 +3,9 @@ import lib.TreeNode;
 import org.junit.Test;
 import java.util.*;
 
-//
-//
-//
+//  105. Construct Binary Tree from Preorder and Inorder Traversal
+//  https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
+//  http://www.lintcode.com/zh-cn/problem/construct-binary-tree-from-preorder-and-inorder-traversal/
 public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_M {
     // jiuzhang
 	private int findPosition(int[] arr, int start, int end, int key) {
@@ -343,6 +343,28 @@ Here is my 5ms AC solution:
 
 
 }
+/*
+前序遍历和中序遍历树构造二叉树
+
+ 描述
+ 笔记
+ 数据
+ 评测
+根据前序遍历和中序遍历树构造二叉树.
+
+ 注意事项
+
+你可以假设树中不存在相同数值的节点
+
+样例
+给出中序遍历：[1,2,3]和前序遍历：[2,1,3]. 返回如下的树:
+
+  2
+ / \
+1   3
+标签
+二叉树
+ */
 
 /*Given preorder and inorder traversal of a tree, construct the binary tree.
 

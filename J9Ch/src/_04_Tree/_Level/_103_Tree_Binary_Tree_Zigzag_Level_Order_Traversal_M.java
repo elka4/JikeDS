@@ -1,15 +1,13 @@
 package _04_Tree._Level;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
 import java.util.*;
 
-
-//
-//
-//
+//  103. Binary Tree Zigzag Level Order Traversal
+//  https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+//  http://www.lintcode.com/zh-cn/problem/binary-tree-zigzag-level-order-traversal/
 public class _103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M {
 
     public class Solution {
@@ -118,79 +116,99 @@ public class _103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M {
     }
 
 /////////////////////////////////////////////////////////////////////////////
+    //jiuzhang
+    public class Jiuzhang {
+        public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+            List<List<Integer>> result = new ArrayList<List<Integer>>();
 
-    public ArrayList<ArrayList<Integer>> zigzagLevelOrder2(TreeNode root) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
-
-        if (root == null) {
-            return result;
-        }
-
-        Stack<TreeNode> currLevel = new Stack<TreeNode>();
-        Stack<TreeNode> nextLevel = new Stack<TreeNode>();
-        Stack<TreeNode> tmp;
-
-        currLevel.push(root);
-        boolean normalOrder = true;
-
-        while (!currLevel.isEmpty()) {
-            ArrayList<Integer> currLevelResult = new ArrayList<>();
-
-            while (!currLevel.isEmpty()) {
-                TreeNode node = currLevel.pop();
-                currLevelResult.add(node.val);
-
-                if (normalOrder) {
-                    if (node.left != null) {
-                        nextLevel.push(node.left);
-                    }
-                    if (node.right != null) {
-                        nextLevel.push(node.right);
-                    }
-                } else {
-                    if (node.right != null) {
-                        nextLevel.push(node.right);
-                    }
-                    if (node.left != null) {
-                        nextLevel.push(node.left);
-                    }
-                }
+            if (root == null) {
+                return result;
             }
 
-            result.add(currLevelResult);
+            Stack<TreeNode> currLevel = new Stack<TreeNode>();
+            Stack<TreeNode> nextLevel = new Stack<TreeNode>();
+            Stack<TreeNode> tmp;
 
-            tmp = currLevel;
-            currLevel = nextLevel;
-            nextLevel = tmp;
+            currLevel.push(root);
+            boolean normalOrder = true;
 
-            normalOrder = !normalOrder;
+            while (!currLevel.isEmpty()) {
+                ArrayList<Integer> currLevelResult = new ArrayList<Integer>();
+
+                while (!currLevel.isEmpty()) {
+                    TreeNode node = currLevel.pop();
+                    currLevelResult.add(node.val);
+
+                    if (normalOrder) {
+                        if (node.left != null) {
+                            nextLevel.push(node.left);
+                        }
+                        if (node.right != null) {
+                            nextLevel.push(node.right);
+                        }
+                    } else {
+                        if (node.right != null) {
+                            nextLevel.push(node.right);
+                        }
+                        if (node.left != null) {
+                            nextLevel.push(node.left);
+                        }
+                    }
+                }
+
+                result.add(currLevelResult);
+                tmp = currLevel;
+                currLevel = nextLevel;
+                nextLevel = tmp;
+                normalOrder = !normalOrder;
+            }
+
+            return result;
+
         }
-
-        return result;
     }
+/////////////////////////////////////////////////////////////////////////////
 }
 /*
+二叉树的锯齿形层次遍历
 
- */
-/*Given a binary tree, return the zigzag level order
- * traversal of its nodes' values. (ie, from left to right,
- * then right to left for the next level and alternate between).
+ 描述
+ 笔记
+ 数据
+ 评测
+给出一棵二叉树，返回其节点值的锯齿形层次遍历（先从左往右，下一层再从右往左，层与层之间交替进行）
 
-Example
-Given binary tree {3,9,20,#,#,15,7},
+样例
+给出一棵二叉树 {3,9,20,#,#,15,7},
 
     3
    / \
   9  20
     /  \
    15   7
-
-return its zigzag level order traversal as:
+返回其锯齿形的层次遍历为：
 
 [
   [3],
   [20,9],
   [15,7]
 ]
-Tags
-LinkedIn Queue Binary Tree Binary Tree Traversal Breadth First Search*/
+ */
+
+/*
+Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
+
+For example:
+Given binary tree [3,9,20,null,null,15,7],
+    3
+   / \
+  9  20
+    /  \
+   15   7
+return its zigzag level order traversal as:
+[
+  [3],
+  [20,9],
+  [15,7]
+]
+*/

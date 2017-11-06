@@ -7,16 +7,11 @@ import java.util.*;
 import lib.*;
 import org.junit.Test;
 
-/*
-LeetCode – Binary Tree Vertical Order Traversal (Java)
-
-Given a binary tree, return the vertical order traversal of its nodes' values. (ie, from top to bottom, column by column).
-
-Java Solution
-
-For each node, its left child's degree is -1 and is right child's degree is +1. We can do a level order traversal and save the degree information.
- */
+//  314. Binary Tree Vertical Order Traversal
+//  https://leetcode.com/problems/binary-tree-vertical-order-traversal/description/
+//
 public class _314_Binary_Tree_Vertical_Order_Traversal {
+    //jiuzhang
     public List<List<Integer>> verticalOrder(TreeNode root) {
         // Write your code here
         List<List<Integer>> results = new ArrayList<>();
@@ -311,3 +306,62 @@ Process finished with exit code 0
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 }
+/*
+Given a binary tree, return the vertical order traversal of its nodes' values. (ie, from top to bottom, column by column).
+
+If two nodes are in the same row and column, the order should be from left to right.
+
+Examples:
+
+Given binary tree [3,9,20,null,null,15,7],
+   3
+  /\
+ /  \
+ 9  20
+    /\
+   /  \
+  15   7
+return its vertical order traversal as:
+[
+  [9],
+  [3,15],
+  [20],
+  [7]
+]
+Given binary tree [3,9,8,4,0,1,7],
+     3
+    /\
+   /  \
+   9   8
+  /\  /\
+ /  \/  \
+ 4  01   7
+return its vertical order traversal as:
+[
+  [4],
+  [9],
+  [3,0,1],
+  [8],
+  [7]
+]
+Given binary tree [3,9,8,4,0,1,7,null,null,null,2,5] (0's right child is 2 and 1's left child is 5),
+     3
+    /\
+   /  \
+   9   8
+  /\  /\
+ /  \/  \
+ 4  01   7
+    /\
+   /  \
+   5   2
+return its vertical order traversal as:
+[
+  [4],
+  [9,5],
+  [3,0,1],
+  [8,2],
+  [7]
+]
+
+ */

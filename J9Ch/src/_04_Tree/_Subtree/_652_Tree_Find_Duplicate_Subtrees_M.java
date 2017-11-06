@@ -6,12 +6,12 @@ import org.junit.Test;
 import java.util.*;
 
 
-// 652. Find Duplicate Subtrees
-//
+//  652. Find Duplicate Subtrees
+//  https://leetcode.com/problems/find-duplicate-subtrees/description/
 //
 public class _652_Tree_Find_Duplicate_Subtrees_M {
 
-//method1
+    //method1
     class Solution1{
         public boolean findTarget(TreeNode root, int k) {
             HashSet<Integer> set = new HashSet<>();
@@ -50,12 +50,14 @@ public class _652_Tree_Find_Duplicate_Subtrees_M {
     // method3
     class Solution3{
         public boolean findTarget(TreeNode root, int k) {
+
             return dfs(root, root,  k);
         }
 
         public boolean dfs(TreeNode root,  TreeNode cur, int k){
             if(cur == null)return false;
-            return search(root, cur, k - cur.val) || dfs(root, cur.left, k) || dfs(root, cur.right, k);
+            return search(root, cur, k - cur.val) ||
+                    dfs(root, cur.left, k) || dfs(root, cur.right, k);
         }
 
         public boolean search(TreeNode root, TreeNode cur, int value){
@@ -65,18 +67,20 @@ public class _652_Tree_Find_Duplicate_Subtrees_M {
                     || (root.val > value) && search(root.left, cur, value);
         }
     }
-/////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
-//Java Concise Postorder Traversal Solution
-public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
-    List<TreeNode> res = new LinkedList<>();
-    postorder(root, new HashMap<>(), res);
-    return res;
-}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+    //Java Concise Postorder Traversal Solution
+    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+        List<TreeNode> res = new LinkedList<>();
+        postorder(root, new HashMap<>(), res);
+        return res;
+    }
 
     public String postorder(TreeNode cur, Map<String, Integer> map, List<TreeNode> res) {
         if (cur == null) return "#";
-        String serial = cur.val + "," + postorder(cur.left, map, res) + "," + postorder(cur.right, map, res);
+        String serial = cur.val + "," + postorder(cur.left, map, res)
+                + "," + postorder(cur.right, map, res);
         if (map.getOrDefault(serial, 0) == 1) res.add(cur);
         map.put(serial, map.getOrDefault(serial, 0) + 1);
         return serial;
@@ -109,10 +113,8 @@ public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
      */
 /////////////////////////////////////////////////////////////////////////////////
 
-
-    /////////////////////////////////////////////////////////////////////////////////
     //Java 1ms solution, by passing a three-element array up to parent
-    class solution3{
+    class solution4{
         private int largestBSTSubtreeSize = 0;
         public int largestBSTSubtree(TreeNode root) {
             helper(root);
@@ -145,9 +147,9 @@ public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
         }
     }
 
-    /////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
     // [C++] [Java] Clean Code
-    class Solution4 {
+    class Solution5 {
         public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
             Map<String, List<TreeNode>> map = new HashMap<String, List<TreeNode>>();
             List<TreeNode> dups = new ArrayList<TreeNode>();
@@ -177,17 +179,15 @@ public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
         root.right.left = new TreeNode(2);
         root.right.left.left = new TreeNode(4);
         root.print();
-        System.out.println(new Solution4().findDuplicateSubtrees(root));
+        System.out.println(new Solution5().findDuplicateSubtrees(root));
     }
 
 /////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////
 }
-/*
 
- */
 /*
-Given a binary tree, return all duplicate subtrees. For each kind of duplicate subtrees, you only need to return the root node of any one of them.
+Given a binary tree, return all duplicate subtrees.
+For each kind of duplicate subtrees, you only need to return the root node of any one of them.
 
 Two trees are duplicate if they have the same structure with same node values.
 

@@ -1,41 +1,44 @@
 package _04_Tree._Level;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
 import java.util.*;
 
-//version 1: BFS
+//  102. Binary Tree Level Order Traversal
+//  https://leetcode.com/problems/binary-tree-level-order-traversal/
+//  http://www.lintcode.com/zh-cn/problem/binary-tree-level-order-traversal/
 public class _102_Binary_Tree_Level_Order_Traversal {
- public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
-     ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+    //jiuzhang
+    //version 1: BFS
+    public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 
-     if (root == null) {
-         return result;
-     }
+        if (root == null) {
+            return result;
+        }
 
-     Queue<TreeNode> queue = new LinkedList<>();
-     queue.offer(root);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
 
-     while (!queue.isEmpty()) {
-         ArrayList<Integer> level = new ArrayList<>();
-         int size = queue.size();
-         for (int i = 0; i < size; i++) {
-             TreeNode head = queue.poll();
-             level.add(head.val);
-             if (head.left != null) {
-                 queue.offer(head.left);
+        while (!queue.isEmpty()) {
+             ArrayList<Integer> level = new ArrayList<>();
+             int size = queue.size();
+             for (int i = 0; i < size; i++) {
+                 TreeNode head = queue.poll();
+                 level.add(head.val);
+                 if (head.left != null) {
+                     queue.offer(head.left);
+                 }
+                 if (head.right != null) {
+                     queue.offer(head.right);
+                 }
              }
-             if (head.right != null) {
-                 queue.offer(head.right);
-             }
-         }
-         result.add(level);
-     }
+             result.add(level);
+        }
 
-     return result;
- }
+        return result;
+    }
 //////////////////////////////////////////////////////////////////////
 //version 2:  DFS
 public class _60Binary_Tree_Level_Order_Traversal_DFS {
@@ -82,7 +85,7 @@ public class _60Binary_Tree_Level_Order_Traversal_DFS {
 }
 
 
-    //////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
 //version 3: BFS. two queues
 public class _60Binary_Tree_Level_Order_Traversal_BFS_2Q {
     /**
@@ -256,53 +259,52 @@ public class _60Binary_Tree_Level_Order_Traversal_BFS_2Q {
 
 
 }
+/*
+二叉树的层次遍历
 
-/*Given a binary tree, return the level order traversal 
- * of its nodes' values. (ie, from left to right, level by level).
+ 描述
+ 笔记
+ 数据
+ 评测
+给出一棵二叉树，返回其节点值的层次遍历（逐层从左往右访问）
 
-Have you met this question in a real interview? Yes
-Example
-Given binary tree {3,9,20,#,#,15,7},
+样例
+给一棵二叉树 {3,9,20,#,#,15,7} ：
 
-    3
-   / \
-  9  20
-    /  \
-   15   7
- 
-
-return its level order traversal as:
+  3
+ / \
+9  20
+  /  \
+ 15   7
+返回他的分层遍历结果：
 
 [
   [3],
   [9,20],
   [15,7]
 ]
-Challenge 
-Challenge 1: Using only 1 queue to implement it.
+挑战
+挑战1：只使用一个队列去实现它
 
-Challenge 2: Use DFS algorithm to do it.
+挑战2：用DFS算法来做
 
-Tags 
-Queue Binary Tree Breadth First Search Binary Tree Traversal 
-LinkedIn Uber Facebook*/
+
+ */
 
 /*
-LeetCode – Binary Tree Level Order Traversal (Java)
-
 Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
 
 For example:
-Given binary tree {3,9,20,#,#,15,7},
-
+Given binary tree [3,9,20,null,null,15,7],
     3
    / \
   9  20
     /  \
    15   7
-return its level order traversal as [[3], [9,20], [15,7]]
-
-Analysis
-
-It is obvious that this problem can be solve by using a queue. However, if we use one queue we can not track when each level starts. So we use two queues to track the current level and the next level.
+return its level order traversal as:
+[
+  [3],
+  [9,20],
+  [15,7]
+]
  */

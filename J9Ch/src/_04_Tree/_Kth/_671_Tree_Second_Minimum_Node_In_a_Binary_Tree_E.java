@@ -5,10 +5,18 @@ import lib.TreeNode;
 import java.util.*;
 
 
-//
-//
-//
+//  671. Second Minimum Node In a Binary Tree
+//  https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/description/
 public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
+
+    //  https://leetcode.com/articles/second-minimum-node-in-a-binary-tree/
+
+    //    Approach #1: Brute Force [Accepted]
+
+    //    Approach #2: Ad-Hoc [Accepted]
+
+    // need to OCR
+///////////////////////////////////////////////////////////////////////////
     public int findSecondMinimumValue(TreeNode root) {
         if (root == null) {
             return -1;
@@ -59,6 +67,7 @@ public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
 
         return (secondSmall == Integer.MAX_VALUE && !diffFound) ? -1 : secondSmall;
     }
+///////////////////////////////////////////////////////////////////////////
 }
 /*
 

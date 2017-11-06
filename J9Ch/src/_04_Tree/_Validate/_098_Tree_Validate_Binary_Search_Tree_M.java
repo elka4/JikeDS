@@ -1,19 +1,14 @@
 package _04_Tree._Validate;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
-
-
-//
-//
-//
+//  98. Validate Binary Search Tree
+//  https://leetcode.com/problems/validate-binary-search-tree/description/
+//  http://www.lintcode.com/zh-cn/problem/validate-binary-search-tree/
 public class _098_Tree_Validate_Binary_Search_Tree_M {
+    //Jiuzhang
 
     // version 1 Traverse
     private int lastVal = Integer.MIN_VALUE;
@@ -50,9 +45,9 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
     }
 
 /////////////////////////////////////////////////////////////////////////////////
+    //Jiuzhang
 
     // version 2  Divide and Conquer, with result type
-
     class ResultType {
         boolean is_bst;
         int maxValue, minValue;
@@ -106,9 +101,9 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
     }
 
 /////////////////////////////////////////////////////////////////////////////////
+    //Jiuzhang
 
     // version 3  Divide and Conquer
-
     public boolean isValidBST3(TreeNode root) {
         // write your code here
         return divConq(root, Long.MIN_VALUE, Long.MAX_VALUE);
@@ -136,14 +131,15 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         root.print();
         System.out.println(isValidBST3(root));
     }
-    /////////////////////////////////////////////////////////////////////////////////
+
 /////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////
+
     public boolean isValidBST11(TreeNode root) {
         if(root == null)
             return true;
         return isValidBST(root, Long.MAX_VALUE, Long.MAX_VALUE);
     }
+
     private boolean isValidBST(TreeNode root,  long min, long max) {
         if(root == null)
             return true;
@@ -174,8 +170,8 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
 
     }
 /////////////////////////////////////////////////////////////////////////////////
-        /*Java Solution 1 - Recursive
 
+    /*Java Solution 1 - Recursive
     All values on the left sub tree must be less than root, and all values on the
      right sub tree must be greater than root. So we just check the boundaries for each node.*/
 
@@ -225,7 +221,6 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
 /////////////////////////////////////////////////////////////////////
 
     //Java Solution 2 - Iterative
-
     public class Solution {
         public boolean isValidBST(TreeNode root) {
             if(root == null)
@@ -248,6 +243,7 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
             return true;
         }
     }
+
     //define a BNode class with TreeNode and it's boundaries
     class BNode{
         TreeNode n;
@@ -265,25 +261,24 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
     //My simple Java solution in 3 lines
     public class Solution4 {
         public boolean isValidBST4(TreeNode root) {
+
             return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
         }
 
         public boolean isValidBST(TreeNode root, long minVal, long maxVal) {
             if (root == null) return true;
             if (root.val >= maxVal || root.val <= minVal) return false;
-            return isValidBST(root.left, minVal, root.val) && isValidBST(root.right, root.val, maxVal);
+            return isValidBST(root.left, minVal, root.val) &&
+                    isValidBST(root.right, root.val, maxVal);
         }
     }
-
-
-
 
 /////////////////////////////////////////////////////////////////////
 
     //Learn one iterative inorder traversal, apply it to multiple tree questions (Java Solution)
-    //I will show you all how to tackle various tree questions using iterative inorder traversal. First one is the standard iterative inorder traversal using stack. Hope everyone agrees with this solution.
-
-
+    //I will show you all how to tackle various tree questions using iterative inorder traversal.
+    // First one is the standard iterative inorder traversal using stack.
+    // Hope everyone agrees with this solution.
 
     public List<Integer> inorderTraversal5(TreeNode root) {
         List<Integer> list = new ArrayList<>();
@@ -302,15 +297,10 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         return list;
     }
 
-
-
-
 /////////////////////////////////////////////////////////////////////
 
     //My java inorder iteration solution
-
     //the idea is to do a inorder Traversal and keep the value of the
-
     public boolean isValidBST6 (TreeNode root){
         Stack<TreeNode> stack = new Stack<TreeNode> ();
         TreeNode cur = root ;
@@ -331,16 +321,12 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         return true ;
     }
 
-
-
-
-
 /////////////////////////////////////////////////////////////////////
 
     //Another passed Java solution
-
     public class Solution7 {
         public boolean isValidBST(TreeNode root) {
+
             return helper(root, null, null);
         }
 
@@ -359,9 +345,9 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
 /////////////////////////////////////////////////////////////////////
 
     //1 ms Java Solution using Recursion
-
     public class Solution8 {
         public boolean isValidBST(TreeNode root) {
+
             return isValid(root, null, null);
         }
 
@@ -374,14 +360,12 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         }
     }
 
-
-
 /////////////////////////////////////////////////////////////////////
 
     //1ms Java solution, O(n) time and O(1) space, using Integer object and null pointer
-
     public class Solution9 {
         public boolean isValidBST(TreeNode root) {
+
             return isValidBSTHelper(root, null, null);
         }
 
@@ -390,22 +374,17 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
             if (root == null) {
                 return true;
             }
-            if (leftBound != null && root.val <= leftBound || rightBound != null && root.val >= rightBound) {
+            if (leftBound != null && root.val <= leftBound ||
+                    rightBound != null && root.val >= rightBound) {
                 return false;
             }
-            return isValidBSTHelper(root.left, leftBound, root.val) && isValidBSTHelper(root.right, root.val, rightBound);
+            return isValidBSTHelper(root.left, leftBound, root.val) &&
+                    isValidBSTHelper(root.right, root.val, rightBound);
         }
     }
 
 /////////////////////////////////////////////////////////////////////////////////
 
-    /*
-      2
-     / \
-    1   4
-       / \
-      3   5
-     *//////////////////////////////////////////////////////////////////////////////////
     public class Solution0 {
         public boolean isValidBST(TreeNode root) {
             return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE); }
@@ -415,11 +394,102 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
             return isValidBST(root.left, minVal, root.val) && isValidBST(root.right,
                     root.val, maxVal);
         }
-        /////////////////////////////////////////////////////////////////////////////////
     }
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+/*Learn one iterative inorder traversal, apply it to multiple tree questions (Java Solution)
+    I will show you all how to tackle various tree questions using iterative inorder traversal. First one is the standard iterative inorder traversal using stack. Hope everyone agrees with this solution.
+
+            Question : Binary Tree Inorder Traversal*/
+
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if(root == null) return list;
+        Stack<TreeNode> stack = new Stack<>();
+        while(root != null || !stack.empty()){
+            while(root != null){
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            list.add(root.val);
+            root = root.right;
+
+        }
+        return list;
+    }
+/*    Now, we can use this structure to find the Kth smallest element in BST.
+
+            Question : Kth Smallest Element in a BST*/
+
+    public int kthSmallest(TreeNode root, int k) {
+        Stack<TreeNode> stack = new Stack<>();
+        while(root != null || !stack.isEmpty()) {
+            while(root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            if(--k == 0) break;
+            root = root.right;
+        }
+        return root.val;
+    }
+/*
+    We can also use this structure to solve BST validation question.
+
+    Question : Validate Binary Search Tree
+*/
+
+    public boolean isValidBST_(TreeNode root) {
+        if (root == null) return true;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode pre = null;
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            if(pre != null && root.val <= pre.val) return false;
+            pre = root;
+            root = root.right;
+        }
+        return true;
+    }
+
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 }
 /*
+验证二叉查找树
 
+ 描述
+ 笔记
+ 数据
+ 评测
+给定一个二叉树，判断它是否是合法的二叉查找树(BST)
+
+一棵BST定义为：
+
+节点的左子树中的值要严格小于该节点的值。
+节点的右子树中的值要严格大于该节点的值。
+左右子树也必须是二叉查找树。
+一个节点的树也是二叉查找树。
+样例
+一个例子：
+
+  2
+ / \
+1   4
+   / \
+  3   5
+上述这棵二叉树序列化为 {2,1,4,#,#,3,5}.
+
+标签
  */
 
 /*

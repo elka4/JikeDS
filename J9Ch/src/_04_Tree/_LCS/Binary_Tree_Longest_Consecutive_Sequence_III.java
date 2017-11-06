@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-/**
+/** lintcode
  * 619
  * Binary Tree Longest Consecutive Sequence III
  * Created by tianhuizhu on 6/28/17.

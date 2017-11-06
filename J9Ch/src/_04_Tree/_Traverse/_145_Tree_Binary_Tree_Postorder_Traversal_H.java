@@ -1,18 +1,15 @@
 package _04_Tree._Traverse;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
-
 import java.util.*;
 
-
-//
-//
-//
+//  145. Binary Tree Postorder Traversal
+//  https://leetcode.com/problems/binary-tree-postorder-traversal/description/
+//  http://www.lintcode.com/zh-cn/problem/binary-tree-postorder-traversal/
 public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
-//    PRE ORDER TRAVERSE
-
+    //Preorder, Inorder, and Postorder Iteratively Summarization
+    //    PRE ORDER TRAVERSE
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
@@ -29,8 +26,8 @@ public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
         }
         return result;
     }
-//    IN ORDER TRAVERSE
 
+    //    IN ORDER TRAVERSE
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
@@ -47,8 +44,8 @@ public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
         }
         return result;
     }
-//    POST ORDER TRAVERSE
 
+    //    POST ORDER TRAVERSE
     public List<Integer> postorderTraversal(TreeNode root) {
         LinkedList<Integer> result = new LinkedList<>();
         Deque<TreeNode> stack = new ArrayDeque<>();
@@ -67,41 +64,42 @@ public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
     }
 
 //////////////////////////////////////////////////////////////////////////////
-//Iterative
-public ArrayList<Integer> postorderTraversal2(TreeNode root) {
-    ArrayList<Integer> result = new ArrayList<>();
-    Stack<TreeNode> stack = new Stack<>();
-    TreeNode prev = null; // previously traversed node
-    TreeNode curr = root;
+    //Jiuzhang
+    //Iterative
+    public ArrayList<Integer> postorderTraversal2(TreeNode root) {
+        ArrayList<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode prev = null; // previously traversed node
+        TreeNode curr = root;
 
-    if (root == null) {
+        if (root == null) {
+            return result;
+        }
+
+        stack.push(root);
+        while (!stack.empty()) {
+            curr = stack.peek();
+            if (prev == null || prev.left == curr || prev.right == curr) {
+                // traverse down the tree
+                if (curr.left != null) {
+                    stack.push(curr.left);
+                } else if (curr.right != null) {
+                    stack.push(curr.right);
+                }
+            } else if (curr.left == prev) {
+                // traverse up the tree from the left
+                if (curr.right != null) {
+                    stack.push(curr.right);
+                }
+            } else { // traverse up the tree from the right
+                result.add(curr.val);
+                stack.pop();
+            }
+            prev = curr;
+        }
+
         return result;
     }
-
-    stack.push(root);
-    while (!stack.empty()) {
-        curr = stack.peek();
-        if (prev == null || prev.left == curr || prev.right == curr) {
-            // traverse down the tree
-            if (curr.left != null) {
-                stack.push(curr.left);
-            } else if (curr.right != null) {
-                stack.push(curr.right);
-            }
-        } else if (curr.left == prev) {
-            // traverse up the tree from the left
-            if (curr.right != null) {
-                stack.push(curr.right);
-            }
-        } else { // traverse up the tree from the right
-            result.add(curr.val);
-            stack.pop();
-        }
-        prev = curr;
-    }
-
-    return result;
-}
     @Test
     public void test01(){
         int[] arr = {3,9,20};
@@ -113,8 +111,9 @@ public ArrayList<Integer> postorderTraversal2(TreeNode root) {
         root.print();
     }
 
-    ///////////////////////////////////////////////////////////////////////
-//Recursive
+///////////////////////////////////////////////////////////////////////
+    //Jiuzhang
+    //Recursive
     public ArrayList<Integer> postorderTraversal22(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<>();
         if (root == null) {
@@ -153,7 +152,7 @@ public ArrayList<Integer> postorderTraversal2(TreeNode root) {
         }
     }
 
-    //////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
     public ArrayList<Integer> postorderTraversal4(TreeNode root) {
 
         ArrayList<Integer> lst = new ArrayList<Integer>();
@@ -207,7 +206,7 @@ public ArrayList<Integer> postorderTraversal2(TreeNode root) {
         return lst;
     }
 
-////////////////////////////////?
+//////////////////////////////////////////////////////////////////////
 
     public List<Integer> postorderTraversal3(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
@@ -240,35 +239,66 @@ public ArrayList<Integer> postorderTraversal2(TreeNode root) {
 
         return res;
     }
-//////////////////////////////////////////////////////////////////////
 
-//////////////////////////////////////////////////////////////////////
+
+//    Java simple and clean
+    public List<Integer> postorderTraversal5(TreeNode root) {
+        LinkedList<Integer> ans = new LinkedList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        if (root == null) return ans;
+
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode cur = stack.pop();
+            ans.addFirst(cur.val);
+            if (cur.left != null) {
+                stack.push(cur.left);
+            }
+            if (cur.right != null) {
+                stack.push(cur.right);
+            }
+        }
+        return ans;
+    }
 //////////////////////////////////////////////////////////////////////////////
 
 }
-/*
+/*  leetcode
+二叉树的后序遍历
 
- */
-/*Given a binary tree, return the postorder traversal of its nodes' values.
+ 描述
+ 笔记
+ 数据
+ 评测
+给出一棵二叉树，返回其节点值的后序遍历。
 
-Have you met this question in a real interview? Yes
-Example
-Given binary tree {1,#,2,3},
+样例
+给出一棵二叉树 {1,#,2,3},
 
    1
     \
      2
     /
    3
+返回 [3,2,1]
 
+挑战
+你能使用非递归实现么？
+ */
 
+/* leetcode
+Given a binary tree, return the postorder traversal of its nodes' values.
+
+For example:
+Given binary tree {1,#,2,3},
+   1
+    \
+     2
+    /
+   3
 return [3,2,1].
 
-Challenge
-Can you do it without recursion?
+Note: Recursive solution is trivial, could you do it iteratively?
 
-Tags
-Recursion Binary Tree Binary Tree Traversal
-Related Problems
-Easy Binary Tree Preorder Traversal 40 %
+
 */

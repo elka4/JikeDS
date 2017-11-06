@@ -8,8 +8,8 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 
-//
-//
+//  156. Binary Tree Upside Down
+//  https://leetcode.com/problems/binary-tree-upside-down/
 //
 public class _156_Tree_Binary_Tree_Upside_Down_M {
 
@@ -152,4 +152,22 @@ reverse it into a new tree where the original right nodes becoming new left leaf
 
 右边的sibling编程左孩子
 父节点变成右孩子
+ */
+/*
+Given a binary tree where all the right nodes are either leaf nodes with a sibling (a left node that shares the same parent node) or empty, flip it upside down and turn it into a tree where the original right nodes turned into left leaf nodes. Return the new root.
+
+For example:
+Given a binary tree {1,2,3,4,5},
+    1
+   / \
+  2   3
+ / \
+4   5
+return the root of the binary tree [4,5,2,#,#,3,1].
+   4
+  / \
+ 5   2
+    / \
+   3   1
+confused what "{1,#,2,3}" means? > read more on how binary tree is serialized on OJ.
  */

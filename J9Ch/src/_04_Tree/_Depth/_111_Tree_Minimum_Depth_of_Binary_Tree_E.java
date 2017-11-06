@@ -7,9 +7,9 @@ import org.junit.Test;
 import java.util.LinkedList;
 
 
-//
-//
-//
+//  111. Minimum Depth of Binary Tree
+//  https://leetcode.com/problems/minimum-depth-of-binary-tree/description/
+//  http://www.lintcode.com/zh-cn/problem/minimum-depth-of-binary-tree/
 public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
     public int minDepth1(TreeNode root) {
         if(root == null) return 0;
@@ -18,7 +18,8 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
         return (left == 0 || right == 0) ? left + right + 1: Math.min(left,right) + 1;
 
     }
-
+////////////////////////////////////////////////////////////////////////
+    //jiuzhang
     public int minDepth(TreeNode root) {
         if (root == null) {
             return 0;
@@ -47,7 +48,7 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
         root.print();
         System.out.println(minDepth(root));
     }
-    ////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
     public int minDepth22(TreeNode root) {
         if(root == null){
             return 0;
@@ -81,7 +82,7 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
         return 0;
     }
 
-    ////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
     public int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
@@ -103,7 +104,7 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
         System.out.println(maxDepth(root));
     }
 
-    ////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
     public int minDepth2(TreeNode root){
         if (root == null){
             return 0;
@@ -140,4 +141,39 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
 4   5
 return [1,2,4,5,3]
      */
+////////////////////////////////////////////////////////////////////////
 }
+/*
+二叉树的最小深度
+
+ 描述
+ 笔记
+ 数据
+ 评测
+给定一个二叉树，找出其最小深度。
+
+二叉树的最小深度为根节点到最近叶子节点的距离。
+样例
+给出一棵如下的二叉树:
+
+        1
+
+     /     \
+
+   2       3
+
+          /    \
+
+        4      5
+
+这个二叉树的最小深度为 2
+
+标签
+二叉树 深度优先搜索
+ */
+
+/*
+Given a binary tree, find its minimum depth.
+
+The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+ */

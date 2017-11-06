@@ -4,19 +4,19 @@ import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
-/** 596. Minimum Subtree
+/* 596. Minimum Subtree
  *
  * Given a binary tree, find the subtree with minimum sum.
  * Return the root of the subtree.
+ * 给一棵二叉树, 找到和为最小的子树, 返回其根节点。
  * Easy
 
- * Created by tianhuizhu on 6/27/17.
  */
 
 // subtree with minimum sum.
 
 public class Minimum_Subtree {
-
+    //jiuzhang
     // version 1 : traverse + divide conquer
     private TreeNode subtree = null;
     private int subtreeSum = Integer.MAX_VALUE;
@@ -63,7 +63,7 @@ public class Minimum_Subtree {
     }
 
 ///////////////////////////////////////////////////////////////////////////
-
+    //jiuzhang
     // version 2: Pure divide conquer
 
     class ResultType {
@@ -188,3 +188,8 @@ return the node 1.
 
 
 }
+/*
+给一棵二叉树, 找到和为最小的子树, 返回其根节点。
+
+
+ */

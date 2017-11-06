@@ -6,10 +6,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-//
-//
-//
+//  366. Find Leaves of Binary Tree
+//  https://leetcode.com/problems/find-leaves-of-binary-tree/description/
 public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
+    //  10 lines simple Java solution using recursion with explanation
+    /*
+    For this question we need to take bottom-up approach. The key is to find the height of each node. Here the definition of height is:
+The height of a node is the number of edges from the node to the deepest leaf. --CMU 15-121 Binary Trees
+
+I used a helper function to return the height of current node. According to the definition, the height of leaf is 0. h(node) = 1 + max(h(node.left), h(node.right)).
+The height of a node is also the its index in the result list (res). For example, leaves, whose heights are 0, are stored in res[0]. Once we find the height of a node, we can put it directly into the result.
+
+UPDATE:
+Thanks @adrianliu0729 for pointing out that my previous code does not actually remove leaves. I added one line node.left = node.right = null; to remove visited nodes
+
+UPDATE:
+There seems to be some debate over whether we need to actually "remove" leaves from the input tree. Anyway, it is just a matter of one line code. In the actual interview, just confirm with the interviewer whether removal is required.
+     */
     public class Solution {
         public List<List<Integer>> findLeaves(TreeNode root) {
             List<List<Integer>> res = new ArrayList<>();
@@ -25,6 +38,16 @@ public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
         }
     }
 
+
+
+
+
+/*
+Java backtracking O(n) time O(n) space No hashing!
+The essential of problem is not to find the leaves, but group leaves of same level together and also to cut the tree. This is the exact role backtracking plays. The helper function returns the level which is the distance from its furthest subtree leaf to root, which helps to identify which group the root belongs to
+
+
+ */
     public class Solution2 {
         public List<List<Integer>> findLeaves(TreeNode root) {
             List<List<Integer>> list = new ArrayList<>();
@@ -48,10 +71,65 @@ public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
             return level;
         }
     }
+
+
+//    1 ms Easy understand Java Solution
+    public class Solution3 {
+        public List<List<Integer>> findLeaves(TreeNode root) {
+
+            List<List<Integer>> leavesList = new ArrayList< List<Integer>>();
+            List<Integer> leaves = new ArrayList<Integer>();
+
+            while(root != null) {
+                if(isLeave(root, leaves)) root = null;
+                leavesList.add(leaves);
+                leaves = new ArrayList<Integer>();
+            }
+            return leavesList;
+        }
+
+        public boolean isLeave(TreeNode node, List<Integer> leaves) {
+
+            if (node.left == null && node.right == null) {
+                leaves.add(node.val);
+                return true;
+            }
+
+            if (node.left != null) {
+                if(isLeave(node.left, leaves))  node.left = null;
+            }
+
+            if (node.right != null) {
+                if(isLeave(node.right, leaves)) node.right = null;
+            }
+
+            return false;
+        }
+    }
 }
 /*
+Given a binary tree, collect a tree's nodes as if you were doing this: Collect and remove all leaves, repeat until the tree is empty.
 
- */
-/*
+Example:
+Given binary tree
+          1
+         / \
+        2   3
+       / \
+      4   5
+Returns [4, 5, 3], [2], [1].
 
+Explanation:
+1. Removing the leaves [4, 5, 3] would result in this tree:
+
+          1
+         /
+        2
+2. Now removing the leaf [2] would result in this tree:
+
+          1
+3. Now removing the leaf [1] would result in the empty tree:
+
+          []
+Returns [4, 5, 3], [2], [1].
  */
