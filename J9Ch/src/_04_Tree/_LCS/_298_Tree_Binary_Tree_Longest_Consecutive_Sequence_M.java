@@ -29,7 +29,7 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
             helper(root.right, cur, root.val + 1);
         }
     }
-
+///////////////////////////////////////////////////////////////////////////////////
     public int longestConsecutive1(TreeNode root) {
         int[] lens = new int[1];
         if (root == null)  return 0;

@@ -37,7 +37,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
         return root;
     }
 
-    public TreeNode buildTree(int[] inorder, int[] postorder) {
+    public TreeNode buildTree1(int[] inorder, int[] postorder) {
         if (inorder.length != postorder.length) {
             return null;
         }
@@ -49,7 +49,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
     public void test01(){
         int[] postorder = {1,3,2};
         int[] inorder = {1,2,3};
-        buildTree(postorder, inorder).print();
+        buildTree1(postorder, inorder).print();
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -79,7 +79,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
         return root;
     }
 //////////////////////////////////////////////////////////////////////////////////////
-// Java iterative solution with explanation
+    // Java iterative solution with explanation
     public TreeNode buildTree3(int[] inorder, int[] postorder) {
         if (inorder.length == 0 || postorder.length == 0) return null;
         int ip = inorder.length - 1;
@@ -111,16 +111,14 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
         return root;
     }
 //////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////
-public TreeNode buildTree11(int[] inorder, int[] postorder) {
-    int inStart = 0;
-    int inEnd = inorder.length - 1;
-    int postStart = 0;
-    int postEnd = postorder.length - 1;
+    public TreeNode buildTree4(int[] inorder, int[] postorder) {
+        int inStart = 0;
+        int inEnd = inorder.length - 1;
+        int postStart = 0;
+        int postEnd = postorder.length - 1;
 
-    return buildTree(inorder, inStart, inEnd, postorder, postStart, postEnd);
-}
+        return buildTree(inorder, inStart, inEnd, postorder, postStart, postEnd);
+    }
 
     public TreeNode buildTree(int[] inorder, int inStart, int inEnd,
                               int[] postorder, int postStart, int postEnd) {
@@ -155,40 +153,36 @@ public TreeNode buildTree11(int[] inorder, int[] postorder) {
 
 //////////////////////////////////////////////////////////////
 
+    public TreeNode buildTreePostIn5(int[] inorder, int[] postorder) {
+        if (inorder == null || postorder == null || inorder.length != postorder.length)
+            return null;
+        HashMap<Integer, Integer> hm = new HashMap<Integer,Integer>();
+        for (int i=0;i<inorder.length;++i)
+            hm.put(inorder[i], i);
+        return buildTreePostIn5(inorder, 0, inorder.length-1, postorder, 0,
+                postorder.length-1,hm);
+    }
 
-    class Solution2{
-
-
-        public TreeNode buildTreePostIn(int[] inorder, int[] postorder) {
-            if (inorder == null || postorder == null || inorder.length != postorder.length)
-                return null;
-            HashMap<Integer, Integer> hm = new HashMap<Integer,Integer>();
-            for (int i=0;i<inorder.length;++i)
-                hm.put(inorder[i], i);
-            return buildTreePostIn(inorder, 0, inorder.length-1, postorder, 0,
-                    postorder.length-1,hm);
-        }
-
-        private TreeNode buildTreePostIn(int[] inorder, int is, int ie, int[] postorder, int ps, int pe,
-                                         HashMap<Integer,Integer> hm){
-            if (ps>pe || is>ie) return null;
-            TreeNode root = new TreeNode(postorder[pe]);
-            int ri = hm.get(postorder[pe]);
-            TreeNode leftchild = buildTreePostIn(inorder, is, ri-1, postorder, ps, ps+ri-is-1, hm);
-            TreeNode rightchild = buildTreePostIn(inorder,ri+1, ie, postorder, ps+ri-is, pe-1, hm);
-            root.left = leftchild;
-            root.right = rightchild;
-            return root;
-        }
-
+    private TreeNode buildTreePostIn5(int[] inorder, int is, int ie, int[] postorder, int ps, int pe,
+                                     HashMap<Integer,Integer> hm){
+        if (ps>pe || is>ie) return null;
+        TreeNode root = new TreeNode(postorder[pe]);
+        int ri = hm.get(postorder[pe]);
+        TreeNode leftchild = buildTreePostIn5(inorder, is, ri-1, postorder, ps, ps+ri-is-1, hm);
+        TreeNode rightchild = buildTreePostIn5(inorder,ri+1, ie, postorder, ps+ri-is, pe-1, hm);
+        root.left = leftchild;
+        root.right = rightchild;
+        return root;
     }
 
 
 //////////////////////////////////////////////////////////////
 
     //Java iterative solution with explanation
-
-    public TreeNode buildTree33(int[] inorder, int[] postorder) {
+    /*
+    This is my iterative solution, think about "Constructing Binary Tree from inorder and preorder array", the idea is quite similar. Instead of scanning the preorder array from beginning to end and using inorder array as a kind of mark, in this question, the key point is to scanning the postorder array from end to beginning and also use inorder array from end to beginning as a mark because the logic is more clear in this way. The core idea is: Starting from the last element of the postorder and inorder array, we put elements from postorder array to a stack and each one is the right child of the last one until an element in postorder array is equal to the element on the inorder array. Then, we pop as many as elements we can from the stack and decrease the mark in inorder array until the peek() element is not equal to the mark value or the stack is empty. Then, the new element that we are gonna scan from postorder array is the left child of the last element we have popped out from the stack.
+     */
+    public TreeNode buildTree6(int[] inorder, int[] postorder) {
         if (inorder.length == 0 || postorder.length == 0) return null;
         int ip = inorder.length - 1;
         int pp = postorder.length - 1;
@@ -220,110 +214,94 @@ public TreeNode buildTree11(int[] inorder, int[] postorder) {
     }
 
 
-    /*
-    This is my iterative solution, think about "Constructing Binary Tree from inorder and preorder array", the idea is quite similar. Instead of scanning the preorder array from beginning to end and using inorder array as a kind of mark, in this question, the key point is to scanning the postorder array from end to beginning and also use inorder array from end to beginning as a mark because the logic is more clear in this way. The core idea is: Starting from the last element of the postorder and inorder array, we put elements from postorder array to a stack and each one is the right child of the last one until an element in postorder array is equal to the element on the inorder array. Then, we pop as many as elements we can from the stack and decrease the mark in inorder array until the peek() element is not equal to the mark value or the stack is empty. Then, the new element that we are gonna scan from postorder array is the left child of the last element we have popped out from the stack.
-     */
 
 //////////////////////////////////////////////////////////////
 
     //Simple and clean Java solution with comments, recursive.
-
-
-    class Solution4{
-        public TreeNode buildTree(int[] inorder, int[] postorder) {
-            return buildTree(inorder, inorder.length-1, 0, postorder, postorder.length-1);
-        }
-
-        private TreeNode buildTree(int[] inorder, int inStart, int inEnd, int[] postorder,
-                                   int postStart) {
-            if (postStart < 0 || inStart < inEnd)
-                return null;
-
-            //The last element in postorder is the root.
-            TreeNode root = new TreeNode(postorder[postStart]);
-
-            //find the index of the root from inorder. Iterating from the end.
-            int rIndex = inStart;
-            for (int i = inStart; i >= inEnd; i--) {
-                if (inorder[i] == postorder[postStart]) {
-                    rIndex = i;
-                    break;
-                }
-            }
-            //build right and left subtrees. Again, scanning from the end to find the sections.
-            root.right = buildTree(inorder, inStart, rIndex + 1, postorder, postStart-1);
-            root.left = buildTree(inorder, rIndex - 1, inEnd, postorder, postStart - (inStart - rIndex) -1);
-            return root;
-        }
+    public TreeNode buildTree7(int[] inorder, int[] postorder) {
+        return buildTree7(inorder, inorder.length-1, 0,
+                postorder, postorder.length-1);
     }
 
+    private TreeNode buildTree7(int[] inorder, int inStart, int inEnd, int[] postorder,
+                               int postStart) {
+        if (postStart < 0 || inStart < inEnd)
+            return null;
 
+        //The last element in postorder is the root.
+        TreeNode root = new TreeNode(postorder[postStart]);
+
+        //find the index of the root from inorder. Iterating from the end.
+        int rIndex = inStart;
+        for (int i = inStart; i >= inEnd; i--) {
+            if (inorder[i] == postorder[postStart]) {
+                rIndex = i;
+                break;
+            }
+        }
+        //build right and left subtrees. Again, scanning from the end to find the sections.
+        root.right = buildTree7(inorder, inStart, rIndex + 1,
+                postorder, postStart-1);
+        root.left = buildTree7(inorder, rIndex - 1, inEnd,
+                postorder, postStart - (inStart - rIndex) -1);
+        return root;
+    }
 
 //////////////////////////////////////////////////////////////
-
-
     //My JAVA recursive answer, BEAT 92.9%, 2ms
-
-
-    class Solution5{
-        public TreeNode buildTree(int[] inorder, int[] postorder) {
-            return build(inorder,inorder.length-1,0,postorder,postorder.length-1);
-        }
-
-        public TreeNode build(int[] inorder, int inStart, int inEnd, int[] postorder, int postStart){
-            if(inEnd > inStart){
-                return null;
-            }
-            TreeNode root = new TreeNode(postorder[postStart]);
-            if(inEnd == inStart){
-                return root;
-            }
-            int index = 0;
-            // find the index in inorder:
-            for(int i = inStart; i >= inEnd; i--){
-                if(inorder[i] == root.val){
-                    index = i;
-                    break;
-                }
-            }
-
-            root.right = build(inorder,inStart,index+1,postorder,postStart-1);
-            root.left = build(inorder,index-1,inEnd,postorder,postStart-(inStart-index)-1);
-
-            return root;
-        }
+    public TreeNode buildTree8(int[] inorder, int[] postorder) {
+        return build8(inorder,inorder.length-1,0,postorder,postorder.length-1);
     }
 
-//////////////////////////////////////////////////////////////
-
-
-    //Concise recursive Java code by making slight modification to the previous problem.
-
-    //Code for Problem 106:
-
-    class Solution6{
-
-        public  TreeNode buildTree(int[] inorder, int[] postorder) {
-            return helper(postorder, postorder.length - 1, inorder, 0, inorder.length - 1);
+    public TreeNode build8(int[] inorder, int inStart, int inEnd, int[] postorder, int postStart){
+        if(inEnd > inStart){
+            return null;
         }
-
-        public  TreeNode helper(int[] postorder, int postStart, int[] inorder, int inStart, int inEnd) {
-            if (postStart < 0 || inStart > inEnd)
-                return null;
-            TreeNode root = new TreeNode(postorder[postStart]);
-            int target = inStart;
-            while (inorder[target] != postorder[postStart]) target++;
-            root.left = helper(postorder, postStart - inEnd + target - 1, inorder, inStart, target - 1);
-            root.right = helper(postorder, postStart - 1, inorder, target + 1, inEnd);
-
+        TreeNode root = new TreeNode(postorder[postStart]);
+        if(inEnd == inStart){
             return root;
         }
+        int index = 0;
+        // find the index in inorder:
+        for(int i = inStart; i >= inEnd; i--){
+            if(inorder[i] == root.val){
+                index = i;
+                break;
+            }
+        }
+
+        root.right = build8(inorder,inStart,index+1,postorder,postStart-1);
+        root.left = build8(inorder,index-1,inEnd,postorder,postStart-(inStart-index)-1);
+
+        return root;
+    }
+
+
+
+//////////////////////////////////////////////////////////////
+    //Concise recursive Java code by making slight modification to the previous problem.
+    //Code for Problem 106:
+    public  TreeNode buildTree9(int[] inorder, int[] postorder) {
+        return helper9(postorder, postorder.length - 1,
+                inorder, 0, inorder.length - 1);
+    }
+
+    public  TreeNode helper9(int[] postorder, int postStart, int[] inorder, int inStart, int inEnd) {
+        if (postStart < 0 || inStart > inEnd)
+            return null;
+        TreeNode root = new TreeNode(postorder[postStart]);
+        int target = inStart;
+        while (inorder[target] != postorder[postStart]) target++;
+        root.left = helper9(postorder, postStart - inEnd + target - 1,
+                inorder, inStart, target - 1);
+        root.right = helper9(postorder, postStart - 1,
+                inorder, target + 1, inEnd);
+
+        return root;
     }
 
 
 //////////////////////////////////////////////////////////////////////////////////////
-
-
 }
 /*
 中序遍历和后序遍历树构造二叉树

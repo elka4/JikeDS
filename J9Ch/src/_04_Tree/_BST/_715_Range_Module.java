@@ -3,9 +3,9 @@ import java.util.*;
 
 //  715. Range Module
 //  https://leetcode.com/problems/range-module/description/
-//
 public class _715_Range_Module {
     //https://leetcode.com/articles/range-module/
+
     //Approach #1: Maintain Sorted Disjoint Intervals [Accepted]
 
 

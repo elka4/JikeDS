@@ -12,51 +12,55 @@ public class _669_Tree_Trim_a_Binary_Search_Tree_E {
 
 ////////////////////////////////////////////////////////////////
     //Java solution, 6 liner
-    class Solution {
-        public TreeNode trimBST(TreeNode root, int L, int R) {
-            if (root == null) return null;
+    public TreeNode trimBST2(TreeNode root, int L, int R) {
+        if (root == null) return null;
 
-            if (root.val < L) return trimBST(root.right, L, R);
-            if (root.val > R) return trimBST(root.left, L, R);
+        if (root.val < L) return trimBST2(root.right, L, R);
+        if (root.val > R) return trimBST2(root.left, L, R);
 
-            root.left = trimBST(root.left, L, R);
-            root.right = trimBST(root.right, L, R);
+        root.left = trimBST2(root.left, L, R);
+        root.right = trimBST2(root.right, L, R);
 
-            return root;
-        }
+        return root;
     }
 
+
+////////////////////////////////////////////////////////////////
     //Simple Java recursive solution
-    public TreeNode trimBST2(TreeNode root, int L, int R) {
+    public TreeNode trimBST3(TreeNode root, int L, int R) {
         if (root == null) {
             return root;
         }
 
         if (root.val > R) {
-            return trimBST2(root.left, L, R);
+            return trimBST3(root.left, L, R);
         }
 
         if (root.val < L) {
-            return trimBST2(root.right, L, R);
+            return trimBST3(root.right, L, R);
         }
 
-        root.left = trimBST2(root.left, L, R);
-        root.right = trimBST2(root.right, L, R);
+        root.left = trimBST3(root.left, L, R);
+        root.right = trimBST3(root.right, L, R);
         return root;
     }
-
-//    easy java
-    public TreeNode trimBST3(TreeNode root, int L, int R) {
+////////////////////////////////////////////////////////////////
+    //    easy java
+    public TreeNode trimBST4(TreeNode root, int L, int R) {
         if (root == null) return null;
-        TreeNode left = trimBST3(root.left, L, R);
-        TreeNode right = trimBST3(root.right, L, R);
+        TreeNode left = trimBST4(root.left, L, R);
+        TreeNode right = trimBST4(root.right, L, R);
         root.left = left;
         root.right = right;
         return root.val >= L && root.val <= R? root : root.val < L? right : left;
     }
+////////////////////////////////////////////////////////////////
 }
 /*
-Given a binary search tree and the lowest and highest boundaries as L and R, trim the tree so that all its elements lies in [L, R] (R >= L). You might need to change the root of the tree, so the result should return the new root of the trimmed binary search tree.
+Given a binary search tree and the lowest and highest boundaries as L and R,
+trim the tree so that all its elements lies in [L, R] (R >= L).
+You might need to change the root of the tree,
+so the result should return the new root of the trimmed binary search tree.
 
 Example 1:
 Input:

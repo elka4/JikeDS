@@ -1,5 +1,4 @@
 package _04_Tree._Depth;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
@@ -11,16 +10,39 @@ import java.util.LinkedList;
 //  https://leetcode.com/problems/minimum-depth-of-binary-tree/description/
 //  http://www.lintcode.com/zh-cn/problem/minimum-depth-of-binary-tree/
 public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
+
     public int minDepth1(TreeNode root) {
         if(root == null) return 0;
         int left = minDepth1(root.left);
         int right = minDepth1(root.right);
         return (left == 0 || right == 0) ? left + right + 1: Math.min(left,right) + 1;
-
     }
+
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(minDepth1(root));
+    }
+    /*
+    root:
+               3
+              / \
+             /   \
+             9   20
+                / \
+                15 7
+
+            2
+     */
 ////////////////////////////////////////////////////////////////////////
     //jiuzhang
-    public int minDepth(TreeNode root) {
+    public int minDepth2(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -38,7 +60,7 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
     }
 
     @Test
-    public void test01(){
+    public void test02(){
         int[] arr = {3,9,20};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         TreeNode node20 = root.find(20);
@@ -46,10 +68,11 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
         node20.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
-        System.out.println(minDepth(root));
+        System.out.println(minDepth2(root));
     }
 ////////////////////////////////////////////////////////////////////////
-    public int minDepth22(TreeNode root) {
+
+    public int minDepth3(TreeNode root) {
         if(root == null){
             return 0;
         }
@@ -82,44 +105,6 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
         return 0;
     }
 
-////////////////////////////////////////////////////////////////////////
-    public int maxDepth(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
-        int left = maxDepth(root.left);
-        int right = maxDepth(root.right);
-
-        return Math.max(left, right) + 1;
-    }
-    @Test
-    public void test02(){
-        int[] arr = {3,9,20};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        TreeNode node20 = root.find(20);
-        node20.setLeftChild(new TreeNode(15));
-        node20.setRightChild(new TreeNode(7));
-        System.out.println("root: ");
-        root.print();
-        System.out.println(maxDepth(root));
-    }
-
-////////////////////////////////////////////////////////////////
-    public int minDepth2(TreeNode root){
-        if (root == null){
-            return 0;
-        }
-        if (root.left == null && root.left == null){
-            return 1;
-        }
-
-        //让权。非法情况下就把结果变得无穷大。
-        int left = root.left == null ? Integer.MAX_VALUE : minDepth2(root.left);
-        int right = root.right == null ? Integer.MAX_VALUE : minDepth2(root.right);
-
-        return Math.min(left, right) + 1;
-    }
-
     @Test
     public void test03(){
         int[] arr = {3,9,20};
@@ -129,18 +114,38 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
         node20.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
-        System.out.println(minDepth2(root));
+        System.out.println(minDepth3(root));
     }
 
+////////////////////////////////////////////////////////////////
 
-    /*
-    1
-   / \
-  2   3
- / \
-4   5
-return [1,2,4,5,3]
-     */
+    public int minDepth4(TreeNode root){
+        if (root == null){
+            return 0;
+        }
+        if (root.left == null && root.left == null){
+            return 1;
+        }
+
+        //让权。非法情况下就把结果变得无穷大。
+        int left = root.left == null ? Integer.MAX_VALUE : minDepth4(root.left);
+        int right = root.right == null ? Integer.MAX_VALUE : minDepth4(root.right);
+
+        return Math.min(left, right) + 1;
+    }
+
+    @Test
+    public void test04(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(minDepth4(root));
+    }
+
 ////////////////////////////////////////////////////////////////////////
 }
 /*
@@ -175,5 +180,6 @@ return [1,2,4,5,3]
 /*
 Given a binary tree, find its minimum depth.
 
-The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+The minimum depth is the number of nodes along the shortest path
+from the root node down to the nearest leaf node.
  */

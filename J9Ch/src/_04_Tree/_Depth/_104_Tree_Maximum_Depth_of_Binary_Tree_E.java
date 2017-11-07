@@ -1,14 +1,12 @@
 package _04_Tree._Depth;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
-
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
-
+@SuppressWarnings("all")
 
 //  104. Maximum Depth of Binary Tree
 //  https://leetcode.com/problems/maximum-depth-of-binary-tree/
@@ -17,7 +15,6 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
 
 
     // Version 1: Divide Conquer. With no global depth.
-
     public int maxDepth1(TreeNode root) {
         if (root == null) {
             return 0;
@@ -37,51 +34,26 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
         root.right.setRightChild(new TreeNode(5));
         System.out.println("root: ");
         root.print();
-        System.out.println(maxDepth(root));
+        System.out.println(maxDepth1(root));
     }
+    /*
+    root:
+               1
+              / \
+             /   \
+             2   3
+                / \
+                4 5
 
+            3
+     */
 
 /////////////////////////////////////////////////////////////////////////////////
-    class sol{
-        public int maxDepth0(TreeNode root) {
-            if(root==null)
-                return 0;
 
-            int leftDepth = maxDepth0(root.left);
-            int rightDepth = maxDepth0(root.right);
-
-            int bigger = Math.max(leftDepth, rightDepth);
-
-            return bigger+1;
-        }
-    }
-
-/////////////////////////////////////////////////////////////////////////////////
-    public int minDepth2(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
-        return getMin(root);
-    }
-
-    public int getMin(TreeNode root){
-        if (root == null) {
-            return Integer.MAX_VALUE;
-        }
-
-        if (root.left == null && root.right == null) {
-            return 1;
-        }
-
-        return Math.min(getMin(root.left), getMin(root.right)) + 1;
-    }
-/////////////////////////////////////////////////////////////////////////////////
-
-// version 2: Traverse. With global depth.
-
+    // version 2: Traverse. With global depth.
     private int depth;
 
-    public int maxDepth_2(TreeNode root) {
+    public int maxDepth2(TreeNode root) {
         depth = 0;
         helper(root, 1);
 
@@ -109,12 +81,12 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
         root.right.setRightChild(new TreeNode(5));
         System.out.println("root: ");
         root.print();
-        System.out.println(maxDepth_2(root));
+        System.out.println(maxDepth2(root));
     }
 
-    /////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
     //non-recursion
-    @SuppressWarnings("all")
     public int maxDepth3(TreeNode root) {
         if (root == null){
             return 0;
@@ -137,74 +109,44 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
                 }
             }
             count++;
-
         }
-
         return count;
     }
 
-
-    /////////////////////////////////////////////////////////////////////////////////
-//技巧：求最小值，那就先都把默认设成无穷大。最后用Max.min（）来滤过无穷大的值。
-    @SuppressWarnings("all")
-
-    class _155Minimum_Depth_of_Binary_Tree_1 {
-        public int minDepth1(TreeNode root) {
-            if (root == null) {
-                return 0;
-            }
-            return getMin(root);
-        }
-
-        public int getMin(TreeNode root) {
-            if (root == null) {
-                return Integer.MAX_VALUE;
-            }
-            if (root.left == null && root.right == null) {
-                return 1;
-            }
-            return Math.min(getMin(root.left), getMin(root.right)) + 1;
-        }
-
-//////////////////////////////////////////////////////////////
-
-
-        public int minDepth2(TreeNode root) {
-            if (root == null) {
-                return 0;
-            }
-            if (root.left == null && root.left == null) {
-                return 1;
-            }
-
-            //让权。非法情况下就把结果变得无穷大。
-            int left = root.left == null ? Integer.MAX_VALUE : minDepth2(root.left);
-            int right = root.right == null ? Integer.MAX_VALUE : minDepth2(root.right);
-
-            return Math.min(left, right) + 1;
-        }
-/////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////
-
-/*
-          1
-         / \
-        2   3
-           / \
-          4   5
-        The maximum depth is 3.
- */
+    @Test
+    public void test03() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setLeftChild(new TreeNode(4));
+        root.right.setRightChild(new TreeNode(5));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxDepth3(root));
     }
 
-    public int maxDepth(TreeNode root) { if(root==null){
-        return 0; }
-        return 1+Math.max(maxDepth(root.left),maxDepth(root.right));
+/////////////////////////////////////////////////////////////////////////////////
+
+    public int maxDepth4(TreeNode root) {
+        if(root==null){
+            return 0;
+        }
+        return 1 + Math.max(maxDepth4(root.left), maxDepth4(root.right));
     }
 
+    @Test
+    public void test04() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setLeftChild(new TreeNode(4));
+        root.right.setRightChild(new TreeNode(5));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxDepth4(root));
+    }
 
-//    DFS
-
-    public int maxDepth2(TreeNode root) {
+/////////////////////////////////////////////////////////////////////////////////
+    //    DFS
+    public int maxDepth5(TreeNode root) {
         if(root == null) {
             return 0;
         }
@@ -214,25 +156,38 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
         stack.push(root);
         value.push(1);
         int max = 0;
+
         while(!stack.isEmpty()) {
             TreeNode node = stack.pop();
             int temp = value.pop();
             max = Math.max(temp, max);
             if(node.left != null) {
                 stack.push(node.left);
-                value.push(temp+1);
+                value.push(temp + 1);
             }
             if(node.right != null) {
                 stack.push(node.right);
-                value.push(temp+1);
+                value.push(temp + 1);
             }
         }
         return max;
     }
-// 7ms
-//    BFS
 
-    public int maxDepth4(TreeNode root) {
+    @Test
+    public void test05() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setLeftChild(new TreeNode(4));
+        root.right.setRightChild(new TreeNode(5));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxDepth5(root));
+    }
+
+/////////////////////////////////////////////////////////////////////////////////
+
+    //    BFS
+    public int maxDepth6(TreeNode root) {
         if(root == null) {
             return 0;
         }
@@ -254,7 +209,90 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
         }
         return count;
     }
-// 3ms
+
+    @Test
+    public void test06() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setLeftChild(new TreeNode(4));
+        root.right.setRightChild(new TreeNode(5));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(maxDepth6(root));
+    }
+
+/////////////////////////////////////////////////////////////////////////////////
+
+    //技巧：求最小值，那就先都把默认设成无穷大。最后用Max.min（）来滤过无穷大的值。
+    public int minDepth1(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return getMin1(root);
+    }
+
+    public int getMin1(TreeNode root){
+        if (root == null) {
+            return Integer.MAX_VALUE;
+        }
+
+        if (root.left == null && root.right == null) {
+            return 1;
+        }
+
+        return Math.min(getMin1(root.left), getMin1(root.right)) + 1;
+    }
+
+    @Test
+    public void test07() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setLeftChild(new TreeNode(4));
+        root.right.setRightChild(new TreeNode(5));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(minDepth1(root));
+    }
+/*
+                    root:
+                       1
+                      / \
+                     /   \
+                     2   3
+                        / \
+                        4 5
+
+                    2
+ */
+/////////////////////////////////////////////////////////////////////////////////
+
+    public int minDepth2(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        if (root.left == null && root.left == null) {
+            return 1;
+        }
+
+        //让权。非法情况下就把结果变得无穷大。
+        int left = root.left == null ? Integer.MAX_VALUE : minDepth2(root.left);
+        int right = root.right == null ? Integer.MAX_VALUE : minDepth2(root.right);
+
+        return Math.min(left, right) + 1;
+    }
+
+    @Test
+    public void test08() {
+        int[] arr = {1, 2, 3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        root.right.setLeftChild(new TreeNode(4));
+        root.right.setRightChild(new TreeNode(5));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(minDepth2(root));
+    }
+
+/////////////////////////////////////////////////////////////////////////////////
 }
 /*
 二叉树的最大深度

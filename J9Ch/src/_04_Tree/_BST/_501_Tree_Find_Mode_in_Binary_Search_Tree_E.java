@@ -2,14 +2,10 @@ package _04_Tree._BST;
 import java.util.*;
 import lib.TreeNode;
 
-
 //  501. Find Mode in Binary Search Tree
 //  https://leetcode.com/problems/find-mode-in-binary-search-tree/description/
-//
 public class _501_Tree_Find_Mode_in_Binary_Search_Tree_E {
-    public class Solution {
-
-        public int[] findMode(TreeNode root) {
+        public int[] findMode1(TreeNode root) {
             inorder(root);
             modes = new int[modeCount];
             modeCount = 0;
@@ -47,10 +43,6 @@ public class _501_Tree_Find_Mode_in_Binary_Search_Tree_E {
             handleValue(root.val);
             inorder(root.right);
         }
-    }
-
-
-
 /*    private void inorder(TreeNode root) { TreeNode node = root;
         while (node != null) {
             if (node.left == null) { handleValue(node.val); node = node.right;
@@ -65,19 +57,21 @@ public class _501_Tree_Find_Mode_in_Binary_Search_Tree_E {
                 } }
         } }*/
 
-//////////////////////////////////////////////////////////Java 4ms Beats 100% Extra O(1) solution - No Map
-public class Solution2 {
+////////////////////////////////////////////////////////
+
+// Java 4ms Beats 100% Extra O(1) solution - No Map
     Integer prev = null;
     int count = 1;
-    int max = 0;
-    public int[] findMode(TreeNode root) {
+    int max2 = 0;
+    public int[] findMode2(TreeNode root) {
         if (root == null) return new int[0];
 
         List<Integer> list = new ArrayList<>();
         traverse(root, list);
 
         int[] res = new int[list.size()];
-        for (int i = 0; i < list.size(); ++i) res[i] = list.get(i);
+        for (int i = 0; i < list.size(); ++i)
+            res[i] = list.get(i);
         return res;
     }
 
@@ -90,51 +84,56 @@ public class Solution2 {
             else
                 count = 1;
         }
-        if (count > max) {
-            max = count;
+        if (count > max2) {
+            max2 = count;
             list.clear();
             list.add(root.val);
-        } else if (count == max) {
+        } else if (count == max2) {
             list.add(root.val);
         }
         prev = root.val;
         traverse(root.right, list);
     }
-}
+
+
 //////////////////////////////////////////////////////////
-//Java AC Solution
-//    O(n) time O(n) space
 
-    public class Solution3 {
-        Map<Integer, Integer> map;
-        int max = 0;
-        public int[] findMode(TreeNode root) {
-            if(root==null) return new int[0];
-            this.map = new HashMap<>();
+    //Java AC Solution
+    //    O(n) time O(n) space
+    /*
+        Just travel the tree and count, find the those with max counts.
+        Nothing much. Spent 10min on figuring out what is mode....
 
-            inorder(root);
+        If using this method (hashmap), inorder/preorder/postorder gives the same result.
+        Because essentially you just travel the entire nodes and count. And BST is not necessary.
+        This method works for any tree.
+    */
+    Map<Integer, Integer> map;
+    int max = 0;
+    public int[] findMode3(TreeNode root) {
+        if(root==null) return new int[0];
+        this.map = new HashMap<>();
 
-            List<Integer> list = new LinkedList<>();
-            for(int key: map.keySet()){
-                if(map.get(key) == max) list.add(key);
-            }
+        inorder3(root);
 
-            int[] res = new int[list.size()];
-            for(int i = 0; i<res.length; i++) res[i] = list.get(i);
-            return res;
+        List<Integer> list = new LinkedList<>();
+        for(int key: map.keySet()){
+            if(map.get(key) == max) list.add(key);
         }
 
-        private void inorder(TreeNode node){
-            if(node.left!=null) inorder(node.left);
-            map.put(node.val, map.getOrDefault(node.val, 0)+1);
-            max = Math.max(max, map.get(node.val));
-            if(node.right!=null) inorder(node.right);
-        }
+        int[] res = new int[list.size()];
+        for(int i = 0; i<res.length; i++) res[i] = list.get(i);
+        return res;
     }
-/*    Just travel the tree and count, find the those with max counts. Nothing much. Spent 10min on figuring out what is mode....
 
-    If using this method (hashmap), inorder/preorder/postorder gives the same result. Because essentially you just travel the entire nodes and count. And BST is not necessary. This method works for any tree.*/
-//////////////////////////////////////////////////////////
+    private void inorder3(TreeNode node){
+        if(node.left!=null) inorder3(node.left);
+        map.put(node.val, map.getOrDefault(node.val, 0)+1);
+        max = Math.max(max, map.get(node.val));
+        if(node.right!=null) inorder3(node.right);
+    }
+
+////////////////////////////////////////////////////////////////////////////////////
 }
 /*
 Given a binary search tree (BST) with duplicates, find all the mode(s) (the most frequently occurred element) in the given BST.

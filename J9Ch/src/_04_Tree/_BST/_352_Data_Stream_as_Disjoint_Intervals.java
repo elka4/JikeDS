@@ -5,7 +5,16 @@ import java.util.*;
 //  https://leetcode.com/problems/data-stream-as-disjoint-intervals/description/
 //
 public class _352_Data_Stream_as_Disjoint_Intervals {
-/*    Java solution using TreeMap, real O(logN) per adding.
+//////////////////////////////////////////////////////////////////////////
+    class Interval {
+        int start, end;
+        Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+    }
+//////////////////////////////////////////////////////////////////////////
+    /* Java solution using TreeMap, real O(logN) per adding.
     Use TreeMap to easily find the lower and higher keys, the key is the start of the interval.
     Merge the lower and higher intervals when necessary. The time complexity for adding is O(logN) since lowerKey(), higherKey(), put() and remove() are all O(logN). It would be O(N) if you use an ArrayList and remove an interval from it.*/
 
@@ -37,14 +46,7 @@ public class _352_Data_Stream_as_Disjoint_Intervals {
             return new ArrayList<>(tree.values());
         }
     }
-//////////////////////////////////////////////////////////////////////////
-class Interval {
-    int start, end;
-    Interval(int start, int end) {
-        this.start = start;
-        this.end = end;
-    }
-}
+
 //////////////////////////////////////////////////////////////////////////
 //Java fast log (N) solution (186ms) without using the TreeMap but a customized BST
     public class SummaryRanges2 {
@@ -141,8 +143,8 @@ class Interval {
             return list;
         }
     }
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
+
+
 //////////////////////////////////////////////////////////////////////////
 }
 /*

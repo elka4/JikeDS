@@ -13,52 +13,45 @@ public class _236_Tree_Lowest_Common_Ancestor_of_a_Binary_Tree_M {
 
 Update: I also wrote two iterative solutions now, one of them being a version of the solution here. They're more complicated than this simple recursive solution, but I do find them interesting.
      */
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q) return root;
-        TreeNode left = lowestCommonAncestor(root.left, p, q);
-        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        TreeNode left = lowestCommonAncestor1(root.left, p, q);
+        TreeNode right = lowestCommonAncestor1(root.right, p, q);
         return left == null ? right : right == null ? left : root;
     }
 
-
-
-
+/////////////////////////////////////////////////////////////////////////////////////////////////
     //Java/Python iterative solution
-    public class Solution {
-        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-            Map<TreeNode, TreeNode> parent = new HashMap<>();
-            Deque<TreeNode> stack = new ArrayDeque<>();
-            parent.put(root, null);
-            stack.push(root);
-
-            while (!parent.containsKey(p) || !parent.containsKey(q)) {
-                TreeNode node = stack.pop();
-                if (node.left != null) {
-                    parent.put(node.left, node);
-                    stack.push(node.left);
-                }
-                if (node.right != null) {
-                    parent.put(node.right, node);
-                    stack.push(node.right);
-                }
-            }
-            Set<TreeNode> ancestors = new HashSet<>();
-            while (p != null) {
-                ancestors.add(p);
-                p = parent.get(p);
-            }
-            while (!ancestors.contains(q))
-                q = parent.get(q);
-            return q;
-        }
-    }
    /* To find the lowest common ancestor, we need to find where is p and q and a way to track their ancestors. A parent pointer for each node found is good for the job. After we found both p and q, we create a set of p's ancestors. Then we travel through q's ancestors, the first one appears in p's is our answer.*/
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        Map<TreeNode, TreeNode> parent = new HashMap<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        parent.put(root, null);
+        stack.push(root);
+
+        while (!parent.containsKey(p) || !parent.containsKey(q)) {
+            TreeNode node = stack.pop();
+            if (node.left != null) {
+                parent.put(node.left, node);
+                stack.push(node.left);
+            }
+            if (node.right != null) {
+                parent.put(node.right, node);
+                stack.push(node.right);
+            }
+        }
+        Set<TreeNode> ancestors = new HashSet<>();
+        while (p != null) {
+            ancestors.add(p);
+            p = parent.get(p);
+        }
+        while (!ancestors.contains(q))
+            q = parent.get(q);
+        return q;
+    }
 
 
-
-
-
-
+/////////////////////////////////////////////////////////////////////////////////////////////////
 }
 /*
 Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.

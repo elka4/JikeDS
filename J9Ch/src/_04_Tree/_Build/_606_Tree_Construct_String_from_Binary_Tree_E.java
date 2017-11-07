@@ -1,5 +1,4 @@
 package _04_Tree._Build;
-
 import lib.TreeNode;
 
 
@@ -10,57 +9,59 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
 
     //https://leetcode.com/articles/construct-string-from-binary-tree/
 
-//    Approach #1 Using Recursion [Accepted]
-//    Approach #2 Iterative Method Using stack [Accepted]
+    // Approach #1 Using Recursion [Accepted]
+
+    // Approach #2 Iterative Method Using stack [Accepted]
+
 
 //////////////////////////////////////////////////////////////////////////////////////Î
-    public class Solution3 {
-        public String tree2str(TreeNode t) {
-            if (t == null) return "";
+    public String tree2str3(TreeNode t) {
+        if (t == null) return "";
 
-            String result = t.val + "";
+        String result = t.val + "";
 
-            String left = tree2str(t.left);
-            String right = tree2str(t.right);
+        String left = tree2str3(t.left);
+        String right = tree2str3(t.right);
 
-            if (left == "" && right == "") return result;
-            if (left == "") return result + "()" + "(" + right + ")";
-            if (right == "") return result + "(" + left + ")";
-            return result + "(" + left + ")" + "(" + right + ")";
-        }
+        if (left == "" && right == "") return result;
+        if (left == "") return result + "()" + "(" + right + ")";
+        if (right == "") return result + "(" + left + ")";
+        return result + "(" + left + ")" + "(" + right + ")";
     }
-    public String tree2str(TreeNode t) {
+
+//////////////////////////////////////////////////////////////////////////////////////Î
+    //    EDIT : Changed from (left == "" ? "" : left) to left.
+    public String tree2str4(TreeNode t) {
         if(t == null) return "";
-        String left = tree2str(t.left);
-        String right = tree2str(t.right);
+        String left = tree2str4(t.left);
+        String right = tree2str4(t.right);
 
         if(left == "" && right == "") return  t.val + "";
 
         return t.val + "(" + left  + ")" + (right == "" ? "" : "(" + right + ")");
     }
-//    EDIT : Changed from (left == "" ? "" : left) to left.
 
 
 //////////////////////////////////////////////////////////////////////////////////////Î
-//Java Solution, Tree Traversal
-    public class Solution4 {
-        public String tree2str(TreeNode t) {
-            if (t == null) return "";
+    //Java Solution, Tree Traversal
+    public String tree2str5(TreeNode t) {
+        if (t == null) return "";
 
-            String result = t.val + "";
+        String result = t.val + "";
 
-            String left = tree2str(t.left);
-            String right = tree2str(t.right);
+        String left = tree2str5(t.left);
+        String right = tree2str5(t.right);
 
-            if (left == "" && right == "") return result;
-            if (left == "") return result + "()" + "(" + right + ")";
-            if (right == "") return result + "(" + left + ")";
-            return result + "(" + left + ")" + "(" + right + ")";
-        }
+        if (left == "" && right == "") return result;
+        if (left == "") return result + "()" + "(" + right + ")";
+        if (right == "") return result + "(" + left + ")";
+        return result + "(" + left + ")" + "(" + right + ")";
     }
 
-//    Java simple recursion
-    public String tree2str5(TreeNode t) {
+//////////////////////////////////////////////////////////////////////////////////////Î
+
+    //    Java simple recursion
+    public String tree2str6(TreeNode t) {
         StringBuilder sb = new StringBuilder();
         helper(sb,t);
         return sb.toString();
@@ -80,17 +81,17 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
             }
         }
     }
+//////////////////////////////////////////////////////////////////////////////////////
 
-//    Java 1 liner
-
-    class Solution6 {
-        public String tree2str(TreeNode t) {
-            return t == null ? "" : t.val + (t.left != null ? "(" + tree2str(t.left) + ")" : t.right != null ? "()" : "")
-                    + (t.right != null ? "(" + tree2str(t.right) + ")" : "");
-        }
+    //    Java 1 liner
+    public String tree2str7(TreeNode t) {
+        return t == null ?
+                "" : t.val + (t.left != null ?
+                "(" + tree2str7(t.left) + ")" : t.right != null ? "()" : "")
+                + (t.right != null ? "(" + tree2str7(t.right) + ")" : "");
     }
-//////////////////////////////////////////////////////////////////////////////////////Î
 
+//////////////////////////////////////////////////////////////////////////////////////
 }
 /*
 You need to construct a string consists of parenthesis and integers from a binary tree with the preorder traversing way.

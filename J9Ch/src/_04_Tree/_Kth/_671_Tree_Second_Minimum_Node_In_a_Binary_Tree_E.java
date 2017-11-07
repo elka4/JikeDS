@@ -17,7 +17,7 @@ public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
 
     // need to OCR
 ///////////////////////////////////////////////////////////////////////////
-    public int findSecondMinimumValue(TreeNode root) {
+    public int findSecondMinimumValue3(TreeNode root) {
         if (root == null) {
             return -1;
         }
@@ -45,8 +45,9 @@ public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
         return;
     }
 
+///////////////////////////////////////////////////////////////////////////
     //BFS
-    public int findSecondMinimumValue2(TreeNode root) {
+    public int findSecondMinimumValue4(TreeNode root) {
         int rootVal = root.val;
         int secondSmall =Integer.MAX_VALUE;
         boolean diffFound = false;
@@ -67,11 +68,9 @@ public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
 
         return (secondSmall == Integer.MAX_VALUE && !diffFound) ? -1 : secondSmall;
     }
+
 ///////////////////////////////////////////////////////////////////////////
 }
-/*
-
- */
 
 /*
 Given a non-empty special binary tree consisting of nodes with the non-negative value, where each node in this tree has exactly two or zero sub-node. If the node has two sub-nodes, then this node's value is the smaller value among its two sub-nodes.

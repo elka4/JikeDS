@@ -19,7 +19,7 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
         return size;
     }
 
-    public TreeNode sortedListToBST(ListNode head) {
+    public TreeNode sortedListToBST1(ListNode head) {
         int size;
 
         current = head;
@@ -48,7 +48,7 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
 ///////////////////////////////////////////////////////////////////////////
 
 //Share my JAVA solution, 1ms, very short and concise.
-    public TreeNode sortedListToBST1(ListNode head) {
+    public TreeNode sortedListToBST2(ListNode head) {
         if(head==null) return null;
         return toBST(head,null);
     }
@@ -73,7 +73,7 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
     // Share my O(1) space and O(n) time Java code
     private ListNode node;
 
-    public TreeNode sortedListToBST2(ListNode head) {
+    public TreeNode sortedListToBST3(ListNode head) {
         if(head == null){
             return null;
         }
@@ -110,7 +110,7 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
 
 ///////////////////////////////////////////////////////////////////////////
     // Recursive BST construction using slow-fast traversal on linked list
-    public TreeNode sortedListToBST3(ListNode head) {
+    public TreeNode sortedListToBST4(ListNode head) {
         if(head == null)
             return null;
         ListNode fast = head;
@@ -134,16 +134,15 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
     }
 
 ///////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////
     static ListNode h;
 
-    public TreeNode sortedListToBST11(ListNode head) {
+    public TreeNode sortedListToBST5(ListNode head) {
         if (head == null)
             return null;
 
         h = head;
         int len = getLength(head);
-        return sortedListToBST(0, len - 1);
+        return sortedListToBST6(0, len - 1);
     }
 
     // get list length
@@ -158,18 +157,20 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
         return len;
     }
 
+///////////////////////////////////////////////////////////////////////////
+
     // build tree bottom-up
-    public TreeNode sortedListToBST(int start, int end) {
+    public TreeNode sortedListToBST6(int start, int end) {
         if (start > end)
             return null;
 
         // mid
         int mid = (start + end) / 2;
 
-        TreeNode left = sortedListToBST(start, mid - 1);
+        TreeNode left = sortedListToBST6(start, mid - 1);
         TreeNode root = new TreeNode(h.val);
         h = h.next;
-        TreeNode right = sortedListToBST(mid + 1, end);
+        TreeNode right = sortedListToBST6(mid + 1, end);
 
         root.left = left;
         root.right = right;
@@ -177,12 +178,7 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
         return root;
     }
 
-
-//////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////
-
-
-
 }
 /*
 排序列表转换为二分查找树

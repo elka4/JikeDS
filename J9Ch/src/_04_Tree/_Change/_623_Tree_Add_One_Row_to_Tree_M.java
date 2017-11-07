@@ -1,15 +1,14 @@
 package _04_Tree._Change;
-
+import lib.AssortedMethods;
 import lib.TreeNode;
+import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-
 //  623. Add One Row to Tree
 //  https://leetcode.com/problems/add-one-row-to-tree/description/
-//
 public class _623_Tree_Add_One_Row_to_Tree_M {
     //https://leetcode.com/problems/add-one-row-to-tree/solution/
 
@@ -41,6 +40,15 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
             }
         }
     }
+    @Test
+    public void test01() {
+        int[] arr = {4,2,6,3,1,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        new Solution1().addOneRow(root, 1, 2);
+        root.print();
+    }
 /////////////////////////////////////////////////////////////////////////////////
     //Approach #2 Using stack(DFS) [Accepted]
     public class Solution2 {
@@ -60,8 +68,8 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
             }
             Stack<Node> stack=new Stack<>();
             stack.push(new Node(root,1));
-            while(!stack.isEmpty())
-            {
+
+            while(!stack.isEmpty()) {
                 Node n=stack.pop();
                 if(n.node==null)
                     continue;
@@ -82,10 +90,17 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
         }
     }
 
-
+    @Test
+    public void test02() {
+        int[] arr = {4,2,6,3,1,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        new Solution2().addOneRow(root, 1, 2);
+        root.print();
+    }
 /////////////////////////////////////////////////////////////////////////////////
     //Approach #3 Using queue(BFS) [Accepted]
-
     public class Solution3 {
         public TreeNode addOneRow(TreeNode root, int v, int d) {
             if (d == 1) {
@@ -119,13 +134,18 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
         }
     }
 
-
+    @Test
+    public void test03() {
+        int[] arr = {4,2,6,3,1,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        new Solution3().addOneRow(root, 1, 2);
+        root.print();
+    }
 /////////////////////////////////////////////////////////////////////////////////
-
-
-//Simple Java solution - O(N)
-//Simply traverse recursively to the depth d - 1 and add nodes accordingly.
-
+    //Simple Java solution - O(N)
+    //Simply traverse recursively to the depth d - 1 and add nodes accordingly.
     public class Solution4 {
         public TreeNode addOneRow(TreeNode root, int v, int d) {
             if (d == 1) {
@@ -157,7 +177,16 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
             add(node.right, v, d, currentDepth + 1);
         }
     }
-
+    @Test
+    public void test04() {
+        int[] arr = {4,2,6,3,1,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        new Solution4().addOneRow(root, 1, 2);
+        root.print();
+    }
+/////////////////////////////////////////////////////////////////////////////////
     public class Solution5 {
         public TreeNode addOneRow(TreeNode root, int v, int d) {
             if(d == 1) {
@@ -184,17 +213,42 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
                 addSubNodes(root.right,v,d,p+1);
         }
     }
+    @Test
+    public void test05() {
+        int[] arr = {4,2,6,3,1,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        new Solution5().addOneRow(root, 1, 2);
+        root.print();
+    }
+/////////////////////////////////////////////////////////////////////////////////
 
     public class Solution6 {
         public TreeNode addOneRow(TreeNode root, int v, int d) {
             if (d == 0 || d == 1) {
-                TreeNode newroot = new TreeNode(v); newroot.left = d == 1 ? root : null; newroot.right = d == 0 ? root : null; return newroot;
+                TreeNode newroot = new TreeNode(v);
+                newroot.left = d == 1 ? root : null;
+                newroot.right = d == 0 ? root : null;
+                return newroot;
             }
             if (root != null && d >= 2) {
                 root.left = addOneRow(root.left, v, d > 2 ? d - 1 : 1);
-                root.right = addOneRow(root.right, v, d > 2 ? d - 1 : 0); }
-            return root; }
+                root.right = addOneRow(root.right, v, d > 2 ? d - 1 : 0);
+            }
+            return root;
+        }
     }
+    @Test
+    public void test06() {
+        int[] arr = {4,2,6,3,1,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        new Solution6().addOneRow(root, 1, 2);
+        root.print();
+    }
+/////////////////////////////////////////////////////////////////////////////////
 }
 /*
 Given the root of a binary tree, then value v and depth d, you need to add a row of nodes with value v at the given depth d. The root node is at depth 1.

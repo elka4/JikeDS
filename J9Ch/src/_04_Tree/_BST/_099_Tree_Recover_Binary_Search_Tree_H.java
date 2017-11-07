@@ -1,19 +1,18 @@
 package _04_Tree._BST;
-
+import lib.AssortedMethods;
 import lib.TreeNode;
-
+import org.junit.Test;
 
 //  99. Recover Binary Search Tree
-//
-//
+//  https://leetcode.com/problems/recover-binary-search-tree/description/
 public class _099_Tree_Recover_Binary_Search_Tree_H {
 
 
     public class Solution {
-
         TreeNode firstElement = null;
         TreeNode secondElement = null;
-        // The reason for this initialization is to avoid null pointer exception in the first comparison when prevElement has not been initialized
+        // The reason for this initialization is to avoid null pointer exception
+        // in the first comparison when prevElement has not been initialized
         TreeNode prevElement = new TreeNode(Integer.MIN_VALUE);
 
         public void recoverTree(TreeNode root) {
@@ -35,12 +34,14 @@ public class _099_Tree_Recover_Binary_Search_Tree_H {
             traverse(root.left);
 
             // Start of "do some business",
-            // If first element has not been found, assign it to prevElement (refer to 6 in the example above)
+            // If first element has not been found, assign it to prevElement
+            // (refer to 6 in the example above)
             if (firstElement == null && prevElement.val >= root.val) {
                 firstElement = prevElement;
             }
 
-            // If first element is found, assign the second element to the root (refer to 2 in the example above)
+            // If first element is found, assign the second element to the root
+            // (refer to 2 in the example above)
             if (firstElement != null && prevElement.val >= root.val) {
                 secondElement = root;
             }
@@ -52,53 +53,105 @@ public class _099_Tree_Recover_Binary_Search_Tree_H {
         }
     }
 
+    @Test
+    public void test01() {
+        TreeNode root = new TreeNode(7);
+        root.left  = new TreeNode(9);
+        root.right = new TreeNode(5);
+        root.left.setLeftChild(new TreeNode(4));
+        root.left.setRightChild(new TreeNode(6));
+        System.out.println("root: ");
+        root.print();
+        new Solution().recoverTree(root);
+        root.print();
+    }
 
+//////////////////////////////////////////////////////////////////////////
 
-
-    public void morrisTraversal(TreeNode root){ TreeNode temp = null;
-        while(root!=null){ if(root.left!=null){
-// connect threading for root
-            temp = root.left;
-            while(temp.right!=null && temp.right != root)
-                temp = temp.right;
-// the threading already exists
-            if(temp.right!=null){
-                temp.right = null; System.out.println(root.val); root = root.right;
-            }else{
-// construct the threading temp.right = root;
-                root = root.left;
-            } }else{
-            System.out.println(root.val);
-            root = root.right;
-        }
-        } }
-
-
-
-    public void recoverTree(TreeNode root) { TreeNode pre = null;
-        TreeNode first = null, second = null; // Morris Traversal
-        TreeNode temp = null; while(root!=null){
+    public void morrisTraversal(TreeNode root){
+        TreeNode temp = null;
+        while(root!=null){
             if(root.left!=null){
-// connect threading for root
+                // connect threading for root
                 temp = root.left;
                 while(temp.right!=null && temp.right != root)
                     temp = temp.right;
-// the threading already exists
+                // the threading already exists
+                if(temp.right!=null){
+                    temp.right = null;
+                    System.out.println(root.val);
+                    root = root.right;
+                }else{
+                    // construct the threading temp.right = root;
+                    root = root.left;
+                }
+            }else{
+                System.out.println(root.val);
+                root = root.right;
+            }
+        }
+    }
+
+    @Test
+    public void test02() {
+        TreeNode root = new TreeNode(7);
+        root.left  = new TreeNode(9);
+        root.right = new TreeNode(5);
+        root.left.setLeftChild(new TreeNode(4));
+        root.left.setRightChild(new TreeNode(6));
+        System.out.println("root: ");
+        root.print();
+        morrisTraversal(root);
+        root.print();
+    }
+    /*
+    root:
+   7
+  / \
+ /   \
+ 9   5
+/ \
+4 6
+     */
+//////////////////////////////////////////////////////////////////////////
+
+    public void recoverTree(TreeNode root) {
+        TreeNode pre = null;
+        TreeNode first = null, second = null; // Morris Traversal
+        TreeNode temp = null;
+        while(root!=null){
+            if(root.left!=null){
+                // connect threading for root
+                temp = root.left;
+                while(temp.right!=null && temp.right != root)
+                    temp = temp.right;
+                // the threading already exists
                 if(temp.right!=null){
                     if(pre!=null && pre.val > root.val){
-                        if(first==null){first = pre;second = root;}
-                        else{second = root;} }
+                        if(first==null){
+                            first = pre;second = root;
+                        }
+                        else{
+                            second = root;
+                        }
+                    }
                     pre = root;
                     temp.right = null;
-                    root = root.right; }else{
-// construct the threading
+                    root = root.right;
+                }else{
+                    // construct the threading
                     temp.right = root;
                     root = root.left;
                 }
             }else{
                 if(pre!=null && pre.val > root.val){
-                    if(first==null){first = pre;second = root;}
-                    else{second = root;} }
+                    if(first==null){
+                            first = pre;second = root;
+                    }
+                    else{
+                        second = root;
+                    }
+                }
                 pre = root;
                 root = root.right;
             }
@@ -109,7 +162,35 @@ public class _099_Tree_Recover_Binary_Search_Tree_H {
         }
     }
 
+    @Test
+    public void test03() {
+        TreeNode root = new TreeNode(7);
+        root.left  = new TreeNode(9);
+        root.right = new TreeNode(5);
+        root.left.setLeftChild(new TreeNode(4));
+        root.left.setRightChild(new TreeNode(6));
+        System.out.println("root: ");
+        root.print();
+        recoverTree(root);
+        root.print();
+    }
+    /*
+    root:
+                   7
+                  / \
+                 /   \
+                 9   5
+                / \
+                4 6
 
+                   7
+                  / \
+                 /   \
+                 5   9
+                / \
+                4 6
+     */
+//////////////////////////////////////////////////////////////////////////
     class Recover_BST {
 
         TreeNode first;
@@ -150,9 +231,23 @@ public class _099_Tree_Recover_Binary_Search_Tree_H {
             }
 
         }
-
     }
+
+    @Test
+    public void test04() {
+        TreeNode root = new TreeNode(7);
+        root.left  = new TreeNode(9);
+        root.right = new TreeNode(5);
+        root.left.setLeftChild(new TreeNode(4));
+        root.left.setRightChild(new TreeNode(6));
+        System.out.println("root: ");
+        root.print();
+        new Recover_BST().recoverTree(root);
+        root.print();
+    }
+
 //////////////////////////////////////////////////////////////////////////
+
     //jiuzhang
 public class Jiuzhang {
     private TreeNode firstElement = null;
@@ -183,6 +278,19 @@ public class Jiuzhang {
         secondElement.val = temp;
     }
 }
+
+    @Test
+    public void test05() {
+        TreeNode root = new TreeNode(7);
+        root.left  = new TreeNode(9);
+        root.right = new TreeNode(5);
+        root.left.setLeftChild(new TreeNode(4));
+        root.left.setRightChild(new TreeNode(6));
+        System.out.println("root: ");
+        root.print();
+        new Jiuzhang().recoverTree(root);
+        root.print();
+    }
 //////////////////////////////////////////////////////////////////////////
 }
 /*

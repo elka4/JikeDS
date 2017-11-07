@@ -3,14 +3,14 @@ import java.util.*;
 
 //  327. Count of Range Sum
 //  https://leetcode.com/problems/count-of-range-sum/description/
-//
 public class _327_Count_of_Range_Sum {
-/*    Share my solution
-    First of all, let's look at the naive solution. Preprocess to calculate the prefix sums S[i] = S(0, i), then S(i, j) = S[j] - S[i]. Note that here we define S(i, j) as the sum of range [i, j) where j exclusive and j > i. With these prefix sums, it is trivial to see that with O(n^2) time we can find all S(i, j) in the range [lower, upper]
+    /*    Share my solution
+        First of all, let's look at the naive solution. Preprocess to calculate the prefix sums S[i] = S(0, i), then S(i, j) = S[j] - S[i]. Note that here we define S(i, j) as the sum of range [i, j) where j exclusive and j > i. With these prefix sums, it is trivial to see that with O(n^2) time we can find all S(i, j) in the range [lower, upper]
 
-    Java - Naive Solution*/
+        Java - Naive Solution
+    */
 
-    public int countRangeSum(int[] nums, int lower, int upper) {
+    public int countRangeSum1(int[] nums, int lower, int upper) {
         int n = nums.length;
         long[] sums = new long[n + 1];
         for (int i = 0; i < n; ++i)
@@ -73,9 +73,9 @@ public class _327_Count_of_Range_Sum {
         return count;
     }
 ///////////////////////////////////////////////////////////////////////////////
+
     //Summary of the Divide and Conquer based and Binary Indexed Tree based solutions
-    class Solution2{
-    public int countRangeSum(int[] nums, int lower, int upper) {
+    public int countRangeSum4(int[] nums, int lower, int upper) {
         if (nums == null || nums.length == 0 || lower > upper) return 0;
         return countRangeSumSub(nums, 0, nums.length - 1, lower, upper);
     }
@@ -103,10 +103,12 @@ public class _327_Count_of_Range_Sum {
         sum = 0;
         for (int i = m; i >= l; i--) {
             sum += nums[i];
-            count += findIndex(arr, upper - sum + 0.5) - findIndex(arr, lower - sum - 0.5);
+            count += findIndex(arr, upper - sum + 0.5) -
+                    findIndex(arr, lower - sum - 0.5);
         }
 
-        return countRangeSumSub(nums, l, m, lower, upper) + countRangeSumSub(nums, m + 1, r, lower, upper) + count;
+        return countRangeSumSub(nums, l, m, lower, upper) +
+                countRangeSumSub(nums, m + 1, r, lower, upper) + count;
     }
 
     // binary search function
@@ -125,155 +127,153 @@ public class _327_Count_of_Range_Sum {
 
         return l;
     }
-    }
+
+
 ///////////////////////////////////////////////////////////////////////////////
-//Java SegmentTree Solution, 36ms
-//    Understand my segmentTree implementation is not optimized.
-//    Please feel free to give me suggestions.
 
-    public class Solution3 {
-        class SegmentTreeNode {
-            SegmentTreeNode left;
-            SegmentTreeNode right;
-            int count;
-            long min;
-            long max;
-            public SegmentTreeNode(long min, long max) {
-                this.min = min;
-                this.max = max;
-            }
+    // Java SegmentTree Solution, 36ms
+    // Understand my segmentTree implementation is not optimized.
+    // Please feel free to give me suggestions.
+    class SegmentTreeNode {
+        SegmentTreeNode left;
+        SegmentTreeNode right;
+        int count;
+        long min;
+        long max;
+        public SegmentTreeNode(long min, long max) {
+            this.min = min;
+            this.max = max;
         }
-        private SegmentTreeNode buildSegmentTree(Long[] valArr, int low, int high) {
-            if(low > high) return null;
-            SegmentTreeNode stn = new SegmentTreeNode(valArr[low], valArr[high]);
-            if(low == high) return stn;
-            int mid = (low + high)/2;
-            stn.left = buildSegmentTree(valArr, low, mid);
-            stn.right = buildSegmentTree(valArr, mid+1, high);
-            return stn;
-        }
-        private void updateSegmentTree(SegmentTreeNode stn, Long val) {
-            if(stn == null) return;
-            if(val >= stn.min && val <= stn.max) {
-                stn.count++;
-                updateSegmentTree(stn.left, val);
-                updateSegmentTree(stn.right, val);
-            }
-        }
-        private int getCount(SegmentTreeNode stn, long min, long max) {
-            if(stn == null) return 0;
-            if(min > stn.max || max < stn.min) return 0;
-            if(min <= stn.min && max >= stn.max) return stn.count;
-            return getCount(stn.left, min, max) + getCount(stn.right, min, max);
-        }
-
-        public int countRangeSum(int[] nums, int lower, int upper) {
-
-            if(nums == null || nums.length == 0) return 0;
-            int ans = 0;
-            Set<Long> valSet = new HashSet<Long>();
-            long sum = 0;
-            for(int i = 0; i < nums.length; i++) {
-                sum += (long) nums[i];
-                valSet.add(sum);
-            }
-
-            Long[] valArr = valSet.toArray(new Long[0]);
-
-            Arrays.sort(valArr);
-            SegmentTreeNode root = buildSegmentTree(valArr, 0, valArr.length-1);
-
-            for(int i = nums.length-1; i >=0; i--) {
-                updateSegmentTree(root, sum);
-                sum -= (long) nums[i];
-                ans += getCount(root, (long)lower+sum, (long)upper+sum);
-            }
-            return ans;
-        }
-
     }
+    private SegmentTreeNode buildSegmentTree(Long[] valArr, int low, int high) {
+        if(low > high) return null;
+        SegmentTreeNode stn = new SegmentTreeNode(valArr[low], valArr[high]);
+        if(low == high) return stn;
+        int mid = (low + high)/2;
+        stn.left = buildSegmentTree(valArr, low, mid);
+        stn.right = buildSegmentTree(valArr, mid+1, high);
+        return stn;
+    }
+    private void updateSegmentTree(SegmentTreeNode stn, Long val) {
+        if(stn == null) return;
+        if(val >= stn.min && val <= stn.max) {
+            stn.count++;
+            updateSegmentTree(stn.left, val);
+            updateSegmentTree(stn.right, val);
+        }
+    }
+    private int getCount(SegmentTreeNode stn, long min, long max) {
+        if(stn == null) return 0;
+        if(min > stn.max || max < stn.min) return 0;
+        if(min <= stn.min && max >= stn.max) return stn.count;
+        return getCount(stn.left, min, max) + getCount(stn.right, min, max);
+    }
+
+    public int countRangeSum5(int[] nums, int lower, int upper) {
+
+        if(nums == null || nums.length == 0) return 0;
+        int ans = 0;
+        Set<Long> valSet = new HashSet<Long>();
+        long sum = 0;
+        for(int i = 0; i < nums.length; i++) {
+            sum += (long) nums[i];
+            valSet.add(sum);
+        }
+
+        Long[] valArr = valSet.toArray(new Long[0]);
+
+        Arrays.sort(valArr);
+        SegmentTreeNode root = buildSegmentTree(valArr, 0, valArr.length-1);
+
+        for(int i = nums.length-1; i >=0; i--) {
+            updateSegmentTree(root, sum);
+            sum -= (long) nums[i];
+            ans += getCount(root, (long)lower+sum, (long)upper+sum);
+        }
+        return ans;
+    }
+
+
 ///////////////////////////////////////////////////////////////////////////////
     //Java BST solution averagely O(nlogn)
-//The performance would be bad if all the numbers are positive or negative, where the BST is completely unbalanced.
-
-    public class Solution4 {
-        private class TreeNode {
-            long val = 0;
-            int count = 1;
-            int leftSize = 0;
-            int rightSize = 0;
-            TreeNode left = null;
-            TreeNode right = null;
-            public TreeNode(long v) {
-                this.val = v;
-                this.count = 1;
-                this.leftSize = 0;
-                this.rightSize = 0;
-            }
+    //The performance would be bad if all the numbers are positive or negative,
+    // where the BST is completely unbalanced.
+    private class TreeNode {
+        long val = 0;
+        int count = 1;
+        int leftSize = 0;
+        int rightSize = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+        public TreeNode(long v) {
+            this.val = v;
+            this.count = 1;
+            this.leftSize = 0;
+            this.rightSize = 0;
         }
+    }
 
-        private TreeNode insert(TreeNode root, long val) {
-            if(root == null) {
-                return new TreeNode(val);
-            } else if(root.val == val) {
-                root.count++;
-            } else if(val < root.val) {
-                root.leftSize++;
-                root.left = insert(root.left, val);
-            } else if(val > root.val) {
-                root.rightSize++;
-                root.right = insert(root.right, val);
-            }
-            return root;
+    private TreeNode insert(TreeNode root, long val) {
+        if(root == null) {
+            return new TreeNode(val);
+        } else if(root.val == val) {
+            root.count++;
+        } else if(val < root.val) {
+            root.leftSize++;
+            root.left = insert(root.left, val);
+        } else if(val > root.val) {
+            root.rightSize++;
+            root.right = insert(root.right, val);
         }
+        return root;
+    }
 
-        private int countSmaller(TreeNode root, long val) {
-            if(root == null) {
-                return 0;
-            } else if(root.val == val) {
-                return root.leftSize;
-            } else if(root.val > val) {
-                return countSmaller(root.left, val);
-            } else {
-                return root.leftSize + root.count + countSmaller(root.right, val);
-            }
+    private int countSmaller(TreeNode root, long val) {
+        if(root == null) {
+            return 0;
+        } else if(root.val == val) {
+            return root.leftSize;
+        } else if(root.val > val) {
+            return countSmaller(root.left, val);
+        } else {
+            return root.leftSize + root.count + countSmaller(root.right, val);
         }
+    }
 
-        private int countLarger(TreeNode root, long val) {
-            if(root == null) {
-                return 0;
-            } else if(root.val == val) {
-                return root.rightSize;
-            } else if(root.val < val) {
-                return countLarger(root.right, val);
-            } else {
-                return countLarger(root.left, val) + root.count + root.rightSize;
-            }
+    private int countLarger(TreeNode root, long val) {
+        if(root == null) {
+            return 0;
+        } else if(root.val == val) {
+            return root.rightSize;
+        } else if(root.val < val) {
+            return countLarger(root.right, val);
+        } else {
+            return countLarger(root.left, val) + root.count + root.rightSize;
         }
+    }
 
-        private int rangeSize(TreeNode root, long lower, long upper) {
-            int total = root.count + root.leftSize + root.rightSize;
-            int smaller = countSmaller(root, lower);    // Exclude everything smaller than lower
-            int larger = countLarger(root, upper);      // Exclude everything larger than upper
-            return total - smaller - larger;
-        }
+    private int rangeSize(TreeNode root, long lower, long upper) {
+        int total = root.count + root.leftSize + root.rightSize;
+        int smaller = countSmaller(root, lower);    // Exclude everything smaller than lower
+        int larger = countLarger(root, upper);      // Exclude everything larger than upper
+        return total - smaller - larger;
+    }
 
-        public int countRangeSum(int[] nums, int lower, int upper) {
-            if(nums.length == 0) {
-                return 0;
-            }
-            long[] sums = new long[nums.length + 1];
-            for(int i = 0; i < nums.length; i++) {
-                sums[i + 1] = sums[i] + nums[i];
-            }
-            TreeNode root = new TreeNode(sums[0]);
-            int output = 0;
-            for(int i = 1; i < sums.length; i++) {
-                output += rangeSize(root, sums[i] - upper, sums[i] - lower);
-                insert(root, sums[i]);
-            }
-            return output;
+    public int countRangeSum6(int[] nums, int lower, int upper) {
+        if(nums.length == 0) {
+            return 0;
         }
+        long[] sums = new long[nums.length + 1];
+        for(int i = 0; i < nums.length; i++) {
+            sums[i + 1] = sums[i] + nums[i];
+        }
+        TreeNode root = new TreeNode(sums[0]);
+        int output = 0;
+        for(int i = 1; i < sums.length; i++) {
+            output += rangeSize(root, sums[i] - upper, sums[i] - lower);
+            insert(root, sums[i]);
+        }
+        return output;
     }
 
 
