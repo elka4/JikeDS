@@ -2,12 +2,10 @@ package _04_Tree._Leaves;
 import lib.TreeNode;
 import java.util.*;
 
-
 //  404. Sum of Left Leaves
 //  https://leetcode.com/problems/sum-of-left-leaves/
 public class _404_Tree_Sum_of_Left_Leaves_E {
-    public class Solution {
-        public int sumOfLeftLeaves(TreeNode root) {
+        public int sumOfLeftLeaves1(TreeNode root) {
             if(root == null || root.left == null && root.right == null) return 0;
 
             int res = 0;
@@ -29,10 +27,10 @@ public class _404_Tree_Sum_of_Left_Leaves_E {
             }
             return res;
         }
-    }
+
 //////////////////////////////////////////////////////////////////////////////////////
-/*Java iterative and recursive solutions
-    Recursive method. For given node we check whether its left child is a leaf. If it is the case, we add its value to answer, otherwise recursively call method on left child. For right child we call method only if it has at least one nonnull child.*/
+    /*Java iterative and recursive solutions
+        Recursive method. For given node we check whether its left child is a leaf. If it is the case, we add its value to answer, otherwise recursively call method on left child. For right child we call method only if it has at least one nonnull child.*/
 
     public int sumOfLeftLeaves2(TreeNode root) {
         if(root == null) return 0;
@@ -45,7 +43,11 @@ public class _404_Tree_Sum_of_Left_Leaves_E {
 
         return ans;
     }
-/*    Iterative method. Here for each node in the tree we check whether its left child is a leaf. If it is true, we add its value to answer, otherwise add left child to the stack to process it later. For right child we add it to stack only if it is not a leaf.*/
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+/*Iterative method. Here for each node in the tree we check whether its left child is a leaf. If it is true, we add its value to answer, otherwise add left child to the stack to process it later. For right child we add it to stack only if it is not a leaf.
+* */
 
     public int sumOfLeftLeaves3(TreeNode root) {
         if(root == null) return 0;

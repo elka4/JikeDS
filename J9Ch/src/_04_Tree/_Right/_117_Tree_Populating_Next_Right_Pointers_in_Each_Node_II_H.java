@@ -59,12 +59,13 @@ public class _117_Tree_Populating_Next_Right_Pointers_in_Each_Node_II_H {
         }
     }
 
+////////////////////////////////////////////////////////////////////////////////////
 
     //Simple solution using constant space
-/*
-The idea is simple: level-order traversal.
-You can see the following code:
- */
+    /*
+    The idea is simple: level-order traversal.
+    You can see the following code:
+     */
     public void connect2(TreeLinkNode root) {
 
         while(root != null){
@@ -85,6 +86,7 @@ You can see the following code:
         }
     }
 
+////////////////////////////////////////////////////////////////////////////////////
 
 //    Java solution with constant space
     public void connect3(TreeLinkNode root) {
@@ -108,7 +110,7 @@ You can see the following code:
         }
     }
 
-
+////////////////////////////////////////////////////////////////////////////////////
 
     public void connect4(TreeLinkNode root) {
         if(root == null)
@@ -154,9 +156,8 @@ You can see the following code:
         }
     }
 
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////
-//jiuzhang
-public class Jiuzhang {
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //jiuzhang
     public void connect(TreeLinkNode root) {
         if (root == null) {
             return;
@@ -195,7 +196,6 @@ public class Jiuzhang {
             parent = next;
         }
     }
-}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 /*

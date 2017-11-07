@@ -10,11 +10,9 @@ public class _663_Tree_Equal_Tree_Partition_M {
 
     /*
     [Java/C++] Simple solution with only one HashMap<>.
-The idea is to use a hash table to record all the different sums of each subtree in the tree. If the total sum of the tree is sum, we just need to check if the hash table constains sum/2.
-
-The following code has the correct result at a special case when the tree is [0,-1,1], which many solutions dismiss. I think this test case should be added.
+    The idea is to use a hash table to record all the different sums of each subtree in the tree. If the total sum of the tree is sum, we just need to check if the hash table constains sum/2. The following code has the correct result at a special case when the tree is [0,-1,1], which many solutions dismiss. I think this test case should be added.
      */
-    public boolean checkEqualTree(TreeNode root) {
+    public boolean checkEqualTree1(TreeNode root) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int sum = getsum(root, map);
         if(sum == 0)return map.getOrDefault(sum, 0) > 1;
@@ -28,35 +26,35 @@ The following code has the correct result at a special case when the tree is [0,
         return cur;
     }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////
     //Java solution, Tree traversal and Sum
-    class Solution {
-        boolean equal = false;
-        long total = 0;
+    boolean equal = false;
+    long total = 0;
 
-        public boolean checkEqualTree(TreeNode root) {
-            if (root.left == null && root.right == null) return false;
-            total = getTotal(root);
-            checkEqual(root);
-            return equal;
-        }
-
-        private long getTotal(TreeNode root) {
-            if (root == null) return 0;
-            return getTotal(root.left) + getTotal(root.right) + root.val;
-        }
-
-        private long checkEqual(TreeNode root) {
-            if (root == null || equal) return 0;
-
-            long curSum = checkEqual(root.left) + checkEqual(root.right) + root.val;
-            if (total - curSum == curSum) {
-                equal = true;
-                return 0;
-            }
-            return curSum;
-        }
+    public boolean checkEqualTree2(TreeNode root) {
+        if (root.left == null && root.right == null) return false;
+        total = getTotal(root);
+        checkEqual(root);
+        return equal;
     }
+
+    private long getTotal(TreeNode root) {
+        if (root == null) return 0;
+        return getTotal(root.left) + getTotal(root.right) + root.val;
+    }
+
+    private long checkEqual(TreeNode root) {
+        if (root == null || equal) return 0;
+
+        long curSum = checkEqual(root.left) + checkEqual(root.right) + root.val;
+        if (total - curSum == curSum) {
+            equal = true;
+            return 0;
+        }
+        return curSum;
+    }
+
+
 /////////////////////////////////////////////////////////////////////////////////////
 }
 /*

@@ -8,6 +8,7 @@ import java.util.Map;
 //  https://leetcode.com/problems/house-robber-iii/
 //  http://www.lintcode.com/zh-cn/problem/house-robber-iii/
 public class _337_Tree_House_Robber_III_M {
+
     //Step by step tackling of the problem
     public int rob(TreeNode root) {
         if (root == null) return 0;
@@ -26,7 +27,7 @@ public class _337_Tree_House_Robber_III_M {
     }
 
 
-
+//////////////////////////////////////////////////////////////////////////////////////////
 
     //Step II -- Think one step further
     //And here is the improved solution:
@@ -54,7 +55,7 @@ public class _337_Tree_House_Robber_III_M {
         return val;
     }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////
 
     //Step III -- Think one step back
     public int rob3(TreeNode root) {
@@ -77,27 +78,24 @@ public class _337_Tree_House_Robber_III_M {
 
 /////////////////////////////////////////////////////////////////////////////////
 
-    public class Solution4 {
-        public int rob(TreeNode root) {
-            int[] num = dfs(root);
-            return Math.max(num[0], num[1]);
-        }
-        private int[] dfs(TreeNode x) {
-            if (x == null) return new int[2];
-            int[] left = dfs(x.left);
-            int[] right = dfs(x.right);
-            int[] res = new int[2];
-            res[0] = left[1] + right[1] + x.val;
-            res[1] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
-            return res;
-        }
+    public int rob4(TreeNode root) {
+        int[] num = dfs(root);
+        return Math.max(num[0], num[1]);
     }
-//////////////////////////////////////////////////////////////////////////////////////
+    private int[] dfs(TreeNode x) {
+        if (x == null) return new int[2];
+        int[] left = dfs(x.left);
+        int[] right = dfs(x.right);
+        int[] res = new int[2];
+        res[0] = left[1] + right[1] + x.val;
+        res[1] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+        return res;
+    }
+
 //////////////////////////////////////////////////////////////////////////////////////
     //jiuzhang
-//dp[i][0]表示以i为根的子树不偷根节点能获得的最高价值，dp[i][1]表示以i为根的子树偷根节点能获得的最高价值
-public class Jiuzhang1 {
-    public int houseRobber3(TreeNode root) {
+    //dp[i][0]表示以i为根的子树不偷根节点能获得的最高价值，dp[i][1]表示以i为根的子树偷根节点能获得的最高价值
+    public int houseRobber_J1(TreeNode root) {
         int[] ans = dp(root);
         return Math.max(ans[0], ans[1]);
     }
@@ -113,9 +111,10 @@ public class Jiuzhang1 {
         now[1] = left[0] + right[0] + root.val;
         return now;
     }
-}
 
-// version 2
+//////////////////////////////////////////////////////////////////////////////////////
+    //Jiuzhang
+    // version 2
     /**
      * Definition of TreeNode:
      * public class TreeNode {
@@ -128,32 +127,26 @@ public class Jiuzhang1 {
         public int rob, not_rob;
         public ResultType() { rob = not_rob = 0; }
     }
-
-    public class Jiuzhang2 {
-        /**
-         * @param root: The root of binary tree.
-         * @return: The maximum amount of money you can rob tonight
-         */
-        public int houseRobber3(TreeNode root) {
-            // write your code here
-            ResultType result = visit(root);
-            return Math.max(result.rob, result.not_rob);
-        }
-
-        public ResultType visit(TreeNode root) {
-            ResultType result = new ResultType();
-            if (root == null)
-                return result;
-
-            ResultType left_result = visit(root.left);
-            ResultType right_result = visit(root.right);
-
-            result.rob = root.val + left_result.not_rob + right_result.not_rob;
-            result.not_rob = Math.max(left_result.rob, left_result.not_rob) +
-                    Math.max(right_result.rob, right_result.not_rob);
-            return result;
-        }
+    public int houseRobber_J2(TreeNode root) {
+        // write your code here
+        ResultType result = visit(root);
+        return Math.max(result.rob, result.not_rob);
     }
+
+    public ResultType visit(TreeNode root) {
+        ResultType result = new ResultType();
+        if (root == null)
+            return result;
+
+        ResultType left_result = visit(root.left);
+        ResultType right_result = visit(root.right);
+
+        result.rob = root.val + left_result.not_rob + right_result.not_rob;
+        result.not_rob = Math.max(left_result.rob, left_result.not_rob) +
+                Math.max(right_result.rob, right_result.not_rob);
+        return result;
+    }
+
 //////////////////////////////////////////////////////////////////////////////////////
 }
 /*

@@ -8,41 +8,41 @@ import org.junit.Test;
 //  https://leetcode.com/problems/largest-bst-subtree/description/
 //
 public class _333_Tree_Largest_BST_Subtree_M {
-    public class Solution {
 
-        class Result {  // (size, rangeLower, rangeUpper) -- size of current tree, range of current tree [rangeLower, rangeUpper]
-            int size;
-            int lower;
-            int upper;
+    // (size, rangeLower, rangeUpper) -- size of current tree,
+    // range of current tree [rangeLower, rangeUpper]
+    class Result {
+        int size;
+        int lower;
+        int upper;
 
-            Result(int size, int lower, int upper) {
-                this.size = size;
-                this.lower = lower;
-                this.upper = upper;
-            }
-        }
-
-        int max = 0;
-
-        public int largestBSTSubtree(TreeNode root) {
-            if (root == null) { return 0; }
-            traverse(root);
-            return max;
-        }
-
-        private Result traverse(TreeNode root) {
-            if (root == null) { return new Result(0, Integer.MAX_VALUE, Integer.MIN_VALUE); }
-            Result left = traverse(root.left);
-            Result right = traverse(root.right);
-            if (left.size == -1 || right.size == -1 || root.val <= left.upper || root.val >= right.lower) {
-                return new Result(-1, 0, 0);
-            }
-            int size = left.size + 1 + right.size;
-            max = Math.max(size, max);
-            return new Result(size, Math.min(left.lower, root.val), Math.max(right.upper, root.val));
+        Result(int size, int lower, int upper) {
+            this.size = size;
+            this.lower = lower;
+            this.upper = upper;
         }
     }
 
+    int max1 = 0;
+
+    public int largestBSTSubtree1(TreeNode root) {
+        if (root == null) { return 0; }
+        traverse1(root);
+        return max1;
+    }
+
+    private Result traverse1(TreeNode root) {
+        if (root == null) { return new Result(0, Integer.MAX_VALUE, Integer.MIN_VALUE); }
+        Result left = traverse1(root.left);
+        Result right = traverse1(root.right);
+        if (left.size == -1 || right.size == -1 || root.val <= left.upper || root.val >= right.lower) {
+            return new Result(-1, 0, 0);
+        }
+        int size = left.size + 1 + right.size;
+        max1 = Math.max(size, max1);
+        return new Result(size, Math.min(left.lower, root.val), Math.max(right.upper, root.val));
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
     /*
         in brute-force solution, we get information in a top-down manner.
@@ -84,7 +84,7 @@ public class _333_Tree_Largest_BST_Subtree_M {
         }
     }
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
     public class Solution3 {
         class Result {
@@ -117,7 +117,7 @@ public class _333_Tree_Largest_BST_Subtree_M {
         }
     }
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
     public class Solution4 {
         public int largestBSTSubtree(TreeNode root) {
@@ -154,10 +154,7 @@ public class _333_Tree_Largest_BST_Subtree_M {
         }
     }
 
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 //    Share my O(n) Java code with brief explanation and comments
@@ -165,7 +162,7 @@ public class _333_Tree_Largest_BST_Subtree_M {
     //Runtime: 7 ms
 //Your runtime beats 53.14 % of java submissions.
 
-    public class Solution11 {
+    public class Solution5 {
         // (size, rangeLower, rangeUpper) -- size of current tree, range of current tree [rangeLower, rangeUpper]
         class Result {
             int size;
@@ -203,29 +200,27 @@ public class _333_Tree_Largest_BST_Subtree_M {
         }
     }
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
     //Clean and easy to understand Java Solution
-    class solution2{
-        public int largestBSTSubtree(TreeNode root) {
-            if (root == null) return 0;
-            if (root.left == null && root.right == null) return 1;
-            if (isValid(root, null, null)) return countNode(root);
-            return Math.max(largestBSTSubtree(root.left), largestBSTSubtree(root.right));
-        }
+    public int largestBSTSubtree6(TreeNode root) {
+        if (root == null) return 0;
+        if (root.left == null && root.right == null) return 1;
+        if (isValid6(root, null, null)) return countNode6(root);
+        return Math.max(largestBSTSubtree(root.left), largestBSTSubtree(root.right));
+    }
 
-        public boolean isValid(TreeNode root, Integer min, Integer max) {
-            if (root == null) return true;
-            if (min != null && min >= root.val) return false;
-            if (max != null && max <= root.val) return false;
-            return isValid(root.left, min, root.val) && isValid(root.right, root.val, max);
-        }
+    public boolean isValid6(TreeNode root, Integer min, Integer max) {
+        if (root == null) return true;
+        if (min != null && min >= root.val) return false;
+        if (max != null && max <= root.val) return false;
+        return isValid6(root.left, min, root.val) && isValid6(root.right, root.val, max);
+    }
 
-        public int countNode(TreeNode root) {
-            if (root == null) return 0;
-            if (root.left == null && root.right == null) return 1;
-            return 1 + countNode(root.left) + countNode(root.right);
-        }
+    public int countNode6(TreeNode root) {
+        if (root == null) return 0;
+        if (root.left == null && root.right == null) return 1;
+        return 1 + countNode6(root.left) + countNode6(root.right);
     }
 ////////////////////////////////////////////////////////////////////////////////////////////
     //jiuhang
@@ -392,58 +387,60 @@ public class _333_Tree_Largest_BST_Subtree_M {
 
     //这个算法有问题，不能返回subtree的正确node数
     //有可能是 //int[] max = {0};
+    class Solution{
+        class Result {
+            int size;
+            int min;
+            int max;
 
-    class Result {
-        int size;
-        int min;
-        int max;
-
-        public Result (int size, int min, int max) {
-            this.size = size;
-            this.min = min;
-            this.max = max;
-        }
-        public String toString(){
-            return "Result: " + "size  "+ size + " min  "+ min + " max  "+ max;
-        }
-    }
-
-    public int largestBSTSubtree2(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
-        int[] max = {0};
-        Result res = helper(root, max);
-        return max[0];
-    }
-
-    private Result helper(TreeNode root, int[] max) {
-        if (root == null) {
-            return new Result(0, Integer.MAX_VALUE, Integer.MIN_VALUE);
+            public Result (int size, int min, int max) {
+                this.size = size;
+                this.min = min;
+                this.max = max;
+            }
+            public String toString(){
+                return "Result: " + "size  "+ size + " min  "+ min + " max  "+ max;
+            }
         }
 
-        Result left = helper(root.left, max);
-        Result right = helper(root.right, max);
+        public int largestBSTSubtree2(TreeNode root) {
+            if (root == null) {
+                return 0;
+            }
+            int[] max = {0};
+            Result res = helper(root, max);
+            return max[0];
+        }
 
-        root.print();
+        private Result helper(TreeNode root, int[] max) {
+            if (root == null) {
+                return new Result(0, Integer.MAX_VALUE, Integer.MIN_VALUE);
+            }
+
+            Result left = helper(root.left, max);
+            Result right = helper(root.right, max);
+
+            root.print();
 //        System.out.println("root: " + root.val);
 //        System.out.println("left: " + left);
 //        System.out.println("right: " + right);
 
 
-        if (left.size == -1 || right.size == -1 ||
-                root.val <= left.max || root.val >= right.min) {
+            if (left.size == -1 || right.size == -1 ||
+                    root.val <= left.max || root.val >= right.min) {
 
 //            System.out.println("left.size == -1 || right.size == -1 ||");
 
-            return new Result(-1, 0, 0);
+                return new Result(-1, 0, 0);
+            }
+
+            max[0] = Math.max(max[0], left.size + right.size + 1);
+
+            return new Result(left.size + right.size + 1,
+                    Math.min(left.min, root.val), Math.max(root.val, right.max));
         }
-
-        max[0] = Math.max(max[0], left.size + right.size + 1);
-
-        return new Result(left.size + right.size + 1,
-                Math.min(left.min, root.val), Math.max(root.val, right.max));
     }
+
 
     @Test
     public void test03(){
@@ -452,119 +449,59 @@ public class _333_Tree_Largest_BST_Subtree_M {
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         System.out.println("root: ");
         root.print();
-        System.out.println("largestBSTSubtree2 " + largestBSTSubtree2(root));
+        System.out.println("largestBSTSubtree2 " );
     }
 
-    @Test
-    public void test04(){
-        int[] arr = {5,3,6,1,4,8};
-
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        System.out.println("largestBSTSubtree2 " + largestBSTSubtree2(root));
-    }
 
 ///////////////////////////////////////////////////////////////////
-    class Node {
-        boolean isBST;
-        int min;
-        int max;
-        int size;
+    class Solution33{
+        class Node {
+            boolean isBST;
+            int min;
+            int max;
+            int size;
 
-        public Node() {
-            isBST = false;
-            min = Integer.MAX_VALUE;
-            max = Integer.MIN_VALUE;
-            size = 0;
-        }
-    }
-
-    public int largestBSTSubtree3(TreeNode root) {
-        int [] res = {0};
-        helper(root, res);
-        return res[0];
-    }
-
-    private Node helper2(TreeNode root, int [] res){
-        Node cur = new Node();
-
-        if(root == null){
-            cur.isBST = true;
-            return cur;
-        }
-
-        Node left = helper2(root.left, res);
-        Node right = helper2(root.right, res);
-
-        if(left.isBST && root.val > left.max && right.isBST && root.val < right.min){
-            cur.isBST = true;
-
-            cur.min = Math.min(root.val, left.min);
-            cur.max = Math.max(root.val, right.max);
-
-            cur.size = left.size + right.size + 1;
-
-            if(cur.size > res[0]){
-                res[0] = cur.size;
+            public Node() {
+                isBST = false;
+                min = Integer.MAX_VALUE;
+                max = Integer.MIN_VALUE;
+                size = 0;
             }
         }
-        return cur;
-    }
 
-    @Test
-    public void test05(){
-        //int[] arr = {5,3,6,1,4,8};
-        int[] arr = {5,2,7,1,3,6,8};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        System.out.println("largestBSTSubtree3 " + largestBSTSubtree3(root));
-    }
+        public int largestBSTSubtree3(TreeNode root) {
+            int [] res = {0};
+            helper2(root, res);
+            return res[0];
+        }
 
-    @Test
-    public void test06(){
-        int[] arr = {5,3,6,1,4,8};
+        private Node helper2(TreeNode root, int [] res){
+            Node cur = new Node();
 
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        System.out.println("largestBSTSubtree3 " + largestBSTSubtree3(root));
-    }
+            if(root == null){
+                cur.isBST = true;
+                return cur;
+            }
 
-////////////////////////////////////////////////////////////////////////////////////////
+            Node left = helper2(root.left, res);
+            Node right = helper2(root.right, res);
 
-    class Result2 {  // (size, rangeLower, rangeUpper) -- size of current tree, range of current tree [rangeLower, rangeUpper]
-        int size;
-        int lower;
-        int upper;
+            if(left.isBST && root.val > left.max && right.isBST && root.val < right.min){
+                cur.isBST = true;
 
-        Result2(int size, int lower, int upper) {
-            this.size = size;
-            this.lower = lower;
-            this.upper = upper;
+                cur.min = Math.min(root.val, left.min);
+                cur.max = Math.max(root.val, right.max);
+
+                cur.size = left.size + right.size + 1;
+
+                if(cur.size > res[0]){
+                    res[0] = cur.size;
+                }
+            }
+            return cur;
         }
     }
 
-    int max1 = 0;
-
-    public int largestBSTSubtree22(TreeNode root) {
-        if (root == null) { return 0; }
-        traverse(root);
-        return max1;
-    }
-
-    private Result2 traverse(TreeNode root) {
-        if (root == null) { return new Result2(0, Integer.MAX_VALUE, Integer.MIN_VALUE); }
-        Result2 left = traverse(root.left);
-        Result2 right = traverse(root.right);
-        if (left.size == -1 || right.size == -1 || root.val <= left.upper || root.val >= right.lower) {
-            return new Result2(-1, 0, 0);
-        }
-        int size = left.size + 1 + right.size;
-        max = Math.max(size, max);
-        return new Result2(size, Math.min(left.lower, root.val), Math.max(right.upper, root.val));
-    }
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -755,45 +692,6 @@ public class _333_Tree_Largest_BST_Subtree_M {
         }
         return currentTotal;
     }
-/////////////////////////////////////////////////////////////////////////////////////////////
-    // leetcode
-    // 333. Largest BST Subtree
-
-    //Share my O(n) Java code with brief explanation and comments
-    class Solution1 {
-
-        class Result {  // (size, rangeLower, rangeUpper) -- size of current tree, range of current tree [rangeLower, rangeUpper]
-            int size;
-            int lower;
-            int upper;
-
-            Result(int size, int lower, int upper) {
-                this.size = size;
-                this.lower = lower;
-                this.upper = upper;
-            }
-        }
-
-        int max = 0;
-
-        public int largestBSTSubtree(TreeNode root) {
-            if (root == null) { return 0; }
-            traverse(root);
-            return max;
-        }
-
-        private Result traverse(TreeNode root) {
-            if (root == null) { return new Result(0, Integer.MAX_VALUE, Integer.MIN_VALUE); }
-            Result left = traverse(root.left);
-            Result right = traverse(root.right);
-            if (left.size == -1 || right.size == -1 || root.val <= left.upper || root.val >= right.lower) {
-                return new Result(-1, 0, 0);
-            }
-            int size = left.size + 1 + right.size;
-            max = Math.max(size, max);
-            return new Result(size, Math.min(left.lower, root.val), Math.max(right.upper, root.val));
-        }
-    }
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -821,7 +719,7 @@ public class _333_Tree_Largest_BST_Subtree_M {
     }
 /////////////////////////////////////////////////////////////////////////////////////////////
     //Java 1ms solution, by passing a three-element array up to parent
-    class Solution33 {
+    class Solution331 {
         private int largestBSTSubtreeSize = 0;
 
         public int largestBSTSubtree(TreeNode root) {

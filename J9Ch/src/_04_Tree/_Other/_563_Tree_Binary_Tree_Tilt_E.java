@@ -8,110 +8,46 @@ public class _563_Tree_Binary_Tree_Tilt_E {
 
     //https://leetcode.com/problems/binary-tree-tilt/solution/
     //Approach #1 Using Recursion [Accepted]
+    //post-order traversal
+    //helper will return sum of a subtree.
+    int result = 0;
 
-/////////////////////////////////////////////////////////////////////////
-
-    //Java Solution, post-order traversal
-    public class Solution {
-        int result = 0;
-
-        public int findTilt(TreeNode root) {
-            postOrder(root);
-            return result;
-        }
-
-        private int postOrder(TreeNode root) {
-            if (root == null) return 0;
-
-            int left = postOrder(root.left);
-            int right = postOrder(root.right);
-
-            result += Math.abs(left - right);
-
-            return left + right + root.val;
-        }
+    public int findTilt(TreeNode root) {
+        postOrder(root);
+        return result;
     }
 
-    class Solution2{
-//        helper will return sum of a subtree.
+    private int postOrder(TreeNode root) {
+        if (root == null) return 0;
 
-        int res = 0;
-        public int findTilt(TreeNode root) {
-            helper(root);
-            return res;
-        }
+        int left = postOrder(root.left);
+        int right = postOrder(root.right);
 
-        int helper(TreeNode root){
-            if(root == null) return 0;
+        result += Math.abs(left - right);
 
-            int l = helper(root.left);
-            int r = helper(root.right);
-            res += Math.abs(l - r);
-            return l + r + root.val;
-        }
+        return left + right + root.val;
     }
 
 
-    public class Solution3 {
-
-        public int sumOfTilt;
-        public int findTilt(TreeNode root) {
-            SumOfTree(root);
-            return sumOfTilt;
-        }
-        public int SumOfTree(TreeNode root) {
-            if (root == null) {
-                return 0;
-            }
-            int leftSum = SumOfTree(root.left);
-            int rightSum = SumOfTree(root.right);
-
-            sumOfTilt += Math.abs(leftSum - rightSum);
-            return leftSum + rightSum + root.val;
-
-        }
-    }
 /////////////////////////////////////////////////////////////////////////
     //    Simple Java Solution -- without Global Variable
     //    To avoid using global variable, you can take use of size-1 array or any other objects.
-    class Solution4{
-
-        public int findTilt(TreeNode root) {
-            int[] ret = new int[1];
-            helper(root, ret);
-            return ret[0];
-        }
-
-        private int helper(TreeNode node, int[] ret){
-            if(node == null){
-                return 0;
-            }
-            int l_sum = helper(node.left, ret);
-            int r_sum = helper(node.right, ret);
-            ret[0] += Math.abs(l_sum - r_sum);
-            return l_sum + r_sum + node.val;
-        }
+    public int findTilt2(TreeNode root) {
+        int[] ret = new int[1];
+        helper(root, ret);
+        return ret[0];
     }
-/////////////////////////////////////////////////////////////////////////
-    //Java O(n) Postorder Traversal
-    public class Solution5 {
 
-        int tilt = 0;
-
-        public int findTilt(TreeNode root) {
-            postorder(root);
-            return tilt;
+    private int helper(TreeNode node, int[] ret){
+        if(node == null){
+            return 0;
         }
-
-        public int postorder(TreeNode root) {
-            if (root == null) return 0;
-            int leftSum = postorder(root.left);
-            int rightSum = postorder(root.right);
-            tilt += Math.abs(leftSum - rightSum);
-            return leftSum + rightSum + root.val;
-        }
-
+        int l_sum = helper(node.left, ret);
+        int r_sum = helper(node.right, ret);
+        ret[0] += Math.abs(l_sum - r_sum);
+        return l_sum + r_sum + node.val;
     }
+
 /////////////////////////////////////////////////////////////////////////
 }
 /*

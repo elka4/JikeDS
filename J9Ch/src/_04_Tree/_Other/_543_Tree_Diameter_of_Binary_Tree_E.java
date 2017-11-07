@@ -10,82 +10,77 @@ public class _543_Tree_Diameter_of_Binary_Tree_E {
     //    Java Solution, MaxDepth
     //    For every node, length of longest path which pass it = MaxDepth of
     // its left subtree + MaxDepth of its right subtree.
-    public class Solution {
-        int max = 0;
+    int max = 0;
 
-        public int diameterOfBinaryTree(TreeNode root) {
-            maxDepth(root);
-            return max;
-        }
-
-        private int maxDepth(TreeNode root) {
-            if (root == null) return 0;
-
-            int left = maxDepth(root.left);
-            int right = maxDepth(root.right);
-
-            max = Math.max(max, left + right);
-
-            return Math.max(left, right) + 1;
-        }
+    public int diameterOfBinaryTree1(TreeNode root) {
+        maxDepth(root);
+        return max;
     }
 
+    private int maxDepth(TreeNode root) {
+        if (root == null) return 0;
 
-    class Solution2{
-        public int DiameterOfBinaryTree(TreeNode root) {
-            return DFS(root)[0];
-        }
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
 
-        // int[2] = [best, height]
-        private int[] DFS(TreeNode node)
-        {
-            if (node == null) return new int[] { 0, 0 };
-            int[] left = DFS(node.left);
-            int[] right = DFS(node.right);
+        max = Math.max(max, left + right);
 
-            int best = Math.max(left[1] + right[1], Math.max(left[0], right[0]));
-            int height = 1 + Math.max(left[1], right[1]);
-            return new int[] { best, height };
-        }
+        return Math.max(left, right) + 1;
     }
 
-    public class Solution3 {
-        int max;
-        public int diameterOfBinaryTree(TreeNode root) {
-            max = 0;
-            height(root);
-            return max;
-        }
-        int height(TreeNode root){
-            if(root==null)return -1;
-            int leftH = height(root.left);
-            int rightH = height(root.right);
-            int height = Math.max(leftH,rightH)+1;
-            max = Math.max(max,leftH+rightH+2);
-            return height;
-        }
+////////////////////////////////////////////////////////////////////////////////
+    public int DiameterOfBinaryTree2(TreeNode root) {
+        return DFS(root)[0];
     }
 
-//    Java easy to understand solution
-    public class Solution4 {
-        public int diameterOfBinaryTree(TreeNode root) {
-            if(root == null){
-                return 0;
-            }
-            int dia = depth(root.left) + depth(root.right);
-            int ldia = diameterOfBinaryTree(root.left);
-            int rdia = diameterOfBinaryTree(root.right);
-            return Math.max(dia,Math.max(ldia,rdia));
+    // int[2] = [best, height]
+    private int[] DFS(TreeNode node)
+    {
+        if (node == null) return new int[] { 0, 0 };
+        int[] left = DFS(node.left);
+        int[] right = DFS(node.right);
 
+        int best = Math.max(left[1] + right[1], Math.max(left[0], right[0]));
+        int height = 1 + Math.max(left[1], right[1]);
+        return new int[] { best, height };
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+    int max3;
+    public int diameterOfBinaryTree3(TreeNode root) {
+        max3 = 0;
+        height(root);
+        return max3;
+    }
+    int height(TreeNode root){
+        if(root==null)return -1;
+        int leftH = height(root.left);
+        int rightH = height(root.right);
+        int height = Math.max(leftH,rightH)+1;
+        max3 = Math.max(max3,leftH+rightH+2);
+        return height;
+    }
+
+////////////////////////////////////////////////////////////////////////////////
+    //    Java easy to understand solution
+    public int diameterOfBinaryTree(TreeNode root) {
+        if(root == null){
+            return 0;
         }
-        public int depth(TreeNode root){
-            if(root == null){
-                return 0;
-            }
-            return 1+Math.max(depth(root.left), depth(root.right));
-        }
+        int dia = depth(root.left) + depth(root.right);
+        int ldia = diameterOfBinaryTree(root.left);
+        int rdia = diameterOfBinaryTree(root.right);
+        return Math.max(dia,Math.max(ldia,rdia));
 
     }
+    public int depth(TreeNode root){
+        if(root == null){
+            return 0;
+        }
+        return 1+Math.max(depth(root.left), depth(root.right));
+    }
+
+////////////////////////////////////////////////////////////////////////////////
 }
 /*
 

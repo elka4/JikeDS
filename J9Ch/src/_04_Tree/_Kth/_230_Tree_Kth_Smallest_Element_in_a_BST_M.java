@@ -5,7 +5,6 @@ import java.util.Stack;
 
 //  230. Kth Smallest Element in a BST
 //  https://leetcode.com/problems/kth-smallest-element-in-a-bst/
-//
 public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
     //3 ways implemented in JAVA (Python): Binary Search, in-order iterative & recursive
 
@@ -78,6 +77,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
     Appreciated everyone reviewing my answers and leaving insightful comments here through the last two years, I've never got chance to reply to all of them, and unfortunately, I no longer write in JAVA and this might be the excuse I won't go back editing my stupid codes any more lol. Below is my Python answer that I just picked up lately, it's more fun and hopefully, easier to understand by its simple structure.
 
     note: requirement has been changed a bit since last time I visited that the counting could be looked up frequently and BST itself could be altered (inserted/deleted) by multiple times, so that's the main reason that I stored them in an array.*/
+
 /////////////////////////////////////////////////////////////////////////////////////
 
     public int kthSmallest4(TreeNode root, int k) {

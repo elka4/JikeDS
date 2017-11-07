@@ -10,8 +10,7 @@ import java.util.*;
 //  http://www.lintcode.com/zh-cn/problem/binary-tree-zigzag-level-order-traversal/
 public class _103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M {
 
-    public class Solution {
-        public List<List<Integer>> zigzagLevelOrder(TreeNode root)
+        public List<List<Integer>> zigzagLevelOrder1(TreeNode root)
         {
             List<List<Integer>> sol = new ArrayList<>();
             travel(root, sol, 0);
@@ -35,11 +34,9 @@ public class _103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M {
             travel(curr.left, sol, level + 1);
             travel(curr.right, sol, level + 1);
         }
-    }
+//////////////////////////////////////////////////////////////////////////////////////
 
-
-    public class Solution2 {
-        public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        public List<List<Integer>> zigzagLevelOrder2(TreeNode root) {
             List<List<Integer>> res = new ArrayList<>();
             if(root == null) return res;
 
@@ -66,9 +63,10 @@ public class _103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M {
             }
             return res;
         }
-    }
 
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+//////////////////////////////////////////////////////////////////////////////////////
+
+    public List<List<Integer>> zigzagLevelOrder3(TreeNode root) {
         List<List<Integer>>  res = new ArrayList<List<Integer>>();
         if (root == null)
             return res;
@@ -112,61 +110,61 @@ public class _103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M {
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         System.out.println("root: ");
         root.print();
-        System.out.println(zigzagLevelOrder(root));
+        System.out.println(zigzagLevelOrder3(root));
     }
 
 /////////////////////////////////////////////////////////////////////////////
     //jiuzhang
-    public class Jiuzhang {
-        public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-            List<List<Integer>> result = new ArrayList<List<Integer>>();
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
 
-            if (root == null) {
-                return result;
-            }
+        if (root == null) {
+            return result;
+        }
 
-            Stack<TreeNode> currLevel = new Stack<TreeNode>();
-            Stack<TreeNode> nextLevel = new Stack<TreeNode>();
-            Stack<TreeNode> tmp;
+        Stack<TreeNode> currLevel = new Stack<TreeNode>();
+        Stack<TreeNode> nextLevel = new Stack<TreeNode>();
+        Stack<TreeNode> tmp;
 
-            currLevel.push(root);
-            boolean normalOrder = true;
+        currLevel.push(root);
+        boolean normalOrder = true;
+
+        while (!currLevel.isEmpty()) {
+            ArrayList<Integer> currLevelResult = new ArrayList<Integer>();
 
             while (!currLevel.isEmpty()) {
-                ArrayList<Integer> currLevelResult = new ArrayList<Integer>();
+                TreeNode node = currLevel.pop();
+                currLevelResult.add(node.val);
 
-                while (!currLevel.isEmpty()) {
-                    TreeNode node = currLevel.pop();
-                    currLevelResult.add(node.val);
-
-                    if (normalOrder) {
-                        if (node.left != null) {
-                            nextLevel.push(node.left);
-                        }
-                        if (node.right != null) {
-                            nextLevel.push(node.right);
-                        }
-                    } else {
-                        if (node.right != null) {
-                            nextLevel.push(node.right);
-                        }
-                        if (node.left != null) {
-                            nextLevel.push(node.left);
-                        }
+                if (normalOrder) {
+                    if (node.left != null) {
+                        nextLevel.push(node.left);
+                    }
+                    if (node.right != null) {
+                        nextLevel.push(node.right);
+                    }
+                } else {
+                    if (node.right != null) {
+                        nextLevel.push(node.right);
+                    }
+                    if (node.left != null) {
+                        nextLevel.push(node.left);
                     }
                 }
-
-                result.add(currLevelResult);
-                tmp = currLevel;
-                currLevel = nextLevel;
-                nextLevel = tmp;
-                normalOrder = !normalOrder;
             }
 
-            return result;
-
+            result.add(currLevelResult);
+            tmp = currLevel;
+            currLevel = nextLevel;
+            nextLevel = tmp;
+            normalOrder = !normalOrder;
         }
+
+        return result;
+
     }
+
+
 /////////////////////////////////////////////////////////////////////////////
 }
 /*

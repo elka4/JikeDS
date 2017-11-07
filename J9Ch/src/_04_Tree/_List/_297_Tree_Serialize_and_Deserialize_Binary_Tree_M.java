@@ -9,7 +9,7 @@ import java.util.LinkedList;
 //
 public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
     //Easy to understand Java Solution
-/*    The idea is simple: print the tree in pre-order traversal and use "X" to denote null node and split node with ",". We can use a StringBuilder for building the string on the fly. For deserializing, we use a Queue to store the pre-order traversal and since we have "X" as null node, we know exactly how to where to end building subtress.*/
+    /*    The idea is simple: print the tree in pre-order traversal and use "X" to denote null node and split node with ",". We can use a StringBuilder for building the string on the fly. For deserializing, we use a Queue to store the pre-order traversal and since we have "X" as null node, we know exactly how to where to end building subtress.*/
     public class Codec {
         private static final String spliter = ",";
         private static final String NN = "X";
@@ -92,10 +92,7 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
         return node;
     }
 ///////////////////////////////////////////////////////////////////////////////////
-/*Short and straight forward BFS Java code with a queue
-    Here I use typical BFS method to handle a binary tree. I use string n to represent null values. The string of the binary tree in the example will be "1 2 3 n n 4 5 n n n n ".
-
-    When deserialize the string, I assign left and right child for each not-null node, and add the not-null children to the queue, waiting to be handled later.*/
+/*Short and straight forward BFS Java code with a queue Here I use typical BFS method to handle a binary tree. I use string n to represent null values. The string of the binary tree in the example will be "1 2 3 n n 4 5 n n n n ".When deserialize the string, I assign left and right child for each not-null node, and add the not-null children to the queue, waiting to be handled later.*/
 
     public class Codec3 {
         public String serialize(TreeNode root) {
@@ -141,10 +138,9 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
 
 ///////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////
-/*Recursive DFS, Iterative DFS and BFS
+    /*Recursive DFS, Iterative DFS and BFS
     This problem can solved in 3 different ways
-
-            (1) Iterative DFS*/
+    (1) Iterative DFS*/
 
     public class Codec4 {
 
@@ -199,8 +195,8 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
             return root;
         }
     }
-//(2) recursive DFS
 
+    //(2) recursive DFS
     public class Codec5 {
 
         // Encodes a tree to a single string.
@@ -238,8 +234,8 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
             return x;
         }
     }
-//(3) BFS
 
+    //(3) BFS
     public class Codec6 {
 
         // Encodes a tree to a single string.
@@ -298,7 +294,8 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
             return root;
         }
     }
-///////////////////////////////////////////////////////////////////////////////////
+
+
 ///////////////////////////////////////////////////////////////////////////////////
 }
 /*

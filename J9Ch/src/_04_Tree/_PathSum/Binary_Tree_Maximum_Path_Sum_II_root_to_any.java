@@ -4,7 +4,7 @@ import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 // root to any
-public class Binary_Tree_Maximum_Path_Sum_II {
+public class Binary_Tree_Maximum_Path_Sum_II_root_to_any {
     /**
      * @param root the root of binary tree.
      * @return an integer

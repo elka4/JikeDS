@@ -3,7 +3,7 @@ import lib.*;
 import org.junit.Test;
 
 //      leetcode 687. Longest Univalue Path
-public class Longest_Univalue_Path {
+public class _687_Longest_Univalue_Path {
 //Approach #1: Recursion [Accepted]
     class Solution{
         int ans;

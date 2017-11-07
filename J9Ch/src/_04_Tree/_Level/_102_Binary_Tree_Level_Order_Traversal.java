@@ -40,13 +40,8 @@ public class _102_Binary_Tree_Level_Order_Traversal {
         return result;
     }
 //////////////////////////////////////////////////////////////////////
-//version 2:  DFS
-public class _60Binary_Tree_Level_Order_Traversal_DFS {
-    /**
-     * @param root: The root of binary tree.
-     * @return: Level order a list of lists of integer
-     */
-    public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
+    //version 2:  DFS
+    public ArrayList<ArrayList<Integer>> levelOrder2(TreeNode root) {
         ArrayList<ArrayList<Integer>> results = new ArrayList<>();
 
         if (root == null) {
@@ -82,17 +77,11 @@ public class _60Binary_Tree_Level_Order_Traversal_DFS {
         dfs(root.left, level, curtLevel + 1, maxLevel);
         dfs(root.right, level, curtLevel + 1, maxLevel);
     }
-}
 
 
 //////////////////////////////////////////////////////////////////////
-//version 3: BFS. two queues
-public class _60Binary_Tree_Level_Order_Traversal_BFS_2Q {
-    /**
-     * @param root: The root of binary tree.
-     * @return: Level order a list of lists of integer
-     */
-    public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
+    //version 3: BFS. two queues
+    public ArrayList<ArrayList<Integer>> levelOrder3(TreeNode root) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
         if (root == null) {
             return result;
@@ -127,51 +116,46 @@ public class _60Binary_Tree_Level_Order_Traversal_BFS_2Q {
 
         return result;
     }
-}
+
 
 //////////////////////////////////////////////////////////////////////
 
     //version 4: BFS, queue with dummy node
-    public class _60Binary_Tree_Level_Order_Traversal_Q_DummyNode {
-        /**
-         * @param root: The root of binary tree.
-         * @return: Level order a list of lists of integer
-         */
-        public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
-            ArrayList<ArrayList<Integer>> result = new ArrayList<>();
-            if (root == null) {
-                return result;
-            }
-
-            Queue<TreeNode> Q = new LinkedList<TreeNode>();
-            Q.offer(root);
-            Q.offer(null); // dummy node
-
-            ArrayList<Integer> level = new ArrayList<Integer>();
-            while (!Q.isEmpty()) {
-                TreeNode node = Q.poll();
-                if (node == null) {
-                    if (level.size() == 0) {
-                        break;
-                    }
-                    result.add(level);
-                    level = new ArrayList<Integer>();
-                    Q.offer(null); // add a new dummy node
-                    continue;
-                }
-
-                level.add(node.val);
-                if (node.left != null) {
-                    Q.offer(node.left);
-                }
-                if (node.right != null) {
-                    Q.offer(node.right);
-                }
-            }
-
+    public ArrayList<ArrayList<Integer>> levelOrder4(TreeNode root) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+        if (root == null) {
             return result;
         }
+
+        Queue<TreeNode> Q = new LinkedList<TreeNode>();
+        Q.offer(root);
+        Q.offer(null); // dummy node
+
+        ArrayList<Integer> level = new ArrayList<Integer>();
+        while (!Q.isEmpty()) {
+            TreeNode node = Q.poll();
+            if (node == null) {
+                if (level.size() == 0) {
+                    break;
+                }
+                result.add(level);
+                level = new ArrayList<Integer>();
+                Q.offer(null); // add a new dummy node
+                continue;
+            }
+
+            level.add(node.val);
+            if (node.left != null) {
+                Q.offer(node.left);
+            }
+            if (node.right != null) {
+                Q.offer(node.right);
+            }
+        }
+
+        return result;
     }
+
 
 //////////////////////////////////////////////////////////////////////
 
@@ -223,7 +207,7 @@ public class _60Binary_Tree_Level_Order_Traversal_BFS_2Q {
                     [[5], [3, 7], [1, 2, 6, 8]]
      */
 //////////////////////////////////////////////////////////////////////
-    public ArrayList<ArrayList<Integer>> levelOrderX(TreeNode root) {
+    public ArrayList<ArrayList<Integer>> levelOrder6(TreeNode root) {
         ArrayList<ArrayList<Integer>> al = new ArrayList<ArrayList<Integer>>();
         ArrayList<Integer> nodeValues = new ArrayList<Integer>();
         if(root == null)
@@ -252,12 +236,8 @@ public class _60Binary_Tree_Level_Order_Traversal_BFS_2Q {
         }
         return al;
     }
-//////////////////////////////////////////////////////////////////////
 
 //////////////////////////////////////////////////////////////////////
-
-
-
 }
 /*
 二叉树的层次遍历

@@ -10,59 +10,18 @@ import java.util.List;
 public class _199_Tree_Binary_Tree_Right_Side_View_M {
 
     //https://leetcode.com/articles/binary-tree-right-side-view/
-//    Initial Thoughts
-//    Approach #1 Depth-First Search [Accepted]
-    class Solution1 {
-        public List<Integer> rightSideView(TreeNode root) {
-            Map<Integer, Integer> rightmostValueAtDepth = new HashMap<Integer, Integer>();
-            int max_depth = -1;
+    //    Initial Thoughts
+    //    Approach #1 Depth-First Search [Accepted]
 
-        /* These two stacks are always synchronized, providing an implicit
-         * association values with the same offset on each stack. */
-            Stack<TreeNode> nodeStack = new Stack<TreeNode>();
-            Stack<Integer> depthStack = new Stack<Integer>();
-            nodeStack.push(root);
-            depthStack.push(0);
 
-            while (!nodeStack.isEmpty()) {
-                TreeNode node = nodeStack.pop();
-                int depth = depthStack.pop();
-
-                if (node != null) {
-                    max_depth = Math.max(max_depth, depth);
-
-                /* The first node that we encounter at a particular depth contains
-                * the correct value. */
-                    if (!rightmostValueAtDepth.containsKey(depth)) {
-                        rightmostValueAtDepth.put(depth, node.val);
-                    }
-
-                    nodeStack.push(node.left);
-                    nodeStack.push(node.right);
-                    depthStack.push(depth+1);
-                    depthStack.push(depth+1);
-                }
-            }
-
-        /* Construct the solution based on the values that we end up with at the
-         * end. */
-            List<Integer> rightView = new ArrayList<Integer>();
-            for (int depth = 0; depth <= max_depth; depth++) {
-                rightView.add(rightmostValueAtDepth.get(depth));
-            }
-
-            return rightView;
-        }
-    }
-
-//    Approach #2 Breadth-First Search [Accepted]
-class Solution2 {
-    public List<Integer> rightSideView(TreeNode root) {
+/////////////////////////////////////////////////////////////////////////////////
+    //    Approach #2 Breadth-First Search [Accepted]
+    public List<Integer> rightSideView2(TreeNode root) {
         Map<Integer, Integer> rightmostValueAtDepth = new HashMap<Integer, Integer>();
         int max_depth = -1;
 
-        /* These two Queues are always synchronized, providing an implicit
-         * association values with the same offset on each Queue. */
+            /* These two Queues are always synchronized, providing an implicit
+             * association values with the same offset on each Queue. */
         Queue<TreeNode> nodeQueue = new LinkedList<TreeNode>();
         Queue<Integer> depthQueue = new LinkedList<Integer>();
         nodeQueue.add(root);
@@ -75,8 +34,8 @@ class Solution2 {
             if (node != null) {
                 max_depth = Math.max(max_depth, depth);
 
-                /* The last node that we encounter at a particular depth contains
-                * the correct value, so the correct value is never overwritten. */
+                    /* The last node that we encounter at a particular depth contains
+                    * the correct value, so the correct value is never overwritten. */
                 rightmostValueAtDepth.put(depth, node.val);
 
                 nodeQueue.add(node.left);
@@ -86,8 +45,8 @@ class Solution2 {
             }
         }
 
-        /* Construct the solution based on the values that we end up with at the
-         * end. */
+            /* Construct the solution based on the values that we end up with at the
+             * end. */
         List<Integer> rightView = new ArrayList<Integer>();
         for (int depth = 0; depth <= max_depth; depth++) {
             rightView.add(rightmostValueAtDepth.get(depth));
@@ -95,32 +54,28 @@ class Solution2 {
 
         return rightView;
     }
-}
 
 /////////////////////////////////////////////////////////////////////////////////
-    public class Solution {
-        public List<Integer> rightSideView(TreeNode root) {
-            List<Integer> result = new ArrayList<Integer>();
-            rightView(root, result, 0);
-            return result;
-        }
-
-        public void rightView(TreeNode curr, List<Integer> result, int currDepth){
-            if(curr == null){
-                return;
-            }
-            if(currDepth == result.size()){
-                result.add(curr.val);
-            }
-
-            rightView(curr.right, result, currDepth + 1);
-            rightView(curr.left, result, currDepth + 1);
-
-        }
+    public List<Integer> rightSideView3(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+        rightView3(root, result, 0);
+        return result;
     }
+
+    public void rightView3(TreeNode curr, List<Integer> result, int currDepth){
+        if(curr == null){
+            return;
+        }
+        if(currDepth == result.size()){
+            result.add(curr.val);
+        }
+
+        rightView3(curr.right, result, currDepth + 1);
+        rightView3(curr.left, result, currDepth + 1);
+    }
+
 /////////////////////////////////////////////////////////////////////////////////
-//jiuzhang
-public class Jiuzhang {
+    //jiuzhang
     private void dfs(HashMap<Integer, Integer> depthToValue, TreeNode node, int depth) {
         if (node == null) {
             return;
@@ -143,9 +98,8 @@ public class Jiuzhang {
         }
         return result;
     }
-}
-/////////////////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////////////////
 }
 /*
 

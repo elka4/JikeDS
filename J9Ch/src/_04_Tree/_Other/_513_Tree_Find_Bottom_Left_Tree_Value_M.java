@@ -9,10 +9,10 @@ import java.util.Queue;
 //
 public class _513_Tree_Find_Bottom_Left_Tree_Value_M {
     //Right-to-Left BFS (Python + Java)
-/*
-Doing BFS right-to-left means we can simply return the last node's value and don't have to keep track of the first node in the current row or even care about rows at all. Inspired by @fallcreek's solution (not published) which uses two nested loops to go row by row but already had the right-to-left idea making it easier. I just took that further.
- */
-    public int findLeftMostNode(TreeNode root) {
+    /*
+    Doing BFS right-to-left means we can simply return the last node's value and don't have to keep track of the first node in the current row or even care about rows at all. Inspired by @fallcreek's solution (not published) which uses two nested loops to go row by row but already had the right-to-left idea making it easier. I just took that further.
+     */
+    public int findLeftMostNode1(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
@@ -26,87 +26,84 @@ Doing BFS right-to-left means we can simply return the last node's value and don
     }
 
 
+//////////////////////////////////////////////////////////////////////////////////////////
 
+    public int findLeftMostNode2(TreeNode root) {
+        if (root == null) return 0;
 
-    public class Solution {
-        public int findLeftMostNode(TreeNode root) {
-            if (root == null) return 0;
+        int result = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
 
-            int result = 0;
-            Queue<TreeNode> queue = new LinkedList<>();
-            queue.add(root);
-
-            while (!queue.isEmpty()) {
-                int size = queue.size();
-                for (int i = 0; i < size; i++) {
-                    TreeNode node = queue.poll();
-                    if (i == 0) result = node.val;
-                    if (node.left != null) queue.add(node.left);
-                    if (node.right != null) queue.add(node.right);
-                }
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                if (i == 0) result = node.val;
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
             }
-
-            return result;
         }
+
+        return result;
     }
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////
     //Simple Java Solution, beats 100.0%!
-    public class Solution2 {
-        int ans=0, h=0;
-        public int findBottomLeftValue(TreeNode root) {
-            findBottomLeftValue(root, 1);
-            return ans;
-        }
-        public void findBottomLeftValue(TreeNode root, int depth) {
-            if (h<depth) {ans=root.val;h=depth;}
-            if (root.left!=null) findBottomLeftValue(root.left, depth+1);
-            if (root.right!=null) findBottomLeftValue(root.right, depth+1);
-        }
+    int ans=0, h=0;
+    public int findBottomLeftValue4(TreeNode root) {
+        findBottomLeftValue4(root, 1);
+        return ans;
+    }
+    public void findBottomLeftValue4(TreeNode root, int depth) {
+        if (h<depth) {ans=root.val;h=depth;}
+        if (root.left!=null) findBottomLeftValue4(root.left, depth+1);
+        if (root.right!=null) findBottomLeftValue4(root.right, depth+1);
     }
 
 
-
-//    No global variables, 6ms (faster):
-
-    public class Solution3 {
-        public int findBottomLeftValue(TreeNode root) {
-
-            return findBottomLeftValue(root, 1, new int[]{0,0});
-        }
-        public int findBottomLeftValue(TreeNode root, int depth, int[] res) {
-            if (res[1]<depth) {res[0]=root.val;res[1]=depth;}
-            if (root.left!=null) findBottomLeftValue(root.left, depth+1, res);
-            if (root.right!=null) findBottomLeftValue(root.right, depth+1, res);
-            return res[0];
-        }
-    }
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-/*    Verbose Java Solution, Binary tree level order traversal
-    Typical way to do binary tree level order traversal. Only additional step is to remember the first element of each level.*/
 
-    public class Solution4 {
-        public int findLeftMostNode(TreeNode root) {
-            if (root == null) return 0;
+    //    No global variables, 6ms (faster):
+    public int findBottomLeftValue5(TreeNode root) {
 
-            int result = 0;
-            Queue<TreeNode> queue = new LinkedList<>();
-            queue.add(root);
-
-            while (!queue.isEmpty()) {
-                int size = queue.size();
-                for (int i = 0; i < size; i++) {
-                    TreeNode node = queue.poll();
-                    if (i == 0) result = node.val;
-                    if (node.left != null) queue.add(node.left);
-                    if (node.right != null) queue.add(node.right);
-                }
-            }
-
-            return result;
-        }
+        return findBottomLeftValue5(root, 1, new int[]{0,0});
     }
+    public int findBottomLeftValue5(TreeNode root, int depth, int[] res) {
+        if (res[1]<depth) {res[0]=root.val;res[1]=depth;}
+        if (root.left!=null) findBottomLeftValue5(root.left, depth+1, res);
+        if (root.right!=null) findBottomLeftValue5(root.right, depth+1, res);
+        return res[0];
+    }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+    /* Verbose Java Solution, Binary tree level order traversal. Typical way to do binary tree level order traversal. Only additional step is to remember the first element of each level.*/
+    public int findLeftMostNode6(TreeNode root) {
+        if (root == null) return 0;
+
+        int result = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                if (i == 0) result = node.val;
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
+            }
+        }
+
+        return result;
+    }
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 }
 /*

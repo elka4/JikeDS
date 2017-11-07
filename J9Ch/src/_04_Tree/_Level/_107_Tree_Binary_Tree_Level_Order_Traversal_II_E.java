@@ -10,55 +10,55 @@ import java.util.*;
 //  http://www.lintcode.com/zh-cn/problem/binary-tree-level-order-traversal-ii/
 public class _107_Tree_Binary_Tree_Level_Order_Traversal_II_E {
 
-//    DFS solution:
+    //    DFS solution:
+    public List<List<Integer>> levelOrderBottom1(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        List<List<Integer>> wrapList = new LinkedList<List<Integer>>();
 
-    public class Solution1 {
-        public List<List<Integer>> levelOrderBottom(TreeNode root) {
-            Queue<TreeNode> queue = new LinkedList<TreeNode>();
-            List<List<Integer>> wrapList = new LinkedList<List<Integer>>();
+        if(root == null) return wrapList;
 
-            if(root == null) return wrapList;
-
-            queue.offer(root);
-            while(!queue.isEmpty()){
-                int levelNum = queue.size();
-                List<Integer> subList = new LinkedList<Integer>();
-                for(int i=0; i<levelNum; i++) {
-                    if(queue.peek().left != null) queue.offer(queue.peek().left);
-                    if(queue.peek().right != null) queue.offer(queue.peek().right);
-                    subList.add(queue.poll().val);
-                }
-                wrapList.add(0, subList);
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            int levelNum = queue.size();
+            List<Integer> subList = new LinkedList<Integer>();
+            for(int i=0; i<levelNum; i++) {
+                if(queue.peek().left != null) queue.offer(queue.peek().left);
+                if(queue.peek().right != null) queue.offer(queue.peek().right);
+                subList.add(queue.poll().val);
             }
-            return wrapList;
+            wrapList.add(0, subList);
         }
+        return wrapList;
     }
-//    BFS solution:
 
-    public class Solution2 {
-        public List<List<Integer>> levelOrderBottom(TreeNode root) {
-            List<List<Integer>> wrapList = new LinkedList<List<Integer>>();
-            levelMaker(wrapList, root, 0);
-            return wrapList;
-        }
+/////////////////////////////////////////////////////////////////////////////////////
 
-        public void levelMaker(List<List<Integer>> list, TreeNode root, int level) {
-            if(root == null) return;
-            if(level >= list.size()) {
-                list.add(0, new LinkedList<Integer>());
-            }
-            levelMaker(list, root.left, level+1);
-            levelMaker(list, root.right, level+1);
-            list.get(list.size()-level-1).add(root.val);
-        }
+    //    BFS solution:
+    public List<List<Integer>> levelOrderBottom2(TreeNode root) {
+        List<List<Integer>> wrapList = new LinkedList<List<Integer>>();
+        levelMaker(wrapList, root, 0);
+        return wrapList;
     }
+
+    public void levelMaker(List<List<Integer>> list, TreeNode root, int level) {
+        if(root == null) return;
+        if(level >= list.size()) {
+            list.add(0, new LinkedList<Integer>());
+        }
+        levelMaker(list, root.left, level+1);
+        levelMaker(list, root.right, level+1);
+        list.get(list.size()-level-1).add(root.val);
+    }
+
+
+
 ////////////////////////////////////////////////////////////////////////
     //jiuzhang
     /**
      * @param root: The root of binary tree.
      * @return: buttom-up level order a list of lists of integer
      */
-    public ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
+    public ArrayList<ArrayList<Integer>> levelOrderBottom3(TreeNode root) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<>();
         if (root == null) {
             return result;
@@ -96,12 +96,12 @@ public class _107_Tree_Binary_Tree_Level_Order_Traversal_II_E {
         node20.setRightChild(new TreeNode(7));
         System.out.println("root: ");
         root.print();
-        System.out.println(levelOrderBottom(root));
+        System.out.println(levelOrderBottom3(root));
     }
 
 //////////////////////////////////////////////////////////////
 
-    public List<ArrayList<Integer>> levelOrderBottom2(TreeNode root) {
+    public List<ArrayList<Integer>> levelOrderBottom4(TreeNode root) {
         ArrayList<ArrayList<Integer>> result = new  ArrayList<ArrayList<Integer>>();
 
         if(root == null){
@@ -143,6 +143,7 @@ public class _107_Tree_Binary_Tree_Level_Order_Traversal_II_E {
 
         return reversedResult;
     }
+
 ////////////////////////////////////////////////////////////////////////
 }
 /*

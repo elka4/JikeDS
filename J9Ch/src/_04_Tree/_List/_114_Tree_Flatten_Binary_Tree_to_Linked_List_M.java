@@ -9,6 +9,7 @@ import java.util.Stack;
 //  https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
 //  http://www.lintcode.com/zh-cn/problem/flatten-binary-tree-to-linked-list/
 public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
+
     // Version 1: Traverse
     private TreeNode lastNode = null;
 
@@ -161,12 +162,13 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
     public void flatten4(TreeNode root) {
         if (root == null)
             return;
-        flatten(root.right);
-        flatten(root.left);
+        flatten4(root.right);
+        flatten4(root.left);
         root.right = prev4;
         root.left = null;
         prev4 = root;
     }
+
 
 ///////////////////////////////////////////////////////////////
 
@@ -208,13 +210,13 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
     }
 
 ///////////////////////////////////////////////////////////////
-//The idea is very simple:
-//
-//    flatten left subtree
-//
-//    flatten right subtree
-//
-//    concatenate root -> left flatten subtree -> right flatten subtree
+    //  The idea is very simple:
+    //
+    //    flatten left subtree
+    //
+    //    flatten right subtree
+    //
+    //    concatenate root -> left flatten subtree -> right flatten subtree
 
     public void flatten7(TreeNode root) {
         if(root == null)
@@ -240,6 +242,7 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
             root.right = right;
         }
     }
+
 ///////////////////////////////////////////////////////////////
 
     // Java Solution Recursive & Non-Recursive
@@ -290,37 +293,10 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
             node = node.right;
         return node;
     }
-    ///////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////
-    private TreeNode prev = null;
-    public void flatten10(TreeNode root) { if (root == null)
-        return; flatten10(root.right); flatten10(root.left); root.right = prev; root.left = null; prev = root;
-    }
 
-
-
-
-    public void flatten2(TreeNode root) {
-        if (root == null) return;
-
-        TreeNode left = root.left;
-        TreeNode right = root.right;
-
-        root.left = null;
-
-        flatten2(left);
-        flatten2(right);
-
-        root.right = left;
-        TreeNode cur = root;
-        while (cur.right != null) cur = cur.right;
-        cur.right = right;
-    }
-///////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
-    public void flatten444(TreeNode root) {
+    public void flatten10(TreeNode root) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode p = root;
 
@@ -334,141 +310,52 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
                 p.right = p.left;
                 p.left = null;
             }else if(!stack.empty()){
-                TreeNode temp = stack.pop();
-                p.right=temp;
+                TreeNode tem = stack.pop();
+                p.right=tem;
             }
 
             p = p.right;
         }
     }
 
-
-
-//////////////////////////////////////////////////////////////
-
-    //My short post order traversal Java solution for share
-    class Solution2{
-        private TreeNode prev = null;
-
-        public void flatten(TreeNode root) {
-            if (root == null)
-                return;
-            flatten(root.right);
-            flatten(root.left);
-            root.right = prev;
-            root.left = null;
-            prev = root;
-        }
-
-    }
-
-
-//////////////////////////////////////////////////////////////
-
-    //Straightforward Java Solution
-
-    class Solution3{
-        public void flatten(TreeNode root) {
-            if (root == null) return;
-
-            TreeNode left = root.left;
-            TreeNode right = root.right;
-
-            root.left = null;
-
-            flatten(left);
-            flatten(right);
-
-            root.right = left;
-            TreeNode cur = root;
-            while (cur.right != null) cur = cur.right;
-            cur.right = right;
-        }
-
-    }
-
-
-
-//////////////////////////////////////////////////////////////
-
-    //Accepted simple Java solution , iterative
-    class Solution4{
-/*
-        it is DFS so u need a stack. Dont forget to set the left child to null, or u'll get TLE. (tricky!)*/
-
-        public void flatten(TreeNode root) {
-            if (root == null) return;
-            Stack<TreeNode> stk = new Stack<TreeNode>();
-            stk.push(root);
-            while (!stk.isEmpty()){
-                TreeNode curr = stk.pop();
-                if (curr.right!=null)
-                    stk.push(curr.right);
-                if (curr.left!=null)
-                    stk.push(curr.left);
-                if (!stk.isEmpty())
-                    curr.right = stk.peek();
-                curr.left = null;  // dont forget this!!
-            }
-        }
-    }
-
 //////////////////////////////////////////////////////////////
 
     //Easy 1ms Java DFS solution
+    public void flatten11(TreeNode root) {
+        if(root==null)
+            return;
 
-    class Solution55{
-        public void flatten(TreeNode root) {
-            if(root==null)
-                return;
+        flatten(root.left);
+        flatten(root.right);
 
-            flatten(root.left);
-            flatten(root.right);
-
-            TreeNode left  = root.left;
-            TreeNode right = root.right;
-            root.left  = null;
-            root.right = left;
-            while(root.right!=null)
-                root = root.right;
-            root.right = right;
-        }
-
+        TreeNode left  = root.left;
+        TreeNode right = root.right;
+        root.left  = null;
+        root.right = left;
+        while(root.right!=null)
+            root = root.right;
+        root.right = right;
     }
-
-
-
-//////////////////////////////////////////////////////////////
-
-
 
 
 //////////////////////////////////////////////////////////////
 
     //Java solution refer to Mirris traversal using constant place
-
-    class Solutoin66{
-        public void flatten(TreeNode root) {
-            TreeNode cur = root;
-            TreeNode prev = null;
-            while(cur != null){
-                if(cur.left == null) cur = cur.right;
-                else {
-                    prev = cur.left;
-                    while(prev.right != null) prev = prev.right;
-                    prev.right = cur.right;
-                    cur.right = cur.left;
-                    cur.left = null;
-                }
+    public void flatten12(TreeNode root) {
+        TreeNode cur = root;
+        TreeNode prev = null;
+        while(cur != null){
+            if(cur.left == null) cur = cur.right;
+            else {
+                prev = cur.left;
+                while(prev.right != null) prev = prev.right;
+                prev.right = cur.right;
+                cur.right = cur.left;
+                cur.left = null;
             }
         }
     }
 
-
-
-//////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
 }
 /*

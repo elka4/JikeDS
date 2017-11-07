@@ -6,7 +6,7 @@ import java.util.LinkedList;
 //
 public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
     //Java solution with O(1) memory+ O(n) time
-    public void connect(TreeLinkNode root) {
+    public void connect1(TreeLinkNode root) {
         TreeLinkNode level_start=root;
         while(level_start!=null){
             TreeLinkNode cur=level_start;
@@ -20,40 +20,37 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
         }
     }
 
+///////////////////////////////////////////////////////////////////////////////////////
     // My recursive solution(Java)
-    class Solution2{
-        public void connect(TreeLinkNode root) {
-            if(root == null)
-                return;
+    public void connect2(TreeLinkNode root) {
+        if(root == null)
+            return;
 
-            if(root.left != null){
-                root.left.next = root.right;
-                if(root.next != null)
-                    root.right.next = root.next.left;
-            }
-
-            connect(root.left);
-            connect(root.right);
+        if(root.left != null){
+            root.left.next = root.right;
+            if(root.next != null)
+                root.right.next = root.next.left;
         }
+
+        connect2(root.left);
+        connect2(root.right);
     }
 
-
+///////////////////////////////////////////////////////////////////////////////////////
     //Java solution traversing by level without extra space
-    public class Solution3 {
-        public void connect(TreeLinkNode root) {
-            if(root==null) return;
-            TreeLinkNode cur = root;
-            TreeLinkNode nextLeftmost = null;
+    public void connect3(TreeLinkNode root) {
+        if(root==null) return;
+        TreeLinkNode cur = root;
+        TreeLinkNode nextLeftmost = null;
 
-            while(cur.left!=null){
-                nextLeftmost = cur.left; // save the start of next level
-                while(cur!=null){
-                    cur.left.next=cur.right;
-                    cur.right.next = cur.next==null? null : cur.next.left;
-                    cur=cur.next;
-                }
-                cur=nextLeftmost;  // point to next level
+        while(cur.left!=null){
+            nextLeftmost = cur.left; // save the start of next level
+            while(cur!=null){
+                cur.left.next=cur.right;
+                cur.right.next = cur.next==null? null : cur.next.left;
+                cur=cur.next;
             }
+            cur=nextLeftmost;  // point to next level
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////
@@ -144,7 +141,6 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
 ////////////////////////////////////////////////////////////////////////////
 
     //Jiuzhang
-public class Jiuzhang {
     public void connect(TreeLinkNode root) {
         if (root == null) {
             return;
@@ -169,7 +165,6 @@ public class Jiuzhang {
             next = parent.left;
         }
     }
-}
 ////////////////////////////////////////////////////////////////////////////////////
 }
 /*

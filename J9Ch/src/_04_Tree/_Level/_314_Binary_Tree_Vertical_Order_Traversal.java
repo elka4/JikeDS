@@ -11,108 +11,103 @@ import org.junit.Test;
 //  https://leetcode.com/problems/binary-tree-vertical-order-traversal/description/
 //
 public class _314_Binary_Tree_Vertical_Order_Traversal {
-    //jiuzhang
-    public List<List<Integer>> verticalOrder(TreeNode root) {
-        // Write your code here
-        List<List<Integer>> results = new ArrayList<>();
+    //5ms Java Clean Solution
+    public List<List<Integer>> verticalOrder1(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
         if (root == null) {
-            return results;
+            return res;
         }
-        Map<Integer, List<Integer>> map = new TreeMap<Integer, List<Integer>>();
-        Queue<Integer> qCol = new LinkedList<>();
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root);
-        qCol.offer(0);
 
-        while(!queue.isEmpty()) {
-            TreeNode curr = queue.poll();
-            int col = qCol.poll();
-            if(!map.containsKey(col)) {
-                map.put(col, new ArrayList<Integer>(Arrays.asList(curr.val)));
-            } else {
-                map.get(col).add(curr.val);
+        Map<Integer, ArrayList<Integer>> map = new HashMap<>();
+        Queue<TreeNode> q = new LinkedList<>();
+        Queue<Integer> cols = new LinkedList<>();
+
+        q.add(root);
+        cols.add(0);
+
+        int min = 0;
+        int max = 0;
+
+        while (!q.isEmpty()) {
+            TreeNode node = q.poll();
+            int col = cols.poll();
+
+            if (!map.containsKey(col)) {
+                map.put(col, new ArrayList<Integer>());
             }
-            if(curr.left != null) {
-                queue.offer(curr.left);
-                qCol.offer(col - 1);
-            }
-            if(curr.right != null) {
-                queue.offer(curr.right);
-                qCol.offer(col + 1);
-            }
-        }
-        for(int n : map.keySet()) {
-            results.add(map.get(n));
-        }
-        return results;
-    }
-
-
-//////////////////////////////////////////////////////////////////////////
-
-    // version: 高频题班
-    public List<List<Integer>> verticalOrder2(TreeNode root) {
-        // Write your code here
-        List<List<Integer>> ans = new ArrayList<>();
-        if (root == null) {
-            return ans;
-        }
-
-        Map<Integer, List<Integer>> col = new HashMap<>();
-        Queue<Integer> qCol = new LinkedList<>();
-        Queue<TreeNode> qNode = new LinkedList<>();
-
-        qCol.offer(0);
-        qNode.offer(root);
-        // 以qCol为主，同时操作qNode
-        //
-        while (!qCol.isEmpty()) {                      // bfs
-            int c = qCol.poll();
-            TreeNode node = qNode.poll();
-
-            col.putIfAbsent(c, new ArrayList<>());
-            col.get(c).add(node.val);
+            map.get(col).add(node.val);
 
             if (node.left != null) {
-                qCol.offer(c - 1);
-                qNode.offer(node.left);
+                q.add(node.left);
+                cols.add(col - 1);
+                min = Math.min(min, col - 1);
+            }
+
+            if (node.right != null) {
+                q.add(node.right);
+                cols.add(col + 1);
+                max = Math.max(max, col + 1);
+            }
+        }
+
+        for (int i = min; i <= max; i++) {
+            res.add(map.get(i));
+        }
+
+        return res;
+    }
+
+    //Alternatively, we can calculate the rang first, then insert into buckets. Credit to @Jinx_boom
+    public List<List<Integer>> verticalOrder2(TreeNode root) {
+        List<List<Integer>> cols = new ArrayList<>();
+        if (root == null) {
+            return cols;
+        }
+
+        int[] range = new int[] {0, 0};
+        getRange(root, range, 0);
+
+        for (int i = range[0]; i <= range[1]; i++) {
+            cols.add(new ArrayList<Integer>());
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<Integer> colQueue = new LinkedList<>();
+
+        queue.add(root);
+        colQueue.add(-range[0]);
+
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+            int col = colQueue.poll();
+
+            cols.get(col).add(node.val);
+
+            if (node.left != null) {
+                queue.add(node.left);
+                colQueue.add(col - 1);
             }
             if (node.right != null) {
-                qCol.offer(c + 1);
-                qNode.offer(node.right);
+                queue.add(node.right);
+                colQueue.add(col + 1);
             }
         }
 
-        for (int i = Collections.min(col.keySet()); i <= Collections.max(col.keySet()); i++) {
-            ans.add(col.get(i));
+        return cols;
+    }
+
+    public void getRange(TreeNode root, int[] range, int col) {
+        if (root == null) {
+            return;
         }
-        return ans;
+        range[0] = Math.min(range[0], col);
+        range[1] = Math.max(range[1], col);
+
+        getRange(root.left, range, col - 1);
+        getRange(root.right, range, col + 1);
     }
 
-
-    @Test
-    public void test(){
-        int[] arr = {9,3,20};
-        TreeNode root = TreeNode.createMinimalBST(arr);
-        root.right.setLeftChild(new TreeNode(15));
-        root.right.setRightChild(new TreeNode(7));
-        root.print();
-
-        List<List<Integer>> result = verticalOrder2(root);
-
-        System.out.println(result);
-    }
-    /*
-                   3
-                  / \
-                 /   \
-                 9   20
-                    / \
-                    15 7
-
-                [[9], [3, 15], [20], [7]]
-     */
-////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
     public List<List<Integer>> verticalOrder3(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if(root==null)
@@ -166,8 +161,11 @@ public class _314_Binary_Tree_Vertical_Order_Traversal {
 
         return result;
     }
-    
+
 /////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+    //Bittigger
     // VerticalTraversal_BFS
     class Node implements Comparable<Node>{
         int value;
@@ -184,7 +182,7 @@ public class _314_Binary_Tree_Vertical_Order_Traversal {
     @Test
     public void test02()throws  FileNotFoundException {
         Scanner in = new Scanner(new File(
-                "/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_2Tree/intpu_verticalTraversal"));
+"/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_2Tree/intpu_verticalTraversal"));
         //read input process
         int n = in.nextInt();
         while(n != -1){
@@ -221,7 +219,7 @@ Process finished with exit code 0
  */
 
 /////////////////////////////////////////////////////////////////////
-
+    //Bittigger
     // VerticalTraversal_DFS
     class Node3{
         int value;
@@ -256,7 +254,7 @@ Process finished with exit code 0
     @Test
     public void test03() throws  FileNotFoundException{
         Scanner in = new Scanner(new File(
-                "/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_2Tree/intpu_verticalTraversal"));
+"/Users/tianhuizhu/Downloads/uber/code/JikeDS/top100/src/_2Tree/intpu_verticalTraversal"));
         //read input process
         int n = in.nextInt();
         while(n != -1){
@@ -300,11 +298,110 @@ Process finished with exit code 0
 6 -1 -1
 
  */
+/////////////////////////////////////////////////////////////////////////////////
+    //jiuzhang
+    public List<List<Integer>> verticalOrder_J1(TreeNode root) {
+        // Write your code here
+        List<List<Integer>> results = new ArrayList<>();
+        if (root == null) {
+            return results;
+        }
+        Map<Integer, List<Integer>> map = new TreeMap<Integer, List<Integer>>();
+        Queue<Integer> qCol = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        qCol.offer(0);
 
-    
-/////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
+        while(!queue.isEmpty()) {
+            TreeNode curr = queue.poll();
+            int col = qCol.poll();
+            if(!map.containsKey(col)) {
+                map.put(col, new ArrayList<Integer>(Arrays.asList(curr.val)));
+            } else {
+                map.get(col).add(curr.val);
+            }
+            if(curr.left != null) {
+                queue.offer(curr.left);
+                qCol.offer(col - 1);
+            }
+            if(curr.right != null) {
+                queue.offer(curr.right);
+                qCol.offer(col + 1);
+            }
+        }
+        for(int n : map.keySet()) {
+            results.add(map.get(n));
+        }
+        return results;
+    }
+
+
+//////////////////////////////////////////////////////////////////////////
+
+    // version: 高频题班
+    public List<List<Integer>> verticalOrder_J2(TreeNode root) {
+        // Write your code here
+        List<List<Integer>> ans = new ArrayList<>();
+        if (root == null) {
+            return ans;
+        }
+
+        Map<Integer, List<Integer>> col = new HashMap<>();
+        Queue<Integer> qCol = new LinkedList<>();
+        Queue<TreeNode> qNode = new LinkedList<>();
+
+        qCol.offer(0);
+        qNode.offer(root);
+        // 以qCol为主，同时操作qNode
+        //
+        while (!qCol.isEmpty()) {                      // bfs
+            int c = qCol.poll();
+            TreeNode node = qNode.poll();
+
+            col.putIfAbsent(c, new ArrayList<>());
+            col.get(c).add(node.val);
+
+            if (node.left != null) {
+                qCol.offer(c - 1);
+                qNode.offer(node.left);
+            }
+            if (node.right != null) {
+                qCol.offer(c + 1);
+                qNode.offer(node.right);
+            }
+        }
+
+        for (int i = Collections.min(col.keySet()); i <= Collections.max(col.keySet()); i++) {
+            ans.add(col.get(i));
+        }
+        return ans;
+    }
+
+
+    @Test
+    public void test(){
+        int[] arr = {9,3,20};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.right.setLeftChild(new TreeNode(15));
+        root.right.setRightChild(new TreeNode(7));
+        root.print();
+
+        List<List<Integer>> result = verticalOrder_J2(root);
+
+        System.out.println(result);
+    }
+    /*
+                   3
+                  / \
+                 /   \
+                 9   20
+                    / \
+                    15 7
+
+                [[9], [3, 15], [20], [7]]
+     */
+
+//////////////////////////////////////////////////////////////////////////
 }
 /*
 Given a binary tree, return the vertical order traversal of its nodes' values. (ie, from top to bottom, column by column).

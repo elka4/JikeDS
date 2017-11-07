@@ -1,5 +1,7 @@
 package _04_Tree._PathSum;
+import lib.AssortedMethods;
 import lib.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -11,7 +13,7 @@ import java.util.List;
 public class _257_Tree_Binary_Tree_Paths_E {
 
     //Accepted Java simple solution in 8 lines
-    public List<String> binaryTreePaths(TreeNode root) {
+    public List<String> binaryTreePaths1(TreeNode root) {
         List<String> answer = new ArrayList<String>();
         if (root != null) searchBT(root, "", answer);
         return answer;
@@ -22,6 +24,7 @@ public class _257_Tree_Binary_Tree_Paths_E {
         if (root.right != null) searchBT(root.right, path + root.val + "->", answer);
     }
 
+///////////////////////////////////////////////////////////////////////////////////
 
     /*
     Clean Java solution (Accepted) without any helper recursive function
@@ -38,11 +41,11 @@ Lot of recursive solutions on this forum involves creating a helper recursive fu
             return paths;
         }
 
-        for (String path : binaryTreePaths(root.left)) {
+        for (String path : binaryTreePaths2(root.left)) {
             paths.add(root.val + "->" + path);
         }
 
-        for (String path : binaryTreePaths(root.right)) {
+        for (String path : binaryTreePaths2(root.right)) {
             paths.add(root.val + "->" + path);
         }
 
@@ -51,20 +54,15 @@ Lot of recursive solutions on this forum involves creating a helper recursive fu
     }
 ///////////////////////////////////////////////////////////////////////////////////
     //jiuzhang
-// version 1: Divide Conquer
-public class Jiuzhang {
-    /**
-     * @param root the root of the binary tree
-     * @return all root-to-leaf paths
-     */
-    public List<String> binaryTreePaths(TreeNode root) {
+    // version 1: Divide Conquer
+    public List<String> binaryTreePaths_J1(TreeNode root) {
         List<String> paths = new ArrayList<>();
         if (root == null) {
             return paths;
         }
 
-        List<String> leftPaths = binaryTreePaths(root.left);
-        List<String> rightPaths = binaryTreePaths(root.right);
+        List<String> leftPaths = binaryTreePaths_J1(root.left);
+        List<String> rightPaths = binaryTreePaths_J1(root.right);
         for (String path : leftPaths) {
             paths.add(root.val + "->" + path);
         }
@@ -79,7 +77,51 @@ public class Jiuzhang {
 
         return paths;
     }
-}
+
+    @Test
+    public void testJ1(){
+        int[] arr = {1,3,5,6,7,8,5};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(binaryTreePaths_J1(root));
+    }
+
+
+
+    // version 2: traverse
+    /**
+     * @param root the root of the binary tree
+     * @return all root-to-leaf paths
+     */
+    public List<String> binaryTreePaths_J2(TreeNode root) {
+        List<String> result = new ArrayList<String>();
+        if (root == null) {
+            return result;
+        }
+        helper(root, String.valueOf(root.val), result);
+        return result;
+    }
+
+    private void helper(TreeNode root, String path, List<String> result) {
+        if (root == null) {
+            return;
+        }
+
+        if (root.left == null && root.right == null) {
+            result.add(path);
+            return;
+        }
+
+        if (root.left != null) {
+            helper(root.left, path + "->" + String.valueOf(root.left.val), result);
+        }
+
+        if (root.right != null) {
+            helper(root.right, path + "->" + String.valueOf(root.right.val), result);
+        }
+    }
+
 ///////////////////////////////////////////////////////////////////////////////////
 }
 /*
@@ -121,4 +163,16 @@ All root-to-leaf paths are:
 
 ["1->2->5", "1->3"]
 
+ */
+
+/*
+LeetCode – Balanced Binary Tree (Java)
+
+Given a binary tree, determine if it is height-balanced.
+
+For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+
+Analysis
+
+This is a typical tree problem that can be solve by using recursion.
  */
