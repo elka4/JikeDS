@@ -1,4 +1,5 @@
 package DP.DP3;
+import org.junit.Test;
 
 //_6BestTimeToBuyAndSellStockIII  31:38
 //• 有状态的序列型动态规划
@@ -104,11 +105,80 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
 
  */
 
-
-import org.junit.Test;
-
-//Best Time To Buy And Sell Stock III
+//  123. Best Time to Buy and Sell Stock III
+//  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
 public class _6BestTimeToBuyAndSellStockIII {
+    /*
+    Is it Best Solution with O(n), O(1).
+
+The thinking is simple and is inspired by the best solution from Single Number II (I read through the discussion after I use DP).
+Assume we only have 0 money at first;
+4 Variables to maintain some interested 'ceilings' so far:
+The maximum of if we've just buy 1st stock, if we've just sold 1nd stock, if we've just buy 2nd stock, if we've just sold 2nd stock.
+Very simple code too and work well. I have to say the logic is simple than those in Single Number II.
+
+     */
+
+    public int maxProfit01(int[] prices) {
+        int hold1 = Integer.MIN_VALUE, hold2 = Integer.MIN_VALUE;
+        int release1 = 0, release2 = 0;
+        for(int i:prices){                              // Assume we only have 0 money at first
+            release2 = Math.max(release2, hold2+i);     // The maximum if we've just sold 2nd stock so far.
+            hold2    = Math.max(hold2,    release1-i);  // The maximum if we've just buy  2nd stock so far.
+            release1 = Math.max(release1, hold1+i);     // The maximum if we've just sold 1nd stock so far.
+            hold1    = Math.max(hold1,    -i);          // The maximum if we've just buy  1st stock so far.
+        }
+        return release2; ///Since release1 is initiated as 0, so release2 will always higher than release1.
+    }
+
+    //2ms Java DP Solution
+    public int maxProfit02(int[] prices) {
+        // these four variables represent your profit after executing corresponding transaction
+        // in the beginning, your profit is 0.
+        // when you buy a stock ,the profit will be deducted of the price of stock.
+        int firstBuy = Integer.MIN_VALUE, firstSell = 0;
+        int secondBuy = Integer.MIN_VALUE, secondSell = 0;
+
+        for (int curPrice : prices) {
+            // the max profit after you buy first stock
+            if (firstBuy < -curPrice) firstBuy = -curPrice;
+            // the max profit after you sell it
+            if (firstSell < firstBuy + curPrice) firstSell = firstBuy + curPrice;
+            // the max profit after you buy the second stock
+            if (secondBuy < firstSell - curPrice) secondBuy = firstSell - curPrice;
+            // the max profit after you sell the second stock
+            if (secondSell < secondBuy + curPrice) secondSell = secondBuy + curPrice;
+        }
+
+        return secondSell; // secondSell will be the max profit after passing the prices
+    }
+
+    public int maxProfit022(int[] prices) {
+        // these four variables represent your profit after executing corresponding transaction
+        // in the beginning, your profit is 0.
+        // when you buy a stock ,the profit will be deducted of the price of stock.
+        int firstBuy = Integer.MIN_VALUE, firstSell = 0;
+        int secondBuy = Integer.MIN_VALUE, secondSell = 0;
+
+
+        // (-firstBuy) is min value beteen [0, curPrice.index], firstBuy itself is a negative value
+
+        // (firstSell) is max profit between [0, current.index], before update it is max profit between [0, current.index-1], after update is max(firstSell.before, curPrice + firstBuy(e.g. - minValue[0, curPrice.index]))
+
+        // (secondBuy) is max profit between [0,curPrice.index] under seen prices if you hold/buy a stock between[0, curPrice.index] and haven't sell it yet.
+
+        // (secondSell) is max profit between [0,curPrice.index] under seen prices if you buy a second stock between [0,curPrice.index];
+
+        for (int curPrice : prices) {
+            if (firstBuy < -curPrice) firstBuy = -curPrice; // the max profit after you buy first stock
+            if (firstSell < firstBuy + curPrice) firstSell = firstBuy + curPrice; // the max profit after you sell it
+            if (secondBuy < firstSell - curPrice) secondBuy = firstSell - curPrice; // the max profit after you buy the second stock
+            if (secondSell < secondBuy + curPrice) secondSell = secondBuy + curPrice; // the max profit after you sell the second stock
+        }
+
+        return secondSell; // secondSell will be the max profit after passing the prices
+    }
+////////////////////////////////////////////////////////////////////////////
     // 9Ch DP
     public int maxProfit(int[] prices) {
         int n = prices.length;

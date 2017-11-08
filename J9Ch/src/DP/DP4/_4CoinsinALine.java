@@ -23,7 +23,9 @@ f[i] = f[i-1] == FALSE OR f[i-2] == FALSE
 -----------------------------------------------------------------------------------------------
 
  */
-//Coins in A Line
+
+//  Coins in A Line
+//  http://lintcode.com/zh-cn/problem/coins-in-a-line/
 public class _4CoinsinALine {
 
     // 9Ch DP
@@ -83,7 +85,7 @@ public class _4CoinsinALine {
     }
 
 //////////////////////////////////////////////////////////////////////
-
+    // 9Ch
     // 方法一
     public class Solution {
         /**
@@ -127,7 +129,7 @@ public class _4CoinsinALine {
     }
 
 //////////////////////////////////////////////////////////////////////
-
+    // 9Ch
     // 方法二 StackOverflow
     public class Solution2 {
         /**
@@ -159,7 +161,7 @@ public class _4CoinsinALine {
     }
 
 //////////////////////////////////////////////////////////////////////
-
+    // 9Ch
     //方法三
     public class Solution3 {
         /**
@@ -185,9 +187,30 @@ public class _4CoinsinALine {
             return dp[n];
         }
     }
-//////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////////////////
 }
+/*
+有 n 个硬币排成一条线。两个参赛者轮流从右边依次拿走 1 或 2 个硬币，直到没有硬币为止。拿到最后一枚硬币的人获胜。
+
+请判定 第一个玩家 是输还是赢？
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+n = 1, 返回 true.
+
+n = 2, 返回 true.
+
+n = 3, 返回 false.
+
+n = 4, 返回 true.
+
+n = 5, 返回 true.
+
+挑战
+O(1) 时间复杂度且O(1) 存储。
+ */
+
 /*
 There are n coins in a line. Two players take turns to take one or two coins from right side until there are no more coins left. The player who take the last coin wins.
 
@@ -208,20 +231,3 @@ n = 5, return true.
 
  */
 
-/*
-有 n 个硬币排成一条线。两个参赛者轮流从右边依次拿走 1 或 2 个硬币，直到没有硬币为止。拿到最后一枚硬币的人获胜。
-
-请判定 第一个玩家 是输还是赢？
-
-您在真实的面试中是否遇到过这个题？ Yes
-样例
-n = 1, 返回 true.
-
-n = 2, 返回 true.
-
-n = 3, 返回 false.
-
-n = 4, 返回 true.
-
-n = 5, 返回 true.
- */

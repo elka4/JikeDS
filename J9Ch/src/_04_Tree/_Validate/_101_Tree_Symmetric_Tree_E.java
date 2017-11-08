@@ -23,8 +23,118 @@ public class _101_Tree_Symmetric_Tree_E {
         return isSymmetricHelp(left.left, right.right) && isSymmetricHelp(left.right,
                 right.left);
     }
+///////////////////////////////////////////////////////////////////////
+
+    //recursion
+    public boolean isSymetric_1 (TreeNode root) {
+        if (root == null) return true;
+        return isSymetric(root.left, root.right);
+    }
+
+    public boolean isSymetric (TreeNode one, TreeNode two) {
+        //base case
+        if (one == null || two == null) {
+            if (one == two) return true;
+            else return false;
+        }
+
+        if (one.val != two.val) {//curretn level
+            return false;
+        }else {//return left && right
+            return isSymetric(one.left, two.right) &&
+                    isSymetric(one.right, two.left);
+        }
+    }
+
+    @Test
+    public void test01() {
+        int[] arr = {1, 2, 2,3,3,3,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isSymetric_1(root));
+    }
+
+    @Test
+    public void test02() {
+        int[] arr = {1, 2, 2,3,3,3,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isSymetric_1(root));
+    }
+
+/////////////////////////////////////////////////////////////////////////
+
+    public boolean isSymmetric3(TreeNode root) {
+        // Write your code here
+        if (root == null) {
+            return true;
+        }
+        return check(root.left, root.right);
+    }
+
+    private boolean check(TreeNode root1, TreeNode root2) {
+        if (root1 == null && root2 == null) {
+            return true;
+        }
+        if (root1 == null || root2 == null) {
+            return false;
+        }
+        if (root1.val != root2.val) {
+            return false;
+        }
+        return check(root1.left, root2.right) && check(root1.right, root2.left);
+    }
+    @Test
+    public void test05() {
+        int[] arr = {1, 2, 2,3,3,3,3};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isSymmetric3(root));
+    }
+    @Test
+    public void test06() {
+        int[] arr = {1, 2, 2,3,3,3,4};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        System.out.println(isSymmetric3(root));
+    }
+
+///////////////////////////////////////////////////////////////////////////////
+        /*Java Solution - Recursion
+
+    This problem can be solve by using a simple recursion.
+    The key is finding the conditions that return false, such as value is not equal,
+    only one node(left or right) has value.*/
+
+    public boolean isSymmetric99(TreeNode root) {
+        if (root == null)
+            return true;
+        return isSymmetric99(root.left, root.right);
+    }
 
 
+    public boolean isSymmetric99(TreeNode l, TreeNode r) {
+        if (l == null && r == null) {
+            return true;
+        } else if (r == null || l == null) {
+            return false;
+        }
+
+        if (l.val != r.val)
+            return false;
+
+        if (!isSymmetric99(l.left, r.right))
+            return false;
+        if (!isSymmetric99(l.right, r.left))
+            return false;
+
+        return true;
+    }
+///////////////////////////////////////////////////////////////////////
 
     public boolean isSymmetric2(TreeNode root) {
         if(root==null)  return true;
@@ -68,46 +178,7 @@ public class _101_Tree_Symmetric_Tree_E {
         return true;
     }
 
-///////////////////////////////////////////////////////////////////////
 
-    //recursion
-    public boolean isSymetric_1 (TreeNode root) {
-        if (root == null) return true;
-        return isSymetric(root.left, root.right);
-    }
-
-    public boolean isSymetric (TreeNode one, TreeNode two) {
-        //base case
-        if (one == null || two == null) {
-            if (one == two) return true;
-            else return false;
-        }
-
-        if (one.val != two.val) {//curretn level
-            return false;
-        }else {//return left && right
-            return isSymetric(one.left, two.right) &&
-                    isSymetric(one.right, two.left);
-        }
-    }
-
-    @Test
-    public void test01() {
-        int[] arr = {1, 2, 2,3,3,3,3};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        System.out.println(isSymetric_1(root));
-    }
-
-    @Test
-    public void test02() {
-        int[] arr = {1, 2, 2,3,3,3,4};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        System.out.println(isSymetric_1(root));
-    }
 
 /////////////////////////////////////////////////////////
 
@@ -158,98 +229,9 @@ public class _101_Tree_Symmetric_Tree_E {
         System.out.println(isSymetric_2(root));
     }
 
-/////////////////////////////////////////////////////////////////////////
-
-    public boolean isSymmetric3(TreeNode root) {
-        // Write your code here
-        if (root == null) {
-            return true;
-        }
-        return check(root.left, root.right);
-    }
-
-    private boolean check(TreeNode root1, TreeNode root2) {
-        if (root1 == null && root2 == null) {
-            return true;
-        }
-        if (root1 == null || root2 == null) {
-            return false;
-        }
-        if (root1.val != root2.val) {
-            return false;
-        }
-        return check(root1.left, root2.right) && check(root1.right, root2.left);
-    }
-    @Test
-    public void test05() {
-        int[] arr = {1, 2, 2,3,3,3,3};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        System.out.println(isSymmetric3(root));
-    }
-    @Test
-    public void test06() {
-        int[] arr = {1, 2, 2,3,3,3,4};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        System.out.println(isSymmetric3(root));
-    }
-///////////////////////////////////////////////////////////////////////////////
-        /*Java Solution - Recursion
-
-    This problem can be solve by using a simple recursion.
-    The key is finding the conditions that return false, such as value is not equal,
-    only one node(left or right) has value.*/
-
-    public boolean isSymmetric99(TreeNode root) {
-        if (root == null)
-            return true;
-        return isSymmetric99(root.left, root.right);
-    }
 
 
-    public boolean isSymmetric99(TreeNode l, TreeNode r) {
-        if (l == null && r == null) {
-            return true;
-        } else if (r == null || l == null) {
-            return false;
-        }
 
-        if (l.val != r.val)
-            return false;
-
-        if (!isSymmetric99(l.left, r.right))
-            return false;
-        if (!isSymmetric99(l.right, r.left))
-            return false;
-
-        return true;
-    }
-
-/////////////////////////////////////////////////////////////////////////////
-
-    public boolean isSymmetric11(TreeNode root) {
-        // Write your code here
-        if (root == null) {
-            return true;
-        }
-        return check1(root.left, root.right);
-    }
-
-    private boolean check1(TreeNode root1, TreeNode root2) {
-        if (root1 == null && root2 == null) {
-            return true;
-        }
-        if (root1 == null || root2 == null) {
-            return false;
-        }
-        if (root1.val != root2.val) {
-            return false;
-        }
-        return check1(root1.left, root2.right) && check1(root1.right, root2.left);
-    }
 /////////////////////////////////////////////////////////////////////////////
 
 

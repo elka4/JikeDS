@@ -46,7 +46,7 @@ LintCode 534 House Robber II
  */
 
 //House RobberII
-public class _3HouseRobberII {
+public class _3HouseRobber_II {
 
 ////////////////////////////////////////////////////////////////////
 

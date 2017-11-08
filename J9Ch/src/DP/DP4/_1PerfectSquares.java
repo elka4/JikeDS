@@ -39,12 +39,166 @@ f[i-j*j]   i-j*j 最少被分成几个完全平方数之和
 
 -----------------------------------------------------------------------------------------------
 
------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------------------------
  */
-//Perfect Squares
-public class _1PerfectSquares {
 
+
+
+//  279. Perfect Squares
+//  https://leetcode.com/problems/perfect-squares/description/
+//  http://www.lintcode.com/zh-cn/problem/perfect-squares/
+public class _1PerfectSquares {
+/*  An easy understanding DP solution in Java
+
+    dp[n] indicates that the perfect squares count of the given n, and we have:
+
+    dp[0] = 0
+    dp[1] = dp[0]+1 = 1
+    dp[2] = dp[1]+1 = 2
+    dp[3] = dp[2]+1 = 3
+    dp[4] = Min{ dp[4-1*1]+1, dp[4-2*2]+1 }
+      = Min{ dp[3]+1, dp[0]+1 }
+      = 1
+    dp[5] = Min{ dp[5-1*1]+1, dp[5-2*2]+1 }
+      = Min{ dp[4]+1, dp[1]+1 }
+      = 2
+              .
+              .
+              .
+    dp[13] = Min{ dp[13-1*1]+1, dp[13-2*2]+1, dp[13-3*3]+1 }
+       = Min{ dp[12]+1, dp[9]+1, dp[4]+1 }
+       = 2
+               .
+               .
+               .
+    dp[n] = Min{ dp[n - i*i] + 1 },  n - i*i >=0 && i >= 1
+    and the sample code is like below:
+*/
+
+    public int numSquares01(int n) {
+        int[] dp = new int[n + 1];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = 0;
+        for(int i = 1; i <= n; ++i) {
+            int min = Integer.MAX_VALUE;
+            int j = 1;
+            while(i - j*j >= 0) {
+                min = Math.min(min, dp[i - j*j] + 1);
+                ++j;
+            }
+            dp[i] = min;
+        }
+        return dp[n];
+    }
+
+
+
+
+/*    Simple Java DP Solution
+
+40
+    C czonzhu
+    Reputation:  809
+    Just regular DP. Time Complexity: n * sqrt(n) Space: O(n)*/
+
+    public int numSquares02(int n) {
+        int[] dp = new int[n + 1];
+        Arrays.fill(dp, Integer.MAX_VALUE);
+        dp[0] = 0;
+        for(int i = 0; i <= n; i++){
+            for(int j = 1; i + j * j <= n; j++){
+                dp[i  + j * j] = Math.min(dp[i + j * j], dp[i] + 1);
+            }
+        }
+        return dp[n];
+    }
+
+
+
+    //Java DP Solution with explanation
+
+        public int numSquares03(int n) {
+            int[] dp = new int[n + 1];
+            for (int i = 1; i <= n; i++) {
+                dp[i] = Integer.MAX_VALUE;
+            }
+
+            for (int i = 1; i <= n; i++) {
+                int sqrt = (int)Math.sqrt(i);
+
+                // If the number is already a perfect square,
+                // then dp[number] can be 1 directly. This is
+                // just a optimization for this DP solution.
+                if (sqrt * sqrt == i) {
+                    dp[i] = 1;
+                    continue;
+                }
+
+                // To get the value of dp[n], we should choose the min
+                // value from:
+                //     dp[n - 1] + 1,
+                //     dp[n - 4] + 1,
+                //     dp[n - 9] + 1,
+                //     dp[n - 16] + 1
+                //     and so on...
+                for (int j = 1; j <= sqrt; j++) {
+                    int dif = i - j * j;
+                    dp[i] = Math.min(dp[i], (dp[dif] + 1));
+                }
+            }
+
+            return dp[n];
+        }
+
+
+    //    Beautiful 8 Lines Java Solution
+    public int numSquares04(int n) {
+        int[] record = new int[n + 1];
+        for(int i = 0; i <= n; i++){
+            record[i] = i;
+            for(int j = 1; j * j <=i ; j++){
+                record[i] = Math.min(record[i - j * j] + 1,record[i]);
+            }
+        }
+        return record[n];
+    }
+
+
+
+
+/*    Explanation of the DP solution
+
+18
+    J jim11
+    Reputation:  36
+    The most common solution for this problem is using DP, BFS or Number theory. Here I will give a brief explanation of the DP solution. The solution is as following:*/
+
+    /*    First of all, we created the DP array as usual. This DP array stands for the least number of perfect square numbers for its index. For example DP[13]=2 stands for if you want to decompose 13 into some perfect square numbers, it will contains at least two terms which are 33 and 22.
+
+        After the initialization of the DP array. We want to iterate through the array to fill all indices. During each iteration we're actually doing this: dp[i] = 1 + min (dp[i-j*j] for j*j<=i). The formula itself is a little bit hard to understand. Here's an example of how it works: (C#)
+
+        Suppose we want to get DP[13] and we already have the previous indices filled.
+
+        DP[13] = DP[13-1x1]+DP[1] = DP[12]+1 = 3;
+
+        DP[13] = DP[13-2x2]+DP[2x2] = DP[9]+1 = 2;
+
+        DP[13] = DP[13-3x3] + DP[3x3] = DP[4] + 1 = 2;
+
+        We pick the smallest one which is 2 so DP[13] = 2. Hope it helps.*/
+    public int NumSquares05(int n) {
+        int[] DP = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            int min=  Integer.MAX_VALUE;
+            for (int j = 1; j * j <= i; j++) {
+                min= Math.min(min, DP[i - j * j] + 1);
+            }
+            DP[i] = min;
+        }
+        return DP[n];
+    }
+
+////////////////////////////////////////////////////////////////////////////////
     // 9Ch DP class
     public int numSquares4(int n){
         int[] f = new int[n + 1];
@@ -75,11 +229,8 @@ public class _1PerfectSquares {
     }
 
 
-
-
-
 /////////////////////////////////////////////////////////////////////////
-
+    //Jiuzhang
     // version 0 DP
     /**
      * @param n a positive integer
@@ -126,7 +277,7 @@ public class _1PerfectSquares {
     }
 
 /////////////////////////////////////////////////////////////////////////
-
+    //Jiuzhang
     // version 1 DP
     /**
      * @param n a positive integer
@@ -147,7 +298,7 @@ public class _1PerfectSquares {
     }
 
 /////////////////////////////////////////////////////////////////////////
-
+    //Jiuzhang
     // version 2  Math
     /**
      * @param n a positive integer
@@ -172,10 +323,16 @@ public class _1PerfectSquares {
         }
         return 3;
     }
+
 /////////////////////////////////////////////////////////////////////////
-
-
 }
+
+/*
+Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.
+
+For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9.
+ */
+
 /*
 Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.
 

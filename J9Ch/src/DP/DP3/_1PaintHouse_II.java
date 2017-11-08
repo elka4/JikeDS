@@ -1,4 +1,5 @@
 package DP.DP3;
+import org.junit.Test;
 
 //_1PaintHouseII  01:39
 
@@ -87,7 +88,6 @@ cost[i-1][j]:        用颜色j的油漆房子i-1的花 费
 
  */
 
-import org.junit.Test;
 
 /*
 Given n = 3, k = 3, costs = [[14,2,11],[11,14,5],[14,3,10]] return 10
@@ -95,11 +95,92 @@ Given n = 3, k = 3, costs = [[14,2,11],[11,14,5],[14,3,10]] return 10
 house 0 is color 2, house 1 is color 3, house 2 is color 2, 2 + 5 + 3 = 10
  */
 
-//Paint HouseII
-public class _1PaintHouseII {
+//  265. Paint House II
+//  https://leetcode.com/problems/paint-house-ii/description/
+public class _1PaintHouse_II {
+/*    AC Java solution without extra space
 
-    // 9Ch DP
+94
+    jeantimex
+    Reputation:  4,407
+    The idea is similar to the problem Paint House I, for each house and each color, the minimum cost of painting the house with that color should be the minimum cost of painting previous houses, and make sure the previous house doesn't paint with the same color.
+
+    We can use min1 and min2 to track the indices of the 1st and 2nd smallest cost till previous house, if the current color's index is same as min1, then we have to go with min2, otherwise we can safely go with min1.
+
+    The code below modifies the value of costs[][] so we don't need extra space.*/
+
+    //这个比下面九章的好看多了，把计算结果和update min1，min2分开来做
+    //last1, last2, min1, min2都是index
+    //min1，min2是用来update last1，last2的。和old，now的用法很类似。
+    //
     public int minCostII(int[][] costs) {
+        if (costs == null || costs.length == 0) return 0;
+
+        int n = costs.length, k = costs[0].length;
+        // min1 is the index of the 1st-smallest cost till previous house
+        // min2 is the index of the 2nd-smallest cost till previous house
+        int min1 = -1, min2 = -1;
+
+
+
+        for (int i = 0; i < n; i++) {
+            int last1 = min1, last2 = min2;
+            min1 = -1; min2 = -1;
+            for (int j = 0; j < k; j++) {
+                if (j != last1) {
+                    // current color j is different to last min1
+                    costs[i][j] += last1 == -1 ? 0 : costs[i - 1][last1];//last1 == -1 应该是初始化
+                } else {
+                    costs[i][j] += last2 == -1 ? 0 : costs[i - 1][last2];
+                }
+
+                // find the indices of 1st and 2nd smallest cost of painting current house i
+                if (min1 < 0 || costs[i][j] < costs[i][min1]) {
+                    min2 = min1; min1 = j;
+                } else if (min2 < 0 || costs[i][j] < costs[i][min2]) {
+                    min2 = j;
+                }
+            }
+        }
+
+        return costs[n - 1][min1];
+    }
+
+
+    public int minCostII_Original(int[][] costs) {
+        if (costs == null || costs.length == 0) return 0;
+
+        int n = costs.length, k = costs[0].length;
+        // min1 is the index of the 1st-smallest cost till previous house
+        // min2 is the index of the 2nd-smallest cost till previous house
+        int min1 = -1, min2 = -1;
+
+        for (int i = 0; i < n; i++) {
+            int last1 = min1, last2 = min2;
+            min1 = -1; min2 = -1;
+
+            for (int j = 0; j < k; j++) {
+                if (j != last1) {
+                    // current color j is different to last min1
+                    costs[i][j] += last1 < 0 ? 0 : costs[i - 1][last1];
+                } else {
+                    costs[i][j] += last2 < 0 ? 0 : costs[i - 1][last2];
+                }
+
+                // find the indices of 1st and 2nd smallest cost of painting current house i
+                if (min1 < 0 || costs[i][j] < costs[i][min1]) {
+                    min2 = min1; min1 = j;
+                } else if (min2 < 0 || costs[i][j] < costs[i][min2]) {
+                    min2 = j;
+                }
+            }
+        }
+
+        return costs[n - 1][min1];
+    }
+////////////////////////////////////////////////////////////////////////////////////////////
+    // 9Ch DP
+    public int minCostII2(int[][] costs) {
         if (costs == null || costs.length == 0) {
             return 0;
         }
@@ -226,7 +307,73 @@ public class _1PaintHouseII {
         System.out.println(minCostII1(costs));
     }
 /////////////////////////////////////////////////////////////
+    // 9CH DP
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    public int minCostII3(int[][] costs) {
+        //Method DP: Using an int[k] last representing the last min costs in k tracks
+        //Using an int[k] cur representing the current min costs
+
+        //TimeO(kn) Space O(k)
+        //use heap, nlogk
+        if(costs == null || costs.length == 0)
+            return 0;
+        if(costs[0] == null || costs[0].length == 0)
+            return 0;
+        int col = costs[0].length;
+        int[] last = new int[col];
+        int[] cur = new int[col];
+        for(int[] cost : costs) {
+            for(int i = 0; i < col; i++) {
+                cur[i] = cost[i] + findMin(last, i);
+            }
+            int[] tmp = cur;
+            cur = last;
+            last = tmp;
+        }
+        return findMin(last, last.length);
+    }
+
+    private int findMin(int[] arr, int except) {
+        int min = Integer.MAX_VALUE;
+        for(int i = 0; i < arr.length; i++) {
+            if(i != except) {
+                min = Math.min(min, arr[i]);
+            }
+        }
+        return min == Integer.MAX_VALUE ? 0 : min;
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //time O(kn), space O(1)
+    public int minCostII22(int[][] costs) {
+        if(costs == null || costs.length == 0) return 0;
+        int m = costs.length, n = costs[0].length;
+        int lastMin = 0;
+        int lastSec = 0;
+        int lastIndex = -1;
+        for (int[] cost : costs) {
+            int curMin = Integer.MAX_VALUE;
+            int curSec = m;
+            int curIndex = -1;
+            for(int j = 0; j < n; j++) {
+                int val = cost[j] + (j == lastIndex ? lastSec : lastMin);
+                if(val < curMin) {
+                    curSec = curMin;
+                    curMin = val;
+                    curIndex = j;
+                } else if(val < curSec) {
+                    curSec = val;
+                }
+            }
+            lastMin = curMin;
+            lastSec = curSec;
+            lastIndex = curIndex;
+        }
+        return lastMin;
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////
 }
 /*

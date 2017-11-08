@@ -28,35 +28,25 @@ f[0], f[1], .... f[N]
 时间复杂度 O(N), 空间复杂度O(N)
 
 -----------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
  */
 
 
-//leet 91. Decode Ways
-//lint
+//  91. Decode Ways
+//  https://leetcode.com/problems/decode-ways/description/
 public class _3DecodeWays {
-    public int numDecodings2222(String s) {
-        char[] sc  = s.toCharArray();
+
+    //这个算法好地方在于从2开始算，所以中间不用那么多if
+    public int numDecodings(String s) {
+        char[] sc  = s.toCharArray();  //这样之后操作简单，直接变成对array的操作
         int n = sc.length;
         if (n == 0) {
             return 0;
         }
 
         int[] f = new int[n + 1];
-        f[0] = 1;
-        f[1] = sc[0] != '0' ? 1 : 0;
+        //初始化两位字母
+        f[0] = 1;                        //空串有1种方式解密
+        f[1] = sc[0] != '0' ? 1 : 0;    //最后哦一个数字
 
         for(int i = 2; i <= n; i++) {
             int first = sc[i - 1] - '0';
@@ -70,9 +60,32 @@ public class _3DecodeWays {
         }
         return f[n];
     }
+
+    //上面算法的String版本
+    public int numDecodings7(String s) {
+        if(s == null || s.length() == 0) {
+            return 0;
+        }
+        int n = s.length();
+        int[] dp = new int[n+1];
+        dp[0] = 1;
+        dp[1] = s.charAt(0) != '0' ? 1 : 0;
+        for(int i = 2; i <= n; i++) {
+            int first = Integer.valueOf(s.substring(i-1, i));
+            int second = Integer.valueOf(s.substring(i-2, i));
+            if(first >= 1 && first <= 9) {
+                dp[i] += dp[i-1];
+            }
+            if(second >= 10 && second <= 26) {
+                dp[i] += dp[i-2];
+            }
+        }
+        return dp[n];
+    }
+
 //////////////////////////////////////////////////////////////////////////
     //jiuzhang
-    public int numDecodings(String s) {
+    public int numDecodings2(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }
@@ -107,7 +120,7 @@ public class _3DecodeWays {
      * @param s a string,  encoded message
      * @return an integer, the number of ways decoding
      */
-    public int numDecodings2(String s) {
+    public int numDecodings3(String s) {
         // Write your code here
         int l = s.length();
         if (l == 0) {
@@ -138,7 +151,7 @@ public class _3DecodeWays {
     }
 
     // 9Ch DP
-    public int numDecodings22(String ss){
+    public int numDecodings4(String ss){
         char[] s  = ss.toCharArray();
         int n = s.length;
         if (n == 0) {
@@ -170,7 +183,7 @@ public class _3DecodeWays {
         return f[n];
     }
 
-    public int numDecodings222(String ss){
+    public int numDecodings5(String ss){
         char[] s  = ss.toCharArray();
         int n = s.length;
         if (n == 0) {
@@ -202,14 +215,14 @@ public class _3DecodeWays {
 
     @Test
     public void test022(){
-        System.out.println(numDecodings22("2526")); //4
-        System.out.println(numDecodings22("12"));   //2
+        System.out.println(numDecodings5("2526")); //4
+        System.out.println(numDecodings5("12"));   //2
     }
 
 
 /////////////////////////////////////////////////////////
-
-    public int numDecodings3(String s) {
+    //从长向短计算， 可以把状态memo[i]理解成不要i个字符可以decode的方法数
+    public int numDecodings6(String s) {
         int n = s.length();
         if (n == 0) return 0;
 
@@ -226,30 +239,10 @@ public class _3DecodeWays {
 
 ///////////////////////////////////////////////////////////////
 
-    public int numDecodings4(String s) {
-        if(s == null || s.length() == 0) {
-            return 0;
-        }
-        int n = s.length();
-        int[] dp = new int[n+1];
-        dp[0] = 1;
-        dp[1] = s.charAt(0) != '0' ? 1 : 0;
-        for(int i = 2; i <= n; i++) {
-            int first = Integer.valueOf(s.substring(i-1, i));
-            int second = Integer.valueOf(s.substring(i-2, i));
-            if(first >= 1 && first <= 9) {
-                dp[i] += dp[i-1];
-            }
-            if(second >= 10 && second <= 26) {
-                dp[i] += dp[i-2];
-            }
-        }
-        return dp[n];
-    }
 
 ////////////////////////////////////////////////////////////
 
-    public int numDecodings5(String s) {
+    public int numDecodings8(String s) {
 
         if (s == null || s.length() == 0)
             return 0;

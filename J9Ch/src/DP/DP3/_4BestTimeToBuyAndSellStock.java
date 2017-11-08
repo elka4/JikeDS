@@ -39,8 +39,9 @@ LintCode 149 Best Time to Buy and Sell Stock
 -----------------------------------------------------------------------------------------------
 
  */
-
-//Best Time To Buy And Sell Stock
+//
+//  121. Best Time to Buy and Sell Stock
+//  https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 public class _4BestTimeToBuyAndSellStock {
     //jiuzhang
     public class Solution {
@@ -48,8 +49,10 @@ public class _4BestTimeToBuyAndSellStock {
             int minprice = Integer.MAX_VALUE;
             int maxprofit = 0;
             for (int i = 0; i < prices.length; i++) {
+
                 if (prices[i] < minprice)
                     minprice = prices[i];
+                    //如果当前股价prices[i]是最小，那么肯定不会update maxprofit
                 else if (prices[i] - minprice > maxprofit)
                     maxprofit = prices[i] - minprice;
             }

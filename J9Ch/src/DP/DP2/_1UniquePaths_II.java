@@ -41,8 +41,10 @@ f[i-1][j] + f[i][j-1]， 其他
 
  */
 
+import org.junit.Test;
+
 //  Unique PathsII
-public class _1UniquePathsII {
+public class _1UniquePaths_II {
 
     // 这个是目前看最好的解法， 从下面复制来
     public int uniquePathsWithObstaclesXX(int[][] obstacleGrid) {
@@ -82,7 +84,7 @@ public class _1UniquePathsII {
         int old = 0;int now = 0;
         for(int i=0;i<m;i++){
 
-            old = now;
+            old = now;                              //可不可以写成 old=(i+1)%2   now=i%2  ?????
             now = 1 - old;
             for(int j=0;j<n;j++){
                 // s[now][j] = 0;                   //不需要。那为什么下面的算法需要？
@@ -94,57 +96,176 @@ public class _1UniquePathsII {
                     }
                 }
                 else if(i==0){                      //初始化首行
-                    s[now][j] = s[now][j-1];//j>0排除了起始点
+                    s[now][j] = s[now][j-1];// 已经排除了i，j同时为0
                 }
                 else if(j==0){                      //初始化首列
-                    s[now][j] = s[old][j];//i>0排除了起始点
+                    s[now][j] = s[old][j];// 已经排除了i，j同时为0
                 }
                 else s[now][j] = s[old][j] + s[now][j-1];
             }
         }
+        print(s);
         return s[now][n-1];
     }
+    @Test
+    public void test02X(){
+        int[][] A = {{0, 0}, {1, 1}, {0, 0}};
+        System.out.println(uniquePathsWithObstaclesXXX(A));
+    }
+    /*
+    i:0; j:0 f[i][j]:0; i:0; j:1 f[i][j]:0;
+    i:1; j:0 f[i][j]:0; i:1; j:1 f[i][j]:0;
+    0
+     */
 
     //从下面copy来的
     public int uniquePathsWithObstacles222(int[][] obstacleGrid) {
         int m = obstacleGrid.length;
         int n = obstacleGrid[0].length;
         int[][] paths = new int[2][n];
-        int old;                        //最简单做法这两个都初始化为0
+        int old;                        //最简单做法这两个都初始化为0，也可以一个设成1另一个设成0
         int now = 0;
 
-        if (obstacleGrid[0][0] == 1 || obstacleGrid[m-1][n-1] == 1) {
-            return 0;
-        }
-
-
         for (int i = 0; i < m; i++) {
-            old = now;                  //这里是重点
+            old = now;                  //这里是重点 now指的是当前行，old指的是上一行
             now = 1 - now;
             for (int j = 0; j < n; j++) {
-                paths[now][j] = 0;              //这里不能省略！否则[[0,0],[1,1],[0,0]]会错报2, why????!!!
+                //如果不重设，paths[now][j]就是上一轮外层循环里的里得到的 paths[old][j]
+                paths[now][j] = 0;              //这里必须归零！否则[[0,0],[1,1],[0,0]]会错报2, 为什么????!!!
+                //当然，paths[now][j]用来存储当前结果，所以它必须为0。只是它为什么不是0呢？因为上一层的paths[old][j]不是0
+                //也就是上上次外层循环得到的paths[now][j]还在。
+                //所以其实我的问题是，为什么上面两个算法不需要重设？？？？！！！
+
                 if (obstacleGrid[i][j] == 1) { //一定要先判断obstacle
                     paths[now][j] = 0;
+                    // paths[old][j] = 0;            //这样能过， 为什么？？？？？？？？？？？？？
                 }
                 else {
                     if (i == 0 && j == 0) {
 //                        paths[now][j] = 1;
                         if (obstacleGrid[i][i] == 0) paths[now][j] = 1;
                     }else{
-                        if (i > 0) {
-                            paths[now][j] += paths[old][j]; //加左边
-                        }
-                        if (j > 0) {
-                            paths[now][j] += paths[now][j-1];//加右边
-                        }
+                        if (i > 0) paths[now][j] += paths[old][j]; //加上边
+
+                        if (j > 0) paths[now][j] += paths[now][j-1];//加左边
+
                     }
                 }
             }
         }
-
+//        print(paths);
         return paths[now][n - 1];
     }
 
+    //改成这样以后就可以不用在内层循环每次paths[now][j] = 0;
+    //所以上面方法的问题出在以下这两行，就是边界处理最上面那行和最左边那列的情况出了问题。
+    //这里的算法是分的非常清楚，三种：第一行，第一列，其余状况。
+    /*
+    if (i > 0) paths[now][j] += paths[old][j]; //加上边
+
+    if (j > 0) paths[now][j] += paths[now][j-1];//加左边
+     */
+    public int uniquePathsWithObstacles2222(int[][] obstacleGrid) {
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
+        int[][] paths = new int[2][n];
+        int old;                        //最简单做法这两个都初始化为0，也可以一个设成1另一个设成0
+        int now = 0;
+
+        for (int i = 0; i < m; i++) {
+            old = now;                  //这里是重点 now指的是当前行，old指的是上一行
+            now = 1 - now;
+            for (int j = 0; j < n; j++) {
+                //如果不重设，paths[now][j]就是上一轮外层循环里的里得到的 paths[old][j]
+//                paths[now][j] = 0;              //这里不用归零！ 为什么????!!!
+                //当然，paths[now][j]用来存储当前结果，所以它必须为0。只是它为什么不是0呢？因为上一层的paths[old][j]不是0
+                //也就是上上次外层循环得到的paths[now][j]还在。
+                //所以其实我的问题是，为什么上面两个算法不需要重设？？？？！！！
+
+                if (obstacleGrid[i][j] == 1) { //一定要先判断obstacle
+                    paths[now][j] = 0;
+                    // paths[old][j] = 0;            //这样能过， 为什么？？？？？？？？？？？？？
+                }
+                else {
+                    if (i == 0 && j == 0) {
+                        if (obstacleGrid[i][i] == 0) paths[now][j] = 1;
+                    }else if(i==0){                      //初始化首行
+                        paths[now][j] = paths[now][j-1];// 已经排除了i，j同时为0
+                    }
+                    else if(j==0){                      //初始化首列
+                        paths[now][j] = paths[old][j];// 已经排除了i，j同时为0
+                    }
+                    else paths[now][j] = paths[old][j] + paths[now][j-1];
+                }
+            }
+        }
+//        print(paths);
+        return paths[now][n - 1];
+    }
+    @Test
+    public void test02XX(){
+        int[][] A = {{0, 0}, {1, 1}, {0, 0}};
+        System.out.println(uniquePathsWithObstacles222(A));
+    }
+    /*
+    i:0; j:0 f[i][j]:0; i:0; j:1 f[i][j]:0;
+    i:1; j:0 f[i][j]:1; i:1; j:1 f[i][j]:2;
+    2
+     */
+
+
+
+    //这个不用paths[now][j] 每轮循环归零， 但是后面两行做了修改 += ---> =
+    public int uniquePathsWithObstacles22222(int[][] obstacleGrid) {
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
+        int[][] paths = new int[2][n];
+        int old;                        //最简单做法这两个都初始化为0，也可以一个设成1另一个设成0
+        int now = 0;
+
+        for (int i = 0; i < m; i++) {
+            old = now;                  //这里是重点 now指的是当前行，old指的是上一行
+            now = 1 - now;
+            for (int j = 0; j < n; j++) {
+                //如果不重设，paths[now][j]就是上一轮外层循环里的里得到的 paths[old][j]
+                // paths[now][j] = 0;              //这里必须归零！否则[[0,0],[1,1],[0,0]]会错报2, 为什么????!!!
+                //当然，paths[now][j]用来存储当前结果，所以它必须为0。只是它为什么不是0呢？因为上一层的paths[old][j]不是0
+                //也就是上上次外层循环得到的paths[now][j]还在。
+                //所以其实我的问题是，为什么上面两个算法不需要重设？？？？！！！
+
+                if (obstacleGrid[i][j] == 1) { //一定要先判断obstacle
+                    paths[now][j] = 0;
+                    // paths[old][j] = 0;            //这样能过， 为什么？？？？？？？？？？？？？
+                }
+                else {
+                    if (i == 0 && j == 0) {
+//                        paths[now][j] = 1;
+                        if (obstacleGrid[i][i] == 0) paths[now][j] = 1;
+                    }else{
+                        //加上边   这里改成了 "="  ！！！！！ 为什么AC了？
+                        //其实性质和重设paths[now][j]一样：这里等于就是不要之前的paths[now][j]，也就是重设为0。为什么？
+                        if (i > 0) paths[now][j] = paths[old][j];
+
+                        if (j > 0) paths[now][j] += paths[now][j-1];//加左边
+
+                    }
+                }
+            }
+        }
+//        print(paths);
+        return paths[now][n - 1];
+    }
+//////////////////////////////////////////////////////////////////////////////////////////////////
+    private void print(int[][] f){
+        for (int i = 0; i < f.length; i++) {
+            if (f[0].length != 0){
+                for (int j = 0; j < f[0].length; j++) {
+                    System.out.print("i:" + i + "; j:"+j + " f[i][j]:" +f[i][j] + "; ");
+                }
+            }
+            System.out.println();
+        }
+    }
 //////////////////////////////////////////////////////////////////////////////////////////////////
     //最标准写法
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {

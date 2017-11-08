@@ -1,10 +1,9 @@
 package DP.DP3;
-//• 坐标型
-
-
-import a.d.M;
-import a.j.A;
+import StdLib.In;
 import org.junit.Test;
+import java.util.*;
+
+//• 坐标型
 
 /*
 
@@ -68,15 +67,135 @@ a[j] > a[i]
  */
 
 
-//  Longest Increasing Subsequence
+//  300. Longest Increasing Subsequence
+//  https://leetcode.com/problems/longest-increasing-subsequence/description/
+//  http://www.lintcode.com/zh-cn/problem/longest-increasing-subsequence/
 public class _8LongestIncreasingSubsequence {
+    //https://leetcode.com/problems/longest-increasing-subsequence/solution/
+    //https://leetcode.com/articles/longest-increasing-subsequence/
+
+    //Approach #1 Brute Force [Time Limit Exceeded]
+    class Solution01{
+        public int lengthOfLIS(int[] nums){
+            return lengthOfLIS(nums, Integer.MIN_VALUE, 0);
+        }
+        public int lengthOfLIS(int[] nums, int prev, int curpos){
+            if (curpos == nums.length) {
+                return 0;
+            }
+            int taken = 0;
+            if (nums[curpos] > prev) {
+                taken = 1 + lengthOfLIS(nums, nums[curpos], curpos + 1);
+            }
+            int nottaken = lengthOfLIS(nums, prev, curpos + 1);
+            return Math.max(taken, nottaken);
+        }
+    }
 
 
+    //Approach #2 Recursion with memorization [Memory Limit Exceeded]
+    public class Solution02 {
+        public int lengthOfLIS(int[] nums) {
+            int memo[][] = new int[nums.length + 1][nums.length];
+            for (int[] l : memo) {
+                Arrays.fill(l, -1);
+            }
+            return lengthofLIS(nums, -1, 0, memo);
+        }
+        public int lengthofLIS(int[] nums, int previndex, int curpos, int[][] memo) {
+            if (curpos == nums.length) {
+                return 0;
+            }
+            if (memo[previndex + 1][curpos] >= 0) {
+                return memo[previndex + 1][curpos];
+            }
+            int taken = 0;
+            if (previndex < 0 || nums[curpos] > nums[previndex]) {
+                taken = 1 + lengthofLIS(nums, curpos, curpos + 1, memo);
+            }
+
+            int nottaken = lengthofLIS(nums, previndex, curpos + 1, memo);
+            memo[previndex + 1][curpos] = Math.max(taken, nottaken);
+            return memo[previndex + 1][curpos];
+        }
+    }
+
+    //Approach #3 Dynamic Programming [Accepted]
+    //其实这个没有九章的解法好理解
+    public class Solution03 {
+        public int lengthOfLIS(int[] nums) {
+            if (nums.length == 0) {
+                return 0;
+            }
+            int[] dp = new int[nums.length];
+            dp[0] = 1;
+            int maxans = 1;
+
+            for (int i = 1; i < dp.length; i++) {
+                int maxval = 0;
+                for (int j = 0; j < i; j++) {
+                    if (nums[i] > nums[j]) {
+                        maxval = Math.max(maxval, dp[j]);
+                    }
+                }
+                dp[i] = maxval + 1;                      //要好好理解 +1
+                maxans = Math.max(maxans, dp[i]);
+            }
+            return maxans;
+        }
+    }
+    /*
+    Complexity Analysis
+    Time complexity : O(n^2). Two loops of nn are there.
+    Space complexity : O(n). dp array of size n is used.
+     */
+
+
+
+    //Approach #4 Dynamic Programming with Binary Search[Accepted]:
+    public class Solution04 {
+        public int lengthOfLIS(int[] nums) {
+            int[] dp = new int[nums.length];
+            int len = 0;
+            for (int num : nums) {
+                int i = Arrays.binarySearch(dp, 0, len, num);
+                if (i < 0) {
+                    i = -(i + 1);
+                }
+                dp[i] = num;
+                if (i == len) {
+                    len++;
+                }
+            }
+            return len;
+        }
+    }
+///////////////////////////////////////////////////////////////////////////
+
+    //Jiuzhang
+    public int longestIncreasingSubsequence1(int[] nums) {
+        int []f = new int[nums.length];
+        int max = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            f[i] = 1;
+            for (int j = 0; j < i; j++) {
+                if (nums[i] > nums[j]) {
+                    // f[i] = f[i] > f[j] + 1 ? f[i] : f[j] + 1;
+                    f[i] = Math.max(f[i], f[j] + 1);
+                }
+            }
+            if (f[i] > max) {
+                max = f[i];
+            }
+        }
+        return max;
+    }
 ///////////////////////////////////////////////////////////////////////////
 
     // 9Ch DP
-    public int longestIncreasingSubsequence(int[] A) {
-        int n = A.length;
+    public int longestIncreasingSubsequence(int[] nums) {
+        int n = nums.length;
         if (n == 0) {
             return 0;
         }
@@ -91,7 +210,7 @@ public class _8LongestIncreasingSubsequence {
 
             //case 2
             for (i = 0; i < j; i++) {
-                if (A[i] < A[j] && f[i] + 1 > f[j]) {
+                if (nums[i] < nums[j] && f[i] + 1 > f[j]) {     //要好好理解 +1
                     f[j] = f[i] + 1;
                 }
             }
@@ -100,10 +219,10 @@ public class _8LongestIncreasingSubsequence {
         return  res;
     }
 
-/*
-给出 [5,4,1,2,3]，LIS 是 [1,2,3]，返回 3
-给出 [4,2,4,5,3,7]，LIS 是 [2,4,5,7]，返回 4
- */
+    /*
+    给出 [5,4,1,2,3]，LIS 是 [1,2,3]，返回 3
+    给出 [4,2,4,5,3,7]，LIS 是 [2,4,5,7]，返回 4
+     */
 
     @Test
     public void test01(){
@@ -112,33 +231,11 @@ public class _8LongestIncreasingSubsequence {
         System.out.println(longestIncreasingSubsequence(A));
         System.out.println(longestIncreasingSubsequence(B));
     }
-///////////////////////////////////////////////////////////////////////////
 
-
-    /**
-     * @param nums: The integer array
-     * @return: The length of LIS (longest increasing subsequence)
-     */
-    public int longestIncreasingSubsequence1(int[] nums) {
-        int []f = new int[nums.length];
-        int max = 0;
-        for (int i = 0; i < nums.length; i++) {
-            f[i] = 1;
-            for (int j = 0; j < i; j++) {
-                if (nums[j] < nums[i]) {
-                    f[i] = f[i] > f[j] + 1 ? f[i] : f[j] + 1;
-                }
-            }
-            if (f[i] > max) {
-                max = f[i];
-            }
-        }
-        return max;
-    }
 
 
 ///////////////////////////////////////////////////////////////////////////
-
+    //jiuzhang
     // O(nlogn) Binary Search
 
     /**
@@ -184,6 +281,20 @@ public class _8LongestIncreasingSubsequence {
 ///////////////////////////////////////////////////////////////////////////
 
 }
+
+/*
+ Given an unsorted array of integers, find the length of longest increasing subsequence.
+
+For example,
+Given [10, 9, 2, 5, 3, 7, 101, 18],
+The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4. Note that there may be more than one LIS combination, it is only necessary for you to return the length.
+
+Your algorithm should run in O(n2) complexity.
+
+Follow up: Could you improve it to O(n log n) time complexity?
+ */
+
+
 /*
 Given a sequence of integers, find the longest increasing subsequence (LIS).
 

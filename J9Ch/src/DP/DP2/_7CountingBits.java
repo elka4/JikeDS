@@ -12,22 +12,15 @@ f[i>>1]: i的二进制表示中去掉最后一位，剩下的1的个数
 
 -----------------------------------------------------------------------------------------------
 
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
  */
-//Counting Bits
+
+
+//  338. Counting Bits
+//  https://leetcode.com/problems/counting-bits/description/
+//
 public class _7CountingBits {
     // 9Ch DP
+    //序列，每个元素就是0 ≤ i ≤ num中一个数字， 这位置是不能变的呀，所以时序列型
     public int[] countBits(int num) {
         int[] f = new int[num + 1];
         f[0] = 0;
@@ -45,7 +38,8 @@ public class _7CountingBits {
     //Three-Line Java Solution
     public int[] countBits1(int num) {
         int[] f = new int[num + 1];
-        for (int i=1; i<=num; i++) f[i] = f[i >> 1] + (i & 1);
+        for (int i=1; i<=num; i++)
+            f[i] = f[i >> 1] + (i & 1);
         return f;
     }
 
@@ -83,6 +77,7 @@ public class _7CountingBits {
             return count;
         }
     }
+
     //Approach #2 DP + Most Significant Bit [Accepted]
     public class Solution2 {
         public int[] countBits(int num) {
@@ -101,6 +96,7 @@ public class _7CountingBits {
             return ans;
         }
     }
+
     //Approach #3 DP + Least Significant Bit [Accepted]
     public class Solution3 {
         public int[] countBits(int num) {
@@ -110,6 +106,7 @@ public class _7CountingBits {
             return ans;
         }
     }
+
     //Approach #4 DP + Last Set Bit [Accepted]
     public class Solution4 {
         public int[] countBits(int num) {
