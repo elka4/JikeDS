@@ -53,27 +53,100 @@ public class _1UniquePathsII {
         // if(s[0][0] == 0) return 0;
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
-                if(obstacleGrid[i][j] == 1){
+                if(obstacleGrid[i][j] == 1){        //要先对obstacle做处理，适合任何情况，除了起始点。但是起始点在下面处理了。
                     s[i%2][j] = 0;
-                } else if (i == 0 && j == 0) {
+                } else if (i == 0 && j == 0) {      //起始点检查和初始化
                     if (obstacleGrid[0][0] == 0){
                         s[i][j] = 1;
-                    }else {
-                        return 0;
                     }
                 }
-                else if(i==0){
-                    if(j>0) s[i%2][j] = s[i%2][j-1];
+                else if(i==0){                      //初始化首行
+                     s[i%2][j] = s[i%2][j-1];//j>0排除了起始点 //j>0 is always true
                 }
-                else if(j==0){
-                    if(i>0) s[i%2][j] = s[(i-1)%2][j];
+                else if(j==0){                      //初始化首列
+                     s[i%2][j] = s[(i-1)%2][j];//i>0排除了起始点   //i>0 is always true
                 }
                 else s[i%2][j] = s[(i-1)%2][j] + s[i%2][j-1];
             }
         }
         return s[(m-1)%2][n-1];
     }
+
+    //讲以上算法转为now， old
+    public int uniquePathsWithObstaclesXXX(int[][] obstacleGrid) {
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
+
+        int[][] s = new int[2][n];
+
+        int old = 0;int now = 0;
+        for(int i=0;i<m;i++){
+
+            old = now;
+            now = 1 - old;
+            for(int j=0;j<n;j++){
+                // s[now][j] = 0;                   //不需要。那为什么下面的算法需要？
+                if(obstacleGrid[i][j] == 1){        //要先对obstacle做处理，适合任何情况，除了起始点。但是起始点在下面处理了。
+                    s[now][j] = 0;
+                } else if (i == 0 && j == 0) {      //起始点检查和初始化
+                    if (obstacleGrid[0][0] == 0){
+                        s[now][j] = 1;
+                    }
+                }
+                else if(i==0){                      //初始化首行
+                    s[now][j] = s[now][j-1];//j>0排除了起始点
+                }
+                else if(j==0){                      //初始化首列
+                    s[now][j] = s[old][j];//i>0排除了起始点
+                }
+                else s[now][j] = s[old][j] + s[now][j-1];
+            }
+        }
+        return s[now][n-1];
+    }
+
+    //从下面copy来的
+    public int uniquePathsWithObstacles222(int[][] obstacleGrid) {
+        int m = obstacleGrid.length;
+        int n = obstacleGrid[0].length;
+        int[][] paths = new int[2][n];
+        int old;                        //最简单做法这两个都初始化为0
+        int now = 0;
+
+        if (obstacleGrid[0][0] == 1 || obstacleGrid[m-1][n-1] == 1) {
+            return 0;
+        }
+
+
+        for (int i = 0; i < m; i++) {
+            old = now;                  //这里是重点
+            now = 1 - now;
+            for (int j = 0; j < n; j++) {
+                paths[now][j] = 0;              //这里不能省略！否则[[0,0],[1,1],[0,0]]会错报2, why????!!!
+                if (obstacleGrid[i][j] == 1) { //一定要先判断obstacle
+                    paths[now][j] = 0;
+                }
+                else {
+                    if (i == 0 && j == 0) {
+//                        paths[now][j] = 1;
+                        if (obstacleGrid[i][i] == 0) paths[now][j] = 1;
+                    }else{
+                        if (i > 0) {
+                            paths[now][j] += paths[old][j]; //加左边
+                        }
+                        if (j > 0) {
+                            paths[now][j] += paths[now][j-1];//加右边
+                        }
+                    }
+                }
+            }
+        }
+
+        return paths[now][n - 1];
+    }
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
+    //最标准写法
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
             return 0;
@@ -87,7 +160,7 @@ public class _1UniquePathsII {
             if (obstacleGrid[i][0] != 1) {
                 paths[i][0] = 1;
             } else {
-                break;
+                break;//一旦遭遇obstacle，后面的点全都不能到达，为0。默认值为0。所以可以直接break
             }
         }
 
@@ -112,15 +185,16 @@ public class _1UniquePathsII {
         return paths[n - 1][m - 1];
     }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
     public int uniquePathsWithObstaclesX(int[][] obstacleGrid) {
-        if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
-            return 0;
-        }
+//        if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
+//            return 0;
+//        }
 
         int m = obstacleGrid.length;
         int n = obstacleGrid[0].length;
         int[][] paths = new int[2][n];
-        int old;
+        int old;                        //最简单做法这两个都初始化为0
         int now = 0;
 
         if (obstacleGrid[0][0] == 1 || obstacleGrid[m-1][n-1] == 1) {
@@ -129,11 +203,11 @@ public class _1UniquePathsII {
 
 
         for (int i = 0; i < m; i++) {
-            old = now;
+            old = now;                  //这里是重点
             now = 1 - now;
             for (int j = 0; j < n; j++) {
-                paths[now][j] = 0;
-                if (obstacleGrid[i][j] == 1) {
+                paths[now][j] = 0;              //这里不能省略！否则[[0,0],[1,1],[0,0]]会错报2
+                if (obstacleGrid[i][j] == 1) { //一定要先判断obstacle
                     paths[now][j] = 0;
                 }
                 else {
@@ -144,10 +218,10 @@ public class _1UniquePathsII {
                             paths[now][j] = 1;
                         }
                         if (i > 0) {
-                            paths[now][j] += paths[old][j];
+                            paths[now][j] += paths[old][j]; //加左边
                         }
                         if (j > 0) {
-                            paths[now][j] += paths[now][j-1];
+                            paths[now][j] += paths[now][j-1];//加右边
                         }
                     }
                 }
@@ -158,7 +232,7 @@ public class _1UniquePathsII {
     }
 //                        paths[now][j] = paths[old][j] + paths[now][j - 1];
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
     //Simple Java DP solution
     public class Solution {
         public int uniquePathsWithObstacles(int[][] obstacleGrid) {
@@ -223,10 +297,10 @@ public class _1UniquePathsII {
                         }
                     }
                     else if(i==0){
-                        if(j>0) s[i%2][j] = s[i%2][j-1];
+                        if(j>0) s[i%2][j] = s[i%2][j-1];    //j>0 is always true, why?
                     }
                     else if(j==0){
-                        if(i>0) s[i%2][j] = s[(i-1)%2][j];
+                        if(i>0) s[i%2][j] = s[(i-1)%2][j];  //i>0 is always true, why?
                     }
                     else s[i%2][j] = s[(i-1)%2][j] + s[i%2][j-1];
                 }
@@ -236,7 +310,7 @@ public class _1UniquePathsII {
     }
 
 //////////////////////////////////////////////////////////////////////////
-    //  Short JAVA solution
+    //  Short JAVA solution   这方法会破坏原数组
     public int uniquePathsWithObstacles4(int[][] obstacleGrid) {
         int width = obstacleGrid[0].length;
         int[] dp = new int[width];
@@ -280,7 +354,7 @@ public class _1UniquePathsII {
             old = now;
             now = 1 - now;
             for (j = 0; j < n; ++j) {
-                f[now][j] = 0;
+                f[now][j] = 0;          //必须清零。没想清楚到底为什么必须清零，和第一个相比。
                 if (A[i][j] == 1) {
                     f[now][j] = 0;
                 }
@@ -305,13 +379,13 @@ public class _1UniquePathsII {
 //////////////////////////////////////////////////////////////////////////
 
     // 9Ch DP
-    public int uniquePathsWithObstacles3(int[][] A) {
-        int m = A.length;
+    public int uniquePathsWithObstacles3(int[][] obstacleGrid) {
+        int m = obstacleGrid.length;
         if(m == 0){
             return 0;
         }
 
-        int n = A[0].length;
+        int n = obstacleGrid[0].length;
         if (n == 0) {
             return 0;
         }
@@ -321,7 +395,7 @@ public class _1UniquePathsII {
         for (i = 0; i < m; ++i) {
             for (j = 0; j < n; ++j) {
                 //遇到障碍
-              if (A[i][j] == 1){
+              if (obstacleGrid[i][j] == 1){
                   f[i][j] = 0;
               }
               else{
@@ -331,7 +405,7 @@ public class _1UniquePathsII {
                   if (i == 0 && j == 0){
                       f[i][j] = 1;
                   } else {
-                      //初始化：每个点都初始化为0
+                      //初始化：每个点都初始化为0                   这行没必要因为默认为0
                       f[i][j] = 0;
                       //排除i == 0的情况， 也就是 第一行的情况
                       if(i - 1 >= 0){
