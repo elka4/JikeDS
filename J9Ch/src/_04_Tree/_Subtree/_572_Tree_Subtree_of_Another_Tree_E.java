@@ -1,7 +1,6 @@
 package _04_Tree._Subtree;
 import lib.TreeNode;
-
-import java.util.Stack;
+import java.util.*;
 
 //  572. Subtree of Another Tree
 //  https://leetcode.com/problems/subtree-of-another-tree/description/
@@ -9,10 +8,42 @@ import java.util.Stack;
 public class _572_Tree_Subtree_of_Another_Tree_E {
     //https://leetcode.com/problems/subtree-of-another-tree/solution/
 
-//    Approach #1 Using Preorder Traversal [Accepted]
-
-//    Approach #2 By Comparison of Nodes [Accepted]
-    //need to do type in
+    //Approach #1 Using Preorder Traversal [Accepted]
+    public class Solution01 {
+        HashSet < String > trees = new HashSet < > ();
+        public boolean isSubtree(TreeNode s, TreeNode t) {
+            String tree1 = preorder(s, true);
+            String tree2 = preorder(t, true);
+            return tree1.indexOf(tree2) >= 0;
+        }
+        public String preorder(TreeNode t, boolean left) {
+            if (t == null) {
+                if (left)
+                    return "lnull";
+                else
+                    return "rnull";
+            }
+            return "#"+t.val + " " +preorder(t.left, true)+" " +preorder(t.right, false);
+        }
+    }
+    //Approach #2 By Comparison of Nodes [Accepted]
+    public class Solution02 {
+        public boolean isSubtree(TreeNode s, TreeNode t) {
+            return traverse(s,t);
+        }
+        public boolean equals(TreeNode x,TreeNode y)
+        {
+            if(x==null && y==null)
+                return true;
+            if(x==null || y==null)
+                return false;
+            return x.val==y.val && equals(x.left,y.left) && equals(x.right,y.right);
+        }
+        public boolean traverse(TreeNode s,TreeNode t)
+        {
+            return  s!=null && ( equals(s,t) || traverse(s.left,t) || traverse(s.right,t));
+        }
+    }
 
 /////////////////////////////////////////////////////////////////////////////
     //Java Solution, tree traversal

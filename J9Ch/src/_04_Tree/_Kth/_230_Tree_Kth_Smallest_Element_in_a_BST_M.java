@@ -8,7 +8,7 @@ import java.util.Stack;
 public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
     //3 ways implemented in JAVA (Python): Binary Search, in-order iterative & recursive
 
-    //    Binary Search (dfs): most preferable
+    //    1. Binary Search (dfs): most preferable
     public int kthSmallest1(TreeNode root, int k) {
         int count = countNodes(root.left);
         if (k <= count) {
@@ -27,7 +27,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
     }
 
 ////////////////////////////////////////////////////////////////////////////////////
-    //    DFS in-order recursive:
+    //    2. DFS in-order recursive:
     // better keep these two variables in a wrapper class
     private static int number = 0;
     private static int count2 = 0;
@@ -49,7 +49,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
     }
 
 ////////////////////////////////////////////////////////////////////////////////////
-    //    DFS in-order iterative:
+    //    3. DFS in-order iterative:     这个性能不是太好，因为这个是O(n)
     public int kthSmallest3(TreeNode root, int k) {
         Stack<TreeNode> st = new Stack<>();
 
@@ -201,8 +201,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         traverse(root.right, k);
     }
 
-    class Solution4{
-    }
+/////////////////////////////////////////////////////////////////////////////////////
 
     //Iterative:
     public int kthSmallest8(TreeNode root, int k) {

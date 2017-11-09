@@ -12,10 +12,48 @@ public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
     //  https://leetcode.com/articles/second-minimum-node-in-a-binary-tree/
 
     //    Approach #1: Brute Force [Accepted]
+    class Solution01 {
+        public void dfs(TreeNode root, Set<Integer> uniques) {
+            if (root != null) {
+                uniques.add(root.val);
+                dfs(root.left, uniques);
+                dfs(root.right, uniques);
+            }
+        }
+        public int findSecondMinimumValue(TreeNode root) {
+            Set<Integer> uniques = new HashSet<Integer>();
+            dfs(root, uniques);
 
+            int min1 = root.val;
+            long ans = Long.MAX_VALUE;
+            for (int v : uniques) {
+                if (min1 < v && v < ans) ans = v;
+            }
+            return ans < Long.MAX_VALUE ? (int) ans : -1;
+        }
+    }
     //    Approach #2: Ad-Hoc [Accepted]
+    class Solution02 {
+        int min1;
+        long ans = Long.MAX_VALUE;
 
-    // need to OCR
+        public void dfs(TreeNode root) {
+            if (root != null) {
+                if (min1 < root.val && root.val < ans) {
+                    ans = root.val;
+                } else if (min1 == root.val) {
+                    dfs(root.left);
+                    dfs(root.right);
+                }
+            }
+        }
+        public int findSecondMinimumValue(TreeNode root) {
+            min1 = root.val;
+            dfs(root);
+            return ans < Long.MAX_VALUE ? (int) ans : -1;
+        }
+    }
+
 ///////////////////////////////////////////////////////////////////////////
     public int findSecondMinimumValue3(TreeNode root) {
         if (root == null) {
