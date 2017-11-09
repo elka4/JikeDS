@@ -1,5 +1,6 @@
 package DP.DP7;
-
+import org.junit.Test;
+import java.util.*;
 
 /*
 -----------------------------------------------------------------------------------------------
@@ -63,10 +64,105 @@ f[i]，f[j] = f[i] + 1
 -----------------------------------------------------------------------------------------------
  */
 
-import org.junit.Test;
 
 //  Longest Increasing Subsequence
+//  https://leetcode.com/problems/longest-increasing-subsequence/description/
+//  http://www.lintcode.com/zh-cn/problem/longest-increasing-subsequence/
 public class _3LongestIncreasingSubsequence {
+    //https://leetcode.com/problems/longest-increasing-subsequence/solution/
+
+    //Approach #1 Brute Force [Time Limit Exceeded]
+
+    public class Solution01 {
+
+        public int lengthOfLIS(int[] nums) {
+            return lengthofLIS(nums, Integer.MIN_VALUE, 0);
+        }
+
+        public int lengthofLIS(int[] nums, int prev, int curpos) {
+            if (curpos == nums.length) {
+                return 0;
+            }
+            int taken = 0;
+            if (nums[curpos] > prev) {
+                taken = 1 + lengthofLIS(nums, nums[curpos], curpos + 1);
+            }
+            int nottaken = lengthofLIS(nums, prev, curpos + 1);
+            return Math.max(taken, nottaken);
+        }
+    }
+
+    //Approach #2 Recursion with memorization [Memory Limit Exceeded]
+    public class Solution02 {
+        public int lengthOfLIS(int[] nums) {
+            int memo[][] = new int[nums.length + 1][nums.length];
+            for (int[] l : memo) {
+                Arrays.fill(l, -1);
+            }
+            return lengthofLIS(nums, -1, 0, memo);
+        }
+        public int lengthofLIS(int[] nums, int previndex, int curpos, int[][] memo) {
+            if (curpos == nums.length) {
+                return 0;
+            }
+            if (memo[previndex + 1][curpos] >= 0) {
+                return memo[previndex + 1][curpos];
+            }
+            int taken = 0;
+            if (previndex < 0 || nums[curpos] > nums[previndex]) {
+                taken = 1 + lengthofLIS(nums, curpos, curpos + 1, memo);
+            }
+
+            int nottaken = lengthofLIS(nums, previndex, curpos + 1, memo);
+            memo[previndex + 1][curpos] = Math.max(taken, nottaken);
+            return memo[previndex + 1][curpos];
+        }
+    }
+
+    //Approach #3 Dynamic Programming [Accepted]
+    public class Solution03 {
+        public int lengthOfLIS(int[] nums) {
+            if (nums.length == 0) {
+                return 0;
+            }
+            int[] dp = new int[nums.length];
+            dp[0] = 1;
+            int maxans = 1;
+            for (int i = 1; i < dp.length; i++) {
+                int maxval = 0;
+                for (int j = 0; j < i; j++) {
+                    if (nums[i] > nums[j]) {
+                        maxval = Math.max(maxval, dp[j]);
+                    }
+                }
+                dp[i] = maxval + 1;
+                maxans = Math.max(maxans, dp[i]);
+            }
+            return maxans;
+        }
+    }
+
+    //Approach #4 Dynamic Programming with Binary Search[Accepted]:
+    public class Solution04 {
+        public int lengthOfLIS(int[] nums) {
+            int[] dp = new int[nums.length];
+            int len = 0;
+            for (int num : nums) {
+                int i = Arrays.binarySearch(dp, 0, len, num);
+                if (i < 0) {
+                    i = -(i + 1);
+                }
+                dp[i] = num;
+                if (i == len) {
+                    len++;
+                }
+            }
+            return len;
+        }
+    }
+
+
+//////////////////////////////////////////////////////////////////
     //9CH DP
     // nlogn
     public int LongestIncreasingSubsequence(int[] nums) {
@@ -174,12 +270,11 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
     }
 
 //////////////////////////////////////////////////////////////////
+    // 9Ch
     /**
      * @param nums: The integer array
      * @return: The length of LIS (longest increasing subsequence)
      */
-
-
     public int longestIncreasingSubsequence1(int[] nums) {
         int []f = new int[nums.length];
         int max = 0;
@@ -204,7 +299,7 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
     }
 
 //////////////////////////////////////////////////////////////////
-
+    // 9Ch
     // O(nlogn) Binary Search
     /**
      * @param nums: The integer array
@@ -256,6 +351,22 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
 //////////////////////////////////////////////////////////////////
 
 }
+/*  最长上升子序列
+给定一个整数序列，找到最长上升子序列（LIS），返回LIS的长度。
+
+您在真实的面试中是否遇到过这个题？ Yes
+说明
+最长上升子序列的定义：
+
+最长上升子序列问题是在一个无序的给定序列中找到一个尽可能长的由低到高排列的子序列，这种子序列不一定是连续的或者唯一的。
+https://en.wikipedia.org/wiki/Longest_increasing_subsequence
+
+样例
+给出 [5,4,1,2,3]，LIS 是 [1,2,3]，返回 3
+给出 [4,2,4,5,3,7]，LIS 是 [2,4,5,7]，返回 4
+
+要求时间复杂度为O(n^2) 或者 O(nlogn)
+ */
 /*
 Given a sequence of integers, find the longest increasing subsequence (LIS).
 
@@ -274,17 +385,3 @@ For [5, 4, 1, 2, 3], the LIS is [1, 2, 3], return 3
 For [4, 2, 4, 5, 3, 7], the LIS is [2, 4, 5, 7], return 4
  */
 
-/*
-给定一个整数序列，找到最长上升子序列（LIS），返回LIS的长度。
-
-您在真实的面试中是否遇到过这个题？ Yes
-说明
-最长上升子序列的定义：
-
-最长上升子序列问题是在一个无序的给定序列中找到一个尽可能长的由低到高排列的子序列，这种子序列不一定是连续的或者唯一的。
-https://en.wikipedia.org/wiki/Longest_increasing_subsequence
-
-样例
-给出 [5,4,1,2,3]，LIS 是 [1,2,3]，返回 3
-给出 [4,2,4,5,3,7]，LIS 是 [2,4,5,7]，返回 4
- */

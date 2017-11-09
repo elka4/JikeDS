@@ -55,7 +55,8 @@ public class _7CoinsInALineII {
                     Math.min(MemorySearch(n-2, dp, flag,values) ,
                             MemorySearch(n-3, dp, flag, values)) + values[values.length-n],
                     Math.min(MemorySearch(n-3, dp, flag, values),
-                            MemorySearch(n-4, dp, flag, values)) + values[values.length-n] + values[values.length - n + 1]
+                            MemorySearch(n-4, dp, flag, values)) + values[values.length-n] +
+                            values[values.length - n + 1]
             );
         }
 
@@ -65,9 +66,6 @@ public class _7CoinsInALineII {
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 }
 /*
 有 n 个不同价值的硬币排成一条线。两个参赛者轮流从左边依次拿走 1 或 2 个硬币，直到没有硬币为止。计算两个人分别拿到的硬币总价值，价值高的人获胜。

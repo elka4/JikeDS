@@ -1,9 +1,7 @@
 package DP.DP7;
-
 import groovy.transform.ToString;
 import org.junit.Test;
-
-import java.util.HashMap;
+import java.util.*;
 import java.util.HashSet;
 
 /*
@@ -88,8 +86,138 @@ f[k][j+1] 能最后一跳j+1跳到石头ak
 -----------------------------------------------------------------------------------------------
  */
 
-//Frog Jump
+//  403. Frog Jump
+//  https://leetcode.com/problems/frog-jump/description/
+//  http://www.lintcode.com/zh-cn/problem/frog-jump/
 public class _5FrogJump {
+    //https://leetcode.com/problems/frog-jump/solution/
+
+    //Approach #1 Brute Force [Time Limit Exceeded]
+    public class Solution01 {
+        public boolean canCross(int[] stones) {
+            return can_Cross(stones, 0, 0);
+        }
+        public boolean can_Cross(int[] stones, int ind, int jumpsize) {
+            for (int i = ind + 1; i < stones.length; i++) {
+                int gap = stones[i] - stones[ind];
+                if (gap >= jumpsize - 1 && gap <= jumpsize + 1) {
+                    if (can_Cross(stones, i, gap)) {
+                        return true;
+                    }
+                }
+            }
+            return ind == stones.length - 1;
+        }
+    }
+
+    //Approach #2 Better Brute Force[Time Limit Exceeded]
+    public class Solution02 {
+        public boolean canCross(int[] stones) {
+            return can_Cross(stones, 0, 0);
+        }
+        public boolean can_Cross(int[] stones, int ind, int jumpsize) {
+            if (ind == stones.length - 1) {
+                return true;
+            }
+            int ind1 = Arrays.binarySearch(stones, ind + 1, stones.length, stones[ind] + jumpsize);
+            if (ind1 >= 0 && can_Cross(stones, ind1, jumpsize)) {
+                return true;
+            }
+            int ind2 = Arrays.binarySearch(stones, ind + 1, stones.length, stones[ind] + jumpsize - 1);
+            if (ind2 >= 0 && can_Cross(stones, ind2, jumpsize - 1)) {
+                return true;
+            }
+            int ind3 = Arrays.binarySearch(stones, ind + 1, stones.length, stones[ind] + jumpsize + 1);
+            if (ind3 >= 0 && can_Cross(stones, ind3, jumpsize + 1)) {
+                return true;
+            }
+            return false;
+        }
+    }
+
+    //Approach #3 Using Memorization [Accepted]
+    public class Solution03 {
+        public boolean canCross(int[] stones) {
+            int[][] memo = new int[stones.length][stones.length];
+            for (int[] row : memo) {
+                Arrays.fill(row, -1);
+            }
+            return can_Cross(stones, 0, 0, memo) == 1;
+        }
+        public int can_Cross(int[] stones, int ind, int jumpsize, int[][] memo) {
+            if (memo[ind][jumpsize] >= 0) {
+                return memo[ind][jumpsize];
+            }
+            for (int i = ind + 1; i < stones.length; i++) {
+                int gap = stones[i] - stones[ind];
+                if (gap >= jumpsize - 1 && gap <= jumpsize + 1) {
+                    if (can_Cross(stones, i, gap, memo) == 1) {
+                        memo[ind][gap] = 1;
+                        return 1;
+                    }
+                }
+            }
+            memo[ind][jumpsize] = (ind == stones.length - 1) ? 1 : 0;
+            return memo[ind][jumpsize];
+        }
+    }
+
+    //Approach #4 Using Memorization with Binary Search [Accepted]
+    public class Solution04 {
+        public boolean canCross(int[] stones) {
+            int[][] memo = new int[stones.length][stones.length];
+            for (int[] row : memo) {
+                Arrays.fill(row, -1);
+            }
+            return can_Cross(stones, 0, 0, memo) == 1;
+        }
+        public int can_Cross(int[] stones, int ind, int jumpsize, int[][] memo) {
+            if (memo[ind][jumpsize] >= 0) {
+                return memo[ind][jumpsize];
+            }
+            int ind1 = Arrays.binarySearch(stones, ind + 1, stones.length, stones[ind] + jumpsize);
+            if (ind1 >= 0 && can_Cross(stones, ind1, jumpsize, memo) == 1) {
+                memo[ind][jumpsize] = 1;
+                return 1;
+            }
+            int ind2 = Arrays.binarySearch(stones, ind + 1, stones.length, stones[ind] + jumpsize - 1);
+            if (ind2 >= 0 && can_Cross(stones, ind2, jumpsize - 1, memo) == 1) {
+                memo[ind][jumpsize - 1] = 1;
+                return 1;
+            }
+            int ind3 = Arrays.binarySearch(stones, ind + 1, stones.length, stones[ind] + jumpsize + 1);
+            if (ind3 >= 0 && can_Cross(stones, ind3, jumpsize + 1, memo) == 1) {
+                memo[ind][jumpsize + 1] = 1;
+                return 1;
+            }
+            memo[ind][jumpsize] = ((ind == stones.length - 1) ? 1 : 0);
+            return memo[ind][jumpsize];
+        }
+    }
+
+    //Approach #5 Using Dynamic Programming[Accepted]
+    public class Solution05 {
+        public boolean canCross(int[] stones) {
+            HashMap<Integer, Set<Integer>> map = new HashMap<>();
+            for (int i = 0; i < stones.length; i++) {
+                map.put(stones[i], new HashSet<Integer>());
+            }
+            map.get(0).add(0);
+            for (int i = 0; i < stones.length; i++) {
+                for (int k : map.get(stones[i])) {
+                    for (int step = k - 1; step <= k + 1; step++) {
+                        if (step > 0 && map.containsKey(stones[i] + step)) {
+                            map.get(stones[i] + step).add(step);
+                        }
+                    }
+                }
+            }
+            return map.get(stones[stones.length - 1]).size() > 0;
+        }
+    }
+
+
+////////////////////////////////////////////////////////////////////////
     // 9Ch DP
     public boolean canCross(int[] stones) {
 
@@ -162,6 +290,32 @@ public class _5FrogJump {
 
 ////////////////////////////////////////////////////////////////////////
 }
+
+/*
+一只青蛙正要过河，这条河分成了 x 个单位，每个单位可能存在石头，青蛙可以跳到石头上，但它不能跳进水里。
+按照顺序给出石头所在的位置，判断青蛙能否到达最后一块石头所在的位置。刚开始时青蛙在第一块石头上，假设青蛙第一次跳只能跳一个单位的长度。
+如果青蛙最后一个跳 k 个单位，那么它下一次只能跳 k - 1 ，k 或者 k + 1 个单位。注意青蛙只能向前跳。
+
+ 注意事项
+
+石头的个数 >= 2并且 <= 1100。
+每块石头的位置是一个非负数并且 < 2^31。
+第一块石头的位置总是 0.
+
+样例
+给出石头的位置为 [0,1,3,5,6,8,12,17]
+
+总共8块石头。
+第一块石头在 0 位置，第二块石头在 1 位置，第三块石头在 3 位置等等......
+最后一块石头在 17 位置。
+
+返回 true。青蛙可以通过跳 1 格到第二块石头，跳 2 格到第三块石头，跳 2 格到第四块石头，跳 3 格到第六块石头，跳 4 格到第七块石头，最后跳 5 格到第八块石头。
+
+给出石头的位置为 `[0,1,2,3,4,8,9,11]`
+返回 false。青蛙没有办法跳到最后一块石头因为第五块石头跟第六块石头的距离太大了。
+ */
+
+
 /*
 A frog is crossing a river. The river is divided into x units and at each unit there may or may not exist a stone. The frog can jump on a stone, but it must not jump into the water.
 

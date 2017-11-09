@@ -1,4 +1,5 @@
 package DP.DP6;
+import org.junit.Test;
 
 //双序列型动态规划
 
@@ -75,10 +76,121 @@ bitwise inclusive OR and assignment operator.	C |= 2 is same as C = C | 2
  */
 
 
-import org.junit.Test;
 
-// Interleaving String
+//  97. Interleaving String
+//  https://leetcode.com/problems/interleaving-string/description/
 public class _2InterleavingString {
+    //https://leetcode.com/articles/interleaving-strings/
+    //https://leetcode.com/problems/interleaving-string/solution/
+
+    //Approach #1 Brute Force [Time Limit Exceeded]
+    public class Solution1 {
+        public boolean is_Interleave(String s1,int i,String s2,int j,String res,String s3) {
+            if(res.equals(s3) && i==s1.length() && j==s2.length())
+                return true;
+            boolean ans=false;
+            if(i<s1.length())
+                ans|=is_Interleave(s1,i+1,s2,j,res+s1.charAt(i),s3);
+            if(j<s2.length())
+                ans|=is_Interleave(s1,i,s2,j+1,res+s2.charAt(j),s3);
+            return ans;
+
+        }
+        public boolean isInterleave(String s1, String s2, String s3) {
+
+            return is_Interleave(s1,0,s2,0,"",s3);
+        }
+    }
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+    //Approach #2 Recursion with memoization [Accepted]
+    public class Solution2 {
+        public boolean is_Interleave(String s1, int i, String s2, int j, String s3, int k, int[][] memo) {
+            if (i == s1.length()) {
+                return s2.substring(j).equals(s3.substring(k));
+            }
+            if (j == s2.length()) {
+                return s1.substring(i).equals(s3.substring(k));
+            }
+            if (memo[i][j] >= 0) {
+                return memo[i][j] == 1 ? true : false;
+            }
+            boolean ans = false;
+            if (s3.charAt(k) == s1.charAt(i)
+                    && is_Interleave(s1, i + 1, s2, j, s3, k + 1, memo)
+                    || s3.charAt(k) == s2.charAt(j)
+                    && is_Interleave(s1, i, s2, j + 1, s3, k + 1, memo)) {
+                ans = true;
+            }
+            memo[i][j] = ans ? 1 : 0;
+            return ans;
+        }
+        public boolean isInterleave(String s1, String s2, String s3) {
+            int memo[][] = new int[s1.length()][s2.length()];
+            for (int i = 0; i < s1.length(); i++) {
+                for (int j = 0; j < s2.length(); j++) {
+                    memo[i][j] = -1;
+                }
+            }
+            return is_Interleave(s1, 0, s2, 0, s3, 0, memo);
+        }
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////
+    //Approach #3 Using 2-d Dynamic Programming [Accepted]
+    public class Solution3 {
+        public boolean isInterleave(String s1, String s2, String s3) {
+            if (s3.length() != s1.length() + s2.length()) {
+                return false;
+            }
+            boolean dp[][] = new boolean[s1.length() + 1][s2.length() + 1];
+            for (int i = 0; i <= s1.length(); i++) {
+                for (int j = 0; j <= s2.length(); j++) {
+                    if (i == 0 && j == 0) {
+                        dp[i][j] = true;
+                    } else if (i == 0) {
+                        dp[i][j] = dp[i][j - 1] && s2.charAt(j - 1) == s3.charAt(i + j - 1);
+                    } else if (j == 0) {
+                        dp[i][j] = dp[i - 1][j] && s1.charAt(i - 1) == s3.charAt(i + j - 1);
+                    } else {
+                        dp[i][j] = (dp[i - 1][j] && s1.charAt(i - 1) == s3.charAt(i + j - 1))
+                                || (dp[i][j - 1] && s2.charAt(j - 1) == s3.charAt(i + j - 1));
+                    }
+                }
+            }
+            return dp[s1.length()][s2.length()];
+        }
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////
+    //Approach #4 Using 1-d Dynamic Programming [Accepted]:
+    public class Solution4 {
+        public boolean isInterleave(String s1, String s2, String s3) {
+            if (s3.length() != s1.length() + s2.length()) {
+                return false;
+            }
+            boolean dp[] = new boolean[s2.length() + 1];
+            for (int i = 0; i <= s1.length(); i++) {
+                for (int j = 0; j <= s2.length(); j++) {
+                    if (i == 0 && j == 0) {
+                        dp[j] = true;
+                    } else if (i == 0) {
+                        dp[j] = dp[j - 1] && s2.charAt(j - 1) == s3.charAt(i + j - 1);
+                    } else if (j == 0) {
+                        dp[j] = dp[j] && s1.charAt(i - 1) == s3.charAt(i + j - 1);
+                    } else {
+                        dp[j] = (dp[j] && s1.charAt(i - 1) == s3.charAt(i + j - 1))
+                                || (dp[j - 1] && s2.charAt(j - 1) == s3.charAt(i + j - 1));
+                    }
+                }
+            }
+            return dp[s2.length()];
+        }
+    }
+
+
+/////////////////////////////////////////////////////////////////////////////////////
     //9Ch DP
     public boolean isInterleave(String s1, String s2, String s3) {
         char[] c1 = s1.toCharArray();
@@ -119,8 +231,8 @@ public class _2InterleavingString {
         /*
         For s1 = "aabcc", s2 = "dbbca"
 
-When s3 = "aadbbcbcac", return true.
-When s3 = "aadbbbaccc", return false.
+        When s3 = "aadbbcbcac", return true.
+        When s3 = "aadbbbaccc", return false.
          */
         System.out.println(isInterleave("aabcc", "dbbca", "aadbbcbcac"));
         System.out.println(isInterleave("aabcc", "dbbca", "aadbbbaccc"));
@@ -192,118 +304,7 @@ When s3 = "aadbbbaccc", return false.
     }
 
 /////////////////////////////////////////////////////////////////////////////////////
-    //https://leetcode.com/articles/interleaving-strings/
 
-//Approach #1 Brute Force [Time Limit Exceeded]
-public class Solution1 {
-    public boolean is_Interleave(String s1,int i,String s2,int j,String res,String s3)
-    {
-        if(res.equals(s3) && i==s1.length() && j==s2.length())
-            return true;
-        boolean ans=false;
-        if(i<s1.length())
-            ans|=is_Interleave(s1,i+1,s2,j,res+s1.charAt(i),s3);
-        if(j<s2.length())
-            ans|=is_Interleave(s1,i,s2,j+1,res+s2.charAt(j),s3);
-        return ans;
-
-    }
-    public boolean isInterleave(String s1, String s2, String s3) {
-        return is_Interleave(s1,0,s2,0,"",s3);
-    }
-}
-
-
-/////////////////////////////////////////////////////////////////////////////////////
-    //Approach #2 Recursion with memoization [Accepted]
-public class Solution2 {
-    public boolean is_Interleave(String s1, int i, String s2, int j, String s3, int k, int[][] memo) {
-        if (i == s1.length()) {
-            return s2.substring(j).equals(s3.substring(k));
-        }
-        if (j == s2.length()) {
-            return s1.substring(i).equals(s3.substring(k));
-        }
-        if (memo[i][j] >= 0) {
-            return memo[i][j] == 1 ? true : false;
-        }
-        boolean ans = false;
-        if (s3.charAt(k) == s1.charAt(i)
-                && is_Interleave(s1, i + 1, s2, j, s3, k + 1, memo)
-                || s3.charAt(k) == s2.charAt(j)
-                && is_Interleave(s1, i, s2, j + 1, s3, k + 1, memo)) {
-            ans = true;
-        }
-        memo[i][j] = ans ? 1 : 0;
-        return ans;
-    }
-    public boolean isInterleave(String s1, String s2, String s3) {
-        int memo[][] = new int[s1.length()][s2.length()];
-        for (int i = 0; i < s1.length(); i++) {
-            for (int j = 0; j < s2.length(); j++) {
-                memo[i][j] = -1;
-            }
-        }
-        return is_Interleave(s1, 0, s2, 0, s3, 0, memo);
-    }
-}
-
-/////////////////////////////////////////////////////////////////////////////////////
-//Approach #3 Using 2-d Dynamic Programming [Accepted]
-
-    public class Solution3 {
-        public boolean isInterleave(String s1, String s2, String s3) {
-            if (s3.length() != s1.length() + s2.length()) {
-                return false;
-            }
-            boolean dp[][] = new boolean[s1.length() + 1][s2.length() + 1];
-            for (int i = 0; i <= s1.length(); i++) {
-                for (int j = 0; j <= s2.length(); j++) {
-                    if (i == 0 && j == 0) {
-                        dp[i][j] = true;
-                    } else if (i == 0) {
-                        dp[i][j] = dp[i][j - 1] && s2.charAt(j - 1) == s3.charAt(i + j - 1);
-                    } else if (j == 0) {
-                        dp[i][j] = dp[i - 1][j] && s1.charAt(i - 1) == s3.charAt(i + j - 1);
-                    } else {
-                        dp[i][j] = (dp[i - 1][j] && s1.charAt(i - 1) == s3.charAt(i + j - 1))
-                                || (dp[i][j - 1] && s2.charAt(j - 1) == s3.charAt(i + j - 1));
-                    }
-                }
-            }
-            return dp[s1.length()][s2.length()];
-        }
-    }
-
-/////////////////////////////////////////////////////////////////////////////////////
-    //Approach #4 Using 1-d Dynamic Programming [Accepted]:
-
-    public class Solution4 {
-        public boolean isInterleave(String s1, String s2, String s3) {
-            if (s3.length() != s1.length() + s2.length()) {
-                return false;
-            }
-            boolean dp[] = new boolean[s2.length() + 1];
-            for (int i = 0; i <= s1.length(); i++) {
-                for (int j = 0; j <= s2.length(); j++) {
-                    if (i == 0 && j == 0) {
-                        dp[j] = true;
-                    } else if (i == 0) {
-                        dp[j] = dp[j - 1] && s2.charAt(j - 1) == s3.charAt(i + j - 1);
-                    } else if (j == 0) {
-                        dp[j] = dp[j] && s1.charAt(i - 1) == s3.charAt(i + j - 1);
-                    } else {
-                        dp[j] = (dp[j] && s1.charAt(i - 1) == s3.charAt(i + j - 1))
-                                || (dp[j - 1] && s2.charAt(j - 1) == s3.charAt(i + j - 1));
-                    }
-                }
-            }
-            return dp[s2.length()];
-        }
-    }
-
-
-/////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////
 }

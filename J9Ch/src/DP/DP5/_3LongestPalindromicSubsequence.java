@@ -1,4 +1,5 @@
 package DP.DP5;
+import org.junit.Test;
 
 //• 区间型动态规划
 
@@ -49,11 +50,129 @@ f[i+1][j-1] + 2|S[i]=S[j]:  S[i+1..j-1]的最长回文子串 的长度，加上S
  */
 
 
-import org.junit.Test;
 
-// Longest Palindromic Subsequence
+//  516. Longest Palindromic Subsequence
+//  https://leetcode.com/problems/longest-palindromic-subsequence/description/
+//
 public class _3LongestPalindromicSubsequence {
 
+/*    Straight forward Java DP solution
+    dp[i][j]: the longest palindromic subsequence's length of subString(i, j)
+    State transition:
+    dp[i][j] = dp[i+1][j-1] + 2 if s.charAt(i) == s.charAt(j)
+    otherwise, dp[i][j] = Math.max(dp[i+1][j], dp[i][j-1])
+    Initialization: dp[i][i] = 1*/
+
+    public class Solution01 {
+        public int longestPalindromeSubseq(String s) {
+            int[][] dp = new int[s.length()][s.length()];
+
+            for (int i = s.length() - 1; i >= 0; i--) {
+                dp[i][i] = 1;
+                for (int j = i+1; j < s.length(); j++) {
+                    if (s.charAt(i) == s.charAt(j)) {
+                        dp[i][j] = dp[i+1][j-1] + 2;
+                    } else {
+                        dp[i][j] = Math.max(dp[i+1][j], dp[i][j-1]);
+                    }
+                }
+            }
+            return dp[0][s.length()-1];
+        }
+    }
+
+
+    //    Top bottom recursive method with memoization
+    public class Solution02 {
+        public int longestPalindromeSubseq(String s) {
+            return helper(s, 0, s.length() - 1, new Integer[s.length()][s.length()]);
+        }
+
+        private int helper(String s, int i, int j, Integer[][] memo) {
+            if (memo[i][j] != null) {
+                return memo[i][j];
+            }
+            if (i > j)      return 0;
+            if (i == j)     return 1;
+
+            if (s.charAt(i) == s.charAt(j)) {
+                memo[i][j] = helper(s, i + 1, j - 1, memo) + 2;
+            } else {
+                memo[i][j] = Math.max(helper(s, i + 1, j, memo), helper(s, i, j - 1, memo));
+            }
+            return memo[i][j];
+        }
+    }
+////////////////////////////////////////////////////////////////////////////////////////////
+/*short java solution,beats 99%,with explanation
+
+7
+    M magtron_3
+    Reputation:  25
+    It is a typical DP problem. let's use a[i][j] represent the longest Palindromic Subsequence of S[i:j] (i,j inclusive).
+    So a[i][j]=
+            (1) a[i+1][j-1]+2 if S[i] == S[j]
+            (2) Max( a[i+1][j], a[i][j-1] ) if S[i]! = S[j]*/
+
+    public class Solution {
+        public int longestPalindromeSubseq03(String s) {
+            int n=s.length();
+            int[][] a=new int[n][n];
+            for(int i=0;i<n;i++) a[i][i]=1;
+            return helper(a,0,n-1,s);
+        }
+        private int helper(int[][] a,int i,int j,String s){
+            if(i>j || a[i][j]!=0) return a[i][j];
+            if(s.charAt(i)==s.charAt(j)) a[i][j]=helper(a,i+1,j-1,s)+2;
+            else a[i][j]=Math.max(helper(a,i,j-1,s),helper(a,i+1,j,s) );
+            return a[i][j];
+        }
+    }
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+//    Java DP Solution
+    public class Solution04 {
+        public int longestPalindromeSubseq(String s) {
+            int len = s.length();
+            int[][] dp = new int[len][len];
+            for(int i = 0;i < len;i++){
+                dp[i][i] = 1;
+            }
+            //for each interval length
+            for(int l = 2;l <= len;l++){
+                //for each interval with the same length
+                for(int st = 0;st <= len-l;st++){
+                    int ed = st+l-1;
+                    //if left end equals to right end or not
+                    dp[st][ed] = s.charAt(st)==s.charAt(ed)?
+                            dp[st+1][ed-1]+2 : Math.max(dp[st+1][ed], dp[st][ed-1]);
+                }
+            }
+            return dp[0][len-1];
+        }
+    }
+////////////////////////////////////////////////////////////////////////////////////////////
+//Java DP solution, similar to solving LCS problem
+//
+//    To find the longest palindromic subsequence, we could reverse the string and find the LCS(Longest common subsequence) of these two strings.
+
+    public class Solution05 {
+        public int longestPalindromeSubseq(String s) {
+            int len = s.length();
+            if(len < 2) return len;
+            int[][] dp= new int[len+1][len+1];
+            String reverse = new StringBuilder(s).reverse().toString();
+            for(int i = 1; i <= len; i++) {
+                for(int j = 1; j <= len; j++) {
+                    if(s.charAt(i-1) == reverse.charAt(j-1)) dp[i][j] = dp[i-1][j-1] + 1;
+                    else dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+                }
+            }
+            return dp[len][len];
+        }
+    }
+////////////////////////////////////////////////////////////////////////////////////////////
     // 9Ch DP
 
     public int longestPalindromeSubseq(String ss) {
@@ -103,6 +222,7 @@ public class _3LongestPalindromicSubsequence {
         System.out.println(longestPalindromeSubseq("bbbafbb"));//2  bb
     }
 ////////////////////////////////////////////////////////////////////
+// 9CH
     // 动态规划专题班非递归版：
     public int longestPalindromeSubseq1(String s) {
         int n = s.length();
@@ -159,6 +279,7 @@ public class _3LongestPalindromicSubsequence {
         System.out.println(longestPalindromeSubseq1("bbbafbb"));//2  bb
     }
 ////////////////////////////////////////////////////////////////////
+    // 9CH
 
     // 动态规划专题班递归版：
     int[][] f = null;
@@ -226,7 +347,7 @@ public class _3LongestPalindromicSubsequence {
     }
 
 ////////////////////////////////////////////////////////////////////
-
+    // 9CH
     /**
      * @param s the maximum length of s is 1000
      * @return the longest palindromic subsequence's length
@@ -252,6 +373,28 @@ public class _3LongestPalindromicSubsequence {
 ////////////////////////////////////////////////////////////////////
 
 }
+
 /*
-Given a string s, find the longest palindromic subsequence's length in s. You may assume that the maximum length of s is 1000.
+Given a String s, find the longest palindromic subsequence's length in s. You may assume that the maximum length of s is 1000.
+
+Example 1:
+Input:
+
+"bbbab"
+Output:
+4
+One possible longest palindromic subsequence is "bbbb".
+Example 2:
+Input:
+
+"cbbd"
+Output:
+2
+One possible longest palindromic subsequence is "bb".
+
+ */
+
+
+/*
+Given a String s, find the longest palindromic subsequence's length in s. You may assume that the maximum length of s is 1000.
  */

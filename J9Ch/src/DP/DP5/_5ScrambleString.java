@@ -1,7 +1,5 @@
 package DP.DP5;
-
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 //• 区间型动态规划
 
@@ -16,25 +14,168 @@ OR1<=w<=k-1{f[i][j+k-w][w] AND f[i+w][j][k-w]}
 
 
 -----------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
-
  */
 
-//  Scramble String
+//  87. Scramble String
+//  https://leetcode.com/problems/scramble-string/description/
+//  http://www.lintcode.com/zh-cn/problem/scramble-string/
 public class _5ScrambleString {
 
+//    Accepted Java solution
+    public class Solution01 {
+        public boolean isScramble(String s1, String s2) {
+            if (s1.equals(s2)) return true;
+
+            int[] letters = new int[26];
+            for (int i=0; i<s1.length(); i++) {
+                letters[s1.charAt(i)-'a']++;
+                letters[s2.charAt(i)-'a']--;
+            }
+            for (int i=0; i<26; i++) if (letters[i]!=0) return false;
+
+            for (int i=1; i<s1.length(); i++) {
+                if (isScramble(s1.substring(0,i), s2.substring(0,i))
+                        && isScramble(s1.substring(i), s2.substring(i))) return true;
+                if (isScramble(s1.substring(0,i), s2.substring(s2.length()-i))
+                        && isScramble(s1.substring(i), s2.substring(0,s2.length()-i))) return true;
+            }
+            return false;
+        }
+    }
+//////////////////////////////////////////////////////////////////////////
+/*
+Simple iterative DP Java solution with explanation
+    Explanation in code itself. The iterative version of the idea is considerably slower than the recursive simply because here we consider all possible states, while the recursive will only compute required states as it founds them. Time complexity of both is, in any case, the same.
+*/
+
+    public class Solution02 {
+        public boolean isScramble(String s1, String s2) {
+            if (s1.length() != s2.length()) return false;
+            int len = s1.length();
+            /**
+             * Let F(i, j, k) = whether the substring S1[i..i + k - 1] is a scramble of S2[j..j + k - 1] or not
+             * Since each of these substrings is a potential node in the tree, we need to check for all possible cuts.
+             * Let q be the length of a cut (hence, q < k), then we are in the following situation:
+             *
+             * S1 [   x1    |         x2         ]
+             *    i         i + q                i + k - 1
+             *
+             * here we have two possibilities:
+             *
+             * S2 [   y1    |         y2         ]
+             *    j         j + q                j + k - 1
+             *
+             * or
+             *
+             * S2 [       y1        |     y2     ]
+             *    j                 j + k - q    j + k - 1
+             *
+             * which in terms of F means:
+             *
+             * F(i, j, k) = for some 1 <= q < k we have:
+             *  (F(i, j, q) AND F(i + q, j + q, k - q)) OR (F(i, j + k - q, q) AND F(i + q, j, k - q))
+             *
+             * Base case is k = 1, where we simply need to check for S1[i] and S2[j] to be equal
+             * */
+            boolean [][][] F = new boolean[len][len][len + 1];
+            for (int k = 1; k <= len; ++k)
+                for (int i = 0; i + k <= len; ++i)
+                    for (int j = 0; j + k <= len; ++j)
+                        if (k == 1)
+                            F[i][j][k] = s1.charAt(i) == s2.charAt(j);
+                        else for (int q = 1; q < k && !F[i][j][k]; ++q) {
+                            F[i][j][k] = (F[i][j][q] && F[i + q][j + q][k - q]) || (F[i][j + k - q][q] && F[i + q][j][k - q]);
+                        }
+            return F[0][0][len];
+        }
+    }
+//////////////////////////////////////////////////////////////////////////
+/*Java fast DP iteration solution and recursion solution
+
+4
+    L liji94188
+    Reputation:  476
+    Iterative version:*/
+
+    public class Solution03 {
+        public boolean isScramble(String s1, String s2) {
+            int len = s1.length();
+            if(len!=s2.length()) return false;
+            if(len==0) return true;
+            boolean[][][] isScr = new boolean[len][len][len];
+            for(int i = 0; i < len; i++) { //length of current substring, 0 means length==1
+                for(int j = 0; j + i < len; j++) { //start point of current substring at s1.
+                    for(int k = 0; k + i < len; k++) { //start point of current substring at s2.
+                        if(i==0) isScr[i][j][k] = s1.charAt(j)==s2.charAt(k);
+                        for(int m = 0; m < i; m++) {
+                            if(isScr[m][j][k] && isScr[i-(m+1)][j+m+1][k+m+1]) isScr[i][j][k] = true;
+                            else if(isScr[m][j][k+i-m] && isScr[i-(m+1)][j+m+1][k]) isScr[i][j][k] = true;
+                        }
+                    }
+                }
+            }
+            return isScr[len-1][0][0];
+        }
+    }
+
+
+
+    //    Recursive version: with some pruning check at the beginning, finally get rid of TLE...
+    public class Solution04 {
+        public boolean isScramble(String s1, String s2) {
+            int len= s1.length();
+            if(s2.length()!=len) return false;
+            if(s1.equals(s2)) return true;
+            Map<Character,Integer> checkPermutation = new HashMap<Character,Integer>();
+            for(int i = 0; i < len; i++) {
+                char a = s1.charAt(i), b = s2.charAt(i);
+                if(checkPermutation.containsKey(a))
+                    checkPermutation.put(a,checkPermutation.get(a)+1);
+                else checkPermutation.put(a,1);
+                if(checkPermutation.containsKey(b))
+                    checkPermutation.put(b,checkPermutation.get(b)-1);
+                else checkPermutation.put(b,-1);
+            }
+            for(char c : checkPermutation.keySet()) if(checkPermutation.get(c)!=0) return false;
+
+            for(int i = 1; i < s1.length(); i++) {
+                if(isScramble(s1.substring(0,i),s2.substring(0,i)) &&
+                        isScramble(s1.substring(i,len),s2.substring(i,len)))
+                    return true;
+                else if(isScramble(s1.substring(0,i),s2.substring(len-i,len)) &&
+                        isScramble(s1.substring(i,len),s2.substring(0,len-i))) return true;
+            }
+            return false;
+        }
+    }
+
+//////////////////////////////////////////////////////////////////////////
+/*    2ms Java Recursive solution (beat 100%)
+
+4
+    A antiquity
+    Reputation:  18*/
+    public class Solution05 {
+        int[] p = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997};
+        public boolean isScramble(String s1, String s2) {
+            int l1=s1.length(), l2=s2.length();
+            if(l1!=l2) return false;
+            if(l1<=1) return s1.equals(s2);
+            if(s1.equals(s2)) return true;
+            long a=1, b=1, c=1;
+            for(int i=0; i<l1; i++){
+                if(i>0 && a==b && isScramble(s1.substring(0,i),s2.substring(l2-i)) && isScramble(s1.substring(i),s2.substring(0,l2-i)))
+                    return true;
+                if(i>0 && a==c && isScramble(s1.substring(0,i),s2.substring(0,i)) && isScramble(s1.substring(i),s2.substring(i)))
+                    return true;
+                a*=p[s1.charAt(i)-'A'];
+                b*=p[s2.charAt(l2-1-i)-'A'];
+                c*=p[s2.charAt(i)-'A'];
+            }
+            return false;
+        }
+    }
+//////////////////////////////////////////////////////////////////////////
     // 9CH DP
     public boolean isScramble(String s1, String s2) {
         char[] c1 = s1.toCharArray();
@@ -272,6 +413,47 @@ public class _5ScrambleString {
     }
 //////////////////////////////////////////////////////////////////////////
 }
+
+/*  攀爬字符串
+给定一个字符串 S1，将其递归地分割成两个非空子字符串,从而将其表示为二叉树。
+
+下面是s1 = "great"的一个可能表达：
+
+    great
+   /    \
+  gr    eat
+ / \    /  \
+g   r  e   at
+           / \
+          a   t
+在攀爬字符串的过程中，我们可以选择其中任意一个非叶节点，然后交换该节点的两个儿子。
+
+例如，我们选择了 "gr" 节点，并将该节点的两个儿子进行交换，从而产生了攀爬字符串 "rgeat"。
+
+    rgeat
+   /    \
+  rg    eat
+ / \    /  \
+r   g  e   at
+           / \
+          a   t
+我们认为， "rgeat" 是 "great" 的一个攀爬字符串.
+
+类似地，如果我们继续将其节点 "eat" 和 "at" 进行交换，就会产生新的攀爬字符串 "rgtae"。
+
+    rgtae
+   /    \
+  rg    tae
+ / \    /  \
+r   g  ta  e
+       / \
+      t   a
+同样地，"rgtae" 也是 "great"的一个攀爬字符串。
+
+给定两个相同长度的字符串s1 和 s2，判定 s2 是否为 s1 的攀爬字符串。
+ */
+
+
 /*
 Given a string s1, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.
 

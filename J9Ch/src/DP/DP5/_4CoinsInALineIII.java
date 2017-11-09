@@ -192,6 +192,12 @@ public class _4CoinsInALineIII {
 ////////////////////////////////////////////////////////////////////
 }
 /*
+有 n 个硬币排成一条线，每一枚硬币有不同的价值。两个参赛者轮流从任意一边取一枚硬币，知道没有硬币为止。计算拿到的硬币总价值，价值最高的获胜。
+
+请判定 第一个玩家 是输还是赢？
+ */
+
+/*
 There are n coins in a line. Two players take turns to take a coin from one of the ends of the line until there are no more coins left. The player with the larger amount of money wins.
 Could you please decide the first player will win or lose?
 Example

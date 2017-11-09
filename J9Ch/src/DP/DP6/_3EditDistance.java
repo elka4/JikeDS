@@ -66,8 +66,117 @@ f[i-1][j-1]   情况四:A和B最后一个 字符相等
 
 -----------------------------------------------------------------------------------------------
  */
-//  Edit Distance
+
+
+//  72. Edit Distance
+//  https://leetcode.com/problems/edit-distance/description/
+//
 public class _3EditDistance {
+
+
+/*
+    Java DP solution - O(nm)
+    Let following be the function definition :-
+
+    f(i, j) := minimum cost (or steps) required to convert first i characters of word1 to first j characters of word2
+
+    Case 1: word1[i] == word2[j], i.e. the ith the jth character matches.
+
+    f(i, j) = f(i - 1, j - 1)
+    Case 2: word1[i] != word2[j], then we must either insert, delete or replace, whichever is cheaper
+
+    f(i, j) = 1 + min { f(i, j - 1), f(i - 1, j), f(i - 1, j - 1) }
+    f(i, j - 1) represents insert operation
+    f(i - 1, j) represents delete operation
+    f(i - 1, j - 1) represents replace operation
+    Here, we consider any operation from word1 to word2. It means, when we say insert operation, we insert a new character after word1 that matches the jth character of word2. So, now have to match i characters of word1 to j - 1 characters of word2. Same goes for other 2 operations as well.
+
+    Note that the problem is symmetric. The insert operation in one direction (i.e. from word1 to word2) is same as delete operation in other. So, we could choose any direction.
+
+    Above equations become the recursive definitions for DP.
+
+    Base Case:
+
+    f(0, k) = f(k, 0) = k
+    Below is the direct bottom-up translation of this recurrent relation. It is only important to take care of 0-based index with actual code :-
+*/
+
+    public class Solution02 {
+        public int minDistance(String word1, String word2) {
+            int m = word1.length();
+            int n = word2.length();
+
+            int[][] cost = new int[m + 1][n + 1];
+            for(int i = 0; i <= m; i++)
+                cost[i][0] = i;
+            for(int i = 1; i <= n; i++)
+                cost[0][i] = i;
+
+            for(int i = 0; i < m; i++) {
+                for(int j = 0; j < n; j++) {
+                    if(word1.charAt(i) == word2.charAt(j))
+                        cost[i + 1][j + 1] = cost[i][j];
+                    else {
+                        int a = cost[i][j];
+                        int b = cost[i][j + 1];
+                        int c = cost[i + 1][j];
+                        cost[i + 1][j + 1] = a < b ? (a < c ? a : c) : (b < c ? b : c);
+                        cost[i + 1][j + 1]++;
+                    }
+                }
+            }
+            return cost[m][n];
+        }
+    }
+//    Time complexity : If n is the length of word1, m of word2, because of the two indented loops, it is O(nm)
+//////////////////////////////////////////////////////////////////////////////////////////////
+    //  https://web.stanford.edu/class/cs124/lec/med.pdf
+
+/*My Accepted Java Solution
+    Hi:
+
+    This is a very interesting question and I found a youtube video that helps a lot.
+    Basically the idea is to build up the solution step by step and keep track of the previous optimal solution in a 2D array. In this 2D array dp, dp[i][j] means the operation needed to transform word1(0, i) to word2(0,j).
+
+    There can be three conditions:
+
+            1, word1[i] == word2[j] : then no operation needed. dp[i][j] == dp[i-1][j-1]
+
+            2, Do one operation on word1[i-1][j]. dp[i][j] = dp[i-1][j] + 1
+
+            3, Do one operation on word2[i][j-1]. dp[i][j] = dp[i][j-1] + 1
+
+            for 2 and 3, the reason it works is that we know the optimal ways to transfrom word1(0,i) to word2(0,j-1) and word1(0,i-1) to word(0,j) ( Delete ("abc" to "ab") or Insert ("ab" to "abc") ). Now all we need to one more operation.
+
+    The code will be:*/
+
+    public int minDistance02(String word1, String word2) {
+        if (word1.equals(word2)) {
+            return 0;
+        }
+        if (word1.length() == 0 || word2.length() == 0) {
+            return Math.abs(word1.length() - word2.length());
+        }
+        int[][] dp = new int[word1.length() + 1][word2.length() + 1];
+        for (int i = 0; i <= word1.length(); i++) {
+            dp[i][0] = i;
+        }
+        for (int i = 0; i <= word2.length(); i++) {
+            dp[0][i] = i;
+        }
+        for (int i = 1; i <= word1.length(); i++) {
+            for (int j = 1; j <= word2.length(); j++) {
+                if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.min(dp[i-1][j-1], Math.min(dp[i-1][j], dp[i][j-1])) + 1;
+                }
+            }
+        }
+        return dp[word1.length()][word2.length()];
+    }
+//    Remeber that we start from dp[0][0], which is an empty string to an empty string.
+//////////////////////////////////////////////////////////////////////////////////////////////
     // 9Ch DP 动态规划版本去掉注释
     public int minDistance(String word1, String word2) {
         char[] s1 = word1.toCharArray();
