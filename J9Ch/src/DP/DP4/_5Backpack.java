@@ -55,6 +55,27 @@ dp[i][j] = max(dp[i-1][j] + dp[i-1][j-A[i]] + A[i])
 //Backpack
 public class _5Backpack {
 
+    public int backPack2(int m, int[] A) {
+        // write your code here
+        int n = A.length;
+        int[][] f = new int[n + 1][m + 1];//n是物品个数，m是物品大小
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {//j是物品大小
+
+                if (j >= A[i - 1]) {
+                    //f[i - 1][j]： 不放当前，取顶头
+                    //f[i - 1][j - A[i - 1]]： 放当前+ A[i - 1]， 取斜上方。。。。
+                    f[i][j] = Math.max(f[i - 1][j], f[i - 1][j - A[i - 1]] + A[i - 1]);
+                } else {
+                    f[i][j] = f[i - 1][j];
+                }
+            }
+        }
+        return f[n][m];
+    }
+
+//////////////////////////////////////////////////////////////////
     // 9Ch DP
     public int backPack(int m, int[] A) {
         int n = A.length;
@@ -120,39 +141,9 @@ public class _5Backpack {
         return 0;
     }
 //////////////////////////////////////////////////////////////////
-public int backPack2(int m, int[] A) {
-    // write your code here
-    int n = A.length;
-    int[][] f = new int[n + 1][m + 1];
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= m; j++) {
 
-            if (j >= A[i - 1]) {
-                //f[i - 1][j]： 不放当前，取顶头
-                //f[i - 1][j - A[i - 1]]： 放当前+ A[i - 1]， 取斜上方。。。。
-                f[i][j] = Math.max(f[i - 1][j], f[i - 1][j - A[i - 1]] + A[i - 1]);
-            } else {
-                f[i][j] = f[i - 1][j];
-            }
-        }
-    }
-    return f[n][m];
 }
-//////////////////////////////////////////////////////////////////
-}
-/*
-Given n items with size Ai, an integer m denotes the size of a backpack. How full you can fill this backpack?
 
- Notice
-
-You can not divide any item into small pieces.
-
-Have you met this question in a real interview? Yes
-Example
-If we have 4 items with size [2, 3, 5, 7], the backpack size is 11, we can select [2, 3, 5], so that the max size we can fill this backpack is 10. If the backpack size is 12. we can select [2, 3, 7] so that we can fulfill the backpack.
-
-You function should return the max size we can fill in the given backpack.
- */
 /*
 在n个物品中挑选若干物品装入背包，最多能装多满？假设背包的大小为m，每个物品的大小为A[i]
 
@@ -169,4 +160,19 @@ You function should return the max size we can fill in the given backpack.
 如果背包的大小为12，可以选择[2, 3, 7]装入背包，最多可以装满12的空间。
 
 函数需要返回最多能装满的空间大小。
+ */
+
+
+/*
+Given n items with size Ai, an integer m denotes the size of a backpack. How full you can fill this backpack?
+
+ Notice
+
+You can not divide any item into small pieces.
+
+Have you met this question in a real interview? Yes
+Example
+If we have 4 items with size [2, 3, 5, 7], the backpack size is 11, we can select [2, 3, 5], so that the max size we can fill this backpack is 10. If the backpack size is 12. we can select [2, 3, 7] so that we can fulfill the backpack.
+
+You function should return the max size we can fill in the given backpack.
  */

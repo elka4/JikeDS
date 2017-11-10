@@ -77,6 +77,7 @@ public class _270_Tree_Closest_Binary_Search_Tree_Value_E {
         int a = root.val;
         TreeNode kid = target < a ? root.left : root.right;
         if (kid == null) return a;
+
         int b = closestValue3(kid, target);
         return Math.abs(a - target) < Math.abs(b - target) ? a : b;
     }
@@ -87,16 +88,16 @@ public class _270_Tree_Closest_Binary_Search_Tree_Value_E {
 
 /////////////////////////////////////////////////////////////////
 
-    //Clean and concise java solution
+    //Clean and concise java solution  这个看上去很好
     public int closestValue4(TreeNode root, double target) {
-        int ret = root.val;
+        int result = root.val;
         while(root != null){
-            if(Math.abs(target - root.val) < Math.abs(target - ret)){
-                ret = root.val;
+            if(Math.abs(target - root.val) < Math.abs(target - result)){
+                result = root.val;
             }
             root = root.val > target? root.left: root.right;
         }
-        return ret;
+        return result;
     }
 
 

@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 
 //  leetcode  315. Count of Smaller Numbers After Self
 //  https://leetcode.com/problems/count-of-smaller-numbers-after-self/description/
-public class Count_of_Smaller_Numbers_After_Self {
+public class _315_Count_of_Smaller_Numbers_After_Self {
 /*
 9ms short Java BST solution get answer when building BST
 Every node will maintain a val sum recording the total of number on it's left bottom side, dup counts the duplication. For example, [3, 2, 2, 6, 1], from back to beginning,we would have:

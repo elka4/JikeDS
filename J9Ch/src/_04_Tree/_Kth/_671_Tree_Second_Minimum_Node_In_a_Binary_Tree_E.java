@@ -24,7 +24,7 @@ public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
             Set<Integer> uniques = new HashSet<Integer>();
             dfs(root, uniques);
 
-            int min1 = root.val;
+            int min1 = root.val;//The first minimum must be root.val.
             long ans = Long.MAX_VALUE;
             for (int v : uniques) {
                 if (min1 < v && v < ans) ans = v;
@@ -32,6 +32,8 @@ public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
             return ans < Long.MAX_VALUE ? (int) ans : -1;
         }
     }
+
+
     //    Approach #2: Ad-Hoc [Accepted]
     class Solution02 {
         int min1;
@@ -55,13 +57,22 @@ public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
     }
 
 ///////////////////////////////////////////////////////////////////////////
+    //  https://www.zhihu.com/question/28414001
+    /*
+    JDK8的HashSet实现变了，导致元素插入的位置发生了变化；iterator自身实现的顺序倒没变，还是按照内部插入的位置顺序来遍历，于是题主就看到了JDK7和JDK8的结果不一样。具体来说，是JDK7与JDK8的java.util.HashMap的hash算法以及HashMap的数据布局发生了变化。
+
+作者：RednaxelaFX
+链接：https://www.zhihu.com/question/28414001/answer/40733996
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+     */
     public int findSecondMinimumValue3(TreeNode root) {
         if (root == null) {
             return -1;
         }
         Set<Integer> set = new TreeSet<>();
         dfs(root, set);
-        Iterator<Integer> iterator = set.iterator();
+        Iterator<Integer> iterator = set.iterator();//set的iterator可以保证从小到大的顺序？
         int count = 0;
         while (iterator.hasNext()) {
             count++;

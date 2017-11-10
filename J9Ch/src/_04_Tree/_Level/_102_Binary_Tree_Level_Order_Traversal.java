@@ -11,8 +11,8 @@ import java.util.*;
 public class _102_Binary_Tree_Level_Order_Traversal {
     //jiuzhang
     //version 1: BFS
-    public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
 
         if (root == null) {
             return result;
@@ -23,10 +23,13 @@ public class _102_Binary_Tree_Level_Order_Traversal {
 
         while (!queue.isEmpty()) {
              ArrayList<Integer> level = new ArrayList<>();
+
              int size = queue.size();
+            //1. Pop and print all nodes in curernt level
              for (int i = 0; i < size; i++) {
                  TreeNode head = queue.poll();
                  level.add(head.val);
+                 //2.add left and right children into queue
                  if (head.left != null) {
                      queue.offer(head.left);
                  }
@@ -39,10 +42,11 @@ public class _102_Binary_Tree_Level_Order_Traversal {
 
         return result;
     }
+
 //////////////////////////////////////////////////////////////////////
     //version 2:  DFS
-    public ArrayList<ArrayList<Integer>> levelOrder2(TreeNode root) {
-        ArrayList<ArrayList<Integer>> results = new ArrayList<>();
+    public List<List<Integer>> levelOrder2(TreeNode root) {
+        List<List<Integer>> results = new ArrayList<>();
 
         if (root == null) {
             return results;
@@ -65,6 +69,7 @@ public class _102_Binary_Tree_Level_Order_Traversal {
 
     private void dfs(TreeNode root, ArrayList<Integer> level,
                      int curtLevel, int maxLevel) {
+
         if (root == null || curtLevel > maxLevel) {
             return;
         }
@@ -81,8 +86,8 @@ public class _102_Binary_Tree_Level_Order_Traversal {
 
 //////////////////////////////////////////////////////////////////////
     //version 3: BFS. two queues
-    public ArrayList<ArrayList<Integer>> levelOrder3(TreeNode root) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+    public List<List<Integer>> levelOrder3(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
             return result;
         }
@@ -91,6 +96,7 @@ public class _102_Binary_Tree_Level_Order_Traversal {
         ArrayList<TreeNode> Q2 = new ArrayList<TreeNode>();
 
         Q1.add(root);
+
         while (Q1.size() != 0) {
             ArrayList<Integer> level = new ArrayList<Integer>();
             Q2.clear();
@@ -121,8 +127,8 @@ public class _102_Binary_Tree_Level_Order_Traversal {
 //////////////////////////////////////////////////////////////////////
 
     //version 4: BFS, queue with dummy node
-    public ArrayList<ArrayList<Integer>> levelOrder4(TreeNode root) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+    public List<List<Integer>> levelOrder4(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
             return result;
         }
@@ -207,9 +213,9 @@ public class _102_Binary_Tree_Level_Order_Traversal {
                     [[5], [3, 7], [1, 2, 6, 8]]
      */
 //////////////////////////////////////////////////////////////////////
-    public ArrayList<ArrayList<Integer>> levelOrder6(TreeNode root) {
-        ArrayList<ArrayList<Integer>> al = new ArrayList<ArrayList<Integer>>();
-        ArrayList<Integer> nodeValues = new ArrayList<Integer>();
+    public List<List<Integer>> levelOrder6(TreeNode root) {
+        List<List<Integer>> al = new ArrayList<>();
+        List<Integer> nodeValues = new ArrayList<Integer>();
         if(root == null)
             return al;
 
@@ -218,7 +224,7 @@ public class _102_Binary_Tree_Level_Order_Traversal {
         current.add(root);
 
         while(!current.isEmpty()){
-            TreeNode node = current.remove();
+            TreeNode node = current.remove();// Retrieves and removes the head (first element) of this list.
 
             if(node.left != null)
                 next.add(node.left);
@@ -236,16 +242,21 @@ public class _102_Binary_Tree_Level_Order_Traversal {
         }
         return al;
     }
-
+    @Test
+    public void test06(){
+        int[] arr = {9,3,20};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+        root.print();
+        System.out.println(levelOrder6(root));
+//        root.print();
+    }
 //////////////////////////////////////////////////////////////////////
 }
 /*
 二叉树的层次遍历
 
- 描述
- 笔记
- 数据
- 评测
 给出一棵二叉树，返回其节点值的层次遍历（逐层从左往右访问）
 
 样例

@@ -16,9 +16,9 @@ public class _19_K_Closest_Numbers_In_Sorted_Array {
      */
     class Solution1 {
         public List<Integer> findClosestElements(List<Integer> arr, int k, int x) {
-            Collections.sort(arr, (a,b) -> a == b ? a - b : Math.abs(a - x) - Math.abs(b - x));
+            Collections.sort(arr, (a,b) -> a == b ? a - b : Math.abs(a - x) - Math.abs(b - x));//按照arr中元素与x的差，从小到大排序
             arr = arr.subList(0, k);
-            Collections.sort(arr);
+            Collections.sort(arr);//重新对arr按照元素大小排序
             return arr;
         }
 
@@ -85,6 +85,8 @@ Time complexity : O(log(n)+k)O(log(n)+k). O(log(n))O(log(n)) is for the time of 
 
 Space complexity : O(k)O(k). It is to generate the required sublist.
  */
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //  Java 4-Liner and O(n) Time Solution
     class Solution3 {

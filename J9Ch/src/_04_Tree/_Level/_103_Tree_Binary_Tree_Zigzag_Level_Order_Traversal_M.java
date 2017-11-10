@@ -10,19 +10,16 @@ import java.util.*;
 //  http://www.lintcode.com/zh-cn/problem/binary-tree-zigzag-level-order-traversal/
 public class _103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M {
 
-        public List<List<Integer>> zigzagLevelOrder1(TreeNode root)
-        {
+        public List<List<Integer>> zigzagLevelOrder1(TreeNode root) {
             List<List<Integer>> sol = new ArrayList<>();
             travel(root, sol, 0);
             return sol;
         }
 
-        private void travel(TreeNode curr, List<List<Integer>> sol, int level)
-        {
+        private void travel(TreeNode curr, List<List<Integer>> sol, int level) {
             if(curr == null) return;
 
-            if(sol.size() <= level)
-            {
+            if(sol.size() <= level) {
                 List<Integer> newLevel = new LinkedList<>();
                 sol.add(newLevel);
             }

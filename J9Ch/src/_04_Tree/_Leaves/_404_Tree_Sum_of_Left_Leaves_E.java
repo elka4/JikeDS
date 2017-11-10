@@ -29,23 +29,7 @@ public class _404_Tree_Sum_of_Left_Leaves_E {
         }
 
 //////////////////////////////////////////////////////////////////////////////////////
-    /*Java iterative and recursive solutions
-        Recursive method. For given node we check whether its left child is a leaf. If it is the case, we add its value to answer, otherwise recursively call method on left child. For right child we call method only if it has at least one nonnull child.*/
-
-    public int sumOfLeftLeaves2(TreeNode root) {
-        if(root == null) return 0;
-        int ans = 0;
-        if(root.left != null) {
-            if(root.left.left == null && root.left.right == null) ans += root.left.val;
-            else ans += sumOfLeftLeaves2(root.left);
-        }
-        ans += sumOfLeftLeaves2(root.right);
-
-        return ans;
-    }
-
-//////////////////////////////////////////////////////////////////////////////////////
-
+        //其实就是两个条件，第一，node必须是个左树，第二node左右子树必须为null
 /*Iterative method. Here for each node in the tree we check whether its left child is a leaf. If it is true, we add its value to answer, otherwise add left child to the stack to process it later. For right child we add it to stack only if it is not a leaf.
 * */
 
@@ -70,7 +54,27 @@ public class _404_Tree_Sum_of_Left_Leaves_E {
         }
         return ans;
     }
+
+
 //////////////////////////////////////////////////////////////////////////////////////
+    /*Java iterative and recursive solutions
+        Recursive method. For given node we check whether its left child is a leaf. If it is the case, we add its value to answer, otherwise recursively call method on left child. For right child we call method only if it has at least one nonnull child.*/
+    //这个和九章的一样
+    public int sumOfLeftLeaves2(TreeNode root) {
+        if(root == null) return 0;
+        int ans = 0;
+        if(root.left != null) {
+            if(root.left.left == null && root.left.right == null)
+                ans += root.left.val;
+            else ans += sumOfLeftLeaves2(root.left);
+        }
+        ans += sumOfLeftLeaves2(root.right);
+
+        return ans;
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////
+
     //Jiuzhang
 public class Jiuzhang {
     public int sumOfLeftLeaves(TreeNode root) {
@@ -81,7 +85,7 @@ public class Jiuzhang {
 
         if(root.left != null) {
             TreeNode left = root.left;
-            if(left.left == null && left.right == null) {
+            if(left.left == null && left.right == null) {//左树而且其左右皆为null，就是左叶子
                 sum += left.val;
             }
             else {

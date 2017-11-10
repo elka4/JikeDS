@@ -27,28 +27,28 @@ public int hIndex2(int[] citations) {
     for (int c:citations) {
         papers[Math.min(n, c)]++;
     }
-        //finding the h-index
-        int k = n;
-        for (int s = papers[n]; k > s; s += papers[k]){
-            k--;
-        }
+    //finding the h-index
+    int k = n;
+    for (int s = papers[n]; k > s; s += papers[k]){
+        k--;
+    }
     return k;
 }
 
 
 
 //////////////////////////////////////////////////////////
-public int hIndex(int[] citations) {
-    Arrays.sort(citations);
+    public int hIndex(int[] citations) {
+        Arrays.sort(citations);
 
-    int result = 0;
-    for(int i=0; i<citations.length; i++){
-        int smaller = Math.min(citations[i], citations.length-i);
-        result = Math.max(result, smaller);
+        int result = 0;
+        for(int i=0; i<citations.length; i++){
+            int smaller = Math.min(citations[i], citations.length-i);
+            result = Math.max(result, smaller);
+        }
+
+        return result;
     }
-
-    return result;
-}
 }
 /*
 Given an array of citations (each citation is a non-negative integer) of a researcher, write a function to compute the researcher's h-index.

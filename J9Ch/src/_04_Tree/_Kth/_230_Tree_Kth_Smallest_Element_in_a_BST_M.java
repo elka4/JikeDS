@@ -10,20 +10,20 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
 
     //    1. Binary Search (dfs): most preferable
     public int kthSmallest1(TreeNode root, int k) {
-        int count = countNodes(root.left);
-        if (k <= count) {
+        int count = countNodes(root.left);//先计算树中node总数
+        if (k <= count) {                 //如果k小于等于count，就在左树中
             return kthSmallest1(root.left, k);
-        } else if (k > count + 1) {
+        } else if (k > count + 1) {        //如果大于count+1，就在右树中找k - (count + 1)个
             return kthSmallest1(root.right, k-1-count); // 1 is counted as current node
         }
 
-        return root.val;
+        return root.val;                    //否则root就是第k个
     }
 
-    public int countNodes(TreeNode n) {
+    public int countNodes(TreeNode n) { //计算n为root的树中node总数
         if (n == null) return 0;
 
-        return 1 + countNodes(n.left) + countNodes(n.right);
+        return 1 + countNodes(n.left) + countNodes(n.right); //1是root的计数
     }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -72,12 +72,6 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         return -1; // never hit if k is valid
     }
 
-
-/*2 yrs later...
-    Appreciated everyone reviewing my answers and leaving insightful comments here through the last two years, I've never got chance to reply to all of them, and unfortunately, I no longer write in JAVA and this might be the excuse I won't go back editing my stupid codes any more lol. Below is my Python answer that I just picked up lately, it's more fun and hopefully, easier to understand by its simple structure.
-
-    note: requirement has been changed a bit since last time I visited that the counting could be looked up frequently and BST itself could be altered (inserted/deleted) by multiple times, so that's the main reason that I stored them in an array.*/
-
 /////////////////////////////////////////////////////////////////////////////////////
 
     public int kthSmallest4(TreeNode root, int k) {
@@ -122,15 +116,15 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
     public int kthSmallest5(TreeNode root, int k) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
 
-        TreeNode p = root;
+        TreeNode p = root;      //其实并不需要指定pointer，直接用root也没问题
         int result = 0;
 
         while(!stack.isEmpty() || p!=null){
-            if(p!=null){
+            if(p!=null){    //反正就是把root的左树全部压进去
                 stack.push(p);
 
                 p = p.left;
-            }else{
+            }else{  //上一步中左树为null
                 TreeNode t = stack.pop();
 
                 k--;

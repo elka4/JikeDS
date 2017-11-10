@@ -27,7 +27,7 @@ f[i]        i最少被分成几个完全平方数之和
 f[i-j*j]   i-j*j 最少被分成几个完全平方数之和
 
 • 设f[i]表示i最少被分成几个完全平方数之和
-• f[i] = min1<=j*j<=i{f[i-j2] + 1}
+• f[i] = min1<=j*j<=i{f[i-j^2] + 1}
 • 初始条件:0被分成0个完全平方数之和 – f[0] = 0
 
 
@@ -95,10 +95,6 @@ public class _1PerfectSquares {
 
 
 /*    Simple Java DP Solution
-
-40
-    C czonzhu
-    Reputation:  809
     Just regular DP. Time Complexity: n * sqrt(n) Space: O(n)*/
 
     public int numSquares02(int n) {
@@ -113,7 +109,17 @@ public class _1PerfectSquares {
         return dp[n];
     }
 
-
+    //    Beautiful 8 Lines Java Solution
+    public int numSquares04(int n) {
+        int[] record = new int[n + 1];
+        for(int i = 0; i <= n; i++){
+            record[i] = i;
+            for(int j = 1; j * j <=i ; j++){
+                record[i] = Math.min(record[i - j * j] + 1,record[i]);
+            }
+        }
+        return record[n];
+    }
 
     //Java DP Solution with explanation
 
@@ -151,17 +157,7 @@ public class _1PerfectSquares {
         }
 
 
-    //    Beautiful 8 Lines Java Solution
-    public int numSquares04(int n) {
-        int[] record = new int[n + 1];
-        for(int i = 0; i <= n; i++){
-            record[i] = i;
-            for(int j = 1; j * j <=i ; j++){
-                record[i] = Math.min(record[i - j * j] + 1,record[i]);
-            }
-        }
-        return record[n];
-    }
+
 
 
 
@@ -326,7 +322,14 @@ public class _1PerfectSquares {
 
 /////////////////////////////////////////////////////////////////////////
 }
+/*
+给一个正整数 n, 找到若干个完全平方数(比如1, 4, 9, ... )使得他们的和等于 n。你需要让平方数的个数最少。
 
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给出 n = 12, 返回 3 因为 12 = 4 + 4 + 4。
+给出 n = 13, 返回 2 因为 13 = 4 + 9。
+ */
 /*
 Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.
 
@@ -342,11 +345,3 @@ Given n = 12, return 3 because 12 = 4 + 4 + 4
 Given n = 13, return 2 because 13 = 4 + 9
  */
 
-/*
-给一个正整数 n, 找到若干个完全平方数(比如1, 4, 9, ... )使得他们的和等于 n。你需要让平方数的个数最少。
-
-您在真实的面试中是否遇到过这个题？ Yes
-样例
-给出 n = 12, 返回 3 因为 12 = 4 + 4 + 4。
-给出 n = 13, 返回 2 因为 13 = 4 + 9。
- */

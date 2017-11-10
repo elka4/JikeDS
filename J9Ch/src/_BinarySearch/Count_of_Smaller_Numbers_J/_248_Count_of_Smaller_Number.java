@@ -8,72 +8,115 @@ import java.util.*;
 
 public class _248_Count_of_Smaller_Number {
     //  http://blog.csdn.net/sunday0904/article/details/72721803
-    public class Solution1 {
-        /**
-         * @param A: An integer array
-         * @return: The number of element in the array that
-         *          are smaller that the given integer
-         */
-        public ArrayList<Integer> countOfSmallerNumber(int[] A, int[] queries) {
-            // write your code here
-            ArrayList<Integer> result = new ArrayList<Integer>();
-            Arrays.sort(A);
-
-            for(int i = 0;i<queries.length;i++){
-                int count = 0;
-                for(int j = 0;j<A.length;j++){
-                    if(A[j] >= queries[i]){
-                        count = j;
-                        break;
-                    }
-                }
-                result.add(count);
-            }
-            return result;
-        }
-    }
-
-///////////////////////////////////////////////////////////////////////////
-
-    //  https://github.com/Silocean/LintCode/blob/master/248%20%E7%BB%9F%E8%AE%A1%E6%AF%94%E7%BB%99%E5%AE%9A%E6%95%B4%E6%95%B0%E5%B0%8F%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0/CountOfSmallerNumber.java
-    public class Solution2 {
-        /**
-         * @param A: An integer array
-         * @return: The number of element in the array that
-         * are smaller that the given integer
-         */
-        public ArrayList<Integer> countOfSmallerNumber(int[] A, int[] queries) {
-            ArrayList<Integer> result = new ArrayList<>();
-            Arrays.sort(A);
-            for (int i = 0; i < queries.length; i++) {
-                result.add(helper(A, queries[i]));
-            }
-
-            return result;
-        }
-
-        private int helper(int[] A, int num) {
-            int count = 0;
-            for (int i = 0; i < A.length; i++) {
-                if (A[i] < num) {
-                    count++;
-                } else {
+    /**
+     * @param nums: An integer array
+     * @return: The number of element in the array that
+     *          are smaller that the given integer
+     */
+    public ArrayList<Integer> countOfSmallerNumber1(int[] nums, int[] queries) {
+        // write your code here
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        Arrays.sort(nums);
+        //因为没有用到i，所有可以用foreach
+        for(int i = 0; i < queries.length; i++){
+            int count = 0; //每个query都重设count
+            for(int j = 0; j < nums.length; j++){
+                //j >=0 就是j已经不满足了，就是比最大的满足小于query的index还大1
+                //就是j这个时候的数值刚好等于小于query的数目
+                if(nums[j] >= queries[i]){
+                    count = j;
                     break;
                 }
             }
-
-            return count;
+            result.add(count);
         }
+        return result;
+    }
+///////////////////////////////////////////////////////////////////////////
+
+    //  https://github.com/Silocean/LintCode/blob/master/248%20%E7%BB%9F%E8%AE%A1%E6%AF%94%E7%BB%99%E5%AE%9A%E6%95%B4%E6%95%B0%E5%B0%8F%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0/CountOfSmallerNumber.java
+    /** 和上面做法一样
+     * @param nums: nums integer array
+     * @return: The number of element in the array that
+     * are smaller that the given integer
+     */
+    public ArrayList<Integer> countOfSmallerNumber2(int[] nums, int[] queries) {
+        ArrayList<Integer> result = new ArrayList<>();
+        Arrays.sort(nums);
+        for (int i = 0; i < queries.length; i++) {
+            result.add(helper(nums, queries[i]));
+        }
+
+        return result;
+    }
+
+    private int helper(int[] nums, int num) {
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < num) {
+                count++;
+            } else {
+                break;
+            }
+        }
+
+        return count;
     }
 
     @Test
     public void test02(){
-        ArrayList<Integer> result = countOfSmallerNumber(new int[]{1, 2, 7, 8, 5}, new int[]{1, 8, 5});
+        ArrayList<Integer> result = countOfSmallerNumber2(
+                new int[]{1, 2, 7, 8, 5}, new int[]{1, 8, 5});
         for (int i = 0; i < result.size(); i++) {
             System.out.println(result.get(i));
         }
     }
 
+///////////////////////////////////////////////////////////////////////////
+    //  https://github.com/Silocean/LintCode/blob/master/248%20%E7%BB%9F%E8%AE%A1%E6%AF%94%E7%BB%99%E5%AE%9A%E6%95%B4%E6%95%B0%E5%B0%8F%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0/CountOfSmallerNumberII.java
+    /**
+     * @param A: An integer array
+     * @return: The number of element in the array that
+     * are smaller that the given integer
+     */
+    public  ArrayList<Integer> countOfSmallerNumber33(int[] A, int[] queries) {
+        ArrayList<Integer> result = new ArrayList<>();
+        Arrays.sort(A);
+        for (int i = 0; i < queries.length; i++) {
+            result.add(binarySearch(A, queries[i]));
+        }
+        return result;
+    }
+
+    private int binarySearch(int[] A, int number) {
+        if (A.length == 0) return 0;
+        int start = 0;
+        int end = A.length - 1;
+        int mid = 0;
+        while (start + 1 < end) {
+            mid = (start + end) / 2;
+            if (number > A[mid]) {
+                start = mid;
+            } else {
+                end = mid;
+            }
+        }
+        if (A[start] >= number) {
+            return start;
+        }
+        if (A[end] >= number) {
+            return end;
+        }
+        return end + 1;
+    }
+
+    @Test
+    public void test03(){
+        ArrayList<Integer> result = countOfSmallerNumber33(new int[]{1, 2, 7, 8, 5}, new int[]{1, 12, 6});
+        for (int i = 0; i < result.size(); i++) {
+            System.out.println(result.get(i));
+        }
+    }
 ///////////////////////////////////////////////////////////////////////////
 	/*
      * @param nums: An integer array
@@ -156,13 +199,13 @@ public class _248_Count_of_Smaller_Number {
         //更新
         root.count = root.left.count + root.right.count;
     }
-    public ArrayList<Integer> countOfSmallerNumber(int[] A, int[] queries) {
+    public ArrayList<Integer> countOfSmallerNumber3(int[] nums, int[] queries) {
         // write your code here
         root = build(0, 10000);
         ArrayList<Integer> ans = new ArrayList<>();
         int res;
-        for(int i = 0; i < A.length; i++) {
-            modifySegmentTree(root, A[i], 1);
+        for(int i = 0; i < nums.length; i++) {
+            modifySegmentTree(root, nums[i], 1);
         }
         for(int i = 0; i < queries.length; i++) {
             res = 0;

@@ -3,6 +3,39 @@ package _BinarySearch.Closest_Number_J; import org.junit.Test;
 //  Closest Number in Sorted Array
 
 public class _18_Closest_Number_in_Sorted_Array {
+
+
+
+    public int closestNumber2(int[] A, int target) {
+        // Write your code here
+        if (A == null || A.length == 0) {
+            return -1;
+        }
+
+        int start = 0;
+        int end = A.length - 1;
+
+        while (start + 1 < end) {
+            int mid = start + (end - start) / 2;
+
+            if(target== A[mid]) {
+                return mid;
+            } else if (target < A[mid]) {
+                end = mid;
+            } else {
+                start = mid;
+            }
+        }
+
+        return (Math.abs(A[start] - target) < Math.abs(A[end] - target)) ? start : end;
+
+    }
+
+/*    作者：菲雨非鱼
+    链接：http://www.jianshu.com/p/75109c804886
+    來源：简书
+    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 */
+///////////////////////////////////////////////////////////////////////////
 	/**
      * @param A an integer array sorted in ascending order
      * @param target an integer
@@ -27,14 +60,17 @@ public class _18_Closest_Number_in_Sorted_Array {
             System.out.println("index == A.length");
             return A.length - 1;
         }
+        //index是第一个大于等于target的位置，所以结果不是index就是index-1
 
-        //
+        //因为是sorted order，所以target必然大于等于A[index - 1] ，小于等于 A[index]
         if (target - A[index - 1] < A[index] - target) {
             System.out.println("target - A[index - 1] < A[index] - target");
             return index - 1;
         }
         return index;
     }
+
+
     // 找到第一个大于等于target的index
     private int firstIndex(int[] A, int target) {
         int start = 0, end = A.length - 1;
@@ -106,36 +142,7 @@ public class _18_Closest_Number_in_Sorted_Array {
     }
 ///////////////////////////////////////////////////////////////////////////
 
-    public int closestNumber2(int[] A, int target) {
-        // Write your code here
-        if (A == null || A.length == 0) {
-            return -1;
-        }
 
-        int start = 0;
-        int end = A.length - 1;
-
-        while (start + 1 < end) {
-            int mid = start + (end - start) / 2;
-
-            if(target== A[mid]) {
-                return mid;
-            } else if (target < A[mid]) {
-                end = mid;
-            } else {
-                start = mid;
-            }
-        }
-
-        return (Math.abs(A[start] - target) < Math.abs(A[end] - target)) ? start : end;
-
-    }
-
-/*    作者：菲雨非鱼
-    链接：http://www.jianshu.com/p/75109c804886
-    來源：简书
-    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 */
-///////////////////////////////////////////////////////////////////////////
 /*
 跟Closest Binary Search Tree Vlaue类似：
 

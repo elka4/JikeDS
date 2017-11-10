@@ -114,7 +114,8 @@ try to divide & conqure =>
         for(int i = 2; i <= n; i++){
             for(int j = i - 1; j >= 0; j--){
                 //if(isPalindr[j][i]){
-                if(s.charAt(i - 1) == s.charAt(j) && (i - 1 - j < 2 || isPalindr[j + 1][i - 1])){
+                if(s.charAt(i - 1) == s.charAt(j) &&
+                        (i - 1 - j < 2 || isPalindr[j + 1][i - 1])){
                     isPalindr[j][i] = true;
                     dp[i] = Math.min(dp[i], dp[j] + 1);
                 }
@@ -285,9 +286,11 @@ try to divide & conqure =>
     private boolean[][] getIsPalindrome(String s) {
         boolean[][] isPalindrome = new boolean[s.length()][s.length()];
 
+        //对角线，单一字符
         for (int i = 0; i < s.length(); i++) {
             isPalindrome[i][i] = true;
         }
+        //两个字符
         for (int i = 0; i < s.length() - 1; i++) {
             isPalindrome[i][i + 1] = (s.charAt(i) == s.charAt(i + 1));
         }
@@ -326,6 +329,18 @@ try to divide & conqure =>
         }
 
         return f[s.length()] - 1;
+    }
+
+    @Test
+    public void testpl(){
+        int[][] arr = new int[2][2];
+        Arrays.fill(arr, new int[]{1,2});
+        for(int i = 0; i < arr.length; i++){
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.print(arr[i][j]);
+            }
+            System.out.println();
+        }
     }
 
 
@@ -375,7 +390,7 @@ try to divide & conqure =>
 
             // initialize
             int[] f = new int[s.length() + 1];
-            for (int i = 0; i <= s.length(); i++) {
+            for (int i = 0; i <= s.length(); i++) {//初始化切割成单一字符的次数
                 f[i] = i - 1;
             }
 
@@ -395,15 +410,6 @@ try to divide & conqure =>
 ///////////////////////////////////////////////////////////////////////////
 
 }
-/*
-Given a string s, partition s such that every substring of the partition is a palindrome.
-
-Return the minimum cuts needed for a palindrome partitioning of s.
-
-For example, given s = "aab",
-Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 cut.
- */
-
 
 /*
 给定一个字符串s，将s分割成一些子串，使每个子串都是回文。
@@ -416,6 +422,18 @@ Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 
 
 返回 1， 因为进行一次分割可以将字符串s分割成["aa","b"]这样两个回文子串
  */
+
+/*
+Given a string s, partition s such that every substring of the partition is a palindrome.
+
+Return the minimum cuts needed for a palindrome partitioning of s.
+
+For example, given s = "aab",
+Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 cut.
+ */
+
+
+
 
 /*
 Given a string s, cut s into some substrings such that every substring is a palindrome.

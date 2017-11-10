@@ -1,5 +1,7 @@
 package _04_Tree._Leaves;
 import lib.TreeNode;
+import org.junit.Test;
+
 import java.util.*;
 
 //  366. Find Leaves of Binary Tree
@@ -16,25 +18,50 @@ public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
     UPDATE:
     There seems to be some debate over whether we need to actually "remove" leaves from the input tree. Anyway, it is just a matter of one line code. In the actual interview, just confirm with the interviewer whether removal is required.
      */
+        //这个不移除leaf，但是可以AC
         public List<List<Integer>> findLeaves1(TreeNode root) {
             List<List<Integer>> res = new ArrayList<>();
             height1(root, res);
             return res;
         }
         private int height1(TreeNode node, List<List<Integer>> res){
+            //这样才能确保到了leaf，两边都是null，返回的都是-1，这样返回leaf以后计算level的时候为0
             if(null==node)  return -1;
+            //postorder，因为要左右子树都访问过了才能算出来当前子树的高度
+            //the height of leaf is 0. h(node) = 1 + max(h(node.left), h(node.right)).
             int level = 1 + Math.max(height1(node.left, res), height1(node.right, res));
-            if(res.size()<level+1)  res.add(new ArrayList<>());
+
+            //The height of a node is also the its index in the result list (res).
+            // For example, leaves, whose heights are 0, are stored in res[0].
+            //这个就如同array的index + 1对应的是size
+            if(res.size()<level+1)//list.size() == level
+                res.add(new ArrayList<>());
+
             res.get(level).add(node.val);
+
+            node.left = null; //这两行可以移除leaf node
+            node.right = null;
+
             return level;
         }
 
+        @Test
+        public void test01(){
+            int[] arr = {2,1,3};
+            TreeNode root = TreeNode.createMinimalBST(arr);
+            root.left.left = new TreeNode(4);
+            root.left.right = new TreeNode(5);
+            root.print();
+            System.out.println(findLeaves1(root));
+            root.print();
+        }
 
 ///////////////////////////////////////////////////////////////////////////////
     /*
     Java backtracking O(n) time O(n) space No hashing!
     The essential of problem is not to find the leaves, but group leaves of same level together and also to cut the tree. This is the exact role backtracking plays. The helper function returns the level which is the distance from its furthest subtree leaf to root, which helps to identify which group the root belongs to
      */
+        // 这个方法移除了所有node
         public List<List<Integer>> findLeaves2(TreeNode root) {
             List<List<Integer>> list = new ArrayList<>();
             findLeavesHelper2(list, root);
@@ -48,18 +75,33 @@ public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
             }
             int leftLevel = findLeavesHelper2(list, root.left);
             int rightLevel = findLeavesHelper2(list, root.right);
+
             int level = Math.max(leftLevel, rightLevel) + 1;
+
             if (list.size() == level) {
                 list.add(new ArrayList<>());
             }
             list.get(level).add(root.val);
+
             root.left = root.right = null;
             return level;
+        }
+
+        @Test
+        public void test02(){
+            int[] arr = {2,1,3};
+            TreeNode root = TreeNode.createMinimalBST(arr);
+            root.left.left = new TreeNode(4);
+            root.left.right = new TreeNode(5);
+            root.print();
+            System.out.println(findLeaves2(root));
+            root.print();
         }
 
 /////////////////////////////////////////////////////////////////////////////////
 
         // 1 ms Easy understand Java Solution
+        // 这个方法移除了所有node
         public List<List<Integer>> findLeaves3(TreeNode root) {
 
             List<List<Integer>> leavesList = new ArrayList< List<Integer>>();
@@ -90,67 +132,119 @@ public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
 
             return false;
         }
+
+        @Test
+        public void test03(){
+            int[] arr = {2,1,3};
+            TreeNode root = TreeNode.createMinimalBST(arr);
+            root.left.left = new TreeNode(4);
+            root.left.right = new TreeNode(5);
+            root.print();
+            System.out.println(findLeaves3(root));
+            root.print();
+        }
 /////////////////////////////////////////////////////////////////////////////////
     //jiuzhang
-    public class Jiuzhang1 {
-        /**
-         * @param root the root of binary tree
-         * @return collect and remove all leaves
-         */
-        public List<List<Integer>> findLeaves(TreeNode root) {
-            // Write your code here
-            List<List<Integer>> results = new ArrayList<List<Integer>>();
-            dfs(root, results);
-            return results;
-        }
-
-        int dfs(TreeNode root, List<List<Integer>> results) {
-            if (root == null) {
-                return 0;
-            }
-            int level = Math.max(dfs(root.left, results), dfs(root.right, results)) + 1;
-            int size = results.size();
-            if (level > size) {
-                results.add(new ArrayList<Integer>());
-            }
-            results.get(level - 1).add(root.val);
-            return level;
-        }
+    //这种方法leaf的level为1
+    public List<List<Integer>> findLeaves4(TreeNode root) {
+        // Write your code here
+        List<List<Integer>> results = new ArrayList<List<Integer>>();
+        dfs(root, results);
+        return results;
     }
 
+    int dfs(TreeNode root, List<List<Integer>> results) {
+        if (root == null) {
+            return 0;
+        }
+        int level = Math.max(dfs(root.left, results), dfs(root.right, results)) + 1;
+        int size = results.size();
+        if (level > size) {
+            results.add(new ArrayList<Integer>());
+        }
+        results.get(level - 1).add(root.val);
+        return level;
+    }
+
+    @Test
+    public void test04(){
+        int[] arr = {2,1,3};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.print();
+        System.out.println(findLeaves4(root));
+        root.print();
+    }
+/////////////////////////////////////////////////////////////////////////////////
     // version: 高频题班
-    public class Jiuzhang2 {
-        /**
-         * @param root the root of binary tree
-         * @return collect and remove all leaves
-         */
-        Map<Integer, List<Integer>> depth = new HashMap<>();
+    //和上面一样的方法，就是改用hashmap存高度和leaf的value
+    Map<Integer, List<Integer>> depth = new HashMap<>();
 
-        int dfs(TreeNode cur) {
-            if (cur == null) {
-                return 0;
-            }
-            int d = Math.max(dfs(cur.left), dfs(cur.right)) + 1;
-
-            depth.putIfAbsent(d, new ArrayList<>());
-            depth.get(d).add(cur.val);
-            return d;
+    int dfs5(TreeNode cur) {
+        if (cur == null) {
+            return 0;
         }
+        int d = Math.max(dfs5(cur.left), dfs5(cur.right)) + 1;
 
-        public List<List<Integer>> findLeaves(TreeNode root) {
-            // Write your code here
-            List<List<Integer>> ans = new ArrayList<>();
+        depth.putIfAbsent(d, new ArrayList<>());
+        depth.get(d).add(cur.val);
+        return d;
+    }
 
-            int max_depth = dfs(root);
+    public List<List<Integer>> findLeaves5(TreeNode root) {
+        // Write your code here
+        List<List<Integer>> ans = new ArrayList<>();
 
-            for (int i = 1; i <= max_depth; i++) {
-                ans.add(depth.get(i));
-            }
-            return ans;
+        int max_depth = dfs5(root);
+
+        for (int i = 1; i <= max_depth; i++) {
+            ans.add(depth.get(i));
         }
+        return ans;
+    }
+
+    @Test
+    public void test05(){
+        int[] arr = {2,1,3};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.print();
+        System.out.println(findLeaves5(root));
+        root.print();
     }
 /////////////////////////////////////////////////////////////////////////////////
 }
+/*
+Given a binary tree, collect a tree's nodes as if you were doing this: Collect and remove all leaves, repeat until the tree is empty.
+
+Example:
+Given binary tree
+          1
+         / \
+        2   3
+       / \
+      4   5
+Returns [4, 5, 3], [2], [1].
+
+Explanation:
+1. Removing the leaves [4, 5, 3] would result in this tree:
+
+          1
+         /
+        2
+2. Now removing the leaf [2] would result in this tree:
+
+          1
+3. Now removing the leaf [1] would result in the empty tree:
+
+          []
+Returns [4, 5, 3], [2], [1].
+
+
+ */
+
 /*
 给定一个二叉树，像这样收集树节点：收集并移除所有叶子，重复，直到树为空。
 
