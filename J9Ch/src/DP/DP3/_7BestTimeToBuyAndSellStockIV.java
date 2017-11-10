@@ -1,4 +1,5 @@
 package DP.DP3;
+import org.junit.Test;
 
 //_7BestTimeToBuyAndSellStockIV   01:17:13
 //• 有状态的序列型动态规划
@@ -66,12 +67,15 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
 
  */
 
-import StdLib.In;
-import org.junit.Test;
 
 //  188. Best Time to Buy and Sell Stock IV
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/description/
+//  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-iv/
 public class _7BestTimeToBuyAndSellStockIV {
+
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/
+
+
 
 /*    A Concise DP Solution in Java
 
@@ -513,7 +517,10 @@ Example
 Given prices = [4,4,6,1,1,4,2,5], and k = 2, return 6.
  */
 
+
 /*
+买卖股票的最佳时机 IV
+
 假设你有一个数组，它的第i个元素是一支给定的股票在第i天的价格。
 
 设计一个算法来找到最大的利润。你最多可以完成 k 笔交易。
@@ -522,8 +529,13 @@ Given prices = [4,4,6,1,1,4,2,5], and k = 2, return 6.
 
 你不可以同时参与多笔交易(你必须在再次购买前出售掉之前的股票)
 
+您在真实的面试中是否遇到过这个题？ Yes
 样例
 给定价格 = [4,4,6,1,1,4,2,5], 且 k = 2, 返回 6.
 
+挑战
+O(nk) 时间序列。
 
+标签
+动态规划
  */

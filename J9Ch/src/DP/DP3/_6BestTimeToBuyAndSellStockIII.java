@@ -107,7 +107,12 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
 
 //  123. Best Time to Buy and Sell Stock III
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
+//  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-iii/
 public class _6BestTimeToBuyAndSellStockIII {
+
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/
+
+
     /*
     Is it Best Solution with O(n), O(1).
 
@@ -434,6 +439,8 @@ right[i]: 4
 
 }
 /*
+买卖股票的最佳时机 III
+
 假设你有一个数组，它的第i个元素是一支给定的股票在第i天的价格。设计一个算法来找到最大的利润。你最多可以完成两笔交易。
 
  注意事项
@@ -443,4 +450,16 @@ right[i]: 4
 您在真实的面试中是否遇到过这个题？ Yes
 样例
 给出一个样例数组 [4,4,6,1,1,4,2,5], 返回 6
+
+标签
+枚举法 前后遍历 数组
+ */
+
+/* Leetcode
+Say you have an array for which the ith element is the price of a given stock on day i.
+
+Design an algorithm to find the maximum profit. You may complete at most two transactions.
+
+Note:
+You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
  */

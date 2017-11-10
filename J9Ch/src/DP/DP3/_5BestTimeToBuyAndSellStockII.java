@@ -29,8 +29,11 @@ LintCode 150 Best Time to Buy and Sell Stock II
 
 //  122. Best Time to Buy and Sell Stock II
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+//  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-ii/
 public class _5BestTimeToBuyAndSellStockII {
     //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/solution/
+
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/
 
     //Approach #1 Brute Force [Time Limit Exceeded]
     public int maxProfit01(int[] prices) {
@@ -115,9 +118,20 @@ public class _5BestTimeToBuyAndSellStockII {
 /////////////////////////////////////////////////////////////////
 }
 /*
-假设有一个数组，它的第i个元素是一个给定的股票在第i天的价格。设计一个算法来找到最大的利润。
-你可以完成尽可能多的交易(多次买卖股票)。然而,你不能同时参与多个交易(你必须在再次购买前出售股票)。
+买卖股票的最佳时机 II
 
+假设有一个数组，它的第i个元素是一个给定的股票在第i天的价格。设计一个算法来找到最大的利润。你可以完成尽可能多的交易(多次买卖股票)。然而,你不能同时参与多个交易(你必须在再次购买前出售股票)。
+
+您在真实的面试中是否遇到过这个题？ Yes
 样例
 给出一个数组样例[2,1,2,0,1], 返回 2
+
+标签
+枚举法 数组 贪心
+ */
+
+/*  Leetcode
+Say you have an array for which the ith element is the price of a given stock on day i.
+
+Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
  */

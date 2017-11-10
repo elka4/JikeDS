@@ -11,8 +11,58 @@ import java.util.*;
 public class _637_Tree_Average_of_Levels_in_Binary_Tree_E {
     //https://leetcode.com/articles/average-of-levels/
     //    Approach #1 Using Depth First Search [Accepted]
+   public class Solution01 {
+        public List < Double > averageOfLevels(TreeNode root) {
+            List < Integer > count = new ArrayList < > ();
+            List < Double > res = new ArrayList < > ();
+            average(root, 0, res, count);
+
+            for (int i = 0; i < res.size(); i++)
+                res.set(i, res.get(i) / count.get(i));
+
+            return res;
+        }
+        public void average(TreeNode t, int i, List < Double > sum, List < Integer > count) {
+            if (t == null)
+                return;
+
+            if (i < sum.size()) {
+                sum.set(i, sum.get(i) + t.val);
+                count.set(i, count.get(i) + 1);
+            } else {
+                sum.add(1.0 * t.val);
+                count.add(1);
+            }
+
+            average(t.left, i + 1, sum, count);
+            average(t.right, i + 1, sum, count);
+        }
+    }
 
     //    Approach #2 Breadth First Search [Accepted]
+    public class Solution02 {
+        public List < Double > averageOfLevels(TreeNode root) {
+            List < Double > res = new ArrayList < > ();
+            Queue < TreeNode > queue = new LinkedList < > ();
+            queue.add(root);
+            while (!queue.isEmpty()) {
+                long sum = 0, count = 0;
+                Queue < TreeNode > temp = new LinkedList < > ();
+                while (!queue.isEmpty()) {
+                    TreeNode n = queue.remove();
+                    sum += n.val;
+                    count++;
+                    if (n.left != null)
+                        temp.add(n.left);
+                    if (n.right != null)
+                        temp.add(n.right);
+                }
+                queue = temp;
+                res.add(sum * 1.0 / count);
+            }
+            return res;
+        }
+    }
 
 /////////////////////////////////////////////////////////////////
     //Java BFS Solution
@@ -37,7 +87,7 @@ public class _637_Tree_Average_of_Levels_in_Binary_Tree_E {
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////
-
+    //DFS
     public List<Double> averageOfLevels4(TreeNode root) {
         List<Double> sumLs = new ArrayList<Double>();
         List<Integer> cntLs = new ArrayList<Integer>();
@@ -72,10 +122,13 @@ public class _637_Tree_Average_of_Levels_in_Binary_Tree_E {
 
     public String postorder(TreeNode cur, Map<String, Integer> map, List<TreeNode> res) {
         if (cur == null) return "#";
+
         String serial = cur.val + "," + postorder(cur.left, map, res) + ","
                 + postorder(cur.right, map, res);
+
         if (map.getOrDefault(serial, 0) == 1)
             res.add(cur);
+
         map.put(serial, map.getOrDefault(serial, 0) + 1);
         return serial;
     }

@@ -25,12 +25,35 @@ public class _103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M {
             }
 
             List<Integer> collection  = sol.get(level);
+
             if(level % 2 == 0) collection.add(curr.val);
+
             else collection.add(0, curr.val);
 
             travel(curr.left, sol, level + 1);
             travel(curr.right, sol, level + 1);
         }
+
+        @Test
+        public void test01(){
+            int[] arr = {2,1,3};
+            TreeNode root = TreeNode.createMinimalBST(arr);
+            root.left.left = new TreeNode(4);
+            root.left.right = new TreeNode(5);
+            root.print();
+            System.out.println(zigzagLevelOrder1(root));
+//            root.print();
+        }
+        /*
+                   1
+                  / \
+                 /   \
+                 2   3
+                / \
+                4 5
+
+                [[1], [3, 2], [4, 5]]
+         */
 //////////////////////////////////////////////////////////////////////////////////////
 
         public List<List<Integer>> zigzagLevelOrder2(TreeNode root) {
@@ -61,6 +84,26 @@ public class _103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M {
             return res;
         }
 
+        @Test
+        public void test02(){
+            int[] arr = {2,1,3};
+            TreeNode root = TreeNode.createMinimalBST(arr);
+            root.left.left = new TreeNode(4);
+            root.left.right = new TreeNode(5);
+            root.print();
+            System.out.println(zigzagLevelOrder2(root));
+//            root.print();
+        }
+        /*
+                   1
+                  / \
+                 /   \
+                 2   3
+                / \
+                4 5
+
+                [[1], [3, 2], [4, 5]]
+         */
 //////////////////////////////////////////////////////////////////////////////////////
 
     public List<List<Integer>> zigzagLevelOrder3(TreeNode root) {
@@ -102,14 +145,24 @@ public class _103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M {
     }
 
     @Test
-    public void test01(){
+    public void test03(){
         int[] arr = {1,3,5,6,7,8};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         System.out.println("root: ");
         root.print();
         System.out.println(zigzagLevelOrder3(root));
     }
+    /*
+                root:
+               1
+              / \
+             /   \
+             3   5
+            / \ /
+            6 7 8
 
+            [[1], [5, 3], [6, 7, 8]]
+     */
 /////////////////////////////////////////////////////////////////////////////
     //jiuzhang
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
@@ -162,6 +215,26 @@ public class _103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M {
     }
 
 
+        @Test
+        public void test04(){
+            int[] arr = {2,1,3};
+            TreeNode root = TreeNode.createMinimalBST(arr);
+            root.left.left = new TreeNode(4);
+            root.left.right = new TreeNode(5);
+            root.print();
+            System.out.println(zigzagLevelOrder(root));
+//            root.print();
+        }
+/*
+                   1
+                  / \
+                 /   \
+                 2   3
+                / \
+                4 5
+
+                [[1], [3, 2], [4, 5]]
+ */
 /////////////////////////////////////////////////////////////////////////////
 }
 /*

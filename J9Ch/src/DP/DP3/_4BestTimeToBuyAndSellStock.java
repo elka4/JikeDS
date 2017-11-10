@@ -42,17 +42,36 @@ LintCode 149 Best Time to Buy and Sell Stock
 //
 //  121. Best Time to Buy and Sell Stock
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
+//  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock/
 public class _4BestTimeToBuyAndSellStock {
-    //jiuzhang
-    public class Solution {
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solution/
+
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/
+
+
+    //Approach #1 (Brute Force) [Time Limit Exceeded]
+    public class Solution01 {
+        public int maxProfit(int prices[]) {
+            int maxprofit = 0;
+            for (int i = 0; i < prices.length - 1; i++) {
+                for (int j = i + 1; j < prices.length; j++) {
+                    int profit = prices[j] - prices[i];
+                    if (profit > maxprofit)
+                        maxprofit = profit;
+                }
+            }
+            return maxprofit;
+        }
+    }
+
+    //Approach #2 (One Pass) [Accepted]
+    public class Solution02 {
         public int maxProfit(int prices[]) {
             int minprice = Integer.MAX_VALUE;
             int maxprofit = 0;
             for (int i = 0; i < prices.length; i++) {
-
                 if (prices[i] < minprice)
                     minprice = prices[i];
-                    //如果当前股价prices[i]是最小，那么肯定不会update maxprofit
                 else if (prices[i] - minprice > maxprofit)
                     maxprofit = prices[i] - minprice;
             }
@@ -60,9 +79,24 @@ public class _4BestTimeToBuyAndSellStock {
         }
     }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+    //jiuzhang
+    public int maxProfit1(int prices[]) {
+        int minprice = Integer.MAX_VALUE;
+        int maxprofit = 0;
+        for (int i = 0; i < prices.length; i++) {
+
+            if (prices[i] < minprice)
+                minprice = prices[i];
+                //如果当前股价prices[i]是最小，那么肯定不会update maxprofit
+            else if (prices[i] - minprice > maxprofit)
+                maxprofit = prices[i] - minprice;
+        }
+        return maxprofit;
+    }
 ////////////////////////////////////////////////////////////////
     //jiuzhang
-    public int maxProfit(int[] prices) {
+    public int maxProfit2(int[] prices) {
         if (prices == null || prices.length == 0) {
             return 0;
         }
@@ -78,9 +112,50 @@ public class _4BestTimeToBuyAndSellStock {
         return profit;
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////
+    //mine
+    public int maxProfit3(int[] prices) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
 
+        int min = Integer.MAX_VALUE;
+        int profit = 0;
+
+        for (int price : prices) {
+            min = Math.min(min, price);
+            profit = Math.max(profit, price - min);
+        }
+
+        return profit;
+    }
 ////////////////////////////////////////////////////////////////////////////////////////////////
 }
+
+/*
+假设有一个数组，它的第i个元素是一支给定的股票在第i天的价格。如果你最多只允许完成一次交易(例如,一次买卖股票),设计一个算法来找出最大利润。
+
+样例
+给出一个数组样例 [3,2,3,1,2], 返回 1
+ */
+
+
+/* Leetcdoe
+Say you have an array for which the ith element is the price of a given stock on day i.
+
+If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.
+
+Example 1:
+Input: [7, 1, 5, 3, 6, 4]
+Output: 5
+
+max. difference = 6-1 = 5 (not 7-1 = 6, as selling price needs to be larger than buying price)
+Example 2:
+Input: [7, 6, 4, 3, 1]
+Output: 0
+
+In this case, no transaction is done, i.e. max profit = 0.
+ */
+
 /*Say you have an array for which the ith element is the price of a given stock on day i.
 
 Design an algorithm to find the maximum profit. You may complete at most k transactions.
@@ -94,11 +169,3 @@ Example
 Given prices = [4,4,6,1,1,4,2,5], and k = 2, return 6.
  */
 
-/*
-假设有一个数组，它的第i个元素是一支给定的股票在第i天的价格。如果你最多只允许完成一次交易(例如,一次买卖股票),设计一个算法来找出最大利润。
-
-样例
-给出一个数组样例 [3,2,3,1,2], 返回 1
-
-
- */
