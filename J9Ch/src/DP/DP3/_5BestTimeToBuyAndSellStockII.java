@@ -33,7 +33,9 @@ LintCode 150 Best Time to Buy and Sell Stock II
 public class _5BestTimeToBuyAndSellStockII {
     //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/solution/
 
-    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/
+    //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
+
+
 
     //Approach #1 Brute Force [Time Limit Exceeded]
     public int maxProfit01(int[] prices) {
@@ -78,6 +80,7 @@ public class _5BestTimeToBuyAndSellStockII {
     }
 
     //Approach #3 (Simple One Pass) [Accepted]
+    //最好的做法，和下面九章做法类似，关键在于一维数组坐标的熟练操作
     public int maxProfit03(int[] prices) {
         int maxprofit = 0;
         for (int i = 1; i < prices.length; i++) {
@@ -106,9 +109,10 @@ public class _5BestTimeToBuyAndSellStockII {
         int profit = 0;
         for (int i = 0; i < prices.length - 1; i++) {
             int diff = prices[i+1] - prices[i];
-            if (diff > 0) {
+            /*if (diff > 0) {
                 profit += diff;
-            }
+            }*/
+            profit += diff > 0 ? diff : 0;
         }
         return profit;
     }

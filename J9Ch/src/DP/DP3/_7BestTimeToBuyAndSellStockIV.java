@@ -73,8 +73,9 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-iv/
 public class _7BestTimeToBuyAndSellStockIV {
 
-    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/
+    //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 
+//////////////////////////////////////////////////////////////////////////////
 
 
 /*    A Concise DP Solution in Java
@@ -85,13 +86,18 @@ public class _7BestTimeToBuyAndSellStockIV {
 
     public int maxProfit01(int k, int[] prices) {
         int len = prices.length;
+        //k >= len / 2就是对每个price都可以买一次或者卖一次
         if (k >= len / 2) return quickSolve(prices);
 
         int[][] t = new int[k + 1][len];
+
         for (int i = 1; i <= k; i++) {
             int tmpMax =  -prices[0];
+
             for (int j = 1; j < len; j++) {
+
                 t[i][j] = Math.max(t[i][j - 1], prices[j] + tmpMax);
+
                 tmpMax =  Math.max(tmpMax, t[i - 1][j - 1] - prices[j]);
             }
         }
@@ -99,15 +105,18 @@ public class _7BestTimeToBuyAndSellStockIV {
     }
 
 
-    private int quickSolve(int[] prices) {
+    private int quickSolve(int[] prices) {//这个就是stock2吧
         int len = prices.length, profit = 0;
+
         for (int i = 1; i < len; i++)
             // as long as there is a price gap, we gain a profit.
-            if (prices[i] > prices[i - 1]) profit += prices[i] - prices[i - 1];
+            if (prices[i] > prices[i - 1])
+                profit += prices[i] - prices[i - 1];
+
         return profit;
     }
 
-
+//////////////////////////////////////////////////////////////////////////////
 
 //    Clean Java DP solution with comment
 
@@ -135,16 +144,32 @@ public class _7BestTimeToBuyAndSellStockIV {
         }
 
         int[][] dp = new int[k+1][n];
+
+        /*
+            for (int i = 1; i <= k; i++) {
+                int tmpMax =  -prices[0];
+
+                for (int j = 1; j < len; j++) {
+
+                    t[i][j] = Math.max(t[i][j - 1], prices[j] + tmpMax);
+
+                    tmpMax =  Math.max(tmpMax, t[i - 1][j - 1] - prices[j]);
+                }
+            }
+         */
         for (int i = 1; i <= k; i++) {
             int localMax = dp[i-1][0] - prices[0];
+
             for (int j = 1; j < n; j++) {
+
                 dp[i][j] = Math.max(dp[i][j-1],  prices[j] + localMax);
+
                 localMax = Math.max(localMax, dp[i-1][j] - prices[j]);
             }
         }
         return dp[k][n-1];
     }
-
+//////////////////////////////////////////////////////////////////////////////
 /*    Easy understanding and can be easily modified to different situations Java Solution
 
     The basic idea is to create two tables. hold and unhold.

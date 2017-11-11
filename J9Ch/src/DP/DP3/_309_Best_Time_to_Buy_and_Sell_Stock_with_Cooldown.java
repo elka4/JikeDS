@@ -6,10 +6,11 @@ package DP.DP3;
 //
 public class _309_Best_Time_to_Buy_and_Sell_Stock_with_Cooldown {
 
-    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/
+    //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 
 
-/*
+
+    /*
 Share my thinking process
 The series of problems are typical dp. The key for dp is to find the variables to represent the states and deduce the transition function.
 
@@ -63,6 +64,8 @@ Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to
         }
         return sell;
     }
+
+
 ///////////////////////////////////////////////////////////////////////////
     /*
     Easiest JAVA solution with explanations
@@ -118,6 +121,8 @@ Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to
         }
         return s0;
     }
+
+
 ///////////////////////////////////////////////////////////////////////////
 /*    7-line Java: only consider sell and cooldown
     Define:
@@ -147,6 +152,8 @@ Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to
         }
         return Math.max(profit1, profit2);
     }
+
+
 ///////////////////////////////////////////////////////////////////////////
 /*    DescriptionHintsSubmissionsDiscussSolution
     Very Easy to Understand One Pass O(n) Solution with No Extra Space
@@ -186,6 +193,7 @@ Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to
         }
         return has1_Sell > has0_doNothing ? has1_Sell : has0_doNothing;
     }
+
 
 ///////////////////////////////////////////////////////////////////////////
 }

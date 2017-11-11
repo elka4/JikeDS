@@ -46,7 +46,7 @@ LintCode 149 Best Time to Buy and Sell Stock
 public class _4BestTimeToBuyAndSellStock {
     //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solution/
 
-    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/
+    //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 
 
     //Approach #1 (Brute Force) [Time Limit Exceeded]
@@ -84,6 +84,7 @@ public class _4BestTimeToBuyAndSellStock {
     public int maxProfit1(int prices[]) {
         int minprice = Integer.MAX_VALUE;
         int maxprofit = 0;
+
         for (int i = 0; i < prices.length; i++) {
 
             if (prices[i] < minprice)

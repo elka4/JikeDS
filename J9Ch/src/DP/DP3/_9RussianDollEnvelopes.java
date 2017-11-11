@@ -87,6 +87,7 @@ public class _9RussianDollEnvelopes {
         if(envelopes == null || envelopes.length == 0
                 || envelopes[0] == null || envelopes[0].length != 2)
             return 0;
+
         Arrays.sort(envelopes, new Comparator<int[]>(){
             public int compare(int[] arr1, int[] arr2){
                 if(arr1[0] == arr2[0])
@@ -95,22 +96,65 @@ public class _9RussianDollEnvelopes {
                     return arr1[0] - arr2[0];
             }
         });
+
         int dp[] = new int[envelopes.length];
         int len = 0;
+
         for(int[] envelope : envelopes){
             int index = Arrays.binarySearch(dp, 0, len, envelope[1]);
+
             if(index < 0)
                 index = -(index + 1);
+
             dp[index] = envelope[1];
-            if(index == len)
+
+            if(index == len) //这个看着很眼熟啊，为什么相等的时候就可以len++？
                 len++;
         }
         return len;
     }
-/////////////////////////////////////////////////////////////////////////////
+
 
 /////////////////////////////////////////////////////////////////////////////
+    //Simple DP solution
+    public int maxEnvelopes02(int[][] envelopes) {
+        if (   envelopes           == null
+                || envelopes.length    == 0
+                || envelopes[0]        == null
+                || envelopes[0].length == 0){
+            return 0;
+        }
+
+        Arrays.sort(envelopes, new Comparator<int[]>(){
+            @Override
+            public int compare(int[] e1, int[] e2){
+                return Integer.compare(e1[0], e2[0]);
+            }
+        });
+
+        int   n  = envelopes.length;
+        int[] dp = new int[n];
+
+        int ret = 0;
+
+        for (int i = 0; i < n; i++){
+            dp[i] = 1;
+
+            for (int j = 0; j < i; j++){
+                if (envelopes[i][0] > envelopes[j][0] &&
+                    envelopes[i][1] > envelopes[j][1]){
+
+                    dp[i] = Math.max(dp[i], 1 + dp[j]);
+                }
+            }
+
+            ret = Math.max(ret, dp[i]);
+        }
+        return ret;
+    }
+/////////////////////////////////////////////////////////////////////////////
     // 9Ch DP
+    //
     public int maxEnvelopes(int[][] A) {
         // Write your code here
         if(A == null || A.length == 0) {
@@ -131,10 +175,12 @@ public class _9RussianDollEnvelopes {
         int i, j, res = 0;
 
         for (i = 0; i < n; i++) {
-            f[i] = 1;
+            f[i] = 1; //怎么样都可以取一个信封
             for (j = 0; j < i; j++) {
-                // envelope j can be put inside envelope i
+                // envelope j can be put inside envelope i  ！！！！
                 if (A[j][0] < A[i][0] && A[j][1] < A[i][1]) {
+                    //不放，f[i]
+                    //放， f[j] + 1。1就是envelope i。
                     f[i] = Math.max(f[i], f[j] + 1);
                 }
             }
@@ -144,6 +190,32 @@ public class _9RussianDollEnvelopes {
         return res;
     }
 
+    //重写九章给的算法，首先把ij互换
+    public int longestIncreasingSubsequence_J1(int[] nums) {
+        int n = nums.length;
+        if (n == 0) {
+            return 0;
+        }
+
+        int[] f = new int[n];
+        int res = 0;
+
+        for (int i = 0; i < n; i++) {
+            //case 1
+            f[i] = 1;//至少可以取一个数字
+
+            //case 2
+            for (int j = 0; j < i; j++) {
+                if (nums[j] < nums[i]) {     //j指向的是前面的数字，i指向的是后面的数字
+                    //f[j]: 以f[j]结尾的最长上升子序列的长度
+                    //f[i]：不取nums[j]； f[j] + 1：取nums[j]， 而nums[j] < nums[i]， nums[i]指的是1
+                    f[i] = Math.max(f[i], f[j] + 1);
+                }
+            }
+            res = Math.max(res, f[i]);
+        }
+        return  res;
+    }
 /////////////////////////////////////////////////////////////////////////////
     // 9Ch
     /**
@@ -170,9 +242,12 @@ public class _9RussianDollEnvelopes {
 
         for(int[] envelope : envelopes){
             int index = Arrays.binarySearch(dp, 0, len, envelope[1]);
+
             if(index < 0)
                 index = -index - 1;
+
             dp[index] = envelope[1];
+
             if (index == len)
                 len++;
         }

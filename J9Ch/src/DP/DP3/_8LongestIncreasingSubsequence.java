@@ -77,6 +77,7 @@ public class _8LongestIncreasingSubsequence {
     //Approach #1 Brute Force [Time Limit Exceeded]
     class Solution01{
         public int lengthOfLIS(int[] nums){
+
             return lengthOfLIS(nums, Integer.MIN_VALUE, 0);
         }
         public int lengthOfLIS(int[] nums, int prev, int curpos){
@@ -232,6 +233,32 @@ public class _8LongestIncreasingSubsequence {
         System.out.println(longestIncreasingSubsequence(B));
     }
 
+    //重写九章给的算法，首先把ij互换
+    public int longestIncreasingSubsequence_J1(int[] nums) {
+        int n = nums.length;
+        if (n == 0) {
+            return 0;
+        }
+
+        int[] f = new int[n];
+        int res = 0;
+
+        for (int i = 0; i < n; i++) {
+            //case 1
+            f[i] = 1;
+
+            //case 2
+            for (int j = 0; j < i; j++) {
+                if (nums[j] < nums[i]) {     //j指向的是前面的数字，i指向的是后面的数字
+                    //f[j]: 以f[j]结尾的最长上升子序列的长度
+                    //f[i]：不取nums[j]； f[j] + 1：取nums[j]， 而nums[j] < nums[i]， nums[i]指的是1
+                    f[i] = Math.max(f[i], f[j] + 1);
+                }
+            }
+            res = Math.max(res, f[i]);
+        }
+        return  res;
+    }
 
 
 ///////////////////////////////////////////////////////////////////////////

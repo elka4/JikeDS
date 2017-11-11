@@ -4,7 +4,7 @@ import org.junit.Test;
 //_6BestTimeToBuyAndSellStockIII  31:38
 //• 有状态的序列型动态规划
 
-// 2次交易
+
 
 /*
 
@@ -102,16 +102,20 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
 -----------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------
-
  */
+
+
+// 2次交易
+
 
 //  123. Best Time to Buy and Sell Stock III
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-iii/
 public class _6BestTimeToBuyAndSellStockIII {
 
-    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/
+    //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 
+////////////////////////////////////////////////////////////////////////////
 
     /*
     Is it Best Solution with O(n), O(1).
@@ -127,14 +131,65 @@ Very simple code too and work well. I have to say the logic is simple than those
     public int maxProfit01(int[] prices) {
         int hold1 = Integer.MIN_VALUE, hold2 = Integer.MIN_VALUE;
         int release1 = 0, release2 = 0;
-        for(int i:prices){                              // Assume we only have 0 money at first
-            release2 = Math.max(release2, hold2+i);     // The maximum if we've just sold 2nd stock so far.
-            hold2    = Math.max(hold2,    release1-i);  // The maximum if we've just buy  2nd stock so far.
-            release1 = Math.max(release1, hold1+i);     // The maximum if we've just sold 1nd stock so far.
-            hold1    = Math.max(hold1,    -i);          // The maximum if we've just buy  1st stock so far.
+
+        for(int price:prices){                              // Assume we only have 0 money at first
+
+            release2 = Math.max(release2, hold2 + price);     // The maximum if we've just sold 2nd stock so far.
+
+            hold2    = Math.max(hold2,    release1 - price);  // The maximum if we've just buy  2nd stock so far.
+
+            release1 = Math.max(release1, hold1 + price);     // The maximum if we've just sold 1nd stock so far.
+
+            hold1    = Math.max(hold1,    -price);          // The maximum if we've just buy  1st stock so far.
         }
+
         return release2; ///Since release1 is initiated as 0, so release2 will always higher than release1.
     }
+
+
+    //这方法真好啊
+    //初始值很重要
+    public int maxProfit011(int[] prices) {
+        int hold1 = Integer.MIN_VALUE, hold2 = Integer.MIN_VALUE;
+        int release1 = 0, release2 = 0;
+
+        for(int price:prices){                              // Assume we only have 0 money at first
+
+            hold1    = Math.max(hold1,    -price);            // The maximum if we've just buy  1st stock so far.
+
+            release1 = Math.max(release1, hold1 + price);     // The maximum if we've just sold 1nd stock so far.
+
+            hold2    = Math.max(hold2,    release1 - price);  // The maximum if we've just buy  2nd stock so far.
+
+            release2 = Math.max(release2, hold2 + price);     // The maximum if we've just sold 2nd stock so far.
+        }
+
+        return release2; ///Since release1 is initiated as 0, so release2 will always higher than release1.
+    }
+
+////////////////////////////////////////////////////////////////////////////
+
+
+    public int maxProfit0111(int[] prices) {
+        if (prices == null || prices.length == 0) return 0;
+        int len = prices.length;
+        //k >= len / 2就是对每个price都可以买一次或者卖一次
+        int k = 2;
+        int[][] t = new int[k + 1][len];
+
+        for (int i = 1; i <= k; i++) {
+            int tmpMax =  -prices[0];
+
+            for (int j = 1; j < len; j++) {
+
+                t[i][j] = Math.max(t[i][j - 1], prices[j] + tmpMax);
+
+                tmpMax =  Math.max(tmpMax, t[i - 1][j - 1] - prices[j]);
+            }
+        }
+        return t[k][len - 1];
+    }
+////////////////////////////////////////////////////////////////////////////
 
     //2ms Java DP Solution
     public int maxProfit02(int[] prices) {
@@ -145,18 +200,30 @@ Very simple code too and work well. I have to say the logic is simple than those
         int secondBuy = Integer.MIN_VALUE, secondSell = 0;
 
         for (int curPrice : prices) {
+
             // the max profit after you buy first stock
-            if (firstBuy < -curPrice) firstBuy = -curPrice;
+            //一开始firstbuy是MIN，这个肯定满足，意义就是买了股票盈利为负值
+            //写了0就好理解了
+            if (firstBuy < 0 - curPrice) firstBuy = 0 - curPrice;
+
             // the max profit after you sell it
+            //firstBuy + curPrice 为在curPrice时卖了股票的盈利，firstSell一开始为零
+            //就是说如果卖了股票可以盈利，那么就卖了，把盈利赋值给firstSell
             if (firstSell < firstBuy + curPrice) firstSell = firstBuy + curPrice;
+
             // the max profit after you buy the second stock
+            //第二次购买股票的盈利，也就是第一次的盈利firstSell 减去当前股价curPrice，
+            // 如果这个盈利比secondBuy大，就把这个值给secondBuy
             if (secondBuy < firstSell - curPrice) secondBuy = firstSell - curPrice;
+
             // the max profit after you sell the second stock
             if (secondSell < secondBuy + curPrice) secondSell = secondBuy + curPrice;
         }
 
         return secondSell; // secondSell will be the max profit after passing the prices
     }
+
+////////////////////////////////////////////////////////////////////////////
 
     public int maxProfit022(int[] prices) {
         // these four variables represent your profit after executing corresponding transaction
@@ -183,7 +250,9 @@ Very simple code too and work well. I have to say the logic is simple than those
 
         return secondSell; // secondSell will be the max profit after passing the prices
     }
+
 ////////////////////////////////////////////////////////////////////////////
+
     // 9Ch DP
     public int maxProfit(int[] prices) {
         int n = prices.length;
@@ -258,13 +327,15 @@ Very simple code too and work well. I have to say the logic is simple than those
         for (i = 1; i <= n; ++i) {
             for (j = 1; j <= 2 * K + 1; j += 2) {
                 f[i][j] = update(f[i][j], f[i-1][j], 0);
-                if (j > 1 && i > 1) f[i][j] =
+                if (j > 1 && i > 1)
+                    f[i][j] =
                         update(f[i][j], f[i - 1][j - 1], prices[i - 1] - prices[i - 2]);
             }
 
             for (j = 2; j <= 2 * K; j += 2) {
                 if (i > 1) f[i][j] =
                         update(f[i][j], f[i-1][j], prices[i - 1] - prices[i - 2]);
+
                 if (j > 1) f[i][j] =
                         update(f[i][j], f[i-1][j-1], 0);
             }
@@ -319,37 +390,7 @@ Very simple code too and work well. I have to say the logic is simple than those
 
         return profit;
     }
-/*
-min: 4
-left[i]: 0
-min: 4
-left[i]: 2
-min: 1
-left[i]: 2
-min: 1
-left[i]: 2
-min: 1
-left[i]: 3
-min: 1
-left[i]: 3
-min: 1
-left[i]: 4
 
-max: 5
-right[i]: 3
-max: 5
-right[i]: 3
-max: 5
-right[i]: 4
-max: 5
-right[i]: 4
-max: 6
-right[i]: 4
-max: 6
-right[i]: 4
-max: 6
-right[i]: 4
- */
     @Test
     public void test03() {
         //给出一个样例数组 [4,4,6,1,1,4,2,5], 返回 6
