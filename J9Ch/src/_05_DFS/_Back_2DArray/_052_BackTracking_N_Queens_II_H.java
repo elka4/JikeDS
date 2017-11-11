@@ -1,10 +1,9 @@
 package _05_DFS._Back_2DArray;
+import java.util.*;
 
-import java.util.HashSet;
-import java.util.Set;
-
-//52. N-Queens II
-
+//  52. N-Queens II
+//  https://leetcode.com/problems/n-queens-ii/description/
+//  http://www.lintcode.com/zh-cn/problem/n-queens-ii/
 public class _052_BackTracking_N_Queens_II_H {
     //Accepted Java Solution
     class Solution{
@@ -44,6 +43,7 @@ public class _052_BackTracking_N_Queens_II_H {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////////////////////
     public class Solution2 {
         int result = 0;
         public int totalNQueens(int n) {
@@ -68,6 +68,7 @@ public class _052_BackTracking_N_Queens_II_H {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////////////////////
     class Solution3{
         int res = 0;
         public int totalNQueens(int n) {
@@ -101,6 +102,7 @@ public class _052_BackTracking_N_Queens_II_H {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////////////////////
 /*    Easiest Java Solution (1ms, 98.22%)
     This is a classic backtracking problem.
 
@@ -135,7 +137,7 @@ public class _052_BackTracking_N_Queens_II_H {
         }
     }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////
 //    Share my Java code (beats 97.83% run times)
     /*
         常规n-queens解法, 数答案个数.
@@ -208,10 +210,24 @@ public class _052_BackTracking_N_Queens_II_H {
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 }
+
+/*
+N皇后问题 II
+
+根据n皇后问题，现在返回n皇后不同的解决方案的数量而不是具体的放置布局。
+
+样例
+比如n=4，存在2种解决方案
+
+标签
+递归
+相关题目
+中等 组合 33 %
+中等 N皇后问题
+ */
+
+
 /*
 Follow up for N-Queens problem.
 

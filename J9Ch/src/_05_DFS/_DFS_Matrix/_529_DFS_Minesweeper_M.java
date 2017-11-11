@@ -1,18 +1,18 @@
 package _05_DFS._DFS_Matrix;
+import java.util.*;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
+//  529. Minesweeper
+//  https://leetcode.com/problems/minesweeper/description/
 public class _529_DFS_Minesweeper_M {
     /*
     This is a typical Search problem, either by using DFS or BFS. Search rules:
 
-If click on a mine ('M'), mark it as 'X', stop further search.
-If click on an empty cell ('E'), depends on how many surrounding mine:
-2.1 Has surrounding mine(s), mark it with number of surrounding mine(s), stop further search.
-2.2 No surrounding mine, mark it as 'B', continue search its 8 neighbors.
+    If click on a mine ('M'), mark it as 'X', stop further search.
+    If click on an empty cell ('E'), depends on how many surrounding mine:
+    2.1 Has surrounding mine(s), mark it with number of surrounding mine(s), stop further search.
+    2.2 No surrounding mine, mark it as 'B', continue search its 8 neighbors.
      */
-//    DFS solution.
+    //    DFS solution.
 
     public class Solution {
         public char[][] updateBoard(char[][] board, int[] click) {
@@ -51,7 +51,9 @@ If click on an empty cell ('E'), depends on how many surrounding mine:
             return board;
         }
     }
-//    BFS solution. As you can see the basic logic is almost the same as DFS. Only added a queue to facilitate BFS.
+
+//////////////////////////////////////////////////////////////////////////////////////
+    //    BFS solution. As you can see the basic logic is almost the same as DFS. Only added a queue to facilitate BFS.
 
     public class Solution2 {
         public char[][] updateBoard(char[][] board, int[] click) {
@@ -100,8 +102,8 @@ If click on an empty cell ('E'), depends on how many surrounding mine:
         }
     }
 
-//    Another BFS -
-
+//////////////////////////////////////////////////////////////////////////////////////
+    //    Another BFS -
     public char[][] updateBoard(char[][] board, int[] click) {
         int m = board.length;
         if (m == 0) return board;
@@ -143,7 +145,8 @@ If click on an empty cell ('E'), depends on how many surrounding mine:
         return board;
     }
 
-
+//////////////////////////////////////////////////////////////////////////////////////
+    //Straight forward Java solution
     public class Solution4 {
         public char[][] updateBoard(char[][] board, int[] click) {
             int x = click[0], y = click[1];
@@ -191,6 +194,7 @@ If click on an empty cell ('E'), depends on how many surrounding mine:
         }
     }
 
+//////////////////////////////////////////////////////////////////////////////////////
     public class Solution5 {
         public char[][] updateBoard(char[][] board, int[] click) {
             int y = click[0], x = click[1];
@@ -244,15 +248,106 @@ If click on an empty cell ('E'), depends on how many surrounding mine:
 
 //////////////////////////////////////////////////////////////////////////////////////
 
+/*    Java Solution, DFS + BFS
+    This is a typical Search problem, either by using DFS or BFS. Search rules:
 
+    If click on a mine ('M'), mark it as 'X', stop further search.
+    If click on an empty cell ('E'), depends on how many surrounding mine:
+            2.1 Has surrounding mine(s), mark it with number of surrounding mine(s), stop further search.
+2.2 No surrounding mine, mark it as 'B', continue search its 8 neighbors.
+    DFS solution.*/
 
+    public class Solution06 {
+        public char[][] updateBoard(char[][] board, int[] click) {
+            int m = board.length, n = board[0].length;
+            int row = click[0], col = click[1];
+
+            if (board[row][col] == 'M') { // Mine
+                board[row][col] = 'X';
+            }
+            else { // Empty
+                // Get number of mines first.
+                int count = 0;
+                for (int i = -1; i < 2; i++) {
+                    for (int j = -1; j < 2; j++) {
+                        if (i == 0 && j == 0) continue;
+                        int r = row + i, c = col + j;
+                        if (r < 0 || r >= m || c < 0 || c < 0 || c >= n) continue;
+                        if (board[r][c] == 'M' || board[r][c] == 'X') count++;
+                    }
+                }
+
+                if (count > 0) { // If it is not a 'B', stop further DFS.
+                    board[row][col] = (char)(count + '0');
+                }
+                else { // Continue DFS to adjacent cells.
+                    board[row][col] = 'B';
+                    for (int i = -1; i < 2; i++) {
+                        for (int j = -1; j < 2; j++) {
+                            if (i == 0 && j == 0) continue;
+                            int r = row + i, c = col + j;
+                            if (r < 0 || r >= m || c < 0 || c < 0 || c >= n) continue;
+                            if (board[r][c] == 'E') updateBoard(board, new int[] {r, c});
+                        }
+                    }
+                }
+            }
+
+            return board;
+        }
+    }
+//    BFS solution. As you can see the basic logic is almost the same as DFS. Only added a queue to facilitate BFS.
+
+    public class Solution07 {
+        public char[][] updateBoard(char[][] board, int[] click) {
+            int m = board.length, n = board[0].length;
+            Queue<int[]> queue = new LinkedList<>();
+            queue.add(click);
+
+            while (!queue.isEmpty()) {
+                int[] cell = queue.poll();
+                int row = cell[0], col = cell[1];
+
+                if (board[row][col] == 'M') { // Mine
+                    board[row][col] = 'X';
+                }
+                else { // Empty
+                    // Get number of mines first.
+                    int count = 0;
+                    for (int i = -1; i < 2; i++) {
+                        for (int j = -1; j < 2; j++) {
+                            if (i == 0 && j == 0) continue;
+                            int r = row + i, c = col + j;
+                            if (r < 0 || r >= m || c < 0 || c < 0 || c >= n) continue;
+                            if (board[r][c] == 'M' || board[r][c] == 'X') count++;
+                        }
+                    }
+
+                    if (count > 0) { // If it is not a 'B', stop further BFS.
+                        board[row][col] = (char)(count + '0');
+                    }
+                    else { // Continue BFS to adjacent cells.
+                        board[row][col] = 'B';
+                        for (int i = -1; i < 2; i++) {
+                            for (int j = -1; j < 2; j++) {
+                                if (i == 0 && j == 0) continue;
+                                int r = row + i, c = col + j;
+                                if (r < 0 || r >= m || c < 0 || c < 0 || c >= n) continue;
+                                if (board[r][c] == 'E') {
+                                    queue.add(new int[] {r, c});
+                                    board[r][c] = 'B'; // Avoid to be added again.
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return board;
+        }
+    }
 
 //////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
 
 }
 /*

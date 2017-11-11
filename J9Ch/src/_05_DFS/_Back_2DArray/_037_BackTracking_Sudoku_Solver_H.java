@@ -1,11 +1,11 @@
 package _05_DFS._Back_2DArray;
+import java.util.*;
 
-import java.util.HashSet;
-import java.util.Set;
-
+//  37. Sudoku Solver
+//  https://leetcode.com/problems/sudoku-solver/description/
+//
 public class _037_BackTracking_Sudoku_Solver_H {
     //Straight Forward Java Solution Using Backtracking
-
     public class Solution {
         public void solveSudoku(char[][] board) {
             if(board == null || board.length == 0)
@@ -111,6 +111,8 @@ public class _037_BackTracking_Sudoku_Solver_H {
             return true;
         }
     }
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 /*
 Write a program to solve a Sudoku puzzle by filling the empty cells.

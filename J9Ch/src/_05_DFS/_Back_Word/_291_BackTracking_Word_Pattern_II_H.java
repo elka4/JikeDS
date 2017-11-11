@@ -1,15 +1,12 @@
 package _05_DFS._Back_Word;
+import java.util.*;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
+//  291. Word Pattern II
+//  https://leetcode.com/problems/word-pattern-ii/description/
+//
 public class _291_BackTracking_Word_Pattern_II_H {
     //Share my Java backtracking solution
-    //https://leetcode.com/problems/word-pattern-ii/discuss/
     public class Solution {
-
         public boolean wordPatternMatch(String pattern, String str) {
             Map<Character, String> map = new HashMap<>();
             Set<String> set = new HashSet<>();
@@ -66,7 +63,7 @@ public class _291_BackTracking_Word_Pattern_II_H {
 
     }
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////
     //20 lines JAVA clean solution, easy to understand
     public class Solution2 {
         Map<Character,String> map =new HashMap();
@@ -91,6 +88,7 @@ public class _291_BackTracking_Word_Pattern_II_H {
         }
     }
 
+///////////////////////////////////////////////////////////////////////////////////////////////
     //*Java* HashSet + backtracking (2ms beats 100%)
     class Solution3{
         public boolean wordPatternMatch(String pattern, String str) {
@@ -139,16 +137,8 @@ public class _291_BackTracking_Word_Pattern_II_H {
             return false; // exhausted
         }
     }
-///////////////////////////////////////////////////////////////////////////////////////////////
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 }
 /*
 Given a pattern and a string str, find if str follows the same pattern.

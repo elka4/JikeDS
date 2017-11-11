@@ -1,9 +1,27 @@
 package _05_DFS._DFS_String;
 import java.util.*;
 
-//301. Remove Invalid Parentheses
-
+//  301. Remove Invalid Parentheses
+//  https://leetcode.com/problems/remove-invalid-parentheses/description/
 public class _301_DFS_Remove_Invalid_Parentheses_H {
+    /*
+    Share my Java BFS solution
+The idea is straightforward, with the input string s, we generate all possible states by removing one ( or ), check if they are valid, if found valid ones on the current level, put them to the final result list and we are done, otherwise, add them to a queue and carry on to the next level.
+
+The good thing of using BFS is that we can guarantee the number of parentheses that need to be removed is minimal, also no recursion call is needed in BFS.
+
+Thanks to @peisi, we don't need stack to check valid parentheses.
+
+Time complexity:
+
+In BFS we handle the states level by level, in the worst case, we need to handle all the levels, we can analyze the time complexity level by level and add them up to get the final complexity.
+
+On the first level, there's only one string which is the input string s, let's say the length of it is n, to check whether it's valid, we need O(n) time. On the second level, we remove one ( or ) from the first level, so there are C(n, n-1) new strings, each of them has n-1 characters, and for each string, we need to check whether it's valid or not, thus the total time complexity on this level is (n-1) x C(n, n-1). Come to the third level, total time complexity is (n-2) x C(n, n-2), so on and so forth...
+
+Finally we have this formula:
+
+T(n) = n x C(n, n) + (n-1) x C(n, n-1) + ... + 1 x C(n, 1) = n x 2^(n-1).
+     */
     public class Solution {
         public List<String> removeInvalidParentheses(String s) {
             List<String> res = new ArrayList<>();
@@ -63,6 +81,24 @@ public class _301_DFS_Remove_Invalid_Parentheses_H {
         }
     }
 
+///////////////////////////////////////////////////////////////////////////////////////
+    /*
+    Easiest 9ms Java Solution
+Here I share my DFS or backtracking solution. It's 10X faster than optimized BFS.
+
+Limit max removal rmL and rmR for backtracking boundary. Otherwise it will exhaust all possible valid substrings, not shortest ones.
+Scan from left to right, avoiding invalid strs (on the fly) by checking num of open parens.
+If it's '(', either use it, or remove it.
+If it's '(', either use it, or remove it.
+Otherwise just append it.
+Lastly set StringBuilder to the last decision point.
+In each step, make sure:
+
+i does not exceed s.length().
+Max removal rmL rmR and num of open parens are non negative.
+De-duplicate by adding to a HashSet.
+Compared to 106 ms BFS (Queue & Set), it's faster and easier. Hope it helps! Thanks.
+     */
     class Solution2{
         public List<String> removeInvalidParentheses(String s) {
             int rmL = 0, rmR = 0;
@@ -112,7 +148,7 @@ public class _301_DFS_Remove_Invalid_Parentheses_H {
         }
     }
 
-
+///////////////////////////////////////////////////////////////////////////////////////
     /*
     Easy, Short, Concise and Fast Java DFS 3 ms solution
 For a better view see here
@@ -163,17 +199,6 @@ Here is the final implement in Java.
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 }
 /*
 Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.

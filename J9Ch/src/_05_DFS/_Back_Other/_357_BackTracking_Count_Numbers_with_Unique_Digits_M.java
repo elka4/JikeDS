@@ -1,7 +1,7 @@
 package _05_DFS._Back_Other;
 
-//357. Count Numbers with Unique Digits
-
+//  357. Count Numbers with Unique Digits
+//  https://leetcode.com/problems/count-numbers-with-unique-digits/description/
 public class _357_BackTracking_Count_Numbers_with_Unique_Digits_M {
     //DP
     //JAVA DP O(1) solution.
@@ -42,7 +42,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         return res;
     }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 /*
     Java, O(1), with explanation
     This is a digit combination problem. Can be solved in at most 10 loops.
@@ -76,7 +76,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         return ans;
     }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
     //Backtracking solution
     public class Solution2 {
         public int countNumbersWithUniqueDigits(int n) {
@@ -118,6 +118,8 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         }
     }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
     public class Solution3 {
         public int countNumbersWithUniqueDigits(int n) {
             if (n == 0) {
@@ -137,7 +139,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         }
     }
 ///////////////////////////////////////////////////////////////////////////////
-
+    // 9Ch
     //  solution 1
     //DP Solution
     public class Jiuzhang1 {
@@ -167,6 +169,8 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         }
     }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
+    // 9Ch
     // solution 2
     //Math Method
     public class Jiuzhang2 {
@@ -190,10 +194,8 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
             return ans;
         }
     }
+
 ///////////////////////////////////////////////////////////////////////////////
-
-
-
 }
 /*
 Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x < 10n.

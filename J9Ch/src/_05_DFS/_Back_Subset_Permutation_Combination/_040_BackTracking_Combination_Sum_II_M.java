@@ -1,11 +1,12 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
+//  40. Combination Sum II
+//  https://leetcode.com/problems/combination-sum-ii/description/
+//  http://www.lintcode.com/zh-cn/problem/combination-sum-ii/
 public class _040_BackTracking_Combination_Sum_II_M {
-    public List<List<Integer>> combinationSum2(int[] nums, int target) {
+    //  Combination Sum I, II and III Java solution (see the similarities yourself)
+    public List<List<Integer>> combinationSum01(int[] nums, int target) {
         List<List<Integer>> list = new ArrayList<>();
         Arrays.sort(nums);
         backtrack(list, new ArrayList<>(), nums, target, 0);
@@ -13,7 +14,8 @@ public class _040_BackTracking_Combination_Sum_II_M {
 
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, int remain, int start){
+    private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+                           int [] nums, int remain, int start){
         if(remain < 0) return;
         else if(remain == 0) list.add(new ArrayList<>(tempList));
         else{
@@ -26,112 +28,105 @@ public class _040_BackTracking_Combination_Sum_II_M {
         }
     }
 
-
-
-    class Solution{
-        public List<List<Integer>> combinationSum2(int[] cand, int target) {
-            Arrays.sort(cand);
-            List<List<Integer>> res = new ArrayList<List<Integer>>();
-            List<Integer> path = new ArrayList<Integer>();
-            dfs_com(cand, 0, target, path, res);
-            return res;
+//////////////////////////////////////////////////////////////////////////////////
+    //Java solution using dfs, easy understand
+    public List<List<Integer>> combinationSum02(int[] cand, int target) {
+        Arrays.sort(cand);
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        List<Integer> path = new ArrayList<Integer>();
+        dfs_com(cand, 0, target, path, res);
+        return res;
+    }
+    void dfs_com(int[] cand, int cur, int target, List<Integer> path, List<List<Integer>> res) {
+        if (target == 0) {
+            res.add(new ArrayList(path));
+            return ;
         }
-        void dfs_com(int[] cand, int cur, int target, List<Integer> path, List<List<Integer>> res) {
-            if (target == 0) {
-                res.add(new ArrayList(path));
-                return ;
-            }
-            if (target < 0) return;
-            for (int i = cur; i < cand.length; i++){
-                if (i > cur && cand[i] == cand[i-1]) continue;
-                path.add(path.size(), cand[i]);
-                dfs_com(cand, i+1, target - cand[i], path, res);
-                path.remove(path.size()-1);
-            }
+        if (target < 0) return;
+        for (int i = cur; i < cand.length; i++){
+            if (i > cur && cand[i] == cand[i-1]) continue;
+            path.add(path.size(), cand[i]);
+            dfs_com(cand, i+1, target - cand[i], path, res);
+            path.remove(path.size()-1);
+        }
+    }
+
+//////////////////////////////////////////////////////////////////////////////////
+    //    Java - short and recursive, clean code.
+    public List<List<Integer>> combinationSum03(int[] candidates, int target) {
+        List<List<Integer>> ans = new ArrayList<>();
+        List<Integer> comb = new ArrayList<>();
+        Arrays.sort(candidates); // need sort to make this work.
+        combination(candidates, target, 0, comb, ans);
+        return ans;
+    }
+
+    private void combination(int[] candi, int target, int start,
+                             List<Integer> comb, List<List<Integer>> ans) {
+        for (int i = start; i < candi.length; i++) {
+            if (i > start && candi[i] == candi[i - 1]) //remove duplicates.
+                continue;
+            if (candi[i] == target) {
+                //recursion exit.
+                List<Integer> newComb = new ArrayList<>(comb);
+                newComb.add(candi[i]);
+                ans.add(newComb);
+            } else if (candi[i] < target) {
+                //continue to look for the rest.
+                List<Integer> newComb = new ArrayList<>(comb);
+                newComb.add(candi[i]);
+                combination(candi, target - candi[i], i + 1, newComb, ans);
+            } else
+                break; //invalid path, return nothing.
         }
     }
 
 //////////////////////////////////////////////////////////////////////////////////
     //jiuzhang
-    public class Jiuzhang {
-        /**
-         * @param candidates: Given the candidate numbers
-         * @param target: Given the target number
-         * @return: All the combinations that sum to target
-         */
-        public List<List<Integer>> combinationSum2(int[] candidates,
-                                                   int target) {
-            List<List<Integer>> results = new ArrayList<>();
-            if (candidates == null || candidates.length == 0) {
-                return results;
-            }
-
-            Arrays.sort(candidates);
-            List<Integer> combination = new ArrayList<Integer>();
-            helper(candidates, 0, combination, target, results);
-
+    /**
+     * @param candidates: Given the candidate numbers
+     * @param target: Given the target number
+     * @return: All the combinations that sum to target
+     */
+    public List<List<Integer>> combinationSum_J1(int[] candidates,
+                                                int target) {
+        List<List<Integer>> results = new ArrayList<>();
+        if (candidates == null || candidates.length == 0) {
             return results;
         }
 
-        private void helper(int[] candidates,
-                            int startIndex,
-                            List<Integer> combination,
-                            int target,
-                            List<List<Integer>> results) {
-            if (target == 0) {
-                results.add(new ArrayList<Integer>(combination));
-                return;
-            }
+        Arrays.sort(candidates);
+        List<Integer> combination = new ArrayList<Integer>();
+        helper(candidates, 0, combination, target, results);
 
-            for (int i = startIndex; i < candidates.length; i++) {
-                if (i != startIndex && candidates[i] == candidates[i - 1]) {
-                    continue;
-                }
-                if (target < candidates[i]) {
-                    break;
-                }
-                combination.add(candidates[i]);
-                helper(candidates, i + 1, combination, target - candidates[i], results);
-                combination.remove(combination.size() - 1);
+        return results;
+    }
+
+    private void helper(int[] candidates,
+                        int startIndex,
+                        List<Integer> combination,
+                        int target,
+                        List<List<Integer>> results) {
+        if (target == 0) {
+            results.add(new ArrayList<Integer>(combination));
+            return;
+        }
+
+        for (int i = startIndex; i < candidates.length; i++) {
+            if (i != startIndex && candidates[i] == candidates[i - 1]) {
+                continue;
             }
+            if (target < candidates[i]) {
+                break;
+            }
+            combination.add(candidates[i]);
+            helper(candidates, i + 1, combination, target - candidates[i], results);
+            combination.remove(combination.size() - 1);
         }
     }
 
-
-
 //////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 }
-/*
-Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
-
-Each number in C may only be used once in the combination.
-
-Note:
-All numbers (including target) will be positive integers.
-The solution set must not contain duplicate combinations.
-For example, given candidate set [10, 1, 2, 7, 6, 1, 5] and target 8,
-A solution set is:
-[
-  [1, 7],
-  [1, 2, 5],
-  [2, 6],
-  [1, 1, 6]
-]
-
- */
-
 
 /*
 lint
@@ -149,5 +144,27 @@ lint
 给出一个例子，候选数字集合为[10,1,6,7,2,1,5] 和目标数字 8  ,
 
 解集为：[[1,7],[1,2,5],[2,6],[1,1,6]]
+标签
+数组 回溯法 深度优先搜索
+ */
+
+
+
+/*
+Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+
+Each number in C may only be used once in the combination.
+
+Note:
+All numbers (including target) will be positive integers.
+The solution set must not contain duplicate combinations.
+For example, given candidate set [10, 1, 2, 7, 6, 1, 5] and target 8,
+A solution set is:
+[
+  [1, 7],
+  [1, 2, 5],
+  [2, 6],
+  [1, 1, 6]
+]
 
  */

@@ -1,13 +1,15 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
+//  78. Subsets
+//  https://leetcode.com/problems/subsets/description/
+//  http://www.lintcode.com/zh-cn/problem/subsets/
 public class _078_BackTracking_Subsets_M {
-//    Subsets : https://leetcode.com/problems/subsets/
 
-    public List<List<Integer>> subsets(int[] nums) {
+    //https://discuss.leetcode.com/topic/46159/a-general-approach-to-backtracking-questions-in-java-subsets-permutations-combination-sum-palindrome-partitioning
+
+    //  A general approach to backtracking questions in Java (Subsets, Permutations, Combination Sum, Palindrome Partitioning)
+    public List<List<Integer>> subsets01(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
         Arrays.sort(nums);
         backtrack(list, new ArrayList<>(), nums, 0);
@@ -23,39 +25,53 @@ public class _078_BackTracking_Subsets_M {
         }
     }
 
+///////////////////////////////////////////////////////////////////////////////////
+    //    Simple Java Solution with For-Each loops
+    //    No messy indexing. Avoid the ConcurrentModificationException by using a temp list.
+    public List<List<Integer>> subsets02(int[] S) {
+        List<List<Integer>> res = new ArrayList<>();
+        res.add(new ArrayList<Integer>());
 
-//    Simple Java Solution with For-Each loops
-//    No messy indexing. Avoid the ConcurrentModificationException by using a temp list.
-
-    public class Solution {
-        public List<List<Integer>> subsets(int[] S) {
-            List<List<Integer>> res = new ArrayList<>();
-            res.add(new ArrayList<Integer>());
-
-            Arrays.sort(S);
-            for(int i : S) {
-                List<List<Integer>> tmp = new ArrayList<>();
-                for(List<Integer> sub : res) {
-                    List<Integer> a = new ArrayList<>(sub);
-                    a.add(i);
-                    tmp.add(a);
-                }
-                res.addAll(tmp);
+        Arrays.sort(S);
+        for(int i : S) {
+            List<List<Integer>> tmp = new ArrayList<>();
+            for(List<Integer> sub : res) {
+                List<Integer> a = new ArrayList<>(sub);
+                a.add(i);
+                tmp.add(a);
             }
-            return res;
+            res.addAll(tmp);
         }
+        return res;
     }
+
 ///////////////////////////////////////////////////////////////////////////////////
+    //Simple Java Solution Using Bit Operations
+    public List<List<Integer>> subsets03(int[] nums) {
+        int n = nums.length;
+        List<List<Integer>> subsets = new ArrayList<>();
+        for (int i = 0; i < Math.pow(2, n); i++)
+        {
+            List<Integer> subset = new ArrayList<>();
+            for (int j = 0; j < n; j++)
+            {
+                if (((1 << j) & i) != 0)
+                    subset.add(nums[j]);
+            }
+            Collections.sort(subset);
+            subsets.add(subset);
+        }
+        return subsets;
+    }
 
 
 ///////////////////////////////////////////////////////////////////////////////////
-// 递归：实现方式，一种实现DFS算法的一种方式
-class Jiuzhang1 {
+    // 递归：实现方式，一种实现DFS算法的一种方式
     /**
      * @param nums: A set of numbers.
      * @return: A list of lists. All valid subsets.
      */
-    public List<List<Integer>> subsets(int[] nums) {
+    public List<List<Integer>> subsets_J1(int[] nums) {
         List<List<Integer>> results = new ArrayList<>();
 
         if (nums == null) {
@@ -96,45 +112,40 @@ class Jiuzhang1 {
         // 3. 递归的出口
         // return;
     }
-}
 
-
+///////////////////////////////////////////////////////////////////////////////////
+    // 9Ch
     // Non Recursion
-    class Jiuzhang2 {
-        /**
-         * @param nums: A set of numbers.
-         * @return: A list of lists. All valid subsets.
-         */
-        public List<List<Integer>> subsets(int[] nums) {
-            List<List<Integer>> result = new ArrayList<List<Integer>>();
-            int n = nums.length;
-            Arrays.sort(nums);
+    /**
+     * @param nums: A set of numbers.
+     * @return: A list of lists. All valid subsets.
+     */
+    public List<List<Integer>> subsets_J2(int[] nums) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        int n = nums.length;
+        Arrays.sort(nums);
 
-            // 1 << n is 2^n
-            // each subset equals to an binary integer between 0 .. 2^n - 1
-            // 0 -> 000 -> []
-            // 1 -> 001 -> [1]
-            // 2 -> 010 -> [2]
-            // ..
-            // 7 -> 111 -> [1,2,3]
-            for (int i = 0; i < (1 << n); i++) {
-                List<Integer> subset = new ArrayList<Integer>();
-                for (int j = 0; j < n; j++) {
-                    // check whether the jth digit in i's binary representation is 1
-                    if ((i & (1 << j)) != 0) {
-                        subset.add(nums[j]);
-                    }
+        // 1 << n is 2^n
+        // each subset equals to an binary integer between 0 .. 2^n - 1
+        // 0 -> 000 -> []
+        // 1 -> 001 -> [1]
+        // 2 -> 010 -> [2]
+        // ..
+        // 7 -> 111 -> [1,2,3]
+        for (int i = 0; i < (1 << n); i++) {
+            List<Integer> subset = new ArrayList<Integer>();
+            for (int j = 0; j < n; j++) {
+                // check whether the jth digit in i's binary representation is 1
+                if ((i & (1 << j)) != 0) {
+                    subset.add(nums[j]);
                 }
-                result.add(subset);
             }
-            return result;
+            result.add(subset);
         }
+        return result;
     }
 
 ///////////////////////////////////////////////////////////////////////////////////
-
-
-
 }
 /*
 Given a set of distinct integers, nums, return all possible subsets (the power set).

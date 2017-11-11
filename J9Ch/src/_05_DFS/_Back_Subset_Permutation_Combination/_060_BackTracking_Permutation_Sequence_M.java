@@ -1,49 +1,47 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 //  60. Permutation Sequence
-
+//  https://leetcode.com/problems/permutation-sequence/description/
+//  http://www.lintcode.com/zh-cn/problem/permutation-sequence/
 public class _060_BackTracking_Permutation_Sequence_M {
-    public class Solution {
-        public String getPermutation(int n, int k) {
-            int pos = 0;
-            List<Integer> numbers = new ArrayList<>();
-            int[] factorial = new int[n+1];
-            StringBuilder sb = new StringBuilder();
 
-            // create an array of factorial lookup
-            int sum = 1;
-            factorial[0] = 1;
-            for(int i=1; i<=n; i++){
-                sum *= i;
-                factorial[i] = sum;
-            }
-            // factorial[] = {1, 1, 2, 6, 24, ... n!}
+    public String getPermutation01(int n, int k) {
+        int pos = 0;
+        List<Integer> numbers = new ArrayList<>();
+        int[] factorial = new int[n+1];
+        StringBuilder sb = new StringBuilder();
 
-            // create a list of numbers to get indices
-            for(int i=1; i<=n; i++){
-                numbers.add(i);
-            }
-            // numbers = {1, 2, 3, 4}
-
-            k--;
-
-            for(int i = 1; i <= n; i++){
-                int index = k/factorial[n-i];
-                sb.append(String.valueOf(numbers.get(index)));
-                numbers.remove(index);
-                k-=index*factorial[n-i];
-            }
-
-            return String.valueOf(sb);
+        // create an array of factorial lookup
+        int sum = 1;
+        factorial[0] = 1;
+        for(int i=1; i<=n; i++){
+            sum *= i;
+            factorial[i] = sum;
         }
+        // factorial[] = {1, 1, 2, 6, 24, ... n!}
+
+        // create a list of numbers to get indices
+        for(int i=1; i<=n; i++){
+            numbers.add(i);
+        }
+        // numbers = {1, 2, 3, 4}
+
+        k--;
+
+        for(int i = 1; i <= n; i++){
+            int index = k/factorial[n-i];
+            sb.append(String.valueOf(numbers.get(index)));
+            numbers.remove(index);
+            k-=index*factorial[n-i];
+        }
+
+        return String.valueOf(sb);
     }
 
+//////////////////////////////////////////////////////////////////////////////
 
-    public String getPermutation(int n, int k) {
+    public String getPermutation02(int n, int k) {
         List<Integer> num = new LinkedList<Integer>();
         for (int i = 1; i <= n; i++) num.add(i);
         int[] fact = new int[n];  // factorial
@@ -60,7 +58,7 @@ public class _060_BackTracking_Permutation_Sequence_M {
         return sb.toString();
     }
 
-
+//////////////////////////////////////////////////////////////////////////////
     /*
     "Explain-like-I'm-five" Java Solution in O(n)
 I'm sure somewhere can be simplified so it'd be nice if anyone can let me know. The pattern was that:
@@ -127,41 +125,40 @@ Fourth number is 2
 Giving us 3142. If you manually list out the permutations using DFS method, it would be 3142. Done! It really was all about pattern finding.
      */
 
-    public class Solution3 {
-        public String getPermutation(int n, int k) {
-            int pos = 0;
-            List<Integer> numbers = new ArrayList<>();
-            int[] factorial = new int[n+1];
-            StringBuilder sb = new StringBuilder();
+    public String getPermutation03(int n, int k) {
+        int pos = 0;
+        List<Integer> numbers = new ArrayList<>();
+        int[] factorial = new int[n+1];
+        StringBuilder sb = new StringBuilder();
 
-            // create an array of factorial lookup
-            int sum = 1;
-            factorial[0] = 1;
-            for(int i=1; i<=n; i++){
-                sum *= i;
-                factorial[i] = sum;
-            }
-            // factorial[] = {1, 1, 2, 6, 24, ... n!}
-
-            // create a list of numbers to get indices
-            for(int i=1; i<=n; i++){
-                numbers.add(i);
-            }
-            // numbers = {1, 2, 3, 4}
-
-            k--;
-
-            for(int i = 1; i <= n; i++){
-                int index = k/factorial[n-i];
-                sb.append(String.valueOf(numbers.get(index)));
-                numbers.remove(index);
-                k-=index*factorial[n-i];
-            }
-
-            return String.valueOf(sb);
+        // create an array of factorial lookup
+        int sum = 1;
+        factorial[0] = 1;
+        for(int i=1; i<=n; i++){
+            sum *= i;
+            factorial[i] = sum;
         }
+        // factorial[] = {1, 1, 2, 6, 24, ... n!}
+
+        // create a list of numbers to get indices
+        for(int i=1; i<=n; i++){
+            numbers.add(i);
+        }
+        // numbers = {1, 2, 3, 4}
+
+        k--;
+
+        for(int i = 1; i <= n; i++){
+            int index = k/factorial[n-i];
+            sb.append(String.valueOf(numbers.get(index)));
+            numbers.remove(index);
+            k-=index*factorial[n-i];
+        }
+
+        return String.valueOf(sb);
     }
 
+//////////////////////////////////////////////////////////////////////////////
 /*
     An iterative solution for reference
     Recursion will use more memory, while this problem can be solved by iteration. I solved this problem before, but I didn't realize that using k = k-1 would avoid dealing with case k%(n-1)!==0. Rewrote this code, should be pretty concise now.
@@ -171,7 +168,7 @@ Giving us 3142. If you manually list out the permutations using DFS method, it w
     The logic is as follows: for n numbers the permutations can be divided to (n-1)! groups, for n-1 numbers can be divided to (n-2)! groups, and so on. Thus k/(n-1)! indicates the index of current number, and k%(n-1)! denotes remaining index for the remaining n-1 numbers.
     We keep doing this until n reaches 0, then we get n numbers permutations that is kth.*/
 
-    public String getPermutation4(int n, int k) {
+    public String getPermutation04(int n, int k) {
         List<Integer> num = new LinkedList<Integer>();
         for (int i = 1; i <= n; i++) num.add(i);
         int[] fact = new int[n];  // factorial
@@ -187,52 +184,73 @@ Giving us 3142. If you manually list out the permutations using DFS method, it w
         }
         return sb.toString();
     }
+
 ///////////////////////////////////////////////////////////////////////////////
 
     //jiuzhang
-    public class Jiuzhang {
+    public String getPermutation_J(int n, int k) {
+        StringBuilder sb = new StringBuilder();
+        boolean[] used = new boolean[n];
 
-        public String getPermutation(int n, int k) {
-            StringBuilder sb = new StringBuilder();
-            boolean[] used = new boolean[n];
+        k = k - 1;
+        int factor = 1;
+        for (int i = 1; i < n; i++) {
+            factor *= i;
+        }
 
-            k = k - 1;
-            int factor = 1;
-            for (int i = 1; i < n; i++) {
-                factor *= i;
-            }
-
-            for (int i = 0; i < n; i++) {
-                int index = k / factor;
-                k = k % factor;
-                for (int j = 0; j < n; j++) {
-                    if (used[j] == false) {
-                        if (index == 0) {
-                            used[j] = true;
-                            sb.append((char) ('0' + j + 1));
-                            break;
-                        } else {
-                            index--;
-                        }
+        for (int i = 0; i < n; i++) {
+            int index = k / factor;
+            k = k % factor;
+            for (int j = 0; j < n; j++) {
+                if (used[j] == false) {
+                    if (index == 0) {
+                        used[j] = true;
+                        sb.append((char) ('0' + j + 1));
+                        break;
+                    } else {
+                        index--;
                     }
                 }
-                if (i < n - 1) {
-                    factor = factor / (n - 1 - i);
-                }
             }
-
-            return sb.toString();
+            if (i < n - 1) {
+                factor = factor / (n - 1 - i);
+            }
         }
+
+        return sb.toString();
     }
 
 ///////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////
-
-
-
 }
+
+/* Leetcode
+第k个排列
+
+给定 n 和 k，求123..n组成的排列中的第 k 个排列。
+
+ 注意事项
+
+1 ≤ n ≤ 9
+
+样例
+对于 n = 3, 所有的排列如下：
+
+123
+132
+213
+231
+312
+321
+如果 k = 4, 第4个排列为，231.
+
+挑战
+O(n*k) in time complexity is easy, can you do it in O(n^2) or less?
+
+标签
+排列 数组
+ */
+
+
 /*
 The set [1,2,3,…,n] contains a total of n! unique permutations.
 

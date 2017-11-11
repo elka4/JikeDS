@@ -31,6 +31,7 @@ public class _294_BackTracking_Flip_Game_II_M {
         return false;
     }
 
+////////////////////////////////////////////////////////////////////////////////////?
     //Simple backtracking inspired by Flip Game I
     public boolean canWin2(String s) {
         List<String> list = new ArrayList<>();
@@ -83,6 +84,7 @@ public class _294_BackTracking_Flip_Game_II_M {
         }
     }
 
+////////////////////////////////////////////////////////////////////////////////////?
     // 方法二 nim 博弈
     public class Jiuzhang2 {
         public boolean canWin(String s) {
@@ -120,8 +122,6 @@ public class _294_BackTracking_Flip_Game_II_M {
             }
         }
     }
-////////////////////////////////////////////////////////////////////////////////////?
-
 
 ////////////////////////////////////////////////////////////////////////////////////?
 }

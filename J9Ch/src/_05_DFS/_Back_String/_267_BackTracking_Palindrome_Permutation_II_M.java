@@ -1,11 +1,98 @@
 package _05_DFS._Back_String;
 import java.util.*;
 
-// 267. Palindrome Permutation II
-
+//  267. Palindrome Permutation II
+//  https://leetcode.com/problems/palindrome-permutation-ii/description/
+//  http://www.lintcode.com/zh-cn/problem/palindrome-partitioning-ii/
 public class _267_BackTracking_Palindrome_Permutation_II_M {
+    //  https://leetcode.com/problems/palindrome-permutation-ii/solution/
+    //Approach #1 Brute Force [Time Limit Exceeded]
+    public class Solution01 {
+        Set < String > set = new HashSet < > ();
+        public List < String > generatePalindromes(String s) {
+            permute(s.toCharArray(), 0);
+            return new ArrayList < String > (set);
+        }
+        public boolean isPalindrome(char[] s) {
+            for (int i = 0; i < s.length; i++) {
+                if (s[i] != s[s.length - 1 - i])
+                    return false;
+            }
+            return true;
+        }
+        public void swap(char[] s, int i, int j) {
+            char temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+        }
+        void permute(char[] s, int l) {
+            if (l == s.length) {
+                if (isPalindrome(s))
+                    set.add(new String(s));
+            } else {
+                for (int i = l; i < s.length; i++) {
+                    swap(s, l, i);
+                    permute(s, l + 1);
+                    swap(s, l, i);
+                }
+            }
+        }
+    }
 
-    class sol{
+    //Approach #2 Backtracking [Accepted]
+    public class Solution02 {
+        Set < String > set = new HashSet < > ();
+        public List < String > generatePalindromes(String s) {
+            int[] map = new int[128];
+            char[] st = new char[s.length() / 2];
+            if (!canPermutePalindrome(s, map))
+                return new ArrayList < > ();
+            char ch = 0;
+            int k = 0;
+            for (int i = 0; i < map.length; i++) {
+                if (map[i] % 2 == 1)
+                    ch = (char) i;
+                for (int j = 0; j < map[i] / 2; j++) {
+                    st[k++] = (char) i;
+                }
+            }
+            permute(st, 0, ch);
+            return new ArrayList < String > (set);
+        }
+        public boolean canPermutePalindrome(String s, int[] map) {
+            int count = 0;
+            for (int i = 0; i < s.length(); i++) {
+                map[s.charAt(i)]++;
+                if (map[s.charAt(i)] % 2 == 0)
+                    count--;
+                else
+                    count++;
+            }
+            return count <= 1;
+        }
+        public void swap(char[] s, int i, int j) {
+            char temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+        }
+        void permute(char[] s, int l, char ch) {
+            if (l == s.length) {
+                set.add(new String(s) + (ch == 0 ? "" : ch) + new StringBuffer(new String(s)).reverse());
+            } else {
+                for (int i = l; i < s.length; i++) {
+                    if (s[l] != s[i] || l == i) {
+                        swap(s, l, i);
+                        permute(s, l + 1, ch);
+                        swap(s, l, i);
+                    }
+                }
+            }
+        }
+    }
+
+//////////////////////////////////////////////////////////////////////////////////
+
+    class sol03{
         public List<String> generatePalindromes(String s) {
             int odd = 0;
             String mid = "";
@@ -62,10 +149,10 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
             }
         }
     }
+//////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-    class Solution2{
+    class Solution04{
         public List<String> generatePalindromes(String s) {
             int[] map = new int[256];
             for(int i=0;i<s.length();i++){
@@ -106,8 +193,8 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
     }
 
 
-
-    class Solution3{
+//////////////////////////////////////////////////////////////////////////////////////////
+    class Solution05{
         private List<String> list = new ArrayList<>();
 
         public List<String> generatePalindromes(String s) {
@@ -149,62 +236,12 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
             }
         }
     }
-///////////////////////////////////////////////////////////////////////////////////
-    //Approach #2 Backtracking [Accepted]
-public class leet1 {
-    Set < String > set = new HashSet < > ();
-    public List < String > generatePalindromes(String s) {
-        int[] map = new int[128];
-        char[] st = new char[s.length() / 2];
-        if (!canPermutePalindrome(s, map))
-            return new ArrayList < > ();
-        char ch = 0;
-        int k = 0;
-        for (int i = 0; i < map.length; i++) {
-            if (map[i] % 2 == 1)
-                ch = (char) i;
-            for (int j = 0; j < map[i] / 2; j++) {
-                st[k++] = (char) i;
-            }
-        }
-        permute(st, 0, ch);
-        return new ArrayList < String > (set);
-    }
-    public boolean canPermutePalindrome(String s, int[] map) {
-        int count = 0;
-        for (int i = 0; i < s.length(); i++) {
-            map[s.charAt(i)]++;
-            if (map[s.charAt(i)] % 2 == 0)
-                count--;
-            else
-                count++;
-        }
-        return count <= 1;
-    }
-    public void swap(char[] s, int i, int j) {
-        char temp = s[i];
-        s[i] = s[j];
-        s[j] = temp;
-    }
-    void permute(char[] s, int l, char ch) {
-        if (l == s.length) {
-            set.add(new String(s) + (ch == 0 ? "" : ch) + new StringBuffer(new String(s)).reverse());
-        } else {
-            for (int i = l; i < s.length; i++) {
-                if (s[l] != s[i] || l == i) {
-                    swap(s, l, i);
-                    permute(s, l + 1, ch);
-                    swap(s, l, i);
-                }
-            }
-        }
-    }
-}
 
 ///////////////////////////////////////////////////////////////////////////////////
-// version 1
-// f[i] 表示前i个字母，最少可以被分割为多少个回文串
-// 最后return f[n] - 1
+    // 9Ch
+    // version 1
+    // f[i] 表示前i个字母，最少可以被分割为多少个回文串
+    // 最后return f[n] - 1
 public class Jiuzhang {
     private boolean[][] getIsPalindrome(String s) {
         boolean[][] isPalindrome = new boolean[s.length()][s.length()];
@@ -253,9 +290,11 @@ public class Jiuzhang {
     }
 }
 
+///////////////////////////////////////////////////////////////////////////////////
+    // 9Ch
     // version 2
-// f[i] 表示前i个字母，最少被切割几次可以切割为都是回文串。
-// 最后return f[n]
+    // f[i] 表示前i个字母，最少被切割几次可以切割为都是回文串。
+    // 最后return f[n]
     public class Jiuzhang2 {
         private boolean isPalindrome(String s, int start, int end) {
             for (int i = start, j = end; i < j; i++, j--) {
@@ -313,10 +352,32 @@ public class Jiuzhang {
             return f[s.length()];
         }
     }
+
 ///////////////////////////////////////////////////////////////////////////////////
-
-
 }
+
+/*
+分割回文串 II
+
+给定一个字符串s，将s分割成一些子串，使每个子串都是回文。
+
+返回s符合要求的的最少分割次数。
+
+样例
+比如，给出字符串s = "aab"，
+
+返回 1， 因为进行一次分割可以将字符串s分割成["aa","b"]这样两个回文子串
+
+标签
+动态规划
+相关题目
+中等 摆动排序 II 25 %
+中等 分割回文串 28 %
+中等 最长回文子串
+ */
+
+
+
 /*
 Given a string s, return all the palindromic permutations (without duplicates) of it. Return an empty list if no palindromic permutation could be form.
 
@@ -330,14 +391,3 @@ Given s = "abc", return [].
  */
 
 
-/*
-给定一个字符串s，将s分割成一些子串，使每个子串都是回文。
-
-返回s符合要求的的最少分割次数。
-
-您在真实的面试中是否遇到过这个题？ Yes
-样例
-比如，给出字符串s = "aab"，
-
-返回 1， 因为进行一次分割可以将字符串s分割成["aa","b"]这样两个回文子串
- */

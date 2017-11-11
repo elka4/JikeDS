@@ -1,11 +1,9 @@
 package _05_DFS._Back_2DArray;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 //  51. N-Queens
-
+//  https://leetcode.com/problems/n-queens/description/
+//  http://www.lintcode.com/zh-cn/problem/n-queens/
 public class _051_BackTracking_N_Queens_H {
     //    My easy understanding Java Solution
     public class Solution {
@@ -55,6 +53,7 @@ public class _051_BackTracking_N_Queens_H {
         }
     }
 
+////////////////////////////////////////////////////////////////////////////////////////
     //Comparably concise Java code
     // We just remember the busy columns and diagonals and recursively try to put the queen into the next row.
     public class Solution2 {
@@ -87,10 +86,8 @@ public class _051_BackTracking_N_Queens_H {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////
-
+////////////////////////////////////////////////////////////////////////////////////////
     //jiuzhang
-
     class Jiuzhang {
         /**
          * Get all distinct N-Queen solutions
@@ -159,11 +156,8 @@ public class _051_BackTracking_N_Queens_H {
             return true;
         }
     }
-/////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////
-
-
 }
 /*
 Given an integer n, return all distinct solutions to the n-queens puzzle.
@@ -188,8 +182,6 @@ There exist two distinct solutions to the 4-queens puzzle:
  */
 
 /*
-
-
 n皇后问题是将n个皇后放置在n*n的棋盘上，皇后彼此之间不能相互攻击。
 
 给定一个整数n，返回所有不同的n皇后问题的解决方案。

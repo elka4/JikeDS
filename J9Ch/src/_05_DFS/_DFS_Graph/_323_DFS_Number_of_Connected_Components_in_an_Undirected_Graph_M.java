@@ -1,9 +1,10 @@
 package _05_DFS._DFS_Graph;
 import java.util.*;
-//323. Number of Connected Components in an Undirected Graph
 
+//  323. Number of Connected Components in an Undirected Graph
+//  https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/description/
 public class _323_DFS_Number_of_Connected_Components_in_an_Undirected_Graph_M {
-
+    //AC JAVA code, Union Find
     class Solution{
         private int[] father;
         public int countComponents(int n, int[][] edges) {
@@ -36,7 +37,7 @@ public class _323_DFS_Number_of_Connected_Components_in_an_Undirected_Graph_M {
         }
     }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////
     class Solution2{
         public int countComponents(int n, int[][] edges) {
             int res = n;
@@ -61,8 +62,10 @@ public class _323_DFS_Number_of_Connected_Components_in_an_Undirected_Graph_M {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+    //Easiest 2ms Java Solution
     class Solution3{
-/*        Easiest 2ms Java Solution
+/*
         This is 1D version of Number of Islands II. For more explanations, check out this 2D Solution.
 
                 n points = n islands = n trees = n roots.
@@ -96,11 +99,9 @@ public class _323_DFS_Number_of_Connected_Components_in_an_Undirected_Graph_M {
         }
     }
 
-
-
-//    Java concise DFS
-//    start dfsVisit with sources 0-n-1, count number of unvisited sources.
-
+//////////////////////////////////////////////////////////////////////////////////////////////
+    //    Java concise DFS
+    //    start dfsVisit with sources 0-n-1, count number of unvisited sources.
     public class Solution4 {
         public int countComponents(int n, int[][] edges) {
             if (n <= 1)
@@ -131,18 +132,122 @@ public class _323_DFS_Number_of_Connected_Components_in_an_Undirected_Graph_M {
             }
         }
     }
-//////////////////////////////////////////////////////////////////////////////////////
-
-
-
 
 //////////////////////////////////////////////////////////////////////////////////////
+    //Java Union find & DFS & BFS Code (very clean)
+    public class Solution05 {
 
+        public int countComponents(int n, int[][] edges) {
+            if (n <= 1) {
+                return n;
+            }
+            int[] roots = new int[n];
+            for (int i = 0; i < n; i++) {
+                roots[i] = i;
+            }
+            for (int[] edge : edges) {
+                int x = find(roots, edge[0]);
+                int y = find(roots, edge[1]);
+                if (x != y) {
+                    roots[x] = y;
+                    n--;
+                }
+            }
 
+            return n;
+        }
 
+        public int find(int[] roots, int id) {
+            int x = id;
+            while (roots[id] != id) {
+                id = roots[id];
+            }
+            while (roots[x] != id) {
+                int fa = roots[x];
+                roots[x] = id;
+                x = fa;
+            }
 
+            return id;
+        }
+    }
+//    DFS:
 
+    public class Solution06 {
 
+        public int countComponents(int n, int[][] edges) {
+            if (n <= 1) {
+                return n;
+            }
+            List<List<Integer>> adjList = new ArrayList<List<Integer>>();
+            for (int i = 0; i < n; i++) {
+                adjList.add(new ArrayList<Integer>());
+            }
+            for (int[] edge : edges) {
+                adjList.get(edge[0]).add(edge[1]);
+                adjList.get(edge[1]).add(edge[0]);
+            }
+            boolean[] visited = new boolean[n];
+            int count = 0;
+            for (int i = 0; i < n; i++) {
+                if (!visited[i]) {
+                    count++;
+                    dfs(visited, i, adjList);
+                }
+            }
+
+            return count;
+        }
+
+        public void dfs(boolean[] visited, int index, List<List<Integer>> adjList) {
+            visited[index] = true;
+            for (int i : adjList.get(index)) {
+                if (!visited[i]) {
+                    dfs(visited, i, adjList);
+                }
+            }
+        }
+    }
+//    BFS:
+
+    public class Solution07 {
+
+        public int countComponents(int n, int[][] edges) {
+            if (n <= 1) {
+                return n;
+            }
+            List<List<Integer>> adjList = new ArrayList<List<Integer>>();
+            for (int i = 0; i < n; i++) {
+                adjList.add(new ArrayList<Integer>());
+            }
+            for (int[] edge : edges) {
+                adjList.get(edge[0]).add(edge[1]);
+                adjList.get(edge[1]).add(edge[0]);
+            }
+            boolean[] visited = new boolean[n];
+            int count = 0;
+            for (int i = 0; i < n; i++) {
+                if (!visited[i]) {
+                    count++;
+                    Queue<Integer> queue = new LinkedList<Integer>();
+                    queue.offer(i);
+                    while (!queue.isEmpty()) {
+                        int index = queue.poll();
+                        visited[index] = true;
+                        for (int next : adjList.get(index)) {
+                            if (!visited[next]) {
+                                queue.offer(next);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return count;
+        }
+    }
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 }
 /*
 Given n nodes labeled from 0 to n - 1 and a list of undirected edges (each edge is a pair of nodes), write a function to find the number of connected components in an undirected graph.

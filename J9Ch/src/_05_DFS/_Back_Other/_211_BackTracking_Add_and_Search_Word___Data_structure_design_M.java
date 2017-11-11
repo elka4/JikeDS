@@ -71,6 +71,7 @@ public class _211_BackTracking_Add_and_Search_Word___Data_structure_design_M {
             WordNode[] children = new WordNode[26];
         }
     }
+
 ///////////////////////////////////////////////////////////////////////////////
 
 //    My simple and clean Java code
@@ -174,10 +175,8 @@ public class _211_BackTracking_Add_and_Search_Word___Data_structure_design_M {
             return true;
         }
     }
+
 ///////////////////////////////////////////////////////////////////////////////
-
-
-
 }
 /*
 Design a data structure that supports the following two operations:

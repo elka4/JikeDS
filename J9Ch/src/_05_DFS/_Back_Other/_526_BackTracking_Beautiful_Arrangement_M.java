@@ -1,9 +1,97 @@
 package _05_DFS._Back_Other;
 
-//526. Beautiful Arrangement
-
+//  526. Beautiful Arrangement
+//  https://leetcode.com/problems/beautiful-arrangement/description/
+//
 public class _526_BackTracking_Beautiful_Arrangement_M {
+//////////////////////////////////////////////////////////////////////////
+    //https://leetcode.com/problems/beautiful-arrangement/solution/
 
+    //Approach #1 Brute Force [Time Limit Exceeded]
+    public class Solution01 {
+        int count = 0;
+        public int countArrangement(int N) {
+            int[] nums = new int[N];
+            for (int i = 1; i <= N; i++)
+                nums[i - 1] = i;
+            permute(nums, 0);
+            return count;
+        }
+        public void permute(int[] nums, int l) {
+            if (l == nums.length - 1) {
+                int i;
+                for (i = 1; i <= nums.length; i++) {
+                    if (nums[i - 1] % i != 0 && i % nums[i - 1] != 0)
+                        break;
+                }
+                if (i == nums.length + 1) {
+                    count++;
+                }
+            }
+            for (int i = l; i < nums.length; i++) {
+                swap(nums, i, l);
+                permute(nums, l + 1);
+                swap(nums, i, l);
+            }
+        }
+        public void swap(int[] nums, int x, int y) {
+            int temp = nums[x];
+            nums[x] = nums[y];
+            nums[y] = temp;
+        }
+    }
+
+
+    //Approach #2 Better Brute Force [Accepted]
+    public class Solution02 {
+        int count = 0;
+        public int countArrangement(int N) {
+            int[] nums = new int[N];
+            for (int i = 1; i <= N; i++)
+                nums[i - 1] = i;
+            permute(nums, 0);
+            return count;
+        }
+        public void permute(int[] nums, int l) {
+            if (l == nums.length) {
+                count++;
+            }
+            for (int i = l; i < nums.length; i++) {
+                swap(nums, i, l);
+                if (nums[l] % (l + 1) == 0 || (l + 1) % nums[l] == 0)
+                    permute(nums, l + 1);
+                swap(nums, i, l);
+            }
+        }
+        public void swap(int[] nums, int x, int y) {
+            int temp = nums[x];
+            nums[x] = nums[y];
+            nums[y] = temp;
+        }
+    }
+
+    //Approach #3 Backtracking [Accepted]
+    public class Solution03 {
+        int count = 0;
+        public int countArrangement(int N) {
+            boolean[] visited = new boolean[N + 1];
+            calculate(N, 1, visited);
+            return count;
+        }
+        public void calculate(int N, int pos, boolean[] visited) {
+            if (pos > N)
+                count++;
+            for (int i = 1; i <= N; i++) {
+                if (!visited[i] && (pos % i == 0 || i % pos == 0)) {
+                    visited[i] = true;
+                    calculate(N, pos + 1, visited);
+                    visited[i] = false;
+                }
+            }
+        }
+    }
+
+//////////////////////////////////////////////////////////////////////////
     public class Solution {
         int count = 0;
 
@@ -29,7 +117,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         }
     }
 
-
+//////////////////////////////////////////////////////////////////////////
     public class Solution2 {
         public int countArrangement(int N) {
             int[] cnt = new int[1];
@@ -48,6 +136,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////
     public class Solution3 {
         public int countArrangement(int N) {
             // arr[0] is reserved for sum
@@ -77,6 +166,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
 
     }
 
+//////////////////////////////////////////////////////////////////////////
     public class Solution4 {
         public int countArrangement(int n) {
             boolean[] used = new boolean[n + 1];
@@ -105,6 +195,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////
     class Solution5{
         public int countArrangement(int N) {
             return dfs(N, new boolean[N + 1], 1);
@@ -124,6 +215,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////
     public class Solution6 {
         int count = 0;
 
@@ -149,6 +241,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////
     public class Solution7 {
         public int countArrangement(int N) {
             dfs(N, N, new boolean[N + 1]);
@@ -173,36 +266,8 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         }
     }
 
-    //Approach #3 Backtracking [Accepted]
-    public class Solution8 {
-        int count = 0;
-        public int countArrangement(int N) {
-            boolean[] visited = new boolean[N + 1];
-            calculate(N, 1, visited);
-            return count;
-        }
-        public void calculate(int N, int pos, boolean[] visited) {
-            if (pos > N)
-                count++;
-            for (int i = 1; i <= N; i++) {
-                if (!visited[i] && (pos % i == 0 || i % pos == 0)) {
-                    visited[i] = true;
-                    calculate(N, pos + 1, visited);
-                    visited[i] = false;
-                }
-            }
-        }
-    }
-///////////////////////////////////////////////////////////////////////////////////////////
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-
-
-///////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 }
 /*
 Suppose you have N integers from 1 to N. We define a beautiful arrangement as an array that is constructed by these N numbers successfully if one of the following is true for the ith position (1 <= i <= N) in this array:

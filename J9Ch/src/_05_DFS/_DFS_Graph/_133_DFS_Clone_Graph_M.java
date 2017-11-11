@@ -1,9 +1,20 @@
 package _05_DFS._DFS_Graph;
-import _05_DFS._DFS_Other.UndirectedGraphNode;
-
 import java.util.*;
 
+//  133. Clone Graph
+//  https://leetcode.com/problems/clone-graph/description/
+//  http://www.lintcode.com/zh-cn/problem/clone-graph/
 public class _133_DFS_Clone_Graph_M {
+    class UndirectedGraphNode {
+        int label;
+        List<UndirectedGraphNode> neighbors;
+        UndirectedGraphNode(int x) {
+            label = x;
+            neighbors = new ArrayList<UndirectedGraphNode>();
+        }
+    }
+////////////////////////////////////////////////////////////////////////////////////////
+    //Depth First Simple Java Solution
     public class Solution {
         private HashMap<Integer, UndirectedGraphNode> map = new HashMap<>();
         public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
@@ -25,6 +36,7 @@ public class _133_DFS_Clone_Graph_M {
         }
     }
 
+////////////////////////////////////////////////////////////////////////////////////////
     //Simple Java iterative BFS solution with HashMap and queue
     public class Solution2 {
         public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
@@ -62,13 +74,13 @@ public class _133_DFS_Clone_Graph_M {
 
 //////////////////////////////////////////////////////////////////////////////////////
 
-//jiuzhang
+    //jiuzhang
     /*
     用3个步骤：
 
-从1个点找到所有点
-复制所有的点
-复制所有的边
+    从1个点找到所有点
+    复制所有的点
+    复制所有的边
      */
 public class Jiuzhang1 {
     /**
@@ -196,12 +208,12 @@ public class Jiuzhang1 {
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
-/*
-两个步骤：
+    /*
+    两个步骤：
 
-一边找到所有的点，一边复制所有的点。
-复制所有的边
- */
+    一边找到所有的点，一边复制所有的点。
+    复制所有的边
+     */
     public class Jiuzhang3 {
         public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
             if (node == null) {
@@ -239,13 +251,8 @@ public class Jiuzhang1 {
             return map.get(node);
         }
     }
+
 //////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 }
 /*
 Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.

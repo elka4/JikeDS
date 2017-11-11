@@ -1,10 +1,11 @@
 package _05_DFS._Back_Other;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
+//  401. Binary Watch
+//  https://leetcode.com/problems/binary-watch/description/
+//  http://www.lintcode.com/zh-cn/problem/binary-time/
 public class _401_BackTracking_Binary_Watch_E {
-    //straightforward java answer
+        //straightforward java answer
     public List<String> readBinaryWatch(int num) {
         List<String> times = new ArrayList<>();
         for (int h=0; h<12; h++)
@@ -14,6 +15,7 @@ public class _401_BackTracking_Binary_Watch_E {
         return times;
     }
 
+////////////////////////////////////////////////////////////////////////////////////////
     //3ms Java Solution Using Backtracking and Idea of "Permutation and Combination"
     public class Solution {
         public List<String> readBinaryWatch(int num) {
@@ -50,7 +52,6 @@ public class _401_BackTracking_Binary_Watch_E {
             }
         }
     }
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////
     //jiuzhang
@@ -92,15 +93,25 @@ public class Jiuzhang {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
 }
+
+/*
+二进制时间
+
+给了一个二进制显示时间的手表和一个非负整数 n, n 代表在给定时间表上 1 的数量, 返回所有可能的时间
+
+ 注意事项
+
+输出的顺序没有要求.
+小时不能包含前导零, 比如 "01:00" 是不允许的, 应该为 "1:00".
+分钟必须由两位数组成, 可能包含前导零, 比如 "10:2" 是无效的, 应该为 "10:02".
+
+样例
+给出 n = 1
+返回 ["1:00", "2:00", "4:00", "8:00", "0:01", "0:02", "0:04", "0:08", "0:16", "0:32"]
+ */
+
+
 /*
 For example, the above binary watch reads "3:25".
 

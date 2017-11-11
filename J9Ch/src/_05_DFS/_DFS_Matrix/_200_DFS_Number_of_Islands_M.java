@@ -1,8 +1,9 @@
 package _05_DFS._DFS_Matrix;
+import java.util.*;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
+//  200. Number of Islands
+//  https://leetcode.com/problems/number-of-islands/
+//  http://www.lintcode.com/zh-cn/problem/number-of-islands/
 public class _200_DFS_Number_of_Islands_M {
     public class NumberofIslands {
         int[] dx = {-1,0,0,1};
@@ -23,12 +24,15 @@ public class _200_DFS_Number_of_Islands_M {
         public void explore(char[][] grid, int i, int j) {
             grid[i][j]='x';
             for(int d=0;d<dx.length;d++) {
-                if(i+dy[d]<grid.length && i+dy[d]>=0 && j+dx[d]<grid[0].length && j+dx[d]>=0 && grid[i+dy[d]][j+dx[d]]=='1') {
+                if(i+dy[d]<grid.length && i+dy[d]>=0 &&
+                        j+dx[d]<grid[0].length && j+dx[d]>=0 && grid[i+dy[d]][j+dx[d]]=='1') {
                     explore(grid,i+dy[d],j+dx[d]);
                 }
             }
         }
     }
+
+//////////////////////////////////////////////////////////////////////////////////////
 /*
     The algorithm works as follow:
 
@@ -68,8 +72,8 @@ public class _200_DFS_Number_of_Islands_M {
         }
     }
 
-//    Java Solution 1
-
+//////////////////////////////////////////////////////////////////////////////////////
+    //    Java Solution 1
     public class Solution3 {
         char[][] g;
         public int numIslands(char[][] grid) {
@@ -88,8 +92,9 @@ public class _200_DFS_Number_of_Islands_M {
             return 1;
         }
     }
-//    Java Solution 2
 
+//////////////////////////////////////////////////////////////////////////////////////
+    //    Java Solution 2
     public class Solution4 {
         public int numIslands(char[][] grid) {
             int islands = 0;
@@ -181,7 +186,7 @@ public class _200_DFS_Number_of_Islands_M {
             return coor.x >= 0 && coor.x < n && coor.y >= 0 && coor.y < m;
         }
     }
-
+//////////////////////////////////////////////////////////////////////////////////////
     // version 2: Union Find
     class UnionFind {
 
@@ -223,6 +228,7 @@ public class _200_DFS_Number_of_Islands_M {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////////////////
     public class Jiuzhang2 {
         /**
          * @param grid a boolean 2D matrix
@@ -265,6 +271,7 @@ public class _200_DFS_Number_of_Islands_M {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////////////////
     // version 3: DFS (not recommended)
     public class Jiuzhang3 {
         /**
@@ -303,17 +310,36 @@ public class _200_DFS_Number_of_Islands_M {
         }
     }
 
-
-
-
 //////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 }
+
+/*
+岛屿的个数
+
+给一个01矩阵，求不同的岛屿的个数。
+
+0代表海，1代表岛，如果两个1相邻，那么这两个1属于同一个岛。我们只考虑上下左右为相邻。
+
+样例
+在矩阵：
+
+[
+  [1, 1, 0, 0, 0],
+  [0, 1, 0, 0, 1],
+  [0, 0, 0, 1, 1],
+  [0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 1]
+]
+中有 3 个岛.
+
+标签
+谷歌 脸书 Zenefits
+相关题目
+中等 大岛的数量 20 %
+中等 被围绕的区域
+ */
+
+
 /*
 Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
 

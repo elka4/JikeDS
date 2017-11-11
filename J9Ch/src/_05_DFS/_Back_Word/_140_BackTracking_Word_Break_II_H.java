@@ -1,40 +1,38 @@
 package _05_DFS._Back_Word;
 import java.util.*;
 
-// backtracking, DP
 
+
+//  140. Word Break II
+//  https://leetcode.com/problems/word-break-ii/description/
 //
+// backtracking, DP
 public class _140_BackTracking_Word_Break_II_H {
-
-    public class Solution {
-        public List<String> wordBreak(String s, Set<String> dict) {
-            List<String> result = new ArrayList<String>();
-            for(int j = s.length() - 1; j >= 0; j--){
-                if(dict.contains(s.substring(j)))
-                    break;
-                else{
-                    if(j == 0)
-                        return result;
+    //https://leetcode.com/problems/word-break-ii/solution/
+    //Approach #1 Brute Force [Time Limit Exceeded]
+    public class Solution01 {
+        public List<String> wordBreak(String s, Set<String> wordDict) {
+            return word_Break(s, wordDict, 0);
+        }
+        public List<String> word_Break(String s, Set<String> wordDict, int start) {
+            LinkedList<String> res = new LinkedList<>();
+            if (start == s.length()) {
+                res.add("");
+            }
+            for (int end = start + 1; end <= s.length(); end++) {
+                if (wordDict.contains(s.substring(start, end))) {
+                    List<String> list = word_Break(s, wordDict, end);
+                    for (String l : list) {
+                        res.add(s.substring(start, end) + (l.equals("") ? "" : " ") + l);
+                    }
                 }
             }
-            for(int i = 0; i < s.length()-1; i++)
-            {
-                if(dict.contains(s.substring(0,i+1)))
-                {
-                    List<String> strs = wordBreak(s.substring(i+1,s.length()),dict);
-                    if(strs.size() != 0)
-                        for(Iterator<String> it = strs.iterator();it.hasNext();)
-                        {
-                            result.add(s.substring(0,i+1)+" "+it.next());
-                        }
-                }
-            }
-            if(dict.contains(s)) result.add(s);
-            return result;
+            return res;
         }
     }
+
     //Approach #2 Recursion with memoization [Accepted]
-    public class Solution2 {
+    public class Solution02 {
 
         public List<String> wordBreak(String s, Set<String> wordDict) {
             return word_Break(s, wordDict, 0);
@@ -63,7 +61,7 @@ public class _140_BackTracking_Word_Break_II_H {
     }
 
     //Approach #3 Using Dynamic Programming [Time Limit Exceeded]:
-    public class Solution3 {
+    public class Solution03 {
         public List<String> wordBreak(String s, Set<String> wordDict) {
             LinkedList<String>[] dp = new LinkedList[s.length() + 1];
             LinkedList<String> initial = new LinkedList<>();
@@ -84,6 +82,66 @@ public class _140_BackTracking_Word_Break_II_H {
         }
     }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+    //My concise answer.
+    public class Solution04 {
+        public List<String> wordBreak(String s, Set<String> dict) {
+            List<String> result = new ArrayList<String>();
+            for(int j = s.length() - 1; j >= 0; j--){
+                if(dict.contains(s.substring(j)))
+                    break;
+                else{
+                    if(j == 0)
+                        return result;
+                }
+            }
+            for(int i = 0; i < s.length()-1; i++)
+            {
+                if(dict.contains(s.substring(0,i+1)))
+                {
+                    List<String> strs = wordBreak(s.substring(i+1,s.length()),dict);
+                    if(strs.size() != 0)
+                        for(Iterator<String> it = strs.iterator();it.hasNext();)
+                        {
+                            result.add(s.substring(0,i+1)+" "+it.next());
+                        }
+                }
+            }
+            if(dict.contains(s)) result.add(s);
+            return result;
+        }
+    }
+/////////////////////////////////////////////////////////////////////////////////////////////
+/*My concise JAVA solution based on memorized DFS
+    Explanation
+
+    Using DFS directly will lead to TLE, so I just used HashMap to save the previous results to prune duplicated branches, as the following:*/
+
+    public List<String> wordBreak05(String s, Set<String> wordDict) {
+        return DFS(s, wordDict, new HashMap<String, LinkedList<String>>());
+    }
+
+    // DFS function returns an array including all substrings derived from s.
+    List<String> DFS(String s, Set<String> wordDict, HashMap<String, LinkedList<String>>map) {
+        if (map.containsKey(s))
+            return map.get(s);
+
+        LinkedList<String>res = new LinkedList<String>();
+        if (s.length() == 0) {
+            res.add("");
+            return res;
+        }
+        for (String word : wordDict) {
+            if (s.startsWith(word)) {
+                List<String>sublist = DFS(s.substring(word.length()), wordDict, map);
+                for (String sub : sublist)
+                    res.add(word + (sub.isEmpty() ? "" : " ") + sub);
+            }
+        }
+        map.put(s, res);
+        return res;
+    }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
     //Jiuzhang
@@ -151,8 +209,8 @@ public class _140_BackTracking_Word_Break_II_H {
 
     }
 
-// version 2:
-
+/////////////////////////////////////////////////////////////////////////////////////////////
+    // version 2:
     public class Jiuzhang2 {
         public ArrayList<String> wordBreak(String s, Set<String> dict) {
             // Note: The Solution object is instantiated only once and is reused by each test case.
@@ -185,10 +243,8 @@ public class _140_BackTracking_Word_Break_II_H {
             return result;
         }
     }
+
 /////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 }
 /*
 Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. You may assume the dictionary does not contain duplicate words.

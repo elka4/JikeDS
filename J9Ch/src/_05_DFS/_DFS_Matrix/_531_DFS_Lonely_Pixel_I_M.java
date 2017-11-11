@@ -1,8 +1,9 @@
 package _05_DFS._DFS_Matrix;
 
+//  531. Lonely Pixel I
+//  https://leetcode.com/problems/lonely-pixel-i/
 public class _531_DFS_Lonely_Pixel_I_M {
-//    O(nm) Time, O(n+m) Space Solution:
-
+    //    O(nm) Time, O(n+m) Space Solution:
     public int findLonelyPixel(char[][] picture) {
         int n = picture.length, m = picture[0].length;
 
@@ -18,8 +19,9 @@ public class _531_DFS_Lonely_Pixel_I_M {
 
         return count;
     }
-//    O(nm) Time, O(1) Space Solution:
 
+/////////////////////////////////////////////////////////////////////////////////////////
+    //    O(nm) Time, O(1) Space Solution:
     public int findLonelyPixel2(char[][] picture) {
         int n = picture.length, m = picture[0].length;
 
@@ -43,7 +45,7 @@ public class _531_DFS_Lonely_Pixel_I_M {
         return count;
     }
 
-
+/////////////////////////////////////////////////////////////////////////////////////////
 
     /*
     thought is very simple, we can easily count how many times B occurs in each row. But how can we know if this col has existing B?
@@ -53,10 +55,8 @@ B W W W
 W W W B
 W W W B
 we can maintain an array calls colArray[], which is used to record how many times the B occurs in each column. Then solution is simple
-
-
      */
-    public class Solution {
+    public class Solution3 {
         public int findLonelyPixel(char[][] picture) {
             if (picture == null || picture.length == 0 || picture[0].length == 0) return 0;
 
@@ -82,7 +82,9 @@ we can maintain an array calls colArray[], which is used to record how many time
         }
     }
 
-    public class Solution2 {
+/////////////////////////////////////////////////////////////////////////////////////////
+    //[Java] [C++] Clean Code with explanation
+    public class Solution4 {
         public int findLonelyPixel(char[][] pic) {
             int m = pic.length;
             int n = pic[0].length;
@@ -108,18 +110,22 @@ we can maintain an array calls colArray[], which is used to record how many time
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 }
 /*
+Given a picture consisting of black and white pixels, find the number of black lonely pixels.
 
+The picture is represented by a 2D char array consisting of 'B' and 'W', which means black and white pixels respectively.
+
+A black lonely pixel is character 'B' that located at a specific position where the same row and same column don't have any other black pixels.
+
+Example:
+Input:
+[['W', 'W', 'B'],
+ ['W', 'B', 'W'],
+ ['B', 'W', 'W']]
+
+Output: 3
+Explanation: All the three 'B's are black lonely pixels.
+Note:
+The range of width and height of the input 2D array is [1,500].
  */

@@ -1,6 +1,8 @@
 package _05_DFS._Back_Word;
 
-//
+//  79. Word Search
+//  https://leetcode.com/problems/word-search/description/
+//  http://www.lintcode.com/zh-cn/problem/word-search/
 public class _079_BackTracking_Word_Search_M {
 //    Accepted very short Java solution. No additional space.
 //    Here accepted solution based on recursion. To save memory I decuded to apply bit mask for every visited cell. Please check board[y][x] ^= 256;
@@ -29,7 +31,8 @@ public class _079_BackTracking_Word_Search_M {
         }
     }
 
-//    My Java solution
+///////////////////////////////////////////////////////////////////////////////////////////
+    //    My Java solution
     public class Solution2 {
         boolean[][] visited;
         public boolean exist(char[][] board, String word) {
@@ -51,7 +54,8 @@ public class _079_BackTracking_Word_Search_M {
                 return true;
             }
 
-            if(i >= board.length || i < 0 || j >= board[i].length || j < 0 || board[i][j] != word.charAt(index) || visited[i][j]){
+            if(i >= board.length || i < 0 || j >= board[i].length || j < 0 ||
+                    board[i][j] != word.charAt(index) || visited[i][j]){
                 return false;
             }
 
@@ -68,6 +72,7 @@ public class _079_BackTracking_Word_Search_M {
         }
     }
 
+///////////////////////////////////////////////////////////////////////////////////////////
     //Simple solution
     class Solution3{
         public boolean exist(char[][] board, String word) {
@@ -95,7 +100,6 @@ public class _079_BackTracking_Word_Search_M {
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////
-
     //Jiuzhang
     public class Jiuzhang {
         // recursion
@@ -138,37 +142,10 @@ public class _079_BackTracking_Word_Search_M {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
 }
-/*
-Given a 2D board and a word, find if the word exists in the grid.
-
-The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
-
-For example,
-Given board =
-
-[
-  ['A','B','C','E'],
-  ['S','F','C','S'],
-  ['A','D','E','E']
-]
-word = "ABCCED", -> returns true,
-word = "SEE", -> returns true,
-word = "ABCB", -> returns false.
- */
 
 /*
 lint
-
-
 给出一个二维的字母板和一个单词，寻找字母板网格中是否存在这个单词。
 
 单词可以由按顺序的相邻单元的字母组成，其中相邻单元指的是水平或者垂直方向相邻。每个单元中的字母最多只能使用一次。
@@ -191,4 +168,23 @@ word = "SEE"，-> 返回 true,
 
 word = "ABCB"， -> 返回 false.
 
+ */
+
+
+/*
+Given a 2D board and a word, find if the word exists in the grid.
+
+The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
+
+For example,
+Given board =
+
+[
+  ['A','B','C','E'],
+  ['S','F','C','S'],
+  ['A','D','E','E']
+]
+word = "ABCCED", -> returns true,
+word = "SEE", -> returns true,
+word = "ABCB", -> returns false.
  */

@@ -1,6 +1,8 @@
 package _05_DFS._DFS_String;
 import java.util.*;
 
+//
+//
 public class _472_DFS_Concatenated_Words_H {
     /*
     Java DP Solution
@@ -47,6 +49,7 @@ Of course it is also obvious that a word can only be formed by words shorter tha
         }
     }
 
+///////////////////////////////////////////////////////////////////////////////////
     public class Solution2 {
         public  List<String> findAllConcatenatedWordsInADict(String[] words) {
             List<String> result = new ArrayList<>();
@@ -90,7 +93,7 @@ Of course it is also obvious that a word can only be formed by words shorter tha
     }
 
 
-
+///////////////////////////////////////////////////////////////////////////////////
 
     public class Solution3 {
         class TrieNode {
@@ -157,6 +160,7 @@ Of course it is also obvious that a word can only be formed by words shorter tha
         }
     }
 
+///////////////////////////////////////////////////////////////////////////////////
     class Solution4{
 //        102ms java Trie + DFS solution. With explanation, easy to understand.
         public List<String> findAllConcatenatedWordsInADict(String[] words) {
@@ -219,18 +223,8 @@ Of course it is also obvious that a word can only be formed by words shorter tha
             sons = new TrieNode[26];
         }
     }
-//////////////////////////////////////////////////////////////////////////////////////
-
-
-
 
 //////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 }
 /*
 Given a list of words (without duplicates), please write a program that returns all concatenated words in the given list of words.

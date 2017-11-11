@@ -1,7 +1,8 @@
 package _05_DFS._DFS_String;
+import java.util.*;
 
-import java.util.Stack;
-
+//  394. Decode String
+//  https://leetcode.com/problems/decode-string/description/
 public class _394_DFS_Decode_String_M {
     //Simple Java Solution using Stack
     public class Solution {
@@ -41,6 +42,7 @@ public class _394_DFS_Decode_String_M {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////////////////////////
     //There will be many temporary String object there. So I used a Stack with StringBuilder.
 
     class StrItem {
@@ -78,8 +80,8 @@ public class _394_DFS_Decode_String_M {
         }
     }
 
-
-//    Java short and easy-understanding solution using stack
+//////////////////////////////////////////////////////////////////////////////////////////////
+    //    Java short and easy-understanding solution using stack
     public class Solution3 {
         public String decodeString(String s) {
             Stack<Integer> count = new Stack<>();
@@ -112,18 +114,6 @@ public class _394_DFS_Decode_String_M {
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
-
-//jiuzhang
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
 }
 /*
 Given an encoded string, return it's decoded string.
