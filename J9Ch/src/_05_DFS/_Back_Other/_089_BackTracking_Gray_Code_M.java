@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-//89. Gray Code
-
+//  89. Gray Code
+//  https://leetcode.com/problems/gray-code/description/
+//  http://www.lintcode.com/zh-cn/problem/gray-code/
 public class _089_BackTracking_Gray_Code_M {
+
+/////////////////////////////////////////////////////////////////////////
     //    An accepted three line solution in JAVA
     class Solution1{
         public List<Integer> grayCode(int n) {
