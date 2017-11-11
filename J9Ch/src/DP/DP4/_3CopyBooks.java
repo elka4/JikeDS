@@ -49,6 +49,7 @@ public class _3CopyBooks {
             for (i = 1; i <= n; ++i) {
                 f[k][i] = Integer.MAX_VALUE;
                 sum = 0;
+                // 设f[k][i]为k个抄写员最少需要多少时间抄完前i本书
                 // f[k][i] = minj=0,...,i{max{f[k-1][j], A[j] +... +A[i-1]}}
                 // important
                 // sum是前方最后一段，这样倒着做最方便， 这是一个看最后一段的好办法
@@ -176,9 +177,13 @@ public class _3CopyBooks {
         for (int j=1; j<k; ++j) {
             int p = 0;
             f[0][j] = pages[0];
-            for (int i = 1; i < j; ++i) f[i][j] = Math.max(f[i-1][j], pages[i]);
+            for (int i = 1; i < j; ++i)
+                f[i][j] = Math.max(f[i-1][j], pages[i]);
+
+
             for (int i = j; i < n; ++i) {
-                while (p < i && f[p][j-1] < sum[i] - sum[p]) ++p;
+                while (p < i && f[p][j-1] < sum[i] - sum[p])
+                    ++p;
                 f[i][j] = Math.max(f[p][j - 1], sum[i] - sum[p]);
                 if (p > 0) {
                     --p;

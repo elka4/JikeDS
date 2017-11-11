@@ -55,18 +55,20 @@ dp[i][j] = max(dp[i-1][j] + dp[i-1][j-A[i]] + A[i])
 //Backpack
 public class _5Backpack {
 
-    public int backPack2(int m, int[] A) {
+    public int backPack1(int m, int[] nums) {
         // write your code here
-        int n = A.length;
-        int[][] f = new int[n + 1][m + 1];//n是物品个数，m是物品大小
+        int n = nums.length;
+        //n是物品个数，m是物品大小。
+        //f[i][j]: 能否用前i个物品拼出重量 j (TRUE / FALSE)
+        int[][] f = new int[n + 1][m + 1];
 
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= m; j++) {//j是物品大小
 
-                if (j >= A[i - 1]) {
+                if (j >= nums[i - 1]) {
                     //f[i - 1][j]： 不放当前，取顶头
                     //f[i - 1][j - A[i - 1]]： 放当前+ A[i - 1]， 取斜上方。。。。
-                    f[i][j] = Math.max(f[i - 1][j], f[i - 1][j - A[i - 1]] + A[i - 1]);
+                    f[i][j] = Math.max(f[i - 1][j], f[i - 1][j - nums[i - 1]] + nums[i - 1]);
                 } else {
                     f[i][j] = f[i - 1][j];
                 }
@@ -77,8 +79,8 @@ public class _5Backpack {
 
 //////////////////////////////////////////////////////////////////
     // 9Ch DP
-    public int backPack(int m, int[] A) {
-        int n = A.length;
+    public int backPack2(int m, int[] nums) {
+        int n = nums.length;
         if (n == 0) {
             return 0;
         }
@@ -92,8 +94,8 @@ public class _5Backpack {
         for (i = 1; i <= n; i++) {
             for (j = 0; j <= m; j++) {
                 f[i][j] = f[i - 1][j];
-                if (j >= A[i - 1]) {
-                    f[i][j] = f[i][j] || f[i - 1][j - A[i - 1]];
+                if (j >= nums[i - 1]) {
+                    f[i][j] = f[i][j] || f[i - 1][j - nums[i - 1]];
                 }
             }
         }
@@ -112,7 +114,7 @@ public class _5Backpack {
      * @param A: Given n items with size A[i]
      * @return: The maximum size
      */
-    public int backPack1(int m, int[] A) {
+    public int backPack3(int m, int[] A) {
         boolean f[][] = new boolean[A.length + 1][m + 1];
 
         for (int i = 0; i <= A.length; i++) {

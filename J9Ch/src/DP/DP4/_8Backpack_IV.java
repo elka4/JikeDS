@@ -55,7 +55,7 @@ int backPackIV(vector<int>& nums, int target) {
  */
 
 // Backpack IV
-public class _8BackpackIV {
+public class _8Backpack_IV {
 
 ///////////////////////////////////////////////////////////////////////////////////////
     // 方法一

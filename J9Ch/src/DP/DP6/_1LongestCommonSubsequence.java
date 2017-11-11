@@ -70,6 +70,7 @@ public class _1LongestCommonSubsequence {
 
         int m = A.length;
         int n = B.length;
+        //• 设f[i][j]为A前i个字符A[0..i-1]和B前j个字符[0..j-1]的最长公共子串的长度
         int[][] f = new int[m + 1][n + 1];
         int i, j;
 

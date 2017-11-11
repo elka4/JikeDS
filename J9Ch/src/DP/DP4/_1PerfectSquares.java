@@ -91,12 +91,24 @@ public class _1PerfectSquares {
         return dp[n];
     }
 
+////////////////////////////////////////////////////////////////////////////////
+    //这可能是最好的一个， 从下面复制上来的
+    public int numSquares444(int n){
+        int[] f = new int[n + 1];
+        f[0] = 0;
+        for (int i = 1; i <= n; i++) {
+            f[i] = Integer.MAX_VALUE;//初始化成i就可以
+            for (int j = 1; j * j <= i; j++) {
+                f[i] = Math.min(f[i], f[i - j * j] + 1);
 
+            }
+        }
+        return f[n];
+    }
 
-
-/*    Simple Java DP Solution
+    /* Simple Java DP Solution
     Just regular DP. Time Complexity: n * sqrt(n) Space: O(n)*/
-
+    //这个没有上下的方法简介
     public int numSquares02(int n) {
         int[] dp = new int[n + 1];
         Arrays.fill(dp, Integer.MAX_VALUE);
@@ -109,6 +121,7 @@ public class _1PerfectSquares {
         return dp[n];
     }
 
+////////////////////////////////////////////////////////////////////////////////
     //    Beautiful 8 Lines Java Solution
     public int numSquares04(int n) {
         int[] record = new int[n + 1];
@@ -121,8 +134,8 @@ public class _1PerfectSquares {
         return record[n];
     }
 
-    //Java DP Solution with explanation
-
+////////////////////////////////////////////////////////////////////////////////
+        //Java DP Solution with explanation
         public int numSquares03(int n) {
             int[] dp = new int[n + 1];
             for (int i = 1; i <= n; i++) {
@@ -156,11 +169,7 @@ public class _1PerfectSquares {
             return dp[n];
         }
 
-
-
-
-
-
+////////////////////////////////////////////////////////////////////////////////
 
 /*    Explanation of the DP solution
 
@@ -199,6 +208,7 @@ public class _1PerfectSquares {
     public int numSquares4(int n){
         int[] f = new int[n + 1];
         f[0] = 0;
+
         for (int i = 1; i <= n; i++) {
             f[i] = Integer.MAX_VALUE;
             for (int j = 1; j * j <= i; j++) {
@@ -211,6 +221,7 @@ public class _1PerfectSquares {
         return f[n];
     }
 
+    //这可能是最好的一个
     public int numSquares44(int n){
         int[] f = new int[n + 1];
         f[0] = 0;

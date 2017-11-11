@@ -1,4 +1,5 @@
 package DP.DP4;
+import org.junit.Test;
 
 /*
 A0, A1, ... AN-1 加起来等于target有几种方式
@@ -28,18 +29,7 @@ f[i-1][w-Ai-1]只能在 w≥Ai-1 时使用
 
 -----------------------------------------------------------------------------------------------
 
-
 -----------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
  */
 
 
@@ -90,12 +80,11 @@ int backPackV(vector<int>& nums, int target) {
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
  */
 
-import org.junit.Test;
 
 //Backpack V
-public class _6BackpackV {
-     // 9 Ch DP
+public class _6Backpack_V {
 
+     // 9 Ch DP
     public int backPackV(int[] A, int T){
         int i, j;
         int n = A.length;
@@ -110,7 +99,7 @@ public class _6BackpackV {
         }
 
         for (i = 1; i <= n; i++) {
-            // importan, T downto 0
+            // important, T downto 0
             for (j = T; j >= 0; --j) {
                 // f'[j]
                 // cover f[j]
@@ -128,6 +117,7 @@ public class _6BackpackV {
         int T = 7;
         System.out.println(backPackV(A, T));
     }
+
 /////////////////////////////////////////////////////////////////
     /**
      * @param nums an integer array and all positive numbers
@@ -144,22 +134,15 @@ public class _6BackpackV {
 
         return f[target];
     }
-/////////////////////////////////////////////////////////////////
-    /**
-     * @param nums an integer array and all positive numbers
-     * @param target an integer
-     * @return an integer
-     */
-    public int backPackV2(int[] nums, int target) {
-        // Write your code here
-        int[] f = new int[target + 1];
-        f[0] = 1;
-        for (int i = 0; i < nums.length; ++i)
-            for (int  j = target; j >= nums[i]; --j)
-                f[j] += f[j - nums[i]];
 
-        return f[target];
+
+    @Test
+    public void test02() {
+        int[] A = {1,2,3,3,7};
+        int T = 7;
+        System.out.println(backPackV1(A, T));
     }
+
 /////////////////////////////////////////////////////////////////
 }
 

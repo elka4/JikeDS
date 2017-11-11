@@ -131,7 +131,7 @@ public class _3LongestPalindromicSubsequence {
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-//    Java DP Solution
+    //    Java DP Solution
     public class Solution04 {
         public int longestPalindromeSubseq(String s) {
             int len = s.length();
@@ -153,16 +153,17 @@ public class _3LongestPalindromicSubsequence {
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////////////
-//Java DP solution, similar to solving LCS problem
-//
-//    To find the longest palindromic subsequence, we could reverse the string and find the LCS(Longest common subsequence) of these two strings.
+    //Java DP solution, similar to solving LCS problem
+    //
+    //    To find the longest palindromic subsequence, we could reverse the string and
+    // find the LCS(Longest common subsequence) of these two strings.
 
     public class Solution05 {
         public int longestPalindromeSubseq(String s) {
             int len = s.length();
             if(len < 2) return len;
             int[][] dp= new int[len+1][len+1];
-            String reverse = new StringBuilder(s).reverse().toString();
+            String reverse = new StringBuilder(s).reverse().toString();//记住这个用法
             for(int i = 1; i <= len; i++) {
                 for(int j = 1; j <= len; j++) {
                     if(s.charAt(i-1) == reverse.charAt(j-1)) dp[i][j] = dp[i-1][j-1] + 1;

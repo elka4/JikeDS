@@ -36,7 +36,7 @@ a[j] - f[i][j-1]:   选择a[j]，对手采取最优策略时自己能得到的�
 import org.junit.Test;
 
 //  Coins In A Line III
-public class _4CoinsInALineIII {
+public class _4CoinsInALine_III {
 
     // 9CH DP
     public boolean firstWillWin (int[] A) {
@@ -44,7 +44,7 @@ public class _4CoinsInALineIII {
         if (n == 0) {
             return true;
         }
-
+        // 设f[i][j]为一方在面对a[i..j]这些数字时，能得到的最大的与对手的数字差
         int[][] f = new int[n][n];
         int i, j, len;
         for (i = 0; i < n; i++) {
@@ -53,7 +53,7 @@ public class _4CoinsInALineIII {
 
         for (len = 2; len <= n; len++) {
             for (i = 0; i <= n - len; i++) {
-                j = i + len - 1;
+                j = i + len - 1;//右端点坐标
                 f[i][j] = Math.max(A[i] - f[i + 1][j], A[j] - f[i][j - 1]);
             }
         }
@@ -189,6 +189,8 @@ public class _4CoinsInALineIII {
         }
         return dp[left][right];
     }
+
+
 ////////////////////////////////////////////////////////////////////
 }
 /*

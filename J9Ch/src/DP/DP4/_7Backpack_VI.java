@@ -12,16 +12,6 @@ f[i-A1] +...+ f[i-AN-1]: 多少种组合能拼出i - AN-1
 
 -----------------------------------------------------------------------------------------------
 
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
 -----------------------------------------------------------------------------------------------
 
  */
@@ -56,17 +46,17 @@ import com.intellij.codeInsight.template.postfix.templates.SoutPostfixTemplate;
 import org.junit.Test;
 
 //Backpack VI
-public class _7BackpackVI {
+public class _7Backpack_VI {
     // 9CH DP, 不记录状态
-    public int backPackVI (int[] A, int T) {
+    public int backPackVI (int[] nums, int T) {
         int[] f = new int[T + 1];
         f[0] = 1;
         int i, j;
         for (i = 1; i <= T; i++) {
             f[i] = 0;
-            for (j = 0; j < A.length; j++) {
-                if (i >= A[j]) {
-                    f[i] += f[i - A[j]];
+            for (j = 0; j < nums.length; j++) {
+                if (i >= nums[j]) {
+                    f[i] += f[i - nums[j]];
                 }
             }
         }
@@ -80,11 +70,11 @@ public class _7BackpackVI {
     public void test01(){
         int[] A = {1, 2, 4};
         int T = 4;
-        System.out.println(backPackVI(A, T));
+        System.out.println(backPackVI(A, T));//6
 
         A = new int[]{5, 7, 13, 17};
         T = 32;
-        System.out.println(backPackVI(A, T));
+        System.out.println(backPackVI(A, T));//22
 
     }
 //////////////////////////////////////////////////////////////////
@@ -157,7 +147,7 @@ public class _7BackpackVI {
     public void test03(){
         int[] A = {1, 2, 4};
         int T = 4;
-        System.out.println(backPackVI3(A, T));
+        System.out.println(backPackVI3(A, T));//6
     }
 //////////////////////////////////////////////////////////////////
 

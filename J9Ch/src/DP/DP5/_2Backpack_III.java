@@ -74,7 +74,7 @@ int backPackIII(vector<int>& A, vector<int>& V, int m) {
 import StdLib.In;
 
 //Backpack III
-public class _2BackpackIII {
+public class _2Backpack_III {
     public int backPackIII(int[] A, int[] V, int m) {
         int n = A.length;
         if (n == 0) {

@@ -1,8 +1,10 @@
 package _05_DFS._Backtracking;
 import java.util.*;
 
-//  BFS
-public class Word_Ladder {
+//  127. Word Ladder
+//  https://leetcode.com/problems/word-ladder/description/
+//  http://www.lintcode.com/zh-cn/problem/word-ladder/
+public class _127_Word_Ladder {
 
 
 
@@ -78,6 +80,7 @@ public class Word_Ladder {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////////////////////
     // version: LeetCode
     public class Jiuzhang2 {
         public int ladderLength(String start, String end, List<String> wordList) {
@@ -145,10 +148,9 @@ public class Word_Ladder {
             return nextWords;
         }
     }
+
+
 //////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 }
 
 /*
@@ -178,6 +180,8 @@ Note:
 UPDATE (2017/1/20):
 The wordList parameter had been changed to a list of strings (instead of a set of strings). Please reload the code definition to get the latest changes.
  */
+
+
 /*
 lint
 

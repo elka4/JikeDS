@@ -67,7 +67,7 @@ int backPackII(int m, vector<int> A, vector<int> V) {
 
 
 //Backpack II
-public class _1BackpackII {
+public class _1Backpack_II {
     // 9Ch DP
     public int backPackII(int m, int[] A, int V[]) {
         int n = A.length;
@@ -107,7 +107,7 @@ public class _1BackpackII {
      * @param A & V: Given n items with size A[i] and value V[i]
      * @return: The maximum value
      */
-
+    //设f[i][w] = 用前i个物品拼出重量w时最大总价值 (-1表示不能拼出w)
     public int backPackII1(int m, int[] A, int V[]) {
         // write your code here
         int[][] dp = new int[A.length + 1][m + 1];
@@ -149,8 +149,8 @@ public class _1BackpackII {
 }
 
 /*
-给定N个物品，重量分别为正整数A0, A1, ..., AN-1，价值分别为正整数V0,
-V1, ..., VN-1
+给定N个物品，重量分别为正整数A0, A1, ..., AN-1，价值分别为正整数V0, V1, ..., VN-1
+
 • 一个背包最大承重是正整数M
 • 最多能带走多大价值的物品
 
@@ -164,4 +164,6 @@ A[i], V[i], n, m均为整数。你不能将物品进行切分。你所挑选的�
 您在真实的面试中是否遇到过这个题？ Yes
 样例
 对于物品体积[2, 3, 5, 7]和对应的价值[1, 5, 2, 4], 假设背包大小为10的话，最大能够装入的价值为9。
+挑战
+O(n x m) memory is acceptable, can you do it in O(m) memory?
  */
