@@ -1,4 +1,6 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
+import org.junit.Test;
+
 import java.util.*;
 
 //  216. Combination Sum III
@@ -8,13 +10,15 @@ public class _216_BackTracking_Combination_Sum_III_M {
 
     //Combination Sum I, II and III Java solution (see the similarities yourself)
     //  https://discuss.leetcode.com/topic/44037/combination-sum-i-ii-and-iii-java-solution-see-the-similarities-yourself
+
     public List<List<Integer>> combinationSum(int k, int n) {
         List<List<Integer>> list = new ArrayList<>();
         backtrack(list, new ArrayList<Integer>(), k, n, 1);
         return list;
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int k, int remain, int start) {
+    private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+                           int k, int remain, int start) {
         if(tempList.size() > k) return; /** no solution */
         else if(tempList.size() == k && remain == 0) list.add(new ArrayList<>(tempList));
         else{
@@ -25,7 +29,14 @@ public class _216_BackTracking_Combination_Sum_III_M {
             }
         }
     }
-///////////////////////////////////////////////////////////////////////////////////////////
+
+    @Test
+    public void test01(){
+        System.out.println(combinationSum(3, 9));
+    }//[[1, 2, 6], [1, 3, 5], [2, 3, 4]]
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////
         //Simple and clean Java code, backtracking.
         public List<List<Integer>> combinationSum1(int k, int n) {
             List<List<Integer>> ans = new ArrayList<>();
@@ -48,7 +59,8 @@ public class _216_BackTracking_Combination_Sum_III_M {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
         // To make this faster, you can quit the for loop early and avoid unnecessary work.
-        private void combination2(List<List<Integer>> ans, List<Integer> comb, int k,  int start, int n) {
+        private void combination2(List<List<Integer>> ans, List<Integer> comb,
+                                  int k,  int start, int n) {
             if (comb.size() > k) {
                 return;
             }
@@ -69,7 +81,8 @@ public class _216_BackTracking_Combination_Sum_III_M {
 ///////////////////////////////////////////////////////////////////////////////////////////
         //if you think for loop with multiple conditions is complex,
         // you can add an if condition inside the for loop instead.
-        private void combination3(List<List<Integer>> ans, List<Integer> comb, int k,  int start, int n) {
+        private void combination3(List<List<Integer>> ans, List<Integer> comb, int k,
+                                  int start, int n) {
             if (comb.size() > k) {
                 return;
             }

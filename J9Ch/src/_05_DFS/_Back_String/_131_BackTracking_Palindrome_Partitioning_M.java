@@ -35,40 +35,41 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
         return true;
     }
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////
     //Concise Java Solution
-    public class Solution01 {
-        public List<List<String>> partition(String s) {
-            List<List<String>> res=new ArrayList<List<String>>();
-            if(s.length()==0)return res;
-            recur(res,new ArrayList<String>(),s);
-            return res;
-        }
+    public List<List<String>> partition02(String s) {
+        List<List<String>> res=new ArrayList<List<String>>();
+        if(s.length()==0)return res;
+        recur(res,new ArrayList<String>(),s);
+        return res;
+    }
 
-        public void recur(List<List<String>> res,List<String> temp, String s){
-            if(s.length()==0){
-                res.add(new ArrayList<String>(temp));
-                return;
-            }
-            for(int i=0;i<s.length();i++){
-                if(isPalin(s.substring(0,i+1))){
-                    temp.add(s.substring(0,i+1));
-                    recur(res,temp,s.substring(i+1));
-                    temp.remove(temp.size()-1);
-                }
-            }
+    public void recur(List<List<String>> res,List<String> temp, String s){
+        if(s.length()==0){
+            res.add(new ArrayList<String>(temp));
+            return;
         }
-
-        public boolean isPalin(String s){
-            for(int i=0;i<s.length()/2;i++){
-                if(s.charAt(i)!=s.charAt(s.length()-1-i))return false;
+        for(int i=0;i<s.length();i++){
+            if(isPalin(s.substring(0,i+1))){
+                temp.add(s.substring(0,i+1));
+                recur(res,temp,s.substring(i+1));
+                temp.remove(temp.size()-1);
             }
-            return true;
         }
     }
 
+    public boolean isPalin(String s){
+        for(int i=0;i<s.length()/2;i++){
+            if(s.charAt(i)!=s.charAt(s.length()-1-i))return false;
+        }
+        return true;
+    }
+
+
 ////////////////////////////////////////////////////////////////////////////////////
     //My Java DP only solution without recursion. O(n^2)
-    public List<List<String>> partition02(String s) {
+    public List<List<String>> partition03(String s) {
         int len = s.length();
         List<List<String>>[] result = new List[len + 1];
         result[0] = new ArrayList<List<String>>();
@@ -92,12 +93,13 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
         return result[len];
     }
 
+
 ////////////////////////////////////////////////////////////////////////////////////
     //Java: Backtracking solution.
     //https://discuss.leetcode.com/topic/6186/java-backtracking-solution
     List<List<String>> resultLst;
     ArrayList<String> currLst;
-    public List<List<String>> partition03(String s) {
+    public List<List<String>> partition04(String s) {
         resultLst = new ArrayList<List<String>>();
         currLst = new ArrayList<String>();
         backTrack(s,0);

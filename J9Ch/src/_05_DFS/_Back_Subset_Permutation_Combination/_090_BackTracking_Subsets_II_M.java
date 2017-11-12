@@ -31,29 +31,30 @@ public class _090_BackTracking_Subsets_II_M {
         return;
     }
 
-    //Standard DFS Java Solution
-    public class Solution2 {
-        public List<List<Integer>> subsetsWithDup(int[] nums) {
-            Arrays.sort(nums);
-            List<List<Integer>> result= new ArrayList<>();
-            dfs(nums,0,new ArrayList<Integer>(),result);
-            return result;
-        }
 
-        public void dfs(int[] nums,int index,List<Integer> path,List<List<Integer>> result){
-            result.add(path);
-            for(int i=index;i<nums.length;i++){
-                if(i>index&&nums[i]==nums[i-1]) continue;
-                List<Integer> nPath= new ArrayList<>(path);
-                nPath.add(nums[i]);
-                dfs(nums,i+1,nPath,result);
-            }
+///////////////////////////////////////////////////////////////////////////////////////
+    //Standard DFS Java Solution
+    public List<List<Integer>> subsetsWithDup02(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> result= new ArrayList<>();
+        dfs(nums,0,new ArrayList<Integer>(),result);
+        return result;
+    }
+
+    public void dfs(int[] nums,int index,List<Integer> path,List<List<Integer>> result){
+        result.add(path);
+        for(int i=index;i<nums.length;i++){
+            if(i>index&&nums[i]==nums[i-1]) continue;
+            List<Integer> nPath= new ArrayList<>(path);
+            nPath.add(nums[i]);
+            dfs(nums,i+1,nPath,result);
         }
     }
 
+
+///////////////////////////////////////////////////////////////////////////////////////
     //Accepted java iterative solution
-    class Solution3{
-        public List<List<Integer>> subsetsWithDup(int[] num) {
+        public List<List<Integer>> subsetsWithDup03(int[] num) {
             Arrays.sort(num);
             List<List<Integer>> ans = new ArrayList<List<Integer>>();
             int len = num.length;
@@ -79,82 +80,89 @@ public class _090_BackTracking_Subsets_II_M {
             }
             return ans;
         }
-    }
+
+
 //////////////////////////////////////////////////////////////////////////////
-
+    // 9Ch
     // return List<List<Integer>>
-    class Jiuzhang1 {
-        /**
-         * @param nums: A set of numbers.
-         * @return: A list of lists. All valid subsets.
-         */
-        public List<List<Integer>> subsetsWithDup(int[] nums) {
-            // write your code here
-            List<List<Integer>> results = new ArrayList<List<Integer>>();
-            if (nums == null) return results;
+    /**
+     * @param nums: A set of numbers.
+     * @return: A list of lists. All valid subsets.
+     */
+    public List<List<Integer>> subsetsWithDup_J1(int[] nums) {
+        // write your code here
+        List<List<Integer>> results = new ArrayList<List<Integer>>();
+        if (nums == null) return results;
 
-            if (nums.length == 0) {
-                results.add(new ArrayList<Integer>());
-                return results;
-            }
-            Arrays.sort(nums);
-
-            List<Integer> subset = new ArrayList<Integer>();
-            helper(nums, 0, subset, results);
-
+        if (nums.length == 0) {
+            results.add(new ArrayList<Integer>());
             return results;
-
-
         }
-        public void helper(int[] nums, int startIndex, List<Integer> subset, List<List<Integer>> results){
-            results.add(new ArrayList<Integer>(subset));
-            for(int i=startIndex; i<nums.length; i++){
-                if (i != startIndex && nums[i]==nums[i-1]) {
-                    continue;
-                }
-                subset.add(nums[i]);
-                helper(nums, i+1, subset, results);
-                subset.remove(subset.size()-1);
+        Arrays.sort(nums);
+
+        List<Integer> subset = new ArrayList<Integer>();
+        helper(nums, 0, subset, results);
+
+        return results;
+
+
+    }
+    public void helper(int[] nums, int startIndex, List<Integer> subset,
+                       List<List<Integer>> results){
+        results.add(new ArrayList<Integer>(subset));
+        for(int i=startIndex; i<nums.length; i++){
+            if (i != startIndex && nums[i]==nums[i-1]) {
+                continue;
             }
+            subset.add(nums[i]);
+            helper(nums, i+1, subset, results);
+            subset.remove(subset.size()-1);
         }
     }
 
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+    // 9Ch
     // return ArrayList<ArrayList<Integer>>
-    class Jiuzhang2 {
-        /**
-         * @param nums: A set of numbers.
-         * @return: A list of lists. All valid subsets.
-         */
-        public ArrayList<ArrayList<Integer>> subsetsWithDup(int[] nums) {
-            // write your code here
-            ArrayList<ArrayList<Integer>> results = new ArrayList<>();
-            if (nums == null) return results;
+    /**
+     * @param nums: A set of numbers.
+     * @return: A list of lists. All valid subsets.
+     */
+    public ArrayList<ArrayList<Integer>> subsetsWithDup_J2(int[] nums) {
+        // write your code here
+        ArrayList<ArrayList<Integer>> results = new ArrayList<>();
+        if (nums == null) return results;
 
-            if (nums.length == 0) {
-                results.add(new ArrayList<Integer>());
-                return results;
-            }
-            Arrays.sort(nums);
-
-            ArrayList<Integer> subset = new ArrayList<>();
-            helper(nums, 0, subset, results);
-
+        if (nums.length == 0) {
+            results.add(new ArrayList<Integer>());
             return results;
-
-
         }
-        public void helper(int[] nums, int startIndex, ArrayList<Integer> subset, ArrayList<ArrayList<Integer>> results){
-            results.add(new ArrayList<Integer>(subset));
-            for(int i=startIndex; i<nums.length; i++){
-                if (i != startIndex && nums[i]==nums[i-1]) {
-                    continue;
-                }
-                subset.add(nums[i]);
-                helper(nums, i+1, subset, results);
-                subset.remove(subset.size()-1);
+        Arrays.sort(nums);
+
+        ArrayList<Integer> subset = new ArrayList<>();
+        helper_J2(nums, 0, subset, results);
+
+        return results;
+
+
+    }
+    public void helper_J2(int[] nums, int startIndex, ArrayList<Integer> subset,
+                       ArrayList<ArrayList<Integer>> results){
+        results.add(new ArrayList<Integer>(subset));
+        for(int i=startIndex; i<nums.length; i++){
+            if (i != startIndex && nums[i]==nums[i-1]) {
+                continue;
             }
+            subset.add(nums[i]);
+            helper_J2(nums, i+1, subset, results);
+            subset.remove(subset.size()-1);
         }
     }
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
 }
 /*
 Given a collection of integers that might contain duplicates, nums, return all possible subsets (the power set).

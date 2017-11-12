@@ -1,4 +1,6 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -7,27 +9,51 @@ import java.util.List;
 //  39. Combination Sum
 //  https://leetcode.com/problems/combination-sum/description/
 //  http://www.lintcode.com/zh-cn/problem/combination-sum/
+//  C中的数字可以无限制重复被选取
 public class _039_BackTracking_Combination_Sum_M {
-
-    public List<List<Integer>> combinationSum01(int[] nums, int target) {
+    //30%
+    public List<List<Integer>> combinationSum01(int[] candidates, int target) {
         List<List<Integer>> list = new ArrayList<>();
-        Arrays.sort(nums);
-        backtrack(list, new ArrayList<>(), nums, target, 0);
+        Arrays.sort(candidates);
+        backtrack(list, new ArrayList<>(), candidates, target, 0);
         return list;
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, int remain, int start){
+    private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+                           int [] candidates, int remain, int start){
+
         if(remain < 0) return;
         else if(remain == 0) list.add(new ArrayList<>(tempList));
         else{
-            for(int i = start; i < nums.length; i++){
-                tempList.add(nums[i]);
+            for(int i = start; i < candidates.length; i++){
+                tempList.add(candidates[i]);
                 // not i + 1 because we can reuse same elements
-                backtrack(list, tempList, nums, remain - nums[i], i);
+                backtrack(list, tempList, candidates, remain - candidates[i], i);
                 tempList.remove(tempList.size() - 1);
             }
         }
     }
+
+    /*
+        C中的数字可以无限制重复被选取。例如,给出候选数组[2,3,6,7]和目标数字7，所求的解为：
+        [7]，[2,2,3]
+     */
+
+    @Test
+    public void test01(){
+        int[] candidates = {2,3,6,7};
+        int t = 7;
+        System.out.println(combinationSum01(candidates, t));
+    }//[[2, 2, 3], [7]]
+
+    @Test
+    public void test011(){
+        int[] candidates = {1,2,3,6,7};
+        int t = 7;
+        System.out.println(combinationSum01(candidates, t));
+    }//[[1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 2], [1, 1, 1, 1, 3], [1, 1, 1, 2, 2],
+    // [1, 1, 2, 3], [1, 2, 2, 2], [1, 3, 3], [1, 6], [2, 2, 3], [7]]
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -40,7 +66,8 @@ public class _039_BackTracking_Combination_Sum_M {
     }
 
     // the index here means we are allowed to choose candidates from that index
-    private void recurse(List<Integer> list, int target, int[] candidates, int index, List<List<Integer>> ret) {
+    private void recurse(List<Integer> list, int target, int[] candidates,
+                         int index, List<List<Integer>> ret) {
         if (target == 0) {
             ret.add(list);
             return;
@@ -59,6 +86,7 @@ public class _039_BackTracking_Combination_Sum_M {
 
 ////////////////////////////////////////////////////////////////////////////////////////////
     //Java solution using recursive
+    //98%
     public List<List<Integer>> combinationSum03(int[] candidates, int target) {
         Arrays.sort(candidates);
         List<List<Integer>> result = new ArrayList<List<Integer>>();
@@ -67,7 +95,8 @@ public class _039_BackTracking_Combination_Sum_M {
         return result;
     }
 
-    private void getResult(List<List<Integer>> result, List<Integer> cur, int candidates[], int target, int start){
+    private void getResult(List<List<Integer>> result, List<Integer> cur,
+                           int candidates[], int target, int start){
         if(target > 0){
             for(int i = start; i < candidates.length && target >= candidates[i]; i++){
                 cur.add(candidates[i]);
@@ -81,7 +110,7 @@ public class _039_BackTracking_Combination_Sum_M {
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-
+    //70%
     public List<List<Integer>> combinationSum04(int[] candidates, int target) {
         Arrays.sort(candidates);
         List<List<Integer>> result = new ArrayList<>();
@@ -164,13 +193,13 @@ public class _039_BackTracking_Combination_Sum_M {
 
         int[] nums = new int[index + 1];
         for (int i = 0; i < index + 1; i++) {
-            nums[i] = candidates[i];
+            candidates[i] = candidates[i];
         }
 
-        return nums;
+        return candidates;
     }
 
-    private void dfs_J1(int[] nums,
+    private void dfs_J1(int[] candidates,
                         int startIndex,
                         List<Integer> combination,
                         int remainTarget,
@@ -180,12 +209,12 @@ public class _039_BackTracking_Combination_Sum_M {
             return;
         }
 
-        for (int i = startIndex; i < nums.length; i++) {
-            if (remainTarget < nums[i]) {
+        for (int i = startIndex; i < candidates.length; i++) {
+            if (remainTarget < candidates[i]) {
                 break;
             }
-            combination.add(nums[i]);
-            dfs_J1(nums, i, combination, remainTarget - nums[i], results);
+            combination.add(candidates[i]);
+            dfs_J1(candidates, i, combination, remainTarget - candidates[i], results);
             combination.remove(combination.size() - 1);
         }
     }
@@ -193,6 +222,7 @@ public class _039_BackTracking_Combination_Sum_M {
 ////////////////////////////////////////////////////////////////////////////////////////////
     // version 2: reuse candidates array
     // combination在存储状态
+    //80%
     public  List<List<Integer>> combinationSum_J2(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
         if (candidates == null) {

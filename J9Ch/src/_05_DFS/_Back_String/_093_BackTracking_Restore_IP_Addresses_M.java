@@ -58,6 +58,8 @@ In isValid, strings whose length greater than 3 or equals to 0 is not valid; or 
             restoreIp(ip, solutions, idx+i, restored+s+(count==3?"" : "."), count+1);
         }
     }
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
     /*
     My concise AC java code
@@ -87,6 +89,7 @@ the basic idea is to make three cuts into the string, separating it into four pa
         }
         return ans;
     }
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
     //jiuzhang

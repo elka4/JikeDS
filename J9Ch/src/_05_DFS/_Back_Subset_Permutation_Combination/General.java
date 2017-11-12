@@ -17,7 +17,8 @@ public class General {
             return list;
         }
 
-        private void backtrack(List<List<Integer>> list , List<Integer> tempList, int [] nums, int start){
+        private void backtrack(List<List<Integer>> list , List<Integer> tempList,
+                               int [] nums, int start){
             list.add(new ArrayList<>(tempList));
             for(int i = start; i < nums.length; i++){
                 tempList.add(nums[i]);
@@ -37,7 +38,8 @@ public class General {
             return list;
         }
 
-        private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, int start){
+        private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+                               int [] nums, int start){
             list.add(new ArrayList<>(tempList));
             for(int i = start; i < nums.length; i++){
                 if(i > start && nums[i] == nums[i-1]) continue; // skip duplicates
@@ -82,7 +84,8 @@ public class General {
             return list;
         }
 
-        private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, boolean [] used){
+        private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+                               int [] nums, boolean [] used){
             if(tempList.size() == nums.length){
                 list.add(new ArrayList<>(tempList));
             } else{
@@ -108,7 +111,8 @@ public class General {
             return list;
         }
 
-        private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, int remain, int start){
+        private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+                               int [] nums, int remain, int start){
             if(remain < 0) return;
             else if(remain == 0) list.add(new ArrayList<>(tempList));
             else{
@@ -133,7 +137,8 @@ public class General {
 
         }
 
-        private void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, int remain, int start){
+        private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+                               int [] nums, int remain, int start){
             if(remain < 0) return;
             else if(remain == 0) list.add(new ArrayList<>(tempList));
             else{

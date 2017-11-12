@@ -1,4 +1,6 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
+import org.junit.Test;
+
 import java.util.*;
 
 //  77. Combinations
@@ -23,6 +25,15 @@ public class _077_BackTracking_Combinations_M {
         return result;
     }
 
+    @Test
+    public void test01(){
+/*        组给出两个整数n和k，返回从1......n中选出的k个数的组合。
+
+        样例
+        例如 n = 4 且 k = 2*/
+        System.out.println(combine01(4,2));
+    }//[[3, 4], [2, 4], [1, 4], [2, 3], [1, 3], [1, 2]]
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
     //Backtracking Solution Java
     public List<List<Integer>> combine02(int n, int k) {
@@ -41,7 +52,14 @@ public class _077_BackTracking_Combinations_M {
             comb.remove(comb.size()-1);
         }
     }
+    @Test
+    public void test02(){
+/*        组给出两个整数n和k，返回从1......n中选出的k个数的组合。
 
+        样例
+        例如 n = 4 且 k = 2*/
+        System.out.println(combine02(4,2));
+    }//[[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]
 //////////////////////////////////////////////////////////////////////////////////////////////////
     //DP for the problem
     // Combine(n, n).
@@ -94,7 +112,14 @@ public class _077_BackTracking_Combinations_M {
 
         return (previous.size() == 0) ? Collections.<List<Integer>>emptyList() : previous.get(previous.size() - 1);
     }
+    @Test
+    public void test03(){
+/*        组给出两个整数n和k，返回从1......n中选出的k个数的组合。
 
+        样例
+        例如 n = 4 且 k = 2*/
+        System.out.println(combine03(4,2));
+    }
 //////////////////////////////////////////////////////////////////////////////////////////////////
     //3 ms Java Solution
     public List<List<Integer>> combine04(int n, int k) {
@@ -113,7 +138,14 @@ public class _077_BackTracking_Combinations_M {
         result.addAll(combine04(n - 1, k));
         return result;
     }
+    @Test
+    public void test04(){
+/*        组给出两个整数n和k，返回从1......n中选出的k个数的组合。
 
+        样例
+        例如 n = 4 且 k = 2*/
+        System.out.println(combine04(4,2));
+    }
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
     //DFS recursive Java Solution
@@ -138,7 +170,14 @@ public class _077_BackTracking_Combinations_M {
             path.pop();
         }
     }
+    @Test
+    public void test05(){
+/*        组给出两个整数n和k，返回从1......n中选出的k个数的组合。
 
+        样例
+        例如 n = 4 且 k = 2*/
+        System.out.println(combine05(4,2));
+    }
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -166,7 +205,14 @@ public class _077_BackTracking_Combinations_M {
             solution.remove(solution.size() - 1);
         }
     }
+    @Test
+    public void test06(){
+/*        组给出两个整数n和k，返回从1......n中选出的k个数的组合。
 
+        样例
+        例如 n = 4 且 k = 2*/
+        System.out.println(combine_J(4,2));
+    }
 ///////////////////////////////////////////////////////////////////////////////////////
 }
 

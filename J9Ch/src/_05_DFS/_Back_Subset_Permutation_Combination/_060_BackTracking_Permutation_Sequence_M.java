@@ -1,4 +1,6 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
+import org.junit.Test;
+
 import java.util.*;
 
 //  60. Permutation Sequence
@@ -37,6 +39,17 @@ public class _060_BackTracking_Permutation_Sequence_M {
         }
 
         return String.valueOf(sb);
+    }
+    //第k个排列    给定 n 和 k，求123..n组成的排列中的第 k 个排列。
+    //[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
+    @Test
+    public void test01(){
+        System.out.println(getPermutation01(3,1));//123
+        System.out.println(getPermutation01(3,2));//132
+        System.out.println(getPermutation01(3,3));//213
+        System.out.println(getPermutation01(3,4));//231
+        System.out.println(getPermutation01(3,5));//312
+        System.out.println(getPermutation01(3,6));//321
     }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -224,9 +237,7 @@ Giving us 3142. If you manually list out the permutations using DFS method, it w
 }
 
 /* Leetcode
-第k个排列
-
-给定 n 和 k，求123..n组成的排列中的第 k 个排列。
+第k个排列    给定 n 和 k，求123..n组成的排列中的第 k 个排列。
 
  注意事项
 

@@ -1,4 +1,6 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
+import org.junit.Test;
+
 import java.util.*;
 
 //  78. Subsets
@@ -24,7 +26,8 @@ public class _078_BackTracking_Subsets_M {
             tempList.remove(tempList.size() - 1);
         }
     }
-
+    @Test public void test01(){ System.out.println(subsets01(new int[]{1,2,3})); }
+    //[[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
 ///////////////////////////////////////////////////////////////////////////////////
     //    Simple Java Solution with For-Each loops
     //    No messy indexing. Avoid the ConcurrentModificationException by using a temp list.
@@ -44,6 +47,7 @@ public class _078_BackTracking_Subsets_M {
         }
         return res;
     }
+    @Test public void test02(){ System.out.println(subsets02(new int[]{1,2,3})); }
 
 ///////////////////////////////////////////////////////////////////////////////////
     //Simple Java Solution Using Bit Operations
@@ -63,6 +67,7 @@ public class _078_BackTracking_Subsets_M {
         }
         return subsets;
     }
+    @Test public void test03(){ System.out.println(subsets03(new int[]{1,2,3})); }
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -112,6 +117,7 @@ public class _078_BackTracking_Subsets_M {
         // 3. 递归的出口
         // return;
     }
+    @Test public void test04(){ System.out.println(subsets_J1(new int[]{1,2,3})); }
 
 ///////////////////////////////////////////////////////////////////////////////////
     // 9Ch
@@ -144,6 +150,7 @@ public class _078_BackTracking_Subsets_M {
         }
         return result;
     }
+    @Test public void test05(){ System.out.println(subsets_J2(new int[]{1,2,3})); }
 
 ///////////////////////////////////////////////////////////////////////////////////
 }

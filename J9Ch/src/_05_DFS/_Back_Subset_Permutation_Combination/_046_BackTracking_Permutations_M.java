@@ -1,4 +1,6 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
+import org.junit.Test;
+
 import java.util.*;
 import java.util.stream.*;
 
@@ -39,7 +41,8 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
         }
         return ans;
     }
-
+    @Test public void test01(){ System.out.println(permute01(new int[]{1,2,3})); }
+    //[[3, 2, 1], [3, 1, 2], [2, 3, 1], [1, 3, 2], [2, 1, 3], [1, 2, 3]]
 ////////////////////////////////////////////////////////////////////////////////////
 
     public List<List<Integer>> permute02(int[] num) {
@@ -58,6 +61,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
         }
         return res;
     }
+    @Test public void test02(){ System.out.println(permute02(new int[]{1,2,3})); }
 
 ////////////////////////////////////////////////////////////////////////////////////
     //  A general approach to backtracking questions in Java
@@ -81,70 +85,69 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
             }
         }
     }
+    @Test public void test03(){ System.out.println(permute03(new int[]{1,2,3})); }
 
 
-/////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////////////////
     //Java Clean Code - Two recursive solutions
     //Bottom up? approach - 280ms
-    public class Solution04 {
-        public List<List<Integer>> permute(int[] nums) {
-            List<List<Integer>> permutations = new ArrayList<>();
-            if (nums.length == 0) {
-                return permutations;
-            }
-
-            collectPermutations(nums, 0, new ArrayList<>(), permutations);
+    public List<List<Integer>> permute04(int[] nums) {
+        List<List<Integer>> permutations = new ArrayList<>();
+        if (nums.length == 0) {
             return permutations;
         }
 
-        private void collectPermutations(int[] nums, int start, List<Integer> permutation,
-                                         List<List<Integer>>  permutations) {
-
-            if (permutation.size() == nums.length) {
-                permutations.add(permutation);
-                return;
-            }
-
-            for (int i = 0; i <= permutation.size(); i++) {
-                List<Integer> newPermutation = new ArrayList<>(permutation);
-                newPermutation.add(i, nums[start]);
-                collectPermutations(nums, start + 1, newPermutation, permutations);
-            }
-        }
+        collectPermutations(nums, 0, new ArrayList<>(), permutations);
+        return permutations;
     }
 
+    private void collectPermutations(int[] nums, int start, List<Integer> permutation,
+                                     List<List<Integer>>  permutations) {
+
+        if (permutation.size() == nums.length) {
+            permutations.add(permutation);
+            return;
+        }
+
+        for (int i = 0; i <= permutation.size(); i++) {
+            List<Integer> newPermutation = new ArrayList<>(permutation);
+            newPermutation.add(i, nums[start]);
+            collectPermutations(nums, start + 1, newPermutation, permutations);
+        }
+    }
+    @Test public void test04(){ System.out.println(permute04(new int[]{1,2,3})); }
+
+//////////////////////////////////////////////////////////////////////////////////////
 
     //Base case and build approach - 524ms
-    public class Solution05 {
-        public List<List<Integer>> permute(int[] nums) {
-            return permute(Arrays.stream(nums).boxed().collect(Collectors.toList()));
-        }
-
-        private List<List<Integer>> permute(List<Integer> nums) {
-            List<List<Integer>> permutations = new ArrayList<>();
-            if (nums.size() == 0) {
-                return permutations;
-            }
-            if (nums.size() == 1) {
-                List<Integer> permutation = new ArrayList<>();
-                permutation.add(nums.get(0));
-                permutations.add(permutation);
-                return permutations;
-            }
-
-            List<List<Integer>> smallPermutations = permute(nums.subList(1, nums.size()));
-            int first = nums.get(0);
-            for(List<Integer> permutation : smallPermutations) {
-                for (int i = 0; i <= permutation.size(); i++) {
-                    List<Integer> newPermutation = new ArrayList<>(permutation);
-                    newPermutation.add(i, first);
-                    permutations.add(newPermutation);
-                }
-            }
-            return permutations;
-        }
+    public List<List<Integer>> permute05(int[] nums) {
+        return permute05(Arrays.stream(nums).boxed().collect(Collectors.toList()));
     }
 
+    private List<List<Integer>> permute05(List<Integer> nums) {
+        List<List<Integer>> permutations = new ArrayList<>();
+        if (nums.size() == 0) {
+            return permutations;
+        }
+        if (nums.size() == 1) {
+            List<Integer> permutation = new ArrayList<>();
+            permutation.add(nums.get(0));
+            permutations.add(permutation);
+            return permutations;
+        }
+
+        List<List<Integer>> smallPermutations = permute05(nums.subList(1, nums.size()));
+        int first = nums.get(0);
+        for(List<Integer> permutation : smallPermutations) {
+            for (int i = 0; i <= permutation.size(); i++) {
+                List<Integer> newPermutation = new ArrayList<>(permutation);
+                newPermutation.add(i, first);
+                permutations.add(newPermutation);
+            }
+        }
+        return permutations;
+    }
+    @Test public void test05(){ System.out.println(permute05(new int[]{1,2,3})); }
 
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -168,52 +171,50 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
         }
         return result;
     }
+    @Test public void test06(){ System.out.println(permute06(new int[]{1,2,3})); }
 
 /////////////////////////////////////////////////////////////////////////////////////
     //Java solution easy to understand (backtracking)
-    public class Solution07 {
+    List<List<Integer>> list;
 
-        List<List<Integer>> list;
+    public List<List<Integer>> permute07(int[] nums) {
 
-        public List<List<Integer>> permute(int[] nums) {
-
-            list = new ArrayList<>();
-            ArrayList<Integer> perm = new ArrayList<Integer>();
-            backTrack(perm,0,nums);
-            return list;
-        }
-
-        void backTrack (ArrayList<Integer> perm,int i,int[] nums){
-
-            //Permutation completes
-            if(i==nums.length){
-                list.add(new ArrayList(perm));
-                return;
-            }
-
-            ArrayList<Integer> newPerm = new ArrayList<Integer>(perm);
-
-            //Insert elements in the array by increasing index
-            for(int j=0;j<=i;j++){
-                newPerm.add(j,nums[i]);
-                backTrack(newPerm,i+1,nums);
-                newPerm.remove(j);
-            }
-
-        }
+        list = new ArrayList<>();
+        ArrayList<Integer> perm = new ArrayList<Integer>();
+        backTrack(perm,0,nums);
+        return list;
     }
 
+    void backTrack (ArrayList<Integer> perm,int i,int[] nums){
+        //Permutation completes
+        if(i==nums.length){
+            list.add(new ArrayList(perm));
+            return;
+        }
+
+        ArrayList<Integer> newPerm = new ArrayList<Integer>(perm);
+
+        //Insert elements in the array by increasing index
+        for(int j=0;j<=i;j++){
+            newPerm.add(j,nums[i]);
+            backTrack(newPerm,i+1,nums);
+            newPerm.remove(j);
+        }
+    }
+    @Test public void test07(){ System.out.println(permute07(new int[]{1,2,3})); }
+
+//////////////////////////////////////////////////////////////////////////////////
 //    A new ArrayList<Integer> newPerm is not necessary.
 //
 //            Try this:
 
-    public List<List<Integer>> permute(int[] nums) {
+    public List<List<Integer>> permute08(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        permute(new ArrayList<Integer>(), 0, nums, res);
+        permute08(new ArrayList<Integer>(), 0, nums, res);
         return res;
     }
 
-    private void permute(ArrayList<Integer> path, int index, int[] nums, List<List<Integer>> res){
+    private void permute08(ArrayList<Integer> path, int index, int[] nums, List<List<Integer>> res){
         if(index == nums.length){
             res.add(new ArrayList<Integer>(path));
             return;
@@ -221,10 +222,13 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
 
         for(int j = 0; j <=index; ++j ){
             path.add(j, nums[index]);
-            permute(path, index + 1, nums, res);
+            permute08(path, index + 1, nums, res);
             path.remove(j);
         }
     }
+    @Test public void test08(){ System.out.println(permute08(new int[]{1,2,3})); }
+
+
 /////////////////////////////////////////////////////////////////////////////////////
 
     //jiuzhang
@@ -270,8 +274,9 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
             set.remove(nums[i]);
             permutation.remove(permutation.size() - 1);
         }
-
     }
+    @Test public void test09(){ System.out.println(permute_J1(new int[]{1,2,3})); }
+
 
 ////////////////////////////////////////////////////////////////////////////////////
     // 9Ch
@@ -331,6 +336,8 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
 
         return permutations;
     }
+    @Test public void test10(){ System.out.println(permute_J2(new int[]{1,2,3})); }
+    //[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
 
 ////////////////////////////////////////////////////////////////////////////////////
 }

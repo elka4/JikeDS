@@ -1,9 +1,12 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
+import org.junit.Test;
+
 import java.util.*;
 
 //  40. Combination Sum II
 //  https://leetcode.com/problems/combination-sum-ii/description/
 //  http://www.lintcode.com/zh-cn/problem/combination-sum-ii/
+//  C中每个数字在每个组合中只能使用一次。
 public class _040_BackTracking_Combination_Sum_II_M {
     //  Combination Sum I, II and III Java solution (see the similarities yourself)
     public List<List<Integer>> combinationSum01(int[] nums, int target) {
@@ -28,7 +31,15 @@ public class _040_BackTracking_Combination_Sum_II_M {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////
+    @Test
+    public void test01(){
+        int[] candidates = {10,1,6,7,2,1,5};
+        int t = 8;
+        System.out.println(combinationSum01(candidates, t));
+    }//[[1, 1, 6], [1, 2, 5], [1, 7], [2, 6]]
+
+
+    //////////////////////////////////////////////////////////////////////////////////
     //Java solution using dfs, easy understand
     public List<List<Integer>> combinationSum02(int[] cand, int target) {
         Arrays.sort(cand);

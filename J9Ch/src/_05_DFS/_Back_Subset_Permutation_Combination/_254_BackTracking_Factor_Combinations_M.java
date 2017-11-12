@@ -55,6 +55,8 @@ public class _254_BackTracking_Factor_Combinations_M {
             }
         }
     }
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////
    /* My short Java solution which Is EASY to understand
     Here is my JAVA solution which will print the result in the following way:
@@ -81,6 +83,7 @@ public class _254_BackTracking_Factor_Combinations_M {
             }
         }
     }
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -122,6 +125,8 @@ public class _254_BackTracking_Factor_Combinations_M {
             }
         }
     }
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 
     //Java 2ms easy to understand, short and sweet
@@ -147,6 +152,8 @@ public class _254_BackTracking_Factor_Combinations_M {
             }
         }
     }
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////
     //Simple Java Recursive Solution
     public List<List<Integer>> getFactors6(int n) {
@@ -168,6 +175,7 @@ public class _254_BackTracking_Factor_Combinations_M {
         }
         return list;
     }
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 }
