@@ -1,4 +1,6 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
+import org.junit.Test;
+
 import java.util.*;
 
 //  254. Factor Combinations
@@ -29,6 +31,10 @@ public class _254_BackTracking_Factor_Combinations_M {
             }
         }
     }
+    @Test
+    public void test01(){
+        System.out.println(getFactors1(12));
+    }//[[2, 2, 3], [2, 6], [3, 4]]
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -55,7 +61,10 @@ public class _254_BackTracking_Factor_Combinations_M {
             }
         }
     }
-
+    @Test
+    public void test02(){
+        System.out.println(getFactors2(12));
+    }//[[2, 2, 3], [2, 6], [3, 4]]
 
 /////////////////////////////////////////////////////////////////////////////////////////////
    /* My short Java solution which Is EASY to understand
@@ -83,7 +92,10 @@ public class _254_BackTracking_Factor_Combinations_M {
             }
         }
     }
-
+    @Test
+    public void test03(){
+        System.out.println(getFactors3(12));
+    }//[[2, 6], [2, 2, 3], [3, 4]]
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -125,7 +137,10 @@ public class _254_BackTracking_Factor_Combinations_M {
             }
         }
     }
-
+    @Test
+    public void test04(){
+        System.out.println(getFactors4(12));
+    }//[[2, 6], [2, 2, 3], [3, 4]]
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -152,7 +167,10 @@ public class _254_BackTracking_Factor_Combinations_M {
             }
         }
     }
-
+    @Test
+    public void test05(){
+        System.out.println(getFactors5(12));
+    }//[[2, 6], [2, 2, 3], [3, 4]]
 
 /////////////////////////////////////////////////////////////////////////////////////////////
     //Simple Java Recursive Solution
@@ -175,7 +193,10 @@ public class _254_BackTracking_Factor_Combinations_M {
         }
         return list;
     }
-
+    @Test
+    public void test06(){
+        System.out.println(getFactors6(12));
+    }//[[2, 6], [2, 2, 3], [3, 4]]
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 }
@@ -193,9 +214,11 @@ Examples:
 input: 1
 output:
 []
+
 input: 37
 output:
 []
+
 input: 12
 output:
 [
@@ -203,6 +226,7 @@ output:
   [2, 2, 3],
   [3, 4]
 ]
+
 input: 32
 output:
 [
