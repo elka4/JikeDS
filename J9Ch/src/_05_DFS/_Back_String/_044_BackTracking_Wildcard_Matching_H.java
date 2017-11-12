@@ -62,7 +62,8 @@ public class _044_BackTracking_Wildcard_Matching_H {
             for (int i = 1; i <= s.length(); i++) {
                 char letter = s.charAt(i - 1);
                 if (pattern != '*') {
-                    dp[j][i] = dp[j - 1][i - 1] && (pattern == '?' || pattern == letter);
+                    dp[j][i] = dp[j - 1][i - 1] &&
+                            (pattern == '?' || pattern == letter);
                 } else
                     dp[j][i] = dp[j][i - 1] || dp[j - 1][i];
             }
@@ -99,7 +100,8 @@ public class _044_BackTracking_Wildcard_Matching_H {
 //////////////////////////////////////////////////////////////////////////////////
     //Java DFA solution, with better structure and easy understand
 
-    public boolean isMatch04(String s, String p) {return matchHere(s,p,0,0);
+    public boolean isMatch04(String s, String p) {
+        return matchHere(s,p,0,0);
     }
 
     private boolean matchHere(String s, String p, int indexS, int indexP){
@@ -126,6 +128,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
         return true;
     }
     private boolean isPatternEndWithWildCard(String p){
+
         return p.endsWith("*");
     }
     private boolean matchWildCard(String s, String p, int indexS, int indexP){
@@ -201,7 +204,8 @@ public class _044_BackTracking_Wildcard_Matching_H {
                     if (si == 0) {
                         dp[si] = allStar ? true : false;
                     } else if (p.charAt(pi) != '*') {
-                        if (s.charAt(si) == p.charAt(pi) || p.charAt(pi) == '?') dp[si] = dp[si-1];
+                        if (s.charAt(si) == p.charAt(pi) ||
+                                p.charAt(pi) == '?') dp[si] = dp[si-1];
                         else dp[si] = false;
                     } else {
                         int firstTruePos = firstTrueSet.isEmpty() ? Integer.MAX_VALUE : firstTrueSet.first();

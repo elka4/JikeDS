@@ -1,6 +1,6 @@
 package _05_DFS._DFS_Tree;
 
-import _05_DFS._DFS_Other.TreeLinkNode;
+//import _05_DFS._DFS_Other.TreeLinkNode;
 //116. Populating Next Right Pointers in Each Node
 
 public class _116_DFS_Populating_Next_Right_Pointers_in_Each_Node_M {

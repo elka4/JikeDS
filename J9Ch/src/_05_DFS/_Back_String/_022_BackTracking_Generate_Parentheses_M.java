@@ -1,4 +1,6 @@
 package _05_DFS._Back_String;
+import org.junit.Test;
+
 import java.util.*;
 
 //  22. Generate Parentheses
@@ -42,6 +44,10 @@ public class _022_BackTracking_Generate_Parentheses_M {
 
         return lists.get(lists.size() - 1);
     }
+    @Test
+    public void test01(){
+        System.out.println(generateParenthesis01(3));
+    }
 
 /////////////////////////////////////////////////////////////////////////////////////////
     //Easy to understand Java backtracking solution
@@ -62,6 +68,10 @@ public class _022_BackTracking_Generate_Parentheses_M {
             backtrack(list, str+"(", open+1, close, max);
         if(close < open)
             backtrack(list, str+")", open, close+1, max);
+    }
+    @Test
+    public void test02(){
+        System.out.println(generateParenthesis02(3));
     }
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -85,6 +95,10 @@ public class _022_BackTracking_Generate_Parentheses_M {
             list.add(sublist);
             return;
         }
+    }
+    @Test
+    public void test03(){
+        System.out.println(generateParenthesis03(3));
     }
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -123,6 +137,10 @@ public class _022_BackTracking_Generate_Parentheses_M {
         }
         return result;
     }
+    @Test
+    public void test04(){
+        System.out.println(generateParenthesis04(3));
+    }
 
 /////////////////////////////////////////////////////////////////////////////////////
     //2ms AC JAVA Solution using recursive call
@@ -139,6 +157,11 @@ public class _022_BackTracking_Generate_Parentheses_M {
         if(l>0) generate(m, s+"(",  l-1,  r);
         if(r>l) generate(m, s+")",  l,  r-1);
     }
+    @Test
+    public void test05(){
+        System.out.println(generateParenthesis05(3));
+    }
+
 
 /////////////////////////////////////////////////////////////////////////////////////
     //Easy java solution
@@ -161,7 +184,13 @@ public class _022_BackTracking_Generate_Parentheses_M {
         helper(res, "", n, n);
         return res;
     }
+    @Test
+    public void test06(){
+        System.out.println(generateParenthesis06(3));
+    }
 
+
+/////////////////////////////////////////////////////////////////////////////////////
 /*
 @yin10 The reason why there are no duplicates is because it is based on an unambiguous context-free grammar (if you know what those are):
 S -> S(S) | empty
@@ -181,6 +210,10 @@ Here it is rewritten as in a single function:
             }
         }
         return parens;
+    }
+    @Test
+    public void test07(){
+        System.out.println(ans(3));
     }
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -211,6 +244,10 @@ Here it is rewritten as in a single function:
             helper(result, paren + ")", left, right - 1);
         }
     }
+    @Test
+    public void test08(){
+        System.out.println(generateParenthesisJ_1(3));
+    }
 
 /////////////////////////////////////////////////////////////////////////////////////
     //Zhu
@@ -237,6 +274,10 @@ Here it is rewritten as in a single function:
         if(right > 0 ){
             dfs(paren + ")", left, right - 1, result);
         }
+    }
+    @Test
+    public void test09(){
+        System.out.println(generateParenthesis_Zhu(3));
     }
 
 /////////////////////////////////////////////////////////////////////////////////////

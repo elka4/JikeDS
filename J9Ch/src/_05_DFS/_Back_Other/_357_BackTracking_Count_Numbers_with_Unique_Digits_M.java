@@ -1,5 +1,7 @@
 package _05_DFS._Back_Other;
 
+import org.junit.Test;
+
 //  357. Count Numbers with Unique Digits
 //  https://leetcode.com/problems/count-numbers-with-unique-digits/description/
 public class _357_BackTracking_Count_Numbers_with_Unique_Digits_M {
@@ -28,7 +30,7 @@ The problem is asking for numbers from 0 to 10^n. Hence return f(1) + f(2) + .. 
 
 As @4acreg suggests, There are only 11 different ans. You can create a lookup table for it. This problem is O(1) in essence.
      */
-    public int countNumbersWithUniqueDigits(int n) {
+    public int countNumbersWithUniqueDigits1(int n) {
         if (n == 0)     return 1;
 
         int res = 10;
@@ -40,6 +42,10 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
             availableNumber--;
         }
         return res;
+    }
+    @Test
+    public void test01(){
+        System.out.println(countNumbersWithUniqueDigits1(2));
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -75,126 +81,137 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         }
         return ans;
     }
+    @Test
+    public void test02(){
+        System.out.println(countNumbersWithUniqueDigits2(2));
+    }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
     //Backtracking solution
-    public class Solution2 {
-        public int countNumbersWithUniqueDigits(int n) {
-            if (n > 10) {
-                return countNumbersWithUniqueDigits(10);
-            }
-            int count = 1; // x == 0
-            long max = (long) Math.pow(10, n);
+    public int countNumbersWithUniqueDigits3(int n) {
+        if (n > 10) {
+            return countNumbersWithUniqueDigits3(10);
+        }
+        int count = 1; // x == 0
+        long max = (long) Math.pow(10, n);
 
-            boolean[] used = new boolean[10];
+        boolean[] used = new boolean[10];
 
-            for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < 10; i++) {
+            used[i] = true;
+            count += search(i, max, used);
+            used[i] = false;
+        }
+
+        return count;
+    }
+
+    private int search(long prev, long max, boolean[] used) {
+        int count = 0;
+        if (prev < max) {
+            count += 1;
+        } else {
+            return count;
+        }
+
+        for (int i = 0; i < 10; i++) {
+            if (!used[i]) {
                 used[i] = true;
-                count += search(i, max, used);
+                long cur = 10 * prev + i;
+                count += search(cur, max, used);
                 used[i] = false;
             }
-
-            return count;
         }
 
-        private int search(long prev, long max, boolean[] used) {
-            int count = 0;
-            if (prev < max) {
-                count += 1;
-            } else {
-                return count;
-            }
-
-            for (int i = 0; i < 10; i++) {
-                if (!used[i]) {
-                    used[i] = true;
-                    long cur = 10 * prev + i;
-                    count += search(cur, max, used);
-                    used[i] = false;
-                }
-            }
-
-            return count;
-        }
+        return count;
     }
-
+    @Test
+    public void test03(){
+        System.out.println(countNumbersWithUniqueDigits3(2));
+    }
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-    public class Solution3 {
-        public int countNumbersWithUniqueDigits(int n) {
-            if (n == 0) {
-                return 2;
-            }
-            if (n == 1) {
-                return 10; // should be 11
-            }
-            n = Math.min(n, 10);
-            int sum = 10;
-            int tmp = 9;
-            for (int i = 1; i < n; i++) {
-                tmp *= 10 - i;
-                sum += tmp;
-            }
-            return sum;
+    public int countNumbersWithUniqueDigits4(int n) {
+        if (n == 0) {
+            return 2;
         }
+        if (n == 1) {
+            return 10; // should be 11
+        }
+        n = Math.min(n, 10);
+        int sum = 10;
+        int tmp = 9;
+        for (int i = 1; i < n; i++) {
+            tmp *= 10 - i;
+            sum += tmp;
+        }
+        return sum;
     }
+    @Test
+    public void test04(){
+        System.out.println(countNumbersWithUniqueDigits4(2));
+    }
+
 ///////////////////////////////////////////////////////////////////////////////
     // 9Ch
     //  solution 1
     //DP Solution
-    public class Jiuzhang1 {
-        public int countNumbersWithUniqueDigits(int n) {
-            if (n == 0) {
-                return 1;
-            }
-            if (n == 1) {
-                return 10;
-            }
-            if (n > 10) {
-                n = 10;
-            }
-            //f[i]表示不含0的i位数中满足条件的数的个数
-            //g[i]表示含有0的i位数中满足条件的数的个数
-            int[] f = new int[11];
-            int[] g = new int[11];
-            int ans = 10;
-            g[0] = 1;
-            g[1] = 9;
-            for (int i = 2; i <= n; i++) {
-                f[i] = f[i-1] * (11 - i) + g[i-2] * (11 - i);
-                g[i] = g[i-1] * (10 - i);
-                ans += f[i] + g[i];
-            }
-            return ans;
+    public int countNumbersWithUniqueDigits5(int n) {
+        if (n == 0) {
+            return 1;
         }
+        if (n == 1) {
+            return 10;
+        }
+        if (n > 10) {
+            n = 10;
+        }
+        //f[i]表示不含0的i位数中满足条件的数的个数
+        //g[i]表示含有0的i位数中满足条件的数的个数
+        int[] f = new int[11];
+        int[] g = new int[11];
+        int ans = 10;
+        g[0] = 1;
+        g[1] = 9;
+        for (int i = 2; i <= n; i++) {
+            f[i] = f[i-1] * (11 - i) + g[i-2] * (11 - i);
+            g[i] = g[i-1] * (10 - i);
+            ans += f[i] + g[i];
+        }
+        return ans;
+    }
+    @Test
+    public void test05(){
+        System.out.println(countNumbersWithUniqueDigits5(2));
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
     // 9Ch
     // solution 2
     //Math Method
-    public class Jiuzhang2 {
-        public int countNumbersWithUniqueDigits(int n) {
-            if (n == 0) {
-                return 1;
-            }
-            if (n > 10) {
-                n = 10;
-            }
-            int ans = 1;
-            int multiple = 9;
-            for (int i = n - 1; i >= 0; i--) {
-                if (i == 0) {
-                    ans += multiple;
-                } else {
-                    ans += (n - i + 1) * multiple;
-                }
-                multiple = multiple * (10 - n + i - 1);
-            }
-            return ans;
+    public int countNumbersWithUniqueDigits6(int n) {
+        if (n == 0) {
+            return 1;
         }
+        if (n > 10) {
+            n = 10;
+        }
+        int ans = 1;
+        int multiple = 9;
+        for (int i = n - 1; i >= 0; i--) {
+            if (i == 0) {
+                ans += multiple;
+            } else {
+                ans += (n - i + 1) * multiple;
+            }
+            multiple = multiple * (10 - n + i - 1);
+        }
+        return ans;
     }
-
+    @Test
+    public void test06(){
+        System.out.println(countNumbersWithUniqueDigits6(2));
+    }
 ///////////////////////////////////////////////////////////////////////////////
 }
 /*

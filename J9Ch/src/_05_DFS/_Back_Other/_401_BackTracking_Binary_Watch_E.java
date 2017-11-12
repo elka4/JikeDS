@@ -1,4 +1,6 @@
 package _05_DFS._Back_Other;
+import org.junit.Test;
+
 import java.util.*;
 
 //  401. Binary Watch
@@ -6,7 +8,7 @@ import java.util.*;
 //  http://www.lintcode.com/zh-cn/problem/binary-time/
 public class _401_BackTracking_Binary_Watch_E {
         //straightforward java answer
-    public List<String> readBinaryWatch(int num) {
+    public List<String> readBinaryWatch1(int num) {
         List<String> times = new ArrayList<>();
         for (int h=0; h<12; h++)
             for (int m=0; m<60; m++)
@@ -14,49 +16,54 @@ public class _401_BackTracking_Binary_Watch_E {
                     times.add(String.format("%d:%02d", h, m));
         return times;
     }
+    @Test
+    public void test01(){
+        System.out.println(readBinaryWatch1(1));
+    }
 
 ////////////////////////////////////////////////////////////////////////////////////////
     //3ms Java Solution Using Backtracking and Idea of "Permutation and Combination"
-    public class Solution {
-        public List<String> readBinaryWatch(int num) {
-            List<String> res = new ArrayList<>();
-            int[] nums1 = new int[]{8, 4, 2, 1}, nums2 = new int[]{32, 16, 8, 4, 2, 1};
-            for(int i = 0; i <= num; i++) {
-                List<Integer> list1 = generateDigit(nums1, i);
-                List<Integer> list2 = generateDigit(nums2, num - i);
-                for(int num1: list1) {
-                    if(num1 >= 12) continue;
-                    for(int num2: list2) {
-                        if(num2 >= 60) continue;
-                        res.add(num1 + ":" + (num2 < 10 ? "0" + num2 : num2));
-                    }
+    public List<String> readBinaryWatch2(int num) {
+        List<String> res = new ArrayList<>();
+        int[] nums1 = new int[]{8, 4, 2, 1}, nums2 = new int[]{32, 16, 8, 4, 2, 1};
+        for(int i = 0; i <= num; i++) {
+            List<Integer> list1 = generateDigit(nums1, i);
+            List<Integer> list2 = generateDigit(nums2, num - i);
+            for(int num1: list1) {
+                if(num1 >= 12) continue;
+                for(int num2: list2) {
+                    if(num2 >= 60) continue;
+                    res.add(num1 + ":" + (num2 < 10 ? "0" + num2 : num2));
                 }
             }
-            return res;
+        }
+        return res;
+    }
+
+    private List<Integer> generateDigit(int[] nums, int count) {
+        List<Integer> res = new ArrayList<>();
+        generateDigitHelper(nums, count, 0, 0, res);
+        return res;
+    }
+
+    private void generateDigitHelper(int[] nums, int count, int pos, int sum, List<Integer> res) {
+        if(count == 0) {
+            res.add(sum);
+            return;
         }
 
-        private List<Integer> generateDigit(int[] nums, int count) {
-            List<Integer> res = new ArrayList<>();
-            generateDigitHelper(nums, count, 0, 0, res);
-            return res;
+        for(int i = pos; i < nums.length; i++) {
+            generateDigitHelper(nums, count - 1, i + 1, sum + nums[i], res);
         }
-
-        private void generateDigitHelper(int[] nums, int count, int pos, int sum, List<Integer> res) {
-            if(count == 0) {
-                res.add(sum);
-                return;
-            }
-
-            for(int i = pos; i < nums.length; i++) {
-                generateDigitHelper(nums, count - 1, i + 1, sum + nums[i], res);
-            }
-        }
+    }
+    @Test
+    public void test02(){
+        System.out.println(readBinaryWatch2(1));
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
     //jiuzhang
-public class Jiuzhang {
-    public List<String> readBinaryWatch(int num) {
+    public List<String> readBinaryWatch3(int num) {
         ArrayList<String> ans = new ArrayList<String>();
         ArrayList<ArrayList<Integer>> hour = new ArrayList<ArrayList<Integer>>();
         ArrayList<ArrayList<Integer>> min = new ArrayList<ArrayList<Integer>>();
@@ -89,8 +96,10 @@ public class Jiuzhang {
         }
         return ans;
     }
-}
-
+    @Test
+    public void test03(){
+        System.out.println(readBinaryWatch3(1));
+    }
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 }

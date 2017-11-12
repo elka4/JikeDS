@@ -7,7 +7,7 @@ import java.util.Map;
 //  211. Add and Search Word - Data structure design
 //  https://leetcode.com/problems/add-and-search-word-data-structure-design/description/
 //
-public class _211_BackTracking_Add_and_Search_Word___Data_structure_design_M {
+public class _211_BackTracking_Add_and_Search_Word_Data_structure_design_M {
     //My JAVA Trie based solution
     public class WordDictionary {
         WordNode root = new WordNode();

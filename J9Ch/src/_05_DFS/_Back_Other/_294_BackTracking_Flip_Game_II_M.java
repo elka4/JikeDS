@@ -1,5 +1,7 @@
 package _05_DFS._Back_Other;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 //294. Flip Game II
@@ -30,6 +32,10 @@ public class _294_BackTracking_Flip_Game_II_M {
 
         return false;
     }
+    @Test
+    public void test01(){
+        System.out.println(canWin("++++"));
+    }
 
 ////////////////////////////////////////////////////////////////////////////////////?
     //Simple backtracking inspired by Flip Game I
@@ -49,80 +55,86 @@ public class _294_BackTracking_Flip_Game_II_M {
         }
         return false;
     }
-
+    @Test
+    public void test02(){
+        System.out.println(canWin2("++++"));
+    }
 ////////////////////////////////////////////////////////////////////////////////////?
-
+    // 9Ch
     // 方法一 搜索
-    public class Jiuzhang1 {
-        public boolean canWin(String s) {
-            boolean[] state = new boolean[s.length()];
-            for (int i = 0; i < s.length(); i++) {
-                if (s.charAt(i) == '+') {
-                    state[i] = true;
-                } else {
-                    state[i] = false;
-                }
-            }
-            return search(state);
-        }
-        public boolean search(boolean[] state) {
-            for (int i = 0; i < state.length - 1; i++) {
-                if (state[i] && state[i + 1]) {
-                    state[i] = false;
-                    state[i + 1] = false;
-                    if (!search(state)) {
-                        state[i] = true;
-                        state[i + 1] = true;
-                        return true;
-                    } else {
-                        state[i] = true;
-                        state[i + 1] = true;
-                    }
-                }
-            }
-            return false;
-        }
-    }
-
-////////////////////////////////////////////////////////////////////////////////////?
-    // 方法二 nim 博弈
-    public class Jiuzhang2 {
-        public boolean canWin(String s) {
-            int[] nim = new int[s.length() + 1];
-            boolean[] happen = new boolean[s.length() + 1];
-            for (int i = 2; i <= s.length(); i++) {
-                for (int j = 0; j < i - j - 1; j++) {
-                    happen[nim[j] ^ nim[i - j - 2]] = true;
-                }
-                boolean nimEmpty = true;
-                for (int j = 0; j <= s.length(); j++) {
-                    if (!happen[j] && nimEmpty) {
-                        nimEmpty = false;
-                        nim[i] = j;
-                    } else {
-                        happen[j] = false;
-                    }
-                }
-            }
-            int ans = 0;
-            int len = 0;
-            s = s + "-";
-            for (int i = 0; i < s.length(); i++) {
-                if (s.charAt(i) == '+') {
-                    len++;
-                } else {
-                    ans = ans ^ nim[len];
-                    len = 0;
-                }
-            }
-            if (ans == 0) {
-                return false;
+    public boolean canWin3(String s) {
+        boolean[] state = new boolean[s.length()];
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '+') {
+                state[i] = true;
             } else {
-                return true;
+                state[i] = false;
             }
         }
+        return search(state);
     }
-
+    public boolean search(boolean[] state) {
+        for (int i = 0; i < state.length - 1; i++) {
+            if (state[i] && state[i + 1]) {
+                state[i] = false;
+                state[i + 1] = false;
+                if (!search(state)) {
+                    state[i] = true;
+                    state[i + 1] = true;
+                    return true;
+                } else {
+                    state[i] = true;
+                    state[i + 1] = true;
+                }
+            }
+        }
+        return false;
+    }
+    @Test
+    public void test03(){
+        System.out.println(canWin3("++++"));
+    }
+////////////////////////////////////////////////////////////////////////////////////?
+    // 9Ch
+    // 方法二 nim 博弈
+    public boolean canWin4(String s) {
+        int[] nim = new int[s.length() + 1];
+        boolean[] happen = new boolean[s.length() + 1];
+        for (int i = 2; i <= s.length(); i++) {
+            for (int j = 0; j < i - j - 1; j++) {
+                happen[nim[j] ^ nim[i - j - 2]] = true;
+            }
+            boolean nimEmpty = true;
+            for (int j = 0; j <= s.length(); j++) {
+                if (!happen[j] && nimEmpty) {
+                    nimEmpty = false;
+                    nim[i] = j;
+                } else {
+                    happen[j] = false;
+                }
+            }
+        }
+        int ans = 0;
+        int len = 0;
+        s = s + "-";
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '+') {
+                len++;
+            } else {
+                ans = ans ^ nim[len];
+                len = 0;
+            }
+        }
+        if (ans == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    @Test
+    public void test04(){
+        System.out.println(canWin4("++++"));
+    }
 ////////////////////////////////////////////////////////////////////////////////////?
 }
 /*
