@@ -181,38 +181,36 @@ public class _077_BackTracking_Combinations_M {
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
-    //jiuzhang
+    //jiuzhang  最好还是这个
     public List<List<Integer>> combine_J(int n, int k) {
-        List<List<Integer>> rst = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
         List<Integer> solution = new ArrayList<Integer>();
 
-        helper(rst, solution, n, k, 1);
-        return rst;
+        helper(result, solution, n, k, 1);
+        return result;
     }
 
-    private void helper(List<List<Integer>> rst, List<Integer> solution,
+    private void helper(List<List<Integer>> result, List<Integer> solution,
                         int n, int k, int start) {
         if (solution.size() == k){
-            rst.add(new ArrayList(solution));
+            result.add(new ArrayList(solution));
             return;
         }
 
         for(int i = start; i<= n; i++){
             solution.add(i);
-
             // the new start should be after the next number after i
-            helper(rst, solution, n, k, i + 1);
+            helper(result, solution, n, k, i + 1);
             solution.remove(solution.size() - 1);
         }
     }
     @Test
     public void test06(){
 /*        组给出两个整数n和k，返回从1......n中选出的k个数的组合。
-
-        样例
         例如 n = 4 且 k = 2*/
         System.out.println(combine_J(4,2));
-    }
+    }//[[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]
+
 ///////////////////////////////////////////////////////////////////////////////////////
 }
 

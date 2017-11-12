@@ -1,4 +1,4 @@
-package _05_DFS.Permutation;
+package _05_DFS.Permutation_Top;
 import org.junit.Test;
 import java.util.*;
 

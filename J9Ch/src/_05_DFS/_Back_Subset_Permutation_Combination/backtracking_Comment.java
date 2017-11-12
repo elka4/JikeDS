@@ -1,4 +1,4 @@
-package _05_DFS.backtracking;
+package _05_DFS._Back_Subset_Permutation_Combination;
 
 import org.junit.Test;
 
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class backtracking {
+public class backtracking_Comment {
 
     // subset
     public List<List<Integer>> subsets(int[] nums) {
@@ -48,7 +48,6 @@ public class backtracking {
     }
 
 ///////////////////////////////////////////////////////////////////////////////
-
     //_2_Subsets_II
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
@@ -100,14 +99,10 @@ public class backtracking {
     }
 
 //////////////////////////////////////////////////////////////////////
-
     //_3_Permutations
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-
         Arrays.sort(nums); // not necessary
-
-
         backtrack(nums, result, new ArrayList<>());
         return result;
     }
@@ -149,9 +144,7 @@ public class backtracking {
 
 
 ///////////////////////////////////////////////////////////////////////////////
-
     //_4_Permutations_II
-
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
@@ -214,7 +207,6 @@ public class backtracking {
     }
 
 ///////////////////////////////////////////////////////////////////////////////
-
     //_5_Combination_Sum  Combination Sum
     //num无重复元素，每个元素可以重复使用
     public List<List<Integer>> combinationSum(int[] nums, int target) {
@@ -261,7 +253,6 @@ public class backtracking {
     }
 
 ///////////////////////////////////////////////////////////////////////////////
-
     //_6_Combination_Sum_II  Combination Sum II
     //nums有重复元素，不重复使用同一元素
     public List<List<Integer>> combinationSum2(int[] nums, int target) {
@@ -308,7 +299,6 @@ public class backtracking {
     }
 
 ///////////////////////////////////////////////////////////////////////////////
-
     //_7_Palindrome_Partitioning  Palindrome Partitioning
     public List<List<String>> partition(String s) {
         List<List<String>> result = new ArrayList<>();

@@ -1,7 +1,7 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
 import java.util.*;
 
-public class General {
+public class backtracking {
     //  https://leetcode.com/problems/combination-sum/discuss/
     /*
         A general approach to backtracking questions in Java (Subsets, Permutations, Combination Sum, Palindrome Partitioning)
@@ -134,7 +134,6 @@ public class General {
             Arrays.sort(nums);
             backtrack(list, new ArrayList<>(), nums, target, 0);
             return list;
-
         }
 
         private void backtrack(List<List<Integer>> list, List<Integer> tempList,

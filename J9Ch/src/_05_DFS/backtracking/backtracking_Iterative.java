@@ -2,7 +2,7 @@ package _05_DFS.backtracking;
 
 import java.util.*;
 
-public class backtracking_iter {
+public class backtracking_Iterative {
 
     // subset
     // Simple Java Solution with For-Each loops

@@ -268,7 +268,34 @@ public class _1_Subsets {
 //////////////////////////////////////////////////////////////////
 
 
+    // subset
 
+    /* Share my 12-line simple java code with brief explanations
+
+    dfs. 每个位置都有选与不选两个选项, 也可以看成遍历一棵二叉树, 向左走选, 向右走不选
+    */
+    public List<List<Integer>> subsets8(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if (nums == null) { return ans; }
+        Arrays.sort(nums);  // non-descending order
+        dfs8(ans, nums, new ArrayList<Integer>(), 0);
+        return ans;
+    }
+
+    private void dfs8(List<List<Integer>> ans, int[] nums, List<Integer> list, int index) {
+        if (index == nums.length) {
+            ans.add(new ArrayList<Integer>(list));
+            return;
+        }
+
+        dfs8(ans, nums, list, index+1);  // not pick the number at this index
+
+        list.add(nums[index]);
+
+        dfs8(ans, nums, list, index+1);  // pick the number at this index
+
+        list.remove(list.size()-1);
+    }
 
 
 

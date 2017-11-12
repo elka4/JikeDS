@@ -15,19 +15,19 @@ public class _254_BackTracking_Factor_Combinations_M {
         return result;
     }
 
-    public void helper1(List<List<Integer>> result, List<Integer> item, int n, int start){
+    public void helper1(List<List<Integer>> result, List<Integer> list, int n, int start){
         if (n <= 1) {
-            if (item.size() > 1) {
-                result.add(new ArrayList<Integer>(item));
+            if (list.size() > 1) {
+                result.add(new ArrayList<Integer>(list));
             }
             return;
         }
 
         for (int i = start; i <= n; ++i) {
             if (n % i == 0) {
-                item.add(i);
-                helper1(result, item, n/i, i);
-                item.remove(item.size()-1);
+                list.add(i);
+                helper1(result, list, n / i, i);
+                list.remove(list.size() - 1);
             }
         }
     }
@@ -73,21 +73,21 @@ public class _254_BackTracking_Factor_Combinations_M {
     given n = 24, output: [[2,12], [2,2,6], [2,2,2,3], [2,3,4], [3,8], [4,6]]*/
 
     public List<List<Integer>> getFactors3(int n) {
-        List<List<Integer>> ret = new LinkedList<List<Integer>>();
-        if(n <= 3)  return ret;
+        List<List<Integer>> result = new LinkedList<List<Integer>>();
+        if(n <= 3)  return result;
         List<Integer> path = new LinkedList<Integer>();
-        getFactors(2, n, path, ret);
-        return ret;
+        getFactors(2, n, path, result);
+        return result;
     }
 
-    private void getFactors(int start, int n, List<Integer> path, List<List<Integer>> ret){
+    private void getFactors(int start, int n, List<Integer> path, List<List<Integer>> result){
         for(int i = start; i <= Math.sqrt(n); i++){
             if(n % i == 0 && n/i >= i){  // The previous factor is no bigger than the next
                 path.add(i);
                 path.add(n/i);
-                ret.add(new LinkedList<Integer>(path));
+                result.add(new LinkedList<Integer>(path));
                 path.remove(path.size() - 1);
-                getFactors(i, n/i, path, ret);
+                getFactors(i, n/i, path, result);
                 path.remove(path.size() - 1);
             }
         }
@@ -131,6 +131,7 @@ public class _254_BackTracking_Factor_Combinations_M {
                 cur.add(i);
                 cur.add(factor);
                 res.add(new ArrayList<Integer>(cur));
+
                 cur.remove(cur.size()-1);
                 backTrack(res, cur, i, factor);
                 cur.remove(cur.size()-1);
@@ -175,23 +176,23 @@ public class _254_BackTracking_Factor_Combinations_M {
 /////////////////////////////////////////////////////////////////////////////////////////////
     //Simple Java Recursive Solution
     public List<List<Integer>> getFactors6(int n) {
-        List<List<Integer>> list = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
 
-        list = perform(n, list, new ArrayList<Integer>());
-        return list;
+        result = perform(n, result, new ArrayList<Integer>());
+        return result;
     }
 
-    private List<List<Integer>> perform(int n, List<List<Integer>> list, List<Integer> l){
+    private List<List<Integer>> perform(int n, List<List<Integer>> result, List<Integer> l){
         for(int i=2;i<n;i++){
-            if(n%i==0 && i<=n/i && (l.size()==0 || l.get(l.size()-1) <= i)){
+            if(n % i == 0 && i <= n/i && (l.size() == 0 || l.get(l.size() - 1) <= i)){
                 List<Integer> temp  = new ArrayList<Integer>(l);
                 temp.add(i);
-                list = perform(n/i, list, temp);
+                result = perform(n/i, result, temp);
                 temp.add(n/i);
-                list.add(temp);
+                result.add(temp);
             }
         }
-        return list;
+        return result;
     }
     @Test
     public void test06(){

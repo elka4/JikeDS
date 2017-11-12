@@ -155,9 +155,7 @@ class solution1 {
         }
 }
 ////////////////////////////////////////////////////////////////////////////////////
-//Java - short and recursive, clean code.
-
-
+    //Java - short and recursive, clean code.
     public List<List<Integer>> combinationSum2_3(int[] candidates, int target) {
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> comb = new ArrayList<>();
@@ -186,6 +184,7 @@ class solution1 {
                 break; //invalid path, return nothing.
         }
     }
+
 ////////////////////////////////////////////////////////////////////////////////////
 public class Solution {
     public List<List<Integer>> combinationSum2(int[] num, int target) {
@@ -217,10 +216,11 @@ public class Solution {
         }
     }
 }
+
 /////////////////////////////////////////////////////////////////////////
-//my version, similar, I think I ,managed to remove some of
-// the code in the recursive find ,
-// above the comment line, so the result looks cleaner
+    //my version, similar, I think I ,managed to remove some of
+    // the code in the recursive find ,
+    // above the comment line, so the result looks cleaner
 
     public class Solution5 {
         List<Integer> partialSolution ;
@@ -256,8 +256,7 @@ public class Solution {
 
 /////////////////////////////////////////////////////////////////////////////
 
-//    Java solutions beats 99,87%
-
+    //    Java solutions beats 99,87%
     public class Solution6 {
         public List<List<Integer>> combinationSum2(int[] candidates, int target) {
             Arrays.sort(candidates);
@@ -400,5 +399,5 @@ The code is something like:
 
 
 
-
+////////////////////////////////////////////////////////////////////////////
 }
