@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-public class Permutation_all {
+public class Permutation_I_String {
 
     public static ArrayList<String> getPerms(String str) {
         if (str == null) {
@@ -34,7 +34,18 @@ public class Permutation_all {
         return start + c + end;
     }
 
-    /////////////////////////////////////////////////////////////////
+    @Test
+    public void test01(){
+        System.out.println(getPerms("abc"));
+    }//[abc, bac, bca, acb, cab, cba]
+
+    @Test
+    public void test011(){
+        System.out.println(getPerms("aab"));
+    }//[aab, aab, aba, aba, baa, baa]
+
+
+/////////////////////////////////////////////////////////////////
 
     public static ArrayList<String> getPerms2(String remainder) {
         int len = remainder.length();
@@ -61,8 +72,18 @@ public class Permutation_all {
         return result;
     }
 
+    @Test
+    public void test02(){
+        System.out.println(getPerms2("abc"));
+    }//[abc, acb, bac, bca, cab, cba]
 
-    ////////////////////////////////////////////////////////////////////
+
+    @Test
+    public void test022(){
+        System.out.println(getPerms2("aab"));
+    }//[aab, aba, aab, aba, baa, baa]
+
+////////////////////////////////////////////////////////////////////
 
     public static void getPerms3(String prefix, String remainder, ArrayList<String> result) {
         if (remainder.length() == 0) {
@@ -82,12 +103,23 @@ public class Permutation_all {
         getPerms3("", str, result);
         return result;
     }
+    @Test
+    public void test03(){
+        System.out.println(getPerms3("abc"));
+    }//[abc, acb, bac, bca, cab, cba]
 
 
-    ///////////////////////////////////////////////////////
 
     @Test
-    public void test01(){
+    public void test033(){
+        System.out.println(getPerms3("aab"));
+    }//[aab, aba, aab, aba, baa, baa]
+
+
+///////////////////////////////////////////////////////
+
+    @Test
+    public void test04(){
         long start = System.currentTimeMillis();
         ArrayList<String> list = getPerms("abcdefgh");
         System.out.println("There are " + list.size() + " permutations.");
@@ -111,7 +143,14 @@ public class Permutation_all {
          time = end - start;
         System.out.println(  ": " + time + "ms");
 
-
+/*
+There are 40320 permutations.
+: 13ms
+There are 40320 permutations.
+: 67ms
+There are 40320 permutations.
+: 15ms
+ */
 
     }
 }

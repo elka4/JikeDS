@@ -13,22 +13,22 @@ import java.util.List;
 public class _039_BackTracking_Combination_Sum_M {
     //30%
     public List<List<Integer>> combinationSum01(int[] candidates, int target) {
-        List<List<Integer>> list = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(candidates);
-        backtrack(list, new ArrayList<>(), candidates, target, 0);
-        return list;
+        backtrack(result, new ArrayList<>(), candidates, target, 0);
+        return result;
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+    private void backtrack(List<List<Integer>> result, List<Integer> tempList,
                            int [] candidates, int remain, int start){
 
         if(remain < 0) return;
-        else if(remain == 0) list.add(new ArrayList<>(tempList));
+        else if(remain == 0) result.add(new ArrayList<>(tempList));
         else{
             for(int i = start; i < candidates.length; i++){
                 tempList.add(candidates[i]);
                 // not i + 1 because we can reuse same elements
-                backtrack(list, tempList, candidates, remain - candidates[i], i);
+                backtrack(result, tempList, candidates, remain - candidates[i], i);
                 tempList.remove(tempList.size() - 1);
             }
         }
@@ -58,11 +58,11 @@ public class _039_BackTracking_Combination_Sum_M {
 ////////////////////////////////////////////////////////////////////////////////////////////
 
     public List<List<Integer>> combinationSum02(int[] candidates, int target) {
-        List<List<Integer>> ret = new LinkedList<List<Integer>>();
+        List<List<Integer>> result = new LinkedList<List<Integer>>();
         Arrays.sort(candidates); // sort the candidates
         // collect possible candidates from small to large to eliminate duplicates,
-        recurse(new ArrayList<Integer>(), target, candidates, 0, ret);
-        return ret;
+        recurse(new ArrayList<Integer>(), target, candidates, 0, result);
+        return result;
     }
 
     // the index here means we are allowed to choose candidates from that index

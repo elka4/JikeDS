@@ -12,19 +12,20 @@ public class _216_BackTracking_Combination_Sum_III_M {
     //  https://discuss.leetcode.com/topic/44037/combination-sum-i-ii-and-iii-java-solution-see-the-similarities-yourself
 
     public List<List<Integer>> combinationSum(int k, int n) {
-        List<List<Integer>> list = new ArrayList<>();
-        backtrack(list, new ArrayList<Integer>(), k, n, 1);
-        return list;
+        List<List<Integer>> result = new ArrayList<>();
+        backtrack(result, new ArrayList<Integer>(), k, n, 1);
+        return result;
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+    private void backtrack(List<List<Integer>> result, List<Integer> tempList,
                            int k, int remain, int start) {
         if(tempList.size() > k) return; /** no solution */
-        else if(tempList.size() == k && remain == 0) list.add(new ArrayList<>(tempList));
+        else if(tempList.size() == k && remain == 0)
+            result.add(new ArrayList<>(tempList));
         else{
             for (int i = start; i <= 9; i++) {
                 tempList.add(i);
-                backtrack(list, tempList, k, remain-i, i+1);
+                backtrack(result, tempList, k, remain-i, i+1);
                 tempList.remove(tempList.size() - 1);
             }
         }
@@ -36,7 +37,7 @@ public class _216_BackTracking_Combination_Sum_III_M {
     }//[[1, 2, 6], [1, 3, 5], [2, 3, 4]]
 
 
-    ///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
         //Simple and clean Java code, backtracking.
         public List<List<Integer>> combinationSum1(int k, int n) {
             List<List<Integer>> ans = new ArrayList<>();

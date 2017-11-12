@@ -4,28 +4,29 @@ import org.junit.Test;
 import java.util.*;
 
 //I:   C中的数字可以无限制重复被选取
-//II:  C中每个数字在每个组合中只能使用一次。
+//II:  C中每个数字在每个组合中只能使用一次
 //III: k numbers that add up to a number n, given that only numbers from 1 to 9 can be used
 public class Combination_Sum_I_II_III {
     //Combination Sum I, II and III Java solution (see the similarities yourself)
     //  https://discuss.leetcode.com/topic/44037/combination-sum-i-ii-and-iii-java-solution-see-the-similarities-yourself
 
     //Combination Sum I
+    //I:   C中的数字可以无限制重复被选取
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> list = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(candidates);
-        backtrack(list, new ArrayList<Integer>(), candidates, target, 0);
-        return list;
+        backtrack(result, new ArrayList<Integer>(), candidates, target, 0);
+        return result;
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+    private void backtrack(List<List<Integer>> result, List<Integer> tempList,
                            int[] candidates, int remain, int start) {
-        if (remain < 0) return; /** no solution */
-        else if (remain == 0) list.add(new ArrayList<>(tempList));
-        else{
+        if (remain < 0) return; /* no solution */
+        else if (remain == 0) result.add(new ArrayList<>(tempList));//切记 new
+        else{//每一层都是从start开始，所有两层之间是重叠的，所以可以重复取元素
             for (int i = start; i < candidates.length; i++) {
                 tempList.add(candidates[i]);
-                backtrack(list, tempList, candidates, remain - candidates[i], i);
+                backtrack(result, tempList, candidates, remain - candidates[i], i);
                 tempList.remove(tempList.size()-1);
             }
         }
@@ -41,23 +42,25 @@ public class Combination_Sum_I_II_III {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
     //Combination Sum II
+    //II:  C中每个数字在每个组合中只能使用一次
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        List<List<Integer>> list = new LinkedList<List<Integer>>();
+        List<List<Integer>> result = new LinkedList<List<Integer>>();
         Arrays.sort(candidates);
-        backtrack2(list, new ArrayList<Integer>(), candidates, target, 0);
-        return list;
+        backtrack2(result, new ArrayList<Integer>(), candidates, target, 0);
+        return result;
     }
 
-    private void backtrack2(List<List<Integer>> list, List<Integer> tempList,
-                           int[] cand, int remain, int start) {
+    private void backtrack2(List<List<Integer>> result, List<Integer> tempList,
+                           int[] candidates, int remain, int start) {
 
         if(remain < 0) return; /** no solution */
-        else if(remain == 0) list.add(new ArrayList<>(tempList));
+        else if(remain == 0) result.add(new ArrayList<>(tempList));
         else{
-            for (int i = start; i < cand.length; i++) {
-                if(i > start && cand[i] == cand[i-1]) continue; /** skip duplicates */
-                tempList.add(cand[i]);
-                backtrack2(list, tempList, cand, remain - cand[i], i+1);
+            for (int i = start; i < candidates.length; i++) {
+                if(i > start && candidates[i] == candidates[i-1]) continue; //避免取candidates中重复元素
+                tempList.add(candidates[i]);
+                //i+1: 避免重复的取同一个元素
+                backtrack2(result, tempList, candidates, remain - candidates[i], i+1);
                 tempList.remove(tempList.size() - 1);
             }
         }
@@ -72,20 +75,21 @@ public class Combination_Sum_I_II_III {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
     //Combination Sum III
+    //III: k numbers that add up to a number n, given that only numbers from 1 to 9 can be used
     public List<List<Integer>> combinationSum3(int k, int n) {
-        List<List<Integer>> list = new ArrayList<>();
-        backtrack(list, new ArrayList<Integer>(), k, n, 1);
-        return list;
+        List<List<Integer>>  result = new ArrayList<>();
+        backtrack(result, new ArrayList<Integer>(), k, n, 1);
+        return result;
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+    private void backtrack(List<List<Integer>> result, List<Integer> tempList,
                            int k, int remain, int start) {
         if(tempList.size() > k) return; /** no solution */
-        else if(tempList.size() == k && remain == 0) list.add(new ArrayList<>(tempList));
+        else if(tempList.size() == k && remain == 0) result.add(new ArrayList<>(tempList));
         else{
             for (int i = start; i <= 9; i++) {
                 tempList.add(i);
-                backtrack(list, tempList, k, remain-i, i+1);
+                backtrack(result, tempList, k, remain-i, i+1);
                 tempList.remove(tempList.size() - 1);
             }
         }

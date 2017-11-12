@@ -10,22 +10,22 @@ import java.util.*;
 public class _040_BackTracking_Combination_Sum_II_M {
     //  Combination Sum I, II and III Java solution (see the similarities yourself)
     public List<List<Integer>> combinationSum01(int[] nums, int target) {
-        List<List<Integer>> list = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
-        backtrack(list, new ArrayList<>(), nums, target, 0);
-        return list;
+        backtrack(result, new ArrayList<>(), nums, target, 0);
+        return result;
 
     }
 
-    private void backtrack(List<List<Integer>> list, List<Integer> tempList,
+    private void backtrack(List<List<Integer>> result, List<Integer> tempList,
                            int [] nums, int remain, int start){
         if(remain < 0) return;
-        else if(remain == 0) list.add(new ArrayList<>(tempList));
+        else if(remain == 0) result.add(new ArrayList<>(tempList));
         else{
             for(int i = start; i < nums.length; i++){
                 if(i > start && nums[i] == nums[i-1]) continue; // skip duplicates
                 tempList.add(nums[i]);
-                backtrack(list, tempList, nums, remain - nums[i], i + 1);
+                backtrack(result, tempList, nums, remain - nums[i], i + 1);
                 tempList.remove(tempList.size() - 1);
             }
         }
@@ -43,21 +43,21 @@ public class _040_BackTracking_Combination_Sum_II_M {
     //Java solution using dfs, easy understand
     public List<List<Integer>> combinationSum02(int[] cand, int target) {
         Arrays.sort(cand);
-        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
         List<Integer> path = new ArrayList<Integer>();
-        dfs_com(cand, 0, target, path, res);
-        return res;
+        dfs_com(cand, 0, target, path, result);
+        return result;
     }
-    void dfs_com(int[] cand, int cur, int target, List<Integer> path, List<List<Integer>> res) {
+    void dfs_com(int[] cand, int cur, int target, List<Integer> path, List<List<Integer>> result) {
         if (target == 0) {
-            res.add(new ArrayList(path));
+            result.add(new ArrayList(path));
             return ;
         }
         if (target < 0) return;
         for (int i = cur; i < cand.length; i++){
             if (i > cur && cand[i] == cand[i-1]) continue;
             path.add(path.size(), cand[i]);
-            dfs_com(cand, i+1, target - cand[i], path, res);
+            dfs_com(cand, i+1, target - cand[i], path, result);
             path.remove(path.size()-1);
         }
     }

@@ -43,6 +43,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     }
     @Test public void test01(){ System.out.println(permute01(new int[]{1,2,3})); }
     //[[3, 2, 1], [3, 1, 2], [2, 3, 1], [1, 3, 2], [2, 1, 3], [1, 2, 3]]
+
 ////////////////////////////////////////////////////////////////////////////////////
 
     public List<List<Integer>> permute02(int[] num) {
@@ -67,10 +68,10 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     //  A general approach to backtracking questions in Java
     // (Subsets, Permutations, Combination Sum, Palindrome Partioning)
     public List<List<Integer>> permute03(int[] nums) {
-        List<List<Integer>> list = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
         // Arrays.sort(nums); // not necessary
-        backtrack(list, new ArrayList<>(), nums);
-        return list;
+        backtrack(result, new ArrayList<>(), nums);
+        return result;
     }
 
     private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums) {
@@ -88,7 +89,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     @Test public void test03(){ System.out.println(permute03(new int[]{1,2,3})); }
 
 
-    /////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
     //Java Clean Code - Two recursive solutions
     //Bottom up? approach - 280ms
     public List<List<Integer>> permute04(int[] nums) {
@@ -195,9 +196,9 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
         ArrayList<Integer> newPerm = new ArrayList<Integer>(perm);
 
         //Insert elements in the array by increasing index
-        for(int j=0;j<=i;j++){
-            newPerm.add(j,nums[i]);
-            backTrack(newPerm,i+1,nums);
+        for(int j = 0; j <= i; j++){
+            newPerm.add(j, nums[i]);
+            backTrack(newPerm, i + 1, nums);
             newPerm.remove(j);
         }
     }
@@ -209,20 +210,21 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
 //            Try this:
 
     public List<List<Integer>> permute08(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
-        permute08(new ArrayList<Integer>(), 0, nums, res);
-        return res;
+        List<List<Integer>> result = new ArrayList<>();
+        permute08(new ArrayList<Integer>(), 0, nums, result);
+        return result;
     }
 
-    private void permute08(ArrayList<Integer> path, int index, int[] nums, List<List<Integer>> res){
+    private void permute08(ArrayList<Integer> path, int index,
+                           int[] nums, List<List<Integer>> result){
         if(index == nums.length){
-            res.add(new ArrayList<Integer>(path));
+            result.add(new ArrayList<Integer>(path));
             return;
         }
 
-        for(int j = 0; j <=index; ++j ){
+        for(int j = 0; j <= index; ++j ){
             path.add(j, nums[index]);
-            permute08(path, index + 1, nums, res);
+            permute08(path, index + 1, nums, result);
             path.remove(j);
         }
     }

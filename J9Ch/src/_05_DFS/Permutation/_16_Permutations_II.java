@@ -44,7 +44,7 @@ public class _16_Permutations_II {
 
         if(list.size() == nums.length) {
             results.add(new ArrayList<Integer>(list));
-            System.out.println("list.size() == nums.length " + list);
+//            System.out.println("list.size() == nums.length " + list);
             return;
         }
 
@@ -62,10 +62,10 @@ public class _16_Permutations_II {
             当中也应该排在前面，这样就保证了唯一性。所以当前面的2还没有使用的时候，就
             不应该让后面的2使用。
             */
-            System.out.println("nums[i] " + nums[i]);
-            System.out.println("list " + list);
-            System.out.println("results " + results);
-            System.out.println("========================");
+//            System.out.println("nums[i] " + nums[i]);
+//            System.out.println("list " + list);
+//            System.out.println("results " + results);
+//            System.out.println("========================");
 
             visited[i] = 1;
             list.add(nums[i]);
@@ -84,7 +84,7 @@ public class _16_Permutations_II {
     public void test02(){
         int[] nums = {1,2,2};
         System.out.println(permuteUnique(nums));
-    }
+    }//1, 2, 2], [2, 1, 2], [2, 2, 1]]
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -112,8 +112,7 @@ public class _16_Permutations_II {
         for(int i = 0; i < nums.length; i++){
 
             //避免重复已使用元素
-            if(used[i] ||
-                    i > 0 && nums[i] == nums[i-1] && !used[i - 1]){
+            if(used[i] || i > 0 && nums[i] == nums[i-1] && !used[i - 1]){
                 //不是第一个i > 0，而且和前一个相同nums[i] == nums[i-1]
                 continue;
             }
