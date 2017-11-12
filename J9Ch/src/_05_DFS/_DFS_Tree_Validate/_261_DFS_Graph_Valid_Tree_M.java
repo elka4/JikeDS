@@ -1,4 +1,4 @@
-package _05_DFS._DFS_Tree;
+package _05_DFS._DFS_Tree_Validate;
 import java.util.*;
 
 public class _261_DFS_Graph_Valid_Tree_M {

@@ -1,4 +1,4 @@
-package _05_DFS._DFS_Tree;
+package _05_DFS._DFS_Tree_List;
 
 import lib.TreeNode;
 
