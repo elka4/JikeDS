@@ -1,4 +1,5 @@
 package _05_DFS._Back_Subset_Permutation_Combination;
+import org.junit.Test;
 import java.util.*;
 
 
@@ -7,22 +8,36 @@ import java.util.*;
 //  http://www.lintcode.com/zh-cn/problem/letter-combinations-of-a-phone-number/
 public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
     //My java solution with FIFO queue
+    //
     public List<String> letterCombinations01(String digits) {
         LinkedList<String> ans = new LinkedList<String>();
         String[] mapping = new String[] {"0", "1", "abc", "def", "ghi",
                 "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        //这里应该做null和size为0的判断
 
         ans.add("");
-        for(int i =0; i<digits.length();i++){
+        //i的意义：输入的数字中从左到右数的第几位
+        for(int i = 0; i < digits.length(); i++){
+            //把输入的String中数字转为int
+            //getNumericValue这个方法从字母也能操作得到数字，所以是否最佳？
             int x = Character.getNumericValue(digits.charAt(i));
-            while(ans.peek().length()==i){
-                String t = ans.remove();
+            //peak: Retrieves, but does not remove, the head (first element) of this list.
+            //如果ans里第一个元素的长度==i，就是需要对首元素加一个char
+            //index 0对应长度0，只差一位，刚好就是给下面for循环加一个char的
+            while(ans.peek().length() == i){
+                //remove: Retrieves and removes the head (first element) of this list.
+                String t = ans.remove();//这就是前面为什么要在for之前ans.add("");
                 for(char s : mapping[x].toCharArray())
-                    ans.add(t+s);
+                    ans.add(t + s);
             }
         }
         return ans;
     }
+
+    @Test
+    public void test01(){
+        System.out.println(letterCombinations01("").size());
+    }//1
 
 ////////////////////////////////////////////////////////////////////
     //My recursive solution using Java
@@ -31,21 +46,31 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
 
     public List<String> letterCombinations02(String digits) {
         List<String> ret = new LinkedList<String>();
+        if (digits == null || digits.equals("")) {
+            return ret;
+        }
         combination("", digits, 0, ret);
         return ret;
     }
 
     private void combination(String prefix, String digits, int offset, List<String> ret) {
-        if (offset >= digits.length()) {
+        if (offset == digits.length()) {//原来为>=
             ret.add(prefix);
             return;
         }
+        //对于一个按键的所有字母进行操作
         String letters = KEYS[(digits.charAt(offset) - '0')];
 
+        //用prefix String来记录状态。每次进入recursion都是重新建了一个String。
+        //所以不用使用经典的add，remove包围
         for (int i = 0; i < letters.length(); i++) {
             combination(prefix + letters.charAt(i), digits, offset + 1, ret);
         }
     }
+    @Test
+    public void test02(){
+        System.out.println(letterCombinations02("").size());
+    }//1
 
 ////////////////////////////////////////////////////////////////////
     // jiuzhang
@@ -55,7 +80,7 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
         if (digits == null || digits.equals("")) {
             return result;
         }
-
+        //这个有点烦
         Map<Character, char[]> map = new HashMap<Character, char[]>();
         map.put('0', new char[] {});
         map.put('1', new char[] {});
@@ -76,11 +101,15 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
 
     private void helper(Map<Character, char[]> map, String digits,
                         StringBuilder sb, ArrayList<String> result) {
+
         if (sb.length() == digits.length()) {
             result.add(sb.toString());
             return;
         }
-
+        //这个是经典的add，remove
+        //StringBuilder记录状态
+        //对于从短到长，从左往右输入的数字对应的按键的每个字母进行操作
+        //sb.length()为0对应index为0的第一个输入数字，以此类推
         for (char c : map.get(digits.charAt(sb.length()))) {
             sb.append(c);
             helper(map, digits, sb, result);
@@ -94,7 +123,16 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
 
     //  方法1 计状态
     ArrayList<String> ans = new ArrayList<>();
+    public ArrayList<String> letterCombinations_J2(String digits) {
+        // Write your code here
+        String phone[] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
+        if (digits.length() == 0) {
+            return ans;
+        }
+        dfs(0, digits.length(), "", digits, phone);
+        return ans;
+    }
     void dfs(int x, int l, String str, String digits, String phone[]) {
         if (x == l) {
             ans.add(str);
@@ -106,37 +144,42 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
         }
     }
 
-    public ArrayList<String> letterCombinations_J2(String digits) {
-        // Write your code here
-        String phone[] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    //改写 version: 高频题班 方法1 计状态
+    //不需要l，digits.length()就可以了
+    class Solution_Jiuzhang2{
+        ArrayList<String> ans = new ArrayList<>();
+        public ArrayList<String> letterCombinations(String digits) {
+            // Write your code here
+            String phone[] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
-        if (digits.length() == 0) {
+            if (digits.length() == 0) {
+                return ans;
+            }
+            dfs(0, "", digits, phone);
             return ans;
         }
-        dfs(0, digits.length(), "", digits, phone);
-        return ans;
+        //x就是offset
+        void dfs(int x, String str, String digits, String phone[]) {
+            if (x == digits.length()) {
+                ans.add(str);
+                return;
+            }
+            int d = digits.charAt(x) - '0';
+            for (char c : phone[d].toCharArray()) {
+                dfs(x + 1, str + c, digits, phone);
+            }
+        }
     }
 
 ////////////////////////////////////////////////////////////////////
     // 9Ch
-    // 方法2 计状态
+    // 方法2 计状态。仅仅是展示把能放到global的全放到global什么样子。可以让dfs（）参数很少。
     ArrayList<String> ans_J3 = new ArrayList<>();
 
     int l;
     String digits;
     final String phone[] = {"", "", "abc", "def", "ghi", "jkl",
             "mno", "pqrs", "tuv", "wxyz"};
-
-    void dfs_J3(int x, String str) {
-        if (x == l) {
-            ans_J3.add(str);
-            return;
-        }
-        int d = digits.charAt(x) - '0';
-        for (char c : phone[d].toCharArray()) {
-            dfs_J3(x + 1, str + c);
-        }
-    }
 
     public ArrayList<String> letterCombinations_J3(String digits) {
         // Write your code here
@@ -149,6 +192,18 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
         dfs_J3(0, "");
         return ans_J3;
     }
+
+    void dfs_J3(int x, String str) {
+        if (x == l) {
+            ans_J3.add(str);
+            return;
+        }
+        int d = digits.charAt(x) - '0';
+        for (char c : phone[d].toCharArray()) {
+            dfs_J3(x + 1, str + c);
+        }
+    }
+
 
 ///////////////////////////////////////////////////////////////////
 }
