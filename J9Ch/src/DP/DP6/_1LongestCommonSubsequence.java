@@ -76,13 +76,9 @@ public class _1LongestCommonSubsequence {
 
         for (i = 0; i <= m; i++) {
             for (j = 0; j <= n; j++) {
-                //init
-                if (i == 0 || j ==0) {
-                    f[i][j] = 0;//默认就是0，做了这个只是逻辑更清晰
-                    continue;
-                }
+                //init//默认就是0，做了这个只是逻辑更清晰
+                if (i == 0 || j ==0) { f[i][j] = 0; continue; }
 
-                // normal transiton function
                 f[i][j] = Math.max(f[i - 1][j], f[i][j - 1]);
 
                 if (A[i - 1] == B[j - 1]) {
@@ -90,7 +86,6 @@ public class _1LongestCommonSubsequence {
                 }
             }
         }
-
         return f[m][n];
     }
 
