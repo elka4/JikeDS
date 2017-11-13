@@ -10,16 +10,38 @@ import java.util.*;
 public class _089_BackTracking_Gray_Code_M {
 
 /////////////////////////////////////////////////////////////////////////
-    //    An accepted three line solution in JAVA
+    //An accepted three line solution in JAVA
+    //完全是Bit 操作
+    //  i ^ i>>1 操作得到的相邻两个二进制数字在一位上为0或1
+
+    public List<Integer> grayCode11(int n) {
+        List<Integer> result = new LinkedList<>();
+        for (int i = 0; i < 1<<n; i++){
+            result.add(i ^ i>>1);
+        }
+        return result;
+    }
+
     public List<Integer> grayCode1(int n) {
         List<Integer> result = new LinkedList<>();
         System.out.println("1<<n: " + (1<<n));
         System.out.println("1<<n: " + Integer.toBinaryString(1<<n));
         for (int i = 0; i < 1<<n; i++){
             result.add(i ^ i>>1);
-            System.out.printf(i + ":%3s", Integer.toBinaryString(i));
-            System.out.printf(" ^ i:%3s", Integer.toBinaryString(i>>1));
-            System.out.printf(" = %4s\n", Integer.toBinaryString(i ^ i>>1));
+            System.out.print(i + ": ");
+            if (Integer.toBinaryString(i).length() == 2) System.out.print("0");
+            if (Integer.toBinaryString(i).length() == 1) System.out.print("00");
+            System.out.printf("%s", Integer.toBinaryString(i));
+//            if (Integer.toBinaryString(i>>1).length() == 2) System.out.print("0");
+//            if (Integer.toBinaryString(i>>1).length() == 1) System.out.print("00");
+            System.out.print(" ^ i: ");
+            if (Integer.toBinaryString(i>>1).length() == 2) System.out.print("0");
+            if (Integer.toBinaryString(i>>1).length() == 1) System.out.print("00");
+            System.out.printf("%s", Integer.toBinaryString(i>>1));
+            System.out.print(" = ");
+            if (Integer.toBinaryString(i ^ i>>1).length() == 2) System.out.print("0");
+            if (Integer.toBinaryString(i ^ i>>1).length() == 1) System.out.print("00");
+            System.out.printf("%s\n", Integer.toBinaryString(i ^ i>>1));
 
         }
         return result;
@@ -68,14 +90,39 @@ public class _089_BackTracking_Gray_Code_M {
     // For example, when n=3, we can get the result based on n=2.
 
     //00,01,11,10 -> (000,001,011,010 ) (110,111,101,100).
-    // The middle two numbers only differ at their highest bit,
+    // The middle two numbers only differ at their highest bit,首尾对应的两个元素
     // while the rest numbers of part two are exactly symmetric of part one.
     // It is easy to see its correctness.
     //    Code is simple:
-    public List<Integer> grayCode2(int n) {
+    //每次都是将最高位设为1 result.get(k) | 1 << i
+    //将一个数第i位设为1的操作：| 1 << i
+    //要理解并记住这种倒着处理的方法，肯定有用的
+    public List<Integer> grayCode22(int n) {
         List<Integer> result = new ArrayList<Integer>();
         result.add(0);
         for(int i = 0; i < n; i++){
+            int size = result.size();
+            //每轮对已有结果倒着处理，从后往前的处理，将结果中每个元素的首位，如果为0就设为1
+            //倒着操作才使得下面循环中两个元素result.get(k)和操作结果result.get(k) | 1 << i只是在首尾不同，一个为0一个为1
+            //之前的全部结果，已经确保了每两个相邻元素只在一位有差别，这样只对首位0进行操作，可以确保新的结果和相邻结果依旧只在一位不同
+            //每轮的首位相同，除第一个元素外，都为1。每轮中相邻元素之间差别来自于已有结果是确定相邻元素只有一位不同。
+            //不同轮首元素与上一轮尾元素不同，是新一轮首位多了一位为1
+            for(int k = size - 1; k >= 0; k--){
+                result.add(result.get(k) | 1 << i);
+            }
+        }
+        return result;
+    }
+    /*
+    000,
+    001,
+    011,010,
+    110,111,101,100
+     */
+    public List<Integer> grayCode2(int n) {
+        List<Integer> result = new ArrayList<Integer>();
+        result.add(0);
+        for(int i = 0; i < n; i++){// 2 ^ i 位二进制
             int size = result.size();
             for(int k = size - 1; k >= 0; k--){
                 System.out.printf("i:" + i + " k:" + k + ". result.get(k):%3s",
@@ -115,8 +162,9 @@ public class _089_BackTracking_Gray_Code_M {
     110
     111
      */
+
 /////////////////////////////////////////////////////////////////////////
-    //jiuzhang
+    //jiuzhang DFS
     public ArrayList<Integer> grayCode3(int n) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         if (n <= 1) {

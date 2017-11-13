@@ -1,7 +1,9 @@
-package _05_DFS._Back_Other;
+package _05_DFS._Back_Abbreviation;
 import java.util.*;
 
 //  411. Minimum Unique Word Abbreviation
+//  https://leetcode.com/problems/minimum-unique-word-abbreviation/
+//  Backtracking, Bit Manipulation
 public class _411_BackTracking_Minimum_Unique_Word_Abbreviation_M {
     //Trie + Bruteforce
     class Trie{

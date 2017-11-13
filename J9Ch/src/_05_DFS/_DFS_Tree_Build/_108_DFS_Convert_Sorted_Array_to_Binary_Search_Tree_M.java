@@ -1,13 +1,12 @@
 package _05_DFS._DFS_Tree_Build;
 
 import lib.TreeNode;
+import java.util.*;
+import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.LinkedList;
-
-//108. Convert Sorted Array to Binary Search Tree
-
+//  108. Convert Sorted Array to Binary Search Tree
+//  https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+//  http://lintcode.com/zh-cn/problem/convert-sorted-array-to-binary-search-tree-with-minimal-height/
 public class _108_DFS_Convert_Sorted_Array_to_Binary_Search_Tree_M {
     class Solution{
         public TreeNode sortedArrayToBST(int[] num) {
@@ -208,5 +207,33 @@ public class _108_DFS_Convert_Sorted_Array_to_Binary_Search_Tree_M {
 
 }
 /*
+把排序数组转换为高度最小的二叉搜索树
 
+ 描述
+ 笔记
+ 数据
+ 评测
+给一个排序数组（从小到大），将其转换为一棵高度最小的排序二叉树。
+
+ 注意事项
+
+There may exist multiple valid solutions, return any of them.
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给出数组 [1,2,3,4,5,6,7], 返回
+
+     4
+   /   \
+  2     6
+ / \    / \
+1   3  5   7
+标签
+Cracking The Coding Interview 递归 二叉树
+相关题目
+中等 排序列表转换为二分查找树
  */
+
+//  Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
+
+

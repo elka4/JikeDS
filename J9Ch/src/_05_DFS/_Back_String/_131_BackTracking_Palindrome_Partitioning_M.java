@@ -1,4 +1,5 @@
 package _05_DFS._Back_String;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.List;
 //  132. Palindrome Partitioning II  is DP
 //  https://leetcode.com/problems/palindrome-partitioning/description/
 //  http://www.lintcode.com/zh-cn/problem/palindrome-partitioning/
+//  Backtracking
 public class _131_BackTracking_Palindrome_Partitioning_M {
 
     public List<List<String>> partition01(String s) {
@@ -34,6 +36,11 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
             if(s.charAt(low++) != s.charAt(high--)) return false;
         return true;
     }
+
+    @Test
+    public void test01(){
+        System.out.println(partition01("aab"));
+    }//[[a, a, b], [aa, b]]
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,7 +72,10 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
         }
         return true;
     }
-
+    @Test
+    public void test02(){
+        System.out.println(partition02("aab"));
+    }//[[a, a, b], [aa, b]]
 
 ////////////////////////////////////////////////////////////////////////////////////
     //My Java DP only solution without recursion. O(n^2)
@@ -92,7 +102,10 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
         }
         return result[len];
     }
-
+    @Test
+    public void test03(){
+        System.out.println(partition03("aab"));
+    }//[[a, a, b], [aa, b]]
 
 ////////////////////////////////////////////////////////////////////////////////////
     //Java: Backtracking solution.
@@ -130,6 +143,10 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
         }
         return true;
     }
+    @Test
+    public void test04(){
+        System.out.println(partition04("aab"));
+    }//[[a, a, b], [aa, b]]
 
 ////////////////////////////////////////////////////////////////////////////////////
     //Java DP + DFS solution
@@ -143,73 +160,76 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
             second, based on the prescanned palindrome partitions saved in dp array, a simple backtrack does the job.
 */
 
-    public class Solution04 {
-        public List<List<String>> partition(String s) {
-            List<List<String>> res = new ArrayList<>();
-            boolean[][] dp = new boolean[s.length()][s.length()];
-            for(int i = 0; i < s.length(); i++) {
-                for(int j = 0; j <= i; j++) {
-                    if(s.charAt(i) == s.charAt(j) && (i - j <= 2 || dp[j+1][i-1])) {
-                        dp[j][i] = true;
-                    }
+    public List<List<String>> partition05(String s) {
+        List<List<String>> res = new ArrayList<>();
+        boolean[][] dp = new boolean[s.length()][s.length()];
+        for(int i = 0; i < s.length(); i++) {
+            for(int j = 0; j <= i; j++) {
+                if(s.charAt(i) == s.charAt(j) && (i - j <= 2 || dp[j+1][i-1])) {
+                    dp[j][i] = true;
                 }
             }
-            helper(res, new ArrayList<>(), dp, s, 0);
-            return res;
+        }
+        helper(res, new ArrayList<>(), dp, s, 0);
+        return res;
+    }
+
+    private void helper(List<List<String>> res, List<String> path, boolean[][] dp, String s, int pos) {
+        if(pos == s.length()) {
+            res.add(new ArrayList<>(path));
+            return;
         }
 
-        private void helper(List<List<String>> res, List<String> path, boolean[][] dp, String s, int pos) {
-            if(pos == s.length()) {
-                res.add(new ArrayList<>(path));
-                return;
-            }
-
-            for(int i = pos; i < s.length(); i++) {
-                if(dp[pos][i]) {
-                    path.add(s.substring(pos,i+1));
-                    helper(res, path, dp, s, i+1);
-                    path.remove(path.size()-1);
-                }
+        for(int i = pos; i < s.length(); i++) {
+            if(dp[pos][i]) {
+                path.add(s.substring(pos,i+1));
+                helper(res, path, dp, s, i+1);
+                path.remove(path.size()-1);
             }
         }
     }
+    @Test
+    public void test05(){
+        System.out.println(partition05("aab"));
+    }//[[a, a, b], [aa, b]]
 
 ////////////////////////////////////////////////////////////////////////////////////
     //Concise Java solution
     //DFS to find every combinations of the string, if the substring is not Palindrome, ignore it then go to the next.
 
-    public class Solution05 {
-        List<List<String>> result = new ArrayList<List<String>>();
-        public List<List<String>> partition(String s) {
-            helper(s, new ArrayList<String>());
-            return result;
-        }
+    List<List<String>> result = new ArrayList<List<String>>();
+    public List<List<String>> partition06(String s) {
+        helper(s, new ArrayList<String>());
+        return result;
+    }
 
-        public void helper(String s, List<String> cur){                 //DFS every combinations
-            if(s.length() == 0){result.add(cur); return;}
-            for(int i = 1; i <= s.length(); i++){
-                String sub = s.substring(0,i);
-                if(isPal(sub)){
-                    List<String> newList = new ArrayList<String>(cur);
-                    newList.add(sub);
-                    helper(s.substring(i,s.length()), newList);
-                }
-                else continue;                                    //not palindrome, ignore it
+    public void helper(String s, List<String> cur){                 //DFS every combinations
+        if(s.length() == 0){result.add(cur); return;}
+        for(int i = 1; i <= s.length(); i++){
+            String sub = s.substring(0,i);
+            if(isPal(sub)){
+                List<String> newList = new ArrayList<String>(cur);
+                newList.add(sub);
+                helper(s.substring(i,s.length()), newList);
             }
-        }
-
-        public boolean isPal(String str){
-            int l = 0;
-            int r = str.length()-1;
-            while(l <= r){
-                if(str.charAt(l) != str.charAt(r))  return false;
-                l++;r--;
-            }
-            return true;
+            else continue;                                    //not palindrome, ignore it
         }
     }
-//    note: I found some people using the same method of mine, but they like to call their methods "backtracking", it is actually DFS, note backtracking.
 
+    public boolean isPal(String str){
+        int l = 0;
+        int r = str.length()-1;
+        while(l <= r){
+            if(str.charAt(l) != str.charAt(r))  return false;
+            l++;r--;
+        }
+        return true;
+    }
+//    note: I found some people using the same method of mine, but they like to call their methods "backtracking", it is actually DFS, note backtracking.
+    @Test
+    public void test06(){
+        System.out.println(partition06("aab"));
+    }//[[a, a, b], [aa, b]]
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -223,7 +243,16 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
 
     Compared to the non-recursive implementation this one saves a lot of space as you do not have to store the substrings or the cut positions up to position i for all 0 <= i < s.length(). However it does perform repetitive work compared to the DP solution, e.g., if you have found two different ways of partitioning s[0..k], you still recursively search for partitioning of s[k+1,...]. So it's a typical trade-off between space and time.*/
 
-    public class Solution06 {
+        public List<List<String>> partition07(String s) {
+            int len = s.length();
+            boolean[][] isPal = new boolean[len][len];
+            boolean[] cut = new boolean[len];
+
+            init(isPal, s);
+            List<List<String>> ans = new ArrayList<List<String>>();
+            helper(s, 0, len-1, cut, ans, isPal);
+            return ans;
+        }
 
         private void init(boolean[][] isPal, String s) {
             int len = isPal.length;
@@ -258,60 +287,56 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
                 }
             }
         }
+    @Test
+    public void test07(){
+        System.out.println(partition07("aab"));
+    }//[[a, a, b], [aa, b]]
 
-        public List<List<String>> partition(String s) {
-            int len = s.length();
-            boolean[][] isPal = new boolean[len][len];
-            boolean[] cut = new boolean[len];
-
-            init(isPal, s);
-            List<List<String>> ans = new ArrayList<List<String>>();
-            helper(s, 0, len-1, cut, ans, isPal);
-            return ans;
-        }
-    }
 ////////////////////////////////////////////////////////////////////////////////////
     //Java Easy-follow Recursive Solution, can convert to DP easily, what is complexity? O(n^2)?
 
-    public class Solution07 {
-
-        public boolean isPalindrom(String s) {
-            int start = 0;
-            int end = s.length()-1;
-            while(start<end) {
-                if(s.charAt(start)!=s.charAt(end))
-                    return false;
-                start++;
-                end--;
-            }
-            return true;
+    public boolean isPalindrom(String s) {
+        int start = 0;
+        int end = s.length()-1;
+        while(start<end) {
+            if(s.charAt(start)!=s.charAt(end))
+                return false;
+            start++;
+            end--;
         }
+        return true;
+    }
 
-        public List<List<String>> partition(String s) {
-            List<List<String>> res = new ArrayList<List<String>>();
-            if(s.length()==0) {
-                res.add(new ArrayList<String>());
-                return res;
-            }
-            if(s.length()==1) {
-                List<String> subLs = new ArrayList<String>();
-                subLs.add(s);
-                res.add(subLs);
-                return res;
-            }
-            for(int i=0; i<s.length(); i++) {
-                String subS = s.substring(0,i+1);
-                if(isPalindrom(subS)) {
-                    List<List<String>> subRes = partition(s.substring(i+1));
-                    for(List<String> l : subRes) {
-                        l.add(0,subS);
-                        res.add(l);
-                    }
-                }
-            }
+    public List<List<String>> partition08(String s) {
+        List<List<String>> res = new ArrayList<List<String>>();
+        if(s.length()==0) {
+            res.add(new ArrayList<String>());
             return res;
         }
+        if(s.length()==1) {
+            List<String> subLs = new ArrayList<String>();
+            subLs.add(s);
+            res.add(subLs);
+            return res;
+        }
+        for(int i=0; i<s.length(); i++) {
+            String subS = s.substring(0,i+1);
+            if(isPalindrom(subS)) {
+                List<List<String>> subRes = partition08(s.substring(i+1));
+                for(List<String> l : subRes) {
+                    l.add(0,subS);
+                    res.add(l);
+                }
+            }
+        }
+        return res;
     }
+    @Test
+    public void test08(){
+        System.out.println(partition08("aab"));
+    }//[[a, a, b], [aa, b]]
+
+
 ////////////////////////////////////////////////////////////////////////////////////
     // jiuzhang
     // version 1: shorter but slower
@@ -359,6 +384,10 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
         }
         return true;
     }
+    @Test
+    public void test09(){
+        System.out.println(partition_J1("aab"));
+    }//[[a, a, b], [aa, b]]
 
 ////////////////////////////////////////////////////////////////////////////////////
     // version 2: longer but faster
@@ -427,6 +456,11 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
         }
         results.add(result);
     }
+
+    @Test
+    public void test10(){
+        System.out.println(partition_J2("aab"));
+    }//[[a, a, b], [aa, b]]
 
 ////////////////////////////////////////////////////////////////////////////////////
 }

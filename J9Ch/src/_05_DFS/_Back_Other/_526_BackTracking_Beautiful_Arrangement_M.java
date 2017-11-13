@@ -1,5 +1,7 @@
 package _05_DFS._Back_Other;
 
+import org.junit.Test;
+
 //  526. Beautiful Arrangement
 //  https://leetcode.com/problems/beautiful-arrangement/description/
 //
@@ -38,7 +40,10 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         nums[x] = nums[y];
         nums[y] = temp;
     }
-
+    @Test
+    public void test01(){
+        System.out.println(countArrangement(2));
+    }
 
 //////////////////////////////////////////////////////////////////////////
     //Approach #2 Better Brute Force [Accepted]
@@ -62,7 +67,10 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
             swap(nums, i, l);
         }
     }
-
+    @Test
+    public void test02(){
+        System.out.println(countArrangement2(2));
+    }
 
 //////////////////////////////////////////////////////////////////////////
     //Approach #3 Backtracking [Accepted]

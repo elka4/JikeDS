@@ -1,10 +1,9 @@
 package _05_DFS._Back_Other;
-
 import org.junit.Test;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.List;
-//294. Flip Game II
+//  294. Flip Game II
+//  https://leetcode.com/problems/flip-game-ii/description/
 
 public class _294_BackTracking_Flip_Game_II_M {
     /*
@@ -15,13 +14,17 @@ public class _294_BackTracking_Flip_Game_II_M {
 
     That's what I thought, but I could be wrong :)
      */
+    //DFS
+    //这题要求熟练掌握对于String的substring方法，index的了解和操作
     public boolean canWin(String s) {
         if (s == null || s.length() < 2) {
             return false;
         }
-
+        //要掌握 boolean startsWith(String prefix, int toffset) 这个方法
+        //String substring(int beginIndex): toffset   where to begin looking in this string.
         for (int i = 0; i < s.length() - 1; i++) {
             if (s.startsWith("++", i)) {
+                //beginIndex   the beginning index, inclusive.
                 String t = s.substring(0, i) + "--" + s.substring(i + 2);
 
                 if (!canWin(t)) {
@@ -29,17 +32,20 @@ public class _294_BackTracking_Flip_Game_II_M {
                 }
             }
         }
-
         return false;
     }
     @Test
     public void test01(){
         System.out.println(canWin("++++"));
-    }
+    }//true
 
 ////////////////////////////////////////////////////////////////////////////////////?
     //Simple backtracking inspired by Flip Game I
+
+    //貌似目前这个最好理解，就是把本人可以进行的所有操作依次带入本方法作为对手的操作
+    //要记住这个做法
     public boolean canWin2(String s) {
+        //首先是进行Flip Game I的操作，得到所有++可以替换成--的结果。只替换一次。
         List<String> list = new ArrayList<>();
         for(int i = 0; i < s.length() - 1; i++){
             if(s.charAt(i) == '+' && s.charAt(i + 1) == '+')
@@ -48,17 +54,20 @@ public class _294_BackTracking_Flip_Game_II_M {
         }
         /*if(list.isEmpty())
             return false;*/
+        //将这些替换了一次的结果再次带入本方法，就是对手的操作。只要有一个方法对手false，那就是本选手true。
         for(String str : list){
             // if there is any one way the next player can't win, take it and you'll win
             if(!canWin2(str))
                 return true;
         }
+        //能走到这儿就是对手怎么都会赢，那本选手就是输
         return false;
     }
     @Test
     public void test02(){
         System.out.println(canWin2("++++"));
     }
+
 ////////////////////////////////////////////////////////////////////////////////////?
     // 9Ch
     // 方法一 搜索
@@ -94,6 +103,8 @@ public class _294_BackTracking_Flip_Game_II_M {
     public void test03(){
         System.out.println(canWin3("++++"));
     }
+
+
 ////////////////////////////////////////////////////////////////////////////////////?
     // 9Ch
     // 方法二 nim 博弈
@@ -135,6 +146,8 @@ public class _294_BackTracking_Flip_Game_II_M {
     public void test04(){
         System.out.println(canWin4("++++"));
     }
+
+
 ////////////////////////////////////////////////////////////////////////////////////?
 }
 /*

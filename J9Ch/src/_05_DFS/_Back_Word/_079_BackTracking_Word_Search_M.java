@@ -1,5 +1,7 @@
 package _05_DFS._Back_Word;
 
+import org.junit.Test;
+
 //  79. Word Search
 //  https://leetcode.com/problems/word-search/description/
 //  http://www.lintcode.com/zh-cn/problem/word-search/
@@ -28,8 +30,36 @@ public class _079_BackTracking_Word_Search_M {
         board[y][x] ^= 256;
         return exist;
     }
+    /*[
 
-///////////////////////////////////////////////////////////////////////////////////////////
+[
+  ['A','B','C','E'],
+  ['S','F','C','S'],
+  ['A','D','E','E']
+]
+word = "ABCCED", -> returns true,
+word = "SEE", -> returns true,
+word = "ABCB", -> returns false.
+
+*/
+    @Test
+    public void test01(){
+//        int[] arr = new int[]{1,2,3};
+//        String[] strs = new String[]{"22"};
+        char[][] board = new char[][] {{'A','B','C','E'}, {'S','F','C','S'}, {'A','D','E','E'}};
+//        char[][] board1 = {{'A','B','C','E'}, {'S','F','C','S'}, {'A','D','E','E'}};
+//        char[] board2 = new char[4]{'A','B','C','E'};
+//        char[][] board = new char[3][4];
+//        char[] values2 = { 'a', 'b', 'c' };
+//        board[0][1] = 'A';
+        System.out.println(exist1(board, "ABCCED"));
+        System.out.println(exist1(board, "SEE"));
+        System.out.println(exist1(board, "ABCB"));
+
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////
     //    My Java solution
     boolean[][] visited;
     public boolean exist2(char[][] board, String word) {
@@ -134,6 +164,14 @@ public class _079_BackTracking_Word_Search_M {
         return rst;
     }
 
+    @Test
+    public void test04(){
+        char[][] board = new char[][] {{'A','B','C','E'}, {'S','F','C','S'}, {'A','D','E','E'}};
+        System.out.println(exist4(board, "ABCCED"));
+        System.out.println(exist4(board, "SEE"));
+        System.out.println(exist4(board, "ABCB"));
+
+    }
 
 ////////////////////////////////////////////////////////////////////////////////////////
 }

@@ -12,7 +12,46 @@ public class _199_Tree_Binary_Tree_Right_Side_View_M {
     //https://leetcode.com/articles/binary-tree-right-side-view/
     //    Initial Thoughts
     //    Approach #1 Depth-First Search [Accepted]
+    public List<Integer> rightSideView01(TreeNode root) {
+        Map<Integer, Integer> rightmostValueAtDepth = new HashMap<Integer, Integer>();
+        int max_depth = -1;
 
+        /* These two stacks are always synchronized, providing an implicit
+         * association values with the same offset on each stack. */
+        Stack<TreeNode> nodeStack = new Stack<TreeNode>();
+        Stack<Integer> depthStack = new Stack<Integer>();
+        nodeStack.push(root);
+        depthStack.push(0);
+
+        while (!nodeStack.isEmpty()) {
+            TreeNode node = nodeStack.pop();
+            int depth = depthStack.pop();
+
+            if (node != null) {
+                max_depth = Math.max(max_depth, depth);
+
+                /* The first node that we encounter at a particular depth contains
+                * the correct value. */
+                if (!rightmostValueAtDepth.containsKey(depth)) {
+                    rightmostValueAtDepth.put(depth, node.val);
+                }
+
+                nodeStack.push(node.left);
+                nodeStack.push(node.right);
+                depthStack.push(depth+1);
+                depthStack.push(depth+1);
+            }
+        }
+
+        /* Construct the solution based on the values that we end up with at the
+         * end. */
+        List<Integer> rightView = new ArrayList<Integer>();
+        for (int depth = 0; depth <= max_depth; depth++) {
+            rightView.add(rightmostValueAtDepth.get(depth));
+        }
+
+        return rightView;
+    }
 
 /////////////////////////////////////////////////////////////////////////////////
     //    Approach #2 Breadth-First Search [Accepted]

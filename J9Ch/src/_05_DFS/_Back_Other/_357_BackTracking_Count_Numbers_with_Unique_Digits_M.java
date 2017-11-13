@@ -97,7 +97,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
 
         boolean[] used = new boolean[10];
 
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < 10; i++) {//i就是数字的位数
             used[i] = true;
             count += search(i, max, used);
             used[i] = false;
@@ -113,7 +113,6 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         } else {
             return count;
         }
-
         for (int i = 0; i < 10; i++) {
             if (!used[i]) {
                 used[i] = true;
@@ -122,13 +121,14 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
                 used[i] = false;
             }
         }
-
         return count;
     }
+
     @Test
     public void test03(){
         System.out.println(countNumbersWithUniqueDigits3(2));
     }
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
     public int countNumbersWithUniqueDigits4(int n) {
@@ -215,7 +215,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
 ///////////////////////////////////////////////////////////////////////////////
 }
 /*
-Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x < 10n.
+Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x < 10^n.
 
 Example:
 Given n = 2, return 91. (The answer should be the total numbers in the range of 0 ≤ x < 100, excluding [11,22,33,44,55,66,77,88,99])

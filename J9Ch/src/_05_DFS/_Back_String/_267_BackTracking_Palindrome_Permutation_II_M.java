@@ -1,9 +1,12 @@
 package _05_DFS._Back_String;
+import org.junit.Test;
+
 import java.util.*;
 
 //  267. Palindrome Permutation II
 //  https://leetcode.com/problems/palindrome-permutation-ii/description/
 //  http://www.lintcode.com/zh-cn/problem/palindrome-partitioning-ii/
+//  Backtracking
 public class _267_BackTracking_Palindrome_Permutation_II_M {
     //  https://leetcode.com/problems/palindrome-permutation-ii/solution/
     //Approach #1 Brute Force [Time Limit Exceeded]
@@ -36,7 +39,10 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
             }
         }
     }
-
+    @Test
+    public void test01(){
+        System.out.println(generatePalindromes1("aab"));
+    }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
     //Approach #2 Backtracking [Accepted]
@@ -83,7 +89,10 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
             }
         }
     }
-
+    @Test
+    public void test02(){
+        System.out.println(generatePalindromes2("aab"));
+    }
 
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -143,7 +152,10 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
             }
         }
     }
-
+    @Test
+    public void test03(){
+        System.out.println(generatePalindromes3("aab"));
+    }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -184,8 +196,9 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
             }
         }
     }
-    class Solution04{
-
+    @Test
+    public void test04(){
+        System.out.println(generatePalindromes04("aab"));
     }
 
 
@@ -229,6 +242,10 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
                 map[i]++;
             }
         }
+    }
+    @Test
+    public void test05(){
+        System.out.println(generatePalindromes5("aab"));
     }
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -281,70 +298,75 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
 
         return f[s.length()] - 1;
     }
+    @Test
+    public void test06(){
+        System.out.println(minCut("aab"));
+    }//1
 
 ///////////////////////////////////////////////////////////////////////////////////
     // 9Ch
     // version 2
     // f[i] 表示前i个字母，最少被切割几次可以切割为都是回文串。
     // 最后return f[n]
-    public class Jiuzhang2 {
-        private boolean isPalindrome7(String s, int start, int end) {
-            for (int i = start, j = end; i < j; i++, j--) {
-                if (s.charAt(i) != s.charAt(j)) {
-                    return false;
-                }
+    private boolean isPalindrome7(String s, int start, int end) {
+        for (int i = start, j = end; i < j; i++, j--) {
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
             }
-            return true;
         }
-
-        private boolean[][] getIsPalindrome(String s) {
-            boolean[][] isPalindrome = new boolean[s.length()][s.length()];
-
-            for (int i = 0; i < s.length(); i++) {
-                isPalindrome[i][i] = true;
-            }
-            for (int i = 0; i < s.length() - 1; i++) {
-                isPalindrome[i][i + 1] = (s.charAt(i) == s.charAt(i + 1));
-            }
-
-            for (int length = 2; length < s.length(); length++) {
-                for (int start = 0; start + length < s.length(); start++) {
-                    isPalindrome[start][start + length]
-                            = isPalindrome[start + 1][start + length - 1] &&
-                              s.charAt(start) == s.charAt(start + length);
-                }
-            }
-
-            return isPalindrome;
-        }
-
-        public int minCut(String s) {
-            if (s == null || s.length() == 0) {
-                return 0;
-            }
-
-            // preparation
-            boolean[][] isPalindrome = getIsPalindrome(s);
-
-            // initialize
-            int[] f = new int[s.length() + 1];
-            for (int i = 0; i <= s.length(); i++) {
-                f[i] = i - 1;
-            }
-
-            // main
-            for (int i = 1; i <= s.length(); i++) {
-                for (int j = 0; j < i; j++) {
-                    if (isPalindrome[j][i - 1]) {
-                        f[i] = Math.min(f[i], f[j] + 1);
-                    }
-                }
-            }
-
-            return f[s.length()];
-        }
+        return true;
     }
 
+    private boolean[][] getIsPalindrome(String s) {
+        boolean[][] isPalindrome = new boolean[s.length()][s.length()];
+
+        for (int i = 0; i < s.length(); i++) {
+            isPalindrome[i][i] = true;
+        }
+        for (int i = 0; i < s.length() - 1; i++) {
+            isPalindrome[i][i + 1] = (s.charAt(i) == s.charAt(i + 1));
+        }
+
+        for (int length = 2; length < s.length(); length++) {
+            for (int start = 0; start + length < s.length(); start++) {
+                isPalindrome[start][start + length]
+                        = isPalindrome[start + 1][start + length - 1] &&
+                        s.charAt(start) == s.charAt(start + length);
+            }
+        }
+
+        return isPalindrome;
+    }
+
+    public int minCut7(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+
+        // preparation
+        boolean[][] isPalindrome = getIsPalindrome(s);
+
+        // initialize
+        int[] f = new int[s.length() + 1];
+        for (int i = 0; i <= s.length(); i++) {
+            f[i] = i - 1;
+        }
+
+        // main
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = 0; j < i; j++) {
+                if (isPalindrome[j][i - 1]) {
+                    f[i] = Math.min(f[i], f[j] + 1);
+                }
+            }
+        }
+
+        return f[s.length()];
+    }
+    @Test
+    public void test07(){
+        System.out.println(minCut7("aab"));//1
+    }
 ///////////////////////////////////////////////////////////////////////////////////
 }
 

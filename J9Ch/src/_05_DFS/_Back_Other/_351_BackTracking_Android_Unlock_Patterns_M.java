@@ -1,8 +1,10 @@
 package _05_DFS._Back_Other;
 
+import org.junit.Test;
+
 //  351. Android Unlock Patterns
 //  https://leetcode.com/problems/android-unlock-patterns/description/
-//
+//  DP, Backtracking
 public class _351_BackTracking_Android_Unlock_Patterns_M {
     //https://leetcode.com/problems/android-unlock-patterns/solution/
     //Approach #1: (Backtracking) [Accepted]
@@ -54,6 +56,12 @@ public class _351_BackTracking_Android_Unlock_Patterns_M {
         }
         return sum;
     }
+    @Test
+    public void test01(){
+        System.out.println(numberOfPatterns1(1,2));//3
+        System.out.println(numberOfPatterns1(2,2));//8
+        System.out.println(numberOfPatterns1(1,3));//5
+    }
 
 //////////////////////////////////////////////////////////////////////////////////////////
     //Java DFS solution with clear explanations and optimization, beats 97.61% (12ms)
@@ -95,7 +103,7 @@ public class _351_BackTracking_Android_Unlock_Patterns_M {
 
 ///////////////////////////////////////////////////////////////////////////////////////
     //
-private int[][] jumps;
+    private int[][] jumps;
     private boolean[] visited;
 
     public int numberOfPatterns3(int m, int n) {

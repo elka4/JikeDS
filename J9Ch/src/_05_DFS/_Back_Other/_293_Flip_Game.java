@@ -10,6 +10,7 @@ public class _293_Flip_Game {
     //4 lines in Java
     public List<String> generatePossibleNextMoves1(String s) {
         List list = new ArrayList();
+        //总觉得这个应该用while写，不过要记住这种在for中操作的方法
         for (int i=-1; (i = s.indexOf("++", i+1)) >= 0; )
             list.add(s.substring(0, i) + "--" + s.substring(i+2));
         return list;
@@ -27,6 +28,7 @@ public class _293_Flip_Game {
         List<String> list = new ArrayList<String>();
         for (int i = 1; i < s.length(); i++) {
             if (s.charAt(i) == '+' && s.charAt(i - 1) == '+') {
+
                 list.add(s.substring(0, i - 1) + "--" + s.substring(i + 1, s.length()));
             }
         }
@@ -46,6 +48,7 @@ public class _293_Flip_Game {
         char chs[] = s.toCharArray();
         for (int i = 0; i < s.length() - 1; i++) {
             if (chs[i] == chs[i+1] && chs[i] == '+') {
+                //这个先变化，处理，再变回来的方法，是不是和经典recursion的add和remove很像啊
                 chs[i] = chs[i+1] = '-';
                 result.add(String.valueOf(chs));
                 chs[i] = chs[i+1] = '+';

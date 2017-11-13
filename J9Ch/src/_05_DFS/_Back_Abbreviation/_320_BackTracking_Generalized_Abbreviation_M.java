@@ -1,13 +1,14 @@
-package _05_DFS._Back_Other;
+package _05_DFS._Back_Abbreviation;
 import org.junit.Test;
 
 import java.util.*;
 
 //  320. Generalized Abbreviation
 //  https://leetcode.com/problems/generalized-abbreviation/description/
-//
+//  Backtracking, Bit Manipulation
 public class _320_BackTracking_Generalized_Abbreviation_M {
     //https://leetcode.com/problems/generalized-abbreviation/solution/
+
     //Approach #1 (Backtracking) [Accepted]
     public List<String> generateAbbreviations1(String word){
         List<String> ans = new ArrayList<String>();
@@ -31,7 +32,7 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
             builder.append(word.charAt(i));
             backtrack(ans, builder, word, i + 1, 0);
         }
-        builder.setLength(len); // reset builder to the original state
+        builder.setLength(len); // reset builder to the original state去掉len后面的
     }
 
     @Test
@@ -39,6 +40,14 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
         System.out.println(generateAbbreviations1("word"));
     }//[4, 3d, 2r1, 2rd, 1o2, 1o1d, 1or1, 1ord, w3, w2d, w1r1,
     // w1rd, wo2, wo1d, wor1, word]
+
+    @Test
+    public void test011(){
+        StringBuilder sb = new StringBuilder("1234");
+        System.out.println(sb);
+        sb.setLength(3);
+        System.out.println(sb);
+    }
 
 ////////////////////////////////////////////////////////////////////////////////////?
 
@@ -54,6 +63,7 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
     private String abbr(String word, int x) {
         StringBuilder builder = new StringBuilder();
         int k = 0, n = word.length(); // k is the count of consecutive ones in x
+
         for (int i = 0; i < n; ++i, x >>= 1) {
             if ((x & 1) == 0) { // bit is zero, we keep word.charAt(i)
                 if (k != 0) { // we have abbreviated k characters
@@ -68,6 +78,7 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
         if (k != 0) builder.append(k); //don't forget to append the last k if non zero
         return builder.toString();
     }
+
     @Test
     public void test02(){
         System.out.println(generateAbbreviations2("word"));
@@ -90,9 +101,10 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
         }
         else{
             backtrack(ret, word, pos + 1, cur, count + 1);
-            backtrack(ret, word, pos+1, cur + (count>0 ? count : "") + word.charAt(pos), 0);
+            backtrack(ret, word, pos + 1, cur + (count>0 ? count : "") + word.charAt(pos), 0);
         }
     }
+
     @Test
     public void test03(){
         System.out.println(generateAbbreviations3("word"));
@@ -102,16 +114,18 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
 ////////////////////////////////////////////////////////////////////////////////////?
 
     public List<String> generateAbbreviations4(String word) {
-        List<String> res = new ArrayList<String>();
+        List<String> result = new ArrayList<String>();
         int len = word.length();
-        res.add(len==0 ? "" : String.valueOf(len));
+        result.add(len == 0 ? "" : String.valueOf(len));
+
         for(int i = 0 ; i < len ; i++)
-            for(String right : generateAbbreviations4(word.substring(i+1))){
+            for(String right : generateAbbreviations4(word.substring(i + 1))){
                 String leftNum = i > 0 ? String.valueOf(i) : "";
-                res.add( leftNum + word.substring(i,i + 1) + right );
+                result.add(leftNum + word.substring(i, i + 1) + right);
             }
-        return res;
+        return result;
     }
+
     @Test
     public void test04(){
         System.out.println(generateAbbreviations4("word"));
@@ -133,6 +147,7 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
     ... backtracking logic ...
     sb.setLength(len);     // reset to decision point
      */
+
     public List<String> generateAbbreviations5(String word) {
         List<String> res = new ArrayList<>();
         DFS(res, new StringBuilder(), word.toCharArray(), 0, 0);
@@ -157,6 +172,7 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
         System.out.println(generateAbbreviations5("word"));
     }//[4, 3d, 2r1, 2rd, 1o2, 1o1d, 1or1, 1ord, w3, w2d, w1r1,
     // w1rd, wo2, wo1d, wor1, word]
+
 ////////////////////////////////////////////////////////////////////////////////////?
 }
 /*

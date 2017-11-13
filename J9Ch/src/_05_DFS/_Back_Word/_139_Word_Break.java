@@ -10,78 +10,79 @@ public class _139_Word_Break {
     //https://leetcode.com/articles/word-break/
 
     //Approach #1 Brute Force [Time Limit Exceeded]
-    public class Solution01 {
-        public boolean wordBreak(String s, List<String> wordDict) {
-            return word_Break(s, new HashSet(wordDict), 0);
+    public boolean wordBreak1(String s, List<String> wordDict) {
+
+        return word_Break1(s, new HashSet(wordDict), 0);
+    }
+    public boolean word_Break1(String s, Set<String> wordDict, int start) {
+        if (start == s.length()) {
+            return true;
         }
-        public boolean word_Break(String s, Set<String> wordDict, int start) {
-            if (start == s.length()) {
+        for (int end = start + 1; end <= s.length(); end++) {
+            if (wordDict.contains(s.substring(start, end)) && word_Break1(s, wordDict, end)) {
                 return true;
             }
-            for (int end = start + 1; end <= s.length(); end++) {
-                if (wordDict.contains(s.substring(start, end)) && word_Break(s, wordDict, end)) {
-                    return true;
-                }
-            }
-            return false;
         }
+        return false;
     }
 
+
+//////////////////////////////////////////////////////////////////
     //Approach #2 Recursion with memoization [Accepted]
-    public class Solution02 {
-        public boolean wordBreak(String s, List<String> wordDict) {
-            return word_Break(s, new HashSet(wordDict), 0, new Boolean[s.length()]);
+
+    public boolean wordBreak2(String s, List<String> wordDict) {
+        return word_Break2(s, new HashSet(wordDict), 0, new Boolean[s.length()]);
+    }
+    public boolean word_Break2(String s, Set<String> wordDict, int start, Boolean[] memo) {
+        if (start == s.length()) {
+            return true;
         }
-        public boolean word_Break(String s, Set<String> wordDict, int start, Boolean[] memo) {
-            if (start == s.length()) {
-                return true;
-            }
-            if (memo[start] != null) {
-                return memo[start];
-            }
-            for (int end = start + 1; end <= s.length(); end++) {
-                if (wordDict.contains(s.substring(start, end)) && word_Break(s, wordDict, end, memo)) {
-                    return memo[start] = true;
-                }
-            }
-            return memo[start] = false;
+        if (memo[start] != null) {
+            return memo[start];
         }
+        for (int end = start + 1; end <= s.length(); end++) {
+            if (wordDict.contains(s.substring(start, end)) && word_Break2(s, wordDict, end, memo)) {
+                return memo[start] = true;
+            }
+        }
+        return memo[start] = false;
     }
 
+
+//////////////////////////////////////////////////////////////////
     //Approach #3 Using Breadth-First-Search [Accepted]
-    public class Solution03 {
-        public boolean wordBreak(String s, List<String> wordDict) {
-            Set<String> wordDictSet=new HashSet(wordDict);
-            Queue<Integer> queue = new LinkedList<>();
-            int[] visited = new int[s.length()];
-            queue.add(0);
-            while (!queue.isEmpty()) {
-                int start = queue.remove();
-                if (visited[start] == 0) {
-                    for (int end = start + 1; end <= s.length(); end++) {
-                        if (wordDictSet.contains(s.substring(start, end))) {
-                            queue.add(end);
-                            if (end == s.length()) {
-                                return true;
-                            }
+
+    public boolean wordBreak3(String s, List<String> wordDict) {
+        Set<String> wordDictSet=new HashSet(wordDict);
+        Queue<Integer> queue = new LinkedList<>();
+        int[] visited = new int[s.length()];
+        queue.add(0);
+        while (!queue.isEmpty()) {
+            int start = queue.remove();
+            if (visited[start] == 0) {
+                for (int end = start + 1; end <= s.length(); end++) {
+                    if (wordDictSet.contains(s.substring(start, end))) {
+                        queue.add(end);
+                        if (end == s.length()) {
+                            return true;
                         }
                     }
-                    visited[start] = 1;
                 }
+                visited[start] = 1;
             }
-            return false;
         }
+        return false;
     }
 
 
 //////////////////////////////////////////////////////////////////
     //Java implementation using DP in two ways
-    public class Solution04 {
-        public boolean wordBreak(String s, Set<String> dict) {
 
-            boolean[] f = new boolean[s.length() + 1];
+    public boolean wordBreak4(String s, Set<String> dict) {
 
-            f[0] = true;
+        boolean[] f = new boolean[s.length() + 1];
+
+        f[0] = true;
 
 
         /* First DP
@@ -98,18 +99,17 @@ public class _139_Word_Break {
             }
         }*/
 
-            //Second DP
-            for(int i=1; i <= s.length(); i++){
-                for(int j=0; j < i; j++){
-                    if(f[j] && dict.contains(s.substring(j, i))){
-                        f[i] = true;
-                        break;
-                    }
+        //Second DP
+        for(int i=1; i <= s.length(); i++){
+            for(int j=0; j < i; j++){
+                if(f[j] && dict.contains(s.substring(j, i))){
+                    f[i] = true;
+                    break;
                 }
             }
-
-            return f[s.length()];
         }
+
+        return f[s.length()];
     }
 
 //////////////////////////////////////////////////////////////////
@@ -123,100 +123,95 @@ public class _139_Word_Break {
 
         Use a set to record all position that cannot find a match in dict. That cuts down the run time of DFS to O(n^2)
     */
-    public class Solution05 {
-        public boolean wordBreak(String s, Set<String> dict) {
-            // DFS
-            Set<Integer> set = new HashSet<Integer>();
-            return dfs(s, 0, dict, set);
-        }
 
-        private boolean dfs(String s, int index, Set<String> dict, Set<Integer> set){
-            // base case
-            if(index == s.length()) return true;
-            // check memory
-            if(set.contains(index)) return false;
-            // recursion
-            for(int i = index+1;i <= s.length();i++){
-                String t = s.substring(index, i);
-                if(dict.contains(t))
-                    if(dfs(s, i, dict, set))
-                        return true;
-                    else
-                        set.add(i);
-            }
-            set.add(index);
-            return false;
+    public boolean wordBreak5(String s, Set<String> dict) {
+        // DFS
+        Set<Integer> set = new HashSet<Integer>();
+        return dfs(s, 0, dict, set);
+    }
+
+    private boolean dfs(String s, int index, Set<String> dict, Set<Integer> set){
+        // base case
+        if(index == s.length()) return true;
+        // check memory
+        if(set.contains(index)) return false;
+        // recursion
+        for(int i = index+1;i <= s.length();i++){
+            String t = s.substring(index, i);
+            if(dict.contains(t))
+                if(dfs(s, i, dict, set))
+                    return true;
+                else
+                    set.add(i);
         }
+        set.add(index);
+        return false;
     }
 
 //////////////////////////////////////////////////////////////////
     //    A concise Java solution. (11-line in wordBreak function)
-    public class Solution06 {
-        public boolean wordBreak(String s, Set<String> wordDict) {
-            int len = s.length();
-            boolean[] f = new boolean[len + 1];
-            f[0] = true;
-            for (int i = 1; i < len + 1; i++)
-                for (int j = 0; j < i; j++)
-                    if (f[j] && wordDict.contains(s.substring(j, i))) {
-                        f[i] = true;
-                        break;
-                    }
-            return f[len];
-        }
+    public boolean wordBreak6(String s, Set<String> wordDict) {
+        int len = s.length();
+        boolean[] f = new boolean[len + 1];
+        f[0] = true;
+        for (int i = 1; i < len + 1; i++)
+            for (int j = 0; j < i; j++)
+                if (f[j] && wordDict.contains(s.substring(j, i))) {
+                    f[i] = true;
+                    break;
+                }
+        return f[len];
     }
 
 //////////////////////////////////////////////////////////////////
     //Several solutions comparison
-    public class Solution07 {
-        //dp without count => 2ms
-        public boolean wordBreakX(String s, Set<String> wordDict) {
-            int n = s.length();
-            boolean [] dp = new boolean [n+1];
-            dp[0] = true;
-            for(int i=0;i<n;i++){
-                for(int j=i;j>=0;j--){
-                    if(!dp[j])continue;  //check this first
-                    if(wordDict.contains(s.substring(j,i+1))){
-                        dp[i+1]=true;
-                        break;  //break!!!!
-                    }
+    //dp without count => 2ms
+    public boolean wordBreak7(String s, Set<String> wordDict) {
+        int n = s.length();
+        boolean [] dp = new boolean [n+1];
+        dp[0] = true;
+        for(int i=0;i<n;i++){
+            for(int j=i;j>=0;j--){
+                if(!dp[j])continue;  //check this first
+                if(wordDict.contains(s.substring(j,i+1))){
+                    dp[i+1]=true;
+                    break;  //break!!!!
                 }
             }
-            return dp[n];
         }
-        //dp with count, this will give us how many ways we can break => 11ms
-        public boolean wordBreak(String s, Set<String> wordDict) {
-            int n = s.length();
-            int [] dp = new int [n+1];
-            dp[0] = 1;
-            for(int i=0;i<n;i++){
-                for(int j=i;j>=0;j--){
-                    if(dp[j]==0)continue;
-                    if(wordDict.contains(s.substring(j,i+1))){
-                        dp[i+1]++;
-                    }
-                }
-            }
-            return dp[n]!=0;
-        }
+        return dp[n];
+    }
 
-        //simple dfs => TLE
-        public boolean wordBreakxx(String s, Set<String> wordDict) {
-            if(s.equals(""))return true;
-            for(int i=0;i<s.length();i++){
-                if(wordDict.contains(s.substring(0,i+1))){
-                    if(wordBreak(s.substring(i+1),wordDict))return true;
+    //dp with count, this will give us how many ways we can break => 11ms
+    public boolean wordBreak8(String s, Set<String> wordDict) {
+        int n = s.length();
+        int [] dp = new int [n+1];
+        dp[0] = 1;
+        for(int i=0;i<n;i++){
+            for(int j=i;j>=0;j--){
+                if(dp[j]==0)continue;
+                if(wordDict.contains(s.substring(j,i+1))){
+                    dp[i+1]++;
                 }
             }
-            return false;
         }
+        return dp[n]!=0;
+    }
+
+    //simple dfs => TLE
+    public boolean wordBreak9(String s, Set<String> wordDict) {
+        if(s.equals(""))return true;
+        for(int i=0;i<s.length();i++){
+            if(wordDict.contains(s.substring(0,i+1))){
+                if(wordBreak9(s.substring(i+1),wordDict))return true;
+            }
+        }
+        return false;
     }
 
 //////////////////////////////////////////////////////////////////
-//Jiuzhang
-public class Jiuzhang {
-    private int getMaxLength(Set<String> dict) {
+    //Jiuzhang
+    private int getMaxLength_J(Set<String> dict) {
         int maxLength = 0;
         for (String word : dict) {
             maxLength = Math.max(maxLength, word.length());
@@ -229,7 +224,7 @@ public class Jiuzhang {
             return true;
         }
 
-        int maxLength = getMaxLength(dict);
+        int maxLength = getMaxLength_J(dict);
         boolean[] canSegment = new boolean[s.length() + 1];
 
         canSegment[0] = true;
@@ -251,7 +246,7 @@ public class Jiuzhang {
 
         return canSegment[s.length()];
     }
-}
+
 
 //////////////////////////////////////////////////////////////////
 }

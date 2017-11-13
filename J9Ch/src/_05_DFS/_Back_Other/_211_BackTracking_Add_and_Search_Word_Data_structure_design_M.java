@@ -6,7 +6,7 @@ import java.util.Map;
 
 //  211. Add and Search Word - Data structure design
 //  https://leetcode.com/problems/add-and-search-word-data-structure-design/description/
-//
+//  Backtracking Design Trie
 public class _211_BackTracking_Add_and_Search_Word_Data_structure_design_M {
     //My JAVA Trie based solution
     public class WordDictionary {
@@ -18,7 +18,7 @@ public class _211_BackTracking_Add_and_Search_Word_Data_structure_design_M {
 
         private void addWord(char[] chars, int index, WordNode parent) {
             char c = chars[index];
-            int idx = c-'a';
+            int idx = c - 'a';
             WordNode node = parent.children[idx];
             if (node == null){
                 node = new WordNode();
@@ -74,9 +74,8 @@ public class _211_BackTracking_Add_and_Search_Word_Data_structure_design_M {
 
 ///////////////////////////////////////////////////////////////////////////////
 
-//    My simple and clean Java code
-//    Using backtrack to check each character of word to search.
-
+    //    My simple and clean Java code
+    //    Using backtrack to check each character of word to search.
     public class WordDictionary2 {
         public class TrieNode {
             public TrieNode[] children = new TrieNode[26];
@@ -119,8 +118,8 @@ public class _211_BackTracking_Add_and_Search_Word_Data_structure_design_M {
 
 ///////////////////////////////////////////////////////////////////////////////
     //Java Solution, easy understand
+    //是用了Hashset，没有使用recursion
     public class WordDictionary3 {
-
         Map<Integer, List<String>> map = new HashMap<Integer, List<String>>();
         // Adds a word into the data structure.
         public void addWord(String word) {
@@ -132,7 +131,6 @@ public class _211_BackTracking_Add_and_Search_Word_Data_structure_design_M {
             }else{
                 map.get(index).add(word);
             }
-
         }
 
         // Returns if the word is in the data structure. A word could
