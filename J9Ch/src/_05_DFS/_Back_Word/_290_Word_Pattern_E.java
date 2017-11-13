@@ -6,7 +6,7 @@ import java.util.*;
 //  290. Word Pattern
 //  https://leetcode.com/problems/word-pattern/description/
 //  Hash Table
-public class _290_Word_Pattern {
+public class _290_Word_Pattern_E {
     //8 lines simple Java
     public boolean wordPattern(String pattern, String str) {
         String[] words = str.split(" ");

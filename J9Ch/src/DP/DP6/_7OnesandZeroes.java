@@ -63,9 +63,8 @@ f[i-1][j-ai-1][k-bi-1] + 1 前i-1个01串最多能有多少 个被j-ai-1个0和k
 -----------------------------------------------------------------------------------------------
  */
 
-import a.j.A;
-
-// Ones and Zeroes
+//  474. Ones and Zeroes
+//  https://leetcode.com/problems/ones-and-zeroes/description/
 public class _7OnesandZeroes {
     // 9Ch DP
     public int findMaxForm(String[] strs, int m, int n) {

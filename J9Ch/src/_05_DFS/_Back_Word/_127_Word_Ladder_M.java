@@ -7,7 +7,7 @@ import java.util.*;
 //  https://leetcode.com/problems/word-ladder/description/
 //  http://www.lintcode.com/zh-cn/problem/word-ladder/
 //  BFS
-public class _127_Word_Ladder {
+public class _127_Word_Ladder_M {
 
 //////////////////////////////////////////////////////////////////////////////////////////
     // version: LeetCode

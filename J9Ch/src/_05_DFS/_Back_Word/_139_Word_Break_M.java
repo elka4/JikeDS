@@ -5,7 +5,7 @@ import java.util.*;
 //  https://leetcode.com/problems/word-break/description/
 //  http://www.lintcode.com/zh-cn/problem/word-break/
 //  DP
-public class _139_Word_Break {
+public class _139_Word_Break_M {
 
     //https://leetcode.com/articles/word-break/
 

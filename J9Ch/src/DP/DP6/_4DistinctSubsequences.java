@@ -156,16 +156,14 @@ public class _4DistinctSubsequences {
 
         int[][] f = new int[m + 1][n + 1];
         int i, j;
+
         for (i = 0; i <= m; i++) {
             for (j = 0; j <= n; j++) {
-                //s2 is empty
-                if (j == 0) {
+                if (j == 0) {//s2 is empty
                     f[i][j] = 1;//very important
                     continue;
                 }
-
-                // s1 is empty, s2 is NOT empty
-                if (i == 0) {
+                if (i == 0) {// s1 is empty, s2 is NOT empty
                     f[i][j] = 0;
                     continue;
                 }
@@ -177,7 +175,6 @@ public class _4DistinctSubsequences {
             }
         }
         return f[m][n];
-
     }
 
 //////////////////////////////////////////////////////////////////////

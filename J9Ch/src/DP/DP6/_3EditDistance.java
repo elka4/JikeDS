@@ -181,25 +181,16 @@ public class _3EditDistance {
     public int minDistance(String word1, String word2) {
         char[] s1 = word1.toCharArray();
         char[] s2 = word2.toCharArray();
-        int i, j;
         int m = s1.length;
         int n = s2.length;
 
         int[][] f = new int[m + 1][n + 1];
 
-        for (i = 0; i <= m; ++i) {
-            for (j = 0; j <= n; ++j) {
-                if (i == 0) {
-                    f[i][j] = j;
-                    continue;
-                }
+        for (int i = 0; i <= m; ++i) {
+            for (int j = 0; j <= n; ++j) {
+                if (i == 0) {f[i][j] = j; continue;}
+                if (j == 0) {f[i][j] = i; continue;}
 
-                if (j == 0) {
-                    f[i][j] = i;
-                    continue;
-                }
-
-                // i > 0, j > 0
                 // +1, important!
                 //                       delete        insert         replace
                 f[i][j] = Math.min(Math.min(f[i - 1][j], f[i][j - 1]), f[i - 1][j - 1]) + 1;
@@ -452,6 +443,7 @@ public int minDistance00(String word1, String word2) {
     }
 //////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
+
 
 }
 /*

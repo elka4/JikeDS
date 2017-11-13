@@ -137,6 +137,7 @@ public class _6WildcardMatching {
         return match[0][0];
     }
 
+//////////////////////////////////////////////////////////////////////////
 //    How much time your solution costs? PS. recently I cannot view my java solution cost time among that of all other solutions, however, time cost graph will present when submitting python solution.
 //
 //    Here comes my 600ms solution, just amazing long.
@@ -165,6 +166,7 @@ public class _6WildcardMatching {
         return match[ls][lp];
     }
 
+//////////////////////////////////////////////////////////////////////////
 
 /*    The original post has DP 2d array index from high to low, which is not quite intuitive.
 
@@ -210,6 +212,7 @@ public class _6WildcardMatching {
         return dp[m][n];
     }
 
+//////////////////////////////////////////////////////////////////////////
 
 /*    Hi, I've submitted this solution and I get ~500ms, whereas the OP solution gets much lower time. They seem to have the same complexity, and do the same thing (one backwards and one forward). Anyone would be able to tell me why mine takes much longer?
     Thanks*/
@@ -232,7 +235,7 @@ public class _6WildcardMatching {
         return dp[s.length()][p.length()];
     }
 
-
+//////////////////////////////////////////////////////////////////////////
 //    Thanks for sharing. Similar to your solution, here is mine.
 
     public boolean isMatch06(String s, String p) {
@@ -260,7 +263,7 @@ public class _6WildcardMatching {
         return dp[s.length()][p.length()];
     }
 
-
+//////////////////////////////////////////////////////////////////////////
 //    DP solution using 2d tabel, the code similar to problem 10(Regular Expression Matching)
 
     public boolean isMatch07(String s, String p) {
@@ -286,7 +289,7 @@ public class _6WildcardMatching {
         return d[s_len][p_len];
     }
 
-
+//////////////////////////////////////////////////////////////////////////
     //My Java DP Solution
     //At first I cannot pass the the long 'aaa...' test case. Then I add more check and pass it.
     public boolean isMatch08(String s, String p) {
@@ -318,6 +321,7 @@ public class _6WildcardMatching {
         return match[m];
     }
 
+//////////////////////////////////////////////////////////////////////////
     public boolean isMatch09(String s, String p) {
 
         boolean[][] match = new boolean[s.length()+1][p.length()+1];
@@ -480,6 +484,8 @@ isMatch("aa", "a*") → true
 isMatch("ab", "?*") → true
 isMatch("aab", "c*a*b") → false
  */
+
+
 /*
 判断两个可能包含通配符“？”和“*”的字符串是否匹配。匹配规则如下：
 

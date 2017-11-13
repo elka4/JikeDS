@@ -41,6 +41,7 @@ In isValid, strings whose length greater than 3 or equals to 0 is not valid; or 
     public void test01(){
         System.out.println(restoreIpAddresses01("25525511135"));
     }
+    //[255.255.11.135, 255.255.111.35]
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
     //Very simple DFS solution
@@ -68,7 +69,11 @@ In isValid, strings whose length greater than 3 or equals to 0 is not valid; or 
             restoreIp(ip, solutions, idx+i, restored+s+(count==3?"" : "."), count + 1);
         }
     }
-
+    @Test
+    public void test02(){
+        System.out.println(restoreIpAddresses02("25525511135"));
+    }
+    //[255.255.11.135, 255.255.111.35]
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
     /*

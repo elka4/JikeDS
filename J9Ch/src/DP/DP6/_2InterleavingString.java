@@ -85,20 +85,20 @@ public class _2InterleavingString {
 
     //Approach #1 Brute Force [Time Limit Exceeded]
     public class Solution1 {
-        public boolean is_Interleave(String s1,int i,String s2,int j,String res,String s3) {
+        public boolean is_Interleave1(String s1,int i,String s2,int j,String res,String s3) {
             if(res.equals(s3) && i==s1.length() && j==s2.length())
                 return true;
             boolean ans=false;
             if(i<s1.length())
-                ans|=is_Interleave(s1,i+1,s2,j,res+s1.charAt(i),s3);
+                ans|=is_Interleave1(s1,i+1,s2,j,res+s1.charAt(i),s3);
             if(j<s2.length())
-                ans|=is_Interleave(s1,i,s2,j+1,res+s2.charAt(j),s3);
+                ans|=is_Interleave1(s1,i,s2,j+1,res+s2.charAt(j),s3);
             return ans;
 
         }
-        public boolean isInterleave(String s1, String s2, String s3) {
+        public boolean isInterleave1(String s1, String s2, String s3) {
 
-            return is_Interleave(s1,0,s2,0,"",s3);
+            return is_Interleave1(s1,0,s2,0,"",s3);
         }
     }
 
@@ -106,7 +106,8 @@ public class _2InterleavingString {
 /////////////////////////////////////////////////////////////////////////////////////
     //Approach #2 Recursion with memoization [Accepted]
     public class Solution2 {
-        public boolean is_Interleave(String s1, int i, String s2, int j, String s3, int k, int[][] memo) {
+        public boolean is_Interleave2(String s1, int i, String s2, int j,
+                                     String s3, int k, int[][] memo) {
             if (i == s1.length()) {
                 return s2.substring(j).equals(s3.substring(k));
             }
@@ -118,29 +119,29 @@ public class _2InterleavingString {
             }
             boolean ans = false;
             if (s3.charAt(k) == s1.charAt(i)
-                    && is_Interleave(s1, i + 1, s2, j, s3, k + 1, memo)
+                    && is_Interleave2(s1, i + 1, s2, j, s3, k + 1, memo)
                     || s3.charAt(k) == s2.charAt(j)
-                    && is_Interleave(s1, i, s2, j + 1, s3, k + 1, memo)) {
+                    && is_Interleave2(s1, i, s2, j + 1, s3, k + 1, memo)) {
                 ans = true;
             }
             memo[i][j] = ans ? 1 : 0;
             return ans;
         }
-        public boolean isInterleave(String s1, String s2, String s3) {
+        public boolean isInterleave2(String s1, String s2, String s3) {
             int memo[][] = new int[s1.length()][s2.length()];
             for (int i = 0; i < s1.length(); i++) {
                 for (int j = 0; j < s2.length(); j++) {
                     memo[i][j] = -1;
                 }
             }
-            return is_Interleave(s1, 0, s2, 0, s3, 0, memo);
+            return is_Interleave2(s1, 0, s2, 0, s3, 0, memo);
         }
     }
 
 /////////////////////////////////////////////////////////////////////////////////////
     //Approach #3 Using 2-d Dynamic Programming [Accepted]
     public class Solution3 {
-        public boolean isInterleave(String s1, String s2, String s3) {
+        public boolean isInterleave3(String s1, String s2, String s3) {
             if (s3.length() != s1.length() + s2.length()) {
                 return false;
             }
@@ -166,13 +167,15 @@ public class _2InterleavingString {
 /////////////////////////////////////////////////////////////////////////////////////
     //Approach #4 Using 1-d Dynamic Programming [Accepted]:
     public class Solution4 {
-        public boolean isInterleave(String s1, String s2, String s3) {
+        public boolean isInterleave4(String s1, String s2, String s3) {
             if (s3.length() != s1.length() + s2.length()) {
                 return false;
             }
             boolean dp[] = new boolean[s2.length() + 1];
+
             for (int i = 0; i <= s1.length(); i++) {
                 for (int j = 0; j <= s2.length(); j++) {
+
                     if (i == 0 && j == 0) {
                         dp[j] = true;
                     } else if (i == 0) {
@@ -192,7 +195,7 @@ public class _2InterleavingString {
 
 /////////////////////////////////////////////////////////////////////////////////////
     //9Ch DP
-    public boolean isInterleave(String s1, String s2, String s3) {
+    public boolean isInterleave_J1(String s1, String s2, String s3) {
         char[] c1 = s1.toCharArray();
         char[] c2 = s2.toCharArray();
         char[] c3 = s3.toCharArray();
@@ -234,8 +237,8 @@ public class _2InterleavingString {
         When s3 = "aadbbcbcac", return true.
         When s3 = "aadbbbaccc", return false.
          */
-        System.out.println(isInterleave("aabcc", "dbbca", "aadbbcbcac"));
-        System.out.println(isInterleave("aabcc", "dbbca", "aadbbbaccc"));
+        System.out.println(isInterleave_J1("aabcc", "dbbca", "aadbbcbcac"));
+        System.out.println(isInterleave_J1("aabcc", "dbbca", "aadbbbaccc"));
 
     }
 
@@ -274,7 +277,7 @@ public class _2InterleavingString {
 
 
 /////////////////////////////////////////////////////////////////////////////////////
-    public boolean isInterleave1(String s1, String s2, String s3) {
+    public boolean isInterleave5(String s1, String s2, String s3) {
         if (s1.length() + s2.length() != s3.length()) {
             return false;
         }

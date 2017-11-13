@@ -64,7 +64,7 @@ Longest Common Subsequence
  */
 public class _1LongestCommonSubsequence {
     // 9Ch DP
-    public int longestCommonSubsequence(String AA, String BB) {
+    public int longestCommonSubsequence1(String AA, String BB) {
         char[] A = AA.toCharArray();
         char[] B = BB.toCharArray();
 
@@ -78,7 +78,7 @@ public class _1LongestCommonSubsequence {
             for (j = 0; j <= n; j++) {
                 //init
                 if (i == 0 || j ==0) {
-                    f[i][j] = 0;
+                    f[i][j] = 0;//默认就是0，做了这个只是逻辑更清晰
                     continue;
                 }
 
@@ -101,14 +101,14 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
      */
     @Test
     public void test01() {
-        System.out.println(longestCommonSubsequence("ABCD", "EDCA"));
-        System.out.println(longestCommonSubsequence("ABCD" , "EACB"));
+        System.out.println(longestCommonSubsequence1("ABCD", "EDCA"));
+        System.out.println(longestCommonSubsequence1("ABCD" , "EACB"));
     }
 
 ////////////////////////////////////////////////////////////////
-
     // 9Ch DP
-    public int longestCommonSubsequence1(String AA, String BB) {
+    //和上面的相同，多了记录状态的数组，可以得到longestCommonSubsequence的String
+    public int longestCommonSubsequence2(String AA, String BB) {
         char[] A = AA.toCharArray();
         char[] B = BB.toCharArray();
 
@@ -144,7 +144,7 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
             }
         }
 
-        //recover (reversely)
+        //recover (reversely)为什么非要倒着处理？
         // f[m][n] --> ....---> f[0][0]
         char[] res = new char[f[m][n]];
         int p = f[m][n] - 1;
@@ -156,7 +156,7 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
             } else {
                 if (pai[i][j] == 2) {
                     --j;
-                } else {
+                } else {//pai[i][j] == 3
                     res[p--] = A[i - 1];
                     --i;
                     --j;
@@ -165,7 +165,7 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
         }
 
         for (p = 0; p < f[m][n]; p++) {
-            System.out.println(res[p]);
+            System.out.print(res[p]);
         }
         System.out.println();
 
@@ -174,7 +174,7 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
 
     @Test
     public void test02() {
-        System.out.println(longestCommonSubsequence1("jiuzhang", "lijiang"));
+        System.out.println(longestCommonSubsequence2("jiuzhang", "lijiang"));
 //        System.out.println(longestCommonSubsequence1("ABCD" , "EACB"));
     }
 
@@ -183,10 +183,11 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
      * @param A, B: Two strings.
      * @return: The length of longest common subsequence of A and B.
      */
-    public int longestCommonSubsequence2(String A, String B) {
+    public int longestCommonSubsequence3(String A, String B) {
         int n = A.length();
         int m = B.length();
         int f[][] = new int[n + 1][m + 1];
+
         for(int i = 1; i <= n; i++){
             for(int j = 1; j <= m; j++){
                 f[i][j] = Math.max(f[i - 1][j], f[i][j - 1]);
@@ -195,6 +196,12 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
             }
         }
         return f[n][m];
+    }
+
+    @Test
+    public void test03() {
+        System.out.println(longestCommonSubsequence3("ABCD", "EDCA"));
+        System.out.println(longestCommonSubsequence3("ABCD" , "EACB"));
     }
 ////////////////////////////////////////////////////////////////
 

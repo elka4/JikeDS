@@ -71,6 +71,8 @@ f[i][j] = f[i][j-2] OR (f[i-1][j] AND (B[j-2]=‘.’ OR B[j-2]=A[i-1]))，如�
 -----------------------------------------------------------------------------------------------
  */
 
+import org.junit.Test;
+
 //  10. Regular Expression Matching
 //  https://leetcode.com/problems/regular-expression-matching/description/
 //
@@ -92,6 +94,8 @@ public class _5RegularExpressionMatching {
             }
         }
     }
+
+//////////////////////////////////////////////////////////////////////////////////
     //Approach #2: Dynamic Programming [Accepted]
     //Top-Down Variation
     enum Result {
@@ -115,12 +119,10 @@ public class _5RegularExpressionMatching {
                 ans = i == text.length();
             } else{
                 boolean first_match = (i < text.length() &&
-                        (pattern.charAt(j) == text.charAt(i) ||
-                                pattern.charAt(j) == '.'));
+                        (pattern.charAt(j) == text.charAt(i) || pattern.charAt(j) == '.'));
 
                 if (j + 1 < pattern.length() && pattern.charAt(j+1) == '*'){
-                    ans = (dp(i, j+2, text, pattern) ||
-                            first_match && dp(i+1, j, text, pattern));
+                    ans = (dp(i, j+2, text, pattern) || first_match && dp(i+1, j, text, pattern));
                 } else {
                     ans = first_match && dp(i+1, j+1, text, pattern);
                 }
@@ -130,6 +132,7 @@ public class _5RegularExpressionMatching {
         }
     }
 
+//////////////////////////////////////////////////////////////////////////////////
     //Bottom-Up Variation
     class Solution03 {
         public boolean isMatch(String text, String pattern) {
@@ -139,8 +142,8 @@ public class _5RegularExpressionMatching {
             for (int i = text.length(); i >= 0; i--){
                 for (int j = pattern.length() - 1; j >= 0; j--){
                     boolean first_match = (i < text.length() &&
-                            (pattern.charAt(j) == text.charAt(i) ||
-                                    pattern.charAt(j) == '.'));
+                            (pattern.charAt(j) == text.charAt(i) || pattern.charAt(j) == '.'));
+
                     if (j + 1 < pattern.length() && pattern.charAt(j+1) == '*'){
                         dp[i][j] = dp[i][j+2] || first_match && dp[i+1][j];
                     } else {
@@ -151,8 +154,6 @@ public class _5RegularExpressionMatching {
             return dp[0][0];
         }
     }
-
-
 
 //////////////////////////////////////////////////////////////////////////////////
 
@@ -175,7 +176,6 @@ public class _5RegularExpressionMatching {
 */
 
     public boolean isMatch4(String s, String p) {
-
         if (s == null || p == null) {
             return false;
         }
@@ -205,9 +205,9 @@ public class _5RegularExpressionMatching {
         }
         return dp[s.length()][p.length()];
     }
+
 //////////////////////////////////////////////////////////////////////////////////
     //Clean Java Solution
-
     public boolean isMatch5(String s, String p) {
         if (p.isEmpty()) {
             return s.isEmpty();
@@ -231,6 +231,8 @@ public class _5RegularExpressionMatching {
 
         return isMatch5(s, p.substring(2));
     }
+
+
 //////////////////////////////////////////////////////////////////////////////////
     // 9CH DP
     public boolean isMatch1(String s, String p) {
@@ -238,34 +240,26 @@ public class _5RegularExpressionMatching {
         char[] c2 = p.toCharArray();
         int m = c1.length;
         int n = c2.length;
-
         boolean[][] f = new boolean[m + 1][n + 1];
-        int i, j;
-        for (i = 0; i <= m; i++) {
-            for (j = 0; j <= n; j++) {
-                if (i == 0 && j == 0) {
-                    f[i][j] = true;
-                    continue;
-                }
 
-                if (j == 0) {
-                    f[i][j] = false;
-                    continue;
-                }
+        for (int i = 0; i <= m; i++) {
+            for (int j = 0; j <= n; j++) {
+                if (i == 0 && j == 0) { f[i][j] = true; continue; }
+                if (j == 0) { f[i][j] = false; continue; }
 
                 f[i][j] = false;
+
                 if (c2[j - 1] != '*') {
                     if (i >0 && (c2[j - 1] == '.' || c1[i - 1] == c2[j - 1])) {
                         f[i][j] = f[i - 1][j - 1];
                     }
-                } else {
-                    // c2[j - 1] == '*'
+                } else {                        // c2[j - 1] == '*'
                     if (j - 2 >= 0) {
                         f[i][j] |= f[i][j - 2];
                     }
-
                     if (i >= 1 && j >= 2) {
-                        f[i][j] |= f[i - 1][j] && (c2[j - 2] == '.' || c2[j - 2] == c1[i - 1]);
+                        if (c2[j - 2] == '.' || c2[j - 2] == c1[i - 1])
+                            f[i][j] |= f[i - 1][j];
                     }
                 }
             }
@@ -273,10 +267,22 @@ public class _5RegularExpressionMatching {
         return  f[m][n];
     }
 
+    @Test
+    public void test(){
+        boolean result = true;
+        result |= false;
+        System.out.println(result);//true
 
+        result = false;
+        result |= false;
+        System.out.println(result);//false
+
+        result = false;
+        result |= true;
+        System.out.println(result);//true
+    }
 
 //////////////////////////////////////////////////////////////////////////////////
-
     public boolean isMatch(String s, String p) {
         //Java note: s.substring(n) will be "" if n == s.length(), but if n > s.length(), index oob error
 
@@ -337,6 +343,8 @@ public class _5RegularExpressionMatching {
         }
         return true;
     }
+
+
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
