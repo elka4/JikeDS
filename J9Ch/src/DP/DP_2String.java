@@ -1,4 +1,4 @@
-package DP.DP6;
+package DP;
 import org.junit.Test;
 
 public class DP_2String {

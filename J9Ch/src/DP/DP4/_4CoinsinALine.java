@@ -3,7 +3,7 @@ package DP.DP4;
 //• 博弈型
 //感觉有点像坐标型
 /*
-•  f[i]表示面对i个狮子，是否限售必胜(f[i] = TRUE / FALSE)
+•  f[i]表示面对i个石子，是否限售必胜(f[i] = TRUE / FALSE)
 
 
 f[i] = f[i-1] == FALSE OR f[i-2] == FALSE
