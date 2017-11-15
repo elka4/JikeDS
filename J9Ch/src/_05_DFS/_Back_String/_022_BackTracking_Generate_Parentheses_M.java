@@ -6,7 +6,10 @@ import java.util.*;
 //  22. Generate Parentheses
 //  https://leetcode.com/problems/generate-parentheses/description/
 //  http://www.lintcode.com/zh-cn/problem/generate-parentheses/
+// 3 == 9， 10
 public class _022_BackTracking_Generate_Parentheses_M {
+
+    // 1
     /*  An iterative method.
     My method is DP. First consider how to get the result f(n) from previous result f(0)...f(n-1).
     Actually, the result f(n) will be put an extra () pair to f(n-1). Let the "(" always at the first position, to produce a valid result, we can only put ")" in a way that there will be i pairs () inside the extra () and n - 1 - i pairs () outside the extra pair.
@@ -48,8 +51,10 @@ public class _022_BackTracking_Generate_Parentheses_M {
     public void test01(){
         System.out.println(generateParenthesis01(3));
     }
+    //[()()(), ()(()), (())(), (()()), ((()))]
 
 /////////////////////////////////////////////////////////////////////////////////////////
+    // 2
     //Easy to understand Java backtracking solution
     public List<String> generateParenthesis02(int n) {
         List<String> list = new ArrayList<String>();
@@ -73,8 +78,10 @@ public class _022_BackTracking_Generate_Parentheses_M {
     public void test02(){
         System.out.println(generateParenthesis02(3));
     }
+    //[((())), (()()), (())(), ()(()), ()()()]
 
 /////////////////////////////////////////////////////////////////////////////////////
+    // 3
     //Java DFS way solution
     public List<String> generateParenthesis03(int n) {
         List<String> list = new ArrayList<String>();
@@ -85,23 +92,27 @@ public class _022_BackTracking_Generate_Parentheses_M {
         if(left > right){
             return;
         }
+        if(left == 0 && right == 0){ //这个用preorder或者postorder或者inorder都可以
+            list.add(sublist);
+            return;
+        }
+
         if(left > 0){
             generateOneByOne( sublist + "(" , list, left-1, right);
         }
         if(right > 0){
             generateOneByOne( sublist + ")" , list, left, right-1);
         }
-        if(left == 0 && right == 0){
-            list.add(sublist);
-            return;
-        }
+
     }
     @Test
     public void test03(){
         System.out.println(generateParenthesis03(3));
     }
+    //[((())), (()()), (())(), ()(()), ()()()]
 
 /////////////////////////////////////////////////////////////////////////////////////
+    // 4
 //My accepted JAVA solution
 //
 //31
@@ -143,6 +154,7 @@ public class _022_BackTracking_Generate_Parentheses_M {
     }
 
 /////////////////////////////////////////////////////////////////////////////////////
+    // 5
     //2ms AC JAVA Solution using recursive call
     public List<String> generateParenthesis05(int n) {
         ArrayList<String> m=new ArrayList<>();
@@ -164,6 +176,7 @@ public class _022_BackTracking_Generate_Parentheses_M {
 
 
 /////////////////////////////////////////////////////////////////////////////////////
+    //  6
     //Easy java solution
     private void helper(List<String> res, String present, int left, int right) {
         if (right == 0) {
@@ -191,6 +204,7 @@ public class _022_BackTracking_Generate_Parentheses_M {
 
 
 /////////////////////////////////////////////////////////////////////////////////////
+    // 7
 /*
 @yin10 The reason why there are no duplicates is because it is based on an unambiguous context-free grammar (if you know what those are):
 S -> S(S) | empty
@@ -215,8 +229,10 @@ Here it is rewritten as in a single function:
     public void test07(){
         System.out.println(ans(3));
     }
+    //[((())), (()()), ()(()), (())(), ()()()]
 
 /////////////////////////////////////////////////////////////////////////////////////
+    // 8
     //jiuzhang
     public ArrayList<String> generateParenthesisJ_1(int n) {
         ArrayList<String> result = new ArrayList<String>();
@@ -248,9 +264,15 @@ Here it is rewritten as in a single function:
     public void test08(){
         System.out.println(generateParenthesisJ_1(3));
     }
+    //[((())), (()()), (())(), ()(()), ()()()]
 
 /////////////////////////////////////////////////////////////////////////////////////
+    // 9
     //Zhu
+    /*
+    这个方法是DFS，但是并不是backtracking，因为每次传递到下层函数的是通过 + 重新创建的一个String
+
+     */
     public List<String> generateParenthesis_Zhu(int n) {
         List<String> result = new ArrayList<>();
 
@@ -279,6 +301,69 @@ Here it is rewritten as in a single function:
     public void test09(){
         System.out.println(generateParenthesis_Zhu(3));
     }
+    //[((())), (()()), (())(), ()(()), ()()()]
+
+    @Test
+    public void test09_1(){
+//        System.out.println(generateParenthesis_Zhu(3));
+        System.gc();
+        long t0 = System.currentTimeMillis();
+/*        for (int i = 1; i < 15; i++) {
+            generateParenthesis_Zhu(i);
+        }*/
+        generateParenthesis_Zhu(15);
+        long t = System.currentTimeMillis() - t0;
+        System.out.println(" String time: " + t + " ms");
+    }//String time: 7658 ms
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // 10
+    //Zhu
+    /*
+    现在这方法就是正宗的backtracking，使用了StringBuilder，每次传到下层的都是同一个Object
+    因此每次在返回上一层之后，需要删除上一层的操作
+
+     */
+    public List<String> generateParenthesis_Zhu10(int n) {
+        List<String> result = new ArrayList<>();
+
+        if(n <= 0){
+            return result;
+        }
+        dfs10(new StringBuilder(), n, n, result);
+        return result;
+    }
+
+    void dfs10(StringBuilder paren, int left, int right, List<String> result){
+        if (left > right) {
+            return;
+        }
+        if (left == 0 && right == 0) {
+            result.add(paren.toString());
+        }
+        if (left > 0) {
+            dfs10(paren.append("("), left - 1, right, result);
+            paren.deleteCharAt(paren.length() - 1);
+        }
+        if(right > 0 ){
+            dfs10(paren.append(")"), left, right - 1, result);
+            paren.deleteCharAt(paren.length() - 1);
+        }
+    }
+    @Test
+    public void test10(){
+//        System.out.println(generateParenthesis_Zhu(3));
+        System.gc();
+        long t0 = System.currentTimeMillis();
+//        for (int i = 1; i < 15; i++) {
+//            generateParenthesis_Zhu10(i);
+//        }
+        generateParenthesis_Zhu10(15);
+        long t = System.currentTimeMillis() - t0;
+        System.out.println(" StringBuilder time: " + t + " ms");
+    }// StringBuilder time: 6110 ms
+    // StringBuilder time: 5928 ms
+    //[((())), (()()), (())(), ()(()), ()()()]
 
 /////////////////////////////////////////////////////////////////////////////////////
 }

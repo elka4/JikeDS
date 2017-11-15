@@ -17,14 +17,16 @@ j > 0, 即a[j]前面至少还有一个元素
 a[j] > a[j - 1]， 满足单调性
 
 -----------------------------------------------------------------------------------------------
+从前往后和从后往前各找一次，如果后一个（前一个）比前一个（后一个）大，则将length更新+1，否则将length更新为1（即从当前元素开始新的搜索）。
  */
 
 
 //  lint 397. Longest Increasing Continuous Subsequence
 //  674. Longest Continuous Increasing Subsequence  只看一个方向
 //  https://leetcode.com/problems/longest-continuous-increasing-subsequence/description/
+//  5: 3
 public class _4LICS {
-
+    // 1
     //  https://leetcode.com/articles/longest-continuous-increasing-subsequence/
     //  Approach #1: Sliding Window [Accepted]
     public int findLengthOfLCIS1(int[] nums) {
@@ -40,7 +42,7 @@ public class _4LICS {
 
 
 /////////////////////////////////////////////////////////////////////////
-
+    // 2
     //  674. Longest Continuous Increasing Subsequence  只看一个方向
     public int findLengthOfLCIS(int[] nums) {
         if (nums == null || nums.length == 0) {
@@ -61,7 +63,7 @@ public class _4LICS {
     }
 
 /////////////////////////////////////////////////////////////////////////
-
+    // 3
     public int longestIncreasingContinuousSubsequence (int[] A){
         int n = A.length;
         if (n == 0) {
@@ -113,24 +115,6 @@ public class _4LICS {
 
     int result = 0;
 
-    void calc1(int[] A, int n){
-        int[] f = new int[n];
-        int i;
-        for (i = 0; i < n; ++i) {
-            //option 1
-            f[i] = 1;
-
-            //option2
-            if (i > 0 && A[i - 1] < A[i]) {
-                f[i] = f[i - 1] + 1;
-            }
-
-            if (f[i] > result){
-                result = f[i];
-            }
-        }
-    }
-
     void calc2(int[] A, int n){
         int[] f = new int[2];
         int i;
@@ -153,7 +137,7 @@ public class _4LICS {
         }
     }
 /////////////////////////////////////////////////////////////////////////
-
+    // 4
     public int longestIncreasingContinuousSubsequence1(int[] A) {
         if (A == null || A.length == 0) {
             return 0;
@@ -188,7 +172,7 @@ public class _4LICS {
     }
 
 /////////////////////////////////////////////////////////////////////////
-
+    // 5
     //  方法二
     /**
      * @param A an array of Integer
@@ -250,7 +234,11 @@ time
 给定 [5, 4, 2, 1, 3], 其最长上升连续子序列（LICS）为 [5, 4, 2, 1], 返回 4.
 
 给定 [5, 1, 2, 3, 4], 其最长上升连续子序列（LICS）为 [1, 2, 3, 4], 返回 4.
+---------------------------------------------------------------------------------------------
  */
+
+
+
 /*
 Give an integer array，find the longest increasing continuous subsequence in this array.
 
@@ -267,7 +255,11 @@ Example
 For [5, 4, 2, 1, 3], the LICS is [5, 4, 2, 1], return 4.
 
 For [5, 1, 2, 3, 4], the LICS is [1, 2, 3, 4], return 4.
+---------------------------------------------------------------------------------------------
  */
+
+
+
 
 /*  leetcode
  Given an unsorted array of integers, find the length of longest continuous increasing subsequence.
@@ -286,4 +278,5 @@ Output: 1
 Explanation: The longest continuous increasing subsequence is [2], its length is 1.
 
 Note: Length of the array will not exceed 10,000.
+---------------------------------------------------------------------------------------------
  */

@@ -203,6 +203,30 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
 ////////////////////////////////////////////////////////////////
 }
 /*
+77. 最长公共子序列
+
+给出两个字符串，找到最长公共子序列(LCS)，返回LCS的长度。
+
+您在真实的面试中是否遇到过这个题？ Yes
+说明
+最长公共子序列的定义：
+
+最长公共子序列问题是在一组序列（通常2个）中找到最长公共子序列（注意：不同于子串，LCS不需要是连续的子串）。
+
+该问题是典型的计算机科学问题，是文件差异比较程序的基础，在生物信息学中也有所应用。
+https://en.wikipedia.org/wiki/Longest_common_subsequence_problem
+样例
+给出"ABCD" 和 "EDCA"，这个LCS是 "A" (或 D或C)，返回1
+
+给出 "ABCD" 和 "EACB"，这个LCS是"AC"返回 2
+
+标签
+LintCode 版权所有 动态规划 最长公共子串
+ */
+
+
+
+/*
 Given two strings, find the longest common subsequence (LCS).
 
 Your code should return the length of LCS.

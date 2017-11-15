@@ -1,7 +1,20 @@
 package DP;
 import org.junit.Test;
 
+/*
+1. Longest Common Subsequence
+2. Interleaving String
+3. Edit Distance
+4. Distinct Subsequences
+5. Regular Expression Matching
+6. Wildcard Matching
+7. Ones and Zeroes
+
+ */
 public class DP_2String {
+//111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111//
+
+    // 1
     //  Longest Common Subsequence
     //  9Ch DP
 /*
@@ -59,7 +72,7 @@ public class DP_2String {
     -----------------------------------------------------------------------------------------------
 
  */
-
+    //无注释
     public int longestCommonSubsequence1(String AA, String BB) {
         char[] A = AA.toCharArray();
         char[] B = BB.toCharArray();
@@ -69,10 +82,7 @@ public class DP_2String {
 
         for (int i = 0; i <= m; i++) {
             for (int j = 0; j <= n; j++) {
-                //init 默认就是0，做了这个只是逻辑更清晰
                 if (i == 0 || j ==0) { f[i][j] = 0; continue; }
-
-                // normal transiton function
                 f[i][j] = Math.max(f[i - 1][j], f[i][j - 1]);
                 if (A[i - 1] == B[j - 1]) {
                     f[i][j] = Math.max(f[i][j], f[i - 1][j - 1] + 1);
@@ -83,7 +93,7 @@ public class DP_2String {
     }
 
     @Test
-    public void test01() {
+    public void testI_01() {
     /*
     For "ABCD" and "EDCA", the LCS is "A" (or "D", "C"), return 1.
     For "ABCD" and "EACB", the LCS is "AC", return 2.
@@ -92,7 +102,85 @@ public class DP_2String {
         System.out.println(longestCommonSubsequence1("ABCD" , "EACB"));
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+    @Test
+    public void testI_02() {
+        System.out.println(longestCommonSubsequence1("134679" , "12357823"));
+    }//137: 3
+
+
+    //有注释
+    public int longestCommonSubsequence11(String AA, String BB) {
+        char[] A = AA.toCharArray();
+        char[] B = BB.toCharArray();
+        int m = A.length;
+        int n = B.length;
+        int[][] f = new int[m + 1][n + 1];
+
+        for (int i = 0; i <= m; i++) {
+            for (int j = 0; j <= n; j++) {
+                //init 默认就是0，做了这个只是逻辑更清晰
+                if (i == 0 || j ==0) { f[i][j] = 0; continue; }
+                // normal transiton function
+                f[i][j] = Math.max(f[i - 1][j], f[i][j - 1]);
+                if (A[i - 1] == B[j - 1]) {
+                    f[i][j] = Math.max(f[i][j], f[i - 1][j - 1] + 1);
+                }
+            }
+        }
+        return f[m][n];
+    }
+
+    //mine， 这个是完整清晰的版本
+    //• 设f[i][j]为A前i个字符A[0..i-1]和B前j个字符[0..j-1]的最长公共子串的长度
+    //f[i][j] = max{f[i-1][j], f[i][j-1], f[i-1][j-1]+1|A[i-1]=B[j-1]}
+    public int longestCommonSubsequence111(String A, String B) {
+        char[] ac = A.toCharArray();
+        char[] bc = B.toCharArray();
+        int m = ac.length;
+        int n = bc.length;
+        int[][] f = new int[m + 1][n + 1];
+        //A, B都是空串
+        f[0][0] = 0;
+
+        // i == 0， 就是A为空串
+        for (int j = 1; j <= n; j++) {
+            f[0][j] = 0;
+        }
+        // j == 0， 就是B为空串
+        for (int i = 1; i <= m; i++) {
+            f[i][0] = 0;
+        }
+        //A, B都不是空串
+        //• 最长公共子串也是公共子串:长度是L->选定了L个对应的对子
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                //每次处理A中第i个字符ac[i - 1]和B中第j个字符bc[j - 1]
+                //将结果存储在f[i][j]
+
+                //情况一:对子中没有A[m-1]。     推论:A和B的最长公共子串就是A前m-1个字符和B前n个字符的最长公共子串
+                //情况二:对子中没有B[n-1]。     推论:A和B的最长公共子串就是A前m个字符和B前n-1个字符的最长公共子串
+
+                //情况一:A[0..i-2]和B[0..j- 1]的最长公共子串: f[i - 1][j]
+                //情况二:A[0..i-1]和 B[0..j-2]的最长公共子串: f[i][j - 1]
+                f[i][j] = Math.max(f[i - 1][j], f[i][j - 1]);//这两个值之前已经算出来了
+
+
+                //情况三:对子中有A[m-1]-B[n-1]。推论:A和B的最长公共子串就是A前m-1个字符和B前n-1个字符的最长公共子串+A[m-1]
+                //情况三:A[0..i-2]和B[0..j-2]的最长公共子串+A[i-1]: f[i - 1][j - 1] + 1
+                if (ac[i - 1] == bc[j - 1]) {
+                    f[i][j] = Math.max(f[i][j], f[i - 1][j - 1] + 1);//1指的是A[i-1]
+                }
+            }
+        }
+        return f[m][n];
+    }
+
+
+//111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111//
+
+//22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222//
+
+    // 2
     //  97. Interleaving String
     //  mine
     //  determine whether s3 is formed by the interleaving of s1 and s2.
@@ -161,8 +249,8 @@ public class DP_2String {
     • 时间复杂度(计算步数)O(MN)，空间复杂度(数组大小)O(MN)，可 以用滚动数组优化空间至O(N)
     -----------------------------------------------------------------------------------------------
 */
-
-    public boolean isInterleave11(String s1, String s2, String s3) {
+    //无注释
+    public boolean isInterleaveI_1(String s1, String s2, String s3) {
         char[] c1 = s1.toCharArray();
         char[] c2 = s2.toCharArray();
         char[] c3 = s3.toCharArray();
@@ -193,11 +281,75 @@ public class DP_2String {
         When s3 = "aadbbcbcac", return true.
         When s3 = "aadbbbaccc", return false.
          */
-        System.out.println(isInterleave11("aabcc", "dbbca", "aadbbcbcac"));
-        System.out.println(isInterleave11("aabcc", "dbbca", "aadbbbaccc"));
+        System.out.println(isInterleaveI_1("aabcc", "dbbca", "aadbbcbcac"));
+        System.out.println(isInterleaveI_1("aabcc", "dbbca", "aadbbbaccc"));
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+    /*
+        // i == 0， 就是A为空串
+        for (int j = 1; j <= n; j++) {
+            f[0][j] = 0;
+        }
+        // j == 0， 就是B为空串
+        for (int i = 1; i <= m; i++) {
+            f[i][0] = 0;
+        }
+     */
+
+    //完整清晰版本
+    //• 设f[i][j]为X前i+j个字符是否由A前i个字符A[0..i-1]和B前j个字符B[0..j-1]交错形成
+    //f[i][j] = (f[i-1][j] AND X[i+j-1]==A[i-1]) OR (f[i][j-1] AND X[i+j-1]==B[j-1])
+    public boolean isInterleaveI_11(String s1, String s2, String s3) {
+        char[] c1 = s1.toCharArray();
+        char[] c2 = s2.toCharArray();
+        char[] c3 = s3.toCharArray();
+        int m = c1.length;
+        int n = c2.length;
+        if (c3.length != m + n) { return false; }
+        boolean[][] f = new boolean[m + 1][n + 1];
+
+        //c1, c2都是空串
+        f[0][0] = true;
+
+        //c2是空串，c1不是。如果c1和c3中第i个字符c3[i - 1]和c1[i - 1]相同.
+        for (int i = 1; i <= m; i++) {
+            if (c3[i - 1] == c1[i - 1]) {
+                f[i][0] = f[i - 1][0];
+            }
+        }
+        //c1是空串，c2不是。如果c2和c3中第i个字符c3[j - 1]和c2[j - 1]相同
+        for (int j = 1; j <= n; j++) {
+            if (c3[j - 1] == c2[j - 1]) {
+                f[0][j] = f[0][j - 1];
+            }
+        }
+
+        //s1, s2都不是空串
+
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                //每轮都是看如果c3的第i + j个字符和c1的第i个字符，c2的第j个字符是否相同
+                //从而判断为c3前i+j个字符是否由c1前i个字符c1[0..i-1]和c2前j个字符c2[0..j-1]交错形成
+
+                //如果c3的第i + j个字符和c1的第i个字符相同
+                //f[i][j]
+                if (c3[i + j - 1] == c1[i - 1]) {
+                    f[i][j] = f[i][j] | f[i - 1][j];
+                    //f[i][j] =   f[i - 1][j]; 这样也能pass, 因为f[i][j]默认为false，只需要看f[i - 1][j]
+                }
+
+                //如果c3的第i + j个字符和c2的第个字符相同
+                if (c3[i + j - 1] == c2[j - 1]) {
+                    f[i][j] = f[i][j] | f[i][j - 1];//这里不能忽略f[i][j], 因为此时f[i][j]在上面可能已经赋值为true。
+                }
+            }
+        }
+        return f[m][n];
+    }
+//22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222//
+
+//33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333//
+    // 3
     //  72. Edit Distance
     //  9Ch DP 动态规划版本去掉注释
     //  find the minimum number of steps required to convert word1 to word2.
@@ -274,8 +426,62 @@ public class DP_2String {
         System.out.println(minDistance("mart", "karma"));
     }
 
+    //完整清晰
+    //• 设f[i][j]为X前i+j个字符是否由A前i个字符A[0..i-1]和B前j个字符B[0..j-1]交错形成
+    //f[i][j] = (f[i-1][j] AND X[i+j-1]==A[i-1]) OR (f[i][j-1] AND X[i+j-1]==B[j-1])
+    public int minDistance2(String word1, String word2) {
+        char[] s1 = word1.toCharArray();
+        char[] s2 = word2.toCharArray();
+        int m = s1.length;
+        int n = s2.length;
+        int[][] f = new int[m + 1][n + 1];
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+        f[0][0] = 0;
+
+        //j == 0, word2是空串，对word1进行i步insert以变成word2
+        for (int i = 1; i <= m; ++i) {
+            f[i][0] = i;
+        }
+
+        //i == 0，word1是空串，对word1进行j步delete以变成word2
+        for (int j = 1; j <= n; ++j) {
+            f[0][j] = j;
+        }
+
+        //• 于是最优策略(以及所有合法策略)最终都是让A的最后一个字符变成B 的最后一个字符
+        //• 设A长度是m, B长度是n
+        //• 全部操作完成后A的长度也是n，并且A[n-1]=B[n-1]
+        for (int i = 1; i <= m; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                //大情况1：需要进行一步操作，插入，删除，或者替换
+
+                //情况一:A在最后插入B[n-1]        • 要将A[0..m-1]变成B[0..n-2]
+                //情况二:A最后一个字符替换成B[n-1] • 要将A[0..m-2]变成B[0..n-2]
+                //情况三:A删掉最后一个字符         • 要将A[0..m-2]变成B[0..n-1]
+
+                //f[i][j-1]+1   情况一:A在最后插入 B[j-1]
+                //f[i-1][j-1]+1 情况二:A最后一个字符替换成B[j-1]
+                //f[i-1][j]+1   情况三:A删掉最后一个字符
+                //                            delete        insert         replace
+                f[i][j] = Math.min(Math.min(f[i - 1][j], f[i][j - 1]), f[i - 1][j - 1]) + 1;//1指1步操作
+
+
+                //大情况1：不需要进行任何操作
+                //情况四:A和B最后一个字符相等      • 要将A[0..m-2]变成B[0..n-2]
+                //f[i-1][j-1]   情况四:A和B最后一个 字符相等
+                if (s1[i - 1] == s2[j - 1]) {
+                    f[i][j] = Math.min(f[i][j], f[i - 1][j - 1]);
+                }
+            }
+        }
+        return f[m][n];
+    }
+
+//33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333//
+
+//4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444//
+
+    // 4
     //  115. Distinct Subsequences
     //  9Ch DP
     //  Implement regular expression matching with support for '.' and '*'.
@@ -353,7 +559,53 @@ public class DP_2String {
         System.out.println(numDistinct("rabbbit", "rabbit"));
     }//3
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+    //• 问B在A中出现多少次(可以不连续)
+    //• 设f[i][j]为B前j个字符B[0..j-1]在A前i个字符A[0..i-1]中出现多少次
+    //• 转移方程: f[i][j] = f[i-1][j-1]|A[i-1]=B[j-1] + f[i-1][j]
+    public int numDistinct11(String s, String t) {
+        char[] c1 = s.toCharArray();
+        char[] c2 = t.toCharArray();
+        int m = c1.length;
+        int n = c2.length;
+        int[][] f = new int[m + 1][n + 1];
+
+        //空串在空串中出现1次
+        f[0][0] = 1;
+
+        //– 如果B是空串，B在A中出现次数是1
+        //– f[i][0] = 1 (i = 0, 1, 2, ..., m)
+        for (int i = 1; i <= m; ++i) {
+            f[i][0] = 1;
+        }
+
+        //– 如果A是空串而B不是空串，B在A中出现次数是0
+        //– f[0][j] = 0 (j = 1, 2, ..., n)
+        for (int j = 1; j <= n; ++j) {
+            f[0][j] = 0;
+        }
+
+
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+
+                //情况1:B[j-1]不和 A[i-1]结成对子, 求B[0..n-1]在A[0..m-2]中出现多少次
+                f[i][j] = f[i - 1][j];
+
+                //情况2:B[j-1] = A[i-1]结成对子, 求B[0..n-2]在A[0..m-2]中出现多少次
+                if (c1[i - 1] == c2[j - 1]) {
+                    f[i][j] += f[i - 1][j - 1];
+                }
+            }
+        }
+        return f[m][n];
+    }
+
+
+//4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444//
+
+//555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555//
+
+    // 5
     //  10. Regular Expression Matching
     //  9CH DP
     //  Implement regular expression matching with support for '.' and '*'.
@@ -422,6 +674,8 @@ public class DP_2String {
     • 可以用滚动数组优化空间至O(N)
     -----------------------------------------------------------------------------------------------
      */
+
+    //9Ch
     public boolean isMatch1(String s, String p) {
         char[] c1 = s.toCharArray();
         char[] c2 = p.toCharArray();
@@ -461,7 +715,199 @@ public class DP_2String {
         System.out.println(isMatch1("aab", "c*a*b"));
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+
+    //• 设f[i][j]为A前i个字符A[0..i-1]和B前j个字符B[0..j-1]能否匹配
+    //f[i][j] = f[i-1][j-1]，如果B[j-1]=‘.’或者A[i-1]=B[j-1]
+    //f[i][j] = f[i][j-2] OR (f[i-1][j] AND (B[j-2]=‘.’ OR B[j-2]=A[i-1]))，如果B[j-1]=‘*’
+
+
+
+
+/*
+    Easy DP Java Solution with detailed Explanation
+    This Solution use 2D DP. beat 90% solutions, very simple.
+
+    Here are some conditions to figure out, then the logic can be very straightforward.
+
+    1, If p.charAt(j) == s.charAt(i) :  dp[i][j] = dp[i-1][j-1];
+    2, If p.charAt(j) == '.' : dp[i][j] = dp[i-1][j-1];
+    3, If p.charAt(j) == '*':
+    here are two sub conditions:
+            1   if p.charAt(j-1) != s.charAt(i) : dp[i][j] = dp[i][j-2]  //in this case, a* only counts as empty
+            2   if p.charAt(i-1) == s.charAt(i) or p.charAt(i-1) == '.':
+    dp[i][j] = dp[i-1][j]    //in this case, a* counts as multiple a
+    or dp[i][j] = dp[i][j-1]   // in this case, a* counts as single a
+    or dp[i][j] = dp[i][j-2]   // in this case, a* counts as empty
+    Here is the solution
+*/
+
+    public boolean isMatch4(String s, String p) {
+        if (s == null || p == null) {
+            return false;
+        }
+        int m = s.length();
+        int n = p.length();
+        boolean[][] dp = new boolean[m+1][n+1];
+        //空串对空pattern
+        dp[0][0] = true;
+        //
+        for (int i = 0; i < p.length(); i++) {
+            if (p.charAt(i) == '*' && dp[0][i-1]) {
+                dp[0][i+1] = true;
+            }
+        }
+
+        for (int i = 0 ; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                //1, If p.charAt(j) == s.charAt(i) :  dp[i][j] = dp[i-1][j-1];
+
+                if (p.charAt(j) == s.charAt(i)) {
+                    dp[i+1][j+1] = dp[i][j];
+                }
+
+                //2, If p.charAt(j) == '.' : dp[i][j] = dp[i-1][j-1];
+                if (p.charAt(j) == '.') {
+                    dp[i+1][j+1] = dp[i][j];
+                }
+
+                //3, If p.charAt(j) == '*':
+
+                if (p.charAt(j) == '*') {
+                    //1   if p.charAt(j-1) != s.charAt(i) : dp[i][j] = dp[i][j-2]
+                    // in this case, a* only counts as empty
+                    if (p.charAt(j-1) != s.charAt(i) && p.charAt(j-1) != '.') {
+                        dp[i+1][j+1] = dp[i+1][j-1];
+                    }
+                    //2   if p.charAt(i-1) == s.charAt(i) or p.charAt(i-1) == '.':
+                    else {
+                        dp[i+1][j+1] = (dp[i+1][j] || dp[i][j+1] || dp[i+1][j-1]);
+                    }
+                }
+            }
+        }
+        return dp[m][n];
+    }
+
+    // use char[][]
+    public boolean isMatch44(String s, String p) {
+        if (s == null || p == null) {
+            return false;
+        }
+        char[] sc = s.toCharArray();
+        char[] pc = p.toCharArray();
+        int m = sc.length;
+        int n = pc.length;
+        //dp[i][j] s的前i个字符sc[i - 1] 与p的前j个字符pc[i - 1]是否匹配
+        boolean[][] dp = new boolean[m+1][n+1];
+        //空串 对 空pattern 是正确的
+        dp[0][0] = true;
+
+        //i == 0 空串对于各种pattern
+        //对于pattern中的'*'，
+        for (int j = 0; j < n; j++) {
+            if (pc[j] == '*') {
+                dp[0][j + 1] = dp[0][j - 1];
+            }
+        }
+
+        for (int i = 0 ; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                //1, If sc[i] == pc[j] :  dp[i][j] = dp[i-1][j-1];
+                //
+                if (sc[i] == pc[j]) {
+                    dp[i+1][j+1] = dp[i][j];
+                }
+
+                //2, If p.charAt(j) == '.' : dp[i][j] = dp[i-1][j-1];
+                if (pc[j] == '.') {
+                    dp[i+1][j+1] = dp[i][j];
+                }
+
+                //3, If p.charAt(j) == '*':
+
+                if (pc[j] == '*') {
+                    //1   if p.charAt(j-1) != s.charAt(i) : dp[i][j] = dp[i][j-2]
+                    // in this case, a* only counts as empty
+                    if (pc[j-1] != sc[i] && pc[j-1] != '.') {
+                        dp[i+1][j+1] = dp[i+1][j-1];
+                    }
+                    //2   if p.charAt(i-1) == s.charAt(i) or p.charAt(i-1) == '.':
+                    else {
+                        dp[i+1][j+1] = (dp[i+1][j] || dp[i][j+1] || dp[i+1][j-1]);
+                    }
+                }
+            }
+        }
+        return dp[m][n];
+    }
+
+    // use char[][]
+    public boolean isMatch444(String s, String p) {
+        if (s == null || p == null) {
+            return false;
+        }
+        char[] sc = s.toCharArray();
+        char[] pc = p.toCharArray();
+        int m = sc.length;
+        int n = pc.length;
+        //dp[i][j] s的前i个字符sc[i - 1] 与p的前j个字符pc[i - 1]是否匹配
+        boolean[][] dp = new boolean[m+1][n+1];
+        //空串 对 空pattern 是正确的
+        dp[0][0] = true;
+
+        //i == 0 空串对于各种pattern
+        //对于pattern中的'*'，
+        for (int j = 1; j < n + 1; j++) {
+            if (pc[j-1] == '*') {
+                dp[0][j] = dp[0][j - 2];
+            }
+        }
+
+        for (int i = 1 ; i < m + 1; i++) {
+            for (int j = 1; j < n + 1; j++) {
+                //每轮处理s前i个字符和p前j个字符
+
+                //1, If sc[i] == pc[j] :  dp[i][j] = dp[i-1][j-1];
+                //s第i个字符和p第j个字符相同
+                //那么s前i个字符与p前j个字符是否匹配dp[i][j]
+                //取决于s前i-1个字符与p前j-1个字符是否匹配dp[i-1][j-1]
+                if (sc[i-1] == pc[j-1]) {
+                    dp[i][j] = dp[i-1][j-1];
+                }
+
+                //2, If p.charAt(j) == '.' : dp[i][j] = dp[i-1][j-1];
+                //p第j个字符为'.'，
+                //那么s前i个字符与p前j个字符是否匹配dp[i][j]
+                //取决于s前i-1个字符与p前j-1个字符是否匹配dp[i-1][j-1]
+                if (pc[j-1] == '.') {
+                    dp[i][j] = dp[i-1][j-1];
+                }
+
+                //3, If p.charAt(j) == '*':
+                //p第j个字符为'*'，
+                if (pc[j - 1] == '*') {
+                    //1   if p.charAt(j-1) != s.charAt(i) : dp[i][j] = dp[i][j-2]
+                    // in this case, a* only counts as empty
+                    //p第j-1个字符和s第i个字符不同，并且p第j-1个字符不是'.'
+                    //那么s前i个字符与p前j个字符是否匹配，取决于s前i个字符和p前j-2个字符是否匹配
+                    if (pc[j - 2] != sc[i - 1] && pc[j - 2] != '.') {
+                        dp[i][j] = dp[i][j-2];
+                    }
+                    //2   if p.charAt(i-1) == s.charAt(i) or p.charAt(i-1) == '.':
+                    //p第j-1个字符和s第i个字符相同，或者p第j-1个字符是'.'
+                    else {
+                        dp[i][j] = (dp[i][j-1] || dp[i-1][j] || dp[i][j-2]);
+                    }
+                }
+            }
+        }
+        return dp[m][n];
+    }
+//555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555//
+
+//66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666//
+
+    // 6
     //  44. Wildcard Matching
     //  Java DP Accepted
 
@@ -572,7 +1018,11 @@ public class DP_2String {
     }
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+//66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666//
+
+//7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777//
+
+    // 7
     //find the maximum number of strings that you can form with given m 0s and n 1s.
     // Each 0 and 1 can be used at most once.
     //  474. Ones and Zeroes
@@ -610,6 +1060,7 @@ public class DP_2String {
         System.out.println(findMaxForm(new String[]{"10", "0001", "111001", "1", "0"}, 5, 3));
         System.out.println(findMaxForm(new String[]{"10", "0", "1"}, 1, 1));
     }
+//7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777//
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 }
