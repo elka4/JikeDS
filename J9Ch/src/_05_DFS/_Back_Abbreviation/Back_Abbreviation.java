@@ -13,7 +13,7 @@ import java.util.*;
  */
 
 public class Back_Abbreviation {
-////////////////////////////////////////////////////////////////////////////////////
+/////////  1.  Valid Word Abbreviation， 1.  Valid Word Abbreviation， 1.  Valid Word Abbreviation，
 //////Valid Word Abbreviation, Valid Word Abbreviation, Valid Word Abbreviation, Valid Word Abbreviation
 //  408. Valid Word Abbreviation
 //  https://leetcode.com/problems/valid-word-abbreviation/description/
@@ -28,6 +28,10 @@ public class Back_Abbreviation {
     public boolean validWordAbbreviation2(String word, String abbr) {
         return word.matches(abbr.replaceAll("[1-9]\\d*", ".{$0}"));
     }
+    @Test
+    public void testReg(){
+        System.out.println("324df".replaceAll("\\d*", ".{$0}"));
+    }
 
 
 //------------------------------------------------------------------------------------
@@ -41,7 +45,7 @@ public class Back_Abbreviation {
             if(c == '0' && num == 0) return false;
             if(c >= '0' && c <= '9'){
                 num = num*10 + (c-'0');
-            }else{
+            }else{//c是一个字母
                 idx += num;
                 if(idx >= word.length() || c != word.charAt(idx)) return false;
                 num = 0;
@@ -80,9 +84,9 @@ public class Back_Abbreviation {
         System.out.println(validWordAbbreviation1("apple", "a2e"));
     }
 
-//////Valid Word Abbreviation, Valid Word Abbreviation, Valid Word Abbreviation, Valid Word Abbreviation
+/////////  1.  Valid Word Abbreviation， 1.  Valid Word Abbreviation， 1.  Valid Word Abbreviation，
 
-//////Unique Word Abbreviation, Unique Word Abbreviation, Unique Word Abbreviation, Unique Word Abbreviation
+//////  2. Unique Word Abbreviation, 2. Unique Word Abbreviation, 2. Unique Word Abbreviation, 2. Unique Word Abbreviation
 //  288. Unique Word Abbreviation
 //  https://leetcode.com/problems/unique-word-abbreviation/description/
 //  Hash Table, Design
@@ -210,9 +214,9 @@ If above is yes, then it can only be unique if the grouping of the abbreviation 
         System.out.println(vw.isUnique("make") );   //true
     }
 
-//////Unique Word Abbreviation, Unique Word Abbreviation, Unique Word Abbreviation, Unique Word Abbreviation
+//////  2. Unique Word Abbreviation, 2. Unique Word Abbreviation, 2. Unique Word Abbreviation, 2. Unique Word Abbreviation
 
-//////Generalized Abbreviation, Generalized Abbreviation, Generalized Abbreviation, Generalized Abbreviation
+//////  3. Generalized Abbreviation, 3. Generalized Abbreviation, 3. Generalized Abbreviation, 3. Generalized Abbreviation,
 //  320. Generalized Abbreviation
 //  https://leetcode.com/problems/generalized-abbreviation/description/
 //  Backtracking, Bit Manipulation
@@ -284,9 +288,9 @@ If above is yes, then it can only be unique if the grouping of the abbreviation 
     }//[4, 3d, 2r1, 2rd, 1o2, 1o1d, 1or1, 1ord, w3, w2d, w1r1,
     // w1rd, wo2, wo1d, wor1, word]
 
-//////Generalized Abbreviation, Generalized Abbreviation, Generalized Abbreviation, Generalized Abbreviation
+//////  3. Generalized Abbreviation, 3. Generalized Abbreviation, 3. Generalized Abbreviation, 3. Generalized Abbreviation,
 
-///////Minimum Unique Word Abbreviation, Minimum Unique Word Abbreviation, Minimum Unique Word Abbreviation
+/////// 4. Minimum Unique Word Abbreviation, 4. Minimum Unique Word Abbreviation, 4. Minimum Unique Word Abbreviation
 
 //  411. Minimum Unique Word Abbreviation
 //  https://leetcode.com/problems/minimum-unique-word-abbreviation/
@@ -397,9 +401,11 @@ Examples:
         TrieNode curr = root;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
-            if (curr.nodes[c - 'a'] == null) curr.nodes[c - 'a'] = new TrieNode();
+            if (curr.nodes[c - 'a'] == null)
+                curr.nodes[c - 'a'] = new TrieNode();
             curr = curr.nodes[c - 'a'];
-            if (i == word.length() - 1) curr.isEnd = true;
+            if (i == word.length() - 1)
+                curr.isEnd = true;
         }
     }
 
@@ -456,9 +462,9 @@ Examples:
             isEnd = false;
         }
     }
-///////Minimum Unique Word Abbreviation, Minimum Unique Word Abbreviation, Minimum Unique Word Abbreviation
+/////// 4. Minimum Unique Word Abbreviation, 4. Minimum Unique Word Abbreviation, 4. Minimum Unique Word Abbreviation
 
-///////Word Abbreviation, Word Abbreviation, Word Abbreviation, Word Abbreviation, Word Abbreviation
+/////// 5. Word Abbreviation, 5. Word Abbreviation, 5. Word Abbreviation, 5. Word Abbreviation, 5. Word Abbreviation
 
 //  527. Word Abbreviation
 //  https://leetcode.com/problems/word-abbreviation/description/
@@ -481,7 +487,7 @@ The return answers should be in the same order as the original array.
  */
 
 
-///////Word Abbreviation, Word Abbreviation, Word Abbreviation, Word Abbreviation, Word Abbreviation
+/////// 5. Word Abbreviation, 5. Word Abbreviation, 5. Word Abbreviation, 5. Word Abbreviation, 5. Word Abbreviation
 
 
 

@@ -13,6 +13,7 @@ public class _411_BackTracking_Minimum_Unique_Word_Abbreviation_M {
     }
     Trie root = new Trie();
     List<String> abbrs;
+
     public String minAbbreviation(String target, String[] dictionary) {
         for(String s:dictionary) {
             addTrie(s);
@@ -26,6 +27,7 @@ public class _411_BackTracking_Minimum_Unique_Word_Abbreviation_M {
         }
         return "";
     }
+
     public void addTrie(String s) {
         Trie cur = root;
         for(int i=0; i<s.length(); i++) {
@@ -37,6 +39,7 @@ public class _411_BackTracking_Minimum_Unique_Word_Abbreviation_M {
         }
         cur.isEnd = true;
     }
+
     public boolean search(String target, Trie root, int i, int loop) {
         if(root==null) return false;
 
@@ -61,6 +64,7 @@ public class _411_BackTracking_Minimum_Unique_Word_Abbreviation_M {
             return search(target, root.next[target.charAt(i)-'a'], i+1, 0);
         }
     }
+
     public void abbrGenerator(String target, int i, String tmp, int abbr, int num) {
         if(i==target.length()) {
             if(num==0&&abbr==0) abbrs.add(tmp);

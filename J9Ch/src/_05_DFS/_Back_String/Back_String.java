@@ -3,13 +3,10 @@ import org.junit.Test;
 import java.util.*;
 
 /*
-
 1.  Generate Parentheses
 2.  Restore IP Addresses
 3.  Palindrome Partitioning
 4.  Palindrome Permutation II
-
-
  */
 
 public class Back_String {
@@ -59,7 +56,7 @@ public class Back_String {
         dfs10(new StringBuilder(), n, n, result);
         return result;
     }
-
+    //left right指要多少个左括号，多少个右括号
     private void dfs10(StringBuilder paren, int left, int right, List<String> result){
         if (left > right) {
             return;
@@ -80,7 +77,41 @@ public class Back_String {
     public void test10(){
         System.out.println(generateParenthesis_Zhu(3));
     }//[((())), (()()), (())(), ()(()), ()()()]
+    @Test
+    public void test11(){
+        StringBuilder sb = new StringBuilder();
+        List<String> result = new ArrayList<>();
 
+        dfs10(sb, 1,3, result);
+        System.out.println(result);
+    }//[())), )()), ))()]
+
+//---------------------------------------------------------------------------------------------
+    //最好的是这个我自己改写的
+    class Solution3 {
+        public List<String> generateParenthesis3(int n) {
+
+            List<String> result = new ArrayList<>();
+            if(n <= 0)return result;
+            dfs10_3(new StringBuilder(), n, n, result);
+            return result;
+        }
+        //left right指要多少个左括号，多少个右括号
+        private void dfs10_3(StringBuilder paren, int left, int right, List<String> result){
+            if (left > right || left < 0 || right < 0) {
+                return;
+            }
+            if (left == 0 && right == 0) {
+                result.add(paren.toString());
+            }
+
+            dfs10_3(paren.append('('), left - 1, right, result);
+            paren.deleteCharAt(paren.length() - 1);
+
+            dfs10_3(paren.append(')'), left, right - 1, result);
+            paren.deleteCharAt(paren.length() - 1);
+        }
+    }
 //////Generate Parentheses, Generate Parentheses, Generate Parentheses, Generate Parentheses ////////
 
 ////////Restore IP Addresses, Restore IP Addresses, Restore IP Addresses, Restore IP Addresses///////////
@@ -108,6 +139,8 @@ public class Back_String {
 
     private void helper(ArrayList<String> result, ArrayList<String> list, String s, int start){
         if(list.size() == 4){
+            //这个很重要，如果只是list.size() == 4，可能s还没取完
+            //根据题意，必须是全部s都取完了，而且是分成4个部分
             if(start != s.length()) return;
 
             StringBuilder sb = new StringBuilder();
@@ -115,7 +148,7 @@ public class Back_String {
                 sb.append(tmp);
                 sb.append('.');
             }
-            sb.deleteCharAt(sb.length() - 1);
+            sb.deleteCharAt(sb.length() - 1);//记住这个方法
             result.add(sb.toString());
             return;
         }
@@ -133,7 +166,7 @@ public class Back_String {
     private boolean isvalid(String s){
         // to eliminate cases like "00", "10"
         if(s.charAt(0) == '0') return s.equals("0");
-        int digit = Integer.valueOf(s);
+        int digit = Integer.valueOf(s);//记住这个方法
         return digit >= 0 && digit <= 255;
     }
 
@@ -159,21 +192,21 @@ public class Back_String {
     //传到下一层的是string和新一轮的start
     //Backtracking, 用tempList来存储状态
     public List<List<String>> partition01(String s) {
-        List<List<String>> list = new ArrayList<>();
-        backtrack(list, new ArrayList<>(), s, 0);
-        return list;
+        List<List<String>> result = new ArrayList<>();
+        backtrack(result, new ArrayList<>(), s, 0);
+        return result;
     }
 
-    public void backtrack(List<List<String>> list, List<String> tempList, String s, int start){
+    public void backtrack(List<List<String>> result, List<String> tempList, String s, int start){
         if(start == s.length()){
-            list.add(new ArrayList<>(tempList));
+            result.add(new ArrayList<>(tempList));
             return;
         }
 
         for(int i = start; i < s.length(); i++){
             if(isValid(s, start, i)){
                 tempList.add(s.substring(start, i + 1));
-                backtrack(list, tempList, s, i + 1);
+                backtrack(result, tempList, s, i + 1);
                 tempList.remove(tempList.size() - 1);
             }
         }
@@ -200,12 +233,21 @@ public class Back_String {
 //  http://www.lintcode.com/zh-cn/problem/palindrome-partitioning-ii/
 
 
+/*
+Given a string s, return all the palindromic permutations (without duplicates) of it.
+Return an empty list if no palindromic permutation could be form.
+
+For example:
+Given s = "aabb", return ["abba", "baab"].
+Given s = "abc", return [].
+ */
+
     //3
 
     public List<String> generatePalindromes3(String s) {
         int odd = 0;
         String mid = "";
-        List<String> res = new ArrayList<>();
+        List<String> result = new ArrayList<>();
         List<Character> list = new ArrayList<>();
         Map<Character, Integer> map = new HashMap<>();
 
@@ -217,7 +259,7 @@ public class Back_String {
         }
 
         // cannot form any palindromic string
-        if (odd > 1) return res;
+        if (odd > 1) return result;
 
         // step 2. add half count of each character to list
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
@@ -230,16 +272,16 @@ public class Back_String {
         }
 
         // step 3. generate all the permutations
-        getPerm(list, mid, new boolean[list.size()], new StringBuilder(), res);
+        getPerm(list, mid, new boolean[list.size()], new StringBuilder(), result);
 
-        return res;
+        return result;
     }
 
     // generate all unique permutation from list
-    void getPerm(List<Character> list, String mid, boolean[] used, StringBuilder sb, List<String> res) {
+    void getPerm(List<Character> list, String mid, boolean[] used, StringBuilder sb, List<String> result) {
         if (sb.length() == list.size()) {
             // form the palindromic string
-            res.add(sb.toString() + mid + sb.reverse().toString());
+            result.add(sb.toString() + mid + sb.reverse().toString());
             sb.reverse();
             return;
         }
@@ -251,7 +293,7 @@ public class Back_String {
             if (!used[i]) {
                 used[i] = true; sb.append(list.get(i));
                 // recursion
-                getPerm(list, mid, used, sb, res);
+                getPerm(list, mid, used, sb, result);
                 // backtracking
                 used[i] = false; sb.deleteCharAt(sb.length() - 1);
             }

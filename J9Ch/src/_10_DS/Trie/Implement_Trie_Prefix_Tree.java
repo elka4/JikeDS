@@ -7,7 +7,7 @@ public class Implement_Trie_Prefix_Tree {
 
     class TrieNode {
         char c;
-        HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>();
+           HashMap<Character, TrieNode> children = new HashMap<Character, TrieNode>();
         boolean isLeaf;
         public TrieNode() {}
         public TrieNode(char c){
@@ -69,6 +69,7 @@ public class Implement_Trie_Prefix_Tree {
         public TrieNode searchNode(String str){
             Map<Character, TrieNode> children = root.children;
             TrieNode t = null;
+
             for(int i=0; i<str.length(); i++){
                 char c = str.charAt(i);
                 if(children.containsKey(c)){
@@ -85,44 +86,6 @@ public class Implement_Trie_Prefix_Tree {
 
 
 ////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-
 
 
 
