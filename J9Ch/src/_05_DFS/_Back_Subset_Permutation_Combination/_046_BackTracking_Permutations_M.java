@@ -205,6 +205,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     @Test public void test07(){ System.out.println(permute07(new int[]{1,2,3})); }
 
 //////////////////////////////////////////////////////////////////////////////////
+    //8
 //    A new ArrayList<Integer> newPerm is not necessary.
 //
 //            Try this:
@@ -232,7 +233,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
 
 
 /////////////////////////////////////////////////////////////////////////////////////
-
+    //9
     //jiuzhang
     public List<List<Integer>> permute_J1(int[] nums) {
         List<List<Integer>> results = new ArrayList<>();
@@ -281,6 +282,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
 
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //10
     // 9Ch
     // Non-Recursion
     /**
@@ -341,6 +343,84 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     @Test public void test10(){ System.out.println(permute_J2(new int[]{1,2,3})); }
     //[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
 
+////////////////////////////////////////////////////////////////////////////////////
+    //11
+    //bit
+/*Clean Java, 3 ms using bit-manipulation with explanation
+
+2
+    A anton15
+    Reputation:  120
+    We know that the number of permutations is n!. Hence, the maximum number of elements we can handle without overflowing the integer is 12 (12! < Integer.MAX_VALUE). So instead of using a boolean array to store the information about the elements that we have already used, we can just set/unset bits of our integer.
+
+    For those who are not too familiar with bit manipulation:
+
+            (set & (1 << i)) == 0 --------------------- checks if the bit at index i is unset.
+            alternatively (set & (1 << i)) > 0 -------- checks if the bit at index i is set.
+            set |= (1 << i) --------------------------- sets the bit at index i to 1.
+    set &= ~(1 << i) -------------------------- clears the bit at index i to 0.
+    In this case set is a 32-bit integer. One might think that somehow a short (16-bit) can be more efficient than a 32-bit integer, since we only need 12 bits. This is not true, most CPUs are 32-bit based, so having a short of length 16 will simply mask the remaining 16 bits, which doesn't give us any extra value.*/
+
+    private List<List<Integer>> res = new ArrayList<>();
+
+    public List<List<Integer>> permute(int[] nums) {
+        int set = 0;
+        List<Integer> perm = new ArrayList<>(nums.length);
+        permute(nums, set, perm);
+        return res;
+    }
+
+    private void permute(int[] nums, int set, List<Integer> perm) {
+        if (perm.size() == nums.length) {
+            res.add(new ArrayList<Integer>(perm));
+            return;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if ((set & (1 << i)) == 0) {
+                set |= (1 << i);
+                perm.add(nums[i]);
+                permute(nums, set, perm);
+                set &= ~(1 << i);
+                perm.remove(perm.size()-1);
+            }
+        }
+    }
+////////////////////////////////////////////////////////////////////////////////////
+    //12
+/*My Java Solution beats 90% javasubmissions using 2ms
+
+4
+    A ashitakasan
+    Reputation:  4*/
+    public class Solution12 {
+
+        public List<List<Integer>> permute(int[] nums) {
+            List<List<Integer>> list = new LinkedList<>();
+            permute(list, nums, 0);
+            return list;
+        }
+
+        private void permute(List<List<Integer>> list, int[] nums, int start){
+            if(start == nums.length - 1){
+                List<Integer> l = new LinkedList<>();
+                for(int n:nums)
+                    l.add(n);
+                list.add(l);
+            }
+            else{
+                for(int i=start; i<nums.length; i++){
+                    int tmp = nums[i];
+                    nums[i] = nums[start];
+                    nums[start] = tmp;
+                    permute(list, nums, start+1);
+                    tmp = nums[i];
+                    nums[i] = nums[start];
+                    nums[start] = tmp;
+                }
+            }
+        }
+
+    }
 ////////////////////////////////////////////////////////////////////////////////////
 }
 

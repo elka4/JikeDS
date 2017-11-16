@@ -1,11 +1,12 @@
-package _05_DFS._Back_Abbreviation;
-import java.util.*;
+package _08_Bit.HF_bit;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //  411. Minimum Unique Word Abbreviation
 //  https://leetcode.com/problems/minimum-unique-word-abbreviation/
 //  Backtracking, Bit Manipulation
-//  3:
-public class _411_BackTracking_Minimum_Unique_Word_Abbreviation_M {
+public class _411_Bit_Minimum_Unique_Word_Abbreviation_M {
     //Trie + Bruteforce
     class Trie{
         Trie[] next = new Trie[26];

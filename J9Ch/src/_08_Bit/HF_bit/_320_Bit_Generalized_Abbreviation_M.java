@@ -1,12 +1,14 @@
-package _05_DFS._Back_Abbreviation;
+package _08_Bit.HF_bit;
+
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 //  320. Generalized Abbreviation
 //  https://leetcode.com/problems/generalized-abbreviation/description/
 //  Backtracking, Bit Manipulation
-public class _320_BackTracking_Generalized_Abbreviation_M {
+public class _320_Bit_Generalized_Abbreviation_M {
     //https://leetcode.com/problems/generalized-abbreviation/solution/
 
     //Approach #1 (Backtracking) [Accepted]
@@ -87,7 +89,6 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
     //Java backtracking solution
-    //这个其实是DFS，不是backtracking
     public List<String> generateAbbreviations3(String word){
         List<String> ret = new ArrayList<String>();
         backtrack(ret, word, 0, "", 0);

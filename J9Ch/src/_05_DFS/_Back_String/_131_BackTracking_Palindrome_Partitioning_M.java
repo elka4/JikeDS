@@ -9,8 +9,11 @@ import java.util.List;
 //  https://leetcode.com/problems/palindrome-partitioning/description/
 //  http://www.lintcode.com/zh-cn/problem/palindrome-partitioning/
 //  Backtracking
+//  10: 1
 public class _131_BackTracking_Palindrome_Partitioning_M {
-
+    //1
+    //传到下一层的是string和新一轮的start
+    //Backtracking, 用tempList来存储状态
     public List<List<String>> partition01(String s) {
         List<List<String>> list = new ArrayList<>();
         backtrack(list, new ArrayList<>(), s, 0);
@@ -18,15 +21,16 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
     }
 
     public void backtrack(List<List<String>> list, List<String> tempList, String s, int start){
-        if(start == s.length())
+        if(start == s.length()){
             list.add(new ArrayList<>(tempList));
-        else{
-            for(int i = start; i < s.length(); i++){
-                if(isPalindrome01(s, start, i)){
-                    tempList.add(s.substring(start, i + 1));
-                    backtrack(list, tempList, s, i + 1);
-                    tempList.remove(tempList.size() - 1);
-                }
+            return;
+        }
+
+        for(int i = start; i < s.length(); i++){
+            if(isPalindrome01(s, start, i)){
+                tempList.add(s.substring(start, i + 1));
+                backtrack(list, tempList, s, i + 1);
+                tempList.remove(tempList.size() - 1);
             }
         }
     }
@@ -44,7 +48,9 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////
+    //2
     //Concise Java Solution
+    //这个貌似和1类似，每次传下去的是新的String，一个substring。什么时候substring为空串，就是全都取完了可以加入results。
     public List<List<String>> partition02(String s) {
         List<List<String>> res=new ArrayList<List<String>>();
         if(s.length()==0)return res;
@@ -78,6 +84,7 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
     }//[[a, a, b], [aa, b]]
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //3
     //My Java DP only solution without recursion. O(n^2)
     public List<List<String>> partition03(String s) {
         int len = s.length();
@@ -108,6 +115,7 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
     }//[[a, a, b], [aa, b]]
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //4
     //Java: Backtracking solution.
     //https://discuss.leetcode.com/topic/6186/java-backtracking-solution
     List<List<String>> resultLst;
@@ -149,6 +157,7 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
     }//[[a, a, b], [aa, b]]
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //5
     //Java DP + DFS solution
 /*
 The normal dfs backtracking will need to check each substring for palindrome, but a dp array can be used to record the possible break for palindrome before we start recursion.
@@ -194,6 +203,7 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
     }//[[a, a, b], [aa, b]]
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //6
     //Concise Java solution
     //DFS to find every combinations of the string, if the substring is not Palindrome, ignore it then go to the next.
 
@@ -233,6 +243,7 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
 
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //7
 
 /*    Classic recursive solution in Java
 
@@ -293,6 +304,7 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
     }//[[a, a, b], [aa, b]]
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //8
     //Java Easy-follow Recursive Solution, can convert to DP easily, what is complexity? O(n^2)?
 
     public boolean isPalindrom(String s) {
@@ -338,6 +350,7 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
 
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //9
     // jiuzhang
     // version 1: shorter but slower
     /**
@@ -390,6 +403,7 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
     }//[[a, a, b], [aa, b]]
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //10
     // version 2: longer but faster
     List<List<String>> results;
     boolean[][] isPalindrome;

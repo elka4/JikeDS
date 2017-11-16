@@ -1,11 +1,16 @@
-package _05_DFS._Back_Other;
+package _08_Bit;
+
 import org.junit.Test;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
 
 //  89. Gray Code
 //  https://leetcode.com/problems/gray-code/description/
 //  http://www.lintcode.com/zh-cn/problem/gray-code/
-public class _089_BackTracking_Gray_Code_M {
+public class _089_Bit_Gray_Code_M {
 
 /////////////////////////////////////////////////////////////////////////
     //An accepted three line solution in JAVA
@@ -115,29 +120,29 @@ public class _089_BackTracking_Gray_Code_M {
 
     //Java Solution with Recursive
     public List<Integer> grayCode3(int n) {
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<Integer>();
         if (n==0) {
-            result.add(0);
+            list.add(0);
         } else {
-            grayCode3(n, 0, result);
+            grayCode3(n, 0, list);
         }
-        return result;
+        return list;
     }
-    public void grayCode3(int n, int val, List<Integer> result) {
+    public void grayCode3(int n, int val, List<Integer> list) {
         int flag = Integer.bitCount(val)%2;
         if (n > 1) {
-            grayCode3(n-1, val<<1|(flag&1), result);
-            grayCode3(n-1, val<<1|(flag^1), result);
+            grayCode3(n-1, val<<1|(flag&1), list);
+            grayCode3(n-1, val<<1|(flag^1), list);
         } else {
-            result.add(val<<1|(flag&1));
-            result.add(val<<1|(flag^1));
+            list.add(val<<1|(flag&1));
+            list.add(val<<1|(flag^1));
         }
     }
 
     @Test
     public void test03(){
         //Returns the number of one-bits in the two's complement binary
-     //* representation of the specified {@code int} value.
+        //* representation of the specified {@code int} value.
         System.out.println(Integer.toBinaryString(1));//1
         System.out.println(Integer.bitCount(1));      //1
 
@@ -229,7 +234,7 @@ public class _089_BackTracking_Gray_Code_M {
     111
      */
 
-/////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////
     //jiuzhang DFS
     public ArrayList<Integer> grayCode5(int n) {
         ArrayList<Integer> result = new ArrayList<Integer>();
@@ -311,24 +316,24 @@ Java solution use a stack, easy to figure out, simple and interesting
     From the above example, I believe you will find out that why use a stack here, all the post half is the pre half plus the Math.pow(2, i) in the symmetric form!!!
 */
 
-        public List<Integer> grayCode4(int n) {
-            List<Integer> list = new LinkedList<Integer>();
-            Stack<Integer> stack = new Stack<Integer>();
-            list.add(0);
-            int i = 0;
-            while(i < n) {
-                int len = list.size();
-                int inc = (int)(Math.pow(2, i));
-                for(int j=0; j<len; j++) {
-                    stack.push(list.get(j));
-                }
-                while(!stack.isEmpty()) {
-                    list.add(stack.pop() + inc);
-                }
-                i++;
+    public List<Integer> grayCode4(int n) {
+        List<Integer> list = new LinkedList<Integer>();
+        Stack<Integer> stack = new Stack<Integer>();
+        list.add(0);
+        int i = 0;
+        while(i < n) {
+            int len = list.size();
+            int inc = (int)(Math.pow(2, i));
+            for(int j=0; j<len; j++) {
+                stack.push(list.get(j));
             }
-            return list;
+            while(!stack.isEmpty()) {
+                list.add(stack.pop() + inc);
+            }
+            i++;
         }
+        return list;
+    }
 
 
 /////////////////////////////////////////////////////////////////////////

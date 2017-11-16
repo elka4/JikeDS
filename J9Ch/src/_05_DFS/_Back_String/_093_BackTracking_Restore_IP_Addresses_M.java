@@ -6,12 +6,14 @@ import java.util.*;
 //  93. Restore IP Addresses
 //  https://leetcode.com/problems/restore-ip-addresses/description/
 //  http://www.lintcode.com/zh-cn/problem/restore-ip-addresses/
+//  4: 4
 public class _093_BackTracking_Restore_IP_Addresses_M {
+    // 1
     //My code in Java
-    /*
-    3-loop divides the string s into 4 substring: s1, s2, s3, s4. Check if each substring is valid.
+/*
+3-loop divides the string s into 4 substring: s1, s2, s3, s4. Check if each substring is valid.
 In isValid, strings whose length greater than 3 or equals to 0 is not valid; or if the string's length is longer than 1 and the first letter is '0' then it's invalid; or the string whose integer representation greater than 255 is invalid.
-     */
+*/
     public List<String> restoreIpAddresses01(String s) {
         List<String> res = new ArrayList<String>();
         int len = s.length();
@@ -42,45 +44,13 @@ In isValid, strings whose length greater than 3 or equals to 0 is not valid; or 
         System.out.println(restoreIpAddresses01("25525511135"));
     }
     //[255.255.11.135, 255.255.111.35]
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //Very simple DFS solution
-    public List<String> restoreIpAddresses02(String s) {
-        List<String> solutions = new ArrayList<String>();
-        restoreIp(s, solutions, 0, "", 0);
-        return solutions;
-    }
-
-    private void restoreIp(String ip, List<String> solutions, int idx, String restored, int count) {
-        if (count > 4) return;
-        if (count == 4 && idx == ip.length()) {
-            solutions.add(restored);
-        }
-
-        for (int i = 1; i < 4; i++) {
-            if (idx + i > ip.length()) {
-                break;
-            }
-            String s = ip.substring(idx, idx + i);
-
-            if ((s.startsWith("0") && s.length() > 1) || (i == 3 && Integer.parseInt(s) >= 256)) {
-                continue;
-            }
-            restoreIp(ip, solutions, idx+i, restored+s+(count==3?"" : "."), count + 1);
-        }
-    }
-    @Test
-    public void test02(){
-        System.out.println(restoreIpAddresses02("25525511135"));
-    }
-    //[255.255.11.135, 255.255.111.35]
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // 2
     /*
     My concise AC java code
 the basic idea is to make three cuts into the string, separating it into four parts, each part contains 1~3 digits and it must be <255.
      */
-    List<String> restoreIpAddresses03(String s) {
+    List<String> restoreIpAddresses02(String s) {
         List<String> ans = new ArrayList<String>();
         int len = s.length();
         for (int i = 1; i <=3; ++i){ // first cut
@@ -105,9 +75,52 @@ the basic idea is to make three cuts into the string, separating it into four pa
         return ans;
     }
 
+    @Test
+    public void test02(){
+        System.out.println(restoreIpAddresses02("25525511135"));
+    }
+    //[255.255.11.135, 255.255.111.35]
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // 3
+    //Very simple DFS solution
+    //每个单位里有.
+    // 这个是DFS但是不是backtracking，因为每次加进来的是+创建的新的String
+    public List<String> restoreIpAddresses03(String s) {
+        List<String> solutions = new ArrayList<String>();
+        restoreIp(s, solutions, 0, "", 0);
+        return solutions;
+    }
+
+    private void restoreIp(String ip, List<String> solutions, int idx, String restored, int count) {
+        if (count > 4) return;
+        if (count == 4 && idx == ip.length()) {
+            solutions.add(restored);
+        }
+
+        for (int i = 1; i < 4; i++) {
+            if (idx + i > ip.length()) {
+                break;
+            }
+            String s = ip.substring(idx, idx + i);
+
+            if ((s.startsWith("0") && s.length() > 1) || (i == 3 && Integer.parseInt(s) >= 256)) {
+                continue;
+            }
+            restoreIp(ip, solutions, idx+i, restored+s+(count==3?"" : "."), count + 1);
+        }
+    }
+    @Test
+    public void test03(){
+        System.out.println(restoreIpAddresses03("25525511135"));
+    }
+    //[255.255.11.135, 255.255.111.35]
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //4
     //jiuzhang
+    //每个单位里只有数字
+    //这个是Backtracking，用list来存储状态，在返回上一层函数之后要删除之前增加的
     public ArrayList<String> restoreIpAddresses_J1(String s) {
         ArrayList<String> result = new ArrayList<String>();
         ArrayList<String> list = new ArrayList<String>();
@@ -121,36 +134,41 @@ the basic idea is to make three cuts into the string, separating it into four pa
 
     public void helper(ArrayList<String> result, ArrayList<String> list, String s, int start){
         if(list.size() == 4){
-            if(start != s.length())
-                return;
+            if(start != s.length()) return;
 
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             for(String tmp: list){
                 sb.append(tmp);
-                sb.append(".");
+                sb.append('.');
             }
-            sb.deleteCharAt(sb.length()-1);
+            sb.deleteCharAt(sb.length() - 1);
             result.add(sb.toString());
             return;
         }
 
-        for(int i=start; i<s.length() && i < start+3; i++){
-            String tmp = s.substring(start, i+1);
+        for(int i = start; i < s.length() && i < start + 3; i++){
+            String tmp = s.substring(start, i + 1);
             if(isvalid(tmp)){
                 list.add(tmp);
-                helper(result, list, s, i+1);
-                list.remove(list.size()-1);
+                helper(result, list, s, i + 1);
+                list.remove(list.size() - 1);
             }
         }
     }
 
     private boolean isvalid(String s){
-        if(s.charAt(0) == '0')
-            return s.equals("0"); // to eliminate cases like "00", "10"
+        // to eliminate cases like "00", "10"
+        if(s.charAt(0) == '0') return s.equals("0");
         int digit = Integer.valueOf(s);
         return digit >= 0 && digit <= 255;
     }
 
+
+    @Test
+    public void test04(){
+        System.out.println(restoreIpAddresses_J1("25525511135"));
+    }
+    //[255.255.11.135, 255.255.111.35]
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

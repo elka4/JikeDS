@@ -869,32 +869,39 @@ public class DP_2String {
 
                 //1, If sc[i] == pc[j] :  dp[i][j] = dp[i-1][j-1];
                 //s第i个字符和p第j个字符相同
-                //那么s前i个字符与p前j个字符是否匹配dp[i][j]
+                //dp[i][j]：p前j个字符与s前i个字符是否匹配
                 //取决于s前i-1个字符与p前j-1个字符是否匹配dp[i-1][j-1]
-                if (sc[i-1] == pc[j-1]) {
+                if (pc[j-1] == sc[i-1]) {
                     dp[i][j] = dp[i-1][j-1];
                 }
 
                 //2, If p.charAt(j) == '.' : dp[i][j] = dp[i-1][j-1];
                 //p第j个字符为'.'，
-                //那么s前i个字符与p前j个字符是否匹配dp[i][j]
+                //dp[i][j]：那么s前i个字符与p前j个字符是否匹配
                 //取决于s前i-1个字符与p前j-1个字符是否匹配dp[i-1][j-1]
                 if (pc[j-1] == '.') {
                     dp[i][j] = dp[i-1][j-1];
                 }
 
                 //3, If p.charAt(j) == '*':
-                //p第j个字符为'*'，
+                //p第j个字符，当前字符为'*'，
                 if (pc[j - 1] == '*') {
                     //1   if p.charAt(j-1) != s.charAt(i) : dp[i][j] = dp[i][j-2]
                     // in this case, a* only counts as empty
                     //p第j-1个字符和s第i个字符不同，并且p第j-1个字符不是'.'
                     //那么s前i个字符与p前j个字符是否匹配，取决于s前i个字符和p前j-2个字符是否匹配
+
+                    //p的前一个字符和s的最后一个字符不匹配，p的后面两个不用考虑
                     if (pc[j - 2] != sc[i - 1] && pc[j - 2] != '.') {
                         dp[i][j] = dp[i][j-2];
                     }
                     //2   if p.charAt(i-1) == s.charAt(i) or p.charAt(i-1) == '.':
                     //p第j-1个字符和s第i个字符相同，或者p第j-1个字符是'.'
+
+                    //p的前一个字符pc[j - 2]和s的最后一个字符匹配sc[i - 1]，以下三种情况都可以满足匹配
+                    //不考虑p的最后1个dp[i][j-1]
+                    //不考虑p的最后2个dp[i][j-2]
+                    //不考虑s的最后1个dp[i-1][j]
                     else {
                         dp[i][j] = (dp[i][j-1] || dp[i-1][j] || dp[i][j-2]);
                     }
@@ -1015,6 +1022,34 @@ public class DP_2String {
         //isMatch("ab", "?*") → true
         //isMatch("aab", "c*a*b") → false
         System.out.println(isMatch2("aab", "?*"));
+    }
+
+    //注释
+    public boolean isMatch22(String s, String p) {
+        int m = s.length(), n = p.length();
+        char[] ws = s.toCharArray();
+        char[] wp = p.toCharArray();
+        boolean[][] dp = new boolean[m+1][n+1];
+        //空串匹配空串
+        dp[0][0] = true;
+        //如果s是空串，取决于p中当前字符是否为*和之前字符串是否匹配
+        for (int j = 1; j <= n; j++)
+            dp[0][j] = dp[0][j - 1] && wp[j - 1] == '*';
+
+
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                //如果p最后一个字符以?或者相同来匹配s
+                //忽略s和p的最后一个字符
+                if (wp[j - 1] == '?' || ws[i - 1] == wp[j - 1])
+                    dp[i][j] = dp[i - 1][j - 1];
+                    //如果p最后一个字符是*
+                    //忽略s或者p的最后一个字符
+                else if (wp[j - 1] == '*')
+                    dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
+            }
+        }
+        return dp[m][n];
     }
 
 

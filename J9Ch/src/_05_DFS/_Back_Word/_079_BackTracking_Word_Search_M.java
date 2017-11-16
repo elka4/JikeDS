@@ -5,6 +5,7 @@ import org.junit.Test;
 //  79. Word Search
 //  https://leetcode.com/problems/word-search/description/
 //  http://www.lintcode.com/zh-cn/problem/word-search/
+//   Array, Backtracking
 public class _079_BackTracking_Word_Search_M {
     //    Accepted very short Java solution. No additional space.
     //    Here accepted solution based on recursion. To save memory I decuded to apply bit mask for every visited cell. Please check board[y][x] ^= 256;
