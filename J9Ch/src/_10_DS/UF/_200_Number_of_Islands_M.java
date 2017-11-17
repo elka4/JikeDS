@@ -497,7 +497,7 @@ I separate all the union find logic in a separate class and use 1d version to ma
             count = total;
         }
     }
-
+//------------------------------------------------------------------------------
     public class Solution {
         /**
          * @param grid a boolean 2D matrix
