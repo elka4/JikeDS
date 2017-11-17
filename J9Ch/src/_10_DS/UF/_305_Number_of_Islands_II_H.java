@@ -1,16 +1,15 @@
 package _10_DS.UF;
+import org.junit.Test;
+
 import java.util.*;
 
 
 //  305. Number of Islands II
 //  https://leetcode.com/problems/number-of-islands-ii/description/
-//   UF
+//  UF
+//  5:5只看这个我自己写的就好了
 public class _305_Number_of_Islands_II_H {
 
-    class Point {
-        int x,y,l;
-        public Point(int _x, int _y, int _l) {x=_x;y=_y;l=_l;}
-    }
 
 ///////////////////////////////////////////////////////////////////////////////////////
 //1
@@ -39,6 +38,8 @@ Here I've attached my solution. There can be at least two improvements: union by
 
 Cheers!
  */
+
+//1
     class Solution1{
         int[][] dirs = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
 
@@ -248,14 +249,16 @@ public int findIsland(int[] roots, int id) {
     }
 }
 ///////////////////////////////////////////////////////////////////////////////////////
+    //4
 // 9Ch
-public class Jiuzhang {
-    /**
-     * @param n an integer
-     * @param m an integer
-     * @param operators an array of point
-     * @return an integer array
-     */
+
+    class Point {
+        int x,y,l;
+        public Point(int _x, int _y, int _l) {x=_x;y=_y;l=_l;}
+    }
+
+    public class Jiuzhang {
+
     int converttoId(int x, int y, int m){
         return x*m + y;
     }
@@ -292,7 +295,7 @@ public class Jiuzhang {
                 father.put(fa_x, fa_y);
         }
     }
-
+//-----------------------------------------------------------------------------------------
     public List<Integer> numIslands2(int n, int m, Point[] operators) {
         // Write your code here
         List<Integer> ans = new ArrayList<Integer>();
@@ -311,23 +314,22 @@ public class Jiuzhang {
         for(int i = 0; i < operators.length; i++) {
             int x = operators[i].x;
             int y = operators[i].y;
-            if(island[x][y] != 1) {
-                count ++;
-                island[x][y]  = 1;
-                int id = converttoId(x,y , m);
-                for(int j = 0 ; j < 4; j++) {
-                    int nx = x + dx[j];
-                    int ny = y + dy[j];
-                    if(0 <= nx && nx < n && 0 <= ny && ny < m && island[nx][ny] == 1)
-                    {
-                        int nid = converttoId(nx, ny, m);
+            if(island[x][y] == 1) continue;
 
-                        int fa = uf.compressed_find(id);
-                        int nfa = uf.compressed_find(nid);
-                        if(fa != nfa) {
-                            count--;
-                            uf.union(id, nid);
-                        }
+            count ++;
+            island[x][y]  = 1;
+            int id = converttoId(x,y , m);
+            for(int j = 0 ; j < 4; j++) {
+                int nx = x + dx[j];
+                int ny = y + dy[j];
+                if(0 <= nx && nx < n && 0 <= ny && ny < m && island[nx][ny] == 1) {
+                    int nid = converttoId(nx, ny, m);
+
+                    int fa = uf.compressed_find(id);
+                    int nfa = uf.compressed_find(nid);
+                    if(fa != nfa) {
+                        count--;
+                        uf.union(id, nid);
                     }
                 }
             }
@@ -335,7 +337,113 @@ public class Jiuzhang {
         }
         return ans;
     }
+
+
 }
+///////////////////////////////////////////////////////////////////////////////////////
+    //5
+    class mine{
+        class UnionFind {
+            int [] parents;
+            public UnionFind(int totalNodes) {
+                parents = new int[totalNodes];
+                for(int i = 0; i < totalNodes; i++) {
+                    parents[i] = i;
+                }
+            }
+
+            boolean union(int node1, int node2) {
+                int root1 = find(node1);
+                int root2 = find(node2);
+                if(root1 != root2) {
+                    parents[root2] = root1;
+                    return false;
+                }
+                return true;
+            }
+
+            int find(int node) {
+                while(parents[node] != node) {
+                    parents[node] = parents[parents[node]];
+                    node = parents[node];
+                }
+
+                return node;
+            }
+
+            //average O(1)
+            int compressed_find(int node){
+                int parent = parents[node];
+                while (parent != parents[parent]) {
+                    parent = parents[parent];
+                }
+                int next;
+                while (node != parents[parent]) {
+                    next = parents[parent];
+                    parents[node] = parent;
+                    node = next;
+                }
+                return parent;
+            }
+
+            boolean isConnected(int node1, int node2) {
+                return find(node1) == find(node2);
+            }
+        }
+    //-------------------------------------------------------------------------------------
+
+
+        public List<Integer> numIslands2(int m, int n, int[][] positions) {
+            List<Integer> result = new ArrayList<Integer>();
+            if(positions == null) return result;
+
+            int []dx = {0,-1, 0, 1};
+            int []dy = {1, 0, -1, 0};
+            int[][] distance = {{1,0},{-1,0},{0,1},{0,-1}};
+            int [][]island = new int[m][n];
+
+            UnionFind uf = new UnionFind(m*n);
+            int count = 0;
+
+            for(int[] position:positions) {
+                int x = position[0];
+                int y = position[1];
+
+                if(island[x][y] == 1) continue;
+
+                count ++;//每处理一个input，就是处理一格，就先count++
+                island[x][y]  = 1;
+                int id = x*n + y;
+
+                for (int[] d : distance) {
+                    int nx = x + d[0];
+                    int ny = y + d[1];
+                    if(0 <= nx && nx < m && 0 <= ny && ny < n && island[nx][ny] == 1) {
+                        int nid = nx*n + ny;
+                        if (!uf.union(id, nid))  count--;
+                    }
+                }
+                result.add(count);
+            }
+            return result;
+        }
+
+    }// class mine
+
+    @Test
+    public void test_mine(){
+        mine mine = new mine();
+        /* 1   2     [[0,1],[0,0]]*/
+        System.out.println(mine.numIslands2(1,2,new int[][]{{0,1},{0,0}}));
+    }
+
+    @Test
+    public void test_mine1(){
+        mine mine = new mine();
+        /*  8   4   [[0,0],[7,1],[6,1],[3,3],[4,1]]*/
+        System.out.println(mine.numIslands2(8,4,new int[][]{{0,0},{7,1},{6,1},{3,3},{4,1}}));
+    }
+
 ///////////////////////////////////////////////////////////////////////////////////////
 }
 /*
@@ -378,5 +486,8 @@ Can you do it in time complexity O(k log mn), where k is the length of the posit
 
 
 /*
-给定 n，m，分别代表一个2D矩阵的行数和列数，同时，给定一个大小为 k 的二元数组A。起初，2D矩阵的行数和列数均为 0，即该矩阵中只有海洋。二元数组有 k 个运算符，每个运算符有 2 个整数 A[i].x, A[i].y，你可通过改变矩阵网格中的A[i].x]，[A[i].y] 来将其由海洋改为岛屿。请在每次运算后，返回矩阵中岛屿的数量。
+给定 n，m，分别代表一个2D矩阵的行数和列数，同时，给定一个大小为 k 的二元数组A。
+起初，2D矩阵的行数和列数均为 0，即该矩阵中只有海洋。
+二元数组有 k 个运算符，每个运算符有 2 个整数 A[i].x, A[i].y，你可通过改变矩阵网格中的A[i].x]，[A[i].y] 来将其由海洋改为岛屿。
+请在每次运算后，返回矩阵中岛屿的数量。
  */

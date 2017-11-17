@@ -6,6 +6,7 @@ import java.util.*;
 //  https://leetcode.com/problems/surrounded-regions/description/
 //  http://www.lintcode.com/zh-cn/problem/surrounded-regions/
 //  Breadth-first Search, Union Find
+//  4:4
 public class _130_Surrounded_Regions_M {
 
 
@@ -20,23 +21,28 @@ public class _130_Surrounded_Regions_M {
             if(board.length == 0 || board[0].length == 0) return;
 
             // init, every char itself is an union
-            int height = board.length, width = board[0].length;
+            int height = board.length;
+            int width = board[0].length;
             unionSet = new int[height * width];
             hasEdgeO = new boolean[unionSet.length];
-            for(int i = 0;i<unionSet.length; i++) unionSet[i] = i;
+            for(int i = 0;i<unionSet.length; i++)
+                unionSet[i] = i;
+
             for(int i = 0;i<hasEdgeO.length; i++){
                 int x = i / width, y = i % width;
                 hasEdgeO[i] = (board[x][y] == 'O' && (x==0 || x==height-1 || y==0 || y==width-1));
             }
 
-            // iterate the matrix, for each char, union it + its upper char + its right char if they equals to each other
+            // iterate the matrix, for each char,
+            // union it + its upper char + its right char if they equals to each other
             for(int i = 0;i<unionSet.length; i++){
                 int x = i / width, y = i % width, up = x - 1, right = y + 1;
                 if(up >= 0 && board[x][y] == board[up][y]) union(i,i-width);
                 if(right < width && board[x][y] == board[x][right]) union(i,i+1);
             }
 
-            // for each char in the matrix, if it is an 'O' and its union doesn't has an 'edge O', the whole union should be setted as 'X'
+            // for each char in the matrix, if it is an 'O' and its union doesn't has an 'edge O',
+            // the whole union should be setted as 'X'
             for(int i = 0;i<unionSet.length; i++){
                 int x = i / width, y = i % width;
                 if(board[x][y] == 'O' && !hasEdgeO[findSet(i)])
@@ -80,14 +86,16 @@ public class _130_Surrounded_Regions_M {
                 hasEdgeO[i] = (board[x][y] == 'O' && (x==0 || x==height-1 || y==0 || y==width-1));
             }
 
-            // iterate the matrix, for each char, union it + its upper char + its right char if they equals to each other
+            // iterate the matrix, for each char,
+            // union it + its upper char + its right char if they equals to each other
             for(int i = 0;i<unionSet.length; i++){
                 int x = i / width, y = i % width, up = x - 1, right = y + 1;
                 if(up >= 0 && board[x][y] == board[up][y]) union(i,i-width);
                 if(right < width && board[x][y] == board[x][right]) union(i,i+1);
             }
 
-            // for each char in the matrix, if it is an 'O' and its union doesn't has an 'edge O', the whole union should be setted as 'X'
+            // for each char in the matrix, if it is an 'O' and its union doesn't has an 'edge O',
+            // the whole union should be setted as 'X'
             for(int i = 0;i<unionSet.length; i++){
                 int x = i / width, y = i % width;
                 if(board[x][y] == 'O' && !hasEdgeO[findSet(i)])
@@ -206,6 +214,37 @@ public class _130_Surrounded_Regions_M {
 //Cleaner Java code
 
     public class Solution4 {
+        class UnionFind {
+            int [] parents;
+            public UnionFind(int totalNodes) {
+                parents = new int[totalNodes];
+                for(int i = 0; i < totalNodes; i++) {
+                    parents[i] = i;
+                }
+            }
+
+            void union(int node1, int node2) {
+                int root1 = find(node1);
+                int root2 = find(node2);
+                if(root1 != root2) {
+                    parents[root2] = root1;
+                }
+            }
+
+            int find(int node) {
+                while(parents[node] != node) {
+                    parents[node] = parents[parents[node]];
+                    node = parents[node];
+                }
+
+                return node;
+            }
+
+            boolean isConnected(int node1, int node2) {
+                return find(node1) == find(node2);
+            }
+        }
+        //-------------------------------------------------------------------
         int rows, cols;
 
         public void solve(char[][] board) {
@@ -218,22 +257,24 @@ public class _130_Surrounded_Regions_M {
             UnionFind uf = new UnionFind(rows * cols + 1);
             int dummyNode = rows * cols;
 
+            //遍历全部格子，如果格子是'O'， 将四条边和dummyNode合并，将中间的格子合并
             for(int i = 0; i < rows; i++) {
                 for(int j = 0; j < cols; j++) {
-                    if(board[i][j] == 'O') {
-                        if(i == 0 || i == rows-1 || j == 0 || j == cols-1) {
-                            uf.union(node(i,j), dummyNode);
-                        }
-                        else {
-                            if(i > 0 && board[i-1][j] == 'O')  uf.union(node(i,j), node(i-1,j));
-                            if(i < rows-1 && board[i+1][j] == 'O')  uf.union(node(i,j), node(i+1,j));
-                            if(j > 0 && board[i][j-1] == 'O')  uf.union(node(i,j), node(i, j-1));
-                            if(j < cols-1 && board[i][j+1] == 'O')  uf.union(node(i,j), node(i, j+1));
-                        }
+                    if(board[i][j] == 'X') continue;
+
+                    if(i == 0 || i == rows-1 || j == 0 || j == cols-1) {
+                        uf.union(node(i,j), dummyNode);
+                    }
+                    else {
+                        if(i > 0 && board[i-1][j] == 'O')  uf.union(node(i,j), node(i-1,j));
+                        if(i < rows-1 && board[i+1][j] == 'O')  uf.union(node(i,j), node(i+1,j));
+                        if(j > 0 && board[i][j-1] == 'O')  uf.union(node(i,j), node(i, j-1));
+                        if(j < cols-1 && board[i][j+1] == 'O')  uf.union(node(i,j), node(i, j+1));
                     }
                 }
             }
 
+            //遍历全部格子，如果是和dummy连接的就变成'O'，否则变成'X'
             for(int i = 0; i < rows; i++) {
                 for(int j = 0; j < cols; j++) {
                     if(uf.isConnected(node(i,j), dummyNode)) {
@@ -245,42 +286,13 @@ public class _130_Surrounded_Regions_M {
                 }
             }
         }
-
+        //将x，y坐标转换成一维数字
         int node(int i, int j) {
             return i * cols + j;
         }
     }
 
-    class UnionFind {
-        int [] parents;
-        public UnionFind(int totalNodes) {
-            parents = new int[totalNodes];
-            for(int i = 0; i < totalNodes; i++) {
-                parents[i] = i;
-            }
-        }
 
-        void union(int node1, int node2) {
-            int root1 = find(node1);
-            int root2 = find(node2);
-            if(root1 != root2) {
-                parents[root2] = root1;
-            }
-        }
-
-        int find(int node) {
-            while(parents[node] != node) {
-                parents[node] = parents[parents[node]];
-                node = parents[node];
-            }
-
-            return node;
-        }
-
-        boolean isConnected(int node1, int node2) {
-            return find(node1) == find(node2);
-        }
-    }
 ///////////////////////////////////////////////////////////////////////////////////////
 // 9Ch
 //  http://www.jiuzhang.com/solution/surrounded-regions/

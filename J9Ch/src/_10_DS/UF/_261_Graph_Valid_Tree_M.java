@@ -5,8 +5,9 @@ import java.util.*;
 //  https://leetcode.com/problems/graph-valid-tree/
 //  http://www.lintcode.com/zh-cn/problem/graph-valid-tree/
 //  Depth-first Search, Breadth-first Search, Union Find, Graph
+//  3
 public class _261_Graph_Valid_Tree_M {
-
+    //1
     //AC Java Union-Find solution
     public class Solution1 {
         public boolean validTree(int n, int[][] edges) {
@@ -90,6 +91,7 @@ public class _261_Graph_Valid_Tree_M {
 ///////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////////
+    //3
 // 9Ch
 // version 2: Union Find
 public class Jiuzhang {
@@ -137,6 +139,7 @@ public class Jiuzhang {
         UnionFind uf = new UnionFind(n);
 
         for (int i = 0; i < edges.length; i++) {
+            //一个边的两个顶点都连接同一个顶点
             if (uf.compressed_find(edges[i][0]) == uf.compressed_find(edges[i][1])) {
                 return false;
             }

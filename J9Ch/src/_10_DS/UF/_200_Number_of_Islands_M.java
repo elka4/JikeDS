@@ -4,10 +4,11 @@ import java.util.*;
 //  200. Number of Islands
 //  https://leetcode.com/problems/number-of-islands/
 //  http://www.lintcode.com/zh-cn/problem/number-of-islands/
-//   DFS, Breadth-first Search, Union Find
+//  DFS, Breadth-first Search, Union Find
+//  7: 7
 public class _200_Number_of_Islands_M {
 
-
+//1
 //Java Union Find Solution
     class Solution1{
     class UF {
@@ -81,6 +82,9 @@ public class _200_Number_of_Islands_M {
         }
         return uf.count;
     }
+
+
+
 }
 ///////////////////////////////////////////////////////////////////////////////////////
 //2
@@ -417,8 +421,8 @@ I separate all the union find logic in a separate class and use 1d version to ma
             }
             return uf.count;
         }
-        //Union Find:
 
+        //Union Find:
         class UnionFind {
             int[] father;
             int m, n;
@@ -455,50 +459,54 @@ I separate all the union find logic in a separate class and use 1d version to ma
         }
     }
 ///////////////////////////////////////////////////////////////////////////////////////
+    //7
 //Jiuzhang
 
     // version 2: Union Find
-    class UnionFind {
 
-        private int[] father = null;
-        private int count;
+    //8
+    public class Jiuzhang {
 
-        private int find(int x) {
-            if (father[x] == x) {
-                return x;
+        class UnionFind {
+
+            private int[] father = null;
+            private int count;
+
+            private int find(int x) {
+                if (father[x] == x) {
+                    return x;
+                }
+                return father[x] = find(father[x]);
             }
-            return father[x] = find(father[x]);
-        }
 
-        public UnionFind(int n) {
-            // initialize your data structure here.
-            father = new int[n];
-            for (int i = 0; i < n; ++i) {
-                father[i] = i;
+            public UnionFind(int n) {
+                // initialize your data structure here.
+                father = new int[n];
+                for (int i = 0; i < n; ++i) {
+                    father[i] = i;
+                }
+            }
+
+            public void connect(int a, int b) {
+                // Write your code here
+                int root_a = find(a);
+                int root_b = find(b);
+                if (root_a != root_b) {
+                    father[root_a] = root_b;
+                    count --;
+                }
+            }
+
+            public int query() {
+                // Write your code here
+                return count;
+            }
+
+            public void set_count(int total) {
+                count = total;
             }
         }
-
-        public void connect(int a, int b) {
-            // Write your code here
-            int root_a = find(a);
-            int root_b = find(b);
-            if (root_a != root_b) {
-                father[root_a] = root_b;
-                count --;
-            }
-        }
-
-        public int query() {
-            // Write your code here
-            return count;
-        }
-
-        public void set_count(int total) {
-            count = total;
-        }
-    }
 //------------------------------------------------------------------------------
-    public class Solution {
         /**
          * @param grid a boolean 2D matrix
          * @return an integer
@@ -536,6 +544,43 @@ I separate all the union find logic in a separate class and use 1d version to ma
                             union_find.connect(i * m + j, i * m + j + 1);
                         }
                     }
+            return union_find.query();
+        }
+
+        //mine
+        public int numIslands2(char[][] grid) {
+            int m = grid.length;
+            if (m == 0) return 0;
+            int n = grid[0].length;
+            if (n == 0) return 0;
+
+            int total = 0;
+            for(int i = 0; i < m; ++i)
+                for(int j = 0; j < n; ++j)
+                    if (grid[i][j] == '1')
+                        total ++;
+
+            UnionFind union_find = new UnionFind(m * n);
+            union_find.set_count(total);
+
+            int[][] distance = {{1,0},{-1,0},{0,1},{0,-1}};
+
+            for(int i = 0;i < m; ++i){
+                for(int j = 0;j < n; ++j) {
+                    if (grid[i][j] == '0') continue;
+
+                    for (int[] d : distance) {
+                        int x = i + d[0];
+                        int y = j + d[1];
+                        if (x >= 0 && x < m && y >= 0 && y < n && grid[x][y] == '1') {
+                            int id1 = i*n+j; //理解并记住这个是n
+                            int id2 = x*n+y;
+                            union_find.connect(id1, id2);
+                        }
+                    }
+                }
+            }
+
             return union_find.query();
         }
     }

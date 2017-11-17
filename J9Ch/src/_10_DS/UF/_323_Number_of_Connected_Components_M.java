@@ -1,11 +1,14 @@
 package _10_DS.UF;
+import org.junit.Test;
+
 import java.util.*;
 
 //  323. Number of Connected Components in an Undirected Graph
 //  https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/description/
-//  Depth-first Search Breadth-first Search Union Find Graph
-public class _323_Number_of_Connected_Components_in_an_Undirected_Graph_M {
-
+//  Depth-first Search,  Breadth-first Search,   Union Find,     Graph
+//  4:4
+public class _323_Number_of_Connected_Components_M {
+//1
 /*
 
     Easiest 2ms Java Solution
@@ -44,38 +47,39 @@ public class _323_Number_of_Connected_Components_in_an_Undirected_Graph_M {
 
     }
 ///////////////////////////////////////////////////////////////////////////////////////
+    //2
     //AC JAVA code, Union Find
-class Solution2{
-    private int[] father;
-    public int countComponents(int n, int[][] edges) {
+    class Solution2{
+        private int[] father;
+        public int countComponents(int n, int[][] edges) {
 
-        Set<Integer> set = new HashSet<Integer>();
-        father = new int[n];
-        for (int i = 0; i < n; i++) {
-            father[i] = i;
-        }
-        for (int i = 0; i < edges.length; i++) {
-            union(edges[i][0], edges[i][1]);
+            Set<Integer> set = new HashSet<Integer>();
+            father = new int[n];
+            for (int i = 0; i < n; i++) {
+                father[i] = i;
+            }
+            for (int i = 0; i < edges.length; i++) {
+                union(edges[i][0], edges[i][1]);
+            }
+
+            for (int i = 0; i < n; i++){
+                set.add(find(i));
+            }
+            return set.size();
         }
 
-        for (int i = 0; i < n; i++){
-            set.add(find(i));
+        int find(int node) {
+            if (father[node] == node) {
+                return node;
+            }
+            father[node] = find(father[node]);
+            return father[node];
         }
-        return set.size();
+
+        void union(int node1, int node2) {
+            father[find(node1)] = find(node2);
+        }
     }
-
-    int find(int node) {
-        if (father[node] == node) {
-            return node;
-        }
-        father[node] = find(father[node]);
-        return father[node];
-    }
-
-    void union(int node1, int node2) {
-        father[find(node1)] = find(node2);
-    }
-}
 ///////////////////////////////////////////////////////////////////////////////////////
 //3
 
@@ -119,7 +123,34 @@ class Solution2{
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////
+//4
+     public int countComponents(int n, int[][] edges) {
+                if (n <= 1) {
+            return n;
+        }
+        //UnionFind uf = new UnionFind(n);
+        unionFind2 uf = new unionFind2(n);
 
+                for(int[] e : edges) {
+            int root1 = uf.find(e[0]);
+            int root2 = uf.find(e[1]);
+            if(root1 != root2) {
+    //                    roots[root1] = root2;  // union
+                uf.union(e[0], e[1]);
+                n--;
+            }
+        }
+                return n;
+
+    }
+//    class Solution4 {
+//
+//    }
+
+    @Test
+    public void test(){
+        System.out.println(countComponents(5, new int[][]{{0,1}, {1,2}, {3,4}}));
+    }
 ///////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////////

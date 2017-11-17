@@ -1,4 +1,4 @@
-package _10_DS;
+package _10_DS.Trie;
 
 import org.junit.Test;
 
