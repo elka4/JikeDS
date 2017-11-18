@@ -125,27 +125,18 @@ public class _323_Number_of_Connected_Components_M {
 ///////////////////////////////////////////////////////////////////////////////////////
 //4
      public int countComponents(int n, int[][] edges) {
-                if (n <= 1) {
-            return n;
-        }
-        //UnionFind uf = new UnionFind(n);
+        if (n <= 1) return n;
+
         unionFind2 uf = new unionFind2(n);
 
-                for(int[] e : edges) {
-            int root1 = uf.find(e[0]);
-            int root2 = uf.find(e[1]);
-            if(root1 != root2) {
-    //                    roots[root1] = root2;  // union
-                uf.union(e[0], e[1]);
+        for(int[] e : edges) {
+            if (!uf.union2(e[0], e[1])){//true if they are connected
                 n--;
             }
         }
-                return n;
-
+        return n;
     }
-//    class Solution4 {
-//
-//    }
+
 
     @Test
     public void test(){

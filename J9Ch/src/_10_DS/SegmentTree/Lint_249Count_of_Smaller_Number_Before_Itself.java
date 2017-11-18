@@ -7,7 +7,7 @@ import java.util.ArrayList;
 //  http://lintcode.com/zh-cn/problem/count-of-smaller-number-before-itself/
 
 //
-public class _249Count_of_Smaller_Number_Before_Itself {
+public class Lint_249Count_of_Smaller_Number_Before_Itself {
     /*
      * @param nums: An integer array
      * @return: Count the number of element before this element 'ai' is

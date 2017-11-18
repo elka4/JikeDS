@@ -5,7 +5,7 @@ import java.util.ArrayList;
 // Count of Smaller Number
 // lint:    http://lintcode.com/zh-cn/problem/count-of-smaller-number/
 
-public class _248Count_of_Smaller_Number {
+public class Lint_248Count_of_Smaller_Number {
 	/*
      * @param nums: An integer array
      * @return: The number of element in the array that 

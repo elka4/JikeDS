@@ -3,7 +3,7 @@ package _10_DS.Trie;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Implement_Trie_Prefix_Tree {
+public class _07_Implement_Trie_Prefix_Tree {
 
     class TrieNode {
         char c;
@@ -15,7 +15,7 @@ public class Implement_Trie_Prefix_Tree {
         }
     }
 
-
+//------------------------------------------------------------------------------------
 
     public class Trie {
         private TrieNode root;
@@ -83,10 +83,7 @@ public class Implement_Trie_Prefix_Tree {
             return t;
         }
     }
-
-
-////////////////////////////////////////////////////////////////////////////////
-
+//------------------------------------------------------------------------------------
 
 
 }

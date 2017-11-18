@@ -5,10 +5,12 @@ import org.junit.Test;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Top_K_Frequent_Elements {
+public class _347_Top_K_Frequent_Elements {
 
     // leet 347. Top K Frequent Elements
+    //  Hash Table,  Heap
 
+////////////////////////////////////////////////////////////////////
 //    这种问题一般有两种做法，一是建立一个wrapper class统计频率,然后用heap得到topK.
 //    二是bucket sort.bucket的index就是频率，里面放的是对应的值。
 //    PQ的做法

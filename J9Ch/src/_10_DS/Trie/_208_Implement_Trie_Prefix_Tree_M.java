@@ -1,14 +1,14 @@
 package _10_DS.Trie;
+import org.junit.Test;
+
+
 
 //  208. Implement Trie (Prefix Tree)
 //  https://leetcode.com/articles/implement-trie-prefix-tree/
 
-import org.junit.Test;
-
-//  https://leetcode.com/articles/implement-trie-prefix-tree/
 public class _208_Implement_Trie_Prefix_Tree_M {
-    class TrieNode {
 
+    class TrieNode {
         // R links to node children
         private TrieNode[] links;
 
@@ -38,6 +38,7 @@ public class _208_Implement_Trie_Prefix_Tree_M {
     }
 
 
+//------------------------------------------------------------------------------------
 
     class Trie {
         private TrieNode root;
@@ -88,6 +89,7 @@ public class _208_Implement_Trie_Prefix_Tree_M {
             return node != null;
         }
     }
+//------------------------------------------------------------------------------------
 
     @Test
     public void test01(){

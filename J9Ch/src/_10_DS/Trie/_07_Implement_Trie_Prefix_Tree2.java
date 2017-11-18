@@ -1,6 +1,6 @@
 package _10_DS.Trie;
 
-public class Implement_Trie_Prefix_Tree2 {
+public class _07_Implement_Trie_Prefix_Tree2 {
 
     //Java Solution 2 - Improve Performance by Using an Array
     //Each trie node can only contains 'a'-'z' characters.
@@ -15,6 +15,8 @@ public class Implement_Trie_Prefix_Tree2 {
         }
 
     }
+
+//------------------------------------------------------------------------------------
 
     public class Trie {
         private TrieNode root;
@@ -82,7 +84,8 @@ public class Implement_Trie_Prefix_Tree2 {
             return p;
         }
     }
+//------------------------------------------------------------------------------------
 
+//------------------------------------------------------------------------------------
 
-////////////////////////////////////////////////////////////////////////////////
 }

@@ -4,11 +4,13 @@ import java.util.*;
 
 //  547. Friend Circles
 //  https://leetcode.com/problems/friend-circles/description/
+//  Depth-first Search, Union Find
+//  4:4
 public class _547_Friend_Circles_M {
     //https://leetcode.com/problems/friend-circles/solution/
 
+    //1
     //Approach #1 Using Depth First Search[Accepted]
-
     public class Solution1 {
         public void dfs(int[][] M, int[] visited, int i) {
             for (int j = 0; j < M.length; j++) {
@@ -33,64 +35,66 @@ public class _547_Friend_Circles_M {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
+    //2
     //Approach #2 Using Breadth First Search[Accepted]
-public class Solution3 {
-    public int findCircleNum(int[][] M) {
-        int[] visited = new int[M.length];
-        int count = 0;
-        Queue < Integer > queue = new LinkedList < > ();
-        for (int i = 0; i < M.length; i++) {
-            if (visited[i] == 0) {
-                queue.add(i);
-                while (!queue.isEmpty()) {
-                    int s = queue.remove();
-                    visited[s] = 1;
-                    for (int j = 0; j < M.length; j++) {
-                        if (M[s][j] == 1 && visited[j] == 0)
-                            queue.add(j);
+    public class Solution3 {
+        public int findCircleNum(int[][] M) {
+            int[] visited = new int[M.length];
+            int count = 0;
+            Queue < Integer > queue = new LinkedList < > ();
+            for (int i = 0; i < M.length; i++) {
+                if (visited[i] == 0) {
+                    queue.add(i);
+                    while (!queue.isEmpty()) {
+                        int s = queue.remove();
+                        visited[s] = 1;
+                        for (int j = 0; j < M.length; j++) {
+                            if (M[s][j] == 1 && visited[j] == 0)
+                                queue.add(j);
+                        }
                     }
+                    count++;
                 }
-                count++;
             }
+            return count;
         }
-        return count;
     }
-}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
-//Approach #3 Using Union-Find Method[Accepted]
-public class Solution {
-    int find(int parent[], int i) {
-        if (parent[i] == -1)
-            return i;
-        return find(parent, parent[i]);
-    }
+    //3
+    //Approach #3 Using Union-Find Method[Accepted]
+    public class Solution {
+        int find(int parent[], int i) {
+            if (parent[i] == -1)
+                return i;
+            return find(parent, parent[i]);
+        }
 
-    void union(int parent[], int x, int y) {
-        int xset = find(parent, x);
-        int yset = find(parent, y);
-        if (xset != yset)
-            parent[xset] = yset;
-    }
-    public int findCircleNum(int[][] M) {
-        int[] parent = new int[M.length];
-        Arrays.fill(parent, -1);
-        for (int i = 0; i < M.length; i++) {
-            for (int j = 0; j < M.length; j++) {
-                if (M[i][j] == 1 && i != j) {
-                    union(parent, i, j);
+        void union(int parent[], int x, int y) {
+            int xset = find(parent, x);
+            int yset = find(parent, y);
+            if (xset != yset)
+                parent[xset] = yset;
+        }
+        public int findCircleNum(int[][] M) {
+            int[] parent = new int[M.length];
+            Arrays.fill(parent, -1);
+            for (int i = 0; i < M.length; i++) {
+                for (int j = 0; j < M.length; j++) {
+                    if (M[i][j] == 1 && i != j) {
+                        union(parent, i, j);
+                    }
                 }
             }
+            int count = 0;
+            for (int i = 0; i < parent.length; i++) {
+                if (parent[i] == -1)
+                    count++;
+            }
+            return count;
         }
-        int count = 0;
-        for (int i = 0; i < parent.length; i++) {
-            if (parent[i] == -1)
-                count++;
-        }
-        return count;
     }
-}
 
 ///////////////////////////////////////////////////////////////////////////////////////
 //4
@@ -152,7 +156,24 @@ public class Solution {
         }
     }
 ///////////////////////////////////////////////////////////////////////////////////////
+//5
 
+    class Solution5{
+        public int findCircleNum(int[][] M) {
+            int n = M.length;
+            UnionFind uf = new UnionFind(n);
+
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = i + 1; j < n; j++) {
+                    if (M[i][j] == 1){
+                        uf.union(i, j);
+                        n--;
+                    }
+                }
+            }
+            return n;
+        }
+    }
 ///////////////////////////////////////////////////////////////////////////////////////
 }
 /*
@@ -168,6 +189,8 @@ Input:
 Output: 2
 Explanation:The 0th and 1st students are direct friends, so they are in a friend circle.
 The 2nd student himself is in a friend circle. So return 2.
+
+
 Example 2:
 Input:
 [[1,1,0],
@@ -176,6 +199,8 @@ Input:
 Output: 1
 Explanation:The 0th and 1st students are direct friends, the 1st and 2nd students are direct friends,
 so the 0th and 2nd students are indirect friends. All of them are in the same friend circle, so return 1.
+
+
 Note:
 N is in range [1,200].
 M[i][i] = 1 for all students.

@@ -4,9 +4,12 @@ import java.util.*;
 //  684. Redundant Connection
 //  https://leetcode.com/problems/redundant-connection/description/
 //  Tree, Union Find, Graph
+//  5:5 mine
 public class _684_Redundant_Connection_M {
-
+    //1
     //https://leetcode.com/problems/redundant-connection/solution/
+
+    //1
     //Approach #1: DFS [Accepted]
     //For each edge (u, v), traverse the graph with a depth-first search to see if we can connect u to v. If we can, then it must be the duplicate edge.
     class Solution1 {
@@ -44,6 +47,7 @@ public class _684_Redundant_Connection_M {
 
 
 ///////////////////////////////////////////////////////////////////////////////////////
+    //2
     //Approach #2: Union-Find [Accepted]
     /*
     If we are familiar with a Disjoint Set Union (DSU) data structure, we can use this in a straightforward manner to solve the problem: we simply find the first edge occurring in the graph that is already connected. The rest of this explanation will focus on the details of implementing DSU.
@@ -134,6 +138,7 @@ Specifically, the meaning of rank is that there are less than 2 ^ rank[x] follow
 ///////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////////
+    //4
 // 9Ch
 class Jiuzhang {
     public int[] findRedundantConnection(int[][] edges) {
@@ -167,6 +172,25 @@ class Jiuzhang {
 
 }
 ///////////////////////////////////////////////////////////////////////////////////////
+//5
+    //mine
+    class Solution5 {
+        public int[] findRedundantConnection(int[][] edges) {
+            int n = edges.length;
+            //为什么要+1?因为从0开始for(int i = 0; i < totalNodes; i++) {
+            UnionFind uf = new UnionFind(n + 1);
+            int father_l, father_r;
+
+
+            for (int[] now_edge:edges) {
+                if (uf.union2(now_edge[0], now_edge[1])){
+                    return now_edge;
+                }
+            }
+            return new int[2];
+        }
+    }
+///////////////////////////////////////////////////////////////////////////////////////
 }
 /*
 In this problem, a tree is an undirected graph that is connected and has no cycles.
@@ -184,6 +208,9 @@ Explanation: The given undirected graph will be like this:
   1
  / \
 2 - 3
+
+
+
 Example 2:
 Input: [[1,2], [2,3], [3,4], [1,4], [1,5]]
 Output: [1,4]
@@ -191,6 +218,8 @@ Explanation: The given undirected graph will be like this:
 5 - 1 - 2
     |   |
     4 - 3
+
+
 Note:
 The size of the input 2D-array will be between 3 and 1000.
 Every integer represented in the 2D-array will be between 1 and N, where N is the size of the input array.
