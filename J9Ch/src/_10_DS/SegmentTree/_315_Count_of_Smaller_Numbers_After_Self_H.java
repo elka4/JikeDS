@@ -41,7 +41,8 @@ public class _315_Count_of_Smaller_Numbers_After_Self_H {
             SegTreeNode root = new SegTreeNode(min, max);
 
             for (int i = nums.length - 1; i >= 0; i--) {
-                list.add(0, find(nums[i] - 1, root)); // minus 1, in case there will be a equal one
+                // minus 1, in case there will be a equal one
+                list.add(0, find(nums[i] - 1, root));
                 add(nums[i], root);
             }
 
@@ -196,7 +197,9 @@ public class _315_Count_of_Smaller_Numbers_After_Self_H {
 ////////////////////////////////////////////////////////////////////////////////////
 }
 /*
-You are given an integer array nums and you have to return a new counts array. The counts array has the property where counts[i] is the number of smaller elements to the right of nums[i].
+You are given an integer array nums and you have to return a new counts array.
+
+The counts array has the property where counts[i] is the number of smaller elements to the right of nums[i].
 
 Example:
 

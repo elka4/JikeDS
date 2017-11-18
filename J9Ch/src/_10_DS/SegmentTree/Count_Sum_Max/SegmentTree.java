@@ -2,6 +2,8 @@ package _10_DS.SegmentTree.Count_Sum_Max;
 
 
 public class SegmentTree {
+
+    ///------------------------------------------------------------------
     SegmentTreeNode root;
     SegmentTree(){
 
@@ -10,6 +12,7 @@ public class SegmentTree {
     SegmentTree(int start, int end){
         root = build(start, end);
     }
+
     SegmentTree(int[] arr){
         int n = arr.length;
         root = build(1, n);
@@ -19,11 +22,9 @@ public class SegmentTree {
     }
 
     public SegmentTreeNode build(int start, int end) {
-        // write your code here
-        if(start > end) {  // check core case
+        if(start > end) {
             return null;
         }
-
 
         SegmentTreeNode root = new SegmentTreeNode(start, end);
         if (start == end){
@@ -47,8 +48,8 @@ public class SegmentTree {
     public void modify(int index, int value){
         modify(root, index, value);
     }
+
     private void modify(SegmentTreeNode root, int index, int value) {
-        // write your code here
         if(root.start == index && root.end == index) { // 查找到
             root.sum = value;
             root.max = value;
@@ -76,6 +77,7 @@ public class SegmentTree {
     public int query_count(int start, int end){
         return query_count(root, start, end);
     }
+
     public int query_count(SegmentTreeNode root, int start, int end) {
         // write your code here
         if(start > end || root==null)
@@ -109,6 +111,7 @@ public class SegmentTree {
     public int query_max(int start, int end){
         return query_max(root, start, end);
     }
+
     public int query_max(SegmentTreeNode root, int start, int end) {
         // write your code here
         if(start == root.start && root.end == end) { // 相等
@@ -144,6 +147,7 @@ public class SegmentTree {
     public int query_min(int start, int end){
         return query_min(root, start, end);
     }
+
     public int query_min(SegmentTreeNode root, int start, int end) {
         // write your code here
         if(start == root.start && root.end == end) { // 相等
@@ -156,18 +160,18 @@ public class SegmentTree {
         // 左子区
         if(start <= mid) {
             if( mid < end) { // 分裂
-                leftmax =  query_max(root.left, start, mid);
+                leftmax =  query_min(root.left, start, mid);
             } else { // 包含
-                leftmax = query_max(root.left, start, end);
+                leftmax = query_min(root.left, start, end);
             }
             // leftmax = query(root.left, start, Math.min(mid,end));
         }
         // 右子区
         if(mid < end) { // 分裂 3
             if(start <= mid) {
-                rightmax = query_max(root.right, mid+1, end);
+                rightmax = query_min(root.right, mid+1, end);
             } else { //  包含
-                rightmax = query_max(root.right, start, end);
+                rightmax = query_min(root.right, start, end);
             }
             //rightmax = query(root.right, Math.max(mid+1,start), end);
         }
@@ -179,6 +183,7 @@ public class SegmentTree {
     public int query_sum(int start, int end){
         return query_sum(root, start, end);
     }
+
     public int query_sum(SegmentTreeNode root, int start, int end) {
         // write your code here
         if(start > end || root==null)

@@ -111,7 +111,8 @@ public class RangeMinimumQuery {
             // Print minimum value in arr[qs..qe]
             System.out.println("Minimum of values in range [" + qs + ", "
                     + qe + "] is = " + tree.RMQ(n, qs, qe));
-        }
+        }//Minimum of values in range [1, 5] is = 2
+
     }
 // This code is contributed by Ankur Narain Verma
 

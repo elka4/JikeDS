@@ -14,10 +14,9 @@ public class SegmentTreeNode {
         this.start = start;
         this.end = end;
         this.left = this.right = null;
-
-        //this.count = 1;
-
     }
+
+
 /*    public SegmentTreeNode(int start, int end, int sum) {
         this.start = start;
         this.end = end;
@@ -25,7 +24,6 @@ public class SegmentTreeNode {
         this.left = this.right = null;
         this.sum = sum;
     }*/
-    @Override
     public String toString(){
         return "[start: " + start + "; end: " + end + "; count: " + count
                 + "; max: " + max +"; min: " + min + "; sum: " + sum + "]";

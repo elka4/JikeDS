@@ -6,7 +6,7 @@ package _04_Tree._BST;
 //  http://www.lintcode.com/zh-cn/problem/unique-binary-search-trees/
 public class _096_Tree_Unique_Binary_Search_Trees_M {
 
-
+//1
 /*
     DP Solution in 6 lines with explanation. F(i, n) = G(i-1) * G(n-i)
     The problem can be solved in a dynamic programming way. I’ll explain the intuition and formulas in the following.
@@ -42,7 +42,7 @@ public class _096_Tree_Unique_Binary_Search_Trees_M {
     With the above explanation and formulas, here is the implementation in Java.
 */
 
-    public int numTrees(int n) {
+    public int numTrees1(int n) {
         int [] G = new int[n+1];
         G[0] = G[1] = 1;
 
@@ -55,8 +55,8 @@ public class _096_Tree_Unique_Binary_Search_Trees_M {
         return G[n];
     }
 
-
-
+////////////////////////////////////////////////////////////////////
+//2
 
 /*    Fantastic Clean Java DP Solution with Detail Explaination
     First note that dp[k] represents the number of BST trees built from 1....k;
@@ -69,7 +69,7 @@ public class _096_Tree_Unique_Binary_Search_Trees_M {
 
     Now, we may have a better understanding of the dp[k], which essentially represents the number of BST trees with k consecutive nodes. It is used as database when we need to know how many left sub trees are possible for k nodes when picking (k+1) as root.*/
 
-    public int numTrees1(int n) {
+    public int numTrees2(int n) {
         int [] dp = new int[n+1];
         dp[0]= 1;
         dp[1] = 1;
@@ -78,17 +78,18 @@ public class _096_Tree_Unique_Binary_Search_Trees_M {
                 dp[level] += dp[level-root]*dp[root-1];
         return dp[n];
     }
+////////////////////////////////////////////////////////////////////
 
-
-
-    public int numTrees2(int n) {
+//3
+    public int numTrees3(int n) {
         int [] G = new int[n+1]; G[0] = G[1] = 1;
         for(int i=2; i<=n; ++i) { for(int j=1; j<=i; ++j) {
             G[i] += G[j-1] * G[i-j]; }
         }
         return G[n];
     }
-    public int number(int n){ if(n==0)return 1;
+    //4
+    public int number4(int n){ if(n==0)return 1;
         if(n==1)return 1;
         int result[]=new int [n+1]; result[0]=1;
         result[1]=1;
@@ -101,8 +102,9 @@ public class _096_Tree_Unique_Binary_Search_Trees_M {
             } }
         return result[n];
     }
+    //5
     //DP
-    public int numTrees0(int n) {
+    public int numTrees5(int n) {
         int[] count = new int[n + 1];
 
         count[0] = 1;
@@ -119,7 +121,7 @@ public class _096_Tree_Unique_Binary_Search_Trees_M {
 
 
 ////////////////////////////////////////////////////////////////////
-
+//6
     //Dp problem. 10+ lines with comments
     /**
      * Taking 1~n as root respectively:
@@ -134,7 +136,7 @@ public class _096_Tree_Unique_Binary_Search_Trees_M {
      *      F(n) = F(0) * F(n-1) + F(1) * F(n-2) + F(2) * F(n-3) + ... + F(n-2) * F(1) + F(n-1) * F(0)
      */
 
-    int numTrees3(int n) {
+    int numTrees6(int n) {
         int[] dp = new int[n+1];
         dp[0] = dp[1] = 1;
         for (int i=2; i<=n; i++) {
@@ -147,7 +149,7 @@ public class _096_Tree_Unique_Binary_Search_Trees_M {
     }
 
 ////////////////////////////////////////////////////////////////////
-
+//7
 /*    Simple solution with easy explaination
     WE can know that by zero we can have 1 bst of null
     by 1 we have 1 bst of 1
@@ -157,7 +159,7 @@ public class _096_Tree_Unique_Binary_Search_Trees_M {
     Now making 3 as root node. There will be 2 nodes in left subtree and 0 nodes in right subtree. We know 2 will give 2 BST and zero will give 1 BST.
     Totalling the result of all the 3 nodes as root will give 5. Same process can be applied for more numbers.*/
 
-    public int number6(int n){
+    public int number7(int n){
         if(n==0)return 1;
         if(n==1)return 1;
 
@@ -181,8 +183,8 @@ public class _096_Tree_Unique_Binary_Search_Trees_M {
     }
 
 ////////////////////////////////////////////////////////////////////////////
+    //8
     //jiuzhang
-public class Jiuzhang {
     /*
     The case for 3 elements example
     Count[3] = Count[0]*Count[2]  (1 as root)
@@ -193,7 +195,7 @@ public class Jiuzhang {
     Count[i] = ∑ Count[0...k] * [ k+1....i]     0<=k<i-1
 
     */
-    public int numTrees(int n) {
+    public int numTrees8(int n) {
         int[] count = new int[n + 2];
         count[0] = 1;
         count[1] = 1;
@@ -205,7 +207,6 @@ public class Jiuzhang {
         }
         return count[n];
     }
-}
 
 
 ////////////////////////////////////////////////////////////////////////////

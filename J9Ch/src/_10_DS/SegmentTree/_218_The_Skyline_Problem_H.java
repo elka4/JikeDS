@@ -84,7 +84,8 @@ public class _218_The_Skyline_Problem_H {
         if(node == null){
             return;
         }else{
-            if(node.left == null && node.right == null && (result.size() == 0 || result.get(result.size() - 1)[1] != node.height)){
+            if(node.left == null && node.right == null && (result.size() == 0 ||
+                    result.get(result.size() - 1)[1] != node.height)){
                 result.add(new int[]{endpointList.get(node.start), node.height});
             }else{
                 explore(result, endpointList, node.left);
@@ -124,7 +125,8 @@ public class _218_The_Skyline_Problem_H {
             if (startRange == endRange)
                 return segTree[node];
             int mid = (startRange + endRange) >> 1;
-            int res = index <= mid ? query(node << 1, startRange, mid, index) : query((node << 1) + 1, mid + 1, endRange, index);
+            int res = index <= mid ? query(node << 1, startRange, mid, index) :
+                    query((node << 1) + 1, mid + 1, endRange, index);
             return Math.max(res, segTree[node]); //do this, because of lazy propagation
         }
     }

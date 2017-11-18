@@ -1,11 +1,14 @@
 package _10_DS.SegmentTree;
 
-import java.util.ArrayList;
+import org.junit.Test;
+
+import java.util.*;
 
 // Count of Smaller Number
 // lint:    http://lintcode.com/zh-cn/problem/count-of-smaller-number/
 
 public class Lint_248Count_of_Smaller_Number {
+    //1
 	/*
      * @param nums: An integer array
      * @return: The number of element in the array that 
@@ -88,7 +91,7 @@ public class Lint_248Count_of_Smaller_Number {
         //更新
         root.count = root.left.count + root.right.count;
     }
-
+//-------------------------------------------------------------------------------------
 
     public ArrayList<Integer> countOfSmallerNumber(int[] A, int[] queries) {
         // write your code here
@@ -109,7 +112,41 @@ public class Lint_248Count_of_Smaller_Number {
 
 /////////////////////////////////////////////////////////////////////////
 
+class Solution2{
+    public List<Integer> countOfSmallerNumber(int[] A, int[] queries) {
+//        Arrays.sort(A);
+        //Arrays.sort(A, (a,b) -> a - b);
+//        Integer[] arr = (Integer[])A;
 
+        Integer[] newArray = new Integer[A.length];
+        int i = 0;
+        for (int value : A) {
+            newArray[i++] = Integer.valueOf(value);
+        }
+
+        Arrays.sort(newArray, Collections.reverseOrder());
+        SegmentTree st = new SegmentTree(A);
+
+        List<Integer> result = new ArrayList<>();
+        int res;
+        for (int q :queries) {
+            res = st.query_count( newArray[0],q - 1);
+            result.add(res);
+        }
+        return result;
+
+    }
+
+
+}
+
+@Test
+    public void test02(){
+        Solution2 sol2 = new Solution2();
+    int[] A = new int[]{1,2,7,8,5};
+    int[] queries  = new int[]{1,8,5};
+    System.out.println(sol2.countOfSmallerNumber(A, queries));
+    }
 /////////////////////////////////////////////////////////////////////////
 
 

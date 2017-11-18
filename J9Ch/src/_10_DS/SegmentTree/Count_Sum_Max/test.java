@@ -33,13 +33,13 @@ public class test {
         System.out.println("-------------------------------------------------------");
         System.out.println(st.query_count(1,4));//4
         System.out.println(st.query_max(1,4));//3
-        System.out.println(st.query_min(1,4));//3
+        System.out.println(st.query_min(1,4));//0
         System.out.println(st.query_sum(1,4));//6
         System.out.println("-------------------------------------------------------");
         System.out.println(st.query_count(1,1));//1
         System.out.println(st.query_count(3,3));//1
-        System.out.println(st.query_min(2,4));//1
-        System.out.println(st.query_min(3,4));//3
+        System.out.println(st.query_min(2,4));//0
+        System.out.println(st.query_min(3,4));//0
 
         System.out.println(st.root);//[start: 1; end: 4; count: 4; max: 3; min: 3; sum: 6]
 

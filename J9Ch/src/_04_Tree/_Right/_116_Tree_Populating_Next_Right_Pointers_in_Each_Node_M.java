@@ -5,6 +5,7 @@ import java.util.LinkedList;
 //  https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
 //
 public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
+    //1
     //Java solution with O(1) memory+ O(n) time
     public void connect1(TreeLinkNode root) {
         TreeLinkNode level_start=root;
@@ -21,6 +22,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////
+    //2
     // My recursive solution(Java)
     public void connect2(TreeLinkNode root) {
         if(root == null)
@@ -37,6 +39,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////
+    //3
     //Java solution traversing by level without extra space
     public void connect3(TreeLinkNode root) {
         if(root==null) return;
@@ -54,7 +57,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////
-
+    //4
     //Java Solution 1 - Simple
     public void connect4(TreeLinkNode root) {
         if(root==null)
@@ -93,7 +96,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
     }
 
 ////////////////////////////////////////////////////////////////////////////
-
+    //5
     //Java Solution 2
 
     //This solution is easier to understand. You can use the example tree above
@@ -139,7 +142,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
     }
 
 ////////////////////////////////////////////////////////////////////////////
-
+    //6
     //Jiuzhang
     public void connect(TreeLinkNode root) {
         if (root == null) {
