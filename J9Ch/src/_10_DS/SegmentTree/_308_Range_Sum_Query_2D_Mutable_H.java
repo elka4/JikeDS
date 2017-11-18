@@ -8,6 +8,7 @@ public class _308_Range_Sum_Query_2D_Mutable_H {
 
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //1
 class NumMatrix{
     TreeNode root;
     public NumMatrix(int[][] matrix) {
@@ -122,6 +123,7 @@ class NumMatrix{
 
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //2
     //A Segment Tree Solution in Java
 
     public class NumMatrix2 {

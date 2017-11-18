@@ -8,6 +8,7 @@ public class _315_Count_of_Smaller_Numbers_After_Self_H {
 
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //1
 
 //3 Ways (Segment Tree, Binary Indexed Tree, Merge Sort) clean Java code
 
@@ -84,6 +85,7 @@ public class _315_Count_of_Smaller_Numbers_After_Self_H {
     }
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //2
     //Binary indexed Tree
     public class Solution2 {
         public List<Integer> countSmaller(int[] nums) {
@@ -125,6 +127,7 @@ public class _315_Count_of_Smaller_Numbers_After_Self_H {
         }
     }
 ////////////////////////////////////////////////////////////////////////////////////
+    //3
     //Merge Sort
     public class Solution3 {
 

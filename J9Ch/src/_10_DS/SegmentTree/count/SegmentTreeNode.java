@@ -1,4 +1,4 @@
-package _10_DS.SegmentTree;
+package _10_DS.SegmentTree.count;
 
 public class SegmentTreeNode {
     public int start, end, max;

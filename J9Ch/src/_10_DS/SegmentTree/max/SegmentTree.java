@@ -1,4 +1,4 @@
-package _10_DS.SegmentTree;
+package _10_DS.SegmentTree.max;
 
 import org.junit.Test;
 
@@ -80,7 +80,7 @@ public class SegmentTreeNode {
             root.left = build(start, mid);
             root.right = build(mid+1, end);
 
-            // root.max = Math.max(root.left.max, root.right.max);
+            root.max = Math.max(root.left.max, root.right.max);
         }
         return root;
     }

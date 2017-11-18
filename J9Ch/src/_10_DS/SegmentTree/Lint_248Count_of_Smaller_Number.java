@@ -22,6 +22,7 @@ public class Lint_248Count_of_Smaller_Number {
               this.left = this.right = null;
         }
     }
+
     SegmentTreeNode root;
     public SegmentTreeNode build(int start, int end) {
         // write your code here
@@ -87,6 +88,8 @@ public class Lint_248Count_of_Smaller_Number {
         //更新
         root.count = root.left.count + root.right.count;
     }
+
+
     public ArrayList<Integer> countOfSmallerNumber(int[] A, int[] queries) {
         // write your code here
         root = build(0, 10000);

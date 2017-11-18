@@ -1,4 +1,4 @@
-package _10_DS.SegmentTree;
+package _10_DS.SegmentTree.max;
 
 public class SegmentTreeNode {
     public int start, end, max;

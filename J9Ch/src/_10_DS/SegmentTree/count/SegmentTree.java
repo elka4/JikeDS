@@ -1,4 +1,4 @@
-package _10_DS.SegmentTree;
+package _10_DS.SegmentTree.count;
 
 import org.junit.Test;
 

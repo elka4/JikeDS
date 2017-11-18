@@ -7,7 +7,9 @@ import java.util.*;
 public class _699_Falling_Squares_H {
 
     //https://leetcode.com/problems/falling-squares/solution/
-        //Approach #1: Offline Propagation [Accepted]
+
+    //1
+    //Approach #1: Offline Propagation [Accepted]
     class Solution1 {
         public List<Integer> fallingSquares(int[][] positions) {
             int[] qans = new int[positions.length];
@@ -38,6 +40,7 @@ public class _699_Falling_Squares_H {
     }
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //2
     //Approach #2: Brute Force with Coordinate Compression [Accepted]
 class Solution2 {
     int[] heights;
@@ -80,6 +83,7 @@ class Solution2 {
 
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //3
 //Approach #3: Block (Square Root) Decomposition [Accepted]
 class Solution3 {
     int[] heights;
@@ -152,6 +156,7 @@ class Solution3 {
 
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //4
 //Approach #4: Segment Tree with Lazy Propagation [Accepted]
 
     class Solution {

@@ -7,6 +7,7 @@ import java.util.*;
 public class _307_Range_Sum_Query_Mutable {
 
     //https://leetcode.com/problems/range-sum-query-mutable/solution/
+    //1
     int[] data;
     //Approach #1 (Naive) [Time Limit Exceeded]
     class Solution1{
@@ -25,6 +26,7 @@ public class _307_Range_Sum_Query_Mutable {
     }
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //2
     //Approach #2 (Sqrt decomposition) [Accepted]
     class NumArray2{
         private int[] b;
@@ -69,6 +71,7 @@ public class _307_Range_Sum_Query_Mutable {
 
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //3
 //Approach #3 (Segment tree) [Accepted]
     class NumArray3{
         int[] tree;

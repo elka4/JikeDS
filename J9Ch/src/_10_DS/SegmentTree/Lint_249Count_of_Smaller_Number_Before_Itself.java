@@ -24,6 +24,7 @@ public class Lint_249Count_of_Smaller_Number_Before_Itself {
             this.left = this.right = null;
         }
     }
+
     SegmentTreeNode root;
     public SegmentTreeNode build(int start, int end) {
         // write your code here

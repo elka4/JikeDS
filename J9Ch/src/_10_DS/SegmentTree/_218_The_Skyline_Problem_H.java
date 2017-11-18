@@ -8,6 +8,7 @@ public class _218_The_Skyline_Problem_H {
     //https://briangordon.github.io/2014/08/the-skyline-problem.html
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //1
     //Java Segment Tree Solution, 47 ms
     private static class Node{
         int start, end;
@@ -93,6 +94,7 @@ public class _218_The_Skyline_Problem_H {
     }
 
 ////////////////////////////////////////////////////////////////////////////////////
+    //2
     //A segment tree solution
     //Segment Tree Range Minimum Query
     //https://www.youtube.com/watch?v=ZBHKZF5w4YU&list=PLXjkndB54dnJ9Ml7J7M85TB_pyvcVVuGi&index=2

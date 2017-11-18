@@ -7,6 +7,7 @@ import java.util.*;
 public class _715_Range_Module_H {
     //https://leetcode.com/problems/range-module/solution/
 
+    //1
     //Approach #1: Maintain Sorted Disjoint Intervals [Accepted]
 
     class RangeModule {
@@ -62,7 +63,7 @@ public class _715_Range_Module_H {
     }
 
 ////////////////////////////////////////////////////////////////////////////////////
-
+//2
 //Java Segment Tree
 
 
