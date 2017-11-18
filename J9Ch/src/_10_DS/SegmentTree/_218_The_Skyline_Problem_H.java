@@ -129,7 +129,7 @@ public class _218_The_Skyline_Problem_H {
         }
     }
 
-    public class Solution {
+    public class Solution2 {
 
         public List<int[]> getSkyline(int[][] buildings) {
             Set<Integer> ts = new TreeSet<>(); //sorted by ascending order

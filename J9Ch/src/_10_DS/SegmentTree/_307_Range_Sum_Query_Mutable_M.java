@@ -4,7 +4,7 @@ import java.util.*;
 //  307. Range Sum Query - Mutable
 //  https://leetcode.com/problems/range-sum-query-mutable/description/
 //  Binary Indexed Tree Segment Tree
-public class _307_Range_Sum_Query_Mutable {
+public class _307_Range_Sum_Query_Mutable_M {
 
     //https://leetcode.com/problems/range-sum-query-mutable/solution/
     //1

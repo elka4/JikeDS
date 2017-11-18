@@ -1,4 +1,4 @@
-package _10_DS.SegmentTree.count;
+package _10_DS.SegmentTree.Sum;
 
 import org.junit.Test;
 
@@ -72,17 +72,20 @@ public class SegmentTreeNode {
         if(start > end) {  // check core case
             return null;
         }
+
         SegmentTreeNode root = new SegmentTreeNode(start, end);
+
         if (start == end){
             return  root;
         }
 
+        if(start != end) {
+            int mid = (start + end) / 2;
+            root.left = build(start, mid);
+            root.right = build(mid+1, end);
 
-        int mid = (start + end) / 2;
-        root.left = build(start, mid);
-        root.right = build(mid+1, end);
-
-        root.count = root.left.count + root.right.count;
+            root.sum = root.left.sum + root.right.sum;
+        }
         return root;
     }
 //-----------------------------------------------------------
@@ -136,7 +139,8 @@ public class SegmentTreeNode {
     public void modify(SegmentTreeNode root, int index, int value) {
         // write your code here
         if(root.start == index && root.end == index) { // 查找到
-            root.value = value;
+            //root.value = value;
+            root.sum = value;
             return;
         }
 
@@ -150,11 +154,8 @@ public class SegmentTreeNode {
             modify(root.right, index, value);
         }
         //更新
-//        root.count = Math.max(root.left.count, root.right.count) + 1;
+        root.sum = root.left.sum + root.right.sum;
     }
-//-----------------------------------------------------------
-
-
 //-----------------------------------------------------------
     //  http://www.lintcode.com/zh-cn/problem/segment-tree-query-ii/
 /*
@@ -193,7 +194,7 @@ query(0, 2), return 2
         if(start > end || root==null)
             return 0;
         if(start <= root.start && root.end <= end) { // 相等
-            return root.count;
+            return root.sum;
         }
 
         int mid = (root.start + root.end)/2;
@@ -218,14 +219,14 @@ query(0, 2), return 2
         return leftsum + rightsum;
     }
 //-----------------------------------------------------------
-/*@Test
+@Test
 public void test01(){
     SegmentTree st = new SegmentTree();
     SegmentTreeNode stn = st.build(1,10);
     st.modify(stn, 1,1);
     System.out.println(st.query(stn, 1,1));
 
-}*///java.lang.Exception: Test class should have exactly one public constructor
+}//java.lang.Exception: Test class should have exactly one public constructor
 //-----------------------------------------------------------
 
 
