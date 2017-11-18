@@ -73,7 +73,7 @@ public class SegmentTreeNode {
             return null;
         }
 
-        SegmentTreeNode root = new SegmentTreeNode(start, end);
+        SegmentTreeNode root = new SegmentTreeNode(start, end, Integer.MIN_VALUE);
 
         if(start != end) {
             int mid = (start + end) / 2;

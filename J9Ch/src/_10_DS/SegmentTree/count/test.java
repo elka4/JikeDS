@@ -1,7 +1,6 @@
 package _10_DS.SegmentTree.count;
 
-import _10_DS.SegmentTree.SegmentTree;
-import _10_DS.SegmentTree.SegmentTreeNode;
+
 import org.junit.Test;
 
 public class test {
@@ -37,12 +36,12 @@ public class test {
     }//java.lang.Exception: Test class should have exactly one public constructor
 
 
-    @Test
+    /*@Test
     public void test02(){
-        SegmentTree st = new SegmentTree();
+        //SegmentTree st = new SegmentTree();
         //SegmentTreeNode stn = st.build(1,10);
         //st.modify(stn, 1,1);
         //System.out.println(st.query(stn, 1,1));
 
-    }//java.lang.Exception: Test class should have exactly one public constructor
+    }*///java.lang.Exception: Test class should have exactly one public constructor
 }

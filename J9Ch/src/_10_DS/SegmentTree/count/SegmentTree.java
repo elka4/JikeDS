@@ -72,16 +72,17 @@ public class SegmentTreeNode {
         if(start > end) {  // check core case
             return null;
         }
-
         SegmentTreeNode root = new SegmentTreeNode(start, end);
-
-        if(start != end) {
-            int mid = (start + end) / 2;
-            root.left = build(start, mid);
-            root.right = build(mid+1, end);
-
-            // root.max = Math.max(root.left.max, root.right.max);
+        if (start == end){
+            return  root;
         }
+
+
+        int mid = (start + end) / 2;
+        root.left = build(start, mid);
+        root.right = build(mid+1, end);
+
+        root.count = root.left.count + root.right.count;
         return root;
     }
 //-----------------------------------------------------------
@@ -135,7 +136,7 @@ public class SegmentTreeNode {
     public void modify(SegmentTreeNode root, int index, int value) {
         // write your code here
         if(root.start == index && root.end == index) { // 查找到
-            root.max = value;
+            root.value = value;
             return;
         }
 
@@ -149,73 +150,10 @@ public class SegmentTreeNode {
             modify(root.right, index, value);
         }
         //更新
-        root.max = Math.max(root.left.max, root.right.max);
+//        root.count = Math.max(root.left.count, root.right.count) + 1;
     }
 //-----------------------------------------------------------
-    ////  http://www.lintcode.com/zh-cn/problem/segment-tree-query/
-/*
-对于一个有n个数的整数数组，在对应的线段树中, 根节点所代表的区间为0-n-1, 每个节点有一个额外的属性max，值为该节点所代表的数组区间start到end内的最大值。
 
-为SegmentTree设计一个 query 的方法，接受3个参数root, start和end，线段树root所代表的数组中子区间[start, end]内的最大值。
-
- 注意事项
-
-在做此题之前，请先完成 线段树构造 这道题目。
-
-样例
-对于数组 [1, 4, 2, 3], 对应的线段树为：
-
-                  [0, 3, max=4]
-                 /             \
-          [0,1,max=4]        [2,3,max=3]
-          /         \        /         \
-   [0,0,max=1] [1,1,max=4] [2,2,max=2], [3,3,max=3]
-query(root, 1, 1), return 4
-
-query(root, 1, 2), return 4
-
-query(root, 2, 3), return 3
-
-query(root, 0, 2), return 4
- */
-
-
-
-    /**
-     *@param root, start, end: The root of segment tree and
-     *                         an segment / interval
-     *@return: The maximum number in the interval [start, end]
-     */
-    public int query(SegmentTreeNode root, int start, int end) {
-        // write your code here
-        if(start == root.start && root.end == end) { // 相等
-            return root.max;
-        }
-
-
-        int mid = (root.start + root.end)/2;
-        int leftmax = Integer.MIN_VALUE, rightmax = Integer.MIN_VALUE;
-        // 左子区
-        if(start <= mid) {
-            if( mid < end) { // 分裂
-                leftmax =  query(root.left, start, mid);
-            } else { // 包含
-                leftmax = query(root.left, start, end);
-            }
-            // leftmax = query(root.left, start, Math.min(mid,end));
-        }
-        // 右子区
-        if(mid < end) { // 分裂 3
-            if(start <= mid) {
-                rightmax = query(root.right, mid+1, end);
-            } else { //  包含
-                rightmax = query(root.right, start, end);
-            }
-            //rightmax = query(root.right, Math.max(mid+1,start), end);
-        }
-        // else 就是不相交
-        return Math.max(leftmax, rightmax);
-    }
 
 //-----------------------------------------------------------
     //  http://www.lintcode.com/zh-cn/problem/segment-tree-query-ii/
@@ -271,23 +209,23 @@ query(0, 2), return 2
         // 右子区
         if(mid < end) { // 分裂 3
             if(start <= mid) {
-                rightsum = query(root.right, mid+1, end);
+                rightsum = query2(root.right, mid+1, end);
             } else { //  包含
-                rightsum = query(root.right, start, end);
+                rightsum = query2(root.right, start, end);
             }
         }
         // else 就是不相交
         return leftsum + rightsum;
     }
 //-----------------------------------------------------------
-@Test
+/*@Test
 public void test01(){
     SegmentTree st = new SegmentTree();
     SegmentTreeNode stn = st.build(1,10);
     st.modify(stn, 1,1);
     System.out.println(st.query(stn, 1,1));
 
-}//java.lang.Exception: Test class should have exactly one public constructor
+}*///java.lang.Exception: Test class should have exactly one public constructor
 //-----------------------------------------------------------
 
 

@@ -1,7 +1,5 @@
 package _10_DS.SegmentTree.max;
 
-import _10_DS.SegmentTree.SegmentTree;
-import _10_DS.SegmentTree.SegmentTreeNode;
 import org.junit.Test;
 
 public class test {
@@ -19,7 +17,7 @@ public class test {
 
 
          */
-        SegmentTreeNode stn = st.build(1,6);
+        SegmentTreeNode stn = st.build(1,4);
         System.out.println(stn);
 
         st.modify(stn, 1,2);
@@ -27,7 +25,22 @@ public class test {
         //st.modify(stn, 3,3);
         st.modify(stn, 4,3);
         System.out.println(stn);
-        System.out.println(st.query2(stn, 1,6));
+        System.out.println("---------------------------------");
+
+        System.out.println(st.query(stn, 1,1));//2
+        System.out.println(st.query(stn, 2,2));//1
+        System.out.println(st.query(stn, 3,3));//0
+        System.out.println(st.query(stn, 4,4));//3
+        System.out.println("---------------------------------");
+        System.out.println(st.query(stn, 1,1));//2
+        System.out.println(st.query(stn, 1,2));//2
+        System.out.println(st.query(stn, 1,3));//2
+        System.out.println(st.query(stn, 1,4));//3
+        System.out.println("---------------------------------");
+        System.out.println(st.query(stn, 2,3));//1
+        System.out.println(st.query(stn, 3,4));//3
+        System.out.println(st.query(stn, 4,3));//-2147483648
+
 //        System.out.println(st.query(stn, 1,4));
 //        System.out.println(st.query(stn, 2,8));
 //        System.out.println(st.query(stn, 1,10));
