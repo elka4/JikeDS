@@ -7,7 +7,10 @@ import java.util.*;
 //  366. Find Leaves of Binary Tree
 //  https://leetcode.com/problems/find-leaves-of-binary-tree/description/
 //  http://lintcode.com/zh-cn/problem/binary-tree-leaves-order-traversal/
+//  Tree, Depth-first Search
+//  5:1
 public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
+    //1
     //  10 lines simple Java solution using recursion with explanation
     /*
     For this question we need to take bottom-up approach. The key is to find the height of each node. Here the definition of height is: The height of a node is the number of edges from the node to the deepest leaf. --CMU 15-121 Binary Trees. I used a helper function to return the height of current node. According to the definition, the height of leaf is 0. h(node) = 1 + max(h(node.left), h(node.right)). The height of a node is also the its index in the result list (res). For example, leaves, whose heights are 0, are stored in res[0]. Once we find the height of a node, we can put it directly into the result.
@@ -18,45 +21,96 @@ public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
     UPDATE:
     There seems to be some debate over whether we need to actually "remove" leaves from the input tree. Anyway, it is just a matter of one line code. In the actual interview, just confirm with the interviewer whether removal is required.
      */
-        //这个不移除leaf，但是可以AC
+
+
+
+        /*
+    这题是从下往上，postorder。和_103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M用preorder从下网上
+    可以形成一对很好的对比。
+     */
+
+
+    //DFS
+    class Solution1{//无注释
         public List<List<Integer>> findLeaves1(TreeNode root) {
-            List<List<Integer>> res = new ArrayList<>();
-            height1(root, res);
-            return res;
+            List<List<Integer>> result = new ArrayList<>();
+            height1(root, result);
+            return result;
         }
-        private int height1(TreeNode node, List<List<Integer>> res){
-            //这样才能确保到了leaf，两边都是null，返回的都是-1，这样返回leaf以后计算level的时候为0
+        private int height1(TreeNode node, List<List<Integer>> result){
             if(null==node)  return -1;
-            //postorder，因为要左右子树都访问过了才能算出来当前子树的高度
-            //the height of leaf is 0. h(node) = 1 + max(h(node.left), h(node.right)).
-            int level = 1 + Math.max(height1(node.left, res), height1(node.right, res));
+            int level = 1 + Math.max(height1(node.left, result), height1(node.right, result));
 
-            //The height of a node is also the its index in the result list (res).
-            // For example, leaves, whose heights are 0, are stored in res[0].
-            //这个就如同array的index + 1对应的是size
-            if(res.size()<level+1)//list.size() == level
-                res.add(new ArrayList<>());
+            if(result.size() < level + 1)
+                result.add(new ArrayList<>());
 
-            res.get(level).add(node.val);
+            result.get(level).add(node.val);
 
-            node.left = null; //这两行可以移除leaf node
+            node.left = null;
             node.right = null;
 
             return level;
         }
+    }
 
-        @Test
-        public void test01(){
-            int[] arr = {2,1,3};
-            TreeNode root = TreeNode.createMinimalBST(arr);
-            root.left.left = new TreeNode(4);
-            root.left.right = new TreeNode(5);
-            root.print();
-            System.out.println(findLeaves1(root));
-            root.print();
-        }
+//------------------------------------------------------------------------------
+    //注释
+    public List<List<Integer>> findLeaves1(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        height1(root, result);
+        return result;
+    }
+    //postorder
+    private int height1(TreeNode node, List<List<Integer>> result){
+        //这样才能确保到了leaf，两边都是null，返回的都是-1，这样返回leaf以后计算level的时候为0
+        if(null==node)  return -1;
+        //postorder，因为要左右子树都访问过了才能算出来当前子树的高度
+        //the height of leaf is 0. h(node) = 1 + max(h(node.left), h(node.right)).
+        int level = 1 + Math.max(height1(node.left, result), height1(node.right, result));
+
+        //The height of a node is also the its index in the result list (res).
+        // For example, leaves, whose heights are 0, are stored in res[0].
+        //这个就如同array的index + 1对应的是size
+        //result.size() == level，叶子level是0，此时result size是0
+        //原来是if(result.size()<level+1)
+        if(result.size() == level)
+            result.add(new ArrayList<>());
+
+        result.get(level).add(node.val);
+
+        node.left = null; //这两行可以移除leaf node
+        node.right = null;
+
+        return level;
+    }
+
+//------------------------------------------------------------------------------
+
+    @Test
+    public void test01(){
+        int[] arr = {2,1,3};
+        TreeNode root = TreeNode.createMinimalBST(arr);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.print();
+        System.out.println(findLeaves1(root));
+        root.print();
+    }
+
+    /*
+           1                level 2   result.size():2 -> 3
+          / \
+         /   \
+         2   3              level 1   result.size():1 -> 2
+        / \
+        4 5                 level 0   result.size():0 -> 1
+
+        [[4, 5, 3], [2], [1]]
+        1
+     */
 
 ///////////////////////////////////////////////////////////////////////////////
+    //2
     /*
     Java backtracking O(n) time O(n) space No hashing!
     The essential of problem is not to find the leaves, but group leaves of same level together and also to cut the tree. This is the exact role backtracking plays. The helper function returns the level which is the distance from its furthest subtree leaf to root, which helps to identify which group the root belongs to
@@ -69,6 +123,7 @@ public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
         }
 
         // return the level of root
+        // PreOrder
         private int findLeavesHelper2(List<List<Integer>> list, TreeNode root) {
             if (root == null) {
                 return -1;
@@ -99,7 +154,8 @@ public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
         }
 
 /////////////////////////////////////////////////////////////////////////////////
-
+    //3
+        //DFS
         // 1 ms Easy understand Java Solution
         // 这个方法移除了所有node
         public List<List<Integer>> findLeaves3(TreeNode root) {
@@ -144,7 +200,9 @@ public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
             root.print();
         }
 /////////////////////////////////////////////////////////////////////////////////
+    //4
     //jiuzhang
+    //DFS
     //这种方法leaf的level为1
     public List<List<Integer>> findLeaves4(TreeNode root) {
         // Write your code here
@@ -177,6 +235,7 @@ public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
         root.print();
     }
 /////////////////////////////////////////////////////////////////////////////////
+    //5
     // version: 高频题班
     //和上面一样的方法，就是改用hashmap存高度和leaf的value
     Map<Integer, List<Integer>> depth = new HashMap<>();

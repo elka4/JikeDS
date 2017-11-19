@@ -52,7 +52,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         buildTree1(preorder, inorder).print();
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //My Accepted Java Solution
     public TreeNode buildTree2(int[] preorder, int[] inorder) {
         return helper(0, 0, inorder.length - 1, preorder, inorder);
@@ -85,7 +85,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         int[] inorder = {1,2,3};
         buildTree2(preorder, inorder).print();
     }
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     // 5ms Java Clean Solution with Caching
     public TreeNode buildTree3(int[] preorder, int[] inorder) {
         Map<Integer, Integer> inMap = new HashMap<Integer, Integer>();
@@ -122,7 +122,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         int[] inorder = {1,2,3};
         buildTree2(preorder, inorder).print();
     }
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     public TreeNode buildTree4(int[] preorder, int[] inorder) {
         int preStart = 0;
         int preEnd = preorder.length-1;
@@ -394,7 +394,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         buildTree10(preorder, inorder).print();
     }
 
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 }
 /*
 前序遍历和中序遍历树构造二叉树

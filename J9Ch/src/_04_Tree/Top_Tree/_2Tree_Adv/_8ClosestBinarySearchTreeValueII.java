@@ -45,7 +45,7 @@ public class _8ClosestBinarySearchTreeValueII {
         inorder(reverse ? root.left : root.right, target, reverse, stack);
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     //O(logN) Java Solution with two stacks following hint
     public List<Integer> closestKValues2(TreeNode root, double target, int k) {
@@ -124,7 +124,7 @@ public class _8ClosestBinarySearchTreeValueII {
         }
         return ret;
     }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
     //Java 5ms iterative, following hint, O(klogn) time and space
 public List<Integer> closestKValues3(TreeNode root, double target, int k) {
     List<Integer> result = new LinkedList<Integer>();
@@ -177,7 +177,7 @@ public List<Integer> closestKValues3(TreeNode root, double target, int k) {
         }
         return popped.val;
     }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     public List<Integer> closestKValues4(TreeNode root, double target, int k) {
         LinkedList<Integer> list = new LinkedList<Integer>();
@@ -209,7 +209,7 @@ public List<Integer> closestKValues3(TreeNode root, double target, int k) {
         return closestKValuesHelper4(list, root.right, target, k);
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 }
 /*
 Given a non-empty binary search tree and a target value, find k values in the BST that are closest to the target.

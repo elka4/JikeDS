@@ -28,7 +28,7 @@ public class backtracking {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //    Subsets II (contains duplicates) : https://leetcode.com/problems/subsets-ii/
     class SubsetsII{
         public List<List<Integer>> subsetsWithDup(int[] nums) {
@@ -50,7 +50,7 @@ public class backtracking {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //    Permutations : https://leetcode.com/problems/permutations/
     class permute{
         public List<List<Integer>> permute(int[] nums) {
@@ -74,7 +74,7 @@ public class backtracking {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Permutations II (contains duplicates) : https://leetcode.com/problems/permutations-ii/
     class PermutationsII{
         public List<List<Integer>> permuteUnique(int[] nums) {
@@ -101,7 +101,7 @@ public class backtracking {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Combination Sum : https://leetcode.com/problems/combination-sum/
     class Combination{
         public List<List<Integer>> combinationSum(int[] nums, int target) {
@@ -126,7 +126,7 @@ public class backtracking {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Combination Sum II (can't reuse same element) : https://leetcode.com/problems/combination-sum-ii/
     class CombinationSumII{
         public List<List<Integer>> combinationSum2(int[] nums, int target) {
@@ -151,7 +151,7 @@ public class backtracking {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Palindrome Partitioning : https://leetcode.com/problems/palindrome-partitioning/
     class PalindromePartitioning{
         public List<List<String>> partition(String s) {
@@ -180,6 +180,6 @@ public class backtracking {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
 }

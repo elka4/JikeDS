@@ -7,7 +7,7 @@ import java.util.*;
 
 //  298. Binary Tree Longest Consecutive Sequence
 //  https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/description/
-//
+//  Tree
 public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
 
     private int max1 = 0;
@@ -27,7 +27,7 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
     }
 
 
-///////////////////////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------------------------------
     public int longestConsecutive2(TreeNode root) {
         int[] lens = new int[1];
         if (root == null)  return 0;
@@ -45,7 +45,7 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
     }
 
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     public int longestConsecutive3(TreeNode root) {
         if (root == null) {
             return 0;
@@ -66,7 +66,7 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
         return Math.max(DFS3(node.left, node.val + 1, curr, max),
                 DFS3(node.right, node.val + 1, curr, max));
     }
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     // Simple Recursive DFS without global variable
     public int longestConsecutive4(TreeNode root) {
@@ -83,7 +83,7 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
     }
 
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //jiuzhang
     // version 1: Traverse + Divide Conquer
 
@@ -151,7 +151,7 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
     }
 
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //jiuzhang
     // version 2: Another Traverse + Divide Conquer
     /**
@@ -213,7 +213,7 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
         System.out.println(longestConsecutive2(root));
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //jiuzhang
     // version 3: Divide Conquer
     private class ResultType {

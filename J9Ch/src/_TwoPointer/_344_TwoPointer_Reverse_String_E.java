@@ -169,7 +169,7 @@ public class _344_TwoPointer_Reverse_String_E {
     Approach: Divide and Conquer (Recursive)
 
     The string is split into half. Each substring will be further divided. This process continues until the string can no longer be divided (length `<= 1`). The conquering process will take they previously split strings and concatenate them in reverse order.*/
-//////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////
     //Java- easiest method- 2-line code, attached another method
     class Solution7{
         //method 1: use StringBuilder
@@ -214,9 +214,9 @@ public class _344_TwoPointer_Reverse_String_E {
         return new String(c);
     }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////
 
 
 }

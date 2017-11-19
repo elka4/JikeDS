@@ -31,7 +31,7 @@ public class _530_Minimum_Absolute_Difference_in_BST {
         return min;
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
     /*
     What if it is not a BST? (Follow up of the problem) The idea is to put values in
@@ -61,7 +61,7 @@ public class _530_Minimum_Absolute_Difference_in_BST {
         return min2;
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     /*
     Java O(n) Time Inorder Traversal Solution
     Since this is a BST, the inorder traversal of its nodes results in a sorted list of values.
@@ -85,7 +85,7 @@ public class _530_Minimum_Absolute_Difference_in_BST {
         inorder(root.right);
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
     /*
     Java No In-order Traverse Solution, just pass upper bound and lower bound

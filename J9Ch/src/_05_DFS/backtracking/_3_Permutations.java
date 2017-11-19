@@ -45,7 +45,7 @@ public class _3_Permutations {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 //My AC simple iterative java/python solution
 
 /*
@@ -264,7 +264,7 @@ def permute(self, nums):
 
 
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 //Java Clean Code - Two recursive solutions
 
    // Bottom up? approach - 280ms
@@ -364,7 +364,7 @@ def permute(self, nums):
     i = 2, newPermutation = [3, 2, 1]
 */
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
     // 这个也是Top100的版本
 
 //My Java Accepted solution without additional space
@@ -398,7 +398,7 @@ def permute(self, nums):
     }
 
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 //If you want it to be in order, just sort the array before you go.
 // It won't affect the complexity.
 
@@ -432,7 +432,7 @@ def permute(self, nums):
         num[i] = num[j] + num[i];
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 //I used your idea and revised a little bitbit on using extra space in the way I think
 // will reduce times of array and list copy. The running time is now 2ms and beats 96%.
 
@@ -470,7 +470,7 @@ def permute(self, nums):
             numcopy[j] = tmp;
         }}
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 //Java solution easy to understand (backtracking)
 public class Solution2 {
 

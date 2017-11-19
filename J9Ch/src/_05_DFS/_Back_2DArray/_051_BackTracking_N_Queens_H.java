@@ -53,7 +53,7 @@ public class _051_BackTracking_N_Queens_H {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     //Comparably concise Java code
     // We just remember the busy columns and diagonals and recursively try to put the queen into the next row.
     public class Solution2 {
@@ -86,7 +86,7 @@ public class _051_BackTracking_N_Queens_H {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     //jiuzhang
     class Jiuzhang {
         /**

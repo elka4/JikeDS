@@ -24,7 +24,7 @@ public class _257_Tree_Binary_Tree_Paths_E {
         if (root.right != null) searchBT(root.right, path + root.val + "->", answer);
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     /*
     Clean Java solution (Accepted) without any helper recursive function
@@ -52,7 +52,7 @@ Lot of recursive solutions on this forum involves creating a helper recursive fu
         return paths;
 
     }
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //jiuzhang
     // version 1: Divide Conquer
     public List<String> binaryTreePaths_J1(TreeNode root) {
@@ -122,7 +122,7 @@ Lot of recursive solutions on this forum involves creating a helper recursive fu
         }
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 二叉树的所有路径

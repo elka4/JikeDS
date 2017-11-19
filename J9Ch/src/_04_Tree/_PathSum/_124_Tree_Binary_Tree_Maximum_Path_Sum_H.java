@@ -28,7 +28,7 @@ public class _124_Tree_Binary_Tree_Maximum_Path_Sum_H {
         return Math.max(left, right) + node.val;
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //Elegant Java solution
     int max2 = Integer.MIN_VALUE;
 
@@ -50,7 +50,7 @@ public class _124_Tree_Binary_Tree_Maximum_Path_Sum_H {
         return root.val + Math.max(left, right);
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     // global max
     int max = Integer.MIN_VALUE;
 
@@ -70,7 +70,7 @@ public class _124_Tree_Binary_Tree_Maximum_Path_Sum_H {
         // if the below path is negative, just make it 0 so that we could 'ignore' it
         return Math.max(0, root.val + Math.max(lMax, rMax));
     }
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     ///////////////////////////////////////////////////////////////////
 
     //My AC java recursive solution
@@ -127,7 +127,7 @@ public class _124_Tree_Binary_Tree_Maximum_Path_Sum_H {
             return node.val + Math.max(left, right);
         }
     }
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //Ch9 2016summer code
     private class ResultType4{
         int root2Any, any2Any;
@@ -165,7 +165,7 @@ public class _124_Tree_Binary_Tree_Maximum_Path_Sum_H {
 
         return new ResultType4(root2Any, any2Any);
     }
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //We can also use an array to store value for recursive methods.
 
     public int maxPathSum5(TreeNode root) {
@@ -189,7 +189,7 @@ public class _124_Tree_Binary_Tree_Maximum_Path_Sum_H {
         return current;
     }
 
-    //////////////////////////////////////////////////////////////////////////////////////
+    //-------------------------------------------------------------------------///
     //jiuzhang
     private class ResultType {
         // singlePath: 从root往下走到任意点的最大路径，这条路径可以不包含任何点
@@ -260,7 +260,7 @@ public class _124_Tree_Binary_Tree_Maximum_Path_Sum_H {
         ResultType result = helper_J2(root);
         return result.maxPath;
     }
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
 }
 /*

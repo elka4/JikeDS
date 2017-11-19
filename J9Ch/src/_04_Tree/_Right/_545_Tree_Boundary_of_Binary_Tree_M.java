@@ -18,7 +18,7 @@ public class _545_Tree_Boundary_of_Binary_Tree_M {
 
 
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //Java(12ms) - left boundary, left leaves, right leaves, right boundary
     List<Integer> nodes = new ArrayList<>(1000);
 
@@ -56,7 +56,7 @@ public class _545_Tree_Boundary_of_Binary_Tree_M {
     }
 
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //    [Java] [C++] Clean Code (1 Pass perorder postorder hybrid)
 
     public List<Integer> boundaryOfBinaryTree4(TreeNode root) {
@@ -78,7 +78,7 @@ public class _545_Tree_Boundary_of_Binary_Tree_M {
         if (rb) res.add(node.val);
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     /*
     Java Preorder Single Pass O(n) Solution
 We perform a single preorder traversal of the tree, keeping tracking of the left boundary and middle leaf nodes and the right boundary nodes in the process. A single flag is used to designate the type of node during the preorder traversal. Its values are:
@@ -99,7 +99,7 @@ We perform a single preorder traversal of the tree, keeping tracking of the left
         preorder(cur.right, left, right, flag % 2 == 0 ? 2 : (flag == 1 && cur.left == null) ? 1 : 3);
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     private List<Integer> bound = new ArrayList<>();
 
     public List<Integer> boundaryOfBinaryTree6(TreeNode root) {
@@ -144,7 +144,7 @@ We perform a single preorder traversal of the tree, keeping tracking of the left
     }
 
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 /*
 

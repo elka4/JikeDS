@@ -151,7 +151,7 @@ Poll one path from queue while the queue has path:
             }
         }
     }
-////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 //Clear Java Accepted DFS Solution with Explanation
 public class Solution3 {
     int min; //min distance to hole
@@ -271,7 +271,7 @@ Each time, first add the direction to the path, and then go with that direction,
             }
         }
     }
-////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 
 /*    I really appreciated your int[][] map and use index of int[][] dirs to represent r,u,l,d, it simplified many works for me.
 
@@ -358,7 +358,7 @@ Each time, first add the direction to the path, and then go with that direction,
             }
         }
     }
-////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 //Java BFS solution with Queue, standard BFS 15ms(beats 85.71%)
 public class Solution6 {
     public class Element {
@@ -424,7 +424,7 @@ public class Solution6 {
 }
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 //Short,clean and straight forward BFS solution with PriorityQueue
 /*The idea is just using BFS with a PriorityQueue(dijkstra's algorithm), PriorityQueue polls out the Coordinate with the minimum distance, if there are two with same distance, we compare their lexicographical order, by this way, we can ensure that we get the lexicographically smallest way in the end.*/
 
@@ -498,7 +498,7 @@ public class Solution6 {
 }
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 
 
 

@@ -59,7 +59,7 @@ public class _117_Tree_Populating_Next_Right_Pointers_in_Each_Node_II_H {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     //Simple solution using constant space
     /*
@@ -86,7 +86,7 @@ public class _117_Tree_Populating_Next_Right_Pointers_in_Each_Node_II_H {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
 //    Java solution with constant space
     public void connect3(TreeLinkNode root) {
@@ -110,7 +110,7 @@ public class _117_Tree_Populating_Next_Right_Pointers_in_Each_Node_II_H {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     public void connect4(TreeLinkNode root) {
         if(root == null)
@@ -156,7 +156,7 @@ public class _117_Tree_Populating_Next_Right_Pointers_in_Each_Node_II_H {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //jiuzhang
     public void connect(TreeLinkNode root) {
         if (root == null) {
@@ -196,7 +196,7 @@ public class _117_Tree_Populating_Next_Right_Pointers_in_Each_Node_II_H {
             parent = next;
         }
     }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 

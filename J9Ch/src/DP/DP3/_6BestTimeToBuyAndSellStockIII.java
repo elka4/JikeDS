@@ -294,7 +294,7 @@ Very simple code too and work well. I have to say the logic is simple than those
 
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
     // 动态规划专题班版本 verison 1
     private int update(int a, int b, int delta) {
         if (b == Integer.MIN_VALUE) {

@@ -60,7 +60,7 @@ public int integerReplacement(int n) {
 An alternative approach to intuitive algorithm was very well put by @dettier in a discussion: you should create as many trailing zeroes as you can. This way you can avoid the tie-breaking trap (there can be no ties), but you'll still have to handle the n=3 exception separately.
  */
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 /*    JAVA 3ms Bit Manipulation Solution
     For this problem, if we look at the binary form of each number, we can get the idea that for each '1' (except for the first '1') it counts to two steps, for each '0', it counts to one step.
     So our goal is to use +1 or -1 to reduce steps.

@@ -87,7 +87,7 @@ I used global variable count, but obviously we can avoid global variable by pass
             return res;
         }
     }
-////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
     /*
     Simple AC Java Solution DFS
 Each time find all the path start from current node
@@ -136,7 +136,7 @@ Time Complexity should be O(N^2) for the worst case and O(NlogN) for balanced bi
             return res;
         }
     }
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 class Jiuzhang {
     public int pathSum(TreeNode root, int sum) {
         if (root == null) {
@@ -201,7 +201,7 @@ class Jiuzhang {
 
     }
 }
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 

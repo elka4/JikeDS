@@ -58,7 +58,7 @@ public class b_393_UTF_8_Validation {
         return isValid;
     }
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 //Simple one pass concise Java solution beating 99%
     public boolean validUtf83(int[] data) {
         int varCharLeft = 0;

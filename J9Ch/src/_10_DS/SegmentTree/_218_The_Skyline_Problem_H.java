@@ -7,7 +7,7 @@ import java.util.*;
 public class _218_The_Skyline_Problem_H {
     //https://briangordon.github.io/2014/08/the-skyline-problem.html
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
     //1
     //Java Segment Tree Solution, 47 ms
     private static class Node{
@@ -94,7 +94,7 @@ public class _218_The_Skyline_Problem_H {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
     //2
     //A segment tree solution
     //Segment Tree Range Minimum Query
@@ -163,13 +163,13 @@ public class _218_The_Skyline_Problem_H {
             return ret;
         }
     }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 }
 /*
 A city's skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Now suppose you are given the locations and height of all the buildings as shown on a cityscape photo (Figure A), write a program to output the skyline formed by these buildings collectively (Figure B).

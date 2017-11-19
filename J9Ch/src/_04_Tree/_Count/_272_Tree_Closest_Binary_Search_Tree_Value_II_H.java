@@ -6,7 +6,7 @@ import java.util.*;
 //  272. Closest Binary Search Tree Value II
 //  https://leetcode.com/problems/closest-binary-search-tree-value-ii/description/
 public class _272_Tree_Closest_Binary_Search_Tree_Value_II_H {
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     /*
     AC clean Java solution using two stacks
     The idea is to compare the predecessors and successors of the closest node to the target,
@@ -55,7 +55,7 @@ public class _272_Tree_Closest_Binary_Search_Tree_Value_II_H {
         inorder(reverse ? root.left : root.right, target, reverse, stack);
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
 //O(logN) Java Solution with two stacks following hint
     public List<Integer> closestKValues2(TreeNode root, double target, int k) {
@@ -137,7 +137,7 @@ public class _272_Tree_Closest_Binary_Search_Tree_Value_II_H {
     }
 
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     /*
     Java 5ms iterative, following hint, O(klogn) time and space
     Following the hint, I use a predecessor stack and successor stack. I do a logn traversal to initialize them until I reach the null node. Then I use the getPredecessor and getSuccessor method to pop k closest nodes and update the stacks.
@@ -296,7 +296,7 @@ public class _272_Tree_Closest_Binary_Search_Tree_Value_II_H {
         return ret;
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     //2 ms O(N) and 6 ms O(logN) java solution
     /*O(N), 2ms: In-order recursive traversal and maintaining a size k LinkedList
@@ -323,7 +323,7 @@ public class _272_Tree_Closest_Binary_Search_Tree_Value_II_H {
         closestKValuesHelper(root.right, target, k, list);
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
         /*
         O(logN), 6ms: The Stack initialization costs O(logN),
         and getPredecessor & getSuccessor actually cost O(MAX(logN, K)) in worst case,
@@ -406,7 +406,7 @@ public class _272_Tree_Closest_Binary_Search_Tree_Value_II_H {
         helper(root.right,target,k,res);
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     //Clear Java Solution with one stack one linkedlist
     public List<Integer> closestKValues10(TreeNode root, double target, int k) {
@@ -433,7 +433,7 @@ public class _272_Tree_Closest_Binary_Search_Tree_Value_II_H {
         return ret;
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 }
 /*
 Given a non-empty binary search tree and a target value,

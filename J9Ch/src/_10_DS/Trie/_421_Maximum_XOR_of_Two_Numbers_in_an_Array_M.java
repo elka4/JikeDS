@@ -26,7 +26,7 @@ public class _421_Maximum_XOR_of_Two_Numbers_in_an_Array_M {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
     //Java O(n) solution using Trie
     class Trie {
         Trie[] children;
@@ -68,7 +68,7 @@ public class _421_Maximum_XOR_of_Two_Numbers_in_an_Array_M {
         }
         return max;
     }
-/////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 //31ms O(n) Java solution using Trie
 /*
 We add the number into the trie and find the max possible XOR result at the same time.
@@ -128,7 +128,7 @@ After setting the node, find the opposite bit in the trie to maximize the possib
             return re;
         }
     }
-/////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
     class Solution4{
 //        Thank you~ This solution is truely fast.
@@ -171,7 +171,7 @@ After setting the node, find the opposite bit in the trie to maximize the possib
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
 
 }

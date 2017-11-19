@@ -40,9 +40,9 @@ public class _527_Word_Abbreviation_H {
         builder.append(s.charAt(s.length()-1));
         return builder.toString();
     }
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //https://www.youtube.com/watch?v=yAQMcGY4c90
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //Verbose Java Solution, HashMap(s)
     public class Solution2 {
         public List<String> wordsAbbreviation(List<String> dict) {
@@ -119,7 +119,7 @@ public class _527_Word_Abbreviation_H {
             return res;
         }
     }
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 //HashMap + Trie => O(nL) solution
 //The basic idea is to group all conflicted words, and then resolve the conflicts using Trie. The time complexity will be O(nL) for building trie, O(nL) to resolve conflicts, O(n) to group words. So the time complexity will be O(n(2L + 1). n is the number of words, and L is the average length of each words.
 //
@@ -231,7 +231,7 @@ public class _527_Word_Abbreviation_H {
             Map<Character, Trie> next = new HashMap<>();
         }
     }
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     /*Java DFS+Trie+Binary Search 90ms
 
     Use Trie to build a dictionary with a function to check abbreviation.
@@ -332,7 +332,7 @@ public class _527_Word_Abbreviation_H {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 /*
 Given an array of n distinct non-empty strings, you need to generate minimal possible abbreviations for every word following rules below.

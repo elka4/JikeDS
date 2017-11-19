@@ -21,7 +21,7 @@ public class _401_BackTracking_Binary_Watch_E {
         System.out.println(readBinaryWatch1(1));
     }
     //[0:01, 0:02, 0:04, 0:08, 0:16, 0:32, 1:00, 2:00, 4:00, 8:00]
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     //3ms Java Solution Using Backtracking and Idea of "Permutation and Combination"
     public List<String> readBinaryWatch2(int num) {
         List<String> res = new ArrayList<>();
@@ -61,7 +61,7 @@ public class _401_BackTracking_Binary_Watch_E {
         System.out.println(readBinaryWatch2(1));
     }
     //[0:32, 0:16, 0:08, 0:04, 0:02, 0:01, 8:00, 4:00, 2:00, 1:00]
-///////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
     //jiuzhang
     public List<String> readBinaryWatch3(int num) {
         ArrayList<String> ans = new ArrayList<String>();
@@ -101,7 +101,7 @@ public class _401_BackTracking_Binary_Watch_E {
         System.out.println(readBinaryWatch3(1));
     }
     //[0:01, 0:02, 0:04, 0:08, 0:16, 0:32, 1:00, 2:00, 4:00, 8:00]
-///////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 }
 
 /*

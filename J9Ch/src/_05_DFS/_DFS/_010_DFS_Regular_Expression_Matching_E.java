@@ -124,7 +124,7 @@ Here are some conditions to figure out, then the logic can be very straightforwa
 
 
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //  https://leetcode.com/articles/regular-expression-matching/
 
     //Approach #1: Recursion [Accepted]
@@ -202,7 +202,7 @@ Here are some conditions to figure out, then the logic can be very straightforwa
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //jiuzhang
     //DFS
     public class Jiuzhang {
@@ -313,7 +313,7 @@ Here are some conditions to figure out, then the logic can be very straightforwa
     }
 
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
 
 

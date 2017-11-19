@@ -33,7 +33,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
         return dp[m][n];
     }
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 
 /*    dp[n] means the substring s[:n] if match the pattern i
 
@@ -71,7 +71,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
         return dp[p.length()][s.length()];
     }
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 
     //My java DP solution using 2D table
     public boolean isMatch03(String s, String p) {
@@ -220,7 +220,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
         }
 
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
     // 9Ch DP
     public boolean isMatch_J2(String s, String p) {
         char[] s1 = s.toCharArray();

@@ -27,10 +27,10 @@ public class _625_Minimum_Factorization_M {
             return search(dig, i, a, mul * dig[i], dig[i] + res) || search(dig, i + 1, a, mul, res);
         }
     }
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 //
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 /*
 Given a positive integer a, find the smallest positive integer b whose multiplication of each digit equals to a.

@@ -71,7 +71,7 @@ public class _10_Longest_Substring_with_At_Most_K_Distinct_Characters {
         return res;
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 	/**
      * @param s : A string
      * @return : The length of the longest substring 
@@ -111,7 +111,7 @@ public class _10_Longest_Substring_with_At_Most_K_Distinct_Characters {
         }
         return maxLen;
     }
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 给定一个字符串，找到最多有k个不同字符的最长子字符串。

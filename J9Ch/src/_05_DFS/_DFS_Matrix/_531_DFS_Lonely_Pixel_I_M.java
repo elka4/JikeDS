@@ -20,7 +20,7 @@ public class _531_DFS_Lonely_Pixel_I_M {
         return count;
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
     //    O(nm) Time, O(1) Space Solution:
     public int findLonelyPixel2(char[][] picture) {
         int n = picture.length, m = picture[0].length;
@@ -45,7 +45,7 @@ public class _531_DFS_Lonely_Pixel_I_M {
         return count;
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 
     /*
     thought is very simple, we can easily count how many times B occurs in each row. But how can we know if this col has existing B?
@@ -82,7 +82,7 @@ we can maintain an array calls colArray[], which is used to record how many time
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
     //[Java] [C++] Clean Code with explanation
     public class Solution4 {
         public int findLonelyPixel(char[][] pic) {
@@ -109,7 +109,7 @@ we can maintain an array calls colArray[], which is used to record how many time
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 /*
 Given a picture consisting of black and white pixels, find the number of black lonely pixels.

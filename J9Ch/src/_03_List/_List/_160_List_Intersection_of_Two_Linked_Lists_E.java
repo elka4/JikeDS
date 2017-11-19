@@ -158,7 +158,7 @@ public class _160_List_Intersection_of_Two_Linked_Lists_E {
         return p1;
     }
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
 /*    Java O(n) time O(1) space solution by using "assume there are no cycles"
 
@@ -215,7 +215,7 @@ public class _160_List_Intersection_of_Two_Linked_Lists_E {
         return start;
     }
 //    If there's no cycle it simply concats B after A and traverese to the end via the fast pointer.
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 //Java O(1) space solution
 
     public ListNode getIntersectionNode7(ListNode headA, ListNode headB) {
@@ -246,10 +246,10 @@ public class _160_List_Intersection_of_Two_Linked_Lists_E {
     }
 //    First get the two length for each list, then put them at the same starting line by moving the longer one forward. Then move them at the same time and check the first match.
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 //jiuzhang
 public class Jiuzhang {
     /**
@@ -297,7 +297,7 @@ public class Jiuzhang {
 }
 
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
 }
 /*

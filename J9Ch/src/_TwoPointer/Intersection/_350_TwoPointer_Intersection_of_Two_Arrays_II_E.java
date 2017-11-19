@@ -223,7 +223,7 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
 /*Great solution without sorting two arrays, thank you! The solution using java hashmap has O(m + n) time complexity and O(min(m, n)) space complexity. In theory, they are faster than sorted arrays in terms of time complexity, at the expense of extra space. However, tests show that the 1st solution(85.83%) > 2nd solution(67.33%) > your solution(48.29%). The difference between theory and practice may lie in the fact that the frequent get/put operations on HashMap and final for-loop to convert a List<Integer> to an int array.
 
@@ -348,7 +348,7 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
         return bound;
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     //  @VanillaCoke yes,we are same,as I just use ArrayList:
 
@@ -402,7 +402,7 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     //jiuzhang
     public class Jiuzhang {

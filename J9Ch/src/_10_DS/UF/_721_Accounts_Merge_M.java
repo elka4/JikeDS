@@ -61,7 +61,7 @@ class Solution1 {
         return ans;
     }
 }
-///////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 //Approach #2: Union-Find [Accepted]
 /*
 As in Approach #1, our problem comes down to finding the connected components of a graph. This is a natural fit for a Disjoint Set Union (DSU) structure.
@@ -123,7 +123,7 @@ Python
         }
     }
 
-///////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 //3
     /*
     [Java/C++] Union Find
@@ -189,7 +189,7 @@ d->g
             return p.get(s) == s ? s : find(p.get(s), p);
         }
     }
-///////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 //4
 //HashMap plus union found solution using Java programming!
 
@@ -259,7 +259,7 @@ d->g
             return index;
         }
     }
-///////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 //5
 /*Java Union-Find solution with explanation
 
@@ -353,7 +353,7 @@ d->g
             return res;
         }
     }
-///////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 }
 /*
 Given a list accounts, each element accounts[i] is a list of strings, where the first element accounts[i][0] is a name, and the rest of the elements are emails representing emails of the account.

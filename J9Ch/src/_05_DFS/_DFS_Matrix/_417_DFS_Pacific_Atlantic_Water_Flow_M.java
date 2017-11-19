@@ -58,7 +58,7 @@ public class Solution {
     }
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
     //    DFS version:
     public class Solution2 {
         public List<int[]> pacificAtlantic(int[][] matrix) {
@@ -97,7 +97,7 @@ public class Solution {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
 public class Solution3 {
     public List<int[]> pacificAtlantic(int[][] matrix) {
         List<int[]> result = new ArrayList<int[]>();
@@ -153,7 +153,7 @@ public class Solution3 {
     }
 }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 /*
 Given an m x n matrix of non-negative integers representing the height of each unit cell in a continent, the "Pacific ocean" touches the left and top edges of the matrix and the "Atlantic ocean" touches the right and bottom edges.

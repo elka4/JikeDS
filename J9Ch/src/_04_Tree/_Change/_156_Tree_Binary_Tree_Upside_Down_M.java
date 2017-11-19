@@ -9,7 +9,7 @@ import java.util.*;
 //  https://leetcode.com/problems/binary-tree-upside-down/
 public class _156_Tree_Binary_Tree_Upside_Down_M {
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     public TreeNode upsideDownBinaryTree1(TreeNode root) {
         if (root == null || root.left == null && root.right == null)
@@ -56,7 +56,7 @@ public class _156_Tree_Binary_Tree_Upside_Down_M {
                         6
 
      */
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     //recurtion
     public TreeNode upsideDownBinaryTree2(TreeNode root) {
@@ -85,7 +85,7 @@ public class _156_Tree_Binary_Tree_Upside_Down_M {
     }
 
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     public TreeNode UpsideDownBinaryTree3(TreeNode root) {
         TreeNode curr = root;
@@ -114,7 +114,7 @@ public class _156_Tree_Binary_Tree_Upside_Down_M {
         UpsideDownBinaryTree3(root).print();
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     //time O(n) space O(n)
     public TreeNode upsideDownBinaryTree4(TreeNode root) {
@@ -154,7 +154,7 @@ public class _156_Tree_Binary_Tree_Upside_Down_M {
         upsideDownBinaryTree4(root).print();
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 }
 /*
 all right nodes are either 1 leaf nodes with a left sibling or 2 empty

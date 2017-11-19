@@ -32,7 +32,7 @@ public class _536_Tree_Construct_Binary_Tree_from_String_M {
         return cur;
     }
 
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     public TreeNode str2tree2(String s) {
         // Base case
         if (s.length() == 0) return null;
@@ -64,7 +64,7 @@ public class _536_Tree_Construct_Binary_Tree_from_String_M {
         return root;
     }
 
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     public TreeNode str2tree3(String s) {
         Stack<TreeNode> stack = new Stack<>();
         for(int i = 0, j = i; i < s.length(); i++, j = i){
@@ -84,8 +84,8 @@ public class _536_Tree_Construct_Binary_Tree_from_String_M {
         return stack.isEmpty() ? null : stack.peek();
     }
 
-////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
+//-------------------------------------------------------------------------/////
 }
 /*
 You need to construct a binary tree from a string consisting of parenthesis and integers.

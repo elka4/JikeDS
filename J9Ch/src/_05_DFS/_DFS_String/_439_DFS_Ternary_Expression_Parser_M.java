@@ -33,7 +33,7 @@ P.S. this code is guaranteed only if "the given expression is valid" base on the
         return String.valueOf(stack.peek());
     }
 
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     //    5ms JAVA DFS Solution
     public class Solution2 {
         public String parseTernary(String expression) {
@@ -64,7 +64,7 @@ P.S. this code is guaranteed only if "the given expression is valid" base on the
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     /*
     Easy and Concise 5-lines Python/Java Solution
 In order to pick out useful "?" and ":", we can always begin with the last "?" and the first ":" after the chosen "?".
@@ -91,7 +91,7 @@ Removed stack, added Java version.
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 //    Java O(n) using Binary Tree
 //    We can also use a stack to store the parent node.
     public class Solution4 {
@@ -147,7 +147,7 @@ Removed stack, added Java version.
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 /*
 Given a string representing arbitrarily nested ternary expressions, calculate the result of the expression. You can always assume that the given expression is valid and only consists of digits 0-9, ?, :, T and F (T and F represent True and False respectively).

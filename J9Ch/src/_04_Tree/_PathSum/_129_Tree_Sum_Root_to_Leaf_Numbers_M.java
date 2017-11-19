@@ -24,7 +24,7 @@ public class _129_Tree_Sum_Root_to_Leaf_Numbers_M {
         return val;
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     //Java Solution - Recursive
 
@@ -73,7 +73,7 @@ public class _129_Tree_Sum_Root_to_Leaf_Numbers_M {
 
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     public int sumNumbers3(TreeNode root) {
         return sum(root, 0);
@@ -85,7 +85,7 @@ public class _129_Tree_Sum_Root_to_Leaf_Numbers_M {
         return sum(n.left, s*10 + n.val) + sum(n.right, s*10 + n.val);
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Same approach, but simpler coding style.
 
     public int sumNumbers4(TreeNode root) {
@@ -113,7 +113,7 @@ public class _129_Tree_Sum_Root_to_Leaf_Numbers_M {
 
         return sum;
     }
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     //Jiuzhang
     public int sumNumbers(TreeNode root) {
@@ -133,7 +133,7 @@ public class _129_Tree_Sum_Root_to_Leaf_Numbers_M {
         return dfs(root.left, sum) + dfs(root.right, sum);
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 

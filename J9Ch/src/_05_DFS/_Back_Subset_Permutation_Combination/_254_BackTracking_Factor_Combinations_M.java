@@ -7,7 +7,7 @@ import java.util.*;
 //  https://leetcode.com/problems/factor-combinations/description/
 public class _254_BackTracking_Factor_Combinations_M {
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
     //My Recursive DFS Java Solution
     public List<List<Integer>> getFactors1(int n) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
@@ -37,7 +37,7 @@ public class _254_BackTracking_Factor_Combinations_M {
     }//[[2, 2, 3], [2, 6], [3, 4]]
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
     //A simple java solution
     public List<List<Integer>> getFactors2(int n) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
@@ -66,7 +66,7 @@ public class _254_BackTracking_Factor_Combinations_M {
         System.out.println(getFactors2(12));
     }//[[2, 2, 3], [2, 6], [3, 4]]
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
    /* My short Java solution which Is EASY to understand
     Here is my JAVA solution which will print the result in the following way:
     e.g.
@@ -97,7 +97,7 @@ public class _254_BackTracking_Factor_Combinations_M {
         System.out.println(getFactors3(12));
     }//[[2, 6], [2, 2, 3], [3, 4]]
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
 
 /*    Very easy to understand 2ms java backtracking solution
 
@@ -143,7 +143,7 @@ public class _254_BackTracking_Factor_Combinations_M {
         System.out.println(getFactors4(12));
     }//[[2, 6], [2, 2, 3], [3, 4]]
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
 
     //Java 2ms easy to understand, short and sweet
     public List<List<Integer>> getFactors5(int n) {
@@ -173,7 +173,7 @@ public class _254_BackTracking_Factor_Combinations_M {
         System.out.println(getFactors5(12));
     }//[[2, 6], [2, 2, 3], [3, 4]]
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
     //Simple Java Recursive Solution
     public List<List<Integer>> getFactors6(int n) {
         List<List<Integer>> result = new ArrayList<>();
@@ -199,7 +199,7 @@ public class _254_BackTracking_Factor_Combinations_M {
         System.out.println(getFactors6(12));
     }//[[2, 6], [2, 2, 3], [3, 4]]
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
 }
 /*
 Numbers can be regarded as product of its factors. For example,

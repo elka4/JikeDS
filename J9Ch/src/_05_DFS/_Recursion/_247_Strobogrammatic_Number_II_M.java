@@ -3,7 +3,7 @@ import java.util.*;
 
 //  https://leetcode.com/problems/strobogrammatic-number-ii/description/
 public class _247_Strobogrammatic_Number_II_M {
-//////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////
     //Accepted Java solution using recursion
     public List<String> findStrobogrammatic(int n) {
         findStrobogrammaticHelper(new char[n], 0, n - 1);
@@ -37,7 +37,7 @@ public class _247_Strobogrammatic_Number_II_M {
         a[l] = '9'; a[r] = '6';
         findStrobogrammaticHelper(a, l+1, r-1);
     }
-//////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////
 }
 /*
 A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).

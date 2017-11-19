@@ -3,7 +3,7 @@ package DP;
 import org.junit.Test;
 
 public class DP_Stock {
-/////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
     //  121. Best Time to Buy and Sell Stock
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock/
@@ -74,7 +74,7 @@ LintCode 149 Best Time to Buy and Sell Stock
 
         return profit;
     }
-/////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
     //  122. Best Time to Buy and Sell Stock II
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-ii/
@@ -116,7 +116,7 @@ LintCode 150 Best Time to Buy and Sell Stock II
         return profit;
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 //  123. Best Time to Buy and Sell Stock III
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-iii/
@@ -352,7 +352,7 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
         System.out.println(maxProfitIII_2(prices));
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 
 //  188. Best Time to Buy and Sell Stock IV
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/description/
@@ -486,11 +486,11 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
     }
 
 
-/////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 
 
 
-/////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 
 
 

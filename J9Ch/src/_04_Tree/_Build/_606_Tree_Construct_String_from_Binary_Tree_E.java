@@ -14,7 +14,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
     // Approach #2 Iterative Method Using stack [Accepted]
 
 
-//////////////////////////////////////////////////////////////////////////////////////Î
+//-------------------------------------------------------------------------///Î
     public String tree2str3(TreeNode t) {
         if (t == null) return "";
 
@@ -29,7 +29,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
         return result + "(" + left + ")" + "(" + right + ")";
     }
 
-//////////////////////////////////////////////////////////////////////////////////////Î
+//-------------------------------------------------------------------------///Î
     //    EDIT : Changed from (left == "" ? "" : left) to left.
     public String tree2str4(TreeNode t) {
         if(t == null) return "";
@@ -42,7 +42,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
     }
 
 
-//////////////////////////////////////////////////////////////////////////////////////Î
+//-------------------------------------------------------------------------///Î
     //Java Solution, Tree Traversal
     public String tree2str5(TreeNode t) {
         if (t == null) return "";
@@ -58,7 +58,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
         return result + "(" + left + ")" + "(" + right + ")";
     }
 
-//////////////////////////////////////////////////////////////////////////////////////Î
+//-------------------------------------------------------------------------///Î
 
     //    Java simple recursion
     public String tree2str6(TreeNode t) {
@@ -81,7 +81,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
             }
         }
     }
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
     //    Java 1 liner
     public String tree2str7(TreeNode t) {
@@ -91,7 +91,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
                 + (t.right != null ? "(" + tree2str7(t.right) + ")" : "");
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 /*
 You need to construct a string consists of parenthesis and integers from a binary tree with the preorder traversing way.

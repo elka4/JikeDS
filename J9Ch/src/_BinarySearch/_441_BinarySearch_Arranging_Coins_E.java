@@ -83,7 +83,7 @@ public class _441_BinarySearch_Arranging_Coins_E {
 `x = 1 / 2 * (-sqrt(8 * n + 1)-1)` (Inapplicable) or `x = 1 / 2 * (sqrt(8 * n + 1)-1)`
     Negative root is ignored and positive root is used instead. Note that 8.0 * n is very important because it will cause Java to implicitly autoboxed the intermediate result into double data type. The code will not work if it is simply 8 * n. Alternatively, an explicit casting can be done 8 * (long) n).*/
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 //O(logn) binary search java solution
     public int arrangeCoins(int n) {
         //convert int to long to prevent integer overflow

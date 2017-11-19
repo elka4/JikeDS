@@ -50,7 +50,7 @@ public class _6_Combination_Sum_II {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 //Java solution using dfs, easy understand
 
     public List<List<Integer>> combinationSum2_2(int[] cand, int target) {
@@ -74,7 +74,7 @@ public class _6_Combination_Sum_II {
             path.remove(path.size()-1);
         }
     }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 //Combination Sum I, II and III Java solution (see the similarities yourself)
 class solution1 {
     //Combination Sum I
@@ -154,7 +154,7 @@ class solution1 {
             }
         }
 }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
     //Java - short and recursive, clean code.
     public List<List<Integer>> combinationSum2_3(int[] candidates, int target) {
         List<List<Integer>> ans = new ArrayList<>();
@@ -185,7 +185,7 @@ class solution1 {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 public class Solution {
     public List<List<Integer>> combinationSum2(int[] num, int target) {
         List<List<Integer>> combos = new LinkedList<>();

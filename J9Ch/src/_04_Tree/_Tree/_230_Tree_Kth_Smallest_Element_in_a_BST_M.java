@@ -66,7 +66,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         return -1; // never hit if k is valid
     }
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     public class Solution {
         public int kthSmallest(TreeNode root, int k) {

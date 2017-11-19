@@ -37,7 +37,7 @@ public class _216_BackTracking_Combination_Sum_III_M {
     }//[[1, 2, 6], [1, 3, 5], [2, 3, 4]]
 
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
         //Simple and clean Java code, backtracking.
         public List<List<Integer>> combinationSum1(int k, int n) {
             List<List<Integer>> ans = new ArrayList<>();
@@ -58,7 +58,7 @@ public class _216_BackTracking_Combination_Sum_III_M {
             }
         }
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
         // To make this faster, you can quit the for loop early and avoid unnecessary work.
         private void combination2(List<List<Integer>> ans, List<Integer> comb,
                                   int k,  int start, int n) {
@@ -79,7 +79,7 @@ public class _216_BackTracking_Combination_Sum_III_M {
             }
         }
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
         //if you think for loop with multiple conditions is complex,
         // you can add an if condition inside the for loop instead.
         private void combination3(List<List<Integer>> ans, List<Integer> comb, int k,
@@ -102,7 +102,7 @@ public class _216_BackTracking_Combination_Sum_III_M {
             }
         }
 
-///////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
 //    Fast, easy Java code, with explanation!
 //
 //            19
@@ -137,7 +137,7 @@ public class _216_BackTracking_Combination_Sum_III_M {
     }
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
 
 /*    Accepted recursive Java solution, easy to understand
 
@@ -161,7 +161,7 @@ public class _216_BackTracking_Combination_Sum_III_M {
             tmp.remove(tmp.size() - 1);
         }
     }
-///////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
     public List<List<Integer>> combinationSum6(int k, int n) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         rec(k, n, 1, new ArrayList<Integer>(), res);
@@ -181,9 +181,9 @@ public class _216_BackTracking_Combination_Sum_III_M {
             rec(kLeft - 1, nLeft - i, i + 1, newList, res);
         }
     }
-///////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
 
-///////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
 }
 /*
 Find all possible combinations of k numbers that add up to a number n, given that only numbers

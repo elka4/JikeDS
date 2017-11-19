@@ -74,7 +74,7 @@ Below is my code:
                 backtrack(list, str+")", open, close+1, max);
         }
     }
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //jiuzhang
     public class Juzhang {
         public ArrayList<String> generateParenthesis(int n) {
@@ -105,7 +105,7 @@ Below is my code:
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     class SolutionZhu {
         public List<String> generateParenthesis(int n) {
             List<String> result = new ArrayList<>();
@@ -132,7 +132,7 @@ Below is my code:
             }
         }
     }
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 }
 /*Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 

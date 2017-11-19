@@ -21,7 +21,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
         }
     }
 
-///////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //2
     // My recursive solution(Java)
     public void connect2(TreeLinkNode root) {
@@ -38,7 +38,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
         connect2(root.right);
     }
 
-///////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //3
     //Java solution traversing by level without extra space
     public void connect3(TreeLinkNode root) {
@@ -56,7 +56,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
             cur=nextLeftmost;  // point to next level
         }
     }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
     //4
     //Java Solution 1 - Simple
     public void connect4(TreeLinkNode root) {
@@ -168,7 +168,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
             next = parent.left;
         }
     }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 }
 /*
 

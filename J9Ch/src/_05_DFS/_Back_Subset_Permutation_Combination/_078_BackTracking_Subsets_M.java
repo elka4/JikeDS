@@ -28,7 +28,7 @@ public class _078_BackTracking_Subsets_M {
     }
     @Test public void test01(){ System.out.println(subsets01(new int[]{1,2,3})); }
     //[[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //    Simple Java Solution with For-Each loops
     //    No messy indexing. Avoid the ConcurrentModificationException by using a temp list.
     public List<List<Integer>> subsets02(int[] S) {
@@ -49,7 +49,7 @@ public class _078_BackTracking_Subsets_M {
     }
     @Test public void test02(){ System.out.println(subsets02(new int[]{1,2,3})); }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Simple Java Solution Using Bit Operations
     public List<List<Integer>> subsets03(int[] nums) {
         int n = nums.length;
@@ -70,7 +70,7 @@ public class _078_BackTracking_Subsets_M {
     @Test public void test03(){ System.out.println(subsets03(new int[]{1,2,3})); }
 
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     // 递归：实现方式，一种实现DFS算法的一种方式
     /**
      * @param nums: A set of numbers.
@@ -119,7 +119,7 @@ public class _078_BackTracking_Subsets_M {
     }
     @Test public void test04(){ System.out.println(subsets_J1(new int[]{1,2,3})); }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     // 9Ch
     // Non Recursion
     /**
@@ -152,7 +152,7 @@ public class _078_BackTracking_Subsets_M {
     }
     @Test public void test05(){ System.out.println(subsets_J2(new int[]{1,2,3})); }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 Given a set of distinct integers, nums, return all possible subsets (the power set).

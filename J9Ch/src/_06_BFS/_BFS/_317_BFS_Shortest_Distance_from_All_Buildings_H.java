@@ -83,7 +83,7 @@ this building. After we do this for all the buildings, we can get the sum of sho
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 /*Share a Java implement
     Short version: BFS from every building, calculate the distances and find the minimum distance in the end.
 
@@ -154,7 +154,7 @@ this building. After we do this for all the buildings, we can get the sum of sho
         }
     }
 
-    //////////////////////////////////////////////////////////////////////////////////////////
+    //-------------------------------------------------------------------------///////
 //    My BFS Java Solution
 
     public class Solution4 {
@@ -217,7 +217,7 @@ this building. After we do this for all the buildings, we can get the sum of sho
         }
     }
 }
-//////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
 /*
 You want to build a house on an empty land which reaches all buildings in the shortest amount of distance. You can only move up, down, left and right. You are given a 2D grid of values 0, 1 or 2, where:

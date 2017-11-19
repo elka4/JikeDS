@@ -30,7 +30,7 @@ public class _687_Longest_Univalue_Path_E {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 //Same idea.
 
     class Solution2 {
@@ -50,7 +50,7 @@ public class _687_Longest_Univalue_Path_E {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 /*
 Given a binary tree, find the length of the longest path where each node in the path has the same value. This path may or may not pass through the root.

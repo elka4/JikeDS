@@ -83,7 +83,7 @@ public class _159_TwoPointer_Longest_Substring_with_At_Most_Two_Distinct_Charact
             return maxLen;
         }
     }
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //  https://discuss.leetcode.com/topic/71662/sliding-window-algorithm-template-to-solve-all-the-leetcode-substring-search-problem/4
 
 //Sliding Window algorithm template to solve all the Leetcode substring search problem.
@@ -368,7 +368,7 @@ to
             return result;
         }
     }
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //  https://www.programcreek.com/2013/02/longest-substring-which-contains-2-unique-characters/
 
 /*1. Longest Substring Which Contains 2 Unique Characters
@@ -461,7 +461,7 @@ to
     }
 //    Time is O(n).
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
 }
 /*

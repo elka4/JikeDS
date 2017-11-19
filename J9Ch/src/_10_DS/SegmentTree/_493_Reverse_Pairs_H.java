@@ -12,7 +12,7 @@ public class _493_Reverse_Pairs_H {
 
     //http://massivealgorithms.blogspot.com/2017/02/leetcode-493-reverse-pairs.html
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
     //1
     //Clean Java Solution using Enhanced Binary Search Tree
 
@@ -88,7 +88,7 @@ Otherwise, only search left sub-tree.
             }
         }
     }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 //2
     //Your code can't pass test now ! I changed it by balancing the tree. but neither do it.
 
@@ -188,7 +188,7 @@ Otherwise, only search left sub-tree.
 
         }
     }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 //3
 //Java Segment Tree Solution
 //Inspired by binary index tree solution, I just wrote a segment tree version.
@@ -262,7 +262,7 @@ Otherwise, only search left sub-tree.
             }
         }
     }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
 //4
 
@@ -520,7 +520,7 @@ Otherwise, only search left sub-tree.
     class Solution5{
 
     }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 }
 /*
 Given an array nums, we call (i, j) an important reverse pair if i < j and nums[i] > 2*nums[j].

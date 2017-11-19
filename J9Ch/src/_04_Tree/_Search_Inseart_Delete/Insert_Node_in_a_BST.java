@@ -44,7 +44,7 @@ public class Insert_Node_in_a_BST {
         root.print();
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     public TreeNode insertNode2(TreeNode root, TreeNode node) {
         if (root == null) {
             return node;
@@ -56,7 +56,7 @@ public class Insert_Node_in_a_BST {
         }
         return root;
     }
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
     /**
      * @param root: The root of the binary search tree.

@@ -29,7 +29,7 @@ public class _047_BackTracking_Permutations_II_M {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
 /*    Really easy Java solution, much easier than the solutions with very high vote
     Use an extra boolean array " boolean[] used" to indicate whether the value is added to list.
@@ -64,7 +64,7 @@ public class _047_BackTracking_Permutations_II_M {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
     //    Share my Java code with detailed explanantion
     public List<List<Integer>> permuteUnique03(int[] nums) {
@@ -97,7 +97,7 @@ public class _047_BackTracking_Permutations_II_M {
         nums[j] = save;
     }
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
     // 9Ch
     // version 1: Remove duplicates & generate a new array
     /**
@@ -156,7 +156,7 @@ public class _047_BackTracking_Permutations_II_M {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
     // 9Ch
     // version 2: reuse candidates array
     public  List<List<Integer>> combinationSum_J2(int[] candidates, int target) {
@@ -197,7 +197,7 @@ public class _047_BackTracking_Permutations_II_M {
         }
     }
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
     // 9Ch
     /**
      * @param nums: A list of integers.
@@ -256,7 +256,7 @@ public class _047_BackTracking_Permutations_II_M {
         }
     }
 
-///////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 }
 
 /*

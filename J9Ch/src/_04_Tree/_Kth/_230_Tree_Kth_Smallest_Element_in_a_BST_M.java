@@ -26,7 +26,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         return 1 + countNodes(n.left) + countNodes(n.right); //1是root的计数
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
     //    2. DFS in-order recursive:
     // better keep these two variables in a wrapper class
     private static int number = 0;
@@ -48,7 +48,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         if (n.right != null) helper(n.right);
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
     //    3. DFS in-order iterative:     这个性能不是太好，因为这个是O(n)
     public int kthSmallest3(TreeNode root, int k) {
         Stack<TreeNode> st = new Stack<>();
@@ -72,7 +72,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         return -1; // never hit if k is valid
     }
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     public int kthSmallest4(TreeNode root, int k) {
         TreeNodeWithCount rootWithCount = buildTreeWithCount(root);
@@ -109,7 +109,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         TreeNodeWithCount(int x) {val = x; count = 1;};
     }
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     /*Java Solution 1 - Inorder Traversal
     We can inorder traverse the tree and get the kth smallest element. Time is O(n).*/
@@ -138,7 +138,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
     }
 
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //Similarly, we can also write the inorder traversal as the following:
     /*Java Solution 2 - Extra Data Structure
 
@@ -171,7 +171,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
     }
 
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     /*
     Two Easiest In Order Traverse (Java)
@@ -195,7 +195,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         traverse(root.right, k);
     }
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     //Iterative:
     public int kthSmallest8(TreeNode root, int k) {

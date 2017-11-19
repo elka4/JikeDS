@@ -24,7 +24,7 @@ public class _652_Tree_Find_Duplicate_Subtrees_M {
         return dfs(root.left, set, k) || dfs(root.right, set, k);
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
     //method2
     public boolean findTarget2(TreeNode root, int k) {
         List<Integer> nums = new ArrayList<>();
@@ -44,7 +44,7 @@ public class _652_Tree_Find_Duplicate_Subtrees_M {
         inorder(root.right, nums);
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
     // method3
     public boolean findTarget3(TreeNode root, int k) {
 
@@ -64,7 +64,7 @@ public class _652_Tree_Find_Duplicate_Subtrees_M {
                 || (root.val > value) && search(root.left, cur, value);
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 
     //Java Concise Postorder Traversal Solution
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
@@ -176,6 +176,31 @@ public class _652_Tree_Find_Duplicate_Subtrees_M {
         root.right.left.left = new TreeNode(4);
         root.print();
         System.out.println(new Solution5().findDuplicateSubtrees(root));
+    }
+
+/////////////////////////////////////////////////////////////////////////////////
+//6
+public List<TreeNode> findDuplicateSubtrees6(TreeNode root) {
+    List<TreeNode> result = new LinkedList<>();
+    Map<String,Integer> map = new HashMap<>();
+    findDuplicateSubtreesHelperPostOrder(map,root,result);
+
+    return result;
+
+}
+    public String findDuplicateSubtreesHelperPostOrder(Map<String,
+            Integer> map,TreeNode root,List<TreeNode> result){
+        if(root==null)
+            return "#";
+        String path = root.val +
+                findDuplicateSubtreesHelperPostOrder(map,root.left,result) +
+                findDuplicateSubtreesHelperPostOrder(map,root.right,result);
+        Integer times = map.getOrDefault(path,0);
+        if(times==1){
+            result.add(root);
+        }
+        map.put(path,times+1);
+        return path;
     }
 
 /////////////////////////////////////////////////////////////////////////////////

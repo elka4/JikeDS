@@ -49,7 +49,7 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
         }
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();
         helperS(root, sb);
@@ -91,7 +91,7 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
 
         return node;
     }
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 /*Short and straight forward BFS Java code with a queue Here I use typical BFS method to handle a binary tree. I use string n to represent null values. The string of the binary tree in the example will be "1 2 3 n n 4 5 n n n n ".When deserialize the string, I assign left and right child for each not-null node, and add the not-null children to the queue, waiting to be handled later.*/
 
     public class Codec3 {
@@ -136,8 +136,8 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
         }
     }
 
-///////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
     /*Recursive DFS, Iterative DFS and BFS
     This problem can solved in 3 different ways
     (1) Iterative DFS*/
@@ -296,7 +296,7 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
     }
 
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a file or memory buffer, or transmitted across a network connection link to be reconstructed later in the same or another computer environment.

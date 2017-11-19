@@ -154,7 +154,7 @@ public class _505_DFS_The_Maze_II_M {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
     public class Solution {
         class Point {
             int x,y,l;
@@ -188,7 +188,7 @@ public class _505_DFS_The_Maze_II_M {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
     public class Solution2 {
         private int[][] maze;
         private int[][] minSteps;//memorize the minimus steps to reach each position
@@ -263,7 +263,7 @@ public class _505_DFS_The_Maze_II_M {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 /*
 There is a ball in a maze with empty spaces and walls. The ball can go through empty spaces by rolling up, down, left or right, but it won't stop rolling until hitting a wall. When the ball stops, it could choose the next direction.

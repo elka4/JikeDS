@@ -464,7 +464,7 @@ class Solution9{
     }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //Java, 5 methods, merge sort, binary indexed tree, binary search tree
     //  Bottom up merge sort, sort the index array and count the exchanges during merge
     class Solution11{
@@ -660,7 +660,7 @@ class Solution9{
             return result;
         }
     }
-////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 }
 /*
 You are given an integer array nums and you have to return a new counts array.

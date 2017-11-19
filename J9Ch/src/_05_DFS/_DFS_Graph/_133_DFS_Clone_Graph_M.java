@@ -13,7 +13,7 @@ public class _133_DFS_Clone_Graph_M {
             neighbors = new ArrayList<UndirectedGraphNode>();
         }
     }
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     //Depth First Simple Java Solution
     public class Solution {
         private HashMap<Integer, UndirectedGraphNode> map = new HashMap<>();
@@ -36,7 +36,7 @@ public class _133_DFS_Clone_Graph_M {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     //Simple Java iterative BFS solution with HashMap and queue
     public class Solution2 {
         public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
@@ -72,7 +72,7 @@ public class _133_DFS_Clone_Graph_M {
     }
 
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
     //jiuzhang
     /*
@@ -134,7 +134,7 @@ public class Jiuzhang1 {
 }
 
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     class StackElement {
         public UndirectedGraphNode node;
         public int neighborIndex;
@@ -207,7 +207,7 @@ public class Jiuzhang1 {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     /*
     两个步骤：
 
@@ -252,7 +252,7 @@ public class Jiuzhang1 {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 /*
 Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.

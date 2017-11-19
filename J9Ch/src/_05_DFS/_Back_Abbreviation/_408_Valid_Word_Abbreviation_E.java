@@ -29,7 +29,7 @@ public class _408_Valid_Word_Abbreviation_E {
         return i == word.length() && j == abbr.length();
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Simple Regex One-liner (Java, Python)
     //Much nicer, I just turn an abbreviation like "i12iz4n" into a regular expression like "i.{12}iz.{4}n". Duh.
     /*
@@ -40,7 +40,7 @@ public class _408_Valid_Word_Abbreviation_E {
     }
 
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Java straightforward, easy understand solution.
     public boolean validWordAbbreviation3(String word, String abbr) {
         if(word == null || abbr == null) return false;
@@ -62,7 +62,7 @@ public class _408_Valid_Word_Abbreviation_E {
         return idx+num == word.length() ? true : false;
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Simple Java Solution
     public boolean validWordAbbreviation4(String word, String abbr) {
         int lengthOfWord = word.length();
@@ -90,7 +90,7 @@ public class _408_Valid_Word_Abbreviation_E {
         return lengthOfWord==count;
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     // 9Ch
     public boolean validWordAbbreviation_J(String word, String abbr) {
         int i = 0, j = 0;
@@ -117,7 +117,7 @@ public class _408_Valid_Word_Abbreviation_E {
         System.out.println(validWordAbbreviation_J("internationalization", "i12iz4n"));
         System.out.println(validWordAbbreviation_J("apple", "a2e"));
     }
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 检查缩写字

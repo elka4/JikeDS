@@ -76,7 +76,7 @@ Because we only scan the matrix for one time, time complexity is O(m*n). m = num
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //[Java] [C++] Clean Code with Explanation - map<int, set<int>>
     public class Solution2 {
         public int findBlackPixel(char[][] pic, int N) {
@@ -111,7 +111,7 @@ Because we only scan the matrix for one time, time complexity is O(m*n). m = num
             return lonelys;
         }
     }
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 /*
 Given a picture consisting of black and white pixels, and a positive integer N, find the number of black pixels located at some specific row R and column C that align with all the following rules:

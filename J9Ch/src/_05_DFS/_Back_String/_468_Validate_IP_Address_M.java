@@ -57,7 +57,7 @@ public class _468_Validate_IP_Address_M {
         return true;
     }
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //Jiuzhang
     String IPv6char = "0123456789abcdefABCDEF";
     public boolean isVaild_IPv4Number(String str){
@@ -132,7 +132,7 @@ public class _468_Validate_IP_Address_M {
 
         return "Neither";
     }
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 }
 /*
 Write a function to check whether an input string is a valid IPv4 address or IPv6 address or neither.

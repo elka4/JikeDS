@@ -103,7 +103,7 @@ public class _3LongestPalindromicSubsequence {
             return memo[i][j];
         }
     }
-////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 /*short java solution,beats 99%,with explanation
 
 7
@@ -129,7 +129,7 @@ public class _3LongestPalindromicSubsequence {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 
     //    Java DP Solution
     public class Solution04 {
@@ -152,7 +152,7 @@ public class _3LongestPalindromicSubsequence {
             return dp[0][len-1];
         }
     }
-////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
     //Java DP solution, similar to solving LCS problem
     //
     //    To find the longest palindromic subsequence, we could reverse the string and
@@ -173,7 +173,7 @@ public class _3LongestPalindromicSubsequence {
             return dp[len][len];
         }
     }
-////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
     // 9Ch DP
 
     public int longestPalindromeSubseq(String ss) {

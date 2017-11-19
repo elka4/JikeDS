@@ -47,7 +47,7 @@ public class _642_Design_Search_Autocomplete_System_H {
      * AutocompleteSystem obj = new AutocompleteSystem(sentences, times);
      * List<String> param_1 = obj.input(c);
      */
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Approach #2 Using One level Indexing[Accepted]
     public class AutocompleteSystem2 {
         HashMap < String, Integer > [] arr;
@@ -88,7 +88,7 @@ public class _642_Design_Search_Autocomplete_System_H {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Approach #3 Using Trie[Accepted]
 
     public class AutocompleteSystem3 {
@@ -160,7 +160,7 @@ public class _642_Design_Search_Autocomplete_System_H {
     }
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Java solution, Trie and PriorityQueue
     //Only thing more than a normal Trie is added a map of sentence to count in each of the Trie node to facilitate process of getting top 3 results.
 
@@ -240,12 +240,12 @@ public class _642_Design_Search_Autocomplete_System_H {
             return res;
         }
     }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 Design a search autocomplete system for a search engine. Users may input a sentence (at least one word and end with a special character '#'). For each character they type except '#', you need to return the top 3 historical hot sentences that have prefix the same as the part of sentence already typed. Here are the specific rules:

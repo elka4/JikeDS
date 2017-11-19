@@ -73,7 +73,7 @@ public class _4WordLadder {
 
 
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     // version: LeetCode
     public int ladderLength(String start, String end, List<String> wordList) {
@@ -140,7 +140,7 @@ public class _4WordLadder {
         }
         return nextWords;
     }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 }
 /*
 Given two words (start and end), and a dictionary, find the length of shortest transformation sequence from start to end, such that:

@@ -103,7 +103,7 @@ public class _2InterleavingString {
     }
 
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //Approach #2 Recursion with memoization [Accepted]
     public class Solution2 {
         public boolean is_Interleave2(String s1, int i, String s2, int j,
@@ -138,7 +138,7 @@ public class _2InterleavingString {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //Approach #3 Using 2-d Dynamic Programming [Accepted]
     public class Solution3 {
         public boolean isInterleave3(String s1, String s2, String s3) {
@@ -164,7 +164,7 @@ public class _2InterleavingString {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //Approach #4 Using 1-d Dynamic Programming [Accepted]:
     public class Solution4 {
         public boolean isInterleave4(String s1, String s2, String s3) {
@@ -193,7 +193,7 @@ public class _2InterleavingString {
     }
 
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //9Ch DP
     public boolean isInterleave_J1(String s1, String s2, String s3) {
         char[] c1 = s1.toCharArray();
@@ -243,7 +243,7 @@ public class _2InterleavingString {
     }
 
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     // mine
     public boolean isInterleave11(String s1, String s2, String s3) {
@@ -276,7 +276,7 @@ public class _2InterleavingString {
     }
 
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     public boolean isInterleave5(String s1, String s2, String s3) {
         if (s1.length() + s2.length() != s3.length()) {
             return false;
@@ -306,10 +306,10 @@ public class _2InterleavingString {
         return interleaved[s1.length()][s2.length()];
     }
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
 
-/////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 }
 /*
 Given three strings: s1, s2, s3, determine whether s3 is formed by the interleaving of s1 and s2.

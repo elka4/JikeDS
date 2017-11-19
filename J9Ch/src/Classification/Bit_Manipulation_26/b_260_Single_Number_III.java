@@ -59,7 +59,7 @@ Therefore, the value of diff after executing diff &= -diff is still
         return rets;
     }
 
-////////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 public int[] singleNumber2(int[] nums) {
     int result[] = new int[2];
     int xor = nums[0];

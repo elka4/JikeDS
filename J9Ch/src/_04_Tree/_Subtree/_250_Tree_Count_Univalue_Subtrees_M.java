@@ -33,7 +33,7 @@ public class _250_Tree_Count_Univalue_Subtrees_M {
         return false;
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     /*
     Java, 11 lines added
     Helper all tells whether all nodes in the given tree have the given value.
@@ -52,7 +52,7 @@ public class _250_Tree_Count_Univalue_Subtrees_M {
         all(root, 0);
         return count3;
     }
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Very easy JAVA solution, post order recursion
     public int countUnivalSubtrees4(TreeNode root) {
         int[] arr = new int[1];
@@ -72,7 +72,7 @@ public class _250_Tree_Count_Univalue_Subtrees_M {
         return false;
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //AC clean Java solution
     int count;
 
@@ -98,7 +98,7 @@ public class _250_Tree_Count_Univalue_Subtrees_M {
         return false;
     }
 
-///////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 

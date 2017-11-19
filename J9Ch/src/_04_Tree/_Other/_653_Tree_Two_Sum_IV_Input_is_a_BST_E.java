@@ -67,7 +67,7 @@ public class _653_Tree_Two_Sum_IV_Input_is_a_BST_E {
         list.add(root.val);
         inorder1(root.right, list);
     }
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     /*[Java/C++] Three simple methods - choose one you like
     Method 1.
@@ -89,7 +89,7 @@ public class _653_Tree_Two_Sum_IV_Input_is_a_BST_E {
     }
 
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     /* Method 2.
     The idea is to use a sorted array to save the values of the nodes in the BST by using an inorder traversal. Then, we use two pointers which begins from the start and end of the array to find if there is a sum k.
@@ -115,7 +115,7 @@ public class _653_Tree_Two_Sum_IV_Input_is_a_BST_E {
         inorder(root.right, nums);
     }
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
 
     /*    Method 3.
@@ -141,7 +141,7 @@ public class _653_Tree_Two_Sum_IV_Input_is_a_BST_E {
 
 
 
-////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 }
 /*
 

@@ -113,7 +113,7 @@ public class _6WildcardMatching {
         return p == pattern.length();
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //My java DP solution using 2D table
     public boolean isMatch02(String s, String p) {
         boolean[][] match=new boolean[s.length()+1][p.length()+1];
@@ -341,7 +341,7 @@ public class _6WildcardMatching {
         return match[s.length()][p.length()];
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //I like this one.
     //Java DP Accepted
     public class Solution3 {
@@ -373,7 +373,7 @@ public class _6WildcardMatching {
 
 
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     // 9Ch DP
     public boolean isMatch2(String s, String p) {
         char[] s1 = s.toCharArray();

@@ -4,7 +4,10 @@ import java.util.*;
 
 //  404. Sum of Left Leaves
 //  https://leetcode.com/problems/sum-of-left-leaves/
+//  Tree
+//  4: 1, 4。1是iterative，4是recursion。其实1更好理解， 用Queue。
 public class _404_Tree_Sum_of_Left_Leaves_E {
+    //1
         public int sumOfLeftLeaves1(TreeNode root) {
             if(root == null || root.left == null && root.right == null) return 0;
 
@@ -18,6 +21,8 @@ public class _404_Tree_Sum_of_Left_Leaves_E {
                 if(curr.left != null && curr.left.left == null && curr.left.right == null){
                     res += curr.left.val;
                 }
+
+
                 if(curr.left != null) {
                     queue.offer(curr.left);
                 }
@@ -28,7 +33,8 @@ public class _404_Tree_Sum_of_Left_Leaves_E {
             return res;
         }
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
+    //2
         //其实就是两个条件，第一，node必须是个左树，第二node左右子树必须为null
 /*Iterative method. Here for each node in the tree we check whether its left child is a leaf. If it is true, we add its value to answer, otherwise add left child to the stack to process it later. For right child we add it to stack only if it is not a leaf.
 * */
@@ -56,7 +62,8 @@ public class _404_Tree_Sum_of_Left_Leaves_E {
     }
 
 
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
+    //3
     /*Java iterative and recursive solutions
         Recursive method. For given node we check whether its left child is a leaf. If it is the case, we add its value to answer, otherwise recursively call method on left child. For right child we call method only if it has at least one nonnull child.*/
     //这个和九章的一样
@@ -73,34 +80,35 @@ public class _404_Tree_Sum_of_Left_Leaves_E {
         return ans;
     }
 
-//////////////////////////////////////////////////////////////////////////////////////
-
+//-------------------------------------------------------------------------///
+    //4
     //Jiuzhang
-public class Jiuzhang {
-    public int sumOfLeftLeaves(TreeNode root) {
-        if(root == null) {
-            return 0;
-        }
-        int sum = 0;
-
-        if(root.left != null) {
-            TreeNode left = root.left;
-            if(left.left == null && left.right == null) {//左树而且其左右皆为null，就是左叶子
-                sum += left.val;
+    //DFS
+    public class Jiuzhang {
+        public int sumOfLeftLeaves3(TreeNode root) {
+            if(root == null) {
+                return 0;
             }
-            else {
-                sum += sumOfLeftLeaves(left);
-            }
-        }
+            int sum = 0;
 
-        if(root.right != null) {
-            TreeNode right = root.right;
-            sum += sumOfLeftLeaves(right);
+            if(root.left != null) {
+                TreeNode left = root.left;
+                if(left.left == null && left.right == null) {//左树而且其左右皆为null，就是左叶子
+                    sum += left.val;
+                }
+                else {
+                    sum += sumOfLeftLeaves3(left);
+                }
+            }
+
+            if(root.right != null) {
+                TreeNode right = root.right;
+                sum += sumOfLeftLeaves3(right);
+            }
+            return sum;
         }
-        return sum;
     }
-}
-//////////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 /*
 Find the sum of all left leaves in a given binary tree.
