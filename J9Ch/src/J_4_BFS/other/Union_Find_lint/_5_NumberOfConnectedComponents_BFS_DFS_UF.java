@@ -35,7 +35,7 @@ public class _5_NumberOfConnectedComponents_BFS_DFS_UF {
         return cur;
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     public int countComponents_DFS(int n, int[][] edges) {
         int[] tag = new int[n];
@@ -72,7 +72,7 @@ public class _5_NumberOfConnectedComponents_BFS_DFS_UF {
         }
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     public int countComponents_BFS(int n, int[][] edges) {
         if (edges == null || edges.length == 0) {
@@ -123,7 +123,7 @@ public class _5_NumberOfConnectedComponents_BFS_DFS_UF {
         }
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
 
 

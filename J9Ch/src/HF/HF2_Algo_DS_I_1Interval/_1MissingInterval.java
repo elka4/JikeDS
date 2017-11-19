@@ -73,7 +73,7 @@ public class _1MissingInterval {
         System.out.println(findMissingRanges(nums, lower, upper));
     }
 
-///////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     //jiuzhang
     /**
@@ -118,7 +118,7 @@ public class _1MissingInterval {
         System.out.println(findMissingRanges2(nums, lower, upper));
     }
 
-///////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
 
     // version: 高频题班
@@ -193,7 +193,7 @@ public class _1MissingInterval {
         System.out.println(findMissingRanges3(nums, lower, upper));
     }
 
-///////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 }
 /*
 Given a sorted integer array where the range of elements are in the inclusive range [lower, upper], return its missing ranges.

@@ -2,7 +2,7 @@ package _BinarySearch.Subarray;
 
 public class _209_BinarySearch_Minimum_Size_Subarray_Sum_M {
 
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
 
     //jiuzhang
     public class Jiuzhang{

@@ -75,7 +75,7 @@ public class _431_ConnectedComponentInUndirectedGraph {
     }
 
 
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 
 
     public int countComponents_DFS(int n, int[][] edges) {
@@ -108,7 +108,7 @@ public class _431_ConnectedComponentInUndirectedGraph {
         System.out.println(countComponents_DFS(7,edges));
     }
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
     public int countComponents_BFS(int n, int[][] edges) {
         if (edges == null || edges.length == 0) {
@@ -176,7 +176,7 @@ public class _431_ConnectedComponentInUndirectedGraph {
         System.out.println(countComponents_BFS(7,edges));
     }
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
 
 

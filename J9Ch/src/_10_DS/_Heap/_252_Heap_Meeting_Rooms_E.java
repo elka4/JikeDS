@@ -9,7 +9,7 @@ public class _252_Heap_Meeting_Rooms_E {
             this.end = end;
         }
     }
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //AC clean Java solution
     class Solution1{
         public boolean canAttendMeetings(Interval[] intervals) {
@@ -71,7 +71,7 @@ public class _252_Heap_Meeting_Rooms_E {
         }
     }
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //jiuzhang
 public class Jiuzhang {
     public boolean canAttendMeetings(Interval[] intervals) {

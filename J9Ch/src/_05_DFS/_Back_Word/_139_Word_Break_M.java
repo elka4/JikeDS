@@ -27,7 +27,7 @@ public class _139_Word_Break_M {
     }
 
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //Approach #2 Recursion with memoization [Accepted]
 
     public boolean wordBreak2(String s, List<String> wordDict) {
@@ -49,7 +49,7 @@ public class _139_Word_Break_M {
     }
 
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //Approach #3 Using Breadth-First-Search [Accepted]
 
     public boolean wordBreak3(String s, List<String> wordDict) {
@@ -75,7 +75,7 @@ public class _139_Word_Break_M {
     }
 
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //Java implementation using DP in two ways
 
     public boolean wordBreak4(String s, Set<String> dict) {
@@ -112,7 +112,7 @@ public class _139_Word_Break_M {
         return f[s.length()];
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     /*
     DFS with Path Memorizing Java Solution
 
@@ -148,7 +148,7 @@ public class _139_Word_Break_M {
         return false;
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //    A concise Java solution. (11-line in wordBreak function)
     public boolean wordBreak6(String s, Set<String> wordDict) {
         int len = s.length();
@@ -163,7 +163,7 @@ public class _139_Word_Break_M {
         return f[len];
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //Several solutions comparison
     //dp without count => 2ms
     public boolean wordBreak7(String s, Set<String> wordDict) {
@@ -209,7 +209,7 @@ public class _139_Word_Break_M {
         return false;
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //Jiuzhang
     private int getMaxLength_J(Set<String> dict) {
         int maxLength = 0;
@@ -248,7 +248,7 @@ public class _139_Word_Break_M {
     }
 
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 }
 /*
 单词拆分 I

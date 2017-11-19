@@ -21,7 +21,7 @@ public class _293_Flip_Game {
     }//[--++, +--+, ++--]
 
 
-//////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
     /*Simple solution in Java
         We start from i = 1 and check whether current and previous characters of the input string equals to +. If true, then add substring to a list: characters before previous one (concatenating with --) and characters after the current character.*/
     public List<String> generatePossibleNextMoves2(String s) {
@@ -40,7 +40,7 @@ public class _293_Flip_Game {
     }//[--++, +--+, ++--]
 
 
-//////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
     //    AC simple O(n) JAVA solution
     public List<String> generatePossibleNextMoves3(String s) {
         List<String> result = new ArrayList<String>();
@@ -61,7 +61,7 @@ public class _293_Flip_Game {
         System.out.println(generatePossibleNextMoves3("++++"));
     }//[--++, +--+, ++--]
 
-//////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 }
 /*
 You are playing the following Flip Game with your friend: Given a string that contains only these two characters: + and -, you and your friend take turns to flip two consecutive "++" into "--". The game ends when a person can no longer make a move and therefore the other person will be the winner.

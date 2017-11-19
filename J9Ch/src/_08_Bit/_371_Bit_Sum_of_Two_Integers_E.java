@@ -12,7 +12,7 @@ public class _371_Bit_Sum_of_Two_Integers_E {
 //  A summary: how to use bit manipulation to solve problems easily and efficiently
 
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
 //  Java simple easy understand solution with explanation
 
@@ -120,7 +120,7 @@ i = 2, carry = 1000, a = 0001, b = 0000, stop, return a(1)
         }
         return a;
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 //0ms AC java solution
 
     public int getSum4(int a, int b) {
@@ -143,10 +143,10 @@ i = 2, carry = 1000, a = 0001, b = 0000, stop, return a(1)
         a = a & (~carry); // if carry is 1, then it current value need to be set to 0;
         return getSum5(a, carry << 1);
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 }
 /*
 Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.

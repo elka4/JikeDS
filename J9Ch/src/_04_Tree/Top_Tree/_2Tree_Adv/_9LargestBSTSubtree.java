@@ -38,7 +38,7 @@ public class _9LargestBSTSubtree {
         max = Math.max(size, max);
         return new Result(size, Math.min(left.lower, root.val), Math.max(right.upper, root.val));
     }
-////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
 
     //Clean and easy to understand Java Solution
     public int largestBSTSubtree2(TreeNode root) {
@@ -62,7 +62,7 @@ public class _9LargestBSTSubtree {
     }
 
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 
     //Java 1ms solution, by passing a three-element array up to parent
 

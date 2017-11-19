@@ -84,7 +84,7 @@ public class _411_Bit_Minimum_Unique_Word_Abbreviation_M {
         abbrGenerator(target, i+1, abbr==0?tmp+cur:tmp+abbr+cur, 0, abbr==0?num-1:num-2);
         abbrGenerator(target, i+1, tmp, abbr+1, num);
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 /*Java DFS+Trie+Binary Search 90ms
     Use Trie to build a dictionary with a function to check abbreviation.
     Use DFS with backtracking to generate the abbreviations of a given length.
@@ -184,7 +184,7 @@ public class _411_Bit_Minimum_Unique_Word_Abbreviation_M {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
 /*    Java bit mask + DFS with pruning
 
@@ -297,10 +297,10 @@ public class _411_Bit_Minimum_Unique_Word_Abbreviation_M {
         }
         return mask;
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 }
 /*
 A string such as "word" contains the following abbreviations:

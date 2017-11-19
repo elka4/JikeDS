@@ -5,7 +5,7 @@ public class _218_Heap_The_Skyline_Problem_H {
 
 //  https://briangordon.github.io/2014/08/the-skyline-problem.html
 
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
     //Short Java solution
     class Solution{
         public List<int[]> getSkyline(int[][] buildings) {
@@ -39,7 +39,7 @@ public class _218_Heap_The_Skyline_Problem_H {
         }
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
     //Once for all, explanation with clean Java code(O(n^2)time, O(n) space)
     //  https://leetcode.com/problems/the-skyline-problem/discuss/
     class Solution3{
@@ -89,9 +89,9 @@ public class _218_Heap_The_Skyline_Problem_H {
             return result;
         }
     }
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
 
 }

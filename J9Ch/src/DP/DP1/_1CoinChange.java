@@ -175,7 +175,7 @@ public class _1CoinChange {
         }
         return -1;
     }
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //leetcode
     //Approach #2 (Dynamic programming - Top down) [Accepted]
     public int coinChange02(int[] coins, int amount) {
@@ -247,7 +247,7 @@ public class _1CoinChange {
         System.out.println("new int[" + "]: " + t + " ms");
     }
 
-    /////////////////////////////////////////////////////////////////
+    //-------------------------------------------------------------------------///
     //Approach #3 (Dynamic programming - Bottom up) [Accepted]
     public int coinChange03(int[] coins, int amount) {
         int max = amount + 1;
@@ -317,7 +317,7 @@ public class _1CoinChange {
         System.out.println("new int[" + "]: " + t + " ms");
     }
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //Jiuzhang
 
     public int coinChange2(int[] coins, int amount) {
@@ -397,7 +397,7 @@ public class _1CoinChange {
         System.out.println("new int[" + "]: " + t + " ms");
     }
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
     //9Ch DP video
     //这个是接近Approach3的算法
@@ -421,7 +421,7 @@ public class _1CoinChange {
         return f[amount] == Integer.MAX_VALUE ? -1 : f[amount];
     }
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
     //  me based on 9Ch DP video
     public int coinChangeLeet4(int[] coins, int amount) {
@@ -444,7 +444,7 @@ public class _1CoinChange {
         return f[amount] == Integer.MAX_VALUE ? -1 : f[amount];
     }
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     // note
     int f(int X) {
         if (X == 0) return 0;
@@ -471,7 +471,7 @@ public class _1CoinChange {
         int M = 89;
         System.out.println(f(M));
     }
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //leet discussion
     //#Iterative Method:#
 
@@ -528,7 +528,7 @@ public class _1CoinChange {
         count[rem-1] = (min==Integer.MAX_VALUE) ? -1 : min;
         return count[rem-1];
     }
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 
 /*

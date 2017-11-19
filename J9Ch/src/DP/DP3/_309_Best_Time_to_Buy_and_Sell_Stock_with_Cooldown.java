@@ -66,7 +66,7 @@ Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to
     }
 
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
     /*
     Easiest JAVA solution with explanations
     Here I share my no brainer weapon when it comes to this kind of problems.
@@ -123,7 +123,7 @@ Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to
     }
 
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 /*    7-line Java: only consider sell and cooldown
     Define:
 
@@ -154,7 +154,7 @@ Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to
     }
 
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 /*    DescriptionHintsSubmissionsDiscussSolution
     Very Easy to Understand One Pass O(n) Solution with No Extra Space
     The idea is as follows:
@@ -195,7 +195,7 @@ Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to
     }
 
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 }
 
 /* Leetcode

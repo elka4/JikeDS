@@ -168,7 +168,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
     }
 
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     //Concise recursive Java code by making slight modification to the previous problem.
     public  TreeNode buildTree5(int[] preorder, int[] inorder) {
@@ -196,7 +196,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         int[] inorder = {1,2,3};
         buildTree5(preorder, inorder).print();
     }
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     /*
         My Accepted Java Solution
         Hi guys, this is my Java solution. I read this post, which is very helpful.
@@ -239,7 +239,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         buildTree6(preorder, inorder).print();
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     /*
         5ms Java Clean Solution with Caching
@@ -284,7 +284,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
     }
 
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     //Here is the iterative solution in Java
     public TreeNode buildTree8(int[] preorder, int[] inorder) {
@@ -324,7 +324,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         buildTree8(preorder, inorder).print();
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     //Concise Java Recursive Solution
     public TreeNode buildTree9(int[] preorder, int[] inorder) {
@@ -356,7 +356,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         buildTree9(preorder, inorder).print();
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Recursive solution in Java
     //This question is similar to the one using postorder and inorder arrays.
     // Once one notices that the first element of preorder is the root node,

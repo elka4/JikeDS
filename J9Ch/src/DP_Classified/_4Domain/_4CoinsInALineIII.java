@@ -38,7 +38,7 @@ public class _4CoinsInALineIII {
 
 
 
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 
     // 方法一
     /**
@@ -80,7 +80,7 @@ public class _4CoinsInALineIII {
     }
 
 
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 
     // 方法二
     /**
@@ -123,7 +123,7 @@ public class _4CoinsInALineIII {
         return dp[left][right];
     }
 
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 }
 /*
 There are n coins in a line. Two players take turns to take a coin from one of the ends of the line until there are no more coins left. The player with the larger amount of money wins.

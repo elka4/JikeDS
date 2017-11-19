@@ -108,7 +108,7 @@ def permute(self, nums):
     return perms
  */
 
-//////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 //I used your idea of adding each next value to every
 // possible position of current list,
 // but have done it with recursion.
@@ -142,7 +142,7 @@ def permute(self, nums):
 
 
 
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 //Very nice solution! you can simply a little bit
 // by removing a couple of lines:
 
@@ -170,7 +170,7 @@ def permute(self, nums):
 
 
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 //Good idea! I was thinking we can optimize the solution by
 // adding on to a single
 // answer list instead of recreating a new list every time!
@@ -200,7 +200,7 @@ def permute(self, nums):
 
 
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 //I used your idea, but have a slightly different starting point before
 // getting into the loop.
 // I think it's logically more clear and don't need to handle corner
@@ -231,7 +231,7 @@ def permute(self, nums):
     }
 
 
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 //Share my short iterative JAVA solution
     public List<List<Integer>> permute7(int[] num) {
         LinkedList<List<Integer>> res = new LinkedList<List<Integer>>();
@@ -509,7 +509,7 @@ public class Solution2 {
 
 
 
-//////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 
    // A new ArrayList<Integer> newPerm is not necessary.
 
@@ -535,7 +535,7 @@ public class Solution2 {
         }
     }
 
-////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
 
     //Accepted Recursive Solution in Java
 
@@ -574,7 +574,7 @@ public class Solution2 {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
 //    2ms Java solution beats 93%, I think it could be optimized
 
     public class Solution4 {
@@ -608,7 +608,7 @@ public class Solution2 {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
 
     //Java Backtracking Solution
     public class Solution6 {
@@ -640,7 +640,7 @@ public class Solution2 {
     }
 
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //Improving a little using hashset as you commented based on your solution:
 
     public class Solution7 {
@@ -669,7 +669,7 @@ public class Solution2 {
         }
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 
 
 

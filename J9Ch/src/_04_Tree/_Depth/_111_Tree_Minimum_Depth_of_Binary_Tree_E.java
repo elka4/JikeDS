@@ -40,7 +40,7 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
 
             2
      */
-////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
     //jiuzhang
     public int minDepth2(TreeNode root) {
         if (root == null) {
@@ -70,7 +70,7 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
         root.print();
         System.out.println(minDepth2(root));
     }
-////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
 
     public int minDepth3(TreeNode root) {
         if(root == null){
@@ -117,7 +117,7 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
         System.out.println(minDepth3(root));
     }
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     public int minDepth4(TreeNode root){
         if (root == null){
@@ -146,7 +146,7 @@ public class _111_Tree_Minimum_Depth_of_Binary_Tree_E {
         System.out.println(minDepth4(root));
     }
 
-////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
 }
 /*
 二叉树的最小深度

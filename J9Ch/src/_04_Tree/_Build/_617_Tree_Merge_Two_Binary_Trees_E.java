@@ -12,7 +12,7 @@ public class _617_Tree_Merge_Two_Binary_Trees_E {
 
     // all in java, need to be typed
 
-/////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////////
     public TreeNode mergeTrees1(TreeNode t1, TreeNode t2) {
         if (t1 == null && t2 == null) return null;
 
@@ -25,7 +25,7 @@ public class _617_Tree_Merge_Two_Binary_Trees_E {
         return newNode;
     }
 
-/////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////////
     public TreeNode mergeTrees2(TreeNode t1, TreeNode t2) {
         if(t1 == null && t2 == null) return null;
         int sum = 0;
@@ -38,7 +38,7 @@ public class _617_Tree_Merge_Two_Binary_Trees_E {
     }
 
 
-/////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////////
     public TreeNode mergeTrees3(TreeNode t1, TreeNode t2) {
         if(t1 == null || t2 == null) return t1==null?t2:t1;
         TreeNode root = new TreeNode(t1.val+t2.val);
@@ -48,7 +48,7 @@ public class _617_Tree_Merge_Two_Binary_Trees_E {
     }
 
 
-/////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////////
 }
 /*
 Given two binary trees and imagine that when you put one of them to cover the other,

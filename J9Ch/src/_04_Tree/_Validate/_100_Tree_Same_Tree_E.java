@@ -59,7 +59,7 @@ public class _100_Tree_Same_Tree_E {
     }
 
 
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 
     //Five line Java solution with recursion
     public boolean isSameTree(TreeNode p, TreeNode q) {
@@ -76,7 +76,7 @@ public class _100_Tree_Same_Tree_E {
         }
     }
 
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 
 //    My non-recursive method
 //    the idea is to use stack for preorder traverse
@@ -99,7 +99,7 @@ public class _100_Tree_Same_Tree_E {
         }
         return stack_p.size() == stack_q.size() ;
     }
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 
     class ResultType {
         boolean is_bst;
@@ -192,7 +192,7 @@ public class _100_Tree_Same_Tree_E {
             return true;
         }
     }
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 }
 /*
 Given two binary trees, write a function to check if they are the same or not.

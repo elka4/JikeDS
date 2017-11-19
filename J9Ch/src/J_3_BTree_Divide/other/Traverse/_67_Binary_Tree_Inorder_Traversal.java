@@ -47,7 +47,7 @@ public class _67_Binary_Tree_Inorder_Traversal {
         System.out.println(inorderTraversal(root));
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     //Version 0: Non-Recursion (Recommend)
     public List<Integer> preorderTraversal(TreeNode root) {

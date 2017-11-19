@@ -5,7 +5,7 @@ package _BinarySearch.Subarray;
 //  http://www.lintcode.com/zh-cn/problem/longest-increasing-subsequence/
 public class _300_BinarySearch_Longest_Increasing_Subsequence_M {
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     //jiuzhnag
     public int longestIncreasingSubsequence(int[] nums) {
         int []f = new int[nums.length];
@@ -62,7 +62,7 @@ public class _300_BinarySearch_Longest_Increasing_Subsequence_M {
         return end;
     }
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 }
 /*
 Given an unsorted array of integers, find the length of longest increasing subsequence.

@@ -15,7 +15,7 @@ public class _2CountCompleteTreeNodes {
     }
 
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
     int height2(TreeNode root) {
         return root == null ? -1 : 1 + height(root.left);
@@ -35,7 +35,7 @@ public class _2CountCompleteTreeNodes {
         return nodes;
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
 
     public int countNodes3(TreeNode root) {
@@ -53,7 +53,7 @@ public class _2CountCompleteTreeNodes {
         return 1 + countNodes3(root.left) + countNodes3(root.right);
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
 
     public int countNodes4(TreeNode root) {
@@ -62,7 +62,7 @@ public class _2CountCompleteTreeNodes {
         return 1 + countNodes4(root.left) + countNodes4(root.right);
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
 
     public int countNodes5(TreeNode root) {
@@ -97,7 +97,7 @@ public class _2CountCompleteTreeNodes {
         return dep;
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 
     public int countNodes6(TreeNode root) {
         if (root==null) return 0;
@@ -128,7 +128,7 @@ public class _2CountCompleteTreeNodes {
         else return (1<<(height-1)) + countLastLevel(root.right, height-1);
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 
 
 }

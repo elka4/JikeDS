@@ -26,7 +26,7 @@ public class _071_Stack_Simplify_Path_M {
 
 
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //jiuzhang
 public class Jiuzhang {
     public String simplifyPath(String path) {

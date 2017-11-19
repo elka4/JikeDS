@@ -50,7 +50,7 @@ public class _3WindowSum {
         return Arrays.asList(ArrayUtils.toObject(array));
     }*/
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     public int[] winSum2(int[] nums, int k) {
         // write your code here
         if (k <= 0){
@@ -110,7 +110,7 @@ public class _3WindowSum {
             System.out.println(i);
         }
     }
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     public int[] winSumMy(int[] nums, int k) {
         // write your code here
@@ -165,9 +165,9 @@ public class _3WindowSum {
             System.out.println(i);
         }
     }
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 Given an array of n integer, and a moving window(size k), move the window at each iteration from the start of the array, find the sum of the element inside the window at each moving.

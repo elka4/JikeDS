@@ -97,7 +97,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
     }
 
 
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////////
     //Java DFA solution, with better structure and easy understand
 
     public boolean isMatch04(String s, String p) {
@@ -139,7 +139,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
         }
         return false;
     }
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////////
     //Linear runtime and constant space solution
     //    Here is my re-write in Java
 
@@ -175,7 +175,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
         return p == pattern.length();
     }
 
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////////
         //jiuzhang
         // Time: O(|s||p|*log|s|), Space: O(|s|)
         // Time can also optimize to O(|s||p|)
@@ -264,7 +264,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
     }
 
 
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////////
 }
 
 /*

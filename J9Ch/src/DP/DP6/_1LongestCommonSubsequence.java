@@ -100,7 +100,7 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
         System.out.println(longestCommonSubsequence1("ABCD" , "EACB"));
     }
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     // 9Ch DP
     //和上面的相同，多了记录状态的数组，可以得到longestCommonSubsequence的String
     public int longestCommonSubsequence2(String AA, String BB) {
@@ -173,7 +173,7 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
 //        System.out.println(longestCommonSubsequence1("ABCD" , "EACB"));
     }
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     /**
      * @param A, B: Two strings.
      * @return: The length of longest common subsequence of A and B.
@@ -198,9 +198,9 @@ For "ABCD" and "EACB", the LCS is "AC", return 2.
         System.out.println(longestCommonSubsequence3("ABCD", "EDCA"));
         System.out.println(longestCommonSubsequence3("ABCD" , "EACB"));
     }
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 }
 /*
 77. 最长公共子序列

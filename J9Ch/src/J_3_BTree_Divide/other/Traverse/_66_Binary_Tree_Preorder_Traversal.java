@@ -49,7 +49,7 @@ public class _66_Binary_Tree_Preorder_Traversal {
         System.out.println(preorderTraversal(root));
     }
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
     //Version 1: Traverse
     public ArrayList<Integer> preorderTraversal_2(TreeNode root) {
@@ -79,7 +79,7 @@ public class _66_Binary_Tree_Preorder_Traversal {
         System.out.println(preorderTraversal_2(root));
     }
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
     //Version 2: Divide & Conquer
     public ArrayList<Integer> preorderTraversal_3(TreeNode root) {

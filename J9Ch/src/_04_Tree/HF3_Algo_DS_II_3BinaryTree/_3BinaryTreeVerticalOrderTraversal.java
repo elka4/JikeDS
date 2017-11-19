@@ -45,7 +45,7 @@ public class _3BinaryTreeVerticalOrderTraversal {
     }
 
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
 
     // version: 高频题班
     public List<List<Integer>> verticalOrder2(TreeNode root) {

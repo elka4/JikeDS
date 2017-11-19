@@ -8,26 +8,34 @@ import java.util.*;
 //  298. Binary Tree Longest Consecutive Sequence
 //  https://leetcode.com/problems/binary-tree-longest-consecutive-sequence/description/
 //  Tree
+//  18:
 public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
-
+    //  1
+    //DFS, global max
+    //
     private int max1 = 0;
     public int longestConsecutive1(TreeNode root) {
         if(root == null) return 0;
         helper1(root, 0, root.val);
         return max1;
     }
-
+    //preorder
     public void helper1(TreeNode root, int cur, int target){
         if(root == null) return;
+
         if(root.val == target) cur++;
         else cur = 1;
+
         max1 = Math.max(cur, max1);
+
         helper1(root.left, cur, root.val + 1);
         helper1(root.right, cur, root.val + 1);
     }
 
 
 //-----------------------------------------------------------------------------------
+    //  2
+    //  DFS, 用数组传递
     public int longestConsecutive2(TreeNode root) {
         int[] lens = new int[1];
         if (root == null)  return 0;
@@ -37,15 +45,19 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
 
     private void helper2(TreeNode root, int cur, int[] cnt, int target) {
         if (root == null)  return;
+
         if (root.val == target)  cur++;
         else  cur = 1;
+
         cnt[0] = Math.max(cur,cnt[0]);
+
         helper2(root.left, cur, cnt, root.val+1);
         helper2(root.right, cur, cnt, root.val+1);
     }
 
 
 //-------------------------------------------------------------------------
+    //  3
     public int longestConsecutive3(TreeNode root) {
         if (root == null) {
             return 0;
@@ -66,8 +78,9 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
         return Math.max(DFS3(node.left, node.val + 1, curr, max),
                 DFS3(node.right, node.val + 1, curr, max));
     }
-//-------------------------------------------------------------------------
 
+//-------------------------------------------------------------------------
+    //  4
     // Simple Recursive DFS without global variable
     public int longestConsecutive4(TreeNode root) {
         return (root==null)? 0 : Math.max(dfs(root.left, 1, root.val),
@@ -84,15 +97,14 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
 
 
 //-------------------------------------------------------------------------
+    //  5
     //jiuzhang
     // version 1: Traverse + Divide Conquer
-
-    public int longestConsecutive(TreeNode root) {
-
-        return helper(root, null, 0);
+    public int longestConsecutive5(TreeNode root) {
+        return helper5(root, null, 0);
     }
 
-    private int helper(TreeNode root, TreeNode parent, int lengthWithoutRoot) {
+    private int helper5(TreeNode root, TreeNode parent, int lengthWithoutRoot) {
         if (root == null) {
             return 0;
         }
@@ -102,8 +114,8 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
                 lengthWithoutRoot + 1
                 : 1;
 
-        int left = helper(root.left, root, length);
-        int right = helper(root.right, root, length);
+        int left = helper5(root.left, root, length);
+        int right = helper5(root.right, root, length);
 
         return Math.max(length, Math.max(left, right));
     }
@@ -147,11 +159,12 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
         root.right.right.setRightChild(new TreeNode(5));
 
         root.print();
-        System.out.println(longestConsecutive(root));
+        System.out.println(longestConsecutive5(root));
     }
 
 
 //-------------------------------------------------------------------------
+    //  6
     //jiuzhang
     // version 2: Another Traverse + Divide Conquer
     /**
@@ -159,19 +172,19 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
      * @return the length of the longest consecutive sequence path
      */
     private int longest;
-    public int longestConsecutive5(TreeNode root) {
+    public int longestConsecutive6(TreeNode root) {
         longest = 0;
-        helper5(root);
+        helper6(root);
         return longest;
     }
 
-    private int helper5(TreeNode root) {
+    private int helper6(TreeNode root) {
         if (root == null) {
             return 0;
         }
 
-        int left = helper5(root.left);
-        int right = helper5(root.right);
+        int left = helper6(root.left);
+        int right = helper6(root.right);
 
         int subtreeLongest = 1; // at least we have root
 
@@ -189,7 +202,7 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
     }
 
     @Test
-    public void test03() {
+    public void test6_1() {
         TreeNode root = new TreeNode(1);
 
         root.setRightChild(new TreeNode(3));
@@ -198,11 +211,11 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
         root.right.right.setRightChild(new TreeNode(5));
 
         root.print();
-        System.out.println(longestConsecutive2(root));
+        System.out.println(longestConsecutive6(root));
     }
 
     @Test
-    public void test04() {
+    public void test6_2() {
         TreeNode root = new TreeNode(2);
 
         root.setRightChild(new TreeNode(3));
@@ -210,10 +223,11 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
         root.right.left.setRightChild(new TreeNode(1));
 
         root.print();
-        System.out.println(longestConsecutive2(root));
+        System.out.println(longestConsecutive6(root));
     }
 
 //-------------------------------------------------------------------------
+    //  7
     //jiuzhang
     // version 3: Divide Conquer
     private class ResultType {
@@ -228,20 +242,20 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
      * @param root the root of binary tree
      * @return the length of the longest consecutive sequence path
      */
-    public int longestConsecutive6(TreeNode root) {
-        System.out.println("maxInSubtree "+helper6(root).maxInSubtree);
-        System.out.println("maxFromRoot "+helper6(root).maxFromRoot);
-        return helper6(root).maxInSubtree;
+    public int longestConsecutive7(TreeNode root) {
+        System.out.println("maxInSubtree "+helper7(root).maxInSubtree);
+        System.out.println("maxFromRoot "+helper7(root).maxFromRoot);
+        return helper7(root).maxInSubtree;
     }
 
 
-    private ResultType helper6(TreeNode root) {
+    private ResultType helper7(TreeNode root) {
         if (root == null) {
             return new ResultType(0, 0);
         }
 
-        ResultType left = helper6(root.left);
-        ResultType right = helper6(root.right);
+        ResultType left = helper7(root.left);
+        ResultType right = helper7(root.right);
 
         // 1 is the root itself.
         ResultType result = new ResultType(0, 1);
@@ -269,7 +283,7 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
     }
 
     @Test
-    public void test05() {
+    public void test7_1() {
         TreeNode root = new TreeNode(1);
 
         root.setRightChild(new TreeNode(3));
@@ -278,11 +292,11 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
         root.right.right.setRightChild(new TreeNode(5));
 
         root.print();
-        System.out.println(longestConsecutive3(root));
+        System.out.println(longestConsecutive7(root));
     }
 
     @Test
-    public void test06() {
+    public void test7_2() {
         TreeNode root = new TreeNode(2);
 
         root.setRightChild(new TreeNode(3));
@@ -290,11 +304,11 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
         root.right.left.setRightChild(new TreeNode(1));
 
         root.print();
-        System.out.println(longestConsecutive3(root));
+        System.out.println(longestConsecutive7(root));
     }
 
-///////////////////////////////////////////////////////////////////
-
+//-------------------------------------------------------------------------
+    //  8
     // Approach #1 (Top Down Depth-first Search) [Accepted]
     /*
     Algorithm
@@ -306,18 +320,18 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
      if it is consecutive.
       If not, we reset the length.
      */
-    private int maxLength7 = 0;
-    public int longestConsecutive7(TreeNode root) {
-        dfs7(root, null, 0);
-        return maxLength7;
+    private int maxLength08 = 0;
+    public int longestConsecutive08(TreeNode root) {
+        dfs08(root, null, 0);
+        return maxLength08;
     }
 
-    private void dfs7(TreeNode p, TreeNode parent, int length) {
+    private void dfs08(TreeNode p, TreeNode parent, int length) {
         if (p == null) return;
         length = (parent != null && p.val == parent.val + 1) ? length + 1 : 1;
-        maxLength7 = Math.max(maxLength7, length);
-        dfs7(p.left, p, length);
-        dfs7(p.right, p, length);
+        maxLength08 = Math.max(maxLength08, length);
+        dfs08(p.left, p, length);
+        dfs08(p.right, p, length);
     }
     /*
     @lightmark presents a neat approach without storing the maxLength
@@ -349,8 +363,8 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
      up to nn levels deep.
      */
 
-///////////////////////////////////////////////////////////////////
-
+//-------------------------------------------------------------------------
+    //  9
     //Approach #2 (Bottom Up Depth-first Search) [Accepted]
 
     // Algorithm The bottom-up approach is similar to a post-order traversal.
@@ -416,9 +430,10 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
      1
     Longest consecutive sequence path is 2-3,not3-2-1, so return 2.
      */
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+    //  10
     // BitTigger
     public int longestConsecutive10(TreeNode root) {
         if (root == null) {
@@ -455,8 +470,8 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
     }
 
 
-////////////////////////////////////////////////////////////////////
-
+//-------------------------------------------------------------------------//////
+    //  11
     //传统做法，但使用了全局变量
     private int max11 = 0;//global变量
 
@@ -503,11 +518,12 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
         root.print();
         System.out.println(longestConsecutive2(root));
     }
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
+//-------------------------------------------------------------------------//////
+//-------------------------------------------------------------------------//////
+//-------------------------------------------------------------------------//////
+//-------------------------------------------------------------------------//////
+    //  12
     //Java Solution 1 - Queue
 
     public int longestConsecutive12(TreeNode root) {
@@ -557,8 +573,8 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
         return max;
     }
 
-///////////////////////////////////////////////////////////////////
-
+//-------------------------------------------------------------------------/////
+    //  13
 
     //Java Solution 2 - Recursion
 
@@ -602,8 +618,8 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
     }
 
 
-///////////////////////////////////////////////////////////////////
-
+//-------------------------------------------------------------------------/////
+    //  14
     //Approach #1 (Top Down Depth-first Search) [Accepted]
 
     //
@@ -623,8 +639,8 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
     }
     //@lightmark presents a neat approach without storing the maxLength as a global variable.
 
-///////////////////////////////////////////////////////////////////
-
+//-------------------------------------------------------------------------/////
+    //  15
     public int longestConsecutive33(TreeNode root) {
 
         return dfs33(root, null, 0);
@@ -642,8 +658,8 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
 
     Space complexity : O(n)O(n). The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to nn levels deep.*/
 
-///////////////////////////////////////////////////////////////////
-
+//-------------------------------------------------------------------------/////
+    //  16
     //Approach #2 (Bottom Up Depth-first Search) [Accepted]
 
    /* Algorithm:
@@ -679,8 +695,8 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
     Space complexity : O(n)O(n). The extra space comes from implicit stack space
     due to recursion. For a skewed binary tree, the recursion could go up to nn levels deep.*/
 
-///////////////////////////////////////////////////////////////////
-
+//-------------------------------------------------------------------------/////
+    //  17
     /*Easy Java DFS, is there better time complexity solution?
     Just very intuitive depth-first search, send cur node value to the next level
     and compare it with the next level node.*/
@@ -702,8 +718,8 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
     }
 
 
-///////////////////////////////////////////////////////////////////
-
+//-------------------------------------------------------------------------/////
+    //  18
     //Simple Recursive DFS without global variable
     public int longestConsecutive66(TreeNode root) {
         return (root==null)?0:
@@ -768,7 +784,7 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
 2
 
      */
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
 }
 /*

@@ -151,7 +151,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
     }
 
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     public TreeNode buildTreePostIn5(int[] inorder, int[] postorder) {
         if (inorder == null || postorder == null || inorder.length != postorder.length)
@@ -176,7 +176,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
     }
 
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     //Java iterative solution with explanation
     /*
@@ -215,7 +215,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
 
 
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     //Simple and clean Java solution with comments, recursive.
     public TreeNode buildTree7(int[] inorder, int[] postorder) {
@@ -247,7 +247,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
         return root;
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //My JAVA recursive answer, BEAT 92.9%, 2ms
     public TreeNode buildTree8(int[] inorder, int[] postorder) {
         return build8(inorder,inorder.length-1,0,postorder,postorder.length-1);
@@ -278,7 +278,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
 
 
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //Concise recursive Java code by making slight modification to the previous problem.
     //Code for Problem 106:
     public  TreeNode buildTree9(int[] inorder, int[] postorder) {

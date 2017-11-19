@@ -72,7 +72,7 @@ public class _327_Count_of_Range_Sum {
         System.arraycopy(cache, 0, sums, start, t - start);
         return count;
     }
-///////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////////
 
     //Summary of the Divide and Conquer based and Binary Indexed Tree based solutions
     public int countRangeSum4(int[] nums, int lower, int upper) {
@@ -129,7 +129,7 @@ public class _327_Count_of_Range_Sum {
     }
 
 
-///////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////////
 
     // Java SegmentTree Solution, 36ms
     // Understand my segmentTree implementation is not optimized.
@@ -194,7 +194,7 @@ public class _327_Count_of_Range_Sum {
     }
 
 
-///////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////////
     //Java BST solution averagely O(nlogn)
     //The performance would be bad if all the numbers are positive or negative,
     // where the BST is completely unbalanced.
@@ -277,7 +277,7 @@ public class _327_Count_of_Range_Sum {
     }
 
 
-///////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////////
 }
 /*
 Given an integer array nums, return the number of range sums that lie in [lower, upper] inclusive.

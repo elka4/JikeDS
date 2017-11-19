@@ -10,7 +10,7 @@ public class _669_Tree_Trim_a_Binary_Search_Tree_E {
     //https://leetcode.com/articles/trim-a-binary-search-tree/
 
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //Java solution, 6 liner
     public TreeNode trimBST2(TreeNode root, int L, int R) {
         if (root == null) return null;
@@ -25,7 +25,7 @@ public class _669_Tree_Trim_a_Binary_Search_Tree_E {
     }
 
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //Simple Java recursive solution
     public TreeNode trimBST3(TreeNode root, int L, int R) {
         if (root == null) {
@@ -44,7 +44,7 @@ public class _669_Tree_Trim_a_Binary_Search_Tree_E {
         root.right = trimBST3(root.right, L, R);
         return root;
     }
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //    easy java
     public TreeNode trimBST4(TreeNode root, int L, int R) {
         if (root == null) return null;
@@ -54,7 +54,7 @@ public class _669_Tree_Trim_a_Binary_Search_Tree_E {
         root.right = right;
         return root.val >= L && root.val <= R? root : root.val < L? right : left;
     }
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 }
 /*
 Given a binary search tree and the lowest and highest boundaries as L and R,

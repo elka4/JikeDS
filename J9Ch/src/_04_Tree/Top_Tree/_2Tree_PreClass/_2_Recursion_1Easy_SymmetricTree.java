@@ -96,7 +96,7 @@ public class _2_Recursion_1Easy_SymmetricTree {
         System.out.println(isSymetric_2(root));
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
     public boolean isSymmetric3(TreeNode root) {
         // Write your code here

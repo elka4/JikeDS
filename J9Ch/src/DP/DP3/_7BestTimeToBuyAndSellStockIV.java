@@ -75,7 +75,7 @@ public class _7BestTimeToBuyAndSellStockIV {
 
     //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
 
 
 /*    A Concise DP Solution in Java
@@ -116,7 +116,7 @@ public class _7BestTimeToBuyAndSellStockIV {
         return profit;
     }
 
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
 
 //    Clean Java DP solution with comment
 
@@ -169,7 +169,7 @@ public class _7BestTimeToBuyAndSellStockIV {
         }
         return dp[k][n-1];
     }
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
 /*    Easy understanding and can be easily modified to different situations Java Solution
 
     The basic idea is to create two tables. hold and unhold.
@@ -286,7 +286,7 @@ public class _7BestTimeToBuyAndSellStockIV {
         System.out.println(maxProfit(k, A));
     }
 
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
     // 动态规划专题班版本 Version 1
     private int update(int a, int b, int delta) {
         if (b == Integer.MIN_VALUE) {
@@ -354,7 +354,7 @@ public class _7BestTimeToBuyAndSellStockIV {
 
 
 
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
 
     // version 2
     class Solution2 {
@@ -403,7 +403,7 @@ public class _7BestTimeToBuyAndSellStockIV {
         }
     };
 
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
 
     // 方法二
     class Solution3 {
@@ -480,7 +480,7 @@ public class _7BestTimeToBuyAndSellStockIV {
             return res;
         }
     }
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
     // 9Ch J DP
     public int maxProfit5(int k, int[] prices) {
         // write your code here
@@ -524,9 +524,9 @@ public class _7BestTimeToBuyAndSellStockIV {
         }
         return globalbest[(n - 1)][k];
     }
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
 
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
 }
 /*
 Say you have an array for which the ith element is the price of a given stock on day i.

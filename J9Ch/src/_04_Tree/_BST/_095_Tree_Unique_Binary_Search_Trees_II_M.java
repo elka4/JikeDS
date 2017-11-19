@@ -1,5 +1,6 @@
 package _04_Tree._BST;
 import lib.TreeNode;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -8,128 +9,19 @@ import java.util.List;
 //  95. Unique Binary Search Trees II
 //  https://leetcode.com/problems/unique-binary-search-trees-ii/description/
 //  http://www.lintcode.com/zh-cn/problem/unique-binary-search-trees-ii/
+//  Dynamic Programming, Tree, DFS
+//  11:
 public class _095_Tree_Unique_Binary_Search_Trees_II_M {
-
+//----------------------------------------------------------------------------------
+    //1
+    //DFS
+    //A simple recursive solution
+/*I start by noting that 1..n is the in-order traversal for any BST with nodes 1 to n. So if I pick i-th node as my root, the left subtree will contain elements 1 to (i-1), and the right subtree will contain elements (i+1) to n. I use recursive calls to get back all possible trees for left and right subtrees and combine them in all possible ways with the root.*/
 
     public class Solution01 {
         public List<TreeNode> generateTrees(int n) {
-            return genTrees(1,n); }
-        public List<TreeNode> genTrees (int start, int end) {
-            List<TreeNode> list = new ArrayList<TreeNode>();
-            if(start>end) {
-                list.add(null);
-                return list; }
-            if(start == end){
-                list.add(new TreeNode(start)); return list;
-            }
-            List<TreeNode> left,right; for(int i=start;i<=end;i++) {
-                left = genTrees(start, i-1); right = genTrees(i+1,end);
-                for(TreeNode lnode: left) {
-                    for(TreeNode rnode: right) {
-                        TreeNode root = new TreeNode(i); root.left = lnode;
-                        root.right = rnode; list.add(root);
-                    } }
-            }
-            return list; }
-    }
-
-    //Here is my java solution with DP:
-    public class Solution02 {
-        public  List<TreeNode> generateTrees(int n) {
-            List<TreeNode>[] result = new List[n+1];
-            result[0] = new ArrayList<TreeNode>(); result[0].add(null);
-            for(int len = 1; len <= n; len++){
-                result[len] = new ArrayList<TreeNode>();
-                for(int j=0; j<len; j++){
-                    for(TreeNode nodeL : result[j]){
-                        for(TreeNode nodeR : result[len-j-1]){
-                            TreeNode node = new TreeNode(j+1); node.left = nodeL;
-                            node.right = clone(nodeR, j+1); result[len].add(node);
-                        }
-                    }
-                }
-            }
-            return result[n];
-        }
-
-        private  TreeNode clone(TreeNode n, int offset){ if(n == null)
-            return null;
-            TreeNode node = new TreeNode(n.val + offset); node.left = clone(n.left, offset);
-            node.right = clone(n.right, offset);
-            return node;
-        }
-    }
-    /*
-    result[i] stores the result until length i. For the result for length i+1, select the root node j from 0 to i, combine the result from left side and right side. Note for the right side we have to clone the nodes as the value will be offsetted by j.
-written by jianwu original link here
-     */
-
-
-
-    /*Solution 3
-This problem is a variant of the problem of Unique Binary Search Trees.
-I provided a solution along with explanation for the above problem, in the question
-"DP solution in 6 lines with explanation"
-It is intuitive to solve this problem by following the same algorithm. Here is the code in a divide-and-conquer style.
-
-     */
-    public class Solution03 {
-        public List<TreeNode> generateTrees(int n) { return generateSubtrees(1, n);
-        }
-        private List<TreeNode> generateSubtrees(int s, int e) { List<TreeNode> res = new LinkedList<TreeNode>(); if (s > e) {
-            res.add(null); // empty tree
-            return res; }
-            for (int i = s; i <= e; ++i) {
-                List<TreeNode> leftSubtrees = generateSubtrees(s, i - 1); List<TreeNode> rightSubtrees = generateSubtrees(i + 1, e);
-                for (TreeNode left : leftSubtrees) {
-                    for (TreeNode right : rightSubtrees) {
-                        TreeNode root = new TreeNode(i); root.left = left;
-                        root.right = right; res.add(root);
-                    } }
-            }
-            return res; }
-    }
-/////////////////////////////////////////////////////////////////////////
-
-    public List<TreeNode> generateTrees(int n) {
-        if(n==0){
-            return new ArrayList<TreeNode>();
-        }
-        return helper(1, n);
-    }
-
-    public List<TreeNode> helper(int m, int n){
-        List<TreeNode> result = new ArrayList<TreeNode>();
-        if(m>n){
-            result.add(null);
-            return result;
-        }
-
-        for(int i=m; i<=n; i++){
-            List<TreeNode> ls = helper(m, i-1);
-            List<TreeNode> rs = helper(i+1, n);
-            for(TreeNode l: ls){
-                for(TreeNode r: rs){
-                    TreeNode curr = new TreeNode(i);
-                    curr.left=l;
-                    curr.right=r;
-                    result.add(curr);
-                }
-            }
-        }
-        return result;
-    }
-
-////////////////////////////////////////////////////////////////////
-
-    //A simple recursive solution
-    /*I start by noting that 1..n is the in-order traversal for any BST with nodes 1 to n. So if I pick i-th node as my root, the left subtree will contain elements 1 to (i-1), and the right subtree will contain elements (i+1) to n. I use recursive calls to get back all possible trees for left and right subtrees and combine them in all possible ways with the root.*/
-
-    public class Solution2 {
-        public List<TreeNode> generateTrees(int n) {
             return genTrees(1,n);
         }
-
         public List<TreeNode> genTrees (int start, int end) {
             List<TreeNode> list = new ArrayList<TreeNode>();
             if(start>end) {
@@ -142,9 +34,11 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
             }
 
             List<TreeNode> left,right;
-            for(int i=start;i<=end;i++) {
+
+            for(int i = start; i <= end; i++) {
                 left = genTrees(start, i-1);
                 right = genTrees(i+1,end);
+
                 for(TreeNode lnode: left) {
                     for(TreeNode rnode: right) {
                         TreeNode root = new TreeNode(i);
@@ -157,9 +51,144 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
             return list;
         }
     }
+    @Test
+    public void test01(){
+        Solution01 jz = new Solution01();
+        List<TreeNode> result = jz.generateTrees(3);
+        for (TreeNode t:result ) {
+            t.print();
+        }
+    }
+//----------------------------------------------------------------------------------
+    //2
+    //DFS
+/*Solution 3
+This problem is a variant of the problem of Unique Binary Search Trees.
+I provided a solution along with explanation for the above problem, in the question
+"DP solution in 6 lines with explanation"
+It is intuitive to solve this problem by following the same algorithm. Here is the code in a divide-and-conquer style.
+*/
 
-////////////////////////////////////////////////////////////////////
+    public class Solution03 {
+        public List<TreeNode> generateTrees(int n) {
+            return generateSubtrees(1, n);
+        }
 
+        private List<TreeNode> generateSubtrees(int s, int e) {
+            List<TreeNode> res = new LinkedList<TreeNode>();
+            if (s > e) {
+                res.add(null); // empty tree
+                return res;
+            }
+
+            for (int i = s; i <= e; ++i) {
+                List<TreeNode> leftSubtrees = generateSubtrees(s, i - 1);
+                List<TreeNode> rightSubtrees = generateSubtrees(i + 1, e);
+
+                for (TreeNode left : leftSubtrees) {
+                    for (TreeNode right : rightSubtrees) {
+                        TreeNode root = new TreeNode(i);
+                        root.left = left;
+                        root.right = right;
+                        res.add(root);
+                    }
+                }
+            }
+            return res;
+        }
+    }
+
+    @Test
+    public void test02(){
+        Solution03 jz = new Solution03();
+        List<TreeNode> result = jz.generateTrees(3);
+        for (TreeNode t:result ) {
+            t.print();
+        }
+    }
+//-------------------------------------------------------------------------///////////
+    //3
+    //DFS
+    class Solution33{
+        public List<TreeNode> generateTrees(int n) {
+            if(n==0)return new ArrayList<TreeNode>();
+            return helper(1, n);
+        }
+
+        public List<TreeNode> helper(int m, int n){
+            List<TreeNode> result = new ArrayList<TreeNode>();
+
+            if(m>n){
+                result.add(null);
+                return result;
+            }
+
+            for(int i=m; i<=n; i++){
+                List<TreeNode> ls = helper(m, i-1);
+                List<TreeNode> rs = helper(i+1, n);
+
+                for(TreeNode l: ls){
+                    for(TreeNode r: rs){
+                        TreeNode curr = new TreeNode(i);
+                        curr.left=l;
+                        curr.right=r;
+                        result.add(curr);
+                    }
+                }
+            }
+            return result;
+        }
+    }
+
+
+    @Test
+    public void test03(){
+        Solution33 jz = new Solution33();
+        List<TreeNode> result = jz.generateTrees(3);
+        for (TreeNode t:result ) {
+            t.print();
+        }
+    }
+
+//-------------------------------------------------------------------------//////
+    //7
+    //The first method that came to mind was the brute force solution as below.
+    class Solution5{
+        public List<TreeNode> generateTrees(int n) {
+            return generateTrees(1,n);
+        }
+
+        public List<TreeNode> generateTrees(int start,int end){
+            List<TreeNode> trees = new ArrayList<TreeNode>();
+            if(start>end){  trees.add(null); return trees;}
+
+            for(int rootValue=start;rootValue<=end;rootValue++){
+                List<TreeNode> leftSubTrees=generateTrees(start,rootValue-1);
+                List<TreeNode> rightSubTrees=generateTrees(rootValue+1,end);
+
+                for(TreeNode leftSubTree:leftSubTrees){
+                    for(TreeNode rightSubTree:rightSubTrees){
+                        TreeNode root=new TreeNode(rootValue);
+                        root.left=leftSubTree;
+                        root.right=rightSubTree;
+                        trees.add(root);
+                    }
+                }
+            }
+            return trees;
+        }
+    }
+
+    @Test
+    public void test07(){
+        Solution5 jz = new Solution5();
+        List<TreeNode> result = jz.generateTrees(3);
+        for (TreeNode t:result ) { t.print();}
+    }
+
+
+//-------------------------------------------------------------------------//////
+    //6
     //Java Solution with DP
     class Solution3{
         public List<TreeNode> generateTrees(int n) {
@@ -197,77 +226,158 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
         }
     }
 
-////////////////////////////////////////////////////////////////////
+    @Test
+    public void test06(){
+        Solution3 jz = new Solution3();
+        List<TreeNode> result = jz.generateTrees(3);
+        for (TreeNode t:result ) { t.print();}
+    }
 
-    class Solutoin4{
-    /*        Divide-and-conquer. F(i) = G(i-1) * G(n-i)
-            This problem is a variant of the problem of Unique Binary Search Trees.
+//-------------------------------------------------------------------------//////
 
-            I provided a solution along with explanation for the above problem,
-            in the question "DP solution in 6 lines with explanation"
+//-------------------------------------------------------------------------///////////
 
-            It is intuitive to solve this problem by following the same algorithm.
-            Here is the code in a divide-and-conquer style.*/
-
+    //8
+    //Java 2ms solution beats 92%
+    //DFS
+    public class Solution7 {
         public List<TreeNode> generateTrees(int n) {
-            return generateSubtrees(1, n);
+            if(n==0) return new ArrayList<TreeNode>();
+            return generateTress(1, n);
         }
 
-        private List<TreeNode> generateSubtrees(int s, int e) {
-            List<TreeNode> res = new LinkedList<TreeNode>();
-            if (s > e) {
-                res.add(null); // empty tree
-                return res;
+        private List<TreeNode> generateTress(int start, int end){
+            if(start>end) {
+                List<TreeNode> list = new ArrayList<TreeNode>();
+                list.add(null);
+                return list;
             }
+            if(start==end) {
+                List<TreeNode> list = new ArrayList<TreeNode>();
+                list.add(new TreeNode(start)); return list;
+            }
+            List<TreeNode> roots = new ArrayList<TreeNode>();
 
-            for (int i = s; i <= e; ++i) {
-                List<TreeNode> leftSubtrees = generateSubtrees(s, i - 1);
-                List<TreeNode> rightSubtrees = generateSubtrees(i + 1, e);
+            for(int i=start;i<=end;i++){
+                List<TreeNode> leftTrees = generateTress(start, i-1);
+                List<TreeNode> rightTrees = generateTress(i+1, end);
 
-                for (TreeNode left : leftSubtrees) {
-                    for (TreeNode right : rightSubtrees) {
+                for(int j=0;j<leftTrees.size();j++){
+                    for(int k=0;k<rightTrees.size();k++){
                         TreeNode root = new TreeNode(i);
-                        root.left = left;
-                        root.right = right;
-                        res.add(root);
+                        root.left = leftTrees.get(j);
+                        root.right = rightTrees.get(k);
+                        roots.add(root);
+                    }
+                }
+
+            }
+            return roots;
+        }
+    }
+    @Test
+    public void test08(){
+        Solution7 jz = new Solution7();
+        List<TreeNode> result = jz.generateTrees(3);
+        for (TreeNode t:result ) { t.print();}
+    }
+//-------------------------------------------------------------------------//////
+    //9
+    //jiuzhang
+    //DFS
+    public class Jiuzhang {
+        public ArrayList<TreeNode> generateTrees(int n) {
+
+            return generate(1, n);
+        }
+
+        private ArrayList<TreeNode> generate(int start, int end){
+            ArrayList<TreeNode> result = new ArrayList<TreeNode>();
+
+            if(start > end){
+                result.add(null);
+                return result;
+            }
+
+            for(int i=start; i<=end; i++){
+                ArrayList<TreeNode> left = generate(start, i-1);
+                ArrayList<TreeNode> right = generate(i+1, end);
+
+                for(TreeNode l: left){
+                    for(TreeNode r: right){
+                        // should new a root here because it need to
+                        // be different for each tree
+                        TreeNode root = new TreeNode(i);
+                        root.left = l;
+                        root.right = r;
+                        result.add(root);
                     }
                 }
             }
-            return res;
+            return result;
         }
     }
 
-////////////////////////////////////////////////////////////////////
-
-    //The first method that came to mind was the brute force solution as below.
-    class Solution5{
-        public List<TreeNode> generateTrees(int n) {
-            return generateTrees(1,n);
+    @Test
+    public void test_J(){
+        Jiuzhang jz = new Jiuzhang();
+        ArrayList<TreeNode> result = jz.generate(1,3);
+        for (TreeNode t:result ) {
+            t.print();
         }
+    }
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+    //10
+    //DP
+    //Here is my java solution with DP:
+/*
+result[i] stores the result until length i. For the result for length i+1, select the root node j from 0 to i, combine the result from left side and right side. Note for the right side we have to clone the nodes as the value will be offsetted by j.
+written by jianwu original link here
+*/
 
-        public List<TreeNode> generateTrees(int start,int end){
-            List<TreeNode> trees = new ArrayList<TreeNode>();
-            if(start>end){  trees.add(null); return trees;}
+    public class Solution02 {
+        public  List<TreeNode> generateTrees(int n) {
+            List<TreeNode>[] result = new List[n+1];
+            result[0] = new ArrayList<TreeNode>();
+            result[0].add(null);
 
-            for(int rootValue=start;rootValue<=end;rootValue++){
-                List<TreeNode> leftSubTrees=generateTrees(start,rootValue-1);
-                List<TreeNode> rightSubTrees=generateTrees(rootValue+1,end);
-
-                for(TreeNode leftSubTree:leftSubTrees){
-                    for(TreeNode rightSubTree:rightSubTrees){
-                        TreeNode root=new TreeNode(rootValue);
-                        root.left=leftSubTree;
-                        root.right=rightSubTree;
-                        trees.add(root);
+            for(int len = 1; len <= n; len++){
+                result[len] = new ArrayList<TreeNode>();
+                for(int j=0; j<len; j++){
+                    for(TreeNode nodeL : result[j]){
+                        for(TreeNode nodeR : result[len-j-1]){
+                            TreeNode node = new TreeNode(j+1); node.left = nodeL;
+                            node.right = clone(nodeR, j+1); result[len].add(node);
+                        }
                     }
                 }
             }
-            return trees;
+            return result[n];
+        }
+
+        private  TreeNode clone(TreeNode n, int offset){
+            if(n == null)
+                return null;
+            TreeNode node = new TreeNode(n.val + offset);
+            node.left = clone(n.left, offset);
+            node.right = clone(n.right, offset);
+            return node;
         }
     }
 
-////////////////////////////////////////////////////////////////////
+    @Test
+    public void test10(){
+        Solution02 jz = new Solution02();
+        List<TreeNode> result = jz.generateTrees(3);
+        for (TreeNode t:result ) { t.print();}
+    }
 
+//-------------------------------------------------------------------------//////
+
+    //11
 /*
 Then @6219221 reminded me it is unnecessary to create the BSTs with all brand new nodes.
 Assume you have a list of all BSTs with values from 1 to n-1, every possible way to insert value n only involves changing the right tree (root inclusive) because n is always greater than root.val and the left subtree structure is fixed. So all we gotta do is to create a new copy of the right part of the tree and point the new root.left to the original left subtree. This way we reuse the left tree, which saves time and space.
@@ -276,20 +386,7 @@ How to insert Node n into the right subtree?
 Given any BST on the n - 1 level, it will be only valid to put n on the root.right, root.right.right or root.right.....right locations and then move the right subtree of n.right...right to become the left child of n, in order to keep n on the right-most position as the greatest value in the tree.
 
 Here is my implementation. Note that I do the dp from [n] back to [n to 1]. Therefore all the right subtree structures are fixed and new values are inserted into the left side, opposite to making BSTs from 1 to [1 to n].
- */
-
-
-////////////////////////////////////////////////////////////////////
-
-    /*
-    Then @6219221 reminded me it is unnecessary to create the BSTs with all brand new nodes.
-Assume you have a list of all BSTs with values from 1 to n-1, every possible way to insert value n only involves changing the right tree (root inclusive) because n is always greater than root.val and the left subtree structure is fixed. So all we gotta do is to create a new copy of the right part of the tree and point the new root.left to the original left subtree. This way we reuse the left tree, which saves time and space.
-
-How to insert Node n into the right subtree?
-Given any BST on the n - 1 level, it will be only valid to put n on the root.right, root.right.right or root.right.....right locations and then move the right subtree of n.right...right to become the left child of n, in order to keep n on the right-most position as the greatest value in the tree.
-
-Here is my implementation. Note that I do the dp from [n] back to [n to 1]. Therefore all the right subtree structures are fixed and new values are inserted into the left side, opposite to making BSTs from 1 to [1 to n].
-     */
+*/
 
     class Solution6{
         public List<TreeNode> generateTrees(int n) {
@@ -342,82 +439,13 @@ Here is my implementation. Note that I do the dp from [n] back to [n to 1]. Ther
             return cRoot;
         }
     }
-
-////////////////////////////////////////////////////////////////////
-
-    //Java 2ms solution beats 92%
-    public class Solution7 {
-        public List<TreeNode> generateTrees(int n) {
-            if(n==0) return new ArrayList<TreeNode>();
-            return generateTress(1, n);
-        }
-
-        private List<TreeNode> generateTress(int start, int end){
-            if(start>end) {
-                List<TreeNode> list = new ArrayList<TreeNode>();
-                list.add(null);
-                return list;
-            }
-            if(start==end) {
-                List<TreeNode> list = new ArrayList<TreeNode>();
-                list.add(new TreeNode(start)); return list;
-            }
-            List<TreeNode> roots = new ArrayList<TreeNode>();
-            for(int i=start;i<=end;i++){
-                List<TreeNode> leftTrees = generateTress(start, i-1);
-                List<TreeNode> rightTrees = generateTress(i+1, end);
-                for(int j=0;j<leftTrees.size();j++){
-                    for(int k=0;k<rightTrees.size();k++){
-                        TreeNode root = new TreeNode(i);
-                        root.left = leftTrees.get(j);
-                        root.right = rightTrees.get(k);
-                        roots.add(root);
-                    }
-                }
-
-            }
-            return roots;
-        }
+    @Test
+    public void test11(){
+        Solution6 jz = new Solution6();
+        List<TreeNode> result = jz.generateTrees(3);
+        for (TreeNode t:result ) { t.print();}
     }
-
-////////////////////////////////////////////////////////////////////
-
-/////////////////////////////////////////////////////////////////////////
-
-    //jiuzhang
-    public class Jiuzhang {
-        public ArrayList<TreeNode> generateTrees(int n) {
-            return generate(1, n);
-        }
-
-        private ArrayList<TreeNode> generate(int start, int end){
-            ArrayList<TreeNode> rst = new ArrayList<TreeNode>();
-
-            if(start > end){
-                rst.add(null);
-                return rst;
-            }
-
-            for(int i=start; i<=end; i++){
-                ArrayList<TreeNode> left = generate(start, i-1);
-                ArrayList<TreeNode> right = generate(i+1, end);
-                for(TreeNode l: left){
-                    for(TreeNode r: right){
-                        // should new a root here because it need to
-                        // be different for each tree
-                        TreeNode root = new TreeNode(i);
-                        root.left = l;
-                        root.right = r;
-                        rst.add(root);
-                    }
-                }
-            }
-            return rst;
-        }
-    }
-/////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////
-
+//-------------------------------------------------------------------------//////
 }
 /*
 不同的二叉查找树 II

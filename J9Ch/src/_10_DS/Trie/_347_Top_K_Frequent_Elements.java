@@ -10,7 +10,7 @@ public class _347_Top_K_Frequent_Elements {
     // leet 347. Top K Frequent Elements
     //  Hash Table,  Heap
 
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 //    这种问题一般有两种做法，一是建立一个wrapper class统计频率,然后用heap得到topK.
 //    二是bucket sort.bucket的index就是频率，里面放的是对应的值。
 //    PQ的做法
@@ -64,7 +64,7 @@ public class _347_Top_K_Frequent_Elements {
         System.out.println(result);
     }
 
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 
     // Java O(n) Solution - Bucket Sort
     // Idea is simple.
@@ -105,7 +105,7 @@ public class _347_Top_K_Frequent_Elements {
         System.out.println(result);
     }
 
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
     //O(n) 32ms Java Solution - Bucket Sort
 
     public List<Integer> topKFrequent22(int[] nums, int k) {
@@ -132,7 +132,7 @@ public class _347_Top_K_Frequent_Elements {
 
         return ans;
     }
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 
 //    3 Java Solution using Array, MaxHeap, TreeMap
 
@@ -222,7 +222,7 @@ public class _347_Top_K_Frequent_Elements {
 
 
 
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 
     //*Java* straightforward O(N + (N-k)lg k) solution
 
@@ -254,7 +254,7 @@ public class _347_Top_K_Frequent_Elements {
         }
         return res;
     }
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
     //Java8 functional solution
     public static List<Integer> topKFrequent7(int[] nums, int k) {
         Map<Integer, Integer> counter = new HashMap<>();
@@ -275,7 +275,7 @@ public class _347_Top_K_Frequent_Elements {
     }
 
 
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 //O(n) Solution works for stream dynamic Top K query as well
     public List<Integer> topKFrequent8(int[] nums, int k) {
         Map<Integer, Integer> numToCount = new HashMap<>();
@@ -320,7 +320,7 @@ public class _347_Top_K_Frequent_Elements {
 
 
 
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 
 //Java Solution. Use HashMap and PriorityQueue
 

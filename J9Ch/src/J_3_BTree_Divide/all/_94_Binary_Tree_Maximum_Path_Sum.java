@@ -44,7 +44,7 @@ public class _94_Binary_Tree_Maximum_Path_Sum {
         return new ResultType(singlePath, maxPath);
     }
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 
 // Version 2:
 // SinglePath也定义为，至少包含一个点: root.val。

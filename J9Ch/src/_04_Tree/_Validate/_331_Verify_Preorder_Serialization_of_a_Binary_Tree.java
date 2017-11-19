@@ -42,7 +42,7 @@ We can keep removing the leaf node until there is no one to remove. If a sequenc
 
 
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     //7 lines Easy Java Solution
     /*Some used stack. Some used the depth of a stack. Here I use a different perspective. In a binary tree, if we consider null as leaves, then
@@ -62,7 +62,7 @@ We can keep removing the leaf node until there is no one to remove. If a sequenc
     }
 
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     //Java intuitive 22ms solution with stack
     //See detailed comments below. Time complexity is O(n), space is also O(n) for the stack.
@@ -92,7 +92,7 @@ We can keep removing the leaf node until there is no one to remove. If a sequenc
         return st.size() == 1 && st.peek().equals("#");
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     //JAVA, Counting Indegree and Outdegree, SIMPLE & CLEAR!
     public boolean isValidSerialization4(String preorder) {
@@ -110,7 +110,7 @@ We can keep removing the leaf node until there is no one to remove. If a sequenc
         return degree == 0;
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     public boolean isValidSerialization5(String preorder) {
         int need = 1;
@@ -123,7 +123,7 @@ We can keep removing the leaf node until there is no one to remove. If a sequenc
     }
 
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     //2 lines Java using Regex
 
@@ -133,7 +133,7 @@ We can keep removing the leaf node until there is no one to remove. If a sequenc
     }
 
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     //Java recursion solution
 
@@ -156,7 +156,7 @@ We can keep removing the leaf node until there is no one to remove. If a sequenc
         return next == -1 ? -1 : next;
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     //lean sample JAVA solution with explain
 
@@ -188,7 +188,7 @@ We can keep removing the leaf node until there is no one to remove. If a sequenc
 Each time when adding a node to the tree, one more sentinel must be added some where after the node. (image a node replaced a sentinel, but it self has two sentinel)
 browse the string backward follow rule 1 and 2.
      */
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
     //Jiuzhang
     public class Jiuzhang {
         public boolean isValidSerialization(String preorder) {
@@ -218,7 +218,7 @@ browse the string backward follow rule 1 and 2.
         }
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 }
 /*
 LeetCode – Verify Preorder Serialization of a Binary Tree (Java)

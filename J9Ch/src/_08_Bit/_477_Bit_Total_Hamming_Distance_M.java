@@ -33,7 +33,7 @@ public class _477_Bit_Total_Hamming_Distance_M {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 //8-lines DP solution by one pass with explanation
 /*    It's really a straight forward method. To sum the distances of every pair, you can make it with element one by one. For example, you check first element and second one, then check the coming third one with first and second element as: (1,2), (1,3), (2,3)...So the only thing you need to do is check how many more distances come with a new element nums[k] with passed elements nums[0],nums[1],...,nums[k-1].
 
@@ -51,7 +51,7 @@ public class _477_Bit_Total_Hamming_Distance_M {
             }
         return res;
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 //Java Solution with Explanation
 
 
@@ -80,7 +80,7 @@ public class _477_Bit_Total_Hamming_Distance_M {
             return sum;
         }
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 /*Java O(n) time O(1) Space
 
 96
@@ -113,7 +113,7 @@ public class _477_Bit_Total_Hamming_Distance_M {
         }
         return total;
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 }
 /*
 The Hamming distance between two integers is the number of positions at which the corresponding bits are different.

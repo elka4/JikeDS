@@ -42,7 +42,7 @@ public class _2InorderSuccessorinBinarySearchTree {
         }
 
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     // version: 高频题班
     public TreeNode inorderSuccessor2(TreeNode root, TreeNode p) {
@@ -76,7 +76,7 @@ public class _2InorderSuccessorinBinarySearchTree {
         inorderSuccessor2(root, new TreeNode(2)).print();
 
     }
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
 }
 /*

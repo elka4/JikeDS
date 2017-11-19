@@ -49,7 +49,7 @@ public class _41_Maximum_Subarray {
         return max;
     }
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
     // Version 2: Prefix Sum
     public int maxSubArray2(int[] A) {
@@ -162,7 +162,7 @@ public class _41_Maximum_Subarray {
     6
      */
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 
     //1. Dynamic Programming Solution
 //The changing condition for dynamic programming is "We should ignore the
@@ -261,7 +261,7 @@ public class _41_Maximum_Subarray {
         }
 
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 //leet
 
     public int maxSubArray8(int[] A) {
@@ -279,7 +279,7 @@ public class _41_Maximum_Subarray {
     }
 
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 
 
     //To calculate sum(0,i), you have 2 choices: either adding sum(0,i-1) to a[i],
@@ -313,7 +313,7 @@ public class _41_Maximum_Subarray {
     }
 
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
     //Accepted O(n) solution in java
 
 /*
@@ -335,7 +335,7 @@ MaxEndingHere is either A[i] plus the previous MaxEndingHere, or just A[i], whic
         }
         return maxSoFar;
     }
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 //O(n) Java solution
 //The catch here is that we have to take care of negative value.
 //The solution does 1 iteration with constant space and no DP.
@@ -352,7 +352,7 @@ MaxEndingHere is either A[i] plus the previous MaxEndingHere, or just A[i], whic
         return max;
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     //Solution1. DP Solution - O(n) time, O(n) space
 
@@ -394,7 +394,7 @@ MaxEndingHere is either A[i] plus the previous MaxEndingHere, or just A[i], whic
         }
         return max;
     }
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 //Removed the array, still DP, still reads the same, but O(1) space:
 
     public int maxSubArray15(int[] A) {
@@ -406,7 +406,7 @@ MaxEndingHere is either A[i] plus the previous MaxEndingHere, or just A[i], whic
         }
         return max;
     }
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 public int maxSubArray16(int[] A) {
     int max = A[0], dp = A[0];
     for (int i = 1; i < A.length; i++) {
@@ -415,7 +415,7 @@ public int maxSubArray16(int[] A) {
     }
     return max;
 }
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 //My Divide and Conquer Solution in Java under instruction of CLRS(O(nlogn))
 
 
@@ -459,7 +459,7 @@ public int maxSubArray16(int[] A) {
         }
         return leftSum + rightSum;
     }
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 //JAVA O(n)time O(1) space 5 lines of code
 
     public int maxSubArray18(int[] nums) {
@@ -471,7 +471,7 @@ public int maxSubArray16(int[] A) {
         return max;
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     //I commented on this code and repost it here. Hope I can help someone
     // who has suffering understand this great divide-and-conquer method.

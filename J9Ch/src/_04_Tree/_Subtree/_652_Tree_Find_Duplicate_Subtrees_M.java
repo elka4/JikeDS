@@ -107,7 +107,7 @@ public class _652_Tree_Find_Duplicate_Subtrees_M {
 
 [4 , 2 ]
      */
-/////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////////
     //Java 1ms solution, by passing a three-element array up to parent
 
     class solution4{
@@ -143,7 +143,7 @@ public class _652_Tree_Find_Duplicate_Subtrees_M {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////////
     // [C++] [Java] Clean Code
     class Solution5 {
         public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
@@ -178,7 +178,7 @@ public class _652_Tree_Find_Duplicate_Subtrees_M {
         System.out.println(new Solution5().findDuplicateSubtrees(root));
     }
 
-/////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////////
 //6
 public List<TreeNode> findDuplicateSubtrees6(TreeNode root) {
     List<TreeNode> result = new LinkedList<>();
@@ -203,7 +203,7 @@ public List<TreeNode> findDuplicateSubtrees6(TreeNode root) {
         return path;
     }
 
-/////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////////
 }
 
 /*

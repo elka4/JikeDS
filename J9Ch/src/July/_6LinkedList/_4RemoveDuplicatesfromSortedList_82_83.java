@@ -35,7 +35,7 @@ public class _4RemoveDuplicatesfromSortedList_82_83 {
         return head;
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     public ListNode deleteDuplicates2(ListNode head) {
         ListNode current = head;
@@ -50,7 +50,7 @@ public class _4RemoveDuplicatesfromSortedList_82_83 {
     }
 
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     /*
     Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
@@ -80,7 +80,7 @@ Given 1->1->1->2->3, return 2->3.
         return FakeHead.next;
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     //My Recursive Java Solution
     public ListNode deleteDuplicates4(ListNode head) {
@@ -97,10 +97,10 @@ Given 1->1->1->2->3, return 2->3.
         return head;
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
 
 

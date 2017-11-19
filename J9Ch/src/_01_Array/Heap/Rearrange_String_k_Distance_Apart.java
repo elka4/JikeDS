@@ -100,7 +100,7 @@ public class Rearrange_String_k_Distance_Apart {
 
         return sb.toString();
     }
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     //leetcode
     //Java 15ms Solution with Two auxiliary array. O(N) time.
@@ -133,7 +133,7 @@ public class Rearrange_String_k_Distance_Apart {
         }
         return candidatePos;
     }
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     //leetcode
     //Java 7 version of PriorityQueue O(nlogn) with comments and explanations
@@ -181,7 +181,7 @@ public class Rearrange_String_k_Distance_Apart {
 
         return rearranged.length() == str.length() ? rearranged.toString() : "";
     }
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     public String rearrangeString4(String str, int k) {
         if (k < 2) return str;

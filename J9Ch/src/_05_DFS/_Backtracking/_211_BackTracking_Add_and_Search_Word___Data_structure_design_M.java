@@ -69,7 +69,7 @@ public class _211_BackTracking_Add_and_Search_Word___Data_structure_design_M {
             WordNode[] children = new WordNode[26];
         }
     }
-///////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////////
 
 //    My simple and clean Java code
 //    Using backtrack to check each character of word to search.
@@ -114,7 +114,7 @@ public class _211_BackTracking_Add_and_Search_Word___Data_structure_design_M {
         }
     }
 
-///////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////////
     //Java Solution, easy understand
     public class WordDictionary3 {
 
@@ -172,7 +172,7 @@ public class _211_BackTracking_Add_and_Search_Word___Data_structure_design_M {
             return true;
         }
     }
-///////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////////
 
 
 

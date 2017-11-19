@@ -47,7 +47,7 @@ public class _508_Tree_Most_Frequent_Subtree_Sum_M {
         return sum;
     }
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //Short Easy Java
     int max = 0;
     public int[] findFrequentTreeSum2(TreeNode root) {
@@ -70,7 +70,7 @@ public class _508_Tree_Most_Frequent_Subtree_Sum_M {
         return sum;
     }
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //Java divide and conquer
     int maxFreq = 0;
     int count = 0;
@@ -106,7 +106,7 @@ public class _508_Tree_Most_Frequent_Subtree_Sum_M {
         return sum;
     }
 
-//////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 
 }
 /*

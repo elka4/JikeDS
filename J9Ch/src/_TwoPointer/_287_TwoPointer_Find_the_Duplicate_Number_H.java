@@ -63,7 +63,7 @@ public class _287_TwoPointer_Find_the_Duplicate_Number_H {
         return slow;
     }
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 /*
 Similar idea. Also attached the code of Linked List Cycle II. The code of cycle problem is referred to the popular post in the Leetcode discuss.
     Find duplicate num
@@ -109,7 +109,7 @@ Similar idea. Also attached the code of Linked List Cycle II. The code of cycle 
             return null;
         }
     }
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     //Java O(1)space using Binary-Search
     public int findDuplicate5(int[] nums) {
         int low = 1, high = nums.length - 1;
@@ -134,7 +134,7 @@ For "int mid = (int) (low + (high - low) * 0.5);", you would better to use int i
 
 
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 //    JAVA-------------Easy Version To UnderStand!!!!!!!!!
     public int findDuplicate6(int[] nums) {
         if (nums.length == 0 || nums == null)
@@ -199,8 +199,8 @@ Here is my practice after I learnt your idea and thanks again for your sharing:
 
         return low;
     }
-///////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
+//-------------------------------------------------------------------------/////
     //jiuzhang
     // 二分法
     public class Jiuzhang1 {

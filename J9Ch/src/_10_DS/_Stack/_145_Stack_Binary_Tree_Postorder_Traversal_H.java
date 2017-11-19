@@ -5,7 +5,7 @@ import lib.*;
 
 public class _145_Stack_Binary_Tree_Postorder_Traversal_H {
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //jiuzhang
     //Recursive
     public ArrayList<Integer> postorderTraversal(TreeNode root) {

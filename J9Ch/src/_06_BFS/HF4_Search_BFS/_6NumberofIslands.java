@@ -75,7 +75,7 @@ public class _6NumberofIslands {
             return coor.x >= 0 && coor.x < n && coor.y >= 0 && coor.y < m;
         }
     }
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////////
     // version 2: Union Find
     class UnionFind {
 
@@ -116,7 +116,7 @@ public class _6NumberofIslands {
             count = total;
         }
     }
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////////
     /**
      * @param grid a boolean 2D matrix
      * @return an integer
@@ -157,7 +157,7 @@ public class _6NumberofIslands {
         return union_find.query();
     }
 
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////////
 
     // version 3: DFS (not recommended)
     /**
@@ -196,7 +196,7 @@ public class _6NumberofIslands {
     }
 
 
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////////
 }
 /*
 Given a boolean 2D matrix, 0 is represented as the sea, 1 is represented as the island. If two 1 is adjacent, we consider them in the same island. We only consider up/down/left/right adjacent.

@@ -12,7 +12,7 @@ import java.util.Stack;
 //
 public class _101_Tree_Symmetric_Tree_E {
 
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
     public boolean isSymmetric(TreeNode root) {
 
         return root==null || isSymmetricHelp(root.left, root.right);
@@ -23,7 +23,7 @@ public class _101_Tree_Symmetric_Tree_E {
         return isSymmetricHelp(left.left, right.right) && isSymmetricHelp(left.right,
                 right.left);
     }
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 
     //recursion
     public boolean isSymetric_1 (TreeNode root) {
@@ -64,7 +64,7 @@ public class _101_Tree_Symmetric_Tree_E {
         System.out.println(isSymetric_1(root));
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
     public boolean isSymmetric3(TreeNode root) {
         // Write your code here
@@ -103,7 +103,7 @@ public class _101_Tree_Symmetric_Tree_E {
         System.out.println(isSymmetric3(root));
     }
 
-///////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////////
         /*Java Solution - Recursion
 
     This problem can be solve by using a simple recursion.
@@ -134,7 +134,7 @@ public class _101_Tree_Symmetric_Tree_E {
 
         return true;
     }
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 
     public boolean isSymmetric2(TreeNode root) {
         if(root==null)  return true;
@@ -232,10 +232,10 @@ public class _101_Tree_Symmetric_Tree_E {
 
 
 
-/////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////
 
 
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 }
 /*
 

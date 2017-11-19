@@ -41,7 +41,7 @@ public class _leet_41_First_Missing_Positive {
         nums[j] = t;
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 //Share my O(n)/O(1) solution
 /*
 The basic idea is for any k positive numbers (duplicates allowed),
@@ -101,7 +101,7 @@ After step 2, I can again scan all elements between A[0,k-1] to find the first
             A[i]^=A[j];
         }
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 //O(1) space Java Solution
 /*
 The key here is to use swapping to keep constant space and also make use
@@ -121,7 +121,7 @@ of the length of the array, which means there can be at most n positive integers
         while(i < A.length && A[i] == i+1) i++;
         return i+1;
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 //Beat 100% Fast Elegant Java Index-Based Solution with Explanation
 
 /*
@@ -157,7 +157,7 @@ The basic idea is to traversal and try to move the current value to position
 
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
 
 }

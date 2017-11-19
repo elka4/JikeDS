@@ -218,7 +218,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         return Integer.MIN_VALUE;
     }
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
 }
 /*
 Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.

@@ -52,7 +52,7 @@ public class _190_Bit_Reverse_Bits_E {
         cache.put(b, value);
         return value;
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 //Same idea, but the running time is almost the same as before for test cases on OJ.
 
     public class Solution3 {
@@ -136,7 +136,7 @@ public class _190_Bit_Reverse_Bits_E {
     }
 
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
     //  A short simple Java solution
     public int reverseBits6(int n) {
 
@@ -148,7 +148,7 @@ public class _190_Bit_Reverse_Bits_E {
         return res;
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
     //jiuzhang
     // you need treat n as an unsigned value
     public int reverseBits(int n) {
@@ -160,7 +160,7 @@ public class _190_Bit_Reverse_Bits_E {
         return reversed;
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
 }
 /*

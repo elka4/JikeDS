@@ -205,7 +205,7 @@ public class _3EditDistance {
     }
 
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 // 9Ch DP 不能通过
 public int minDistance00(String word1, String word2) {
     char[] c1 = word1.toCharArray();
@@ -243,7 +243,7 @@ public int minDistance00(String word1, String word2) {
     return f[now][n];
 }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     public int minDistance0(String word1, String word2) {
         // write your code here
         int n = word1.length();
@@ -270,7 +270,7 @@ public int minDistance00(String word1, String word2) {
         }
         return dp[n][m];
     }
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     public int minDistance1(String word1, String word2) {
         int n = word1.length();
@@ -297,7 +297,7 @@ public int minDistance00(String word1, String word2) {
         return dp[n][m];
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     // 动态规划班版本
     /**
@@ -384,7 +384,7 @@ public int minDistance00(String word1, String word2) {
 
         return f[m][n];
     }
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     // leet
     //Java DP solution - O(nm)
 
@@ -413,7 +413,7 @@ public int minDistance00(String word1, String word2) {
         }
         return cost[m][n];
     }
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     // My Accepted Java Solution
 
     public int minDistance4(String word1, String word2) {
@@ -441,8 +441,8 @@ public int minDistance00(String word1, String word2) {
         }
         return dp[word1.length()][word2.length()];
     }
-//////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
 
 
 }

@@ -5,7 +5,7 @@ import org.junit.Test;
 //Binary Search Once
 public class _28_Search_a_2D_Matrix_Once {
 
-///////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////////
     //Don't treat it as a 2D matrix, just treat it as a sorted list
     public boolean searchMatrix1(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0) {
@@ -27,7 +27,7 @@ public class _28_Search_a_2D_Matrix_Once {
         return false;
     }
 
-///////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////////
 
     public boolean searchMatrix2(int[][] matrix, int target) {
 	   if (matrix == null || matrix.length == 0) {
@@ -60,7 +60,7 @@ public class _28_Search_a_2D_Matrix_Once {
 
 	   return false;
 	}
-///////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////////
 	public boolean searchMatrix3(int[][] matrix, int target){
 		 if (matrix == null || matrix.length == 0){
 			 return false;
@@ -100,7 +100,7 @@ public class _28_Search_a_2D_Matrix_Once {
 	    int target = 3;
         System.out.println(searchMatrix3(nums, 3));
     }
-///////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////////
 }
 
 /*

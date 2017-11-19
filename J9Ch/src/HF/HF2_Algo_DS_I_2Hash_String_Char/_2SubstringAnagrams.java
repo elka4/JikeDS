@@ -79,7 +79,7 @@ public class _2SubstringAnagrams {
         return ans;
     }
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 
 
     // version: 高频题班
@@ -137,7 +137,7 @@ public class _2SubstringAnagrams {
         return ans;
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 //clean version
     public List<Integer> findAnagrams3(String s, String p) {
         // Write your code here
@@ -188,7 +188,7 @@ public class _2SubstringAnagrams {
 
         System.out.println(result);
     }
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 }
 /*
 Given a string s and a non-empty string p, find all the start indices of p's anagrams in s.

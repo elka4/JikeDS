@@ -114,7 +114,7 @@ public class _215_Kth_Largest_Element_in_an_Array {
 
 
 
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
 //AC Clean QuickSelect Java solution avg. O(n) time
 //    https://en.wikipedia.org/wiki/Quickselect
 
@@ -155,7 +155,7 @@ public class _215_Kth_Largest_Element_in_an_Array {
         }
 
     }
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
 }
 /*
 Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.

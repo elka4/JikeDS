@@ -6,7 +6,7 @@ package j_2_BinarySearch; import org.junit.Test;
 public class _28Search_a_2D_Matrix_BSTwice {
 
 
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
  //jiuzhang
  public boolean searchMatrix(int[][] matrix, int target) {
     if (matrix == null || matrix.length == 0) {

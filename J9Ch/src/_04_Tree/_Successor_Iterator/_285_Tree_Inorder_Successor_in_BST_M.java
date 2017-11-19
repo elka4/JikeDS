@@ -81,7 +81,7 @@ Only in a balanced BST O(h) = O(log n). In the worst case h can be as large as n
         }
         return res;
     }
-////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////////
  /*
     10 (and 4) lines O(h) Java/C++
 Update: Ugh, turns out I didn't think it through and the big case distinction is unnecessary. Just search from root to bottom, trying to find the smallest node larger than p and return the last one that was larger.
@@ -98,7 +98,7 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
         root = (p.val > root.val) ? root.right : (candidate = root).left;
     return candidate;
 }
-////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////////
     //jiuzhang
     public TreeNode inorderSuccessor5(TreeNode root, TreeNode p) {
         TreeNode successor = null;
@@ -143,7 +143,7 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
         inorderSuccessor5(root, root.right.left).print();
     }
 
-////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////////
 
     //time O(logn) spaceO(1)
 
@@ -180,7 +180,7 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
         return root;
     }
 
-////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////////
 
     //mehtod 2
     public TreeNode inorderSuccessor7(TreeNode root, TreeNode p) {
@@ -293,7 +293,7 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
          */
     }
 
-////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////////
 
     // version: 高频题班
     public TreeNode inorderSuccessorX(TreeNode root, TreeNode p) {
@@ -327,10 +327,10 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
         inorderSuccessorX(root, new TreeNode(2)).print();
 
     }
-////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////////
 
 
-////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////////
     //Java Solution 1
 
     public TreeNode inorderSuccessor11(TreeNode root, TreeNode p) {
@@ -371,7 +371,7 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
     }
     //Time is O(n), Space is O(n).
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
 
     //Java Solution 2
 
@@ -405,7 +405,7 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
     //Time is O(log(n)) and space is O(1).
 
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
     public TreeNode inorderSuccessor2(TreeNode root, TreeNode p) {
         while (root != null && root.val <= p.val)
             root = root.right;

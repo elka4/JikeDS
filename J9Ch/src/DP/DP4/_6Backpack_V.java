@@ -118,7 +118,7 @@ public class _6Backpack_V {
         System.out.println(backPackV(A, T));
     }
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     /**
      * @param nums an integer array and all positive numbers
      * @param target an integer
@@ -143,7 +143,7 @@ public class _6Backpack_V {
         System.out.println(backPackV1(A, T));
     }
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 }
 
 /*

@@ -45,7 +45,7 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
 
         return root;
     }
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 
 //Share my JAVA solution, 1ms, very short and concise.
     public TreeNode sortedListToBST2(ListNode head) {
@@ -69,7 +69,7 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
 
         return thead;
     }
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
     // Share my O(1) space and O(n) time Java code
     private ListNode node;
 
@@ -108,7 +108,7 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
         return treenode;
     }
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
     // Recursive BST construction using slow-fast traversal on linked list
     public TreeNode sortedListToBST4(ListNode head) {
         if(head == null)
@@ -133,7 +133,7 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
         return root;
     }
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
     static ListNode h;
 
     public TreeNode sortedListToBST5(ListNode head) {
@@ -157,7 +157,7 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
         return len;
     }
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 
     // build tree bottom-up
     public TreeNode sortedListToBST6(int start, int end) {
@@ -178,7 +178,7 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
         return root;
     }
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 }
 /*
 排序列表转换为二分查找树

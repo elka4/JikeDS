@@ -6,20 +6,21 @@ import org.junit.Test;
 //  549. Binary Tree Longest Consecutive Sequence II
 //  https://leetcode.com/problems/binary-tree-longest-consecutive-sequence-ii/description/
 public class _549_Tree_Binary_Tree_Longest_Consecutive_Sequence_II_M {
-
-
-///////////////////////////////////////////////////////////////////////
-
     //https://leetcode.com/problems/binary-tree-longest-consecutive-sequence-ii/solution/
 
+
+//------------------------------------------------------------------------------
+
+
     //Approach #1 Brute Force [Time Limit Exceeded]
+    //1
 
 
 
-
-///////////////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------------
 
     //Approach #2 Single traversal [Accepted]
+    //2
     //用数组代替resultType
     /*
     Algorithm
@@ -91,8 +92,8 @@ public class _549_Tree_Binary_Tree_Longest_Consecutive_Sequence_II_M {
             4
      */
     
-///////////////////////////////////////////////////////////////////////
-
+//------------------------------------------------------------------------------
+    //3
     //Java recursively compute ascending and descending sequence
     /*
     For each subtree we recursively compute the length of longest ascending and descending path 
@@ -128,7 +129,7 @@ public class _549_Tree_Binary_Tree_Longest_Consecutive_Sequence_II_M {
     }
 
     @Test
-    public void test03(){
+    public void test3_1(){
         int[] arr = {1,2,0};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
 
@@ -149,8 +150,8 @@ public class _549_Tree_Binary_Tree_Longest_Consecutive_Sequence_II_M {
 
                 4
      */
-///////////////////////////////////////////////////////////////////////
-
+//------------------------------------------------------------------------------
+    //4
     //Java Recursive Solution with some comments.
 
     int maxlen4;
@@ -212,7 +213,7 @@ public class _549_Tree_Binary_Tree_Longest_Consecutive_Sequence_II_M {
                 4
      */
 //-------------------------------------------------------------------------/
-
+    //5
     //jiuzhang
     class ResultType {
         public int max_length, max_down, max_up;

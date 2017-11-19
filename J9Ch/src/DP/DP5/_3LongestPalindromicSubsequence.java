@@ -222,7 +222,7 @@ public class _3LongestPalindromicSubsequence {
         System.out.println(longestPalindromeSubseq("cbbd"));//2  bb
         System.out.println(longestPalindromeSubseq("bbbafbb"));//2  bb
     }
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 // 9CH
     // 动态规划专题班非递归版：
     public int longestPalindromeSubseq1(String s) {
@@ -279,7 +279,7 @@ public class _3LongestPalindromicSubsequence {
         System.out.println(longestPalindromeSubseq1("cbbd"));//2  bb
         System.out.println(longestPalindromeSubseq1("bbbafbb"));//2  bb
     }
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
     // 9CH
 
     // 动态规划专题班递归版：
@@ -347,7 +347,7 @@ public class _3LongestPalindromicSubsequence {
         return res;
     }
 
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
     // 9CH
     /**
      * @param s the maximum length of s is 1000
@@ -371,7 +371,7 @@ public class _3LongestPalindromicSubsequence {
         }
         return dp[0][length - 1];
     }
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
 
 }
 

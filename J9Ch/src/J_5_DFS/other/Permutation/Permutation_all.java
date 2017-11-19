@@ -34,7 +34,7 @@ public class Permutation_all {
         return start + c + end;
     }
 
-    /////////////////////////////////////////////////////////////////
+    //-------------------------------------------------------------------------///
 
     public static ArrayList<String> getPerms2(String remainder) {
         int len = remainder.length();
@@ -62,7 +62,7 @@ public class Permutation_all {
     }
 
 
-    ////////////////////////////////////////////////////////////////////
+    //-------------------------------------------------------------------------//////
 
     public static void getPerms3(String prefix, String remainder, ArrayList<String> result) {
         if (remainder.length() == 0) {

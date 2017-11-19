@@ -6,7 +6,7 @@ import org.junit.Test;
 //  https://leetcode.com/problems/beautiful-arrangement/description/
 //
 public class _526_BackTracking_Beautiful_Arrangement_M {
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
     //https://leetcode.com/problems/beautiful-arrangement/solution/
 
     //Approach #1 Brute Force [Time Limit Exceeded]
@@ -45,7 +45,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         System.out.println(countArrangement(2));
     }
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
     //Approach #2 Better Brute Force [Accepted]
 
     int count2 = 0;
@@ -72,7 +72,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         System.out.println(countArrangement2(2));
     }
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
     //Approach #3 Backtracking [Accepted]
     int count3 = 0;
     public int countArrangement3(int N) {
@@ -92,7 +92,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
     int count4 = 0;
 
     public int countArrangement4(int N) {
@@ -116,7 +116,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
     public int countArrangement5(int N) {
         int[] cnt = new int[1];
         int bit = 0;
@@ -133,7 +133,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
     public int countArrangement6(int N) {
         // arr[0] is reserved for sum
         int[] array = new int[N + 1];
@@ -160,7 +160,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
     public int countArrangement7(int n) {
         boolean[] used = new boolean[n + 1];
         return dfs(1, n, used);
@@ -187,7 +187,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         return (position % value == 0) || (value % position == 0);
     }
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
     public int countArrangement8(int N) {
 
         return dfs(N, new boolean[N + 1], 1);
@@ -206,7 +206,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         return cnt;
     }
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
     int count9 = 0;
 
     public int countArrangement9(int N) {
@@ -230,7 +230,7 @@ public class _526_BackTracking_Beautiful_Arrangement_M {
         }
     }
 
-//////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////
     public int countArrangement10(int N) {
         dfs10(N, N, new boolean[N + 1]);
         return count;

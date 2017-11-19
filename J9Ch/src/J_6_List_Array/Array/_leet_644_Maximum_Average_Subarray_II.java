@@ -36,7 +36,7 @@ public class _leet_644_Maximum_Average_Subarray_II {
         return res;
     }
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     //Approach #2 Using Binary Search [Accepted]
     public double findMaxAverage2(int[] nums, int k) {
@@ -74,6 +74,6 @@ public class _leet_644_Maximum_Average_Subarray_II {
         return false;
     }
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
 }

@@ -35,7 +35,7 @@ public class _02Largest_Rectangle_in_Histogram {
     }
 
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
 
     public int largestRectangleArea1(int[] array) {

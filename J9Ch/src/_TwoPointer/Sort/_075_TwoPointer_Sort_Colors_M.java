@@ -43,7 +43,7 @@ public class _075_TwoPointer_Sort_Colors_M {
     }//0, 1, 1, 2,
 
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //  Four different solutions
     // n = nums.length
     // two pass O(m+n) space
@@ -163,7 +163,7 @@ public class _075_TwoPointer_Sort_Colors_M {
             System.out.print(i + ", ");
         }
     }//0, 1, 1, 2,
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 //Nice summary! For method 1 bucket sort, instead of hard coding 1/2/3 and listing for,for,for,if,else,if,else I suggest write something as follows:
 
     private static final int MnumsX = 3;
@@ -188,7 +188,7 @@ public class _075_TwoPointer_Sort_Colors_M {
             else runner++;
         }
     }
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
     //jiuzhang
     /*
     三指针，左，右，i

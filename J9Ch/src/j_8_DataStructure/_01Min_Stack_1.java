@@ -31,7 +31,7 @@ public class _01Min_Stack_1 {
     }
 
 
-///////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     //version 2, save more space. but space complexity doesn't change.
     public class _01Min_Stack_2 {

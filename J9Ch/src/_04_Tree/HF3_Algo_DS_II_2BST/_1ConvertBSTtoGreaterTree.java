@@ -89,7 +89,7 @@ public class _1ConvertBSTtoGreaterTree {
         convertBST2(root).print();
 
     }
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 /*The basic idea is to do a reversed inorder traversal. When we visit a node we add the sum of all previous nodes (to the right) to its value and also update the sum.
 
     recursive method*/
@@ -157,7 +157,7 @@ public class _1ConvertBSTtoGreaterTree {
     }
 
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
 //    Reversed inorder traversal.
 
@@ -179,7 +179,7 @@ public class _1ConvertBSTtoGreaterTree {
     }
 
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 }
 /*
 Given a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus sum of all keys greater than the original key in BST.

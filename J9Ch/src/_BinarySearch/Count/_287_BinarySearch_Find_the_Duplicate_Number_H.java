@@ -24,7 +24,7 @@ public class _287_BinarySearch_Find_the_Duplicate_Number_H {
         }
         return low;
     }
-////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////
     //jiuzhang
     // 二分法
     public int findDuplicate_J1(int[] nums) {

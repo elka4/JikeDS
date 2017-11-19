@@ -486,7 +486,7 @@ dict = ["hot","dot","dog","lot","log"]
  */
 
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //Approach #2 Recursion with memoization [Accepted]
 
     public boolean wordBreak2(String s, List<String> wordDict) {
@@ -508,7 +508,7 @@ dict = ["hot","dot","dog","lot","log"]
     }
 
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //Approach #3 Using Breadth-First-Search [Accepted]
 
     public boolean wordBreak3(String s, List<String> wordDict) {
@@ -534,7 +534,7 @@ dict = ["hot","dot","dog","lot","log"]
     }
 
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //Java implementation using DP in two ways
 
     public boolean wordBreak4(String s, Set<String> dict) {

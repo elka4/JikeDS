@@ -54,7 +54,7 @@ Example：［1，3，4，3］return 3
         System.out.println(findDupNumber(nums));
 
     }
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 //Java O(n) time and O(1) space solution. Similar to find loop in linkedlist.
 //https://haolin29.gitbooks.io/algorithm-collection/content/Array/missing_num.html
 
@@ -112,7 +112,7 @@ Now the problem is the same as find the cycle in linkedlist!
 
         return slow;
     }
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 //Java O(1)space using Binary-Search
     public int findDuplicate4(int[] nums) {
         int low = 1, high = nums.length - 1;
@@ -129,7 +129,7 @@ Now the problem is the same as find the cycle in linkedlist!
     }
 
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 //JAVA-------------Easy Version To UnderStand!!!!!!!!!
     public int findDuplicate5(int[] nums) {
         if (nums.length == 0 || nums == null)
@@ -151,7 +151,7 @@ Now the problem is the same as find the cycle in linkedlist!
     }
 
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 /*
 You must not modify the array (assume the array is read only). 所以不能swap，不能排序。
 You must use only constant, O(1) extra space. 不能用hashset
@@ -189,7 +189,7 @@ There is only one duplicate number in the array, but it could be repeated more t
 
         return start;
     }
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 /*
 映射找环法 O(N)
 

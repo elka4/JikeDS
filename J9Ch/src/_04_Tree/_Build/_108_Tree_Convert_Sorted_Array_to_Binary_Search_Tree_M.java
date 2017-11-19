@@ -25,7 +25,7 @@ public class _108_Tree_Convert_Sorted_Array_to_Binary_Search_Tree_M {
         }
         return buildTree1(num, 0, num.length - 1);
     }
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     //time O(n) space O(logn)
     public TreeNode sortedArrayToBST2(int[] num) {
         if (num == null || num.length == 0) {
@@ -138,7 +138,7 @@ public class _108_Tree_Convert_Sorted_Array_to_Binary_Search_Tree_M {
         return head;
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 把排序数组转换为高度最小的二叉搜索树

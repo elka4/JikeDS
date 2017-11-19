@@ -98,7 +98,7 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
     }
 
 
-//////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////
     //  Easy Java Solution, isSubSequence
 //Idea is sort the dictionary d first by length DESC then lexicographical ASC and test if p is SubSequence of s. The first match is the answer.
 

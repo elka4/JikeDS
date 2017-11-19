@@ -56,8 +56,8 @@ public class _173_Tree_Binary_Search_Tree_Iterator_M {
         }
     }
 
-/////////////////////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
+    //-------------------------------------------------------------------------///////
 
     public class BSTIterator2 {
         Stack<TreeNode> stack;
@@ -101,7 +101,7 @@ public class _173_Tree_Binary_Search_Tree_Iterator_M {
         }
     }
 
-    /////////////////////////////////////////////////////////////////////
+    //-------------------------------------------------------------------------///////
     //jiuzhang
     public class BSTIterator3 {
         private Stack<TreeNode> stack = new Stack<>();
@@ -158,7 +158,7 @@ public class _173_Tree_Binary_Search_Tree_Iterator_M {
         }
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     public class BSTIterator4 {
         private Stack<TreeNode> stack = new Stack<>();
@@ -210,7 +210,7 @@ public class _173_Tree_Binary_Search_Tree_Iterator_M {
             System.out.println(itr.next());
         }
     }
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     public class BSTIterator6 {
         private Stack<TreeNode> stack = new Stack<TreeNode>();

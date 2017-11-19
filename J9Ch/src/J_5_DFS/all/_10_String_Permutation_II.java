@@ -94,7 +94,7 @@ public class _10_String_Permutation_II {
         System.out.println(reverse2(num, 1,3));
     }
 
-/////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////
     //recursive
     public List<String> stringPermutation2_2(String str) {
         // Write your code here

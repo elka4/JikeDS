@@ -2,7 +2,7 @@ package _BinarySearch.Array_2D;
 
 public class _174_BinarySearch_Dungeon_Game_H {
 
-/////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////////
     //jiuzhang
 public class Jiuzhang {
     private boolean canSurvive(int health, int[][] dungeon) {

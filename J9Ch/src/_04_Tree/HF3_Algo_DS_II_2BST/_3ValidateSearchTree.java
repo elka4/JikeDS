@@ -38,7 +38,7 @@ public class _3ValidateSearchTree {
         System.out.println(isValidBST(root));
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     // version 2  Divide and Conquer
     class ResultType {
@@ -82,7 +82,7 @@ public class _3ValidateSearchTree {
                 Math.min(root.val, left.minValue));
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     // version 3  Divide and Conquer
 
@@ -101,7 +101,7 @@ public class _3ValidateSearchTree {
         return divConq(root.left, min, Math.min(max, root.val)) &&
                divConq(root.right, Math.max(min, root.val), max);
     }
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 }
 /*
 Validate Binary Search Tree

@@ -5,7 +5,7 @@ import java.util.*;
 //  https://leetcode.com/problems/palindrome-pairs/description/
 //  Hash Table,  String,  Trie
 public class _336_Palindrome_Pairs_H {
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 //150 ms 45 lines JAVA solution
     public List<List<Integer>> palindromePairs(String[] words) {
         List<List<Integer>> ret = new ArrayList<>();
@@ -56,7 +56,7 @@ public class _336_Palindrome_Pairs_H {
 //    Since we now use <= in for (int j=0; j<=words[i].length(); j++) instead of <. There may be duplicates in the output (consider test case ["abcd", "dcba"]). Therefore I put a str2.length()!=0 to avoid duplicates.
 //
 //    Another way to avoid duplicates is to use Set<List<Integer>> ret = new HashSet<>(); and return new ArrayList<>(ret);
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 /*The Easy-to-unserstand JAVA Solution
     There are several cases to be considered that isPalindrome(s1 + s2):
 
@@ -152,7 +152,7 @@ public class _336_Palindrome_Pairs_H {
             return true;
         }
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 //3
 /*
 The Easy-to-unserstand JAVA Solution
@@ -251,7 +251,7 @@ The Easy-to-unserstand JAVA Solution
             return true;
         }
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 //4
 //    Accepted short Java solution using HashMap
     class Solution5{
@@ -405,9 +405,9 @@ The Easy-to-unserstand JAVA Solution
         }
     }
 ////////Solution_Trie, Solution_Trie, Solution_Trie, Solution_Trie, Solution_Trie, Solution_Trie
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
 
 }

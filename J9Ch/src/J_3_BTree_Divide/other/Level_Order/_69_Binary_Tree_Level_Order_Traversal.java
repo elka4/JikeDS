@@ -55,7 +55,7 @@ public class _69_Binary_Tree_Level_Order_Traversal {
         System.out.println(levelOrder(root));
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
     // version 2:  DFS
     public ArrayList<ArrayList<Integer>> levelOrder2(TreeNode root) {
@@ -106,7 +106,7 @@ public class _69_Binary_Tree_Level_Order_Traversal {
         System.out.println(levelOrder2(root));
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     // version 3: BFS. two queues
     public ArrayList<ArrayList<Integer>> levelOrder3(TreeNode root) {
@@ -154,7 +154,7 @@ public class _69_Binary_Tree_Level_Order_Traversal {
         System.out.println(levelOrder3(root));
     }
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 
     // version 4: BFS, queue with dummy node
     public ArrayList<ArrayList<Integer>> levelOrder4(TreeNode root) {

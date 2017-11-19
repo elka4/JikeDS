@@ -28,7 +28,7 @@ public class a_389_Find_the_Difference {
         return c;
     }
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
    //Simple JAVA 8ms solution, 4 lines
     public char findTheDifference3(String s, String t) {
         // Initialize variables to store sum of ASCII codes for
@@ -41,7 +41,7 @@ public class a_389_Find_the_Difference {
         return (char)(charCodeT - charCodeS);
     }
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
     //"1 optimization: As t.length() is just 1 character longer than s.length(),
     // we can use 1 pass to process both strings (20% better runtime performance)."
     public char findTheDifference4(String s, String t) {
@@ -53,7 +53,7 @@ public class a_389_Find_the_Difference {
         }
         return (char)charCode;
     }
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 /*
 Hi. There are several methods you can try to solve this. HashMap, Arrays, Bits, etc.
 Here, we're going to use a simple array of size 26 for alphabets.
@@ -74,7 +74,7 @@ Now if at any point, the count goes below 0, then the character isn't present in
 
         return 0;
  */
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
 
 }

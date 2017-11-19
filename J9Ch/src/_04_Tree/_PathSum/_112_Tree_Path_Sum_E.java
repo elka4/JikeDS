@@ -18,7 +18,7 @@ public class _112_Tree_Path_Sum_E {
     }
 
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
      /*
     Java Solution 1 - Using Queue
@@ -64,7 +64,7 @@ public class _112_Tree_Path_Sum_E {
         return false;
     }
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
     //Java Solution 2 - Recursion
 //[Accepted]My recursive solution in Java
@@ -83,7 +83,7 @@ therwise the subtraction at the end could not be 0.*/
                 hasPathSum3(root.right, sum - root.val);
     }
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
     //Java solution, both recursion and iteration
     /*
     双Stack平行运作，一个stac存treenode，一个存这个node对应的pathsum
@@ -124,7 +124,7 @@ therwise the subtraction at the end could not be 0.*/
         return hasPathSum5(root.left, sum - root.val) ||
                 hasPathSum5(root.right, sum - root.val);
     }
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
     //My java no-recursive method
     //the idea is preorder traverse , instead of using recursive call, I am using a stack.
@@ -150,7 +150,7 @@ therwise the subtraction at the end could not be 0.*/
         return false ;
     }
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 }
 /*
 二叉树的最小深度

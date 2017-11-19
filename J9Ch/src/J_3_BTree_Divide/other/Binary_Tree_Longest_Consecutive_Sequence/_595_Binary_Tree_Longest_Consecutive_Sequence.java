@@ -90,7 +90,7 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         System.out.println(longestConsecutive3(root));
     }
 
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
 
     // version 2: Another Traverse + Divide Conquer
     /**
@@ -152,7 +152,7 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         System.out.println(longestConsecutive2(root));
     }
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 
     // version 3: Divide Conquer
     private class ResultType {
@@ -232,7 +232,7 @@ public class _595_Binary_Tree_Longest_Consecutive_Sequence {
         System.out.println(longestConsecutive3(root));
     }
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 
    // Approach #1 (Top Down Depth-first Search) [Accepted]
 /*
@@ -293,7 +293,7 @@ space due to recursion. For a skewed binary tree, the recursion could go
 
 
      */
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 
 //Approach #2 (Bottom Up Depth-first Search) [Accepted]
 

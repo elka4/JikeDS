@@ -54,7 +54,7 @@ A solution set is:
         System.out.println(combinationSum(nums, 7));
     }
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 //Iterative Java DP solution
 
 /*
@@ -91,7 +91,7 @@ the result for all i < target and create the solution from them. For that for ea
     }
 
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 //Java solution using recursive
     public List<List<Integer>> combinationSum3(int[] candidates, int target) {
         Arrays.sort(candidates);
@@ -117,7 +117,7 @@ the result for all i < target and create the solution from them. For that for ea
 
 
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 //From large to small might be easier and shorter.
 
     public List<List<Integer>> combinationSum4(int[] candidates, int target) {
@@ -142,7 +142,7 @@ the result for all i < target and create the solution from them. For that for ea
         }
     }
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 //A little revise without using Arrays.sort which will run faster.
 
     public List<List<Integer>> combinationSum5(int[] candidates, int target) {
@@ -162,7 +162,7 @@ the result for all i < target and create the solution from them. For that for ea
         }
         if (target == 0) result.add(new ArrayList<Integer>(cur));
     }
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 //A solution avoid using set
     /*
     Sort the candidates and we choose from small to large recursively,
@@ -197,7 +197,7 @@ the result for all i < target and create the solution from them. For that for ea
         }
     }
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 
     //Easy to understand 96% performance Java solution
 
@@ -226,7 +226,7 @@ the result for all i < target and create the solution from them. For that for ea
         }
         return res;
     }
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 //Share my 15-line DFS Java code
     public List<List<Integer>> combinationSum8(int[] candidates, int target) {
         List<List<Integer>> ans = new ArrayList<>();
@@ -248,7 +248,7 @@ the result for all i < target and create the solution from them. For that for ea
     }
 
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 //Java solution (backtracking)
 
 
@@ -288,7 +288,7 @@ the result for all i < target and create the solution from them. For that for ea
             }
         }
     }
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
     //Non-Recursive JAVA solution
 public List<List<Integer>> combinationSum10(int[] candidates, int target) {
     Arrays.sort(candidates);
@@ -323,7 +323,7 @@ public List<List<Integer>> combinationSum10(int[] candidates, int target) {
     return result;
 }
 
-///////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////////
 
 
     //Simple java solution
@@ -351,7 +351,7 @@ public List<List<Integer>> combinationSum10(int[] candidates, int target) {
     }
 
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
     /*
     Nice Solution! I solved this problem with the same idea. However,
@@ -398,7 +398,7 @@ same element but different target number (which is current target - candidates[i
     }
 
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 //https://discuss.leetcode.com/topic/7277/a-recursive-yet-efficient-java-solution-with-explanation
 public class Solution4 {
     private List<List<Integer>> res = new LinkedList<List<Integer>>();
@@ -439,7 +439,7 @@ public class Solution4 {
 
 
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 //Java Backtracking Solution, Easy to understand
 
     public List<List<Integer>> combinationSum12(int[] candidates, int target) {
@@ -463,9 +463,9 @@ public class Solution4 {
         }
     }
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
 }

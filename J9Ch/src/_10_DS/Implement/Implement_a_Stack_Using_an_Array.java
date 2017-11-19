@@ -77,7 +77,7 @@ public class Implement_a_Stack_Using_an_Array {
         System.out.println(stack);
     }
 
-//////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------
 
     class Stack2 {
         // Push a new item into the stack

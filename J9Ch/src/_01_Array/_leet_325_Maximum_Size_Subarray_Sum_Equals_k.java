@@ -59,7 +59,7 @@ Can you do it in O(n) time?
         return maxSize;
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
     //O(n) super clean 9-line Java solution with HashMap
     public int maxSubArrayLen2(int[] nums, int k) {
@@ -79,7 +79,7 @@ Can you do it in O(n) time?
 
       //      PS: An "else" is added. Thanks to beckychiu1988 for comment.
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 //Java O(n) explain how I come up with this idea
 
     /*
@@ -116,7 +116,7 @@ index as we want the max j - i, so we want to keep i as left as possible.
         return max;
     }
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
 //Java with newer methods
 //The algorithm is pretty simple and already explained by others,
@@ -138,7 +138,7 @@ index as we want the max j - i, so we want to keep i as left as possible.
 
 
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 //Java 37ms HashMap
 
     public int maxSubArrayLen5(int[] nums, int k) {
@@ -162,7 +162,7 @@ index as we want the max j - i, so we want to keep i as left as possible.
     }
 
 
-/////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////
 
 
 

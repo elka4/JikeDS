@@ -57,7 +57,7 @@ public class _050_BinarySearch_Pow_x_n_M {
     }
 //    bit operation
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
 
     public class Solution6 {
         public double pow(double x, int m) {

@@ -59,7 +59,7 @@ public class _126_Max_Tree {
 
 
 
-///////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////
     /**
      * @param A: Given an integer array with no duplicates.
      * @return: The root of max tree.

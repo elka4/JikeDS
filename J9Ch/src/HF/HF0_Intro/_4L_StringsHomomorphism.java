@@ -115,7 +115,7 @@ public class _4L_StringsHomomorphism {
         System.out.println(isIsomorphic(s,t));
     }
 
-///////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     // version: 高频题班
     /**
@@ -172,7 +172,7 @@ public class _4L_StringsHomomorphism {
         System.out.println(isIsomorphic2("abb", "xyy"));
     }
 
-/////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///
 
 
     //My 6 lines solution
@@ -190,7 +190,7 @@ public class _4L_StringsHomomorphism {
         System.out.println(isIsomorphic3("abb", "xyy"));
     }
 
-///////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     public boolean isIsomorphic4(String s, String t) {
         if(s == null || s.length() <= 1) return true;
@@ -214,7 +214,7 @@ public class _4L_StringsHomomorphism {
 
     }
 
-///////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     public boolean isIsomorphic5(String s1, String s2) {
         Map<Character, Integer> m1 = new HashMap<>();
@@ -229,7 +229,7 @@ public class _4L_StringsHomomorphism {
         return true;
     }
 
-///////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
 
     public boolean isIsomorphic6(String sString, String tString) {
@@ -258,7 +258,7 @@ public class _4L_StringsHomomorphism {
         return true;
     }
 
-///////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
 
     //http://www.cnblogs.com/lz87/p/6943163.html
@@ -297,7 +297,7 @@ public class _4L_StringsHomomorphism {
     }
 
 
-///////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
     public class Solution4 {
         public boolean isIsomorphic8(String s, String t) {
@@ -333,7 +333,7 @@ public class _4L_StringsHomomorphism {
         }
     }
 
-///////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/
 
 }
 

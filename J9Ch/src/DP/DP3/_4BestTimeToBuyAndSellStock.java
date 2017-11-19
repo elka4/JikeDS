@@ -95,7 +95,7 @@ public class _4BestTimeToBuyAndSellStock {
         }
         return maxprofit;
     }
-////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//
     //jiuzhang
     public int maxProfit2(int[] prices) {
         if (prices == null || prices.length == 0) {

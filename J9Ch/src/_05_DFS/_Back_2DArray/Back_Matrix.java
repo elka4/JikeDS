@@ -503,7 +503,7 @@ Now, instead outputting board configurations, return the total number of distinc
 //////3.N-Queens II     3.N-Queens II   3.N-Queens II   3.N-Queens II   3.N-Queens II
 
 
-////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////////
 
 
 

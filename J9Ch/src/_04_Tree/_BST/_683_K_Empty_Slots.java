@@ -12,7 +12,7 @@ public class _683_K_Empty_Slots {
     //Approach #2: Sliding Window [Accepted]
 
 
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
     /*[Java/C++] Simple O(n) solution
     It seems that this question has some mistakes. I think there are two places that might
     lead to misunderstandings: (please feel free to tell me if I'm incorrect)
@@ -36,7 +36,7 @@ public class _683_K_Empty_Slots {
         return (res == Integer.MAX_VALUE)?-1:res;
     }
 
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 
     //    Java Accepted Solution
     public int kEmptySlots4(int[] flowers, int k) {
@@ -56,7 +56,7 @@ public class _683_K_Empty_Slots {
         return -1;
     }
 
-///////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------/////////
 }
 /*
 There is a garden with N slots. In each slot, there is a flower. The N flowers will bloom one by one in N days. In each day, there will be exactly one flower blooming and it will be in the status of blooming since then.

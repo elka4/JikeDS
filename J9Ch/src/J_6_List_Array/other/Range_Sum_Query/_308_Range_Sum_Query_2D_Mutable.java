@@ -77,7 +77,7 @@ public class _308_Range_Sum_Query_2D_Mutable {
 Explanation of Binary Indexed Tree :
 https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/
  */
-//////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 
     //15ms easy to understand java solution
 
@@ -125,7 +125,7 @@ https://www.topcoder.com/community/data-science/data-science-tutorials/binary-in
 
 
 
-//////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 
     //Segment Tree Solution in Java
     public class NumMatrix3 {
@@ -250,7 +250,7 @@ https://www.topcoder.com/community/data-science/data-science-tutorials/binary-in
 
 
 
-//////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 
     //15ms Very Concise Java Code Using BIT
 
@@ -294,13 +294,13 @@ https://www.topcoder.com/community/data-science/data-science-tutorials/binary-in
 
 
 
-//////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 
 
 
 
 
-//////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////
 
 
 

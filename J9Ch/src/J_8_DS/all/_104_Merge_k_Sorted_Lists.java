@@ -60,7 +60,7 @@ public class _104_Merge_k_Sorted_Lists {
 
 
 
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////////
 
     // version 2: Heap
     private Comparator<ListNode> ListNodeComparator = new Comparator<ListNode>() {

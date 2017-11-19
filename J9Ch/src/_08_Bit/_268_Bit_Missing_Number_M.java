@@ -49,7 +49,7 @@ public class _268_Bit_Missing_Number_M {
         }
 
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 //3 different ideas: XOR, SUM, Binary Search. Java code
 
 //1.XOR
@@ -83,7 +83,7 @@ public class _268_Bit_Missing_Number_M {
 //    Summary:
 //    If the array is in order, I prefer Binary Search method. Otherwise, the XOR method is better.
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 //We can do SUM this way to avoid overflow.
 
     public class Solution7 {
@@ -109,10 +109,10 @@ public class _268_Bit_Missing_Number_M {
 
         return (int) (nums.length*(nums.length+1)/2 - sum);
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 }
 /*
 Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the one that is missing from the array.

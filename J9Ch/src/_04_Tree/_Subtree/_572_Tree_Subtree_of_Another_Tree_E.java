@@ -45,7 +45,7 @@ public class _572_Tree_Subtree_of_Another_Tree_E {
         }
     }
 
-/////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////
     //Java Solution, tree traversal
 
     //    For each node during pre-order traversal of s, use a recursive function
@@ -66,7 +66,7 @@ public class _572_Tree_Subtree_of_Another_Tree_E {
         return isSame(s.left, t.left) && isSame(s.right, t.right);
     }
 
-/////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////
     //Easy O(n) java solution using preorder traversal
     public boolean isSubtree4(TreeNode s, TreeNode t) {
         String spreorder = generatepreorderString(s);
@@ -93,7 +93,7 @@ public class _572_Tree_Subtree_of_Another_Tree_E {
         return sb.toString();
     }
 
-/////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////
     //Java Concise O(n+m) Time O(n+m) Space
     public boolean isSubtree5(TreeNode s, TreeNode t) {
         // Java uses a naive contains algorithm so to ensure linear time,
@@ -114,7 +114,7 @@ public class _572_Tree_Subtree_of_Another_Tree_E {
         serialize(cur.right, res);
     }
 
-/////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////////
 }
 /*
 

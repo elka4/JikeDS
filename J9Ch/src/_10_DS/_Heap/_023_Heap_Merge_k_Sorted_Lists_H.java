@@ -76,7 +76,7 @@ My question: is that possible to solve this question under the same time complex
         }
 
     }
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
     //jiuzhang
     // version 1: Divide & Conquer
         /**
@@ -232,7 +232,7 @@ My question: is that possible to solve this question under the same time complex
         }
     }
 
-/////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------///////////
 
 
 

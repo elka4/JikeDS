@@ -88,7 +88,7 @@ public class _1SlidingWindowAveragefromDataStream {
 
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 
     //jiuzhang
     public class MovingAverage2 {
@@ -129,7 +129,7 @@ public class _1SlidingWindowAveragefromDataStream {
      * double param = obj.next(val);
      */
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 
 // version: 高频题班
 //非滚动
@@ -167,7 +167,7 @@ public class _1SlidingWindowAveragefromDataStream {
         System.out.println(m.next(5));
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 
     //滚动
     // 只要是mod比 s+1 大的就行
@@ -210,7 +210,7 @@ public class _1SlidingWindowAveragefromDataStream {
         System.out.println(m.next(5));
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 
     class MovingAverage5{
         double[] sum;
@@ -246,7 +246,7 @@ public class _1SlidingWindowAveragefromDataStream {
         System.out.println(m.next(5));
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
     // Java O(1) time solution.
     //The idea is to keep the sum so far and update the sum just by
     // replacing the oldest number with the new entry.
@@ -293,7 +293,7 @@ public class _1SlidingWindowAveragefromDataStream {
             return sum/q.size();
         }
     }
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 public class MovingAverage8 {
     private double previousSum = 0.0;
     private int maxSize;
@@ -315,7 +315,7 @@ public class MovingAverage8 {
         return previousSum / currentWindow.size();
     }
 }
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 //JAVA O(1) using Deque
 
     public class MovingAverage9 {
@@ -345,7 +345,7 @@ public class MovingAverage8 {
 
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 
     //Simple Java LinkedList Solution
     public class MovingAverage10 {
@@ -372,7 +372,7 @@ public class MovingAverage8 {
         }
     }
 
-//////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////
 
 
 }

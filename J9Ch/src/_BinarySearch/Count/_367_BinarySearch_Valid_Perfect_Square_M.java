@@ -40,7 +40,7 @@ public class _367_BinarySearch_Valid_Perfect_Square_M {
         }
         return x * x == num;
     }
-////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
 class Zhu {
     public boolean isPerfectSquare(int num) {
         int low = 1, high = num;
@@ -60,7 +60,7 @@ class Zhu {
         return false;
     }
 }
-////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//////////
 }
 /*
 Given a positive integer num, write a function which returns True if num is a perfect square else False.

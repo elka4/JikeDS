@@ -4,6 +4,8 @@ import java.util.*;
 //268. Missing Number
 
 public class a_268_Missing_Number {
+//-------------------------------------------------------------------------/
+
     //4 Line Simple Java Bit Manipulate Solution with Explaination
 //    The basic idea is to use XOR operation. We all know that a^b^b =a,
 // which means two xor operations with the same number will eliminate the number
@@ -37,7 +39,10 @@ public class a_268_Missing_Number {
         }
         return res;
     }
-//2.SUM
+
+//-------------------------------------------------------------------------/
+
+    //2.SUM
     public int missingNumber3(int[] nums) { //sum
         int len = nums.length;
         int sum = (0+len)*(len+1)/2;
@@ -45,7 +50,9 @@ public class a_268_Missing_Number {
             sum-=nums[i];
         return sum;
     }
-//3.Binary Search
+//-------------------------------------------------------------------------/
+
+    //3.Binary Search
     //二分法也不错，要研究一下
     public int missingNumber4(int[] nums) { //binary search
         Arrays.sort(nums);
@@ -82,20 +89,8 @@ public class a_268_Missing_Number {
 // The needed modification is
 //
 //return ( (nums.length * (nums.length + 1) ) - 2 * sum ) / 2;
-//-------------------------------------------------------------------------/
-
 
 //-------------------------------------------------------------------------/
-
-
-//-------------------------------------------------------------------------/
-
-
-//-------------------------------------------------------------------------/
-
-
-
-
 }
 /*
 Given an array containing n distinct numbers taken from 0, 1, 2, ..., n,

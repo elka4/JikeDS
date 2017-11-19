@@ -37,7 +37,7 @@ public class _290_Word_Pattern_E {
         System.out.println(wordPattern("aaaa", "dog cat cat dog"));
         System.out.println(wordPattern("abba", "dog dog dog dog"));
     }
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////////
     //Very fast (3ms) Java Solution using HashMap
     public boolean wordPattern2(String pattern, String str) {
         String[] arr= str.split(" ");
@@ -58,7 +58,7 @@ public class _290_Word_Pattern_E {
         return true;
     }
 
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////////
 
     //My 3ms java solution using only one hashmap
     public boolean wordPattern3(String pattern, String str) {
@@ -83,7 +83,7 @@ public class _290_Word_Pattern_E {
         }
         return true;
     }
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------////////////////////
 
 
 
