@@ -8,58 +8,102 @@ import java.util.*;
 //  107. Binary Tree Level Order Traversal II
 //  https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
 //  http://www.lintcode.com/zh-cn/problem/binary-tree-level-order-traversal-ii/
+//  Tree， Breadth-first Search
+//  4:123都很好。1，BFS。2，DFS（这个有难度啊，要理解一下）。3,BFS + Collections.reverse。
 public class _107_Tree_Binary_Tree_Level_Order_Traversal_II_E {
-
-    //    DFS solution:
+    //1
+    //BFS iterative:
     public List<List<Integer>> levelOrderBottom1(TreeNode root) {
+        List<List<Integer>> result = new LinkedList<List<Integer>>();
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        List<List<Integer>> wrapList = new LinkedList<List<Integer>>();
 
-        if(root == null) return wrapList;
+        if(root == null) return result;
 
         queue.offer(root);
         while(!queue.isEmpty()){
             int levelNum = queue.size();
-            List<Integer> subList = new LinkedList<Integer>();
+            List<Integer> list = new LinkedList<Integer>();
             for(int i=0; i<levelNum; i++) {
+                //处理Queue
                 if(queue.peek().left != null) queue.offer(queue.peek().left);
                 if(queue.peek().right != null) queue.offer(queue.peek().right);
-                subList.add(queue.poll().val);
+                //处理List
+                list.add(queue.poll().val);
             }
-            wrapList.add(0, subList);
+            result.add(0, list);//唯一的区别
         }
-        return wrapList;
+        return result;
     }
 
+    @Test
+    public void test01(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");root.print();
+        System.out.println(levelOrderBottom1(root));
+    }
+/*
+            root:
+               3
+              / \
+             /   \
+             9   20
+                / \
+                15 7
+
+            [[15, 7], [9, 20], [3]]
+ */
 /////////////////////////////////////////////////////////////////////////////////////
-
-    //    BFS solution:
+    //2
+    //DFS solution:
     public List<List<Integer>> levelOrderBottom2(TreeNode root) {
-        List<List<Integer>> wrapList = new LinkedList<List<Integer>>();
-        levelMaker(wrapList, root, 0);
-        return wrapList;
+        List<List<Integer>> result = new LinkedList<List<Integer>>();
+        levelMaker(result, root, 0);
+        return result;
     }
-
-    public void levelMaker(List<List<Integer>> list, TreeNode root, int level) {
+    //post order
+    public void levelMaker(List<List<Integer>> result, TreeNode root, int level) {
         if(root == null) return;
-        if(level >= list.size()) {
-            list.add(0, new LinkedList<Integer>());
+        if(level == result.size()) {//原本是>=
+            result.add(0, new LinkedList<Integer>());//唯一区别
         }
-        levelMaker(list, root.left, level+1);
-        levelMaker(list, root.right, level+1);
-        list.get(list.size()-level-1).add(root.val);
+        levelMaker(result, root.left, level+1);
+        levelMaker(result, root.right, level+1);
+
+        result.get(result.size()-level-1).add(root.val);//注意这里。这个怎么理解？！！
     }
 
+    @Test
+    public void test02(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");root.print();
+        System.out.println(levelOrderBottom2(root));
+    }
 
+/*
+            root:
+               3
+              / \
+             /   \
+             9   20
+                / \
+                15 7
 
+            [[15, 7], [9, 20], [3]]
+ */
 ////////////////////////////////////////////////////////////////////////
+    //3
     //jiuzhang
-    /**
-     * @param root: The root of binary tree.
-     * @return: buttom-up level order a list of lists of integer
-     */
-    public ArrayList<ArrayList<Integer>> levelOrderBottom3(TreeNode root) {
-        ArrayList<ArrayList<Integer>> result = new ArrayList<>();
+    // BFS iterative with Queue
+    //   Collections.reverse(result);
+    //超级简单啊，只是用了Collections.reverse(）。要记住这个方法。
+    public List<List<Integer>>  levelOrderBottom3(TreeNode root) {
+        List<List<Integer>>  result = new ArrayList<>();
         if (root == null) {
             return result;
         }
@@ -88,19 +132,28 @@ public class _107_Tree_Binary_Tree_Level_Order_Traversal_II_E {
 
 
     @Test
-    public void test01(){
+    public void test03(){
         int[] arr = {3,9,20};
         TreeNode root = AssortedMethods.createTreeFromArray(arr);
         TreeNode node20 = root.find(20);
-        node20.setLeftChild(new TreeNode(15));
-        node20.setRightChild(new TreeNode(7));
-        System.out.println("root: ");
-        root.print();
+        node20.setLeftChild(new TreeNode(15));node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");root.print();
         System.out.println(levelOrderBottom3(root));
     }
+/*
+root:
+   3
+  / \
+ /   \
+ 9   20
+    / \
+    15 7
 
+[[15, 7], [9, 20], [3]]
+ */
 //////////////////////////////////////////////////////////////
-
+    //4
+    //双Queue
     public List<ArrayList<Integer>> levelOrderBottom4(TreeNode root) {
         ArrayList<ArrayList<Integer>> result = new  ArrayList<ArrayList<Integer>>();
 
@@ -118,15 +171,17 @@ public class _107_Tree_Binary_Tree_Level_Order_Traversal_II_E {
         while(!current.isEmpty()){
             TreeNode head = current.poll();
 
+            //处理List
             numberList.add(head.val);
 
+            //处理Queue
             if(head.left != null){
                 next.offer(head.left);
             }
             if(head.right!= null){
                 next.offer(head.right);
             }
-
+            //swap Queue
             if(current.isEmpty()){
                 current = next;
                 next = new LinkedList<TreeNode>();
@@ -142,6 +197,17 @@ public class _107_Tree_Binary_Tree_Level_Order_Traversal_II_E {
         }
 
         return reversedResult;
+    }
+    @Test
+    public void test04(){
+        int[] arr = {3,9,20};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        TreeNode node20 = root.find(20);
+        node20.setLeftChild(new TreeNode(15));
+        node20.setRightChild(new TreeNode(7));
+        System.out.println("root: ");
+        root.print();
+        System.out.println(levelOrderBottom3(root));
     }
 
 ////////////////////////////////////////////////////////////////////////
