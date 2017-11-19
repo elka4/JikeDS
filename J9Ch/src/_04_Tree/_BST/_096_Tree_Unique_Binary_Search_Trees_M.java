@@ -6,6 +6,65 @@ package _04_Tree._BST;
 //  http://www.lintcode.com/zh-cn/problem/unique-binary-search-trees/
 //  DP
 public class _096_Tree_Unique_Binary_Search_Trees_M {
+//---------------------------------------------------------------------------------
+
+
+    public int numTrees1(int n) {
+        int [] G = new int[n+1];
+        G[0] = G[1] = 1;
+
+        for(int i = 2; i <= n; ++i) {
+            for(int j = 1; j <= i; ++j) {
+                G[i] += G[j-1] * G[i-j];
+            }
+        }
+        return G[n];
+    }
+
+    public int numTrees2(int n) {
+        int [] dp = new int[n+1];
+        dp[0] = 1;
+        dp[1] = 1;
+
+        for(int level = 2; level <= n; level++)
+            for(int root = 1; root <= level; root++)
+                dp[level] += dp[level - root] * dp[root - 1];
+
+        return dp[n];
+    }
+
+    public int numTrees4(int n) {
+        int[] count = new int[n + 1];
+        count[0] = 1;
+        count[1] = 1;
+
+        for (int i = 2; i <= n; i++) {
+            for (int j = 0; j <= i - 1; j++) {
+                //如果左子树的个数为j，那么右子树为i - j - 1
+                count[i] = count[i] + count[j] * count[i - j - 1];
+            }
+        }
+        return count[n];
+    }
+
+
+    public int number3(int n){
+        if(n==0)return 1;
+        if(n==1) return 1;
+        int result[] = new int [n+1];
+        result[0]=1; result[1]=1; result[2]=2;
+
+        if(n<3) return result[n];
+
+        for(int i = 3; i <= n; i++){
+            for(int k = 1; k <= i; k++){
+                result[i] = result[i] + result[k-1] * result[i-k];
+            }
+        }
+        return result[n];
+    }
+
+//---------------------------------------------------------------------------------
 
 //1
 /*
@@ -43,62 +102,8 @@ In terms of calculation, we need to start with the lower number, since the value
 With the above explanation and formulas, here is the implementation in Java.
 */
 
-    public int numTrees1(int n) {
-        int [] G = new int[n+1];
-        G[0] = G[1] = 1;
 
-        for(int i = 2; i <= n; ++i) {
-            for(int j = 1; j <= i; ++j) {
-                G[i] += G[j-1] * G[i-j];
-            }
-        }
-        return G[n];
-    }
-
-    public int numTrees2(int n) {
-        int [] dp = new int[n+1];
-        dp[0] = 1;
-        dp[1] = 1;
-
-        for(int level = 2; level <= n; level++)
-            for(int root = 1; root <= level; root++)
-                dp[level] += dp[level - root] * dp[root - 1];
-
-        return dp[n];
-    }
-
-    public int number3(int n){
-        if(n==0)return 1;
-        if(n==1) return 1;
-        int result[] = new int [n+1];
-        result[0]=1; result[1]=1; result[2]=2;
-
-        if(n<3) return result[n];
-
-        for(int i = 3; i <= n; i++){
-            for(int k = 1; k <= i; k++){
-                result[i] = result[i] + result[k-1] * result[i-k];
-            }
-        }
-        return result[n];
-    }
-
-    public int numTrees4(int n) {
-        int[] count = new int[n + 1];
-        count[0] = 1;
-        count[1] = 1;
-
-        for (int i = 2; i <= n; i++) {
-            for (int j = 0; j <= i - 1; j++) {
-                //如果左子树的个数为j，那么右子树为i - j - 1
-                count[i] = count[i] + count[j] * count[i - j - 1];
-            }
-        }
-        return count[n];
-    }
-
-
-
+//---------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------
 //2
 /*Fantastic Clean Java DP Solution with Detail Explaination

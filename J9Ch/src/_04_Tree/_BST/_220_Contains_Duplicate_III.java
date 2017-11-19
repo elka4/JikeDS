@@ -3,9 +3,11 @@ import java.util.*;
 
 //  220. Contains Duplicate III
 //  https://leetcode.com/problems/contains-duplicate-iii/description/
+//  Binary Search Tree
 public class _220_Contains_Duplicate_III {
     //https://leetcode.com/articles/contains-duplicate-iii/
-
+//---------------------------------------------------------------------------------
+    //1
     //Approach #1 (Naive Linear Search) [Time Limit Exceeded]
     // Time limit exceeded.
     public boolean containsNearbyAlmostDuplicate1(int[] nums, int k, int t) {
@@ -17,8 +19,8 @@ public class _220_Contains_Duplicate_III {
         return false;
     }
 
-//-------------------------------------------------------------------------//////////////
-
+//---------------------------------------------------------------------------------
+    //2
     //Approach #2 (Binary Search Tree) [Accepted]
     public boolean containsNearbyAlmostDuplicate2(int[] nums, int k, int t) {
         TreeSet<Integer> set = new TreeSet<>();
@@ -39,7 +41,8 @@ public class _220_Contains_Duplicate_III {
         return false;
     }
 
-//-------------------------------------------------------------------------//////////////
+//---------------------------------------------------------------------------------
+    //3
     //Approach #3 (Buckets) [Accepted]
     // Get the ID of the bucket from element value x and bucket width w
     // In Java, `-3 / 5 = 0` and but we need `-3 / 5 = -1`.
@@ -68,7 +71,7 @@ public class _220_Contains_Duplicate_III {
         return false;
     }
 
-//-------------------------------------------------------------------------//////////////
+//---------------------------------------------------------------------------------
 }
 /*
 Given an array of integers, find out whether there are two distinct indices i and j

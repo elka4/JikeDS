@@ -5,9 +5,12 @@ import org.junit.Test;
 
 //  99. Recover Binary Search Tree
 //  https://leetcode.com/problems/recover-binary-search-tree/description/
+//  Tree, DFS
+//  5:
 public class _099_Tree_Recover_Binary_Search_Tree_H {
 
-
+//-------------------------------------------------------------------------------
+    //1
     public class Solution {
         TreeNode firstElement = null;
         TreeNode secondElement = null;
@@ -66,8 +69,9 @@ public class _099_Tree_Recover_Binary_Search_Tree_H {
         root.print();
     }
 
-//-------------------------------------------------------------------------////////////
-
+//---------------------------------------------------------------------------------
+    //2
+    //这个是干嘛的？
     public void morrisTraversal(TreeNode root){
         TreeNode temp = null;
         while(root!=null){
@@ -113,8 +117,8 @@ public class _099_Tree_Recover_Binary_Search_Tree_H {
 / \
 4 6
      */
-//-------------------------------------------------------------------------////////////
-
+//---------------------------------------------------------------------------------
+    //3
     public void recoverTree(TreeNode root) {
         TreeNode pre = null;
         TreeNode first = null, second = null; // Morris Traversal
@@ -190,7 +194,8 @@ public class _099_Tree_Recover_Binary_Search_Tree_H {
                 / \
                 4 6
      */
-//-------------------------------------------------------------------------////////////
+//---------------------------------------------------------------------------------
+    //4
     class Recover_BST {
 
         TreeNode first;
@@ -246,38 +251,38 @@ public class _099_Tree_Recover_Binary_Search_Tree_H {
         root.print();
     }
 
-//-------------------------------------------------------------------------////////////
-
+//---------------------------------------------------------------------------------
+    //5
     //jiuzhang
-public class Jiuzhang {
-    private TreeNode firstElement = null;
-    private TreeNode secondElement = null;
-    private TreeNode lastElement = new TreeNode(Integer.MIN_VALUE);
+    public class Jiuzhang {
+        private TreeNode firstElement = null;
+        private TreeNode secondElement = null;
+        private TreeNode lastElement = new TreeNode(Integer.MIN_VALUE);
 
-    private void traverse(TreeNode root) {
-        if (root == null) {
-            return;
+        private void traverse(TreeNode root) {
+            if (root == null) {
+                return;
+            }
+            traverse(root.left);
+            if (firstElement == null && root.val < lastElement.val) {
+                firstElement = lastElement;
+            }
+            if (firstElement != null && root.val < lastElement.val) {
+                secondElement = root;
+            }
+            lastElement = root;
+            traverse(root.right);
         }
-        traverse(root.left);
-        if (firstElement == null && root.val < lastElement.val) {
-            firstElement = lastElement;
-        }
-        if (firstElement != null && root.val < lastElement.val) {
-            secondElement = root;
-        }
-        lastElement = root;
-        traverse(root.right);
-    }
 
-    public void recoverTree(TreeNode root) {
-        // traverse and get two elements
-        traverse(root);
-        // swap
-        int temp = firstElement.val;
-        firstElement.val = secondElement.val;
-        secondElement.val = temp;
+        public void recoverTree(TreeNode root) {
+            // traverse and get two elements
+            traverse(root);
+            // swap
+            int temp = firstElement.val;
+            firstElement.val = secondElement.val;
+            secondElement.val = temp;
+        }
     }
-}
 
     @Test
     public void test05() {
@@ -291,11 +296,8 @@ public class Jiuzhang {
         new Jiuzhang().recoverTree(root);
         root.print();
     }
-//-------------------------------------------------------------------------////////////
+//---------------------------------------------------------------------------------
 }
-/*
-
- */
 /*
 LeetCode – Recover Binary Search Tree (Java)
 

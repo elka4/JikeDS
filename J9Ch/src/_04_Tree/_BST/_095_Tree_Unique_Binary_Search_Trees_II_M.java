@@ -20,18 +20,22 @@ public class _095_Tree_Unique_Binary_Search_Trees_II_M {
 
     public class Solution01 {
         public List<TreeNode> generateTrees(int n) {
+            if(n==0)return new ArrayList<TreeNode>();//i add this
             return genTrees(1,n);
         }
         public List<TreeNode> genTrees (int start, int end) {
             List<TreeNode> list = new ArrayList<TreeNode>();
+
             if(start>end) {
                 list.add(null);
                 return list;
             }
+/*
             if(start == end){
                 list.add(new TreeNode(start));
                 return list;
             }
+*/
 
             List<TreeNode> left,right;
 
@@ -71,11 +75,13 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
 
     public class Solution03 {
         public List<TreeNode> generateTrees(int n) {
+            if(n==0)return new ArrayList<TreeNode>();//i add this
             return generateSubtrees(1, n);
         }
 
         private List<TreeNode> generateSubtrees(int s, int e) {
             List<TreeNode> res = new LinkedList<TreeNode>();
+
             if (s > e) {
                 res.add(null); // empty tree
                 return res;
@@ -87,6 +93,7 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
 
                 for (TreeNode left : leftSubtrees) {
                     for (TreeNode right : rightSubtrees) {
+
                         TreeNode root = new TreeNode(i);
                         root.left = left;
                         root.right = right;
@@ -151,26 +158,28 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
     }
 
 //-------------------------------------------------------------------------//////
-    //7
+    //4
     //The first method that came to mind was the brute force solution as below.
     class Solution5{
         public List<TreeNode> generateTrees(int n) {
+            if(n==0)return new ArrayList<TreeNode>();
             return generateTrees(1,n);
         }
 
         public List<TreeNode> generateTrees(int start,int end){
             List<TreeNode> trees = new ArrayList<TreeNode>();
-            if(start>end){  trees.add(null); return trees;}
+            if(start>end){ trees.add(null); return trees;}
 
             for(int rootValue=start;rootValue<=end;rootValue++){
-                List<TreeNode> leftSubTrees=generateTrees(start,rootValue-1);
-                List<TreeNode> rightSubTrees=generateTrees(rootValue+1,end);
+                List<TreeNode> leftSubTrees = generateTrees(start, rootValue - 1);
+                List<TreeNode> rightSubTrees = generateTrees(rootValue + 1, end);
 
                 for(TreeNode leftSubTree:leftSubTrees){
                     for(TreeNode rightSubTree:rightSubTrees){
-                        TreeNode root=new TreeNode(rootValue);
-                        root.left=leftSubTree;
-                        root.right=rightSubTree;
+
+                        TreeNode root = new TreeNode(rootValue);
+                        root.left = leftSubTree;
+                        root.right = rightSubTree;
                         trees.add(root);
                     }
                 }
@@ -188,8 +197,108 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
 
 
 //-------------------------------------------------------------------------//////
+
+    //5
+    //Java 2ms solution beats 92%
+    //DFS
+    public class Solution7 {
+        public List<TreeNode> generateTrees(int n) {
+            if(n==0) return new ArrayList<TreeNode>();
+            return generateTress(1, n);
+        }
+
+        private List<TreeNode> generateTress(int start, int end){
+            if(start>end) {
+                List<TreeNode> list = new ArrayList<TreeNode>();
+                list.add(null);
+                return list;
+            }
+/*            if(start==end) {
+                List<TreeNode> list = new ArrayList<TreeNode>();
+                list.add(new TreeNode(start)); return list;
+            }*/
+
+            List<TreeNode> roots = new ArrayList<TreeNode>();
+
+            for(int i=start;i<=end;i++){
+                List<TreeNode> leftTrees = generateTress(start, i-1);
+                List<TreeNode> rightTrees = generateTress(i+1, end);
+
+                for(int j=0;j<leftTrees.size();j++){
+                    for(int k=0;k<rightTrees.size();k++){
+                        TreeNode root = new TreeNode(i);
+                        root.left = leftTrees.get(j);
+                        root.right = rightTrees.get(k);
+                        roots.add(root);
+                    }
+                }
+
+            }
+            return roots;
+        }
+    }
+    @Test
+    public void test08(){
+        Solution7 jz = new Solution7();
+        List<TreeNode> result = jz.generateTrees(3);
+        for (TreeNode t:result ) { t.print();}
+    }
+
+
+//-------------------------------------------------------------------------//////
+    //7
+    //jiuzhang
+    //DFS
+    public class Jiuzhang {
+        public List<TreeNode> generateTrees(int n) {
+            return generate(1, n);
+        }
+
+        private List<TreeNode> generate(int start, int end){
+            List<TreeNode> result = new ArrayList<TreeNode>();
+
+            if(start > end){
+                result.add(null);
+                return result;
+            }
+
+            for(int i=start; i<=end; i++){
+                List<TreeNode> left = generate(start, i-1);
+                List<TreeNode> right = generate(i+1, end);
+
+                for(TreeNode l: left){
+                    for(TreeNode r: right){
+                        // should new a root here because it need to
+                        // be different for each tree
+                        TreeNode root = new TreeNode(i);
+                        root.left = l;
+                        root.right = r;
+                        result.add(root);
+                    }
+                }
+            }
+            return result;
+        }
+    }
+
+    @Test
+    public void test_J(){
+        Jiuzhang jz = new Jiuzhang();
+        List<TreeNode> result = jz.generate(1,3);
+        for (TreeNode t:result ) {
+            t.print();
+        }
+    }
+//-------------------------------------------------------------------------//////
     //6
     //Java Solution with DP
+    //这货怎么就DP了？？？！！
+    //Here is my java solution with DP:
+/*
+result[i] stores the result until length i. For the result for length i+1, select the root node j from 0 to i, combine the result from left side and right side. Note for the right side we have to clone the nodes as the value will be offsetted by j.
+written by jianwu original link here
+*/
+
     class Solution3{
         public List<TreeNode> generateTrees(int n) {
             List<TreeNode>[] result = new List[n + 1];
@@ -201,12 +310,17 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
             result[0].add(null);
             for (int len = 1; len <= n; len++) {
                 result[len] = new ArrayList<TreeNode>();
+
                 for (int j = 0; j < len; j++) {
+
                     for (TreeNode nodeL : result[j]) {
                         for (TreeNode nodeR : result[len - j - 1]) {
+
                             TreeNode node = new TreeNode(j + 1);
+
                             node.left = nodeL;
                             node.right = clone(nodeR, j + 1);
+
                             result[len].add(node);
                         }
                     }
@@ -233,110 +347,16 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
         for (TreeNode t:result ) { t.print();}
     }
 
-//-------------------------------------------------------------------------//////
 
 //-------------------------------------------------------------------------///////////
 
+
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------
     //8
-    //Java 2ms solution beats 92%
-    //DFS
-    public class Solution7 {
-        public List<TreeNode> generateTrees(int n) {
-            if(n==0) return new ArrayList<TreeNode>();
-            return generateTress(1, n);
-        }
-
-        private List<TreeNode> generateTress(int start, int end){
-            if(start>end) {
-                List<TreeNode> list = new ArrayList<TreeNode>();
-                list.add(null);
-                return list;
-            }
-            if(start==end) {
-                List<TreeNode> list = new ArrayList<TreeNode>();
-                list.add(new TreeNode(start)); return list;
-            }
-            List<TreeNode> roots = new ArrayList<TreeNode>();
-
-            for(int i=start;i<=end;i++){
-                List<TreeNode> leftTrees = generateTress(start, i-1);
-                List<TreeNode> rightTrees = generateTress(i+1, end);
-
-                for(int j=0;j<leftTrees.size();j++){
-                    for(int k=0;k<rightTrees.size();k++){
-                        TreeNode root = new TreeNode(i);
-                        root.left = leftTrees.get(j);
-                        root.right = rightTrees.get(k);
-                        roots.add(root);
-                    }
-                }
-
-            }
-            return roots;
-        }
-    }
-    @Test
-    public void test08(){
-        Solution7 jz = new Solution7();
-        List<TreeNode> result = jz.generateTrees(3);
-        for (TreeNode t:result ) { t.print();}
-    }
-//-------------------------------------------------------------------------//////
-    //9
-    //jiuzhang
-    //DFS
-    public class Jiuzhang {
-        public ArrayList<TreeNode> generateTrees(int n) {
-
-            return generate(1, n);
-        }
-
-        private ArrayList<TreeNode> generate(int start, int end){
-            ArrayList<TreeNode> result = new ArrayList<TreeNode>();
-
-            if(start > end){
-                result.add(null);
-                return result;
-            }
-
-            for(int i=start; i<=end; i++){
-                ArrayList<TreeNode> left = generate(start, i-1);
-                ArrayList<TreeNode> right = generate(i+1, end);
-
-                for(TreeNode l: left){
-                    for(TreeNode r: right){
-                        // should new a root here because it need to
-                        // be different for each tree
-                        TreeNode root = new TreeNode(i);
-                        root.left = l;
-                        root.right = r;
-                        result.add(root);
-                    }
-                }
-            }
-            return result;
-        }
-    }
-
-    @Test
-    public void test_J(){
-        Jiuzhang jz = new Jiuzhang();
-        ArrayList<TreeNode> result = jz.generate(1,3);
-        for (TreeNode t:result ) {
-            t.print();
-        }
-    }
-//----------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------
-    //10
     //DP
-    //Here is my java solution with DP:
-/*
-result[i] stores the result until length i. For the result for length i+1, select the root node j from 0 to i, combine the result from left side and right side. Note for the right side we have to clone the nodes as the value will be offsetted by j.
-written by jianwu original link here
-*/
 
     public class Solution02 {
         public  List<TreeNode> generateTrees(int n) {
@@ -377,7 +397,7 @@ written by jianwu original link here
 
 //-------------------------------------------------------------------------//////
 
-    //11
+    //9
 /*
 Then @6219221 reminded me it is unnecessary to create the BSTs with all brand new nodes.
 Assume you have a list of all BSTs with values from 1 to n-1, every possible way to insert value n only involves changing the right tree (root inclusive) because n is always greater than root.val and the left subtree structure is fixed. So all we gotta do is to create a new copy of the right part of the tree and point the new root.left to the original left subtree. This way we reuse the left tree, which saves time and space.
@@ -392,6 +412,7 @@ Here is my implementation. Note that I do the dp from [n] back to [n to 1]. Ther
         public List<TreeNode> generateTrees(int n) {
             List<TreeNode> res = new ArrayList<>();
             res.add(null);
+
             for(; n > 0; n--) {
                 List<TreeNode> next = new ArrayList<>();
                 for(TreeNode node: res) {
