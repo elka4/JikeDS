@@ -4,8 +4,11 @@ import java.util.*;
 
 //  530. Minimum Absolute Difference in BST
 //  https://leetcode.com/problems/minimum-absolute-difference-in-bst/description/
-//
+//  Binary Search Tree
+//    K-diff Pairs in an Array
+//  4:
 public class _530_Minimum_Absolute_Difference_in_BST {
+    //1
     /*
     Two Solutions, in-order traversal and a more general way using TreeSet
     The most common idea is to first inOrder traverse the tree and compare
@@ -32,7 +35,7 @@ public class _530_Minimum_Absolute_Difference_in_BST {
     }
 
 //-------------------------------------------------------------------------///
-
+    //2
     /*
     What if it is not a BST? (Follow up of the problem) The idea is to put values in
     a TreeSet and then every time we can use O(lgN) time to lookup for the nearest values.
@@ -62,6 +65,7 @@ public class _530_Minimum_Absolute_Difference_in_BST {
     }
 
 //-------------------------------------------------------------------------///
+    //3
     /*
     Java O(n) Time Inorder Traversal Solution
     Since this is a BST, the inorder traversal of its nodes results in a sorted list of values.
@@ -86,7 +90,7 @@ public class _530_Minimum_Absolute_Difference_in_BST {
     }
 
 //-------------------------------------------------------------------------///
-
+    //4
     /*
     Java No In-order Traverse Solution, just pass upper bound and lower bound
     Make use of the property of BST that value of nodes is bounded by their "previous" and "next" node.

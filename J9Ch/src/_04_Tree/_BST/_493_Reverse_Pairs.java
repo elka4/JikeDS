@@ -108,6 +108,7 @@ public class _493_Reverse_Pairs {
 
 
 //-------------------------------------------------------------------------//
+    //3
     //II -- Partition recurrence relation
     public int reversePairs3(int[] nums) {
 
@@ -139,6 +140,7 @@ public class _493_Reverse_Pairs {
     }
 
 //-------------------------------------------------------------------------////////////////
+    //4
     //Very Short and Clear MergeSort & BST Java Solutions
    /* MergeSort
 
@@ -162,7 +164,8 @@ public class _493_Reverse_Pairs {
         Arrays.sort(nums, s, e+1);
         return cnt;
     }
-
+//-------------------------------------------------------------------------////////////////
+//5
 /*    Or:
     Because left part and right part are sorted, you can replace the Arrays.sort() part with a actual merge sort process. The previous version is easy to write, while this one is faster.*/
     int[] helper;
@@ -197,7 +200,7 @@ public class _493_Reverse_Pairs {
         }
     }
 //-------------------------------------------------------------------------////////////////
-
+//6
 /*    BST
     BST solution is no longer acceptable, because it's performance can be very bad, O(n^2) actually, for extreme cases like [1,2,3,4......49999], due to the its unbalance, but I am still providing it below just FYI.
     We build the Binary Search Tree from right to left, and at the same time, search the partially built tree with nums[i]/2.0. The code below should be clear enough.*/

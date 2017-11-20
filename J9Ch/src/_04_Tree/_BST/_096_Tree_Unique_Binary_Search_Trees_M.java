@@ -13,8 +13,8 @@ public class _096_Tree_Unique_Binary_Search_Trees_M {
         int [] G = new int[n+1];
         G[0] = G[1] = 1;
 
-        for(int i = 2; i <= n; ++i) {
-            for(int j = 1; j <= i; ++j) {
+        for(int i = 2; i <= n; ++i) {//i作为root
+            for(int j = 1; j <= i; ++j) {//左子树j-1个，右子树i-j
                 G[i] += G[j-1] * G[i-j];
             }
         }

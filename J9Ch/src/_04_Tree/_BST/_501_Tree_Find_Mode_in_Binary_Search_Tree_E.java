@@ -4,22 +4,34 @@ import lib.TreeNode;
 
 //  501. Find Mode in Binary Search Tree
 //  https://leetcode.com/problems/find-mode-in-binary-search-tree/description/
+//  Tree
+//  Validate Binary Search Tree
+//  3:
 public class _501_Tree_Find_Mode_in_Binary_Search_Tree_E {
-        public int[] findMode1(TreeNode root) {
-            inorder(root);
-            modes = new int[modeCount];
-            modeCount = 0;
-            currCount = 0;
-            inorder(root);
-            return modes;
-        }
-
+    //1
         private int currVal;
         private int currCount = 0;
         private int maxCount = 0;
         private int modeCount = 0;
 
         private int[] modes;
+
+        public int[] findMode1(TreeNode root) {
+            inorder(root);
+            modes = new int[modeCount];
+            modeCount = 0;
+            currCount = 0;
+
+            inorder(root);
+            return modes;
+        }
+
+        private void inorder(TreeNode root) {
+            if (root == null) return;
+            inorder(root.left);
+            handleValue(root.val);
+            inorder(root.right);
+        }
 
         private void handleValue(int val) {
             if (val != currVal) {
@@ -37,12 +49,6 @@ public class _501_Tree_Find_Mode_in_Binary_Search_Tree_E {
             }
         }
 
-        private void inorder(TreeNode root) {
-            if (root == null) return;
-            inorder(root.left);
-            handleValue(root.val);
-            inorder(root.right);
-        }
 /*    private void inorder(TreeNode root) { TreeNode node = root;
         while (node != null) {
             if (node.left == null) { handleValue(node.val); node = node.right;
@@ -58,7 +64,7 @@ public class _501_Tree_Find_Mode_in_Binary_Search_Tree_E {
         } }*/
 
 ////////////////////////////////////////////////////////
-
+//2
 // Java 4ms Beats 100% Extra O(1) solution - No Map
     Integer prev = null;
     int count = 1;
@@ -69,15 +75,17 @@ public class _501_Tree_Find_Mode_in_Binary_Search_Tree_E {
         List<Integer> list = new ArrayList<>();
         traverse(root, list);
 
-        int[] res = new int[list.size()];
+        int[] result = new int[list.size()];
         for (int i = 0; i < list.size(); ++i)
-            res[i] = list.get(i);
-        return res;
+            result[i] = list.get(i);
+        return result;
     }
 
+    //InOrder
     private void traverse(TreeNode root, List<Integer> list) {
         if (root == null) return;
         traverse(root.left, list);
+
         if (prev != null) {
             if (root.val == prev)
                 count++;
@@ -92,12 +100,13 @@ public class _501_Tree_Find_Mode_in_Binary_Search_Tree_E {
             list.add(root.val);
         }
         prev = root.val;
+
         traverse(root.right, list);
     }
 
 
 //////////////////////////////////////////////////////////
-
+//3
     //Java AC Solution
     //    O(n) time O(n) space
     /*
@@ -108,8 +117,10 @@ public class _501_Tree_Find_Mode_in_Binary_Search_Tree_E {
         Because essentially you just travel the entire nodes and count. And BST is not necessary.
         This method works for any tree.
     */
+
     Map<Integer, Integer> map;
     int max = 0;
+
     public int[] findMode3(TreeNode root) {
         if(root==null) return new int[0];
         this.map = new HashMap<>();
@@ -128,8 +139,10 @@ public class _501_Tree_Find_Mode_in_Binary_Search_Tree_E {
 
     private void inorder3(TreeNode node){
         if(node.left!=null) inorder3(node.left);
+
         map.put(node.val, map.getOrDefault(node.val, 0)+1);
         max = Math.max(max, map.get(node.val));
+
         if(node.right!=null) inorder3(node.right);
     }
 

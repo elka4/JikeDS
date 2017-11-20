@@ -3,6 +3,7 @@ import java.util.*;
 
 //  327. Count of Range Sum
 //  https://leetcode.com/problems/count-of-range-sum/description/
+//  Divide and Conquer, Binary Search Tree
 public class _327_Count_of_Range_Sum {
     /*    Share my solution
         First of all, let's look at the naive solution. Preprocess to calculate the prefix sums S[i] = S(0, i), then S(i, j) = S[j] - S[i]. Note that here we define S(i, j) as the sum of range [i, j) where j exclusive and j > i. With these prefix sums, it is trivial to see that with O(n^2) time we can find all S(i, j) in the range [lower, upper]
@@ -72,7 +73,7 @@ public class _327_Count_of_Range_Sum {
         System.arraycopy(cache, 0, sums, start, t - start);
         return count;
     }
-//-------------------------------------------------------------------------/////////////////
+//---------------------------------------------------------------------------------------------
 
     //Summary of the Divide and Conquer based and Binary Indexed Tree based solutions
     public int countRangeSum4(int[] nums, int lower, int upper) {

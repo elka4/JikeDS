@@ -3,6 +3,9 @@ import java.util.*;
 
 //  315. Count of Smaller Numbers After Self
 //  https://leetcode.com/problems/count-of-smaller-numbers-after-self/description/
+//  Divide and Conquer， Binary Indexed Tree， Segment Tree， Binary Search Tree
+//  Count of Range Sum Queue Reconstruction by Height Reverse Pairs
+//  3
 public class _315_Count_of_Smaller_Numbers_After_Self {
     /*
         9ms short Java BST solution get answer when building BST
@@ -35,7 +38,7 @@ if we insert 7, the right-turning nodes are 1(0,1), 6(3,1), so answer should be 
             for (int i = nums.length - 1; i >= 0; i--) {
                 root = insert(nums[i], root, ans, i, 0);
             }
-            return Arrays.asList(ans);
+            return Arrays.asList(ans);//这个方法
         }
         private Node insert(int num, Node node, Integer[] ans, int i, int preSum) {
             if (node == null) {
