@@ -3,27 +3,37 @@ import java.util.LinkedList;
 
 //  116. Populating Next Right Pointers in Each Node
 //  https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
-//
+//  Tree Depth-first Search
+//  Populating Next Right Pointers in Each Node II Binary Tree Right Side View
+//  perfect binary tree
+//  6:  1, 2
 public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
+//-------------------------------------------------------------------------
+
     //1
     //Java solution with O(1) memory+ O(n) time
     public void connect1(TreeLinkNode root) {
-        TreeLinkNode level_start=root;
-        while(level_start!=null){
-            TreeLinkNode cur=level_start;
-            while(cur!=null){
-                if(cur.left!=null) cur.left.next=cur.right;
-                if(cur.right!=null && cur.next!=null) cur.right.next=cur.next.left;
+        TreeLinkNode level_start = root;
 
-                cur=cur.next;
+        while(level_start != null){
+            TreeLinkNode cur = level_start;
+
+            while(cur != null){
+                if(cur.left != null)
+                    cur.left.next = cur.right;
+                if(cur.right != null && cur.next != null)
+                    cur.right.next = cur.next.left;
+
+                cur = cur.next;
             }
-            level_start=level_start.left;
+            level_start = level_start.left;
         }
     }
 
-//-------------------------------------------------------------------------////
+//-------------------------------------------------------------------------
     //2
     // My recursive solution(Java)
+    // PreOrder
     public void connect2(TreeLinkNode root) {
         if(root == null)
             return;
@@ -34,11 +44,11 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
                 root.right.next = root.next.left;
         }
 
-        connect2(root.left);
-        connect2(root.right);
+        connect(root.left);
+        connect(root.right);
     }
 
-//-------------------------------------------------------------------------////
+//-------------------------------------------------------------------------
     //3
     //Java solution traversing by level without extra space
     public void connect3(TreeLinkNode root) {
@@ -46,17 +56,17 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
         TreeLinkNode cur = root;
         TreeLinkNode nextLeftmost = null;
 
-        while(cur.left!=null){
+        while(cur.left != null){
             nextLeftmost = cur.left; // save the start of next level
-            while(cur!=null){
-                cur.left.next=cur.right;
-                cur.right.next = cur.next==null? null : cur.next.left;
+            while(cur != null){
+                cur.left.next = cur.right;
+                cur.right.next = cur.next == null ? null : cur.next.left;
                 cur=cur.next;
             }
             cur=nextLeftmost;  // point to next level
         }
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
     //4
     //Java Solution 1 - Simple
     public void connect4(TreeLinkNode root) {
@@ -74,7 +84,6 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
         while(!nodeQueue.isEmpty()){
             TreeLinkNode topNode = nodeQueue.poll();
             int depth = depthQueue.poll();
-
             if(depthQueue.isEmpty()){
                 topNode.next = null;
             }else if(depthQueue.peek()>depth){
@@ -82,12 +91,10 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
             }else{
                 topNode.next = nodeQueue.peek();
             }
-
             if(topNode.left!=null){
                 nodeQueue.offer(topNode.left);
                 depthQueue.offer(depth+1);
             }
-
             if(topNode.right!=null){
                 nodeQueue.offer(topNode.right);
                 depthQueue.offer(depth+1);
@@ -95,7 +102,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
         }
     }
 
-//-------------------------------------------------------------------------//////////////
+//-------------------------------------------------------------------------
     //5
     //Java Solution 2
 
@@ -106,8 +113,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
     //populating-next-right-pointers-in-each-node
 
     public void connect5(TreeLinkNode root) {
-        if(root == null)
-            return;
+        if(root == null) return;
 
         TreeLinkNode lastHead = root;//prevous level's head
         TreeLinkNode lastCurrent = null;//previous level's pointer
@@ -116,7 +122,6 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
 
         while(lastHead!=null){
             lastCurrent = lastHead;
-
             while(lastCurrent!=null){
                 if(currentHead == null){
                     currentHead = lastCurrent.left;
@@ -125,15 +130,12 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
                     current.next = lastCurrent.left;
                     current = current.next;
                 }
-
                 if(currentHead != null){
                     current.next = lastCurrent.right;
                     current = current.next;
                 }
-
                 lastCurrent = lastCurrent.next;
             }
-
             //update last head
             lastHead = currentHead;
             currentHead = null;
@@ -141,7 +143,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
 
     }
 
-//-------------------------------------------------------------------------//////////////
+//-------------------------------------------------------------------------
     //6
     //Jiuzhang
     public void connect(TreeLinkNode root) {
@@ -168,7 +170,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
             next = parent.left;
         }
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
 }
 /*
 
@@ -203,3 +205,6 @@ After calling your function, the tree should look like:
 
 
  */
+
+
+//  为每个结点填充next指针指向它的下一个右结点。如果没有右结点，next指针置为空。next指针初始值都为NULL。
