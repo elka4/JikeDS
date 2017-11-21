@@ -4,11 +4,16 @@ import java.util.*;
 
 //  572. Subtree of Another Tree
 //  https://leetcode.com/problems/subtree-of-another-tree/description/
-//
+//  Tree
+//  _250_Tree_Count_Univalue_Subtrees_M, _508_Tree_Most_Frequent_Subtree_Sum_M
+//  5：
+//就是两种思路，要么就是serialize成String比较，要么就是并行着运行recursion。
 public class _572_Tree_Subtree_of_Another_Tree_E {
     //https://leetcode.com/problems/subtree-of-another-tree/solution/
-
+//--------------------------------------------------------------------------------
+    //1
     //Approach #1 Using Preorder Traversal [Accepted]
+
     public class Solution01 {
         HashSet < String > trees = new HashSet < > ();
         public boolean isSubtree(TreeNode s, TreeNode t) {
@@ -26,26 +31,47 @@ public class _572_Tree_Subtree_of_Another_Tree_E {
             return "#"+t.val + " " +preorder(t.left, true)+" " +preorder(t.right, false);
         }
     }
+
+    //不用分别左右，一样可以AC
+    class Solution11{
+        HashSet < String > trees = new HashSet < > ();
+        public boolean isSubtree(TreeNode s, TreeNode t) {
+            String tree1 = preorder(s);
+            String tree2 = preorder(t);
+            return tree1.contains(tree2);
+        }
+        public String preorder(TreeNode t) {
+            if (t == null) {
+                return "null";
+            }
+            return "#"+t.val + " " +preorder(t.left)+" " +preorder(t.right);
+        }
+    }
+//--------------------------------------------------------------------------------
+    //2
     //Approach #2 By Comparison of Nodes [Accepted]
     public class Solution02 {
         public boolean isSubtree(TreeNode s, TreeNode t) {
             return traverse(s,t);
         }
-        public boolean equals(TreeNode x,TreeNode y)
-        {
+
+        public boolean equals(TreeNode x,TreeNode y) {
             if(x==null && y==null)
                 return true;
+
             if(x==null || y==null)
                 return false;
+
             return x.val==y.val && equals(x.left,y.left) && equals(x.right,y.right);
         }
-        public boolean traverse(TreeNode s,TreeNode t)
-        {
+
+        public boolean traverse(TreeNode s,TreeNode t) {
             return  s!=null && ( equals(s,t) || traverse(s.left,t) || traverse(s.right,t));
         }
     }
 
-//-------------------------------------------------------------------------///////////////
+//--------------------------------------------------------------------------------
+    //3
     //Java Solution, tree traversal
 
     //    For each node during pre-order traversal of s, use a recursive function
@@ -66,7 +92,8 @@ public class _572_Tree_Subtree_of_Another_Tree_E {
         return isSame(s.left, t.left) && isSame(s.right, t.right);
     }
 
-//-------------------------------------------------------------------------///////////////
+//--------------------------------------------------------------------------------
+    //4
     //Easy O(n) java solution using preorder traversal
     public boolean isSubtree4(TreeNode s, TreeNode t) {
         String spreorder = generatepreorderString(s);
@@ -93,7 +120,8 @@ public class _572_Tree_Subtree_of_Another_Tree_E {
         return sb.toString();
     }
 
-//-------------------------------------------------------------------------///////////////
+//--------------------------------------------------------------------------------
+    //5
     //Java Concise O(n+m) Time O(n+m) Space
     public boolean isSubtree5(TreeNode s, TreeNode t) {
         // Java uses a naive contains algorithm so to ensure linear time,
@@ -114,12 +142,28 @@ public class _572_Tree_Subtree_of_Another_Tree_E {
         serialize(cur.right, res);
     }
 
-//-------------------------------------------------------------------------///////////////
+    class Solution5{
+        public boolean isSubtree(TreeNode s, TreeNode t) {
+            StringBuilder sb = new StringBuilder();
+            StringBuilder st = new StringBuilder();
+            serialize(s, sb);serialize(t, st);
+            return sb.toString().contains(st.toString());
+        }
+
+        private void serialize(TreeNode cur, StringBuilder res) {
+            if (cur == null) {res.append(",#"); return;}
+            res.append("," + cur.val);
+            serialize(cur.left, res);
+            serialize(cur.right, res);
+        }
+    }
+
+//--------------------------------------------------------------------------------
 }
 /*
 
 Given two non-empty binary trees s and t, check whether tree t has exactly the same structure and node values with a subtree of s. A subtree of s is a tree consists of a node in s and all of this node's descendants. The tree s could also be considered as a subtree of itself.
-
+//--------------------------------------------------------------------------------
 Example 1:
 Given tree s:
 
@@ -133,6 +177,7 @@ Given tree t:
   / \
  1   2
 Return true, because t has the same structure and node values with a subtree of s.
+//--------------------------------------------------------------------------------
 Example 2:
 Given tree s:
 
@@ -148,5 +193,6 @@ Given tree t:
   / \
  1   2
 Return false.
+//--------------------------------------------------------------------------------
 
  */

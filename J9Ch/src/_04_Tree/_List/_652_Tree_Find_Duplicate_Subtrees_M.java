@@ -1,4 +1,4 @@
-package _04_Tree._Subtree;
+package _04_Tree._List;
 
 import lib.TreeNode;
 import org.junit.Test;

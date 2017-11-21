@@ -6,8 +6,12 @@ import java.util.*;
 
 //  508. Most Frequent Subtree Sum
 //  https://leetcode.com/problems/most-frequent-subtree-sum/description/
-//
+//  Hash Table, Tree
+//  3:
+//  一道不难但是非常好的题，关键是要postorder过程中同步操作hashmap<sum，count>, update max
 public class _508_Tree_Most_Frequent_Subtree_Sum_M {
+//-------------------------------------------------------------------------
+    //1
     //Verbose Java solution, postOrder traverse, HashMap (18ms)
     Map<Integer, Integer> sumToCount;
     int maxCount;
@@ -47,7 +51,8 @@ public class _508_Tree_Most_Frequent_Subtree_Sum_M {
         return sum;
     }
 
-//-------------------------------------------------------------------------//
+//-------------------------------------------------------------------------
+    //2
     //Short Easy Java
     int max = 0;
     public int[] findFrequentTreeSum2(TreeNode root) {
@@ -70,7 +75,8 @@ public class _508_Tree_Most_Frequent_Subtree_Sum_M {
         return sum;
     }
 
-//-------------------------------------------------------------------------//
+//-------------------------------------------------------------------------
+    //3
     //Java divide and conquer
     int maxFreq = 0;
     int count = 0;
@@ -106,7 +112,7 @@ public class _508_Tree_Most_Frequent_Subtree_Sum_M {
         return sum;
     }
 
-//-------------------------------------------------------------------------////////
+//--------------------------------------------------------------------------------
 
 }
 /*

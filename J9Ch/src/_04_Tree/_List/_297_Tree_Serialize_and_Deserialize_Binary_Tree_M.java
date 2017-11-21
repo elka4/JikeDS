@@ -6,8 +6,14 @@ import java.util.LinkedList;
 
 //  297. Serialize and Deserialize Binary Tree
 //  https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
-//
+//  Tree, Design
+//  Encode and Decode Strings
+//  Serialize and Deserialize BST
+//  Find Duplicate Subtrees
+//  6
 public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
+//------------------------------------------------------------------------
+        //1
     //Easy to understand Java Solution
     /*    The idea is simple: print the tree in pre-order traversal and use "X" to denote null node and split node with ",". We can use a StringBuilder for building the string on the fly. For deserializing, we use a Queue to store the pre-order traversal and since we have "X" as null node, we know exactly how to where to end building subtress.*/
     public class Codec {
@@ -50,6 +56,7 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
     }
 
 //-------------------------------------------------------------------------
+    //2
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();
         helperS(root, sb);
@@ -92,6 +99,7 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
         return node;
     }
 //-------------------------------------------------------------------------
+    //3
 /*Short and straight forward BFS Java code with a queue Here I use typical BFS method to handle a binary tree. I use string n to represent null values. The string of the binary tree in the example will be "1 2 3 n n 4 5 n n n n ".When deserialize the string, I assign left and right child for each not-null node, and add the not-null children to the queue, waiting to be handled later.*/
 
     public class Codec3 {
@@ -137,7 +145,7 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
     }
 
 //-------------------------------------------------------------------------
-//-------------------------------------------------------------------------
+    //4
     /*Recursive DFS, Iterative DFS and BFS
     This problem can solved in 3 different ways
     (1) Iterative DFS*/
@@ -195,7 +203,8 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
             return root;
         }
     }
-
+//-------------------------------------------------------------------------
+    //5
     //(2) recursive DFS
     public class Codec5 {
 
@@ -234,7 +243,8 @@ public class _297_Tree_Serialize_and_Deserialize_Binary_Tree_M {
             return x;
         }
     }
-
+//-------------------------------------------------------------------------
+    //6
     //(3) BFS
     public class Codec6 {
 

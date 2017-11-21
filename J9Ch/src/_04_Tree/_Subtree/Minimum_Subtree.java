@@ -4,7 +4,7 @@ import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
-/* 596. Minimum Subtree
+/* lint 596. Minimum Subtree
  *
  * Given a binary tree, find the subtree with minimum sum.
  * Return the root of the subtree.

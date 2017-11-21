@@ -1,6 +1,6 @@
-package _04_Tree._Build;
+package _04_Tree._List;
 import lib.TreeNode;
-
+import java.util.*;
 
 //  606. Construct String from Binary Tree
 //  https://leetcode.com/problems/construct-string-from-binary-tree/description/
@@ -8,13 +8,64 @@ import lib.TreeNode;
 public class _606_Tree_Construct_String_from_Binary_Tree_E {
 
     //https://leetcode.com/articles/construct-string-from-binary-tree/
+//-------------------------------------------------------------------------///Î
 
     // Approach #1 Using Recursion [Accepted]
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     *     int val;
+     *     TreeNode left;
+     *     TreeNode right;
+     *     TreeNode(int x) { val = x; }
+     * }
+     */
+    public class Solution1 {
+        public String tree2str(TreeNode t) {
+            if(t==null)
+                return "";
+            if(t.left==null && t.right==null)
+                return t.val+"";
+            if(t.right==null)
+                return t.val+"("+tree2str(t.left)+")";
+            return t.val+"("+tree2str(t.left)+")("+tree2str(t.right)+")";
+        }
+    }
+
+//-------------------------------------------------------------------------///Î
 
     // Approach #2 Iterative Method Using stack [Accepted]
 
 
+    public class Solution2 {
+        public String tree2str(TreeNode t) {
+            if (t == null)
+                return "";
+            Stack < TreeNode > stack = new Stack < > ();
+            stack.push(t);
+            Set < TreeNode > visited = new HashSet < > ();
+            StringBuilder s = new StringBuilder();
+            while (!stack.isEmpty()) {
+                t = stack.peek();
+                if (visited.contains(t)) {
+                    stack.pop();
+                    s.append(")");
+                } else {
+                    visited.add(t);
+                    s.append("(" + t.val);
+                    if (t.left == null && t.right != null)
+                        s.append("()");
+                    if (t.right != null)
+                        stack.push(t.right);
+                    if (t.left != null)
+                        stack.push(t.left);
+                }
+            }
+            return s.substring(1, s.length() - 1);
+        }
+    }
 //-------------------------------------------------------------------------///Î
+    //3
     public String tree2str3(TreeNode t) {
         if (t == null) return "";
 
@@ -30,6 +81,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
     }
 
 //-------------------------------------------------------------------------///Î
+    //4
     //    EDIT : Changed from (left == "" ? "" : left) to left.
     public String tree2str4(TreeNode t) {
         if(t == null) return "";
@@ -43,6 +95,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
 
 
 //-------------------------------------------------------------------------///Î
+    //5
     //Java Solution, Tree Traversal
     public String tree2str5(TreeNode t) {
         if (t == null) return "";
@@ -59,7 +112,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
     }
 
 //-------------------------------------------------------------------------///Î
-
+    //6
     //    Java simple recursion
     public String tree2str6(TreeNode t) {
         StringBuilder sb = new StringBuilder();
@@ -82,7 +135,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
         }
     }
 //-------------------------------------------------------------------------///
-
+    //7
     //    Java 1 liner
     public String tree2str7(TreeNode t) {
         return t == null ?
