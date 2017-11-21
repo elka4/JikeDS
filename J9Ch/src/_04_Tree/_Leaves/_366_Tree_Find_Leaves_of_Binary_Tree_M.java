@@ -25,7 +25,7 @@ public class _366_Tree_Find_Leaves_of_Binary_Tree_M {
 
 
         /*
-    这题是从下往上，postorder。和_103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M用preorder从下网上
+    这题是从下往上，postorder。和_103_Tree_Binary_Tree_Zigzag_Level_Order_Traversal_M用preorder从下向上
     可以形成一对很好的对比。
      */
 

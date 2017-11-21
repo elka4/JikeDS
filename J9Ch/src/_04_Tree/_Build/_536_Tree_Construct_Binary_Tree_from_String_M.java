@@ -1,5 +1,4 @@
 package _04_Tree._Build;
-
 import lib.TreeNode;
 
 import java.util.Stack;
@@ -7,32 +6,38 @@ import java.util.Stack;
 
 //  536. Construct Binary Tree from String
 //  https://leetcode.com/problems/construct-binary-tree-from-string/
-//
+//  4:
 public class _536_Tree_Construct_Binary_Tree_from_String_M {
+//--------------------------------------------------------------------------------------
+    //1
+    //Java Recursive Solution
+    class Solution1{
+        public TreeNode str2tree(String s) {
+            if (s == null || s.length() == 0) return null;
+            int firstParen = s.indexOf("(");
+            int val = firstParen == -1 ?
+                    Integer.parseInt(s) : Integer.parseInt(s.substring(0, firstParen));
+            TreeNode cur = new TreeNode(val);
+            if (firstParen == -1) return cur;
+            int start = firstParen, leftParenCount = 0;
 
-    public TreeNode str2tree(String s) {
-        if (s == null || s.length() == 0) return null;
-        int firstParen = s.indexOf("(");
-        int val = firstParen == -1 ? Integer.parseInt(s) : Integer.parseInt(s.substring(0, firstParen));
-        TreeNode cur = new TreeNode(val);
+            for (int i=start;i<s.length();i++) {
+                if (s.charAt(i) == '(') leftParenCount++;
+                else if (s.charAt(i) == ')') leftParenCount--;
 
-        if (firstParen == -1)
-            return cur;
-        int start = firstParen, leftParenCount = 0;
-
-        for (int i=start;i<s.length();i++) {
-            if (s.charAt(i) == '(') leftParenCount++;
-            else if (s.charAt(i) == ')') leftParenCount--;
-            if (leftParenCount == 0 && start == firstParen) {
-                cur.left = str2tree(s.substring(start+1,i)); start = i+1;
+                if (leftParenCount == 0 && start == firstParen) {
+                    cur.left = str2tree(s.substring(start+1,i)); start = i+1;}
+                else if (leftParenCount == 0)
+                    cur.right = str2tree(s.substring(start+1,i));
             }
-            else if (leftParenCount == 0)
-                cur.right = str2tree(s.substring(start+1,i));
+            return cur;
         }
-        return cur;
     }
 
-//-------------------------------------------------------------------------/////
+//--------------------------------------------------------------------------------------
+
+//--------------------------------------------------------------------------------------
+    //2
     public TreeNode str2tree2(String s) {
         // Base case
         if (s.length() == 0) return null;
@@ -52,19 +57,22 @@ public class _536_Tree_Construct_Binary_Tree_from_String_M {
                 if (s.charAt(j) == ')') count--;
                 if (s.charAt(j) == '(') count++;
             }
-            root.left = str2tree(s.substring(i + 1, j));
+            root.left = str2tree2(s.substring(i + 1, j));
         }
 
         j++;
         // Right child
         if (j < s.length()) {
-            root.right = str2tree(s.substring(j + 1, s.length() - 1));
+            root.right = str2tree2(s.substring(j + 1, s.length() - 1));
         }
 
         return root;
     }
 
-//-------------------------------------------------------------------------/////
+//--------------------------------------------------------------------------------------
+    //3
+    //Stack
+    //Java stack solution
     public TreeNode str2tree3(String s) {
         Stack<TreeNode> stack = new Stack<>();
         for(int i = 0, j = i; i < s.length(); i++, j = i){
@@ -84,8 +92,7 @@ public class _536_Tree_Construct_Binary_Tree_from_String_M {
         return stack.isEmpty() ? null : stack.peek();
     }
 
-//-------------------------------------------------------------------------/////
-//-------------------------------------------------------------------------/////
+//--------------------------------------------------------------------------------------
 }
 /*
 You need to construct a binary tree from a string consisting of parenthesis and integers.

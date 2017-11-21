@@ -9,9 +9,12 @@ import java.util.Stack;
 
 //  623. Add One Row to Tree
 //  https://leetcode.com/problems/add-one-row-to-tree/description/
+//  6:
+//  Tree
 public class _623_Tree_Add_One_Row_to_Tree_M {
     //https://leetcode.com/problems/add-one-row-to-tree/solution/
-
+//------------------------------------------------------------------------------------------
+    //1
     //Approach #1 Using Recursion(DFS) [Accepted]
     public class Solution1 {
         public TreeNode addOneRow(TreeNode root, int v, int d) {
@@ -49,7 +52,8 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
         new Solution1().addOneRow(root, 1, 2);
         root.print();
     }
-//-------------------------------------------------------------------------///////////////////
+//------------------------------------------------------------------------------------------
+    //2
     //Approach #2 Using stack(DFS) [Accepted]
     public class Solution2 {
         class Node{
@@ -99,7 +103,8 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
         new Solution2().addOneRow(root, 1, 2);
         root.print();
     }
-//-------------------------------------------------------------------------///////////////////
+//------------------------------------------------------------------------------------------
+    //3
     //Approach #3 Using queue(BFS) [Accepted]
     public class Solution3 {
         public TreeNode addOneRow(TreeNode root, int v, int d) {
@@ -143,7 +148,8 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
         new Solution3().addOneRow(root, 1, 2);
         root.print();
     }
-//-------------------------------------------------------------------------///////////////////
+//------------------------------------------------------------------------------------------
+    //4
     //Simple Java solution - O(N)
     //Simply traverse recursively to the depth d - 1 and add nodes accordingly.
     public class Solution4 {
@@ -186,7 +192,8 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
         new Solution4().addOneRow(root, 1, 2);
         root.print();
     }
-//-------------------------------------------------------------------------///////////////////
+//------------------------------------------------------------------------------------------
+    //5
     public class Solution5 {
         public TreeNode addOneRow(TreeNode root, int v, int d) {
             if(d == 1) {
@@ -222,8 +229,8 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
         new Solution5().addOneRow(root, 1, 2);
         root.print();
     }
-//-------------------------------------------------------------------------///////////////////
-
+//------------------------------------------------------------------------------------------
+    //6
     public class Solution6 {
         public TreeNode addOneRow(TreeNode root, int v, int d) {
             if (d == 0 || d == 1) {
@@ -248,7 +255,7 @@ public class _623_Tree_Add_One_Row_to_Tree_M {
         new Solution6().addOneRow(root, 1, 2);
         root.print();
     }
-//-------------------------------------------------------------------------///////////////////
+//------------------------------------------------------------------------------------------
 }
 /*
 Given the root of a binary tree, then value v and depth d, you need to add a row of nodes with value v at the given depth d. The root node is at depth 1.

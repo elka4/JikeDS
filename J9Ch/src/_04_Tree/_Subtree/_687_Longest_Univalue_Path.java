@@ -7,7 +7,7 @@ import java.util.*;
 //  https://leetcode.com/problems/longest-univalue-path/description/
 //  Tree Recursion
 //  Binary Tree, Maximum Path Sum, Count Univalue Subtrees, Path Sum III
-public class _687_Longest_Univalue_Path_E {
+public class _687_Longest_Univalue_Path {
 //https://leetcode.com/problems/longest-univalue-path/solution/
 
 //--------------------------------------------------------------------------------------

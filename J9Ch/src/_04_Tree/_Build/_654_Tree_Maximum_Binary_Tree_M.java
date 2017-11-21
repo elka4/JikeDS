@@ -3,13 +3,18 @@ import lib.TreeNode;
 
 //  654. Maximum Binary Tree
 //  https://leetcode.com/problems/maximum-binary-tree/description/
+//  Tree
+//
 public class _654_Tree_Maximum_Binary_Tree_M {
-
+//----------------------------------------------------
+    //1
     //Approach #1 Recursive Solution[Accepted]
+    //非常直觉的recursive建树，每次找到范围内的最大值建root
     public TreeNode constructMaximumBinaryTree1(int[] nums) {
 
         return construct1(nums, 0, nums.length);
     }
+
     public TreeNode construct1(int[] nums, int l, int r) {
         if (l == r)
             return null;
@@ -19,6 +24,7 @@ public class _654_Tree_Maximum_Binary_Tree_M {
         root.right = construct1(nums, max_i + 1, r);
         return root;
     }
+
     public int max(int[] nums, int l, int r) {
         int max_i = l;
         for (int i = l; i < r; i++) {
@@ -29,7 +35,9 @@ public class _654_Tree_Maximum_Binary_Tree_M {
     }
 
 
-////////////////////////////////////////////////////////////
+//----------------------------------------------------
+    //2
+    //一个一个去insert
     public TreeNode constructMaximumBinaryTree2(int[] nums) {
         if(nums == null || nums.length == 0) {
             return null;
@@ -53,7 +61,9 @@ public class _654_Tree_Maximum_Binary_Tree_M {
         return root;
     }
 
-////////////////////////////////////////////////////////////
+//----------------------------------------------------
+    //3
+    //和1是一样的
     public TreeNode constructMaximumBinaryTree3(int[] nums) {
         if (nums == null) return null;
         return build(nums, 0, nums.length - 1);
@@ -77,7 +87,7 @@ public class _654_Tree_Maximum_Binary_Tree_M {
         return root;
     }
 
-////////////////////////////////////////////////////////////
+//----------------------------------------------------
 }
 /*
 Given an integer array with no duplicates. A maximum tree building on this array is defined as follow:

@@ -8,7 +8,30 @@ import java.util.Map;
 //  https://leetcode.com/problems/house-robber-iii/
 //  http://www.lintcode.com/zh-cn/problem/house-robber-iii/
 public class _337_Tree_House_Robber_III_M {
+//-------------------------------------------------------------------------///////
+    //1
+    //这个就很好理解
+    //jiuzhang
+    //dp[i][0]表示以i为根的子树不偷根节点能获得的最高价值，dp[i][1]表示以i为根的子树偷根节点能获得的最高价值
+    public int houseRobber_J1(TreeNode root) {
+        int[] ans = dp(root);
+        return Math.max(ans[0], ans[1]);
+    }
+    public int[] dp(TreeNode root) {
+        if (root == null) {
+            int[] now = new int[]{0, 0};
+            return now;
+        }
+        int[] left = dp(root.left);
+        int[] right = dp(root.right);
 
+        int[] now = new int[2];
+        now[0] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+        now[1] = left[0] + right[0] + root.val;
+        return now;
+    }
+//-------------------------------------------------------------------------///////
+    //2
     //Step by step tackling of the problem
     public int rob(TreeNode root) {
         if (root == null) return 0;
@@ -28,7 +51,7 @@ public class _337_Tree_House_Robber_III_M {
 
 
 //-------------------------------------------------------------------------///////
-
+    //3
     //Step II -- Think one step further
     //And here is the improved solution:
     public int rob2(TreeNode root) {
@@ -56,7 +79,7 @@ public class _337_Tree_House_Robber_III_M {
     }
 
 //-------------------------------------------------------------------------///////
-
+    //4
     //Step III -- Think one step back
     public int rob3(TreeNode root) {
         int[] res = robSub3(root);
@@ -76,8 +99,9 @@ public class _337_Tree_House_Robber_III_M {
         return res;
     }
 
-//-------------------------------------------------------------------------///////////////////
 
+//-----------------------------------------------------------------------------------
+    //和1一样。
     public int rob4(TreeNode root) {
         int[] num = dfs(root);
         return Math.max(num[0], num[1]);
@@ -93,24 +117,6 @@ public class _337_Tree_House_Robber_III_M {
     }
 
 //-------------------------------------------------------------------------///
-    //jiuzhang
-    //dp[i][0]表示以i为根的子树不偷根节点能获得的最高价值，dp[i][1]表示以i为根的子树偷根节点能获得的最高价值
-    public int houseRobber_J1(TreeNode root) {
-        int[] ans = dp(root);
-        return Math.max(ans[0], ans[1]);
-    }
-    public int[] dp(TreeNode root) {
-        if (root == null) {
-            int[] now = new int[]{0, 0};
-            return now;
-        }
-        int[] left = dp(root.left);
-        int[] right = dp(root.right);
-        int[] now = new int[2];
-        now[0] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
-        now[1] = left[0] + right[0] + root.val;
-        return now;
-    }
 
 //-------------------------------------------------------------------------///
     //Jiuzhang

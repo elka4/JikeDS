@@ -1,5 +1,4 @@
 package _04_Tree._Change;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
@@ -8,13 +7,15 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
 
-
 //  226. Invert Binary Tree
 //  https://leetcode.com/problems/invert-binary-tree/description/
 //  http://www.lintcode.com/zh-cn/problem/invert-binary-tree/
+//  Tree
+//  5: 1 divide, 2 recursion, 3,4 Queue, 5 Stack
 public class _226_Tree_Invert_Binary_Tree_E {
 
-
+//-------------------------------------------------------------------------------------
+    //1
     //Java Solution 1 - Recursive
     public TreeNode invertTree1(TreeNode root) {
         if (root == null) {
@@ -34,8 +35,8 @@ public class _226_Tree_Invert_Binary_Tree_E {
         root.print();
         invertTree1(root).print();
     }
-//-------------------------------------------------------------------------////////////
-
+//-------------------------------------------------------------------------------------
+    //2
     public TreeNode invertTree2(TreeNode root) {
         if(root!=null){
             helper(root);
@@ -83,8 +84,8 @@ root:
 
  */
 
-//-------------------------------------------------------------------------////////////
-
+//-------------------------------------------------------------------------------------
+    //3
     //Java Solution 2 - Iterative
     public TreeNode invertTree3(TreeNode root) {
         LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
@@ -117,35 +118,8 @@ root:
         invertTree3(root).print();
     }
 
-
-    public TreeNode invertTree4(TreeNode root) {
-        if (root == null) {
-            return null;
-        }
-        final Deque<TreeNode> stack = new LinkedList<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            final TreeNode node = stack.pop();
-            final TreeNode left = node.left;
-            node.left = node.right;
-            node.right = left;
-            if (node.left != null) {
-                stack.push(node.left);
-            }
-            if (node.right != null) {
-                stack.push(node.right);
-            }
-        }
-        return root;
-    }
-    @Test
-    public void test04() {
-        int[] arr = {5, 3, 7,1,2,6};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        invertTree4(root).print();
-    }
+//-------------------------------------------------------------------------------------
+    //4
 
     public TreeNode invertTree5(TreeNode root) {
         if (root == null) {
@@ -176,7 +150,38 @@ root:
         root.print();
         invertTree5(root).print();
     }
-//-------------------------------------------------------------------------////////////
+//-------------------------------------------------------------------------------------
+    //5
+    public TreeNode invertTree4(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        final Deque<TreeNode> stack = new LinkedList<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            final TreeNode node = stack.pop();
+            final TreeNode left = node.left;
+            node.left = node.right;
+            node.right = left;
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+        }
+        return root;
+    }
+    @Test
+    public void test04() {
+        int[] arr = {5, 3, 7,1,2,6};
+        TreeNode root = AssortedMethods.createTreeFromArray(arr);
+        System.out.println("root: ");
+        root.print();
+        invertTree4(root).print();
+    }
+//-------------------------------------------------------------------------------------
+
 }
 /*
 翻转二叉树

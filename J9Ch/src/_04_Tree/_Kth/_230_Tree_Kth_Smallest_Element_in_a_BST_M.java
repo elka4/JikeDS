@@ -5,9 +5,14 @@ import java.util.Stack;
 
 //  230. Kth Smallest Element in a BST
 //  https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+//  Binary Search Tree
+//  Binary Tree Inorder Traversal
+//  _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E
+//  8:
 public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
     //3 ways implemented in JAVA (Python): Binary Search, in-order iterative & recursive
-
+//-------------------------------------------------------------------------
+    //1
     //    1. Binary Search (dfs): most preferable
     public int kthSmallest1(TreeNode root, int k) {
         int count = countNodes(root.left);//先计算树中node总数
@@ -26,7 +31,8 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         return 1 + countNodes(n.left) + countNodes(n.right); //1是root的计数
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
+    //2
     //    2. DFS in-order recursive:
     // better keep these two variables in a wrapper class
     private static int number = 0;
@@ -48,7 +54,8 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         if (n.right != null) helper(n.right);
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
+    //3
     //    3. DFS in-order iterative:     这个性能不是太好，因为这个是O(n)
     public int kthSmallest3(TreeNode root, int k) {
         Stack<TreeNode> st = new Stack<>();
@@ -72,8 +79,8 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         return -1; // never hit if k is valid
     }
 
-//-------------------------------------------------------------------------//
-
+//-------------------------------------------------------------------------
+    //4
     public int kthSmallest4(TreeNode root, int k) {
         TreeNodeWithCount rootWithCount = buildTreeWithCount(root);
         return kthSmallest(rootWithCount, k);
@@ -109,8 +116,8 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         TreeNodeWithCount(int x) {val = x; count = 1;};
     }
 
-//-------------------------------------------------------------------------//
-
+//-------------------------------------------------------------------------
+    //5
     /*Java Solution 1 - Inorder Traversal
     We can inorder traverse the tree and get the kth smallest element. Time is O(n).*/
     public int kthSmallest5(TreeNode root, int k) {
@@ -138,7 +145,8 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
     }
 
 
-//-------------------------------------------------------------------------//
+//-------------------------------------------------------------------------
+    //6
     //Similarly, we can also write the inorder traversal as the following:
     /*Java Solution 2 - Extra Data Structure
 
@@ -171,8 +179,8 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
     }
 
 
-//-------------------------------------------------------------------------//
-
+//-------------------------------------------------------------------------
+    //7
     /*
     Two Easiest In Order Traverse (Java)
     In order traverse for BST gives the natural order of numbers. No need to use array.
@@ -195,8 +203,8 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         traverse(root.right, k);
     }
 
-//-------------------------------------------------------------------------//
-
+//-------------------------------------------------------------------------
+    //8
     //Iterative:
     public int kthSmallest8(TreeNode root, int k) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -218,7 +226,7 @@ public class _230_Tree_Kth_Smallest_Element_in_a_BST_M {
         return Integer.MIN_VALUE;
     }
 
-//-------------------------------------------------------------------------////////////
+//-------------------------------------------------------------------------
 }
 /*
 Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.

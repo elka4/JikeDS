@@ -1,16 +1,17 @@
 package _04_Tree._Kth;
-
 import lib.TreeNode;
 
 import java.util.*;
 
-
 //  671. Second Minimum Node In a Binary Tree
 //  https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/description/
+//  4:
+//
 public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
 
     //  https://leetcode.com/articles/second-minimum-node-in-a-binary-tree/
-
+//-----------------------------------------------------------------------------------
+    //1
     //    Approach #1: Brute Force [Accepted]
     class Solution01 {
         public void dfs(TreeNode root, Set<Integer> uniques) {
@@ -32,8 +33,8 @@ public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
             return ans < Long.MAX_VALUE ? (int) ans : -1;
         }
     }
-
-
+//-----------------------------------------------------------------------------------
+    //2
     //    Approach #2: Ad-Hoc [Accepted]
     class Solution02 {
         int min1;
@@ -56,7 +57,8 @@ public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
         }
     }
 
-//-------------------------------------------------------------------------/////////////
+//-----------------------------------------------------------------------------------
+    //3
     //  https://www.zhihu.com/question/28414001
     /*
     JDK8的HashSet实现变了，导致元素插入的位置发生了变化；iterator自身实现的顺序倒没变，还是按照内部插入的位置顺序来遍历，于是题主就看到了JDK7和JDK8的结果不一样。具体来说，是JDK7与JDK8的java.util.HashMap的hash算法以及HashMap的数据布局发生了变化。
@@ -94,7 +96,8 @@ public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
         return;
     }
 
-//-------------------------------------------------------------------------/////////////
+//-----------------------------------------------------------------------------------
+    //4
     //BFS
     public int findSecondMinimumValue4(TreeNode root) {
         int rootVal = root.val;
@@ -118,7 +121,7 @@ public class _671_Tree_Second_Minimum_Node_In_a_Binary_Tree_E {
         return (secondSmall == Integer.MAX_VALUE && !diffFound) ? -1 : secondSmall;
     }
 
-//-------------------------------------------------------------------------/////////////
+//-----------------------------------------------------------------------------------
 }
 
 /*

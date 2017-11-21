@@ -7,59 +7,16 @@ import java.util.*;
 
 //  156. Binary Tree Upside Down
 //  https://leetcode.com/problems/binary-tree-upside-down/
+//  3:1 recursion, 2 iterative, 3 iterative stack.
+//  Tree
+//  _206_List_Reverse_Linked_List_E 这两题应该一起看
 public class _156_Tree_Binary_Tree_Upside_Down_M {
 
 //-------------------------------------------------------------------------/
-
-    public TreeNode upsideDownBinaryTree1(TreeNode root) {
-        if (root == null || root.left == null && root.right == null)
-            return root;
-
-        TreeNode newRoot = upsideDownBinaryTree1(root.left);
-
-        root.left.left = root.right;
-        root.left.right = root;
-
-        root.left = null;
-        root.right = null;
-
-        return newRoot;
-    }
-
-    @Test
-    public void test01() {
-        int[] arr = {5, 3, 7,1,2,6};
-        TreeNode root = AssortedMethods.createTreeFromArray(arr);
-        System.out.println("root: ");
-        root.print();
-        upsideDownBinaryTree1(root).print();
-    }
-    /*
-    root:
-                   5
-                  / \
-                 /   \
-                 3   7
-                / \ /
-                1 2 6
-
-                       1
-                      / \
-                     /   \
-                    /     \
-                   /       \
-                   2       3
-                          / \
-                         /   \
-                         7   5
-                        /
-                        6
-
-     */
-//-------------------------------------------------------------------------/
-
+    //1
     //recurtion
     public TreeNode upsideDownBinaryTree2(TreeNode root) {
+        //if (root == null || root.left == null && root.right == null)
         if (root == null || root.left == null) {
             return root;
         }
@@ -86,7 +43,8 @@ public class _156_Tree_Binary_Tree_Upside_Down_M {
 
 
 //-------------------------------------------------------------------------/
-
+    //2
+    //零空间鼓捣node
     public TreeNode UpsideDownBinaryTree3(TreeNode root) {
         TreeNode curr = root;
         TreeNode prev = null;
@@ -115,7 +73,8 @@ public class _156_Tree_Binary_Tree_Upside_Down_M {
     }
 
 //-------------------------------------------------------------------------/
-
+    //3
+    //用Stack
     //time O(n) space O(n)
     public TreeNode upsideDownBinaryTree4(TreeNode root) {
         if (root == null) {

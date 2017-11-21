@@ -4,27 +4,18 @@ import lib.*;
 //  109. Convert Sorted List to Binary Search Tree
 //  https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/description/
 //  http://www.lintcode.com/zh-cn/problem/convert-sorted-list-to-balanced-bst/
+//  6:
+//  这题很关键是要熟悉linkedlist的操作
 public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
+//--------------------------------------------------------------------------------------
+    //1
     // jiuzhang
     private ListNode current;
 
-    private int getListLength(ListNode head) {
-        int size = 0;
-
-        while (head != null) {
-            size++;
-            head = head.next;
-        }
-
-        return size;
-    }
-
     public TreeNode sortedListToBST1(ListNode head) {
         int size;
-
         current = head;
         size = getListLength(head);
-
         return sortedListToBSTHelper(size);
     }
 
@@ -45,8 +36,22 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
 
         return root;
     }
-//-------------------------------------------------------------------------/////////////
 
+    private int getListLength(ListNode head) {
+        int size = 0;
+
+        while (head != null) {
+            size++;
+            head = head.next;
+        }
+
+        return size;
+    }
+
+
+
+//--------------------------------------------------------------------------------------
+//2  这个其实挺好
 //Share my JAVA solution, 1ms, very short and concise.
     public TreeNode sortedListToBST2(ListNode head) {
         if(head==null) return null;
@@ -54,11 +59,12 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
     }
 
     public TreeNode toBST(ListNode head, ListNode tail){
+        if(head == tail) return null;
+
         ListNode slow = head;
         ListNode fast = head;
-        if(head==tail) return null;
-
-        while(fast!=tail&&fast.next!=tail){
+        //快慢指针找到mid，退出的时候slow就是mid
+        while(fast != tail && fast.next != tail){
             fast = fast.next.next;
             slow = slow.next;
         }
@@ -69,7 +75,8 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
 
         return thead;
     }
-//-------------------------------------------------------------------------/////////////
+//--------------------------------------------------------------------------------------
+//3
     // Share my O(1) space and O(n) time Java code
     private ListNode node;
 
@@ -108,7 +115,8 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
         return treenode;
     }
 
-//-------------------------------------------------------------------------/////////////
+//--------------------------------------------------------------------------------------
+//4     iterative
     // Recursive BST construction using slow-fast traversal on linked list
     public TreeNode sortedListToBST4(ListNode head) {
         if(head == null)
@@ -133,7 +141,8 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
         return root;
     }
 
-//-------------------------------------------------------------------------/////////////
+//--------------------------------------------------------------------------------------
+//5 太太复杂
     static ListNode h;
 
     public TreeNode sortedListToBST5(ListNode head) {
@@ -157,8 +166,6 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
         return len;
     }
 
-//-------------------------------------------------------------------------/////////////
-
     // build tree bottom-up
     public TreeNode sortedListToBST6(int start, int end) {
         if (start > end)
@@ -178,7 +185,7 @@ public class _109_Convert_Sorted_List_to_Binary_Search_Tree {
         return root;
     }
 
-//-------------------------------------------------------------------------/////////////
+//--------------------------------------------------------------------------------------
 }
 /*
 排序列表转换为二分查找树

@@ -5,7 +5,11 @@ import org.junit.Test;
 
 //  538. Convert BST to Greater Tree
 //  https://leetcode.com/problems/convert-bst-to-greater-tree/description/
+//
+//  貌似只能用recursoin？
 public class _538_Tree_Convert_BST_to_Greater_Tree_M {
+//-------------------------------------------------------------------------
+    //1
     /*
         Since this is a BST, we can do a reverse inorder traversal to traverse
         the nodes of the tree in descending order. In the process, we keep track
@@ -35,7 +39,8 @@ public class _538_Tree_Convert_BST_to_Greater_Tree_M {
         new Solution1().convertBST(root);
         root.print();
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
+    //2
     /*
         Idea: Reversely traverse the tree and keep a sum of all previously visited values.
         Because its a BST, values seen before are all greater than current node.val .
@@ -66,7 +71,8 @@ public class _538_Tree_Convert_BST_to_Greater_Tree_M {
         new Solution2().convertBST(root);
         root.print();
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
+    //3
     // Reversed inorder traversal.
     public class Solution3 {
         public TreeNode convertBST(TreeNode root) {
@@ -91,7 +97,7 @@ public class _538_Tree_Convert_BST_to_Greater_Tree_M {
         new Solution3().convertBST(root);
         root.print();
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
 }
 
 /*

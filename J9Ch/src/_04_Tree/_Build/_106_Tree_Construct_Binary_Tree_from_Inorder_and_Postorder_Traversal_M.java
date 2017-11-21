@@ -47,6 +47,30 @@ import java.util.*;
 
 当我们发现当前中序遍历和后序遍历长度都为 1 的时候，也就找到了叶子节点，此时我们开始回溯。
  */
+
+
+
+/*
+要知道如何构建二叉树，首先我们需要知道二叉树的几种遍历方式，譬如有如下的二叉树：
+
+                1
+        --------|-------
+        2               3
+    ----|----       ----|----
+    4       5       6       7
+前序遍历 1245367
+中序遍历 4251637
+后续遍历 4526731
+具体到上面这一题，我们知道了一个二叉树的中序遍历以及后序遍历的结果，那么如何构建这颗二叉树呢？
+
+仍然以上面那棵二叉树为例，我们可以发现，对于后序遍历来说，最后一个元素一定是根节点，也就是1。然后我们在中序遍历的结果里面找到1所在的位置，那么它的左半部分就是其左子树，有半部分就是其右子树。
+
+我们将中序遍历左半部分425取出，同时发现后序遍历的结果也在相应的位置上面，只是顺序稍微不一样，也就是452。我们可以发现，后序遍历中的2就是该子树的根节点。
+
+上面说到了左子树，对于右子树，我们取出637，同时发现后序遍历中对应的数据偏移了一格，并且顺序也不一样，为673。而3就是这颗右子树的根节点。
+
+重复上述过程，通过后续遍历找到根节点，然后在中序遍历数据中根据根节点拆分成两个部分，同时将对应的后序遍历的数据也拆分成两个部分，重复递归，就可以得到整个二叉树了。
+ */
 public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal_M {
     //https://www.tianmaying.com/tutorial/LC106
 //------------------------------------------------------------------------
@@ -61,7 +85,15 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
         }
         return -1;
     }
-
+    /*
+                1
+        --------|-------
+        2               3
+    ----|----       ----|----
+    4       5       6       7
+     */
+    //中序遍历 425 1 637
+    //后续遍历 452 673 1
     private TreeNode myBuildTree(int[] inorder, int instart, int inend,
             int[] postorder, int poststart, int postend) {
         if (instart > inend) {
@@ -71,11 +103,11 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
         TreeNode root = new TreeNode(postorder[postend]);
         int position = findPosition(inorder, instart, inend, postorder[postend]);
 
-        root.left = myBuildTree(inorder, instart, position - 1,
-                postorder, poststart, poststart + position - instart - 1);
+        root.left = myBuildTree(inorder, instart, position - 1,             //425
+        postorder, poststart, poststart + position - instart - 1);       //452
 
-        root.right = myBuildTree(inorder, position + 1, inend,
-                postorder, poststart + position - instart, postend - 1);
+        root.right = myBuildTree(inorder, position + 1, inend,            //637
+        postorder, poststart + position - instart, postend - 1);//673
 
         return root;
     }
@@ -338,8 +370,10 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
         if (postStart < 0 || inStart > inEnd)
             return null;
         TreeNode root = new TreeNode(postorder[postStart]);
+
         int target = inStart;
         while (inorder[target] != postorder[postStart]) target++;
+
         root.left = helper9(postorder, postStart - inEnd + target - 1,
                 inorder, inStart, target - 1);
         root.right = helper9(postorder, postStart - 1,
