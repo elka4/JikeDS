@@ -1,11 +1,12 @@
 package HF.HF0_Intro;
-
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.TreeSet;
 
-public class _5A_RectangleOverlap {
+
+//  http://www.lintcode.com/zh-cn/problem/rectangle-overlap/
+public class _5A_RectangleOverlap_Math {
 
       class Point {
           public int x, y;
@@ -168,6 +169,32 @@ Example
 Given l1 = [0, 8], r1 = [8, 0], l2 = [6, 6], r2 = [10, 0], return true
 
 Given l1 = [0, 8], r1 = [8, 0], l2 = [9, 6], r2 = [10, 0], return `false
+ */
 
+/*
+626. 矩形重叠
 
+ 描述
+ 笔记
+ 数据
+ 评测
+给定两个矩形，判断这两个矩形是否有重叠。
+
+ 注意事项
+
+l1代表第一个矩形的左上角
+r1代表第一个矩形的右下角
+l2代表第二个矩形的左上角
+r2代表第二个矩形的右下角
+
+保证：l1 != r2 并且 l2 != r2
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给定 l1 = [0, 8], r1 = [8, 0], l2 = [6, 6], r2 = [10, 0], 返回 true
+
+给定 l1 = [0, 8], r1 = [8, 0], l2 = [9, 6], r2 = [10, 0], 返回 false
+
+标签
+数学 亚马逊
  */

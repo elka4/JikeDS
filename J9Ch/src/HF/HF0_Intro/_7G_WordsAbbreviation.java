@@ -1,10 +1,17 @@
 package HF.HF0_Intro;
-
 import org.junit.Test;
 
 import java.util.*;
 
-// Words Abbreviation
+//  Words Abbreviation
+//  http://www.lintcode.com/zh-cn/problem/words-abbreviation/
+
+//  527. Word Abbreviation
+//  https://leetcode.com/problems/word-abbreviation/description/
+
+//  String Sort
+//  Valid Word Abbreviation
+//  Minimum Unique Word Abbreviation
 public class _7G_WordsAbbreviation {
     /**
      * @param dict an array of n distinct non-empty strings
@@ -300,4 +307,32 @@ The return answers should be in the same order as the original array.
 Given dict = ["like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"]
 return ["l2e","god","internal","me","i6t","interval","inte4n","f2e","intr4n"]
 标签
+ */
+
+/*
+639. 单词缩写
+
+ 描述
+ 笔记
+ 数据
+ 评测
+给出一组 n 个不同的非空字符串，您需要按以下规则为每个单词生成 最小 的缩写。
+1. 从第一个字符开始，然后加上中间缩写掉的字符的长度，后跟最后一个字符。
+2. 如果有冲突，就是多个单词共享相同的缩写，使用较长的前缀，而不是仅使用第一个字符，直到使单词的缩写的映射变为唯一。 换句话说，最终得到的缩写不能映射到多个原始单词。
+3. 如果缩写不会使单词更短，则不进行缩写，保持原样。
+
+ 注意事项
+
+n 和每个单词的长度均不会超过 400。
+每个单词的长度大于 1。
+这些词只包括小写英文字母。
+返回答案应该与原始数组保持相同的顺序。
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给出 dict = ["like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"]
+返回 ["l2e","god","internal","me","i6t","interval","inte4n","f2e","intr4n"]
+标签
+排序 字符串处理 谷歌 Snapchat
+相关题目
+容易 检查缩写字
  */

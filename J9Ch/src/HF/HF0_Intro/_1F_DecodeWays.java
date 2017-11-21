@@ -41,7 +41,10 @@ f[i-2] | S[i-2]S[i-1]对应一个字母
  */
 
 //Decode Ways
+//5:
 public class _1F_DecodeWays {
+//------------------------------------------------------------------------
+    //1
     //jiuzhang
     public int numDecodings(String s) {
         if (s == null || s.length() == 0) {
@@ -50,6 +53,7 @@ public class _1F_DecodeWays {
         int[] nums = new int[s.length() + 1];
         nums[0] = 1;
         nums[1] = s.charAt(0) != '0' ? 1 : 0;
+
         for (int i = 2; i <= s.length(); i++) {
             if (s.charAt(i - 1) != '0') {
                 nums[i] = nums[i - 1];
@@ -69,7 +73,8 @@ public class _1F_DecodeWays {
         System.out.println(numDecodings("12"));
     }
 
-////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------
+    //2
     // version: 高频题班
     //jiuzhang
     /**
@@ -82,9 +87,9 @@ public class _1F_DecodeWays {
         if (l == 0) {
             return 0;   // only for this problem, but the ans should be 1
         }
+        char sc[] = s.toCharArray();
         int[] f = new int[l + 1];
         f[0] = 1;
-        char sc[] = s.toCharArray();
 
         for (int i = 1; i <= l; i++) {
             if (sc[i - 1] != '0') {
@@ -107,8 +112,8 @@ public class _1F_DecodeWays {
         System.out.println(numDecodings2("1212"));
     }
 
-/////////////////////////////////////////////////////////
-
+//------------------------------------------------------------------------
+    //3
     public int numDecodings3(String s) {
         int n = s.length();
         if (n == 0) return 0;
@@ -124,8 +129,8 @@ public class _1F_DecodeWays {
         return memo[0];
     }
 
-//-------------------------------------------------------------------------/
-
+//-------------------------------------------------------------------------
+    //4
     public int numDecodings4(String s) {
         if(s == null || s.length() == 0) {
             return 0;
@@ -147,8 +152,8 @@ public class _1F_DecodeWays {
         return dp[n];
     }
 
-////////////////////////////////////////////////////////////
-
+//------------------------------------------------------------------------
+    //5
     public int numDecodings5(String s) {
 
         if (s == null || s.length() == 0)
@@ -188,6 +193,8 @@ public class _1F_DecodeWays {
 
         return numWays;
     }
+//------------------------------------------------------------------------
+
 }
 /*
 A message containing letters from A-Z is being encoded to numbers using the following mapping:

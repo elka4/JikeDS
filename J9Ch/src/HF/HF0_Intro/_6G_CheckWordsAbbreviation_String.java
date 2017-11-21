@@ -3,7 +3,15 @@ package HF.HF0_Intro;
 import org.junit.Test;
 
 // Check Word Abbreviation
-public class _6G_CheckWordsAbbreviation {
+//  http://www.lintcode.com/zh-cn/problem/check-word-abbreviation/
+
+
+//  408. Valid Word Abbreviation
+//  https://leetcode.com/problems/valid-word-abbreviation/description/
+//  String
+//  Minimum Unique Word Abbreviation
+//  Word Abbreviation
+public class _6G_CheckWordsAbbreviation_String {
     /**
      * @param word a non-empty string
      * @param abbr an abbreviation

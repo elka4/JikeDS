@@ -1,6 +1,6 @@
 package HF.HF0_Intro;
 
-public class _3F_WildcardMatching {
+public class _3F_WildcardMatching_DP {
     //Linear runtime and constant space solution
     boolean comparison(String str, String pattern) {
         int s = 0, p = 0, match = 0, starIdx = -1;

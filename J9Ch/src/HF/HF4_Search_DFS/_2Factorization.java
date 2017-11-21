@@ -41,7 +41,7 @@ public class _2Factorization {
     }
 
 
-////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------
 
     // version: 高频题班
     /**
@@ -86,7 +86,7 @@ public class _2Factorization {
     public void test02(){
         System.out.println(getFactors2(8));
     }
-////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------
 }
 /*
 A non-negative numbers can be regarded as product of its factors.

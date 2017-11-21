@@ -1,11 +1,11 @@
 package HF.HF0_Intro;
-
 import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class _4L_StringsHomomorphism {
+//  http://www.lintcode.com/en/problem/strings-homomorphism/
+public class _4L_StringsHomomorphism_Hash {
     public boolean isIsomorphic0(String s, String t) {
         // write your code here
         char[] sc = s.toCharArray();
@@ -115,7 +115,7 @@ public class _4L_StringsHomomorphism {
         System.out.println(isIsomorphic(s,t));
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
 
     // version: 高频题班
     /**
@@ -172,7 +172,7 @@ public class _4L_StringsHomomorphism {
         System.out.println(isIsomorphic2("abb", "xyy"));
     }
 
-//-------------------------------------------------------------------------///
+//-------------------------------------------------------------------------
 
 
     //My 6 lines solution
@@ -190,7 +190,7 @@ public class _4L_StringsHomomorphism {
         System.out.println(isIsomorphic3("abb", "xyy"));
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
 
     public boolean isIsomorphic4(String s, String t) {
         if(s == null || s.length() <= 1) return true;
@@ -214,7 +214,7 @@ public class _4L_StringsHomomorphism {
 
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
 
     public boolean isIsomorphic5(String s1, String s2) {
         Map<Character, Integer> m1 = new HashMap<>();
@@ -229,7 +229,7 @@ public class _4L_StringsHomomorphism {
         return true;
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
 
 
     public boolean isIsomorphic6(String sString, String tString) {
@@ -258,7 +258,7 @@ public class _4L_StringsHomomorphism {
         return true;
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
 
 
     //http://www.cnblogs.com/lz87/p/6943163.html
@@ -297,7 +297,7 @@ public class _4L_StringsHomomorphism {
     }
 
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
 
     public class Solution4 {
         public boolean isIsomorphic8(String s, String t) {
@@ -333,7 +333,7 @@ public class _4L_StringsHomomorphism {
         }
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------
 
 }
 
@@ -354,4 +354,31 @@ Given s = "egg", t = "add", return true.
 Given s = "foo", t = "bar", return false.
 
 Given s = "paper", t = "title", return true.
+ */
+
+/*
+638. 字符同构
+
+ 描述
+ 笔记
+ 数据
+ 评测
+给定两个字符串 s 和 t ，确定它们是否是同构的。
+两个字符串是同构的如果 s 中的字符可以被替换得到 t。
+所有出现的字符必须用另一个字符代替，同时保留字符串的顺序。 没有两个字符可以映射到同一个字符，但一个字符可以映射到自己。
+
+ 注意事项
+
+你可以假定两个字符串 s 和 t 是一样长度的.
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+给出 s = "egg", t= "add", 返回 true。
+给出 s = "foo", t= "bar", 返回 false。
+给出 s = "paper", t= "title", 返回 true。
+
+标签
+领英 哈希表
+相关题目
+中等 乱序字符串
  */

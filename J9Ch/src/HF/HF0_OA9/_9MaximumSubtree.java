@@ -51,7 +51,7 @@ public class _9MaximumSubtree {
         findSubtree(root).print();
     }
 
-////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------
 
     int max2 = Integer.MAX_VALUE;
     public TreeNode result2 = null;
@@ -91,7 +91,7 @@ public class _9MaximumSubtree {
         root.print();
         findSubtreeMy(root).print();
     }
-////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------
 
 
 }
