@@ -7,33 +7,35 @@ import java.util.*;
 //  https://leetcode.com/problems/longest-univalue-path/description/
 //  Tree Recursion
 //  Binary Tree, Maximum Path Sum, Count Univalue Subtrees, Path Sum III
-public class _687_Longest_Univalue_Path {
+public class _687_Longest_Univalue_Path_E {
 //https://leetcode.com/problems/longest-univalue-path/solution/
 
 //--------------------------------------------------------------------------------------
     //Approach #1: Recursion [Accepted]
-class Solution {
-    int ans;
-    public int longestUnivaluePath(TreeNode root) {
-        ans = 0;
-        arrowLength(root);
-        return ans;
-    }
-    public int arrowLength(TreeNode node) {
-        if (node == null) return 0;
-        int left = arrowLength(node.left);
-        int right = arrowLength(node.right);
-        int arrowLeft = 0, arrowRight = 0;
-        if (node.left != null && node.left.val == node.val) {
-            arrowLeft += left + 1;
+    class Solution {
+        int ans;
+        public int longestUnivaluePath(TreeNode root) {
+            ans = 0;
+            arrowLength(root);
+            return ans;
         }
-        if (node.right != null && node.right.val == node.val) {
-            arrowRight += right + 1;
+        //postorder。 update max，返回单一路径最大值。
+        public int arrowLength(TreeNode node) {
+            if (node == null) return 0;
+            int left = arrowLength(node.left);
+            int right = arrowLength(node.right);
+
+            int arrowLeft = 0, arrowRight = 0;
+            if (node.left != null && node.left.val == node.val) {
+                arrowLeft += left + 1;
+            }
+            if (node.right != null && node.right.val == node.val) {
+                arrowRight += right + 1;
+            }
+            ans = Math.max(ans, arrowLeft + arrowRight);
+            return Math.max(arrowLeft, arrowRight);
         }
-        ans = Math.max(ans, arrowLeft + arrowRight);
-        return Math.max(arrowLeft, arrowRight);
     }
-}
 
 
 
@@ -46,13 +48,6 @@ class Solution {
 
 
 //--------------------------------------------------------------------------------------
-
-
-
-//--------------------------------------------------------------------------------------
-
-
-
 
 }
 /*
@@ -72,6 +67,8 @@ Input:
 Output:
 
 2
+//--------------------------------------------------------------------------------------
+
 Example 2:
 
 Input:

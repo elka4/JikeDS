@@ -1,16 +1,26 @@
 package _04_Tree._Successor_Iterator;
-
 import lib.AssortedMethods;
 import lib.TreeNode;
 import org.junit.Test;
 
 import java.util.Stack;
 
-
 //  173. Binary Search Tree Iterator
 //  https://leetcode.com/problems/binary-search-tree-iterator/
 //  http://wiki.ruihan.org/index.php/All_algorithm_problems/linked_list
+//  Stack, Tree, Design
+
+//  Binary Tree Inorder Traversal
+//  Flatten 2D Vector
+//  Zigzag Iterator
+//  Peeking Iterator
+//  Inorder Successor in BST
+
+//  设计题关键就是要选对数据结构，Tree的Iterator关键就是要会用Stack
+//  6:
 public class _173_Tree_Binary_Search_Tree_Iterator_M {
+//-------------------------------------------------------------------------------
+    //1
     //it is the same as the nonrecursive inorder traversal
     class BSTIterator {
         private Stack<TreeNode> stack = new Stack<>();
@@ -49,16 +59,15 @@ public class _173_Tree_Binary_Search_Tree_Iterator_M {
         root.print();
 
         BSTIterator itr = new BSTIterator(root);
-//        itr.AddNodeToStack(root);
+        // itr.AddNodeToStack(root);
 
         while(itr.hasNext()){
             System.out.println(itr.next());
         }
     }
 
-//-------------------------------------------------------------------------///////
-    //-------------------------------------------------------------------------///////
-
+//-------------------------------------------------------------------------------
+    //2
     public class BSTIterator2 {
         Stack<TreeNode> stack;
 
@@ -101,7 +110,8 @@ public class _173_Tree_Binary_Search_Tree_Iterator_M {
         }
     }
 
-    //-------------------------------------------------------------------------///////
+//-------------------------------------------------------------------------------
+    //3
     //jiuzhang
     public class BSTIterator3 {
         private Stack<TreeNode> stack = new Stack<>();
@@ -158,8 +168,8 @@ public class _173_Tree_Binary_Search_Tree_Iterator_M {
         }
     }
 
-//-------------------------------------------------------------------------///////
-
+//-------------------------------------------------------------------------------
+    //4
     public class BSTIterator4 {
         private Stack<TreeNode> stack = new Stack<>();
         TreeNode next = null;
@@ -210,8 +220,8 @@ public class _173_Tree_Binary_Search_Tree_Iterator_M {
             System.out.println(itr.next());
         }
     }
-//-------------------------------------------------------------------------///////
-
+//-------------------------------------------------------------------------------
+    //5
     public class BSTIterator6 {
         private Stack<TreeNode> stack = new Stack<TreeNode>();
         public BSTIterator6(TreeNode root) { pushAll(root);
@@ -230,7 +240,8 @@ public class _173_Tree_Binary_Search_Tree_Iterator_M {
         }
     }
 
-
+//-------------------------------------------------------------------------------
+    //6
     public class BSTIterator22 {
 
         private Stack<TreeNode> stack;
@@ -269,6 +280,7 @@ public class _173_Tree_Binary_Search_Tree_Iterator_M {
             return node.val;
         }
     }
+//-------------------------------------------------------------------------------
 
 }
 /* leetcode

@@ -216,6 +216,7 @@ root:
             }
             ResultType left = helper(root.left);
             ResultType right = helper(root.right);
+
             int currentSum = left.sum + right.sum + root.val;
             int currentSize = left.size + right.size + 1;
             double avg = (currentSum * 1.0) / currentSize;

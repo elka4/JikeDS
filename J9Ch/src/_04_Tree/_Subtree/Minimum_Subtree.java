@@ -16,6 +16,8 @@ import org.junit.Test;
 // subtree with minimum sum.
 
 public class Minimum_Subtree {
+//-------------------------------------------------------------------------
+    //1
     //jiuzhang
     // version 1 : traverse + divide conquer
     private TreeNode subtree = null;
@@ -62,7 +64,8 @@ public class Minimum_Subtree {
         result.print();
     }
 
-//-------------------------------------------------------------------------/////////////
+//-------------------------------------------------------------------------
+    //2
     //jiuzhang
     // version 2: Pure divide conquer
 
@@ -144,6 +147,7 @@ return the node 1.
 
 
 //-------------------------------------------------------------------------
+    //3
     public TreeNode result = null;
     public int maximum_weight = Integer.MIN_VALUE;
 

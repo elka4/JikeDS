@@ -6,7 +6,13 @@ import java.util.*;
 //  105. Construct Binary Tree from Preorder and Inorder Traversal
 //  https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
 //  http://www.lintcode.com/zh-cn/problem/construct-binary-tree-from-preorder-and-inorder-traversal/
+//  Array Tree Depth-first Search
+//  _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal_M
+//
+
 public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_M {
+//--------------------------------------------------------------------------------
+    //1
     // jiuzhang
 	private int findPosition(int[] arr, int start, int end, int key) {
 	    int i;
@@ -52,7 +58,8 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         buildTree1(preorder, inorder).print();
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+    //2
     //My Accepted Java Solution
     public TreeNode buildTree2(int[] preorder, int[] inorder) {
         return helper(0, 0, inorder.length - 1, preorder, inorder);
@@ -85,7 +92,8 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         int[] inorder = {1,2,3};
         buildTree2(preorder, inorder).print();
     }
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+    //3
     // 5ms Java Clean Solution with Caching
     public TreeNode buildTree3(int[] preorder, int[] inorder) {
         Map<Integer, Integer> inMap = new HashMap<Integer, Integer>();
@@ -122,7 +130,8 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         int[] inorder = {1,2,3};
         buildTree2(preorder, inorder).print();
     }
-//-------------------------------------------------------------------------/////
+//-------------------------------------------------------------------------
+    //4
     public TreeNode buildTree4(int[] preorder, int[] inorder) {
         int preStart = 0;
         int preEnd = preorder.length-1;
@@ -169,7 +178,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
 
 
 //-------------------------------------------------------------------------
-
+    //5
     //Concise recursive Java code by making slight modification to the previous problem.
     public  TreeNode buildTree5(int[] preorder, int[] inorder) {
         return helper(preorder, 0, inorder, 0, inorder.length - 1);
@@ -197,6 +206,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         buildTree5(preorder, inorder).print();
     }
 //-------------------------------------------------------------------------
+    //6
     /*
         My Accepted Java Solution
         Hi guys, this is my Java solution. I read this post, which is very helpful.
@@ -240,7 +250,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
     }
 
 //-------------------------------------------------------------------------
-
+    //7
     /*
         5ms Java Clean Solution with Caching
         In this questions, most of people just loop through inorder[] to find the root.
@@ -285,7 +295,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
 
 
 //-------------------------------------------------------------------------
-
+    //8
     //Here is the iterative solution in Java
     public TreeNode buildTree8(int[] preorder, int[] inorder) {
         if (inorder.length==0) return null;
@@ -357,6 +367,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
     }
 
 //-------------------------------------------------------------------------
+    //9
     //Recursive solution in Java
     //This question is similar to the one using postorder and inorder arrays.
     // Once one notices that the first element of preorder is the root node,
@@ -394,7 +405,7 @@ public class _105_Tree_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal
         buildTree10(preorder, inorder).print();
     }
 
-//-------------------------------------------------------------------------/////
+//-------------------------------------------------------------------------
 }
 /*
 前序遍历和中序遍历树构造二叉树

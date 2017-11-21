@@ -11,7 +11,7 @@ import org.junit.Test;
 //  Subtree of Another Tree, Longest Univalue Path
 //  4:所有的解法都一样，Divide Conquer之后返回本节点是否满足Univalue。用global max或者数组存储结果。
 
-//结果是
+//前驱题：_687_Longest_Univalue_Path_E
 public class _250_Tree_Count_Univalue_Subtrees_M {
 /*
 思路: 题意是说如果一个结点的左子树和右子树的值都相等, 那么就计数+1.

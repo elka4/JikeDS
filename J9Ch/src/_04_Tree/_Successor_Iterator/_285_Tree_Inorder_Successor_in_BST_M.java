@@ -6,8 +6,13 @@ import java.util.*;
 
 //  285. Inorder Successor in BST
 //  https://leetcode.com/problems/inorder-successor-in-bst/description/
+//  Tree
+//  Binary Tree Inorder Traversal, Binary Search Tree Iterator
+//  11: 1给出了前后node的recursion解法！！！！！ 2给出了后的iterative。能不能写出前node？
+//  不管是recursion还是iteration，关键都是要里用BST非左既右的特点。
 public class _285_Tree_Inorder_Successor_in_BST_M {
-
+//--------------------------------------------------------------------------
+    //1
     //    Share my Java recursive solution
     //    Just want to share my recursive solution for both getting
     // the successor and predecessor for a given node in BST.
@@ -37,7 +42,8 @@ public class _285_Tree_Inorder_Successor_in_BST_M {
         }
     }
 
-//-------------------------------------------------------------------------///
+//--------------------------------------------------------------------------
+    //2
     /*
     Java/Python solution, O(h) time and O(1) space, iterative
 The inorder traversal of a BST is the nodes in ascending order. To find a successor, you just need to find the smallest one that is larger than the given value since there are no duplicate values in a BST. It just like the binary search in a sorted list. The time complexity should be O(h) where h is the depth of the result node. succ is a pointer that keeps the possible successor. Whenever you go left the current root is the new possible successor, otherwise the it remains the same.
@@ -56,8 +62,44 @@ Only in a balanced BST O(h) = O(log n). In the worst case h can be as large as n
         }
         return succ;
     }
-//-------------------------------------------------------------------------///
 
+    //http://www.makeinjava.com/find-inorder-predecessor-binary-search-tree-bst-examples/
+    //iterative 的找前node
+    public class InorderPredecessor {
+        private TreeNode max(TreeNode root) {
+            // we found the max node
+            if (root.right == null) {
+                return root;
+            }
+            return max(root.right);
+        }
+
+        public TreeNode predecessor(TreeNode root, TreeNode node) {
+            // Example 3 or Example 4
+            if (node.left != null)
+                return max(node.left);
+
+            // Example 1 or Example 2
+            TreeNode predecessor = null;
+            // Start from root and search for predecessor down the tree
+
+            while (root != null) {
+
+                if (node.val == root.val) {
+                    // by now we might found our predecessor
+                    break;
+                } else if (node.val < root.val) {
+                    root = root.left;
+                } else if (node.val > root.val) {
+                    predecessor = root;
+                    root = root.right;
+                }
+            }
+            return predecessor;
+        }
+    }
+//--------------------------------------------------------------------------
+    //3
 
 /*    *Java* 5ms short code with explanations
     The idea is to compare root's value with p's value if root is not null, and consider the following two cases:
@@ -81,7 +123,8 @@ Only in a balanced BST O(h) = O(log n). In the worst case h can be as large as n
         }
         return res;
     }
-//-------------------------------------------------------------------------//////////////////
+//--------------------------------------------------------------------------------
+    //4
  /*
     10 (and 4) lines O(h) Java/C++
 Update: Ugh, turns out I didn't think it through and the big case distinction is unnecessary. Just search from root to bottom, trying to find the smallest node larger than p and return the last one that was larger.
@@ -98,7 +141,8 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
         root = (p.val > root.val) ? root.right : (candidate = root).left;
     return candidate;
 }
-//-------------------------------------------------------------------------//////////////////
+//--------------------------------------------------------------------------------
+    //5
     //jiuzhang
     public TreeNode inorderSuccessor5(TreeNode root, TreeNode p) {
         TreeNode successor = null;
@@ -143,8 +187,8 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
         inorderSuccessor5(root, root.right.left).print();
     }
 
-//-------------------------------------------------------------------------//////////////////
-
+//--------------------------------------------------------------------------------
+    //6
     //time O(logn) spaceO(1)
 
     public TreeNode inorderSuccessor6(TreeNode root, TreeNode p){
@@ -180,8 +224,8 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
         return root;
     }
 
-//-------------------------------------------------------------------------//////////////////
-
+//--------------------------------------------------------------------------------
+    //7
     //mehtod 2
     public TreeNode inorderSuccessor7(TreeNode root, TreeNode p) {
         TreeNode par = null;
@@ -293,8 +337,8 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
          */
     }
 
-//-------------------------------------------------------------------------//////////////////
-
+//--------------------------------------------------------------------------------
+    //8
     // version: 高频题班
     public TreeNode inorderSuccessorX(TreeNode root, TreeNode p) {
         // write your code here
@@ -327,10 +371,10 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
         inorderSuccessorX(root, new TreeNode(2)).print();
 
     }
-//-------------------------------------------------------------------------//////////////////
 
 
-//-------------------------------------------------------------------------//////////////////
+//--------------------------------------------------------------------------------
+    //9
     //Java Solution 1
 
     public TreeNode inorderSuccessor11(TreeNode root, TreeNode p) {
@@ -371,8 +415,8 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
     }
     //Time is O(n), Space is O(n).
 
-//-------------------------------------------------------------------------////////////
-
+//--------------------------------------------------------------------------------
+    //10
     //Java Solution 2
 
     public TreeNode inorderSuccessor22(TreeNode root, TreeNode p) {
@@ -405,7 +449,8 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
     //Time is O(log(n)) and space is O(1).
 
 
-//-------------------------------------------------------------------------////////////
+//--------------------------------------------------------------------------------
+    //11
     public TreeNode inorderSuccessor2(TreeNode root, TreeNode p) {
         while (root != null && root.val <= p.val)
             root = root.right;
@@ -424,7 +469,7 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
     }
 
 
-//-------------------------------------------------------------------------///
+//--------------------------------------------------------------------------
 }
 /*  leetcode
 Given a binary search tree and a node in it, find the in-order successor of that node in the BST.

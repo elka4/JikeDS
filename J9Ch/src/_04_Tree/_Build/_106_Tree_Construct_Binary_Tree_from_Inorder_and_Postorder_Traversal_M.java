@@ -7,7 +7,50 @@ import java.util.*;
 //  106. Construct Binary Tree from Inorder and Postorder Traversal
 //  https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/
 //  http://www.lintcode.com/zh-cn/problem/construct-binary-tree-from-inorder-and-postorder-traversal/
+
+//9
+
+/*
+解法
+
+本题在属于二叉树遍历的经典题目，已知二叉树的两个遍历序列构造二叉树，有如下性质：
+
+若已知先序和中序，则可以构造出唯一的二叉树
+
+若已知先序和后序，则可以构造出多颗不同的二叉树
+
+若已知中序和后序，则可以构造出唯一的二叉树
+
+本题中我们已知的条件为中序遍历和后序遍历，所以我们一定可以构造出唯一的二叉树。
+
+
+我们先将整棵树看作根节点和两颗子树，则其两种遍历得到的序列为
+
+             in order
++------------+------+-------------+
+| left child | root | right child |
++------------+------+-------------+
+
+            post order
++------------+-------------+------+
+| left child | right child | root |
++------------+-------------+------+
+可以肯定后序遍历序列中最后一个数一定是当前二叉树的根节点root。又因为二叉树不存在相同的数，我们可以找到root在中序遍历中位置p。
+
+则我们可以分别找到两颗子树对应的中序和后序遍历：
+
+左子树的中序 = inOrder[1 .. p - 1]
+左子树的后序 = postOrder[1 .. p - 1]
+右子树的中序 = inOrder[p + 1 .. n]
+右子树的后序 = postOrder[p .. n - 1]
+在此基础上我们就可以递归处理两颗子树。
+
+当我们发现当前中序遍历和后序遍历长度都为 1 的时候，也就找到了叶子节点，此时我们开始回溯。
+ */
 public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal_M {
+    //https://www.tianmaying.com/tutorial/LC106
+//------------------------------------------------------------------------
+    //1
     //jiuzhang
 	private int findPosition(int[] arr, int start, int end, int key) {
         int i;
@@ -52,7 +95,8 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
         buildTree1(postorder, inorder).print();
     }
 
-//-------------------------------------------------------------------------///
+//------------------------------------------------------------------------
+    //2
     //My recursive Java code with O(n) time and O(n) space
     /*
     The the basic idea is to take the last element in postorder array as the root, find the position of the root in the inorder array; then locate the range for left sub-tree and right sub-tree and do recursion. Use a HashMap to record the index of root in the inorder array.
@@ -78,7 +122,8 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
         root.right = rightchild;
         return root;
     }
-//-------------------------------------------------------------------------///
+//------------------------------------------------------------------------
+    //3
     // Java iterative solution with explanation
     public TreeNode buildTree3(int[] inorder, int[] postorder) {
         if (inorder.length == 0 || postorder.length == 0) return null;
@@ -110,7 +155,8 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
 
         return root;
     }
-//-------------------------------------------------------------------------///
+//------------------------------------------------------------------------
+    //4
     public TreeNode buildTree4(int[] inorder, int[] postorder) {
         int inStart = 0;
         int inEnd = inorder.length - 1;
@@ -152,7 +198,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
 
 
 //-------------------------------------------------------------------------
-
+    //5
     public TreeNode buildTreePostIn5(int[] inorder, int[] postorder) {
         if (inorder == null || postorder == null || inorder.length != postorder.length)
             return null;
@@ -177,7 +223,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
 
 
 //-------------------------------------------------------------------------
-
+    //6
     //Java iterative solution with explanation
     /*
     This is my iterative solution, think about "Constructing Binary Tree from inorder and preorder array", the idea is quite similar. Instead of scanning the preorder array from beginning to end and using inorder array as a kind of mark, in this question, the key point is to scanning the postorder array from end to beginning and also use inorder array from end to beginning as a mark because the logic is more clear in this way. The core idea is: Starting from the last element of the postorder and inorder array, we put elements from postorder array to a stack and each one is the right child of the last one until an element in postorder array is equal to the element on the inorder array. Then, we pop as many as elements we can from the stack and decrease the mark in inorder array until the peek() element is not equal to the mark value or the stack is empty. Then, the new element that we are gonna scan from postorder array is the left child of the last element we have popped out from the stack.
@@ -216,7 +262,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
 
 
 //-------------------------------------------------------------------------
-
+    //7
     //Simple and clean Java solution with comments, recursive.
     public TreeNode buildTree7(int[] inorder, int[] postorder) {
         return buildTree7(inorder, inorder.length-1, 0,
@@ -248,6 +294,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
     }
 
 //-------------------------------------------------------------------------
+    //8
     //My JAVA recursive answer, BEAT 92.9%, 2ms
     public TreeNode buildTree8(int[] inorder, int[] postorder) {
         return build8(inorder,inorder.length-1,0,postorder,postorder.length-1);
@@ -279,6 +326,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
 
 
 //-------------------------------------------------------------------------
+    //9
     //Concise recursive Java code by making slight modification to the previous problem.
     //Code for Problem 106:
     public  TreeNode buildTree9(int[] inorder, int[] postorder) {
@@ -301,7 +349,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
     }
 
 
-//-------------------------------------------------------------------------///
+//------------------------------------------------------------------------
 }
 /*
 中序遍历和后序遍历树构造二叉树

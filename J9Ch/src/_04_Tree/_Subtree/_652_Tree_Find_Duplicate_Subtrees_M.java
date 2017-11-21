@@ -12,79 +12,28 @@ import java.util.*;
 //  297 Serialize and Deserialize Binary Tree
 //  449 Serialize and Deserialize BST
 //  606 Construct String from Binary Tree
+//  3: 三个解法本质上一样，只是细节不同
 public class _652_Tree_Find_Duplicate_Subtrees_M {
 //-------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------
     //1
-    //method1
-    public boolean findTarget1(TreeNode root, int k) {
-        HashSet<Integer> set = new HashSet<>();
-        return dfs(root, set, k);
-    }
-
-    public boolean dfs(TreeNode root, HashSet<Integer> set, int k){
-        if(root == null)return false;
-        if(set.contains(k - root.val))return true;
-        set.add(root.val);
-        return dfs(root.left, set, k) || dfs(root.right, set, k);
-    }
-
-//-------------------------------------------------------------------------
-    //2
-    //method2
-    public boolean findTarget2(TreeNode root, int k) {
-        List<Integer> nums = new ArrayList<>();
-        inorder(root, nums);
-        for(int i = 0, j = nums.size()-1; i<j;){
-            if(nums.get(i) + nums.get(j) == k)return true;
-            if(nums.get(i) + nums.get(j) < k)i++;
-            else j--;
-        }
-        return false;
-    }
-
-    public void inorder(TreeNode root, List<Integer> nums){
-        if(root == null)return;
-        inorder(root.left, nums);
-        nums.add(root.val);
-        inorder(root.right, nums);
-    }
-
-//-------------------------------------------------------------------------
-    //3
-    // method3
-    public boolean findTarget3(TreeNode root, int k) {
-
-        return dfs3(root, root,  k);
-    }
-
-    public boolean dfs3(TreeNode root,  TreeNode cur, int k){
-        if(cur == null)return false;
-        return search(root, cur, k - cur.val) ||
-                dfs3(root, cur.left, k) || dfs3(root, cur.right, k);
-    }
-
-    public boolean search(TreeNode root, TreeNode cur, int value){
-        if(root == null)return false;
-        return (root.val == value) && (root != cur)
-                || (root.val < value) && search(root.right, cur, value)
-                || (root.val > value) && search(root.left, cur, value);
-    }
-
-//-------------------------------------------------------------------------
-    //4
     //Java Concise Postorder Traversal Solution
+    //用post order 遍历，将树线性化成String，用hashmap存储String和出现次数
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
-        List<TreeNode> res = new LinkedList<>();
-        postorder(root, new HashMap<>(), res);
-        return res;
+        List<TreeNode> result = new LinkedList<>();
+        postorder(root, new HashMap<>(), result);
+        return result;
     }
 
-    public String postorder(TreeNode cur, Map<String, Integer> map, List<TreeNode> res) {
+    public String postorder(TreeNode cur, Map<String, Integer> map, List<TreeNode> result) {
         if (cur == null) return "#";
-        String serial = cur.val + "," + postorder(cur.left, map, res)
-                + "," + postorder(cur.right, map, res);
-        if (map.getOrDefault(serial, 0) == 1) res.add(cur);
+        String serial = cur.val + "," + postorder(cur.left, map, result)
+                + "," + postorder(cur.right, map, result);
+
+        if (map.getOrDefault(serial, 0) == 1) result.add(cur);
         map.put(serial, map.getOrDefault(serial, 0) + 1);
+
         return serial;
     }
 
@@ -114,46 +63,12 @@ public class _652_Tree_Find_Duplicate_Subtrees_M {
 [4 , 2 ]
      */
 //--------------------------------------------------------------------------------
-    //5
-    //Java 1ms solution, by passing a three-element array up to parent
 
-    class solution4{
-        private int largestBSTSubtreeSize = 0;
-        public int largestBSTSubtree(TreeNode root) {
-            helper(root);
-            return largestBSTSubtreeSize;
-        }
-
-        private int[] helper(TreeNode root) {
-            // return 3-element array:
-            // # of nodes in the subtree, leftmost value, rightmost value
-            // # of nodes in the subtree will be -1 if it is not a BST
-            int[] result = new int[3];
-            if (root == null) {
-                return result;
-            }
-            int[] leftResult = helper(root.left);
-            int[] rightResult = helper(root.right);
-            if ((leftResult[0] == 0 || leftResult[0] > 0 && leftResult[2] <= root.val) &&
-                    (rightResult[0] == 0 || rightResult[0] > 0 && rightResult[1] >= root.val)) {
-                int size = 1 + leftResult[0] + rightResult[0];
-                largestBSTSubtreeSize = Math.max(largestBSTSubtreeSize, size);
-                int leftBoundary = leftResult[0] == 0 ? root.val : leftResult[1];
-                int rightBoundary = rightResult[0] == 0 ? root.val : rightResult[2];
-                result[0] = size;
-                result[1] = leftBoundary;
-                result[2] = rightBoundary;
-            } else {
-                result[0] = -1;
-            }
-            return result;
-        }
-    }
 
 //--------------------------------------------------------------------------------
-    //6
+    //2  和上面的一样
     // [C++] [Java] Clean Code
-    class Solution5 {
+    class Solution2 {
         public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
             Map<String, List<TreeNode>> map = new HashMap<String, List<TreeNode>>();
             List<TreeNode> dups = new ArrayList<TreeNode>();
@@ -183,11 +98,11 @@ public class _652_Tree_Find_Duplicate_Subtrees_M {
         root.right.left = new TreeNode(2);
         root.right.left.left = new TreeNode(4);
         root.print();
-        System.out.println(new Solution5().findDuplicateSubtrees(root));
+        System.out.println(new Solution2().findDuplicateSubtrees(root));
     }
 
 //--------------------------------------------------------------------------------
-    //7
+    //3
     public List<TreeNode> findDuplicateSubtrees6(TreeNode root) {
         List<TreeNode> result = new LinkedList<>();
         Map<String,Integer> map = new HashMap<>();
