@@ -30,7 +30,7 @@ public class _4LongestPalindrome {
         System.out.println(longestPalindrome("abccccdd"));
     }
 
-///////////////////////////////////////////////////////
+//-----------------------------------------------------------///
 
     // version 1
     /**

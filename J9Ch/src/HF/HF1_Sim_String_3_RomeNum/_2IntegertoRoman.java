@@ -1,5 +1,5 @@
 package HF.HF1_Sim_String_3_RomeNum;
-
+import java.util.*;
 
 /*
 Example:
@@ -20,6 +20,8 @@ Example:
 3. 基础数据结构/算法
  */
 
+import org.junit.Test;
+
 //Integer to Roman
 public class _2IntegertoRoman {
         /*
@@ -35,14 +37,26 @@ public class _2IntegertoRoman {
         return M[n / 1000] + C[(n/100) % 10] + X[(n/10) % 10] + I[n % 10];
     }
 
-    void change(int n){
+    List<Integer>  change(int n, int k){
         int i = 0;
-        int k = 2;
-        int[] digit = new int[10];
+//        int k = 2;
+//        int[] digit = new int[10];
+        List<Integer> digit = new LinkedList<>();
         while (n != 0) {
-            digit[i++] = n % k;
+            digit.add(0, n % k);
             n /= k;
         }
+        return digit;
+    }
+
+    @Test
+    public void test01(){
+        System.out.println(change(1,2));
+        System.out.println(change(2,2));
+        System.out.println(change(3,2));
+        System.out.println(change(4,2));
+        System.out.println(change(5,2));
+
     }
 
 

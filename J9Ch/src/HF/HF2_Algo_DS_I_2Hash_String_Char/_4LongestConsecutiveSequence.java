@@ -2,7 +2,7 @@ package HF.HF2_Algo_DS_I_2Hash_String_Char;
 
 import org.junit.Test;
 
-import java.util.HashSet;
+import java.util.*;
 import java.util.Set;
 
 /*
@@ -45,7 +45,107 @@ import java.util.Set;
  */
 
 //Longest Consecutive Sequence
+//128. Longest Consecutive Sequence
+//  https://leetcode.com/problems/longest-consecutive-sequence/description/
+//  Array
+//  Union Find
+//  Binary Tree Longest Consecutive Sequence
 public class _4LongestConsecutiveSequence {
+    //https://leetcode.com/articles/longest-consecutive-sequence/
+//-------------------------------------------------------------------
+    //https://leetcode.com/articles/longest-consecutive-sequence/
+
+//-------------------------------------------------------------------
+    //Approach #1 Brute Force [Time Limit Exceeded]
+class Solution1 {
+    private boolean arrayContains(int[] arr, int num) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == num) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    public int longestConsecutive(int[] nums) {
+        int longestStreak = 0;
+
+        for (int num : nums) {
+            int currentNum = num;
+            int currentStreak = 1;
+
+            while (arrayContains(nums, currentNum + 1)) {
+                currentNum += 1;
+                currentStreak += 1;
+            }
+
+            longestStreak = Math.max(longestStreak, currentStreak);
+        }
+
+        return longestStreak;
+    }
+}
+
+//-------------------------------------------------------------------
+    //Approach #2 Sorting [Accepted]
+
+    class Solution2 {
+        public int longestConsecutive(int[] nums) {
+            if (nums.length == 0) {
+                return 0;
+            }
+
+            Arrays.sort(nums);
+
+            int longestStreak = 1;
+            int currentStreak = 1;
+
+            for (int i = 1; i < nums.length; i++) {
+                if (nums[i] != nums[i-1]) {
+                    if (nums[i] == nums[i-1]+1) {
+                        currentStreak += 1;
+                    }
+                    else {
+                        longestStreak = Math.max(longestStreak, currentStreak);
+                        currentStreak = 1;
+                    }
+                }
+            }
+
+            return Math.max(longestStreak, currentStreak);
+        }
+    }
+
+//-------------------------------------------------------------------
+    //  Approach #3 HashSet and Intelligent Sequence Building [Accepted]
+class Solution3 {
+    public int longestConsecutive(int[] nums) {
+        Set<Integer> num_set = new HashSet<Integer>();
+        for (int num : nums) {
+            num_set.add(num);
+        }
+
+        int longestStreak = 0;
+
+        for (int num : num_set) {
+            if (!num_set.contains(num-1)) {
+                int currentNum = num;
+                int currentStreak = 1;
+
+                while (num_set.contains(currentNum+1)) {
+                    currentNum += 1;
+                    currentStreak += 1;
+                }
+
+                longestStreak = Math.max(longestStreak, currentStreak);
+            }
+        }
+
+        return longestStreak;
+    }
+}
+
+//-------------------------------------------------------------------
     //jiuzhang
     /**
      * @param nums: A list of integers

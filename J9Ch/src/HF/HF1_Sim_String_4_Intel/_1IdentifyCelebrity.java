@@ -22,7 +22,7 @@ package HF.HF1_Sim_String_4_Intel;
  */
 
 // bool knows(a, b) which tells you whether A knows B.
-
+//  https://leetcode.com/problems/find-the-celebrity/description/
 //Identify Celebrity
 public class _1IdentifyCelebrity {
     /**
@@ -97,7 +97,7 @@ public class _1IdentifyCelebrity {
         }
         int candidate = 0;
         for(int i = 1; i < n; i++){
-    //find a possible candidate who knows nobody else in his right hand
+             //find a possible candidate who knows nobody else in his right hand
             if (knows(candidate, i)){
                 candidate = i;
             }
@@ -106,7 +106,7 @@ public class _1IdentifyCelebrity {
         for(int i = 0; i < n; i++){
 
             if (i < candidate && knows(candidate, i)) {
-    //check the candidate: A. knows nobody in his left hand
+                //check the candidate: A. knows nobody in his left hand
                 return  -1;
                 //known by everyone else
             }

@@ -78,7 +78,7 @@ public class _1ConvertBSTtoGreaterTree {
         dfs(root);
         return root;
     }
-///////////////////////////////////////////////////////
+//-----------------------------------------------------------///
 
     @Test
     public void test02(){

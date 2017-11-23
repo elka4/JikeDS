@@ -27,7 +27,7 @@ public class _01UpdateBits {
         // Clear i through j, then put m in there
         return ((n & mask) | (m << i));
     }
-/////////////////////////////////////////////////
+--------------------/////////
 
     public int updateBits2(int n, int m, int i, int j) {
         return ((~((((-1) << (31 - j)) >>> (31 - j + i)) << i)) & n) | (m << i);

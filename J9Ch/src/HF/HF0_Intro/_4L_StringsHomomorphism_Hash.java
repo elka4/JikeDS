@@ -5,7 +5,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 //  http://www.lintcode.com/en/problem/strings-homomorphism/
+//  10
 public class _4L_StringsHomomorphism_Hash {
+//-----------------------------------------------------------
+    //1
     public boolean isIsomorphic0(String s, String t) {
         // write your code here
         char[] sc = s.toCharArray();
@@ -58,8 +61,8 @@ public class _4L_StringsHomomorphism_Hash {
         System.out.println(isIsomorphic0(s,t));
     }
 
-////////////////////////////////////////////////////
-
+//-----------------------------------------------------------
+    //2
     public boolean isIsomorphicMy(String s, String t) {
         // write your code here
         int[] m1 = new int[256];
@@ -78,8 +81,8 @@ public class _4L_StringsHomomorphism_Hash {
         return true;
     }
 
-////////////////////////////////////////////////////
-
+//-----------------------------------------------------------
+    //3
     /**
      * @param s a string
      * @param t a string
@@ -116,7 +119,7 @@ public class _4L_StringsHomomorphism_Hash {
     }
 
 //-------------------------------------------------------------------------
-
+    //4
     // version: 高频题班
     /**
      * @param s a string
@@ -140,7 +143,7 @@ public class _4L_StringsHomomorphism_Hash {
         }
 
         /*
-        ///////////////////////////////假设t的取值只有'a' - 'z' 时做t->s 映射的一种写法   （仅做演示使用）
+        ----------///////////假设t的取值只有'a' - 'z' 时做t->s 映射的一种写法   （仅做演示使用）
         int[] map2 = new int[26];
         for (int i = 0; i < t.length(); i++) {
             if (map2[tc[i] - 'a'] == 0) {
@@ -173,7 +176,7 @@ public class _4L_StringsHomomorphism_Hash {
     }
 
 //-------------------------------------------------------------------------
-
+    //5
 
     //My 6 lines solution
     public boolean isIsomorphic3(String s1, String s2) {
@@ -191,7 +194,7 @@ public class _4L_StringsHomomorphism_Hash {
     }
 
 //-------------------------------------------------------------------------
-
+    //6
     public boolean isIsomorphic4(String s, String t) {
         if(s == null || s.length() <= 1) return true;
         HashMap<Character, Character> map = new HashMap<Character, Character>();
@@ -215,7 +218,7 @@ public class _4L_StringsHomomorphism_Hash {
     }
 
 //-------------------------------------------------------------------------
-
+    //7
     public boolean isIsomorphic5(String s1, String s2) {
         Map<Character, Integer> m1 = new HashMap<>();
         Map<Character, Integer> m2 = new HashMap<>();
@@ -230,7 +233,7 @@ public class _4L_StringsHomomorphism_Hash {
     }
 
 //-------------------------------------------------------------------------
-
+    //8
 
     public boolean isIsomorphic6(String sString, String tString) {
 
@@ -259,7 +262,7 @@ public class _4L_StringsHomomorphism_Hash {
     }
 
 //-------------------------------------------------------------------------
-
+    //9
 
     //http://www.cnblogs.com/lz87/p/6943163.html
     public class Solution3 {
@@ -298,7 +301,7 @@ public class _4L_StringsHomomorphism_Hash {
 
 
 //-------------------------------------------------------------------------
-
+    //10
     public class Solution4 {
         public boolean isIsomorphic8(String s, String t) {
             int[] m1 = new int[128];
