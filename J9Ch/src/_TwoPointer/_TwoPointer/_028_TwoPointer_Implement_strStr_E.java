@@ -38,8 +38,8 @@ public class _028_TwoPointer_Implement_strStr_E {
             return -1;
         }
     }
-//////////////////////////////////////////////////////
-    //jiuzhang
+//---------------------------------/////////////////
+    // 9Ch
 class Jiuzhang {
     /**
      * Returns a index to the first occurrence of target in source,

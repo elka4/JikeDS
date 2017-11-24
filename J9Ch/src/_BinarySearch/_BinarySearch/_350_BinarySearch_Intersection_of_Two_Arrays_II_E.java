@@ -3,8 +3,8 @@ import java.util.*;
 import org.junit.Test;
 public class _350_BinarySearch_Intersection_of_Two_Arrays_II_E {
 
-//////////////////////////////////////////////////////////
-    //jiuzhang
+//---------------------------------/////////////////////
+    // 9Ch
 public class Jiuzhang{
     /**
      * @param nums1 an integer array

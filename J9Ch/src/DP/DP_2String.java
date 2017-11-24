@@ -16,7 +16,7 @@ public class DP_2String {
 
     // 1
     //  Longest Common Subsequence
-    //  9Ch DP
+    // 9Ch DP
 /*
     A=“jiuzhang”,
     B=“liji ang”
@@ -351,7 +351,7 @@ public class DP_2String {
 //33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333//
     // 3
     //  72. Edit Distance
-    //  9Ch DP 动态规划版本去掉注释
+    // 9Ch DP 动态规划版本去掉注释
     //  find the minimum number of steps required to convert word1 to word2.
 
     /*
@@ -483,7 +483,7 @@ public class DP_2String {
 
     // 4
     //  115. Distinct Subsequences
-    //  9Ch DP
+    // 9Ch DP
     //  Implement regular expression matching with support for '.' and '*'.
 
 /*
@@ -607,7 +607,7 @@ public class DP_2String {
 
     // 5
     //  10. Regular Expression Matching
-    //  9CH DP
+    // 9Ch DP
     //  Implement regular expression matching with support for '.' and '*'.
 
     /*
@@ -1097,5 +1097,5 @@ public class DP_2String {
     }
 //7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777//
 
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
 }

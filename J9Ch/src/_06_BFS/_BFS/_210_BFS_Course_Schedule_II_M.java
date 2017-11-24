@@ -79,7 +79,7 @@ We observe that if a node has incoming edges, it has prerequisites. Therefore, t
         return true;
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
     //jiuzhnag
     public class Jiuzhang {
         /**
@@ -129,7 +129,7 @@ We observe that if a node has incoming edges, it has prerequisites. Therefore, t
             return new int[0];
         }
     }
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 
 
 

@@ -47,7 +47,7 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
         System.out.println(generatePalindromes1("aabb"));// [abba, baab]
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
     //2
     //Approach #2 Backtracking [Accepted]
     Set < String > set2 = new HashSet < > ();
@@ -100,7 +100,7 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
         System.out.println(generatePalindromes2("aabb"));// [abba, baab]
     }
 
-//-------------------------------------------------------------------------////////////////////
+//------------------------------------------------------------------------------/////////////
     //3
 
     public List<String> generatePalindromes3(String s) {
@@ -165,7 +165,7 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
         System.out.println(generatePalindromes3("aabb"));// [abba, baab]
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //4
     public List<String> generatePalindromes4(String s) {
         int[] map = new int[256];
@@ -212,7 +212,7 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
     }
 
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //5
     private List<String> list = new ArrayList<>();
 

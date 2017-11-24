@@ -227,7 +227,7 @@ public class    _207_BFS_Course_Schedule_M {
     }
 
 //-------------------------------------------------------------------------
-    //jiuzhang
+    // 9Ch
     public class Solution {
         /**
          * @param numCourses a total of n courses

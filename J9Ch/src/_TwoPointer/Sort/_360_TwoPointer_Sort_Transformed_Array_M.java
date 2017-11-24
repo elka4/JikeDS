@@ -1,11 +1,13 @@
 package _TwoPointer.Sort;
-
 import java.util.Arrays;
 
 //  360. Sort Transformed Array
 //  https://leetcode.com/problems/sort-transformed-array/description/
-
+//  6:
+//  Math Two, Pointers
 public class _360_TwoPointer_Sort_Transformed_Array_M {
+//-------------------------------------------------------------------------
+    //1
 //Java O(n) incredibly short yet easy to understand AC solution
 //  https://discuss.leetcode.com/topic/48424/java-o-n-incredibly-short-yet-easy-to-understand-ac-solution/18
 
@@ -41,8 +43,9 @@ public class _360_TwoPointer_Sort_Transformed_Array_M {
         }
     }
 
-//    Same idea as you. Below I share a shorter 8-lines implementation:
-
+//-------------------------------------------------------------------------
+    //2
+    //    Same idea as you. Below I share a shorter 8-lines implementation:
     public class Solution2 {
         public int[] sortTransformedArray(int[] nums, int a, int b, int c) {
             double piv = -b / 2.0 / a;
@@ -60,7 +63,8 @@ public class _360_TwoPointer_Sort_Transformed_Array_M {
         }
     }
 
-
+//-------------------------------------------------------------------------
+    //3
     //My easy to understand Java AC solution using Two pointers
 /*    The idea is simple:
     For a parabola,
@@ -103,7 +107,8 @@ if a < 0, the max value is at its vertex. So our sort goes the opposite way.*/
             return a * x * x + b * x + c;
         }
     }
-
+//-------------------------------------------------------------------------
+    //4
 //O(n) Solution using JAVA
 //It is parabolic relation. After convert nums to a*x^2 + bx + c. If a > 0, there will be bottom in the arr; if a < 0, there it top in the arr. Find the bottom or top then go left and right.
 
@@ -161,7 +166,8 @@ if a < 0, the max value is at its vertex. So our sort goes the opposite way.*/
             return nums;
         }
     }
-
+//-------------------------------------------------------------------------
+    //5
 
     //My solution with some optimization
 /*    This is a kind of long solution, but the idea is to boost the running time by some optimization. There are 4 cases:
@@ -237,7 +243,8 @@ if a < 0, the max value is at its vertex. So our sort goes the opposite way.*/
             return x * (a * x + b) + c;
         }
     }
-
+//-------------------------------------------------------------------------
+    //6
 
     //Accepted Java solution, two pointer
 
@@ -280,7 +287,7 @@ if a < 0, the max value is at its vertex. So our sort goes the opposite way.*/
     }
 
 
-
+//-------------------------------------------------------------------------
 }
 /*
 Given a sorted array of integers nums and integer values a, b and c.

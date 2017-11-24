@@ -2,11 +2,14 @@ package _TwoPointer.Duplicate;
 
 //  26. Remove Duplicates from Sorted Array
 //  https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
-
-//http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-array/
+//  http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-array/
+//  Array, Two Pointers
+//  _027_TwoPointer_Remove_Element_E
+//  2:2
 public class _026_TwoPointer_Remove_Duplicates_from_Sorted_Array_E {
     //https://leetcode.com/articles/remove-duplicates-sorted-array/
-
+//------------------------------------------------------------------------------
+    //1
     //Approach #1 (Two Pointers) [Accepted]
     public int removeDuplicates(int[] nums) {
         if (nums.length == 0) return 0;
@@ -20,24 +23,26 @@ public class _026_TwoPointer_Remove_Duplicates_from_Sorted_Array_E {
         return i + 1;
     }
 
-//-------------------------------------------------------------------------///////
-    //jiuzhang
-public class Jiuzhang {
-    public int removeDuplicates(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
-
-        int size = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != nums[size]) {
-                nums[++size] = nums[i];
+//------------------------------------------------------------------------------
+    //2
+    // 9Ch
+    public class Jiuzhang {
+        public int removeDuplicates(int[] nums) {
+            if (nums == null || nums.length == 0) {
+                return 0;
             }
-        }
-        return size + 1;
-    }
-}
 
+            int size = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] != nums[size]) {
+                    nums[++size] = nums[i];
+                }
+            }
+            return size + 1;
+        }
+    }
+
+//------------------------------------------------------------------------------
 }
 /*
 Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.

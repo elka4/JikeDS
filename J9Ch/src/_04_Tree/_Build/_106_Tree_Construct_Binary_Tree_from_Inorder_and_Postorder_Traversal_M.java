@@ -75,7 +75,7 @@ public class _106_Tree_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversa
     //https://www.tianmaying.com/tutorial/LC106
 //------------------------------------------------------------------------
     //1
-    //jiuzhang
+    // 9Ch
 	private int findPosition(int[] arr, int start, int end, int key) {
         int i;
         for (i = start; i <= end; i++) {

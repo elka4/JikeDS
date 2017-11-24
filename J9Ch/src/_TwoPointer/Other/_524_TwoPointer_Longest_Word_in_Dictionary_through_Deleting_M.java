@@ -3,10 +3,14 @@ import java.util.*;
 
 //  524. Longest Word in Dictionary through Deleting
 //  https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/description/
-
+//  14:
+//  Two Pointers, Sort
+//  _720_Longest_Word_in_Dictionary_E
 public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
 
     //https://leetcode.com/articles/longest-word-in-dictionary-through-deletion/
+//---------------------------------------------------------------------------
+    //1
     //Approach #1 Brute Force [Time Limit Exceeded]
     public class Solution11 {
         public String findLongestWord(String s, List < String > d) {
@@ -32,6 +36,8 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
         }
     }
 
+//---------------------------------------------------------------------------
+    //2
     //Approach #2 Iterative Brute Force [Time Limit Exceeded]
     public class Solution22 {
         public String findLongestWord(String s, List < String > d) {
@@ -54,7 +60,8 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
             return max_str;
         }
     }
-
+//---------------------------------------------------------------------------
+    //3
     //Approach #3 Sorting and checking Subsequence [Accepted]
     public class Solution33 {
 
@@ -79,8 +86,9 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
             return j == x.length();
         }
     }
-
-        // Approach #4 Without Sorting [Accepted]:
+//---------------------------------------------------------------------------
+    //4
+    // Approach #4 Without Sorting [Accepted]:
     public class Solution44 {
 
         public String findLongestWord(String s, List < String > d) {
@@ -105,11 +113,11 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
     }
 
 
-//-------------------------------------------------------------------------////////////////
+//---------------------------------------------------------------------------
+    //5
     //  Easy Java Solution, isSubSequence
-//Idea is sort the dictionary d first by length DESC then lexicographical
-// ASC and test if p is SubSequence of s. The first match is the answer.
-
+    //Idea is sort the dictionary d first by length DESC then lexicographical
+    // ASC and test if p is SubSequence of s. The first match is the answer.
     public class Solution1 {
         public String findLongestWord(String s, List<String> d) {
             if (s.length() == 0 || d.size() == 0) return "";
@@ -141,7 +149,8 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
         }
     }
 
-
+//---------------------------------------------------------------------------
+    //6
 /*    There is no need to sort the dictionary. We could compare the string with current result during the iteration of the dictionary.
 
     If sorting the dictionary, let N be the size of dictionary, L be the length of each string in the dictionary, Ls be the length of string s, then the time complexity is
@@ -184,7 +193,8 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
         }
     }
 
-
+//---------------------------------------------------------------------------
+    //7
 /*    @shawngao Nice solution. Here's my very clean solution without sorting. Sorting incurs of runtime complexity of at least klog(k), where k is the number of words in the dictionary. My algorithm has a runtime complexity of nk, where n is the number of characters in s.*/
 
     public class Solution3 {
@@ -220,10 +230,10 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
         }
     }
 
-
-//    Easy Java Solution, isSubSequence
-//    Idea is sort the dictionary d first by length DESC then lexicographical ASC and test if p is SubSequence of s. The first match is the answer.
-
+//---------------------------------------------------------------------------
+    //8
+    //    Easy Java Solution, isSubSequence
+    //    Idea is sort the dictionary d first by length DESC then lexicographical ASC and test if p is SubSequence of s. The first match is the answer.
     public class Solution4 {
         public String findLongestWord(String s, List<String> d) {
             if (s.length() == 0 || d.size() == 0) return "";
@@ -255,6 +265,8 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
         }
     }
 
+//---------------------------------------------------------------------------
+    //9
     //Java Two Point Solution after Sorting the Dictionary
     class Solution5{
         private class MyCompare implements Comparator<String> {
@@ -289,6 +301,8 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
         }
     }
 
+//---------------------------------------------------------------------------
+    //10
     //  My 13ms Java Solution beats 99% (using indexOf)
     class Solution6{
         public String findLongestWord(String s, List<String> d) {
@@ -315,7 +329,8 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
             return ret;
         }
     }
-
+//---------------------------------------------------------------------------
+    //11
     //Share my java solution (without sorting)
     class Solution7{
         public String findLongestWord(String s, List<String> d) {
@@ -354,7 +369,8 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
         }
     }
 
-
+//---------------------------------------------------------------------------
+    //12
     //Java Solution with HashMap and TreeSet
     public class Solution8 {
         private boolean canFormat(Map<Character, TreeSet<Integer>> map, String s){
@@ -386,7 +402,8 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
             return res;
         }
     }
-
+//---------------------------------------------------------------------------
+    //13
     //Java O(nlogn) solution using TreeSet
     public class Solution9 {
         public String findLongestWord(String s, List<String> d) {
@@ -429,7 +446,8 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
             return true;
         }
     }
-
+//---------------------------------------------------------------------------
+    //14
     //Java simple and fast solution
     public class Solution10 {
         public String findLongestWord(String s, List<String> dictionary) {
@@ -456,6 +474,7 @@ public class _524_TwoPointer_Longest_Word_in_Dictionary_through_Deleting_M {
         }
     }
 
+//---------------------------------------------------------------------------
 }
 /*
 Given a string and a string dictionary, find the longest string in the dictionary that can be formed by deleting some characters of the given string. If there are more than one possible results, return the longest word with the smallest lexicographical order. If there is no possible result, return the empty string.

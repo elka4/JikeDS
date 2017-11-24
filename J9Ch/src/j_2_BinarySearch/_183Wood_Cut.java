@@ -43,7 +43,7 @@ public class _183Wood_Cut {
 	    return sum;
 	}
 
-////////////////////////////////////////////////////
+//---------------------------------///////////////
 public int woodCut2(int[] L, int k) {
     int max = 0;
     for (int i = 0; i < L.length; i++) {

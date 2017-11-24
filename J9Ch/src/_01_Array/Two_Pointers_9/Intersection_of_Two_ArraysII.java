@@ -48,7 +48,7 @@ public class Intersection_of_Two_ArraysII {
     }
 
 
-/////////////////////////////////////////
+//---------------------------------////
 
 //Java Solution 2
 

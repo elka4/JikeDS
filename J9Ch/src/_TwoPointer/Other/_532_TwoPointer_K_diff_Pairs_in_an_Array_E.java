@@ -3,31 +3,32 @@ import java.util.*;
 
 //  532. K-diff Pairs in an Array
 //  https://leetcode.com/problems/k-diff-pairs-in-an-array/description/
+//
 public class _532_TwoPointer_K_diff_Pairs_in_an_Array_E {
+//---------------------------------------------------------------------------
+    //1
+    //[C++] [Java] Clean Code with Explanation [set] [map]
+    public class Solution1 {
+        public int findPairs(int[] nums, int k) {
+            if (k < 0) { return 0; }
 
-//[C++] [Java] Clean Code with Explanation [set] [map]
-public class Solution1 {
-    public int findPairs(int[] nums, int k) {
-        if (k < 0) { return 0; }
+            Set<Integer> starters = new HashSet<Integer>();
+            Set<Integer> uniqs = new HashSet<Integer>();
 
-        Set<Integer> starters = new HashSet<Integer>();
-        Set<Integer> uniqs = new HashSet<Integer>();
+            for (int i = 0; i < nums.length; i++) {
+                if (uniqs.contains(nums[i] - k)) starters.add(nums[i] - k);
+                if (uniqs.contains(nums[i] + k)) starters.add(nums[i]);
+                uniqs.add(nums[i]);
+            }
 
-        for (int i = 0; i < nums.length; i++) {
-            if (uniqs.contains(nums[i] - k)) starters.add(nums[i] - k);
-            if (uniqs.contains(nums[i] + k)) starters.add(nums[i]);
-            uniqs.add(nums[i]);
+            return starters.size();
         }
-
-        return starters.size();
     }
-}
-
-//    Thanks for your concise code. Here's my java solution,
-// but it is really slow, O(n*n) complexity :--(
-
+//---------------------------------------------------------------------------
+    //2
+    //    Thanks for your concise code. Here's my java solution,
+    // but it is really slow, O(n*n) complexity :--(
     public static int findPairs2(int []nums, int k){
-
         int count=0;
         Arrays.sort(nums);//sort at first
         for(int i=0;i<nums.length-1;i++){
@@ -47,12 +48,12 @@ public class Solution1 {
         }
         return count;
     }
-
-//Two-pointer Approach
-/*The problem is just a variant of 2-sum.
-            Update: Fixed a bug that can cause integer subtraction overflow.
-            Update: The code runs in O(n log n) time, using O(1) space.*/
-
+//---------------------------------------------------------------------------
+    //3
+    //Two-pointer Approach
+    /*The problem is just a variant of 2-sum.
+                Update: Fixed a bug that can cause integer subtraction overflow.
+                Update: The code runs in O(n log n) time, using O(1) space.*/
     public int findPairs3(int[] nums, int k) {
         int ans = 0;
         Arrays.sort(nums);
@@ -63,11 +64,9 @@ public class Solution1 {
         }
         return ans;
     }
-
-/*    great! here is my two-pointers on array solution:
-
-            import java.util.Arrays;*/
-
+//---------------------------------------------------------------------------
+    //4
+    //great! here is my two-pointers on array solution:
     public class Solution4 {
         public int findPairs(int[] nums, int k) {
             Arrays.sort(nums);
@@ -111,9 +110,9 @@ public class Solution1 {
         }
         return ans;
      */
-
-//    Time complexity: O(k * n) or n * logn
-
+//---------------------------------------------------------------------------
+    //5
+    //    Time complexity: O(k * n) or n * logn
     public int findPairs6(int[] nums, int k) {
         int n = nums.length;
         if(n < 2) return 0;
@@ -131,7 +130,8 @@ public class Solution1 {
         }
         return res;
     }
-
+//---------------------------------------------------------------------------
+    //6
     public int findPairs7(int[] nums, int k) {
         Arrays.sort(nums);
 
@@ -154,7 +154,8 @@ public class Solution1 {
         return count;
     }
 
-
+//---------------------------------------------------------------------------
+    //7
 /*
     @stevenli, Inspired by your solution, I wrote a different approach where we move either of the pointers just once. I don't like to move pointers with different steps in every iteration.
 
@@ -196,8 +197,9 @@ public class Solution1 {
         }
         return diffCount;
     }
-//Java O(n) solution - one Hashmap, easy to understand
-
+//---------------------------------------------------------------------------
+    //8
+    //Java O(n) solution - one Hashmap, easy to understand
     public class Solution8 {
         public int findPairs(int[] nums, int k) {
             if (nums == null || nums.length == 0 || k < 0)   return 0;
@@ -224,9 +226,9 @@ public class Solution1 {
             return count;
         }
     }
-
-//    Similar solution
-
+//---------------------------------------------------------------------------
+    //9
+    //    Similar solution
     public class Solution9 {
         public int findPairs(int[] nums, int k) {
             Map<Integer,Integer> mp = new HashMap<Integer,Integer>();
@@ -247,8 +249,9 @@ public class Solution1 {
             return cnt;
         }
     }
-//    Thanks for sharing! But duplicate solution need to be handled, right?
-
+//---------------------------------------------------------------------------
+    //10
+    //    Thanks for sharing! But duplicate solution need to be handled, right?
     public int findPairs10(int[] nums, int k) {
         if (nums.length == 0 || k < 0) return 0;
         Map<Integer,Integer> map = new HashMap<>();
@@ -266,7 +269,8 @@ public class Solution1 {
         }
         return cnt;
     }
-
+//---------------------------------------------------------------------------
+    //11
     public class Solution12 {
         public int findPairs(int[] nums, int k) {
             if(nums.length == 0 || k < 0) return 0;
@@ -296,7 +300,8 @@ public class Solution1 {
             return count;
         }
     }
-
+//---------------------------------------------------------------------------
+    //12
     //Self-explained AC Java Sliding Window
     public  int findPairs13(int[] nums, int k) {
         if(k<0 || nums.length<=1){
@@ -338,6 +343,7 @@ public class Solution1 {
         return count;
     }
 
+//---------------------------------------------------------------------------
 }
 /*
 Given an array of integers and an integer k, you need to find the number of unique k-diff pairs in the array. Here a k-diff pair is defined as an integer pair (i, j), where i and j are both numbers in the array and their absolute difference is k.

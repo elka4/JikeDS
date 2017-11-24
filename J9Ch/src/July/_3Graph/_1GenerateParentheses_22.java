@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.*;
 
 public class _1GenerateParentheses_22 {
-    //jiuzhang
+    // 9Ch
     public ArrayList<String> generateParenthesis(int n) {
         ArrayList<String> result = new ArrayList<String>();
         if (n <= 0) {

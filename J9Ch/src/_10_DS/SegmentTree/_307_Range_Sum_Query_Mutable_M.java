@@ -147,7 +147,7 @@ public class _307_Range_Sum_Query_Mutable_M {
             return st.query_sum(i, j);
         }
 
-        ///////////////////////////////////////////
+        //---------------------------------//////
         class SegmentTree {
             SegmentTreeNode root;
             SegmentTree(){

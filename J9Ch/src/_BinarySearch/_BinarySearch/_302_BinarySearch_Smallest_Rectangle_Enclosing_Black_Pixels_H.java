@@ -3,8 +3,8 @@ import java.util.*;
 import org.junit.Test;
 public class _302_BinarySearch_Smallest_Rectangle_Enclosing_Black_Pixels_H {
 
-//-------------------------------------------------------------------------//////////////
-    //jiuzhang
+//------------------------------------------------------------------------------///////
+    // 9Ch
 public class Jiuzhang {
     /**
      * @param image a binary matrix with '0' and '1'

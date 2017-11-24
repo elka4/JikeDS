@@ -45,7 +45,7 @@ public class _2FindTheDuplicateNumber_287 {
         System.out.println(findDuplicate(nums2));
 
     }
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
     // 映射法
     /**
      * @param nums an array containing n + 1 integers which is between 1 and n
@@ -70,7 +70,7 @@ public class _2FindTheDuplicateNumber_287 {
         }
         return slow;
     }
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 }
 /*
 Given an array nums containing n + 1 integers where each integer is between 1 and n (inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one.

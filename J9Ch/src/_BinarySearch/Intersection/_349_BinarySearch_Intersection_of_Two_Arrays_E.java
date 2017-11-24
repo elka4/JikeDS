@@ -99,7 +99,7 @@ public class _349_BinarySearch_Intersection_of_Two_Arrays_E {
         }
     }
 //-------------------------------------------------------------------------//
-    //jiuzhang
+    // 9Ch
 // version 1: sort & merge
 public class Jiuzhang {
     /**

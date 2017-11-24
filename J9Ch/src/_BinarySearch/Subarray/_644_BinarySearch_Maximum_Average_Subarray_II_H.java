@@ -41,8 +41,8 @@ public class _644_BinarySearch_Maximum_Average_Subarray_II_H {
 
 
 
-//-------------------------------------------------------------------------///////////////////
-    //jiuzhang
+//------------------------------------------------------------------------------////////////
+    // 9Ch
 public class Jiuzhang{
     public double findMaxAverage(int[] nums, int k) {
         int n = nums.length;

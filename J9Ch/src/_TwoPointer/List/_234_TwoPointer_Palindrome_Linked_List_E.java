@@ -188,7 +188,7 @@ while (slow != null) {
 
 //
     //-------------------------------------------------------------------------//////
-    //jiuzhang
+    // 9Ch
 // This code would destroy the original structure of the linked list.
 // If you do not want to destroy the structure, you can reserve the second part back.
 public class Jiuzhang {

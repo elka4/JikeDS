@@ -64,7 +64,7 @@ public class _397_Bit_Integer_Replacement_E {
         return c;
     }
 /*    An alternative approach to intuitive algorithm was very well put by @dettier in a discussion: you should create as many trailing zeroes as you can. This way you can avoid the tie-breaking trap (there can be no ties), but you'll still have to handle the n=3 exception separately.*/
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 /*
     Java 12 line 4(5)ms iterative solution with explanations. No other data structures.
 
@@ -88,7 +88,7 @@ public class _397_Bit_Integer_Replacement_E {
         return count;
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 
 /*    JAVA 3ms Bit Manipulation Solution
 
@@ -124,10 +124,10 @@ public class _397_Bit_Integer_Replacement_E {
             return cnt;
         }
     }
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 }
 /*
 Given a positive integer n and you can do operations as follow:

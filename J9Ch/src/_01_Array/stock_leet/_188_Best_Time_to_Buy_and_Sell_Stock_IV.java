@@ -42,7 +42,7 @@ public class _188_Best_Time_to_Buy_and_Sell_Stock_IV {
         return profit;
     }
 
-/////////////////////////////////////////////////////////
+//---------------------------------////////////////////
 
     ///Clean Java DP solution with comment
 
@@ -82,7 +82,7 @@ public class _188_Best_Time_to_Buy_and_Sell_Stock_IV {
 
 
 
-/////////////////////////////////////////////////////////
+//---------------------------------////////////////////
 
 //Easy understanding and can be easily modified to different situations Java Solution
     /*
@@ -121,7 +121,7 @@ public class _188_Best_Time_to_Buy_and_Sell_Stock_IV {
         return res;
     }
 
-/////////////////////////////////////////////////////////
+//---------------------------------////////////////////
 
 //Clean Java DP O(nk) solution with O(k) space
 
@@ -152,11 +152,11 @@ public class _188_Best_Time_to_Buy_and_Sell_Stock_IV {
     }
 
 
-/////////////////////////////////////////////////////////
+//---------------------------------////////////////////
 
 
 
-/////////////////////////////////////////////////////////
+//---------------------------------////////////////////
 
 
 

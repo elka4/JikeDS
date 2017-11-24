@@ -84,7 +84,7 @@ public class _337_DFS_House_Robber_III_M {
     }
 //-------------------------------------------------------------------------///
 
-//jiuzhang
+// 9Ch
 //dp[i][0]表示以i为根的子树不偷根节点能获得的最高价值，dp[i][1]表示以i为根的子树偷根节点能获得的最高价值
 public class Jiuzhang1 {
     public int houseRobber3(TreeNode root) {

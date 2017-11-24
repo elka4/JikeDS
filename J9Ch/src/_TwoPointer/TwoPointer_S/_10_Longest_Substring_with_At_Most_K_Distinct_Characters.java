@@ -5,6 +5,8 @@ import java.util.*;
 //  https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/description/
 //
 public class _10_Longest_Substring_with_At_Most_K_Distinct_Characters {
+//---------------------------------------------------------------------------
+
 //15 lines java solution using slide window
 //    feel it is not a new question, just use num to track the number of distinct characters within the slide window
 
@@ -23,6 +25,7 @@ public class _10_Longest_Substring_with_At_Most_K_Distinct_Characters {
             return res;
         }
     }
+//---------------------------------------------------------------------------
 
 //    A more generic solution as follows, can be solution for Unicode string:
     public int lengthOfLongestSubstringKDistinct2(String s, int k) {
@@ -46,6 +49,7 @@ public class _10_Longest_Substring_with_At_Most_K_Distinct_Characters {
         }
         return best;
     }
+//---------------------------------------------------------------------------
 
 //    Simplified the code a bit. Made the sliding window a bit more readable :)
     public int lengthOfLongestSubstringKDistinct3(String s, int k) {

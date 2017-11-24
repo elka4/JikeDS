@@ -87,7 +87,7 @@ View depth is current size of result list.
     }
 //-------------------------------------------------------------------------///
 
-//jiuzhang
+// 9Ch
 public class Jiuzhang {
     public List<Integer> rightSideView(TreeNode root) {
         HashMap<Integer, Integer> depthToValue = new HashMap<Integer, Integer>();

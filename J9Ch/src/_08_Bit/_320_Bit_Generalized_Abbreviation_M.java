@@ -65,7 +65,7 @@ public class _320_Bit_Generalized_Abbreviation_M {
         }
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 //  Meet in Google Interview Solution with concise explanation.
 
 /*    I meet this problem in Google Interview. However, I didn't solve it at that time because I was totally out of mind when I meet with this problem. The interviewer didn't say much about the output and he first ask me how many abbreviation are there with a given word length of n. It took me a long time to guess it was 2^n.
@@ -117,7 +117,7 @@ public class _320_Bit_Generalized_Abbreviation_M {
         }
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 //Java backtracking solution
 class Solution4{
 /*    The idea is: for every character, we can keep it or abbreviate it. To keep it, we add it to the current solution and carry on backtracking. To abbreviate it, we omit it in the current solution, but increment the count, which indicates how many characters have we abbreviated. When we reach the end or need to put a character in the current solution, and count is bigger than zero, we add the number into the solution.*/
@@ -142,7 +142,7 @@ class Solution4{
 }
 
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 //Java 14ms beats 100%
 class Solution5{
 /*    For each char c[i], either abbreviate it or not.
@@ -195,7 +195,7 @@ public class Solution6 {
 }
 
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 }
 /*
 Write a function to generate the generalized abbreviations of a word.

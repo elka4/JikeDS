@@ -113,7 +113,7 @@ public class _125_TwoPointer_Valid_Palindrome_E {
         return s.equals(new StringBuilder(s).reverse().toString());
     }
 
-////////////////////////////////////////////////////////////
+//---------------------------------///////////////////////
 
     //My three line java solution
     public class Solution7 {
@@ -198,8 +198,8 @@ public class _125_TwoPointer_Valid_Palindrome_E {
         }
     }
 
-////////////////////////////////////////////////////////////
-    //jiuzhang
+//---------------------------------///////////////////////
+    // 9Ch
 public class Jiuzhang {
     public boolean isPalindrome(String s) {
         if (s == null || s.length() == 0) {

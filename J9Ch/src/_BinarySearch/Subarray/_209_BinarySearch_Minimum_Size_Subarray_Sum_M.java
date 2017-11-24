@@ -2,9 +2,9 @@ package _BinarySearch.Subarray;
 
 public class _209_BinarySearch_Minimum_Size_Subarray_Sum_M {
 
-//-------------------------------------------------------------------------////////////////
+//------------------------------------------------------------------------------/////////
 
-    //jiuzhang
+    // 9Ch
     public class Jiuzhang{
         /**
          * @param nums: an array of integers

@@ -8,7 +8,7 @@ import java.util.*;
 //  https://leetcode.com/problems/validate-binary-search-tree/description/
 //  http://www.lintcode.com/zh-cn/problem/validate-binary-search-tree/
 public class _098_Tree_Validate_Binary_Search_Tree_M {
-    //Jiuzhang
+    // 9Ch
 
     // version 1 Traverse
     private int lastVal = Integer.MIN_VALUE;
@@ -44,8 +44,8 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         System.out.println(isValidBST(root));
     }
 
-//-------------------------------------------------------------------------///////////////////
-    //Jiuzhang
+//------------------------------------------------------------------------------////////////
+    // 9Ch
 
     // version 2  Divide and Conquer, with result type
     class ResultType {
@@ -100,8 +100,8 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         System.out.println(isValidBST2(root));
     }
 
-//-------------------------------------------------------------------------///////////////////
-    //Jiuzhang
+//------------------------------------------------------------------------------////////////
+    // 9Ch
 
     // version 3  Divide and Conquer
     public boolean isValidBST3(TreeNode root) {
@@ -132,7 +132,7 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         System.out.println(isValidBST3(root));
     }
 
-//-------------------------------------------------------------------------///////////////////
+//------------------------------------------------------------------------------////////////
 
     public boolean isValidBST11(TreeNode root) {
         if(root == null)
@@ -169,7 +169,7 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         System.out.println(isValidBST(root));
 
     }
-//-------------------------------------------------------------------------///////////////////
+//------------------------------------------------------------------------------////////////
 
     /*Java Solution 1 - Recursive
     All values on the left sub tree must be less than root, and all values on the
@@ -218,7 +218,7 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         return true;
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     //Java Solution 2 - Iterative
     public class Solution {
@@ -256,7 +256,7 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         }
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     //My simple Java solution in 3 lines
     public class Solution4 {
@@ -273,7 +273,7 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         }
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     //Learn one iterative inorder traversal, apply it to multiple tree questions (Java Solution)
     //I will show you all how to tackle various tree questions using iterative inorder traversal.
@@ -297,7 +297,7 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         return list;
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     //My java inorder iteration solution
     //the idea is to do a inorder Traversal and keep the value of the
@@ -321,7 +321,7 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         return true ;
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     //Another passed Java solution
     public class Solution7 {
@@ -342,7 +342,7 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
     }
 
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     //1 ms Java Solution using Recursion
     public class Solution8 {
@@ -360,7 +360,7 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         }
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     //1ms Java solution, O(n) time and O(1) space, using Integer object and null pointer
     public class Solution9 {
@@ -383,7 +383,7 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         }
     }
 
-//-------------------------------------------------------------------------///////////////////
+//------------------------------------------------------------------------------////////////
 
     public class Solution0 {
         public boolean isValidBST(TreeNode root) {
@@ -396,9 +396,9 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         }
     }
 
-//-------------------------------------------------------------------------///////////////////
-//-------------------------------------------------------------------------///////////////////
-//-------------------------------------------------------------------------///////////////////
+//------------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------////////////
 /*Learn one iterative inorder traversal, apply it to multiple tree questions (Java Solution)
     I will show you all how to tackle various tree questions using iterative inorder traversal. First one is the standard iterative inorder traversal using stack. Hope everyone agrees with this solution.
 
@@ -460,9 +460,9 @@ public class _098_Tree_Validate_Binary_Search_Tree_M {
         return true;
     }
 
-//-------------------------------------------------------------------------///////////////////
-//-------------------------------------------------------------------------///////////////////
-//-------------------------------------------------------------------------///////////////////
+//------------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------////////////
 }
 /*
 验证二叉查找树

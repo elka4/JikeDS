@@ -72,7 +72,7 @@ you can also move one at a time which is simpler, like the following:*/
 
 
 
-//////////////////////////////////////////
+//---------------------------------/////
 /*
     Java Solution 2 - Using HashMap
 

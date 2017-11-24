@@ -58,7 +58,7 @@ public class _42_Maximum_Subarray_II {
         for (int i : left){
             System.out.print(i + " ");
         }//1 4 4 5 5 6
-///////////////////////////////////////////////////
+//---------------------------------//////////////
 
         sum = 0;
         minSum = 0;
@@ -76,7 +76,7 @@ public class _42_Maximum_Subarray_II {
             System.out.print(i + " ");
         }//6 5 3 3 2 2
         System.out.println();
-///////////////////////////////////////////////////
+//---------------------------------//////////////
 
         max = Integer.MIN_VALUE;
         for(int i = 0; i < size - 1; i++){

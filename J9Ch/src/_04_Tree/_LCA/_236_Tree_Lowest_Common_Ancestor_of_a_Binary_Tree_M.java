@@ -20,7 +20,7 @@ Update: I also wrote two iterative solutions now, one of them being a version of
         return left == null ? right : right == null ? left : root;
     }
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
     //Java/Python iterative solution
    /* To find the lowest common ancestor, we need to find where is p and q and a way to track their ancestors. A parent pointer for each node found is good for the job. After we found both p and q, we create a set of p's ancestors. Then we travel through q's ancestors, the first one appears in p's is our answer.*/
     public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
@@ -51,7 +51,7 @@ Update: I also wrote two iterative solutions now, one of them being a version of
     }
 
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 }
 /*
 Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.

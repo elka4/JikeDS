@@ -8,7 +8,7 @@ public class _456_Stack_132_Pattern_M {
 
 
 //-------------------------------------------------------------------------//
-    //jiuzhang
+    // 9Ch
     public class Solution {
         /**
          * @param nums a list of n integers

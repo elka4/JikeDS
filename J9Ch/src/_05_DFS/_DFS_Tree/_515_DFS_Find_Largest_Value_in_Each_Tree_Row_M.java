@@ -38,7 +38,7 @@ public class _515_DFS_Find_Largest_Value_in_Each_Tree_Row_M {
     }
 
 
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
     //Java BFS
     public int[] findValueMostElement2(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
@@ -61,7 +61,7 @@ public class _515_DFS_Find_Largest_Value_in_Each_Tree_Row_M {
         return resArray;
     }
 
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
     //Alright, two binary tree level order traversal problems in one contest.
     // This time, mission is to find the max of each level...
     public int[] findValueMostElement3(TreeNode root) {
@@ -91,7 +91,7 @@ public class _515_DFS_Find_Largest_Value_in_Each_Tree_Row_M {
         return result;
     }
 
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
 }
 /*
 

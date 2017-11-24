@@ -1,15 +1,18 @@
 package _TwoPointer.Duplicate;
-
-//  27. Remove Element
-
-//  https://leetcode.com/problems/remove-element/description/
-
 import org.junit.Test;
 
-//http://www.lintcode.com/en/problem/remove-element/
-public class _027_TwoPointer_1_Remove_Element_E {
+//  27. Remove Element
+//  https://leetcode.com/problems/remove-element/description/
+//  http://www.lintcode.com/en/problem/remove-element/
+//  Array, Two Pointers
+//  _026_TwoPointer_Remove_Duplicates_from_Sorted_Array_E
+//  _203_List_Remove_Linked_List_Elements_E
+//  _283_TwoPointer_Move_Zeroes_E
+//  4:
+public class _027_TwoPointer_Remove_Element_E {
     //https://leetcode.com/problems/remove-element/solution/
-
+//------------------------------------------------------------------------------
+    //1
     //Approach #1 (Two Pointers) [Accepted]
     public int removeElement(int[] nums, int val) {
         int i = 0;
@@ -30,11 +33,12 @@ public class _027_TwoPointer_1_Remove_Element_E {
             System.out.print(i + " ");
         }
     }
-/*
-4
-0 0 0 2 0 2 4 4
- */
-
+    /*
+    4
+    0 0 0 2 0 2 4 4
+     */
+//------------------------------------------------------------------------------
+    //2
     //Approach #2 (Two Pointers - when elements to remove are rare) [Accepted]
     public int removeElement2(int[] nums, int val) {
         int i = 0;
@@ -60,10 +64,12 @@ public class _027_TwoPointer_1_Remove_Element_E {
             System.out.print(i + " ");
         }
     }
-/*
-4
-0 2 0 0 0 2 4 4
- */
+    /*
+    4
+    0 2 0 0 0 2 4 4
+     */
+//------------------------------------------------------------------------------
+    //3
     //My solution for your reference.
     int removeElement3(int A[], int n, int elem) {
         int begin=0;
@@ -81,12 +87,13 @@ public class _027_TwoPointer_1_Remove_Element_E {
             System.out.print(i + " ");
         }
     }
-    /*
-4
-0 0 0 2 0 2 4 4
-     */
-////////////////////////////////////////////////////////////
-    //jiuzhang
+        /*
+    4
+    0 0 0 2 0 2 4 4
+         */
+//------------------------------------------------------------------------------
+    //4
+    // 9Ch
     public int removeElement4(int[] nums, int elem) {
         int i = 0;
         int pointer = nums.length - 1;
@@ -122,6 +129,7 @@ public class _027_TwoPointer_1_Remove_Element_E {
             System.out.print(i + " ");
         }
     }
+
 /*                      0 1 2 3 4 5 6 7
                 nums[]: 0 4 4 0 0 2 4 4  | index: 0 | pointer: 7 | i++: 0
                 nums[]: 0 4 4 0 0 2 4 4  | index: 1 | pointer: 7 | nums[i]: 4
@@ -134,6 +142,8 @@ public class _027_TwoPointer_1_Remove_Element_E {
                 4
                 0 2 0 0 0 2 4 4
  */
+//------------------------------------------------------------------------------
+
 }
 /*
 Given an array and a value, remove all instances of that value in place and return the new length.

@@ -52,7 +52,7 @@ If nums = [1,2,2], a solution is:
         }
     }
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 
     // Very simple and fast java solution
 
@@ -92,7 +92,7 @@ while (i < n.length && n[i] == n[i - 1]) {i++;} --> after this, i == 3,
 add the element as in subset I
      */
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 
     //Standard DFS Java Solution
     public List<List<Integer>> subsetsWithDup3(int[] nums) {
@@ -114,7 +114,7 @@ add the element as in subset I
         }
     }
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
     //Share my 2ms java iteration solution (very simple and short)
 
     public List<List<Integer>> subsetsWithDup4(int[] nums) {
@@ -141,7 +141,7 @@ add the element as in subset I
     }
 
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
     //Accepted java iterative solution
     public List<List<Integer>> subsetsWithDup5(int[] num) {
         Arrays.sort(num);
@@ -176,7 +176,7 @@ add the element as in subset I
 
 
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 // Subsets vs. Subsets II: Add only 3 more lines to Subsets solution
 
     public class Solution {
@@ -257,7 +257,7 @@ add the element as in subset I
 
 
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 //Java solution using bit manipulation
 
     public List<List<Integer>> subsetsWithDup7(int[] num) {
@@ -286,7 +286,7 @@ add the element as in subset I
         return lists;
     }
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
     // Share simple recursive java solution
     public List<List<Integer>> subsetsWithDup8(int[] num) {
         Arrays.sort(num);

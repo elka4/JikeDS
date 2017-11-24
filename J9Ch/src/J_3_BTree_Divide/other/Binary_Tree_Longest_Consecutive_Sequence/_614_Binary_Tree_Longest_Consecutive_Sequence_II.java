@@ -23,7 +23,7 @@ import org.junit.Test;
 // from any to any
 public class _614_Binary_Tree_Longest_Consecutive_Sequence_II {
 
-    //jiuzhang
+    // 9Ch
     class ResultType {
         public int max_length, max_down, max_up;
         ResultType(int len, int down, int up) {
@@ -82,7 +82,7 @@ public class _614_Binary_Tree_Longest_Consecutive_Sequence_II {
 
     }
 
-//-------------------------------------------------------------------------/////////
+//------------------------------------------------------------------------------//
 
     //https://leetcode.com/problems/binary-tree-longest-consecutive-sequence-ii/solution/
 
@@ -91,7 +91,7 @@ public class _614_Binary_Tree_Longest_Consecutive_Sequence_II {
 
 
 
-//-------------------------------------------------------------------------/////////
+//------------------------------------------------------------------------------//
 
     //Approach #2 Single traversal [Accepted]
     //用数组代替resultType
@@ -130,7 +130,7 @@ public class _614_Binary_Tree_Longest_Consecutive_Sequence_II {
 
 
 
-//-------------------------------------------------------------------------/////////
+//------------------------------------------------------------------------------//
 
     //Neat Java Solution Single pass O(n)
 
@@ -162,7 +162,7 @@ public class _614_Binary_Tree_Longest_Consecutive_Sequence_II {
     }
 
 
-//-------------------------------------------------------------------------/////////
+//------------------------------------------------------------------------------//
 
     //Java solution, Binary Tree Post Order Traversal
 
@@ -214,7 +214,7 @@ public class _614_Binary_Tree_Longest_Consecutive_Sequence_II {
     }
 
 
-//-------------------------------------------------------------------------/////////
+//------------------------------------------------------------------------------//
 
     //Java recursively compute ascending and descending sequence
 
@@ -246,7 +246,7 @@ For each subtree we recursively compute the length of longest ascending and desc
     }
 
 
-//-------------------------------------------------------------------------/////////
+//------------------------------------------------------------------------------//
 
     //Java Recursive Solution with some comments.
 
@@ -285,21 +285,21 @@ For each subtree we recursively compute the length of longest ascending and desc
 
 
 
-//-------------------------------------------------------------------------/////////
+//------------------------------------------------------------------------------//
 
 
 
 
 
 
-//-------------------------------------------------------------------------/////////
+//------------------------------------------------------------------------------//
 
 
 
 
 
 
-//-------------------------------------------------------------------------/////////
+//------------------------------------------------------------------------------//
 
 
 

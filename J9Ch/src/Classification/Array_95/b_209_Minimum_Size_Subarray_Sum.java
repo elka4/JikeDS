@@ -59,7 +59,7 @@ A simple sliding window solution.
             return 0;
     }
 
-//////////////////////////////////////?
+//---------------------------------/?
 
     //Similarly, we can also write it in a more readable way.
 

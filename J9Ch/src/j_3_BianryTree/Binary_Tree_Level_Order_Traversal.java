@@ -36,7 +36,7 @@ public class Binary_Tree_Level_Order_Traversal {
 
      return result;
  }
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 //version 2:  DFS
 public class _60Binary_Tree_Level_Order_Traversal_DFS {
     /**
@@ -82,7 +82,7 @@ public class _60Binary_Tree_Level_Order_Traversal_DFS {
 }
 
 
-    //-------------------------------------------------------------------------////////
+    //------------------------------------------------------------------------------/
 //version 3: BFS. two queues
 public class _60Binary_Tree_Level_Order_Traversal_BFS_2Q {
     /**
@@ -126,7 +126,7 @@ public class _60Binary_Tree_Level_Order_Traversal_BFS_2Q {
     }
 }
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 
     //version 4: BFS, queue with dummy node
     public class _60Binary_Tree_Level_Order_Traversal_Q_DummyNode {
@@ -170,7 +170,7 @@ public class _60Binary_Tree_Level_Order_Traversal_BFS_2Q {
         }
     }
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 
 
 

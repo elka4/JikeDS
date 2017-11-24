@@ -43,7 +43,7 @@ public class Merge_Two_Sorted_Lists {
     }
 
 
-////////////////////////////////////////////
+//---------------------------------///////
 
     public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);

@@ -42,7 +42,7 @@ import java.util.List;
 
 // Substring Anagrams
 public class _2SubstringAnagrams {
-    //jiuzhang
+    // 9Ch
     /**
      * @param s a string
      * @param p a non-empty string
@@ -137,7 +137,7 @@ public class _2SubstringAnagrams {
         return ans;
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 //clean version
     public List<Integer> findAnagrams3(String s, String p) {
         // Write your code here

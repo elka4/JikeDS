@@ -1,11 +1,12 @@
 package _TwoPointer.Sum;
-
 import java.util.Arrays;
 
-//16. 3Sum Closest
-
-//https://leetcode.com/problems/3sum-closest/description/
+//  16. 3Sum Closest
+//  https://leetcode.com/problems/3sum-closest/description/
+//  3:
 public class _016_TwoPointer_3Sum_Closest_M {
+//-------------------------------------------------------------------------
+    //1
     //Java solution with O(n2) for reference
 /*    Similar to 3 Sum problem, use 3 pointers to point current element, next element and the last element. If the sum is less than target, it means we have to add a larger element so next element move to the next. If the sum is greater, it means we have to add a smaller element so last element move to the second last element. Keep doing this until the end. Each time compare the difference between sum and target, if it is less than minimum difference so far, then replace result with it, otherwise keep iterating.*/
 
@@ -30,7 +31,8 @@ public class _016_TwoPointer_3Sum_Closest_M {
             return result;
         }
     }
-
+//-------------------------------------------------------------------------
+    //2
     //Self-Explanatory Java Solution using two pointers
     public int threeSumClosest(int[] nums, int target) {
         if(nums==null || nums.length<3)
@@ -61,8 +63,9 @@ public class _016_TwoPointer_3Sum_Closest_M {
     }
 
 
-//-------------------------------------------------------------------------//////
-    //jiuzhang
+//-------------------------------------------------------------------------
+    //3
+    // 9Ch
 public class Jiuzhang {
     /**
      * @param numbers: Give an array numbers of n integer
@@ -94,6 +97,7 @@ public class Jiuzhang {
         return bestSum;
     }
 }
+//-------------------------------------------------------------------------
 }
 //给一个包含 n 个整数的数组 S, 找到和与给定整数 target 最接近的三元组，返回这三个数的和。
 

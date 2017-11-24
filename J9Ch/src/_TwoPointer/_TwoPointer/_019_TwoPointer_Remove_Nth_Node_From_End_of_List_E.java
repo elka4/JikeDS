@@ -48,8 +48,8 @@ public class _019_TwoPointer_Remove_Nth_Node_From_End_of_List_E {
     }
 
 
-/////////////////////////////////////////////////////////////
-    //jiuzhang
+//---------------------------------////////////////////////
+    // 9Ch
 public class Jiuzhang {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if (n <= 0) {

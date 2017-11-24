@@ -56,7 +56,7 @@ public class _234_List_Palindrome_Linked_List_E {
         }
         return prev;
     }
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
     /*Java Solution 1 - Creat a new reversed list
 
     We can create a new list in reversed order and then compare each node.
@@ -183,7 +183,7 @@ public class _234_List_Palindrome_Linked_List_E {
     }
     //Time is O(n) and space is O(1).
 //-------------------------------------------------------------------------//
-//jiuzhang
+// 9Ch
     // This code would destroy the original structure of the linked list.
 // If you do not want to destroy the structure, you can reserve the second part back.
     public class Jiuzhang {

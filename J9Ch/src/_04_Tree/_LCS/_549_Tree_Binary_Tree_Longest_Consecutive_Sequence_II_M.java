@@ -214,7 +214,7 @@ public class _549_Tree_Binary_Tree_Longest_Consecutive_Sequence_II_M {
      */
 //-------------------------------------------------------------------------/
     //5
-    //jiuzhang
+    // 9Ch
     class ResultType {
         public int max_length, max_down, max_up;
         ResultType(int len, int down, int up) {
@@ -283,7 +283,7 @@ public class _549_Tree_Binary_Tree_Longest_Consecutive_Sequence_II_M {
 4
      */
 
-/////////////////////////////////////////////////////////////
+//---------------------------------////////////////////////
 }
 /*
 给定一棵二叉树，找到最长连续序列路径的长度。

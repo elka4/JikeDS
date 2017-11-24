@@ -39,7 +39,7 @@ public class _040_BackTracking_Combination_Sum_II_M {
     }//[[1, 1, 6], [1, 2, 5], [1, 7], [2, 6]]
 
 
-    //-------------------------------------------------------------------------////////////////////
+    //------------------------------------------------------------------------------/////////////
     //Java solution using dfs, easy understand
     public List<List<Integer>> combinationSum02(int[] cand, int target) {
         Arrays.sort(cand);
@@ -62,7 +62,7 @@ public class _040_BackTracking_Combination_Sum_II_M {
         }
     }
 
-//-------------------------------------------------------------------------////////////////////
+//------------------------------------------------------------------------------/////////////
     //    Java - short and recursive, clean code.
     public List<List<Integer>> combinationSum03(int[] candidates, int target) {
         List<List<Integer>> ans = new ArrayList<>();
@@ -92,8 +92,8 @@ public class _040_BackTracking_Combination_Sum_II_M {
         }
     }
 
-//-------------------------------------------------------------------------////////////////////
-    //jiuzhang
+//------------------------------------------------------------------------------/////////////
+    // 9Ch
     /**
      * @param candidates: Given the candidate numbers
      * @param target: Given the target number
@@ -136,7 +136,7 @@ public class _040_BackTracking_Combination_Sum_II_M {
         }
     }
 
-//-------------------------------------------------------------------------////////////////////
+//------------------------------------------------------------------------------/////////////
 }
 
 /*

@@ -58,7 +58,7 @@ public class _468_Validate_IP_Address_M {
     }
 
 //-------------------------------------------------------------------------//
-    //Jiuzhang
+    // 9Ch
     String IPv6char = "0123456789abcdefABCDEF";
     public boolean isVaild_IPv4Number(String str){
         int num = 0;

@@ -62,7 +62,7 @@ public class Repeated_DNA_Sequences {
     }
 
 
-/////////////////////////////////////////////////
+//---------------------------------////////////
 
 
     //Clean Java solution (hashmap + bits manipulation)
@@ -89,7 +89,7 @@ public class Repeated_DNA_Sequences {
         }
         return rv;
     }
-//////////////////////////////////////////////////////////
+//---------------------------------/////////////////////
 
     //7 lines simple Java, O(n)
     public List<String> findRepeatedDnaSequences3(String s) {

@@ -204,7 +204,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     }
     @Test public void test07(){ System.out.println(permute07(new int[]{1,2,3})); }
 
-//-------------------------------------------------------------------------////////////////////
+//------------------------------------------------------------------------------/////////////
     //8
 //    A new ArrayList<Integer> newPerm is not necessary.
 //
@@ -234,7 +234,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
 
 //-------------------------------------------------------------------------//
     //9
-    //jiuzhang
+    // 9Ch
     public List<List<Integer>> permute_J1(int[] nums) {
         List<List<Integer>> results = new ArrayList<>();
         if (nums == null) {

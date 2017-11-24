@@ -2,8 +2,8 @@ package _BinarySearch.Array_2D;
 
 public class _174_BinarySearch_Dungeon_Game_H {
 
-//-------------------------------------------------------------------------///////////////////
-    //jiuzhang
+//------------------------------------------------------------------------------////////////
+    // 9Ch
 public class Jiuzhang {
     private boolean canSurvive(int health, int[][] dungeon) {
         int n = dungeon.length, m = dungeon[0].length;

@@ -2,8 +2,8 @@ package _BinarySearch.Peak;
 
 public class _162_BinarySearch_Find_Peak_Element_M {
 
-//-------------------------------------------------------------------------////////////////
-    //jiuzhang
+//------------------------------------------------------------------------------/////////
+    // 9Ch
     class Jiuzhang{
         /**
          * @param A: An integers array.

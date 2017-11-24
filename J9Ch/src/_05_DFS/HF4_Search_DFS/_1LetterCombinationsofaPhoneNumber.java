@@ -49,7 +49,7 @@ public class _1LetterCombinationsofaPhoneNumber {
 
 
 
-///////////////////////////////////////////////////////////
+//---------------------------------//////////////////////
 
 // version: 高频题班
 
@@ -88,7 +88,7 @@ public class _1LetterCombinationsofaPhoneNumber {
         String digits = "23";
         System.out.println(letterCombinations2(digits));
     }
-/////////////////////////////////////////////////////////
+//---------------------------------////////////////////
 
 
     // 方法2 计状态
@@ -126,7 +126,7 @@ public class _1LetterCombinationsofaPhoneNumber {
         return ans;
     }
 
-/////////////////////////////////////////////////////////
+//---------------------------------////////////////////
 }
 /*
 Given a digit string excluded 01, return all possible letter combinations that the number could represent.

@@ -59,7 +59,7 @@ public class _199_DFS_Binary_Tree_Right_Side_View_M {
         return rightView;
     }
 
-    //-------------------------------------------------------------------------///////////////////
+    //------------------------------------------------------------------------------////////////
     //    Approach #2 Breadth-First Search [Accepted]
     public List<Integer> rightSideView2(TreeNode root) {
         Map<Integer, Integer> rightmostValueAtDepth = new HashMap<Integer, Integer>();
@@ -100,7 +100,7 @@ public class _199_DFS_Binary_Tree_Right_Side_View_M {
         return rightView;
     }
 
-    //-------------------------------------------------------------------------///////////////////
+    //------------------------------------------------------------------------------////////////
     public List<Integer> rightSideView3(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         rightView3(root, result, 0);
@@ -119,8 +119,8 @@ public class _199_DFS_Binary_Tree_Right_Side_View_M {
         rightView3(curr.left, result, currDepth + 1);
     }
 
-    //-------------------------------------------------------------------------///////////////////
-    //jiuzhang
+    //------------------------------------------------------------------------------////////////
+    // 9Ch
     private void dfs(HashMap<Integer, Integer> depthToValue, TreeNode node, int depth) {
         if (node == null) {
             return;
@@ -144,7 +144,7 @@ public class _199_DFS_Binary_Tree_Right_Side_View_M {
         return result;
     }
 
-//-------------------------------------------------------------------------///////////////////
+//------------------------------------------------------------------------------////////////
 }
 /*
 

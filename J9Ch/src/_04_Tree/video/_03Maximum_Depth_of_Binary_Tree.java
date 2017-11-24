@@ -22,7 +22,7 @@ public class _03Maximum_Depth_of_Binary_Tree {
         return Math.max(left, right) + 1;
     }
 
-///////////////////////////////////////////////////
+//---------------------------------//////////////
 
 
     //version 2: Traverse
@@ -53,7 +53,7 @@ public class _03Maximum_Depth_of_Binary_Tree {
         }
     }
 
-///////////////////////////////////////////////////
+//---------------------------------//////////////
 //non-recursion
 @SuppressWarnings("all")
 
@@ -86,7 +86,7 @@ public class _02Maximum_Depth_of_Binary_Tree_NonRecursion {
         return count;
     }
 }
-///////////////////////////////////////////////////
+//---------------------------------//////////////
 }
 
 /*

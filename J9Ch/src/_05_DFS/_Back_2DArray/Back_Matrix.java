@@ -463,7 +463,7 @@ Now, instead outputting board configurations, return the total number of distinc
  */
 
 
-    //jiuzhang
+    // 9Ch
     public class JiuzhangN_Queens_II  {
         public int sum;
         public int totalNQueens(int n) {
@@ -503,7 +503,7 @@ Now, instead outputting board configurations, return the total number of distinc
 //////3.N-Queens II     3.N-Queens II   3.N-Queens II   3.N-Queens II   3.N-Queens II
 
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 
 
 

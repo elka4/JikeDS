@@ -62,7 +62,7 @@ public class _1IdentifyCelebrity {
     }
 //------------------------------------------------------------------------
 
-    //jiuzhang
+    // 9Ch
     /**
      * @param n a party with n people
      * @return the celebrity's label or -1

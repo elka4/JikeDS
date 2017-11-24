@@ -71,7 +71,7 @@ public class _2PalindromePartitioning_II {
 
 
 
-//-------------------------------------------------------------------------/////////////
+//------------------------------------------------------------------------------//////
 
 
 /*    DP solution; & some thoughts
@@ -130,7 +130,7 @@ try to divide & conqure =>
     No need to check if a string is a palindrome or not inside the loop by adjusting the order of getting of solution of the sub problems.
     assign dp[0] to be -1 so that when s[0:i) is a palindrome by itself, dp[i] is 0. This is for the consistency of the code.
     The time complexity and the space complexity are both O(n ^ 2).*/
-//-------------------------------------------------------------------------/////////////
+//------------------------------------------------------------------------------//////
 
 //    My accepted Java solution
 //    I've solved the problem some time ago (with DP, of course), and I thought I would share it:
@@ -193,7 +193,7 @@ try to divide & conqure =>
     So there you go. With this method, you are assured that remaining substring (or 'previous state') to the left of the current palindrome is the minimum at that point because you already computed it earlier. You just need to +1 to the cost and see if you have a new minimum cost for the state you are currently in (the last character of the current palindrome).
 
     Sorry for the lengthy explanation :|*/
-//-------------------------------------------------------------------------/////////////
+//------------------------------------------------------------------------------//////
 
 //    JAVA DP recursive 5ms solution
     public class Solution04 {
@@ -221,7 +221,7 @@ try to divide & conqure =>
             }
         }
     }
-//-------------------------------------------------------------------------/////////////
+//------------------------------------------------------------------------------//////
     // 9Ch DP
     public int minCut(String ss) {
         char[] s = ss.toCharArray();
@@ -278,8 +278,8 @@ try to divide & conqure =>
         System.out.println(minCut("aab"));
         System.out.println(minCut("aabcd"));
     }
-//-------------------------------------------------------------------------/////////////
-    //Jiuzhang
+//------------------------------------------------------------------------------//////
+    // 9Ch
     // version 1
     // f[i] 表示前i个字母，最少可以被分割为多少个回文串
     // 最后return f[n] - 1
@@ -344,8 +344,8 @@ try to divide & conqure =>
     }
 
 
-//-------------------------------------------------------------------------/////////////
-    //Jiuzhang
+//------------------------------------------------------------------------------//////
+    // 9Ch
     // version 2
     // f[i] 表示前i个字母，最少被切割几次可以切割为都是回文串。
     // 最后return f[n]
@@ -407,7 +407,7 @@ try to divide & conqure =>
         }
     }
 
-//-------------------------------------------------------------------------/////////////
+//------------------------------------------------------------------------------//////
 
 }
 

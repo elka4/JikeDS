@@ -63,8 +63,8 @@ public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
         return result;
     }
 
-//-------------------------------------------------------------------------////////////////
-    //Jiuzhang
+//------------------------------------------------------------------------------/////////
+    // 9Ch
     //Iterative
     public ArrayList<Integer> postorderTraversal2(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<>();
@@ -111,8 +111,8 @@ public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
         root.print();
     }
 
-//-------------------------------------------------------------------------/////////
-    //Jiuzhang
+//------------------------------------------------------------------------------//
+    // 9Ch
     //Recursive
     public ArrayList<Integer> postorderTraversal22(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<>();
@@ -124,7 +124,7 @@ public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
         result.add(root.val);
         return result;
     }
-//-------------------------------------------------------------------------////////////////////
+//------------------------------------------------------------------------------/////////////
 
     public class Solution_mine {
         /**
@@ -152,7 +152,7 @@ public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
         }
     }
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
     public ArrayList<Integer> postorderTraversal4(TreeNode root) {
 
         ArrayList<Integer> lst = new ArrayList<Integer>();
@@ -206,7 +206,7 @@ public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
         return lst;
     }
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 
     public List<Integer> postorderTraversal3(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
@@ -260,7 +260,7 @@ public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
         }
         return ans;
     }
-//-------------------------------------------------------------------------////////////////
+//------------------------------------------------------------------------------/////////
 
 }
 /*  leetcode

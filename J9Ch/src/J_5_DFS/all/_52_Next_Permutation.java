@@ -69,7 +69,7 @@ public class _52_Next_Permutation {
             System.out.print(i + " ");
         }
     }
-///////////////////////////////////////////////////////
+//---------------------------------//////////////////
 
     public void swapItem(ArrayList<Integer> nums, int i, int j) {
         Integer tmp = nums.get(i);
@@ -134,7 +134,7 @@ For [4,3,2,1], the next permutation is [1,2,3,4]
     //2, 3, 1   3 1 2
     }
 
-//-------------------------------------------------------------------------//////////////////
+//------------------------------------------------------------------------------///////////
 
     // version 2
     public void reverse(int[] num, int start, int end) {

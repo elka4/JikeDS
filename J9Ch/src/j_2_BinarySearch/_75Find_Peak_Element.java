@@ -45,7 +45,7 @@ public class _75Find_Peak_Element {
             return l;
         }
     }
-/////////////////////////////////////////////////////////////
+//---------------------------------////////////////////////
 	/**
 	 * @param nums: numsn integers array.
 	 * @return: return any of peek positions.

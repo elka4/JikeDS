@@ -1,16 +1,16 @@
 package _TwoPointer.Subarray;
-
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-
-//
+//  159. Longest Substring with At Most Two Distinct Characters
+//  https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/description/
+//  10:
 public class _159_TwoPointer_Longest_Substring_with_At_Most_Two_Distinct_Characters_H {
-
-//4ms Java Two pointers solution beat 100%
-
+//-------------------------------------------------------------------------
+    //1
+    //4ms Java Two pointers solution beat 100%
     public int lengthOfLongestSubstringTwoDistinct1(String s) {
         if (s.isEmpty()) return 0;
         int max = 1;
@@ -37,7 +37,8 @@ public class _159_TwoPointer_Longest_Substring_with_At_Most_Two_Distinct_Charact
         return max;
     }
 
-
+//-------------------------------------------------------------------------
+    //2
 //  O(n) time and O(1) space solution without using HashMap
 
 //    The basic idea is to store the two characters and keep track of last indices of them. When third character comes, we set the start_point to 1 + smaller index, in that way we can always throw away one character. And the length is given by current_index - start_point.
@@ -83,7 +84,8 @@ public class _159_TwoPointer_Longest_Substring_with_At_Most_Two_Distinct_Charact
             return maxLen;
         }
     }
-//-------------------------------------------------------------------------///
+//-------------------------------------------------------------------------
+    //3
     //  https://discuss.leetcode.com/topic/71662/sliding-window-algorithm-template-to-solve-all-the-leetcode-substring-search-problem/4
 
 //Sliding Window algorithm template to solve all the Leetcode substring search problem.
@@ -141,6 +143,8 @@ public class _159_TwoPointer_Longest_Substring_with_At_Most_Two_Distinct_Charact
             return result;
         }
     }
+//-------------------------------------------------------------------------
+//4
 /*
 2) the similar questions are:
 
@@ -198,7 +202,8 @@ https://leetcode.com/problems/find-all-anagrams-in-a-string/
         }
     }
 
-
+//-------------------------------------------------------------------------
+    //5
     /*
     you may find that I only change a little code above to solve the question "Find All Anagrams in a String":
 change
@@ -241,7 +246,8 @@ to
             return d;
         }
     }
-
+//-------------------------------------------------------------------------
+    //6
 //    Longest Substring with At Most Two Distinct Characters
 //    https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
 
@@ -268,7 +274,8 @@ to
         }
     }
 
-
+//-------------------------------------------------------------------------
+    //7
 //    Substring with Concatenation of All Words
 //    https://leetcode.com/problems/substring-with-concatenation-of-all-words/
 
@@ -323,7 +330,8 @@ to
         }
     }
 
-
+//-------------------------------------------------------------------------
+//8
 //    Find All Anagrams in a String
 //    https://leetcode.com/problems/find-all-anagrams-in-a-string/
 
@@ -369,6 +377,7 @@ to
         }
     }
 //-------------------------------------------------------------------------///
+    //9
     //  https://www.programcreek.com/2013/02/longest-substring-which-contains-2-unique-characters/
 
 /*1. Longest Substring Which Contains 2 Unique Characters
@@ -410,6 +419,8 @@ to
 
         return max;
     }
+//-------------------------------------------------------------------------
+//10
     //Now if this question is extended to be "the longest substring that contains k unique characters", what should we do?
 
 /*2. Solution for K Unique Characters
@@ -461,7 +472,7 @@ to
     }
 //    Time is O(n).
 
-//-------------------------------------------------------------------------///
+//-------------------------------------------------------------------------
 
 }
 /*

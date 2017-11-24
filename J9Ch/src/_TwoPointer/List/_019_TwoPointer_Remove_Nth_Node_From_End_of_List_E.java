@@ -1,12 +1,13 @@
 package _TwoPointer.List;
-
 import lib.ListNode;
 
 //  19. Remove Nth Node From End of List
 //  https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+//  3:
 public class _019_TwoPointer_Remove_Nth_Node_From_End_of_List_E {
     //https://leetcode.com/problems/remove-nth-node-from-end-of-list/solution/
-
+//------------------------------------------------------------------------------
+    //1
     //Approach #1 (Two pass algorithm)
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
@@ -27,6 +28,8 @@ public class _019_TwoPointer_Remove_Nth_Node_From_End_of_List_E {
         return dummy.next;
     }
 
+//------------------------------------------------------------------------------
+    //2
     //Approach #2 (One pass algorithm)
     public ListNode removeNthFromEnd2(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
@@ -47,33 +50,35 @@ public class _019_TwoPointer_Remove_Nth_Node_From_End_of_List_E {
     }
 
 
-/////////////////////////////////////////////////////////////
-    //jiuzhang
-public class Jiuzhang {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        if (n <= 0) {
-            return null;
-        }
-
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-
-        ListNode preDelete = dummy;
-        for (int i = 0; i < n; i++) {
-            if (head == null) {
+//------------------------------------------------------------------------------
+    //3
+    // 9Ch
+    public class Jiuzhang {
+        public ListNode removeNthFromEnd(ListNode head, int n) {
+            if (n <= 0) {
                 return null;
             }
-            head = head.next;
-        }
-        while (head != null) {
-            head = head.next;
-            preDelete = preDelete.next;
-        }
-        preDelete.next = preDelete.next.next;
-        return dummy.next;
-    }
-}
 
+            ListNode dummy = new ListNode(0);
+            dummy.next = head;
+
+            ListNode preDelete = dummy;
+            for (int i = 0; i < n; i++) {
+                if (head == null) {
+                    return null;
+                }
+                head = head.next;
+            }
+            while (head != null) {
+                head = head.next;
+                preDelete = preDelete.next;
+            }
+            preDelete.next = preDelete.next.next;
+            return dummy.next;
+        }
+    }
+
+//------------------------------------------------------------------------------
 }
 /*
 Given a linked list, remove the nth node from the end of list and return its head.

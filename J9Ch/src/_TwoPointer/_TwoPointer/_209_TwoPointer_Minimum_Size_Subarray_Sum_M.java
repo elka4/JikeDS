@@ -194,9 +194,9 @@ As to NLogN solution, logN immediately reminds you of binary search. In this cas
     }
 
 
-    ////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////
-    //jiuzhang
+    //---------------------------------///////////////////////
+//---------------------------------///////////////////////
+    // 9Ch
 public class Jiuzhang {
     /**
      * @param nums: an array of integers

@@ -1,10 +1,8 @@
 package _03_List.Remove_Insert;
-
 import lib.ListNode;
 
 
-//237. Delete Node in a Linked List
-
+//  237. Delete Node in a Linked List
 //  https://leetcode.com/problems/delete-node-in-a-linked-list/description/
 //
 public class _237_List_Delete_Node_in_a_Linked_List_E {
@@ -14,9 +12,7 @@ public class _237_List_Delete_Node_in_a_Linked_List_E {
         node.next = node.next.next;
     }
 
-
-//    Release the memory:
-
+    //    Release the memory:
     public void deleteNode2(ListNode node) {
         node.val=node.next.val;
         ListNode temp = node.next;
@@ -34,11 +30,7 @@ public class _237_List_Delete_Node_in_a_Linked_List_E {
     }
 
 
-//-------------------------------------------------------------------------//
-
-
-//-------------------------------------------------------------------------//
-
+//---------------------------------------------------------------------------
 }
 /*
 

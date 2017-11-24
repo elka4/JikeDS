@@ -18,7 +18,7 @@ import org.junit.Test;
 public class Minimum_Subtree {
 //-------------------------------------------------------------------------
     //1
-    //jiuzhang
+    // 9Ch
     // version 1 : traverse + divide conquer
     private TreeNode subtree = null;
     private int subtreeSum = Integer.MAX_VALUE;
@@ -66,7 +66,7 @@ public class Minimum_Subtree {
 
 //-------------------------------------------------------------------------
     //2
-    //jiuzhang
+    // 9Ch
     // version 2: Pure divide conquer
 
     class ResultType {

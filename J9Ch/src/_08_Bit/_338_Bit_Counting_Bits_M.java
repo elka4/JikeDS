@@ -64,7 +64,7 @@ public class _338_Bit_Counting_Bits_M {
         }
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 //    Three-Line Java Solution
 //    An easy recurrence for this problem is f[i] = f[i / 2] + i % 2.
 
@@ -74,7 +74,7 @@ public class _338_Bit_Counting_Bits_M {
         return f;
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 /*Simple Java O(n) solution using two pointers
     This uses the hint from the description about using ranges. Basically, the numbers in one range are equal to 1 plus all of the numbers in the ranges before it. If you write out the binary numbers, you can see that numbers 8-15 have the same pattern as 0-7 but with a 1 at the front.
 
@@ -94,7 +94,7 @@ public class _338_Bit_Counting_Bits_M {
         return ret;
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 
 /*    How we handle this question on interview [Thinking process + DP solution]
     Question:
@@ -170,7 +170,7 @@ public class _338_Bit_Counting_Bits_M {
         }
         return result;
     }
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 }
 /*
 Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.

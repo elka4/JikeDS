@@ -31,7 +31,7 @@ public class _469Identical_Binary_Tree {
         System.out.println(isIdentical(root, root2));
     }
 
-//////////////////////////////////////////////////////////
+//---------------------------------/////////////////////
 
     public boolean isIdentical2(TreeNode a, TreeNode b) {
         // Write your code here

@@ -1,12 +1,16 @@
 package _TwoPointer.Sum;
-
 import java.util.Arrays;
 
-
-//259. 3Sum Smaller
+//  259. 3Sum Smaller
 //  https://leetcode.com/problems/3sum-smaller/description/
-
+//  5:
+//  Array Two Pointers
+//  3Sum
+//  3Sum Closest
+//  Valid Triangle Number
 public class _259_TwoPointer_3Sum_Smaller_M {
+//-------------------------------------------------------------------------
+    //1
     //Simple and easy-understanding O(n^2) JAVA solution
     public class Solution1 {
         int count;
@@ -31,9 +35,9 @@ public class _259_TwoPointer_3Sum_Smaller_M {
             return count;
         }
     }
-
-//    great idea. I made the code shorter
-
+//-------------------------------------------------------------------------
+    //2
+    //    great idea. I made the code shorter
     public class Solution2 {
         public int threeSumSmaller(int[] nums, int target) {
             int n = nums.length, cnt = 0;
@@ -47,8 +51,8 @@ public class _259_TwoPointer_3Sum_Smaller_M {
             return cnt;
         }
     }
-
-
+//-------------------------------------------------------------------------
+    //3
     //Accepted and Simple Java O(n^2) solution with detailed explanation
     public class Solution3 {
         public int threeSumSmaller(int[] nums, int target) {
@@ -69,7 +73,8 @@ public class _259_TwoPointer_3Sum_Smaller_M {
             return result;
         }
     }
-
+//-------------------------------------------------------------------------
+    //4
     //*Java* straightforward O(n^2) solution with explanations
 /*    Similar to 3-sum problem, we sort the array first. Again, similar to 3-sum problem, we use two pointers (lo and hi) to check if the sum satisfies the condition. The only trick here is that if we found out
 
@@ -101,7 +106,8 @@ public class _259_TwoPointer_3Sum_Smaller_M {
             return count;
         }
     }
-
+//-------------------------------------------------------------------------
+    //5
     //JAVA O(n^2) solution beats 95% - easy to understand
     public class Solution5 {
 
@@ -131,6 +137,7 @@ public class _259_TwoPointer_3Sum_Smaller_M {
         }
     }
 
+//-------------------------------------------------------------------------
 }
 /*
 Given an array of n integers nums and a target,

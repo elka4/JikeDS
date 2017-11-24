@@ -103,8 +103,8 @@ The basic idea is to link the tail of the list with the head, make it a cycle. T
         return head;
     }
 
-////////////////////////////////////////////////////////
-    //jiuzhang
+//---------------------------------///////////////////
+    // 9Ch
 
     public class Jiuzhang {
         private int getLength(ListNode head) {

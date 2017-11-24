@@ -39,8 +39,8 @@ public class _173_Stack_Binary_Search_Tree_Iterator_M {
             for (; node != null; stack.push(node), node = node.left);
         }
     }
-//////////////////////////////////////////////////////////
-    //jiuzhang
+//---------------------------------/////////////////////
+    // 9Ch
 public class BSTIterator {
     private Stack<TreeNode> stack = new Stack<>();
     TreeNode next = null;

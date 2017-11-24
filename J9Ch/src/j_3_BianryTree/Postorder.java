@@ -41,7 +41,7 @@ public class Postorder {
 
         return result;
     }
-//-------------------------------------------------------------------------/////////
+//------------------------------------------------------------------------------//
 //Recursive
 public ArrayList<Integer> postorderTraversal(TreeNode root) {
     ArrayList<Integer> result = new ArrayList<>();
@@ -53,7 +53,7 @@ public ArrayList<Integer> postorderTraversal(TreeNode root) {
     result.add(root.val);
     return result;
 }
-//-------------------------------------------------------------------------////////////////////
+//------------------------------------------------------------------------------/////////////
 
     public class Solution_mine {
         /**

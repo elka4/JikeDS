@@ -143,7 +143,7 @@ public TreeNode inorderSuccessor4(TreeNode root, TreeNode p) {
 }
 //--------------------------------------------------------------------------------
     //5
-    //jiuzhang
+    // 9Ch
     public TreeNode inorderSuccessor5(TreeNode root, TreeNode p) {
         TreeNode successor = null;
         while (root != null && root != p) {

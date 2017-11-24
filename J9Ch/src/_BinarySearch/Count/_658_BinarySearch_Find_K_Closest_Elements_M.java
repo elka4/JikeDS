@@ -51,7 +51,7 @@ public class _658_BinarySearch_Find_K_Closest_Elements_M {
         }
     }
 
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
 
     //O(log n) Java, 1 line O(log(n) + k) Ruby
     public List<Integer> findClosestElements33(List<Integer> arr, int k, int x) {
@@ -104,9 +104,9 @@ public class _658_BinarySearch_Find_K_Closest_Elements_M {
     }
 //    Note that above solution can be improved using binary search under the assumption that we have O(1) access to elements in input list.
 
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
 
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
 }
 /*
 Given a sorted array, two integers k and x, find the k closest elements to x in the array.

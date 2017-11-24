@@ -63,7 +63,7 @@ public class _351_BackTracking_Android_Unlock_Patterns_M {
         System.out.println(numberOfPatterns1(1,3));//5
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //Java DFS solution with clear explanations and optimization, beats 97.61% (12ms)
     // cur: the current position
     // remain: the steps remaining

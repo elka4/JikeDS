@@ -77,7 +77,7 @@ public class _094_Tree_Binary_Tree_Inorder_Traversal_M {
     }
 
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
     //Iterative solution in Java - simple and readable
     public List<Integer> inorderTraversal4(TreeNode root) {
         List<Integer> list = new ArrayList<Integer>();
@@ -122,7 +122,7 @@ public class _094_Tree_Binary_Tree_Inorder_Traversal_M {
         return res;
     }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
     //Java solution, both recursion and iteration
     public List<Integer> inorderTraversal6(TreeNode root) {
@@ -163,7 +163,7 @@ public class _094_Tree_Binary_Tree_Inorder_Traversal_M {
         return res;
     }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
     //Java Two solutions: Recursive ( 1 ms) and Non-recursive ( 2 ms)
     class Solution7{
         public List<Integer> inorderTraversal(TreeNode root) {
@@ -197,8 +197,8 @@ public class _094_Tree_Binary_Tree_Inorder_Traversal_M {
             return list;
         }
     }
-//-------------------------------------------------------------------------////////////
-    //Jiuzhang
+//------------------------------------------------------------------------------/////
+    // 9Ch
     public ArrayList<Integer> inorderTraversal(TreeNode root) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         ArrayList<Integer> result = new ArrayList<Integer>();
@@ -227,7 +227,7 @@ public class _094_Tree_Binary_Tree_Inorder_Traversal_M {
         System.out.println(inorderTraversal(root));
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     //Version 0: Non-Recursion (Recommend)
     public List<Integer> preorderTraversal(TreeNode root) {
@@ -263,7 +263,7 @@ public class _094_Tree_Binary_Tree_Inorder_Traversal_M {
         root.print();
         System.out.println(inorderTraversal(root));
     }
-//-------------------------------------------------------------------------/////////
+//------------------------------------------------------------------------------//
 
     public ArrayList<Integer> inorderTraversal3(TreeNode root) {
         // IMPORTANT: Please reset any member data you declared, as
@@ -319,7 +319,7 @@ public class _094_Tree_Binary_Tree_Inorder_Traversal_M {
         if(p.right!=null)
             helper(p.right);
     }
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 }
 /*
 二叉树的中序遍历

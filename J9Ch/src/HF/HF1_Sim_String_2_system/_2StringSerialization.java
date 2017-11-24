@@ -94,7 +94,7 @@ public class _2StringSerialization {
 
 //-------------------------------------------------------------------------//////
 
-    //jiuzhang
+    // 9Ch
     /**
      * @param strs a list of strings
      * @return encodes a list of strings to a single string.

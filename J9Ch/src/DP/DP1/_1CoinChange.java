@@ -318,7 +318,7 @@ public class _1CoinChange {
     }
 
 //-------------------------------------------------------------------------///
-    //Jiuzhang
+    // 9Ch
 
     public int coinChange2(int[] coins, int amount) {
         int[] f = new int[amount + 1];

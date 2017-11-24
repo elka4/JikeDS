@@ -29,7 +29,7 @@ public class _563_Tree_Binary_Tree_Tilt_E {
     }
 
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
     //    Simple Java Solution -- without Global Variable
     //    To avoid using global variable, you can take use of size-1 array or any other objects.
     public int findTilt2(TreeNode root) {
@@ -48,7 +48,7 @@ public class _563_Tree_Binary_Tree_Tilt_E {
         return l_sum + r_sum + node.val;
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 }
 /*
 

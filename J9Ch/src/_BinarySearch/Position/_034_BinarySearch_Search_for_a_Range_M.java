@@ -2,8 +2,8 @@ package _BinarySearch.Position;
 
 public class _034_BinarySearch_Search_for_a_Range_M {
 
-//-------------------------------------------------------------------------////////
-    //jiuzhang
+//------------------------------------------------------------------------------/
+    // 9Ch
 public class Solution {
     public int[] searchRange(int[] A, int target) {
         if (A.length == 0) {

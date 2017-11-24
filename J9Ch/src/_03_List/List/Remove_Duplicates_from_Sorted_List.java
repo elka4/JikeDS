@@ -42,7 +42,7 @@ public class Remove_Duplicates_from_Sorted_List {
     }
 
 
-///////////////////////////////////////////
+//---------------------------------//////
 
     public ListNode deleteDuplicates2(ListNode head) {
         if(head == null || head.next == null)

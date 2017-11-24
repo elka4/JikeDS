@@ -1,10 +1,13 @@
 package _TwoPointer.Subarray;
 
+
 //  209. Minimum Size Subarray Sum
 //  https://leetcode.com/problems/minimum-size-subarray-sum/description/
-
 //  http://www.lintcode.com/zh-cn/problem/minimum-size-subarray-sum/
+//  8:
 public class _209_TwoPointer_Minimum_Size_Subarray_Sum_M {
+//-------------------------------------------------------------------------
+    //1
     //Accepted clean Java O(n) solution (two pointers)
     public int minSubArrayLen(int s, int[] a) {
         if (a == null || a.length == 0)
@@ -24,7 +27,8 @@ public class _209_TwoPointer_Minimum_Size_Subarray_Sum_M {
         return min == Integer.MAX_VALUE ? 0 : min;
     }
 
-
+//-------------------------------------------------------------------------
+    //2
 //    Perhaps could make it more readable. Thanks for sharing!
 
     public int minSubArrayLen2(int s, int[] nums) {
@@ -38,7 +42,8 @@ public class _209_TwoPointer_Minimum_Size_Subarray_Sum_M {
         }
         return (win == Integer.MAX_VALUE) ? 0 : win;
     }
-
+//-------------------------------------------------------------------------
+    //3
     //Two AC solutions in Java with time complexity of N and NLogN with explanation
 /*
 Since the given array contains only positive integers, the subarray sum can only increase by including more elements. Therefore, you don't have to include more elements once the current subarray already has a sum large enough. This gives the linear time complexity solution by maintaining a minimum window with a two indices.
@@ -85,7 +90,8 @@ As to NLogN solution, logN immediately reminds you of binary search. In this cas
             return lo;
         }
     }
-
+//-------------------------------------------------------------------------
+    //4
     public class Solution4 {
 
         public int minSubArrayLen(int s, int[] nums) {
@@ -116,7 +122,8 @@ As to NLogN solution, logN immediately reminds you of binary search. In this cas
         }
     }
 
-
+//-------------------------------------------------------------------------
+    //5
 
     //O(N),O(NLogN) solutions, both O(1) space
 //    O(N) - keep a moving window expand until sum>=s, then shrink util sum<s. Each time after shrinking, update length. (similar to other solutions, just removed unnecessary min value assignment)
@@ -134,6 +141,8 @@ As to NLogN solution, logN immediately reminds you of binary search. In this cas
             return min == Integer.MAX_VALUE ? 0 : min;
         }
     }
+//-------------------------------------------------------------------------
+    //6
 //    O(NLogN) - search if a window of size k exists that satisfy the condition
 
     public class Solution6 {
@@ -160,6 +169,8 @@ As to NLogN solution, logN immediately reminds you of binary search. In this cas
             return false;
         }
     }
+//-------------------------------------------------------------------------
+    //7
 //    Another O(NLogN) solution that first calculate cumulative sum and then for each starting point binary search for end position. This uses O(N) space
 
     public class Solution7 {
@@ -191,10 +202,9 @@ As to NLogN solution, logN immediately reminds you of binary search. In this cas
         }
     }
 
-
-    ////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////
-    //jiuzhang
+//-------------------------------------------------------------------------
+    //8
+    // 9Ch
 public class Jiuzhang {
     /**
      * @param nums: an array of integers
@@ -221,6 +231,7 @@ public class Jiuzhang {
         return ans;
     }
 }
+//-------------------------------------------------------------------------
 }
 /*
 Given an array of n positive integers and a positive integer s, find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.

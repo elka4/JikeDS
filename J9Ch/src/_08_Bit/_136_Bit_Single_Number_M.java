@@ -48,8 +48,8 @@ public class _136_Bit_Single_Number_M {
         return ans;
 
     }
-/////////////////////////////////////////////////////
-    //jiuzhang
+//---------------------------------////////////////
+    // 9Ch
     public int singleNumber(int[] A) {
         if(A == null || A.length == 0) {
             return -1;

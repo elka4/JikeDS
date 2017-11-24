@@ -45,7 +45,7 @@ f[i-2] | S[i-2]S[i-1]对应一个字母
 public class _1F_DecodeWays {
 //------------------------------------------------------------------------
     //1
-    //jiuzhang
+    // 9Ch
     public int numDecodings(String s) {
         if (s == null || s.length() == 0) {
             return 0;
@@ -76,7 +76,7 @@ public class _1F_DecodeWays {
 //------------------------------------------------------------------------
     //2
     // version: 高频题班
-    //jiuzhang
+    // 9Ch
     /**
      * @param s a string,  encoded message
      * @return an integer, the number of ways decoding

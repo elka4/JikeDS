@@ -35,7 +35,7 @@ Special thanks to @Freezen for adding this problem and creating all test cases.
 
 public class _406_Minimum_Size_Subarray_Sum {
 
-    //jiuzhang
+    // 9Ch
     /**
      * @param nums: an array of integers
      * @param s: an integer

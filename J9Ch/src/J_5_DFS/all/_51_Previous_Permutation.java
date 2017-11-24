@@ -67,7 +67,7 @@ public class _51_Previous_Permutation {
         System.out.println(previousPermuation(input));
     }
 
-///////////////////////////////////////////////
+//---------------------------------//////////
 
     public int[] nextPermutation(int[] nums) {
         int len = nums.length;

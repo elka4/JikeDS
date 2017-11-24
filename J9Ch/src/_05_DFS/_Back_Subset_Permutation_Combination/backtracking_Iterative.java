@@ -3,7 +3,7 @@ package _05_DFS._Back_Subset_Permutation_Combination;
 import java.util.*;
 
 public class backtracking_Iterative {
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
     // subset
     // Simple Java Solution with For-Each loops
     // No messy indexing. Avoid the ConcurrentModificationException by using a temp list.
@@ -48,7 +48,7 @@ public class backtracking_Iterative {
         return res;
     }
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
     //_2_Subsets_II
     //Share my 2ms java iteration solution (very simple and short)
 
@@ -105,7 +105,7 @@ public class backtracking_Iterative {
 
 
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
     //_3_Permutations
 
     //My AC simple iterative java/python solution
@@ -153,7 +153,7 @@ public class backtracking_Iterative {
         return ans;
     }
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
 //I used your idea of adding each next value to every possible position of current list,
 // but have done it with recursion.
 
@@ -183,7 +183,7 @@ public class backtracking_Iterative {
 
 
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
 //Very nice solution! you can simply a little bit by removing a couple of lines:
 
     public List<List<Integer>> permute4(int[] num) {
@@ -209,7 +209,7 @@ public class backtracking_Iterative {
     }
 
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
     //Good idea! I was thinking we can optimize the solution by adding on to a single
     // answer list instead of recreating a new list every time!
     public List<List<Integer>> permute5(int[] nums) {
@@ -235,7 +235,7 @@ public class backtracking_Iterative {
         return result;
     }
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
     //I used your idea, but have a slightly different starting point before getting into the loop.
     // I think it's logically more clear and don't need to handle corner case when num is empty.
 
@@ -264,7 +264,7 @@ public class backtracking_Iterative {
     }
 
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
     //Share my short iterative JAVA solution
     public List<List<Integer>> permute7(int[] num) {
         LinkedList<List<Integer>> res = new LinkedList<List<Integer>>();
@@ -292,7 +292,7 @@ public class backtracking_Iterative {
     在每个位置添加nums[i]然后加到res末尾（第三个for loop，循环r.size()次），一共进行size次（第二个for loop）。
      */
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
     //    2ms Java solution beats 93%, I think it could be optimized
     public List<List<Integer>> permute8(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
@@ -322,9 +322,9 @@ public class backtracking_Iterative {
         }
     }
 
-//-------------------------------------------------------------------------/////////////////
-//-------------------------------------------------------------------------/////////////////
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------//////////
     //_4_Permutations_II
 
     //Short iterative Java solution
@@ -353,7 +353,7 @@ public class backtracking_Iterative {
         return res;
     }
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
     //here is my iterative solution with only a queue. FYI.
     public List<List<Integer>> permuteUnique7(int[] nums) {
         if (nums.length == 0) return new ArrayList<>();
@@ -375,7 +375,7 @@ public class backtracking_Iterative {
         return new ArrayList<>(queue);
     }
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
 
     //Java Iterative solution, no Set needed!
 
@@ -406,9 +406,9 @@ public class backtracking_Iterative {
         return r;
     }
 
-//-------------------------------------------------------------------------/////////////////
-//-------------------------------------------------------------------------/////////////////
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------//////////
 
     //_5_Combination_Sum
 
@@ -446,7 +446,7 @@ public class backtracking_Iterative {
         return dp.get(t-1);
     }
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
 
     //A solution avoid using set
     /*
@@ -482,7 +482,7 @@ public class backtracking_Iterative {
         }
     }
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
 
     //Easy to understand 96% performance Java solution
     public List<List<Integer>> combinationSum7(int[] candidates, int target) {
@@ -509,7 +509,7 @@ public class backtracking_Iterative {
         return res;
     }
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
     //Non-Recursive JAVA solution
     public List<List<Integer>> combinationSum10(int[] candidates, int target) {
         Arrays.sort(candidates);
@@ -544,13 +544,13 @@ public class backtracking_Iterative {
     }
 
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
 
     //_6_Combination_Sum_II
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
 
     //_7_Palindrome_Partitioning
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
 }

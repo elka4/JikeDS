@@ -62,7 +62,7 @@ Return true because "lintcode" can be break as "lint code".
         System.out.println(wordBreak(s, wordDict));
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 
     // version 2, DP, from leetcode
     public boolean wordBreak2(String s, Set<String> dict) {
@@ -95,7 +95,7 @@ Return true because "lintcode" can be break as "lint code".
         System.out.println(wordBreak2(s, wordDict));
     }
 
-//-------------------------------------------------------------------------/////////////
+//------------------------------------------------------------------------------//////
 
     // version 3, DP, from leet
     public boolean wordBreak3(String s, Set<String> dict) {
@@ -124,7 +124,7 @@ Return true because "lintcode" can be break as "lint code".
         System.out.println(wordBreak3(s, wordDict));
     }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
     // version 4, DFS with Path Memorizing Java Solution
     // from leetcode
@@ -164,7 +164,7 @@ Return true because "lintcode" can be break as "lint code".
         System.out.println(wordBreak4(s, wordDict));
     }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
     // leetcode
 
     // Approach #1 Brute Force [Time Limit Exceeded]
@@ -185,7 +185,7 @@ Return true because "lintcode" can be break as "lint code".
         }
     }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
     // Approach #2 Recursion with memoization [Accepted]
     public class Solution2 {
@@ -208,7 +208,7 @@ Return true because "lintcode" can be break as "lint code".
         }
     }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
     //  Approach #3 Using Breadth-First-Search [Accepted]
     public class Solution3 {
@@ -234,7 +234,7 @@ Return true because "lintcode" can be break as "lint code".
             return false;
         }
     }
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
     //A pproach #4 Using Dynamic Programming [Accepted]:
     public class Solution4 {
@@ -253,9 +253,9 @@ Return true because "lintcode" can be break as "lint code".
             return dp[s.length()];
         }
     }
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
 }
 /*

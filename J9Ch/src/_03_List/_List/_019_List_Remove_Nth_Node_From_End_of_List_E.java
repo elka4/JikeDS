@@ -59,7 +59,7 @@ public ListNode removeNthFromEnd2(ListNode head, int n) {
 
 
 //-------------------------------------------------------------------------//
-//jiuzhang
+// 9Ch
 public class Jiuzhang {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if (n <= 0) {

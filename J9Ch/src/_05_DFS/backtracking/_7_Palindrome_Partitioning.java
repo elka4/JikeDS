@@ -50,7 +50,7 @@ public class _7_Palindrome_Partitioning {
     }
 
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 //Java: Backtracking solution.
 //https://discuss.leetcode.com/topic/6186/java-backtracking-solution/2
     public class Solution {
@@ -91,7 +91,7 @@ public class _7_Palindrome_Partitioning {
 
 
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 //My Java DP only solution without recursion. O(n^2)
 
 
@@ -131,7 +131,7 @@ The result[i], is to store from beginng until current index i (Non inclusive),
  all possible partitions. From the past result we can determine current result.
  */
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 //Java DP + DFS solution
 //https://discuss.leetcode.com/topic/37756/java-dp-dfs-solution/2
 
@@ -169,7 +169,7 @@ The result[i], is to store from beginng until current index i (Non inclusive),
 
 
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 //Concise Java Solution
 
     public class Solution4 {
@@ -204,7 +204,7 @@ The result[i], is to store from beginng until current index i (Non inclusive),
 
 
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 // In order to check whether a string is palindrome, simply compare to reversed itself.
 
     public class Solution5 {
@@ -240,7 +240,7 @@ The result[i], is to store from beginng until current index i (Non inclusive),
 
 
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 
 //Concise Java solution
 
@@ -282,7 +282,7 @@ The result[i], is to store from beginng until current index i (Non inclusive),
     }
 
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 //Simple backtracking Java solution with 95% performance
 public class Solution7 {
     public List<List<String>> partition(String s) {
@@ -311,7 +311,7 @@ public class Solution7 {
     }
 }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
     //Classic recursive solution in Java
 
     public class Solution8 {

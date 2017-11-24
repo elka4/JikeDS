@@ -73,7 +73,7 @@ Return true because "lintcode" can be break as "lint code".
         System.out.println(wordBreak(s, wordDict));
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 
     // version 2, DP, from leetcode
     public boolean wordBreak2(String s, Set<String> dict) {
@@ -106,7 +106,7 @@ Return true because "lintcode" can be break as "lint code".
         System.out.println(wordBreak2(s, wordDict));
     }
 
-//-------------------------------------------------------------------------/////////////
+//------------------------------------------------------------------------------//////
 
     // version 3, DP, from leet
     public boolean wordBreak3(String s, Set<String> dict) {
@@ -135,7 +135,7 @@ Return true because "lintcode" can be break as "lint code".
         System.out.println(wordBreak3(s, wordDict));
     }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
     // version 4, DFS with Path Memorizing Java Solution
     // from leetcode

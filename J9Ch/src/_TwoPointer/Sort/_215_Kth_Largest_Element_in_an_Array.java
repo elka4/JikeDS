@@ -1,10 +1,16 @@
 package _TwoPointer.Sort;
 import java.util.*;
 
-
 //  215. Kth Largest Element in an Array
 //  https://leetcode.com/problems/kth-largest-element-in-an-array/description/
+//  4:
+//  Divide and Conquer, Heap
+//  Wiggle Sort II
+//  Top K Frequent Elements
+//  Third Maximum Number
 public class _215_Kth_Largest_Element_in_an_Array {
+//-------------------------------------------------------------------------
+    //1
 //  https://discuss.leetcode.com/topic/14597/solution-explained
 /*This problem is well known and quite often can be found in various text books.
 
@@ -33,6 +39,8 @@ public class _215_Kth_Largest_Element_in_an_Array {
         }
         return pq.peek();
     }
+//-------------------------------------------------------------------------
+    //2
 /*    O(N) best case / O(N^2) worst case running time + O(1) memory
     The smart approach for this problem is to use the selection algorithm (based on the partion method - the same one as used in quicksort).*/
 
@@ -79,6 +87,8 @@ public class _215_Kth_Largest_Element_in_an_Array {
     private boolean less(int v, int w) {
         return v < w;
     }
+//-------------------------------------------------------------------------
+    //3
    /* O(N) guaranteed running time + O(1) space
 
     So how can we improve the above solution and make it O(N) guaranteed? The answer is quite simple, we can randomize the input, so that even when the worst case input would be provided the algorithm wouldn't be affected. So all what it is needed to be done is to shuffle the input.*/
@@ -114,7 +124,8 @@ public class _215_Kth_Largest_Element_in_an_Array {
 
 
 
-//-------------------------------------------------------------------------////////////////
+//-------------------------------------------------------------------------
+    //4
 //AC Clean QuickSelect Java solution avg. O(n) time
 //    https://en.wikipedia.org/wiki/Quickselect
 
@@ -153,9 +164,9 @@ public class _215_Kth_Largest_Element_in_an_Array {
             a[i] = a[j];
             a[j] = tmp;
         }
-
     }
-//-------------------------------------------------------------------------////////////////
+
+//-------------------------------------------------------------------------
 }
 /*
 Find the kth largest element in an unsorted array. Note that it is the kth largest element in the sorted order, not the kth distinct element.
@@ -165,6 +176,4 @@ Given [3,2,1,5,6,4] and k = 2, return 5.
 
 Note:
 You may assume k is always valid, 1 ≤ k ≤ array's length.
-
-
  */

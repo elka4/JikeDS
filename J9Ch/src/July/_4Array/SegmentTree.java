@@ -1,7 +1,7 @@
 package July._4Array;
 
 public class SegmentTree {
-    //jiuzhang
+    // 9Ch
 
     class SegmentTreeNode {
         public int start, end;

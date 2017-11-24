@@ -34,7 +34,7 @@ public class _077_BackTracking_Combinations_M {
         System.out.println(combine01(4,2));
     }//[[3, 4], [2, 4], [1, 4], [2, 3], [1, 3], [1, 2]]
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
     //Backtracking Solution Java
     public List<List<Integer>> combine02(int n, int k) {
         List<List<Integer>> combs = new ArrayList<List<Integer>>();
@@ -60,7 +60,7 @@ public class _077_BackTracking_Combinations_M {
         例如 n = 4 且 k = 2*/
         System.out.println(combine02(4,2));
     }//[[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
     //DP for the problem
     // Combine(n, n).
     private List<Integer> allContain(int n)
@@ -120,7 +120,7 @@ public class _077_BackTracking_Combinations_M {
         例如 n = 4 且 k = 2*/
         System.out.println(combine03(4,2));
     }
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
     //3 ms Java Solution
     public List<List<Integer>> combine04(int n, int k) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
@@ -146,7 +146,7 @@ public class _077_BackTracking_Combinations_M {
         例如 n = 4 且 k = 2*/
         System.out.println(combine04(4,2));
     }
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 
     //DFS recursive Java Solution
     //A DFS idea with back-trace. Very straightforward.
@@ -181,7 +181,7 @@ public class _077_BackTracking_Combinations_M {
 
 //-------------------------------------------------------------------------////
 
-    //jiuzhang  最好还是这个
+    // 9Ch  最好还是这个
     public List<List<Integer>> combine_J(int n, int k) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         List<Integer> solution = new ArrayList<Integer>();

@@ -1,10 +1,14 @@
 package _TwoPointer.Subarray;
 import java.util.*;
 
-
 //  30. Substring with Concatenation of All Words
 //  https://leetcode.com/problems/substring-with-concatenation-of-all-words/description/
+//  4:
+//  Hash Table, Two Pointers, String
+//  _076_TwoPointer_Minimum_Window_Substring_H
 public class _030_TwoPointer_Substring_with_Concatenation_of_All_Words_H {
+//-------------------------------------------------------------------------
+    //1
 //    I think your code is O(kn) where k = |L[0]|. I made a real O(n) code using k maps and each time do maps.get(i%k) to get its corresponding map. But I use extra queue, while the queue could be simplified into one variable after seeing your code.
 
     public class Solution {
@@ -59,7 +63,8 @@ public class _030_TwoPointer_Substring_with_Concatenation_of_All_Words_H {
             return;
         }
     }
-
+//-------------------------------------------------------------------------
+    //2
     /*
     I think the complexity is O(KN), K = L[0].length(), N = S.length(). If you think I am wrong, please point it out, thanks!
 
@@ -113,7 +118,8 @@ This is my Java version of Sliding Window.
         }
     }
 
-
+//-------------------------------------------------------------------------
+    //3
     //Simple Java Solution with Two Pointers and Map
 //    My idea is pretty simple. Just build a map for the words and their relative count in L.
 // Then we traverse through S to check whether there is a match.
@@ -147,7 +153,8 @@ This is my Java version of Sliding Window.
 // Owing to the fact that duplicate is allowed in L, we need to use map instead.
 
 //-------------------------------------------------------------------------/////
-    //jiuzhang
+    //4
+    // 9Ch
     public class Jiuzhang{
         public ArrayList<Integer> findSubstring(String S, String[] L) {
             ArrayList<Integer> result = new ArrayList<Integer>();
@@ -183,7 +190,7 @@ This is my Java version of Sliding Window.
         }
     }
 
-
+//-------------------------------------------------------------------------
 }
 /*
 You are given a string, s, and a list of words, words, that are all of the same length. Find all starting indices of substring(s) in s that is a concatenation of each word in words exactly once and without any intervening characters.
@@ -194,6 +201,4 @@ words: ["foo", "bar"]
 
 You should return the indices: [0,9].
 (order does not matter).
-
-
  */

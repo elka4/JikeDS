@@ -35,7 +35,7 @@ public class _159_Find_Minimum_in_Rotated_Sorted_Array {
             }
         }
     }
-    /////////////////////////////////////////////////////////
+    //---------------------------------////////////////////
     public int findMin_my(int[] nums) {
         int start = 0;
         int end = nums.length - 1;

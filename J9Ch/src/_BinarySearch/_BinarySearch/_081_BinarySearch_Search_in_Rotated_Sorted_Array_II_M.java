@@ -6,7 +6,7 @@ import org.junit.Test;
 public class _081_BinarySearch_Search_in_Rotated_Sorted_Array_II_M {
 
 //-------------------------------------------------------------------------
-    //jiuzhang
+    // 9Ch
     public class Solution {
         // 这个问题在面试中不会让实现完整程序
         // 只需要举出能够最坏情况的数据是 [1,1,1,1... 1] 里有一个0即可。

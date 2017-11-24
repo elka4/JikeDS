@@ -93,7 +93,7 @@ int[256] for Extended ASCII
             return ans;
         }
     }
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
     //Java Solution 1
 
     //The first solution is like the problem of "determine if a string has all unique characters" in CC 150. We can use a flag array to track the existing characters for the longest substring without repeating characters.
@@ -202,7 +202,7 @@ int[256] for Extended ASCII
 
 
 //-------------------------------------------------------------------------//////
-    //jiuzhang
+    // 9Ch
 public class Jiuzhang {
     /**
      * @param s: a string

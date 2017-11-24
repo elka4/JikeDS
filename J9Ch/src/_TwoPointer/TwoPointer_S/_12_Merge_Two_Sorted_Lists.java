@@ -27,6 +27,7 @@ public class _12_Merge_Two_Sorted_Lists {
             return mergeHead;
         }
     }
+//---------------------------------------------------------------------------
 
     public class Solution2 {
         public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -43,6 +44,7 @@ public class _12_Merge_Two_Sorted_Lists {
             }
         }
     }
+//---------------------------------------------------------------------------
 
     //JAVA Easy to understand solution
     public ListNode mergeTwoLists3(ListNode l1, ListNode l2) {
@@ -65,6 +67,7 @@ public class _12_Merge_Two_Sorted_Lists {
         }
         return ans.next;
     }
+//---------------------------------------------------------------------------
 
     //1ms java clean code
     public class Solution4 {
@@ -106,6 +109,7 @@ public class _12_Merge_Two_Sorted_Lists {
         */
         }
     }
+//---------------------------------------------------------------------------
 
     //Non Recursive, No Extra Space (Java)
     public class Solution5 {
@@ -142,8 +146,8 @@ public class _12_Merge_Two_Sorted_Lists {
         }
     }
 
-//-------------------------------------------------------------------------////
-    //jiuzhang
+//-------------------------------------------------------------------------
+    // 9Ch
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
         ListNode lastNode = dummy;
@@ -168,7 +172,7 @@ public class _12_Merge_Two_Sorted_Lists {
         return dummy.next;
     }
 
-//-------------------------------------------------------------------------////
+//-------------------------------------------------------------------------
 }
 /*
 合并两个排序链表

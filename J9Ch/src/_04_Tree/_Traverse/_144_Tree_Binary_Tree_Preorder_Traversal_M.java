@@ -26,7 +26,7 @@ public class _144_Tree_Binary_Tree_Preorder_Traversal_M {
         return list;
     }
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 //    3 Different Solutions
 //    Recursive method with List as returning value:
     public List<Integer> preorderTraversal01(TreeNode root) {
@@ -66,7 +66,7 @@ public class _144_Tree_Binary_Tree_Preorder_Traversal_M {
         }
         return pre;
     }
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 
     public List<Integer> preorderTraversal2(TreeNode root) {
         List<Integer> result = new LinkedList<>();
@@ -99,8 +99,8 @@ public class _144_Tree_Binary_Tree_Preorder_Traversal_M {
         return result;
     }
 
-//-------------------------------------------------------------------------//////////////
-    //Jiuzhang
+//------------------------------------------------------------------------------///////
+    // 9Ch
 //Version 0: Non-Recursion (Recommend)
 public List<Integer> preorderTraversal0(TreeNode root) {
     Stack<TreeNode> stack = new Stack<TreeNode>();
@@ -136,8 +136,8 @@ public List<Integer> preorderTraversal0(TreeNode root) {
         System.out.println(preorderTraversal(root));
     }
 
-//-------------------------------------------------------------------------//////////////
-    //Jiuzhang
+//------------------------------------------------------------------------------///////
+    // 9Ch
     //Version 1: Traverse
     public ArrayList<Integer> preorderTraversal_2(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<Integer>();
@@ -181,8 +181,8 @@ public List<Integer> preorderTraversal0(TreeNode root) {
         System.out.println(preorderTraversal_2(root));
     }
 
-//-------------------------------------------------------------------------//////////////
-    //Jiuzhang
+//------------------------------------------------------------------------------///////
+    // 9Ch
     //Version 2: Divide & Conquer
     public ArrayList<Integer> preorderTraversal_3(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<>();
@@ -213,7 +213,7 @@ public List<Integer> preorderTraversal0(TreeNode root) {
         System.out.println(preorderTraversal_3(root));
     }
 
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
     /**
      * @param root: The root of binary tree.
      * @return: Inorder in ArrayList which contains node values.
@@ -234,7 +234,7 @@ public List<Integer> preorderTraversal0(TreeNode root) {
         }
         return result;
     }
-////////////////////////////////////////////////////////
+//---------------------------------///////////////////
 
     public List<Integer> inorderTraversal5(TreeNode root) {
         // write your code here
@@ -254,7 +254,7 @@ public List<Integer> preorderTraversal0(TreeNode root) {
         return result;
     }
 
-////////////////////////////////////////////////////////
+//---------------------------------///////////////////
 
     public List<Integer> inorderTraversal6(TreeNode root) {
         // write your code here
@@ -275,7 +275,7 @@ public List<Integer> preorderTraversal0(TreeNode root) {
         helper(root.right, list);
     }
 
-////////////////////////////////////////////////////////
+//---------------------------------///////////////////
 
     public ArrayList<Integer> preorderTraversal7(TreeNode root) {
         ArrayList<Integer> returnList = new ArrayList<Integer>();
@@ -302,7 +302,7 @@ public List<Integer> preorderTraversal0(TreeNode root) {
     }
 
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 }
 /* inorder
 result.addAll(left);

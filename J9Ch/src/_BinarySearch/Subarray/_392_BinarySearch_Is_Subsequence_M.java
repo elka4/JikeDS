@@ -59,7 +59,7 @@ public class _392_BinarySearch_Is_Subsequence_M {
         return true;
     }
 //-------------------------------------------------------------------------/
-    //jiuzhang
+    // 9Ch
 public class Jiuzhang{
     public boolean isSubsequence(String s, String t) {
         int i = 0, j = 0;

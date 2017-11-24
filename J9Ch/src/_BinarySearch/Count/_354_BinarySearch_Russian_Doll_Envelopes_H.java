@@ -41,8 +41,8 @@ public class _354_BinarySearch_Russian_Doll_Envelopes_H {
         return ret;
     }
 
-///////////////////////////////////////////////////////////
-    //jiuzhang
+//---------------------------------//////////////////////
+    // 9Ch
     /*
     1. Sort the array. Ascend on width and descend on height if width are same.
     3. Find the longest increasing subsequence based on height.
@@ -97,7 +97,7 @@ public class _354_BinarySearch_Russian_Doll_Envelopes_H {
 
     }
 
-///////////////////////////////////////////////////////////
+//---------------------------------//////////////////////
     //  https://leetcode.com/problems/longest-increasing-subsequence/discuss/
     //  Java/Python Binary search O(nlogn) time with explanation
     public int lengthOfLIS(int[] nums) {
@@ -145,7 +145,7 @@ The the final answer is just the size.
 
  */
 
-///////////////////////////////////////////////////////////
+//---------------------------------//////////////////////
 
 }
 /*

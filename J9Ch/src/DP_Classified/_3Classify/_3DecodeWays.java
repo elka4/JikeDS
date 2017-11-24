@@ -35,7 +35,7 @@ f[i-2] | S[i-2]S[i-1]对应一个字母
 //Decode Ways
 public class _3DecodeWays {
 
-    //jiuzhang
+    // 9Ch
     public int numDecodings(String s) {
         if (s == null || s.length() == 0) {
             return 0;
@@ -62,9 +62,9 @@ public class _3DecodeWays {
         System.out.println(numDecodings("12"));
     }
 
-////////////////////////////////////////////////////////////
+//---------------------------------///////////////////////
     // version: 高频题班
-    //jiuzhang
+    // 9Ch
     /**
      * @param s a string,  encoded message
      * @return an integer, the number of ways decoding
@@ -95,7 +95,7 @@ public class _3DecodeWays {
 
 
 
-/////////////////////////////////////////////////////////
+//---------------------------------////////////////////
 
     public int numDecodings3(String s) {
         int n = s.length();
@@ -135,7 +135,7 @@ public class _3DecodeWays {
         return dp[n];
     }
 
-////////////////////////////////////////////////////////////
+//---------------------------------///////////////////////
 
     public int numDecodings5(String s) {
 

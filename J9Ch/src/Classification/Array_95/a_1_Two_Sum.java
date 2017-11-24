@@ -35,7 +35,7 @@ public class a_1_Two_Sum {
         return new int[]{0,0};
     }
 
-/////////////////////////////////////
+//---------------------------------
 
     //array is sorted
 
@@ -60,7 +60,7 @@ public class a_1_Two_Sum {
         return null;
     }
 
-/////////////////////////////////////
+//---------------------------------
 /*
 Design and implement a TwoSum class. It should support the following operations: add and find.
 

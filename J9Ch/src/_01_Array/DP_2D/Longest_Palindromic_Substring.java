@@ -89,7 +89,7 @@ public class Longest_Palindromic_Substring {
     }
 
 
-/////////////////////////////////////////////////////
+//---------------------------------////////////////
 
 /*
 3. Manacher's Algorithm

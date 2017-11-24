@@ -1,14 +1,16 @@
 package _TwoPointer.Reverse;
-
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
 
-
 //  345. Reverse Vowels of a String
 //  https://leetcode.com/problems/reverse-vowels-of-a-string/description/
-
+//  9:
+//  Two Pointers, String
+//  _344_String_Reverse_String_E
 public class _345_TwoPointer_Reverse_Vowels_of_a_String_E {
+//------------------------------------------------------------------------------
+    //1
     //Java Standard Two Pointer Solution
 /*    In the inner while loop, don't forget the condition "start less than end" while incrementing start and decrementing end. This is my friend's google phone interview question. Cheers!
 // update! May use a HashSet<Character> to reduce the look up time to O(1)*/
@@ -40,7 +42,8 @@ public class _345_TwoPointer_Reverse_Vowels_of_a_String_E {
             return new String(chars);
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
 //    Same idea. But use statically declared String as the dictionary and use the indexOf function to avoid String comparison. This code run in 6ms.
 
     public class Solution2 {
@@ -64,7 +67,8 @@ public class _345_TwoPointer_Reverse_Vowels_of_a_String_E {
             return new String(array);
         }
     }
-
+//------------------------------------------------------------------------------
+    //3
 
     public static boolean[] vowels = new boolean[300];
     static{
@@ -108,7 +112,8 @@ public class _345_TwoPointer_Reverse_Vowels_of_a_String_E {
 
         return new String(arr);
     }
-
+//------------------------------------------------------------------------------
+    //4
 //    Try this! But since we traverse the string twice, the running time doubles. Good Luck!
 
     public class Solution4 {
@@ -149,7 +154,8 @@ public class _345_TwoPointer_Reverse_Vowels_of_a_String_E {
             return sb.toString();
         }
     }
-
+//------------------------------------------------------------------------------
+    //5
 //my solution is that use Set and 2 pointers
 
     public String reverseVowels5(String s) {
@@ -183,7 +189,8 @@ public class _345_TwoPointer_Reverse_Vowels_of_a_String_E {
         }
         return new String(sa);
     }
-
+//------------------------------------------------------------------------------
+    //6
 //        My 6ms solution
     class Solution6{
 
@@ -217,8 +224,8 @@ public class _345_TwoPointer_Reverse_Vowels_of_a_String_E {
         }
     }
 
-
-
+//------------------------------------------------------------------------------
+    //7
 //    Nice solution! Following solution with similar idea could be used to avoid checking i<j in inner while loops. I think that does not affect time complexity of solution. Correct me if I am wrong.
     class Solution7{
         public String reverseVowels(String s) {
@@ -264,7 +271,8 @@ public class _345_TwoPointer_Reverse_Vowels_of_a_String_E {
 
     }
 
-
+//------------------------------------------------------------------------------
+    //8
     public class Solution8 {
         public String reverseVowels(String s) {
             Set<Character> se = new HashSet<Character>();
@@ -299,40 +307,41 @@ public class _345_TwoPointer_Reverse_Vowels_of_a_String_E {
             return output.toString();
         }
     }
-//-------------------------------------------------------------------------//////////
-    //jiuzhang
-public class Jiuzhang {
-    public String reverseVowels(String s) {
-        int[] pos = new int[s.length()];
-        int cnt = 0;
-        HashSet<Character> vowel = new HashSet<Character>();
-        vowel.add('a');
-        vowel.add('e');
-        vowel.add('i');
-        vowel.add('o');
-        vowel.add('u');
-        vowel.add('A');
-        vowel.add('E');
-        vowel.add('I');
-        vowel.add('O');
-        vowel.add('U');
+//------------------------------------------------------------------------------
+    //9
+    // 9Ch
+    public class Jiuzhang {
+        public String reverseVowels(String s) {
+            int[] pos = new int[s.length()];
+            int cnt = 0;
+            HashSet<Character> vowel = new HashSet<Character>();
+            vowel.add('a');
+            vowel.add('e');
+            vowel.add('i');
+            vowel.add('o');
+            vowel.add('u');
+            vowel.add('A');
+            vowel.add('E');
+            vowel.add('I');
+            vowel.add('O');
+            vowel.add('U');
 
-        for (int i = 0; i < s.length(); i++) {
-            if (vowel.contains(s.charAt(i))) {
-                pos[cnt] = i;
-                cnt++;
+            for (int i = 0; i < s.length(); i++) {
+                if (vowel.contains(s.charAt(i))) {
+                    pos[cnt] = i;
+                    cnt++;
+                }
             }
-        }
 
-        char[] ans = new char[s.length()];
-        ans = s.toCharArray();
-        for (int i = 0; i < cnt; i++) {
-            ans[pos[i]] = s.charAt(pos[cnt - i - 1]);
+            char[] ans = new char[s.length()];
+            ans = s.toCharArray();
+            for (int i = 0; i < cnt; i++) {
+                ans[pos[i]] = s.charAt(pos[cnt - i - 1]);
+            }
+            return String.valueOf(ans);
         }
-        return String.valueOf(ans);
     }
-}
-
+//------------------------------------------------------------------------------
 }
 /*
 Write a function that takes a string as input and reverse only the vowels of a string.
@@ -346,9 +355,6 @@ Given s = "leetcode", return "leotcede".
 Note:
 The vowels does not include the letter "y".
 
-
- */
-
-/*
+//------------------------------------------------------------------------------
 
  */

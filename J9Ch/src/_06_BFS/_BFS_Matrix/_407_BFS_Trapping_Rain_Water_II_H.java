@@ -68,7 +68,7 @@ public class _407_BFS_Trapping_Rain_Water_II_H {
         }
     }
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
     /*
     Alternative approach using Dijkstra in O(rc max(log r, log c)) time
 This problem can also be solved in a more general approach way using Dijkstra.
@@ -138,7 +138,7 @@ We want to compute the dist(i, j) for all pairs of (i, j). Here, we have multipl
             return ans;
         }
     }
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
     //Java solution beating 100%
 /*My method is still based on PriorityQueue(heap). But it is combined with flood fill.
     Maintain a heap which contains the current walls, the boundary of the water pool.
@@ -216,7 +216,7 @@ We want to compute the dist(i, j) for all pairs of (i, j). Here, we have multipl
     }
 
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
     //Java Solution with PriorityQueue
 public class Solution4 {
     private class Point implements Comparable<Point>{
@@ -267,12 +267,12 @@ public class Solution4 {
 }
 
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 
 //    https://www.youtube.com/watch?v=cJayBq38VYw
 
-//-------------------------------------------------------------------------////////
-    //jiuzhang
+//------------------------------------------------------------------------------/
+    // 9Ch
 
 
     class Jiuzhang {
@@ -346,7 +346,7 @@ public class Solution4 {
             return ans;
         }
     }
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 }
 /*
 Given an m x n matrix of positive integers representing the height of each unit cell in a 2D elevation map, compute the volume of water it is able to trap after raining.

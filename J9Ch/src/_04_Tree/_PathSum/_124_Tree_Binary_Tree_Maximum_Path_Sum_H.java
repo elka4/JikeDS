@@ -190,7 +190,7 @@ public class _124_Tree_Binary_Tree_Maximum_Path_Sum_H {
     }
 
     //-------------------------------------------------------------------------///
-    //jiuzhang
+    // 9Ch
     private class ResultType {
         // singlePath: 从root往下走到任意点的最大路径，这条路径可以不包含任何点
         // maxPath: 从树中任意到任意点的最大路径，这条路径至少包含一个点

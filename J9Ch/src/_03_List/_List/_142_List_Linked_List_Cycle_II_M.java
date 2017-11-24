@@ -79,7 +79,7 @@ public class _142_List_Linked_List_Cycle_II_M {
 
 
 //-------------------------------------------------------------------------//
-//jiuzhang
+// 9Ch
 public class Jiuzhang {
     public Boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {

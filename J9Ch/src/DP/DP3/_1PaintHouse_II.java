@@ -178,7 +178,7 @@ public class _1PaintHouse_II {
 
         return costs[n - 1][min1];
     }
-//-------------------------------------------------------------------------/////////
+//------------------------------------------------------------------------------//
     // 9Ch DP
     public int minCostII2(int[][] costs) {
         if (costs == null || costs.length == 0) {
@@ -242,9 +242,9 @@ public class _1PaintHouse_II {
         System.out.println(minCostII(costs));
     }
 
-/////////////////////////////////////////////////////////////
+//---------------------------------////////////////////////
 
-    //jiuzhang
+    // 9Ch
     /**
      * @param costs n x k cost matrix
      * @return an integer, the minimum cost to paint all houses
@@ -306,10 +306,10 @@ public class _1PaintHouse_II {
         int[][] costs = {{14,2,11}, {11,14,5}, {14,3,10}};
         System.out.println(minCostII1(costs));
     }
-/////////////////////////////////////////////////////////////
+//---------------------------------////////////////////////
     // 9CH DP
 
-    //-------------------------------------------------------------------------/////////////
+    //------------------------------------------------------------------------------//////
     public int minCostII3(int[][] costs) {
         //Method DP: Using an int[k] last representing the last min costs in k tracks
         //Using an int[k] cur representing the current min costs
@@ -344,7 +344,7 @@ public class _1PaintHouse_II {
         return min == Integer.MAX_VALUE ? 0 : min;
     }
 
-//-------------------------------------------------------------------------/////////////
+//------------------------------------------------------------------------------//////
 
     //time O(kn), space O(1)
     public int minCostII22(int[][] costs) {
@@ -373,8 +373,8 @@ public class _1PaintHouse_II {
         }
         return lastMin;
     }
-//-------------------------------------------------------------------------/////////////
-/////////////////////////////////////////////////////////////
+//------------------------------------------------------------------------------//////
+//---------------------------------////////////////////////
 }
 /*
 There are a row of n houses, each house can be painted with one of the k colors. The cost of painting each house with a certain color is different. You have to paint all the houses such that no two adjacent houses have the same color.

@@ -42,7 +42,7 @@ public class _5ScrambleString {
             return false;
         }
     }
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 /*
 Simple iterative DP Java solution with explanation
     Explanation in code itself. The iterative version of the idea is considerably slower than the recursive simply because here we consider all possible states, while the recursive will only compute required states as it founds them. Time complexity of both is, in any case, the same.
@@ -89,7 +89,7 @@ Simple iterative DP Java solution with explanation
             return F[0][0][len];
         }
     }
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 /*Java fast DP iteration solution and recursion solution
 
 4
@@ -149,7 +149,7 @@ Simple iterative DP Java solution with explanation
         }
     }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 /*    2ms Java Recursive solution (beat 100%)
 
 4
@@ -175,7 +175,7 @@ Simple iterative DP Java solution with explanation
             return false;
         }
     }
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
     // 9CH DP
     public boolean isScramble(String s1, String s2) {
         char[] c1 = s1.toCharArray();
@@ -220,7 +220,7 @@ Simple iterative DP Java solution with explanation
         return f[0][0][n];
      }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
     // 记忆化搜索
     /**
@@ -256,7 +256,7 @@ Simple iterative DP Java solution with explanation
         return false;
     }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
     // 递推
     /**
@@ -284,7 +284,7 @@ Simple iterative DP Java solution with explanation
         return dp[0][0][n];
     }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
     // 普通搜索
     /**
@@ -334,7 +334,7 @@ Simple iterative DP Java solution with explanation
         return true;
     }
 
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
     // 记忆化搜索
     public class Solution4 {
@@ -411,7 +411,7 @@ Simple iterative DP Java solution with explanation
             return true;
         }
     }
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 }
 
 /*  攀爬字符串

@@ -65,7 +65,7 @@ public class Bitwise_AND_of_Numbers_Range {
         return m * moveFactor;
     }
 
-//////////////////////////////////////////////
+//---------------------------------/////////
 
     public int rangeBitwiseAnd3(int m, int n) {
         while(m<n) n = n & (n-1);

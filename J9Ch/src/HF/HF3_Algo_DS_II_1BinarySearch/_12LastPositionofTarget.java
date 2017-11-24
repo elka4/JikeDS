@@ -3,7 +3,7 @@ package HF.HF3_Algo_DS_II_1BinarySearch;
 //Last Position of Target
 public class _12LastPositionofTarget {
 
-//-------------------------------------------------------------------------//////////////////
+//------------------------------------------------------------------------------///////////
 // version 1: with jiuzhang template
     public int lastPosition(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
@@ -33,7 +33,7 @@ public class _12LastPositionofTarget {
         return -1;
     }
 
-//-------------------------------------------------------------------------//////////////////
+//------------------------------------------------------------------------------///////////
 
     // version 2: without jiuzhang template
 
@@ -62,7 +62,7 @@ public class _12LastPositionofTarget {
         }
         return -1;
     }
-//-------------------------------------------------------------------------//////////////////
+//------------------------------------------------------------------------------///////////
 }
 /*
 Find the last position of a target number in a sorted array. Return -1 if target does not exist.

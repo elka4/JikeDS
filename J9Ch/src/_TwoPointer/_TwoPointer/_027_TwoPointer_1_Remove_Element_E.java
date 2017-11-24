@@ -43,8 +43,8 @@ public class _027_TwoPointer_1_Remove_Element_E {
         for(int i=0;i<n;i++) if(A[i]!=elem) A[begin++]=A[i];
         return begin;
     }
-////////////////////////////////////////////////////////////
-    //jiuzhang
+//---------------------------------///////////////////////
+    // 9Ch
 public class Jiuzhang{
     public int removeElement(int[] A, int elem) {
         int i = 0;

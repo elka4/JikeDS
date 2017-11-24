@@ -1,12 +1,15 @@
 package _TwoPointer.Other;
-
 import java.util.Arrays;
 import java.util.HashMap;
 
 //  567. Permutation in String
 //  https://leetcode.com/problems/permutation-in-string/description/
+//
+//
 public class _567_TwoPointer_Permutation_in_String_M {
-//https://leetcode.com/problems/permutation-in-string/solution/
+    //https://leetcode.com/problems/permutation-in-string/solution/
+//---------------------------------------------------------------------------
+    //1
     //Approach #1 Brute Force [Time Limit Exceeded]
     public class Solution1 {
         boolean flag = false;
@@ -37,7 +40,8 @@ public class _567_TwoPointer_Permutation_in_String_M {
             }
         }
     }
-
+//---------------------------------------------------------------------------
+    //2
     //Approach #2 Using sorting [Time Limit Exceeded]:
     public class Solution2 {
         public boolean checkInclusion(String s1, String s2) {
@@ -54,7 +58,8 @@ public class _567_TwoPointer_Permutation_in_String_M {
             return new String(t);
         }
     }
-
+//---------------------------------------------------------------------------
+    //3
     //Approach #3 Using Hashmap [Time Limit Exceeded]
     public class Solution3 {
         public boolean checkInclusion(String s1, String s2) {
@@ -80,7 +85,8 @@ public class _567_TwoPointer_Permutation_in_String_M {
             return true;
         }
     }
-
+//---------------------------------------------------------------------------
+    //4
     //Approach #4 Using Array [Accepted]
     public class Solution4 {
         public boolean checkInclusion(String s1, String s2) {
@@ -107,7 +113,8 @@ public class _567_TwoPointer_Permutation_in_String_M {
             return true;
         }
     }
-
+//---------------------------------------------------------------------------
+    //5
     //Approach #5 Sliding Window [Accepted]:
     public class Solution5 {
         public boolean checkInclusion(String s1, String s2) {
@@ -133,7 +140,8 @@ public class _567_TwoPointer_Permutation_in_String_M {
             return true;
         }
     }
-
+//---------------------------------------------------------------------------
+    //6
     //Approach #6 Optimized Sliding Window [Accepted]:
     public class Solution6 {
         public boolean checkInclusion(String s1, String s2) {
@@ -165,6 +173,8 @@ public class _567_TwoPointer_Permutation_in_String_M {
             return count == 26;
         }
     }
+
+//---------------------------------------------------------------------------
 }
 /*
 Given two strings s1 and s2, write a function to return true if s2 contains the permutation of s1. In other words, one of the first string's permutations is the substring of the second string.

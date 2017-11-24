@@ -8,7 +8,7 @@ import java.util.*;
 //  https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/
 //  http://www.lintcode.com/zh-cn/problem/construct-binary-tree-from-inorder-and-postorder-traversal/
 public class _106_DFS_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal_M {
- //jiuzhang
+ // 9Ch
 	private int findPosition(int[] arr, int start, int end, int key) {
         int i;
         for (i = start; i <= end; i++) {

@@ -1,9 +1,11 @@
 package _TwoPointer.Sum;
 
-//   167. Two Sum II - Input array is sorted
+//  167. Two Sum II - Input array is sorted
 //  https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
+//
 public class _167_TwoPointer_Two_Sum_II_Input_array_is_sorted_M {
-
+//-------------------------------------------------------------------------
+    //1
 //    Share my java AC solution.
 //    Without HashMap, just have two pointers, A points to index 0, B points to index len - 1, shrink the scope based on the value and target comparison.
 
@@ -25,7 +27,8 @@ public class _167_TwoPointer_Two_Sum_II_Input_array_is_sorted_M {
         }
         return indice;
     }
-
+//-------------------------------------------------------------------------
+    //2
 
 //    Simple 8 line Java solution with explanation. O(n)
     public int[] twoSum2(int[] numbers, int target) {
@@ -52,4 +55,8 @@ public class _167_TwoPointer_Two_Sum_II_Input_array_is_sorted_M {
     Since the question said there is EXACTLY one solution and didn't provide any info about when there is no valid answer, so we can always assume there is one and only one answer, which means l and r never across each other.
 
     Another thing to notice is that this array is sorted.*/
+//-------------------------------------------------------------------------
 }
+/*
+
+ */

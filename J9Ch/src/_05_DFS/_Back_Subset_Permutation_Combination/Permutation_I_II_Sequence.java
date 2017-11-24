@@ -40,7 +40,7 @@ public class Permutation_I_II_Sequence {
     }//[[3, 2, 1], [2, 3, 1], [2, 1, 3], [3, 1, 2], [1, 3, 2], [1, 2, 3]]
 
 
-///////////////////////////////////////////////////////
+//---------------------------------//////////////////
 
     // permutation, recursion
     //time O(n!*n)
@@ -76,7 +76,7 @@ public class Permutation_I_II_Sequence {
         System.out.println(permute2(new int[]{1,2,3}));
     }//[[3, 2, 1], [2, 3, 1], [2, 1, 3], [3, 1, 2], [1, 3, 2], [1, 2, 3]]
 
-///////////////////////////////////////////////////////
+//---------------------------------//////////////////
 
     // permutation, recursion, swap
     //因为用了swap，所以省了空间
@@ -117,15 +117,15 @@ public class Permutation_I_II_Sequence {
         System.out.println(permute3(new int[]{1,2,3}));
     }//[[3, 2, 1], [2, 3, 1], [2, 1, 3], [3, 1, 2], [1, 3, 2], [1, 2, 3]]
 
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
     private void swap(int[] nums, int pos, int i) {
         int temp = nums[pos];
         nums[pos] = nums[i];
         nums[i] = temp;
     }
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
+//---------------------------------/////////////////
+//---------------------------------/////////////////
     // permutationII, recursion, hashset
     public List <List <Integer>> permuteUnique1(int[] nums) {
         //Corn Cases Checked
@@ -195,7 +195,7 @@ public class Permutation_I_II_Sequence {
     }//[[1, 2, 2], [2, 1, 2], [2, 2, 1]]
 
 
-///////////////////////////////////////////////////////
+//---------------------------------//////////////////
     public List<List<Integer>> permuteUnique2(int[] nums) {
         ArrayList<List<Integer>> results = new ArrayList<List<Integer>>();
         if (nums == null) {
@@ -244,7 +244,7 @@ public class Permutation_I_II_Sequence {
         System.out.println(permuteUnique2(new int[]{1,2,2}));
     }//[[1, 2, 2], [2, 1, 2], [2, 2, 1]]
 
-///////////////////////////////////////////////////////
+//---------------------------------//////////////////
 
     public List<List<Integer>> permuteUnique3(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
@@ -292,9 +292,9 @@ public class Permutation_I_II_Sequence {
         System.out.println(permuteUnique3(new int[]{1,2,2}));
     }//[[1, 2, 2], [2, 1, 2], [2, 2, 1]]
 
-///////////////////////////////////////////////////////
-///////////////////////////////////////////////////////
-///////////////////////////////////////////////////////
+//---------------------------------//////////////////
+//---------------------------------//////////////////
+//---------------------------------//////////////////
 
     public String getPermutation01(int n, int k) {
         int pos = 0;
@@ -340,7 +340,7 @@ public class Permutation_I_II_Sequence {
         System.out.println(getPermutation01(3,5));//312
         System.out.println(getPermutation01(3,6));//321
     }
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
     public String getPermutation02(int n, int k) {
         List<Integer> num = new LinkedList<Integer>();
         for (int i = 1; i <= n; i++) num.add(i);
@@ -370,7 +370,7 @@ public class Permutation_I_II_Sequence {
     }
 
 
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
     public String getPermutation03(int n, int k) {
         int pos = 0;
         List<Integer> numbers = new ArrayList<>();
@@ -415,7 +415,7 @@ public class Permutation_I_II_Sequence {
         System.out.println(getPermutation03(3,6));//321
     }
 
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
     public String getPermutation04(int n, int k) {
         List<Integer> num = new LinkedList<Integer>();
         for (int i = 1; i <= n; i++) num.add(i);
@@ -443,8 +443,8 @@ public class Permutation_I_II_Sequence {
         System.out.println(getPermutation04(3,5));//312
         System.out.println(getPermutation04(3,6));//321
     }
-//////////////////////////////////////////////////////
-    //jiuzhang
+//---------------------------------/////////////////
+    // 9Ch
     public String getPermutation_J(int n, int k) {
         StringBuilder sb = new StringBuilder();
         boolean[] used = new boolean[n];
@@ -487,8 +487,8 @@ public class Permutation_I_II_Sequence {
         System.out.println(getPermutation_J(3,5));//312
         System.out.println(getPermutation_J(3,6));//321
     }
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
+//---------------------------------/////////////////
+//---------------------------------/////////////////
 
 }

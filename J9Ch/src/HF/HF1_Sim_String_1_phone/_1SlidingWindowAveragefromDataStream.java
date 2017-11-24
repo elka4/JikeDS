@@ -95,7 +95,7 @@ public class _1SlidingWindowAveragefromDataStream {
 
 //-------------------------------------------------------------------------
 
-    //jiuzhang
+    // 9Ch
     public class MovingAverage2 {
 
         private Queue<Integer> que;

@@ -27,7 +27,7 @@ public class _071_Stack_Simplify_Path_M {
 
 
 //-------------------------------------------------------------------------////
-    //jiuzhang
+    // 9Ch
 public class Jiuzhang {
     public String simplifyPath(String path) {
         String result = "/";

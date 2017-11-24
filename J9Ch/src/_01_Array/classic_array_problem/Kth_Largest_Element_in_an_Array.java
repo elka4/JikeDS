@@ -23,7 +23,7 @@ public class Kth_Largest_Element_in_an_Array {
     //Time is O(nlog(n)).
 
 
-////////////////////////////////////////
+//---------------------------------///
     //Java Solution 2 - Quick Sort
 
     //This problem can also be solved by using quickselect, which is similar to quicksort.
@@ -80,7 +80,7 @@ public class Kth_Largest_Element_in_an_Array {
     //Average case time is O(n), worst case time is O(n^2).
 
 
-//////////////////////////////////////
+//---------------------------------/
 
     //Java Solution 3 - Heap
 
@@ -100,7 +100,7 @@ public class Kth_Largest_Element_in_an_Array {
     }
 
 
-//////////////////////////////////////
+//---------------------------------/
 
 
 

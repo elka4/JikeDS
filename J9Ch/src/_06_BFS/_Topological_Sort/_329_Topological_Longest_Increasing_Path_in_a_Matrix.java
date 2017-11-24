@@ -142,7 +142,7 @@ In out problem, since we want the longest path in the DAG, which equals to the t
             return height;
         }
     }
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
 /*15ms Concise Java Solution
     To get max length of increasing sequences:
 
@@ -183,7 +183,7 @@ In out problem, since we want the longest path in the DAG, which equals to the t
         }
 
     }
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
 /*
 Java 14ms relative short & easy to code solution with explanation. O(mn) time O(mn) space. DFS + DP
 The idea is simple and intuitive:
@@ -271,7 +271,7 @@ public class Solution5 {
         }
     }
 
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
 // Topological Sort Based Solution // An Alternative Solution
 public class Solution7 {
     private final int[][] dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
@@ -315,7 +315,7 @@ public class Solution7 {
         return height;
     }
 }
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
 
 
 }

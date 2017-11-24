@@ -1,13 +1,14 @@
 package _TwoPointer.Sum;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-//  15. 3Sum
 
+//  15. 3Sum
 //  https://leetcode.com/problems/3sum/description/
 public class _015_TwoPointer_3Sum_M {
+//-------------------------------------------------------------------------
+    //1
     //Share my simple java solution
     public class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
@@ -31,7 +32,8 @@ public class _015_TwoPointer_3Sum_M {
         }
     }
 
-
+//-------------------------------------------------------------------------
+    //2
     //Easiest Java Solution
 //    Sort the array, iterate through the list, and use another two pointers to approach the target.
 
@@ -60,7 +62,8 @@ public class _015_TwoPointer_3Sum_M {
         }
         return res;
     }
-
+//-------------------------------------------------------------------------
+    //3
     //Concise O(N^2) Java solution
 //    The idea is to sort an input array and then run through all indices of a possible first element of a triplet. For each possible first element we make a standard bi-directional 2Sum sweep of the remaining part of the array. Also we want to skip equal elements to avoid duplicates in the answer without making a set or smth like that.
 
@@ -85,8 +88,9 @@ public class _015_TwoPointer_3Sum_M {
     }
 
 
-//-------------------------------------------------------------------------//////////
-    //jiuzhang
+//------------------------------------------------------------------------------
+    //4
+    // 9Ch
 public class Jiuzhang {
     /**
      * @param nums : Give an array numbers of n integer
@@ -147,4 +151,8 @@ public class Jiuzhang {
         }
     }
 }
+//-------------------------------------------------------------------------
 }
+/*
+
+ */

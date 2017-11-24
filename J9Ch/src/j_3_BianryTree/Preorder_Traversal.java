@@ -53,7 +53,7 @@ public class Preorder_Traversal {
 
         return preorder;
     }
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
 //Version 1: Traverse
 
     public ArrayList<Integer> preorderTraversal3(TreeNode root) {
@@ -86,7 +86,7 @@ traverse(root.right, result);
 result.add(root.val);
  */
 
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
     /**
      * @param root: The root of binary tree.
      * @return: Inorder in ArrayList which contains node values.
@@ -107,7 +107,7 @@ result.add(root.val);
         }
         return result;
     }
-////////////////////////////////////////////////////////
+//---------------------------------///////////////////
 
     public List<Integer> inorderTraversal5(TreeNode root) {
         // write your code here
@@ -127,7 +127,7 @@ result.add(root.val);
         return result;
     }
 
-////////////////////////////////////////////////////////
+//---------------------------------///////////////////
 
     public List<Integer> inorderTraversal6(TreeNode root) {
         // write your code here
@@ -148,13 +148,13 @@ result.add(root.val);
         helper(root.right, list);
     }
 
-////////////////////////////////////////////////////////
+//---------------------------------///////////////////
 
 
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
 
 
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
 
 
 

@@ -201,7 +201,7 @@ Here is my practice after I learnt your idea and thanks again for your sharing:
     }
 //-------------------------------------------------------------------------/////
 //-------------------------------------------------------------------------/////
-    //jiuzhang
+    // 9Ch
     // 二分法
     public class Jiuzhang1 {
         /**

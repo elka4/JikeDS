@@ -4,8 +4,8 @@ package _BinarySearch.Rotated;
 
 public class _153_BinarySearch_Find_Minimum_in_Rotated_Sorted_Array_M {
 
-//-------------------------------------------------------------------------////////////
-    //jiuzhang
+//------------------------------------------------------------------------------/////
+    // 9Ch
 public class Jiuzhang{
     /**
      * @param nums: a rotated sorted array

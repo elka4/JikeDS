@@ -145,7 +145,7 @@ class Solution2 {
 
 //-------------------------------------------------------------------------------------
     //4
-    //jiuzhang
+    // 9Ch
     public List<Integer> rightSideView(TreeNode root) {
         HashMap<Integer, Integer> depthToValue = new HashMap<Integer, Integer>();
         dfs(depthToValue, root, 1);

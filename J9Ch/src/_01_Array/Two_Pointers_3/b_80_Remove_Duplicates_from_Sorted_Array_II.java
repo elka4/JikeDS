@@ -38,7 +38,7 @@ public class b_80_Remove_Duplicates_from_Sorted_Array_II {
         return i;
     }
 
-/////////////////////////////////////?
+//---------------------------------?
     //Java Solution 1
 
     //We can not change the given array's size, so we only change the
@@ -80,7 +80,7 @@ public class b_80_Remove_Duplicates_from_Sorted_Array_II {
 
 
 
-/////////////////////////////////////?
+//---------------------------------?
 
     //Java Solution 2
 

@@ -56,7 +56,7 @@ public class _325_Maximum_Size_Subarray_Sum_Equals_k {
     }
 
 
-/////////////////////////////////////
+//---------------------------------
 
     //O(n) super clean 9-line Java solution with HashMap
     public int maxSubArrayLen2(int[] nums, int k) {

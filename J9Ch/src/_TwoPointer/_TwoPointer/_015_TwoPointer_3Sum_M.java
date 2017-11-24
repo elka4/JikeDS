@@ -82,8 +82,8 @@ public class _015_TwoPointer_3Sum_M {
     }
 
 
-//-------------------------------------------------------------------------//////////
-    //jiuzhang
+//------------------------------------------------------------------------------///
+    // 9Ch
 public class Jiuzhang {
     /**
      * @param nums : Give an array numbers of n integer

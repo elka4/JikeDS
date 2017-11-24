@@ -38,7 +38,7 @@ public class _113_Tree_Path_Sum_II_M {
         currentResult.remove(currentResult.size() - 1);
     }
 
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
     public List<List<Integer>> pathSum0(TreeNode root, int sum) {
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
@@ -104,7 +104,7 @@ public class _113_Tree_Path_Sum_II_M {
         list.remove(list.size() - 1);
         System.out.println("list " + list);
     }*/
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
     //    Simple DFS Java Solution
     //    Save intermediate result into stack and save the stack into result
     // array once its sum == required sum.
@@ -228,7 +228,7 @@ public class _113_Tree_Path_Sum_II_M {
     }
 
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //My simple java solution
     /*
     这个方法每次传到下一层的都是一个new出来的新的list，所以不需要在回到某一层时remove！！！！
@@ -254,7 +254,7 @@ public class _113_Tree_Path_Sum_II_M {
 
 
 //-------------------------------------------------------------------------///
-    //jiuzhang
+    // 9Ch
     public ArrayList<ArrayList<Integer>> pathSum(TreeNode root, int sum) {
         ArrayList<ArrayList<Integer>> rst = new ArrayList<ArrayList<Integer>>();
         ArrayList<Integer> solution = new ArrayList<Integer>();
@@ -304,7 +304,7 @@ public class _113_Tree_Path_Sum_II_M {
         System.out.println(pathSum(root, 6));
     }
 //-------------------------------------------------------------------------///
-    //Jiuzhang
+    // 9Ch
     public List<List<Integer>> binaryTreePathSum(TreeNode root, int target) {
         // Algorithm: Traverse
         // Use recursion to traverse the tree in preorder, pass with a parameter

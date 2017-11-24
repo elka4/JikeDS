@@ -22,8 +22,8 @@ public class _026_TwoPointer_Remove_Duplicates_from_Sorted_Array_E {
         return i + 1;
     }
 
-//-------------------------------------------------------------------------///////
-    //jiuzhang
+//------------------------------------------------------------------------------
+    // 9Ch
 public class Jiuzhang {
     public int removeDuplicates(int[] A) {
         if (A == null || A.length == 0) {

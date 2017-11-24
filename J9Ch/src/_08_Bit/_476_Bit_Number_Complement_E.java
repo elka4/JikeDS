@@ -44,7 +44,7 @@ public class _476_Bit_Number_Complement_E {
             return ~num & (Integer.highestOneBit(num) - 1);
         }
     }
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
     /*Java, very simple code and self-evident, explanation
 
 33
@@ -92,7 +92,7 @@ public class _476_Bit_Number_Complement_E {
     public int findComplement6(int num) {
         return ~num + (Integer.highestOneBit(num) << 1);
     }
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 
 //    Share my Java solution with explanation
 
@@ -106,7 +106,7 @@ public class _476_Bit_Number_Complement_E {
 
         return (~num) & mask;
     }
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 //  Java 1 line bit manipulation solution
     public class Solution8 {
         public int findComplement(int num) {
@@ -144,7 +144,7 @@ public class _476_Bit_Number_Complement_E {
         }
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 }
 /*
 Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.

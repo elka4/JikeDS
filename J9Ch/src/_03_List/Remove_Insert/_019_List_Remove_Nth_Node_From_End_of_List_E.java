@@ -1,15 +1,16 @@
 package _03_List.Remove_Insert;
-
 import lib.ListNode;
 
 //  19. Remove Nth Node From End of List
-
 //  https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
 //  http://www.lintcode.com/zh-cn/problem/remove-nth-node-from-end-of-list/
+//  3:
 public class _019_List_Remove_Nth_Node_From_End_of_List_E {
 
     //https://leetcode.com/problems/remove-nth-node-from-end-of-list/solution/
-        //Approach #1 (Two pass algorithm)
+//---------------------------------------------------------------------------
+    //1
+    //Approach #1 (Two pass algorithm)
         public ListNode removeNthFromEnd1(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;
@@ -28,7 +29,8 @@ public class _019_List_Remove_Nth_Node_From_End_of_List_E {
         first.next = first.next.next;
         return dummy.next;
     }
-
+//---------------------------------------------------------------------------
+    //2
     //Approach #2 (One pass algorithm)
     public ListNode removeNthFromEnd2(ListNode head, int n) {
         ListNode dummy = new ListNode(0);
@@ -48,17 +50,9 @@ public class _019_List_Remove_Nth_Node_From_End_of_List_E {
         return dummy.next;
     }
 
-//-------------------------------------------------------------------------//
-
-
-//-------------------------------------------------------------------------//
-
-
-//-------------------------------------------------------------------------//
-
-
-//-------------------------------------------------------------------------//
-//jiuzhang
+//---------------------------------------------------------------------------
+    //3
+    // 9Ch
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if (n <= 0) {
             return null;
@@ -82,15 +76,11 @@ public class _019_List_Remove_Nth_Node_From_End_of_List_E {
         return dummy.next;
     }
 
-
-
-//-------------------------------------------------------------------------//
-
+//---------------------------------------------------------------------------
 }
 /*
+//---------------------------------------------------------------------------
 给定一个链表，删除链表中倒数第n个节点，返回链表的头节点。
-
-
 
  注意事项
 
@@ -100,9 +90,12 @@ public class _019_List_Remove_Nth_Node_From_End_of_List_E {
 给出链表1->2->3->4->5->null和 n = 2.
 
 删除倒数第二个节点之后，这个链表将变成1->2->3->5->null.
+//---------------------------------------------------------------------------
  */
 
+
 /*
+//---------------------------------------------------------------------------
 Given a linked list, remove the nth node from the end of list and return its head.
 
 For example,
@@ -113,6 +106,5 @@ For example,
 Note:
 Given n will always be valid.
 Try to do this in one pass.
-
-
+//---------------------------------------------------------------------------
  */

@@ -192,7 +192,7 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
 
 
 //-------------------------------------------------------------------------//
-//jiuzhang
+// 9Ch
 public class Juizhang {
     public ListNode deleteDuplicates(ListNode head) {
         if(head == null || head.next == null)

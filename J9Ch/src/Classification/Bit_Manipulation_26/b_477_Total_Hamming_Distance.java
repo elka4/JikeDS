@@ -23,7 +23,7 @@ public class b_477_Total_Hamming_Distance {
         return total;
     }
 
-    //-------------------------------------------------------------------------///////
+    //------------------------------------------------------------------------------
 //
 //    Java Solution with Explanation
 //    The first solution came to my mind is brute forcely iterate through each pair, then sum all Integer.bitCount(x ^ y) like what I mentioned here https://discuss.leetcode.com/topic/72093/java-1-line-solution-d But as you can imagine, it TLE...

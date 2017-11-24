@@ -129,7 +129,7 @@ public class _3EditDistance {
         }
     }
 //    Time complexity : If n is the length of word1, m of word2, because of the two indented loops, it is O(nm)
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
     //  https://web.stanford.edu/class/cs124/lec/med.pdf
 
 /*My Accepted Java Solution
@@ -176,7 +176,7 @@ public class _3EditDistance {
         return dp[word1.length()][word2.length()];
     }
 //    Remeber that we start from dp[0][0], which is an empty string to an empty string.
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
     // 9Ch DP 动态规划版本去掉注释
     public int minDistance(String word1, String word2) {
         char[] s1 = word1.toCharArray();

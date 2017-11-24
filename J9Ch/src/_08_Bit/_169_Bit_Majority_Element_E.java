@@ -40,7 +40,7 @@ public class _169_Bit_Majority_Element_E {
             return maj;
         }
     }
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 //Java solutions (sorting, hashmap, moore voting, bit manipulation).
 
     // Sorting
@@ -96,7 +96,7 @@ public class _169_Bit_Majority_Element_E {
         return ret;
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 //  Share my solution [Java] - Count bits
 /*Definitely not the fastest solution but I post it here for your reference since it's different from the rest I saw. The problem reminded me of the approach I followed at Single Number II (problem 137).
 
@@ -128,10 +128,10 @@ public class _169_Bit_Majority_Element_E {
     }
 
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 }
 /*
 Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.

@@ -3,7 +3,7 @@ package _04_Tree.Top_Tree._2Tree_Adv;
 import org.junit.Test;
 
 public class _1SqrtX {
-    //jiuzhang
+    // 9Ch
     public int sqrt0(int x) {
         // find the last number which square of it <= x
         long start = 1, end = x;
@@ -128,7 +128,7 @@ public class _1SqrtX {
         }
     }
 
-////////////////////////////////////////////////////
+//---------------------------------///////////////
 
     public int sqrt2(int x) {
         long r = x;
@@ -137,7 +137,7 @@ public class _1SqrtX {
         return (int) r;
     }
 
-////////////////////////////////////////////////////
+//---------------------------------///////////////
 
     public int mySqrt3(int x) {
         if (x == 0) return 0;
@@ -157,7 +157,7 @@ public class _1SqrtX {
         return start;
     }
 
-////////////////////////////////////////////////////
+//---------------------------------///////////////
 
     public int mySqrt(int x) {
         int res = 0;

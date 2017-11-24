@@ -97,7 +97,7 @@ public class _212_BackTracking_Word_Search_II_H {
     }
 
 
-//-------------------------------------------------------------------------//////////////////??
+//------------------------------------------------------------------------------///////////??
 
     public class Solution2 {
         public class TrieNode{
@@ -168,7 +168,7 @@ public class _212_BackTracking_Word_Search_II_H {
 
 
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
     /*  Java 15ms Easiest Solution (100.00%)
     Backtracking + Trie
 Intuitively, start from every cell and try to build a word in the dictionary. Backtracking (dfs) is the powerful way to exhaust every possible ways. Apparently, we need to do pruning when current character is not in any word.
@@ -233,7 +233,7 @@ No need to use HashSet to de-duplicate. Use "one time search" trie.
             String word;
         }
     }
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 /*My simple and clean Java code using DFS and Trie
     Compared with Word Search, I make my DFS with a tire but a word. The Trie is formed by all the words in given words. Then during the DFS, for each current formed word, I check if it is in the Trie.*/
 
@@ -278,8 +278,8 @@ No need to use HashSet to de-duplicate. Use "one time search" trie.
         }
     }
 
-//-------------------------------------------------------------------------///////////////
-    //Jiuzhang
+//------------------------------------------------------------------------------////////
+    // 9Ch
     public class Jiuzhang {
 
         class TrieNode {
@@ -323,7 +323,7 @@ No need to use HashSet to de-duplicate. Use "one time search" trie.
             }
         };
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
         public int []dx = {1, 0, -1, 0};
         public int []dy = {0, 1, 0, -1};
 
@@ -365,7 +365,7 @@ No need to use HashSet to de-duplicate. Use "one time search" trie.
     }
 
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 }
 /*
 Given a 2D board and a list of words from the dictionary, find all words in the board.

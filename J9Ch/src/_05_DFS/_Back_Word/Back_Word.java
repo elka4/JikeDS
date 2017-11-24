@@ -144,7 +144,7 @@ start = "hit"  end = "cog"  dict = ["hot","dot","dog","lot","log"]
 返回[ ["hit","hot","dot","dog","cog"], ["hit","hot","lot","log","cog"] ]
  */
 
-    //jiuzhang
+    // 9Ch
     public List<List<String>> findLadders(String start, String end,
                                           Set<String> dict) {
         List<List<String>> ladders = new ArrayList<List<String>>();
@@ -621,7 +621,7 @@ The wordDict parameter had been changed to a list of strings (instead of a set o
         return res;
     }
 
-    //-------------------------------------------------------------------------//////////
+    //------------------------------------------------------------------------------///
     //Approach #3 Using Dynamic Programming [Time Limit Exceeded]:
     public List<String> wordBreak3(String s, Set<String> wordDict) {
         LinkedList<String>[] dp = new LinkedList[s.length() + 1];
@@ -644,7 +644,7 @@ The wordDict parameter had been changed to a list of strings (instead of a set o
 
 
 
-    //Jiuzhang
+    // 9Ch
     // version 1:
     public List<String> wordBreak_J1(String s, Set<String> wordDict) {
         ArrayList<String> result = new ArrayList<String>();

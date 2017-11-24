@@ -65,7 +65,7 @@ public class Solution2 {
     }
 }
 //-------------------------------------------------------------------------/
-//jiuzhang
+// 9Ch
     // version 1: O(n) scan
     class Jiuzhang1 {
         /**

@@ -8,10 +8,10 @@ import java.util.Map;
 //  https://leetcode.com/problems/house-robber-iii/
 //  http://www.lintcode.com/zh-cn/problem/house-robber-iii/
 public class _337_Tree_House_Robber_III_M {
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //1
     //这个就很好理解
-    //jiuzhang
+    // 9Ch
     //dp[i][0]表示以i为根的子树不偷根节点能获得的最高价值，dp[i][1]表示以i为根的子树偷根节点能获得的最高价值
     public int houseRobber_J1(TreeNode root) {
         int[] ans = dp(root);
@@ -30,7 +30,7 @@ public class _337_Tree_House_Robber_III_M {
         now[1] = left[0] + right[0] + root.val;
         return now;
     }
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //2
     //Step by step tackling of the problem
     public int rob(TreeNode root) {
@@ -50,7 +50,7 @@ public class _337_Tree_House_Robber_III_M {
     }
 
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //3
     //Step II -- Think one step further
     //And here is the improved solution:
@@ -78,7 +78,7 @@ public class _337_Tree_House_Robber_III_M {
         return val;
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //4
     //Step III -- Think one step back
     public int rob3(TreeNode root) {
@@ -119,7 +119,7 @@ public class _337_Tree_House_Robber_III_M {
 //-------------------------------------------------------------------------///
 
 //-------------------------------------------------------------------------///
-    //Jiuzhang
+    // 9Ch
     // version 2
     /**
      * Definition of TreeNode:

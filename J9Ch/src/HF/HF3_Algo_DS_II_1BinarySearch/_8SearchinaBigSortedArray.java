@@ -3,7 +3,7 @@ package HF.HF3_Algo_DS_II_1BinarySearch;
 //Search in a Big Sorted Array
 public class _8SearchinaBigSortedArray {
 
-//-------------------------------------------------------------------------//////////////////
+//------------------------------------------------------------------------------///////////
     /**
      * @param reader: An instance of ArrayReader can read number by index.
      * @param target: An integer
@@ -47,7 +47,7 @@ public class _8SearchinaBigSortedArray {
         }
     }
 
-//-------------------------------------------------------------------------//////////////////
+//------------------------------------------------------------------------------///////////
 }
 /*
 

@@ -6,7 +6,7 @@ package _TwoPointer.TwoPointer_S;
 //  http://www.lintcode.com/zh-cn/problem/minimum-window-substring/
 public class _09_Minimum_Window_Substring {
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 	//方法一:
     //判断source hash是否包含target hash
     boolean valid(int []sourcehash, int []targethash) {
@@ -48,7 +48,7 @@ public class _09_Minimum_Window_Substring {
         return minStr;
     }
 
-//////////////////////////////////////////
+//---------------------------------/////
 //方法二:
     int initTargetHash(int []targethash, String Target) {
         int targetnum =0 ;
@@ -86,7 +86,7 @@ public class _09_Minimum_Window_Substring {
         }
         return minStr;
     }
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 }
 /*
 最小子串覆盖

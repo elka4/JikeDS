@@ -33,7 +33,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
         return dp[m][n];
     }
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 
 /*    dp[n] means the substring s[:n] if match the pattern i
 
@@ -71,7 +71,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
         return dp[p.length()][s.length()];
     }
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 
     //My java DP solution using 2D table
     public boolean isMatch03(String s, String p) {
@@ -97,7 +97,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
     }
 
 
-//-------------------------------------------------------------------------////////////////////
+//------------------------------------------------------------------------------/////////////
     //Java DFA solution, with better structure and easy understand
 
     public boolean isMatch04(String s, String p) {
@@ -139,7 +139,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
         }
         return false;
     }
-//-------------------------------------------------------------------------////////////////////
+//------------------------------------------------------------------------------/////////////
     //Linear runtime and constant space solution
     //    Here is my re-write in Java
 
@@ -175,8 +175,8 @@ public class _044_BackTracking_Wildcard_Matching_H {
         return p == pattern.length();
     }
 
-//-------------------------------------------------------------------------////////////////////
-        //jiuzhang
+//------------------------------------------------------------------------------/////////////
+        // 9Ch
         // Time: O(|s||p|*log|s|), Space: O(|s|)
         // Time can also optimize to O(|s||p|)
         public boolean isMatch_J1(String s, String p) {
@@ -220,7 +220,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
         }
 
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
     // 9Ch DP
     public boolean isMatch_J2(String s, String p) {
         char[] s1 = s.toCharArray();
@@ -264,7 +264,7 @@ public class _044_BackTracking_Wildcard_Matching_H {
     }
 
 
-//-------------------------------------------------------------------------////////////////////
+//------------------------------------------------------------------------------/////////////
 }
 
 /*

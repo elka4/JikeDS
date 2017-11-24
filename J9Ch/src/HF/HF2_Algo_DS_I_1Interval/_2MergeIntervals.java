@@ -38,7 +38,7 @@ Example:
 
 //Merge Intervals
 public class _2MergeIntervals {
-    //jiuzhang
+    // 9Ch
     public List<Interval> merge(List<Interval> intervals) {
         if (intervals == null || intervals.size() <= 1) {
             return intervals;

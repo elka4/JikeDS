@@ -117,8 +117,8 @@ public class _085_Stack_Maximal_Rectangle_H {
             return maxArea;
         }
     }
-//-------------------------------------------------------------------------//////////////
-    //jiuzhang
+//------------------------------------------------------------------------------///////
+    // 9Ch
     public class Jiuzhang1 {
         /**
          * @param matrix a boolean 2D matrix

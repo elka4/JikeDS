@@ -1,5 +1,4 @@
 package _TwoPointer.Intersection;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -7,14 +6,13 @@ import java.util.Set;
 
 //  349. Intersection of Two Arrays
 //  https://leetcode.com/problems/intersection-of-two-arrays/description/
-
 //  http://www.lintcode.com/zh-cn/problem/intersection-of-two-arrays/
+//  6:
 public class _349_TwoPointer_Intersection_of_Two_Arrays_E {
+//------------------------------------------------------------------------------
+    //1
     //Three Java Solutions
-/*    Use two hash sets
-
-    Time complexity: O(n)*/
-
+    /*    Use two hash sets Time complexity: O(n)*/
     public class Solution1 {
         public int[] intersection(int[] nums1, int[] nums2) {
             Set<Integer> set = new HashSet<>();
@@ -35,10 +33,9 @@ public class _349_TwoPointer_Intersection_of_Two_Arrays_E {
             return result;
         }
     }
-/*    Sort both arrays, use two pointers
-
-    Time complexity: O(nlogn)*/
-
+//------------------------------------------------------------------------------
+    //2
+    /*    Sort both arrays, use two pointers    Time complexity: O(nlogn)*/
     public class Solution2 {
         public int[] intersection(int[] nums1, int[] nums2) {
             Set<Integer> set = new HashSet<>();
@@ -65,10 +62,9 @@ public class _349_TwoPointer_Intersection_of_Two_Arrays_E {
             return result;
         }
     }
-/*    Binary search
-
-    Time complexity: O(nlogn)*/
-
+//------------------------------------------------------------------------------
+    //3
+    /*    Binary search Time complexity: O(nlogn)*/
     public class Solution3 {
         public int[] intersection(int[] nums1, int[] nums2) {
             Set<Integer> set = new HashSet<>();
@@ -104,12 +100,9 @@ public class _349_TwoPointer_Intersection_of_Two_Arrays_E {
         }
     }
 
-//-------------------------------------------------------------------------
-
-
-//-------------------------------------------------------------------------
-//-------------------------------------------------------------------------
-    //jiuzhang
+//------------------------------------------------------------------------------
+    //4
+    // 9Ch
     // version 1: sort & merge
     public class Jiuzhang1 {
         /**
@@ -147,7 +140,8 @@ public class _349_TwoPointer_Intersection_of_Two_Arrays_E {
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //5
     // version 2: hash map
     public class Jiuzhang2 {
         /**
@@ -182,7 +176,8 @@ public class _349_TwoPointer_Intersection_of_Two_Arrays_E {
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //6
     // version 3: sort & binary search
     public class Jiuzhang3 {
         /**
@@ -245,8 +240,10 @@ public class _349_TwoPointer_Intersection_of_Two_Arrays_E {
         }
     }
 
+//------------------------------------------------------------------------------
 }
 /*
+------------------------------------------------------------------------------
 Given two arrays, write a function to compute their intersection.
 
 Example:
@@ -255,9 +252,11 @@ Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2].
 Note:
 Each element in the result must be unique.
 The result can be in any order.
+------------------------------------------------------------------------------
  */
 
 /*
+------------------------------------------------------------------------------
 返回两个数组的交
 
  注意事项
@@ -266,4 +265,5 @@ Each element in the result must be unique.
 The result can be in any order.
 样例
 nums1 = [1, 2, 2, 1], nums2 = [2, 2], 返回 [2].
+------------------------------------------------------------------------------
  */

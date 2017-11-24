@@ -1,14 +1,14 @@
 package _03_List.Remove_Insert;
-
 import lib.ListNode;
 
 
 //  82. Remove Duplicates from Sorted List II
-
 //  https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
 //  http://www.lintcode.com/zh-cn/problem/remove-duplicates-from-sorted-list-ii/
+//  9:
 public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
-
+//---------------------------------------------------------------------------
+    //1
     //    My accepted Java code
     public ListNode deleteDuplicates1(ListNode head) {
         if(head==null) return null;
@@ -31,7 +31,8 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
         return FakeHead.next;
     }
 
-
+//---------------------------------------------------------------------------
+    //2
     //    My Recursive Java Solution
     public ListNode deleteDuplicates2(ListNode head) {
         if (head == null) return null;
@@ -46,10 +47,11 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
         }
         return head;
     }
-//if current node is not unique, return deleteDuplicates with head.next.
-//    If current node is unique, link it to the result of next list made by recursive call. Any improvement?
+    //if current node is not unique, return deleteDuplicates with head.next.
+    //    If current node is unique, link it to the result of next list made by recursive call. Any improvement?
 
-
+//---------------------------------------------------------------------------
+    //3
     //    Another java version
     public ListNode deleteDuplicates3(ListNode head) {
         if(head == null || head.next == null){
@@ -68,6 +70,8 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
         }
     }
 
+//---------------------------------------------------------------------------
+    //4
     //    recursive without while loop:
     public class Solution4 {
         public ListNode deleteDuplicates(ListNode head) {
@@ -85,6 +89,8 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
         }
     }
 
+//---------------------------------------------------------------------------
+    //5
     //    Java simple and clean code with comment
     public class Solution5 {
         public ListNode deleteDuplicates(ListNode head) {
@@ -109,7 +115,8 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
         }
     }
 
-
+//---------------------------------------------------------------------------
+    //6
     //can be further simplified as:
     class Solution6 {
         public ListNode deleteDuplicates(ListNode head) {
@@ -125,6 +132,8 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
         }
     }
 
+//---------------------------------------------------------------------------
+    //7
     class Solution7 {
         public ListNode deleteDuplicates(ListNode head) {
 //            It's a simple one, well done :)
@@ -153,7 +162,8 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
         }
     }
 
-
+//---------------------------------------------------------------------------
+    //8
     //    A short and simple Java solution
     public ListNode deleteDuplicates8(ListNode head) {
         ListNode dummy = new ListNode(0);
@@ -178,10 +188,10 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
         and also skip all the 2's, and now head.val == 3;
 
         ponit d.next to the tail, end the loop*/
-//-------------------------------------------------------------------------//
 
-//-------------------------------------------------------------------------//
-    //jiuzhang
+//-------------------------------------------------------------------------
+    //9
+    // 9Ch
     public ListNode deleteDuplicates(ListNode head) {
         if(head == null || head.next == null)
             return head;
@@ -204,21 +214,23 @@ public class _082_List_Remove_Duplicates_from_Sorted_List_II_M {
         return dummy.next;
     }
 
-
-//-------------------------------------------------------------------------//
-
+//-------------------------------------------------------------------------
 }
+
 /*
+//---------------------------------------------------------------------------
 Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
 
 For example,
 Given 1->2->3->3->4->4->5, return 1->2->5.
 Given 1->1->1->2->3, return 2->3.
-
-
+//---------------------------------------------------------------------------
  */
 
+
+
 /*
+//---------------------------------------------------------------------------
 给定一个排序链表，删除所有重复的元素只留下原链表中没有重复的元素。
 
 样例
@@ -226,5 +238,5 @@ Given 1->1->1->2->3, return 2->3.
 
 给出 1->1->1->2->3->null，返回 2->3->null
 
-
+//---------------------------------------------------------------------------
  */

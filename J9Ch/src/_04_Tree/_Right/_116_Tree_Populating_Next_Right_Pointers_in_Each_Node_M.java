@@ -145,7 +145,7 @@ public class _116_Tree_Populating_Next_Right_Pointers_in_Each_Node_M {
 
 //-------------------------------------------------------------------------
     //6
-    //Jiuzhang
+    // 9Ch
     public void connect(TreeLinkNode root) {
         if (root == null) {
             return;

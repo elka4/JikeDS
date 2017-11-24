@@ -4,8 +4,13 @@ import lib.ListNode;
 //  147. Insertion Sort List
 //  https://leetcode.com/problems/insertion-sort-list/description/
 //  http://www.lintcode.com/zh-cn/problem/insertion-sort-list/
-public class _147_List_Insertion_Sort_List_M {
+//  10:
+//  Linked List, Sort
+//  148. Sort List
 
+public class _147_List_Insertion_Sort_List_M {
+//---------------------------------------------------------------------------
+    //1
     //    An easy and clear way to sort ( O(1) space )
     public ListNode insertionSortList1(ListNode head) {
         if( head == null ){
@@ -33,7 +38,8 @@ public class _147_List_Insertion_Sort_List_M {
         return helper.next;
     }
 
-
+//---------------------------------------------------------------------------
+    //2
     //    Accepted Solution using JAVA
     public class Solution2 {
         public ListNode insertionSortList(ListNode head) {
@@ -53,8 +59,8 @@ public class _147_List_Insertion_Sort_List_M {
             return helper.next;
         }
     }
-
-
+//---------------------------------------------------------------------------
+    //3
     //    Clean Java solution using a fake head
     public ListNode insertionSortList3(ListNode head) {
         ListNode curr = head, next = null;
@@ -76,7 +82,8 @@ public class _147_List_Insertion_Sort_List_M {
 
         return l.next;
     }
-
+//---------------------------------------------------------------------------
+    //4
     /*7ms Java solution with explanation
 
     The only real modification here is to take advantage of the ability to add to both the front and end of a linked list in constant time. A typical insertion sort would have to go through the entire array to find the new location to insert the element. If the element should be placed first in the array then we have to shift everything over. Thankfully, with a linked list we don't need to do this. The slight modification of keeping a pointer to the last node as well as the first dramatically increased the runtime of the algorithm. That being said, the speedup still has a lot to do with the ordering if the items in the array.*/
@@ -127,8 +134,8 @@ public class _147_List_Insertion_Sort_List_M {
 
         return sortedHead;
     }
-
-
+//---------------------------------------------------------------------------
+    //5
     //    Java 34ms solution, clear logic with separate insert method
     //    using insertion sort logic. Insert each new node into a sorted linked list with dummy head.
     public class Solution5 {
@@ -154,6 +161,8 @@ public class _147_List_Insertion_Sort_List_M {
         }
     }
 
+//---------------------------------------------------------------------------
+    //6
     //    Simple and clean java code
 
     public ListNode insertionSortList6(ListNode head) {
@@ -174,9 +183,9 @@ public class _147_List_Insertion_Sort_List_M {
         }
         return dummy.next;
     }
-//-------------------------------------------------------------------------//
-
-//    Maybe the best JAVA solution with code comments
+//---------------------------------------------------------------------------
+    //7
+    //Maybe the best JAVA solution with code comments
     public class Solution7 {
 
         public ListNode insertionSortList(ListNode head) {
@@ -215,6 +224,8 @@ public class _147_List_Insertion_Sort_List_M {
             return head;
         }
     }
+//---------------------------------------------------------------------------
+    //8
 /*    Hope it will helpful. The thinking is very straightforward:
 
     Insert before head.
@@ -277,9 +288,9 @@ public class _147_List_Insertion_Sort_List_M {
         return currentHead;
     }
 
-
-//    Too clumsy. How about mine below:
-
+//---------------------------------------------------------------------------
+    //9
+    //    Too clumsy. How about mine below:
     public ListNode insertionSortList9(ListNode head) {
         if(head==null) return head;
         ListNode current = head.next, prev = head;
@@ -300,14 +311,9 @@ public class _147_List_Insertion_Sort_List_M {
         }
         return head;
     }
-//-------------------------------------------------------------------------//
-
-
-//-------------------------------------------------------------------------//
-
-
-//-------------------------------------------------------------------------//
-    //jiuzhang
+//---------------------------------------------------------------------------
+    //10
+    // 9Ch
     public ListNode insertionSortList(ListNode head) {
         ListNode dummy = new ListNode(0);
         // 这个dummy的作用是，把head开头的链表一个个的插入到dummy开头的链表里
@@ -327,7 +333,7 @@ public class _147_List_Insertion_Sort_List_M {
         return dummy.next;
     }
 
-//-------------------------------------------------------------------------//
+//---------------------------------------------------------------------------
 
 }
 /*

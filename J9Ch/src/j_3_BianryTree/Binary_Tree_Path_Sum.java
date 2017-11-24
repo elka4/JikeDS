@@ -61,7 +61,7 @@ public class Binary_Tree_Path_Sum {
             path.remove(path.size() - 1);
         }
     }
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     // DFS with one LinkedList , accepted java solution
     public List<List<Integer>> pathSum(TreeNode root, int sum){
@@ -88,7 +88,7 @@ public class Binary_Tree_Path_Sum {
         currentResult.remove(currentResult.size() - 1);
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     //Simple DFS Java Solution
     // Save intermediate result into stack and save the stack into result array once its sum == required sum.
@@ -113,7 +113,7 @@ public class Binary_Tree_Path_Sum {
         }
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     // Java Solution: iterative and recursive
 
 //1. iterative: Using a stack to implement DFS
@@ -185,7 +185,7 @@ public class Binary_Tree_Path_Sum {
     }
 
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //Another accepted Java solution
     public class Solution4 {
         public List<List<Integer>> pathSum(TreeNode root, int sum) {
@@ -213,7 +213,7 @@ public class Binary_Tree_Path_Sum {
     }
 
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //My simple java solution
     class solution5 {
         private List<List<Integer>> result = new ArrayList<List<Integer>>();
@@ -237,7 +237,7 @@ public class Binary_Tree_Path_Sum {
     }
 
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
 
 

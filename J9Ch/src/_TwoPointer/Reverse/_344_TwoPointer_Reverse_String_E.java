@@ -2,12 +2,14 @@ package _TwoPointer.Reverse;
 
 //  344. Reverse String
 //  https://leetcode.com/problems/reverse-string/description/
-
+//  9:
+//  Two Pointers, String
+//  _345_TwoPointer_Reverse_Vowels_of_a_String_E
+//  _541_String_Reverse_String_II_E
 public class _344_TwoPointer_Reverse_String_E {
-
-//        [JAVA] Simple and Clean with Explanations [6 Solutions]
-
-
+//---------------------------------------------------------------------------
+    //1
+    //  [JAVA] Simple and Clean with Explanations [6 Solutions]
     public class Solution1 {
         public String reverseString(String s) {
             char[] word = s.toCharArray();
@@ -23,6 +25,8 @@ public class _344_TwoPointer_Reverse_String_E {
             return new String(word);
         }
     }
+//---------------------------------------------------------------------------
+    //2
 /*    Complexity Analysis
 
     Time Complexity: `O(n)` (Average Case) and `O(n)` (Worst Case) where `n` is the total number character in the input string. The algorithm need to reverse the whole string.
@@ -50,6 +54,8 @@ public class _344_TwoPointer_Reverse_String_E {
             return new String(bytes);
         }
     }
+//---------------------------------------------------------------------------
+    //3
 /*    Complexity Analysis
 
     Time Complexity: `O(n)` (Average Case) and `O(n)` (Worst Case) where `n` is the total number character in the input string. The algorithm need to reverse the whole string. Each character is `1` byte.
@@ -79,6 +85,8 @@ public class _344_TwoPointer_Reverse_String_E {
             return new String(word);
         }
     }
+//---------------------------------------------------------------------------
+    //4
     /*Complexity Analysis
 
     Time Complexity: `O(n)` (Average Case) and `O(n)` (Worst Case) where `n` is the total number character in the input string. The algorithm need to reverse the whole string.
@@ -112,6 +120,8 @@ public class _344_TwoPointer_Reverse_String_E {
             return new String(bytes);
         }
     }
+//---------------------------------------------------------------------------
+    //5
     /*Complexity Analysis
 
     Time Complexity: `O(n)` (Average Case) and `O(n)` (Worst Case) where `n` is the total number character in the input string. The algorithm need to reverse the whole string. Each character is `1` byte.
@@ -135,6 +145,8 @@ public class _344_TwoPointer_Reverse_String_E {
             return new StringBuilder(s).reverse().toString();
         }
     }
+//---------------------------------------------------------------------------
+    //6
 /*    Complexity Analysis
 
     Time Complexity: `O(n)` (Average Case) and `O(n)` (Worst Case) where `n` is the total number character in the input string. Depending on the implementation. However, it is not possible to reverse string in less than `O(n)`.
@@ -156,6 +168,8 @@ public class _344_TwoPointer_Reverse_String_E {
             return reverseString(rightStr) + reverseString(leftStr);
         }
     }
+//---------------------------------------------------------------------------
+    //7
 /*    Complexity Analysis
 
     Time Complexity: `O(n log(n))` (Average Case) and `O(n * log(n))` (Worst Case) where `n` is the total number character in the input string. The recurrence equation is `T(n) = 2 * T(n/2) + O(n)`. `O(n)` is due to the fact that concatenation function takes linear time. The recurrence equation can be solved to get `O(n * log(n))`.
@@ -167,7 +181,7 @@ public class _344_TwoPointer_Reverse_String_E {
     Approach: Divide and Conquer (Recursive)
 
     The string is split into half. Each substring will be further divided. This process continues until the string can no longer be divided (length `<= 1`). The conquering process will take they previously split strings and concatenate them in reverse order.*/
-//-------------------------------------------------------------------------///////////////
+
     //Java- easiest method- 2-line code, attached another method
     class Solution7{
         //method 1: use StringBuilder
@@ -193,14 +207,16 @@ public class _344_TwoPointer_Reverse_String_E {
             return new String(cs);
         }
     }
-
+//---------------------------------------------------------------------------
+    //8
     //  1-line:
     public class Solution8 {
         public String reverseString(String s) {
             return new StringBuilder(s).reverse().toString();
         }
     }
-
+//---------------------------------------------------------------------------
+    //9
     //Java swapping char array.
     public String reverseString9(String s) {
         char[] c = s.toCharArray();
@@ -212,21 +228,12 @@ public class _344_TwoPointer_Reverse_String_E {
         return new String(c);
     }
 
-//-------------------------------------------------------------------------///////////////
-
-//-------------------------------------------------------------------------///////////////
-
-
+//---------------------------------------------------------------------------
 }
 /*
 Write a function that takes a string as input and returns the string reversed.
 
 Example:
 Given s = "hello", return "olleh".
-
-
  */
 
-/*
-
- */

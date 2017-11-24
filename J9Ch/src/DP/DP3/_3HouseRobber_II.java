@@ -50,7 +50,7 @@ public class _3HouseRobber_II {
 
 //-------------------------------------------------------------------------//////
 
-    //jiuzhang
+    // 9Ch
     public int houseRobber2(int[] nums) {
         if (nums.length == 0) {
             return 0;

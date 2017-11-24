@@ -27,7 +27,7 @@ public class _337_DFS_House_Robber_III_M {
     }
 
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     //Step II -- Think one step further
     //And here is the improved solution:
@@ -55,7 +55,7 @@ public class _337_DFS_House_Robber_III_M {
         return val;
     }
 
-//-------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     //Step III -- Think one step back
     public int rob3(TreeNode root) {
@@ -76,7 +76,7 @@ public class _337_DFS_House_Robber_III_M {
         return res;
     }
 
-//-------------------------------------------------------------------------///////////////////
+//------------------------------------------------------------------------------////////////
 
     public int rob4(TreeNode root) {
         int[] num = dfs(root);
@@ -93,7 +93,7 @@ public class _337_DFS_House_Robber_III_M {
     }
 
 //-------------------------------------------------------------------------///
-    //jiuzhang
+    // 9Ch
     //dp[i][0]表示以i为根的子树不偷根节点能获得的最高价值，dp[i][1]表示以i为根的子树偷根节点能获得的最高价值
     public int houseRobber_J1(TreeNode root) {
         int[] ans = dp(root);
@@ -113,7 +113,7 @@ public class _337_DFS_House_Robber_III_M {
     }
 
 //-------------------------------------------------------------------------///
-    //Jiuzhang
+    // 9Ch
     // version 2
     /**
      * Definition of TreeNode:

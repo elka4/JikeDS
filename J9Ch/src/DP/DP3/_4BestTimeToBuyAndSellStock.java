@@ -79,8 +79,8 @@ public class _4BestTimeToBuyAndSellStock {
         }
     }
 
-//-------------------------------------------------------------------------/////////////
-    //jiuzhang
+//------------------------------------------------------------------------------//////
+    // 9Ch
     public int maxProfit1(int prices[]) {
         int minprice = Integer.MAX_VALUE;
         int maxprofit = 0;
@@ -96,7 +96,7 @@ public class _4BestTimeToBuyAndSellStock {
         return maxprofit;
     }
 //-------------------------------------------------------------------------//
-    //jiuzhang
+    // 9Ch
     public int maxProfit2(int[] prices) {
         if (prices == null || prices.length == 0) {
             return 0;
@@ -112,7 +112,7 @@ public class _4BestTimeToBuyAndSellStock {
 
         return profit;
     }
-//-------------------------------------------------------------------------/////////////
+//------------------------------------------------------------------------------//////
     //mine
     public int maxProfit3(int[] prices) {
         if (prices == null || prices.length == 0) {
@@ -129,7 +129,7 @@ public class _4BestTimeToBuyAndSellStock {
 
         return profit;
     }
-//-------------------------------------------------------------------------/////////////
+//------------------------------------------------------------------------------//////
 }
 
 /*

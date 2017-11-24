@@ -46,7 +46,7 @@ public class _037_BackTracking_Sudoku_Solver_H {
 
 //-------------------------------------------------------------------------
 
-    //jiuzhang
+    // 9Ch
     public class Jiuzhang {
         public void solveSudoku(char[][] board){
             solve(board);

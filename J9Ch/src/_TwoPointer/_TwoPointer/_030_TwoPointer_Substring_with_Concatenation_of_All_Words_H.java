@@ -148,7 +148,7 @@ This is my Java version of Sliding Window.
 // Owing to the fact that duplicate is allowed in L, we need to use map instead.
 
 //-------------------------------------------------------------------------/////
-    //jiuzhang
+    // 9Ch
     public class Jiuzhang{
         public ArrayList<Integer> findSubstring(String S, String[] L) {
             ArrayList<Integer> result = new ArrayList<Integer>();

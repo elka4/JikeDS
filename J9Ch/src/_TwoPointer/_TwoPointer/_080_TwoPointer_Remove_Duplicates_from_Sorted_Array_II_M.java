@@ -79,8 +79,8 @@ int removeDuplicates2(int A[], int n, int k) {
     }
 
 
-//////////////~/////////////////////////////////////////////////////
-    //jiuzhang
+//////////////~//---------------------------------////////////////
+    // 9Ch
 public class Jiuzhang {
     /**
      * @param nums: a array of integers

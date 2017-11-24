@@ -202,7 +202,7 @@ public class _272_Tree_Closest_Binary_Search_Tree_Value_II_H {
     public class Solution3 {
     }
 
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
     //Java in-order traversal 1ms solution
     public List<Integer> closestKValues5(TreeNode root, double target, int k) {
         LinkedList<Integer> list = new LinkedList<Integer>();
@@ -237,7 +237,7 @@ public class _272_Tree_Closest_Binary_Search_Tree_Value_II_H {
 
 
 
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
 
     //Java Two stacks Iterative solution
     public List<Integer> closestKValues6(TreeNode root, double target, int k) {
@@ -378,7 +378,7 @@ public class _272_Tree_Closest_Binary_Search_Tree_Value_II_H {
             }
         }
 
-//////////////////////////////////////////////////////
+//---------------------------------/////////////////
 
     //Inorder One LinkedList Java solution beat 85%
     //This solution is maintaining a linkedlist and break the

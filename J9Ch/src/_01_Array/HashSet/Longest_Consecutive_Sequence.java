@@ -16,7 +16,7 @@ Your algorithm should run in O(n) complexity.
 
 
 public class Longest_Consecutive_Sequence {
-    //jiuzhang
+    // 9Ch
     /**
      * @param nums: A list of integers
      * @return an integer

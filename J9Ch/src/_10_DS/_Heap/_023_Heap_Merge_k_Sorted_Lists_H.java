@@ -76,8 +76,8 @@ My question: is that possible to solve this question under the same time complex
         }
 
     }
-//-------------------------------------------------------------------------///////////
-    //jiuzhang
+//------------------------------------------------------------------------------////
+    // 9Ch
     // version 1: Divide & Conquer
         /**
          * Definition for ListNode.
@@ -232,7 +232,7 @@ My question: is that possible to solve this question under the same time complex
         }
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 
 
 

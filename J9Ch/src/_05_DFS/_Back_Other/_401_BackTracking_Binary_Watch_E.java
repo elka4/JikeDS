@@ -61,8 +61,8 @@ public class _401_BackTracking_Binary_Watch_E {
         System.out.println(readBinaryWatch2(1));
     }
     //[0:32, 0:16, 0:08, 0:04, 0:02, 0:01, 8:00, 4:00, 2:00, 1:00]
-//-------------------------------------------------------------------------////////
-    //jiuzhang
+//------------------------------------------------------------------------------/
+    // 9Ch
     public List<String> readBinaryWatch3(int num) {
         ArrayList<String> ans = new ArrayList<String>();
         ArrayList<ArrayList<Integer>> hour = new ArrayList<ArrayList<Integer>>();
@@ -101,7 +101,7 @@ public class _401_BackTracking_Binary_Watch_E {
         System.out.println(readBinaryWatch3(1));
     }
     //[0:01, 0:02, 0:04, 0:08, 0:16, 0:32, 1:00, 2:00, 4:00, 8:00]
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 }
 
 /*

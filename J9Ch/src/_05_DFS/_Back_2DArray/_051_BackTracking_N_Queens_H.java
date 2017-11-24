@@ -87,7 +87,7 @@ public class _051_BackTracking_N_Queens_H {
     }
 
 //-------------------------------------------------------------------------/////
-    //jiuzhang
+    // 9Ch
     class Jiuzhang {
         /**
          * Get all distinct N-Queen solutions
@@ -157,7 +157,7 @@ public class _051_BackTracking_N_Queens_H {
         }
     }
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 }
 /*
 Given an integer n, return all distinct solutions to the n-queens puzzle.

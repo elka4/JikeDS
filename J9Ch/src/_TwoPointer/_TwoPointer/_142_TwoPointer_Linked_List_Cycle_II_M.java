@@ -78,9 +78,9 @@ So when another slow2 pointer run from head to 'q', at the same time, previous s
         }
         return null;
     }
-    ////////////////////////////////////////////
-////////////////////////////////////////////
-    //jiuzhang
+    //---------------------------------///////
+//---------------------------------///////
+    // 9Ch
 public class Jiuzhang {
     public ListNode detectCycle(ListNode head) {
         if (head == null || head.next==null) {

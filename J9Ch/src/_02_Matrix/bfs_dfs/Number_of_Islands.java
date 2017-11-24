@@ -59,7 +59,7 @@ public class Number_of_Islands {
         merge(grid, i, j+1);
     }
 
-//////////////////////////////////////////////////
+//---------------------------------/////////////
 
 /*    Java Solution 2 - Union-Find
 

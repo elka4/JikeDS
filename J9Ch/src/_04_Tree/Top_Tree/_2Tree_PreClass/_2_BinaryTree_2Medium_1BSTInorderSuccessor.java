@@ -39,7 +39,7 @@ public class _2_BinaryTree_2Medium_1BSTInorderSuccessor {
 		return root;
 	}
 	
-//////////////////////////////////////////////////
+//---------------------------------/////////////
 
 	//mehtod 2
 	public TreeNode inorderSuccessor2(TreeNode root, TreeNode p) {
@@ -57,7 +57,7 @@ public class _2_BinaryTree_2Medium_1BSTInorderSuccessor {
 				
 	}
 
-//////////////////////////////////////////////////
+//---------------------------------/////////////
 
     @Test
     public void test01() {

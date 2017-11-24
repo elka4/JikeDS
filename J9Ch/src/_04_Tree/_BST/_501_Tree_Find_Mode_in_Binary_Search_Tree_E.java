@@ -63,7 +63,7 @@ public class _501_Tree_Find_Mode_in_Binary_Search_Tree_E {
                 } }
         } }*/
 
-////////////////////////////////////////////////////////
+//---------------------------------///////////////////
 //2
 // Java 4ms Beats 100% Extra O(1) solution - No Map
     Integer prev = null;
@@ -105,7 +105,7 @@ public class _501_Tree_Find_Mode_in_Binary_Search_Tree_E {
     }
 
 
-//////////////////////////////////////////////////////////
+//---------------------------------/////////////////////
 //3
     //Java AC Solution
     //    O(n) time O(n) space

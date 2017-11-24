@@ -74,7 +74,7 @@ public class _411_Bit_Minimum_Unique_Word_Abbreviation_M {
         abbrGenerator(target, i+1, tmp, abbr+1, num);
     }
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 
 /*    Java DFS+Trie+Binary Search 90ms
     Use Trie to build a dictionary with a function to check abbreviation.
@@ -173,7 +173,7 @@ public class _411_Bit_Minimum_Unique_Word_Abbreviation_M {
         return ret;
     }
 
-//-------------------------------------------------------------------------//////////////
+//------------------------------------------------------------------------------///////
 
     public String minAbbreviation3(String target, String[] dictionary) {
         TrieNode root = new TrieNode();

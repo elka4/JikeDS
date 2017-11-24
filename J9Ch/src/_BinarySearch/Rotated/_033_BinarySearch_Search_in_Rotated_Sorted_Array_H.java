@@ -4,7 +4,7 @@ package _BinarySearch.Rotated;
 public class _033_BinarySearch_Search_in_Rotated_Sorted_Array_H {
 
 //-------------------------------------------------------------------------//////
-    //jiuzhang
+    // 9Ch
 public class Jiuzhang {
     public int search(int[] A, int target) {
         if (A == null || A.length == 0) {

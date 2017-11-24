@@ -30,7 +30,7 @@ public class Reverse_Bits {
         return result;
     }
 
-///////////////////////////////////////////////////////////
+//---------------------------------//////////////////////
 
     public int reverseBits(int n) {
         for (int i = 0; i < 16; i++) {
@@ -53,7 +53,7 @@ public class Reverse_Bits {
 
 
 
-//////////////////////////////////////
+//---------------------------------/
 
    /* Java Solution and Optimization
     The Java solution is straightforward, just bitwise operation:*/
@@ -99,7 +99,7 @@ public class Reverse_Bits {
         cache.put(b, value);
         return value;
     }
-//-------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------/////
 
 /*    Sharing my 2ms Java Solution with Explanation
 "

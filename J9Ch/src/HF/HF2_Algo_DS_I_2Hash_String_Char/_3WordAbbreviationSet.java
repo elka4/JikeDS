@@ -55,7 +55,7 @@ isUnique("make") -> true
 
 // Word Abbreviation Set
 public class _3WordAbbreviationSet {
-    //jiuzhang
+    // 9Ch
     public class ValidWordAbbr {
 
         private Map<String,Set<String>> d;
@@ -141,7 +141,7 @@ public class _3WordAbbreviationSet {
      * boolean param = obj.isUnique(word);
      */
 
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
 
     // version: 高频题班
     public class ValidWordAbbr2 {
@@ -194,7 +194,7 @@ public class _3WordAbbreviationSet {
         System.out.println(vwa.isUnique("cane"));
         System.out.println(vwa.isUnique("make"));
     }
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
 
 
 }

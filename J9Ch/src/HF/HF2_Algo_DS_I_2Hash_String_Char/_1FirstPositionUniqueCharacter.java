@@ -28,7 +28,7 @@ package HF.HF2_Algo_DS_I_2Hash_String_Char;
 
 // First Position Unique Character
 public class _1FirstPositionUniqueCharacter {
-    //jiuzhang
+    // 9Ch
     /**
      * @param s a string
      * @return it's index

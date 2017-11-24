@@ -98,7 +98,7 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
 
 //-------------------------------------------------------------------------
     //  5
-    //jiuzhang
+    // 9Ch
     // version 1: Traverse + Divide Conquer
     public int longestConsecutive5(TreeNode root) {
         return helper5(root, null, 0);
@@ -165,7 +165,7 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
 
 //-------------------------------------------------------------------------
     //  6
-    //jiuzhang
+    // 9Ch
     // version 2: Another Traverse + Divide Conquer
     /**
      * @param root the root of binary tree
@@ -228,7 +228,7 @@ public class _298_Tree_Binary_Tree_Longest_Consecutive_Sequence_M {
 
 //-------------------------------------------------------------------------
     //  7
-    //jiuzhang
+    // 9Ch
     // version 3: Divide Conquer
     private class ResultType {
         int maxInSubtree;

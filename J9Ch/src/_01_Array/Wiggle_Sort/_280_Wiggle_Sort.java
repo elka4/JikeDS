@@ -15,7 +15,7 @@ Given nums = [3, 5, 2, 1, 6, 4], one possible answer is [1, 6, 2, 5, 3, 4].
  */
 
 public class _280_Wiggle_Sort {
-    //jiuzhang
+    // 9Ch
     /**
      * @param nums a list of integer
      * @return void

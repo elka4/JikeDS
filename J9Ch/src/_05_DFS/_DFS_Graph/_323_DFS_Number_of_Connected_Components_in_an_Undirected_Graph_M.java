@@ -37,7 +37,7 @@ public class _323_DFS_Number_of_Connected_Components_in_an_Undirected_Graph_M {
         }
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
     class Solution2{
         public int countComponents(int n, int[][] edges) {
             int res = n;
@@ -62,7 +62,7 @@ public class _323_DFS_Number_of_Connected_Components_in_an_Undirected_Graph_M {
         }
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
     //Easiest 2ms Java Solution
     class Solution3{
 /*
@@ -99,7 +99,7 @@ public class _323_DFS_Number_of_Connected_Components_in_an_Undirected_Graph_M {
         }
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
     //    Java concise DFS
     //    start dfsVisit with sources 0-n-1, count number of unvisited sources.
     public class Solution4 {

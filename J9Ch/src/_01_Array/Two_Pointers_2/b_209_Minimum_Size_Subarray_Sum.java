@@ -69,7 +69,7 @@ A simple sliding window solution.
         int[] nums = {2,3,1,2,4,3};
         System.out.println(minSubArrayLen(7, nums));
     }
-//////////////////////////////////////?
+//---------------------------------/?
 
     //Similarly, we can also write it in a more readable way.
 

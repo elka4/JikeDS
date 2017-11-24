@@ -40,7 +40,7 @@ public class Combination_Sum_I_II_III {
     }//[[2, 2, 3], [7]]
 
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
     //Combination Sum II
     //II:  C中每个数字在每个组合中只能使用一次
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
@@ -73,7 +73,7 @@ public class Combination_Sum_I_II_III {
         System.out.println(combinationSum2(candidates, t));
     }//[[1, 1, 6], [1, 2, 5], [1, 7], [2, 6]]
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
     //Combination Sum III
     //III: k numbers that add up to a number n, given that only numbers from 1 to 9 can be used
     public List<List<Integer>> combinationSum3(int k, int n) {
@@ -99,5 +99,5 @@ public class Combination_Sum_I_II_III {
         System.out.println(combinationSum3(3, 9));
     }//[[1, 2, 6], [1, 3, 5], [2, 3, 4]]
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 }

@@ -138,7 +138,7 @@ First one is the standard iterative inorder traversal using stack. Hope everyone
     }
 //-------------------------------------------------------------------------///
 
-//jiuzhang
+// 9Ch
 // version 1 Traverse
 public class Jiuzhang1 {
     private int lastVal = Integer.MIN_VALUE;

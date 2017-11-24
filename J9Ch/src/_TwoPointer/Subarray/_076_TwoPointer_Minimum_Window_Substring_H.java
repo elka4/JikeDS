@@ -1,12 +1,14 @@
 package _TwoPointer.Subarray;
-
 import java.util.HashMap;
 
 //  76. Minimum Window Substring
-
 //  https://leetcode.com/problems/minimum-window-substring/description/
 //  http://www.lintcode.com/zh-cn/problem/minimum-window-substring/
+//  8:
+//
 public class _076_TwoPointer_Minimum_Window_Substring_H {
+//-------------------------------------------------------------------------
+    //1
     public String minWindow(String s, String t) {
 
         int[] map = new int[128];
@@ -24,6 +26,8 @@ public class _076_TwoPointer_Minimum_Window_Substring_H {
         }
         return d == Integer.MAX_VALUE ? "" : s.substring(head + 1, d);
     }
+//-------------------------------------------------------------------------
+    //2
 /*    Here comes the template.
 
     For most substring problem, we are given a string and need to find a substring of it which satisfy some restrictions. A general way is to use a hashmap assisted with two pointers. The template is given below.
@@ -53,7 +57,8 @@ public class _076_TwoPointer_Minimum_Window_Substring_H {
         }
         return d;
     }*/
-
+//-------------------------------------------------------------------------
+    //3
 //    make the template more applicable for Longest Substring Without Repeating Character
 
     public int lengthOfLongestSubstring(String s) {
@@ -75,7 +80,8 @@ public class _076_TwoPointer_Minimum_Window_Substring_H {
     }
 
 
-
+//-------------------------------------------------------------------------
+    //4
     //Java solution. using two pointers + HashMap
 
     public class Solution {
@@ -125,7 +131,8 @@ public class _076_TwoPointer_Minimum_Window_Substring_H {
         }
     }
 
-
+//-------------------------------------------------------------------------
+    //5
 /*    create a hashmap for each character in t and count their frequency in t as the value of hashmap.
     Find the first window in S that contains T. But how? there the author uses the count.
     Checking from the leftmost index of the window and to see if it belongs to t. The reason we do so is that we want to shrink the size of the window.
@@ -163,7 +170,8 @@ public class _076_TwoPointer_Minimum_Window_Substring_H {
         }
         return minLen==s.length()+1?"":s.substring(minLeft, minLeft+minLen);
     }
-
+//-------------------------------------------------------------------------
+    //6
 
     //Share my neat java solution
 
@@ -203,7 +211,8 @@ public class _076_TwoPointer_Minimum_Window_Substring_H {
         }
         return res;
     }
-
+//-------------------------------------------------------------------------
+    //7
     //Sharing my straightforward O(n) solution with explanation
     public class Solution5 {
         public String minWindow(String S, String T) {
@@ -258,8 +267,8 @@ public class _076_TwoPointer_Minimum_Window_Substring_H {
 
 
 //-------------------------------------------------------------------------
-
-    //jiuzhang
+    //8
+    // 9Ch
      class Jiuzhang {
         //方法一:
         int initTargetHash(int []targethash, String Target) {
@@ -304,6 +313,7 @@ public class _076_TwoPointer_Minimum_Window_Substring_H {
             return minStr;
         }
     }
+//-------------------------------------------------------------------------
 }
 /*
 Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).

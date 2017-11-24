@@ -35,7 +35,7 @@ public class _347_Heap_Top_K_Frequent_Elements_M {
 
 
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 
 //    3 Java Solution using Array, MaxHeap, TreeMap
     // use an array to save numbers into different bucket whose index is the frequency
@@ -120,7 +120,7 @@ public class _347_Heap_Top_K_Frequent_Elements_M {
             return res;
         }
     }
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 
 /*    *Java* straightforward O(N + (N-k)lg k) solution
     Idea is very straightforward:
@@ -149,8 +149,8 @@ public class _347_Heap_Top_K_Frequent_Elements_M {
         }
         return res;
     }
-//-------------------------------------------------------------------------////////
-    //jiuzhang
+//------------------------------------------------------------------------------/
+    // 9Ch
     public class Jiuzhang {
         public List<Integer> topKFrequent(int[] nums, int k) {
             Map<Integer, Integer> hashmap = new HashMap<Integer, Integer>();

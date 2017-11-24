@@ -20,7 +20,7 @@ public class _2_BinaryTree_2Medium_3ValidBinaryTree {
 				isValidBST(root.right, root.val, max);
 	}
 
-//////////////////////////////////////////////////
+//---------------------------------/////////////
 
     @Test
     public void test01() {

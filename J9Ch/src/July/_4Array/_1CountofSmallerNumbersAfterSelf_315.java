@@ -6,7 +6,7 @@ import java.util.*;
 
 //  Count of Smaller Numbers After Self
 public class _1CountofSmallerNumbersAfterSelf_315 {
-    //jiuzhang
+    // 9Ch
 
     class SegmentTreeNode {
         public int start, end;
@@ -89,7 +89,7 @@ public class _1CountofSmallerNumbersAfterSelf_315 {
         root.count = root.left.count + root.right.count;
     }
 
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
     /**
      * @param A: An integer array
      * @return: The number of element in the array that

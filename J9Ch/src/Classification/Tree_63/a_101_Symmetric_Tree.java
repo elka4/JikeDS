@@ -59,7 +59,7 @@ public class a_101_Symmetric_Tree {
         }
     }
 
-    //////////////////////////////////////////////////
+    //---------------------------------/////////////
    // Recursive--400ms:
     public class solution2 {
         public boolean isSymmetric(TreeNode root) {
@@ -74,7 +74,7 @@ public class a_101_Symmetric_Tree {
         }
     }
 
-    //////////////////////////////////////////////////
+    //---------------------------------/////////////
     //Non-recursive(use Stack)--460ms:
 
     public class solution3 {

@@ -3,8 +3,8 @@ import java.util.*;
 import org.junit.Test;
 public class _154_BinarySearch_Find_Minimum_in_Rotated_Sorted_Array_II_H {
 
-//-------------------------------------------------------------------------///////////
-    //jiuzhang
+//------------------------------------------------------------------------------////
+    // 9Ch
     // version 1: just for loop is enough
     public class Jiuzhang {
         public int findMin(int[] num) {

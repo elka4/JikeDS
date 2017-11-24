@@ -48,7 +48,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         System.out.println(countNumbersWithUniqueDigits1(2));
     }
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 /*
     Java, O(1), with explanation
     This is a digit combination problem. Can be solved in at most 10 loops.
@@ -86,7 +86,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         System.out.println(countNumbersWithUniqueDigits2(2));
     }
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
     //Backtracking solution
     public int countNumbersWithUniqueDigits3(int n) {
         if (n > 10) {
@@ -129,7 +129,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         System.out.println(countNumbersWithUniqueDigits3(2));
     }
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 
     public int countNumbersWithUniqueDigits4(int n) {
         if (n == 0) {
@@ -152,7 +152,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         System.out.println(countNumbersWithUniqueDigits4(2));
     }
 
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
     // 9Ch
     //  solution 1
     //DP Solution
@@ -185,7 +185,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         System.out.println(countNumbersWithUniqueDigits5(2));
     }
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
     // 9Ch
     // solution 2
     //Math Method
@@ -212,7 +212,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
     public void test06(){
         System.out.println(countNumbersWithUniqueDigits6(2));
     }
-//-------------------------------------------------------------------------/////////////////
+//------------------------------------------------------------------------------//////////
 }
 /*
 Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x < 10^n.

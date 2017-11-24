@@ -13,7 +13,7 @@ import java.util.*;
  */
 
 public class _01Word_Break {
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 	private int getMaxLength(Set<String> dict) {
 	    int maxLength = 0;
 	    for (String word : dict) {
@@ -56,7 +56,7 @@ public class _01Word_Break {
         return canSegment[s.length()];
     }
 
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
     // https://leetcode.com/articles/word-break/
 
     //Approach #1 Brute Force [Time Limit Exceeded]
@@ -76,7 +76,7 @@ public class _01Word_Break {
             return false;
         }
     }
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
     //Approach #2 Recursion with memoization [Accepted]
     public class Solution2 {
         public boolean wordBreak(String s, List<String> wordDict) {
@@ -97,7 +97,7 @@ public class _01Word_Break {
             return memo[start] = false;
         }
     }
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
     //Approach #3 Using Breadth-First-Search [Accepted]
     public class Solution3 {
         public boolean wordBreak(String s, List<String> wordDict) {
@@ -122,7 +122,7 @@ public class _01Word_Break {
             return false;
         }
     }
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
     //Approach #4 Using Dynamic Programming [Accepted]:
     public class Solution4 {
         public boolean wordBreak(String s, List<String> wordDict) {
@@ -140,7 +140,7 @@ public class _01Word_Break {
             return dp[s.length()];
         }
     }
-//-------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------/
 
 
 }

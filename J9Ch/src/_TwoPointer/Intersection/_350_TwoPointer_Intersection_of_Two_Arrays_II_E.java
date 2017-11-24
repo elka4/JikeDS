@@ -3,10 +3,11 @@ import java.util.*;
 
 //  350. Intersection of Two Arrays II
 //  https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
-
 //  http://www.lintcode.com/zh-cn/problem/intersection-of-two-arrays-ii/
+//  12:
 public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
-
+//------------------------------------------------------------------------------
+    //1
     //Use ArrayList to dynamic increase size
     class Solution1 {
         public int[] intersect(int[] nums1, int[] nums2) {
@@ -40,6 +41,8 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
         }
     }
 
+//------------------------------------------------------------------------------
+    //2
     //  Given the range of the test case is not that massive,
     // I used counting sort instead of HashMap. Beats 96%
 
@@ -82,8 +85,8 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
             return result;
         }
     }
-
-
+//------------------------------------------------------------------------------
+    //3
     //AC solution using Java HashMap
     //  https://discuss.leetcode.com/topic/45920/ac-solution-using-java-hashmap
     public class Solution3 {
@@ -114,7 +117,8 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
             return r;
         }
     }
-
+//------------------------------------------------------------------------------
+    //4
     public class Solution4 {
         public int[] intersect(int[] nums1, int[] nums2) {
             List<Integer> res = new ArrayList<Integer>();
@@ -140,9 +144,9 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
             return result;
         }
     }
-
-//    using stream
-
+//------------------------------------------------------------------------------
+    //5
+    //    using stream
     public class Solution5 {
         public int[] intersect(int[] nums1, int[] nums2) {
 
@@ -164,7 +168,8 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
             return list.stream().mapToInt(i->i).toArray();
         }
     }
-
+//------------------------------------------------------------------------------
+    //6
     /*    Using a List.
     1.) Add Elements of nums1 array in a List l1.
     2.) check if elements of nums2 array are in list l1.
@@ -194,9 +199,9 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
         }
     }
 
-
+//------------------------------------------------------------------------------
+    //7
     //    Use ArrayList and two poiters .
-
     public class Solution7 {
         public int[] intersect(int[] nums1, int[] nums2) {
             ArrayList<Integer> arraylist = new ArrayList<Integer>();
@@ -224,7 +229,7 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
     }
 
 //-------------------------------------------------------------------------/
-
+    //8
 /*Great solution without sorting two arrays, thank you! The solution using java hashmap has O(m + n) time complexity and O(min(m, n)) space complexity. In theory, they are faster than sorted arrays in terms of time complexity, at the expense of extra space. However, tests show that the 1st solution(85.83%) > 2nd solution(67.33%) > your solution(48.29%). The difference between theory and practice may lie in the fact that the frequent get/put operations on HashMap and final for-loop to convert a List<Integer> to an int array.
 
     Here are two other solutions based on sorted arrays:
@@ -258,7 +263,8 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
         }
         return Arrays.copyOfRange(res, 0, pt);
     }
-
+//------------------------------------------------------------------------------
+    //9
 /*    (2) binary search : O((m+n)log n)
     STEP 1: determine the frequency of one number in "nums1", f1
     STEP 2: determine the frequency of the same number in "nums2", f2
@@ -349,9 +355,8 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
     }
 
 //-------------------------------------------------------------------------/
-
+    //10
     //  @VanillaCoke yes,we are same,as I just use ArrayList:
-
     public class Solution10 {
         public int[] intersect(int[] nums1, int[] nums2) {
             List<Integer> list=new ArrayList<>();
@@ -370,7 +375,8 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
             return re;
         }
     }
-
+//------------------------------------------------------------------------------
+    //11
     //4ms java solution
     class Solution11 {
         public int[] intersect(int[] nums1, int[] nums2) {
@@ -403,8 +409,8 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
     }
 
 //-------------------------------------------------------------------------/
-
-    //jiuzhang
+    //12
+    // 9Ch
     public class Jiuzhang {
         /**
          * @param nums1 an integer array
@@ -437,9 +443,11 @@ public class _350_TwoPointer_Intersection_of_Two_Arrays_II_E {
             return result;
         }
     }
+//------------------------------------------------------------------------------
 
 }
 /*
+//------------------------------------------------------------------------------
 Given two arrays, write a function to compute their intersection.
 
 Example:
@@ -452,9 +460,11 @@ Follow up:
 What if the given array is already sorted? How would you optimize your algorithm?
 What if nums1's size is small compared to nums2's size? Which algorithm is better?
 What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
+//------------------------------------------------------------------------------
  */
 
 /*
+//------------------------------------------------------------------------------
 两数组的交 II
 
  描述
@@ -470,4 +480,5 @@ What if elements of nums2 are stored on disk, and the memory is limited such tha
 
 样例
 nums1 = [1, 2, 2, 1], nums2 = [2, 2], 返回 [2, 2].
+//------------------------------------------------------------------------------
  */

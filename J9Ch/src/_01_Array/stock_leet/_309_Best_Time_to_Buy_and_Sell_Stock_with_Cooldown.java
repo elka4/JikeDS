@@ -34,7 +34,7 @@ public class _309_Best_Time_to_Buy_and_Sell_Stock_with_Cooldown {
         return sell;
     }
 
-/////////////////////////////////////////////////
+//---------------------------------////////////
 
     //Easiest JAVA solution with explanations
 
@@ -52,7 +52,7 @@ public class _309_Best_Time_to_Buy_and_Sell_Stock_with_Cooldown {
         return s0;
     }
 
-/////////////////////////////////////////////////
+//---------------------------------////////////
 
     //7-line Java: only consider sell and cooldown
 
@@ -66,7 +66,7 @@ public class _309_Best_Time_to_Buy_and_Sell_Stock_with_Cooldown {
         return Math.max(profit1, profit2);
     }
 
-/////////////////////////////////////////////////
+//---------------------------------////////////
 
     //Very Easy to Understand One Pass O(n) Solution with No Extra Space
 
@@ -87,10 +87,10 @@ public class _309_Best_Time_to_Buy_and_Sell_Stock_with_Cooldown {
         return has1_Sell > has0_doNothing ? has1_Sell : has0_doNothing;
     }
 
-/////////////////////////////////////////////////
+//---------------------------------////////////
 
 
-/////////////////////////////////////////////////
+//---------------------------------////////////
 
 
 }

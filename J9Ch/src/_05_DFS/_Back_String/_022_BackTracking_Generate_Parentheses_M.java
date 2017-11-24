@@ -233,7 +233,7 @@ Here it is rewritten as in a single function:
 
 //-------------------------------------------------------------------------//
     // 8
-    //jiuzhang
+    // 9Ch
     public ArrayList<String> generateParenthesisJ_1(int n) {
         ArrayList<String> result = new ArrayList<String>();
         if (n <= 0) {
@@ -316,7 +316,7 @@ Here it is rewritten as in a single function:
         System.out.println(" String time: " + t + " ms");
     }//String time: 7658 ms
 
-//-------------------------------------------------------------------------/////////////////////////////////////////////////////////
+//-------------------------------------------------------------------------//---------------------------------////////////////////
     // 10
     //Zhu
     /*

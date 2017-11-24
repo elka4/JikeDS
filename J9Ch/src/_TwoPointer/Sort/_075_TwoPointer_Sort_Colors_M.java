@@ -1,11 +1,16 @@
 package _TwoPointer.Sort;
-
-
 import org.junit.Test;
 
 //  75. Sort Colors
 //  https://leetcode.com/problems/sort-colors/description/
+//  8:
+//  Array, Two Pointers, Sort
+//  _148_List_Sort_List_M
+//  _280_Wiggle_Sort
+// _324_Wiggle_Sort_II
 public class _075_TwoPointer_Sort_Colors_M {
+//-------------------------------------------------------------------------
+    //1
 //    My java version is more readable, the basic idea is to use two pointer low and high and an iterator i
 //
 //    every elem left low pointer is 0, elem right high pointer is 2
@@ -44,6 +49,7 @@ public class _075_TwoPointer_Sort_Colors_M {
 
 
 //-------------------------------------------------------------------------
+    //2
     //  Four different solutions
     // n = nums.length
     // two pass O(m+n) space
@@ -73,6 +79,8 @@ public class _075_TwoPointer_Sort_Colors_M {
         }
     }//0, 1, 1, 2,
 
+//-------------------------------------------------------------------------
+    //3
     // one pass in place solution
     void sortColors3(int nums[], int n) {
         int n0 = -1, n1 = -1, n2 = -1;
@@ -99,7 +107,8 @@ public class _075_TwoPointer_Sort_Colors_M {
             System.out.print(i + ", ");
         }
     }//0, 1, 1, 2,
-
+//-------------------------------------------------------------------------
+    //4
     // one pass in place solution
     void sortColors4(int nums[], int n) {
         int j = 0, k = n - 1;
@@ -122,7 +131,8 @@ public class _075_TwoPointer_Sort_Colors_M {
             System.out.print(i + ", ");
         }
     }//0, 1, 1, 2,
-
+//-------------------------------------------------------------------------
+    //5
     // one pass in place solution
     void sortColors5(int nums[], int n) {
         int j = 0, k = n-1;
@@ -164,6 +174,7 @@ public class _075_TwoPointer_Sort_Colors_M {
         }
     }//0, 1, 1, 2,
 //-------------------------------------------------------------------------
+    //6
 //Nice summary! For method 1 bucket sort, instead of hard coding 1/2/3 and listing for,for,for,if,else,if,else I suggest write something as follows:
 
     private static final int MnumsX = 3;
@@ -177,7 +188,8 @@ public class _075_TwoPointer_Sort_Colors_M {
             }
         }
     }
-
+//-------------------------------------------------------------------------
+    //7
 //    numsnother O(n) solution like your last one, bounded by one pass:)
 
     public void sortColors7(int[] nums) {
@@ -189,39 +201,42 @@ public class _075_TwoPointer_Sort_Colors_M {
         }
     }
 //-------------------------------------------------------------------------
-    //jiuzhang
+    //8
+    // 9Ch
     /*
     三指针，左，右，i
      */
-class Jiuzhang {
-    public void sortColors(int[] nums) {
-        if (nums == null || nums.length <= 1) {
-            return;
-        }
+    class Jiuzhang {
+        public void sortColors(int[] nums) {
+            if (nums == null || nums.length <= 1) {
+                return;
+            }
 
-        int pl = 0;
-        int pr = nums.length - 1;
-        int i = 0;
-        while (i <= pr) {
-            if (nums[i] == 0) {
-                swap(nums, pl, i);
-                pl++;
-                i++;
-            } else if(nums[i] == 1) {
-                i++;
-            } else if(nums[i] == 2) {
-                swap(nums, pr, i);
-                pr--;
+            int pl = 0;
+            int pr = nums.length - 1;
+            int i = 0;
+            while (i <= pr) {
+                if (nums[i] == 0) {
+                    swap(nums, pl, i);
+                    pl++;
+                    i++;
+                } else if(nums[i] == 1) {
+                    i++;
+                } else if(nums[i] == 2) {
+                    swap(nums, pr, i);
+                    pr--;
+                }
             }
         }
+
+        private void swap(int[] nums, int i, int j) {
+            int tmp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = tmp;
+        }
     }
 
-    private void swap(int[] nums, int i, int j) {
-        int tmp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = tmp;
-    }
-}
+//-------------------------------------------------------------------------
 }
 
 /*
@@ -243,9 +258,11 @@ class Jiuzhang {
 首先，迭代数组计算 0,1,2 出现的次数，然后依次用 0,1,2 出现的次数去覆盖数组。
 
 你否能想出一个仅使用常数级额外空间复杂度且只扫描遍历一遍数组的算法？
+//-------------------------------------------------------------------------
  */
 
 /*
+//-------------------------------------------------------------------------
 Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.
 
 Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
@@ -260,4 +277,5 @@ nums rather straight forward solution is a two-pass algorithm using counting sor
 First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
 
 Could you come up with an one-pass algorithm using only constant space?
+//-------------------------------------------------------------------------
  */

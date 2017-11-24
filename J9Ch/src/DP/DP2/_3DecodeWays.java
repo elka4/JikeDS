@@ -83,8 +83,8 @@ public class _3DecodeWays {
         return dp[n];
     }
 
-//-------------------------------------------------------------------------////////////
-    //jiuzhang
+//------------------------------------------------------------------------------/////
+    // 9Ch
     public int numDecodings2(String s) {
         if (s == null || s.length() == 0) {
             return 0;
@@ -112,10 +112,10 @@ public class _3DecodeWays {
         System.out.println(numDecodings("12"));   //2
     }
 
-////////////////////////////////////////////////////////////
+//---------------------------------///////////////////////
 
     // version: 高频题班
-    //jiuzhang
+    // 9Ch
     /**
      * @param s a string,  encoded message
      * @return an integer, the number of ways decoding
@@ -220,7 +220,7 @@ public class _3DecodeWays {
     }
 
 
-/////////////////////////////////////////////////////////
+//---------------------------------////////////////////
     //从长向短计算， 可以把状态memo[i]理解成不要i个字符可以decode的方法数
     public int numDecodings6(String s) {
         int n = s.length();
@@ -240,7 +240,7 @@ public class _3DecodeWays {
 //-------------------------------------------------------------------------/
 
 
-////////////////////////////////////////////////////////////
+//---------------------------------///////////////////////
 
     public int numDecodings8(String s) {
 

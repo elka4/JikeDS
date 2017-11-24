@@ -50,7 +50,7 @@ public class _4_Permutations_II {
 
 
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 //Really easy Java solution, much easier than the solutions with very high vote
 
 /*
@@ -90,7 +90,7 @@ when a number has the same value with its previous, we can use this
         }
     }
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 /*
 Another option to avoid duplicate num without sorting 'int[] nums' first,
 is to utilize a HashSet to track what numbers are used before,
@@ -136,7 +136,7 @@ if we've used that number then skip it
             numsVisited[i] = 0;
         }
     }
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 /*
 Since we only need permutations of the array, the actual "content" does not change,
 we could find each permutation by swapping the elements in the array.
@@ -193,7 +193,7 @@ so that if we meet the element again, we can just skip it.
         nums[i] = nums[j];
         nums[j] = save;
     }
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 
     //Share my recursive solution
     public List<List<Integer>> permuteUnique5(int[] num) {
@@ -225,7 +225,7 @@ so that if we meet the element again, we can just skip it.
         }
     }
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 //Short iterative Java solution
 
 /*
@@ -252,7 +252,7 @@ public List<List<Integer>> permuteUnique6(int[] num) {
     return res;
 }
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 //here is my iterative solution with only a queue. FYI.
 
     public List<List<Integer>> permuteUnique7(int[] nums) {
@@ -277,7 +277,7 @@ public List<List<Integer>> permuteUnique6(int[] num) {
 
 
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 //Short and Fast Recursive Java solution Easy to understand with Explaination
 
     public List<List<Integer>> permuteUnique8(int[] nums) {
@@ -303,7 +303,7 @@ public List<List<Integer>> permuteUnique6(int[] num) {
         }
     }
 
-//-------------------------------------------------------------------------///////////////
+//------------------------------------------------------------------------------////////
 
 
     //Small modification of Permutation I , using a set
@@ -339,7 +339,7 @@ public List<List<Integer>> permuteUnique6(int[] num) {
         nums[i] = tmp;
     }
 
-//-------------------------------------------------------------------------/////////////
+//------------------------------------------------------------------------------//////
 //Java Iterative solution, no Set needed!
 
 /*
@@ -368,8 +368,8 @@ Break when same number exists in the permutation.
         }
         return r;
     }
-//-------------------------------------------------------------------------/////////////
-//-------------------------------------------------------------------------/////////////
-//-------------------------------------------------------------------------/////////////
+//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------//////
 
 }

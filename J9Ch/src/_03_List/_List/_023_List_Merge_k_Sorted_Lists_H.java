@@ -141,7 +141,7 @@ public class Solution3 {
     }
 
 //-------------------------------------------------------------------------//
-//jiuzhang
+// 9Ch
     // version 1: Divide & Conquer
     /**
      * Definition for ListNode.

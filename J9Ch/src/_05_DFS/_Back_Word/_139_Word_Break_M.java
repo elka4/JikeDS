@@ -210,7 +210,7 @@ public class _139_Word_Break_M {
     }
 
 //-------------------------------------------------------------------------////
-    //Jiuzhang
+    // 9Ch
     private int getMaxLength_J(Set<String> dict) {
         int maxLength = 0;
         for (String word : dict) {

@@ -1,13 +1,13 @@
 package _TwoPointer.Subarray;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
-
 //  487. Max Consecutive Ones II
-
 //  https://leetcode.com/problems/max-consecutive-ones-ii/description/
+//  9:
 public class _487_TwoPointer_Max_Consecutive_Ones_II_M {
+//-------------------------------------------------------------------------
+
 //Java clean solution easily extensible to flipping k zero and follow-up handled
 /*The idea is to keep a window [l, h] that contains at most k zero
 
@@ -26,6 +26,8 @@ public class _487_TwoPointer_Max_Consecutive_Ones_II_M {
         }
         return max;
     }
+//-------------------------------------------------------------------------
+//2
 /*    Now let's deal with follow-up, we need to store up to k indexes of zero within the window [l, h] so that we know where to move l next when the window contains more than k zero. If the input stream is infinite, then the output could be extremely large because there could be super long consecutive ones. In that case we can use BigInteger for all indexes. For simplicity, here we will use int
     Time: O(n) Space: O(k)*/
 
@@ -41,6 +43,8 @@ public class _487_TwoPointer_Max_Consecutive_Ones_II_M {
         }
         return max;
     }
+//-------------------------------------------------------------------------
+//3
 /*    Note that setting k = 0 will give a solution to the earlier version Max Consecutive Ones
 
     For k = 1 we can apply the same idea to simplify the solution. Here q stores the index of zero within the window [l, h] so its role is similar to Queue in the above solution*/
@@ -57,7 +61,8 @@ public class _487_TwoPointer_Max_Consecutive_Ones_II_M {
         return max;
     }
 
-
+//-------------------------------------------------------------------------
+    //4
 //    Same solution as posted by OP. I have tried to simplify it for the noobs like me. Can anyone simplify the algorithm description?
 
     /**
@@ -90,7 +95,8 @@ public class _487_TwoPointer_Max_Consecutive_Ones_II_M {
         return max;
     }
 
-
+//-------------------------------------------------------------------------
+    //5
 /*    you can use 2 counters, one counter has already used it's zero flip and the other has not. When you see a zero the one that has already used it's flip must reset and the one that has not yet used it it's zero uses it now. The counter which is lesser is the the one that has not used it's zero. Also you can limit your check for max to when you see a zero and at the end.*/
 
     public int FindMaxConsecutiveOnes5(int[] nums)
@@ -124,7 +130,8 @@ public class _487_TwoPointer_Max_Consecutive_Ones_II_M {
         max = Math.max(max, c2);
         return max;
     }
-
+//-------------------------------------------------------------------------
+    //6
 
 //    I came up with a similar idea. Use variable index to record the position of zero, and initiate the index to -1. Once we find a zero, refresh the count and store the new index.
 
@@ -143,7 +150,8 @@ public class _487_TwoPointer_Max_Consecutive_Ones_II_M {
             return max;
         }
     }
-
+//-------------------------------------------------------------------------
+    //7
     //Java Concise O(n) Time O(1) Space
     public int findMaxConsecutiveOnes7(int[] nums) {
         int maxConsecutive = 0, zeroLeft = 0, zeroRight = 0;
@@ -157,7 +165,8 @@ public class _487_TwoPointer_Max_Consecutive_Ones_II_M {
         }
         return maxConsecutive;
     }
-
+//-------------------------------------------------------------------------
+    //8
 //    I came up with a different idea. Use variable index to record the position of zero, and initiate the index to -1. Once we find a zero, refresh the count and store the new index. But yours are very impressive. Never thought this way before!
 
     public class Solution8 {
@@ -175,7 +184,8 @@ public class _487_TwoPointer_Max_Consecutive_Ones_II_M {
             return max;
         }
     }
-
+//-------------------------------------------------------------------------
+    //9
     //Java Concise O(n) solution (which can handle input with infinite count)
 
 /*    To handle infinite input, we should not access index of the array.
@@ -204,6 +214,8 @@ public class _487_TwoPointer_Max_Consecutive_Ones_II_M {
     }
 
 }
+//-------------------------------------------------------------------------
+
 /*
 Given a binary array, find the maximum number of consecutive 1s in this array if you can flip at most one 0.
 
@@ -219,5 +231,6 @@ The length of input array is a positive integer and will not exceed 10,000
 Follow up:
 What if the input numbers come in one by one as an infinite stream? In other words, you can't store all numbers coming from the stream as it's too large to hold in memory. Could you solve it efficiently?
 
+//-------------------------------------------------------------------------
 
  */

@@ -4,10 +4,11 @@ import lib.ListNode;
 
 //  287. Find the Duplicate Number
 //  https://leetcode.com/problems/find-the-duplicate-number/description/
-
-//http://www.lintcode.com/zh-cn/problem/find-the-duplicate-number/
+//  http://www.lintcode.com/zh-cn/problem/find-the-duplicate-number/
+//  10:
 public class _287_TwoPointer_Find_the_Duplicate_Number_H {
-
+//------------------------------------------------------------------------------
+    //1
     //  Java O(n) time and O(1) space solution. Similar to find loop in linkedlist.
     //  https://discuss.leetcode.com/topic/25685/java-o-n-time-and-o-1-space-solution-similar-to-find-loop-in-linkedlist
     public int findDuplicate(int[] nums) {
@@ -26,6 +27,8 @@ public class _287_TwoPointer_Find_the_Duplicate_Number_H {
         }
         return slow+1;
     }
+//------------------------------------------------------------------------------
+    //2
 //    One condition is we cannot modify the array. So the solution is
 
     public int findDuplicate2(int[] nums) {
@@ -43,11 +46,9 @@ public class _287_TwoPointer_Find_the_Duplicate_Number_H {
         }
         return slow;
     }
-
-//    Nice idea! Code could be simpler: start with 0 and no need to deduct 1.
-//
-//    Accepted code:
-
+//------------------------------------------------------------------------------
+    //3
+    //    Nice idea! Code could be simpler: start with 0 and no need to deduct 1.
     public int findDuplicate3(int[] nums) {
         int slow = 0, fast = 0;
         do{
@@ -63,10 +64,11 @@ public class _287_TwoPointer_Find_the_Duplicate_Number_H {
     }
 
 //-------------------------------------------------------------------------/////
-/*
-Similar idea. Also attached the code of Linked List Cycle II. The code of cycle problem is referred to the popular post in the Leetcode discuss.
-    Find duplicate num
-*/
+    //4
+    /*
+    Similar idea. Also attached the code of Linked List Cycle II. The code of cycle problem is referred to the popular post in the Leetcode discuss.
+        Find duplicate num
+    */
 
     public class Solution4 {
         public int findDuplicate(int[] nums) {
@@ -87,8 +89,9 @@ Similar idea. Also attached the code of Linked List Cycle II. The code of cycle 
             return -1;
         }
     }
-//    Linked List Cycle II
-
+//------------------------------------------------------------------------------
+    //5
+    //    Linked List Cycle II
     public class Solution44 {
         public ListNode detectCycle(ListNode head) {
             if (head == null || head.next == null)  return null;
@@ -108,7 +111,8 @@ Similar idea. Also attached the code of Linked List Cycle II. The code of cycle 
             return null;
         }
     }
-//-------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
+    //6
     //Java O(1)space using Binary-Search
     public int findDuplicate5(int[] nums) {
         int low = 1, high = nums.length - 1;
@@ -129,12 +133,9 @@ good method, the wise use of number density and binary search, so smart!
 For "int mid = (int) (low + (high - low) * 0.5);", you would better to use int instead of double, which can be much faster.
  */
 
-
-
-
-
-//-------------------------------------------------------------------------/////
-//    JAVA-------------Easy Version To UnderStand!!!!!!!!!
+//------------------------------------------------------------------------------
+    //7
+    //    JAVA-------------Easy Version To UnderStand!!!!!!!!!
     public int findDuplicate6(int[] nums) {
         if (nums.length == 0 || nums == null)
             return 0;
@@ -164,7 +165,8 @@ You can also add data validation code below in the for loop to make it more robu
 if(x >= nums.length || x < 1) return x;
 Here is my practice after I learnt your idea and thanks again for your sharing:
      */
-
+//------------------------------------------------------------------------------
+    //8
     public int findDuplicate7(int[] nums) {
         if( nums == null || nums.length <2){ //No duplicate if length is 1
             return 0;
@@ -198,9 +200,9 @@ Here is my practice after I learnt your idea and thanks again for your sharing:
 
         return low;
     }
-//-------------------------------------------------------------------------/////
-//-------------------------------------------------------------------------/////
-    //jiuzhang
+//------------------------------------------------------------------------------
+    //9
+    // 9Ch
     // 二分法
     public class Jiuzhang1 {
         /**
@@ -236,7 +238,8 @@ Here is my practice after I learnt your idea and thanks again for your sharing:
             return cnt;
         }
     }
-
+//------------------------------------------------------------------------------
+    //10
     // 映射法
     public class Jiuzhang2 {
         /**
@@ -264,6 +267,7 @@ Here is my practice after I learnt your idea and thanks again for your sharing:
         }
     }
 
+//------------------------------------------------------------------------------
 }
 /*
 给出一个数组 nums 包含 n + 1 个整数，每个整数是从 1 到 n (包括边界)，

@@ -90,7 +90,7 @@ public class Solution1 {
     }
 
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 //  My Java solution adapted from the commonest solution here
 /*I read @zhiqing_xiao 's post to get an idea about the solution. His solution is really smart and elegant, but it took me a while to get understand how "diff &= -diff" works. I changed it a little bit to make it better understood, but it is totally based on his solution.
 
@@ -118,11 +118,11 @@ public class Solution1 {
         }
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 
 
-//-------------------------------------------------------------------------///////////
-    //jiuzhang
+//------------------------------------------------------------------------------////
+    // 9Ch
     /**
      * @param A : An integer array
      * @return : Two integers
@@ -149,7 +149,7 @@ public class Solution1 {
         return result;
     }
 
-//-------------------------------------------------------------------------///////////
+//------------------------------------------------------------------------------////
 }
 /*
 Given an array of numbers nums, in which exactly two elements appear only once and all the other elements appear exactly twice. Find the two elements that appear only once.

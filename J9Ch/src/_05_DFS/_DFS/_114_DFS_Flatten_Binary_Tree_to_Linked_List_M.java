@@ -54,7 +54,7 @@ public class _114_DFS_Flatten_Binary_Tree_to_Linked_List_M {
         }
     }
 //-------------------------------------------------------------------------///
-    //jiuzhang
+    // 9Ch
 // Version 1: Traverse
 public class Jiuzhang1 {
     private TreeNode lastNode = null;

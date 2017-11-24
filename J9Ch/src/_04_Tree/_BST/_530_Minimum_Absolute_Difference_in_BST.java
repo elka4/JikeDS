@@ -116,7 +116,7 @@ public class _530_Minimum_Absolute_Difference_in_BST {
     }
 
 
-////////////////////////////////////////////////////////////
+//---------------------------------///////////////////////
 }
 /*
 Given a binary search tree with non-negative values, find the minimum absolute difference between values of any two nodes.

@@ -1,12 +1,13 @@
 package _TwoPointer.Duplicate;
+import org.junit.Test;
 
 //  283. Move Zeroes
 //  https://leetcode.com/problems/move-zeroes/description/
-
-import org.junit.Test;
-
 //  http://www.lintcode.com/zh-cn/problem/move-zeroes/
+//  6:
 public class _283_TwoPointer_Move_Zeroes_E {
+//------------------------------------------------------------------------------
+    //1
     class Solution1 {
         public void moveZeroes(int[] nums) {
             if (nums == null || nums.length == 0) {
@@ -25,9 +26,9 @@ public class _283_TwoPointer_Move_Zeroes_E {
             }
         }
     }
-
-//    In fact in approach 2, we can fill 0 proactively anytime after move non-zero.
-//
+//------------------------------------------------------------------------------
+    //2
+    //In fact in approach 2, we can fill 0 proactively anytime after move non-zero.
     public void moveZeroes2(int[] nums) {
         int lastNonZeroFoundAt = 0;
         // If the current element is not 0, then we need to
@@ -47,7 +48,9 @@ public class _283_TwoPointer_Move_Zeroes_E {
         }
     }
 
-//    The optimal should be like this(from idea 3, but not swap)
+//------------------------------------------------------------------------------
+    //3
+    //The optimal should be like this(from idea 3, but not swap)
     public class Solution3 {
         public void moveZeroes(int[] nums) {
             int first = 0, second = 0;
@@ -61,10 +64,11 @@ public class _283_TwoPointer_Move_Zeroes_E {
             }
         }
     }
-
-//    Simple O(N) Java Solution Using Insert Index
-// Shift non-zero values as far forward as possible
-// Fill remaining space with zeros
+//------------------------------------------------------------------------------
+    //4
+    //    Simple O(N) Java Solution Using Insert Index
+    // Shift non-zero values as far forward as possible
+    // Fill remaining space with zeros
 
     public void moveZeroes4(int[] nums) {
         if (nums == null || nums.length == 0) return;
@@ -78,9 +82,9 @@ public class _283_TwoPointer_Move_Zeroes_E {
             nums[insertPos++] = 0;
         }
     }
-
-
-//    1ms Java solution
+//------------------------------------------------------------------------------
+    //5
+    //1ms Java solution
     public class Solution5 {
 
         public void moveZeroes(int[] nums) {
@@ -96,7 +100,8 @@ public class _283_TwoPointer_Move_Zeroes_E {
             }
         }
     }
-/////////////////////////////////////////////////////////
+
+//------------------------------------------------------------------------------
     private void print(int[] nums){
         for (int i:nums
                 ) {
@@ -122,8 +127,9 @@ public class _283_TwoPointer_Move_Zeroes_E {
     }
 
 
-/////////////////////////////////////////////////////////
-    //jiuzhang
+//------------------------------------------------------------------------------
+    //6
+    // 9Ch
     /**
      * @param nums an integer array
      * @return nothing, do this in-place
@@ -161,9 +167,10 @@ public class _283_TwoPointer_Move_Zeroes_E {
         1 3 0 0 12 | left: 2 | right: 4 | nums[right] 12
  */
 
-
+//------------------------------------------------------------------------------
 }
 /*
+------------------------------------------------------------------------------
 给一个数组 nums 写一个函数将 0 移动到数组的最后面，非零元素保持原数组的顺序
 
  注意事项
@@ -173,9 +180,12 @@ public class _283_TwoPointer_Move_Zeroes_E {
 
 样例
 给出 nums = [0, 1, 0, 3, 12], 调用函数之后, nums = [1, 3, 12, 0, 0].
+------------------------------------------------------------------------------
  */
 
+
 /*
+------------------------------------------------------------------------------
 Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
 For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
@@ -183,5 +193,5 @@ For example, given nums = [0, 1, 0, 3, 12], after calling your function, nums sh
 Note:
 You must do this in-place without making a copy of the array.
 Minimize the total number of operations.
-
+------------------------------------------------------------------------------
  */

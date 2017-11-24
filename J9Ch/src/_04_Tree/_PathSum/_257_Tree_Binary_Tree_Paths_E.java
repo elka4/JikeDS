@@ -53,7 +53,7 @@ Lot of recursive solutions on this forum involves creating a helper recursive fu
 
     }
 //-------------------------------------------------------------------------
-    //jiuzhang
+    // 9Ch
     // version 1: Divide Conquer
     public List<String> binaryTreePaths_J1(TreeNode root) {
         List<String> paths = new ArrayList<>();

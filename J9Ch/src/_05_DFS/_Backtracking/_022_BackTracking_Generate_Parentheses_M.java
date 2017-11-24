@@ -75,7 +75,7 @@ Below is my code:
         }
     }
 //-------------------------------------------------------------------------//
-    //jiuzhang
+    // 9Ch
     public class Juzhang {
         public ArrayList<String> generateParenthesis(int n) {
             ArrayList<String> result = new ArrayList<String>();

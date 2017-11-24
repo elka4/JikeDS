@@ -33,7 +33,7 @@ public class _7CountingBits {
 
 
 
-/////////////////////////////////////////////////////////////
+//---------------------------------////////////////////////
     //leetcode
     //Three-Line Java Solution
     public int[] countBits1(int num) {
@@ -44,7 +44,7 @@ public class _7CountingBits {
     }
 
 
-//////////////////////////////////////
+//---------------------------------/
     //DP
     //https://leetcode.com/problems/counting-bits/discuss/
     public int[] countBits2(int num) {
@@ -59,7 +59,7 @@ public class _7CountingBits {
         return result;
     }
 
-/////////////////////////////////////////////////////////////
+//---------------------------------////////////////////////
 
     //leetcode
     //Approach #1 Pop Count [Accepted]
@@ -117,7 +117,7 @@ public class _7CountingBits {
         }
     }
 
-/////////////////////////////////////////////////////////////
+//---------------------------------////////////////////////
 
 }
 /*

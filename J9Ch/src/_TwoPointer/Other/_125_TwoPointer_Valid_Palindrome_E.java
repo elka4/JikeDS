@@ -3,8 +3,13 @@ package _TwoPointer.Other;
 //  125. Valid Palindrome
 //  https://leetcode.com/problems/valid-palindrome/description/
 //  http://www.lintcode.com/zh-cn/problem/valid-palindrome/
+//  11:
+//  Two Pointers, String
+//  _234_List_Palindrome_Linked_List_E
+//  _680_Valid_Palindrome_II
 public class _125_TwoPointer_Valid_Palindrome_E {
-
+//---------------------------------------------------------------------------
+    //1
     //Accepted pretty Java solution(271ms)
     public class Solution {
         public boolean isPalindrome(String s) {
@@ -33,8 +38,9 @@ public class _125_TwoPointer_Valid_Palindrome_E {
         }
     }
 
-//    Thanks for sharing! But I think it could be more concise.
-
+//---------------------------------------------------------------------------
+    //2
+    //    Thanks for sharing! But I think it could be more concise.
     public boolean isPalindrome(String s) {
         char[] c = s.toCharArray();
         for (int i = 0, j = c.length - 1; i < j; ) {
@@ -46,9 +52,9 @@ public class _125_TwoPointer_Valid_Palindrome_E {
         return true;
     }
 
-
-//    Could be a little bit faster:
-
+//---------------------------------------------------------------------------
+    //3
+    //    Could be a little bit faster:
     public class Solution3 {
         public boolean isPalindrome(String s) {
             s = s.trim().toLowerCase();
@@ -74,11 +80,11 @@ public class _125_TwoPointer_Valid_Palindrome_E {
         }
     }
 
-
+//---------------------------------------------------------------------------
+    //4
 /*    Taking inspiration from your answer I also coded the solution.
     You can actually get rid of extra space in terms of char head; char tail;
     Have a look at my solution. It looks cleaner and smaller. Easy to Understand.*/
-
     public class Solution4 {
         public boolean isPalindrome(String s) {
             if(s==null || s.trim().length()==0)	return true;
@@ -95,6 +101,8 @@ public class _125_TwoPointer_Valid_Palindrome_E {
         }
     }
 
+//---------------------------------------------------------------------------
+    //5
     public class Solution5 {
         public boolean isPalindrome(String s) {
             s = s.toLowerCase();
@@ -115,14 +123,15 @@ public class _125_TwoPointer_Valid_Palindrome_E {
             return true;
         }
     }
-
+//---------------------------------------------------------------------------
+    //6
     boolean isPalindrome6(String s) {
         s = s.toLowerCase().replaceAll("\\W+", "");
         return s.equals(new StringBuilder(s).reverse().toString());
     }
 
-////////////////////////////////////////////////////////////
-
+//---------------------------------------------------------------------------
+    //7
     //My three line java solution
     public class Solution7 {
         public boolean isPalindrome(String s) {
@@ -132,11 +141,13 @@ public class _125_TwoPointer_Valid_Palindrome_E {
         }
     }
 
+//---------------------------------------------------------------------------
+    //8
+
 //    Used the same approach, but instead of reversing and comparing,
 //      I checked characters from both ends using one pointer.
 //
 // Also, converting to lower case in not always necessary, For example : "Coding rocks"
-
     public static boolean isPalindrome8(String s) {
         String regex = "([^A-Za-z0-9])";
         String replacement = "";
@@ -150,7 +161,8 @@ public class _125_TwoPointer_Valid_Palindrome_E {
         }
         return true;
     }
-
+//---------------------------------------------------------------------------
+    //9
     //3ms java solution(beat 100% of java solution)
 
     class Solution9{
@@ -183,7 +195,8 @@ public class _125_TwoPointer_Valid_Palindrome_E {
             return true;
         }
     }
-
+//---------------------------------------------------------------------------
+    //10
     //Java 9ms solution with some of my thoughts
 //    My thoughts on this problem is that the interviewers are not looking at a solution using Regex, it would be too trivial, plus it would take O(n) space to save the new trimmed string. I would just use plain two points to traverse the string and compare them ignore case. It is O(n) time and O(1) space guaranteed and no expensive string concatenation is required.
 
@@ -209,8 +222,9 @@ public class _125_TwoPointer_Valid_Palindrome_E {
         }
     }
 
-////////////////////////////////////////////////////////////
-    //jiuzhang
+//---------------------------------------------------------------------------
+    //11
+    // 9Ch
 public class Jiuzhang {
     public boolean isPalindrome(String s) {
         if (s == null || s.length() == 0) {
@@ -221,10 +235,12 @@ public class Jiuzhang {
         int end = s.length() - 1;
 
         while (front < end) {
-            while (front < s.length() && !isvalid(s.charAt(front))){ // nead to check range of a/b
+            // nead to check range of a/b
+            while (front < s.length() && !isvalid(s.charAt(front))){
                 front++;
             }
-            while (end >= 0 && ! isvalid(s.charAt(end))) { // same here, need to check border of a,b
+            // same here, need to check border of a,b
+            while (end >= 0 && ! isvalid(s.charAt(end))) {
                 end--;
             }
 
@@ -247,6 +263,7 @@ public class Jiuzhang {
     }
 }
 
+//---------------------------------------------------------------------------
 }
 /*
 Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
@@ -260,6 +277,7 @@ Have you consider that the string might be empty? This is a good question to ask
 
 For the purpose of this problem, we define empty string as valid palindrome.
  */
+//---------------------------------------------------------------------------
 
 /*
 给定一个字符串，判断其是否为一个回文串。只包含字母和数字，忽略大小写。
@@ -275,5 +293,6 @@ For the purpose of this problem, we define empty string as valid palindrome.
 
 "race a car" 不是一个回文。
 
+//---------------------------------------------------------------------------
 
  */

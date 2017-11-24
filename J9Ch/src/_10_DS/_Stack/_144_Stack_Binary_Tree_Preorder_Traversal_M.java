@@ -25,7 +25,7 @@ public class _144_Stack_Binary_Tree_Preorder_Traversal_M {
 
 
 
-//-------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------///
 
 //    3 Different Solutions
 //    Recursive method with List as returning value:
@@ -66,8 +66,8 @@ public class _144_Stack_Binary_Tree_Preorder_Traversal_M {
         }
         return pre;
     }
-//-------------------------------------------------------------------------//////////
-    //jiuzhang
+//------------------------------------------------------------------------------///
+    // 9Ch
 //    Version 0: Non-Recursion (Recommend)
     /**
      * Definition for binary tree

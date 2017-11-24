@@ -38,7 +38,7 @@ public class _1_Backtracking_Permutation_All {
         return res;
     }
 
-    ///////////////////////////////////////////////////////
+    //---------------------------------//////////////////
 
     // permutation, recursion
     //time O(n!*n)
@@ -69,7 +69,7 @@ public class _1_Backtracking_Permutation_All {
     }
 
 
-    ///////////////////////////////////////////////////////
+    //---------------------------------//////////////////
 
     // permutation, recursion, swap
     //因为用了swap，所以省了空间
@@ -112,7 +112,7 @@ public class _1_Backtracking_Permutation_All {
         nums[i] = temp;
     }
 
-///////////////////////////////////////////////////////
+//---------------------------------//////////////////
     // permutationII, recursion, hashset
     public List <List <Integer>> permuteUnique(int[] nums) {
         //Corn Cases Checked
@@ -146,7 +146,7 @@ public class _1_Backtracking_Permutation_All {
             }
         }
     }
-    ///////////////////////////////////////////////////////
+    //---------------------------------//////////////////
 
 
     @Test

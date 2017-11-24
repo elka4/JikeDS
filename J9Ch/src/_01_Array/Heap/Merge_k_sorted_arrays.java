@@ -82,7 +82,7 @@ public class Merge_k_sorted_arrays {
 
 //-------------------------------------------------------------------------//
 
-    //jiuzhang
+    // 9Ch
     class Element {
         public int row, col, val;
         Element(int row, int col, int val) {

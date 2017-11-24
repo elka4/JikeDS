@@ -37,7 +37,7 @@ public int hIndex2(int[] citations) {
 
 
 
-//////////////////////////////////////////////////////////
+//---------------------------------/////////////////////
     public int hIndex(int[] citations) {
         Arrays.sort(citations);
 

@@ -72,7 +72,7 @@ public class _252_Heap_Meeting_Rooms_E {
     }
 
 //-------------------------------------------------------------------------//
-    //jiuzhang
+    // 9Ch
 public class Jiuzhang {
     public boolean canAttendMeetings(Interval[] intervals) {
         if(intervals == null || intervals.length == 0) return true;

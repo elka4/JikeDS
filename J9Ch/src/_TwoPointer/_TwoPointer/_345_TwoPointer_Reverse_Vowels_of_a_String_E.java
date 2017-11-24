@@ -297,8 +297,8 @@ public class _345_TwoPointer_Reverse_Vowels_of_a_String_E {
             return output.toString();
         }
     }
-//-------------------------------------------------------------------------//////////
-    //jiuzhang
+//------------------------------------------------------------------------------///
+    // 9Ch
 public class Jiuzhang {
     public String reverseVowels(String s) {
         int[] pos = new int[s.length()];

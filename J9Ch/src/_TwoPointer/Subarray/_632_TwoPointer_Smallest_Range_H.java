@@ -1,5 +1,4 @@
 package _TwoPointer.Subarray;
-
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -9,6 +8,8 @@ import java.util.stream.IntStream;
 //  https://leetcode.com/problems/smallest-range/description/
 public class _632_TwoPointer_Smallest_Range_H {
     //  https://leetcode.com/articles/smallest-range/
+//-------------------------------------------------------------------------
+    //1
     //Approach #1 Brute Force [Time Limit Exceeded]
     public class Solution1 {
         public int[] smallestRange(int[][] nums) {
@@ -42,7 +43,8 @@ public class _632_TwoPointer_Smallest_Range_H {
         }
     }
 
-
+//-------------------------------------------------------------------------
+    //2
     //Approach #2 Better Brute Force [Time Limit Exceeded]
     public class Solution2 {
         public int[] smallestRange(int[][] nums) {
@@ -73,7 +75,8 @@ public class _632_TwoPointer_Smallest_Range_H {
             return new int[]{minx, miny};
         }
     }
-
+//-------------------------------------------------------------------------
+    //3
     //Approach #3 Using Pointers [Time Limit Exceeded]
     public class Solution3 {
         public int[] smallestRange(int[][] nums) {
@@ -100,7 +103,8 @@ public class _632_TwoPointer_Smallest_Range_H {
             return new int[] {minx, miny};
         }
     }
-
+//-------------------------------------------------------------------------
+    //4
 
     //Approach #4 Using Priority Queue [Accepted]:
     public class Solution4 {
@@ -133,8 +137,8 @@ public class _632_TwoPointer_Smallest_Range_H {
             return new int[]{minx, miny};
         }
     }
-//-------------------------------------------------------------------------////
-
+//-------------------------------------------------------------------------
+//5
 /*    Java 8, Sliding window
     The idea is to sort all the elements in the k lists and run a sliding window over the sorted list, to find the minimum window that satisfies the criteria of having atleast one element from each list.*/
 
@@ -165,7 +169,8 @@ public class _632_TwoPointer_Smallest_Range_H {
         }
         return res;
     }
-
+//-------------------------------------------------------------------------
+    //6
     //Java Code using PriorityQueue. similar to merge k array
 
 //    Image you are merging k sorted array using a heap. Then everytime you pop the smallest element out and add the next element of that array to the heap. By keep doing this, you will have the smallest range.
@@ -216,6 +221,8 @@ public class _632_TwoPointer_Smallest_Range_H {
             row = r;
         }
     }
+//-------------------------------------------------------------------------
+    //7
 //    Based on your idea, here is my a little simpler code using int[] instead of Class Element
 
     public int[] smallestRange7(List<List<Integer>> nums) {
@@ -250,6 +257,8 @@ public class _632_TwoPointer_Smallest_Range_H {
 
         return new int[]{start, start+minRange};
     }
+
+//-------------------------------------------------------------------------
 }
 /*
 You have k lists of sorted integers in ascending order. Find the smallest range that includes at least one number from each of the k lists.

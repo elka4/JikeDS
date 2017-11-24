@@ -61,7 +61,7 @@ public class _286_BFS_Walls_and_Gates_M {
 
 
     //-------------------------------------------------------------------------//////
-    //jiuzhang
+    // 9Ch
     // version: 高频题班
     public class Jiuzhang {
         /**

@@ -2,7 +2,7 @@ package DP._s_6_DP2;
 
     public class _02Stone_Game_For {
 
-    ///////////////////////////////////////////////////////////
+    //---------------------------------//////////////////////
 	/**
      * @param A an integer array
      * @return an integer

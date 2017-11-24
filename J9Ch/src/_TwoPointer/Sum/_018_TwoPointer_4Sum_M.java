@@ -1,12 +1,14 @@
 package _TwoPointer.Sum;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 //  18. 4Sum
 //  https://leetcode.com/problems/4sum/description/
-public class _018_TwoPointer_1_4Sum_M {
+//  5:
+public class _018_TwoPointer_4Sum_M {
+//-------------------------------------------------------------------------
+    //1
 /*7ms java code win over 100%
     The first time win over 100%. Basic idea is using subfunctions for 3sum and 2sum, and keeping throwing all impossible cases. O(n^3) time complexity, O(1) extra space complexity.*/
 
@@ -42,7 +44,8 @@ public class _018_TwoPointer_1_4Sum_M {
 
         return res;
     }
-
+//-------------------------------------------------------------------------
+    //2
     /*
      * Find all possible distinguished three numbers adding up to the target
      * in sorted array nums[] between indices low and high. If there are,
@@ -79,7 +82,8 @@ public class _018_TwoPointer_1_4Sum_M {
         }
 
     }
-
+//-------------------------------------------------------------------------
+    //3
     /*
      * Find all possible distinguished two numbers adding up to the target
      * in sorted array nums[] between indices low and high. If there are,
@@ -117,8 +121,9 @@ public class _018_TwoPointer_1_4Sum_M {
         return;
     }
 
-/////////////////////////////////////////////////////////////
-//Clean accepted java O(n^3) solution based on 3sum
+//-------------------------------------------------------------------------
+    //4
+    //Clean accepted java O(n^3) solution based on 3sum
     public class Solution {
         public List<List<Integer>> fourSum(int[] num, int target) {
             ArrayList<List<Integer>> ans = new ArrayList<>();
@@ -155,9 +160,9 @@ public class _018_TwoPointer_1_4Sum_M {
         }
     }
 
-/////////////////////////////////////////////////////////////
-
-    //jiuzhang
+//-------------------------------------------------------------------------
+    //5
+    // 9Ch
 public class Jiuzhang {
     public List<List<Integer>> fourSum(int[] num, int target) {
         List<List<Integer>> rst = new ArrayList<List<Integer>>();
@@ -203,7 +208,7 @@ public class Jiuzhang {
         return rst;
     }
 }
-
+//-------------------------------------------------------------------------
 }
 //  给一个包含n个数的整数数组S，在S中找到所有使得和为给定整数target的四元组(a, b, c, d)。
 

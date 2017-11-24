@@ -12,7 +12,7 @@ public class _253_Heap_Meeting_Rooms_II_M {
             this.end = end;
         }
     }
-/////////////////////////////////////////////////////////////
+//---------------------------------////////////////////////
 
 //AC Java solution using min heap
     class Solution1{
@@ -127,8 +127,8 @@ public class Solution2 {
             return rooms;
         }
     }
-/////////////////////////////////////////////////////////////
-    //jiuzhang
+//---------------------------------////////////////////////
+    // 9Ch
     class Point{
         int time;
         int flag;
