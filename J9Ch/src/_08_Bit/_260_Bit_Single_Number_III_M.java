@@ -58,9 +58,9 @@ public class Solution1 {
 }
 //------------------------------------------------------------------------------
     //2
-//Bit manipulation beats 99.62%
-//Find the rightmost set bit, divide numbers into two groups.
-//    Each group will end up being one unique number.
+    //Bit manipulation beats 99.62%
+    //Find the rightmost set bit, divide numbers into two groups.
+    //Each group will end up being one unique number.
 
     public int[] singleNumber2(int[] nums) {
         int result[] = new int[2];

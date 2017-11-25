@@ -8,7 +8,7 @@ import org.junit.Test;
 public class _320_Bit_Generalized_Abbreviation_M {
 //------------------------------------------------------------------------------
     //1
-//  https://leetcode.com/problems/generalized-abbreviation/solution/
+    //  https://leetcode.com/problems/generalized-abbreviation/solution/
 
     //Approach #1 (Backtracking) [Accepted]
     public class Solution {

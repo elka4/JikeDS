@@ -25,7 +25,9 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
         int maxProduct = 0;
         for (int i = 0; i < len; i++)
             for (int j = i + 1; j < len; j++) {
-                if ((value[i] & value[j]) == 0 && (words[i].length() * words[j].length() > maxProduct))
+                if ((value[i] & value[j]) == 0 &&
+                        (words[i].length() * words[j].length() > maxProduct))
+
                     maxProduct = words[i].length() * words[j].length();
             }
         return maxProduct;
@@ -40,6 +42,7 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
 
             Arrays.sort(words, new Comparator<String>(){
                 public int compare(String a, String b){
+
                     return b.length() - a.length();
                 }
             });
@@ -81,7 +84,8 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
             }
             for(int i=0; i<bytes.length; i++){
                 for(int j=i+1; j<bytes.length; j++){
-                    if((bytes[i] & bytes[j])==0)max = Math.max(max,words[i].length()*words[j].length());
+                    if((bytes[i] & bytes[j])==0)max =
+                            Math.max(max,words[i].length()*words[j].length());
                 }
             }
             return max;
@@ -89,7 +93,8 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
     }
 //------------------------------------------------------------------------------
     //4
-//    Pre-process the word, use bit to represent the words. We can do this because we only need to compare if two words contains the same characters.
+    //Pre-process the word, use bit to represent the words.
+    // We can do this because we only need to compare if two words contains the same characters.
 
     //Java Solution with comments
     public class Solution4 {
@@ -107,6 +112,7 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
          *         Thus if two strings contain the same character when we do and
          *         "AND" the result will not be zero and we can ignore that case.
          */
+
         public int maxProduct(String[] words) {
             int[] checker = new int[words.length];
             int max = 0;
@@ -121,7 +127,8 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
 
             for (int i = 0; i < words.length; i++) {
                 for (int j = i + 1; j < words.length; j++) {
-                    if ((checker[i] & checker[j]) == 0) //checking if the two strings have common character
+                    //checking if the two strings have common character
+                    if ((checker[i] & checker[j]) == 0)
                         max = Math.max(max, words[i].length() * words[j].length());
                 }
             }
@@ -240,7 +247,6 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
                 }
             }
         }
-
         return max;
     }
 

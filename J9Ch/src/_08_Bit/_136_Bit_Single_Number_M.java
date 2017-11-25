@@ -5,77 +5,81 @@ import org.junit.Test;
 //  136. Single Number
 //  https://leetcode.com/problems/single-number/description/
 //  http://www.lintcode.com/zh-cn/problem/single-number/
-//
+//  4:
 //
 public class _136_Bit_Single_Number_M {
 //------------------------------------------------------------------------------
     //1
-//    My O(n) solution using XOR
-//    known that A XOR A = 0 and the XOR operator is commutative, the solution will be very straightforward.
+    //My O(n) solution using XOR
+    //known that A XOR A = 0 and the XOR operator is commutative, the solution will be very straightforward.
 
-
-    int singleNumber1(int A[], int n) {
-        int result = 0;
-        for (int i = 0; i<n; i++)
-        {
-            result ^=A[i];
+    class Solution1{
+        int singleNumber (int A[], int n) {
+            int result = 0;
+            for (int i = 0; i < n; i++) {
+                result ^= A[i];
+            }
+            return result;
         }
-        return result;
     }
 
 //------------------------------------------------------------------------------
     //2
-/*    Easy Java solution (tell you why using bitwise XOR)
-    we use bitwise XOR to solve this problem :
+    /*    Easy Java solution (tell you why using bitwise XOR)
+        we use bitwise XOR to solve this problem :
 
-    first , we have to know the bitwise XOR in java
+        first , we have to know the bitwise XOR in java
 
-0 ^ N = N
-    N ^ N = 0
-    So..... if N is the single number
+    0 ^ N = N
+        N ^ N = 0
+        So..... if N is the single number
 
-    N1 ^ N1 ^ N2 ^ N2 ^..............^ Nx ^ Nx ^ N
+        N1 ^ N1 ^ N2 ^ N2 ^..............^ Nx ^ Nx ^ N
 
-= (N1^N1) ^ (N2^N2) ^..............^ (Nx^Nx) ^ N
+    = (N1^N1) ^ (N2^N2) ^..............^ (Nx^Nx) ^ N
 
-= 0 ^ 0 ^ ..........^ 0 ^ N
+    = 0 ^ 0 ^ ..........^ 0 ^ N
 
-= N*/
-
-    public int singleNumber2(int[] nums) {
-        int ans =0;
-
-        int len = nums.length;
-        for(int i=0;i!=len;i++)
-            ans ^= nums[i];
-
-        return ans;
-
+    = N*/
+    class Solution2{
+        public int singleNumber(int[] nums) {
+            int ans = 0;
+            int len = nums.length;
+            for(int i = 0; i != len; i++)
+                ans ^= nums[i];
+            return ans;
+        }
     }
+
 //------------------------------------------------------------------------------
     //3
     // 9Ch
-    public int singleNumber(int[] A) {
-        if(A == null || A.length == 0) {
-            return -1;
+    class Solution3{
+        public int singleNumber(int[] A) {
+            if(A == null || A.length == 0) {
+                return -1;
+            }
+            int rst = 0;
+            for (int i = 0; i < A.length; i++) {
+                rst ^= A[i];
+            }
+            return rst;
         }
-        int rst = 0;
-        for (int i = 0; i < A.length; i++) {
-            rst ^= A[i];
-        }
-        return rst;
     }
+
 //------------------------------------------------------------------------------
     //4
 /* The key to solve this problem is bit manipulation. XOR will return 1 only on two different bits. So if two numbers are the same, XOR will return 0. Finally only one number left.*/
-
-    public int singleNumber3(int[] A) {
-        int x = 0;
-        for (int a : A) {
-            x = x ^ a;
+    class Solution4{
+        public int singleNumber(int[] A) {
+            int x = 0;
+            for (int a : A) {
+                x = x ^ a;
+            }
+            return x;
         }
-        return x;
     }
+
 //------------------------------------------------------------------------------
 }
 /*------------------------------------------------------------------------------

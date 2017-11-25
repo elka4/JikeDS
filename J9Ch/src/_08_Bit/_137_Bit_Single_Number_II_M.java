@@ -10,16 +10,18 @@ public class _137_Bit_Single_Number_II_M {
 //------------------------------------------------------------------------------
     //1
     //    Challenge me , thx
-    public int singleNumber1(int[] A) {
-        int ones = 0, twos = 0;
-        for(int i = 0; i < A.length; i++){
-            ones = (ones ^ A[i]) & ~twos;
-            twos = (twos ^ A[i]) & ~ones;
+    class Solution1{
+        public int singleNumber(int[] A) {
+            int ones = 0, twos = 0;
+            for(int i = 0; i < A.length; i++){
+                ones = (ones ^ A[i]) & ~twos;
+                twos = (twos ^ A[i]) & ~ones;
+            }
+            return ones;
         }
-        return ones;
     }
 
-    //https://leetcode.com/problems/single-number-ii/discuss/
+
 //------------------------------------------------------------------------------
     //2
 /*    An General Way to Handle All this sort of questions.
@@ -61,9 +63,10 @@ this is the key idea , we can design any based counter and find the occurs any t
     here is my code. with comment.*/
 
     public class Solution2 {
-
         public int singleNumber(int[] nums) {
-            //we need to implement a tree-time counter(base 3) that if a bit appears three time ,it will be zero.
+            //we need to implement a tree-time counter(base 3) that
+            // if a bit appears three time ,it will be zero.
+
             //#curent  income  ouput
             //# ab      c/c       ab/ab
             //# 00      1/0       01/00
@@ -80,80 +83,90 @@ this is the key idea , we can design any based counter and find the occurs any t
             }
             //we need find the number that is 01,10 => 1, 00 => 0.
             return a|b;
-
         }
     }
 
 //------------------------------------------------------------------------------
     //3
-//this is a general solution . and it comes from the Circuit Design on course digital logic.
+    //this is a general solution . and it comes from the Circuit Design on course digital logic.
 
-/*Java O(n) easy to understand solution, easily extended to any times of occurance
-    The usual bit manipulation code is bit hard to get and replicate. I like to think about the number in 32 bits and just count how many 1s are there in each bit, and sum %= 3 will clear it once it reaches 3. After running for all the numbers for each bit, if we have a 1, then that 1 belongs to the single number, we can simply move it back to its spot by doing ans |= sum << i;
+    /*Java O(n) easy to understand solution, easily extended to any times of occurance
+        The usual bit manipulation code is bit hard to get and replicate. I like to think about the number in 32 bits and just count how many 1s are there in each bit, and sum %= 3 will clear it once it reaches 3. After running for all the numbers for each bit, if we have a 1, then that 1 belongs to the single number, we can simply move it back to its spot by doing ans |= sum << i;
 
-    This has complexity of O(32n), which is essentially O(n) and very easy to think and implement. Plus, you get a general solution for any times of occurrence. Say all the numbers have 5 times, just do sum %= 5.*/
+        This has complexity of O(32n), which is essentially O(n) and very easy to think and implement. Plus, you get a general solution for any times of occurrence. Say all the numbers have 5 times, just do sum %= 5.*/
 
-    public int singleNumber3(int[] nums) {
-        int ans = 0;
-        for(int i = 0; i < 32; i++) {
-            int sum = 0;
-            for(int j = 0; j < nums.length; j++) {
-                if(((nums[j] >> i) & 1) == 1) {
-                    sum++;
-                    sum %= 3;
+    public class Solution3 {
+        public int singleNumber(int[] nums) {
+            int ans = 0;
+            for(int i = 0; i < 32; i++) {
+                int sum = 0;
+                for(int j = 0; j < nums.length; j++) {
+                    if(((nums[j] >> i) & 1) == 1) {
+                        sum++;
+                        sum %= 3;
+                    }
+                }
+                if(sum != 0) {
+                    ans |= sum << i;
                 }
             }
-            if(sum != 0) {
-                ans |= sum << i;
-            }
+            return ans;
         }
-        return ans;
     }
 
 //------------------------------------------------------------------------------
     //4
     // 9Ch
-    public int singleNumberII(int[] A) {
-        if (A == null || A.length == 0) {
-            return -1;
-        }
-        int result=0;
-        int[] bits=new int[32];
-        for (int i = 0; i < 32; i++) {
-            for(int j = 0; j < A.length; j++) {
-                bits[i] += A[j] >> i & 1;
-                bits[i] %= 3;
+    class Solution4{
+        public int singleNumber(int[] A) {
+            if (A == null || A.length == 0) {
+                return -1;
             }
+            int result=0;
+            int[] bits=new int[32];
+            for (int i = 0; i < 32; i++) {
+                for(int j = 0; j < A.length; j++) {
+                    bits[i] += A[j] >> i & 1;
+                    bits[i] %= 3;
+                }
 
-            result |= (bits[i] << i);
+                result |= (bits[i] << i);
+            }
+            return result;
         }
-        return result;
     }
+
 
 //------------------------------------------------------------------------------
     //5
-    public int singleNumber2(int[] A) {
-        int ones = 0, twos = 0;
-        for(int i = 0; i < A.length; i++){
-            ones = (ones ^ A[i]) & ~twos;
-            twos = (twos ^ A[i]) & ~ones;
+    class Solution5{
+        public int singleNumber(int[] A) {
+            int ones = 0, twos = 0;
+            for(int i = 0; i < A.length; i++){
+                ones = (ones ^ A[i]) & ~twos;
+                twos = (twos ^ A[i]) & ~ones;
+            }
+            return ones;
         }
-        return ones;
     }
+
 
 //------------------------------------------------------------------------------
     //6
-    public int singleNumber(int[] A) {
-        int ones = 0, twos = 0, threes = 0;
-        for (int i = 0; i < A.length; i++) {
-            twos |= ones & A[i];
-            ones ^= A[i];
-            threes = ones & twos;
-            ones &= ~threes;
-            twos &= ~threes;
+    class Solution6{
+        public int singleNumber(int[] A) {
+            int ones = 0, twos = 0, threes = 0;
+            for (int i = 0; i < A.length; i++) {
+                twos |= ones & A[i];
+                ones ^= A[i];
+                threes = ones & twos;
+                ones &= ~threes;
+                twos &= ~threes;
+            }
+            return ones;
         }
-        return ones;
     }
+
 //------------------------------------------------------------------------------
 }
 /*

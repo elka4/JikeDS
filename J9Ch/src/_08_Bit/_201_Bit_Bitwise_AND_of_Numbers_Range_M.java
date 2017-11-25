@@ -4,7 +4,7 @@ import org.junit.Test;
 
 //  201. Bitwise AND of Numbers Range
 //  https://leetcode.com/problems/bitwise-and-of-numbers-range/description/
-//  6:
+//  5:
 //
 public class _201_Bit_Bitwise_AND_of_Numbers_Range_M {
 //------------------------------------------------------------------------------
@@ -90,13 +90,6 @@ public class _201_Bit_Bitwise_AND_of_Numbers_Range_M {
             moveFactor <<= 1;
         }
         return m * moveFactor;
-    }
-
-//------------------------------------------------------------------------------
-    //6
-    public int rangeBitwiseAnd03(int m, int n) {
-        while(m<n) n = n & (n-1);
-        return n;
     }
 
 //------------------------------------------------------------------------------

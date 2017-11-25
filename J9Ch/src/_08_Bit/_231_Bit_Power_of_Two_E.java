@@ -23,7 +23,8 @@ public class _231_Bit_Power_of_Two_E {
         if(n<=0)
             return false;
         int log_base_2= (int)(Math.log(n)/Math.log(2));
-        return (((n & (1<< log_base_2)) ==n)?true:false);
+
+        return (n & (1<< log_base_2)) == n;
     }
 //------------------------------------------------------------------------------
     //3
@@ -41,7 +42,7 @@ public class _231_Bit_Power_of_Two_E {
 //------------------------------------------------------------------------------
     //4
     public boolean isPowerOfTwo4(int n) {
-        return n > 0 && Integer.highestOneBit(n) == Integer.lowestOneBit(n) ? true : false;
+        return n > 0 && Integer.highestOneBit(n) == Integer.lowestOneBit(n);
     }
 //------------------------------------------------------------------------------
     //5

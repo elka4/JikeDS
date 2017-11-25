@@ -3,7 +3,7 @@ import java.util.*;
 import org.junit.Test;
 
 //  78. Subsets
-//  https://leetcode.com/problems/subsets/discuss/
+//  https://leetcode.com/problems/subsets/description/
 //  http://www.lintcode.com/zh-cn/problem/subsets/
 //  3:
 //
@@ -12,15 +12,15 @@ public class _078_Bit_Subsets_M {
     //1
     //https://leetcode.com/problems/subsets/discuss/
     //Java codes in a similar way.
-    public List<List<Integer>> subsets(int[] S) {
-        Arrays.sort(S);
-        int totalNumber = 1 << S.length;
+    public List<List<Integer>> subsets(int[] nums) {
+        Arrays.sort(nums);
+        int totalNumber = 1 << nums.length;
         List<List<Integer>> collection = new ArrayList<List<Integer>>(totalNumber);
         for (int i=0; i<totalNumber; i++) {
             List<Integer> set = new LinkedList<Integer>();
-            for (int j=0; j<S.length; j++) {
-                if ((i & (1<<j)) != 0) {
-                    set.add(S[j]);
+            for (int j = 0; j < nums.length; j++) {
+                if ((i & (1 << j)) != 0) {
+                    set.add(nums[j]);
                 }
             }
             collection.add(set);
@@ -35,11 +35,9 @@ public class _078_Bit_Subsets_M {
         public List<List<Integer>> subsets(int[] nums) {
             int n = nums.length;
             List<List<Integer>> subsets = new ArrayList<>();
-            for (int i = 0; i < Math.pow(2, n); i++)
-            {
+            for (int i = 0; i < Math.pow(2, n); i++) {
                 List<Integer> subset = new ArrayList<>();
-                for (int j = 0; j < n; j++)
-                {
+                for (int j = 0; j < n; j++) {
                     if (((1 << j) & i) != 0)
                         subset.add(nums[j]);
                 }
@@ -55,10 +53,6 @@ public class _078_Bit_Subsets_M {
     // 9Ch
     // Non Recursion
     class Jiuzhang {
-        /**
-         * @param nums: A set of numbers.
-         * @return: A list of lists. All valid subsets.
-         */
         public List<List<Integer>> subsets(int[] nums) {
             List<List<Integer>> result = new ArrayList<List<Integer>>();
             int n = nums.length;
