@@ -38,7 +38,7 @@ public class _405_Bit_Convert_a_Number_to_Hexadecimal_E {
 
 
 
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
     //[JAVA] Clean Code with Explanations and Running Time [2 Solutions]
 
 //    SOLUTION 1
@@ -112,7 +112,7 @@ public class _405_Bit_Convert_a_Number_to_Hexadecimal_E {
     For Integer.MAX_VALUE or Integer.MIN_VALUE or any input with 8 Hexadecimal characters where the iterations would last the longest. For Integer.MAX_VALUE the algorithm will run for at most `ceil(log_16 (2^31 - 1) + 1) = 8` times.
 
 */
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
 //    Beat 90% Java solution. Long but easy understand. Any advice?
 
     public class Solution4 {
@@ -176,7 +176,7 @@ public class _405_Bit_Convert_a_Number_to_Hexadecimal_E {
             return res.reverse().toString();
         }
     }
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
     // 9Ch
     // 方法一
     public class Jiuzhang1 {
@@ -244,10 +244,10 @@ public class _405_Bit_Convert_a_Number_to_Hexadecimal_E {
         }
     }
 
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
 
 
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
 }
 /*
 Given an integer, write an algorithm to convert it to hexadecimal. For negative integer, two’s complement method is used.

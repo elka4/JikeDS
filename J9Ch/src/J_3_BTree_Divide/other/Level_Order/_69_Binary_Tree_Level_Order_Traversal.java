@@ -55,7 +55,7 @@ public class _69_Binary_Tree_Level_Order_Traversal {
         System.out.println(levelOrder(root));
     }
 
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
 
     // version 2:  DFS
     public ArrayList<ArrayList<Integer>> levelOrder2(TreeNode root) {

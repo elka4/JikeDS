@@ -5,7 +5,7 @@ public class _218_Heap_The_Skyline_Problem_H {
 
 //  https://briangordon.github.io/2014/08/the-skyline-problem.html
 
-//------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
     //Short Java solution
     class Solution{
         public List<int[]> getSkyline(int[][] buildings) {

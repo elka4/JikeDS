@@ -58,7 +58,7 @@ public class Solution {
     }
 }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     //    DFS version:
     public class Solution2 {
         public List<int[]> pacificAtlantic(int[][] matrix) {
@@ -97,7 +97,7 @@ public class Solution {
         }
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
 public class Solution3 {
     public List<int[]> pacificAtlantic(int[][] matrix) {
         List<int[]> result = new ArrayList<int[]>();

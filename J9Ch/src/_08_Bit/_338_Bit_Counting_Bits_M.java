@@ -2,13 +2,16 @@ package _08_Bit;
 import java.util.*;
 import org.junit.Test;
 
-//  338. Counting Bits
 
+//  338. Counting Bits
 //  https://leetcode.com/problems/counting-bits/description/
 //
+//  6:
 public class _338_Bit_Counting_Bits_M {
+//------------------------------------------------------------------------------
     //  https://leetcode.com/problems/counting-bits/solution/
-
+//------------------------------------------------------------------------------
+    //1
     //Approach #1 Pop Count [Accepted]
     public class Solution1 {
         public int[] countBits(int num) {
@@ -23,7 +26,8 @@ public class _338_Bit_Counting_Bits_M {
              return count;
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
     //Approach #2 DP + Most Significant Bit [Accepted]
     public class Solution2 {
         public int[] countBits(int num) {
@@ -42,7 +46,8 @@ public class _338_Bit_Counting_Bits_M {
             return ans;
         }
     }
-
+//------------------------------------------------------------------------------
+    //3
     //Approach #3 DP + Least Significant Bit [Accepted]
     public class Solution3 {
         public int[] countBits(int num) {
@@ -64,9 +69,10 @@ public class _338_Bit_Counting_Bits_M {
         }
     }
 
-//------------------------------------------------------------------------------////
-//    Three-Line Java Solution
-//    An easy recurrence for this problem is f[i] = f[i / 2] + i % 2.
+//------------------------------------------------------------------------------
+    //4
+    //Three-Line Java Solution
+    //An easy recurrence for this problem is f[i] = f[i / 2] + i % 2.
 
     public int[] countBits5(int num) {
         int[] f = new int[num + 1];
@@ -74,7 +80,8 @@ public class _338_Bit_Counting_Bits_M {
         return f;
     }
 
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
+    //5
 /*Simple Java O(n) solution using two pointers
     This uses the hint from the description about using ranges. Basically, the numbers in one range are equal to 1 plus all of the numbers in the ranges before it. If you write out the binary numbers, you can see that numbers 8-15 have the same pattern as 0-7 but with a 1 at the front.
 
@@ -94,8 +101,8 @@ public class _338_Bit_Counting_Bits_M {
         return ret;
     }
 
-//------------------------------------------------------------------------------////
-
+//------------------------------------------------------------------------------
+    //6
 /*    How we handle this question on interview [Thinking process + DP solution]
     Question:
     Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.
@@ -170,7 +177,69 @@ public class _338_Bit_Counting_Bits_M {
         }
         return result;
     }
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
+    //7
+        /*1. Naive Solution
+
+    We can simply count bits for each number like the following:*/
+
+    public int[] countBits(int num) {
+        int[] result = new int[num+1];
+
+        for(int i=0; i<=num; i++){
+            result[i] = countEach(i);
+        }
+
+        return result;
+    }
+
+    public int countEach(int num) {
+        int result = 0;
+
+        while (num != 0) {
+            if (num % 2 == 1) {
+                result++;
+            }
+            num = num / 2;
+        }
+
+        return result;
+    }
+//------------------------------------------------------------------------------
+    //8
+    /*
+    2. Improved Solution
+
+    For number 2(10), 4(100), 8(1000), 16(10000), ..., the number
+    of 1's is 1. Any other number can be converted to be 2^m + x.
+
+    For example, 9=8+1, 10=8+2. The number of 1's for any other
+    number is 1 + # of 1's in x.
+     */
+
+    //有点DP的感觉啊
+
+    public int[] countBits2(int num) {
+        int[] result = new int[num+1];
+
+        int p = 1; //p tracks the index for number x
+        int pow = 1;
+        for(int i=1; i<=num; i++){
+            if(i==pow){
+                result[i] = 1;
+                pow <<= 1;
+                p = 1;
+            }else{
+                result[i] = result[p]+1;
+                p++;
+            }
+
+        }
+
+        return result;
+    }
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 }
 /*
 Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.

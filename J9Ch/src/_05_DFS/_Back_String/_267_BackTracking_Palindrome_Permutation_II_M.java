@@ -47,7 +47,7 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
         System.out.println(generatePalindromes1("aabb"));// [abba, baab]
     }
 
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
     //2
     //Approach #2 Backtracking [Accepted]
     Set < String > set2 = new HashSet < > ();

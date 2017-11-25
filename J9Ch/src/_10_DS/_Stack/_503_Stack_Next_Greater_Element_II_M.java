@@ -26,7 +26,7 @@ public class _503_Stack_Next_Greater_Element_II_M {
     }
 
 
-//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------
 
 /*    Typical ways to solve circular array problems. Java solution.
     The first typical way to solve circular array problems is to extend the original array to twice length, 2nd half has the same element as first half. Then everything become simple.
@@ -89,7 +89,7 @@ public class _503_Stack_Next_Greater_Element_II_M {
             return result;
         }
     }
-//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------
 /*
 NO STACK: O(n) time complexity and O(1) space complexity using DP
     The idea is to use the array to be returned to store information rather than an extra Stack. We use the array called result to store index of next larger element and replace with actual values before returning it. In first iteration, we move from right to left and find next greater element assuming array to be non-cyclical. Then we do another iteration from right to left. This time, we assume array is cyclical and find next larger element for the elements that do not have next larger element if array is not cyclical.

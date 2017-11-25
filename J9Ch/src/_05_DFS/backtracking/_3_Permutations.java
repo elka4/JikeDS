@@ -108,7 +108,7 @@ def permute(self, nums):
     return perms
  */
 
-//------------------------------------------------------------------------------/
+//------------------------------------------------------------------------------
 //I used your idea of adding each next value to every
 // possible position of current list,
 // but have done it with recursion.
@@ -231,7 +231,7 @@ def permute(self, nums):
     }
 
 
-//------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
 //Share my short iterative JAVA solution
     public List<List<Integer>> permute7(int[] num) {
         LinkedList<List<Integer>> res = new LinkedList<List<Integer>>();
@@ -509,7 +509,7 @@ public class Solution2 {
 
 
 
-//------------------------------------------------------------------------------/
+//------------------------------------------------------------------------------
 
    // A new ArrayList<Integer> newPerm is not necessary.
 
@@ -535,7 +535,7 @@ public class Solution2 {
         }
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
 
     //Accepted Recursive Solution in Java
 

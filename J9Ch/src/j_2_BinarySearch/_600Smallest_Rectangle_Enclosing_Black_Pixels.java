@@ -237,7 +237,7 @@ Use a horizontal line, to jump to the bottommost black pixel, in the range of [x
     }
 
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     /**
      * @param image a binary matrix with '0' and '1'
      * @param x, y the location of one of the black pixels

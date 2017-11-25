@@ -621,7 +621,7 @@ The wordDict parameter had been changed to a list of strings (instead of a set o
         return res;
     }
 
-    //------------------------------------------------------------------------------///
+    //------------------------------------------------------------------------------
     //Approach #3 Using Dynamic Programming [Time Limit Exceeded]:
     public List<String> wordBreak3(String s, Set<String> wordDict) {
         LinkedList<String>[] dp = new LinkedList[s.length() + 1];

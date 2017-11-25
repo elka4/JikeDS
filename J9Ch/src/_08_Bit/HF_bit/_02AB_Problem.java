@@ -1,6 +1,12 @@
 package _08_Bit.HF_bit;
 
+
+//  1. A + B Problem
+//  http://www.lintcode.com/zh-cn/problem/a-b-problem/
+//  Cracking The Coding Interview
 public class _02AB_Problem {
+//-------------------------------------------------------------------------
+    //1
     /*
          * param a: The first integer
          * param b: The second integer
@@ -26,8 +32,8 @@ public class _02AB_Problem {
         return a;
     }
 
-//-------------------------------------------------------------------------//
-
+//-------------------------------------------------------------------------
+    //2
     /*
         * param a: The first integer
         * param b: The second integer
@@ -42,6 +48,7 @@ public class _02AB_Problem {
         }
         return a;
     }
+//-------------------------------------------------------------------------
 
 }
 /*
@@ -80,4 +87,10 @@ a和b都是 32位 整数么？
 当然可以
 样例
 如果 a=1 并且 b=2，返回3
+
+挑战
+显然你可以直接 return a + b，但是你是否可以挑战一下不这样做？
+
+标签
+比特位操作 Cracking The Coding Interview
  */

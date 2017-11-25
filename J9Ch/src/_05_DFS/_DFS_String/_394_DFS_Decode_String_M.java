@@ -42,7 +42,7 @@ public class _394_DFS_Decode_String_M {
         }
     }
 
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
     //There will be many temporary String object there. So I used a Stack with StringBuilder.
 
     class StrItem {
@@ -80,7 +80,7 @@ public class _394_DFS_Decode_String_M {
         }
     }
 
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
     //    Java short and easy-understanding solution using stack
     public class Solution3 {
         public String decodeString(String s) {

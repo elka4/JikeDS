@@ -5,7 +5,7 @@ import java.util.*;
 //  https://leetcode.com/problems/data-stream-as-disjoint-intervals/description/
 //  2
 public class _352_Data_Stream_as_Disjoint_Intervals {
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
     class Interval {
         int start, end;
         Interval(int start, int end) {
@@ -13,7 +13,7 @@ public class _352_Data_Stream_as_Disjoint_Intervals {
             this.end = end;
         }
     }
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
     //1
     /* Java solution using TreeMap, real O(logN) per adding.
     Use TreeMap to easily find the lower and higher keys, the key is the start of the interval.
@@ -48,7 +48,7 @@ public class _352_Data_Stream_as_Disjoint_Intervals {
         }
     }
 
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
     //2
 //Java fast log (N) solution (186ms) without using the TreeMap but a customized BST
     public class SummaryRanges2 {
@@ -147,7 +147,7 @@ public class _352_Data_Stream_as_Disjoint_Intervals {
     }
 
 
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
 }
 /*
 Given a data stream input of non-negative integers a1, a2, ..., an, ..., summarize the numbers seen so far as a list of disjoint intervals.

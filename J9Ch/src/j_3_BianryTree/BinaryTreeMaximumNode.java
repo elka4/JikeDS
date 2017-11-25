@@ -64,7 +64,7 @@ public class BinaryTreeMaximumNode {
 
 
     }
-//---------------------------------///////////////////???
+//-----------------------------------------------------------------------------
     // jiuzhang
 
     public TreeNode maxNode2(TreeNode root) {

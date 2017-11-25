@@ -56,7 +56,7 @@ public class Add_Binary {
     }
 
 
-//------------------------------------------------------------------------------/
+//------------------------------------------------------------------------------
 
     //UPDATE: we can simply the method above.
     public String addBinary2(String a, String b) {

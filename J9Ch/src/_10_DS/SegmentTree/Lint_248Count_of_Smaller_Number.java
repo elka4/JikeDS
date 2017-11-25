@@ -110,7 +110,7 @@ public class Lint_248Count_of_Smaller_Number {
         return ans;
     }
 
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
 
 class Solution2{
     public List<Integer> countOfSmallerNumber(int[] A, int[] queries) {
@@ -147,7 +147,7 @@ class Solution2{
     int[] queries  = new int[]{1,8,5};
     System.out.println(sol2.countOfSmallerNumber(A, queries));
     }
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
 
 
 

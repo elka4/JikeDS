@@ -56,7 +56,7 @@ public class _234_List_Palindrome_Linked_List_E {
         }
         return prev;
     }
-//------------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------
     /*Java Solution 1 - Creat a new reversed list
 
     We can create a new list in reversed order and then compare each node.

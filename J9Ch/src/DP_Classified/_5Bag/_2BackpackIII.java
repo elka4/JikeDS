@@ -40,7 +40,7 @@ public class _2BackpackIII {
             }
         return f[n][m];
     }
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
 }
 /*
 Given n kind of items with size Ai and value Vi( each item has an infinite number available) and a backpack with size m. What's the maximum value can you put into the backpack?

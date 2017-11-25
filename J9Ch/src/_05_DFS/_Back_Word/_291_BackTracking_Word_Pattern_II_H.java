@@ -73,7 +73,7 @@ public class _291_BackTracking_Word_Pattern_II_H {
     }
 
 
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
     //20 lines JAVA clean solution, easy to understand
     Map<Character,String> map =new HashMap();
     Set<String> set =new HashSet();
@@ -102,7 +102,7 @@ public class _291_BackTracking_Word_Pattern_II_H {
         System.out.println(wordPatternMatch2("aabb", "xyzabcxzyabc"));
     }
 
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
     //*Java* HashSet + backtracking (2ms beats 100%)
     public boolean wordPatternMatch3(String pattern, String str) {
         String[] map = new String[26]; // mapping of characters 'a' - 'z'
@@ -159,7 +159,7 @@ public class _291_BackTracking_Word_Pattern_II_H {
     }
 
 
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
 }
 /*
 Given a pattern and a string str, find if str follows the same pattern.

@@ -7,7 +7,7 @@ package _TwoPointer.TwoPointer_S;
 public class _07_Minimum_Size_Subarray_Sum {
 
     //  https://leetcode.com/problems/minimum-size-subarray-sum/solution/
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //Accepted clean Java O(n) solution (two pointers)
     public int minSubArrayLen(int s, int[] a) {
         if (a == null || a.length == 0)
@@ -107,7 +107,7 @@ As to NLogN solution, logN immediately reminds you of binary search. In this cas
 
 //    I optimized the O(n) answer with fewer judgements.
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     // 9Ch
 	/**
      * @param nums: an array of integers
@@ -132,7 +132,7 @@ As to NLogN solution, logN immediately reminds you of binary search. In this cas
             ans = -1;
         return ans;
     }
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 }
 /*
 和大于S的最小子数组

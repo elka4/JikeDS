@@ -30,7 +30,7 @@ public class _140_BackTracking_Word_Break_II_H {
         return res;
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     //Approach #2 Recursion with memoization [Accepted]
     public List<String> wordBreak2(String s, Set<String> wordDict) {
 
@@ -58,7 +58,7 @@ public class _140_BackTracking_Word_Break_II_H {
         return res;
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     //Approach #3 Using Dynamic Programming [Time Limit Exceeded]:
     public List<String> wordBreak3(String s, Set<String> wordDict) {
         LinkedList<String>[] dp = new LinkedList[s.length() + 1];
@@ -80,7 +80,7 @@ public class _140_BackTracking_Word_Break_II_H {
     }
 
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     //My concise answer.
     public List<String> wordBreak4(String s, Set<String> dict) {
         List<String> result = new ArrayList<String>();
@@ -109,7 +109,7 @@ public class _140_BackTracking_Word_Break_II_H {
     }
 
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
 /*My concise JAVA solution based on memorized DFS
     Explanation
 
@@ -140,7 +140,7 @@ public class _140_BackTracking_Word_Break_II_H {
         return res;
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     // 9Ch
     // version 1:
     public List<String> wordBreak_J1(String s, Set<String> wordDict) {
@@ -202,7 +202,7 @@ public class _140_BackTracking_Word_Break_II_H {
         }
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     // version 2:
     public ArrayList<String> wordBreak_J2(String s, Set<String> dict) {
         // Note: The Solution object is instantiated only once and is reused by each test case.
@@ -235,7 +235,7 @@ public class _140_BackTracking_Word_Break_II_H {
         return result;
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
 }
 /*
 Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct a sentence where each word is a valid dictionary word. You may assume the dictionary does not contain duplicate words.

@@ -26,7 +26,7 @@ public class _144_Tree_Binary_Tree_Preorder_Traversal_M {
         return list;
     }
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 //    3 Different Solutions
 //    Recursive method with List as returning value:
     public List<Integer> preorderTraversal01(TreeNode root) {
@@ -66,7 +66,7 @@ public class _144_Tree_Binary_Tree_Preorder_Traversal_M {
         }
         return pre;
     }
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     public List<Integer> preorderTraversal2(TreeNode root) {
         List<Integer> result = new LinkedList<>();
@@ -99,7 +99,7 @@ public class _144_Tree_Binary_Tree_Preorder_Traversal_M {
         return result;
     }
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     // 9Ch
 //Version 0: Non-Recursion (Recommend)
 public List<Integer> preorderTraversal0(TreeNode root) {
@@ -136,7 +136,7 @@ public List<Integer> preorderTraversal0(TreeNode root) {
         System.out.println(preorderTraversal(root));
     }
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     // 9Ch
     //Version 1: Traverse
     public ArrayList<Integer> preorderTraversal_2(TreeNode root) {
@@ -181,7 +181,7 @@ public List<Integer> preorderTraversal0(TreeNode root) {
         System.out.println(preorderTraversal_2(root));
     }
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     // 9Ch
     //Version 2: Divide & Conquer
     public ArrayList<Integer> preorderTraversal_3(TreeNode root) {
@@ -302,7 +302,7 @@ public List<Integer> preorderTraversal0(TreeNode root) {
     }
 
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 }
 /* inorder
 result.addAll(left);

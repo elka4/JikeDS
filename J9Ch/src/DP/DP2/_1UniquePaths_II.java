@@ -255,7 +255,7 @@ public class _1UniquePaths_II {
 //        print(paths);
         return paths[now][n - 1];
     }
-//------------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------
     private void print(int[][] f){
         for (int i = 0; i < f.length; i++) {
             if (f[0].length != 0){
@@ -266,7 +266,7 @@ public class _1UniquePaths_II {
             System.out.println();
         }
     }
-//------------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------
     //最标准写法
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
@@ -306,7 +306,7 @@ public class _1UniquePaths_II {
         return paths[n - 1][m - 1];
     }
 
-//------------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------
     public int uniquePathsWithObstaclesX(int[][] obstacleGrid) {
 //        if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
 //            return 0;
@@ -353,7 +353,7 @@ public class _1UniquePaths_II {
     }
 //                        paths[now][j] = paths[old][j] + paths[now][j - 1];
 
-//------------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------
     //Simple Java DP solution
     public class Solution {
         public int uniquePathsWithObstacles(int[][] obstacleGrid) {
@@ -430,7 +430,7 @@ public class _1UniquePaths_II {
         }
     }
 
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
     //  Short JAVA solution   这方法会破坏原数组
     public int uniquePathsWithObstacles4(int[][] obstacleGrid) {
         int width = obstacleGrid[0].length;
@@ -446,7 +446,7 @@ public class _1UniquePaths_II {
         }
         return dp[width - 1];
     }
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
 
     // 方法二
     /**
@@ -497,7 +497,7 @@ public class _1UniquePaths_II {
     }
 
 
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
 
     // 9Ch DP
     public int uniquePathsWithObstacles3(int[][] obstacleGrid) {
@@ -543,7 +543,7 @@ public class _1UniquePaths_II {
         }
         return f[m - 1][n - 1];
     }
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
 
 }
 

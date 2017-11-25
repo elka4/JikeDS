@@ -60,7 +60,7 @@ word = "ABCB", -> returns false.
     }
 
 
-    //------------------------------------------------------------------------------/
+    //------------------------------------------------------------------------------
     //    My Java solution
     boolean[][] visited;
     public boolean exist2(char[][] board, String word) {
@@ -99,7 +99,7 @@ word = "ABCB", -> returns false.
         return false;
     }
 
-//------------------------------------------------------------------------------/
+//------------------------------------------------------------------------------
     //Simple solution
     public boolean exist3(char[][] board, String word) {
         for (int i = 0; i < board.length; i++) {

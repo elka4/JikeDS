@@ -4,15 +4,13 @@ import org.junit.Test;
 
 //  78. Subsets
 //  https://leetcode.com/problems/subsets/discuss/
-
 //  http://www.lintcode.com/zh-cn/problem/subsets/
+//
 public class _078_Bit_Subsets_M {
-
-
+//------------------------------------------------------------------------------
+    //1
     //https://leetcode.com/problems/subsets/discuss/
-
-//    Java codes in a similar way.
-
+    //Java codes in a similar way.
     public List<List<Integer>> subsets(int[] S) {
         Arrays.sort(S);
         int totalNumber = 1 << S.length;
@@ -29,6 +27,8 @@ public class _078_Bit_Subsets_M {
         return collection;
     }
 
+//------------------------------------------------------------------------------
+    //2
     //Simple Java Solution Using Bit Operations
     public class Solution2 {
         public List<List<Integer>> subsets(int[] nums) {
@@ -49,8 +49,8 @@ public class _078_Bit_Subsets_M {
         }
     }
 
-
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
+    //3
     // 9Ch
     // Non Recursion
     class Jiuzhang {
@@ -83,6 +83,8 @@ public class _078_Bit_Subsets_M {
             return result;
         }
     }
+
+//------------------------------------------------------------------------------
 }
 /*
 给定一个含不同整数的集合，返回其所有的子集

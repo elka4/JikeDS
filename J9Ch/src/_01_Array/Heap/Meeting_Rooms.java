@@ -33,7 +33,7 @@ public class Meeting_Rooms {
         return true;
     }
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     // jiuzhang
     public boolean canAttendMeetings2(Interval[] intervals) {
@@ -70,7 +70,7 @@ public class Meeting_Rooms {
         System.out.println(canAttendMeetings(intervals));
     }
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //https://leetcode.com/articles/meeting-rooms/
     //Approach #1 (Brute Force) [Accepted]
 
@@ -92,7 +92,7 @@ public class Meeting_Rooms {
         return (Math.min(i1.end, i2.end) >
                 Math.max(i1.start, i2.start));
     }
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
     //Approach #2 (Sorting) [Accepted]
 
     public boolean canAttendMeetings4(Interval[] intervals) {
@@ -108,6 +108,6 @@ public class Meeting_Rooms {
     }
 
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
 }

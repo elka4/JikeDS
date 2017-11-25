@@ -154,7 +154,7 @@ public class _505_DFS_The_Maze_II_M {
         }
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     public class Solution {
         class Point {
             int x,y,l;
@@ -188,7 +188,7 @@ public class _505_DFS_The_Maze_II_M {
         }
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     public class Solution2 {
         private int[][] maze;
         private int[][] minSteps;//memorize the minimus steps to reach each position

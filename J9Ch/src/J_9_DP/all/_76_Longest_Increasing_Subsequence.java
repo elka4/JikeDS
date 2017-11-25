@@ -62,7 +62,7 @@ public class _76_Longest_Increasing_Subsequence {
         System.out.println(longestIncreasingSubsequence(nums2));
     }
 
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
 
 
     // O(nlogn) Binary Search
@@ -115,7 +115,7 @@ public class _76_Longest_Increasing_Subsequence {
         System.out.println(longestIncreasingSubsequence2(nums2));
     }
 
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
 
 
 

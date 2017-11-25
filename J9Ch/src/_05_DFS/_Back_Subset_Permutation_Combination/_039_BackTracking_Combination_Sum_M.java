@@ -55,7 +55,7 @@ public class _039_BackTracking_Combination_Sum_M {
     // [1, 1, 2, 3], [1, 2, 2, 2], [1, 3, 3], [1, 6], [2, 2, 3], [7]]
 
 
-//------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
 
     public List<List<Integer>> combinationSum02(int[] candidates, int target) {
         List<List<Integer>> result = new LinkedList<List<Integer>>();
@@ -84,7 +84,7 @@ public class _039_BackTracking_Combination_Sum_M {
         }
     }
 
-//------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
     //Java solution using recursive
     //98%
     public List<List<Integer>> combinationSum03(int[] candidates, int target) {
@@ -109,7 +109,7 @@ public class _039_BackTracking_Combination_Sum_M {
         }//else if
     }
 
-//------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
     //70%
     public List<List<Integer>> combinationSum04(int[] candidates, int target) {
         Arrays.sort(candidates);
@@ -131,7 +131,7 @@ public class _039_BackTracking_Combination_Sum_M {
         }
     }
 
-//------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
 /*Iterative Java DP solution
     Hi guys!
 
@@ -160,7 +160,7 @@ public class _039_BackTracking_Combination_Sum_M {
         return dp.get(t-1);
     }
 
-//------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
     // 9Ch
     // version 1: Remove duplicates & generate a new array
     /**
@@ -219,7 +219,7 @@ public class _039_BackTracking_Combination_Sum_M {
         }
     }
 
-//------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
     // version 2: reuse candidates array
     // combination在存储状态
     //80%
@@ -262,7 +262,7 @@ public class _039_BackTracking_Combination_Sum_M {
         }
     }
 
-//------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
 }
 
 /* lint

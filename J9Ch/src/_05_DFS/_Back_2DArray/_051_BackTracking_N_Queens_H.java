@@ -157,7 +157,7 @@ public class _051_BackTracking_N_Queens_H {
         }
     }
 
-//------------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------
 }
 /*
 Given an integer n, return all distinct solutions to the n-queens puzzle.

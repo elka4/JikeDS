@@ -115,7 +115,7 @@ public class _6BestTimeToBuyAndSellStockIII {
 
     //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     /*
     Is it Best Solution with O(n), O(1).
@@ -167,7 +167,7 @@ Very simple code too and work well. I have to say the logic is simple than those
         return release2; ///Since release1 is initiated as 0, so release2 will always higher than release1.
     }
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
 
     public int maxProfit0111(int[] prices) {
@@ -189,7 +189,7 @@ Very simple code too and work well. I have to say the logic is simple than those
         }
         return t[k][len - 1];
     }
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     //2ms Java DP Solution
     public int maxProfit02(int[] prices) {
@@ -223,7 +223,7 @@ Very simple code too and work well. I have to say the logic is simple than those
         return secondSell; // secondSell will be the max profit after passing the prices
     }
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     public int maxProfit022(int[] prices) {
         // these four variables represent your profit after executing corresponding transaction
@@ -251,7 +251,7 @@ Very simple code too and work well. I have to say the logic is simple than those
         return secondSell; // secondSell will be the max profit after passing the prices
     }
 
-//------------------------------------------------------------------------------///////
+//------------------------------------------------------------------------------
 
     // 9Ch DP
     public int maxProfit(int[] prices) {
@@ -294,7 +294,7 @@ Very simple code too and work well. I have to say the logic is simple than those
 
     }
 
-//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------
     // 动态规划专题班版本 verison 1
     private int update(int a, int b, int delta) {
         if (b == Integer.MIN_VALUE) {

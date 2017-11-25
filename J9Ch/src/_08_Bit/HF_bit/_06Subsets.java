@@ -1,10 +1,15 @@
 package _08_Bit.HF_bit;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+//
+//
+//
 public class _06Subsets {
+//------------------------------------------------------------------
+
     /**
      * @param nums: A set of numbers.
      * @return: A list of lists. All valid subsets.
@@ -34,4 +39,9 @@ public class _06Subsets {
 
         return result;
     }
+//------------------------------------------------------------------
 }
+
+/*
+
+ */

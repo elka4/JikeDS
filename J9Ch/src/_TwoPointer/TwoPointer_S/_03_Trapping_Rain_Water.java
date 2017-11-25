@@ -8,8 +8,8 @@ import java.util.*;
 //   Two Pointers Stack
 public class _03_Trapping_Rain_Water {
     //  https://leetcode.com/problems/trapping-rain-water/solution/
-//------------------------------------------------------------------------------//////
-//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 
     //  https://segmentfault.com/a/1190000004594606
 
@@ -82,7 +82,7 @@ public class _03_Trapping_Rain_Water {
             return res;
         }
     }
-//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------
     // jiuzhang
     //Version 0: Two pointer
     public int trapRainWater1(int[] heights) {
@@ -140,7 +140,7 @@ public class _03_Trapping_Rain_Water {
     }
 
 
-//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------
 }
 /*
 Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.

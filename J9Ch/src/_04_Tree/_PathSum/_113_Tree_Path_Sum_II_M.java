@@ -38,7 +38,7 @@ public class _113_Tree_Path_Sum_II_M {
         currentResult.remove(currentResult.size() - 1);
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     public List<List<Integer>> pathSum0(TreeNode root, int sum) {
 
         List<List<Integer>> res = new ArrayList<List<Integer>>();
@@ -104,7 +104,7 @@ public class _113_Tree_Path_Sum_II_M {
         list.remove(list.size() - 1);
         System.out.println("list " + list);
     }*/
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     //    Simple DFS Java Solution
     //    Save intermediate result into stack and save the stack into result
     // array once its sum == required sum.

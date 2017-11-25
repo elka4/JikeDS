@@ -33,7 +33,7 @@ public class Traverse_Iterative {
         return preorder;
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
 
     public List<Integer> inorderTraversal2(TreeNode root) {
         // write your code here
@@ -58,7 +58,7 @@ public class Traverse_Iterative {
     }
 
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     public ArrayList<Integer> postorderTraversal2(TreeNode root) {
         ArrayList<Integer> result = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
@@ -94,7 +94,7 @@ public class Traverse_Iterative {
         return result;
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
 
     public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
@@ -125,7 +125,7 @@ public class Traverse_Iterative {
         return result;
     }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     
     // Bittiger
     class Node{
@@ -235,5 +235,5 @@ public class Traverse_Iterative {
     3 4  5
      6 7
  */
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
 }

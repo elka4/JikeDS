@@ -41,7 +41,7 @@ public class _235_Tree_Lowest_Common_Ancestor_of_a_Binary_Search_Tree_E {
         return root;
     }
 
-//------------------------------------------------------------------------------/////
+//------------------------------------------------------------------------------
 }
 /*
 Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.

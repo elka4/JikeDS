@@ -660,7 +660,7 @@ class Solution9{
             return result;
         }
     }
-//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------
 }
 /*
 You are given an integer array nums and you have to return a new counts array.

@@ -87,7 +87,7 @@ I used global variable count, but obviously we can avoid global variable by pass
             return res;
         }
     }
-//------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
     /*
     Simple AC Java Solution DFS
 Each time find all the path start from current node

@@ -39,7 +39,7 @@ public List<Integer> findClosestElements2(List<Integer> arr, int k, int x) {
     }
 }
 
-//------------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
     //O(log n) Java, 1 line O(log(n) + k) Ruby
 public List<Integer> findClosestElements33(List<Integer> arr, int k, int x) {
     int lo = 0, hi = arr.size() - k;
