@@ -1,5 +1,8 @@
 package _08_Bit.HF_bit;
 
+import a.g.I;
+import org.junit.Test;
+
 //  142. O(1) Check Power of 2
 //  http://www.lintcode.com/en/problem/o1-check-power-of-2/
 //
@@ -12,9 +15,76 @@ public class _03O1_CheckPowerof2 {
         if (n <= 0) {
             return false;
         }
+        //System.out.printf("%10s%32s\n", "n: ", Integer.toBinaryString(n));
+        //System.out.printf("%10s%32s\n", "n-1: ", Integer.toBinaryString(n-1));
+
         return (n & (n-1)) == 0;
     }
+/*
+2的幂特征就是1后面都是0
+也可以检验第一位是1，后面都是0
+ */
+    @Test
+    public void test(){
+        System.out.println(checkPowerOf2(10));
+        System.out.println("------------------------------------------------");
+        System.out.println(checkPowerOf2(11));
+        System.out.println("------------------------------------------------");
+    }
+/*
+       n:                             1010
+     n-1:                             1001
+false
+------------------------------------------------
+       n:                             1011
+     n-1:                             1010
+false
+------------------------------------------------
+ */
 
+    @Test
+    public void test2(){
+        for (int i = 0; i < 100; i++) {
+            if (checkPowerOf2(i)){
+                System.out.println(i);
+                System.out.println(Integer.toBinaryString(i));
+                System.out.println(checkPowerOf2(i));
+                System.out.println("------------------------------------------------");
+            }
+        }
+    }
+/*
+1
+1
+true
+------------------------------------------------
+2
+10
+true
+------------------------------------------------
+4
+100
+true
+------------------------------------------------
+8
+1000
+true
+------------------------------------------------
+16
+10000
+true
+------------------------------------------------
+32
+100000
+true
+------------------------------------------------
+64
+1000000
+true
+------------------------------------------------
+
+
+ */
 //-------------------------------------------------------------------------/
 
 }

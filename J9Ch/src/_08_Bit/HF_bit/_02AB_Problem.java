@@ -1,6 +1,8 @@
 package _08_Bit.HF_bit;
 
 
+import org.junit.Test;
+
 //  1. A + B Problem
 //  http://www.lintcode.com/zh-cn/problem/a-b-problem/
 //  Cracking The Coding Interview
@@ -24,13 +26,49 @@ public class _02AB_Problem {
         // 一直持续，所以b最终会变为0。因此重复做上述操作就可以
         // 求得a + b的值。
         while (b != 0) {
+            System.out.printf("%10s%32s\n", "a: ", Integer.toBinaryString(a));
+            System.out.printf("%10s%32s\n", "b: ", Integer.toBinaryString(b));
+
             int _a = a ^ b;
+            System.out.printf("%10s%32s\n", "a ^ b: ", Integer.toBinaryString(a ^ b));
+
             int _b = (a & b) << 1;
+            System.out.printf("%10s%32s\n", "a & b: ", Integer.toBinaryString(a & b));
+            System.out.printf("%10s%32s\n", "(a&b)<<1:", Integer.toBinaryString((a & b) << 1));
+
             a = _a;
             b = _b;
+            System.out.println("---------------------------------------");
         }
         return a;
     }
+
+    @Test
+    public void test1_1(){
+        System.out.println(aplusb(1,3));
+    }
+    /*
+       a:                                1
+       b:                               11
+   a ^ b:                               10
+   a & b:                                1
+ (a&b)<<1:                              10
+---------------------------------------
+       a:                               10
+       b:                               10
+   a ^ b:                                0
+   a & b:                               10
+ (a&b)<<1:                             100
+---------------------------------------
+       a:                                0
+       b:                              100
+   a ^ b:                              100
+   a & b:                                0
+ (a&b)<<1:                               0
+---------------------------------------
+4
+
+     */
 
 //-------------------------------------------------------------------------
     //2

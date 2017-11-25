@@ -10,10 +10,6 @@ import java.util.List;
 public class _06Subsets {
 //------------------------------------------------------------------
 
-    /**
-     * @param nums: A set of numbers.
-     * @return: A list of lists. All valid subsets.
-     */
     public List<ArrayList<Integer>> subsets(int[] nums) {
         List<ArrayList<Integer>> result = new ArrayList<>();
         int n = nums.length;
@@ -26,8 +22,11 @@ public class _06Subsets {
         // 2 -> 010 -> [2]
         // ..
         // 7 -> 111 -> [1,2,3]
+
+        //对于n个位置，每个位置都决定要或者不要这两种可能
         for (int i = 0; i < (1 << n); i++) {
             ArrayList<Integer> subset = new ArrayList<>();
+
             for (int j = 0; j < n; j++) {
                 // check whether the jth digit in i's binary representation is 1
                 if ((i & (1 << j)) != 0) {

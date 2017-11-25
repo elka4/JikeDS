@@ -1,5 +1,5 @@
 package _08_Bit.HF_bit;
-
+import org.junit.Test;
 
 //  http://lintcode.com/zh-cn/problem/update-bits/
 //  Cracking the Coding Interview
@@ -13,26 +13,69 @@ public class _01UpdateBits {
      *return: An integer
      */
     public int updateBits(int n, int m, int i, int j) {
-        // write your code here
         int max = ~0; /* All 1’s */
 
         // 1’s through position j, then 0’s
-        if (j == 31)
+        if (j == 31){
             j = max;
-        else
+        }
+        else {//j个1， 1111111
             j = (1 << (j + 1)) - 1;
-
+            System.out.printf("%8s%32s\n", "j: ", Integer.toBinaryString(j));
+        }
+        //11111111111111111111111110000000
         int left = max - j;
+        System.out.printf("%8s%32s\n", "left: ", Integer.toBinaryString(left));
 
+        //11
         // 1’s after position i
         int right = ((1 << i) - 1);
+        System.out.printf("%8s%32s\n", "right: ", Integer.toBinaryString(right));
 
         // 1’s, with 0s between i and j
+        //11111111111111111111111110000011
         int mask = left | right;
+        System.out.printf("%8s%32s\n", "mask: ", Integer.toBinaryString(mask));
 
         // Clear i through j, then put m in there
-        return ((n & mask) | (m << i));
+        //10000000000
+        //n & mask 把中间清零，i到j
+        System.out.printf("%8s%32s\n", "n & mask: ", Integer.toBinaryString(n & mask));
+        //1010100
+        //左移i位
+        System.out.printf("%8s%32s\n", "m << i: ", Integer.toBinaryString(m << i));
+
+        return (n & mask) | (m << i);
     }
+
+    @Test
+    public void test1_1(){
+        System.out.printf("%8s%32s\n", "n: ", Integer.toBinaryString(Integer.valueOf("10000000000", 2)));
+        System.out.printf("%8s%32s\n", "m: ", Integer.toBinaryString(Integer.valueOf("10101", 2)));
+        System.out.printf("%8s%32s\n", "result: ", Integer.toBinaryString(updateBits(
+                Integer.valueOf("10000000000", 2),
+                Integer.valueOf("10101", 2),
+                2,6
+
+        )));
+    }
+    @Test
+    public void test1_2(){
+        System.out.println(Integer.toBinaryString(Integer.valueOf("10000000000", 2)));
+    }
+
+    @Test
+    public void test1_3(){
+        System.out.printf("%8s%32s\n", "n: ", Integer.toBinaryString(Integer.valueOf("1111111111111", 2)));
+        System.out.printf("%8s%32s\n", "m: ", Integer.toBinaryString(Integer.valueOf("00000", 2)));
+        System.out.printf("%8s%32s\n", "result: ", Integer.toBinaryString(updateBits(
+                Integer.valueOf("1111111111111", 2),
+                Integer.valueOf("00000", 2),
+                2,6
+
+        )));
+    }
+
 //----------------------------------------------------------------------------
 
     public int updateBits2(int n, int m, int i, int j) {
