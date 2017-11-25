@@ -2,13 +2,11 @@ package _BinarySearch.Array_2D_J;
 
 
 //  Search a 2D Matrix
-//  Binary Search Twice
-//
+//  https://leetcode.com/problems/implement-strstr/description/
 public class _28_Search_a_2D_Matrix_BSTwice {
-
-
 //-----------------------------------------------------------------------------
     // 9Ch
+    //  Binary Search Twice
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0) {
             return false;

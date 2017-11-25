@@ -12,7 +12,6 @@ public class _07SingleNumber {
         return rst;
     }
 
---------------------///////////???///////
 
     public int singleNumber2(int[] nums) {
         int result = 0, n = nums.length;

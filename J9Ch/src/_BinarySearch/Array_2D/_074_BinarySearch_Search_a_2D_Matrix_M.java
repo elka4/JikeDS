@@ -1,11 +1,11 @@
 package _BinarySearch.Array_2D;
 
-//
-//
-//
+//  74. Search a 2D Matrix
+//  https://leetcode.com/problems/search-a-2d-matrix/description/
+//  2:
 public class _074_BinarySearch_Search_a_2D_Matrix_M {
-
 //-----------------------------------------------------------------------------
+    //1
     // 9Ch
     // Binary Search Twice
     public class Jiuzhang {

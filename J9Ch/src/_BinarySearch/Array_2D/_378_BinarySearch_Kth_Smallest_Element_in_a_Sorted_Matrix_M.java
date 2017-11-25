@@ -1,9 +1,13 @@
 package _BinarySearch.Array_2D;
 import java.util.PriorityQueue;
 
-//
-//
-//
+//  378. Kth Smallest Element in a Sorted Matrix
+//  https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/description/
+//  Binary Search, Heap
+//  373. Find K Pairs with Smallest Sums - heap
+//  668. Kth Smallest Number in Multiplication Table - Binary Search
+//  719. Find K-th Smallest Pair Distance - Array Binary Search Heap
+//  3:
 public class _378_BinarySearch_Kth_Smallest_Element_in_a_Sorted_Matrix_M {
 //-----------------------------------------------------------------------------
     //1
@@ -48,15 +52,15 @@ public class _378_BinarySearch_Kth_Smallest_Element_in_a_Sorted_Matrix_M {
     }
 //-----------------------------------------------------------------------------
     //2
-/*    Solution 2 : Binary Search
-    We are done here, but let's think about this problem in another way:
-    The key point for any binary search is to figure out the "Search Space". For me, I think there are two kind of "Search Space" -- index and range(the range from the smallest number to the biggest number). Most usually, when the array is sorted in one direction, we can use index as "search space", when the array is unsorted and we are going to find a specific number, we can use "range".
+/*Solution 2 : Binary Search
+We are done here, but let's think about this problem in another way:
+The key point for any binary search is to figure out the "Search Space". For me, I think there are two kind of "Search Space" -- index and range(the range from the smallest number to the biggest number). Most usually, when the array is sorted in one direction, we can use index as "search space", when the array is unsorted and we are going to find a specific number, we can use "range".
 
-    Let me give you two examples of these two "search space"
+Let me give you two examples of these two "search space"
 
-    index -- A bunch of examples -- https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/ ( the array is sorted)
-    range -- https://leetcode.com/problems/find-the-duplicate-number/ (Unsorted Array)
-    The reason why we did not use index as "search space" for this problem is the matrix is sorted in two directions, we can not find a linear way to map the number and its index.*/
+index -- A bunch of examples -- https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/ ( the array is sorted)
+range -- https://leetcode.com/problems/find-the-duplicate-number/ (Unsorted Array)
+The reason why we did not use index as "search space" for this problem is the matrix is sorted in two directions, we can not find a linear way to map the number and its index.*/
 
     public class Solution2 {
         public int kthSmallest(int[][] matrix, int k) {
@@ -76,10 +80,9 @@ public class _378_BinarySearch_Kth_Smallest_Element_in_a_Sorted_Matrix_M {
     }
 //-----------------------------------------------------------------------------
     //3
-
-/*    Java 1ms nlog(max -min) solution
-    Main loop is binary search of max - min.
-    Swap from left-bottom to right-top can get count <= mid in O(n) time instead of O(nlogn), total complexity will be O(nlogm) while m = max - min.*/
+/*Java 1ms nlog(max -min) solution
+Main loop is binary search of max - min.
+Swap from left-bottom to right-top can get count <= mid in O(n) time instead of O(nlogn), total complexity will be O(nlogm) while m = max - min.*/
 
     public class Solution3 {
         public int kthSmallest(int[][] matrix, int k) {
