@@ -34,7 +34,7 @@ public class _547_Friend_Circles_M {
     }
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //2
     //Approach #2 Using Breadth First Search[Accepted]
     public class Solution3 {
@@ -61,7 +61,7 @@ public class _547_Friend_Circles_M {
     }
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //3
     //Approach #3 Using Union-Find Method[Accepted]
     public class Solution {
@@ -96,7 +96,7 @@ public class _547_Friend_Circles_M {
         }
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //4
 //Java solution, Union Find
 //    This is a typical Union Find problem. I abstracted it as a standalone class. Remember the template, you will be able to use it later.
@@ -155,7 +155,7 @@ public class _547_Friend_Circles_M {
             return uf.count();
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //5
 
     class Solution5{
@@ -174,7 +174,7 @@ public class _547_Friend_Circles_M {
             return n;
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 There are N students in a class. Some of them are friends, while some are not. Their friendship is transitive in nature. For example, if A is a direct friend of B, and B is a direct friend of C, then A is an indirect friend of C. And we defined a friend circle is a group of students who are direct or indirect friends.

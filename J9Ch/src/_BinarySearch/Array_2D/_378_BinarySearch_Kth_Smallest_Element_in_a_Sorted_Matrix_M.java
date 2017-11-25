@@ -1,9 +1,12 @@
 package _BinarySearch.Array_2D;
-
 import java.util.PriorityQueue;
 
+//
+//
+//
 public class _378_BinarySearch_Kth_Smallest_Element_in_a_Sorted_Matrix_M {
-
+//-----------------------------------------------------------------------------
+    //1
    /* Share my thoughts and Clean Java Code
     Solution 1 : Heap
     Here is the step of my solution:
@@ -43,6 +46,8 @@ public class _378_BinarySearch_Kth_Smallest_Element_in_a_Sorted_Matrix_M {
             return this.val - that.val;
         }
     }
+//-----------------------------------------------------------------------------
+    //2
 /*    Solution 2 : Binary Search
     We are done here, but let's think about this problem in another way:
     The key point for any binary search is to figure out the "Search Space". For me, I think there are two kind of "Search Space" -- index and range(the range from the smallest number to the biggest number). Most usually, when the array is sorted in one direction, we can use index as "search space", when the array is unsorted and we are going to find a specific number, we can use "range".
@@ -69,7 +74,8 @@ public class _378_BinarySearch_Kth_Smallest_Element_in_a_Sorted_Matrix_M {
             return lo;
         }
     }
-
+//-----------------------------------------------------------------------------
+    //3
 
 /*    Java 1ms nlog(max -min) solution
     Main loop is binary search of max - min.
@@ -101,6 +107,8 @@ public class _378_BinarySearch_Kth_Smallest_Element_in_a_Sorted_Matrix_M {
             return res;
         }
     }
+
+//-----------------------------------------------------------------------------
 }
 /*
 Given a n x n matrix where each of the rows and columns are sorted in ascending order, find the kth smallest element in the matrix.

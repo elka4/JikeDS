@@ -1,6 +1,12 @@
 package _BinarySearch.Subarray;
 
+
+//
+//
+//
+//
 public class _410_BinarySearch_Split_Array_Largest_Sum_M {
+//------------------------------------------------------------------------------
 
 /*    Clear Explanation: 8ms Binary Search Java
     The answer is between maximum value of input array numbers and sum of those numbers.
@@ -49,7 +55,8 @@ public class _410_BinarySearch_Split_Array_Largest_Sum_M {
     }
 
 
-
+//------------------------------------------------------------------------------
+    //2
 /*    Java easy binary search solution 8ms
     Given a result, it is easy to test whether it is valid or not.
     The max of the result is the sum of the input nums.
@@ -96,7 +103,8 @@ public class _410_BinarySearch_Split_Array_Largest_Sum_M {
             return true;
         }
     }
-
+//------------------------------------------------------------------------------
+    //3
 
 
 /*    DP Java
@@ -138,6 +146,7 @@ public class _410_BinarySearch_Split_Array_Largest_Sum_M {
 
         return dp[0];
     }
+//------------------------------------------------------------------------------
 }
 /*
 Given an array which consists of non-negative integers and an integer m, you can split the array into m non-empty continuous subarrays. Write an algorithm to minimize the largest sum among these m subarrays.

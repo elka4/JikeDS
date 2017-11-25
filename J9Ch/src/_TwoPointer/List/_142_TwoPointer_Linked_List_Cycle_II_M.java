@@ -1,13 +1,13 @@
 package _TwoPointer.List;
-
 import lib.ListNode;
-
 
 //  142. Linked List Cycle II
 //  https://leetcode.com/problems/linked-list-cycle-ii/description/
-
 //  http://www.lintcode.com/zh-cn/problem/linked-list-cycle-ii/
+//  3:
 public class _142_TwoPointer_Linked_List_Cycle_II_M {
+//------------------------------------------------------------------------------
+    //1
     //Java O(1) space solution with detailed explanation.
     //  https://discuss.leetcode.com/topic/19367/java-o-1-space-solution-with-detailed-explanation/13
 /*    Define two pointers slow and fast. Both start at head node, fast is twice as fast as slow. If it reaches the end it means there is no cycle, otherwise eventually it will eventually catch up to slow pointer somewhere in the cycle.
@@ -45,7 +45,8 @@ So when another slow2 pointer run from head to 'q', at the same time, previous s
         }
     }
 
-
+//------------------------------------------------------------------------------
+    //2
 
 
 /*    Concise JAVA solution based on slow fast pointers
@@ -77,32 +78,34 @@ So when another slow2 pointer run from head to 'q', at the same time, previous s
         }
         return null;
     }
-    //---------------------------------///////
-//---------------------------------///////
+//------------------------------------------------------------------------------
+    //3
     // 9Ch
-public class Jiuzhang {
-    public ListNode detectCycle(ListNode head) {
-        if (head == null || head.next==null) {
-            return null;
-        }
-
-        ListNode fast, slow;
-        fast = head.next;
-        slow = head;
-        while (fast != slow) {
-            if(fast==null || fast.next==null)
+    public class Jiuzhang {
+        public ListNode detectCycle(ListNode head) {
+            if (head == null || head.next==null) {
                 return null;
-            fast = fast.next.next;
-            slow = slow.next;
-        }
+            }
 
-        while (head != slow.next) {
-            head = head.next;
-            slow = slow.next;
+            ListNode fast, slow;
+            fast = head.next;
+            slow = head;
+            while (fast != slow) {
+                if(fast==null || fast.next==null)
+                    return null;
+                fast = fast.next.next;
+                slow = slow.next;
+            }
+
+            while (head != slow.next) {
+                head = head.next;
+                slow = slow.next;
+            }
+            return head;
         }
-        return head;
     }
-}
+
+//------------------------------------------------------------------------------
 }
 /*
 Given a linked list, return the node where the cycle begins. If there is no cycle, return null.

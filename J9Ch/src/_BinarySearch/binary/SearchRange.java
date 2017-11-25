@@ -1,11 +1,11 @@
 package _BinarySearch.binary;
-
 import org.junit.Test;
 
-/**
- * Created by tzh on 1/16/17.
- */
+//
+//
+//
 public class SearchRange {
+//-----------------------------------------------------------------------------
 
     public int[] searchRange(int[] nums, int target) {
 
@@ -71,4 +71,9 @@ public class SearchRange {
 
 
     }
+//-----------------------------------------------------------------------------
+
 }
+/*
+
+ */

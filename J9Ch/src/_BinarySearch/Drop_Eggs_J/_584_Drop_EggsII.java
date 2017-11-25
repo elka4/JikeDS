@@ -2,6 +2,8 @@ package _BinarySearch.Drop_Eggs_J;
 
 //
 public class _584_Drop_EggsII {
+//------------------------------------------------------------------------------
+
     /**
      * @param m the number of eggs
      * @param n the umber of floors
@@ -31,6 +33,7 @@ public class _584_Drop_EggsII {
 
         return dp[m][n];
     }
+//------------------------------------------------------------------------------
 
 }
 /*

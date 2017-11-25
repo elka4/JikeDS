@@ -1,8 +1,12 @@
 package _BinarySearch.Math_J;
 
+
+
+//
 //
 public class _586_Sqrtx_II {
-
+//------------------------------------------------------------------------------
+    //1
     //Solution1 : 二分法
     public class _09Sqrtx_II_1 {
         /**
@@ -38,7 +42,8 @@ public class _586_Sqrtx_II {
             return left;
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
     //Solution2 : 牛顿法
     public class _09Sqrtx_II_2 {
         /**
@@ -57,6 +62,7 @@ public class _586_Sqrtx_II {
             return res;
         }
     }
+//------------------------------------------------------------------------------
 }
 /*
 Implement double sqrt(double x) and x >= 0.

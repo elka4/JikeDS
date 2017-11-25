@@ -1,12 +1,12 @@
 package _TwoPointer.List;
-
 import lib.ListNode;
 
 //61. Rotate List
 //https://leetcode.com/problems/rotate-list/description/
-
 //http://www.lintcode.com/zh-cn/problem/rotate-list/
 public class _061_TwoPointer_Rotate_List_M {
+//------------------------------------------------------------------------------
+    //1
 /*
 Share my java solution with explanation
 Since n may be a large number compared to the length of list. So we need to know the length of linked list.After that, move the list after the (l-n%l )th node to the front to finish the rotation.
@@ -45,7 +45,8 @@ Move to the (l-n%l)th node
 
         return dummy.next;
     }
-
+//------------------------------------------------------------------------------
+    //2
 /*
 Clean Java Solution with Brief Explanation
 The basic idea is to link the tail of the list with the head, make it a cycle. Then count to the rotate point and cut it.
@@ -73,7 +74,8 @@ The basic idea is to link the tail of the list with the head, make it a cycle. T
         return copyHead;
     }
 
-
+//------------------------------------------------------------------------------
+    //3
 /*
     Java clean solution, only one pointer used
 
@@ -103,9 +105,9 @@ The basic idea is to link the tail of the list with the head, make it a cycle. T
         return head;
     }
 
-//---------------------------------///////////////////
+//------------------------------------------------------------------------------
+    //4
     // 9Ch
-
     public class Jiuzhang {
         private int getLength(ListNode head) {
             int length = 0;
@@ -144,7 +146,7 @@ The basic idea is to link the tail of the list with the head, make it a cycle. T
             return dummy.next;
         }
     }
-
+//------------------------------------------------------------------------------
 }
 /*
 给定一个链表，旋转链表，使得每个节点向右移动k个位置，其中k是一个非负数

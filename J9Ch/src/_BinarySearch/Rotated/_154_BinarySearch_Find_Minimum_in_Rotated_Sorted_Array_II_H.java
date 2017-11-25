@@ -1,8 +1,12 @@
 package _BinarySearch.Rotated;
 
+
+//
+//
+//
 public class _154_BinarySearch_Find_Minimum_in_Rotated_Sorted_Array_II_H {
 
-//------------------------------------------------------------------------------////
+//------------------------------------------------------------------------------
     // 9Ch
     // version 1: just for loop is enough
     public class Jiuzhang {
@@ -21,6 +25,7 @@ public class _154_BinarySearch_Find_Minimum_in_Rotated_Sorted_Array_II_H {
             return min;
         }
     }
+//------------------------------------------------------------------------------
 
     // version 2: use *fake* binary-search
     public class Jiuzhang2 {
@@ -55,6 +60,8 @@ public class _154_BinarySearch_Find_Minimum_in_Rotated_Sorted_Array_II_H {
             return nums[end];
         }
     }
+//------------------------------------------------------------------------------
+
 }
 /*Follow up for "Find Minimum in Rotated Sorted Array":
 What if duplicates are allowed?

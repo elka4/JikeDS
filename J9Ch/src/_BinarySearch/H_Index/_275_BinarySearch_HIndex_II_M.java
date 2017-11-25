@@ -1,10 +1,14 @@
 package _BinarySearch.H_Index;
 
-//  275. H-Index II
 
+//  275. H-Index II
 //  https://leetcode.com/problems/h-index-ii/description/
+//
+//
 public class _275_BinarySearch_HIndex_II_M {
-//O(logN)-time O(1)-space Easy Solution with Detailed Explanations (C++/Java/Python)
+//------------------------------------------------------------------------------
+    //1
+    //O(logN)-time O(1)-space Easy Solution with Detailed Explanations (C++/Java/Python)
     public class Solution {
         public int hIndex(int[] citations) {
             int len = citations.length;
@@ -30,7 +34,8 @@ public class _275_BinarySearch_HIndex_II_M {
         }
     }
 
-
+//------------------------------------------------------------------------------
+    //2
 /*    Java binary search, simple and clean
     The idea is to search for the first index from the sorted array so that :
 
@@ -56,9 +61,8 @@ public class _275_BinarySearch_HIndex_II_M {
         }
         return len - lo;
     }
+//------------------------------------------------------------------------------
 }
 /*
 Follow up for H-Index: What if the citations array is sorted in ascending order? Could you optimize your algorithm?
-
-
  */

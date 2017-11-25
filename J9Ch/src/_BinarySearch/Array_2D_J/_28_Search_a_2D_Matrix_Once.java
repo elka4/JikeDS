@@ -1,11 +1,12 @@
 package _BinarySearch.Array_2D_J;
-
 import org.junit.Test;
 
-//Binary Search Once
+//  Binary Search Once
+//  3:
 public class _28_Search_a_2D_Matrix_Once {
 
-//------------------------------------------------------------------------------//////////
+//-----------------------------------------------------------------------------
+    //1
     //Don't treat it as a 2D matrix, just treat it as a sorted list
     public boolean searchMatrix1(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0) {
@@ -27,8 +28,8 @@ public class _28_Search_a_2D_Matrix_Once {
         return false;
     }
 
-//------------------------------------------------------------------------------//////////
-
+//-----------------------------------------------------------------------------
+    //2
     public boolean searchMatrix2(int[][] matrix, int target) {
 	   if (matrix == null || matrix.length == 0) {
 	       return false;
@@ -60,7 +61,8 @@ public class _28_Search_a_2D_Matrix_Once {
 
 	   return false;
 	}
-//------------------------------------------------------------------------------//////////
+//-----------------------------------------------------------------------------
+    //3
 	public boolean searchMatrix3(int[][] matrix, int target){
 		 if (matrix == null || matrix.length == 0){
 			 return false;
@@ -100,7 +102,7 @@ public class _28_Search_a_2D_Matrix_Once {
 	    int target = 3;
         System.out.println(searchMatrix3(nums, 3));
     }
-//------------------------------------------------------------------------------//////////
+//-----------------------------------------------------------------------------
 }
 
 /*

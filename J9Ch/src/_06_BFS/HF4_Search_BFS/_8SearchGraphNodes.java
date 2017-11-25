@@ -46,7 +46,7 @@ public class _8SearchGraphNodes {
         }
         return null;
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 Given a undirected graph, a node and a target, return the nearest node to given node which value of it is target, return NULL if you can't find.

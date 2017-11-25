@@ -18,7 +18,7 @@ public class _582_Tree_Kill_Process_M {
     //Approach #4 HashMap + Breadth First Search [Accepted]:
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //BFS
     public List<Integer> killProcess5(List<Integer> pid, List<Integer> ppid, int kill) {
 
@@ -44,7 +44,7 @@ public class _582_Tree_Kill_Process_M {
 
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //DFS
     public List<Integer> killProcess6(List<Integer> pid, List<Integer> ppid, int kill) {
         if (kill == 0) return pid;
@@ -78,7 +78,7 @@ public class _582_Tree_Kill_Process_M {
     }
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 

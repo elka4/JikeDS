@@ -12,6 +12,8 @@ package _BinarySearch.Position_J;
 //  35. Search Insert Position
 
 public class _60_Search_Insert_Position {
+//------------------------------------------------------------------------------
+
     public int searchInsert(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return 0;
@@ -37,6 +39,7 @@ public class _60_Search_Insert_Position {
             return end + 1;
         }
     }
+//------------------------------------------------------------------------------
 
 //version 2: find the last position < target, return +1， 
 //要特判一下target小于所有数组里面的元素
@@ -78,8 +81,9 @@ class Search_Insert_Position2 {
     }
 }
 
- 
- //this is the code in Ch9 2016 summer.
+//------------------------------------------------------------------------------
+
+    //this is the code in Ch9 2016 summer.
     public int searchInseart2(int[] nums, int target){
         if (nums == null || nums.length == 0){
             return 0;
@@ -103,10 +107,8 @@ class Search_Insert_Position2 {
         }
         return nums.length;
     }
+//------------------------------------------------------------------------------
 }
-
-
-
 /*
 Given a sorted array and a target value,  return the 
 index if the target is found. If not, return the index

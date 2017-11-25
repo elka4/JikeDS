@@ -1,43 +1,46 @@
 package _BinarySearch.H_Index;
-
 import java.util.Arrays;
 
 //  274. H-Index
 //  https://leetcode.com/problems/h-index/description/
-//
+//  3:
 public class _274_H_Index_M {
-//https://leetcode.com/problems/h-index/solution/
-//Approach #1 (Sorting) [Accepted]
-public int hIndex1(int[] citations){
-    // sorting the citations in ascending order
-    Arrays.sort(citations);
-    // finding h-index by linear search
-    int i = 0;
-    while(i < citations.length && citations[citations.length - 1 - i] > i){
-        i++;
+//------------------------------------------------------------------------------
+
+    //https://leetcode.com/problems/h-index/solution/
+//------------------------------------------------------------------------------
+    //1
+    //Approach #1 (Sorting) [Accepted]
+    public int hIndex1(int[] citations){
+        // sorting the citations in ascending order
+        Arrays.sort(citations);
+        // finding h-index by linear search
+        int i = 0;
+        while(i < citations.length && citations[citations.length - 1 - i] > i){
+            i++;
+        }
+        return i; // after the while loop, i = i' +1
     }
-    return i; // after the while loop, i = i' +1
-}
-
-//Approach #2 (Counting) [Accepted]
-public int hIndex2(int[] citations) {
-    int n = citations.length;
-    int[] papers = new int[n + 1];
-    // counting papers for each citation number
-    for (int c:citations) {
-        papers[Math.min(n, c)]++;
+//------------------------------------------------------------------------------
+    //2
+    //Approach #2 (Counting) [Accepted]
+    public int hIndex2(int[] citations) {
+        int n = citations.length;
+        int[] papers = new int[n + 1];
+        // counting papers for each citation number
+        for (int c:citations) {
+            papers[Math.min(n, c)]++;
+        }
+        //finding the h-index
+        int k = n;
+        for (int s = papers[n]; k > s; s += papers[k]){
+            k--;
+        }
+        return k;
     }
-    //finding the h-index
-    int k = n;
-    for (int s = papers[n]; k > s; s += papers[k]){
-        k--;
-    }
-    return k;
-}
 
-
-
-//---------------------------------/////////////////////
+//------------------------------------------------------------------------------
+    //3
     public int hIndex(int[] citations) {
         Arrays.sort(citations);
 
@@ -49,6 +52,7 @@ public int hIndex2(int[] citations) {
 
         return result;
     }
+//------------------------------------------------------------------------------
 }
 /*
 Given an array of citations (each citation is a non-negative integer) of a researcher, write a function to compute the researcher's h-index.

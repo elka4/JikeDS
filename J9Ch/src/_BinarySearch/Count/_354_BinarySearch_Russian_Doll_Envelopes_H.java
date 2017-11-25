@@ -1,5 +1,4 @@
 package _BinarySearch.Count;
-
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -10,6 +9,8 @@ import java.util.Comparator;
 //  http://www.lintcode.com/zh-cn/problem/russian-doll-envelopes/
 //   Binary Search, Dynamic Programming
 public class _354_BinarySearch_Russian_Doll_Envelopes_H {
+//-----------------------------------------------------------------------------
+    //1
     //Simple DP solution
     public int maxEnvelopes1(int[][] envelopes) {
         if (envelopes == null || envelopes.length == 0 ||
@@ -41,7 +42,8 @@ public class _354_BinarySearch_Russian_Doll_Envelopes_H {
         return ret;
     }
 
-//---------------------------------//////////////////////
+//-----------------------------------------------------------------------------
+    //2
     // 9Ch
     /*
     1. Sort the array. Ascend on width and descend on height if width are same.
@@ -97,7 +99,8 @@ public class _354_BinarySearch_Russian_Doll_Envelopes_H {
 
     }
 
-//---------------------------------//////////////////////
+//-----------------------------------------------------------------------------
+    //3
     //  https://leetcode.com/problems/longest-increasing-subsequence/discuss/
     //  Java/Python Binary search O(nlogn) time with explanation
     public int lengthOfLIS(int[] nums) {
@@ -145,8 +148,7 @@ The the final answer is just the size.
 
  */
 
-//---------------------------------//////////////////////
-
+//-----------------------------------------------------------------------------
 }
 /*
 You have a number of envelopes with widths and heights given as a pair of integers (w, h). One envelope can fit into another if and only if both the width and height of one envelope is greater than the width and height of the other envelope.

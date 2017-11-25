@@ -62,7 +62,7 @@ public class _4LongestPalindrome {
         System.out.println(longestPalindrome("abccccdd"));
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
     // version 2
     public int longestPalindrome2(String s) {
@@ -112,7 +112,7 @@ public class _4LongestPalindrome {
         System.out.println(longestPalindrome2("abccccdd"));
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
 }
 /*

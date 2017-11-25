@@ -1,12 +1,13 @@
 package _BinarySearch.binary;
-
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by tzh on 1/15/17.
- */
+//
+//
+//
 public class MaximumAverageSubarray {
+//-----------------------------------------------------------------------------
+
     public double maxAverage(int[] nums, int k) {
         // Write your code here
         double l = Integer.MAX_VALUE, r = Integer.MIN_VALUE;
@@ -72,7 +73,12 @@ public class MaximumAverageSubarray {
         System.out.print(1e-0);
     }
 
+//-----------------------------------------------------------------------------
 
 
+//-----------------------------------------------------------------------------
 
 }
+/*
+
+ */

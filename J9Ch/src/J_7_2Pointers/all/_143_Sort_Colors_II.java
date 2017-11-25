@@ -56,13 +56,13 @@ public class _143_Sort_Colors_II {
 
 
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 void swap(int[] colors, int left, int right) {
     int tmp = colors[left];
     colors[left] = colors[right];
     colors[right] = tmp;
 }
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 
 // version 2: O(nk), not efficient, will get Time Limit Exceeded error.
 // But you should try to implement the following algorithm for practicing purpose.

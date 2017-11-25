@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-/**
- * Created by tzh on 1/15/17.
- */
+//
+//2
 public class _349_Intersection_of_Two_Arrays {
+//-----------------------------------------------------------------------------
+    //1
     public int[] intersection(int[] nums1, int[] nums2) {
         int[]  result = new int[0];
         if (nums1 == null || nums2 == null || nums1.length == 0 || nums2.length == 0) {
@@ -36,11 +37,11 @@ public class _349_Intersection_of_Two_Arrays {
         }
 
         return result;
-
-
-
-
     }
+
+//-----------------------------------------------------------------------------
+    //2
+
     private class ResultType{
         private boolean exist = false;
         private int value;
@@ -96,4 +97,8 @@ public class _349_Intersection_of_Two_Arrays {
             System.out.println(i);
         }
     }
+//-----------------------------------------------------------------------------
 }
+/*
+
+ */

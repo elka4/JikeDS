@@ -91,7 +91,7 @@ public class PathSum_III_interval {
 
     }
 
-//------------------------------------------------------------------------------////////////
+//-----------------------------------------------------------------------------///
 
 //    Thanks for your advice, @StefanPochmann . Here is the modified version, concise and shorter:
     /*
@@ -126,7 +126,7 @@ public class PathSum_III_interval {
         }
     }
 
-//------------------------------------------------------------------------------////////////
+//-----------------------------------------------------------------------------///
 
 /*    Simple Java DFS 和Solution2一样
 Runtime: 31 ms           Your runtime beats 34.90 % of java submissions.
@@ -150,7 +150,7 @@ Runtime: 31 ms           Your runtime beats 34.90 % of java submissions.
 
 
 
-//------------------------------------------------------------------------------////////////
+//-----------------------------------------------------------------------------///
 
 /*    Simple AC Java Solution DFS  和Solution1一样
 Runtime: 29 ms       Your runtime beats 59.80 % of java submissions.
@@ -351,7 +351,7 @@ subarray sum to the target, add with some comments:*/
         }
     }
 
-//------------------------------------------------------------------------------////////////
+//-----------------------------------------------------------------------------///
     // 9Ch
     //   Your runtime beats 0.23 % of java submissions.
     class Jiuzhang {

@@ -1,13 +1,13 @@
 package _BinarySearch.Intersection_J;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
 //  http://lintcode.com/zh-cn/problem/intersection-of-two-arrays-ii/
-
 // leetcode 350. Intersection of Two Arrays II
 //  https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
 public class Intersection_of_Two_Arrays_II {
+//------------------------------------------------------------------------------
+    //1
     //Use ArrayList to dynamic increase size
     class Solution1 {
         public int[] intersect(int[] nums1, int[] nums2) {
@@ -40,7 +40,8 @@ public class Intersection_of_Two_Arrays_II {
 
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
     //Given the range of the test case is not that massive, I used counting sort instead of HashMap. Beats 96%
     class Solution2 {
         public int[] intersect(int[] nums1, int[] nums2) {
@@ -78,7 +79,8 @@ public class Intersection_of_Two_Arrays_II {
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //3
     //AC solution using Java HashMap
     public class Solution3 {
         public int[] intersect(int[] nums1, int[] nums2) {
@@ -108,7 +110,8 @@ public class Intersection_of_Two_Arrays_II {
             return r;
         }
     }
-
+//------------------------------------------------------------------------------
+    //4
     //Same idea, Java 8 using Stream
     class Solution4{
         public int[] intersect(int[] nums1, int[] nums2) {
@@ -123,7 +126,8 @@ public class Intersection_of_Two_Arrays_II {
 
         }
     }
-
+//------------------------------------------------------------------------------
+    //5
     class Solution5{
         public int[] intersect1(int[] nums1, int[] nums2) {
             Arrays.sort(nums1);
@@ -152,7 +156,9 @@ public class Intersection_of_Two_Arrays_II {
             }
             return res;
         }
-        //similar to yours
+//------------------------------------------------------------------------------
+    //6
+    //similar to yours
         public int[] intersect2(int[] nums1, int[] nums2) {
             Arrays.sort(nums1);
             Arrays.sort(nums2);
@@ -178,7 +184,9 @@ public class Intersection_of_Two_Arrays_II {
             }
             return r;
         }
-        //This is an example where O(NlogN) solution beats in time to my O(N) solution for available tests.
+//------------------------------------------------------------------------------
+    //7
+    //This is an example where O(NlogN) solution beats in time to my O(N) solution for available tests.
         // Due to use of map lookups?
         public int[] intersect3(int[] nums1, int[] nums2) {
             HashMap<Integer,Integer> hm= new HashMap<>();
@@ -217,7 +225,8 @@ public class Intersection_of_Two_Arrays_II {
         }
     }
 
-//------------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
+    //8
     // 9Ch
     public class Solution {
         /**
@@ -251,7 +260,7 @@ public class Intersection_of_Two_Arrays_II {
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
 }
 /*
 两数组的交 II

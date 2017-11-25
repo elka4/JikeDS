@@ -1,7 +1,11 @@
 package Classification.Bit_Manipulation_26;
 import java.util.*;
 
+//
+//
+//
 public class b_137_Single_Number_II {
+//-----------------------------------------------------------------------------
     /*
     lintcode: Given 3*n + 1 numbers, every numbers occurs triple times except one, find it.
 
@@ -32,7 +36,8 @@ public class b_137_Single_Number_II {
         }
         return result;
     }
-
+//-----------------------------------------------------------------------------
+    //2
     //代码如下所示，用一个32位的数的每一位表示某一位出现几次，出现3次就给它归零：
     public int singleNumber_lint2(int[] A) {
         if (A == null) {
@@ -54,8 +59,8 @@ public class b_137_Single_Number_II {
         return rst;
     }
 
-//-------------------------------------------------------------------------////
-
+//-----------------------------------------------------------------------------
+    //3
     //http://blog.csdn.net/fightforyourdream/article/details/14634123
 
     // Time: O(n), space: O(n)
@@ -78,7 +83,8 @@ public class b_137_Single_Number_II {
         }
         return 0;
     }
-
+//-----------------------------------------------------------------------------
+    //4
     // Time: O(n), space: O(1)
     // 基本思想是每个数都可以表示成二进制形式，进而统计每个数在每一位出现的次数
     public static int singleNumber_bit(int[] A) {
@@ -96,7 +102,8 @@ public class b_137_Single_Number_II {
         }
         return result;
     }
-
+//-----------------------------------------------------------------------------
+    //5
     public int singleNumber_bit2(int[] A) {
         int[] buf = new int[32];
 
@@ -121,7 +128,8 @@ public class b_137_Single_Number_II {
     }
 
 
-
+//-----------------------------------------------------------------------------
+    //6
     public int singleNumber2_Bit3(int[] A) {
         Hashtable<Integer, Integer> ht = new Hashtable<Integer,Integer>();
         for(int i=0; i<A.length; i++){
@@ -141,8 +149,8 @@ public class b_137_Single_Number_II {
 
         return -1;
     }
-//-------------------------------------------------------------------------////
-
+//-----------------------------------------------------------------------------
+    //7
     public int singleNumber(int[] A) {
         int ones = 0, twos = 0;
         for(int i = 0; i < A.length; i++){
@@ -152,10 +160,9 @@ public class b_137_Single_Number_II {
         return ones;
     }
 
-//-------------------------------------------------------------------------/////
-
+//-----------------------------------------------------------------------------/
+    //8
     //https://leetcode.com/problems/single-number-ii/tabs/discuss
-
     public int singleNumber2(int[] nums) {
         //we need to implement a tree-time counter(base 3) that if
         // a bit appears three time ,it will be zero.
@@ -177,21 +184,7 @@ public class b_137_Single_Number_II {
         return a|b;
 
     }
-//-------------------------------------------------------------------------/////
-
-
-//-------------------------------------------------------------------------/////
-
-
-//-------------------------------------------------------------------------/////
-
-
-//-------------------------------------------------------------------------/////
-
-
-//-------------------------------------------------------------------------/////
-
-
+//-----------------------------------------------------------------------------
 }
 
 /*

@@ -2,6 +2,7 @@ package _BinarySearch.Others_J;
 
 
 //
+//
 public class _Minimum_Subtree_596 {
 
   public class TreeNode {
@@ -13,6 +14,7 @@ public class _Minimum_Subtree_596 {
       }
   }
 
+//------------------------------------------------------------------------------
 
     // version 1 : traverse + divide conquer
     public class Solution1 {
@@ -40,6 +42,7 @@ public class _Minimum_Subtree_596 {
             return sum;
         }
     }
+//------------------------------------------------------------------------------
 
     // version 2: Pure divide conquer
     class ResultType {
@@ -51,6 +54,7 @@ public class _Minimum_Subtree_596 {
             this.sum = sum;
         }
     }
+//------------------------------------------------------------------------------
 
     public class Solution2 {
         /**
@@ -89,6 +93,8 @@ public class _Minimum_Subtree_596 {
             return result;
         }
     }
+//------------------------------------------------------------------------------
+
 }
 //给一棵二叉树, 找到和为最小的子树, 返回其根节点。
 

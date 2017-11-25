@@ -3,7 +3,7 @@ package HF.HF3_Algo_DS_II_1BinarySearch;
 //Closest Number in Sorted Array
 public class _13ClosestNumberinSortedArray {
 
-//------------------------------------------------------------------------------///////////
+//-----------------------------------------------------------------------------//
     /**
      * @param A an integer array sorted in ascending order
      * @param target an integer
@@ -50,7 +50,7 @@ public class _13ClosestNumberinSortedArray {
         return A.length;
     }
 
-//------------------------------------------------------------------------------///////////
+//-----------------------------------------------------------------------------//
 }
 /*
 Given a target number and an integer array A sorted in ascending order, find the index i in A such that A[i] is closest to the given target.

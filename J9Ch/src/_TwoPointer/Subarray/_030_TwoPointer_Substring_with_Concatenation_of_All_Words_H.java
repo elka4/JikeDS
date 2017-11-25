@@ -152,7 +152,7 @@ This is my Java version of Sliding Window.
 //    At first I was gonna to use a set for words.
 // Owing to the fact that duplicate is allowed in L, we need to use map instead.
 
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
     //4
     // 9Ch
     public class Jiuzhang{

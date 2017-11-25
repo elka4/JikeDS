@@ -470,7 +470,7 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
     }
 
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
     //  11
     //传统做法，但使用了全局变量
     private int max11 = 0;//global变量
@@ -518,11 +518,11 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
         root.print();
         System.out.println(longestConsecutive2(root));
     }
-//-------------------------------------------------------------------------//////
-//-------------------------------------------------------------------------//////
-//-------------------------------------------------------------------------//////
-//-------------------------------------------------------------------------//////
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------//
+//-----------------------------------------------------------------------------//
     //  12
     //Java Solution 1 - Queue
 
@@ -573,7 +573,7 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
         return max;
     }
 
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
     //  13
 
     //Java Solution 2 - Recursion
@@ -618,7 +618,7 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
     }
 
 
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
     //  14
     //Approach #1 (Top Down Depth-first Search) [Accepted]
 
@@ -639,7 +639,7 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
     }
     //@lightmark presents a neat approach without storing the maxLength as a global variable.
 
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
     //  15
     public int longestConsecutive33(TreeNode root) {
 
@@ -658,7 +658,7 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
 
     Space complexity : O(n)O(n). The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to nn levels deep.*/
 
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
     //  16
     //Approach #2 (Bottom Up Depth-first Search) [Accepted]
 
@@ -695,7 +695,7 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
     Space complexity : O(n)O(n). The extra space comes from implicit stack space
     due to recursion. For a skewed binary tree, the recursion could go up to nn levels deep.*/
 
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
     //  17
     /*Easy Java DFS, is there better time complexity solution?
     Just very intuitive depth-first search, send cur node value to the next level
@@ -718,7 +718,7 @@ For a skewed binary tree, the recursion could go up to nn levels deep.
     }
 
 
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
     //  18
     //Simple Recursive DFS without global variable
     public int longestConsecutive66(TreeNode root) {

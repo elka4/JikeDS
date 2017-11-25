@@ -6,8 +6,10 @@ import java.util.List;
 
 //
 //
-//
+//  5:
 public class _658_BinarySearch_Find_K_Closest_Elements_M {
+//-----------------------------------------------------------------------------
+    //1
     //Approach #1 Using Collection.sort( ) [Accepted]
         /*
         ntuitively, we can sort the elements in list arr by their absolute
@@ -21,7 +23,8 @@ public class _658_BinarySearch_Find_K_Closest_Elements_M {
         return arr;
     }
 
-
+//-----------------------------------------------------------------------------
+    //2
     //Approach #2 Using Binary Search and Two Pointers [Accepted]
     public List<Integer> findClosestElements2(List<Integer> arr, int k, int x) {
         int n = arr.size();
@@ -51,8 +54,8 @@ public class _658_BinarySearch_Find_K_Closest_Elements_M {
         }
     }
 
-//------------------------------------------------------------------------------///
-
+//------------------------------------------------------------------------------
+    //3
     //O(log n) Java, 1 line O(log(n) + k) Ruby
     public List<Integer> findClosestElements33(List<Integer> arr, int k, int x) {
         int lo = 0, hi = arr.size() - k;
@@ -66,17 +69,18 @@ public class _658_BinarySearch_Find_K_Closest_Elements_M {
         return arr.subList(lo, lo + k);
     }
 
-
+//-----------------------------------------------------------------------------
+    //4
     //    Java 4-Liner and O(n) Time Solution
     //    O(nlog(n)) Time Solution:
-
     public List<Integer> findClosestElements3(List<Integer> arr, int k, int x) {
         Collections.sort(arr, (a,b) -> a == b ? a - b : Math.abs(a-x) - Math.abs(b-x));
         arr = arr.subList(0, k);
         Collections.sort(arr);
         return arr;
     }
-
+//-----------------------------------------------------------------------------
+    //5
     //    O(n) Time Solution:
     public List<Integer> findClosestElements4(List<Integer> arr, int k, int x) {
         List<Integer> less = new ArrayList<>(), greater = new ArrayList<>(),
@@ -104,9 +108,7 @@ public class _658_BinarySearch_Find_K_Closest_Elements_M {
     }
 //    Note that above solution can be improved using binary search under the assumption that we have O(1) access to elements in input list.
 
-//------------------------------------------------------------------------------///
-
-//------------------------------------------------------------------------------///
+//-----------------------------------------------------------------------------
 }
 /*
 Given a sorted array, two integers k and x, find the k closest elements to x in the array.

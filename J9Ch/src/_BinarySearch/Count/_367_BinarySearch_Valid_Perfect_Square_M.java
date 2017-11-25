@@ -2,9 +2,11 @@ package _BinarySearch.Count;
 
 //  367. Valid Perfect Square
 //  https://leetcode.com/problems/valid-perfect-square/description/
-//
+//  4:
 public class _367_BinarySearch_Valid_Perfect_Square_M {
-//    A square number is 1+3+5+7+..., JAVA code
+//-----------------------------------------------------------------------------
+    //1
+    //    A square number is 1+3+5+7+..., JAVA code
     public boolean isPerfectSquare(int num) {
         int i = 1;
         while (num > 0) {
@@ -13,7 +15,9 @@ public class _367_BinarySearch_Valid_Perfect_Square_M {
         }
         return num == 0;
     }
-//    The time complexity is O(sqrt(n)), a more efficient one using binary search whose time complexity is O(log(n)):
+//-----------------------------------------------------------------------------
+    //2
+    //The time complexity is O(sqrt(n)), a more efficient one using binary search whose time complexity is O(log(n)):
 
     public boolean isPerfectSquare2(int num) {
         int low = 1, high = num;
@@ -30,6 +34,8 @@ public class _367_BinarySearch_Valid_Perfect_Square_M {
         }
         return false;
     }
+//-----------------------------------------------------------------------------
+    //3
     /*One thing to note is that we have to use long for mid to avoid mid*mid from overflow. Also, you can use long type for low and high to avoid type casting for mid from long to int.
     And a third way is to use Newton Method to calculate the square root or num, refer to Newton Method for details.
 */
@@ -40,27 +46,28 @@ public class _367_BinarySearch_Valid_Perfect_Square_M {
         }
         return x * x == num;
     }
-//------------------------------------------------------------------------------///
-class Zhu {
-    public boolean isPerfectSquare(int num) {
-        int low = 1, high = num;
-        if (num == 1) {
-            return true;
-        }
-        while (low + 1 < high) {
-            long mid = low + (high - low) / 2;
-            if (mid * mid == num) {
+//-----------------------------------------------------------------------------
+    //4
+    class Zhu {
+        public boolean isPerfectSquare(int num) {
+            int low = 1, high = num;
+            if (num == 1) {
                 return true;
-            } else if (mid * mid < num) {
-                low = (int) mid ;
-            } else {
-                high = (int) mid ;
             }
+            while (low + 1 < high) {
+                long mid = low + (high - low) / 2;
+                if (mid * mid == num) {
+                    return true;
+                } else if (mid * mid < num) {
+                    low = (int) mid ;
+                } else {
+                    high = (int) mid ;
+                }
+            }
+            return false;
         }
-        return false;
     }
-}
-//------------------------------------------------------------------------------///
+//-----------------------------------------------------------------------------
 }
 /*
 Given a positive integer num, write a function which returns True if num is a perfect square else False.

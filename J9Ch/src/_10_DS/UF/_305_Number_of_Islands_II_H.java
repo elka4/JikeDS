@@ -11,7 +11,7 @@ import java.util.*;
 public class _305_Number_of_Islands_II_H {
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //1
 /*
 Easiest Java Solution with Explanations
@@ -93,7 +93,7 @@ public int findIsland(int[] roots, int id) {
 }
          */
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //2
 /*    Java/Python clear solution with UnionFind Class (Weighting and Path compression)
     Union Find
@@ -193,7 +193,7 @@ public int findIsland(int[] roots, int id) {
             return i;
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //3
     class Solution3{
 /*    My simple Union-Find solution
@@ -248,7 +248,7 @@ public int findIsland(int[] roots, int id) {
         return roots[target];
     }
 }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //4
 // 9Ch
 
@@ -340,7 +340,7 @@ public int findIsland(int[] roots, int id) {
 
 
 }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //5
     class mine{
         class UnionFind {
@@ -444,7 +444,7 @@ public int findIsland(int[] roots, int id) {
         System.out.println(mine.numIslands2(8,4,new int[][]{{0,0},{7,1},{6,1},{3,3},{4,1}}));
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 A 2d grid map of m rows and n columns is initially filled with water. We may perform an addLand operation which turns the water at position (row, col) into a land. Given a list of positions to operate, count the number of islands after each addLand operation. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.

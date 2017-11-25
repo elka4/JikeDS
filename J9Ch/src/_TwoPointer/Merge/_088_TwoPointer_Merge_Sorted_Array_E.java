@@ -52,20 +52,16 @@ public class _088_TwoPointer_Merge_Sorted_Array_E {
     }
 //---------------------------------------------------------------------------
     //4
-/*
-Awesome job! I had the exact same thing, but I had an extra useless operation at the end. I need to pay attention to the small details. >_<
+    //Share my accepted Java solution!
+    /*
+    Awesome job! I had the exact same thing, but I had an extra useless operation at the end. I need to pay attention to the small details. >_<
 
-    if(mIndex < 0){
-        while(nIndex >= 0){
-            nums1[last--] = nums2[nIndex--];
+        if(mIndex < 0){
+            while(nIndex >= 0){
+                nums1[last--] = nums2[nIndex--];
+            }
         }
-    }
- */
-
-
-
-//Share my accepted Java solution!
-
+     */
     public class Solution4 {
         public void merge(int A[], int m, int B[], int n) {
             int i = m - 1, j = n - 1, k = m + n - 1;

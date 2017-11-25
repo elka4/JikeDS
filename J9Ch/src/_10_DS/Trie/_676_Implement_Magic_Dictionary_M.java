@@ -42,7 +42,7 @@ Strings can only be neighbors if their lengths are equal. When searching a new w
         }
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //Approach #2: Generalized Neighbors [Accepted]
     /*
     Intuition
@@ -96,7 +96,7 @@ Continuing the above thinking, one issue is that 'apply' is not a neighbor with 
     }
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
 //    Easy 14 lines Java solution, HashMap
 //    For each word in dict, for each char, remove the char and put the rest of the word as key, a pair of index of the removed char and the char as part of value list into a map. e.g.
@@ -139,7 +139,7 @@ Continuing the above thinking, one issue is that 'apply' is not a neighbor with 
         }
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
 //    Easiest JAVA with Trie, no need to count the number of changes
 //    Below is my accepted java code.
@@ -202,7 +202,7 @@ Continuing the above thinking, one issue is that 'apply' is not a neighbor with 
         }
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
 
 //    Efficient Trie and Java 8 w/ Explanation
@@ -270,7 +270,7 @@ Continuing the above thinking, one issue is that 'apply' is not a neighbor with 
 
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
 
 

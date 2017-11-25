@@ -1,11 +1,12 @@
 package _BinarySearch.binary;
-
 import org.junit.Test;
 
-/**
- * Created by tzh on 1/15/17.
- */
+//
+//
+//
 public class MaximumNumberInMountainSequence {
+//-----------------------------------------------------------------------------
+
     public int mountainSequence(int[] nums) {
         // Write your code here
         int start = 0;
@@ -28,5 +29,9 @@ public class MaximumNumberInMountainSequence {
         int[] nums = {1, 2, 4, 8, 6, 3};
         System.out.print(mountainSequence(nums));
     }
+//-----------------------------------------------------------------------------
 
 }
+/*
+
+ */

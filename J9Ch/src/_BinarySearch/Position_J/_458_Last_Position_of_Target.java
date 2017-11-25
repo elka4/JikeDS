@@ -2,10 +2,14 @@ package _BinarySearch.Position_J; import org.junit.Test;
 
 
 //Last Position of Target
-
 //version 1: with jiuzhang template
+//
+//
+//
 public class _458_Last_Position_of_Target {
-	/**
+//------------------------------------------------------------------------------
+
+    /**
      * @param nums: An integer array sorted in ascending order
      * @param target: An integer
      * @return an integer
@@ -54,7 +58,8 @@ public class _458_Last_Position_of_Target {
 
 
 
-
+//------------------------------------------------------------------------------
+    //2
     //version 2: without jiuzhang template
     //this code is not working, will get time limit exceeded
     //because of dead loop
@@ -85,9 +90,9 @@ public class _458_Last_Position_of_Target {
         }
         return -1;
     }
- }
+//------------------------------------------------------------------------------
 
-
+}
 
 /*
 Find the last position of a target number in a sorted array. 

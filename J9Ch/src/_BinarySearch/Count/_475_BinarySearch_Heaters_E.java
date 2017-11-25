@@ -1,9 +1,11 @@
 package _BinarySearch.Count;
-
 import java.util.Arrays;
 
+
 //  leetcode 475. Heaters
+//  4:
 public class _475_BinarySearch_Heaters_E {
+//-----------------------------------------------------------------------------
 
 /*    Short and Clean Java Binary Search Solution
     The idea is to leverage decent Arrays.binarySearch() function provided by Java.
@@ -34,7 +36,8 @@ public class _475_BinarySearch_Heaters_E {
             return result;
         }
     }
-
+//-----------------------------------------------------------------------------
+    //2
 /*
     Simple Java Solution with 2 Pointers
     Based on 2 pointers, the idea is to find the nearest heater for each house,
@@ -59,7 +62,8 @@ public class _475_BinarySearch_Heaters_E {
             return res;
         }
     }
-
+//-----------------------------------------------------------------------------
+    //3
     public class Solution3 {
         public int findRadius(int[] houses, int[] heaters) {
             Arrays.sort(houses);
@@ -77,9 +81,9 @@ public class _475_BinarySearch_Heaters_E {
         }
     }
 
-
-
-//    My Java Binary Search Solution, Concise and Easy to Understand
+//-----------------------------------------------------------------------------
+    //4
+    //    My Java Binary Search Solution, Concise and Easy to Understand
     public class Solution4 {
         public int findRadius(int[] houses, int[] heaters) {
             int m = houses.length;
@@ -115,6 +119,7 @@ public class _475_BinarySearch_Heaters_E {
             return j == m;
         }
     }
+//-----------------------------------------------------------------------------
 }
 /*
 Winter is coming! Your first job during the contest is to design a standard heater with fixed warm radius to warm all the houses.

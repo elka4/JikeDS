@@ -162,7 +162,7 @@ public class _3LongestIncreasingSubsequence {
     }
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //9CH DP
     // nlogn
     public int LongestIncreasingSubsequence(int[] nums) {
@@ -216,7 +216,7 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
     }
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     // jiuzhang
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
@@ -269,7 +269,7 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
         System.out.println(lengthOfLIS(nums));
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     // 9Ch
     /**
      * @param nums: The integer array
@@ -298,7 +298,7 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
         System.out.println(longestIncreasingSubsequence1(nums));
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     // 9Ch
     // O(nlogn) Binary Search
     /**
@@ -347,8 +347,8 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
         System.out.println(longestIncreasingSubsequence2(nums));
     }
 
-//-------------------------------------------------------------------------////
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 
 }
 /*  最长上升子序列

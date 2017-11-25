@@ -97,7 +97,7 @@ public class _2CountCompleteTreeNodes {
         return dep;
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
     public int countNodes6(TreeNode root) {
         if (root==null) return 0;
@@ -128,7 +128,7 @@ public class _2CountCompleteTreeNodes {
         else return (1<<(height-1)) + countLastLevel(root.right, height-1);
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
 
 }

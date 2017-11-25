@@ -2,11 +2,11 @@ package _BinarySearch.Count;
 import java.util.TreeSet;
 
 //  363. Max Sum of Rectangle No Larger Than K
-
 //  https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/description/
-//
+//  3:
 public class _363_BinarySearch_Max_Sum_of_Rectangle_No_Larger_Than_K_M {
-
+//-----------------------------------------------------------------------------
+    //1
     //    Java Binary Search solution time complexity min(m,n)^2*max(m,n)*log(max(m,n))
     /* first  consider the situation matrix is 1D
         we can save every sum of 0~i(0<=i<len) and binary search previous sum to find
@@ -48,17 +48,16 @@ public class _363_BinarySearch_Max_Sum_of_Rectangle_No_Larger_Than_K_M {
         }
         return res;
     }
-
-
-
-//2 Accepted Java Solution
-//    Decide to post because I was actually asked this question during my interview!
-//    There is a simple version of O(n^4).
-//    The idea is to calculate every rectangle [[r1,c1], [r2,c2]], and simply pick the max area <= k.
-//    An improved version takes O(n^3logn). It borrows the idea to find max subarray with sum <= k in 1D array, and apply here: we find all rectangles bounded between r1 & r2, with columns from 0 to end. Pick a pair from tree.
-//    I remember the interviewer said there could be an even better solution, but I haven't figured that out...
-//
-//    Solution I, O(n^4):
+//-----------------------------------------------------------------------------
+    //2
+    //2 Accepted Java Solution
+    //    Decide to post because I was actually asked this question during my interview!
+    //    There is a simple version of O(n^4).
+    //    The idea is to calculate every rectangle [[r1,c1], [r2,c2]], and simply pick the max area <= k.
+    //    An improved version takes O(n^3logn). It borrows the idea to find max subarray with sum <= k in 1D array, and apply here: we find all rectangles bounded between r1 & r2, with columns from 0 to end. Pick a pair from tree.
+    //    I remember the interviewer said there could be an even better solution, but I haven't figured that out...
+    //
+    //    Solution I, O(n^4):
 
     public int maxSumSubmatrix2(int[][] matrix, int k) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
@@ -97,8 +96,9 @@ public class _363_BinarySearch_Max_Sum_of_Rectangle_No_Larger_Than_K_M {
         }
         return max;
     }
-//    Solution II (O(n^3logn)
-
+//-----------------------------------------------------------------------------
+    //3
+    //    Solution II (O(n^3logn)
     public int maxSumSubmatrix3(int[][] matrix, int k) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
             return 0;
@@ -137,6 +137,7 @@ public class _363_BinarySearch_Max_Sum_of_Rectangle_No_Larger_Than_K_M {
         }
         return max;
     }
+//-----------------------------------------------------------------------------
 }
 /*
 Given a non-empty 2D matrix matrix and an integer k, find the max sum of a rectangle in the matrix such that its sum is no larger than k.

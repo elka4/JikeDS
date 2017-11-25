@@ -1,38 +1,43 @@
 package _BinarySearch.Other;
 import java.math.BigInteger;
 
+
+
+
 public class _483_BinarySearch_Smallest_Good_Base_H {
+//------------------------------------------------------------------------------
+    //1
+    //Java solution with hand-writing explain
+    public String smallestGoodBase(String nn) {
+        long n = Long.parseLong(nn);
+        long res = 0;
+        for(int k = 60; k >= 2; k--){
+            long s = 2, e = n;
+            while(s < e){
+                long m = s + (e - s) / 2;
 
-//Java solution with hand-writing explain
-public String smallestGoodBase(String nn) {
-    long n = Long.parseLong(nn);
-    long res = 0;
-    for(int k = 60; k >= 2; k--){
-        long s = 2, e = n;
-        while(s < e){
-            long m = s + (e - s) / 2;
-
-            BigInteger left = BigInteger.valueOf(m);
-            left = left.pow(k).subtract(BigInteger.ONE);
-            BigInteger right = BigInteger.valueOf(n).multiply(BigInteger.valueOf(m).subtract(BigInteger.ONE));
-            int cmr = left.compareTo(right);
-            if(cmr == 0){
-                res =  m;
-                break;
-            } else if(cmr < 0){
-                s = m + 1;
-            } else {
-                e = m;
+                BigInteger left = BigInteger.valueOf(m);
+                left = left.pow(k).subtract(BigInteger.ONE);
+                BigInteger right = BigInteger.valueOf(n).multiply(BigInteger.valueOf(m).subtract(BigInteger.ONE));
+                int cmr = left.compareTo(right);
+                if(cmr == 0){
+                    res =  m;
+                    break;
+                } else if(cmr < 0){
+                    s = m + 1;
+                } else {
+                    e = m;
+                }
             }
+
+            if(res != 0) break;
         }
 
-        if(res != 0) break;
+        return "" + res;
     }
 
-    return "" + res;
-}
-
-
+//------------------------------------------------------------------------------
+    //2
 /*    Java/C# binary search solutions with detailed explanation
     The java solution is submitted by lixx2100 to contest.
 
@@ -74,7 +79,8 @@ public String smallestGoodBase(String nn) {
         }
     }
 
-
+//------------------------------------------------------------------------------
+    //3
     //Java Binary Search solution, 9 ms
     public class Solution3 {
         public String smallestGoodBase(String n) {
@@ -107,6 +113,7 @@ public String smallestGoodBase(String nn) {
             return -1;
         }
     }
+//------------------------------------------------------------------------------
 }
 /*
 For an integer n, we call k>=2 a good base of n, if all digits of n base k are 1.

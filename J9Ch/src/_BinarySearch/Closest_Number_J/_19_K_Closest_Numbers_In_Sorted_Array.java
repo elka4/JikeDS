@@ -1,5 +1,4 @@
 package _BinarySearch.Closest_Number_J;
-
 import org.junit.Test;
 
 import java.util.*;
@@ -7,9 +6,11 @@ import java.util.stream.Collectors;
 
 //  k Closest Number in Sorted arrrray
 //   leetcode 658. Find K Closest Elements
-
+//
+//
 public class _19_K_Closest_Numbers_In_Sorted_Array {
-
+//-----------------------------------------------------------------------------
+    //1
     //Approach #1 Using Collection.sort( ) [Accepted]
     /*
     Intuitively, we can sort the elements in list arr by their absolute difference values to the target x. Then the sublist of the first k elements is the result after sorting the elements by the natural order.
@@ -40,9 +41,8 @@ Space complexity : O(k)O(k). The in-place sorting does not consume any extra spa
      */
 
 
-
-
-
+//-----------------------------------------------------------------------------
+    //2
     //Approach #2 Using Binary Search and Two Pointers [Accepted]
 /*
 The original array has been sorted so we can take this advantage by the following steps.
@@ -86,12 +86,12 @@ Time complexity : O(log(n)+k)O(log(n)+k). O(log(n))O(log(n)) is for the time of 
 Space complexity : O(k)O(k). It is to generate the required sublist.
  */
 
-//-------------------------------------------------------------------------///
-
+//-----------------------------------------------------------------------------
+    //3
     //  Java 4-Liner and O(n) Time Solution
     class Solution3 {
-//        Java 4-Liner and O(n) Time Solution
-//        O(nlog(n)) Time Solution:
+    //Java 4-Liner and O(n) Time Solution
+    //O(nlog(n)) Time Solution:
 
         public List<Integer> findClosestElements1(List<Integer> arr, int k, int x) {
             Collections.sort(arr, (a,b) -> a == b ? a - b : Math.abs(a-x) - Math.abs(b-x));
@@ -129,7 +129,8 @@ Space complexity : O(k)O(k). It is to generate the required sublist.
 //        Note that above solution can be improved using binary search under the assumption that we have O(1) access to elements in input list.
     }
 
-
+//-----------------------------------------------------------------------------
+    //4
     //easy java
     class Solution4{
         public List<Integer> findClosestElements(List<Integer> arr, int k, int x) {
@@ -152,15 +153,15 @@ Space complexity : O(k)O(k). It is to generate the required sublist.
         }
     }
 
+//-----------------------------------------------------------------------------
+    //5
     //[Java/C++] Very simple binary search solution
 
-    /*
-    The idea is to find the first number which is equal to or greater than x in arr. Then, we determine the indices of the start and the end of a subarray in arr, where the subarray is our result. The time complexity is O(logn + k).
+/*
+The idea is to find the first number which is equal to or greater than x in arr. Then, we determine the indices of the start and the end of a subarray in arr, where the subarray is our result. The time complexity is O(logn + k).
 
 In the following code, arr[index] is the first number which is euqal to or geater than x (if all numbers are less than x, index is arr.size()), and the result is arr[i+1, i+2, ... j].
-
-
-     */
+*/
     class Solution5{
         public List<Integer> findClosestElements(List<Integer> arr, int k, int x) {
             int index = Collections.binarySearch(arr, x);
@@ -174,7 +175,8 @@ In the following code, arr[index] is the first number which is euqal to or geate
         }
     }
 
-
+//-----------------------------------------------------------------------------
+    //6
     //Java O(logn + klogk) solution with PriorityQueue and Binary Search
 /*
 Search for x in the array. Take a slice of elements starting from searchPos - k to searchPos + klogk
@@ -221,7 +223,8 @@ the lower index a higher priority (since lower index implies lower value since a
         }
     }
 
-
+//-----------------------------------------------------------------------------
+    //7
     //  Binary Search and Two Pointers - 18 ms
     /*
     Noticing the array is sorted, so we can using binary search to get a rough area of target numbers, and then expand it to the left k-1 more and right k-1 more elements, then searching from the left to right. If the left element is more close or equal to the target number x than the right element, then move the right index to the left one step. Otherwise, move the left index to right one step. Once, the element between the left and right is k, then return the result.
@@ -252,7 +255,8 @@ the lower index a higher priority (since lower index implies lower value since a
         }
     }
 
-//------------------------------------------------------------------------------//////////
+//-----------------------------------------------------------------------------
+    //8
 	 /*    这个是lintcode解法，result 按照差大小排序，然后按照数字大小排序
      * @param arr an integer array
      * @param x an integer
@@ -319,6 +323,8 @@ the lower index a higher priority (since lower index implies lower value since a
         int x = 3;
         System.out.println(findClosestElements(arr, 4, 3));
     }
+
+//-----------------------------------------------------------------------------
 }
 /*   leetcode
 Given a sorted array, two integers k and x, find the k closest elements to x in the array.

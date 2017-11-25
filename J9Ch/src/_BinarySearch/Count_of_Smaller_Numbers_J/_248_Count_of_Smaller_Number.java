@@ -5,8 +5,12 @@ import java.util.*;
 
 // Count of Smaller Number
 // lint:    http://lintcode.com/zh-cn/problem/count-of-smaller-number/
-
+//
+//
+//  4:
 public class _248_Count_of_Smaller_Number {
+//-----------------------------------------------------------------------------
+    //1
     //  http://blog.csdn.net/sunday0904/article/details/72721803
     /**
      * @param nums: An integer array
@@ -32,8 +36,8 @@ public class _248_Count_of_Smaller_Number {
         }
         return result;
     }
-//------------------------------------------------------------------------------//////
-
+//------------------------------------------------------------------------------
+    //2
     //  https://github.com/Silocean/LintCode/blob/master/248%20%E7%BB%9F%E8%AE%A1%E6%AF%94%E7%BB%99%E5%AE%9A%E6%95%B4%E6%95%B0%E5%B0%8F%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0/CountOfSmallerNumber.java
     /** 和上面做法一样
      * @param nums: nums integer array
@@ -72,7 +76,8 @@ public class _248_Count_of_Smaller_Number {
         }
     }
 
-//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------
+    //3
     //  https://github.com/Silocean/LintCode/blob/master/248%20%E7%BB%9F%E8%AE%A1%E6%AF%94%E7%BB%99%E5%AE%9A%E6%95%B4%E6%95%B0%E5%B0%8F%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0/CountOfSmallerNumberII.java
     /**
      * @param A: An integer array
@@ -117,7 +122,8 @@ public class _248_Count_of_Smaller_Number {
             System.out.println(result.get(i));
         }
     }
-//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------
+    //4
 	/*
      * @param nums: An integer array
      * @return: The number of element in the array that 
@@ -216,13 +222,7 @@ public class _248_Count_of_Smaller_Number {
         return ans;
     }
 
-//------------------------------------------------------------------------------////
-
-
-//------------------------------------------------------------------------------////
-
-
-
+//------------------------------------------------------------------------------
 }
 /*
 统计比给定整数小的数的个数

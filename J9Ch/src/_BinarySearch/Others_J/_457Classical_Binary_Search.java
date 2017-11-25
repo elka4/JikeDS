@@ -1,11 +1,14 @@
 package _BinarySearch.Others_J;
 
-//Classic Binary Search
-
-//version 1: with jiuzhang template
+//  Classic Binary Search
+//  version 1: with jiuzhang template
+//
+//
 public class _457Classical_Binary_Search {
-	 /**
-     * @param A an integer array sorted in ascending order
+//------------------------------------------------------------------------------
+
+    /**
+     * @param nums an integer array sorted in ascending order
      * @param target an integer
      * @return an integer
      */
@@ -39,6 +42,7 @@ public class _457Classical_Binary_Search {
         }
         return -1;
     }
+//------------------------------------------------------------------------------
 
 
     //version 2: without jiuzhang template
@@ -69,6 +73,8 @@ public class _457Classical_Binary_Search {
         }
         return -1;
     }
+//------------------------------------------------------------------------------
+
 }
 
 

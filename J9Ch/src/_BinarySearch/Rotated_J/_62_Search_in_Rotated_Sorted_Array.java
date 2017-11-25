@@ -3,8 +3,10 @@ package _BinarySearch.Rotated_J;
 // Search in Rotated Sorted numsrray
 //
 //  33. Search in Rotated Sorted numsrray
-
+//
 public class _62_Search_in_Rotated_Sorted_Array {
+//------------------------------------------------------------------------------
+    //1
 	 public int search(int[] nums, int target) {
 	    if (nums == null || nums.length == 0) {
 	        return -1;
@@ -47,7 +49,8 @@ public class _62_Search_in_Rotated_Sorted_Array {
 	    return -1;
 	  }
 
-
+//------------------------------------------------------------------------------
+    //2
 	public int search_mine1(int[] nums, int target) {
 		// write your code here
 		if (nums == null || nums.length == 0) {
@@ -83,6 +86,7 @@ public class _62_Search_in_Rotated_Sorted_Array {
 			return -1;
 		}
 	}
+//------------------------------------------------------------------------------
 }
 
 /*

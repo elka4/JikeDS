@@ -1,6 +1,12 @@
 package _BinarySearch.Math;
 
+
+//
+//
+//
 public class _069_BinarySearch_Sqrt_x_M {
+//------------------------------------------------------------------------------
+
 //    A Binary Search Solution
 //    Instead of using fancy Newton's method, this plain binary search approach also works.
 
@@ -19,5 +25,6 @@ public class _069_BinarySearch_Sqrt_x_M {
             }
         }
     }
+//------------------------------------------------------------------------------
 
 }

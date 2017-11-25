@@ -1,10 +1,14 @@
 package _BinarySearch.Position;
 
+
 //  leetcode    4. Median of Two Sorted Arrays
+//
+//
+//
 public class _004_BinarySearch_Median_of_Two_Sorted_Arrays_H {
 
-
-
+//------------------------------------------------------------------------------
+    //1
     ////Approach #1 Recursive Approach [Accepted]
     //  Your runtime beats 25.30 % of java submissions.
     class Solution_leet{
@@ -48,6 +52,7 @@ public class _004_BinarySearch_Median_of_Two_Sorted_Arrays_H {
         }
     }
 
+//------------------------------------------------------------------------------
 
 //Very concise O(log(min(M,N))) iterative solution with detailed explanation
     //  https://leetcode.com/problems/median-of-two-sorted-arrays/discuss/
@@ -78,6 +83,7 @@ public class _004_BinarySearch_Median_of_Two_Sorted_Arrays_H {
             return -1;
         }
     }
+//------------------------------------------------------------------------------
 
 /*    Concise JAVA solution based on Binary Search
             Explanation
@@ -115,6 +121,7 @@ public class _004_BinarySearch_Median_of_Two_Sorted_Arrays_H {
         }
 
     }
+//------------------------------------------------------------------------------
 
     /*
     Share my iterative solution with O(log(min(n, m)))
@@ -170,6 +177,7 @@ Here is the code:
             return (a + b) / 2.0;
         }
     }
+//------------------------------------------------------------------------------
 
     //JAVA----------------------Easy Version To Understand!!
     class Solution6{
@@ -203,11 +211,7 @@ Here is the code:
         }
     }
 
-
-
-
-
-//------------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------
     // 9Ch
 public class Jiuzhang {
     public double findMedianSortedArrays(int nums1[], int nums2[]) {
@@ -249,11 +253,8 @@ public class Jiuzhang {
         }
     }
 }
-//------------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------
 
-
-
-//------------------------------------------------------------------------------////////
 }
 /*
 There are two sorted arrays nums1 and nums2 of size m and n respectively.

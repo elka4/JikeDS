@@ -50,7 +50,7 @@ public class _6_CourseSchedule_I_TopologicalSort_DFS_BFS {
         return true;
     }
 
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
 
     public boolean canFinish_BFS (int numCourses, int[][] prerequisites) {
         if (prerequisites == null || prerequisites.length == 0 ||
@@ -102,7 +102,7 @@ public class _6_CourseSchedule_I_TopologicalSort_DFS_BFS {
         }
     }
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
     @Test
     public void test03(){

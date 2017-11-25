@@ -139,7 +139,7 @@ public class _493_Reverse_Pairs {
         return res;
     }
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
     //4
     //Very Short and Clear MergeSort & BST Java Solutions
    /* MergeSort
@@ -164,7 +164,7 @@ public class _493_Reverse_Pairs {
         Arrays.sort(nums, s, e+1);
         return cnt;
     }
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 //5
 /*    Or:
     Because left part and right part are sorted, you can replace the Arrays.sort() part with a actual merge sort process. The previous version is easy to write, while this one is faster.*/
@@ -199,7 +199,7 @@ public class _493_Reverse_Pairs {
             }
         }
     }
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 //6
 /*    BST
     BST solution is no longer acceptable, because it's performance can be very bad, O(n^2) actually, for extreme cases like [1,2,3,4......49999], due to the its unbalance, but I am still providing it below just FYI.
@@ -246,7 +246,7 @@ public class _493_Reverse_Pairs {
         }
     }
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 }
 /*
 在数组中的两个数字如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。给你一个数组，求出这个数组中逆序对的总数。

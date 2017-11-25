@@ -83,7 +83,7 @@ public class Permutation_I_String {
         System.out.println(getPerms2("aab"));
     }//[aab, aba, aab, aba, baa, baa]
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
     public static void getPerms3(String prefix, String remainder, ArrayList<String> result) {
         if (remainder.length() == 0) {

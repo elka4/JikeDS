@@ -101,7 +101,7 @@ public class _351_BackTracking_Android_Unlock_Patterns_M {
         return rst;
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //
     private int[][] jumps;
     private boolean[] visited;
@@ -138,7 +138,7 @@ public class _351_BackTracking_Android_Unlock_Patterns_M {
         return count;
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //    int res=0;
     public int numberOfPatterns4(int m, int n) {
         boolean[][] keyboard = new boolean[3][3];
@@ -181,7 +181,7 @@ public class _351_BackTracking_Android_Unlock_Patterns_M {
         }
     }
 /*    And we can continue improving the performance by using symmetry in step 1, which is the next step after start. For start from 1, only consider 2 6 and 5. For start from 2, only consider 3,6,9 and 5. For start from 5, only consider 1 and 2.(72 ms)*/
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
     int res=0;
     public int numberOfPatterns5(int m, int n) {

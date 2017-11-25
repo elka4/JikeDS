@@ -20,7 +20,7 @@ public class _116_DFS_Populating_Next_Right_Pointers_in_Each_Node_M {
         }
     }
 
-    //-------------------------------------------------------------------------////
+    //-----------------------------------------------------------------------------
     // My recursive solution(Java)
     public void connect2(TreeLinkNode root) {
         if(root == null)
@@ -36,7 +36,7 @@ public class _116_DFS_Populating_Next_Right_Pointers_in_Each_Node_M {
         connect2(root.right);
     }
 
-    //-------------------------------------------------------------------------////
+    //-----------------------------------------------------------------------------
     //Java solution traversing by level without extra space
     public void connect3(TreeLinkNode root) {
         if(root==null) return;

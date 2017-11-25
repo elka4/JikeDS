@@ -45,7 +45,7 @@ Let arrow_length(node) be the length of the longest arrow that extends from the 
 While we are computing arrow lengths, each candidate answer will be the sum of the arrows in both directions from that node. We record these candidate answers and return the best one.
  */
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
     //mine
     /*
     Divide and Conquer， postorder
@@ -135,7 +135,7 @@ root:
         root.print();
         System.out.println(new Solution2().longestUnivaluePath(root));
     }
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 
 /*    [Java/C++] Clean Code
     Longest-Univalue-Path of a tree is among those Longest-Univalue-Path-Across at each node;
@@ -159,7 +159,7 @@ root:
             return Math.max(resl, resr);
         }
     }
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
     class Solution4{
         int len = 0; // global variable
         public int longestUnivaluePath(TreeNode root) {
@@ -178,7 +178,7 @@ root:
             return 0;
         }
     }
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 }
 /*
 Given a binary tree, find the length of the longest path where each node in the path has the same value. This path may or may not pass through the root.

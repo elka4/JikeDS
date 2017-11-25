@@ -1,6 +1,11 @@
 package _BinarySearch.Math;
 
+
+//
+//
+//
 public class _050_BinarySearch_Pow_x_n_M {
+//------------------------------------------------------------------------------
 
 //5 different choices when talk with interviewers
 //    After reading some good sharing solutions, I'd like to show them together. You can see different ideas in the code.
@@ -15,6 +20,7 @@ public class _050_BinarySearch_Pow_x_n_M {
             else return x*myPow( myPow(x, n/2), 2);
         }
     }
+//------------------------------------------------------------------------------
 
 //    double myPow
     class Solution2 {
@@ -25,6 +31,7 @@ public class _050_BinarySearch_Pow_x_n_M {
             else return t*t;
         }
     }
+//------------------------------------------------------------------------------
 
 //    double x
     class Solution3{
@@ -37,6 +44,8 @@ public class _050_BinarySearch_Pow_x_n_M {
             return n%2==0 ? myPow(x*x, n/2) : x*myPow(x*x, n/2);
         }
     }
+//------------------------------------------------------------------------------
+
 //    iterative one
     class Solution4{
         double myPow(double x, int n) {
@@ -54,10 +63,9 @@ public class _050_BinarySearch_Pow_x_n_M {
             return ans;
         }
     }
-//    bit operation
+//------------------------------------------------------------------------------
 
-//-------------------------------------------------------------------------/////
-
+    //    bit operation
     public class Solution6 {
         public double pow(double x, int m) {
             double temp = x;
@@ -72,8 +80,7 @@ public class _050_BinarySearch_Pow_x_n_M {
                 else
                     return (temp * temp) / x;
             }
-
         }
-
     }
+//------------------------------------------------------------------------------
 }

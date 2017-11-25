@@ -1,7 +1,11 @@
 package _BinarySearch.Math;
 
 // leetcode 29. Divide Two Integers
+//
+//
 public class _029_BinarySearch_Divide_Two_Integers_M {
+//------------------------------------------------------------------------------
+    //1
     //Clean Java solution with some comment.
     class Solution {
         public int divide(int dividend, int divisor) {
@@ -45,7 +49,8 @@ public class _029_BinarySearch_Divide_Two_Integers_M {
             return multiple + ldivide(ldividend - sum, ldivisor);
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
     //  JAVA----------------Easy Version To Understand!!!!!!!!!!!
     class Solution2{
         public int divide(int dividend, int divisor) {
@@ -82,8 +87,8 @@ public class _029_BinarySearch_Divide_Two_Integers_M {
             }
         }
     }
-//------------------------------------------------------------------------------///////////
-
+//-----------------------------------------------------------------------------//
+    //3
     // 9Ch
     public class Jiuzhang {
         /**
@@ -121,7 +126,7 @@ public class _029_BinarySearch_Divide_Two_Integers_M {
             return isNegative? -result: result;
         }
     }
-
+//------------------------------------------------------------------------------
 }
 /*
 Divide two integers without using multiplication, division and mod operator.

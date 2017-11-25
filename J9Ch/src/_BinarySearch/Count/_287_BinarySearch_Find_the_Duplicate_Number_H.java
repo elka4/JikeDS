@@ -1,16 +1,16 @@
 package _BinarySearch.Count;
 
+
 //  287. Find the Duplicate Number
 //  https://leetcode.com/problems/find-the-duplicate-number/
 //  http://lintcode.com/zh-cn/problem/find-the-duplicate-number/
-
 //  二分法 两根指针 数组
+//  3
 public class _287_BinarySearch_Find_the_Duplicate_Number_H {
-//    Java O(1)space using Binary-Search
-
-    /*
-    有些index和value是相等的。从重复元素开始不相等。
-     */
+//-----------------------------------------------------------------------------
+    //1
+    //    Java O(1)space using Binary-Search
+    //有些index和value是相等的。从重复元素开始不相等。
     public int findDuplicate1(int[] nums) {
         int low = 1, high = nums.length - 1;
         while (low <= high) {
@@ -24,7 +24,8 @@ public class _287_BinarySearch_Find_the_Duplicate_Number_H {
         }
         return low;
     }
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------
+    //2
     // 9Ch
     // 二分法
     public int findDuplicate_J1(int[] nums) {
@@ -55,7 +56,8 @@ public class _287_BinarySearch_Find_the_Duplicate_Number_H {
         }
         return cnt;
     }
-
+//-----------------------------------------------------------------------------
+    //3
     // 映射法
     /**
      * @param nums an array containing n + 1 integers which is between 1 and n
@@ -85,6 +87,7 @@ public class _287_BinarySearch_Find_the_Duplicate_Number_H {
         }
         return slow;
     }
+//-----------------------------------------------------------------------------
 }
 
 /*

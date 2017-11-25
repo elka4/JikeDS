@@ -100,7 +100,7 @@ public class _267_BackTracking_Palindrome_Permutation_II_M {
         System.out.println(generatePalindromes2("aabb"));// [abba, baab]
     }
 
-//------------------------------------------------------------------------------/////////////
+//-----------------------------------------------------------------------------////
     //3
 
     public List<String> generatePalindromes3(String s) {

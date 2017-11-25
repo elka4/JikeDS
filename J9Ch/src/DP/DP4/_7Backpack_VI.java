@@ -77,7 +77,7 @@ public class _7Backpack_VI {
         System.out.println(backPackVI(A, T));//22
 
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
     // 9Ch DP, 记录状态
     public int backPackVI2 (int[] A, int T) {
@@ -126,7 +126,7 @@ public class _7Backpack_VI {
         T = 32;
         System.out.println(backPackVI2(A, T));
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     /**
      * @param nums an integer array and all positive numbers, no duplicates
      * @param target an integer
@@ -149,9 +149,9 @@ public class _7Backpack_VI {
         int T = 4;
         System.out.println(backPackVI3(A, T));//6
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 Given an integer array nums with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer target.

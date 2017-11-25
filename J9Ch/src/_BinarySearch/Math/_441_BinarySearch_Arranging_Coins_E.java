@@ -1,7 +1,12 @@
 package _BinarySearch.Math;
 
+
+//
+//
 public class _441_BinarySearch_Arranging_Coins_E {
-// https://leetcode.com/problems/arranging-coins/discuss/
+//------------------------------------------------------------------------------
+
+    // https://leetcode.com/problems/arranging-coins/discuss/
 /*[JAVA] Clean Code with Explanations and Running Time [2 Solutions]
             [JAVA] Clean Code with Explanations and Running Time [2 Solutions]
 
@@ -23,6 +28,8 @@ public class _441_BinarySearch_Arranging_Coins_E {
             return start - 1;
         }
     }
+//------------------------------------------------------------------------------
+
   /*  Complexity Analysis
 
     Uniform cost model is used as Cost Model and `n` is the input number. `b` in this case would be `2`.
@@ -54,6 +61,8 @@ public class _441_BinarySearch_Arranging_Coins_E {
             return (int) ((Math.sqrt(1 + 8.0 * n) - 1) / 2);
         }
     }
+//------------------------------------------------------------------------------
+
     /*Complexity Analysis
 
     Uniform cost model is used as Cost Model and `n` is the input number. `b` in this case would be `2`.
@@ -82,7 +91,7 @@ public class _441_BinarySearch_Arranging_Coins_E {
 `x = 1 / 2 * (-sqrt(8 * n + 1)-1)` (Inapplicable) or `x = 1 / 2 * (sqrt(8 * n + 1)-1)`
     Negative root is ignored and positive root is used instead. Note that 8.0 * n is very important because it will cause Java to implicitly autoboxed the intermediate result into double data type. The code will not work if it is simply 8 * n. Alternatively, an explicit casting can be done 8 * (long) n).*/
 
-//-------------------------------------------------------------------------/
+//------------------------------------------------------------------------------
 //O(logn) binary search java solution
     public int arrangeCoins(int n) {
         //convert int to long to prevent integer overflow
@@ -105,6 +114,7 @@ public class _441_BinarySearch_Arranging_Coins_E {
 
         return (int)(st - 1);
     }
+//------------------------------------------------------------------------------
 }
 /*
 ou have a total of n coins that you want to form in a staircase shape, where every k-th row must have exactly k coins.

@@ -3,9 +3,13 @@ package _BinarySearch.Subarray;
 //  300. Longest Increasing Subsequence
 //  https://leetcode.com/problems/longest-increasing-subsequence/description/
 //  http://www.lintcode.com/zh-cn/problem/longest-increasing-subsequence/
+//
+//
+//
 public class _300_BinarySearch_Longest_Increasing_Subsequence_M {
 
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------
+    //1
     //jiuzhnag
     public int longestIncreasingSubsequence(int[] nums) {
         int []f = new int[nums.length];
@@ -23,7 +27,8 @@ public class _300_BinarySearch_Longest_Increasing_Subsequence_M {
         }
         return max;
     }
-
+//------------------------------------------------------------------------------
+    //2
     // O(nlogn) Binary Search
     public int longestIncreasingSubsequence2(int[] nums) {
         int[] minLast = new int[nums.length + 1];
@@ -62,7 +67,7 @@ public class _300_BinarySearch_Longest_Increasing_Subsequence_M {
         return end;
     }
 
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------
 }
 /*
 Given an unsorted array of integers, find the length of longest increasing subsequence.

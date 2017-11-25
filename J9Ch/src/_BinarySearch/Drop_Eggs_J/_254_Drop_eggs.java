@@ -5,10 +5,8 @@ package _BinarySearch.Drop_Eggs_J; import org.junit.Test;
 //
 //
 public class _254_Drop_eggs {
-    /**
-     * @param n an integer
-     * @return an integer
-     */
+//------------------------------------------------------------------------------
+
     public int dropEggs(int n) {
         // Write your code here
         long ans = 0;
@@ -19,6 +17,7 @@ public class _254_Drop_eggs {
                 return i;
         }
     }
+//------------------------------------------------------------------------------
 
     public int dropEggs_mine(int n) {
         // Write your code here
@@ -61,6 +60,7 @@ n + (n-1) + (n-2)…… + 1 = N。
         System.out.println(dropEggs_mine(100));
 
     }
+//------------------------------------------------------------------------------
 
 }
 /*

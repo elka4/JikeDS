@@ -1,11 +1,10 @@
 package _BinarySearch.binary;
-
 import org.junit.Test;
 
-/**
- * Created by tzh on 1/15/17.
- */
+
+
 public class DropEggs {
+//-----------------------------------------------------------------------------
 
     public int dropEggs(int n) {
         // Write your code here
@@ -28,5 +27,6 @@ public class DropEggs {
         int result = dropEggs(100);
         System.out.print(result);
     }
+//-----------------------------------------------------------------------------
 
 }

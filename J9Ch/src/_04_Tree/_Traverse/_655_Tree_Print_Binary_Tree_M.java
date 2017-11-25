@@ -91,7 +91,7 @@ public class _655_Tree_Print_Binary_Tree_M {
         }
     }
 
-//------------------------------------------------------------------------------//////////
+//-----------------------------------------------------------------------------/
     //Java Recursive Solution
     class Solution3{
         public List<List<String>> printTree(TreeNode root) {
@@ -118,7 +118,7 @@ public class _655_Tree_Print_Binary_Tree_M {
             return 1 + Math.max(getHeight(root.left), getHeight(root.right));
         }
     }
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
     //Java Iterative Level Order Traversal with Queue
     /*
@@ -196,7 +196,7 @@ Then we can easily have our solution as we always keep track of the left and rig
         }
     }
 
-//------------------------------------------------------------------------------//////////
+//-----------------------------------------------------------------------------/
 /*Java solution, two times traversal
     First traversal measures height and width of final output. Second traversal record where should we put each node by using a HashMap.*/
 
@@ -248,7 +248,7 @@ Then we can easily have our solution as we always keep track of the left and rig
             mark(root.right, y + 1, x + 1, r);
         }
     }
-//------------------------------------------------------------------------------//////////
+//-----------------------------------------------------------------------------/
 }
 /*
 

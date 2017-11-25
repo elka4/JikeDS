@@ -1,9 +1,12 @@
 package _BinarySearch.Subarray;
 
+
+//
+//
+//
 public class _209_BinarySearch_Minimum_Size_Subarray_Sum_M {
-
-//------------------------------------------------------------------------------/////////
-
+//-----------------------------------------------------------------------------
+    //1
     // 9Ch
     public class Jiuzhang{
         /**
@@ -31,7 +34,7 @@ public class _209_BinarySearch_Minimum_Size_Subarray_Sum_M {
             return ans;
         }
     }
-
+//------------------------------------------------------------------------------
 }
 /*
 Given an array of n positive integers and a positive integer s, find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.

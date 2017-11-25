@@ -1,10 +1,14 @@
 package _BinarySearch.Subarray;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+//
+//
+//
 public class _392_BinarySearch_Is_Subsequence_M {
+//------------------------------------------------------------------------------
+    //1
 /*    Straight forward Java simple solution
     Just use two pointers:*/
 
@@ -22,8 +26,8 @@ public class _392_BinarySearch_Is_Subsequence_M {
             return false;
         }
     }
-
-
+//------------------------------------------------------------------------------
+    //2
 /*    Binary search solution for follow-up with detailed comments
     Re: Java binary search using TreeSet got TLE
 
@@ -58,20 +62,22 @@ public class _392_BinarySearch_Is_Subsequence_M {
         }
         return true;
     }
-//-------------------------------------------------------------------------/
+//------------------------------------------------------------------------------
+    //3
     // 9Ch
-public class Jiuzhang{
-    public boolean isSubsequence(String s, String t) {
-        int i = 0, j = 0;
-        while(i<s.length() && j < t.length()) {
-            if(s.charAt(i) == t.charAt(j)) {
-                i++;
+    public class Jiuzhang{
+        public boolean isSubsequence(String s, String t) {
+            int i = 0, j = 0;
+            while(i<s.length() && j < t.length()) {
+                if(s.charAt(i) == t.charAt(j)) {
+                    i++;
+                }
+                j++;
             }
-            j++;
+            return i == s.length();
         }
-        return i == s.length();
     }
-}
+//------------------------------------------------------------------------------
 }
 /*
 Given a string s and a string t, check if s is subsequence of t.

@@ -2,7 +2,12 @@ package _BinarySearch.Closest_Number_J;
 
 
 // lintcode total occurrence of target
+//
+//
+//
 public class _17_Total_Occurrence_of_Target {
+//-----------------------------------------------------------------------------
+
     /*
     本题关键在于，二分法，分两步来寻找，第一步找第一个target的位置，第二部找最后一个target的位置。
 写二分的时候，if (A[mid] == target)时， 找target首次出现和末次出现的区别，就在于是用right = mid还是left = mid。
@@ -62,7 +67,7 @@ public class _17_Total_Occurrence_of_Target {
         return last - first + 1;
     }
 
-//-------------------------------------------------------------------------///
+//-----------------------------------------------------------------------------
 	 /**
      * @param A an integer array sorted in ascending order
      * @param target an integer

@@ -72,7 +72,7 @@ Return 1 since the palindrome partitioning ["aa", "b"] could be produced using 1
         System.out.println(minCut("aab"));
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
     // version 2 // version 2 // version 2 // version 2 // version 2 // version 2
     // f[i] 表示前i个字母，最少被切割几次可以切割为都是回文串。

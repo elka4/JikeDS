@@ -6,6 +6,7 @@ package _TwoPointer.Duplicate;
 //  http://www.lintcode.com/zh-cn/problem/remove-duplicates-from-sorted-array-ii/
 //  Array, Two Pointers
 //  4:
+//  双前向指针
 public class _080_TwoPointer_Remove_Duplicates_from_Sorted_Array_II_M {
 //------------------------------------------------------------------------------
     //1
@@ -25,8 +26,6 @@ public class _080_TwoPointer_Remove_Duplicates_from_Sorted_Array_II_M {
  */
 
     //https://www.sigmainfy.com/blog/leetcode-remove-duplicates-from-sorted-array-i-and-ii.html
-
-
     int removeDuplicates2(int A[], int n, int k) {
         if (n <= k) return n;
         int i = 1, j = 1;

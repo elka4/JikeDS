@@ -1,9 +1,10 @@
 package _BinarySearch.Sum;
 
 public class _167_BinarySearch_Two_Sum_II_Input_array_is_sorted_M {
+//------------------------------------------------------------------------------
 
-//    Share my java AC solution.
-//    Without HashMap, just have two pointers, A points to index 0, B points to index len - 1, shrink the scope based on the value and target comparison.
+    //    Share my java AC solution.
+    //    Without HashMap, just have two pointers, A points to index 0, B points to index len - 1, shrink the scope based on the value and target comparison.
 
     public int[] twoSum(int[] num, int target) {
         int[] indice = new int[2];
@@ -23,6 +24,7 @@ public class _167_BinarySearch_Two_Sum_II_Input_array_is_sorted_M {
         }
         return indice;
     }
+//------------------------------------------------------------------------------
 
 
 //    Simple 8 line Java solution with explanation. O(n)
@@ -34,6 +36,8 @@ public class _167_BinarySearch_Two_Sum_II_Input_array_is_sorted_M {
         }
         return new int[]{l + 1, r + 1};
     }
+//------------------------------------------------------------------------------
+
 }
 /*
 Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.

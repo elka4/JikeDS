@@ -45,7 +45,7 @@ public class _288_Unique_Word_Abbreviation_M {
         }
     }
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
     //Approach #2 (Hash Table) [Accepted]
     /*
     Note that isUnique is called repeatedly for the same set of words in the dictionary each time. We should pre-process the dictionary to speed it up.
@@ -87,7 +87,7 @@ public class _288_Unique_Word_Abbreviation_M {
         }
     }
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
     //Approach #3 (Hash Table) [Accepted]
     /*
     Let us consider another approach using a counter as the table's value. For example, assume the dictionary = ["door", "deer"], we have the mapping of {"d2r" -> 2}. However, this mapping alone is not enough, because we need to consider whether the word exists in the dictionary. This can be easily overcome by inserting the entire dictionary into a set.
@@ -122,7 +122,7 @@ public class _288_Unique_Word_Abbreviation_M {
     }
 
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
     class ValidWordAbbr4{
         //We can do it by just storing 1 map and no set.
 
@@ -149,7 +149,7 @@ public class _288_Unique_Word_Abbreviation_M {
         }
     }
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
     //Java Solution with One HashMap<String, String> beats 90% of Submissions
     public class ValidWordAbbr5 {
         HashMap<String, String> map;
@@ -180,7 +180,7 @@ public class _288_Unique_Word_Abbreviation_M {
         }
     }
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 }
 /*
 An abbreviation of a word follows the form <first letter><number><last letter>. Below are some examples of word abbreviations:

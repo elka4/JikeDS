@@ -112,7 +112,7 @@ public class _05_Kth_Largest_Element {
         }
     }
 //    There is also worth mentioning the Blum-Floyd-Pratt-Rivest-Tarjan algorithm that has a guaranteed O(N) running time.
-//------------------------------------------------------------------------------///////////
+//-----------------------------------------------------------------------------//
 	/*
      * @param k : description of k
      * @param nums : array of nums
@@ -195,7 +195,7 @@ public class _05_Kth_Largest_Element {
         nums[a] = nums[b];
         nums[b] = temp;
     }
-//------------------------------------------------------------------------------///////////
+//-----------------------------------------------------------------------------//
 }
 /*
 第k大元素

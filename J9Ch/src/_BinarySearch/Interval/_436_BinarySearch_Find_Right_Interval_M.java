@@ -1,6 +1,9 @@
 package _BinarySearch.Interval;
 import java.util.*;
 
+//
+//
+//  3:
 public class _436_BinarySearch_Find_Right_Interval_M {
     class Interval{
         int start;
@@ -10,7 +13,9 @@ public class _436_BinarySearch_Find_Right_Interval_M {
             end = j;
         }
     }
-//    Java clear O(n logn) solution based on TreeMap
+//------------------------------------------------------------------------------
+    //1
+    //Java clear O(n logn) solution based on TreeMap
     public class Solution {
         public int[] findRightInterval(Interval[] intervals) {
             int[] result = new int[intervals.length];
@@ -28,7 +33,8 @@ public class _436_BinarySearch_Find_Right_Interval_M {
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
 
 /*    Java Concise Binary Search
     If we are not allowed to use TreeMap:
@@ -74,9 +80,8 @@ public class _436_BinarySearch_Find_Right_Interval_M {
 
     }
 
-
-
-
+//------------------------------------------------------------------------------
+    //3
 /*    Time compexity: n*log(n)
     n*log(n) for sorting
     log(n) for binary search X n times is n*log(n)
@@ -137,6 +142,8 @@ public class _436_BinarySearch_Find_Right_Interval_M {
 
         return res;
     }
+//------------------------------------------------------------------------------
+
 }
 /*
 Given a set of intervals, for each of the interval i, check if there exists an interval j whose start point is bigger than or equal to the end point of the interval i, which can be called that j is on the "right" of i.

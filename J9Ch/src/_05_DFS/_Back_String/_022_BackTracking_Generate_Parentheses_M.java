@@ -53,7 +53,7 @@ public class _022_BackTracking_Generate_Parentheses_M {
     }
     //[()()(), ()(()), (())(), (()()), ((()))]
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
     // 2
     //Easy to understand Java backtracking solution
     public List<String> generateParenthesis02(int n) {

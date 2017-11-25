@@ -1,10 +1,10 @@
 package _BinarySearch.Closest_Number_J; import org.junit.Test;
 
 //  Closest Number in Sorted Array
-
+//
+//
 public class _18_Closest_Number_in_Sorted_Array {
-
-
+//-----------------------------------------------------------------------------
 
     public int closestNumber2(int[] A, int target) {
         // Write your code here
@@ -35,7 +35,8 @@ public class _18_Closest_Number_in_Sorted_Array {
     链接：http://www.jianshu.com/p/75109c804886
     來源：简书
     著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 */
-//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------
+    //2
 	/**
      * @param A an integer array sorted in ascending order
      * @param target an integer
@@ -140,15 +141,14 @@ public class _18_Closest_Number_in_Sorted_Array {
                 3
          */
     }
-//------------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------
+    //3
+    /*
+    跟Closest Binary Search Tree Vlaue类似：
 
-
-/*
-跟Closest Binary Search Tree Vlaue类似：
-
-Binary search. 考虑mid-1, mid+1.
-一旦没有mid = target.index。 那么target最终就narrow down在(mid-1,mid) 或者(mid,mid+1)
- */
+    Binary search. 考虑mid-1, mid+1.
+    一旦没有mid = target.index。 那么target最终就narrow down在(mid-1,mid) 或者(mid,mid+1)
+     */
     public int closestNumber3(int[] A, int target) {
         if (A == null || A.length == 0) {
             return -1;
@@ -172,13 +172,13 @@ Binary search. 考虑mid-1, mid+1.
         }
         return (target - A[start]) < (A[end] - target) ? start : end;
     }
-//------------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------
 
 
-
+//-----------------------------------------------------------------------------
 }
 /*
-
+//-----------------------------------------------------------------------------
 Given a target number and an integer array A sorted in ascending order, 
 find the index i in A such that A[i] is closest to the given target.
 
@@ -209,4 +209,5 @@ Medium K Closest Numbers In Sorted Array 19 %
 Easy Last Position of Target 40 %
 Easy Classical Binary Search 46 %
 Easy First Position of Target 32 %
+//-----------------------------------------------------------------------------
 */

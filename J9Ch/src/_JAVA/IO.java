@@ -42,7 +42,7 @@ public class IO {
         writer.close();
     }//count: 65535
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //3. Write with PrintWriter
 
 
@@ -60,7 +60,7 @@ public class IO {
         printWriter.printf("Product name is %s and its price is %d $", "iPhone", count);
         printWriter.close();
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //4. Write with FileOutputStream
 
 
@@ -83,7 +83,7 @@ public class IO {
 
     }
 
-    //-------------------------------------------------------------------------////
+    //-----------------------------------------------------------------------------
     //5. Write with DataOutputStream
     //Next – let’s take a look at how we can use a DataOutputStream to write a String to file:
     @Test
@@ -119,7 +119,7 @@ public class IO {
         writer.writeInt(data);
         writer.close();
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //6. Write with RandomAccessFile
 
     /*
@@ -135,7 +135,7 @@ RandomAccessFile enable us to write at a specific position in the file given the
         writer.close();
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //7. Write with FileChannel
 
     @Test
@@ -159,7 +159,7 @@ RandomAccessFile enable us to write at a specific position in the file given the
         reader.close();
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 String fileName = "";
     //8. Write to file using Java 7
 @Test
@@ -176,7 +176,7 @@ public void givenUsingJava7_whenWritingToFile_thenCorrect()
     assertEquals(str, read);
 }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //9. Write to temporary file
 @Test
 public void whenWriteToTmpFile_thenCorrect() throws IOException {
@@ -191,7 +191,7 @@ public void whenWriteToTmpFile_thenCorrect() throws IOException {
     reader.close();
 }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //10. Lock File Before Writing
 
     @Test
@@ -213,6 +213,6 @@ public void whenWriteToTmpFile_thenCorrect() throws IOException {
         stream.close();
         channel.close();
     }
-//-------------------------------------------------------------------------////
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 }

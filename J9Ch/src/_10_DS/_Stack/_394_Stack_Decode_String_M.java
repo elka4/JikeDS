@@ -41,7 +41,7 @@ public class _394_Stack_Decode_String_M {
         }
     }
 
-//------------------------------------------------------------------------------///////////
+//-----------------------------------------------------------------------------//
 
 //    Java short and easy-understanding solution using stack
     public class Solution2 {

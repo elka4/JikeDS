@@ -1,12 +1,14 @@
 package _BinarySearch.Rotated_J;
-
 import org.junit.Test;
 
 // Find Minimum in Rotated Sorted Array
-
-
 // leetcode  153. Find Minimum in Rotated Sorted Array
+//
+//
+//
 public class _159_Find_Minimum_in_Rotated_Sorted_Array {
+//------------------------------------------------------------------------------
+
 	 /**
      * @param nums: a rotated sorted array
      * @return: the minimum number in the array
@@ -35,7 +37,8 @@ public class _159_Find_Minimum_in_Rotated_Sorted_Array {
             return nums[end];
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
     //set the far right: nums[end] as target, the target will not be changed
     //move end pointer towards min until exiting while loop
 
@@ -66,7 +69,8 @@ public class _159_Find_Minimum_in_Rotated_Sorted_Array {
         return Math.min(nums[start], nums[end]);
     }
 
-
+//------------------------------------------------------------------------------
+    //3
     //do not use target, but use nums[end] to compare with mid
     //end is updated during the process, which is actually not necessary
     public int findMin_mine(int[] nums) {
@@ -113,6 +117,7 @@ public class _159_Find_Minimum_in_Rotated_Sorted_Array {
         int[] input2 = {1,2,3,4,5,6,7,9};
         System.out.println(findMin_mine(input2));
     }
+//------------------------------------------------------------------------------
 }
 
 /*

@@ -1,10 +1,13 @@
 package _BinarySearch.Others_J;
 
-//  http://lintcode.com/zh-cn/problem/divide-two-integers/
 
-// leetcode 29. Divide Two Integers
+//  http://lintcode.com/zh-cn/problem/divide-two-integers/
+//  leetcode 29. Divide Two Integers
 //  https://leetcode.com/problems/divide-two-integers/description/
+//
 public class _414Divide_Two_Integers {
+//------------------------------------------------------------------------------
+
     //Clean Java solution with some comment.
     class Solution1{
         public int divide(int dividend, int divisor) {
@@ -48,6 +51,7 @@ public class _414Divide_Two_Integers {
             return multiple + ldivide(ldividend - sum, ldivisor);
         }
     }
+//------------------------------------------------------------------------------
 
     //Accepted Java solution with comments.
     class Solution2{
@@ -83,6 +87,8 @@ public class _414Divide_Two_Integers {
                     (divide + divideLong((dividend-sum), divisor));
         }
     }
+//------------------------------------------------------------------------------
+    //3
     /*
     Nice solution, it's really easy to understand!
 I modified your codes a little bit though, to avoid checking whether it is negative in the recursive calls.
@@ -107,7 +113,8 @@ I modified your codes a little bit though, to avoid checking whether it is negat
             return divideTimes + divideLong(dividend - sum, divisor);
         }
     }
-
+//------------------------------------------------------------------------------
+    //4
 
     //No Use of Long Java Solution
     /*
@@ -133,7 +140,8 @@ I modified your codes a little bit though, to avoid checking whether it is negat
             return (1 << cur-1)+divide(res, divisor);
         }
     }
-
+//------------------------------------------------------------------------------
+    //4
     class Solution5{
         //        Using the logic to convert numbers to negative and bitwise operation,
         //        Iterative solution:
@@ -175,7 +183,8 @@ I modified your codes a little bit though, to avoid checking whether it is negat
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //5
     //Very detailed step-by-step explanation (Java solution)
     //  https://discuss.leetcode.com/topic/45980/very-detailed-step-by-step-explanation-java-solution/4
     class Solution6{
@@ -201,7 +210,8 @@ I modified your codes a little bit though, to avoid checking whether it is negat
     }
 
 
-//-------------------------------------------------------------------------///
+//------------------------------------------------------------------------------
+    //6
     // 9Ch
     /**
      * @param dividend the dividend
@@ -237,6 +247,7 @@ I modified your codes a little bit though, to avoid checking whether it is negat
         }
         return isNegative? -result: result;
     }
+//------------------------------------------------------------------------------
 
 }
 /*

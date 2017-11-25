@@ -1,9 +1,11 @@
 package _BinarySearch.Position_J;
 
-//First Position of Target
-
-//version 1: with jiuzhang template
+//  First Position of Target
+//  version 1: with jiuzhang template
+//
+//
 public class _14_First_Position_of_Target {
+//------------------------------------------------------------------------------
 	 /**
      * @param nums: The integer array.
      * @param target: Target to find.
@@ -37,6 +39,7 @@ public class _14_First_Position_of_Target {
         }
         return -1;
     }
+//------------------------------------------------------------------------------
 
     //version 2: without jiuzhang template
     /**
@@ -67,6 +70,7 @@ public class _14_First_Position_of_Target {
 
         return -1;
     }
+//------------------------------------------------------------------------------
 }
 
 

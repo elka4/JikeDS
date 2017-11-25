@@ -50,7 +50,7 @@ public class _5Backpack {
         int[] A = {2, 3, 5, 7};
         System.out.println(backPack(m, A));
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 Given n items with size Ai, an integer m denotes the size of a backpack. How full you can fill this backpack?

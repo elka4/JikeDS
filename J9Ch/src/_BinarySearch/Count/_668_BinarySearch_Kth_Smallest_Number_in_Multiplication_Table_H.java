@@ -3,16 +3,18 @@ package _BinarySearch.Count;
 
 //  668. Kth Smallest Number in Multiplication Table
 //  https://leetcode.com/problems/kth-smallest-number-in-multiplication-table/description/
-//
+//  5:
 public class _668_BinarySearch_Kth_Smallest_Number_in_Multiplication_Table_H {
+//-----------------------------------------------------------------------------
 
     //Approach #1: Brute Force [Memory Limit Exceeded]
 
+//-----------------------------------------------------------------------------
 
     //Approach #2: Next Heap [Time Limit Exceeded]
 
-
-
+//-----------------------------------------------------------------------------
+    //3
     //Approach #3: Binary Search [Accepted]
     class Solution3{
         public boolean enough(int x, int m, int n, int k){
@@ -34,9 +36,9 @@ public class _668_BinarySearch_Kth_Smallest_Number_in_Multiplication_Table_H {
         }
     }
 
-
-
-//    Java solution, binary search
+//-----------------------------------------------------------------------------
+    //4
+    //Java solution, binary search
     class Solution4 {
         public int findKthNumber(int m, int n, int k) {
             int low = 1 , high = m * n + 1;
@@ -60,8 +62,9 @@ public class _668_BinarySearch_Kth_Smallest_Number_in_Multiplication_Table_H {
             return count;
         }
     }
-
-//    solution like Kth Smallest Number in Sorted Matrix
+//-----------------------------------------------------------------------------
+    //5
+    //solution like Kth Smallest Number in Sorted Matrix
     class Solution5 {
         public int findKthNumber(int m, int n, int k) {
             int left = 1 * 1;
@@ -92,6 +95,7 @@ public class _668_BinarySearch_Kth_Smallest_Number_in_Multiplication_Table_H {
             return count;
         }
     }
+//-----------------------------------------------------------------------------
 }
 /*
 Nearly every one have used the Multiplication Table.

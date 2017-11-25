@@ -11,13 +11,13 @@ public class _235_Tree_Lowest_Common_Ancestor_of_a_Binary_Search_Tree_E {
         root = p.val < root.val ? root.left : root.right; return root;
     }
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
     public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
         return (root.val - p.val) * (root.val - q.val) < 1 ? root :
     lowestCommonAncestor2(p.val < root.val ? root.left : root.right, p, q);
 
     }
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
     //    My Java Solution
     public TreeNode lowestCommonAncestor5(TreeNode root, TreeNode p, TreeNode q) {
         //root比p，q都大，那就是root太大了，那么把比较小的root.left代入method
@@ -31,7 +31,7 @@ public class _235_Tree_Lowest_Common_Ancestor_of_a_Binary_Search_Tree_E {
         }
     }
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
     //    11ms java solution, 3 lines
     public TreeNode lowestCommonAncestor4(TreeNode root, TreeNode p, TreeNode q) {
         if(root.val<Math.min(p.val,q.val))

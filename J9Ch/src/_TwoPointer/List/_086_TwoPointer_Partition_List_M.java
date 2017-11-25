@@ -1,13 +1,12 @@
 package _TwoPointer.List;
-
 import lib.ListNode;
 
 //  86. Partition List
-
 //  https://leetcode.com/problems/partition-list/description/
-
-//http://www.lintcode.com/zh-cn/problem/partition-list/
+//  http://www.lintcode.com/zh-cn/problem/partition-list/
 public class _086_TwoPointer_Partition_List_M {
+//------------------------------------------------------------------------------
+    //1
     //Concise java code with explanation, one pass
 //    the basic idea is to maintain two queues, the first one stores all nodes with val less than x , and the second queue stores all the rest nodes. Then concat these two queues. Remember to set the tail of second queue a null next, or u will get TLE.
 
@@ -28,10 +27,9 @@ public class _086_TwoPointer_Partition_List_M {
         curr1.next = dummy2.next;
         return dummy1.next;
     }
-
-
+//------------------------------------------------------------------------------
+    //2
     //Java solution -- pick out larger nodes and append to the end
-
     public ListNode partition2(ListNode head, int x) {
         if(head==null || head.next==null) return head;
 
@@ -60,7 +58,8 @@ public class _086_TwoPointer_Partition_List_M {
         p1.next = l2.next;
         return l1.next;
     }
-
+//------------------------------------------------------------------------------
+    //3
     //Simple Java solution
     public class Solution3 {
         public ListNode partition(ListNode head, int x) {
@@ -86,67 +85,71 @@ public class _086_TwoPointer_Partition_List_M {
             return fake1.next;
         }
     }
+//------------------------------------------------------------------------------
+    //4
+    //My ac java code
+    public ListNode partition4(ListNode head, int x) {
 
-//My ac java code
-public ListNode partition4(ListNode head, int x) {
-
-    ListNode firstHead = new ListNode(0);
-    firstHead.next = head;
-    ListNode secondHead = new ListNode(x);
-
-
-    ListNode first = firstHead;
-    ListNode second = secondHead;
-    ListNode curNode = head;
-    while(curNode!=null){
-        ListNode tmp = curNode.next;
-        if(curNode.val<x){
-
-            first.next = curNode;
-            first = curNode;
-        }else{
-            second.next = curNode;
-            second = curNode;
-            second.next = null;// important
-        }
-        curNode = tmp;
-    }
-    first.next = secondHead.next;
-    return firstHead.next;
-}
+        ListNode firstHead = new ListNode(0);
+        firstHead.next = head;
+        ListNode secondHead = new ListNode(x);
 
 
-//-------------------------------------------------------------------------//////
-    // 9Ch
-public class Jiuzhang {
-    public ListNode partition(ListNode head, int x) {
-        if (head == null) {
-            return null;
-        }
+        ListNode first = firstHead;
+        ListNode second = secondHead;
+        ListNode curNode = head;
+        while(curNode!=null){
+            ListNode tmp = curNode.next;
+            if(curNode.val<x){
 
-        ListNode leftDummy = new ListNode(0);
-        ListNode rightDummy = new ListNode(0);
-        ListNode left = leftDummy, right = rightDummy;
-
-        while (head != null) {
-            if (head.val < x) {
-                left.next = head;
-                left = head;
-            } else {
-                right.next = head;
-                right = head;
+                first.next = curNode;
+                first = curNode;
+            }else{
+                second.next = curNode;
+                second = curNode;
+                second.next = null;// important
             }
-            head = head.next;
+            curNode = tmp;
         }
-
-        right.next = null;
-        left.next = rightDummy.next;
-        return leftDummy.next;
+        first.next = secondHead.next;
+        return firstHead.next;
     }
-}
 
+
+//------------------------------------------------------------------------------
+    //5
+    // 9Ch
+    public class Jiuzhang {
+        public ListNode partition(ListNode head, int x) {
+            if (head == null) {
+                return null;
+            }
+
+            ListNode leftDummy = new ListNode(0);
+            ListNode rightDummy = new ListNode(0);
+            ListNode left = leftDummy, right = rightDummy;
+
+            while (head != null) {
+                if (head.val < x) {
+                    left.next = head;
+                    left = head;
+                } else {
+                    right.next = head;
+                    right = head;
+                }
+                head = head.next;
+            }
+
+            right.next = null;
+            left.next = rightDummy.next;
+            return leftDummy.next;
+        }
+    }
+
+//------------------------------------------------------------------------------
 }
 /*
+//------------------------------------------------------------------------------
 Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
 
 You should preserve the original relative order of the nodes in each of the two partitions.
@@ -154,19 +157,20 @@ You should preserve the original relative order of the nodes in each of the two 
 For example,
 Given 1->4->3->2->5->2 and x = 3,
 return 1->2->2->4->3->5.
+//------------------------------------------------------------------------------
  */
 
+
+
 /*
+//------------------------------------------------------------------------------
 给定一个单链表和数值x，划分链表使得所有小于x的节点排在大于等于x的节点之前。
 
 你应该保留两部分内链表节点原有的相对顺序。
-
-
 
 样例
 给定链表 1->4->3->2->5->2->null，并且 x=3
 
 返回 1->2->2->4->3->5->null
-
-
+//------------------------------------------------------------------------------
  */

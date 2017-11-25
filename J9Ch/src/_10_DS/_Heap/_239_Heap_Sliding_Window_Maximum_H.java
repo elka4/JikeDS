@@ -5,7 +5,7 @@ import org.junit.Test;
 //  239. Sliding Window Maximum
 public class _239_Heap_Sliding_Window_Maximum_H {
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 //Java O(n) solution using deque with explanation
 /*
 We scan the array from 0 to n-1, keep "promising" elements in the deque. The algorithm is amortized O(n) as each element is put and polled once.
@@ -154,7 +154,7 @@ class solution4{
         return res;
     }
 }
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
     // 9Ch
 
     public class Jiuzhang {
@@ -198,7 +198,7 @@ class solution4{
     }
 
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 
 
 

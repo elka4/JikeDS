@@ -154,7 +154,7 @@ public class _69_Binary_Tree_Level_Order_Traversal {
         System.out.println(levelOrder3(root));
     }
 
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
 
     // version 4: BFS, queue with dummy node
     public ArrayList<ArrayList<Integer>> levelOrder4(TreeNode root) {

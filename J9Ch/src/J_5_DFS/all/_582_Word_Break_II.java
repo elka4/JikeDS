@@ -156,7 +156,7 @@ public class _582_Word_Break_II {
         System.out.println(wordBreak2(s, wordDict));
     }
 
-//------------------------------------------------------------------------------//////////
+//-----------------------------------------------------------------------------/
 
 
     //version3, leetcode, memorized DFS
@@ -205,7 +205,7 @@ public class _582_Word_Break_II {
         System.out.println(wordBreak3(s, wordDict));
     }
 
-//------------------------------------------------------------------------------/////////////
+//-----------------------------------------------------------------------------////
 
     //version 4
     public List<String> wordBreak4(String s, Set<String> dict) {

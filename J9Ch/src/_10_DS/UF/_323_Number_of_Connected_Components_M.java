@@ -46,7 +46,7 @@ public class _323_Number_of_Connected_Components_M {
         }
 
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //2
     //AC JAVA code, Union Find
     class Solution2{
@@ -80,7 +80,7 @@ public class _323_Number_of_Connected_Components_M {
             father[find(node1)] = find(node2);
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //3
 
     //Java Union find & DFS & BFS Code (very clean)
@@ -122,7 +122,7 @@ public class _323_Number_of_Connected_Components_M {
         }
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //4
      public int countComponents(int n, int[][] edges) {
         if (n <= 1) return n;
@@ -142,9 +142,9 @@ public class _323_Number_of_Connected_Components_M {
     public void test(){
         System.out.println(countComponents(5, new int[][]{{0,1}, {1,2}, {3,4}}));
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 Given n nodes labeled from 0 to n - 1 and a list of undirected edges (each edge is a pair of nodes), write a function to find the number of connected components in an undirected graph.

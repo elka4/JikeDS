@@ -1,5 +1,4 @@
 package _TwoPointer.List;
-
 import lib.ListNode;
 
 import java.util.HashSet;
@@ -8,7 +7,10 @@ import java.util.Set;
 //  141. Linked List Cycle
 //  https://leetcode.com/problems/linked-list-cycle/description/
 //  http://www.lintcode.com/zh-cn/problem/linked-list-cycle/
+//  3:
 public class _141_TwoPointer_Linked_List_Cycle_M {
+//------------------------------------------------------------------------------
+    //1
     //https://leetcode.com/articles/linked-list-cycle/
     //Approach #1 (Hash Table) [Accepted]
     public boolean hasCycle1(ListNode head) {
@@ -23,7 +25,8 @@ public class _141_TwoPointer_Linked_List_Cycle_M {
         }
         return false;
     }
-
+//------------------------------------------------------------------------------
+    //2
     //Approach #2 (Two Pointers) [Accepted]
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
@@ -41,28 +44,28 @@ public class _141_TwoPointer_Linked_List_Cycle_M {
         return true;
     }
 
-
-    //---------------------------------///////////
-//---------------------------------///////////
+//------------------------------------------------------------------------------
+    //3
     // 9Ch
-public class Jiuzhang {
-    public Boolean hasCycle(ListNode head) {
-        if (head == null || head.next == null) {
-            return false;
-        }
-
-        ListNode fast, slow;
-        fast = head.next;
-        slow = head;
-        while (fast != slow) {
-            if(fast==null || fast.next==null)
+    public class Jiuzhang {
+        public Boolean hasCycle(ListNode head) {
+            if (head == null || head.next == null) {
                 return false;
-            fast = fast.next.next;
-            slow = slow.next;
+            }
+
+            ListNode fast, slow;
+            fast = head.next;
+            slow = head;
+            while (fast != slow) {
+                if(fast==null || fast.next==null)
+                    return false;
+                fast = fast.next.next;
+                slow = slow.next;
+            }
+            return true;
         }
-        return true;
     }
-}
+//------------------------------------------------------------------------------
 }
 /*
 Given a linked list, determine if it has a cycle in it.

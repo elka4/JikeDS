@@ -1,8 +1,14 @@
 package _BinarySearch.Peak_J;
 
+
 // leetcode 162 Find Peak Element
+//
+//
+//  5:
 public class _75_Find_Peak_Element {
     //  https://leetcode.com/articles/find-peak-element/#
+//------------------------------------------------------------------------------
+    //1
     //numspproach #1 Linear Scan [numsccepted]
     class Solution1{
         public int findPeakElement(int[] nums){
@@ -14,6 +20,8 @@ public class _75_Find_Peak_Element {
             return nums.length - 1;
         }
     }
+//------------------------------------------------------------------------------
+    //2
     //numspproach #2 Recursive Binary Search [numsccepted]
     class Solution2 {
         public int findPeakElement(int[] nums) {
@@ -30,6 +38,8 @@ public class _75_Find_Peak_Element {
             return search(nums, mid + 1, r);
         }
     }
+//------------------------------------------------------------------------------
+    //3
     //numspproach #3 Iterative Binary Search [numsccepted]
     class Solution3 {
         public int findPeakElement(int[] nums) {
@@ -45,7 +55,8 @@ public class _75_Find_Peak_Element {
             return l;
         }
     }
-//---------------------------------////////////////////////
+//------------------------------------------------------------------------------
+    //4
 	/**
 	 * @param nums: numsn integers array.
 	 * @return: return any of peek positions.
@@ -70,7 +81,8 @@ public class _75_Find_Peak_Element {
 	        return start;
 	    }
 	}
-
+//------------------------------------------------------------------------------
+    //5
 	public int findPeak_mine1(int[] nums) {
 		// write your code here
 
@@ -91,7 +103,7 @@ public class _75_Find_Peak_Element {
 		return nums[start] > nums[end] ? start : end;
 	}
 
-
+//------------------------------------------------------------------------------
 }
 /*
 leet

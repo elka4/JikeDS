@@ -1,8 +1,12 @@
 package _BinarySearch.Rotated_J;
 
 
+//
+//
+//
 public class _160_Find_Minimum_in_Rotated_Sorted_Array_II {
-
+//------------------------------------------------------------------------------
+    //1
     // version 1: just for loop is enough
     class _07Find_Minimum_in_Rotated_Sorted_Array_II_1 {
         public int findMin(int[] num) {
@@ -20,7 +24,8 @@ public class _160_Find_Minimum_in_Rotated_Sorted_Array_II {
             return min;
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
     // version 2: use *fake* binary-search
     class _07Find_Minimum_in_Rotated_Sorted_Array_II_2 {
         /**
@@ -54,5 +59,8 @@ public class _160_Find_Minimum_in_Rotated_Sorted_Array_II {
             return nums[end];
         }
     }
-
+//------------------------------------------------------------------------------
 }
+/*
+
+ */

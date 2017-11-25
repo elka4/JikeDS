@@ -11,7 +11,7 @@ public class _130_Surrounded_Regions_M {
 
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //Solve it using Union Find
     class Solution1 {
         int[] unionSet; // union find set
@@ -65,7 +65,7 @@ public class _130_Surrounded_Regions_M {
             return unionSet[x];
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //just another version in java:
 
     public class Solution2 {
@@ -118,7 +118,7 @@ public class _130_Surrounded_Regions_M {
             return unionSet[x];
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //Nice thought. I came up with this Java union-find with path compression and weighted union. Currently its run time is 17 ms. Can this be further improved? Thank you.
 
     public class Solution3 {
@@ -209,7 +209,7 @@ public class _130_Surrounded_Regions_M {
             return i;
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //4
 //Cleaner Java code
 
@@ -293,10 +293,10 @@ public class _130_Surrounded_Regions_M {
     }
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 // 9Ch
 //  http://www.jiuzhang.com/solution/surrounded-regions/
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 Given a 2D board containing 'X' and 'O' (the letter O), capture all regions surrounded by 'X'.

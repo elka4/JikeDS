@@ -32,7 +32,7 @@ public class _090_BackTracking_Subsets_II_M {
     }
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //Standard DFS Java Solution
     public List<List<Integer>> subsetsWithDup02(int[] nums) {
         Arrays.sort(nums);
@@ -52,7 +52,7 @@ public class _090_BackTracking_Subsets_II_M {
     }
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //Accepted java iterative solution
         public List<List<Integer>> subsetsWithDup03(int[] num) {
             Arrays.sort(num);
@@ -82,7 +82,7 @@ public class _090_BackTracking_Subsets_II_M {
         }
 
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
     // 9Ch
     // return List<List<Integer>>
     /**
@@ -122,7 +122,7 @@ public class _090_BackTracking_Subsets_II_M {
 
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     // 9Ch
     // return ArrayList<ArrayList<Integer>>
     /**
@@ -162,7 +162,7 @@ public class _090_BackTracking_Subsets_II_M {
 
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 Given a collection of integers that might contain duplicates, nums, return all possible subsets (the power set).

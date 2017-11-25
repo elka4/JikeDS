@@ -4,7 +4,9 @@ package _BinarySearch.Position_J; import org.junit.Test;
 // leetcode 34. Search for a Range
 
 public class _61_Search_for_a_Range {
-	public int[] searchRange(int[] nums, int target) {
+//------------------------------------------------------------------------------
+
+    public int[] searchRange(int[] nums, int target) {
         if (nums.length == 0) {
             return new int[]{-1, -1};
         }
@@ -68,11 +70,7 @@ public class _61_Search_for_a_Range {
             System.out.println(i);
         }
     }
-    /*
-     3
-     4
-
-     */
+//------------------------------------------------------------------------------
 }
 
 

@@ -1,6 +1,8 @@
 package _BinarySearch.Math_J;
 
 public class _141_Sqrtx {
+//------------------------------------------------------------------------------
+    //1
 	  /**
 	 * @param x: An integer
 	 * @return: The sqrt of x
@@ -22,7 +24,8 @@ public class _141_Sqrtx {
 	    }
 	    return (int) start;
 	}
-
+//------------------------------------------------------------------------------
+    //2
 	public int sqrt_mine (int x) {
 		// write your code here
 		//int result = 0;
@@ -45,8 +48,8 @@ public class _141_Sqrtx {
 		} else {
 			return (int)start;
 		}
-
 	}
+//------------------------------------------------------------------------------
 }
 
 /*

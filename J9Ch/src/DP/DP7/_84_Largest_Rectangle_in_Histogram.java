@@ -69,7 +69,7 @@ public class _84_Largest_Rectangle_in_Histogram {
             return maxarea;
         }
     }
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
     //Simple Divide and Conquer AC solution without Segment Tree
     class Solution6{
         public int largestRectangleAreaDQ(int[] A) {
@@ -109,7 +109,7 @@ public class _84_Largest_Rectangle_in_Histogram {
             return area;
         }
     }
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
 
 }
 /*

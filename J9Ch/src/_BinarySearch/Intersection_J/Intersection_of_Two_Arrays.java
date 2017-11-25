@@ -1,5 +1,4 @@
 package _BinarySearch.Intersection_J;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -7,10 +6,12 @@ import java.util.Set;
 
 //  http://lintcode.com/en/problem/intersection-of-two-arrays/
 //  Intersection of Two Arrays
-
 //  leetcode 349. Intersection of Two Arrays
 //  https://leetcode.com/problems/intersection-of-two-arrays/description/
+//  7:
 public class Intersection_of_Two_Arrays {
+//------------------------------------------------------------------------------
+    //1
 //    Three Java Solutions
 //
 //    Use two hash sets
@@ -37,7 +38,8 @@ public class Intersection_of_Two_Arrays {
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
 //    Sort both arrays, use two pointers
 //
 //    Time complexity: O(nlogn)
@@ -68,7 +70,8 @@ public class Intersection_of_Two_Arrays {
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //3
 //    Binary search
 //
 //    Time complexity: O(nlogn)
@@ -109,7 +112,8 @@ public class Intersection_of_Two_Arrays {
     }
 
 
-//------------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------
+    //4
     //    5ms Java Using 1 hashset and time complexity of O(m+n)
 
     class Solution4{
@@ -134,7 +138,8 @@ public class Intersection_of_Two_Arrays {
     }
 
 
-//------------------------------------------------------------------------------//////////
+//------------------------------------------------------------------------------
+    //5
     // 9Ch
     // version 1: sort & merge
     public class Solution11 {
@@ -172,7 +177,8 @@ public class Intersection_of_Two_Arrays {
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //6
     // version 2: hash map
     public class Solution22 {
         /**
@@ -207,7 +213,8 @@ public class Intersection_of_Two_Arrays {
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //7
     // version 3: sort & binary search
     public class Solution33 {
         /**
@@ -269,6 +276,7 @@ public class Intersection_of_Two_Arrays {
             return false;
         }
     }
+//------------------------------------------------------------------------------
 }
 
 /*

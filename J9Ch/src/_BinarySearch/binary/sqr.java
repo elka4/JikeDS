@@ -1,11 +1,9 @@
 package _BinarySearch.binary;
-
 import org.junit.Test;
 
-/**
- * Created by tzh on 1/16/17.
- */
+
 public class sqr {
+//-----------------------------------------------------------------------------
 
 
     public int mySqrt(int x) {
@@ -36,5 +34,9 @@ public class sqr {
         int result = mySqrt(0);
         System.out.print(result);
     }
+//-----------------------------------------------------------------------------
 
 }
+/*
+
+ */

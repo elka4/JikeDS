@@ -5,7 +5,7 @@ package _BinarySearch.Copy_Book_J;
 //  http://lintcode.com/en/problem/copy-books/
 public class _437_Copy_Book {
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
     // 9Ch
     // version 1: Binary Search
     // this version cost O(n log m) where n is the number of books and m is the sum of the pages.
@@ -66,7 +66,7 @@ public class _437_Copy_Book {
             return copiers;
         }
     }
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
     // version 2: Dynamic Programming
     public class Solution2 {
         /**
@@ -118,7 +118,7 @@ public class _437_Copy_Book {
             return f[n - 1][k - 1];
         }
     }
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 
 }
 /*

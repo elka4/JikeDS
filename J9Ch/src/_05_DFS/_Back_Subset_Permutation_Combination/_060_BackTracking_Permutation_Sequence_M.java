@@ -52,7 +52,7 @@ public class _060_BackTracking_Permutation_Sequence_M {
         System.out.println(getPermutation01(3,6));//321
     }
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 
     public String getPermutation02(int n, int k) {
         List<Integer> num = new LinkedList<Integer>();
@@ -71,7 +71,7 @@ public class _060_BackTracking_Permutation_Sequence_M {
         return sb.toString();
     }
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
     /*
     "Explain-like-I'm-five" Java Solution in O(n)
 I'm sure somewhere can be simplified so it'd be nice if anyone can let me know. The pattern was that:
@@ -171,7 +171,7 @@ Giving us 3142. If you manually list out the permutations using DFS method, it w
         return String.valueOf(sb);
     }
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 /*
     An iterative solution for reference
     Recursion will use more memory, while this problem can be solved by iteration. I solved this problem before, but I didn't realize that using k = k-1 would avoid dealing with case k%(n-1)!==0. Rewrote this code, should be pretty concise now.
@@ -198,7 +198,7 @@ Giving us 3142. If you manually list out the permutations using DFS method, it w
         return sb.toString();
     }
 
-//------------------------------------------------------------------------------//////////
+//-----------------------------------------------------------------------------/
 
     // 9Ch
     public String getPermutation_J(int n, int k) {
@@ -233,7 +233,7 @@ Giving us 3142. If you manually list out the permutations using DFS method, it w
         return sb.toString();
     }
 
-//------------------------------------------------------------------------------//////////
+//-----------------------------------------------------------------------------/
 }
 
 /* Leetcode

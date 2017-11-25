@@ -2,6 +2,7 @@ package _BinarySearch.Peak_J; import org.junit.Test;
 
 //
 public class _585_Maximum_Number_in_Mountain_Sequence {
+//------------------------------------------------------------------------------
 
     // version 1：二分法
     public class _Maximum_Number_in_Mountain_Sequence1 {
@@ -27,6 +28,7 @@ public class _585_Maximum_Number_in_Mountain_Sequence {
             return Math.max(nums[start], nums[end]);
         }
     }
+//------------------------------------------------------------------------------
 
     // version 2: 一个比较啰嗦的版本，本质也是2分法，每次取两个点
     public class _Maximum_Number_in_Mountain_Sequence2 {
@@ -52,6 +54,7 @@ public class _585_Maximum_Number_in_Mountain_Sequence {
             return nums[left] > nums[right] ? nums[left] : nums[right];
         }
     }
+//------------------------------------------------------------------------------
 
     public int mountainSequence_mine1(int[] nums) {
         // Write your code here
@@ -69,6 +72,7 @@ public class _585_Maximum_Number_in_Mountain_Sequence {
         }
         return Math.max(nums[start], nums[end]);
     }
+//------------------------------------------------------------------------------
 
     public int mountainSequence_mine2(int[] nums) {
         // Write your code here
@@ -94,6 +98,8 @@ public class _585_Maximum_Number_in_Mountain_Sequence {
         System.out.println(mountainSequence_mine1(input1));
         System.out.println(mountainSequence_mine1(input2));
     }
+//------------------------------------------------------------------------------
+
 }
 //  给 n 个整数的山脉数组，即先增后减的序列，找到山顶（最大值）
 

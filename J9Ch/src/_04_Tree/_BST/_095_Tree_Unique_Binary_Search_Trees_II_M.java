@@ -157,7 +157,7 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
         }
     }
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
     //4
     //The first method that came to mind was the brute force solution as below.
     class Solution5{
@@ -196,7 +196,7 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
     }
 
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
     //5
     //Java 2ms solution beats 92%
@@ -245,7 +245,7 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
     }
 
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
     //7
     // 9Ch
     //DFS
@@ -289,7 +289,7 @@ It is intuitive to solve this problem by following the same algorithm. Here is t
             t.print();
         }
     }
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
     //6
     //Java Solution with DP
     //这货怎么就DP了？？？！！
@@ -395,7 +395,7 @@ written by jianwu original link here
         for (TreeNode t:result ) { t.print();}
     }
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
     //9
 /*
@@ -466,7 +466,7 @@ Here is my implementation. Note that I do the dp from [n] back to [n to 1]. Ther
         List<TreeNode> result = jz.generateTrees(3);
         for (TreeNode t:result ) { t.print();}
     }
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 }
 /*
 不同的二叉查找树 II

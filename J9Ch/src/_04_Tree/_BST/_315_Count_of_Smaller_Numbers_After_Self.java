@@ -57,7 +57,7 @@ if we insert 7, the right-turning nodes are 1(0,1), 6(3,1), so answer should be 
         }
 
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 
     /* My simple AC Java Binary Search code
     Traverse from the back to the beginning of the array, maintain an sorted array of numbers have been visited. Use findIndex() to find the first element in the sorted array which is larger or equal to target number. For example, [5,2,3,6,1], when we reach 2, we have a sorted array[1,3,6], findIndex() returns 1, which is the index where 2 should be inserted and is also the number smaller than 2. Then we insert 2 into the sorted array to form [1,2,3,6].
@@ -93,7 +93,7 @@ if we insert 7, the right-turning nodes are 1(0,1), 6(3,1), so answer should be 
         return end;
     }
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 
     /* 11ms JAVA solution using merge sort with explanation
     The basic idea is to do merge sort to nums[]. To record the result,
@@ -173,7 +173,7 @@ if we insert 7, the right-turning nodes are 1(0,1), 6(3,1), so answer should be 
             indexes[i] = new_indexes[i - start];
         }
     }
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 }
 /*
 You are given an integer array nums and you have to return a new counts array. The counts array has the property where counts[i] is the number of smaller elements to the right of nums[i].

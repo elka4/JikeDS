@@ -48,7 +48,7 @@ LintCode 534 House Robber II
 //House RobberII
 public class _3HouseRobber_II {
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
     // 9Ch
     public int houseRobber2(int[] nums) {
@@ -80,7 +80,7 @@ public class _3HouseRobber_II {
         return res[ed%2];
     }
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
     // leetcode
     // Simple AC solution in Java in O(n) with explanation
@@ -99,7 +99,7 @@ public class _3HouseRobber_II {
         }
         return Math.max(include, exclude);
     }
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
     public int rob3(int[] nums) {
 
@@ -119,7 +119,7 @@ public class _3HouseRobber_II {
         return Math.max(rob, notRob);
     }
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
     //Good performance DP solution using Java
     public int rob4(int[] nums) {
@@ -147,7 +147,7 @@ public class _3HouseRobber_II {
         return Math.max(startFromFirstHouse[nums.length - 1], startFromSecondHouse[nums.length]);
     }
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
     //Jave O(1) space, O(n) time optimal solution
     /*
     Helper method returns DP solution from 0 - n-2 and 1 - n-1. Final answer is the max between two.
@@ -175,7 +175,7 @@ public class _3HouseRobber_II {
     }
 
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
 }
 /*

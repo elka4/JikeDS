@@ -75,7 +75,7 @@ public class _431_ConnectedComponentInUndirectedGraph {
     }
 
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
 
     public int countComponents_DFS(int n, int[][] edges) {

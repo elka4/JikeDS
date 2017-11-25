@@ -6,6 +6,7 @@ package _TwoPointer.Duplicate;
 //  Array, Two Pointers
 //  _027_TwoPointer_Remove_Element_E
 //  2:2
+//  双前向指针
 public class _026_TwoPointer_Remove_Duplicates_from_Sorted_Array_E {
     //https://leetcode.com/articles/remove-duplicates-sorted-array/
 //------------------------------------------------------------------------------

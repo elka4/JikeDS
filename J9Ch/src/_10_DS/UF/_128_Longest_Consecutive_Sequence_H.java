@@ -39,7 +39,7 @@ public class _128_Longest_Consecutive_Sequence_H {
         }
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //Approach #2 Sorting [Accepted]
 
     class Solution2 {
@@ -69,7 +69,7 @@ public class _128_Longest_Consecutive_Sequence_H {
         }
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //Approach #3 HashSet and Intelligent Sequence Building [Accepted]
 class Solution3 {
     public int longestConsecutive(int[] nums) {
@@ -98,7 +98,7 @@ class Solution3 {
     }
 }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //4
 //My Java Solution using UnionFound
 
@@ -160,7 +160,7 @@ class Solution3 {
             return max;
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //5
     /*
     I implemented the following code which is a slight improvement over the one suggested in the original post. I have optimized the retrieval of the maxUnion (getHighestRank in my case) to O(1).
@@ -229,7 +229,7 @@ public class Solution5 {
     }
 }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     class Solution6{
         public int longestConsecutive2(int[] nums) {
             int n = nums.length;
@@ -287,7 +287,7 @@ public class Solution5 {
             }
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     // 9Ch
     public class Jiuzhang1 {
         /**
@@ -320,7 +320,7 @@ public class Solution5 {
             return longest;
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     // version: 高频题班
     public class Jiuzhang2 {
         /**
@@ -355,7 +355,7 @@ public class Solution5 {
             return ans;
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 Given an unsorted array of integers, find the length of the longest consecutive elements sequence.

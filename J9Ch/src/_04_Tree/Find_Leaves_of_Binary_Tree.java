@@ -58,7 +58,7 @@ public class Find_Leaves_of_Binary_Tree {
     }
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
     //10 lines simple Java solution using recursion with explanation
     public class Solution2 {

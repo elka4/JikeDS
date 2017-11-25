@@ -82,7 +82,7 @@ If we can remove exactly 1 edge to achieve the tree structure, a single node can
             System.out.print(i + " ");
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //2
     //one pass disjoint set solution with explain
 
@@ -128,7 +128,7 @@ If we can remove exactly 1 edge to achieve the tree structure, a single node can
             System.out.print(i + " ");
         }
     }//2 1
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //3
 //JAVA Solution by checking union-find
 
@@ -184,7 +184,7 @@ If we can remove exactly 1 edge to achieve the tree structure, a single node can
         }
     }//2 1
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //4
 /*    Concise JAVA solution, 4ms
 
@@ -238,7 +238,7 @@ If we can remove exactly 1 edge to achieve the tree structure, a single node can
             System.out.print(i + " ");
         }
     }//2 1
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //5
     // this is copied from 3
     public int[] findRedundantDirectedConnection(int[][] edges) {
@@ -329,7 +329,7 @@ If we can remove exactly 1 edge to achieve the tree structure, a single node can
     }//1 4
     //expected 21
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 In this problem, a rooted tree is a directed graph such that, there is exactly one node (the root) for which all other nodes are descendants of this node, plus every node has exactly one parent, except for the root node which has no parents.

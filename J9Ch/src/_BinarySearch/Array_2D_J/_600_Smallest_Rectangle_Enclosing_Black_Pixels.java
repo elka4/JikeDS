@@ -1,15 +1,19 @@
 package _BinarySearch.Array_2D_J;
 
-//  Smallest Rectangle Enclosing Black Pixels
 
-// leetcode 302. Smallest Rectangle Enclosing Black Pixels
+
+//  Smallest Rectangle Enclosing Black Pixels
+//  leetcode 302. Smallest Rectangle Enclosing Black Pixels
 //  https://leetcode.com/articles/smallest-rectangle-enclosing-black-pixels/
-//
+//  8:
 public class _600_Smallest_Rectangle_Enclosing_Black_Pixels {
+//-----------------------------------------------------------------------------
+    //1
     //Approach #3 (Binary Search) [Accepted]
 
 
-
+//-----------------------------------------------------------------------------
+    //2
     //C++/Java/Python Binary Search solution with explanation
     class Solution4{
         private char[][] image;
@@ -46,7 +50,8 @@ public class _600_Smallest_Rectangle_Enclosing_Black_Pixels {
         }
     //  Runtime: 1 ms
     }
-
+//-----------------------------------------------------------------------------
+    //3
     //Java (DRY)
     class Solution5{
         private char[][] image;
@@ -75,7 +80,8 @@ public class _600_Smallest_Rectangle_Enclosing_Black_Pixels {
         }
     //  Runtime: 2 ms
     }
-
+//-----------------------------------------------------------------------------
+    //4
 
     //1ms Concise Java Binary Search (DFS is 4ms)
     /*
@@ -146,7 +152,8 @@ Use a horizontal line, to jump to the bottommost black pixel, in the range of [x
             return false;
         }
     }
-
+//-----------------------------------------------------------------------------
+    //5
     //Version 2: Another harder but more compact way is as follows:
     class Solution7{
         public int minArea(char[][] image, int x, int y) {
@@ -178,7 +185,8 @@ Use a horizontal line, to jump to the bottommost black pixel, in the range of [x
         }
 
     }
-
+//-----------------------------------------------------------------------------
+    //6
     //Java DFS Solution and seeking for a binary search solution.
     /*
     DFS or BFS is the intuitive solution for this problem while the problem is with a tag "binary search". So can anyone provide a binary search answer. DFS complexity is O(m * n) and if binary search it would be O(n * lgm + m * lgn)
@@ -204,7 +212,8 @@ Use a horizontal line, to jump to the bottommost black pixel, in the range of [x
             dfs(image, x, y + 1);
         }
     }
-
+//-----------------------------------------------------------------------------
+    //7
     //Very easy DFS JAVA solution with comments
     class Solution9{
         int[][] dir = {{1,0}, {0,1}, {-1,0}, {0,-1}};
@@ -237,7 +246,8 @@ Use a horizontal line, to jump to the bottommost black pixel, in the range of [x
     }
 
 
-//------------------------------------------------------------------------------///////
+//-----------------------------------------------------------------------------
+    //8
     /**
      * @param image a binary matrix with '0' and '1'
      * @param x, y the location of one of the black pixels
@@ -344,7 +354,7 @@ Use a horizontal line, to jump to the bottommost black pixel, in the range of [x
         }
         return true;
     }
-
+//-----------------------------------------------------------------------------
 }
 /*
 一个由二进制矩阵表示的图，0 表示白色像素点，1 表示黑色像素点。

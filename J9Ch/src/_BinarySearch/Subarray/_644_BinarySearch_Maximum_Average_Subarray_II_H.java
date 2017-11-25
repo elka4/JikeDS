@@ -1,6 +1,12 @@
 package _BinarySearch.Subarray;
 
+
+//
+//
+//
 public class _644_BinarySearch_Maximum_Average_Subarray_II_H {
+//------------------------------------------------------------------------------
+    //1
 /*    Java solution O(nlogM) Binary search the answer
 (nums[i]+nums[i+1]+...+nums[j])/(j-i+1)>x
 =>nums[i]+nums[i+1]+...+nums[j]>x*(j-i+1)
@@ -39,41 +45,41 @@ public class _644_BinarySearch_Maximum_Average_Subarray_II_H {
         }
     }
 
-
-
-//------------------------------------------------------------------------------////////////
+//------------------------------------------------------------------------------
+    //2
     // 9Ch
-public class Jiuzhang{
-    public double findMaxAverage(int[] nums, int k) {
-        int n = nums.length;
-        double l = Integer.MAX_VALUE, r = Integer.MIN_VALUE;
-        for (int i = 0; i < n; i++) {
-            l = Math.min(l, (double)nums[i]);
-            r = Math.max(r, (double)nums[i]);
-        }
-        double[] sumNums = new double[n + 1];
-        sumNums[0] = 0;
-        while (r - l > 1e-6) {
-            double mid = (l + r) / 2;
+    public class Jiuzhang{
+        public double findMaxAverage(int[] nums, int k) {
+            int n = nums.length;
+            double l = Integer.MAX_VALUE, r = Integer.MIN_VALUE;
             for (int i = 0; i < n; i++) {
-                sumNums[i + 1] = sumNums[i] + nums[i] - mid;
+                l = Math.min(l, (double)nums[i]);
+                r = Math.max(r, (double)nums[i]);
             }
-            double preMin = 0;
-            double sumMax = Integer.MIN_VALUE;
-            for (int i = k; i <= n; i++) {
-                sumMax = Math.max(sumMax, sumNums[i] - preMin);
-                preMin = Math.min(preMin, sumNums[i - k + 1]);
+            double[] sumNums = new double[n + 1];
+            sumNums[0] = 0;
+            while (r - l > 1e-6) {
+                double mid = (l + r) / 2;
+                for (int i = 0; i < n; i++) {
+                    sumNums[i + 1] = sumNums[i] + nums[i] - mid;
+                }
+                double preMin = 0;
+                double sumMax = Integer.MIN_VALUE;
+                for (int i = k; i <= n; i++) {
+                    sumMax = Math.max(sumMax, sumNums[i] - preMin);
+                    preMin = Math.min(preMin, sumNums[i - k + 1]);
+                }
+                if (sumMax >= 0) {
+                    l = mid;
+                }
+                else {
+                    r = mid;
+                }
             }
-            if (sumMax >= 0) {
-                l = mid;
-            }
-            else {
-                r = mid;
-            }
+            return l;
         }
-        return l;
     }
-}
+//------------------------------------------------------------------------------
 }
 /*
 Given an array consisting of n integers, find the contiguous subarray whose length is greater than or equal to k that has the maximum average value. And you need to output the maximum average value.

@@ -145,7 +145,7 @@ public class _270_Tree_Closest_Binary_Search_Tree_Value_E {
         return value;
     }
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
     public int closestValue7(TreeNode root, double target) {
         int a = root.val;
@@ -155,7 +155,7 @@ public class _270_Tree_Closest_Binary_Search_Tree_Value_E {
         return Math.abs(a - target) < Math.abs(b - target) ? a : b;
     }
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 
     public int closestValue8(TreeNode root, double target) {
         int ret = root.val;
@@ -168,7 +168,7 @@ public class _270_Tree_Closest_Binary_Search_Tree_Value_E {
     }
 
 
-//-------------------------------------------------------------------------//////
+//-----------------------------------------------------------------------------//
 }
 
 /*

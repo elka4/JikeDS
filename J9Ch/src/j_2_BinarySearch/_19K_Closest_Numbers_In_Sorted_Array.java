@@ -247,7 +247,7 @@ the lower index a higher priority (since lower index implies lower value since a
         }
     }
 
-//------------------------------------------------------------------------------//////////
+//-----------------------------------------------------------------------------/
 	 /*    这个是lintcode解法，result 按照差大小排序，然后按照数字大小排序
      * @param arr an integer array
      * @param x an integer

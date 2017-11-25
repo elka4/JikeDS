@@ -1,12 +1,15 @@
 package _BinarySearch.Sum;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+//
+//
+//
 public class _454_BinarySearch_4Sum_II_M {
-
-//    Clean java solution O(n^2)
+//------------------------------------------------------------------------------
+    //1
+    //Clean java solution O(n^2)
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
         Map<Integer, Integer> map = new HashMap<>();
 
@@ -29,9 +32,9 @@ public class _454_BinarySearch_4Sum_II_M {
 
 //    Time complexity:  O(n^2)
 //    Space complexity: O(n^2)
-
-
-//    Simple Java Solution with Explanation
+//------------------------------------------------------------------------------
+    //2
+    //    Simple Java Solution with Explanation
     public int fourSumCount2(int[] A, int[] B, int[] C, int[] D) {
         Map<Integer,Integer> sums = new HashMap<>();
         int count = 0;
@@ -55,6 +58,8 @@ public class _454_BinarySearch_4Sum_II_M {
         }
         return count;
     }
+//------------------------------------------------------------------------------
+    //3
 //    Take the arrays A and B, and compute all the possible sums of two elements. Put the sum in the Hash map, and increase the hash map value if more than 1 pair sums to the same value.
 //
 //    Compute all the possible sums of the arrays C and D. If the hash map contains the opposite value of the current sum, increase the count of four elements sum to 0 by the counter in the map.
@@ -75,7 +80,8 @@ public class _454_BinarySearch_4Sum_II_M {
         }
         return result;
     }
-
+//------------------------------------------------------------------------------
+    //4
     //Java, hashmap solution
     public int fourSumCount4(int[] A, int[] B, int[] C, int[] D) {
         Arrays.sort(A);
@@ -104,7 +110,8 @@ public class _454_BinarySearch_4Sum_II_M {
         }
         return count;
     }
-
+//------------------------------------------------------------------------------
+    //5
     //Java HashMap O(n^2) solution
     public int fourSumCount5(int[] A, int[] B, int[] C, int[] D) {
         Map<Integer, Integer> m1 = new HashMap<>();
@@ -138,6 +145,7 @@ public class _454_BinarySearch_4Sum_II_M {
         }
         return result;
     }
+//------------------------------------------------------------------------------
 }
 
 /*

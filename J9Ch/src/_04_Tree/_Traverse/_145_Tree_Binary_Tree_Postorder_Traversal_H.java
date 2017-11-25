@@ -63,7 +63,7 @@ public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
         return result;
     }
 
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
     // 9Ch
     //Iterative
     public ArrayList<Integer> postorderTraversal2(TreeNode root) {
@@ -124,7 +124,7 @@ public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
         result.add(root.val);
         return result;
     }
-//------------------------------------------------------------------------------/////////////
+//-----------------------------------------------------------------------------////
 
     public class Solution_mine {
         /**
@@ -260,7 +260,7 @@ public class _145_Tree_Binary_Tree_Postorder_Traversal_H {
         }
         return ans;
     }
-//------------------------------------------------------------------------------/////////
+//-----------------------------------------------------------------------------
 
 }
 /*  leetcode

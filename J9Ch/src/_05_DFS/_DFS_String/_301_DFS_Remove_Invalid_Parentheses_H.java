@@ -79,7 +79,7 @@ T(n) = n x C(n, n) + (n-1) x C(n, n-1) + ... + 1 x C(n, 1) = n x 2^(n-1).
         return count == 0;
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     /*
     Easiest 9ms Java Solution
 Here I share my DFS or backtracking solution. It's 10X faster than optimized BFS.
@@ -144,7 +144,7 @@ Compared to 106 ms BFS (Queue & Set), it's faster and easier. Hope it helps! Tha
         sb.setLength(len);
     }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     /*
     Easy, Short, Concise and Fast Java DFS 3 ms solution
 For a better view see here

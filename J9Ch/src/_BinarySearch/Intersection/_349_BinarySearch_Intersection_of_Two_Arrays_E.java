@@ -5,6 +5,8 @@ import java.util.*;
 //  https://leetcode.com/problems/intersection-of-two-arrays/description/
 //
 public class _349_BinarySearch_Intersection_of_Two_Arrays_E {
+//------------------------------------------------------------------------------
+    //1
 /*    Three Java Solutions
     Use two hash sets
 
@@ -30,6 +32,8 @@ public class _349_BinarySearch_Intersection_of_Two_Arrays_E {
             return result;
         }
     }
+//------------------------------------------------------------------------------
+    //2
 /*    Sort both arrays, use two pointers
 
     Time complexity: O(nlogn)*/
@@ -60,6 +64,8 @@ public class _349_BinarySearch_Intersection_of_Two_Arrays_E {
             return result;
         }
     }
+//------------------------------------------------------------------------------
+    //3
 /*    Binary search
 
     Time complexity: O(nlogn)*/
@@ -98,45 +104,47 @@ public class _349_BinarySearch_Intersection_of_Two_Arrays_E {
             return false;
         }
     }
-//-------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
+    //4
     // 9Ch
-// version 1: sort & merge
-public class Jiuzhang {
-    /**
-     * @param nums1 an integer array
-     * @param nums2 an integer array
-     * @return an integer array
-     */
-    public int[] intersection(int[] nums1, int[] nums2) {
-        Arrays.sort(nums1);
-        Arrays.sort(nums2);
+    // version 1: sort & merge
+    public class Jiuzhang {
+        /**
+         * @param nums1 an integer array
+         * @param nums2 an integer array
+         * @return an integer array
+         */
+        public int[] intersection(int[] nums1, int[] nums2) {
+            Arrays.sort(nums1);
+            Arrays.sort(nums2);
 
-        int i = 0, j = 0;
-        int[] temp = new int[nums1.length];
-        int index = 0;
-        while (i < nums1.length && j < nums2.length) {
-            if (nums1[i] == nums2[j]) {
-                if (index == 0 || temp[index - 1] != nums1[i]) {
-                    temp[index++] = nums1[i];
+            int i = 0, j = 0;
+            int[] temp = new int[nums1.length];
+            int index = 0;
+            while (i < nums1.length && j < nums2.length) {
+                if (nums1[i] == nums2[j]) {
+                    if (index == 0 || temp[index - 1] != nums1[i]) {
+                        temp[index++] = nums1[i];
+                    }
+                    i++;
+                    j++;
+                } else if (nums1[i] < nums2[j]) {
+                    i++;
+                } else {
+                    j++;
                 }
-                i++;
-                j++;
-            } else if (nums1[i] < nums2[j]) {
-                i++;
-            } else {
-                j++;
             }
-        }
 
-        int[] result = new int[index];
-        for (int k = 0; k < index; k++) {
-            result[k] = temp[k];
-        }
+            int[] result = new int[index];
+            for (int k = 0; k < index; k++) {
+                result[k] = temp[k];
+            }
 
-        return result;
+            return result;
+        }
     }
-}
-
+//------------------------------------------------------------------------------
+    //5
     // version 2: hash map
     public class Jiuzhang2{
         /**
@@ -171,7 +179,8 @@ public class Jiuzhang {
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //6
     // version 3: sort & binary search
     public class Jiuzhang3{
         /**
@@ -233,6 +242,7 @@ public class Jiuzhang {
             return false;
         }
     }
+//------------------------------------------------------------------------------
 }
 /*
 Given two arrays, write a function to compute their intersection.

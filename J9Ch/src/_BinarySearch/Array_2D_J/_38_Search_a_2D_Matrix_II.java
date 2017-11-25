@@ -2,8 +2,11 @@ package _BinarySearch.Array_2D_J;
 
 
 //  leetcode 240. Search a 2D Matrix II
-
+//
+//  2:
 public class _38_Search_a_2D_Matrix_II {
+//-----------------------------------------------------------------------------
+    //1
     //  My concise O(m+n) Java solution
     public class Solution {
         public boolean searchMatrix(int[][] matrix, int target) {
@@ -24,7 +27,8 @@ public class _38_Search_a_2D_Matrix_II {
             return false;
         }
     }
-//------------------------------------------------------------------------------///////////
+//-----------------------------------------------------------------------------
+    //2
      /**
      * @param matrix: A list of lists of integers
      * @param: A number you want to search in the matrix
@@ -59,7 +63,7 @@ public class _38_Search_a_2D_Matrix_II {
         }
         return count;
     }
-
+//-----------------------------------------------------------------------------
 
 }
 

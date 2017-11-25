@@ -86,7 +86,7 @@ public class _200_Number_of_Islands_M {
 
 
 }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //2
 public class Solution2 {
     public int numIslands(char[][] g) {
@@ -152,7 +152,7 @@ public class Solution2 {
         }
     }
 }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //3
 //    Thanks for sharing. I followed your logic and implement a version by using a more standard union-find class.
 
@@ -242,7 +242,7 @@ public class Solution2 {
     }
 
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //4
 //Nice solution. I have a similar one using Union Find from the idea of "Number of Island II" with some improvements:
 //
@@ -318,7 +318,7 @@ public class Solution2 {
             }
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 //5
 //refactored and becomes more readable
 
@@ -384,7 +384,7 @@ public class Solution2 {
             }
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //6
     //1D Union Find Java solution, easily generalized to other problems
     /*
@@ -458,7 +458,7 @@ I separate all the union find logic in a separate class and use 1d version to ma
             }
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
     //7
 // 9Ch
 
@@ -584,7 +584,7 @@ I separate all the union find logic in a separate class and use 1d version to ma
             return union_find.query();
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.

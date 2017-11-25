@@ -132,7 +132,7 @@ public class _632_TwoPointer_Smallest_Range_H {
             return new int[]{minx, miny};
         }
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 
 /*    Java 8, Sliding window
     The idea is to sort all the elements in the k lists and run a sliding window over the sorted list, to find the minimum window that satisfies the criteria of having atleast one element from each list.*/

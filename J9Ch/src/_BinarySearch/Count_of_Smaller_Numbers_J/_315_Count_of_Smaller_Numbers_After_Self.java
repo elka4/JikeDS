@@ -5,8 +5,13 @@ import java.util.stream.IntStream;
 
 //  leetcode  315. Count of Smaller Numbers After Self
 //  https://leetcode.com/problems/count-of-smaller-numbers-after-self/description/
+//
+//
+//  14:
 public class _315_Count_of_Smaller_Numbers_After_Self {
-/*
+//------------------------------------------------------------------------------
+
+    /*
 9ms short Java BST solution get answer when building BST
 Every node will maintain a val sum recording the total of number on it's left bottom side, dup counts the duplication. For example, [3, 2, 2, 6, 1], from back to beginning,we would have:
 
@@ -55,7 +60,8 @@ public class Solution1 {
         return node;
     }
 }
-
+//------------------------------------------------------------------------------
+//2
 //My simple AC Java Binary Search code
 /*
 Traverse from the back to the beginning of the array, maintain an sorted array of numbers have been visited. Use findIndex() to find the first element in the sorted array which is larger or equal to target number. For example, [5,2,3,6,1], when we reach 2, we have a sorted array[1,3,6], findIndex() returns 1, which is the index where 2 should be inserted and is also the number smaller than 2. Then we insert 2 into the sorted array to form [1,2,3,6].
@@ -92,7 +98,8 @@ class Solution2{
         return end;
     }
 }
-
+//------------------------------------------------------------------------------
+//3
 //11ms JAVA solution using merge sort with explanation
 /*
 The basic idea is to do merge sort to nums[]. To record the result, we need to keep the index of each number in the original array. So instead of sort the number in nums, we sort the indexes of each number.
@@ -169,7 +176,8 @@ class Solution3{
         }
     }
 }
-
+//------------------------------------------------------------------------------
+//4
 //  Easiest Java solution
     /*
     Traverse from nums[len - 1] to nums[0], and build a binary search tree, which stores:
@@ -223,7 +231,8 @@ class Solution4{
         }
     }
 }
-
+//------------------------------------------------------------------------------
+//5
 //  https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/
 //  Short Java Binary Index Tree BEAT 97.33% With Detailed Explanation
 
@@ -280,7 +289,8 @@ public class Solution5 {
         }
     }
 }
-
+//------------------------------------------------------------------------------
+//6
 
 //  Map each number into its corresponding ordered index first.
 //  https://discuss.leetcode.com/topic/39656/short-java-binary-index-tree-beat-97-33-with-detailed-explanation/5
@@ -332,7 +342,8 @@ class Solution6{
     }
 
 }
-
+//------------------------------------------------------------------------------
+//7
 //  Fenwick Tree
 public class Solution7 {
     public List<Integer> countSmaller(int[] nums) {
@@ -378,7 +389,8 @@ public class Solution7 {
         return sum;
     }
 }
-
+//------------------------------------------------------------------------------
+//8
 
 //Another BIT Solution written in Java
 public class Solution8 {
@@ -419,6 +431,8 @@ public class Solution8 {
         return sum;
     }
 }
+//------------------------------------------------------------------------------
+    //9
 /*
 Memory efficient version, in case the given array is sparse.
 Map size would be O(lg(max element) + n)
@@ -464,7 +478,8 @@ class Solution9{
     }
 }
 
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
+    //10
     //Java, 5 methods, merge sort, binary indexed tree, binary search tree
     //  Bottom up merge sort, sort the index array and count the exchanges during merge
     class Solution11{
@@ -502,7 +517,8 @@ class Solution9{
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //11
     //top-down merge sort, similar idea to solution1:
     class Solution22{
         private void merge(int[] nums, int[] indices, int[] aux, int[] count, int start, int end) {
@@ -538,7 +554,8 @@ class Solution9{
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //12
     //  Binary Indexed Tree, iterate from the back of the array, use the rank as BIT index:
     class Solution33{
         private void update(int[]BIT, int index, int val) {
@@ -574,6 +591,8 @@ class Solution9{
             return result;
         }
     }
+//------------------------------------------------------------------------------
+    //13
     //  Binary Indexed Tree, iterate according to sorted order and use original index (from the back) as BIT index:
     class Solution44{
         private void update(int[]BIT, int index, int val) {
@@ -617,7 +636,8 @@ class Solution9{
             return result;
         }
     }
-
+//------------------------------------------------------------------------------
+    //14
     //  Binary Search Tree:
     class Solution55{
         private class TreeNode {
@@ -660,7 +680,7 @@ class Solution9{
             return result;
         }
     }
-//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------
 }
 /*
 You are given an integer array nums and you have to return a new counts array.

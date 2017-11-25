@@ -3,6 +3,8 @@ package _BinarySearch.Copy_Book_J;
 //
 //
 public class _438_Copy_BookII {
+//-----------------------------------------------------------------------------
+    //1
     public class Solution {
         /**
          * @param n: an integer
@@ -55,6 +57,7 @@ public class _438_Copy_BookII {
             return f[k-1][n];
         }
     }
+//-----------------------------------------------------------------------------
 }
 /*
 你有* n 本书，每本书页数一样现在有 k 个人，每个人复印一本书需要花费时间 times[i] *，

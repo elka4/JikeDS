@@ -18,7 +18,7 @@ public class _7BackpackVI {
 
         return f[target];
     }
-//-------------------------------------------------------------------------////
+//-----------------------------------------------------------------------------
 }
 /*
 Given an integer array nums with all positive numbers and no duplicates, find the number of possible combinations that add up to a positive integer target.

@@ -123,7 +123,7 @@ public class _105_DFS_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_
         int[] inorder = {1,2,3};
         buildTree2(preorder, inorder).print();
     }
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
     public TreeNode buildTree4(int[] preorder, int[] inorder) {
         int preStart = 0;
         int preEnd = preorder.length-1;
@@ -395,7 +395,7 @@ public class _105_DFS_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal_
         buildTree10(preorder, inorder).print();
     }
 
-//-------------------------------------------------------------------------/////
+//-----------------------------------------------------------------------------/
 }
 /*
 前序遍历和中序遍历树构造二叉树

@@ -1,9 +1,11 @@
 package _BinarySearch.binary;
 
-/**
- * Created by tzh on 1/16/17.
- */
+//
+//
+//
 public class bt_SearchInRotatedArray {
+//-----------------------------------------------------------------------------
+
     public int search(int[] nums, int target) {
         if(nums == null || nums.length == 0) {
             return -1;
@@ -25,4 +27,9 @@ public class bt_SearchInRotatedArray {
         }
     return -1;
     }
+//-----------------------------------------------------------------------------
+
 }
+/*
+
+ */

@@ -6,12 +6,9 @@ import java.util.*;
 
 //  lintcode    Count of Smaller Number before itself
 //  http://lintcode.com/zh-cn/problem/count-of-smaller-number-before-itself/
-
 //
 public class _249_Count_of_Smaller_Number_Before_Itself {
-
-
-//------------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------
     //  http://blog.csdn.net/u010638189/article/details/68952224
     // LTE
     /**
@@ -53,8 +50,8 @@ public class _249_Count_of_Smaller_Number_Before_Itself {
         return list;
     }
 
-//------------------------------------------------------------------------------////////
-
+//------------------------------------------------------------------------------
+    //2
     /**
      * @param A: An integer array
      * @return: Count the number of element before this element 'ai' is
@@ -123,7 +120,8 @@ public class _249_Count_of_Smaller_Number_Before_Itself {
         int val = 0;//该节点的值
     }
 
-//------------------------------------------------------------------------------////////
+//------------------------------------------------------------------------------
+    //3
     /*
      * @param nums: An integer array
      * @return: Count the number of element before this element 'ai' is
@@ -220,7 +218,7 @@ public class _249_Count_of_Smaller_Number_Before_Itself {
         }
         return ans;
     }
-//------------------------------------------------------------------------------//////
+//------------------------------------------------------------------------------
 }
 
 /*

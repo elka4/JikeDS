@@ -1,12 +1,16 @@
 package _BinarySearch.Rotated_J;
-
 import org.junit.Test;
 
 import java.util.Arrays;
 
 
 //  Rotate String
+//
+//
+//
 public class _16_Rotate_String {
+//------------------------------------------------------------------------------
+
 	  /*
 	 * param A: A string
 	 * param offset: Rotate string with offset.
@@ -51,8 +55,16 @@ public class _16_Rotate_String {
             [4, 3, 2, 1, 5]
             [5, 1, 2, 3, 4]
      */
-}
+//------------------------------------------------------------------------------
 
+
+//------------------------------------------------------------------------------
+
+
+
+//------------------------------------------------------------------------------
+}
+    //2
 /*
  * Given a string and an offset, rotate string by offset. 
  * (rotate from left to right)
