@@ -4,6 +4,7 @@ import org.junit.Test;
 
 //  191. Number of 1 Bits
 //  https://leetcode.com/problems/number-of-1-bits/description/
+//  5:
 //
 public class _191_Bit_Number_of_1_Bits_E {
 //------------------------------------------------------------------------------
@@ -22,8 +23,8 @@ public class _191_Bit_Number_of_1_Bits_E {
         }
         return bits;
     }
-
-
+//------------------------------------------------------------------------------
+    //2
     //  Approach #2 (Bit Manipulation Trick) [Accepted]
     public int hammingWeight2(int n) {
         int sum = 0;
@@ -35,6 +36,7 @@ public class _191_Bit_Number_of_1_Bits_E {
     }
 
 //------------------------------------------------------------------------------
+    //3
     // 9Ch
     // you need to treat n as an unsigned value
     public int hammingWeight(int n) {
@@ -51,6 +53,7 @@ public class _191_Bit_Number_of_1_Bits_E {
     }
 
 //------------------------------------------------------------------------------
+    //4
     public int hammingWeight01(int n) {
         int count = 0;
         for(int i=1; i<33; i++){
@@ -65,6 +68,7 @@ public class _191_Bit_Number_of_1_Bits_E {
         return (n & (1 << i)) != 0;
     }
 //------------------------------------------------------------------------------
+    //5
 //Approach #1 (Loop and Flip) [Accepted]
 
 /*
@@ -100,7 +104,6 @@ And so on.
         return bits;
     }
 //------------------------------------------------------------------------------
-
 }
 /*
 Write a function that takes an unsigned integer and returns the number of ’1' bits it has (also known as the Hamming weight).
@@ -122,6 +125,4 @@ For example, the 32-bit integer ’11' has binary representation 000000000000000
 
 /*
 计算n的二进制表示中的1的个数
-
-
  */

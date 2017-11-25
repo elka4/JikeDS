@@ -3,13 +3,11 @@ import java.util.*;
 import org.junit.Test;
 
 //  231. Power of Two
-
-//  Given an integer, write a function to determine if it is a power of two.
-
-
-//
+//  https://leetcode.com/problems/power-of-two/
+//  5:
 public class _231_Bit_Power_of_Two_E {
-
+//------------------------------------------------------------------------------
+    //1
 //  One line java solution using bitCount
 //This is kind of cheating, but the idea is that a power of two in binary form has and only has one "1".
 
@@ -18,6 +16,8 @@ public class _231_Bit_Power_of_Two_E {
             return n>0 && Integer.bitCount(n) == 1;
         }
     }
+//------------------------------------------------------------------------------
+    //2
     public boolean isPowerOfTwo2(int n) {
 
         if(n<=0)
@@ -25,8 +25,9 @@ public class _231_Bit_Power_of_Two_E {
         int log_base_2= (int)(Math.log(n)/Math.log(2));
         return (((n & (1<< log_base_2)) ==n)?true:false);
     }
-
-//    Same idea here. Count the number of ones (should be 1) by right shifting n by 32 times (be sure to kick out 0x80000000).
+//------------------------------------------------------------------------------
+    //3
+    //Same idea here. Count the number of ones (should be 1) by right shifting n by 32 times (be sure to kick out 0x80000000).
 
     public boolean isPowerOfTwo3(int n) {
         if (n == 0x80000000) return false;
@@ -37,11 +38,13 @@ public class _231_Bit_Power_of_Two_E {
         }
         return ones == 1;
     }
-
+//------------------------------------------------------------------------------
+    //4
     public boolean isPowerOfTwo4(int n) {
         return n > 0 && Integer.highestOneBit(n) == Integer.lowestOneBit(n) ? true : false;
     }
 //------------------------------------------------------------------------------
+    //5
 //4 different ways to solve -- Iterative / Recursive / Bit operation / Math
 
 /*
@@ -94,21 +97,16 @@ return n>0 && (1073741824 % n == 0);
 Time complexity = O(1)
  */
 
-//------------------------------------------------------------------------------
 //One line Java solution
     public boolean isPowerOfTwo(int n) {
         return ((n & (n-1))==0 && n>0);
     }
 
-//------------------------------------------------------------------------------
 
 
 //------------------------------------------------------------------------------
 }
 /*
-
- */
-
-/*
+//  Given an integer, write a function to determine if it is a power of two.
 
  */

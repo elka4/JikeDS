@@ -3,11 +3,12 @@ import java.util.*;
 import org.junit.Test;
 
 //  411. Minimum Unique Word Abbreviation
-
 //  https://leetcode.com/problems/minimum-unique-word-abbreviation/description/
+//  3:
 //
 public class _411_Bit_Minimum_Unique_Word_Abbreviation_M {
-
+//------------------------------------------------------------------------------
+    //1
 /*
     Trie + Bruteforce
     Abbreviation number is pretty like wild card and it can match all the characters appearing in the trie.
@@ -85,6 +86,7 @@ public class _411_Bit_Minimum_Unique_Word_Abbreviation_M {
         abbrGenerator(target, i+1, tmp, abbr+1, num);
     }
 //------------------------------------------------------------------------------
+    //2
 /*Java DFS+Trie+Binary Search 90ms
     Use Trie to build a dictionary with a function to check abbreviation.
     Use DFS with backtracking to generate the abbreviations of a given length.
@@ -185,7 +187,7 @@ public class _411_Bit_Minimum_Unique_Word_Abbreviation_M {
     }
 
 //------------------------------------------------------------------------------
-
+    //3
 /*    Java bit mask + DFS with pruning
 
 7
@@ -297,7 +299,6 @@ public class _411_Bit_Minimum_Unique_Word_Abbreviation_M {
         }
         return mask;
     }
-//------------------------------------------------------------------------------
 
 
 //------------------------------------------------------------------------------
@@ -319,6 +320,3 @@ Examples:
 "apple", ["plain", "amber", "blade"] -> "1p3" (other valid answers include "ap3", "a3e", "2p2", "3le", "3l1").
  */
 
-/*
-
- */

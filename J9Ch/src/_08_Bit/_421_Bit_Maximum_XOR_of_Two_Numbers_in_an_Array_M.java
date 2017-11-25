@@ -3,12 +3,13 @@ import java.util.*;
 import org.junit.Test;
 
 //  421. Maximum XOR of Two Numbers in an Array
-
 //  https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/description/
+//  3:
 //
 public class _421_Bit_Maximum_XOR_of_Two_Numbers_in_an_Array_M {
-
-//    Java O(n) solution using bit manipulation and HashMap
+//------------------------------------------------------------------------------
+    //1
+    //    Java O(n) solution using bit manipulation and HashMap
     public class Solution1 {
         public int findMaximumXOR(int[] nums) {
             int max = 0, mask = 0;
@@ -30,7 +31,8 @@ public class _421_Bit_Maximum_XOR_of_Two_Numbers_in_an_Array_M {
         }
     }
 //------------------------------------------------------------------------------
-//Java O(n) solution using Trie
+    //2
+    //Java O(n) solution using Trie
     class Trie {
         Trie[] children;
         public Trie() {
@@ -73,9 +75,8 @@ public class _421_Bit_Maximum_XOR_of_Two_Numbers_in_an_Array_M {
     }
 
 //------------------------------------------------------------------------------
-
-//    Java, bit manipulation and divide into two groups.
-
+    //3
+    //    Java, bit manipulation and divide into two groups.
     public class Solution3 {
         public int findMaximumXOR(int[] nums) {
             int max = Integer.MIN_VALUE;
@@ -119,8 +120,6 @@ public class _421_Bit_Maximum_XOR_of_Two_Numbers_in_an_Array_M {
             return max;
         }
     }
-//------------------------------------------------------------------------------
-
 
 //------------------------------------------------------------------------------
 }
@@ -138,8 +137,4 @@ Input: [3, 10, 5, 25, 2, 8]
 Output: 28
 
 Explanation: The maximum result is 5 ^ 25 = 28.
- */
-
-/*
-
  */

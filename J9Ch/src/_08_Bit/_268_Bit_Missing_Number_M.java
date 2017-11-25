@@ -3,11 +3,11 @@ import java.util.*;
 import org.junit.Test;
 
 //  268. Missing Number
-
 //  https://leetcode.com/problems/missing-number/description/
-//
+//  8:
 public class _268_Bit_Missing_Number_M {
-
+//------------------------------------------------------------------------------
+    //1
     //  4 Line Simple Java Bit Manipulate Solution with Explaination
 
 /*    The basic idea is to use XOR operation. We all know that a^b^b =a, which means two xor operations with the same number will eliminate the number and reveal the original number.
@@ -22,7 +22,8 @@ public class _268_Bit_Missing_Number_M {
 
         return xor ^ i;
     }
-
+//------------------------------------------------------------------------------
+    //2
 /*    Hey guys, since the n numbers are from [0, n], we can just add all the numbers from [0, n] together and minus the sum of the n-1 numbers in array.
 
     Just like this.
@@ -35,7 +36,8 @@ public class _268_Bit_Missing_Number_M {
             sum += i - nums[i];
         return sum;
     }
-
+//------------------------------------------------------------------------------
+    //3
 //    Sum of n number: n(n+1)/2.
 
     public class Solution3 {
@@ -50,6 +52,7 @@ public class _268_Bit_Missing_Number_M {
 
     }
 //------------------------------------------------------------------------------
+    //4
 //3 different ideas: XOR, SUM, Binary Search. Java code
 
 //1.XOR
@@ -61,6 +64,8 @@ public class _268_Bit_Missing_Number_M {
         }
         return res;
     }
+//------------------------------------------------------------------------------
+    //5
 //2.SUM
     public int missingNumber5(int[] nums) { //sum
         int len = nums.length;
@@ -69,6 +74,8 @@ public class _268_Bit_Missing_Number_M {
             sum-=nums[i];
         return sum;
     }
+//------------------------------------------------------------------------------
+    //6
 //3.Binary Search
     public int missingNumber6(int[] nums) { //binary search
         Arrays.sort(nums);
@@ -84,6 +91,7 @@ public class _268_Bit_Missing_Number_M {
 //    If the array is in order, I prefer Binary Search method. Otherwise, the XOR method is better.
 
 //------------------------------------------------------------------------------
+    //7
 //We can do SUM this way to avoid overflow.
 
     public class Solution7 {
@@ -97,7 +105,8 @@ public class _268_Bit_Missing_Number_M {
             return sum;
         }
     }
-
+//------------------------------------------------------------------------------
+    //8
 //    You could also avoid sum overflow by using longs - something along the lines of this:
 
     public int missingNumber8(int[] nums)
@@ -109,7 +118,6 @@ public class _268_Bit_Missing_Number_M {
 
         return (int) (nums.length*(nums.length+1)/2 - sum);
     }
-//------------------------------------------------------------------------------
 
 
 //------------------------------------------------------------------------------

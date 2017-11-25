@@ -3,13 +3,12 @@ import java.util.*;
 import org.junit.Test;
 
 //  389. Find the Difference
-
 //  https://leetcode.com/problems/find-the-difference/description/
-//
+//  9:
 public class _389_Bit_Find_the_Difference_E {
-
-//Java solution using bit manipulation
-
+//------------------------------------------------------------------------------
+    //1
+    //Java solution using bit manipulation
     public char findTheDifference1(String s, String t) {
         char c = 0;
         for (int i = 0; i < s.length(); ++i) {
@@ -20,8 +19,9 @@ public class _389_Bit_Find_the_Difference_E {
         }
         return c;
     }
-//    maybe a more elegant version:
-
+//------------------------------------------------------------------------------
+    //2
+    //    maybe a more elegant version:
     public char findTheDifference2(String s, String t) {
         int n = t.length();
         char c = t.charAt(n - 1);
@@ -31,7 +31,8 @@ public class _389_Bit_Find_the_Difference_E {
         }
         return c;
     }
-
+//------------------------------------------------------------------------------
+    //3
 //    @acheiver If you use c = c ^ s.chatAt(i) instead of c ^= s.charAt(i),you have to code like:
 //            (because use " ^= " Java code can change type automatically)
 
@@ -45,7 +46,8 @@ public class _389_Bit_Find_the_Difference_E {
         }
         return (char)c;
     }
-
+//------------------------------------------------------------------------------
+    //4
 //    @lujingyang1029 If you not use " ^= ",you can code like this:
 
     public char findTheDifference4(String s, String t) {
@@ -59,9 +61,8 @@ public class _389_Bit_Find_the_Difference_E {
         return (char)c;
     }
 //------------------------------------------------------------------------------
-//Simple JAVA 8ms solution, 4 lines
-
-
+    //5
+    //Simple JAVA 8ms solution, 4 lines
     public class Solution5 {
         public char findTheDifference(String s, String t) {
             // Initialize variables to store sum of ASCII codes for
@@ -74,7 +75,8 @@ public class _389_Bit_Find_the_Difference_E {
             return (char)(charCodeT - charCodeS);
         }
     }
-
+//------------------------------------------------------------------------------
+    //6
 /*    UPDATE:
     Thanks to @zzhai for providing this optimization! :)
             "1 optimization: As t.length() is just 1 character longer than s.length(), we can use 1 pass to process both strings (20% better runtime performance)."*/
@@ -88,7 +90,8 @@ public class _389_Bit_Find_the_Difference_E {
         return (char)charCode;
     }
 
-
+//------------------------------------------------------------------------------
+    //7
    /* The idea is so clever.
 1 optimization: As t.length() is just 1 character longer than s.length(), we can use 1 pass to process both strings (20% better runtime performance).*/
 
@@ -102,7 +105,8 @@ public class _389_Bit_Find_the_Difference_E {
         return (char)charCode;
     }
 
-
+//------------------------------------------------------------------------------
+    //8
 //    my 7ms solution with similar thought,but much longer :-(
 
     public static char findTheDifference8(String s,String t){
@@ -126,6 +130,7 @@ public class _389_Bit_Find_the_Difference_E {
         return ' ';
     }
 //------------------------------------------------------------------------------
+    //9
 //Java solution with 6ms
 //It seams turning String into Char Array is quicker.
 
@@ -141,8 +146,6 @@ public class _389_Bit_Find_the_Difference_E {
             return(char)t1;
         }
     }
-
-//------------------------------------------------------------------------------
 
 
 //------------------------------------------------------------------------------
@@ -165,8 +168,4 @@ e
 
 Explanation:
 'e' is the letter that was added.
- */
-
-/*
-
  */

@@ -9,10 +9,11 @@ import java.util.Stack;
 //  89. Gray Code
 //  https://leetcode.com/problems/gray-code/description/
 //  http://www.lintcode.com/zh-cn/problem/gray-code/
+//  13:
 //
 public class _089_Bit_Gray_Code_M {
-
 //------------------------------------------------------------------------------
+    //1
     //An accepted three line solution in JAVA
     //完全是Bit 操作
     //  i ^ i>>1 操作得到的相邻两个二进制数字在一位上为0或1
@@ -88,6 +89,7 @@ public class _089_Bit_Gray_Code_M {
      */
     //java.util.MissingFormatArgumentException: Format specifier '%s'
 //------------------------------------------------------------------------------
+    //2
 /*
     Java short code with explanation
 
@@ -117,7 +119,7 @@ public class _089_Bit_Gray_Code_M {
 
 
 //------------------------------------------------------------------------------
-
+    //3
     //Java Solution with Recursive
     public List<Integer> grayCode3(int n) {
         List<Integer> list = new ArrayList<Integer>();
@@ -128,6 +130,7 @@ public class _089_Bit_Gray_Code_M {
         }
         return list;
     }
+
     public void grayCode3(int n, int val, List<Integer> list) {
         int flag = Integer.bitCount(val)%2;
         if (n > 1) {
@@ -153,9 +156,8 @@ public class _089_Bit_Gray_Code_M {
         System.out.println(Integer.bitCount(11));      //3
     }
 
-
-
 //------------------------------------------------------------------------------
+    //4
     //    Share my solution
     //    My idea is to generate the sequence iteratively.
     // For example, when n=3, we can get the result based on n=2.
@@ -184,6 +186,8 @@ public class _089_Bit_Gray_Code_M {
         }
         return result;
     }
+//------------------------------------------------------------------------------
+    //5
     /*
     000,
     001,
@@ -235,6 +239,7 @@ public class _089_Bit_Gray_Code_M {
      */
 
 //------------------------------------------------------------------------------
+    //6
     // 9Ch DFS
     public ArrayList<Integer> grayCode5(int n) {
         ArrayList<Integer> result = new ArrayList<Integer>();
@@ -273,6 +278,7 @@ public class _089_Bit_Gray_Code_M {
         }
     }
 //------------------------------------------------------------------------------
+    //7
 /*
 Java solution use a stack, easy to figure out, simple and interesting
 
@@ -337,25 +343,24 @@ Java solution use a stack, easy to figure out, simple and interesting
 
 
 //------------------------------------------------------------------------------
-//------------------------------------------------------------------------------
-//------------------------------------------------------------------------------
-public List<Integer> grayCode(int n) {
-    if (n == 0) {
-        List<Integer> result = new ArrayList<Integer>();
-        result.add(0);
+    //8
+    public List<Integer> grayCode(int n) {
+        if (n == 0) {
+            List<Integer> result = new ArrayList<Integer>();
+            result.add(0);
+            return result;
+        }
+
+        List<Integer> result = grayCode(n - 1);
+
+        int numToAdd = 1 << (n - 1);
+
+        for (int i = result.size() - 1; i >= 0; i--) {
+            result.add(numToAdd + result.get(i));
+        }
+
         return result;
     }
-
-    List<Integer> result = grayCode(n - 1);
-
-    int numToAdd = 1 << (n - 1);
-
-    for (int i = result.size() - 1; i >= 0; i--) {
-        result.add(numToAdd + result.get(i));
-    }
-
-    return result;
-}
 
     @Test
     public void test011() {
@@ -367,8 +372,8 @@ public List<Integer> grayCode(int n) {
         }
     }
 
-//---------------------------------////////////////////////
-
+//------------------------------------------------------------------------------
+    //9
     //iterative 做法, 简单美观, 最好的做法
     //The idea is simple. G(i) = i^ (i/2).
     //要理解为什么 i ^ i>>1 和前一个刚好只差一个1 ！！！？？？？
@@ -445,9 +450,8 @@ i ^ i>>1 100
          */
     }
 
-
-//---------------------------------////////////////////////
-
+//------------------------------------------------------------------------------
+    //10
     //JAVA-----------Easy Version To Understand!!!!!!
 
     public List<Integer> grayCode04(int n) {
@@ -471,7 +475,8 @@ i ^ i>>1 100
     }
 
 
-//---------------------------------////////////////////////
+//------------------------------------------------------------------------------
+    //11
     //1ms Java Solution with explaination
 
     //analyze the pattern
@@ -546,7 +551,8 @@ i ^ i>>1 100
     at ! the numbers differ in two bits: counting from right startin from 0 you need to flip bit 1 and bit 2 to go from 010 to 100. Moving a bit is not allowed here. In other words XOR of two consecutive gray code elements must be a power of 2.
      */
 
-
+//------------------------------------------------------------------------------
+    //12
     //Some simplification:
     public List<Integer> grayCode7(int n) {
         ArrayList<Integer> list = new ArrayList<Integer>();
@@ -562,8 +568,8 @@ i ^ i>>1 100
         }
         return list;
     }
-//---------------------------------////////////////////////
-
+//------------------------------------------------------------------------------
+    //13
     /*
     My idea is to generate the sequence iteratively. For example,
     when n=3, we can get the result based on n=2.
@@ -588,8 +594,7 @@ i ^ i>>1 100
 //------------------------------------------------------------------------------
 }
 
-/*//------------------------------------------------------------------------------
-
+/*------------------------------------------------------------------------------
 lint
 
 格雷编码是一个二进制数字系统，在该系统中，两个连续的数值仅有一个二进制的差异。
@@ -613,14 +618,12 @@ lint
 挑战
 
 O(2n) 时间复杂度。
-//------------------------------------------------------------------------------
-
- */
-
+------------------------------------------------------------------------------
+*/
 
 
-/*//------------------------------------------------------------------------------
 
+/*------------------------------------------------------------------------------
 The gray code is a binary numeral system where two successive values differ in only one bit.
 
 Given a non-negative integer n representing the total number of bits in the code, print the sequence of gray code. A gray code sequence must begin with 0.
@@ -637,6 +640,6 @@ For a given n, a gray code sequence is not uniquely defined.
 For example, [0,2,3,1] is also a valid gray code sequence according to the above definition.
 
 For now, the judge is able to judge based on one instance of gray code sequence. Sorry about that.
-//------------------------------------------------------------------------------
- */
+------------------------------------------------------------------------------
+*/
 

@@ -3,13 +3,13 @@ import java.util.*;
 import org.junit.Test;
 
 //  401. Binary Watch
-
 //  https://leetcode.com/problems/binary-watch/description/
 //  http://www.lintcode.com/zh-cn/problem/binary-time/
+//  8:
 public class _401_Bit_Binary_Watch_E {
+//------------------------------------------------------------------------------
+    //1
     //Simple Python+Java
-
-
     public List<String> readBinaryWatch(int num) {
         List<String> times = new ArrayList<>();
         for (int h=0; h<12; h++)
@@ -18,6 +18,8 @@ public class _401_Bit_Binary_Watch_E {
                     times.add(String.format("%d:%02d", h, m));
         return times;
     }
+//------------------------------------------------------------------------------
+    //2
     //3ms Java Solution Using Backtracking and Idea of "Permutation and Combination"
     public class Solution2 {
         public List<String> readBinaryWatch(int num) {
@@ -55,8 +57,8 @@ public class _401_Bit_Binary_Watch_E {
         }
     }
 
-
-
+//------------------------------------------------------------------------------
+    //3
     //straightforward java answer
     public List<String> readBinaryWatch3(int num) {
         ArrayList<String> result = new ArrayList<>();
@@ -69,7 +71,8 @@ public class _401_Bit_Binary_Watch_E {
         }
         return result;
     }
-
+//------------------------------------------------------------------------------
+    //4
     public List<String> readBinaryWatch4(int num) {
         ArrayList<String> result = new ArrayList<>();
         for (int i = 0; i < 12; i++) {
@@ -82,9 +85,9 @@ public class _401_Bit_Binary_Watch_E {
         return result;
     }
 
-
-//    Java two loops, using bitCount, beat 90%
-
+//------------------------------------------------------------------------------
+    //5
+    //Java two loops, using bitCount, beat 90%
     public List<String> readBinaryWatch6(int num) {
         int bitCount = 0;
         List<String> ls = new ArrayList<String>();
@@ -103,8 +106,9 @@ public class _401_Bit_Binary_Watch_E {
         }
         return ls;
     }
-
-//    No need to compute hour bit counts each time. And when num is less than hour bit counts, just skip to next loop.
+//------------------------------------------------------------------------------
+    //6
+    //No need to compute hour bit counts each time. And when num is less than hour bit counts, just skip to next loop.
 
     public List<String> readBinaryWatch7(int num) {
         List<String> times = new ArrayList<>();
@@ -120,7 +124,7 @@ public class _401_Bit_Binary_Watch_E {
         return times;
     }
 //------------------------------------------------------------------------------
-
+    //7
 /*    Simple Java AC solution with Explanation
 
 9
@@ -185,45 +189,43 @@ public class _401_Bit_Binary_Watch_E {
 
 
 //------------------------------------------------------------------------------
-
-
-//------------------------------------------------------------------------------
-// 9Ch
-public class Jiuzhang {
-    public List<String> readBinaryWatch(int num) {
-        ArrayList<String> ans = new ArrayList<String>();
-        ArrayList<ArrayList<Integer>> hour = new ArrayList<ArrayList<Integer>>();
-        ArrayList<ArrayList<Integer>> min = new ArrayList<ArrayList<Integer>>();
-        for(int i = 0; i < 4; i++) {
-            hour.add(new ArrayList<Integer>());
-        }
-        for(int i = 0; i < 6; i++) {
-            min.add(new ArrayList<Integer>());
-        }
-        for(int i = 0; i < 12; i++) {
-            int n = Integer.bitCount(i);
-            hour.get(n).add(i);
-        }
-        for(int i = 0; i < 60; i++) {
-            min.add(new ArrayList<Integer>());
-            int n = Integer.bitCount(i);
-            min.get(n).add(i);
-        }
-        for(int i = 0; i <= num && i < 4; i++) {
-            for(int h = 0; h < hour.get(i).size(); h++) {
-                for(int m = 0; m < min.get(num - i).size() && num - i < 6; m++) {
-                    String string = hour.get(i).get(h).toString() + ":";
-                    if(min.get(num - i).get(m) < 10) {
-                        string += "0";
+    //8
+    // 9Ch
+    public class Jiuzhang {
+        public List<String> readBinaryWatch(int num) {
+            ArrayList<String> ans = new ArrayList<String>();
+            ArrayList<ArrayList<Integer>> hour = new ArrayList<ArrayList<Integer>>();
+            ArrayList<ArrayList<Integer>> min = new ArrayList<ArrayList<Integer>>();
+            for(int i = 0; i < 4; i++) {
+                hour.add(new ArrayList<Integer>());
+            }
+            for(int i = 0; i < 6; i++) {
+                min.add(new ArrayList<Integer>());
+            }
+            for(int i = 0; i < 12; i++) {
+                int n = Integer.bitCount(i);
+                hour.get(n).add(i);
+            }
+            for(int i = 0; i < 60; i++) {
+                min.add(new ArrayList<Integer>());
+                int n = Integer.bitCount(i);
+                min.get(n).add(i);
+            }
+            for(int i = 0; i <= num && i < 4; i++) {
+                for(int h = 0; h < hour.get(i).size(); h++) {
+                    for(int m = 0; m < min.get(num - i).size() && num - i < 6; m++) {
+                        String string = hour.get(i).get(h).toString() + ":";
+                        if(min.get(num - i).get(m) < 10) {
+                            string += "0";
+                        }
+                        string += min.get(num - i).get(m).toString();
+                        ans.add(string);
                     }
-                    string += min.get(num - i).get(m).toString();
-                    ans.add(string);
                 }
             }
+            return ans;
         }
-        return ans;
     }
-}
 
 //------------------------------------------------------------------------------
 }

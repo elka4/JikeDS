@@ -3,11 +3,12 @@ import java.util.*;
 import org.junit.Test;
 
 //  260. Single Number III
-
 //  https://leetcode.com/problems/single-number-iii/description/
 //  http://www.lintcode.com/zh-cn/problem/single-number-iii/
+//  4:
 public class _260_Bit_Single_Number_III_M {
-
+//------------------------------------------------------------------------------
+    //1
 //Accepted C++/Java O(n)-time O(1)-space Easy Solution with Detail Explanations
 /*
 Once again, we need to use XOR to solve this problem. But this time, we need to do it in two passes:
@@ -55,7 +56,8 @@ public class Solution1 {
         return rets;
     }
 }
-
+//------------------------------------------------------------------------------
+    //2
 //Bit manipulation beats 99.62%
 //Find the rightmost set bit, divide numbers into two groups.
 //    Each group will end up being one unique number.
@@ -91,6 +93,7 @@ public class Solution1 {
 
 
 //------------------------------------------------------------------------------
+    //3
 //  My Java solution adapted from the commonest solution here
 /*I read @zhiqing_xiao 's post to get an idea about the solution. His solution is really smart and elegant, but it took me a while to get understand how "diff &= -diff" works. I changed it a little bit to make it better understood, but it is totally based on his solution.
 
@@ -118,10 +121,9 @@ public class Solution1 {
         }
     }
 
-//------------------------------------------------------------------------------
-
 
 //------------------------------------------------------------------------------
+    //4
     // 9Ch
     /**
      * @param A : An integer array

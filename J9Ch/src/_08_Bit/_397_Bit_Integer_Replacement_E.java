@@ -3,10 +3,11 @@ import java.util.*;
 import org.junit.Test;
 
 //  397. Integer Replacement
-
 //  https://leetcode.com/problems/integer-replacement/description/
-//
+//  4:
 public class _397_Bit_Integer_Replacement_E {
+//------------------------------------------------------------------------------
+    //1
 //  https://discuss.leetcode.com/topic/58334/a-couple-of-java-solutions-with-explanations
 //A couple of Java solutions with explanations
 
@@ -33,7 +34,7 @@ public class _397_Bit_Integer_Replacement_E {
                                                                                                                                                                                                                                                             Here is an example of such a solution in Java:
 */
 
-                                                                                                                                                                                                                                            public int integerReplacement1(int n) {
+                                                                                                                                                                                                                            public int integerReplacement1(int n) {
         int c = 0;
         while (n != 1) {
             if ((n & 1) == 0) {
@@ -47,6 +48,8 @@ public class _397_Bit_Integer_Replacement_E {
         }
         return c;
     }
+//------------------------------------------------------------------------------
+    //2
 /*    Of course, doing bitCount on every iteration is not the best way. It is enough to examine the last two digits to figure out whether incrementing or decrementing will give more 1's. Indeed, if a number ends with 01, then certainly decrementing is the way to go. Otherwise, if it ends with 11, then certainly incrementing is at least as good as decrementing (*011 -> *010 / *100) or even better (if there are three or more 1's). This leads to the following solution:*/
 
     public int integerReplacement2(int n) {
@@ -65,6 +68,7 @@ public class _397_Bit_Integer_Replacement_E {
     }
 /*    An alternative approach to intuitive algorithm was very well put by @dettier in a discussion: you should create as many trailing zeroes as you can. This way you can avoid the tie-breaking trap (there can be no ties), but you'll still have to handle the n=3 exception separately.*/
 //------------------------------------------------------------------------------
+    //3
 /*
     Java 12 line 4(5)ms iterative solution with explanations. No other data structures.
 
@@ -89,7 +93,7 @@ public class _397_Bit_Integer_Replacement_E {
     }
 
 //------------------------------------------------------------------------------
-
+    //4
 /*    JAVA 3ms Bit Manipulation Solution
 
     For this problem, if we look at the binary form of each number, we can get the idea that for each '1' (except for the first '1') it counts to two steps, for each '0', it counts to one step.
@@ -124,8 +128,6 @@ public class _397_Bit_Integer_Replacement_E {
             return cnt;
         }
     }
-//------------------------------------------------------------------------------
-
 
 //------------------------------------------------------------------------------
 }

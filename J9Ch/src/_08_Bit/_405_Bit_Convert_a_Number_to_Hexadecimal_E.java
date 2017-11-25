@@ -3,22 +3,18 @@ import java.util.*;
 import org.junit.Test;
 
 //  405. Convert a Number to Hexadecimal
-
 //  https://leetcode.com/problems/convert-a-number-to-hexadecimal/description/
-//
+//  7:
 public class _405_Bit_Convert_a_Number_to_Hexadecimal_E {
-
-//    Simple Java solution with comment
-
-/*Basic idea: each time we take a look at the last four digits of
-            binary verion of the input, and maps that to a hex char
-            shift the input to the right by 4 bits, do it again
-            until input becomes 0.
-
-*/
-
+//------------------------------------------------------------------------------
+    //1
+    //Simple Java solution with comment
+    /*Basic idea: each time we take a look at the last four digits of
+                binary verion of the input, and maps that to a hex char
+                shift the input to the right by 4 bits, do it again
+                until input becomes 0.
+    */
     public class Solution1 {
-
         char[] map = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
 
         public String toHex(int num) {
@@ -30,19 +26,12 @@ public class _405_Bit_Convert_a_Number_to_Hexadecimal_E {
             }
             return result;
         }
-
-
     }
 
-
-
-
-
 //------------------------------------------------------------------------------
+    //2
     //[JAVA] Clean Code with Explanations and Running Time [2 Solutions]
-
-//    SOLUTION 1
-
+    //    SOLUTION 1
     public class Solution2 {
         public String toHex(int num) {
             long n = num & 0x00000000ffffffffL;
@@ -77,6 +66,8 @@ public class _405_Bit_Convert_a_Number_to_Hexadecimal_E {
 
 //            SOLUTION 2
 
+//------------------------------------------------------------------------------
+    //3
     public class Solution3 {
         public String toHex(int num) {
             if (num == 0) return "0";
@@ -110,11 +101,10 @@ public class _405_Bit_Convert_a_Number_to_Hexadecimal_E {
     StringBuilder is used due to its efficiently in inserting character to existing StringBuilder object. If normal String is used then each insertion by + operation will have to copy over the immutable String object which is highly inefficient.
 
     For Integer.MAX_VALUE or Integer.MIN_VALUE or any input with 8 Hexadecimal characters where the iterations would last the longest. For Integer.MAX_VALUE the algorithm will run for at most `ceil(log_16 (2^31 - 1) + 1) = 8` times.
-
 */
 //------------------------------------------------------------------------------
-//    Beat 90% Java solution. Long but easy understand. Any advice?
-
+    //4
+    //Beat 90% Java solution. Long but easy understand. Any advice?
     public class Solution4 {
         public String toHex(int num) {
             StringBuilder sb = new StringBuilder();
@@ -153,9 +143,9 @@ public class _405_Bit_Convert_a_Number_to_Hexadecimal_E {
         }
     }
 
-
-//    Java arithmetic solution
-
+//------------------------------------------------------------------------------
+    //5
+    //Java arithmetic solution
     public class Solution5 {
         public String toHex(int num) {
             if (num == 0) return "0";
@@ -176,7 +166,9 @@ public class _405_Bit_Convert_a_Number_to_Hexadecimal_E {
             return res.reverse().toString();
         }
     }
+
 //------------------------------------------------------------------------------
+    //6
     // 9Ch
     // 方法一
     public class Jiuzhang1 {
@@ -200,7 +192,8 @@ public class _405_Bit_Convert_a_Number_to_Hexadecimal_E {
             return ans;
         }
     }
-
+//------------------------------------------------------------------------------
+    //7
     // 方法二
     public class Jiuzhang2 {
         public String toHex(int num) {
@@ -243,9 +236,6 @@ public class _405_Bit_Convert_a_Number_to_Hexadecimal_E {
             return ans;
         }
     }
-
-//------------------------------------------------------------------------------
-
 
 //------------------------------------------------------------------------------
 }

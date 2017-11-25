@@ -4,8 +4,11 @@ import org.junit.Test;
 
 //  169. Majority Element
 //  https://leetcode.com/problems/majority-element/description/
+//  7:
+//
 public class _169_Bit_Majority_Element_E {
-
+//------------------------------------------------------------------------------
+    //1
 //    O(n) time O(1) space fastest solution
 
     public class Solution1 {
@@ -24,7 +27,8 @@ public class _169_Bit_Majority_Element_E {
             return major;
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
 //    got it,It's so good,my solution is like yours, I also used Arrays.sort(nums); but your solution is more Simple and efficient.Here is mine:
 
     public class Solution2 {
@@ -40,7 +44,9 @@ public class _169_Bit_Majority_Element_E {
             return maj;
         }
     }
+
 //------------------------------------------------------------------------------
+    //3
 //Java solutions (sorting, hashmap, moore voting, bit manipulation).
 
     // Sorting
@@ -48,7 +54,8 @@ public class _169_Bit_Majority_Element_E {
         Arrays.sort(nums);
         return nums[nums.length/2];
     }
-
+//------------------------------------------------------------------------------
+    //4
     // Hashtable
     public int majorityElement5(int[] nums) {
         Map<Integer, Integer> myMap = new HashMap<Integer, Integer>();
@@ -66,7 +73,8 @@ public class _169_Bit_Majority_Element_E {
         }
         return ret;
     }
-
+//------------------------------------------------------------------------------
+    //5
     // Moore voting algorithm
     public int majorityElement6(int[] nums) {
         int count=0, ret = 0;
@@ -80,7 +88,8 @@ public class _169_Bit_Majority_Element_E {
         }
         return ret;
     }
-
+//------------------------------------------------------------------------------
+    //6
     // Bit manipulation
     public int majorityElement7(int[] nums) {
         int[] bit = new int[32];
@@ -97,6 +106,7 @@ public class _169_Bit_Majority_Element_E {
     }
 
 //------------------------------------------------------------------------------
+    //7
 //  Share my solution [Java] - Count bits
 /*Definitely not the fastest solution but I post it here for your reference since it's different from the rest I saw. The problem reminded me of the approach I followed at Single Number II (problem 137).
 
@@ -126,10 +136,6 @@ public class _169_Bit_Majority_Element_E {
 
         return ret;
     }
-
-
-//------------------------------------------------------------------------------
-
 
 //------------------------------------------------------------------------------
 }

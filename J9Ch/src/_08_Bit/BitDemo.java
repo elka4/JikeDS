@@ -1,10 +1,7 @@
 package _08_Bit;
-
 import org.junit.Test;
 
-/**
- * Created by tianhuizhu on 7/3/17.
- */
+
 public class BitDemo {
     public static void main(String[] args) {
         int bitmask = 0x000F;
@@ -13,6 +10,7 @@ public class BitDemo {
         // prints "2"
         System.out.println(val & bitmask);
     }
+//------------------------------------------------------------------------------
 
     /**
      * ���һ��int�Ķ�������
@@ -22,6 +20,7 @@ public class BitDemo {
         System.out.println(Integer.toBinaryString(num));
     }
 
+//------------------------------------------------------------------------------
 
     //0 for octadezimal 0b for binary and 0x for hexadezimal.
     @Test
@@ -34,6 +33,8 @@ public class BitDemo {
         System.out.println(octa);
         System.out.println(hexa);
     }
+//------------------------------------------------------------------------------
+
     @Test
     public void test02(){
         int a = 60;	/* 60 = 0011 1100 */
@@ -43,6 +44,8 @@ public class BitDemo {
         c = a & b;        /* 12 = 0000 1100 */
         System.out.println("a & b = " + c );
     }
+//------------------------------------------------------------------------------
+
     @Test
     public void test03(){
         int a = 60;	/* 60 = 0011 1100 */
@@ -52,6 +55,8 @@ public class BitDemo {
         c = a | b;        /* 61 = 0011 1101 */
         System.out.println("a | b = " + c );
     }
+//------------------------------------------------------------------------------
+
     @Test
     public void test04(){
         int a = 60;	/* 60 = 0011 1100 */
@@ -61,6 +66,8 @@ public class BitDemo {
         c = a ^ b;        /* 49 = 0011 0001 */
         System.out.println("a ^ b = " + c );
     }
+//------------------------------------------------------------------------------
+
     @Test
     public void test05(){
         int a = 60;	/* 60 = 0011 1100 */
@@ -70,6 +77,8 @@ public class BitDemo {
         c = ~a;           /*-61 = 1100 0011 */
         System.out.println("~a = " + c );
     }
+//------------------------------------------------------------------------------
+
     @Test
     public void test06(){
         int a = 60;	/* 60 = 0011 1100 */
@@ -79,6 +88,8 @@ public class BitDemo {
         c = a << 2;       /* 240 = 1111 0000 */
         System.out.println("a << 2 = " + c );
     }
+//------------------------------------------------------------------------------
+
     @Test
     public void test07(){
         int a = 60;	/* 60 = 0011 1100 */
@@ -88,6 +99,8 @@ public class BitDemo {
         c = a >> 2;       /* 15 = 1111 */
         System.out.println("a >> 2  = " + c );
     }
+//------------------------------------------------------------------------------
+
     @Test
     public void test08(){
         int a = 60;	/* 60 = 0011 1100 */
@@ -97,6 +110,7 @@ public class BitDemo {
         c = a >>> 2;      /* 15 = 0000 1111 */
         System.out.println("a >>> 2 = " + c );
     }
+//------------------------------------------------------------------------------
 
     @Test
     public void test09() {
@@ -115,6 +129,7 @@ public class BitDemo {
         System.out.println(Integer.toBinaryString(Integer.MIN_VALUE));
         System.out.println("11111111111111111111111111111111".length());
     }
+//------------------------------------------------------------------------------
 
     @Test
     public void test10() {
@@ -127,6 +142,7 @@ public class BitDemo {
         // 3��15=0000 1111(������)�����ƶ�λ�����λ�ɷ���λ��佫�õ�0000 0011��3
         System.out.println(b >> 2);
     }
+//------------------------------------------------------------------------------
 
     @Test
     public void test11() {
@@ -136,6 +152,7 @@ public class BitDemo {
         System.out.println(result);
 
     }
+//------------------------------------------------------------------------------
 
     @Test
     public void test12() {
@@ -149,8 +166,9 @@ public class BitDemo {
         int D = C^A;
 
         System.out.println();
-
     }
+//------------------------------------------------------------------------------
+
     @Test
     public void test13() {
         int A = 6;
@@ -162,8 +180,9 @@ public class BitDemo {
         System.out.println(Integer.toBinaryString(C));
         System.out.println(D);
         System.out.println(Integer.toBinaryString(D));
-
     }
+//------------------------------------------------------------------------------
+
     @Test
     public void test14() {
         // prints 144 --octal representation
@@ -173,4 +192,6 @@ public class BitDemo {
 //prints 64 --Hex representation
         System.out.println(Integer.toString(100,16));
     }
+//------------------------------------------------------------------------------
+
 }

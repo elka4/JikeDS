@@ -3,11 +3,11 @@ import java.util.*;
 import org.junit.Test;
 
 //  477. Total Hamming Distance
-
 //  https://leetcode.com/problems/total-hamming-distance/description/
-//
+//  5:
 public class _477_Bit_Total_Hamming_Distance_M {
-
+//------------------------------------------------------------------------------
+    //1
 //Java Easy solution with explanation
 /*Hi there! Here the strightforward idea is to calculate haming distances between each pair and then sum them up. But that algorithm runs for O(31 * n^2). We have to make it faster.
     Actually we don't need to consider each pair. Let's simplify the problem, such that each number consists of single bit. How could we solve then? This case we know, that haming distance between two numbers can be either 1 or 0. Well, 1 if bits are different and 0 otherwise. It means, the answer is the number of pairs with different bits. The latter is equals to the product of # of zero bits and # of set bits.
@@ -34,6 +34,7 @@ public class _477_Bit_Total_Hamming_Distance_M {
     }
 
 //------------------------------------------------------------------------------
+    //2
 //8-lines DP solution by one pass with explanation
 /*    It's really a straight forward method. To sum the distances of every pair, you can make it with element one by one. For example, you check first element and second one, then check the coming third one with first and second element as: (1,2), (1,3), (2,3)...So the only thing you need to do is check how many more distances come with a new element nums[k] with passed elements nums[0],nums[1],...,nums[k-1].
 
@@ -52,6 +53,7 @@ public class _477_Bit_Total_Hamming_Distance_M {
         return res;
     }
 //------------------------------------------------------------------------------
+    //3
 //Java Solution with Explanation
 
 
@@ -81,6 +83,7 @@ public class _477_Bit_Total_Hamming_Distance_M {
         }
     }
 //------------------------------------------------------------------------------
+    //4
 /*Java O(n) time O(1) Space
 
 96
@@ -98,9 +101,9 @@ public class _477_Bit_Total_Hamming_Distance_M {
         }
         return total;
     }
-
-//    Similar Idea but different Implementation.
-
+//------------------------------------------------------------------------------
+    //5
+    //    Similar Idea but different Implementation.
     public int totalHammingDistance5(int[] nums) {
         int total = 0;
         int [][] store = new int [32][2];
@@ -131,9 +134,4 @@ HammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 
 Note:
 Elements of the given array are in the range of 0 to 10^9
 Length of the array will not exceed 10^4.
-
- */
-
-/*
-
- */
+*/

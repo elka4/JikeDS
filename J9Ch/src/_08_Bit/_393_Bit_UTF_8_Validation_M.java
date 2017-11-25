@@ -3,13 +3,12 @@ import java.util.*;
 import org.junit.Test;
 
 //  393. UTF-8 Validation
-
 //  https://leetcode.com/problems/utf-8-validation/description/
-//
+//  6:
 public class _393_Bit_UTF_8_Validation_M {
-
-//    Bit Manipulation, Java, 6ms
-
+//------------------------------------------------------------------------------
+    //1
+    //    Bit Manipulation, Java, 6ms
     public boolean validUtf8(int[] data) {
         if(data==null || data.length==0) return false;
         boolean isValid = true;
@@ -35,10 +34,10 @@ public class _393_Bit_UTF_8_Validation_M {
         }
         return isValid;
     }
+
 //------------------------------------------------------------------------------
-
-//    O(n) JAVA solution, with detailed explaination
-
+    //2
+    //    O(n) JAVA solution, with detailed explaination
     public class Solution2 {
     /*
      * Thought-way:
@@ -97,11 +96,9 @@ public class _393_Bit_UTF_8_Validation_M {
     }
 
 //------------------------------------------------------------------------------
-//Simple one pass concise Java solution beating 99%
-//
-//
-//    So, I wrote a literal translation of the problem statement in Java. This works in O(n), obviously.
-
+    //3
+    //Simple one pass concise Java solution beating 99%
+    //    So, I wrote a literal translation of the problem statement in Java. This works in O(n), obviously.
     public class Solution3 {
         public boolean validUtf8(int[] data) {
             int varCharLeft = 0;
@@ -122,8 +119,8 @@ public class _393_Bit_UTF_8_Validation_M {
     }
 
 //------------------------------------------------------------------------------
-//O(n) solution using Java
-
+    //4
+    //O(n) solution using Java
     public class Solution4 {
         public boolean validUtf8(int[] data) {
             int n = data.length;
@@ -151,10 +148,10 @@ public class _393_Bit_UTF_8_Validation_M {
     }
 
 //------------------------------------------------------------------------------
-//Java solution
+    //5
+    //Java solution
     class Solution5{
         public  boolean validUtf8(int[] data) {
-
             int count = 0;
 
             for(int n: data) {
@@ -176,7 +173,6 @@ public class _393_Bit_UTF_8_Validation_M {
                     else if(n >= (6 << 5) && n < (7 << 5)) count = 1;
 
                     else return false;
-
                 }
 
             }
@@ -184,10 +180,42 @@ public class _393_Bit_UTF_8_Validation_M {
             if(count == 0) return true;
 
             return false;
-
         }
     }
+
 //------------------------------------------------------------------------------
+    //6
+    public boolean validUtf08(int[] data) {
+        int i=0;
+        int count=0;
+        while(i<data.length){
+            int v = data[i];
+            if(count==0){
+                if((v&240)==240 && (v&248)==240){
+                    count=3;
+                }else if(((v&224)==224) && (v&240)==224){
+                    count=2;
+                }else if((v&192)==192 && (v&224)==192){
+                    count=1;
+                }else if((v|127)==127){
+                    count=0;
+                }else{
+                    return false;
+                }
+            }else{
+                if((v&128)==128 && (v&192)==128){
+                    count--;
+                }else{
+                    return false;
+                }
+            }
+
+            i++;
+        }
+
+        return count==0;
+    }
+
 //------------------------------------------------------------------------------
 }
 /*
@@ -226,5 +254,20 @@ But the second continuation byte does not start with 10, so it is invalid.
  */
 
 /*
+LeetCode – UTF-8 Validation (Java)
 
+A character in UTF8 can be from 1 to 4 bytes long, subjected to the following rules:
+
+For 1-byte character, the first bit is a 0, followed by its unicode code.
+For n-bytes character, the first n-bits are all one's, the n+1 bit is 0, followed by n-1 bytes with most significant 2 bits being 10.
+This is how the UTF-8 encoding would work:
+
+   Char. number range  |        UTF-8 octet sequence
+      (hexadecimal)    |              (binary)
+   --------------------+---------------------------------------------
+   0000 0000-0000 007F | 0xxxxxxx
+   0000 0080-0000 07FF | 110xxxxx 10xxxxxx
+   0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx
+   0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+Given an array of integers representing the data, return whether it is a valid utf-8 encoding.
  */

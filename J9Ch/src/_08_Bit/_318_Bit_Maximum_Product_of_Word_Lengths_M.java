@@ -3,11 +3,12 @@ import java.util.*;
 import org.junit.Test;
 
 //  318. Maximum Product of Word Lengths
-
 //  https://leetcode.com/problems/maximum-product-of-word-lengths/description/
+//  8:
 //
 public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
-
+//------------------------------------------------------------------------------
+    //1
     //JAVA----------Easy Version To Understand!!!!!!!!!!!!!!!!!
     public static int maxProduct1(String[] words) {
         if (words == null || words.length == 0)
@@ -30,7 +31,8 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
         return maxProduct;
     }
 
-
+//------------------------------------------------------------------------------
+    //2
     //32ms Java AC solution
     public class Solution2 {
         public int maxProduct(String[] words) {
@@ -63,7 +65,8 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
             return max;
         }
     }
-
+//------------------------------------------------------------------------------
+    //3
     //Bit manipulation Java O(n^2)
     public class Solution3 {
         public int maxProduct(String[] words) {
@@ -84,7 +87,8 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
             return max;
         }
     }
-
+//------------------------------------------------------------------------------
+    //4
 //    Pre-process the word, use bit to represent the words. We can do this because we only need to compare if two words contains the same characters.
 
     //Java Solution with comments
@@ -125,7 +129,8 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
         }
 
     }
-
+//------------------------------------------------------------------------------
+    //5
     //Java solution using bit manipulation
     public class Solution5 {
         public int maxProduct(String[] words) {
@@ -146,7 +151,8 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
             return max;
         }
     }
-
+//------------------------------------------------------------------------------
+    //6
     //My java solution (12ms) O(n*n)
     public class Solution6 {
         public int maxProduct(String[] words) {
@@ -176,12 +182,67 @@ public class _318_Bit_Maximum_Product_of_Word_Lengths_M {
 
 
 //------------------------------------------------------------------------------
+    //7
+    public int maxProduct(String[] words) {
+        if(words==null || words.length==0)
+            return 0;
+
+        int[] arr = new int[words.length];
+
+        for(int i=0; i<words.length; i++){
+            for(int j=0; j<words[i].length(); j++){
+                char c = words[i].charAt(j);
+                arr[i] |= (1<< (c-'a'));
+            }
+        }
+
+        int result = 0;
+
+        for(int i=0; i<words.length; i++){
+            for(int j=i+1; j<words.length; j++){
+                if((arr[i] & arr[j]) == 0){
+                    result = Math.max(result, words[i].length()*words[j].length());
+                }
+            }
+        }
+
+        return result;
+    }
+
 
 
 //------------------------------------------------------------------------------
+    //8
+    //32ms Java AC solution
+    public int maxProduct2(String[] words) {
+        int max = 0;
 
+        Arrays.sort(words, new Comparator<String>(){
+            public int compare(String a, String b){
+                return b.length() - a.length();
+            }
+        });
 
-//------------------------------------------------------------------------------
+        int[] masks = new int[words.length]; // alphabet masks
+
+        for(int i = 0; i < masks.length; i++){
+            for(char c: words[i].toCharArray()){
+                masks[i] |= 1 << (c - 'a');
+            }
+        }
+
+        for(int i = 0; i < masks.length; i++){
+            if(words[i].length() * words[i].length() <= max) break; //prunning
+            for(int j = i + 1; j < masks.length; j++){
+                if((masks[i] & masks[j]) == 0){
+                    max = Math.max(max, words[i].length() * words[j].length());
+                    break; //prunning
+                }
+            }
+        }
+
+        return max;
+    }
 
 
 //------------------------------------------------------------------------------
@@ -208,5 +269,42 @@ No such pair of words.
  */
 
 /*
+LeetCode – Maximum Product of Word Lengths
+
+Given a string array words, find the
+maximum value of length(word[i]) * length(word[j])
+where the two words do not share common letters.
+
+You may assume that each word will contain only lower case letters.
+If no such two words exist, return 0.
+
+Example 1:
+Given ["abcw", "baz", "foo", "bar", "xtfn", "abcdef"]
+Return 16
+The two words can be "abcw", "xtfn".
+
+Example 2:
+Given ["a", "ab", "abc", "d", "cd", "bcd", "abcd"]
+Return 4
+The two words can be "ab", "cd".
+
+Example 3:
+Given ["a", "aa", "aaa", "aaaa"]
+Return 0
+No such pair of words.
+
+ */
+
+/*感觉上有点像个2D array，一维是word，二维是char
+
+   这个算是使用了bit vector吧
+
+arr, index代表word在words里的index
+arr[i]， arr[i] |= (1<< (c-'a'))， 就是在第i个word有哪个char没有哪个char。
+
+int是32位，c-'a'在26以内。就是用一个int代表了一个word关于它的char有无的信息。
+
+
+arr[i] & arr[j]) == 0 就是这两个word没有相同char。
 
  */

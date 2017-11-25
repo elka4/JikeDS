@@ -4,6 +4,7 @@ import org.junit.Test;
 
 //  201. Bitwise AND of Numbers Range
 //  https://leetcode.com/problems/bitwise-and-of-numbers-range/description/
+//  6:
 //
 public class _201_Bit_Bitwise_AND_of_Numbers_Range_M {
 //------------------------------------------------------------------------------
@@ -30,7 +31,8 @@ public class _201_Bit_Bitwise_AND_of_Numbers_Range_M {
             return m * moveFactor;
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
 //    2 line Solution with detailed explanation
     //  https://leetcode.com/problems/bitwise-and-of-numbers-range/discuss/
     public int rangeBitwiseAnd2(int m, int n) {
@@ -39,6 +41,7 @@ public class _201_Bit_Bitwise_AND_of_Numbers_Range_M {
     }
 
 //------------------------------------------------------------------------------
+    //3
     // 9Ch
     public int rangeBitwiseAnd(int m, int n) {
         if (n == m) {
@@ -51,14 +54,15 @@ public class _201_Bit_Bitwise_AND_of_Numbers_Range_M {
     }
 
 //------------------------------------------------------------------------------
-public int rangeBitwiseAnd01(int m, int n) {
-    //退出条件就是n == m
-    while (n > m) {
-        n = n & n - 1;
+    //4
+    public int rangeBitwiseAnd01(int m, int n) {
+        //退出条件就是n == m
+        while (n > m) {
+            n = n & n - 1;
+        }
+        //不遗忘m。但此时n == m，所以其实可以直接返回n。
+        return m & n;
     }
-    //不遗忘m。但此时n == m，所以其实可以直接返回n。
-    return m & n;
-}
 
     @Test
     public void test01(){
@@ -67,7 +71,8 @@ public int rangeBitwiseAnd01(int m, int n) {
 
 
 
-
+//------------------------------------------------------------------------------
+    //5
     /*
     last bit of (odd number & even number) is 0.
     when m != n, There is at least an odd number and an even number,
@@ -87,17 +92,14 @@ public int rangeBitwiseAnd01(int m, int n) {
         return m * moveFactor;
     }
 
-//---------------------------------/////////
-
+//------------------------------------------------------------------------------
+    //6
     public int rangeBitwiseAnd03(int m, int n) {
         while(m<n) n = n & (n-1);
         return n;
     }
-//------------------------------------------------------------------------------
-
 
 //------------------------------------------------------------------------------
-
 }
 /*
 Given a range [m, n] where 0 <= m <= n <= 2147483647, return the bitwise AND of all numbers in this range, inclusive.

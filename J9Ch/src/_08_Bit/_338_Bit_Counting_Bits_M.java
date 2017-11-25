@@ -6,7 +6,7 @@ import org.junit.Test;
 //  338. Counting Bits
 //  https://leetcode.com/problems/counting-bits/description/
 //
-//  6:
+//  8:
 public class _338_Bit_Counting_Bits_M {
 //------------------------------------------------------------------------------
     //  https://leetcode.com/problems/counting-bits/solution/
@@ -238,7 +238,7 @@ public class _338_Bit_Counting_Bits_M {
 
         return result;
     }
-//------------------------------------------------------------------------------
+
 //------------------------------------------------------------------------------
 }
 /*

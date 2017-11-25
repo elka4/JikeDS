@@ -3,14 +3,14 @@ import java.util.*;
 import org.junit.Test;
 
 //  476. Number Complement
-
 //  https://leetcode.com/problems/number-complement/description/
-//
+//  10:
 public class _476_Bit_Number_Complement_E {
+//------------------------------------------------------------------------------
+    //1
+    //https://discuss.leetcode.com/topic/74642/java-1-line-bit-manipulation-solution
 
-//  https://discuss.leetcode.com/topic/74642/java-1-line-bit-manipulation-solution
-
-//    I post solution first and then give out explanation. Please think why does it work before read my explanation.
+    //I post solution first and then give out explanation. Please think why does it work before read my explanation.
 
     public class Solution1 {
         public int findComplement(int num) {
@@ -28,7 +28,8 @@ public class _476_Bit_Number_Complement_E {
     Negate the whole input number.
     Bit AND numbers in step 1 and 2.
     Three line solution if you think one line solution is too confusing:*/
-
+//------------------------------------------------------------------------------
+    //2
     public class Solution2 {
         public int findComplement(int num) {
             int mask = (Integer.highestOneBit(num) << 1) - 1;
@@ -39,20 +40,21 @@ public class _476_Bit_Number_Complement_E {
 /*    UPDATE
     As several people pointed out, we don't need to left shift 1. That's true because the highest 1 bit will always become 0 in the Complement result. So we don't need to take care of that bit.*/
 
+//------------------------------------------------------------------------------
+    //3
     public class Solution3 {
         public int findComplement(int num) {
+
             return ~num & (Integer.highestOneBit(num) - 1);
         }
     }
 //------------------------------------------------------------------------------
+    //4
     /*Java, very simple code and self-evident, explanation
-
-33
-    D dongll
-    Reputation:  44
-            for example:
-            100110, its complement is 011001, the sum is 111111. So we only need get the min number large or equal to num, then do substraction
-*/
+    for example:
+    100110, its complement is 011001, the sum is 111111.
+    So we only need get the min number large or equal to num, then do substraction
+    */
     public int findComplement4(int num)
     {
         int i = 0;
@@ -67,9 +69,9 @@ public class _476_Bit_Number_Complement_E {
         return i - num;
     }
 
-
-//    Same idea, but using bit manipulation instead of Math.pow().
-
+//------------------------------------------------------------------------------
+    //5
+    //Same idea, but using bit manipulation instead of Math.pow().
     public class Solution5 {
         public int findComplement(int num) {
             int n = 0;
@@ -80,9 +82,11 @@ public class _476_Bit_Number_Complement_E {
         }
     }
 
-/*    Java one line solution without using AND (&) or XOR (^)
+//------------------------------------------------------------------------------
+    //6
+    /*    Java one line solution without using AND (&) or XOR (^)
 
-            7
+        7
     Y yuxiangmusic
     Reputation:  955
     To find complement of num = 5 which is 101 in binary.
@@ -90,12 +94,12 @@ public class _476_Bit_Number_Complement_E {
     Then to erase the 1s before 010 we can add 1000*/
 
     public int findComplement6(int num) {
+
         return ~num + (Integer.highestOneBit(num) << 1);
     }
 //------------------------------------------------------------------------------
-
-//    Share my Java solution with explanation
-
+    //7
+    //Share my Java solution with explanation
     public int findComplement7(int num) {
         // find highest one bit
         int id = 31, mask = 1<<id;
@@ -107,12 +111,16 @@ public class _476_Bit_Number_Complement_E {
         return (~num) & mask;
     }
 //------------------------------------------------------------------------------
-//  Java 1 line bit manipulation solution
+    //8
+    //  Java 1 line bit manipulation solution
     public class Solution8 {
         public int findComplement(int num) {
+
             return ~num & ((Integer.highestOneBit(num) << 1) - 1);
         }
     }
+//------------------------------------------------------------------------------
+    //9
 /*    I post solution first and then give out explanation. Please think why does it work before read my explanation.
 
 
@@ -135,6 +143,8 @@ public class _476_Bit_Number_Complement_E {
             return num & mask;
         }
     }
+//------------------------------------------------------------------------------
+    //10
 /*    UPDATE
     As several people pointed out, we don't need to left shift 1. That's true because the highest 1 bit will always become 0 in the Complement result. So we don't need to take care of that bit.*/
 
@@ -160,9 +170,4 @@ Example 2:
 Input: 1
 Output: 0
 Explanation: The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.
-
- */
-
-/*
-
  */

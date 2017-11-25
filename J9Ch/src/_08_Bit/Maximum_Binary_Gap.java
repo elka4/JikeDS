@@ -8,10 +8,10 @@ Problem: Get maximum binary Gap.
 For example, 9's binary form is 1001, the gap is 2.
  */
 
-/*
 
- */
 public class Maximum_Binary_Gap {
+//------------------------------------------------------------------------------
+
 //    Java Solution 1
 //
 //    An integer x & 1 will get the last digit of the integer.
@@ -50,7 +50,7 @@ public class Maximum_Binary_Gap {
 
     //Java Solution 2
 
-//-----------------------------------------------------------------------------//
+//------------------------------------------------------------------------------
 
 
     public int getGap2(int N) {
@@ -73,6 +73,7 @@ public class Maximum_Binary_Gap {
         return len;
     }
     //Time is O(log(n)).
+//------------------------------------------------------------------------------
 
 
 }

@@ -5,6 +5,7 @@ import org.junit.Test;
 //  78. Subsets
 //  https://leetcode.com/problems/subsets/discuss/
 //  http://www.lintcode.com/zh-cn/problem/subsets/
+//  3:
 //
 public class _078_Bit_Subsets_M {
 //------------------------------------------------------------------------------
