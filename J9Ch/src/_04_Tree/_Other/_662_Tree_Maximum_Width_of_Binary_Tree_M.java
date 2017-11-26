@@ -32,7 +32,7 @@ public class _662_Tree_Maximum_Width_of_Binary_Tree_M {
 
 
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //[C++/Java] * [BFS/DFS/3liner] Clean Code With Explanation
     //DFS - Return Value
     public int widthOfBinaryTree2(TreeNode root) {
@@ -49,7 +49,7 @@ public class _662_Tree_Maximum_Width_of_Binary_Tree_M {
     }
 
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //DFS - Side Effect
     public int widthOfBinaryTree3(TreeNode root) {
         List<Integer> lefts = new ArrayList<Integer>(); // left most nodes at each level;
@@ -65,7 +65,7 @@ public class _662_Tree_Maximum_Width_of_Binary_Tree_M {
         dfs3(node.right, id * 2 + 1, depth + 1, lefts, res);
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //BFS
     public int widthOfBinaryTree4(TreeNode root) {
         if (root == null) return 0;
@@ -86,7 +86,7 @@ public class _662_Tree_Maximum_Width_of_Binary_Tree_M {
 
         return max;
     }
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 
     public int widthOfBinaryTree5(TreeNode root) {
         if(root == null) return 0;
@@ -119,7 +119,7 @@ public class _662_Tree_Maximum_Width_of_Binary_Tree_M {
         return max;
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 }
 /*
 

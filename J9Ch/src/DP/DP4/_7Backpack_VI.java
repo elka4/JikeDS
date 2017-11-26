@@ -1,20 +1,14 @@
 package DP.DP4;
-
+import org.junit.Test;
 
 /*
-
-
 f[i] = f[i-A0] + f[i-A1] +...+ f[i-AN-1]
 
 f[i]:多少种组合能拼出i
 f[i-A0]：多少种组合能拼出i - A0
 f[i-A1] +...+ f[i-AN-1]: 多少种组合能拼出i - AN-1
-
 -----------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
- */
+*/
 
 /*
 Backpack VI:
@@ -42,11 +36,12 @@ int backPackVI(vector<int>& nums, int target) {
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
  */
 
-import com.intellij.codeInsight.template.postfix.templates.SoutPostfixTemplate;
-import org.junit.Test;
 
-//Backpack VI
+//  Backpack VI
+//  3:
 public class _7Backpack_VI {
+//------------------------------------------------------------------------------
+    //1
     // 9CH DP, 不记录状态
     public int backPackVI (int[] nums, int T) {
         int[] f = new int[T + 1];
@@ -78,7 +73,7 @@ public class _7Backpack_VI {
 
     }
 //-----------------------------------------------------------------------------
-
+    //2
     // 9Ch DP, 记录状态
     public int backPackVI2 (int[] A, int T) {
         int[] f = new int[T + 1];
@@ -127,6 +122,7 @@ public class _7Backpack_VI {
         System.out.println(backPackVI2(A, T));
     }
 //-----------------------------------------------------------------------------
+    //3
     /**
      * @param nums an integer array and all positive numbers, no duplicates
      * @param target an integer
@@ -149,7 +145,6 @@ public class _7Backpack_VI {
         int T = 4;
         System.out.println(backPackVI3(A, T));//6
     }
-//-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
 }

@@ -52,7 +52,7 @@ public class _117_DFS_Populating_Next_Right_Pointers_in_Each_Node_II_H {
             cur=nextLeftmost;  // point to next level
         }
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
     //Java Solution 1 - Simple
     public void connect4(TreeLinkNode root) {
@@ -164,7 +164,7 @@ public class _117_DFS_Populating_Next_Right_Pointers_in_Each_Node_II_H {
             next = parent.left;
         }
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 }
 /*
 

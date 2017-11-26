@@ -42,7 +42,7 @@ public class _225_Stack_Implement_Stack_using_Queues_E {
             return queue.isEmpty();
         }
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 //Java solutions about three ways one of which utilizes one queue, and the others utilize two queues
 //    First, let's see the most easiest way: one queue.
 //    In this method, the point is that after you add one element to the queue, rotate the queue to make the tail be the head.
@@ -208,5 +208,5 @@ class Solution2{
         }
 
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 }

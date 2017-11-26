@@ -71,18 +71,19 @@ f[i][j-1] AND X[i+j-1]==B[j-1]  : 情况二:X前i+j-1个字符由A前i个 字符
 -----------------------------------------------------------------------------------------------
 
 bitwise inclusive OR and assignment operator.	C |= 2 is same as C = C | 2
-
-
- */
+-----------------------------------------------------------------------------------------------
+*/
 
 
 
 //  97. Interleaving String
 //  https://leetcode.com/problems/interleaving-string/description/
+//  7:
 public class _2InterleavingString {
-    //https://leetcode.com/articles/interleaving-strings/
+//------------------------------------------------------------------------------
     //https://leetcode.com/problems/interleaving-string/solution/
-
+//------------------------------------------------------------------------------
+    //1
     //Approach #1 Brute Force [Time Limit Exceeded]
     public class Solution1 {
         public boolean is_Interleave1(String s1,int i,String s2,int j,String res,String s3) {
@@ -103,7 +104,8 @@ public class _2InterleavingString {
     }
 
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
+    //2
     //Approach #2 Recursion with memoization [Accepted]
     public class Solution2 {
         public boolean is_Interleave2(String s1, int i, String s2, int j,
@@ -138,7 +140,8 @@ public class _2InterleavingString {
         }
     }
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
+    //3
     //Approach #3 Using 2-d Dynamic Programming [Accepted]
     public class Solution3 {
         public boolean isInterleave3(String s1, String s2, String s3) {
@@ -164,7 +167,8 @@ public class _2InterleavingString {
         }
     }
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
+    //4
     //Approach #4 Using 1-d Dynamic Programming [Accepted]:
     public class Solution4 {
         public boolean isInterleave4(String s1, String s2, String s3) {
@@ -193,7 +197,8 @@ public class _2InterleavingString {
     }
 
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
+    //5
     //9Ch DP
     public boolean isInterleave_J1(String s1, String s2, String s3) {
         char[] c1 = s1.toCharArray();
@@ -243,8 +248,8 @@ public class _2InterleavingString {
     }
 
 
-//-------------------------------------------------------------------------//
-
+//--------------------------------------------------------------------------------
+    //6
     // mine
     public boolean isInterleave11(String s1, String s2, String s3) {
         char[] c1 = s1.toCharArray();
@@ -276,7 +281,8 @@ public class _2InterleavingString {
     }
 
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
+    //7
     public boolean isInterleave5(String s1, String s2, String s3) {
         if (s1.length() + s2.length() != s3.length()) {
             return false;
@@ -306,10 +312,8 @@ public class _2InterleavingString {
         return interleaved[s1.length()][s2.length()];
     }
 
-//-------------------------------------------------------------------------//
 
-
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
 }
 /*
 Given three strings: s1, s2, s3, determine whether s3 is formed by the interleaving of s1 and s2.

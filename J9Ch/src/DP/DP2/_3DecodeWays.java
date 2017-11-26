@@ -1,5 +1,4 @@
 package DP.DP2;
-
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -33,8 +32,10 @@ f[0], f[1], .... f[N]
 
 //  91. Decode Ways
 //  https://leetcode.com/problems/decode-ways/description/
+//  8:
 public class _3DecodeWays {
-
+//----------------------------------------------------------------------------
+    //1
     //这个算法好地方在于从2开始算，所以中间不用那么多if
     public int numDecodings(String s) {
         char[] sc  = s.toCharArray();  //这样之后操作简单，直接变成对array的操作
@@ -60,7 +61,8 @@ public class _3DecodeWays {
         }
         return f[n];
     }
-
+//----------------------------------------------------------------------------
+    //2
     //上面算法的String版本
     public int numDecodings7(String s) {
         if(s == null || s.length() == 0) {
@@ -84,6 +86,7 @@ public class _3DecodeWays {
     }
 
 //------------------------------------------------------------------------------
+    //3
     // 9Ch
     public int numDecodings2(String s) {
         if (s == null || s.length() == 0) {
@@ -112,8 +115,8 @@ public class _3DecodeWays {
         System.out.println(numDecodings("12"));   //2
     }
 
-//---------------------------------///////////////////////
-
+//-------------------------------------------------------------------------------
+    //4
     // version: 高频题班
     // 9Ch
     /**
@@ -149,7 +152,8 @@ public class _3DecodeWays {
         System.out.println(numDecodings2("2526")); //4
         System.out.println(numDecodings2("12"));   //2
     }
-
+//-------------------------------------------------------------------------------
+    //5
     // 9Ch DP
     public int numDecodings4(String ss){
         char[] s  = ss.toCharArray();
@@ -182,7 +186,8 @@ public class _3DecodeWays {
         }
         return f[n];
     }
-
+//-------------------------------------------------------------------------------
+    //6
     public int numDecodings5(String ss){
         char[] s  = ss.toCharArray();
         int n = s.length;
@@ -210,17 +215,14 @@ public class _3DecodeWays {
         return f[n];
     }
 
-
-
-
     @Test
     public void test022(){
         System.out.println(numDecodings5("2526")); //4
         System.out.println(numDecodings5("12"));   //2
     }
 
-
-//---------------------------------////////////////////
+//-------------------------------------------------------------------------------
+    //7
     //从长向短计算， 可以把状态memo[i]理解成不要i个字符可以decode的方法数
     public int numDecodings6(String s) {
         int n = s.length();
@@ -237,11 +239,9 @@ public class _3DecodeWays {
         return memo[0];
     }
 
-//-------------------------------------------------------------------------/
 
-
-//---------------------------------///////////////////////
-
+//-------------------------------------------------------------------------------
+    //8
     public int numDecodings8(String s) {
 
         if (s == null || s.length() == 0)
@@ -281,6 +281,8 @@ public class _3DecodeWays {
 
         return numWays;
     }
+
+//----------------------------------------------------------------------------
 }
 /*
 A message containing letters from A-Z is being encoded to numbers using the following mapping:

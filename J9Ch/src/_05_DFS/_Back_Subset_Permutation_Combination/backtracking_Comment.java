@@ -47,7 +47,7 @@ public class backtracking_Comment {
         }
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
     //_2_Subsets_II
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
@@ -143,7 +143,7 @@ public class backtracking_Comment {
     }
 
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
     //_4_Permutations_II
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
@@ -206,7 +206,7 @@ public class backtracking_Comment {
         }
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
     //_5_Combination_Sum  Combination Sum
     //num无重复元素，每个元素可以重复使用
     public List<List<Integer>> combinationSum(int[] nums, int target) {
@@ -252,7 +252,7 @@ public class backtracking_Comment {
         System.out.println(combinationSum(nums, 7));
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
     //_6_Combination_Sum_II  Combination Sum II
     //nums有重复元素，不重复使用同一元素
     public List<List<Integer>> combinationSum2(int[] nums, int target) {
@@ -298,7 +298,7 @@ public class backtracking_Comment {
         System.out.println(combinationSum2(nums, 8));
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
     //_7_Palindrome_Partitioning  Palindrome Partitioning
     public List<List<String>> partition(String s) {
         List<List<String>> result = new ArrayList<>();
@@ -349,7 +349,7 @@ Return
         System.out.println(partition("aab"));
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 
 
 }

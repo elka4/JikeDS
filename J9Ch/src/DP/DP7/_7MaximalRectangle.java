@@ -59,13 +59,17 @@ LintCode 510 Maximum Rectangle
 -----------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------
+*/
 
- */
+
 
 //  85. Maximal Rectangle
 //  https://leetcode.com/problems/maximal-rectangle/description/
 //  http://www.lintcode.com/zh-cn/problem/maximal-rectangle/
+//  3:
 public class _7MaximalRectangle {
+//------------------------------------------------------------------------------
+    //1
 /*    A O(n^2) solution based on Largest Rectangle in Histogram
     This question is similar as [Largest Rectangle in Histogram]:
 
@@ -119,6 +123,7 @@ public class _7MaximalRectangle {
 //------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
+    //2
     // 9Ch
     /**
      * @param matrix a boolean 2D matrix
@@ -172,6 +177,7 @@ public class _7MaximalRectangle {
 
 
 //------------------------------------------------------------------------------
+    //3
     // 9Ch
     // 动态规划专题班版本
     /**
@@ -246,7 +252,6 @@ public class _7MaximalRectangle {
     }
 
 //------------------------------------------------------------------------------
-
 }
 
 /*
@@ -264,9 +269,11 @@ public class _7MaximalRectangle {
   [0, 0, 0, 0, 1]
 ]
 输出6
+//------------------------------------------------------------------------------
  */
 
 /*
+//------------------------------------------------------------------------------
 Given a 2D boolean matrix filled with False and True, find the largest rectangle containing all True and return its area.
 
 Have you met this question in a real interview? Yes
@@ -281,6 +288,5 @@ Given a matrix:
   [0, 0, 0, 0, 1]
 ]
 return 6.
-
-
+//------------------------------------------------------------------------------
  */

@@ -82,7 +82,7 @@ public class _010_DFS_Regular_Expression_Matching_E {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     public boolean isMatch(String s, String p) {
 
         if (s == null || p == null) {
@@ -116,7 +116,7 @@ public class _010_DFS_Regular_Expression_Matching_E {
     }
 
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 
     public boolean isMatch2(String s, String p) {
         if (p.isEmpty()) {
@@ -142,7 +142,7 @@ public class _010_DFS_Regular_Expression_Matching_E {
         return isMatch2(s, p.substring(2));
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
     /*
     Easy DP Java Solution with detailed Explanation
 
@@ -194,7 +194,7 @@ Here are some conditions to figure out, then the logic can be very straightforwa
         return dp[s.length()][p.length()];
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 
     // 9Ch
     //DFS
@@ -306,7 +306,7 @@ Here are some conditions to figure out, then the logic can be very straightforwa
 
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 }
 /*
 正则表达式匹配

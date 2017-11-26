@@ -78,7 +78,7 @@ public class _230_BinarySearch_Kth_Smallest_Element_in_a_BST_M {
         }
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 /*
 Two Easiest In Order Traverse (Java)
     In order traverse for BST gives the natural order of numbers. No need to use array.

@@ -103,7 +103,7 @@ public class _101_Tree_Symmetric_Tree_E {
         System.out.println(isSymmetric3(root));
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
         /*Java Solution - Recursion
 
     This problem can be solve by using a simple recursion.
@@ -180,7 +180,7 @@ public class _101_Tree_Symmetric_Tree_E {
 
 
 
-//---------------------------------////////////////////
+//-------------------------------------------------------------------------------
 
     //iteration, deque
     public boolean isSymetric_2(TreeNode root){

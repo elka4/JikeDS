@@ -52,7 +52,7 @@ public class _6_PathSum3_ReturntheMaxPathSumOnTheSubsectionOfCompletePathFromRoo
     }
 
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     int max = Integer.MIN_VALUE;
 
     public int maxPathSum2(TreeNode root) {

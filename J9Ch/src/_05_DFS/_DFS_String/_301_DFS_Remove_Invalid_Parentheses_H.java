@@ -192,7 +192,7 @@ Here is the final implement in Java.
             ans.add(reversed);
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 }
 /*
 Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.

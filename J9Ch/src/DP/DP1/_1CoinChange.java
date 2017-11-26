@@ -145,12 +145,15 @@ f[X] = min{f[X-2]+1, f[X-5]+1, f[X-7]+1}
 // 最值型
 
 
-//Coin Change
 //  322. Coin Change
 //  https://leetcode.com/problems/coin-change/description/
+//  9:
 public class _1CoinChange {
-    //https://leetcode.com/problems/coin-change/solution/
+//----------------------------------------------------------------------------
 
+    //https://leetcode.com/problems/coin-change/solution/
+//----------------------------------------------------------------------------
+    //1
     //Approach #1 (Brute force) [Time Limit Exceeded]
     public int coinChange01(int[] coins, int amount) {
 
@@ -175,8 +178,8 @@ public class _1CoinChange {
         }
         return -1;
     }
-//-------------------------------------------------------------------------///
-    //leetcode
+//----------------------------------------------------------------------------
+    //2
     //Approach #2 (Dynamic programming - Top down) [Accepted]
     public int coinChange02(int[] coins, int amount) {
         if (amount < 1) return 0;
@@ -247,7 +250,8 @@ public class _1CoinChange {
         System.out.println("new int[" + "]: " + t + " ms");
     }
 
-    //-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+    //3
     //Approach #3 (Dynamic programming - Bottom up) [Accepted]
     public int coinChange03(int[] coins, int amount) {
         int max = amount + 1;
@@ -317,9 +321,9 @@ public class _1CoinChange {
         System.out.println("new int[" + "]: " + t + " ms");
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+    //4
     // 9Ch
-
     public int coinChange2(int[] coins, int amount) {
         int[] f = new int[amount + 1];
         int n = coins.length;
@@ -397,8 +401,8 @@ public class _1CoinChange {
         System.out.println("new int[" + "]: " + t + " ms");
     }
 
-//-------------------------------------------------------------------------///
-
+//----------------------------------------------------------------------------
+    //5
     //9Ch DP video
     //这个是接近Approach3的算法
     public int coinChange3(int[] coins, int amount) {
@@ -421,8 +425,8 @@ public class _1CoinChange {
         return f[amount] == Integer.MAX_VALUE ? -1 : f[amount];
     }
 
-//-------------------------------------------------------------------------///
-
+//----------------------------------------------------------------------------
+    //6
     //  me based on 9Ch DP video
     public int coinChangeLeet4(int[] coins, int amount) {
         int n = coins.length;
@@ -444,7 +448,8 @@ public class _1CoinChange {
         return f[amount] == Integer.MAX_VALUE ? -1 : f[amount];
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+    //7
     // note
     int f(int X) {
         if (X == 0) return 0;
@@ -471,7 +476,8 @@ public class _1CoinChange {
         int M = 89;
         System.out.println(f(M));
     }
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+    //8
     //leet discussion
     //#Iterative Method:#
 
@@ -505,7 +511,8 @@ public class _1CoinChange {
         return dp[amount];
     }
 
-
+//----------------------------------------------------------------------------
+    //9
     public int coinChange5(int[] coins, int amount) {
         if(amount<1) return 0;
         return helper(coins, amount, new int[amount]);
@@ -528,7 +535,7 @@ public class _1CoinChange {
         count[rem-1] = (min==Integer.MAX_VALUE) ? -1 : min;
         return count[rem-1];
     }
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 }
 
 /*

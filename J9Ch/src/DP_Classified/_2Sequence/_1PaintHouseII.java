@@ -85,7 +85,7 @@ public class _1PaintHouseII {
     }
 
 
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 
     //AC Java solution without extra space
     public int minCostII2(int[][] costs) {
@@ -120,7 +120,7 @@ public class _1PaintHouseII {
         return costs[n - 1][min1];
     }
 
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 
     //Fast DP Java solution Runtime O(nk) space O(1)
     //Explanation: dp[i][j] represents the min paint cost from house 0 to house i when house i use color j;
@@ -152,7 +152,7 @@ public class _1PaintHouseII {
         return prevMin;
     }
 
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 
     //Easiest O(1) space JAVA solution
     /*
@@ -188,7 +188,7 @@ public class _1PaintHouseII {
         }
         return min1;
     }
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 
     //Accepted Simple JAVA O(NK) solution
 
@@ -216,7 +216,7 @@ public class _1PaintHouseII {
 
         return m1;
     }
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 
 
 }

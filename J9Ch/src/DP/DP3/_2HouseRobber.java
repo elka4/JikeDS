@@ -62,12 +62,30 @@ f[i][1] = f[i-1][0] + A[i-1]
 • 时间复杂度O(N),空间复杂度O(1)
 
 -----------------------------------------------------------------------------------------------
-
  */
 
 
-//House Robber
+//  198. House Robber
+//  https://leetcode.com/problems/house-robber/description/
+//
 public class _2HouseRobber {
+//-------------------------------------------------------------------------------
+    //1
+    //https://leetcode.com/problems/house-robber/solution/
+    //Approach #1 (Dynamic Programming) [Accepted]
+    public int rob(int[] num) {
+        int prevMax = 0;
+        int currMax = 0;
+        for (int x : num) {
+            int temp = currMax;
+            currMax = Math.max(prevMax + x, currMax);
+            prevMax = temp;
+        }
+        return currMax;
+    }
+
+//-------------------------------------------------------------------------------
+    //2
     // 9Ch DP
     public long houseRobber(int[] A) {
         int n = A.length;
@@ -84,7 +102,9 @@ public class _2HouseRobber {
     }
     //不要当前f[i - 1]， 就是要前一个。
     //要当前f[i - 2] + A[i - 1]， 就不要前一个
-//-----------------------------------------------------------------------------//
+
+//-------------------------------------------------------------------------------
+    //3
     /**
      * @param A: An array of non-negative integers.
      * return: The maximum amount of money you can rob tonight
@@ -107,7 +127,7 @@ public class _2HouseRobber {
     }
 
 //------------------------------------------------------------------------------
-
+    //4
     //---方法二---
     public long houseRobber2(int[] A) {
         // write your code here
@@ -125,13 +145,8 @@ public class _2HouseRobber {
         return res[n%2];
     }
 
-//------------------------------------------------------------------------------
-
 
 //------------------------------------------------------------------------------
-
-
-
 }
 /*
 You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.

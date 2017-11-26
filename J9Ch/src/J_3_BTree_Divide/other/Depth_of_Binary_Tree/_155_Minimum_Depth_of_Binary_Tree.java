@@ -62,7 +62,7 @@ public class _155_Minimum_Depth_of_Binary_Tree {
         System.out.println(maxDepth(root));
     }
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
     public int minDepth2(TreeNode root){
         if (root == null){
             return 0;

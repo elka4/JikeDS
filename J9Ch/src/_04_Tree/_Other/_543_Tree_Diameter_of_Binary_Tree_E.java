@@ -28,7 +28,7 @@ public class _543_Tree_Diameter_of_Binary_Tree_E {
         return Math.max(left, right) + 1;
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
     public int DiameterOfBinaryTree2(TreeNode root) {
         return DFS(root)[0];
     }
@@ -45,7 +45,7 @@ public class _543_Tree_Diameter_of_Binary_Tree_E {
         return new int[] { best, height };
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
     int max3;
     public int diameterOfBinaryTree3(TreeNode root) {
         max3 = 0;
@@ -61,7 +61,7 @@ public class _543_Tree_Diameter_of_Binary_Tree_E {
         return height;
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
     //    Java easy to understand solution
     public int diameterOfBinaryTree(TreeNode root) {
         if(root == null){
@@ -80,7 +80,7 @@ public class _543_Tree_Diameter_of_Binary_Tree_E {
         return 1+Math.max(depth(root.left), depth(root.right));
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 }
 /*
 

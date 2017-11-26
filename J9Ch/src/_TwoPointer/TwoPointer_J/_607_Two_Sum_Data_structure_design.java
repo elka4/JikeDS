@@ -15,7 +15,7 @@ import java.util.Map;
 //  http://www.lintcode.com/zh-cn/problem/two-sum/
 public class _607_Two_Sum_Data_structure_design {
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
     /*
     关键就是要处理重复数字，用Hashmap的value存储
      */

@@ -1,5 +1,4 @@
 package DP.DP4;
-
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -7,17 +6,8 @@ import java.util.Arrays;
 //• 划分型动态规划
 
 /*
-
-
-
 -----------------------------------------------------------------------------------------------
 LintCode 513 Perfect Squares
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
 -----------------------------------------------------------------------------------------------
 • 设f[i]表示i最少被分成几个完全平方数之和
 
@@ -34,20 +24,18 @@ f[i-j*j]   i-j*j 最少被分成几个完全平方数之和
 • 初始化f[0]
 • 计算f[1], ..., f[N]
 • 答案是f[N]
-
-
-
------------------------------------------------------------------------------------------------
-
 ---------------------------------------------------------------------------------------------
- */
+*/
 
 
 
 //  279. Perfect Squares
 //  https://leetcode.com/problems/perfect-squares/description/
 //  http://www.lintcode.com/zh-cn/problem/perfect-squares/
+//  11:
 public class _1PerfectSquares {
+//-------------------------------------------------------------------------------
+    //1
 /*  An easy understanding DP solution in Java
 
     dp[n] indicates that the perfect squares count of the given n, and we have:
@@ -91,7 +79,8 @@ public class _1PerfectSquares {
         return dp[n];
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
+    //2
     //这可能是最好的一个， 从下面复制上来的
     public int numSquares444(int n){
         int[] f = new int[n + 1];
@@ -105,7 +94,8 @@ public class _1PerfectSquares {
         }
         return f[n];
     }
-
+//-------------------------------------------------------------------------------
+    //3
     /* Simple Java DP Solution
     Just regular DP. Time Complexity: n * sqrt(n) Space: O(n)*/
     //这个没有上下的方法简介
@@ -121,8 +111,9 @@ public class _1PerfectSquares {
         return dp[n];
     }
 
-//-----------------------------------------------------------------------------//
-    //    Beautiful 8 Lines Java Solution
+//-------------------------------------------------------------------------------
+    //4
+    //Beautiful 8 Lines Java Solution
     public int numSquares04(int n) {
         int[] record = new int[n + 1];
         for(int i = 0; i <= n; i++){
@@ -134,43 +125,44 @@ public class _1PerfectSquares {
         return record[n];
     }
 
-//-----------------------------------------------------------------------------//
-        //Java DP Solution with explanation
-        public int numSquares03(int n) {
-            int[] dp = new int[n + 1];
-            for (int i = 1; i <= n; i++) {
-                dp[i] = Integer.MAX_VALUE;
-            }
-
-            for (int i = 1; i <= n; i++) {
-                int sqrt = (int)Math.sqrt(i);
-
-                // If the number is already a perfect square,
-                // then dp[number] can be 1 directly. This is
-                // just a optimization for this DP solution.
-                if (sqrt * sqrt == i) {
-                    dp[i] = 1;
-                    continue;
-                }
-
-                // To get the value of dp[n], we should choose the min
-                // value from:
-                //     dp[n - 1] + 1,
-                //     dp[n - 4] + 1,
-                //     dp[n - 9] + 1,
-                //     dp[n - 16] + 1
-                //     and so on...
-                for (int j = 1; j <= sqrt; j++) {
-                    int dif = i - j * j;
-                    dp[i] = Math.min(dp[i], (dp[dif] + 1));
-                }
-            }
-
-            return dp[n];
+//-------------------------------------------------------------------------------
+    //5
+    //Java DP Solution with explanation
+    public int numSquares03(int n) {
+        int[] dp = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            dp[i] = Integer.MAX_VALUE;
         }
 
-//-----------------------------------------------------------------------------//
+        for (int i = 1; i <= n; i++) {
+            int sqrt = (int)Math.sqrt(i);
 
+            // If the number is already a perfect square,
+            // then dp[number] can be 1 directly. This is
+            // just a optimization for this DP solution.
+            if (sqrt * sqrt == i) {
+                dp[i] = 1;
+                continue;
+            }
+
+            // To get the value of dp[n], we should choose the min
+            // value from:
+            //     dp[n - 1] + 1,
+            //     dp[n - 4] + 1,
+            //     dp[n - 9] + 1,
+            //     dp[n - 16] + 1
+            //     and so on...
+            for (int j = 1; j <= sqrt; j++) {
+                int dif = i - j * j;
+                dp[i] = Math.min(dp[i], (dp[dif] + 1));
+            }
+        }
+
+        return dp[n];
+    }
+
+//-------------------------------------------------------------------------------
+    //6
 /*    Explanation of the DP solution
 
 18
@@ -203,7 +195,8 @@ public class _1PerfectSquares {
         return DP[n];
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
+    //7
     // 9Ch DP class
     public int numSquares4(int n){
         int[] f = new int[n + 1];
@@ -220,7 +213,8 @@ public class _1PerfectSquares {
         }
         return f[n];
     }
-
+//-------------------------------------------------------------------------------
+    //8
     //这可能是最好的一个
     public int numSquares44(int n){
         int[] f = new int[n + 1];
@@ -237,6 +231,7 @@ public class _1PerfectSquares {
 
 
 //------------------------------------------------------------------------------
+    //9
     // 9Ch
     // version 0 DP
     /**
@@ -284,6 +279,7 @@ public class _1PerfectSquares {
     }
 
 //------------------------------------------------------------------------------
+    //10
     // 9Ch
     // version 1 DP
     /**
@@ -305,6 +301,7 @@ public class _1PerfectSquares {
     }
 
 //------------------------------------------------------------------------------
+    //11
     // 9Ch
     // version 2  Math
     /**

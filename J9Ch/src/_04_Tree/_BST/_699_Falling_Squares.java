@@ -51,7 +51,7 @@ public class _699_Falling_Squares {
     }
 
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //Approach #2: Brute Force with Coordinate Compression [Accepted]
         Map<Integer, Integer> index = new HashMap();
         int t = 0;
@@ -93,7 +93,7 @@ public class _699_Falling_Squares {
             return ans;
         }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //Approach #3: Block (Square Root) Decomposition [Accepted]
     class Solution3 {
         Map<Integer, Integer> index = new HashMap();
@@ -166,7 +166,7 @@ public class _699_Falling_Squares {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 
     //Approach #4: Segment Tree with Lazy Propagation [Accepted]
     class Solution4 {
@@ -257,7 +257,7 @@ public class _699_Falling_Squares {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 }
 /*
 On an infinite number line (x-axis), we drop given squares in the order they are given.

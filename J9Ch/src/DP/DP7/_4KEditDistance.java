@@ -88,12 +88,15 @@ f[sQ][j-1]   情况四:SP和Target最后 一个字符相等
 -----------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------
- */
+*/
 
-// K Edit Distance
+
+
+//  K Edit Distance
+//  4:
 public class _4KEditDistance {
-
 //------------------------------------------------------------------------------
+    //1
     // 9Ch DP
     char[] target = null;
     int K = 0;
@@ -179,6 +182,7 @@ return"abc" "adc"
     }
 
 //------------------------------------------------------------------------------
+    //2
     /**
      * @param words a set of stirngs
      * @param target a target string
@@ -228,6 +232,7 @@ return"abc" "adc"
     }
 
 //------------------------------------------------------------------------------
+    //3
     // Top
     //Edit Distance I， recursion
     private int match(String word1, String word2, int i, int j, int[][] count) {
@@ -256,7 +261,8 @@ return"abc" "adc"
         count[i][j] = res;
         return res;
     }
-
+//------------------------------------------------------------------------------
+    //4
     //Edit Distance II， iteration
     public int minDistance(String word1, String word2) {
         if (word1 == null || word2 == null) {
@@ -281,14 +287,15 @@ return"abc" "adc"
                 if (word1.charAt(i) == word2.charAt(j))
                     match[i + 1][j + 1] = match[i][j];
                 else {
-                    match[i + 1][j + 1] = Math.min(Math.min(match[i][j], match[i][j + 1]), match[i + 1][j]) + 1;
+                    match[i + 1][j + 1] = Math.min(Math.min(match[i][j], match[i][j + 1]),
+                            match[i + 1][j]) + 1;
                 }
             }
         }
         return match[word1.length()][word2.length()];
     }
-//------------------------------------------------------------------------------
 
+//------------------------------------------------------------------------------
 }
 /*
 Given a set of strings which just has lower case letters and a target string, output all the strings for each the edit distance with the target no greater than k.

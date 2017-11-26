@@ -96,7 +96,7 @@ public class _349_Heap_Intersection_of_Two_Arrays_E {
         }
     }
 
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 //        5ms Java Using 1 hashset and time complexity of O(m+n)
 public int[] intersection(int[] nums1, int[] nums2) {
     HashSet<Integer> set = new HashSet<Integer>();
@@ -115,7 +115,7 @@ public int[] intersection(int[] nums1, int[] nums2) {
     for (int i= 0; i < res.size(); i++) arr[i] = res.get(i);
     return arr;
 }
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
     // 9Ch
     // version 1: sort & merge
     public class Jiuzhang1 {
@@ -250,7 +250,7 @@ public int[] intersection(int[] nums1, int[] nums2) {
             return false;
         }
     }
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 
 
 }

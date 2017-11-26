@@ -26,6 +26,7 @@ a[j] > a[j - 1]， 满足单调性
 //  https://leetcode.com/problems/longest-continuous-increasing-subsequence/description/
 //  5: 3
 public class _4LICS {
+//----------------------------------------------------------------------------
     // 1
     //  https://leetcode.com/articles/longest-continuous-increasing-subsequence/
     //  Approach #1: Sliding Window [Accepted]
@@ -38,8 +39,6 @@ public class _4LICS {
         }
         return ans;
     }
-
-
 
 //------------------------------------------------------------------------------
     // 2

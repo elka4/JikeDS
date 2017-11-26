@@ -34,7 +34,7 @@ public class _100_Tree_Same_Tree_E {
         System.out.println(isIdentical(root, root2));
     }
 
-//---------------------------------/////////////////////
+//--------------------------------------------------------------------------------
 
     public boolean isIdentical2(TreeNode a, TreeNode b) {
         // Write your code here
@@ -143,7 +143,7 @@ public class _100_Tree_Same_Tree_E {
                 Math.min(root.val, left.minValue));
     }
 
-//---------------------------------//////////////////////
+//--------------------------------------------------------------------------------/
 
 //version 1 Traverse， 缺点：经常要用到全局变量
     class _95Validate_Binary_Search_Tree_Traverse {

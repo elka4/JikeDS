@@ -21,8 +21,12 @@ f[i][2] = min{f[i-1][0] + cost[i-1][2], f[i-1][1] + cost[i-1][2]}
  */
 
 
-//  Paint House
+//  256. Paint House
+//  https://leetcode.com/problems/paint-house/
+//
 public class _2PaintHouse {
+//----------------------------------------------------------------------------
+    //1
     //最原始做法
     public int minCost444(int[][] costs) {
         int n = costs.length;
@@ -43,7 +47,8 @@ public class _2PaintHouse {
         }
         return Math.min(Math.min(f[n][0],f[n][1]),f[n][2]);
     }
-
+//----------------------------------------------------------------------------
+    //2
     //用mod做空间优化
     public int minCost4444(int[][] costs) {
         int n = costs.length;
@@ -64,7 +69,8 @@ public class _2PaintHouse {
         }
         return Math.min(Math.min(f[n % 2][0],f[n % 2][1]),f[n % 2][2]);
     }
-
+//----------------------------------------------------------------------------
+    //3
     //直接用now old 做空间优化
     // mine on lint
     public int minCostX(int[][] costs) {
@@ -93,9 +99,9 @@ public class _2PaintHouse {
 
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
+    //4
     // 9Ch DP
-
     public int minCost4(int[][] costs) {
         int n = costs.length;
         if (n == 0) {
@@ -138,10 +144,9 @@ public class _2PaintHouse {
         }
         return res;*/
         return Math.min(Math.min(f[n][0],f[n][1]),f[n][2]);
-
-
     }
-
+//-------------------------------------------------------------------------------
+    //5
     public int minCost44(int[][] costs) {
         int n = costs.length;
         if (n == 0) {
@@ -167,6 +172,7 @@ public class _2PaintHouse {
 
 
 //------------------------------------------------------------------------------
+    //6
     /**
      * @param costs n x 3 cost matrix
      * @return an integer, the minimum cost to paint all houses
@@ -208,9 +214,7 @@ public class _2PaintHouse {
     }
 
 //------------------------------------------------------------------------------
-
-//------------------------------------------------------------------------------
-
+    //7
     public int minCost2(int[][] costs) {
         if(costs==null||costs.length==0){
             return 0;
@@ -225,7 +229,7 @@ public class _2PaintHouse {
     }
 
 //------------------------------------------------------------------------------
-
+    //8
     public int minCost3(int[][] costs) {
         if(costs.length==0) return 0;
         int lastR = costs[0][0];
@@ -242,8 +246,8 @@ public class _2PaintHouse {
         return Math.min(Math.min(lastR,lastG),lastB);
     }
 //------------------------------------------------------------------------------
-
-//    Simple 15 line code with O(n) time and O(1) memory solution(Java)
+    //9
+    //    Simple 15 line code with O(n) time and O(1) memory solution(Java)
     public class Solution5 {
         public int minCost(int[][] costs) {
 
@@ -260,28 +264,29 @@ public class _2PaintHouse {
         }
     }
 //------------------------------------------------------------------------------
-public class Solution6 {
-    public int minCost(int[][] costs) {
-        if (costs == null || costs.length == 0) return 0;
-        int n = costs.length;
-        int nColors = costs[0].length;
-        int[][] cached = new int[n][nColors];
-        return worker(n, nColors, 0, -1,costs, cached);
-    }
-    public int worker(int n, int nColors, int index, int preColor, int[][]costs, int[][] cached) {
-        if (index == n) return 0;
-        int cost = Integer.MAX_VALUE;
-        for (int i = 0; i < nColors; i++) {
-            if (i != preColor) {
-                if (cached[index][i] == 0) {
-                    cached[index][i] = costs[index][i] + worker(n, nColors, index+1, i, costs, cached);
-                }
-                cost = Math.min(cost, cached[index][i]);
-            }
+    //10
+    public class Solution6 {
+        public int minCost(int[][] costs) {
+            if (costs == null || costs.length == 0) return 0;
+            int n = costs.length;
+            int nColors = costs[0].length;
+            int[][] cached = new int[n][nColors];
+            return worker(n, nColors, 0, -1,costs, cached);
         }
-        return cost;
+        public int worker(int n, int nColors, int index, int preColor, int[][]costs, int[][] cached) {
+            if (index == n) return 0;
+            int cost = Integer.MAX_VALUE;
+            for (int i = 0; i < nColors; i++) {
+                if (i != preColor) {
+                    if (cached[index][i] == 0) {
+                        cached[index][i] = costs[index][i] + worker(n, nColors, index+1, i, costs, cached);
+                    }
+                    cost = Math.min(cost, cached[index][i]);
+                }
+            }
+            return cost;
+        }
     }
-}
 
 
 //------------------------------------------------------------------------------

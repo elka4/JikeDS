@@ -66,7 +66,7 @@ public class _3WordSquares {
         }
     }
 
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 
     public List<List<String>> wordSquares(String[] words) {
         List<List<String>> ans = new ArrayList<>();
@@ -104,7 +104,7 @@ public class _3WordSquares {
     }
 
 
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 
     // version: 高频题班
     /**
@@ -181,7 +181,7 @@ public class _3WordSquares {
         System.out.println(wordSquares2(words));
     }
 
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 }
 /*
 Given a set of words without duplicates, find all word squares you can build from them.

@@ -30,10 +30,7 @@ f[i-1][w-Ai-1] + Vi-1:  用前i-1个物品拼出重量w-Ai-1
 • 答案:max0<=j<=M{f[N][j] | f[N][j] ≠-1}
 • 时间复杂度(计算步数):O(MN)，空间复杂度(数组大小):优化后 可以达到O(M)
 -----------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
- */
+*/
 
 /*
 Backpack II:
@@ -66,8 +63,11 @@ int backPackII(int m, vector<int> A, vector<int> V) {
  */
 
 
-//Backpack II
+//  Backpack II
+//  3:
 public class _1Backpack_II {
+//------------------------------------------------------------------------------
+    //1
     // 9Ch DP
     public int backPackII(int m, int[] A, int V[]) {
         int n = A.length;
@@ -102,6 +102,7 @@ public class _1Backpack_II {
     }
 
 //------------------------------------------------------------------------------
+    //2
     /**
      * @param m: An integer m denotes the size of a backpack
      * @param A & V: Given n items with size A[i] and value V[i]
@@ -127,6 +128,7 @@ public class _1Backpack_II {
         return dp[A.length][m];
     }
 //------------------------------------------------------------------------------
+    //3
     // 方法二
     /**
      * @param m: An integer m denotes the size of a backpack
@@ -145,6 +147,7 @@ public class _1Backpack_II {
         }
         return f[m];
     }
+
 //------------------------------------------------------------------------------
 }
 

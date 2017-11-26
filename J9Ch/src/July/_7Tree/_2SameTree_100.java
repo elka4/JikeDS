@@ -12,7 +12,7 @@ public class _2SameTree_100 {
         return false;
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 
     public boolean isSameTree2(TreeNode p, TreeNode q) {
         Stack<TreeNode> stack_p = new Stack <> ();
@@ -33,7 +33,7 @@ public class _2SameTree_100 {
         return stack_p.size() == stack_q.size() ;
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 
     public boolean isSameTree3(TreeNode p, TreeNode q) {
         if (p == null && q == null) return true;
@@ -41,7 +41,7 @@ public class _2SameTree_100 {
                 && p.val == q.val
                 && isSameTree3(p.left, q.left) && isSameTree3(p.right, q.right);
     }
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 
 
 

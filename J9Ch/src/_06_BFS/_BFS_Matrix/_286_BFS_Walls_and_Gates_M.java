@@ -60,7 +60,7 @@ public class _286_BFS_Walls_and_Gates_M {
     Space complexity : O(mn)O(mn). The space complexity depends on the queue's size. We insert at most m \times nm×n points into the queue.*/
 
 
-    //-----------------------------------------------------------------------------//
+    //-------------------------------------------------------------------------------
     // 9Ch
     // version: 高频题班
     public class Jiuzhang {

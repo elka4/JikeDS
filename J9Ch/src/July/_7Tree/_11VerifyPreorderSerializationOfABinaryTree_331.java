@@ -18,7 +18,7 @@ public class _11VerifyPreorderSerializationOfABinaryTree_331 {
     }
 
 
-//---------------------------------////////////////////??
+//-------------------------------------------------------------------------------??
 
     //Java intuitive 22ms solution with stack
     public boolean isValidSerialization2(String preorder) {
@@ -46,7 +46,7 @@ public class _11VerifyPreorderSerializationOfABinaryTree_331 {
         }
         return st.size() == 1 && st.peek().equals("#");
     }
-//---------------------------------////////////////////??
+//-------------------------------------------------------------------------------??
 
     //JAVA, Counting Indegree and Outdegree, SIMPLE & CLEAR!
     public boolean isValidSerialization3(String preorder) {
@@ -64,7 +64,7 @@ public class _11VerifyPreorderSerializationOfABinaryTree_331 {
         return degree == 0;
     }
 
-//---------------------------------////////////////////??
+//-------------------------------------------------------------------------------??
 
 
 

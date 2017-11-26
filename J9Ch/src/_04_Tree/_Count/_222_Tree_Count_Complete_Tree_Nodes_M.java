@@ -32,7 +32,7 @@ Since I halve the tree in every recursive step, I have O(log(n)) steps. Finding 
                         : (1 << h-1) + countNodes1(root.left);
     }
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
     //    Iterative Version - 508 ms
     //    Here's an iterative version as well, with the benefit that I don't recompute h in every step.
     int height2(TreeNode root) {
@@ -54,7 +54,7 @@ Since I halve the tree in every recursive step, I have O(log(n)) steps. Finding 
     }
 
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
     //    A Different Solution - 544 ms
     //    Here's one based on victorlee's C++ solution.
     public int countNodes3(TreeNode root) {
@@ -74,14 +74,14 @@ Since I halve the tree in every recursive step, I have O(log(n)) steps. Finding 
 
 
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
     public int countNodes4(TreeNode root) {
         if (root == null)
             return 0;
         return 1 + countNodes3(root.left) + countNodes3(root.right);
     }
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
 }
 /*
 Given a complete binary tree, count the number of nodes.

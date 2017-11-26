@@ -224,7 +224,7 @@ Of course it is also obvious that a word can only be formed by words shorter tha
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 }
 /*
 Given a list of words (without duplicates), please write a program that returns all concatenated words in the given list of words.

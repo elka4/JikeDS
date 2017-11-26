@@ -134,7 +134,7 @@ public class _191_Maximum_Product_Subarray {
         return result;
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 // leetcode
 
 //Possibly simplest solution with O(n) time complexity
@@ -167,7 +167,7 @@ void swap(int[] A, int imax, int imin){
 }
 
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 
 //Sharing my solution: O(1) space, O(n) running time
 //There's no need to use O(n) space, as all that you need is a minhere and maxhere.
@@ -193,7 +193,7 @@ void swap(int[] A, int imax, int imin){
         return maxsofar;
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 /*
 Loop through the array, each time remember the max and min value for the
 previous product, the most important thing is to update the max and min
@@ -218,7 +218,7 @@ since this is product, a negative * negative could be positive.
         return result;
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 //    f[i] means maximum product that can be achieved ending with i
 //
 //    g[i] means minimum product that can be achieved ending with i
@@ -240,7 +240,7 @@ since this is product, a negative * negative could be positive.
         return res;
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     public int maxProduct8(int[] a) {
         if (a == null || a.length == 0)
             return 0;
@@ -263,7 +263,7 @@ since this is product, a negative * negative could be positive.
         return ans;
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 
     //2 Passes scan, beats 99%
 //it's really about odd negative numbers or even negative numbers,

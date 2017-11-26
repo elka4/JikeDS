@@ -114,7 +114,7 @@ public class _018_TwoPointer_1_4Sum_M {
         return;
     }
 
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 //Clean accepted java O(n^3) solution based on 3sum
     public class Solution {
         public List<List<Integer>> fourSum(int[] num, int target) {
@@ -152,7 +152,7 @@ public class _018_TwoPointer_1_4Sum_M {
         }
     }
 
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 
     // 9Ch
 public class Jiuzhang {

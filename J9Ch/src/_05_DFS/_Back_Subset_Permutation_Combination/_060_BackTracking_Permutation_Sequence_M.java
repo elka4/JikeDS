@@ -198,7 +198,7 @@ Giving us 3142. If you manually list out the permutations using DFS method, it w
         return sb.toString();
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 
     // 9Ch
     public String getPermutation_J(int n, int k) {
@@ -233,7 +233,7 @@ Giving us 3142. If you manually list out the permutations using DFS method, it w
         return sb.toString();
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 }
 
 /* Leetcode

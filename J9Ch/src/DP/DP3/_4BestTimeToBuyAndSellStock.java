@@ -32,23 +32,20 @@ LintCode 149 Best Time to Buy and Sell Stock
 • 时刻保存当前为止(即0~j-1天)的最低价格Pi
 • 最大的Pj - Pi即为答案
 -----------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
  */
-//
+
+
 //  121. Best Time to Buy and Sell Stock
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock/
+//  5:
 public class _4BestTimeToBuyAndSellStock {
     //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solution/
-
+//------------------------------------------------------------------------------
     //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 
-
+//------------------------------------------------------------------------------
+    //1
     //Approach #1 (Brute Force) [Time Limit Exceeded]
     public class Solution01 {
         public int maxProfit(int prices[]) {
@@ -63,7 +60,8 @@ public class _4BestTimeToBuyAndSellStock {
             return maxprofit;
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
     //Approach #2 (One Pass) [Accepted]
     public class Solution02 {
         public int maxProfit(int prices[]) {
@@ -80,6 +78,7 @@ public class _4BestTimeToBuyAndSellStock {
     }
 
 //------------------------------------------------------------------------------
+    //3
     // 9Ch
     public int maxProfit1(int prices[]) {
         int minprice = Integer.MAX_VALUE;
@@ -95,7 +94,9 @@ public class _4BestTimeToBuyAndSellStock {
         }
         return maxprofit;
     }
-//-------------------------------------------------------------------------//
+
+//-------------------------------------------------------------------------------
+    //4
     // 9Ch
     public int maxProfit2(int[] prices) {
         if (prices == null || prices.length == 0) {
@@ -113,6 +114,7 @@ public class _4BestTimeToBuyAndSellStock {
         return profit;
     }
 //------------------------------------------------------------------------------
+    //5
     //mine
     public int maxProfit3(int[] prices) {
         if (prices == null || prices.length == 0) {

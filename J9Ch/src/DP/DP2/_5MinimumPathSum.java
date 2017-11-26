@@ -22,23 +22,25 @@ A[i][j]:    格子（i，j）的数字
 空间优化：
 
 -----------------------------------------------------------------------------------------------
-
  */
 
 
 //  lint 110. Minimum Path Sum
 //  64. Minimum Path Sum
 //  https://leetcode.com/problems/minimum-path-sum/description/
+//  11:
 public class _5MinimumPathSum {
+//----------------------------------------------------------------------------
+    //1
     // https://leetcode.com/articles/minimum-path-sum/
-/*
-        0
-        1
-        2
-        3
-0 1 2 3 4
+    /*
+            0
+            1
+            2
+            3
+    0 1 2 3 4
 
- */
+     */
     //Approach #1 Brute Force [Time Limit Exceeded]
     public int calculate(int[][] grid, int i, int j){
         if (i == grid.length || j == grid[0].length) return grid[i][j];
@@ -49,7 +51,8 @@ public class _5MinimumPathSum {
         return  calculate(grid, 0, 0);
     }
 
-
+//----------------------------------------------------------------------------
+    //2
     //Approach #2 Dynamic Programming 2D [Accepted]
     public int minPathSum02(int[][] grid){
         int[][] dp = new int[grid.length][grid[0].length];
@@ -68,7 +71,8 @@ public class _5MinimumPathSum {
         }
         return dp[0][0];
     }
-
+//----------------------------------------------------------------------------
+    //3
     //Approach #3 Dynamic Programming 1D [Accepted]
     /*
     In the previous case, instead of using a 2D matrix for dp, we can do the same work using a dp array of the row size, since for making the current entry all we need is the dp entry for the bottom and the right element. Thus, we start by initializing only the last element of the array as the last element of the given matrix. The last entry is the bottom rightmost element of the given matrix.
@@ -90,11 +94,12 @@ public class _5MinimumPathSum {
         }
         return dp[0];
     }
-
+//----------------------------------------------------------------------------
+    //4
     //Approach #4 Dynamic Programming (Without Extra Space) [Accepted]
     /*
     Instead of using another dpdp matrix. We can store the minimum sums in the original matrix itself, since we need not retain the original matrix here.
-     */
+    */
     public int minPathSum04(int[][] grid){
         for (int i = grid.length - 1; i >= 0; i--) {
             for (int j = grid[0].length; j >= 0; j--) {
@@ -112,6 +117,7 @@ public class _5MinimumPathSum {
 
 
 //-----------------------------------------------------------------------------
+    //5
     public int minPathSum11(int[][] grid) {
         //leetcode不需要这个
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
@@ -137,7 +143,8 @@ public class _5MinimumPathSum {
         }
         return sum[M - 1][N - 1];
     }
-
+//----------------------------------------------------------------------------
+    //6
     // mod
     public int minPathSum111 (int[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
@@ -163,7 +170,8 @@ public class _5MinimumPathSum {
         }
         return sum[(M - 1) % 2][N - 1];
     }
-
+//----------------------------------------------------------------------------
+    //7
     //old now
     public int minPathSum1111 (int[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
@@ -193,7 +201,8 @@ public class _5MinimumPathSum {
         }
         return sum[now][N - 1];
     }
-
+//----------------------------------------------------------------------------
+    //8
     //单行dp， 这个最牛逼
     public int minPathSum11111(int[][] grid) {
         int M = grid.length;
@@ -218,6 +227,7 @@ public class _5MinimumPathSum {
     }
 
 //------------------------------------------------------------------------------
+    //9
     // DP 这个不好看
     public int minPathSum(int[][] A) {
         if (A == null || A.length == 0 || A[0].length == 0){
@@ -264,6 +274,7 @@ public class _5MinimumPathSum {
     }
 
 //------------------------------------------------------------------------------
+    //10
     //这个最简单明了，把顶点和两条边界处理分离出来
     public int minPathSum1(int[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
@@ -294,11 +305,8 @@ public class _5MinimumPathSum {
     }
 
 
-
-
-
 //------------------------------------------------------------------------------
-
+    //11
     // 方法二
     /**
      * @param A: a list of lists of integers.
@@ -337,7 +345,6 @@ public class _5MinimumPathSum {
     }
 
 //------------------------------------------------------------------------------
-
 }
 
 /*

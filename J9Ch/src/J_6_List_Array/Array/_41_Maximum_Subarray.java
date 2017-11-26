@@ -48,7 +48,7 @@ public class _41_Maximum_Subarray {
         return max;
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 
     // Version 2: Prefix Sum
     public int maxSubArray2(int[] A) {
@@ -73,7 +73,7 @@ public class _41_Maximum_Subarray {
         return max;
     }
 
-//---------------------------------////////////////////
+//-------------------------------------------------------------------------------
 
     public int maxSubArray3(int[] nums) {
         // write your code
@@ -160,7 +160,7 @@ public class _41_Maximum_Subarray {
     6
      */
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 
     //1. Dynamic Programming Solution
 //The changing condition for dynamic programming is "We should ignore the
@@ -547,7 +547,7 @@ public int maxSubArray16(int[] A) {
             return leftsum + rightsum;
         }
     }
-//---------------------------------///////////////////////
+//-------------------------------------------------------------------------------
 //O(n) time O(1) space DP solution (Java)
 
 /*
@@ -587,7 +587,7 @@ the space complexity is reduced to O(1).
 
         return max;
     }
-//---------------------------------///////////////////////
+//-------------------------------------------------------------------------------
 //O(n) time O(1) space dynamic programming 8-line java solution with comment
     /*Then, from i --> i+1:
 -- if sum[i] >= 0, it gives non-negative contribution, sum[i+1] = sum[i] + a[i+1]
@@ -605,7 +605,7 @@ the space complexity is reduced to O(1).
 
 
 
-//---------------------------------///////////////////////
+//-------------------------------------------------------------------------------
 
 
     /*
@@ -630,7 +630,7 @@ We can then use O(1) space to keep track of the max sum(0, i) so far.
         return max;
     }
 
-//---------------------------------///////////////////////
+//-------------------------------------------------------------------------------
     public int maxSubArray22(int[] nums) {
         int maxSum = nums[0];
         int sum = nums[0];
@@ -640,7 +640,7 @@ We can then use O(1) space to keep track of the max sum(0, i) so far.
         }
         return maxSum;
     }
-//---------------------------------///////////////////////
+//-------------------------------------------------------------------------------
 
     public int maxSubArray23(int[] nums) {
 
@@ -659,7 +659,7 @@ We can then use O(1) space to keep track of the max sum(0, i) so far.
     }
 
 
-//---------------------------------///////////////////////
+//-------------------------------------------------------------------------------
 
     //The solution does 1 iteration with constant space and no DP.
 
@@ -677,7 +677,7 @@ We can then use O(1) space to keep track of the max sum(0, i) so far.
         return max;
     }
 
-//---------------------------------///////////////////////
+//-------------------------------------------------------------------------------
 
 
 

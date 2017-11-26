@@ -3,12 +3,15 @@ package DP.DP3;
 
 //  309. Best Time to Buy and Sell Stock with Cooldown
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/
-//
+//  _4BestTimeToBuyAndSellStock, _5BestTimeToBuyAndSellStockII
+//  4
 public class _309_Best_Time_to_Buy_and_Sell_Stock_with_Cooldown {
+//-----------------------------------------------------------------------------
 
     //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 
-
+//-----------------------------------------------------------------------------
+    //1
 
     /*
 Share my thinking process
@@ -67,6 +70,7 @@ Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to
 
 
 //------------------------------------------------------------------------------
+    //2
     /*
     Easiest JAVA solution with explanations
     Here I share my no brainer weapon when it comes to this kind of problems.
@@ -124,6 +128,7 @@ Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to
 
 
 //------------------------------------------------------------------------------
+    //3
 /*    7-line Java: only consider sell and cooldown
     Define:
 
@@ -155,6 +160,7 @@ Since states of day i relies only on i-1 and i-2 we can reduce the O(n) space to
 
 
 //------------------------------------------------------------------------------
+    //4
 /*    DescriptionHintsSubmissionsDiscussSolution
     Very Easy to Understand One Pass O(n) Solution with No Extra Space
     The idea is as follows:

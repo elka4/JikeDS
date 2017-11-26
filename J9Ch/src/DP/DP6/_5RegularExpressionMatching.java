@@ -1,4 +1,6 @@
 package DP.DP6;
+import org.junit.Test;
+
 //双序列型动态规划
 
 /*
@@ -67,18 +69,17 @@ f[i][j] = f[i][j-2] OR (f[i-1][j] AND (B[j-2]=‘.’ OR B[j-2]=A[i-1]))，如�
 -----------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------
+*/
 
------------------------------------------------------------------------------------------------
- */
-
-import org.junit.Test;
 
 //  10. Regular Expression Matching
 //  https://leetcode.com/problems/regular-expression-matching/description/
-//
+//  6:
 public class _5RegularExpressionMatching {
+//--------------------------------------------------------------------------------
     //https://leetcode.com/problems/regular-expression-matching/solution/
-
+//--------------------------------------------------------------------------------
+    //1
     //Approach #1: Recursion [Accepted]
     class Solution01 {
         public boolean isMatch(String text, String pattern) {
@@ -95,7 +96,8 @@ public class _5RegularExpressionMatching {
         }
     }
 
-//-----------------------------------------------------------------------------////
+//--------------------------------------------------------------------------------
+    //2
     //Approach #2: Dynamic Programming [Accepted]
     //Top-Down Variation
     enum Result {
@@ -132,7 +134,8 @@ public class _5RegularExpressionMatching {
         }
     }
 
-//-----------------------------------------------------------------------------////
+//--------------------------------------------------------------------------------
+    //3
     //Bottom-Up Variation
     class Solution03 {
         public boolean isMatch(String text, String pattern) {
@@ -155,8 +158,8 @@ public class _5RegularExpressionMatching {
         }
     }
 
-//-----------------------------------------------------------------------------////
-
+//--------------------------------------------------------------------------------
+    //4
 /*
     Easy DP Java Solution with detailed Explanation
     This Solution use 2D DP. beat 90% solutions, very simple.
@@ -206,7 +209,8 @@ public class _5RegularExpressionMatching {
         return dp[s.length()][p.length()];
     }
 
-//-----------------------------------------------------------------------------////
+//--------------------------------------------------------------------------------
+    //5
     //Clean Java Solution
     public boolean isMatch5(String s, String p) {
         if (p.isEmpty()) {
@@ -233,7 +237,8 @@ public class _5RegularExpressionMatching {
     }
 
 
-//-----------------------------------------------------------------------------////
+//--------------------------------------------------------------------------------
+    //6
     // 9CH DP
     public boolean isMatch1(String s, String p) {
         char[] c1 = s.toCharArray();
@@ -282,7 +287,8 @@ public class _5RegularExpressionMatching {
         System.out.println(result);//true
     }
 
-//-----------------------------------------------------------------------------////
+//--------------------------------------------------------------------------------
+    //6
     public boolean isMatch(String s, String p) {
         //Java note: s.substring(n) will be "" if n == s.length(), but if n > s.length(), index oob error
 
@@ -345,9 +351,7 @@ public class _5RegularExpressionMatching {
     }
 
 
-//-----------------------------------------------------------------------------////
-//-----------------------------------------------------------------------------////
-//-----------------------------------------------------------------------------////
+//--------------------------------------------------------------------------------
 }
 /*
 Implement regular expression matching with support for '.' and '*'.

@@ -83,7 +83,7 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
         System.out.println(partition02("aab"));
     }//[[a, a, b], [aa, b]]
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //3
     //My Java DP only solution without recursion. O(n^2)
     public List<List<String>> partition03(String s) {
@@ -114,7 +114,7 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
         System.out.println(partition03("aab"));
     }//[[a, a, b], [aa, b]]
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //4
     //Java: Backtracking solution.
     //https://discuss.leetcode.com/topic/6186/java-backtracking-solution
@@ -156,7 +156,7 @@ public class _131_BackTracking_Palindrome_Partitioning_M {
         System.out.println(partition04("aab"));
     }//[[a, a, b], [aa, b]]
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //5
     //Java DP + DFS solution
 /*
@@ -202,7 +202,7 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
         System.out.println(partition05("aab"));
     }//[[a, a, b], [aa, b]]
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //6
     //Concise Java solution
     //DFS to find every combinations of the string, if the substring is not Palindrome, ignore it then go to the next.
@@ -242,7 +242,7 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
     }//[[a, a, b], [aa, b]]
 
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //7
 
 /*    Classic recursive solution in Java
@@ -303,7 +303,7 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
         System.out.println(partition07("aab"));
     }//[[a, a, b], [aa, b]]
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //8
     //Java Easy-follow Recursive Solution, can convert to DP easily, what is complexity? O(n^2)?
 
@@ -349,7 +349,7 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
     }//[[a, a, b], [aa, b]]
 
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //9
     // jiuzhang
     // version 1: shorter but slower
@@ -402,7 +402,7 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
         System.out.println(partition_J1("aab"));
     }//[[a, a, b], [aa, b]]
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //10
     // version 2: longer but faster
     List<List<String>> results;
@@ -476,7 +476,7 @@ The normal dfs backtracking will need to check each substring for palindrome, bu
         System.out.println(partition_J2("aab"));
     }//[[a, a, b], [aa, b]]
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 }
 
 /*

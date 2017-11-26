@@ -16,9 +16,9 @@ Up[i][j] = 0, 如果（0， j）格不是敌人
 Up[i][j] = 1, 如果 (0， j）格是敌人
 
 -----------------------------------------------------------------------------------------------
-
  */
-//Bomb Enemy
+
+
 /*
 首先，这个题的关键在于熟悉对于2D Array的操作，就是对于2D Array index x, y的操作。
 
@@ -36,12 +36,12 @@ m-1
 
 //  361. Bomb Enemy
 //  https://leetcode.com/problems/bomb-enemy/description/
-//
+//  5:
 public class _6BombEnemy {
+//----------------------------------------------------------------------------
+    //1
     //Simple DP solution in Java  这个和maxKilledEnemies2是一样的，不过是分离出来row和col的method
-
-    //    only need to store one killed enemies value for a row and an array of each column;
-
+    //only need to store one killed enemies value for a row and an array of each column;
     //if current grid value is W, this means previous stored value becomes invalid, you need to recalculate.
 
     //_5MinimumPathSum里单行DP也是类似思想
@@ -91,6 +91,7 @@ public class _6BombEnemy {
         return num;
     }
 //------------------------------------------------------------------------------
+    //2
     //这个性能极好
     public int maxKilledEnemies33(char[][] grid) {
         // Write your code here
@@ -126,7 +127,8 @@ public class _6BombEnemy {
         return result;
     }
 
-
+//----------------------------------------------------------------------------
+    //3
     public int maxKilledEnemies3(char[][] grid) {
         // Write your code here
         int m = grid.length;
@@ -158,6 +160,7 @@ public class _6BombEnemy {
     }
 
 //------------------------------------------------------------------------------
+    //4
     // 9Ch DP
     public int maxKilledEnemies2(char[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
@@ -275,6 +278,7 @@ public class _6BombEnemy {
 
 
 //------------------------------------------------------------------------------
+    //5
     // 方法二
     /**
      * @param grid Given a 2D grid, each cell is either 'W', 'E' or '0'

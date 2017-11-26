@@ -59,25 +59,19 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
 • f[N][1], ..., f[N][2K+1]
 • 时间复杂度:O(NK),空间复杂度:O(NK)，优化后可以O(K)，因为 f[i][1.. 2K+1]只依赖于f[i-1][1.. 2K+1]
 -----------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
- */
+*/
 
 
 //  188. Best Time to Buy and Sell Stock IV
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/description/
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-iv/
+//  8:
 public class _7BestTimeToBuyAndSellStockIV {
 
     //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 
 //-----------------------------------------------------------------------------
-
-
+    //1
 /*    A Concise DP Solution in Java
 
     The general idea is DP, while I had to add a "quickSolve" function to tackle some corner cases to avoid TLE.
@@ -117,8 +111,8 @@ public class _7BestTimeToBuyAndSellStockIV {
     }
 
 //-----------------------------------------------------------------------------
-
-//    Clean Java DP solution with comment
+    //2
+    //Clean Java DP solution with comment
 
     /**
      * dp[i, j] represents the max profit up until prices[j] using at most i transactions.
@@ -170,6 +164,7 @@ public class _7BestTimeToBuyAndSellStockIV {
         return dp[k][n-1];
     }
 //-----------------------------------------------------------------------------
+    //3
 /*    Easy understanding and can be easily modified to different situations Java Solution
 
     The basic idea is to create two tables. hold and unhold.
@@ -220,7 +215,8 @@ public class _7BestTimeToBuyAndSellStockIV {
     }
 
 
-    //------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+    //4
     // 9Ch DP
     public int maxProfit(int K, int[] A) {
         int n = A.length;
@@ -287,6 +283,7 @@ public class _7BestTimeToBuyAndSellStockIV {
     }
 
 //-----------------------------------------------------------------------------
+    //5
     // 动态规划专题班版本 Version 1
     private int update(int a, int b, int delta) {
         if (b == Integer.MIN_VALUE) {
@@ -352,10 +349,8 @@ public class _7BestTimeToBuyAndSellStockIV {
         return res;
     }
 
-
-
 //-----------------------------------------------------------------------------
-
+    //6
     // version 2
     class Solution2 {
         /**
@@ -404,7 +399,7 @@ public class _7BestTimeToBuyAndSellStockIV {
     };
 
 //-----------------------------------------------------------------------------
-
+    //7
     // 方法二
     class Solution3 {
 
@@ -481,6 +476,7 @@ public class _7BestTimeToBuyAndSellStockIV {
         }
     }
 //-----------------------------------------------------------------------------
+    //8
     // 9Ch J DP
     public int maxProfit5(int k, int[] prices) {
         // write your code here
@@ -524,7 +520,6 @@ public class _7BestTimeToBuyAndSellStockIV {
         }
         return globalbest[(n - 1)][k];
     }
-//-----------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------
 }

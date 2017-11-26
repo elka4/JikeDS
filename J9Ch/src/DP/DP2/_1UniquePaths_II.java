@@ -1,4 +1,5 @@
 package DP.DP2;
+import org.junit.Test;
 
 //• 坐标型动态规划
 
@@ -34,18 +35,16 @@ f[i][j-1]，             如果i=1，即第一行
 f[i-1][j] + f[i][j-1]， 其他
 -----------------------------------------------------------------------------------------------
 
-
 -----------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
  */
 
-import org.junit.Test;
 
-//  Unique PathsII
+//  63. Unique Paths II
+//  https://leetcode.com/problems/unique-paths-ii/description/
+//  13:
 public class _1UniquePaths_II {
-
+//----------------------------------------------------------------------------
+    //1
     // 这个是目前看最好的解法， 从下面复制来
     public int uniquePathsWithObstaclesXX(int[][] obstacleGrid) {
         int m = obstacleGrid.length;
@@ -73,7 +72,8 @@ public class _1UniquePaths_II {
         }
         return s[(m-1)%2][n-1];
     }
-
+//----------------------------------------------------------------------------
+    //2
     //讲以上算法转为now， old
     public int uniquePathsWithObstaclesXXX(int[][] obstacleGrid) {
         int m = obstacleGrid.length;
@@ -117,7 +117,8 @@ public class _1UniquePaths_II {
     i:1; j:0 f[i][j]:0; i:1; j:1 f[i][j]:0;
     0
      */
-
+//----------------------------------------------------------------------------
+    //3
     //从下面copy来的
     public int uniquePathsWithObstacles222(int[][] obstacleGrid) {
         int m = obstacleGrid.length;
@@ -156,7 +157,8 @@ public class _1UniquePaths_II {
 //        print(paths);
         return paths[now][n - 1];
     }
-
+//----------------------------------------------------------------------------
+    //4
     //改成这样以后就可以不用在内层循环每次paths[now][j] = 0;
     //所以上面方法的问题出在以下这两行，就是边界处理最上面那行和最左边那列的情况出了问题。
     //这里的算法是分的非常清楚，三种：第一行，第一列，其余状况。
@@ -178,7 +180,7 @@ public class _1UniquePaths_II {
             for (int j = 0; j < n; j++) {
                 //如果不重设，paths[now][j]就是上一轮外层循环里的里得到的 paths[old][j]
 //                paths[now][j] = 0;              //这里不用归零！ 为什么????!!!
-                //当然，paths[now][j]用来存储当前结果，所以它必须为0。只是它为什么不是0呢？因为上一层的paths[old][j]不是0
+            //当然，paths[now][j]用来存储当前结果，所以它必须为0。只是它为什么不是0呢？因为上一层的paths[old][j]不是0
                 //也就是上上次外层循环得到的paths[now][j]还在。
                 //所以其实我的问题是，为什么上面两个算法不需要重设？？？？！！！
 
@@ -214,7 +216,8 @@ public class _1UniquePaths_II {
      */
 
 
-
+//----------------------------------------------------------------------------
+    //5
     //这个不用paths[now][j] 每轮循环归零， 但是后面两行做了修改 += ---> =
     public int uniquePathsWithObstacles22222(int[][] obstacleGrid) {
         int m = obstacleGrid.length;
@@ -267,6 +270,7 @@ public class _1UniquePaths_II {
         }
     }
 //------------------------------------------------------------------------------
+    //6
     //最标准写法
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
@@ -307,6 +311,7 @@ public class _1UniquePaths_II {
     }
 
 //------------------------------------------------------------------------------
+    //7
     public int uniquePathsWithObstaclesX(int[][] obstacleGrid) {
 //        if (obstacleGrid == null || obstacleGrid.length == 0 || obstacleGrid[0].length == 0) {
 //            return 0;
@@ -354,6 +359,7 @@ public class _1UniquePaths_II {
 //                        paths[now][j] = paths[old][j] + paths[now][j - 1];
 
 //------------------------------------------------------------------------------
+    //8
     //Simple Java DP solution
     public class Solution {
         public int uniquePathsWithObstacles(int[][] obstacleGrid) {
@@ -376,8 +382,8 @@ public class _1UniquePaths_II {
             }
             return s[m-1][n-1];
         }
-
-
+//------------------------------------------------------------------------------
+    //9
         public int uniquePathsWithObstaclesX(int[][] obstacleGrid) {
             int m = obstacleGrid.length;
             int n = obstacleGrid[0].length;
@@ -399,7 +405,8 @@ public class _1UniquePaths_II {
             }
             return s[(m-1)%2][n-1];
         }
-
+//------------------------------------------------------------------------------
+    //10
         // 这个是目前看最好的解法
         public int uniquePathsWithObstaclesXX(int[][] obstacleGrid) {
             int m = obstacleGrid.length;
@@ -431,6 +438,7 @@ public class _1UniquePaths_II {
     }
 
 //------------------------------------------------------------------------------
+    //11
     //  Short JAVA solution   这方法会破坏原数组
     public int uniquePathsWithObstacles4(int[][] obstacleGrid) {
         int width = obstacleGrid[0].length;
@@ -447,7 +455,7 @@ public class _1UniquePaths_II {
         return dp[width - 1];
     }
 //------------------------------------------------------------------------------
-
+    //12
     // 方法二
     /**
      * @param A: A list of lists of integers
@@ -498,7 +506,7 @@ public class _1UniquePaths_II {
 
 
 //------------------------------------------------------------------------------
-
+    //13
     // 9Ch DP
     public int uniquePathsWithObstacles3(int[][] obstacleGrid) {
         int m = obstacleGrid.length;

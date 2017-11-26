@@ -55,7 +55,7 @@ public class _6_CourseSchedule_I {
         return true;
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 
     public boolean canFinish_BFS (int numCourses, int[][] prerequisites) {
         if (prerequisites == null || prerequisites.length == 0 ||

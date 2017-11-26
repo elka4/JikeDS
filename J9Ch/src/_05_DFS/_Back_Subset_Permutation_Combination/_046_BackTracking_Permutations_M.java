@@ -11,7 +11,7 @@ public class _046_BackTracking_Permutations_M {
 
     //  https://discuss.leetcode.com/topic/46162/a-general-approach-to-backtracking-questions-in-java-subsets-permutations-combination-sum-palindrome-partioning
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //My AC simple iterative java/python solution
     /*
     the basic idea is, to permute n numbers, we can add the nth number into the resulting List<List<Integer>> from the n-1 numbers, in every possible position.
@@ -44,7 +44,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     @Test public void test01(){ System.out.println(permute01(new int[]{1,2,3})); }
     //[[3, 2, 1], [3, 1, 2], [2, 3, 1], [1, 3, 2], [2, 1, 3], [1, 2, 3]]
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
     public List<List<Integer>> permute02(int[] num) {
         LinkedList<List<Integer>> res = new LinkedList<List<Integer>>();
@@ -64,7 +64,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     }
     @Test public void test02(){ System.out.println(permute02(new int[]{1,2,3})); }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //  A general approach to backtracking questions in Java
     // (Subsets, Permutations, Combination Sum, Palindrome Partioning)
     public List<List<Integer>> permute03(int[] nums) {
@@ -89,7 +89,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     @Test public void test03(){ System.out.println(permute03(new int[]{1,2,3})); }
 
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
     //Java Clean Code - Two recursive solutions
     //Bottom up? approach - 280ms
     public List<List<Integer>> permute04(int[] nums) {
@@ -118,7 +118,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     }
     @Test public void test04(){ System.out.println(permute04(new int[]{1,2,3})); }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 
     //Base case and build approach - 524ms
     public List<List<Integer>> permute05(int[] nums) {
@@ -151,7 +151,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     @Test public void test05(){ System.out.println(permute05(new int[]{1,2,3})); }
 
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
     //https://discuss.leetcode.com/topic/6740/share-my-three-different-solutions
     //Share my three different solutions
     public List<List<Integer>> permute06(int[] nums) {
@@ -174,7 +174,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     }
     @Test public void test06(){ System.out.println(permute06(new int[]{1,2,3})); }
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
     //Java solution easy to understand (backtracking)
     List<List<Integer>> list;
 
@@ -204,7 +204,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     }
     @Test public void test07(){ System.out.println(permute07(new int[]{1,2,3})); }
 
-//-----------------------------------------------------------------------------////
+//--------------------------------------------------------------------------------
     //8
 //    A new ArrayList<Integer> newPerm is not necessary.
 //
@@ -232,7 +232,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     @Test public void test08(){ System.out.println(permute08(new int[]{1,2,3})); }
 
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
     //9
     // 9Ch
     public List<List<Integer>> permute_J1(int[] nums) {
@@ -281,7 +281,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     @Test public void test09(){ System.out.println(permute_J1(new int[]{1,2,3})); }
 
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //10
     // 9Ch
     // Non-Recursion
@@ -343,7 +343,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
     @Test public void test10(){ System.out.println(permute_J2(new int[]{1,2,3})); }
     //[[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //11
     //bit
 /*Clean Java, 3 ms using bit-manipulation with explanation
@@ -385,7 +385,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
             }
         }
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //12
 /*My Java Solution beats 90% javasubmissions using 2ms
 
@@ -421,7 +421,7 @@ Then we have to add 3. first copy {2,1} and {1,2}, add 3 in position 0; then cop
         }
 
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 }
 
 /*

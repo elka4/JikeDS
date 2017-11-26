@@ -29,8 +29,7 @@ public class b_393_UTF_8_Validation {
     }
 
 
-    //-----------------------------------------------------------------------------/
-
+//-----------------------------------------------------------------------------
     //Bit Manipulation, Java, 6ms
     public boolean validUtf8(int[] data) {
         if(data==null || data.length==0) return false;
@@ -58,7 +57,7 @@ public class b_393_UTF_8_Validation {
         return isValid;
     }
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
 //Simple one pass concise Java solution beating 99%
     public boolean validUtf83(int[] data) {
         int varCharLeft = 0;

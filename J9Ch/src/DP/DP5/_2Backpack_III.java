@@ -68,10 +68,12 @@ int backPackIII(vector<int>& A, vector<int>& V, int m) {
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
  */
 
-import StdLib.In;
 
-//Backpack III
+//  Backpack III
+//
 public class _2Backpack_III {
+//------------------------------------------------------------------------------
+    //1
     public int backPackIII(int[] A, int[] V, int m) {
         int n = A.length;
         if (n == 0) {
@@ -106,6 +108,7 @@ public class _2Backpack_III {
     }
 
 //------------------------------------------------------------------------------
+    //2
     /**
      * @param A an integer array
      * @param V an integer array
@@ -123,6 +126,7 @@ public class _2Backpack_III {
         return f[m];
     }
 //------------------------------------------------------------------------------
+    //3
     // 2D version, 如果你无法理解一维的solution, 可以从二维的solution入手,然后思考空间的优化
     /**
      * @param A an integer array
@@ -142,6 +146,7 @@ public class _2Backpack_III {
             }
         return f[n][m];
     }
+
 //------------------------------------------------------------------------------
 }
 /*

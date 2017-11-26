@@ -49,7 +49,7 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
         System.out.println(sb);
     }
 
-//-------------------------------------------------------------------------/?
+//-------------------------------------------------------------------------------?
 
     //Approach #2 (Bit Manipulation) [Accepted]
     public List<String> generateAbbreviations2(String word) {
@@ -85,7 +85,7 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
     }//[4, 3d, 2r1, 2rd, 1o2, 1o1d, 1or1, 1ord, w3, w2d, w1r1,
     // w1rd, wo2, wo1d, wor1, word]
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //Java backtracking solution
     //这个其实是DFS，不是backtracking
     public List<String> generateAbbreviations3(String word){
@@ -112,7 +112,7 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
     }//[4, 3d, 2r1, 2rd, 1o2, 1o1d, 1or1, 1ord, w3, w2d, w1r1,
     // w1rd, wo2, wo1d, wor1, word]
 
-//-------------------------------------------------------------------------/?
+//-------------------------------------------------------------------------------?
 
     public List<String> generateAbbreviations4(String word) {
         List<String> result = new ArrayList<String>();
@@ -133,7 +133,7 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
     }//[4, 3d, 2r1, 2rd, 1o2, 1o1d, 1or1, 1ord, w3, w2d, w1r1,
     // w1rd, wo2, wo1d, wor1, word]
 
-//-------------------------------------------------------------------------/?
+//-------------------------------------------------------------------------------?
     //Java 14ms beats 100%
     /*
     For each char c[i], either abbreviate it or not.
@@ -174,7 +174,7 @@ public class _320_BackTracking_Generalized_Abbreviation_M {
     }//[4, 3d, 2r1, 2rd, 1o2, 1o1d, 1or1, 1ord, w3, w2d, w1r1,
     // w1rd, wo2, wo1d, wor1, word]
 
-//-------------------------------------------------------------------------/?
+//-------------------------------------------------------------------------------?
 }
 /*
 Write a function to generate the generalized abbreviations of a word.

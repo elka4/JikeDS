@@ -4,16 +4,16 @@ import java.util.*;
 //268. Missing Number
 
 public class a_268_Missing_Number {
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
     //4 Line Simple Java Bit Manipulate Solution with Explaination
-//    The basic idea is to use XOR operation. We all know that a^b^b =a,
-// which means two xor operations with the same number will eliminate the number
-// and reveal the original number.
-//    In this solution, I apply XOR operation to both the index and value of the array.
-// In a complete array with no missing numbers, the index and value should be perfectly
-// corresponding( nums[index] = index), so in a missing array,
-// what left finally is the missing number.
+    //    The basic idea is to use XOR operation. We all know that a^b^b =a,
+    // which means two xor operations with the same number will eliminate the number
+    // and reveal the original number.
+    //    In this solution, I apply XOR operation to both the index and value of the array.
+    // In a complete array with no missing numbers, the index and value should be perfectly
+    // corresponding( nums[index] = index), so in a missing array,
+    // what left finally is the missing number.
 
     //a^b^b =a
     public int missingNumber(int[] nums) {
@@ -27,9 +27,9 @@ public class a_268_Missing_Number {
         return xor ^ i;
     }
 
-//-------------------------------------------------------------------------/
-//3 different ideas: XOR, SUM, Binary Search. Java code
-//1.XOR
+//-------------------------------------------------------------------------------
+    //3 different ideas: XOR, SUM, Binary Search. Java code
+    //1.XOR
     //这个最简单易懂
     public int missingNumber2(int[] nums) { //xor
         int res = nums.length;
@@ -40,7 +40,7 @@ public class a_268_Missing_Number {
         return res;
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
     //2.SUM
     public int missingNumber3(int[] nums) { //sum
@@ -50,7 +50,7 @@ public class a_268_Missing_Number {
             sum-=nums[i];
         return sum;
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
     //3.Binary Search
     //二分法也不错，要研究一下
@@ -68,7 +68,7 @@ public class a_268_Missing_Number {
 //    If the array is in order, I prefer Binary Search method. Otherwise,
 // the XOR method is better.
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
 //    Java solution O(1) space and O(n) in time
 //    Pretty simple since we are told that we are missing only one number in [1,n],
@@ -90,7 +90,7 @@ public class a_268_Missing_Number {
 //
 //return ( (nums.length * (nums.length + 1) ) - 2 * sum ) / 2;
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 }
 /*
 Given an array containing n distinct numbers taken from 0, 1, 2, ..., n,

@@ -133,7 +133,7 @@ public class _323_DFS_Number_of_Connected_Components_in_an_Undirected_Graph_M {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //Java Union find & DFS & BFS Code (very clean)
     public class Solution05 {
 
@@ -246,8 +246,8 @@ public class _323_DFS_Number_of_Connected_Components_in_an_Undirected_Graph_M {
             return count;
         }
     }
-//-------------------------------------------------------------------------///
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
 }
 /*
 Given n nodes labeled from 0 to n - 1 and a list of undirected edges (each edge is a pair of nodes), write a function to find the number of connected components in an undirected graph.

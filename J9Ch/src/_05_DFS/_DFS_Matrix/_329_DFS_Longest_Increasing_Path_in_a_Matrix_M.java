@@ -36,7 +36,7 @@ public class _329_DFS_Longest_Increasing_Path_in_a_Matrix_M {
         }
     }
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
     //Approach #2 (DFS + Memoization) [Accepted]
     // DFS + Memoization Solution
     // Accepted and Recommended
@@ -66,7 +66,7 @@ public class _329_DFS_Longest_Increasing_Path_in_a_Matrix_M {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //Approach #3 (Peeling Onion) [Accepted]
     // Topological Sort Based Solution
     // An Alternative Solution
@@ -118,7 +118,7 @@ public class _329_DFS_Longest_Increasing_Path_in_a_Matrix_M {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     class Solution{
         public final int[][] dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
@@ -150,7 +150,7 @@ public class _329_DFS_Longest_Increasing_Path_in_a_Matrix_M {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     public class Solution2 {
         private final  int[] dx = {0, -1, 1, 0};
         private final  int[] dy = {-1, 0, 0, 1};
@@ -187,7 +187,7 @@ public class _329_DFS_Longest_Increasing_Path_in_a_Matrix_M {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     public class Solution3 {
         public int longestIncreasingPath(int[][] matrix) {
             if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
@@ -225,7 +225,7 @@ public class _329_DFS_Longest_Increasing_Path_in_a_Matrix_M {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 }
 /*
 Given an integer matrix, find the length of the longest increasing path.

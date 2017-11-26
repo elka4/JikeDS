@@ -56,24 +56,19 @@ a[j] > a[i]
 • f[j] =以a[j]结尾的最长上升子序列的长度 • 计算f[0], f[1], f[2], ..., f[n-1]
 • 答案是max{f[0], f[1], f[2], ..., f[n-1]}
 • 算法时间复杂度O(n2)，空间复杂度O(n)
-
 -----------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
- */
+*/
 
 
 //  300. Longest Increasing Subsequence
 //  https://leetcode.com/problems/longest-increasing-subsequence/description/
 //  http://www.lintcode.com/zh-cn/problem/longest-increasing-subsequence/
+//  8:
 public class _8LongestIncreasingSubsequence {
+//-----------------------------------------------------------------------------
     //https://leetcode.com/problems/longest-increasing-subsequence/solution/
-    //https://leetcode.com/articles/longest-increasing-subsequence/
-
+//-----------------------------------------------------------------------------
+    //1
     //Approach #1 Brute Force [Time Limit Exceeded]
     class Solution01{
         public int lengthOfLIS(int[] nums){
@@ -93,7 +88,8 @@ public class _8LongestIncreasingSubsequence {
         }
     }
 
-
+//-----------------------------------------------------------------------------
+    //2
     //Approach #2 Recursion with memorization [Memory Limit Exceeded]
     public class Solution02 {
         public int lengthOfLIS(int[] nums) {
@@ -120,7 +116,8 @@ public class _8LongestIncreasingSubsequence {
             return memo[previndex + 1][curpos];
         }
     }
-
+//-----------------------------------------------------------------------------
+    //3
     //Approach #3 Dynamic Programming [Accepted]
     //其实这个没有九章的解法好理解
     public class Solution03 {
@@ -151,8 +148,8 @@ public class _8LongestIncreasingSubsequence {
     Space complexity : O(n). dp array of size n is used.
      */
 
-
-
+//-----------------------------------------------------------------------------
+    //4
     //Approach #4 Dynamic Programming with Binary Search[Accepted]:
     public class Solution04 {
         public int lengthOfLIS(int[] nums) {
@@ -172,7 +169,7 @@ public class _8LongestIncreasingSubsequence {
         }
     }
 //------------------------------------------------------------------------------
-
+    //5
     // 9Ch
     public int longestIncreasingSubsequence1(int[] nums) {
         int []f = new int[nums.length];
@@ -193,7 +190,7 @@ public class _8LongestIncreasingSubsequence {
         return max;
     }
 //------------------------------------------------------------------------------
-
+    //6
     // 9Ch DP
     public int longestIncreasingSubsequence(int[] nums) {
         int n = nums.length;
@@ -232,7 +229,8 @@ public class _8LongestIncreasingSubsequence {
         System.out.println(longestIncreasingSubsequence(A));
         System.out.println(longestIncreasingSubsequence(B));
     }
-
+//-----------------------------------------------------------------------------
+    //7
     //重写九章给的算法，首先把ij互换
     public int longestIncreasingSubsequence_J1(int[] nums) {
         int n = nums.length;
@@ -262,6 +260,7 @@ public class _8LongestIncreasingSubsequence {
 
 
 //------------------------------------------------------------------------------
+    //8
     // 9Ch
     // O(nlogn) Binary Search
 
@@ -306,7 +305,6 @@ public class _8LongestIncreasingSubsequence {
         return end;
     }
 //------------------------------------------------------------------------------
-
 }
 
 /*

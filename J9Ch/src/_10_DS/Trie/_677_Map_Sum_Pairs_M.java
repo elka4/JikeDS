@@ -30,7 +30,7 @@ public class _677_Map_Sum_Pairs_M {
     }
 
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //Approach #2: Prefix Hashmap [Accepted]
     /*
     We can remember the answer for all possible prefixes in a HashMap score. When we get a new (key, val) pair, we update every prefix of key appropriately: each prefix will be changed by delta = val - map[key], where map is the previous associated value of key (zero if undefined.)
@@ -57,7 +57,7 @@ class MapSum2 {
 }
 
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 //Approach #3: Trie [Accepted]
 
 /*
@@ -94,7 +94,7 @@ class MapSum3 {
         Map<Character, TrieNode> children = new HashMap();
         int score;
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
     //Java solution, Trie
     class MapSum4 {
@@ -152,7 +152,7 @@ class MapSum3 {
             return sum + root.value;
         }
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
     class MapSum5 {
         Map<String,Integer> map = new HashMap<>();
@@ -184,7 +184,7 @@ class MapSum3 {
  * int param_2 = obj.sum(prefix);
  */
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
 
 

@@ -67,14 +67,15 @@ f[j]+1 | j<i 以Ej为此外层信封时，最多的嵌套层数，加上Ei
 • f[0], f[1], ..., f[N-1]
 • 时间复杂度O(N2)，空间复杂度O(N)
 -----------------------------------------------------------------------------------------------
-
- */
+*/
 
 //  354. Russian Doll Envelopes
 //  https://leetcode.com/problems/russian-doll-envelopes/description/
 //  http://www.lintcode.com/zh-cn/problem/russian-doll-envelopes/
+//  5:
 public class _9RussianDollEnvelopes {
-
+//-----------------------------------------------------------------------------
+    //1
 /*
     Java NLogN Solution with Explanation
     Sort the array. Ascend on width and descend on height if width are same.
@@ -116,6 +117,7 @@ public class _9RussianDollEnvelopes {
 
 
 //------------------------------------------------------------------------------
+    //2
     //Simple DP solution
     public int maxEnvelopes02(int[][] envelopes) {
         if (   envelopes           == null
@@ -153,6 +155,7 @@ public class _9RussianDollEnvelopes {
         return ret;
     }
 //------------------------------------------------------------------------------
+    //3
     // 9Ch DP
     //
     public int maxEnvelopes(int[][] A) {
@@ -189,7 +192,8 @@ public class _9RussianDollEnvelopes {
 
         return res;
     }
-
+//-----------------------------------------------------------------------------
+    //4
     //重写九章给的算法，首先把ij互换
     public int longestIncreasingSubsequence_J1(int[] nums) {
         int n = nums.length;
@@ -217,6 +221,7 @@ public class _9RussianDollEnvelopes {
         return  res;
     }
 //------------------------------------------------------------------------------
+    //5
     // 9Ch
     /**
      * @param envelopes a number of envelopes with widths and heights

@@ -34,56 +34,58 @@ f[i-1][w-Ai-1]只能在 w≥Ai-1 时使用
 
 
 /*
-Backpack V:
-http://www.lintcode.com/en/problem/backpack-v/
+    Backpack V:
+    http://www.lintcode.com/en/problem/backpack-v/
 
-这道题就是与IV相比，去掉了无限背包的条件，每个item用一次。
-dp[i][j] 为前i个item，去size <= j 的方案个数。通项公式为
-dp[i][j] = dp[i-1][j] + dp[i-1][j-A[i]]; 与I and II 类似。
+    这道题就是与IV相比，去掉了无限背包的条件，每个item用一次。
+    dp[i][j] 为前i个item，去size <= j 的方案个数。通项公式为
+    dp[i][j] = dp[i-1][j] + dp[i-1][j-A[i]]; 与I and II 类似。
 
-int backPackV(vector<int>& nums, int target) {
-        // Write your code here
-        if(nums.empty() || target <= 0) return 0;
-        int n = nums.size();
-        vector<vector<int>> dp(n+1, vector<int>(target+1, 0));
-        dp[0][0] = 1;
-        for(int i=1; i<=n; i++){
-            dp[i][0] = 1;
-            for(int j=1; j<=target; j++){
-                if(j<nums[i-1]){
-                    dp[i][j] = dp[i-1][j];
-                }else{
-                    dp[i][j] = dp[i-1][j] + dp[i-1][j-nums[i-1]];
+    int backPackV(vector<int>& nums, int target) {
+            // Write your code here
+            if(nums.empty() || target <= 0) return 0;
+            int n = nums.size();
+            vector<vector<int>> dp(n+1, vector<int>(target+1, 0));
+            dp[0][0] = 1;
+            for(int i=1; i<=n; i++){
+                dp[i][0] = 1;
+                for(int j=1; j<=target; j++){
+                    if(j<nums[i-1]){
+                        dp[i][j] = dp[i-1][j];
+                    }else{
+                        dp[i][j] = dp[i-1][j] + dp[i-1][j-nums[i-1]];
+                    }
                 }
             }
+            return dp[n][target];
         }
-        return dp[n][target];
-    }
-或者用下面的方法
+    或者用下面的方法
 
- int findSum(vector<int>& nums, int target){
-        int len = nums.size();
-        int *dp = new int[target+1];
-        fill_n(dp, target+1, 0);
-        dp[0] = 1;
-        for(int i=0; i<nums.size(); i++){
-            for(int j=target; j>=nums[i]; j--){
-                dp[j] += dp[j-nums[i]];
+     int findSum(vector<int>& nums, int target){
+            int len = nums.size();
+            int *dp = new int[target+1];
+            fill_n(dp, target+1, 0);
+            dp[0] = 1;
+            for(int i=0; i<nums.size(); i++){
+                for(int j=target; j>=nums[i]; j--){
+                    dp[j] += dp[j-nums[i]];
+                }
             }
+            return dp[target];
         }
-        return dp[target];
-    }
 
-作者：stepsma
-链接：http://www.jianshu.com/p/7f192e75d734
-來源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+    作者：stepsma
+    链接：http://www.jianshu.com/p/7f192e75d734
+    來源：简书
+    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
  */
 
 
-//Backpack V
+//  Backpack V
+//  2:
 public class _6Backpack_V {
-
+//------------------------------------------------------------------------------
+    //1
      // 9 Ch DP
     public int backPackV(int[] A, int T){
         int i, j;
@@ -118,7 +120,8 @@ public class _6Backpack_V {
         System.out.println(backPackV(A, T));
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+    //2
     /**
      * @param nums an integer array and all positive numbers
      * @param target an integer
@@ -143,7 +146,7 @@ public class _6Backpack_V {
         System.out.println(backPackV1(A, T));
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 }
 
 /*

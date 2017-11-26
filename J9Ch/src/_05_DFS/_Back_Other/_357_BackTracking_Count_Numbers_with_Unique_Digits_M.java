@@ -152,7 +152,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
         System.out.println(countNumbersWithUniqueDigits4(2));
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
     // 9Ch
     //  solution 1
     //DP Solution
@@ -212,7 +212,7 @@ As @4acreg suggests, There are only 11 different ans. You can create a lookup ta
     public void test06(){
         System.out.println(countNumbersWithUniqueDigits6(2));
     }
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 }
 /*
 Given a non-negative integer n, count all numbers with unique digits, x, where 0 ≤ x < 10^n.

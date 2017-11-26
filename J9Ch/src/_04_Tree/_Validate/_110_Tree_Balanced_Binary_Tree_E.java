@@ -26,7 +26,7 @@ public class _110_Tree_Balanced_Binary_Tree_E {
         return Math.max(lH,rH)+1;
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 //Java solution based on height, check left and right node in every recursion to avoid further useless search
     class Solution2{
         public boolean isBalanced(TreeNode root) {
@@ -54,7 +54,7 @@ public class _110_Tree_Balanced_Binary_Tree_E {
             return Math.max(lH,rH)+1;
         }
     }
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 /*    Accepted O(n) solution
     We determine recursively the height of the root node but when the recursion is coming upwards we return UNBALANCED instead of the actual height if we know that the tree is already known to be unbalanced.
 
@@ -82,7 +82,7 @@ public class _110_Tree_Balanced_Binary_Tree_E {
             return 1 + Math.max(l,r);
         }
     }
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 
     //JAVA O(n) solution based on Maximum Depth of Binary Tree
     public class Solution4 {
@@ -124,7 +124,7 @@ public class _110_Tree_Balanced_Binary_Tree_E {
         }
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 
 //    Easy Top Down && Bottom Up(beat 89.35%) Solutions in JAVA
 //
@@ -163,7 +163,7 @@ public class _110_Tree_Balanced_Binary_Tree_E {
         }
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 //A Iterative PostOrder Traversal Java Solution
 //
 //    A recursive method is straightforward. Doing it iteratively is a lot of fun. I use postorder traversal to realize a iterative version.
@@ -194,7 +194,7 @@ public class _110_Tree_Balanced_Binary_Tree_E {
             return true;
         }
     }
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
     // 9Ch
     // Version 1: with ResultType
     /**
@@ -268,9 +268,9 @@ public class _110_Tree_Balanced_Binary_Tree_E {
             return Math.max(left, right) + 1;
         }
     }
-//-----------------------------------------------------------------------------//
-//-----------------------------------------------------------------------------//
-    //---------------------------------/////////////////////
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------
 
     //Java solution based on height, check left and right node in every recursion to avoid further useless search
 
@@ -302,7 +302,7 @@ public class _110_Tree_Balanced_Binary_Tree_E {
     }
 
 
-//---------------------------------/////////////////////
+//--------------------------------------------------------------------------------
     /*        Accepted O(n) solution
         We determine recursively the height of the root node but when the recursion is coming upwards we return UNBALANCED instead of the actual height if we know that the tree is already known to be unbalanced.
 
@@ -333,7 +333,7 @@ public class _110_Tree_Balanced_Binary_Tree_E {
     }
 
 
-//---------------------------------/////////////////////
+//--------------------------------------------------------------------------------
 
     //JAVA O(n) solution based on Maximum Depth of Binary Tree
 
@@ -359,7 +359,7 @@ public class _110_Tree_Balanced_Binary_Tree_E {
 
 
 
-//---------------------------------/////////////////////
+//--------------------------------------------------------------------------------
 
     //Accepted O(n) solution
 
@@ -393,7 +393,7 @@ We visit each node just once thus it has linear time complexity.
     }
 
 
-//---------------------------------/////////////////////
+//--------------------------------------------------------------------------------
 
     //Can we have a better solution
 
@@ -414,7 +414,7 @@ We visit each node just once thus it has linear time complexity.
 
         }}
 
-//---------------------------------/////////////////////
+//--------------------------------------------------------------------------------
 
     //This is the way to avoid 2 recursive method calls. The idea is exactly same as 2 above.
 
@@ -461,7 +461,7 @@ We visit each node just once thus it has linear time complexity.
             return Math.max(leftDepth, rightDepth);
         }
     }
-//---------------------------------/////////////////////
+//--------------------------------------------------------------------------------
 
     // i use the Maximum Depth of Binary Tree code and change a bit,solve the problem with Single Recursion
 
@@ -486,8 +486,8 @@ We visit each node just once thus it has linear time complexity.
         }
     }
 
-//-----------------------------------------------------------------------------//
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------
 }
 /*
 平衡二叉树

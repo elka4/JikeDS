@@ -203,7 +203,7 @@ public class _7G_WordsAbbreviation {
         System.out.println(wordsAbbreviation3(list));
     }
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
 
     //Verbose Java Solution, HashMap(s)
     public List<String> wordsAbbreviation2(List<String> dict) {
@@ -288,7 +288,7 @@ public class _7G_WordsAbbreviation {
             System.out.println(s);
         }
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 }
 /*
 Given an array of n distinct non-empty strings, you need to generate minimal possible abbreviations for every word following rules below.

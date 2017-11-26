@@ -4,12 +4,15 @@ package DP.DP3;
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/
 //
 public class _714_Best_Time_to_Buy_and_Sell_Stock_with_Transaction_Fee {
+//-------------------------------------------------------------------------------
     //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/solution/
-
+//-------------------------------------------------------------------------------
     //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/
 
-
+//-------------------------------------------------------------------------------
+    //1
     //Approach #1: Dynamic Programming [Accepted]
     class Solution01 {
         public int maxProfit(int[] prices, int fee) {
@@ -24,10 +27,8 @@ public class _714_Best_Time_to_Buy_and_Sell_Stock_with_Transaction_Fee {
     }
 
 
-    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/
 
-//-----------------------------------------------------------------------------//
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 }
 /*
 Your are given an array of integers prices, for which the i-th element is the price of a given stock on day i; and a non-negative integer fee representing a transaction fee.

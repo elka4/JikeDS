@@ -31,31 +31,17 @@ f[i+1][j-1] + 2|S[i]=S[j]:  S[i+1..j-1]的最长回文子串 的长度，加上S
 • 长度N:f[0][N-1]
 • 答案是f[0][N-1]
 • 时间复杂度O(N2)，空间复杂度O(N2)
-
-
 -----------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
- */
+*/
 
 
 
 //  516. Longest Palindromic Subsequence
 //  https://leetcode.com/problems/longest-palindromic-subsequence/description/
-//
+//  9:
 public class _3LongestPalindromicSubsequence {
-
+//------------------------------------------------------------------------------
+    //1
 /*    Straight forward Java DP solution
     dp[i][j]: the longest palindromic subsequence's length of subString(i, j)
     State transition:
@@ -81,7 +67,8 @@ public class _3LongestPalindromicSubsequence {
         }
     }
 
-
+//------------------------------------------------------------------------------
+    //2
     //    Top bottom recursive method with memoization
     public class Solution02 {
         public int longestPalindromeSubseq(String s) {
@@ -104,11 +91,9 @@ public class _3LongestPalindromicSubsequence {
         }
     }
 //------------------------------------------------------------------------------
+    //3
 /*short java solution,beats 99%,with explanation
 
-7
-    M magtron_3
-    Reputation:  25
     It is a typical DP problem. let's use a[i][j] represent the longest Palindromic Subsequence of S[i:j] (i,j inclusive).
     So a[i][j]=
             (1) a[i+1][j-1]+2 if S[i] == S[j]
@@ -130,7 +115,7 @@ public class _3LongestPalindromicSubsequence {
     }
 
 //------------------------------------------------------------------------------
-
+    //4
     //    Java DP Solution
     public class Solution04 {
         public int longestPalindromeSubseq(String s) {
@@ -153,6 +138,7 @@ public class _3LongestPalindromicSubsequence {
         }
     }
 //------------------------------------------------------------------------------
+    //5
     //Java DP solution, similar to solving LCS problem
     //
     //    To find the longest palindromic subsequence, we could reverse the string and
@@ -174,8 +160,8 @@ public class _3LongestPalindromicSubsequence {
         }
     }
 //------------------------------------------------------------------------------
+    //6
     // 9Ch DP
-
     public int longestPalindromeSubseq(String ss) {
         s = ss.toCharArray();
         int n = s.length;
@@ -222,8 +208,9 @@ public class _3LongestPalindromicSubsequence {
         System.out.println(longestPalindromeSubseq("cbbd"));//2  bb
         System.out.println(longestPalindromeSubseq("bbbafbb"));//2  bb
     }
-//-----------------------------------------------------------------------------//
-// 9CH
+//-------------------------------------------------------------------------------
+    //7
+    // 9CH
     // 动态规划专题班非递归版：
     public int longestPalindromeSubseq1(String s) {
         int n = s.length();
@@ -279,9 +266,9 @@ public class _3LongestPalindromicSubsequence {
         System.out.println(longestPalindromeSubseq1("cbbd"));//2  bb
         System.out.println(longestPalindromeSubseq1("bbbafbb"));//2  bb
     }
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
+    //8
     // 9CH
-
     // 动态规划专题班递归版：
     int[][] f = null;
     char[] s = null;
@@ -347,7 +334,8 @@ public class _3LongestPalindromicSubsequence {
         return res;
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
+    //9
     // 9CH
     /**
      * @param s the maximum length of s is 1000
@@ -371,8 +359,8 @@ public class _3LongestPalindromicSubsequence {
         }
         return dp[0][length - 1];
     }
-//-----------------------------------------------------------------------------//
 
+//-------------------------------------------------------------------------------
 }
 
 /*

@@ -182,7 +182,7 @@ public class _234_List_Palindrome_Linked_List_E {
         }
     }
     //Time is O(n) and space is O(1).
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
 // 9Ch
     // This code would destroy the original structure of the linked list.
 // If you do not want to destroy the structure, you can reserve the second part back.
@@ -236,7 +236,7 @@ public class _234_List_Palindrome_Linked_List_E {
     }
 
 
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
 
 }
 /*

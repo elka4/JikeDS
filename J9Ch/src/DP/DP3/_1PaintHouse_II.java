@@ -68,8 +68,6 @@ cost[i-1][j]:        用颜色j的油漆房子i-1的花 费
 
 • 时间复杂度降为O(NK)
 
-
-
 -----------------------------------------------------------------------------------------------
 动态规划常见优化
 
@@ -80,12 +78,6 @@ cost[i-1][j]:        用颜色j的油漆房子i-1的花 费
 • f[i][a] = f[i-1][b] + cost[i-1][a]
 • 时间复杂度降为O(NK)
 -----------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
  */
 
 
@@ -95,9 +87,13 @@ Given n = 3, k = 3, costs = [[14,2,11],[11,14,5],[14,3,10]] return 10
 house 0 is color 2, house 1 is color 3, house 2 is color 2, 2 + 5 + 3 = 10
  */
 
+
 //  265. Paint House II
 //  https://leetcode.com/problems/paint-house-ii/description/
+//  6:
 public class _1PaintHouse_II {
+//-------------------------------------------------------------------------------
+    //1
 /*    AC Java solution without extra space
 
 94
@@ -146,7 +142,8 @@ public class _1PaintHouse_II {
         return costs[n - 1][min1];
     }
 
-
+//-------------------------------------------------------------------------------
+    //2
     public int minCostII_Original(int[][] costs) {
         if (costs == null || costs.length == 0) return 0;
 
@@ -179,6 +176,7 @@ public class _1PaintHouse_II {
         return costs[n - 1][min1];
     }
 //------------------------------------------------------------------------------
+    //3
     // 9Ch DP
     public int minCostII2(int[][] costs) {
         if (costs == null || costs.length == 0) {
@@ -242,8 +240,8 @@ public class _1PaintHouse_II {
         System.out.println(minCostII(costs));
     }
 
-//---------------------------------////////////////////////
-
+//-------------------------------------------------------------------------------
+    //4
     // 9Ch
     /**
      * @param costs n x k cost matrix
@@ -306,10 +304,9 @@ public class _1PaintHouse_II {
         int[][] costs = {{14,2,11}, {11,14,5}, {14,3,10}};
         System.out.println(minCostII1(costs));
     }
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
+    //5
     // 9CH DP
-
-    //------------------------------------------------------------------------------
     public int minCostII3(int[][] costs) {
         //Method DP: Using an int[k] last representing the last min costs in k tracks
         //Using an int[k] cur representing the current min costs
@@ -345,7 +342,7 @@ public class _1PaintHouse_II {
     }
 
 //------------------------------------------------------------------------------
-
+    //6
     //time O(kn), space O(1)
     public int minCostII22(int[][] costs) {
         if(costs == null || costs.length == 0) return 0;
@@ -373,8 +370,8 @@ public class _1PaintHouse_II {
         }
         return lastMin;
     }
-//------------------------------------------------------------------------------
-//---------------------------------////////////////////////
+
+//-------------------------------------------------------------------------------
 }
 /*
 There are a row of n houses, each house can be painted with one of the k colors. The cost of painting each house with a certain color is different. You have to paint all the houses such that no two adjacent houses have the same color.
@@ -390,6 +387,7 @@ Example
 Given n = 3, k = 3, costs = [[14,2,11],[11,14,5],[14,3,10]] return 10
 
 house 0 is color 2, house 1 is color 3, house 2 is color 2, 2 + 5 + 3 = 10
+//-------------------------------------------------------------------------------
  */
 
 /*
@@ -407,4 +405,5 @@ house 0 is color 2, house 1 is color 3, house 2 is color 2, 2 + 5 + 3 = 10
 costs = [[14,2,11],[11,14,5],[14,3,10]] return 10
 
 房屋 0 颜色 1, 房屋 1 颜色 2, 房屋 2 颜色 1， 2 + 5 + 3 = 10
+//-------------------------------------------------------------------------------
  */

@@ -23,20 +23,16 @@ S[j..i-1] 最后一段回文串
 • 答案是f[N]
 
 -----------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
- */
+*/
 
 
 //  Palindrome Partitioning II
 //  https://leetcode.com/problems/palindrome-partitioning-ii/description/
 //  http://www.lintcode.com/zh-cn/problem/palindrome-partitioning-ii/
+//  7
 public class _2PalindromePartitioning_II {
+//-------------------------------------------------------------------------------
+    //1
 /*    Easiest Java DP Solution (97.36%)
     This can be solved by two points:
 
@@ -72,8 +68,7 @@ public class _2PalindromePartitioning_II {
 
 
 //------------------------------------------------------------------------------
-
-
+    //2
 /*    DP solution; & some thoughts
     Some thoughts:
 
@@ -131,10 +126,9 @@ try to divide & conqure =>
     assign dp[0] to be -1 so that when s[0:i) is a palindrome by itself, dp[i] is 0. This is for the consistency of the code.
     The time complexity and the space complexity are both O(n ^ 2).*/
 //------------------------------------------------------------------------------
-
-//    My accepted Java solution
-//    I've solved the problem some time ago (with DP, of course), and I thought I would share it:
-
+    //3
+    //My accepted Java solution
+    //I've solved the problem some time ago (with DP, of course), and I thought I would share it:
     public class Solution03 {
         int[] cost;
         public int minCut(String s) {
@@ -194,8 +188,8 @@ try to divide & conqure =>
 
     Sorry for the lengthy explanation :|*/
 //------------------------------------------------------------------------------
-
-//    JAVA DP recursive 5ms solution
+    //4
+    //JAVA DP recursive 5ms solution
     public class Solution04 {
         int[] cut;
         public int minCut(String s) {
@@ -222,6 +216,7 @@ try to divide & conqure =>
         }
     }
 //------------------------------------------------------------------------------
+    //5
     // 9Ch DP
     public int minCut(String ss) {
         char[] s = ss.toCharArray();
@@ -279,6 +274,7 @@ try to divide & conqure =>
         System.out.println(minCut("aabcd"));
     }
 //------------------------------------------------------------------------------
+    //6
     // 9Ch
     // version 1
     // f[i] 表示前i个字母，最少可以被分割为多少个回文串
@@ -345,6 +341,7 @@ try to divide & conqure =>
 
 
 //------------------------------------------------------------------------------
+    //7
     // 9Ch
     // version 2
     // f[i] 表示前i个字母，最少被切割几次可以切割为都是回文串。
@@ -408,7 +405,6 @@ try to divide & conqure =>
     }
 
 //------------------------------------------------------------------------------
-
 }
 
 /*
@@ -421,6 +417,7 @@ try to divide & conqure =>
 比如，给出字符串s = "aab"，
 
 返回 1， 因为进行一次分割可以将字符串s分割成["aa","b"]这样两个回文子串
+//------------------------------------------------------------------------------
  */
 
 /*
@@ -430,6 +427,7 @@ Return the minimum cuts needed for a palindrome partitioning of s.
 
 For example, given s = "aab",
 Return 1 since the palindrome partitioning ["aa","b"] could be produced using 1 cut.
+//------------------------------------------------------------------------------
  */
 
 
@@ -445,5 +443,6 @@ Example
 Given s = "aab",
 
 Return 1 since the palindrome partitioning ["aa", "b"] could be produced using 1 cut.
+//------------------------------------------------------------------------------
  */
 

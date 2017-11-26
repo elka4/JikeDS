@@ -8,7 +8,7 @@ import java.util.*;
 public class _606_Tree_Construct_String_from_Binary_Tree_E {
 
     //https://leetcode.com/articles/construct-string-from-binary-tree/
-//-------------------------------------------------------------------------///Î
+//----------------------------------------------------------------------------Î
 
     // Approach #1 Using Recursion [Accepted]
     /**
@@ -32,7 +32,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
         }
     }
 
-//-------------------------------------------------------------------------///Î
+//----------------------------------------------------------------------------Î
 
     // Approach #2 Iterative Method Using stack [Accepted]
 
@@ -64,7 +64,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
             return s.substring(1, s.length() - 1);
         }
     }
-//-------------------------------------------------------------------------///Î
+//----------------------------------------------------------------------------Î
     //3
     public String tree2str3(TreeNode t) {
         if (t == null) return "";
@@ -80,7 +80,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
         return result + "(" + left + ")" + "(" + right + ")";
     }
 
-//-------------------------------------------------------------------------///Î
+//----------------------------------------------------------------------------Î
     //4
     //    EDIT : Changed from (left == "" ? "" : left) to left.
     public String tree2str4(TreeNode t) {
@@ -94,7 +94,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
     }
 
 
-//-------------------------------------------------------------------------///Î
+//----------------------------------------------------------------------------Î
     //5
     //Java Solution, Tree Traversal
     public String tree2str5(TreeNode t) {
@@ -111,7 +111,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
         return result + "(" + left + ")" + "(" + right + ")";
     }
 
-//-------------------------------------------------------------------------///Î
+//----------------------------------------------------------------------------Î
     //6
     //    Java simple recursion
     public String tree2str6(TreeNode t) {
@@ -134,7 +134,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
             }
         }
     }
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //7
     //    Java 1 liner
     public String tree2str7(TreeNode t) {
@@ -144,7 +144,7 @@ public class _606_Tree_Construct_String_from_Binary_Tree_E {
                 + (t.right != null ? "(" + tree2str7(t.right) + ")" : "");
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 }
 /*
 You need to construct a string consists of parenthesis and integers from a binary tree with the preorder traversing way.

@@ -86,7 +86,7 @@ public class _135_Combination_Sum {
     }
 
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 
     // version 2: reuse candidates array
     public  List<List<Integer>> combinationSum2(int[] candidates, int target) {

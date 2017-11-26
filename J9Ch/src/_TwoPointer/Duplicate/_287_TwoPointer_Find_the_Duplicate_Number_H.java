@@ -63,7 +63,7 @@ public class _287_TwoPointer_Find_the_Duplicate_Number_H {
         return slow;
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
     //4
     /*
     Similar idea. Also attached the code of Linked List Cycle II. The code of cycle problem is referred to the popular post in the Leetcode discuss.

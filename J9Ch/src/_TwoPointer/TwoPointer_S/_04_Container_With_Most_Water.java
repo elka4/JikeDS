@@ -36,7 +36,7 @@ public class _04_Container_With_Most_Water {
 
 
 
-    //-----------------------------------------------------------------------------//
+    //-------------------------------------------------------------------------------
     // 9Ch
     int computeArea(int left, int right,  int[] heights) {
         return (right-left)*Math.min(heights[left], heights[right]);

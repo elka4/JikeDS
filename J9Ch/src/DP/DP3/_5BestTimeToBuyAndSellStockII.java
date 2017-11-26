@@ -14,29 +14,19 @@ LintCode 150 Best Time to Buy and Sell Stock II
 • 输入:[2, 1, 2, 0, 1]
 • 输出:2 (1买入，2卖出，0买入，1卖出)
 -----------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
-
  */
 
 
 //  122. Best Time to Buy and Sell Stock II
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-ii/
+//  5:
 public class _5BestTimeToBuyAndSellStockII {
     //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/solution/
 
     //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
-
-
-
+//------------------------------------------------------------------------------
+    //1
     //Approach #1 Brute Force [Time Limit Exceeded]
     public int maxProfit01(int[] prices) {
         return calculate(prices, 0);
@@ -60,7 +50,8 @@ public class _5BestTimeToBuyAndSellStockII {
         }
         return max;
     }
-
+//------------------------------------------------------------------------------
+    //2
     //  Approach #2 (Peak Valley Approach) [Accepted]
     public int maxProfit02(int[] prices) {
         int i = 0;
@@ -79,6 +70,8 @@ public class _5BestTimeToBuyAndSellStockII {
         return maxprofit;
     }
 
+//------------------------------------------------------------------------------
+    //3
     //Approach #3 (Simple One Pass) [Accepted]
     //最好的做法，和下面九章做法类似，关键在于一维数组坐标的熟练操作
     public int maxProfit03(int[] prices) {
@@ -91,7 +84,8 @@ public class _5BestTimeToBuyAndSellStockII {
     }
 
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+    //4
     // 9Ch DP
     public int maxProfit(int[] prices) {
         int res = 0;
@@ -103,7 +97,8 @@ public class _5BestTimeToBuyAndSellStockII {
         return res;
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+    //5
     // jiuzhang
     public int maxProfit1(int[] prices) {
         int profit = 0;
@@ -117,9 +112,7 @@ public class _5BestTimeToBuyAndSellStockII {
         return profit;
     }
 
-//-------------------------------------------------------------------------///
-//-------------------------------------------------------------------------///
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 }
 /*
 买卖股票的最佳时机 II

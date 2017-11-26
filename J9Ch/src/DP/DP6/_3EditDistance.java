@@ -65,15 +65,15 @@ f[i-1][j-1]   情况四:A和B最后一个 字符相等
 -----------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------
- */
+*/
 
 
 //  72. Edit Distance
 //  https://leetcode.com/problems/edit-distance/description/
-//
+//  9:
 public class _3EditDistance {
-
-
+//------------------------------------------------------------------------------
+    //1
 /*
     Java DP solution - O(nm)
     Let following be the function definition :-
@@ -130,6 +130,7 @@ public class _3EditDistance {
     }
 //    Time complexity : If n is the length of word1, m of word2, because of the two indented loops, it is O(nm)
 //------------------------------------------------------------------------------
+    //2
     //  https://web.stanford.edu/class/cs124/lec/med.pdf
 
 /*My Accepted Java Solution
@@ -177,6 +178,7 @@ public class _3EditDistance {
     }
 //    Remeber that we start from dp[0][0], which is an empty string to an empty string.
 //------------------------------------------------------------------------------
+    //3
     // 9Ch DP 动态规划版本去掉注释
     public int minDistance(String word1, String word2) {
         char[] s1 = word1.toCharArray();
@@ -206,44 +208,46 @@ public class _3EditDistance {
 
 
 //-------------------------------------------------------------------------
-// 9Ch DP 不能通过
-public int minDistance00(String word1, String word2) {
-    char[] c1 = word1.toCharArray();
-    char[] c2 = word2.toCharArray();
-    int m = c1.length;
-    int n = c2.length;
+    //4
+    // 9Ch DP 不能通过
+    public int minDistance00(String word1, String word2) {
+        char[] c1 = word1.toCharArray();
+        char[] c2 = word2.toCharArray();
+        int m = c1.length;
+        int n = c2.length;
 
-    int i, j;
-    int[][] f = new int[2][n + 1];
-    int old, now = 0;
+        int i, j;
+        int[][] f = new int[2][n + 1];
+        int old, now = 0;
 
-    for (i = 0; i <= m; i++) {
-        old = now;
-        now = 1 - now;
-        for (j = 0; j <= n; j++) {
-            if (i == 0) {
-                f[now][j] = j;
-                continue;
+        for (i = 0; i <= m; i++) {
+            old = now;
+            now = 1 - now;
+            for (j = 0; j <= n; j++) {
+                if (i == 0) {
+                    f[now][j] = j;
+                    continue;
+                }
+
+                if (j == 0) {
+                    f[now][j] = i;
+                    continue;
+                }
+                f[now][j] = Math.min(Math.min(f[old][j], f[now][j - 1]), f[old][j - 1]) + 1;
+
+
+                // same
+                if (c1[i - 1] == c2[j - 1]) {
+                    f[now][j] = Math.min(f[now][j], f[old][j - 1]);
+                }
+
             }
-
-            if (j == 0) {
-                f[now][j] = i;
-                continue;
-            }
-            f[now][j] = Math.min(Math.min(f[old][j], f[now][j - 1]), f[old][j - 1]) + 1;
-
-
-            // same
-            if (c1[i - 1] == c2[j - 1]) {
-                f[now][j] = Math.min(f[now][j], f[old][j - 1]);
-            }
-
         }
+        return f[now][n];
     }
-    return f[now][n];
-}
 
 //-------------------------------------------------------------------------
+    //5
     public int minDistance0(String word1, String word2) {
         // write your code here
         int n = word1.length();
@@ -271,7 +275,7 @@ public int minDistance00(String word1, String word2) {
         return dp[n][m];
     }
 //-------------------------------------------------------------------------
-
+    //6
     public int minDistance1(String word1, String word2) {
         int n = word1.length();
         int m = word2.length();
@@ -298,7 +302,7 @@ public int minDistance00(String word1, String word2) {
     }
 
 //-------------------------------------------------------------------------
-
+    //7
     // 动态规划班版本
     /**
      * @param word1 & word2: Two string.
@@ -385,6 +389,7 @@ public int minDistance00(String word1, String word2) {
         return f[m][n];
     }
 //-------------------------------------------------------------------------
+    //8
     // leet
     //Java DP solution - O(nm)
 
@@ -414,8 +419,8 @@ public int minDistance00(String word1, String word2) {
         return cost[m][n];
     }
 //-------------------------------------------------------------------------
+    //9
     // My Accepted Java Solution
-
     public int minDistance4(String word1, String word2) {
         if (word1.equals(word2)) {
             return 0;
@@ -441,10 +446,8 @@ public int minDistance00(String word1, String word2) {
         }
         return dp[word1.length()][word2.length()];
     }
-//-------------------------------------------------------------------------
-//-------------------------------------------------------------------------
 
-
+//-------------------------------------------------------------------------
 }
 /*
 Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2. (each operation is counted as 1 step.)

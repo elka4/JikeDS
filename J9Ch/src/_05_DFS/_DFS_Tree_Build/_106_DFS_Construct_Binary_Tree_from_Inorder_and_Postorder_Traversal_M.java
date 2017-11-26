@@ -52,7 +52,7 @@ public class _106_DFS_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal
         buildTree1(postorder, inorder).print();
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //My recursive Java code with O(n) time and O(n) space
     /*
     The the basic idea is to take the last element in postorder array as the root, find the position of the root in the inorder array; then locate the range for left sub-tree and right sub-tree and do recursion. Use a HashMap to record the index of root in the inorder array.
@@ -78,7 +78,7 @@ public class _106_DFS_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal
         root.right = rightchild;
         return root;
     }
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     // Java iterative solution with explanation
     public TreeNode buildTree3(int[] inorder, int[] postorder) {
         if (inorder.length == 0 || postorder.length == 0) return null;
@@ -110,7 +110,7 @@ public class _106_DFS_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal
 
         return root;
     }
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     public TreeNode buildTree4(int[] inorder, int[] postorder) {
         int inStart = 0;
         int inEnd = inorder.length - 1;
@@ -301,7 +301,7 @@ public class _106_DFS_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal
     }
 
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 }
 /*
 中序遍历和后序遍历树构造二叉树

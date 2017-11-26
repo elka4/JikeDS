@@ -72,14 +72,16 @@ f[i][j] = f[i-1][j] OR f[i][j-1]，如果B[j-1]=‘*’
 • 时间复杂度(计算步数)O(MN)，空间复杂度(数组大小)O(MN)
 • 可以用滚动数组优化空间至O(N)
 -----------------------------------------------------------------------------------------------
- */
+*/
 
 
 //  44. Wildcard Matching
 //  https://leetcode.com/problems/wildcard-matching/description/
 //  http://www.lintcode.com/zh-cn/problem/wildcard-matching/
+//  12:
 public class _6WildcardMatching {
-
+//--------------------------------------------------------------------------------
+    //1
     //  Linear runtime and constant space solution
     boolean comparison(String str, String pattern) {
         int s = 0, p = 0, match = 0, starIdx = -1;
@@ -113,7 +115,8 @@ public class _6WildcardMatching {
         return p == pattern.length();
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+    //2
     //My java DP solution using 2D table
     public boolean isMatch02(String s, String p) {
         boolean[][] match=new boolean[s.length()+1][p.length()+1];
@@ -138,9 +141,9 @@ public class _6WildcardMatching {
     }
 
 //------------------------------------------------------------------------------
-//    How much time your solution costs? PS. recently I cannot view my java solution cost time among that of all other solutions, however, time cost graph will present when submitting python solution.
-//
-//    Here comes my 600ms solution, just amazing long.
+    //3
+    //How much time your solution costs? PS. recently I cannot view my java solution cost time among that of all other solutions, however, time cost graph will present when submitting python solution.
+    //Here comes my 600ms solution, just amazing long.
 
     public boolean isMatch03(String s, String p) {
         char[] cs = s.toCharArray();
@@ -167,7 +170,7 @@ public class _6WildcardMatching {
     }
 
 //------------------------------------------------------------------------------
-
+    //4
 /*    The original post has DP 2d array index from high to low, which is not quite intuitive.
 
     Below is another 2D dp solution. Ideal is identical.
@@ -213,7 +216,7 @@ public class _6WildcardMatching {
     }
 
 //------------------------------------------------------------------------------
-
+    //5
 /*    Hi, I've submitted this solution and I get ~500ms, whereas the OP solution gets much lower time. They seem to have the same complexity, and do the same thing (one backwards and one forward). Anyone would be able to tell me why mine takes much longer?
     Thanks*/
 
@@ -236,8 +239,8 @@ public class _6WildcardMatching {
     }
 
 //------------------------------------------------------------------------------
-//    Thanks for sharing. Similar to your solution, here is mine.
-
+    //6
+    //Thanks for sharing. Similar to your solution, here is mine.
     public boolean isMatch06(String s, String p) {
         if (s == null && p == null) {
             return true;
@@ -264,8 +267,8 @@ public class _6WildcardMatching {
     }
 
 //------------------------------------------------------------------------------
-//    DP solution using 2d tabel, the code similar to problem 10(Regular Expression Matching)
-
+    //7
+    //DP solution using 2d tabel, the code similar to problem 10(Regular Expression Matching)
     public boolean isMatch07(String s, String p) {
         if(s==null || p==null) return false;
         int s_len = s.length();
@@ -290,6 +293,7 @@ public class _6WildcardMatching {
     }
 
 //------------------------------------------------------------------------------
+    //8
     //My Java DP Solution
     //At first I cannot pass the the long 'aaa...' test case. Then I add more check and pass it.
     public boolean isMatch08(String s, String p) {
@@ -322,6 +326,7 @@ public class _6WildcardMatching {
     }
 
 //------------------------------------------------------------------------------
+    //9
     public boolean isMatch09(String s, String p) {
 
         boolean[][] match = new boolean[s.length()+1][p.length()+1];
@@ -334,14 +339,16 @@ public class _6WildcardMatching {
         for(int i=1;i<=s.length();i++)
             for(int j=1;j<=p.length();j++){
                 if(p.charAt(j-1)!='*')
-                    match[i][j]=match[i-1][j-1] && (p.charAt(j-1)=='?' || s.charAt(i-1)== p.charAt(j-1));
+                    match[i][j]=match[i-1][j-1] && (p.charAt(j-1)=='?' ||
+                            s.charAt(i-1)== p.charAt(j-1));
                 else
                     match[i][j]=match[i][j-1] || match[i-1][j] ;
             }
         return match[s.length()][p.length()];
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+    //10
     //I like this one.
     //Java DP Accepted
     public class Solution3 {
@@ -373,7 +380,8 @@ public class _6WildcardMatching {
 
 
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
+    //11
     // 9Ch DP
     public boolean isMatch2(String s, String p) {
         char[] s1 = s.toCharArray();
@@ -417,6 +425,7 @@ public class _6WildcardMatching {
     }
 
 //------------------------------------------------------------------------------
+    //12
     // 9Ch
     // Time: O(|s||p|*log|s|), Space: O(|s|)
     // Time can also optimize to O(|s||p|)
@@ -459,7 +468,6 @@ public class _6WildcardMatching {
         return dp[slen - 1];
     }
 
-//------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
 }

@@ -72,7 +72,7 @@ public class _211_BackTracking_Add_and_Search_Word_Data_structure_design_M {
         }
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 
     //    My simple and clean Java code
     //    Using backtrack to check each character of word to search.
@@ -116,7 +116,7 @@ public class _211_BackTracking_Add_and_Search_Word_Data_structure_design_M {
         }
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
     //Java Solution, easy understand
     //是用了Hashset，没有使用recursion
     public class WordDictionary3 {
@@ -174,7 +174,7 @@ public class _211_BackTracking_Add_and_Search_Word_Data_structure_design_M {
         }
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 }
 /*
 Design a data structure that supports the following two operations:

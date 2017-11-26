@@ -51,7 +51,7 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
                 3 4   6
      */
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
     // version 2: Divide & Conquer
     /**
@@ -100,7 +100,7 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
         root.print();
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
     // version 3: Non-Recursion
     public void flatten_3(TreeNode root) {
@@ -155,7 +155,7 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
                        \
                         6
      */
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 //    My short post order traversal Java solution for share
     private TreeNode prev4 = null;
 
@@ -170,7 +170,7 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
     }
 
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
     //    Straightforward Java Solution
     public void flatten5(TreeNode root) {
@@ -189,7 +189,7 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
         while (cur.right != null) cur = cur.right;
         cur.right = right;
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 //Accepted simple Java solution , iterative
 //    it is DFS so u need a stack. Dont forget to set the left child to null, or u'll get TLE. (tricky!)
 
@@ -209,7 +209,7 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
         }
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //  The idea is very simple:
     //
     //    flatten left subtree
@@ -243,7 +243,7 @@ public class _114_Tree_Flatten_Binary_Tree_to_Linked_List_M {
         }
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
     // Java Solution Recursive & Non-Recursive
     /**

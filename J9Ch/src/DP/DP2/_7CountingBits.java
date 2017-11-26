@@ -11,14 +11,15 @@ f[i>>1]: i的二进制表示中去掉最后一位，剩下的1的个数
 如果求有多少个0，就用（i + 1） % 2
 
 -----------------------------------------------------------------------------------------------
-
  */
 
 
 //  338. Counting Bits
 //  https://leetcode.com/problems/counting-bits/description/
-//
+//  7:
 public class _7CountingBits {
+//-------------------------------------------------------------------------------
+    //1
     // 9Ch DP
     //序列，每个元素就是0 ≤ i ≤ num中一个数字， 这位置是不能变的呀，所以时序列型
     public int[] countBits(int num) {
@@ -31,10 +32,8 @@ public class _7CountingBits {
         return f;
     }
 
-
-
-//---------------------------------////////////////////////
-    //leetcode
+//-------------------------------------------------------------------------------
+    //2
     //Three-Line Java Solution
     public int[] countBits1(int num) {
         int[] f = new int[num + 1];
@@ -44,9 +43,9 @@ public class _7CountingBits {
     }
 
 
-//---------------------------------/
+//-------------------------------------------------------------------------------
+    //3
     //DP
-    //https://leetcode.com/problems/counting-bits/discuss/
     public int[] countBits2(int num) {
         int result[] = new int[num + 1];
         int offset = 1;
@@ -59,9 +58,8 @@ public class _7CountingBits {
         return result;
     }
 
-//---------------------------------////////////////////////
-
-    //leetcode
+//-------------------------------------------------------------------------------
+    //4
     //Approach #1 Pop Count [Accepted]
     public class Solution {
         public int[] countBits(int num) {
@@ -78,6 +76,8 @@ public class _7CountingBits {
         }
     }
 
+//-------------------------------------------------------------------------------
+    //5
     //Approach #2 DP + Most Significant Bit [Accepted]
     public class Solution2 {
         public int[] countBits(int num) {
@@ -97,6 +97,8 @@ public class _7CountingBits {
         }
     }
 
+//-------------------------------------------------------------------------------
+    //6
     //Approach #3 DP + Least Significant Bit [Accepted]
     public class Solution3 {
         public int[] countBits(int num) {
@@ -106,7 +108,8 @@ public class _7CountingBits {
             return ans;
         }
     }
-
+//-------------------------------------------------------------------------------
+    //7
     //Approach #4 DP + Last Set Bit [Accepted]
     public class Solution4 {
         public int[] countBits(int num) {
@@ -117,8 +120,7 @@ public class _7CountingBits {
         }
     }
 
-//---------------------------------////////////////////////
-
+//-------------------------------------------------------------------------------
 }
 /*
 Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.

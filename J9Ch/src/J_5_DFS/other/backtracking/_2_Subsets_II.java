@@ -230,7 +230,7 @@ add the element as in subset I
 
 
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
     //My solution using bit masks
     public List<List<Integer>> subsetsWithDup6(int[] num) {
         //Sort the input

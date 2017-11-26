@@ -3,8 +3,6 @@ package DP.DP6;
 
 /*
 -----------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
 LintCode 668 Ones And Zeroes
 
 • 题意:
@@ -56,16 +54,16 @@ f[i-1][j-ai-1][k-bi-1] + 1 前i-1个01串最多能有多少 个被j-ai-1个0和k
 • f[T][0][0], f[T][0][1], ..., f[T][0][n], f[T][1][0], ..., f[T][1][n], ..., f[T][m][n]
 • 答案是f[T][m][n]
 • 时间复杂度:O(Tmn)，空间复杂度:O(Tmn)，可以用滚动数组优化至 O(mn)
-
 -----------------------------------------------------------------------------------------------
+*/
 
-
------------------------------------------------------------------------------------------------
- */
 
 //  474. Ones and Zeroes
 //  https://leetcode.com/problems/ones-and-zeroes/description/
+//  8:
 public class _7OnesandZeroes {
+//--------------------------------------------------------------------------------
+    //1
     // 9Ch DP
     public int findMaxForm(String[] strs, int m, int n) {
         int T = strs.length;
@@ -101,7 +99,8 @@ public class _7OnesandZeroes {
 
                     // A[i - 1] selected
                     if (j >= cnt0[i - 1] && k >= cnt1[i - 1]) {
-                        f[i][j][k] = Math.max(f[i][j][k], f[i - 1][j - cnt0[i - 1]][k - cnt1[i - 1]] + 1);
+                        f[i][j][k] = Math.max(f[i][j][k],
+                                f[i - 1][j - cnt0[i - 1]][k - cnt1[i - 1]] + 1);
                     }
 
                 }
@@ -111,6 +110,7 @@ public class _7OnesandZeroes {
     }
 
 //------------------------------------------------------------------------------
+    //2
     //方法一 未进行空间复杂度优化：
     public int findMaxForm2(String[] strs, int m, int n) {
         int[][][] dp = new int[strs.length + 1][m + 1][n + 1];
@@ -139,7 +139,7 @@ public class _7OnesandZeroes {
 
 
 //------------------------------------------------------------------------------
-
+    //3
     // 方法二 进行空间复杂度优化：
     public class Solution2 {
         public int findMaxForm(String[] strs, int m, int n) {
@@ -162,6 +162,7 @@ public class _7OnesandZeroes {
     }
 
 //------------------------------------------------------------------------------
+    //4
     //Approach #1 Brute Force [Time Limit Exceeded]
     public class Solution3 {
         public int findMaxForm(String[] strs, int m, int n) {
@@ -193,7 +194,7 @@ public class _7OnesandZeroes {
 
 
 //------------------------------------------------------------------------------
-
+    //5
     //Approach #2 Better Brute Force [Time Limit Exceeded]
     public class Solution4 {
         public int findMaxForm(String[] strs, int m, int n) {
@@ -227,9 +228,8 @@ public class _7OnesandZeroes {
 
 
 //------------------------------------------------------------------------------
-
+    //6
     //Approach #3 Using Recursion [Time Limit Exceeded]
-
     public class Solution5 {
         public int findMaxForm(String[] strs, int m, int n) {
             return calculate(strs, 0, m, n);
@@ -255,7 +255,7 @@ public class _7OnesandZeroes {
 
 
 //------------------------------------------------------------------------------
-
+    //7
     //Approach #4 Using Memoization [Accepted]
     public class Solution6 {
         public int findMaxForm(String[] strs, int m, int n) {
@@ -287,7 +287,7 @@ public class _7OnesandZeroes {
 
 
 //------------------------------------------------------------------------------
-
+    //8
     //Approach #5 Dynamic Programming [Accepted]
     public class Solution7 {
         public int findMaxForm(String[] strs, int m, int n) {
@@ -296,7 +296,8 @@ public class _7OnesandZeroes {
                 int[] count = countzeroesones(s);
                 for (int zeroes = m; zeroes >= count[0]; zeroes--)
                     for (int ones = n; ones >= count[1]; ones--)
-                        dp[zeroes][ones] = Math.max(1 + dp[zeroes - count[0]][ones - count[1]], dp[zeroes][ones]);
+                        dp[zeroes][ones] = Math.max(1 + dp[zeroes - count[0]][ones - count[1]],
+                                dp[zeroes][ones]);
             }
             return dp[m][n];
         }
@@ -310,18 +311,7 @@ public class _7OnesandZeroes {
     }
 
 
-
-
 //------------------------------------------------------------------------------
-
-
-
-//------------------------------------------------------------------------------
-
-
-
-
-
 }
 /*
 In the computer world, use restricted resource you have to generate maximum benefit is what we always want to pursue.

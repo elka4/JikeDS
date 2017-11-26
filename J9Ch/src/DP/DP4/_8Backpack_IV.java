@@ -54,10 +54,11 @@ int backPackIV(vector<int>& nums, int target) {
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
  */
 
-// Backpack IV
+//  Backpack IV
+//  2:
 public class _8Backpack_IV {
-
 //-----------------------------------------------------------------------------
+    //1
     // 方法一
     /**
      * @param nums an integer array and all positive numbers, no duplicates
@@ -84,9 +85,8 @@ public class _8Backpack_IV {
     }
 
 //-----------------------------------------------------------------------------
-
+    //2
     // 方法二
-
     /**
      * @param nums an integer array and all positive numbers, no duplicates
      * @param target an integer

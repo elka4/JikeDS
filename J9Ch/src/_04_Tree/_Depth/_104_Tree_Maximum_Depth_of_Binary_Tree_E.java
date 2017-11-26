@@ -48,7 +48,7 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
             3
      */
 
-//-----------------------------------------------------------------------------///
+//-------------------------------------------------------------------------------
 
     // version 2: Traverse. With global depth.
     private int depth;
@@ -84,7 +84,7 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
         System.out.println(maxDepth2(root));
     }
 
-//-----------------------------------------------------------------------------///
+//-------------------------------------------------------------------------------
 
     //non-recursion
     public int maxDepth3(TreeNode root) {
@@ -124,7 +124,7 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
         System.out.println(maxDepth3(root));
     }
 
-//-----------------------------------------------------------------------------///
+//-------------------------------------------------------------------------------
 
     public int maxDepth4(TreeNode root) {
         if(root==null){
@@ -144,7 +144,7 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
         System.out.println(maxDepth4(root));
     }
 
-//-----------------------------------------------------------------------------///
+//-------------------------------------------------------------------------------
     //    DFS
     public int maxDepth5(TreeNode root) {
         if(root == null) {
@@ -184,7 +184,7 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
         System.out.println(maxDepth5(root));
     }
 
-//-----------------------------------------------------------------------------///
+//-------------------------------------------------------------------------------
 
     //    BFS
     public int maxDepth6(TreeNode root) {
@@ -221,7 +221,7 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
         System.out.println(maxDepth6(root));
     }
 
-//-----------------------------------------------------------------------------///
+//-------------------------------------------------------------------------------
 
     //技巧：求最小值，那就先都把默认设成无穷大。最后用Max.min（）来滤过无穷大的值。
     public int minDepth1(TreeNode root) {
@@ -264,7 +264,7 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
 
                     2
  */
-//-----------------------------------------------------------------------------///
+//-------------------------------------------------------------------------------
 
     public int minDepth2(TreeNode root) {
         if (root == null) {
@@ -292,7 +292,7 @@ public class _104_Tree_Maximum_Depth_of_Binary_Tree_E {
         System.out.println(minDepth2(root));
     }
 
-//-----------------------------------------------------------------------------///
+//-------------------------------------------------------------------------------
 }
 /*
 二叉树的最大深度

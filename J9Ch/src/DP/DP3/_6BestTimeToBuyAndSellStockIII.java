@@ -4,10 +4,7 @@ import org.junit.Test;
 //_6BestTimeToBuyAndSellStockIII  31:38
 //• 有状态的序列型动态规划
 
-
-
 /*
-
 -----------------------------------------------------------------------------------------------
 LintCode 151: Best Time to Buy and Sell Stock III
 • 题意:
@@ -98,11 +95,8 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
 •...
 • f[N][1], ..., f[N][5]
 • 时间复杂度:O(N),空间复杂度:O(N)，优化后可以O(1)，因为f[i][1..5] 只依赖于f[i-1][1..5]
-
 -----------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------
- */
+*/
 
 
 // 2次交易
@@ -111,12 +105,14 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
 //  123. Best Time to Buy and Sell Stock III
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-iii/
+//  9:
 public class _6BestTimeToBuyAndSellStockIII {
+//------------------------------------------------------------------------------
 
     //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 
 //------------------------------------------------------------------------------
-
+    //1
     /*
     Is it Best Solution with O(n), O(1).
 
@@ -146,7 +142,8 @@ Very simple code too and work well. I have to say the logic is simple than those
         return release2; ///Since release1 is initiated as 0, so release2 will always higher than release1.
     }
 
-
+//------------------------------------------------------------------------------
+    //2
     //这方法真好啊
     //初始值很重要
     public int maxProfit011(int[] prices) {
@@ -168,8 +165,7 @@ Very simple code too and work well. I have to say the logic is simple than those
     }
 
 //------------------------------------------------------------------------------
-
-
+    //3
     public int maxProfit0111(int[] prices) {
         if (prices == null || prices.length == 0) return 0;
         int len = prices.length;
@@ -190,7 +186,7 @@ Very simple code too and work well. I have to say the logic is simple than those
         return t[k][len - 1];
     }
 //------------------------------------------------------------------------------
-
+    //4
     //2ms Java DP Solution
     public int maxProfit02(int[] prices) {
         // these four variables represent your profit after executing corresponding transaction
@@ -224,7 +220,7 @@ Very simple code too and work well. I have to say the logic is simple than those
     }
 
 //------------------------------------------------------------------------------
-
+    //5
     public int maxProfit022(int[] prices) {
         // these four variables represent your profit after executing corresponding transaction
         // in the beginning, your profit is 0.
@@ -252,7 +248,7 @@ Very simple code too and work well. I have to say the logic is simple than those
     }
 
 //------------------------------------------------------------------------------
-
+    //6
     // 9Ch DP
     public int maxProfit(int[] prices) {
         int n = prices.length;
@@ -295,6 +291,7 @@ Very simple code too and work well. I have to say the logic is simple than those
     }
 
 //------------------------------------------------------------------------------
+    //7
     // 动态规划专题班版本 verison 1
     private int update(int a, int b, int delta) {
         if (b == Integer.MIN_VALUE) {
@@ -350,8 +347,7 @@ Very simple code too and work well. I have to say the logic is simple than those
     }
 
 //------------------------------------------------------------------------------
-
-
+    //8
     // version 2
     public int maxProfit2(int[] prices) {
         if (prices == null || prices.length <= 1) {
@@ -399,7 +395,7 @@ Very simple code too and work well. I have to say the logic is simple than those
     }
 
 //------------------------------------------------------------------------------
-
+    //9
     // 方法二
     class Solution3 {
 
@@ -477,7 +473,6 @@ Very simple code too and work well. I have to say the logic is simple than those
     }
 
 //------------------------------------------------------------------------------
-
 }
 /*
 买卖股票的最佳时机 III

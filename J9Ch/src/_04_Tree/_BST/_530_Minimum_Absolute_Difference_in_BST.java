@@ -34,7 +34,7 @@ public class _530_Minimum_Absolute_Difference_in_BST {
         return min;
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //2
     /*
     What if it is not a BST? (Follow up of the problem) The idea is to put values in
@@ -64,7 +64,7 @@ public class _530_Minimum_Absolute_Difference_in_BST {
         return min2;
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //3
     /*
     Java O(n) Time Inorder Traversal Solution
@@ -89,7 +89,7 @@ public class _530_Minimum_Absolute_Difference_in_BST {
         inorder(root.right);
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //4
     /*
     Java No In-order Traverse Solution, just pass upper bound and lower bound
@@ -116,7 +116,7 @@ public class _530_Minimum_Absolute_Difference_in_BST {
     }
 
 
-//---------------------------------///////////////////////
+//-------------------------------------------------------------------------------
 }
 /*
 Given a binary search tree with non-negative values, find the minimum absolute difference between values of any two nodes.

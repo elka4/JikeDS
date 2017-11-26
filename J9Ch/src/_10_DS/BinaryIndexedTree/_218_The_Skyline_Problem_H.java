@@ -7,7 +7,7 @@ import java.util.*;
 public class _218_The_Skyline_Problem_H {
     //https://briangordon.github.io/2014/08/the-skyline-problem.html
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //My O(nlogn) solution using Binary Indexed Tree(BIT)/Fenwick Tree
     public List<int[]> getSkyline(int[][] buildings) {
         List<int[]> ret = new ArrayList<>();
@@ -69,7 +69,7 @@ public class _218_The_Skyline_Problem_H {
         }
         return h;
     }
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 //Java Binary Indexed Tree Solution
 
 
@@ -154,13 +154,13 @@ ii. (2^n+k2) can reach VAL by reducing its last bit and change value continuousl
         }
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 }
 /*
 A city's skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Now suppose you are given the locations and height of all the buildings as shown on a cityscape photo (Figure A), write a program to output the skyline formed by these buildings collectively (Figure B).

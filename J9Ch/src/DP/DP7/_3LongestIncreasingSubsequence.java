@@ -55,22 +55,18 @@ f[i]，f[j] = f[i] + 1
 • 每次查找时间复杂度O(log2N)
 • 总的时间复杂度O(Nlog2N)
 -----------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
-
-
------------------------------------------------------------------------------------------------
- */
+*/
 
 
 //  Longest Increasing Subsequence
 //  https://leetcode.com/problems/longest-increasing-subsequence/description/
 //  http://www.lintcode.com/zh-cn/problem/longest-increasing-subsequence/
+//  8:
 public class _3LongestIncreasingSubsequence {
+//------------------------------------------------------------------------------
     //https://leetcode.com/problems/longest-increasing-subsequence/solution/
-
+//------------------------------------------------------------------------------
+    //1
     //Approach #1 Brute Force [Time Limit Exceeded]
 
     public class Solution01 {
@@ -92,6 +88,8 @@ public class _3LongestIncreasingSubsequence {
         }
     }
 
+//------------------------------------------------------------------------------
+    //2
     //Approach #2 Recursion with memorization [Memory Limit Exceeded]
     public class Solution02 {
         public int lengthOfLIS(int[] nums) {
@@ -119,6 +117,8 @@ public class _3LongestIncreasingSubsequence {
         }
     }
 
+//------------------------------------------------------------------------------
+    //3
     //Approach #3 Dynamic Programming [Accepted]
     public class Solution03 {
         public int lengthOfLIS(int[] nums) {
@@ -142,6 +142,8 @@ public class _3LongestIncreasingSubsequence {
         }
     }
 
+//------------------------------------------------------------------------------
+    //4
     //Approach #4 Dynamic Programming with Binary Search[Accepted]:
     public class Solution04 {
         public int lengthOfLIS(int[] nums) {
@@ -161,8 +163,8 @@ public class _3LongestIncreasingSubsequence {
         }
     }
 
-
 //-----------------------------------------------------------------------------
+    //5
     //9CH DP
     // nlogn
     public int LongestIncreasingSubsequence(int[] nums) {
@@ -217,6 +219,7 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
 
 
 //-----------------------------------------------------------------------------
+    //6
     // jiuzhang
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
@@ -270,6 +273,7 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
     }
 
 //-----------------------------------------------------------------------------
+    //7
     // 9Ch
     /**
      * @param nums: The integer array
@@ -299,6 +303,7 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
     }
 
 //-----------------------------------------------------------------------------
+    //8
     // 9Ch
     // O(nlogn) Binary Search
     /**
@@ -348,8 +353,6 @@ The longest increasing subsequence is [2, 3, 7, 101], therefore the length is 4.
     }
 
 //-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
-
 }
 /*  最长上升子序列
 给定一个整数序列，找到最长上升子序列（LIS），返回LIS的长度。

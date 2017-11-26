@@ -12,7 +12,7 @@ import java.util.*;
 //  _206_List_Reverse_Linked_List_E 这两题应该一起看
 public class _156_Tree_Binary_Tree_Upside_Down_M {
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //1
     //recurtion
     public TreeNode upsideDownBinaryTree2(TreeNode root) {
@@ -42,7 +42,7 @@ public class _156_Tree_Binary_Tree_Upside_Down_M {
     }
 
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //2
     //零空间鼓捣node
     public TreeNode UpsideDownBinaryTree3(TreeNode root) {
@@ -72,7 +72,7 @@ public class _156_Tree_Binary_Tree_Upside_Down_M {
         UpsideDownBinaryTree3(root).print();
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
     //3
     //用Stack
     //time O(n) space O(n)
@@ -113,7 +113,7 @@ public class _156_Tree_Binary_Tree_Upside_Down_M {
         upsideDownBinaryTree4(root).print();
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 }
 /*
 all right nodes are either 1 leaf nodes with a left sibling or 2 empty

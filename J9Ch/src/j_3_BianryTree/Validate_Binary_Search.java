@@ -46,7 +46,7 @@ public class Validate_Binary_Search {
                              Math.min(root.val, left.minValue));
     }
 
-//---------------------------------//////////////////////
+//--------------------------------------------------------------------------------/
 //version 1 Traverse， 缺点：经常要用到全局变量
  class _95Validate_Binary_Search_Tree_Traverse {
     private int lastVal = Integer.MIN_VALUE;
@@ -120,9 +120,9 @@ Related Problems:Medium Inorder Successor in Binary Search Tree 30 %
 				 Easy Balanced Binary Tree 38 %
  * */
 
-//---------------------------------//////////////////////
+//--------------------------------------------------------------------------------/
 
-//---------------------------------//////////////////////
+//--------------------------------------------------------------------------------/
 
 
 }

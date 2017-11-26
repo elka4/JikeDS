@@ -1,4 +1,5 @@
 package DP.DP7;
+import org.junit.Test;
 
 /*
 -----------------------------------------------------------------------------------------------
@@ -65,17 +66,19 @@ f[i][j] = min{f[i-1][j], f[i][j-1], f[i-1][j-1]} + 1，如果(i, j)格是1
 -----------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------
- */
+*/
 
-import org.junit.Test;
 
 //  221. Maximal Square
 //  https://leetcode.com/problems/maximal-square/description/
 //  http://www.lintcode.com/zh-cn/problem/maximal-square/
+//  5:
 public class _6MaximalSquare {
+//------------------------------------------------------------------------------
     //https://leetcode.com/problems/maximal-square/solution/
     //https://leetcode.com/articles/maximal-square/
-
+//------------------------------------------------------------------------------
+    //1
     //Approach #1 Brute Force [Accepted]
     public class Solution01 {
         public int maximalSquare(char[][] matrix) {
@@ -111,7 +114,8 @@ public class _6MaximalSquare {
             return maxsqlen * maxsqlen;
         }
     }
-
+//------------------------------------------------------------------------------
+    //2
     //Approach #2 (Dynamic Programming) [Accepted]
     public class Solution02 {
         public int maximalSquare(char[][] matrix) {
@@ -129,7 +133,8 @@ public class _6MaximalSquare {
             return maxsqlen * maxsqlen;
         }
     }
-
+//------------------------------------------------------------------------------
+    //3
     //Approach #3 (Better Dynamic Programming) [Accepted]
     public class Solution03 {
         public int maximalSquare(char[][] matrix) {
@@ -154,6 +159,7 @@ public class _6MaximalSquare {
 
 
 //------------------------------------------------------------------------------
+    //4
     // 9Ch DP
     public int maxSquare(int[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
@@ -200,6 +206,7 @@ public class _6MaximalSquare {
 
 
 //------------------------------------------------------------------------------
+    //5
     /**
      * @param matrix: a matrix of 0 and 1
      * @return: an integer
@@ -249,8 +256,6 @@ public class _6MaximalSquare {
     }
 
 //------------------------------------------------------------------------------
-//------------------------------------------------------------------------------
-
 }
 /*
 在一个二维01矩阵中找到全为1的最大正方形

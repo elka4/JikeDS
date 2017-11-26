@@ -29,7 +29,7 @@ public class _042_TwoPointer_Trapping_Rain_Water_H {
         }
         return max;
     }
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     // 9Ch
 //Version 0: Two pointer
 public class Solution {

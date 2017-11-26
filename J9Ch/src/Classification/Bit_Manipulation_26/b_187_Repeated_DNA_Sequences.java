@@ -27,21 +27,21 @@ public class b_187_Repeated_DNA_Sequences {
         return rv;
     }
 
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 
-//    7 lines simple Java, O(n)
-public List<String> findRepeatedDnaSequences2(String s) {
-    Set seen = new HashSet(), repeated = new HashSet();
-    for (int i = 0; i + 9 < s.length(); i++) {
-        String ten = s.substring(i, i + 10);
-        if (!seen.add(ten))
-            repeated.add(ten);
+    //    7 lines simple Java, O(n)
+    public List<String> findRepeatedDnaSequences2(String s) {
+        Set seen = new HashSet(), repeated = new HashSet();
+        for (int i = 0; i + 9 < s.length(); i++) {
+            String ten = s.substring(i, i + 10);
+            if (!seen.add(ten))
+                repeated.add(ten);
+        }
+        return new ArrayList(repeated);
     }
-    return new ArrayList(repeated);
-}
 
 
-//---------------------------------////////////////////////
+//-------------------------------------------------------------------------------
 
 //    Short Java "rolling-hash" solution
 //    Hi guys!
@@ -74,16 +74,8 @@ public List<String> findRepeatedDnaSequences2(String s) {
         }
     }
 
-//---------------------------------////////////////////////
 
-
-
-//---------------------------------////////////////////////
-
-
-
-//---------------------------------////////////////////////
-
+//-------------------------------------------------------------------------------
 }
 
 /*

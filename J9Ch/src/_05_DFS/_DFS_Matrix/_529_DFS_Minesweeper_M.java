@@ -52,7 +52,7 @@ public class _529_DFS_Minesweeper_M {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //    BFS solution. As you can see the basic logic is almost the same as DFS. Only added a queue to facilitate BFS.
 
     public class Solution2 {
@@ -102,7 +102,7 @@ public class _529_DFS_Minesweeper_M {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //    Another BFS -
     public char[][] updateBoard(char[][] board, int[] click) {
         int m = board.length;
@@ -145,7 +145,7 @@ public class _529_DFS_Minesweeper_M {
         return board;
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     //Straight forward Java solution
     public class Solution4 {
         public char[][] updateBoard(char[][] board, int[] click) {
@@ -194,7 +194,7 @@ public class _529_DFS_Minesweeper_M {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     public class Solution5 {
         public char[][] updateBoard(char[][] board, int[] click) {
             int y = click[0], x = click[1];
@@ -246,7 +246,7 @@ public class _529_DFS_Minesweeper_M {
     }
 
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 
 /*    Java Solution, DFS + BFS
     This is a typical Search problem, either by using DFS or BFS. Search rules:
@@ -347,7 +347,7 @@ public class _529_DFS_Minesweeper_M {
         }
     }
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 
 }
 /*

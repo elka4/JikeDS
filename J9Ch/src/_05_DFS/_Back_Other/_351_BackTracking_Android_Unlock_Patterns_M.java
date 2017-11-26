@@ -258,7 +258,7 @@ public class _351_BackTracking_Android_Unlock_Patterns_M {
         }
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 }
 /*
 Given an Android 3x3 key lock screen and two integers m and n, where 1 ≤ m ≤ n ≤ 9, count the total number of unlock patterns of the Android lock screen, which consist of minimum of m keys and maximum n keys.

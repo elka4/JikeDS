@@ -3,10 +3,12 @@ import java.util.*;
 
 //  84. Largest Rectangle in Histogram
 //  https://leetcode.com/problems/largest-rectangle-in-histogram/description/
-//
+//  4:
 public class _84_Largest_Rectangle_in_Histogram {
+//------------------------------------------------------------------------------
     //https://leetcode.com/problems/largest-rectangle-in-histogram/solution/
-
+//------------------------------------------------------------------------------
+    //1
     //Approach #1 Brute Force [Time Limit Exceeded]
     public class Solution01 {
         public int largestRectangleArea(int[] heights) {
@@ -22,6 +24,8 @@ public class _84_Largest_Rectangle_in_Histogram {
             return maxarea;
         }
     }
+//------------------------------------------------------------------------------
+    //2
     //Approach #2 Better Brute Force[Time Limit Exceeded]
     public class Solution02 {
         public int largestRectangleArea(int[] heights) {
@@ -36,6 +40,8 @@ public class _84_Largest_Rectangle_in_Histogram {
             return maxarea;
         }
     }
+//------------------------------------------------------------------------------
+    //3
     //Approach #3 (Divide and Conquer Approach) [Time Limit Exceeded]
     public class Solution03 {
         public int calculateArea(int[] heights, int start, int end) {
@@ -45,7 +51,9 @@ public class _84_Largest_Rectangle_in_Histogram {
             for (int i = start; i <= end; i++)
                 if (heights[minindex] > heights[i])
                     minindex = i;
-            return Math.max(heights[minindex] * (end - start + 1), Math.max(calculateArea(heights, start, minindex - 1), calculateArea(heights, minindex + 1, end)));
+            return Math.max(heights[minindex] * (end - start + 1),
+                    Math.max(calculateArea(heights, start, minindex - 1),
+                            calculateArea(heights, minindex + 1, end)));
         }
         public int largestRectangleArea(int[] heights) {
             return calculateArea(heights, 0, heights.length - 1);
@@ -69,7 +77,8 @@ public class _84_Largest_Rectangle_in_Histogram {
             return maxarea;
         }
     }
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
+    //4
     //Simple Divide and Conquer AC solution without Segment Tree
     class Solution6{
         public int largestRectangleAreaDQ(int[] A) {
@@ -109,8 +118,8 @@ public class _84_Largest_Rectangle_in_Histogram {
             return area;
         }
     }
-//-----------------------------------------------------------------------------/
 
+//--------------------------------------------------------------------------------
 }
 /*
 

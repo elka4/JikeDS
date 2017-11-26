@@ -52,7 +52,7 @@ public class Top_K_Frequent_Elements {
             ans.add(entry.getKey());
         return ans;
     }
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
 
     //Java Solution 1 - Using HashMap and Heap
 

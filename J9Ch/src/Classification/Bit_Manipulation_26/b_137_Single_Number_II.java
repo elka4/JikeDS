@@ -160,7 +160,7 @@ public class b_137_Single_Number_II {
         return ones;
     }
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
     //8
     //https://leetcode.com/problems/single-number-ii/tabs/discuss
     public int singleNumber2(int[] nums) {

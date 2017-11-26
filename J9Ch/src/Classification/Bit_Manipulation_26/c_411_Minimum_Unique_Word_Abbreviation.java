@@ -79,7 +79,7 @@ public class c_411_Minimum_Unique_Word_Abbreviation {
         abbrGenerator(target, i+1, tmp, abbr+1, num);
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 /*Java DFS+Trie+Binary Search 90ms
     Use Trie to build a dictionary with a function to check abbreviation.
     Use DFS with backtracking to generate the abbreviations of a given length.
@@ -179,7 +179,7 @@ public class c_411_Minimum_Unique_Word_Abbreviation {
         }
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 //https://discuss.leetcode.com/topic/61799/java-bit-mask-dfs-with-pruning
 
     private int minLen;
@@ -286,10 +286,10 @@ public class c_411_Minimum_Unique_Word_Abbreviation {
         return mask;
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 
 
 }

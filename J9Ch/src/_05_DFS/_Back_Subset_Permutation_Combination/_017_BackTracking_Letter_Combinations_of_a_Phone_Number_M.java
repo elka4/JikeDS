@@ -39,7 +39,7 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
         System.out.println(letterCombinations01("").size());
     }//1
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
     //My recursive solution using Java
     private final String[] KEYS = { "", "", "abc", "def", "ghi",
         "jkl", "mno", "pqrs", "tuv", "wxyz" };
@@ -72,7 +72,7 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
         System.out.println(letterCombinations02("").size());
     }//1
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
     // jiuzhang
     public ArrayList<String> letterCombinations_J1(String digits) {
         ArrayList<String> result = new ArrayList<String>();
@@ -117,7 +117,7 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
         }
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
     // 9Ch
     // version: 高频题班
 
@@ -171,7 +171,7 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
         }
     }
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
     // 9Ch
     // 方法2 计状态。仅仅是展示把能放到global的全放到global什么样子。可以让dfs（）参数很少。
     ArrayList<String> ans_J3 = new ArrayList<>();
@@ -205,7 +205,7 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
     }
 
 
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 }
 /*
 电话号码的字母组合

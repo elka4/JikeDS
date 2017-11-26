@@ -20,7 +20,7 @@ public class _341_Stack_Flatten_Nested_List_Iterator_M {
         public List<NestedInteger> getList();
     }
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 class Solution{
 /*    Simple Java solution using a stack with explanation
     A question before this is the Nested List Weight Sum, and it requires recursion to solve. As it carries to this problem that we will need recursion to solve it. But since we need to access each NestedInteger at a time, we will use a stack to help.
@@ -58,7 +58,7 @@ class Solution{
 }
 
 
-//-------------------------------------------------------------------------/
+//-------------------------------------------------------------------------------
 public class NestedIterator implements Iterator<Integer> {
 
     private Stack<NestedInteger> stack;

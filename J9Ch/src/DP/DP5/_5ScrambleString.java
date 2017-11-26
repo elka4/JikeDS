@@ -11,17 +11,17 @@ import java.util.*;
 f[i][j][k] = OR1<=w<=k-1{f[i][j][w] AND f[i+w][j+w][k-w]}
 OR
 OR1<=w<=k-1{f[i][j+k-w][w] AND f[i+w][j][k-w]}
-
-
 -----------------------------------------------------------------------------------------------
- */
+*/
 
 //  87. Scramble String
 //  https://leetcode.com/problems/scramble-string/description/
 //  http://www.lintcode.com/zh-cn/problem/scramble-string/
+//  9:
 public class _5ScrambleString {
-
-//    Accepted Java solution
+//------------------------------------------------------------------------------
+    //1
+    //Accepted Java solution
     public class Solution01 {
         public boolean isScramble(String s1, String s2) {
             if (s1.equals(s2)) return true;
@@ -42,7 +42,9 @@ public class _5ScrambleString {
             return false;
         }
     }
+
 //------------------------------------------------------------------------------
+    //2
 /*
 Simple iterative DP Java solution with explanation
     Explanation in code itself. The iterative version of the idea is considerably slower than the recursive simply because here we consider all possible states, while the recursive will only compute required states as it founds them. Time complexity of both is, in any case, the same.
@@ -90,13 +92,8 @@ Simple iterative DP Java solution with explanation
         }
     }
 //------------------------------------------------------------------------------
-/*Java fast DP iteration solution and recursion solution
-
-4
-    L liji94188
-    Reputation:  476
-    Iterative version:*/
-
+    //3
+    /*Java fast DP iteration solution and recursion solution  Iterative version:*/
     public class Solution03 {
         public boolean isScramble(String s1, String s2) {
             int len = s1.length();
@@ -118,9 +115,9 @@ Simple iterative DP Java solution with explanation
         }
     }
 
-
-
-    //    Recursive version: with some pruning check at the beginning, finally get rid of TLE...
+//------------------------------------------------------------------------------
+    //4
+    //Recursive version: with some pruning check at the beginning, finally get rid of TLE...
     public class Solution04 {
         public boolean isScramble(String s1, String s2) {
             int len= s1.length();
@@ -150,11 +147,9 @@ Simple iterative DP Java solution with explanation
     }
 
 //------------------------------------------------------------------------------
-/*    2ms Java Recursive solution (beat 100%)
+    //5
+    //2ms Java Recursive solution (beat 100%)
 
-4
-    A antiquity
-    Reputation:  18*/
     public class Solution05 {
         int[] p = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997};
         public boolean isScramble(String s1, String s2) {
@@ -176,6 +171,7 @@ Simple iterative DP Java solution with explanation
         }
     }
 //------------------------------------------------------------------------------
+    //6
     // 9CH DP
     public boolean isScramble(String s1, String s2) {
         char[] c1 = s1.toCharArray();
@@ -221,7 +217,7 @@ Simple iterative DP Java solution with explanation
      }
 
 //------------------------------------------------------------------------------
-
+    //7
     // 记忆化搜索
     /**
      * @param s1 A string
@@ -257,7 +253,7 @@ Simple iterative DP Java solution with explanation
     }
 
 //------------------------------------------------------------------------------
-
+    //8
     // 递推
     /**
      * @param s1 A string
@@ -285,7 +281,7 @@ Simple iterative DP Java solution with explanation
     }
 
 //------------------------------------------------------------------------------
-
+    //8
     // 普通搜索
     /**
      * @param s1 A string
@@ -335,7 +331,7 @@ Simple iterative DP Java solution with explanation
     }
 
 //------------------------------------------------------------------------------
-
+    //9
     // 记忆化搜索
     public class Solution4 {
         /**

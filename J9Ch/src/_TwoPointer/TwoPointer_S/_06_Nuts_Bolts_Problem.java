@@ -5,7 +5,7 @@ import java.util.*;
 //
 //  http://www.lintcode.com/zh-cn/problem/nuts-bolts-problem/
 public class _06_Nuts_Bolts_Problem {
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
 	/**
      * @param nuts: an array of integers
      * @param bolts: an array of integers

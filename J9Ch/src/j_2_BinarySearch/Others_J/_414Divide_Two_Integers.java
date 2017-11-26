@@ -201,7 +201,7 @@ I modified your codes a little bit though, to avoid checking whether it is negat
     }
 
 
-//-------------------------------------------------------------------------///
+//----------------------------------------------------------------------------
     // 9Ch
     /**
      * @param dividend the dividend

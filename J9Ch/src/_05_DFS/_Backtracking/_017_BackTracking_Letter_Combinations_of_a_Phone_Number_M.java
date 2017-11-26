@@ -58,7 +58,7 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
     }
 
 
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
 
     private final String[] KEYS = { "", "", "abc", "def",
             "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
@@ -95,7 +95,7 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
         Output:[""]
         Expected:[]
      */
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
     // 9Ch
     public List<String> letterCombinations_J1(String digits) {
         List<String> result = new ArrayList<String>();
@@ -143,7 +143,7 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
     public void test033(){
         System.out.println(letterCombinations_J1("").size());
     }//0
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
     // 9Ch
     // version: 高频题班
     //  方法1 计状态
@@ -174,7 +174,7 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
     public void test044(){
         System.out.println(letterCombinations_J2("").size());
     }//0
-//-----------------------------------------------------------------------------//
+//-------------------------------------------------------------------------------
     // 9Ch
     // 方法2 计状态
     /**
@@ -214,7 +214,7 @@ public class _017_BackTracking_Letter_Combinations_of_a_Phone_Number_M {
     public void test055(){
         System.out.println(letterCombinations_J3("").size());
     }//0
-//-----------------------------------------------------------------------------/
+//--------------------------------------------------------------------------------
 }
 /*
 电话号码的字母组合

@@ -4,7 +4,7 @@ import java.util.*;
 //248. Strobogrammatic Number III
 //https://leetcode.com/problems/strobogrammatic-number-iii/description/
 public class _248_Strobogrammatic_Number_III_H {
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
 //    Concise Java Solution
 //    Construct char arrays from low.length() to high.length()
 //    Add stro pairs from outside
@@ -42,7 +42,7 @@ public class _248_Strobogrammatic_Number_III_H {
             dfs(low, high, c, left + 1, right - 1, count);
         }
     }
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
 
     //2
 /*
@@ -87,8 +87,8 @@ public class _248_Strobogrammatic_Number_III_H {
             return rst;
         }
     }
-//-------------------------------------------------------------------------//
-//-------------------------------------------------------------------------//
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
 }
 /*
 A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).

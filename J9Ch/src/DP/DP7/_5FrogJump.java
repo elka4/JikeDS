@@ -89,9 +89,12 @@ f[k][j+1] 能最后一跳j+1跳到石头ak
 //  403. Frog Jump
 //  https://leetcode.com/problems/frog-jump/description/
 //  http://www.lintcode.com/zh-cn/problem/frog-jump/
+//  7:
 public class _5FrogJump {
+//------------------------------------------------------------------------------
     //https://leetcode.com/problems/frog-jump/solution/
-
+//------------------------------------------------------------------------------
+    //1
     //Approach #1 Brute Force [Time Limit Exceeded]
     public class Solution01 {
         public boolean canCross(int[] stones) {
@@ -110,6 +113,8 @@ public class _5FrogJump {
         }
     }
 
+//------------------------------------------------------------------------------
+    //2
     //Approach #2 Better Brute Force[Time Limit Exceeded]
     public class Solution02 {
         public boolean canCross(int[] stones) {
@@ -135,6 +140,8 @@ public class _5FrogJump {
         }
     }
 
+//------------------------------------------------------------------------------
+    //3
     //Approach #3 Using Memorization [Accepted]
     public class Solution03 {
         public boolean canCross(int[] stones) {
@@ -162,6 +169,8 @@ public class _5FrogJump {
         }
     }
 
+//------------------------------------------------------------------------------
+    //4
     //Approach #4 Using Memorization with Binary Search [Accepted]
     public class Solution04 {
         public boolean canCross(int[] stones) {
@@ -195,6 +204,8 @@ public class _5FrogJump {
         }
     }
 
+//------------------------------------------------------------------------------
+    //5
     //Approach #5 Using Dynamic Programming[Accepted]
     public class Solution05 {
         public boolean canCross(int[] stones) {
@@ -218,6 +229,7 @@ public class _5FrogJump {
 
 
 //------------------------------------------------------------------------------
+    //6
     // 9Ch DP
     public boolean canCross(int[] stones) {
 
@@ -255,6 +267,7 @@ public class _5FrogJump {
 
 
 //------------------------------------------------------------------------------
+    //7
     /**
      * @param stones a list of stones' positions in sorted ascending order
      * @return true if the frog is able to cross the river or false
@@ -286,7 +299,6 @@ public class _5FrogJump {
         return !dp.get(stones[stones.length - 1]).isEmpty();
     }
 
-//------------------------------------------------------------------------------
 
 //------------------------------------------------------------------------------
 }
@@ -313,7 +325,8 @@ public class _5FrogJump {
 
 给出石头的位置为 `[0,1,2,3,4,8,9,11]`
 返回 false。青蛙没有办法跳到最后一块石头因为第五块石头跟第六块石头的距离太大了。
- */
+//------------------------------------------------------------------------------
+*/
 
 
 /*
@@ -346,6 +359,5 @@ Given stones = `[0,1,2,3,4,8,9,11]`
 
 Return false. There is no way to jump to the last stone as
 the gap between the 5th and 6th stone is too large.
-
-
- */
+//------------------------------------------------------------------------------
+*/
