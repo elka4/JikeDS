@@ -4,12 +4,25 @@ package _09_Math;
 //  231. Power of Two
 //  https://leetcode.com/problems/power-of-two/description/
 //  Math, Bit Manipulation
-//
+//  3:2  If a number is power of 2, then its highly bit is 1 and there is only one 1. Therefore, n & (n-1) is 0.
+//  2的次方数实在太有特点，最高位为1，其他位均为0
 public class _231_Power_of_Two {
+//-----------------------------------------------------------------------
+    public boolean isPowerOfTwo(int n) {
+        if(n==0) return false;
+        return n == Math.pow(2, Math.round(Math.log(n)/Math.log(2)));
+    }
+
+    class Solution {
+        public boolean isPowerOfTwo(int n) {
+            return (Math.log10(n) / Math.log10(2)) % 1 == 0;
+
+        }
+    }
 //-----------------------------------------------------------------------
     //1
     //Java Solution 1
-    public boolean isPowerOfTwo(int n) {
+    public boolean isPowerOfTwo1(int n) {
         if(n<=0)
             return false;
 
@@ -33,10 +46,12 @@ public class _231_Power_of_Two {
     // Therefore, n & (n-1) is 0.
 
     public boolean isPowerOfTwo2(int n) {
+
         return n>0 && (n&n-1)==0;
     }
+//-----------------------------------------------------------------------
+    //3
     //Java Solution 3
-
     public boolean isPowerOfTwo3(int n) {
         return n>0 && n==Math.pow(2, Math.round(Math.log(n)/Math.log(2)));
         //In this solution, the Math.round() method rounds up the number.

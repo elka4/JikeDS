@@ -1,4 +1,4 @@
-package HF.HF_extra;
+package _10_DS.UF;
 import java.util.*;
 
 //  629. 最小生成树

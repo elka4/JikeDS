@@ -1,6 +1,13 @@
 package HF.HF_bit;
 
+
+
+//
+//
+//
 public class _05FlipBits {
+//------------------------------------------------------------------------------
+
     /**
      *@param a, b: Two integer
      *return: An integer
@@ -13,7 +20,7 @@ public class _05FlipBits {
         }
         return count;
     }
-//-----------------------------------------------------------///?????
+//------------------------------------------------------------------------------
 
     /**
      *@param a, b: Two integer
@@ -32,6 +39,8 @@ public class _05FlipBits {
         // write your code here
         return countOnes(a ^ b);
     }
+//------------------------------------------------------------------------------
+
 }
 /*
 Determine the number of bits required to flip if you want to convert integer n to integer m.

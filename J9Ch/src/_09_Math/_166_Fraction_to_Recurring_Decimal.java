@@ -4,23 +4,52 @@ import java.util.*;
 
 //  166. Fraction to Recurring Decimal
 //  https://leetcode.com/problems/fraction-to-recurring-decimal/description/
-//
+//  Hash Map, Math
+//  4:
 //
 public class _166_Fraction_to_Recurring_Decimal {
 //-----------------------------------------------------------------------
-
-    public int trailingZeroes(int n) {
-        if (n < 0)
-            return -1;
-
-        int count = 0;
-        for (long i = 5; n / i >= 1; i *= 5) {
-            count += n / i;
+    //1
+    //https://leetcode.com/problems/fraction-to-recurring-decimal/solution/
+    //Approach #1 (Long Division) [Accepted]
+    class Solution1{
+        public String fractionToDecimal(int numerator, int denominator) {
+            if (numerator == 0) {
+                return "0";
+            }
+            StringBuilder fraction = new StringBuilder();
+            // If either one is negative (not both)
+            if (numerator < 0 ^ denominator < 0) {
+                fraction.append("-");
+            }
+            // Convert to Long or else abs(-2147483648) overflows
+            long dividend = Math.abs(Long.valueOf(numerator));
+            long divisor = Math.abs(Long.valueOf(denominator));
+            fraction.append(String.valueOf(dividend / divisor));
+            long remainder = dividend % divisor;
+            if (remainder == 0) {
+                return fraction.toString();
+            }
+            fraction.append(".");
+            Map<Long, Integer> map = new HashMap<>();
+            while (remainder != 0) {
+                if (map.containsKey(remainder)) {
+                    fraction.insert(map.get(remainder), "(");
+                    fraction.append(")");
+                    break;
+                }
+                map.put(remainder, fraction.length());
+                remainder *= 10;
+                fraction.append(String.valueOf(remainder / divisor));
+                remainder %= divisor;
+            }
+            return fraction.toString();
         }
-
-        return count;
     }
+
+
 //-----------------------------------------------------------------------
+    //2
 /*My clean Java solution
     The important thing is to consider all edge cases while thinking this problem through, including: negative integer, possible overflow, etc.
 
@@ -69,6 +98,7 @@ public class _166_Fraction_to_Recurring_Decimal {
     }
 
 //-----------------------------------------------------------------------
+    //3
     //Short Java solution
     class Solution3 {
         public String fractionToDecimal(int numerator, int denominator) {
@@ -97,6 +127,7 @@ public class _166_Fraction_to_Recurring_Decimal {
 
 
 //-----------------------------------------------------------------------
+    //4
 /*Accepted Clean Java Solution
     I don't understand why so many people tends to write "short" java solutions over "clear" java solution when performance stays the same.
     In order to be a good teammate, one should always write clean code instead of hacky code if performance stays the same.*/

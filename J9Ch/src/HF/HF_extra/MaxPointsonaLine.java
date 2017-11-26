@@ -1,11 +1,14 @@
 package HF.HF_extra;
-
 import org.junit.Test;
 
 import java.util.*;
 
 // Max Points on a Line
+//
+//
+//
 public class MaxPointsonaLine {
+//------------------------------------------------------------------------------
 
     class Point {
       int x;

@@ -1,6 +1,11 @@
 package HF.HF_bit;
 
+
+//
+//
+//
 public class _01UpdateBits {
+//------------------------------------------------------------------------------
     /**
      *@param n, m: Two integer
      *@param i, j: Two bit positions
@@ -27,10 +32,17 @@ public class _01UpdateBits {
         // Clear i through j, then put m in there
         return ((n & mask) | (m << i));
     }
+//------------------------------------------------------------------------------
 
     public int updateBits2(int n, int m, int i, int j) {
         return ((~((((-1) << (31 - j)) >>> (31 - j + i)) << i)) & n) | (m << i);
     }
+//------------------------------------------------------------------------------
+
+
+
+//------------------------------------------------------------------------------
+
 }
 /*
 Given two 32-bit numbers, N and M, and two bit positions, i and j. Write a method to set all bits between i and j in N equal to M (e g , M becomes a substring of N located at i and starting at j)

@@ -1,6 +1,12 @@
 package HF.HF_bit;
 
+
+//
+//
+//
 public class _04Count1_inBinary {
+//------------------------------------------------------------------------------
+
     /**
      * @param num: an integer
      * @return: an integer, the number of ones in num
@@ -13,6 +19,7 @@ public class _04Count1_inBinary {
         }
         return count;
     }
+//------------------------------------------------------------------------------
 
 }
 /*

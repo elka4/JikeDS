@@ -1,6 +1,12 @@
 package HF.HF_bit;
 
+
+//
+//
+//
 public class _02AB_Problem {
+//------------------------------------------------------------------------------
+
     /*
          * param a: The first integer
          * param b: The second integer
@@ -42,6 +48,7 @@ public class _02AB_Problem {
         }
         return a;
     }
+//------------------------------------------------------------------------------
 
 }
 /*

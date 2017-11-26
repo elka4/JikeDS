@@ -1,6 +1,12 @@
 package HF.HF_bit;
 
+
+//
+//
+//
 public class _03O1_CheckPowerof2 {
+//------------------------------------------------------------------------------
+
     /*
          * @param n: An integer
          * @return: True or false

@@ -1,6 +1,12 @@
 package HF.HF_bit;
 
+
+//
+//
+//
 public class _07SingleNumber {
+//------------------------------------------------------------------------------
+
     public int singleNumber(int[] A) {
         if(A == null || A.length == 0) {
             return -1;
@@ -12,6 +18,7 @@ public class _07SingleNumber {
         return rst;
     }
 
+//------------------------------------------------------------------------------
 
     public int singleNumber2(int[] nums) {
         int result = 0, n = nums.length;
@@ -21,6 +28,8 @@ public class _07SingleNumber {
         }
         return result;
     }
+//------------------------------------------------------------------------------
+
 }
 /*
 Given 2*n + 1 numbers, every numbers occurs twice except one, find it.

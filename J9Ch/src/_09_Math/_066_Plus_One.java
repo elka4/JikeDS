@@ -7,7 +7,7 @@ package _09_Math;
 //  _043_Multiply_Strings
 //  Add Binary
 //  Plus One Linked List
-//  5:
+//  4:3
 public class _066_Plus_One {
 //-----------------------------------------------------------------------
     //1
@@ -73,8 +73,8 @@ public class _066_Plus_One {
     //My Simple Java Solution
     class Solution4{
         public int[] plusOne(int[] digits) {
-
             int n = digits.length;
+
             for(int i=n-1; i>=0; i--) {
                 if(digits[i] < 9) {
                     digits[i]++;

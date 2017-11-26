@@ -2,6 +2,8 @@ package _09_Math;
 
 //  372. Super Pow
 //  https://leetcode.com/problems/super-pow/
+//  Math
+//  Pow()
 //
 public class _372_Super_Pow {
 //-----------------------------------------------------------------------
@@ -10,7 +12,8 @@ public class _372_Super_Pow {
         int result=1;
 
         for(int i=0; i<b.length; i++){
-            result = helper(result, 10)*helper(a, b[i])%1337; // result^10
+            // result^10
+            result = helper(result, 10)*helper(a, b[i])%1337;
         }
 
         return result;

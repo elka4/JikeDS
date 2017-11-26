@@ -6,7 +6,7 @@ package _09_Math;
 //
 public class _357_Count_Numbers_with_Unique_Digits {
 //-----------------------------------------------------------------------
-    //
+    //1
     public class Solution1 {
         public int countNumbersWithUniqueDigits(int n) {
             int[] arr = new int[n+1];
@@ -28,6 +28,7 @@ public class _357_Count_Numbers_with_Unique_Digits {
     }
 
 //-----------------------------------------------------------------------
+    //2
     // 9Ch
     //  solution 1
     //DP Solution
@@ -58,7 +59,7 @@ public class _357_Count_Numbers_with_Unique_Digits {
         }
     }
 //-----------------------------------------------------------------------
-    //
+    //3
     // solution 2
     //Math Method
     public class Solution3 {

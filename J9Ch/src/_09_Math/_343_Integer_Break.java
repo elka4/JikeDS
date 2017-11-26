@@ -7,7 +7,7 @@ package _09_Math;
 //
 public class _343_Integer_Break {
 //-----------------------------------------------------------------------
-
+    //1
     /*
     Java Solution 1 - Dynamic Programming
 
@@ -29,6 +29,7 @@ Let dp[i] to be the max production value for breaking the number i. Since dp[i+j
     }
 
 //-----------------------------------------------------------------------
+    //2
     //Java DP solution
     class Solution2{
         public int integerBreak(int n) {
@@ -83,8 +84,6 @@ Let dp[i] to be the max production value for breaking the number i. Since dp[i+j
             return product;
         }
     }
-//-----------------------------------------------------------------------
-
 
 
 //-----------------------------------------------------------------------

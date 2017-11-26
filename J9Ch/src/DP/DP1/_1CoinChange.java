@@ -147,7 +147,7 @@ f[X] = min{f[X-2]+1, f[X-5]+1, f[X-7]+1}
 
 //  322. Coin Change
 //  https://leetcode.com/problems/coin-change/description/
-//  9:
+//  9:4, 5, 6
 public class _1CoinChange {
 //----------------------------------------------------------------------------
 
@@ -524,7 +524,8 @@ public class _1CoinChange {
 
         if(rem<0) return -1; // not valid
         if(rem==0) return 0; // completed
-        if(count[rem-1] != 0) return count[rem-1]; // already computed, so reuse
+        // already computed, so reuse
+        if(count[rem-1] != 0) return count[rem-1];
         int min = Integer.MAX_VALUE;
 
         for(int coin : coins) {
