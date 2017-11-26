@@ -1,4 +1,4 @@
-package _09_Math.power;
+package _09_Math;
 
 //  372. Super Pow
 //  https://leetcode.com/problems/super-pow/

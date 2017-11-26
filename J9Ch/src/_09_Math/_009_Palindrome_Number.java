@@ -1,8 +1,9 @@
-package _09_Math.mod;
+package _09_Math;
 
 //  9. Palindrome Number
 //  https://leetcode.com/problems/palindrome-number/description/
-//
+//  http://lintcode.com/en/problem/palindrome-number/
+//  3:  1 完全按照String的操作来, 3 照搬_007_Reverse_Integer的method
 public class _009_Palindrome_Number {
 //-----------------------------------------------------------------------
     //1
@@ -125,5 +126,33 @@ Input: 120
 Output: 21
 Note:
 Assume we are dealing with an environment which could only hold integers within the 32-bit signed integer range. For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
+-------------------------------------------------------------------------------------
+ */
+
+
+
+/*
+-------------------------------------------------------------------------------------
+491. 回文数
+
+判断一个正整数是不是回文数。
+
+回文数的定义是，将这个数反转之后，得到的数仍然是同一个数。
+
+ 注意事项
+
+给的数一定保证是32位正整数，但是反转之后的数就未必了。
+
+您在真实的面试中是否遇到过这个题？ Yes
+样例
+11, 121, 1, 12321 这些是回文数。
+
+23, 32, 1232 这些不是回文数。
+
+标签
+字符串处理 整数
+相关题目
+中等 回文链表 29 %
+容易 有效回文串
 -------------------------------------------------------------------------------------
  */

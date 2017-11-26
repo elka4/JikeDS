@@ -1,4 +1,4 @@
-package _09_Math.power;
+package _09_Math;
 
 
 //  231. Power of Two

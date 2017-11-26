@@ -4,12 +4,13 @@ package _09_Math;
 //  https://leetcode.com/problems/plus-one/description/
 //  http://www.lintcode.com/zh-cn/problem/plus-one/
 //  Array, Math
-//  Multiply Strings
+//  _043_Multiply_Strings
 //  Add Binary
 //  Plus One Linked List
+//  5:
 public class _066_Plus_One {
 //-----------------------------------------------------------------------
-
+    //1
     // To solve this problem, we can use a flag to mark if the current digit needs to be changed.
     public int[] plusOne(int[] digits) {
         if(digits==null||digits.length==0)
@@ -37,6 +38,7 @@ public class _066_Plus_One {
         }
     }
 //-----------------------------------------------------------------------
+    //2
     // 9Ch
 
     public class Solution3 {
@@ -67,6 +69,7 @@ public class _066_Plus_One {
 
 
 //-----------------------------------------------------------------------
+    //3
     //My Simple Java Solution
     class Solution4{
         public int[] plusOne(int[] digits) {
@@ -88,6 +91,7 @@ public class _066_Plus_One {
         }
     }
 //-----------------------------------------------------------------------
+    //4
     //Simple java solution
     class Solution5{
         public int[] plusOne(int[] digits) {
@@ -111,13 +115,13 @@ public class _066_Plus_One {
 //-----------------------------------------------------------------------
 
 }
-/*
+/*//-----------------------------------------------------------------------
 LeetCode – Plus One (Java)
 
 Given a non-negative number represented as an array of digits, plus one to the number. The digits are stored such that the most significant digit is at the head of the list.
  */
 
-/*
+/*//-----------------------------------------------------------------------
 407. 加一
 
 给定一个非负数，表示一个数字数组，在该数的基础上+1，返回一个新的数组。

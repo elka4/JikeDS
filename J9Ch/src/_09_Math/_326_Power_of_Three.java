@@ -1,4 +1,4 @@
-package _09_Math.power;
+package _09_Math;
 
 //  326. Power of Three
 //  https://leetcode.com/problems/power-of-three/description/

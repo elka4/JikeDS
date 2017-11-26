@@ -4,12 +4,13 @@ package _09_Math;
 //  43. Multiply Strings
 //  https://leetcode.com/problems/multiply-strings/description/
 //  http://www.lintcode.com/zh-cn/problem/big-integer-multiplication/
-//
+//  4:1
 public class _043_Multiply_Strings {
 //-----------------------------------------------------------------------
     //1
-    //  https://leetcode.com/problems/multiply-strings/discuss/
+    //  https://discuss.leetcode.com/topic/30508/easiest-java-solution-with-graph-explanation
     //Easiest JAVA Solution with Graph Explanation
+    // `num1[i] * num2[j]` will be placed at indices `[i + j`, `i + j + 1]`
     class Solution1{
         public String multiply(String num1, String num2) {
             int m = num1.length(), n = num2.length();
@@ -19,7 +20,7 @@ public class _043_Multiply_Strings {
                 for(int j = n - 1; j >= 0; j--) {
                     int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
                     int p1 = i + j, p2 = i + j + 1;
-                    int sum = mul + pos[p2];
+                    int sum = mul + pos[p2];//pos[p2]放的是carry
 
                     pos[p1] += sum / 10;
                     pos[p2] = (sum) % 10;
@@ -27,7 +28,9 @@ public class _043_Multiply_Strings {
             }
 
             StringBuilder sb = new StringBuilder();
-            for(int p : pos) if(!(sb.length() == 0 && p == 0)) sb.append(p);
+            for(int p : pos)
+                if(!(sb.length() == 0 && p == 0))
+                    sb.append(p);
             return sb.length() == 0 ? "0" : sb.toString();
         }
     }

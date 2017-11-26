@@ -1,4 +1,4 @@
-package _09_Math.power;
+package _09_Math;
 
 //  342. Power of Four
 //  https://leetcode.com/problems/power-of-four/description/
