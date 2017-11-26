@@ -1,9 +1,17 @@
 package HF.HF5_Math_Graphic_Bit_2Calc;
-
 import org.junit.Test;
 
 //  Big Integer Addition
+//
+//  415. Add Strings
+//  https://leetcode.com/problems/add-strings/description/
+//  2:
+//  Math
+//  2. Add Two Numbers - LinkedList
+//  43. Multiply Strings - String
 public class _1BigIntegerAddition {
+//-------------------------------------------------------------------------------
+    //1
     /**
      * @param num1 a non-negative integers
      * @param num2 a non-negative integers
@@ -37,8 +45,7 @@ public class _1BigIntegerAddition {
     }
 
 //-------------------------------------------------------------------------------
-
-
+    //2
     // version: 高频题班
     /**
      * @param num1 a non-negative integers
@@ -46,7 +53,6 @@ public class _1BigIntegerAddition {
      * @return return sum of num1 and num2
      */
     public String addStrings2(String num1, String num2) {
-        // Write your code here
         String ans = "";
 
         int carry = 0;
@@ -75,7 +81,6 @@ public class _1BigIntegerAddition {
 
 
 //-------------------------------------------------------------------------------
-
 }
 /*
 Given two non-negative integers num1 and num2 represented as string, return the sum of num1 and num2.

@@ -1,73 +1,93 @@
 package HF.HF5_Math_Graphic_Bit_2Calc;
-
 import lib.*;
 import org.junit.Test;
 
-//  Add Two Numbers
+//  2. Add Two Numbers
+//  https://leetcode.com/problems/add-two-numbers/description/
+//  3:
 public class _3AddTwoNumbers {
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        if(l1 == null && l2 == null) {
-            return null;
+//------------------------------------------------------------------------------
+    //https://leetcode.com/problems/add-two-numbers/solution/
+//------------------------------------------------------------------------------
+    //1
+    class Solution1{
+        public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+            ListNode dummyHead = new ListNode(0);
+            ListNode p = l1, q = l2, curr = dummyHead;
+            int carry = 0;
+            while (p != null || q != null) {
+                int x = (p != null) ? p.val : 0;
+                int y = (q != null) ? q.val : 0;
+                int sum = carry + x + y;
+                carry = sum / 10;
+                curr.next = new ListNode(sum % 10);
+                curr = curr.next;
+                if (p != null) p = p.next;
+                if (q != null) q = q.next;
+            }
+            if (carry > 0) {
+                curr.next = new ListNode(carry);
+            }
+            return dummyHead.next;
         }
-
-        ListNode head = new ListNode(0);
-        ListNode point = head;
-        int carry = 0;
-        while(l1 != null && l2!=null){
-            int sum = carry + l1.val + l2.val;
-            point.next = new ListNode(sum % 10);
-            carry = sum / 10;
-            l1 = l1.next;
-            l2 = l2.next;
-            point = point.next;
-        }
-
-        while(l1 != null) {
-            int sum =  carry + l1.val;
-            point.next = new ListNode(sum % 10);
-            carry = sum /10;
-            l1 = l1.next;
-            point = point.next;
-        }
-
-        while(l2 != null) {
-            int sum =  carry + l2.val;
-            point.next = new ListNode(sum % 10);
-            carry = sum /10;
-            l2 = l2.next;
-            point = point.next;
-        }
-
-        if (carry != 0) {
-            point.next = new ListNode(carry);
-        }
-        return head.next;
     }
+//------------------------------------------------------------------------------
+    //2
+    class Solution2{
+        public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+            if(l1 == null && l2 == null) {
+                return null;
+            }
+
+            ListNode head = new ListNode(0);
+            ListNode point = head;
+            int carry = 0;
+            while(l1 != null && l2!=null){
+                int sum = carry + l1.val + l2.val;
+                point.next = new ListNode(sum % 10);
+                carry = sum / 10;
+                l1 = l1.next;
+                l2 = l2.next;
+                point = point.next;
+            }
+
+            while(l1 != null) {
+                int sum =  carry + l1.val;
+                point.next = new ListNode(sum % 10);
+                carry = sum /10;
+                l1 = l1.next;
+                point = point.next;
+            }
+
+            while(l2 != null) {
+                int sum =  carry + l2.val;
+                point.next = new ListNode(sum % 10);
+                carry = sum /10;
+                l2 = l2.next;
+                point = point.next;
+            }
+
+            if (carry != 0) {
+                point.next = new ListNode(carry);
+            }
+            return head.next;
+        }
+    }
+
 
     @Test
     public void test01(){
-//        给出两个链表 3->1->5->null 和 5->9->2->null，返回 8->0->8->null
-
-
+        //给出两个链表 3->1->5->null 和 5->9->2->null，返回 8->0->8->null
         ListNode l1 = ListNode.create(new int[]{3,1,5});
         l1.print();
-
         ListNode l2 = ListNode.create(new int[]{5,9,2});
         l2.print();
-
-        addTwoNumbers(l1, l2).print();
-
+        new Solution2().addTwoNumbers(l1, l2).print();
     }
 
 //------------------------------------------------------------------------------
-
-
+    //3
     // version: 高频题班
-    /**
-     * @param l1: the first list
-     * @param l2: the second list
-     * @return: the sum list of l1 and l2
-     */
     public ListNode addLists(ListNode l1, ListNode l2) {
         // write your code here
         ListNode dummy = new ListNode(0);
@@ -95,21 +115,16 @@ public class _3AddTwoNumbers {
 
     @Test
     public void test02(){
-//        给出两个链表 3->1->5->null 和 5->9->2->null，返回 8->0->8->null
-
-
+        //给出两个链表 3->1->5->null 和 5->9->2->null，返回 8->0->8->null
         ListNode l1 = ListNode.create(new int[]{3,1,5});
         l1.print();
 
         ListNode l2 = ListNode.create(new int[]{5,9,2});
         l2.print();
-
         addLists(l1, l2).print();
-
     }
 
 //------------------------------------------------------------------------------
-
 }
 
 /*

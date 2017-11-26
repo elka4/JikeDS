@@ -1,30 +1,23 @@
 package _09_Math.mod;
 
+//  7. Reverse Integer
+//  https://leetcode.com/problems/reverse-integer/description/
+//
+public class _007_Reverse_Integer {
+//-----------------------------------------------------------------------
+    //1
 /*
-LeetCode – Reverse Integer
-
-LeetCode - Reverse Integer:
-
-Reverse digits of an integer.
-Example1: x = 123, return 321
-Example2: x = -123, return -321
-
-
-
-
- */
-public class Reverse_Integer {
-    /*
-    1. Naive Method
+1. Naive Method
 
 We can convert the integer to a string/char array, reverse the order, and convert the string/char array back to an integer. However, this will require extra space for the string. It doesn't seem to be the right way, if you come with such a solution.
-     */
-
+*/
+//-----------------------------------------------------------------------
+    //2
     /*
     2. Efficient Approach
 
     Actually, this can be done by using the following code.
-     */
+    */
     public int reverse(int x) {
         //flag marks if x is negative
         boolean flag = false;
@@ -48,12 +41,13 @@ We can convert the integer to a string/char array, reverse the order, and conver
 
         return res;
     }
-
+//-----------------------------------------------------------------------
+    //3
     /*
     3. Succinct Solution
 
-This solution is from Sherry, it is succinct and it is pretty.
-     */
+    This solution is from Sherry, it is succinct and it is pretty.
+    */
     public int reverse2(int x) {
         int rev = 0;
         while(x != 0){
@@ -64,5 +58,14 @@ This solution is from Sherry, it is succinct and it is pretty.
         return rev;
     }
 
-
+//-----------------------------------------------------------------------
 }
+/*
+LeetCode – Reverse Integer
+
+LeetCode - Reverse Integer:
+
+Reverse digits of an integer.
+Example1: x = 123, return 321
+Example2: x = -123, return -321
+ */

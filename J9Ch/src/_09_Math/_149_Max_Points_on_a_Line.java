@@ -1,16 +1,13 @@
 package _09_Math;
-
 import java.util.HashMap;
-/*
-LeetCode – Max Points on a Line (Java)
 
-Given n points on a 2D plane, find the maximum number of points that lie on the same straight line.
+//  149. Max Points on a Line
+//  https://leetcode.com/problems/max-points-on-a-line/description/
+//  Hash Table, Math
+//  Line Reflection
+public class _149_Max_Points_on_a_Line {
+//-----------------------------------------------------------------------
 
-Analysis
-
-This problem can be solve by counting points that have the same slope for each point. When counting, we need to be careful about the duplicate points and points on the vertical lines.
- */
-public class Max_Points_on_a_Line {
     class Point{
         int x;
         int y;
@@ -58,4 +55,20 @@ public class Max_Points_on_a_Line {
 
         return max;
     }
+//-----------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------
 }
+/*
+LeetCode – Max Points on a Line (Java)
+
+Given n points on a 2D plane, find the maximum number of points that lie on the same straight line.
+
+Analysis
+
+This problem can be solve by counting points that have the same slope for each point. When counting, we need to be careful about the duplicate points and points on the vertical lines.
+ */
