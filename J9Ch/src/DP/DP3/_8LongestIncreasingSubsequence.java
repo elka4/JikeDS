@@ -60,11 +60,38 @@ a[j] > a[i]
 */
 
 
+
+
 //  300. Longest Increasing Subsequence
 //  https://leetcode.com/problems/longest-increasing-subsequence/description/
 //  http://www.lintcode.com/zh-cn/problem/longest-increasing-subsequence/
-//  8:
+//  8:7
 public class _8LongestIncreasingSubsequence {
+//-----------------------------------------------------------------------------
+    //7
+    //重写九章给的算法，首先把ij互换
+    public int longestIncreasingSubsequence_J1(int[] nums) {
+        int n = nums.length;
+        if (n == 0) return 0;
+        int[] f = new int[n];//f[i]: 以f[i]结尾的最长上升子序列的长度
+        int result = 0;
+
+        //j指向的是前面的数字，i指向的是后面的数字
+        for (int i = 0; i < n; i++) {
+            f[i] = 1;                       //init:至少可以取一个字母
+            for (int j = 0; j < i; j++) {   //从头到尾算一遍看要不要update f[i]
+                if (nums[j] < nums[i]) {//前面的比后面小，就是满足Increasing
+                    //f[i]：不取nums[j]；
+                    //f[j] + 1：取nums[j]， 而nums[j] < nums[i]， nums[i]指的是1
+                    f[i] = Math.max(f[i], f[j] + 1);
+                }
+                //f[i] = Math.max(f[i], nums[j] < nums[i] ? f[j] + 1: f[i]);
+            }
+            result = Math.max(result, f[i]);
+        }
+        return  result;
+    }
+
 //-----------------------------------------------------------------------------
     //https://leetcode.com/problems/longest-increasing-subsequence/solution/
 //-----------------------------------------------------------------------------
@@ -228,34 +255,6 @@ public class _8LongestIncreasingSubsequence {
         int[] B = {4,2,4,5,3,7};
         System.out.println(longestIncreasingSubsequence(A));
         System.out.println(longestIncreasingSubsequence(B));
-    }
-//-----------------------------------------------------------------------------
-    //7
-    //重写九章给的算法，首先把ij互换
-    public int longestIncreasingSubsequence_J1(int[] nums) {
-        int n = nums.length;
-        if (n == 0) {
-            return 0;
-        }
-
-        int[] f = new int[n];
-        int res = 0;
-
-        for (int i = 0; i < n; i++) {
-            //case 1
-            f[i] = 1;
-
-            //case 2
-            for (int j = 0; j < i; j++) {
-                if (nums[j] < nums[i]) {     //j指向的是前面的数字，i指向的是后面的数字
-                    //f[j]: 以f[j]结尾的最长上升子序列的长度
-                    //f[i]：不取nums[j]； f[j] + 1：取nums[j]， 而nums[j] < nums[i]， nums[i]指的是1
-                    f[i] = Math.max(f[i], f[j] + 1);
-                }
-            }
-            res = Math.max(res, f[i]);
-        }
-        return  res;
     }
 
 

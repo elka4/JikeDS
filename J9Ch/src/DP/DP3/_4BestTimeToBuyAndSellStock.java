@@ -38,11 +38,34 @@ LintCode 149 Best Time to Buy and Sell Stock
 //  121. Best Time to Buy and Sell Stock
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock/
-//  5:
+//  5:5
 public class _4BestTimeToBuyAndSellStock {
+//------------------------------------------------------------------------------
     //https://leetcode.com/problems/best-time-to-buy-and-sell-stock/solution/
 //------------------------------------------------------------------------------
     //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
+
+//------------------------------------------------------------------------------
+    //5
+    //mine 反正就是每轮先update min，在用这个min去update profit
+    public class Solution05 {
+        public int maxProfit(int[] prices) {
+            if (prices == null || prices.length == 0) {
+                return 0;
+            }
+
+            int min = Integer.MAX_VALUE;
+            int profit = 0;
+
+            for (int price : prices) {
+                min = Math.min(min, price);
+                profit = Math.max(profit, price - min);
+            }
+
+            return profit;
+        }
+    }
+
 
 //------------------------------------------------------------------------------
     //1
@@ -80,57 +103,43 @@ public class _4BestTimeToBuyAndSellStock {
 //------------------------------------------------------------------------------
     //3
     // 9Ch
-    public int maxProfit1(int prices[]) {
-        int minprice = Integer.MAX_VALUE;
-        int maxprofit = 0;
+    public class Solution03 {
+        public int maxProfit(int prices[]) {
+            int minprice = Integer.MAX_VALUE;
+            int maxprofit = 0;
 
-        for (int i = 0; i < prices.length; i++) {
+            for (int i = 0; i < prices.length; i++) {
 
-            if (prices[i] < minprice)
-                minprice = prices[i];
-                //如果当前股价prices[i]是最小，那么肯定不会update maxprofit
-            else if (prices[i] - minprice > maxprofit)
-                maxprofit = prices[i] - minprice;
+                if (prices[i] < minprice)
+                    minprice = prices[i];
+                    //如果当前股价prices[i]是最小，那么肯定不会update maxprofit
+                else if (prices[i] - minprice > maxprofit)
+                    maxprofit = prices[i] - minprice;
+            }
+            return maxprofit;
         }
-        return maxprofit;
     }
+
 
 //-------------------------------------------------------------------------------
     //4
     // 9Ch
-    public int maxProfit2(int[] prices) {
-        if (prices == null || prices.length == 0) {
-            return 0;
+    public class Solution04 {
+        public int maxProfit(int[] prices) {
+            if (prices == null || prices.length == 0) {
+                return 0;
+            }
+            int min = Integer.MAX_VALUE;  //just remember the smallest price
+            int profit = 0;
+
+            for (int i : prices) {
+                min = i < min ? i : min;
+                profit = (i - min) > profit ? i - min : profit;
+            }
+            return profit;
         }
-
-        int min = Integer.MAX_VALUE;  //just remember the smallest price
-        int profit = 0;
-
-        for (int i : prices) {
-            min = i < min ? i : min;
-            profit = (i - min) > profit ? i - min : profit;
-        }
-
-        return profit;
     }
-//------------------------------------------------------------------------------
-    //5
-    //mine
-    public int maxProfit3(int[] prices) {
-        if (prices == null || prices.length == 0) {
-            return 0;
-        }
 
-        int min = Integer.MAX_VALUE;
-        int profit = 0;
-
-        for (int price : prices) {
-            min = Math.min(min, price);
-            profit = Math.max(profit, price - min);
-        }
-
-        return profit;
-    }
 //------------------------------------------------------------------------------
 }
 

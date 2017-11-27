@@ -20,10 +20,25 @@ LintCode 150 Best Time to Buy and Sell Stock II
 //  122. Best Time to Buy and Sell Stock II
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-ii/
-//  5:
+//  5:3
 public class _5BestTimeToBuyAndSellStockII {
-    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/solution/
+//------------------------------------------------------------------------------
+    //3
+    //Approach #3 (Simple One Pass) [Accepted]
+    //最好的做法，和下面九章做法类似，关键在于一维数组坐标的熟练操作
+    //每步计算当前price和上一个price的差就是profit，将这个profit加到结果里
+    public int maxProfit03(int[] prices) {
+        int maxprofit = 0;
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] > prices[i - 1])
+                maxprofit += prices[i] - prices[i - 1];
+        }
+        return maxprofit;
+    }
 
+//------------------------------------------------------------------------------
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/solution/
+//------------------------------------------------------------------------------
     //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 //------------------------------------------------------------------------------
     //1
@@ -66,19 +81,6 @@ public class _5BestTimeToBuyAndSellStockII {
                 i++;
             peak = prices[i];
             maxprofit += peak - valley;
-        }
-        return maxprofit;
-    }
-
-//------------------------------------------------------------------------------
-    //3
-    //Approach #3 (Simple One Pass) [Accepted]
-    //最好的做法，和下面九章做法类似，关键在于一维数组坐标的熟练操作
-    public int maxProfit03(int[] prices) {
-        int maxprofit = 0;
-        for (int i = 1; i < prices.length; i++) {
-            if (prices[i] > prices[i - 1])
-                maxprofit += prices[i] - prices[i - 1];
         }
         return maxprofit;
     }

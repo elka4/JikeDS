@@ -101,15 +101,37 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
 
 // 2次交易
 
-
 //  123. Best Time to Buy and Sell Stock III
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-iii/
-//  9:
+//  9:2
 public class _6BestTimeToBuyAndSellStockIII {
 //------------------------------------------------------------------------------
-
     //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
+//------------------------------------------------------------------------------
+    //2
+    //这方法真好啊
+    //初始值很重要
+    //-price的意思就是买了股票
+    //+ price的意思就是要卖股票
+    public int maxProfit011(int[] prices) {
+        int hold1 = Integer.MIN_VALUE, hold2 = Integer.MIN_VALUE;
+        int release1 = 0, release2 = 0;
+
+        for(int price : prices){                              // Assume we only have 0 money at first
+
+            hold1    = Math.max(hold1,    -price);            // The maximum if we've just buy  1st stock so far.
+
+            release1 = Math.max(release1, hold1 + price);     // The maximum if we've just sold 1nd stock so far.
+
+            hold2    = Math.max(hold2,    release1 - price);  // The maximum if we've just buy  2nd stock so far.
+
+            release2 = Math.max(release2, hold2 + price);     // The maximum if we've just sold 2nd stock so far.
+        }
+
+        return release2; ///Since release1 is initiated as 0, so release2 will always higher than release1.
+    }
+
 
 //------------------------------------------------------------------------------
     //1
@@ -142,27 +164,6 @@ Very simple code too and work well. I have to say the logic is simple than those
         return release2; ///Since release1 is initiated as 0, so release2 will always higher than release1.
     }
 
-//------------------------------------------------------------------------------
-    //2
-    //这方法真好啊
-    //初始值很重要
-    public int maxProfit011(int[] prices) {
-        int hold1 = Integer.MIN_VALUE, hold2 = Integer.MIN_VALUE;
-        int release1 = 0, release2 = 0;
-
-        for(int price:prices){                              // Assume we only have 0 money at first
-
-            hold1    = Math.max(hold1,    -price);            // The maximum if we've just buy  1st stock so far.
-
-            release1 = Math.max(release1, hold1 + price);     // The maximum if we've just sold 1nd stock so far.
-
-            hold2    = Math.max(hold2,    release1 - price);  // The maximum if we've just buy  2nd stock so far.
-
-            release2 = Math.max(release2, hold2 + price);     // The maximum if we've just sold 2nd stock so far.
-        }
-
-        return release2; ///Since release1 is initiated as 0, so release2 will always higher than release1.
-    }
 
 //------------------------------------------------------------------------------
     //3

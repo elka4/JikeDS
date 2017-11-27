@@ -62,11 +62,14 @@ f[i-1][j-2] + Pi-1 – Pi-2: 昨天持有上一次买的股票， 今天卖出�
 */
 
 
+
+//  k 笔交易
 //  188. Best Time to Buy and Sell Stock IV
 //  https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/description/
 //  http://lintcode.com/zh-cn/problem/best-time-to-buy-and-sell-stock-iv/
 //  8:
 public class _7BestTimeToBuyAndSellStockIV {
+//-----------------------------------------------------------------------------
 
     //https://discuss.leetcode.com/topic/107998/most-consistent-ways-of-dealing-with-the-series-of-stock-problems
 
@@ -74,9 +77,9 @@ public class _7BestTimeToBuyAndSellStockIV {
     //1
 /*    A Concise DP Solution in Java
 
-    The general idea is DP, while I had to add a "quickSolve" function to tackle some corner cases to avoid TLE.
+The general idea is DP, while I had to add a "quickSolve" function to tackle some corner cases to avoid TLE.
 
-            DP: t(i,j) is the max profit for up to i transactions by time j (0<=i<=K, 0<=j<=T).*/
+DP: t(i,j) is the max profit for up to i transactions by time j (0<=i<=K, 0<=j<=T).*/
 
     public int maxProfit01(int k, int[] prices) {
         int len = prices.length;

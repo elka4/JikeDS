@@ -24,12 +24,153 @@ A[i][j]:    格子（i，j）的数字
 -----------------------------------------------------------------------------------------------
  */
 
-
+//• 坐标型动态规划
 //  lint 110. Minimum Path Sum
 //  64. Minimum Path Sum
 //  https://leetcode.com/problems/minimum-path-sum/description/
-//  11:
+//  11: 10 边界情况分开处理, 5 边界一起处理, 6 mod, 7 now old, 8 一维数组牛逼
 public class _5MinimumPathSum {
+
+//------------------------------------------------------------------------------
+    //10
+    //这个最简单明了，把顶点和两条边界处理分离出来
+    public int minPathSum1(int[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+
+        int M = grid.length;
+        int N = grid[0].length;
+        int[][] sum = new int[M][N];
+
+        sum[0][0] = grid[0][0];
+
+        for (int i = 1; i < M; i++) {
+            sum[i][0] = sum[i - 1][0] + grid[i][0];
+        }
+
+        for (int i = 1; i < N; i++) {
+            sum[0][i] = sum[0][i - 1] + grid[0][i];
+        }
+
+        for (int i = 1; i < M; i++) {
+            for (int j = 1; j < N; j++) {
+                sum[i][j] = Math.min(sum[i - 1][j], sum[i][j - 1]) + grid[i][j];
+            }
+        }
+
+        return sum[M - 1][N - 1];
+    }
+//-----------------------------------------------------------------------------
+    //5
+    public int minPathSum11(int[][] grid) {
+        //leetcode不需要这个
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+
+        int M = grid.length;
+        int N = grid[0].length;
+        int[][] sum = new int[M][N];
+
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
+                if (i == 0 && j == 0) {
+                    sum[0][0] = grid[i][j];
+                } else if (i == 0) {
+                    sum[0][j] = grid[i][j] + sum[i][j - 1];
+                } else if (j == 0) {
+                    sum[i][0] = grid[i][j] + sum[i - 1][j];
+                } else {
+                    sum[i][j] = grid[i][j] + Math.min(sum[i - 1][j], sum[i][j - 1]);
+                }
+            }
+        }
+        return sum[M - 1][N - 1];
+    }
+//----------------------------------------------------------------------------
+    //6
+    // mod
+    public int minPathSum111 (int[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+
+        int M = grid.length;
+        int N = grid[0].length;
+        int[][] sum = new int[2][N];
+
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
+                if (i == 0 && j == 0) {
+                    sum[0][0] = grid[i][j];
+                } else if (i == 0) {
+                    sum[0][j] =  grid[i][j] + sum[0][j - 1];
+                } else if (j == 0) {
+                    sum[i % 2][0] = grid[i][j] + sum[(i - 1) % 2][0];
+                } else {
+                    sum[i % 2][j] = grid[i][j] + Math.min(sum[(i - 1) % 2][j], sum[i % 2][j - 1]);
+                }
+            }
+        }
+        return sum[(M - 1) % 2][N - 1];
+    }
+//----------------------------------------------------------------------------
+    //7
+    //old now
+    public int minPathSum1111 (int[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+
+        int M = grid.length;
+        int N = grid[0].length;
+        int[][] sum = new int[2][N];
+        int old = 0;
+        int now = 1;
+
+        for (int i = 0; i < M; i++) {
+            old = now;      //old is row i - 1
+            now = 1 - old; //now is row i
+            for (int j = 0; j < N; j++) {
+                if (i == 0 && j == 0) {
+                    sum[0][0] = grid[i][j];
+                } else if (i == 0) {
+                    sum[0][j] = grid[i][j] + sum[0][j - 1];
+                } else if (j == 0) {
+                    sum[now][0] =  grid[i][j] + sum[old][0];
+                } else {
+                    sum[now][j] = grid[i][j] + Math.min(sum[old][j], sum[now][j - 1]);
+                }
+            }
+        }
+        return sum[now][N - 1];
+    }
+//----------------------------------------------------------------------------
+    //8
+    //单行dp， 这个最牛逼
+    public int minPathSum11111(int[][] grid) {
+        int M = grid.length;
+        int N = grid[0].length;
+        int[] sum = new int[N];//行
+
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
+                if (i == 0 && j == 0) {
+                    sum[j] = grid[i][j];
+                } else if (i == 0) {                //第一行
+                    sum[j] = sum[j - 1] + grid[i][j];//左边的sum + 当前的grid
+                } else if (j == 0) {                //第一列
+                    sum[j] = sum[j] + grid[i][j];   //也就是sum[0] + grid[i][j]， sum[0]这个值是从上到下不断变化的
+                } else {
+                    //从上到下算下来的sum[j]和从左到右算出来的sum[j - 1]中的最小值
+                    sum[j] = Math.min(sum[j], sum[j - 1]) + grid[i][j];
+                }
+            }
+        }
+        return sum[N - 1];
+    }
+
 //----------------------------------------------------------------------------
     //1
     // https://leetcode.com/articles/minimum-path-sum/
@@ -115,119 +256,9 @@ public class _5MinimumPathSum {
         return grid[0][0];
     }
 
-
-//-----------------------------------------------------------------------------
-    //5
-    public int minPathSum11(int[][] grid) {
-        //leetcode不需要这个
-        if (grid == null || grid.length == 0 || grid[0].length == 0) {
-            return 0;
-        }
-
-        int M = grid.length;
-        int N = grid[0].length;
-        int[][] sum = new int[M][N];
-
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
-                if (i == 0 && j == 0) {
-                    sum[0][0] = grid[i][j];
-                } else if (i == 0) {
-                    sum[0][j] = grid[i][j] + sum[i][j - 1];
-                } else if (j == 0) {
-                    sum[i][0] = grid[i][j] + sum[i - 1][j];
-                } else {
-                    sum[i][j] = grid[i][j] + Math.min(sum[i - 1][j], sum[i][j - 1]);
-                }
-            }
-        }
-        return sum[M - 1][N - 1];
-    }
 //----------------------------------------------------------------------------
-    //6
-    // mod
-    public int minPathSum111 (int[][] grid) {
-        if (grid == null || grid.length == 0 || grid[0].length == 0) {
-            return 0;
-        }
-
-        int M = grid.length;
-        int N = grid[0].length;
-        int[][] sum = new int[2][N];
-
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
-                if (i == 0 && j == 0) {
-                    sum[0][0] = grid[i][j];
-                } else if (i == 0) {
-                    sum[0][j] =  grid[i][j] + sum[0][j - 1];
-                } else if (j == 0) {
-                    sum[i % 2][0] = grid[i][j] + sum[(i - 1) % 2][0];
-                } else {
-                    sum[i % 2][j] = grid[i][j] + Math.min(sum[(i - 1) % 2][j], sum[i % 2][j - 1]);
-                }
-            }
-        }
-        return sum[(M - 1) % 2][N - 1];
-    }
-//----------------------------------------------------------------------------
-    //7
-    //old now
-    public int minPathSum1111 (int[][] grid) {
-        if (grid == null || grid.length == 0 || grid[0].length == 0) {
-            return 0;
-        }
-
-        int M = grid.length;
-        int N = grid[0].length;
-        int[][] sum = new int[2][N];
-        int old = 0;
-        int now = 1;
-
-        for (int i = 0; i < M; i++) {
-            old = now;
-            now = 1 - old;
-            for (int j = 0; j < N; j++) {
-                if (i == 0 && j == 0) {
-                    sum[0][0] = grid[i][j];
-                } else if (i == 0) {
-                    sum[0][j] = grid[i][j] + sum[0][j - 1];
-                } else if (j == 0) {
-                    sum[now][0] =  grid[i][j] + sum[old][0];
-                } else {
-                    sum[now][j] = grid[i][j] + Math.min(sum[old][j], sum[now][j - 1]);
-                }
-            }
-        }
-        return sum[now][N - 1];
-    }
-//----------------------------------------------------------------------------
-    //8
-    //单行dp， 这个最牛逼
-    public int minPathSum11111(int[][] grid) {
-        int M = grid.length;
-        int N = grid[0].length;
-        int[] sum = new int[N];//行
-
-        for (int i = 0; i < M; i++) {
-            for (int j = 0; j < N; j++) {
-                if (i == 0 && j == 0) {
-                    sum[j] = grid[i][j];
-                } else if (i == 0) {                //第一行
-                    sum[j] = sum[j - 1] + grid[i][j];//左边的sum + 当前的grid
-                } else if (j == 0) {                //第一列
-                    sum[j] = sum[j] + grid[i][j];   //也就是sum[0] + grid[i][j]， sum[0]这个值是从上到下不断变化的
-                } else {
-                    //从上到下算下来的sum[j]和从左到右算出来的sum[j - 1]中的最小值
-                    sum[j] = Math.min(sum[j], sum[j - 1]) + grid[i][j];
-                }
-            }
-        }
-        return sum[N - 1];
-    }
-
-//------------------------------------------------------------------------------
     //9
+    // 9Ch DP Video
     // DP 这个不好看
     public int minPathSum(int[][] A) {
         if (A == null || A.length == 0 || A[0].length == 0){
@@ -251,7 +282,6 @@ public class _5MinimumPathSum {
                 f[now][j] = A[i][j];
                 if (i > 0) {
                     t1 = f[old][j];
-
                 } else {
                     t1 = Integer.MAX_VALUE;
                 }
@@ -273,40 +303,11 @@ public class _5MinimumPathSum {
         return f[now][n - 1];
     }
 
-//------------------------------------------------------------------------------
-    //10
-    //这个最简单明了，把顶点和两条边界处理分离出来
-    public int minPathSum1(int[][] grid) {
-        if (grid == null || grid.length == 0 || grid[0].length == 0) {
-            return 0;
-        }
-
-        int M = grid.length;
-        int N = grid[0].length;
-        int[][] sum = new int[M][N];
-
-        sum[0][0] = grid[0][0];
-
-        for (int i = 1; i < M; i++) {
-            sum[i][0] = sum[i - 1][0] + grid[i][0];
-        }
-
-        for (int i = 1; i < N; i++) {
-            sum[0][i] = sum[0][i - 1] + grid[0][i];
-        }
-
-        for (int i = 1; i < M; i++) {
-            for (int j = 1; j < N; j++) {
-                sum[i][j] = Math.min(sum[i - 1][j], sum[i][j - 1]) + grid[i][j];
-            }
-        }
-
-        return sum[M - 1][N - 1];
-    }
 
 
 //------------------------------------------------------------------------------
     //11
+    // 9Ch
     // 方法二
     /**
      * @param A: a list of lists of integers.

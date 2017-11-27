@@ -29,11 +29,31 @@ f[i-j*j]   i-j*j 最少被分成几个完全平方数之和
 
 
 
+//• 划分型动态规划
 //  279. Perfect Squares
 //  https://leetcode.com/problems/perfect-squares/description/
 //  http://www.lintcode.com/zh-cn/problem/perfect-squares/
-//  11:
+//  11:8
 public class _1PerfectSquares {
+//-------------------------------------------------------------------------------
+    //8
+    //这可能是最好的一个
+    //f[i] = min 1<=j*j<=i {f[i-j*j] + 1}
+    //f[i]        i最少被分成几个完全平方数之和
+    //1<=j*j<=i 最后一个完全平方数是j*j
+    //f[i-j*j]   i-j*j 最少被分成几个完全平方数之和
+    public int numSquares44(int n){
+        int[] f = new int[n + 1];
+        f[0] = 0;
+        for (int i = 1; i <= n; i++) {
+            f[i] = Integer.MAX_VALUE;
+            for (int j = 1; j * j <= i; j++) {
+                f[i] = Math.min(f[i], f[i - j * j] + 1);
+
+            }
+        }
+        return f[n];
+    }
 //-------------------------------------------------------------------------------
     //1
 /*  An easy understanding DP solution in Java
@@ -213,21 +233,7 @@ public class _1PerfectSquares {
         }
         return f[n];
     }
-//-------------------------------------------------------------------------------
-    //8
-    //这可能是最好的一个
-    public int numSquares44(int n){
-        int[] f = new int[n + 1];
-        f[0] = 0;
-        for (int i = 1; i <= n; i++) {
-            f[i] = Integer.MAX_VALUE;
-            for (int j = 1; j * j <= i; j++) {
-                f[i] = Math.min(f[i], f[i - j * j] + 1);
 
-            }
-        }
-        return f[n];
-    }
 
 
 //------------------------------------------------------------------------------
@@ -330,7 +336,8 @@ public class _1PerfectSquares {
 
 //------------------------------------------------------------------------------
 }
-/*
+/*//------------------------------------------------------------------------------
+
 给一个正整数 n, 找到若干个完全平方数(比如1, 4, 9, ... )使得他们的和等于 n。你需要让平方数的个数最少。
 
 您在真实的面试中是否遇到过这个题？ Yes
@@ -342,6 +349,7 @@ public class _1PerfectSquares {
 Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.
 
 For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9.
+//------------------------------------------------------------------------------
  */
 
 /*

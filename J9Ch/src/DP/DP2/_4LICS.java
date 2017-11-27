@@ -2,7 +2,7 @@ package DP.DP2;
 
 //• 坐标型动态规划
 
-/*
+/* 连续上升子序列
 
 • f[j] = 以a[j]结尾的最长连续上升子序列的长度
 
@@ -21,11 +21,35 @@ a[j] > a[j - 1]， 满足单调性
  */
 
 
+
+//• 坐标型动态规划
 //  lint 397. Longest Increasing Continuous Subsequence
 //  674. Longest Continuous Increasing Subsequence  只看一个方向
 //  https://leetcode.com/problems/longest-continuous-increasing-subsequence/description/
-//  5: 3
+//  5: 2
 public class _4LICS {
+
+//------------------------------------------------------------------------------
+    // 2
+    //  674. Longest Continuous Increasing Subsequence  只看一个方向
+    public int findLengthOfLCIS(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int n = nums.length;
+        int[] f = new int[n];//• f[j] = 以a[j]结尾的最长连续上升子序列的长度
+        //f[0] = 1;
+        int result = 0;
+        for (int i = 0; i < n; i++) {
+            f[i] = 1;                               //初始化为1，就是1个字符
+            if (i > 0 && nums[i] > nums[i - 1]){    //计算
+                f[i] = f[i - 1] + 1;
+            }
+            result = Math.max(result , f[i]);       //update result
+        }
+        return result;
+    }
+
 //----------------------------------------------------------------------------
     // 1
     //  https://leetcode.com/articles/longest-continuous-increasing-subsequence/
@@ -38,27 +62,6 @@ public class _4LICS {
             ans = Math.max(ans, i - anchor + 1);//update ans
         }
         return ans;
-    }
-
-//------------------------------------------------------------------------------
-    // 2
-    //  674. Longest Continuous Increasing Subsequence  只看一个方向
-    public int findLengthOfLCIS(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return 0;
-        }
-        int n = nums.length;
-        int[] f = new int[n];
-        //f[0] = 1;
-        int result = 0;
-        for (int i = 0; i < n; i++) {
-            f[i] = 1;                               //初始化为1，就是1个字符
-            if (i > 0 && nums[i] > nums[i - 1]){    //计算
-                f[i] = f[i - 1] + 1;
-            }
-            result = Math.max(result , f[i]);       //update result
-        }
-        return result;
     }
 
 //------------------------------------------------------------------------------

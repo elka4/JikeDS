@@ -143,6 +143,7 @@ f[X] = min{f[X-2]+1, f[X-5]+1, f[X-7]+1}
 // 是否是 划分型 ？？？
 // 背包型
 // 最值型
+//• 序列型动态规划?
 
 
 //  322. Coin Change
@@ -414,10 +415,14 @@ public class _1CoinChange {
         for (i = 1; i <= amount; ++i) {
             f[i] = Integer.MAX_VALUE;//初始化为最大值
             //select last coin
-            //i >= A[j] 最后一枚硬币必须 小于等于 总面值。 为了下面 i - A[j] 不等于负数
+            //i >= A[j] 最后一枚硬币必须 小于等于 总面值。
+            // 为了下面 i - A[j] 不等于负数
             for (j = 0; j < n; ++j) {
-                //和上面的方法相比，这个算法计算的f[]中，存在-1，代表最终不能取出这样的面额，因此最后需要判断。
-                if (i >= coins[j] && f[i - coins[j]] != Integer.MAX_VALUE && f[i - coins[j]] + 1 < f[i]) {
+                //和上面的方法相比，这个算法计算的f[]中，存在Integer.MAX_VALUE，
+                // 代表最终不能取出这样的面额，因此最后需要判断。
+                if (i >= coins[j] &&
+                        f[i - coins[j]] != Integer.MAX_VALUE &&
+                        f[i - coins[j]] + 1 < f[i]) {
                     f[i] = f[i - coins[j]] + 1;
                 }
             }

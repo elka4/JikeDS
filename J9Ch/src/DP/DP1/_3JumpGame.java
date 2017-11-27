@@ -64,7 +64,7 @@ i + a[i] >= j:  最后一步的距离 不能超过ai
 
 //  55. Jump Game
 //  https://leetcode.com/problems/jump-game/description/
-//
+//  3:3
 public class _3JumpGame {
 //----------------------------------------------------------------------------
     //https://leetcode.com/problems/jump-game/solution/

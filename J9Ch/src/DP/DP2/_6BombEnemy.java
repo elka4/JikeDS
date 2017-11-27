@@ -119,7 +119,7 @@ public class _6BombEnemy {
                     }
                 }
 
-                if (grid[i][j] == '0' && rows + cols[j] > result){
+                if (grid[i][j] == '0' && rows + cols[j] > result){//update result
                     result = rows + cols[j];
                 }
             }

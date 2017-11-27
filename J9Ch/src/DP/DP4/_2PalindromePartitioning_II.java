@@ -29,7 +29,7 @@ S[j..i-1] 最后一段回文串
 //  Palindrome Partitioning II
 //  https://leetcode.com/problems/palindrome-partitioning-ii/description/
 //  http://www.lintcode.com/zh-cn/problem/palindrome-partitioning-ii/
-//  7
+//  7:
 public class _2PalindromePartitioning_II {
 //-------------------------------------------------------------------------------
     //1

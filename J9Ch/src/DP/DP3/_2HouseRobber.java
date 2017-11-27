@@ -67,8 +67,42 @@ f[i][1] = f[i-1][0] + A[i-1]
 
 //  198. House Robber
 //  https://leetcode.com/problems/house-robber/description/
-//
+//  4:3, 4
 public class _2HouseRobber {
+//-------------------------------------------------------------------------------
+    //3
+    //---方法一---
+    public long houseRobber1(int[] A) {
+        // write your code here
+        int n = A.length;
+        if(n == 0) return 0;
+        long[] f = new long[n+1];
+
+        f[0] = 0;
+        f[1] = A[0];
+        for(int i = 2; i <= n; i++) {
+            f[i] = Math.max(f[i-1], f[i-2] + A[i-1]);
+        }
+        return f[n];
+    }
+
+//------------------------------------------------------------------------------
+    //4
+    //---方法二---
+    public long houseRobber2(int[] A) {
+        // write your code here
+        int n = A.length;
+        if(n == 0) return 0;
+        long[] f = new long[2];
+
+        f[0] = 0;
+        f[1] = A[0];
+        for(int i = 2; i <= n; i++) {
+            f[i%2] = Math.max(f[(i-1)%2], f[(i-2)%2] + A[i-1]);
+        }
+        return f[n%2];
+    }
+
 //-------------------------------------------------------------------------------
     //1
     //https://leetcode.com/problems/house-robber/solution/
@@ -103,47 +137,7 @@ public class _2HouseRobber {
     //不要当前f[i - 1]， 就是要前一个。
     //要当前f[i - 2] + A[i - 1]， 就不要前一个
 
-//-------------------------------------------------------------------------------
-    //3
-    /**
-     * @param A: An array of non-negative integers.
-     * return: The maximum amount of money you can rob tonight
-     */
-    //---方法一---
-    public long houseRobber1(int[] A) {
-        // write your code here
-        int n = A.length;
-        if(n == 0)
-            return 0;
-        long []res = new long[n+1];
 
-
-        res[0] = 0;
-        res[1] = A[0];
-        for(int i = 2; i <= n; i++) {
-            res[i] = Math.max(res[i-1], res[i-2] + A[i-1]);
-        }
-        return res[n];
-    }
-
-//------------------------------------------------------------------------------
-    //4
-    //---方法二---
-    public long houseRobber2(int[] A) {
-        // write your code here
-        int n = A.length;
-        if(n == 0)
-            return 0;
-        long []res = new long[2];
-
-
-        res[0] = 0;
-        res[1] = A[0];
-        for(int i = 2; i <= n; i++) {
-            res[i%2] = Math.max(res[(i-1)%2], res[(i-2)%2] + A[i-1]);
-        }
-        return res[n%2];
-    }
 
 
 //------------------------------------------------------------------------------

@@ -72,9 +72,58 @@ f[j]+1 | j<i 以Ej为此外层信封时，最多的嵌套层数，加上Ei
 //  354. Russian Doll Envelopes
 //  https://leetcode.com/problems/russian-doll-envelopes/description/
 //  http://www.lintcode.com/zh-cn/problem/russian-doll-envelopes/
-//  5:
+//  5:4
 public class _9RussianDollEnvelopes {
 //-----------------------------------------------------------------------------
+    //4
+    public int maxEnvelopes_mine(int[][] envelopes) {
+        if(envelopes == null || envelopes.length == 0) return 0;
+        int n = envelopes.length;
+        int[] f = new int[n];
+        int result = 0;
+        Arrays.sort(envelopes, (a, b) ->
+        {return a[1] != b[1] ? a[1]-b[1] : a[0]-b[0];});
+
+        for (int i = 0; i < n; i++) {
+            f[i] = 1; //怎么样都可以取一个信封
+            for (int j = 0; j < i; j++) {
+                if (envelopes[j][0] >= envelopes[i][0] |
+                    envelopes[j][1] >= envelopes[i][1]){
+                    continue;
+                }
+
+                f[i] = Math.max(f[i], f[j] + 1);//不放，f[i]//放， f[j] + 1。1就是envelope i。
+            }
+            result = Math.max(result, f[i]);
+        }
+        return result;
+    }
+
+    //重写九章给的算法，首先把ij互换
+    public int longestIncreasingSubsequence_J1(int[] nums) {
+        int n = nums.length;
+        if (n == 0) return 0;
+        int[] f = new int[n];
+        int result = 0;
+
+        for (int i = 0; i < n; i++) {
+            f[i] = 1;//init: 至少可以取一个数字
+
+            //j指向的是前面的数字，i指向的是后面的数字
+            for (int j = 0; j < i; j++) {//case 2
+                if (nums[j] < nums[i]) {
+                    //f[j]: 以f[j]结尾的最长上升子序列的长度
+                    //f[i]：不取nums[j]；
+                    //f[j] + 1：取nums[j]， 而nums[j] < nums[i]， nums[i]指的是1
+                    f[i] = Math.max(f[i], f[j] + 1);
+                }
+            }
+            result = Math.max(result, f[i]);
+        }
+        return  result;
+    }
+
+//------------------------------------------------------------------------------
     //1
 /*
     Java NLogN Solution with Explanation
@@ -159,7 +208,6 @@ public class _9RussianDollEnvelopes {
     // 9Ch DP
     //
     public int maxEnvelopes(int[][] A) {
-        // Write your code here
         if(A == null || A.length == 0) {
             return 0;
         }
@@ -192,35 +240,8 @@ public class _9RussianDollEnvelopes {
 
         return res;
     }
-//-----------------------------------------------------------------------------
-    //4
-    //重写九章给的算法，首先把ij互换
-    public int longestIncreasingSubsequence_J1(int[] nums) {
-        int n = nums.length;
-        if (n == 0) {
-            return 0;
-        }
-
-        int[] f = new int[n];
-        int res = 0;
-
-        for (int i = 0; i < n; i++) {
-            //case 1
-            f[i] = 1;//至少可以取一个数字
-
-            //case 2
-            for (int j = 0; j < i; j++) {
-                if (nums[j] < nums[i]) {     //j指向的是前面的数字，i指向的是后面的数字
-                    //f[j]: 以f[j]结尾的最长上升子序列的长度
-                    //f[i]：不取nums[j]； f[j] + 1：取nums[j]， 而nums[j] < nums[i]， nums[i]指的是1
-                    f[i] = Math.max(f[i], f[j] + 1);
-                }
-            }
-            res = Math.max(res, f[i]);
-        }
-        return  res;
-    }
 //------------------------------------------------------------------------------
+
     //5
     // 9Ch
     /**
