@@ -9,9 +9,9 @@ import org.junit.Test;
 //
 //
 //
+//给定一个字符串source和一个目标字符串target，在字符串source中找到包括所有目标字符串字母的子串。
 public class _076_String_Minimum_Window_Substring_H {
 //------------------------------------------------------------------------------
-//-------------------------------------------------------------------------
     //1
     public String minWindow(String s, String t) {
 
@@ -333,5 +333,4 @@ If there is no such window in S that covers all characters in T, return the empt
 If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in S.
  */
 
-//给定一个字符串source和一个目标字符串target，在字符串source中找到包括所有目标字符串字母的子串。
 

@@ -7,9 +7,14 @@ import org.junit.Test;
 //  http://www.lintcode.com/zh-cn/problem/valid-number/
 //
 //  给定一个字符串，验证其是否为数字。
+//  Math String
+//  _008_String_String_to_Integer_atoi_E
+//  3:
+//
 public class _065_String_Valid_Number_H {
 //------------------------------------------------------------------------------
-/*Clear Java solution with ifs
+    //1
+    /*Clear Java solution with ifs
     All we need is to have a couple of flags so we can process the string in linear time:*/
 
     public boolean isNumber(String s) {
@@ -62,7 +67,8 @@ public class _065_String_Valid_Number_H {
 
 
 //------------------------------------------------------------------------------
-//9Ch
+    //2
+    //9Ch
     // Non-regex version
 
     public class Solution {
@@ -122,12 +128,16 @@ Update (2015-02-10):
 The signature of the C++ function had been updated. If you still see your function signature accepts a const char * argument, please click the reload button  to reset your code definition.
 
 Seen this question in a real interview before?   Yes  No
+
 Companies
 LinkedIn
+
 Related Topics
 Math String
+
 Similar Questions
 String to Integer (atoi)
+------------------------------------------------------------------------------
  */
 
 
@@ -155,4 +165,5 @@ String to Integer (atoi)
 
 标签
 领英 字符串处理
+------------------------------------------------------------------------------
  */

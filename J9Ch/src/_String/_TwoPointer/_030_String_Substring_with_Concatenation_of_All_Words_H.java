@@ -4,10 +4,9 @@ import org.junit.Test;
 
 //  30. Substring with Concatenation of All Words
 //  https://leetcode.com/problems/substring-with-concatenation-of-all-words/description/
-//  4:
 //  Hash Table, Two Pointers, String
 //  _076_TwoPointer_Minimum_Window_Substring_H
-//
+//  4:
 //
 public class _030_String_Substring_with_Concatenation_of_All_Words_H {
 //------------------------------------------------------------------------------

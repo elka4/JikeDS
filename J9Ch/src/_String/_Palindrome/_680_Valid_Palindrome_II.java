@@ -3,6 +3,8 @@ package _String._Palindrome;
 //  680. Valid Palindrome II
 //  https://leetcode.com/problems/valid-palindrome-ii/description/
 //  125. Valid Palindrome
+//  String
+//  125. Valid Palindrome - Two Pointers String
 //
 //
 public class _680_Valid_Palindrome_II {
@@ -49,4 +51,6 @@ Output: True
 Explanation: You could delete the character 'c'.
 Note:
 The string will only contain lowercase characters a-z. The maximum length of the string is 50000.
+String
+Valid Palindrome
  */

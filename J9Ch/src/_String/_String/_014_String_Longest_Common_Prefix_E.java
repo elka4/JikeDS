@@ -7,12 +7,14 @@ import org.junit.Test;
 //  http://www.lintcode.com/problem/longest-common-prefix/
 //
 //  给k个字符串，求出他们的最长公共前缀(LCP)
-
-
+//  6:
+//
+//
 public class _014_String_Longest_Common_Prefix_E {
 //------------------------------------------------------------------------------
 //https://leetcode.com/articles/longest-common-prefix/
 //------------------------------------------------------------------------------
+    //1
     //Approach #1 (Horizontal scanning)
     class Solution1{
         public String longestCommonPrefix(String[] strs) {
@@ -30,6 +32,7 @@ public class _014_String_Longest_Common_Prefix_E {
 
 
 //------------------------------------------------------------------------------
+    //2
     //Approach #2 (Vertical scanning)
     class Solution2{
         public String longestCommonPrefix(String[] strs) {
@@ -47,6 +50,7 @@ public class _014_String_Longest_Common_Prefix_E {
 
 
 //------------------------------------------------------------------------------
+    //3
     //Approach #3 (Divide and conquer)
     class Solution3{
         public String longestCommonPrefix(String[] strs) {
@@ -77,6 +81,7 @@ public class _014_String_Longest_Common_Prefix_E {
     }
 
 //------------------------------------------------------------------------------
+    //4
     //Approach #4 (Binary search)
     class Solution4{
         public String longestCommonPrefix(String[] strs) {
@@ -109,6 +114,7 @@ public class _014_String_Longest_Common_Prefix_E {
 
 
 //------------------------------------------------------------------------------
+    //5
     //Further Thoughts / Follow up
     public String longestCommonPrefix(String q, String[] strs) {
         if (strs == null || strs.length == 0)
@@ -122,9 +128,6 @@ public class _014_String_Longest_Common_Prefix_E {
         return trie.searchLongestPrefix(q);
     }
 //------------------------------------------------------------------------------
-
-
-
 
     class TrieNode {
 
@@ -240,6 +243,7 @@ public class _014_String_Longest_Common_Prefix_E {
 
 
 //------------------------------------------------------------------------------
+    //6
     //9Ch
     public class Jiuzhang {
 
@@ -269,5 +273,11 @@ public class _014_String_Longest_Common_Prefix_E {
 //------------------------------------------------------------------------------
 }
 /*
+Write a function to find the longest common prefix string amongst an array of strings.
 
+Companies
+Yelp
+
+Related Topics
+String
  */

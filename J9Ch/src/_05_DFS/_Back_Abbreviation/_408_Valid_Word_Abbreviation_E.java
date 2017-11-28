@@ -7,6 +7,7 @@ import org.junit.Test;
 //  http://www.lintcode.com/zh-cn/problem/check-word-abbreviation/
 //  String
 public class _408_Valid_Word_Abbreviation_E {
+//-------------------------------------------------------------------------
 
     //Short and easy to understand Java Solution
     public boolean validWordAbbreviation1(String word, String abbr) {

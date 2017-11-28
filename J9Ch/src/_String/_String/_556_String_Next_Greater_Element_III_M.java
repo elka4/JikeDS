@@ -6,52 +6,56 @@ import org.junit.Test;
 //  556. Next Greater Element III
 //  https://leetcode.com/problems/next-greater-element-iii/
 //
+//Next Greater Element I
+//Next Greater Element II
+//  4:
+//
 public class _556_String_Next_Greater_Element_III_M {
 //------------------------------------------------------------------------------
 //https://leetcode.com/problems/next-greater-element-iii/solution/
 //------------------------------------------------------------------------------
-//Approach #1 Brute Force [Time Limit Exceeded]
-public class Solution1 {
-    public String swap(String s, int i0, int i1) {
-        if (i0 == i1)
-            return s;
-        String s1 = s.substring(0, i0);
-        String s2 = s.substring(i0 + 1, i1);
-        String s3 = s.substring(i1 + 1);
-        return s1 + s.charAt(i1) + s2 + s.charAt(i0) + s3;
-    }
-    ArrayList < String > list = new ArrayList < > ();
-    void permute(String a, int l, int r) {
-        int i;
-        if (l == r)
-            list.add(a);
-        else {
-            for (i = l; i <= r; i++) {
-                a = swap(a, l, i);
-                permute(a, l + 1, r);
-                a = swap(a, l, i);
+    //1
+    //Approach #1 Brute Force [Time Limit Exceeded]
+    public class Solution1 {
+        public String swap(String s, int i0, int i1) {
+            if (i0 == i1)
+                return s;
+            String s1 = s.substring(0, i0);
+            String s2 = s.substring(i0 + 1, i1);
+            String s3 = s.substring(i1 + 1);
+            return s1 + s.charAt(i1) + s2 + s.charAt(i0) + s3;
+        }
+        ArrayList < String > list = new ArrayList < > ();
+        void permute(String a, int l, int r) {
+            int i;
+            if (l == r)
+                list.add(a);
+            else {
+                for (i = l; i <= r; i++) {
+                    a = swap(a, l, i);
+                    permute(a, l + 1, r);
+                    a = swap(a, l, i);
+                }
             }
         }
-    }
-    public int nextGreaterElement(int n) {
-        String s = "" + n;
-        permute(s, 0, s.length() - 1);
-        Collections.sort(list);
-        int i;
-        for (i = list.size() - 1; i >= 0; i--) {
-            if (list.get(i).equals("" + n))
-                break;
+        public int nextGreaterElement(int n) {
+            String s = "" + n;
+            permute(s, 0, s.length() - 1);
+            Collections.sort(list);
+            int i;
+            for (i = list.size() - 1; i >= 0; i--) {
+                if (list.get(i).equals("" + n))
+                    break;
+            }
+            return i == list.size() - 1 ? -1 : Integer.parseInt(list.get(i + 1));
         }
-        return i == list.size() - 1 ? -1 : Integer.parseInt(list.get(i + 1));
     }
-}
 
 
 
 //------------------------------------------------------------------------------
-
-//Approach #2 Linear Solution [Accepted]
-
+    //2
+    //Approach #2 Linear Solution [Accepted]
     public class Solution2 {
         public int nextGreaterElement(int n) {
             char[] a = ("" + n).toCharArray();
@@ -90,7 +94,7 @@ public class Solution1 {
 
 
 //------------------------------------------------------------------------------
-
+    //3
 /*    Simple Java solution (4ms) with explanation.
     This solution is just a java version derived from this post.
 
@@ -147,6 +151,7 @@ public class Solution1 {
     }
 
 //------------------------------------------------------------------------------
+    //4
 /*Java(5ms) - Find - Swap - Sort Solution
     From right to left, the idea is to find the number greater than num[i], swap it, and sort the rest of the elements to the right.*/
 
@@ -189,5 +194,6 @@ Bloomberg
 Related Topics
 String
 Similar Questions
-Next Greater Element I Next Greater Element II
+Next Greater Element I
+Next Greater Element II
  */

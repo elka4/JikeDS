@@ -5,11 +5,16 @@ import org.junit.Test;
 
 //  271. Encode and Decode Strings
 //  https://leetcode.com/problems/encode-and-decode-strings/description/
-//
-//
+//  String
+//  38 Count and Say
+//  297 Serialize and Deserialize Binary Tree
+//  443 String Compression
+//  696	Count Binary Substrings
+//  4:
 //
 public class _271_String_Encode_and_Decode_Strings_M {
 //------------------------------------------------------------------------------
+    //1
     //AC Java Solution
     public class Codec {
 
@@ -36,6 +41,7 @@ public class _271_String_Encode_and_Decode_Strings_M {
         }
     }
 //------------------------------------------------------------------------------
+    //2
 
 /*    Java with "escaping"
     Double any hashes inside the strings, then use standalone hashes (surrounded by spaces) to mark string endings. For example:
@@ -60,7 +66,8 @@ public class _271_String_Encode_and_Decode_Strings_M {
             return strs;
         }
     }
-
+//------------------------------------------------------------------------------
+    //3
     //Or with streaming:
     public class Codec3 {
         public String encode(List<String> strs) {
@@ -80,6 +87,7 @@ public class _271_String_Encode_and_Decode_Strings_M {
 
 
 //------------------------------------------------------------------------------
+    //4
     //Java solution, pretty straight-forward
     class Codec4 {
         // Encodes a list of strings to a single string.
@@ -140,10 +148,16 @@ The string may contain any possible characters out of 256 valid ascii characters
 Do not use class member/global/static variables to store states. Your encode and decode algorithms should be stateless.
 Do not rely on any library method such as eval or serialize methods. You should implement your own encode/decode algorithm.
 Seen this question in a real interview before?   Yes  No
+
 Companies
 Google
+
 Related Topics
 String
+
 Similar Questions
-Count and Say Serialize and Deserialize Binary Tree String Compression Count Binary Substrings
+38 Count and Say
+297 Serialize and Deserialize Binary Tree
+443 String Compression
+696	Count Binary Substrings
  */

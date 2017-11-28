@@ -7,6 +7,7 @@ import org.junit.Test;
 //
 public class _186_String_Reverse_Words_in_a_String_II_M {
 //------------------------------------------------------------------------------
+    //1
     //My Java solution with explanation
     class Solution1{
     public void reverseWords(char[] s) {
@@ -37,6 +38,7 @@ public class _186_String_Reverse_Words_in_a_String_II_M {
     }
 }
 //------------------------------------------------------------------------------
+    //2
     //Java concise in-place solution.
     class Solution2{
         public void reverseWords(char[] s) {
@@ -61,6 +63,7 @@ public class _186_String_Reverse_Words_in_a_String_II_M {
     }
 
 //------------------------------------------------------------------------------
+    //3
     // JAVA-----------Easy Version To Understand!!!!!!!!!!!!!!
     class Solution3{
         public void reverse(char[] s, int start, int end) {
@@ -84,6 +87,7 @@ public class _186_String_Reverse_Words_in_a_String_II_M {
         }
     }
 //------------------------------------------------------------------------------
+    //4
     // Reverse Twice
     //1.Reverse the whole sentence
     //2.Reverse each word
@@ -149,5 +153,6 @@ Related Topics
 String
 
 Similar Questions
-Reverse Words in a String Rotate Array
+Reverse Words in a String
+Rotate Array
  */

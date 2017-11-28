@@ -6,13 +6,15 @@ import org.junit.Test;
 //  635. Design Log Storage System
 //  https://leetcode.com/problems/design-log-storage-system/
 //
+//  Design In-Memory File System
+//  4:
 //
 public class _635_String_Design_Log_Storage_System_M {
 //------------------------------------------------------------------------------
 //https://leetcode.com/problems/design-log-storage-system/solution/
 //------------------------------------------------------------------------------
-//Approach #1 Converting timestamp into a number [Accepted]
-
+    //1
+    //Approach #1 Converting timestamp into a number [Accepted]
     public class LogSystem1 {
         ArrayList < long[] > list;
         public LogSystem1() {
@@ -61,9 +63,8 @@ public class _635_String_Design_Log_Storage_System_M {
 
 
 //------------------------------------------------------------------------------
-
-//Approach #2 Better Retrieval [Accepted]
-
+    //2
+    //Approach #2 Better Retrieval [Accepted]
     public class LogSystem2 {
         TreeMap < Long, Integer > map;
         public LogSystem2() {
@@ -112,28 +113,29 @@ public class _635_String_Design_Log_Storage_System_M {
 
 
 //------------------------------------------------------------------------------
+    //3
     //Concise Java Solution
-public class LogSystem3{
+    public class LogSystem3{
 
-    List<String[]> timestamps = new LinkedList<>();
-    List<String> units = Arrays.asList("Year", "Month", "Day", "Hour", "Minute", "Second");
-    int[] indices = new int[]{4,7,10,13,16,19};
+        List<String[]> timestamps = new LinkedList<>();
+        List<String> units = Arrays.asList("Year", "Month", "Day", "Hour", "Minute", "Second");
+        int[] indices = new int[]{4,7,10,13,16,19};
 
-    public void put(int id, String timestamp) { timestamps.add(new String[]{Integer.toString(id), timestamp}); }
+        public void put(int id, String timestamp) { timestamps.add(new String[]{Integer.toString(id), timestamp}); }
 
-    public List<Integer> retrieve(String s, String e, String gra) {
-        List<Integer> res = new LinkedList<>();
-        int idx = indices[units.indexOf(gra)];
-        for (String[] timestamp : timestamps) {
-            if (timestamp[1].substring(0, idx).compareTo(s.substring(0, idx)) >= 0 &&
-                    timestamp[1].substring(0, idx).compareTo(e.substring(0, idx)) <= 0) res.add(Integer.parseInt(timestamp[0]));
+        public List<Integer> retrieve(String s, String e, String gra) {
+            List<Integer> res = new LinkedList<>();
+            int idx = indices[units.indexOf(gra)];
+            for (String[] timestamp : timestamps) {
+                if (timestamp[1].substring(0, idx).compareTo(s.substring(0, idx)) >= 0 &&
+                        timestamp[1].substring(0, idx).compareTo(e.substring(0, idx)) <= 0) res.add(Integer.parseInt(timestamp[0]));
+            }
+            return res;
         }
-        return res;
     }
-}
 
 //------------------------------------------------------------------------------
-
+    //4
 /*    Java range query using TreeMap.subMap()
     Given the granularity we can set a lower bound and upper bound of timestamp so we could do a range query using TreeMap. To get the lower bound we append a suffix of "2000:01:01:00:00:00" to the prefix of s and to get the upper bound we append a suffix of "2017:12:31:23:59:59" to the prefix of e.*/
 

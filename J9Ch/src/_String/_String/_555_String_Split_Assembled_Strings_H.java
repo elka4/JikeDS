@@ -5,12 +5,14 @@ import org.junit.Test;
 //  555. Split Concatenated Strings
 //  https://leetcode.com/problems/split-concatenated-strings/
 //
+//  5:
+//
 public class _555_String_Split_Assembled_Strings_H {
 //------------------------------------------------------------------------------
 //https://leetcode.com/problems/split-concatenated-strings/solution/
 //------------------------------------------------------------------------------
-//Approach #1 Depth First Search [Time Limit Exceeded]
-
+    //1
+    //Approach #1 Depth First Search [Time Limit Exceeded]
     public class Solution1 {
         String res = "";
         public String splitLoopedString(String[] strs) {
@@ -34,9 +36,8 @@ public class _555_String_Split_Assembled_Strings_H {
 
 
 //------------------------------------------------------------------------------
-
-//Approach #2 Breadth First Search [Memory Limit Exceeded]
-
+    //2
+    //Approach #2 Breadth First Search [Memory Limit Exceeded]
     public class Solution2 {
 
         public String splitLoopedString(String[] strs) {
@@ -67,37 +68,38 @@ public class _555_String_Split_Assembled_Strings_H {
     }
 
 //------------------------------------------------------------------------------
-
-//Approach #3 Optimized Solution [Accepted]
-public class Solution3 {
-    public String splitLoopedString(String[] strs) {
-        for (int i = 0; i < strs.length; i++) {
-            String rev = new StringBuilder(strs[i]).reverse().toString();
-            if (strs[i].compareTo(rev) < 0)
-                strs[i] = rev;
-        }
-        String res = "";
-        for (int i = 0; i < strs.length; i++) {
-            String rev = new StringBuilder(strs[i]).reverse().toString();
-            for (String st: new String[] {strs[i], rev}) {
-                for (int k = 0; k < st.length(); k++) {
-                    StringBuilder t = new StringBuilder(st.substring(k));
-                    for (int j = i + 1; j < strs.length; j++)
-                        t.append(strs[j]);
-                    for (int j = 0; j < i; j++)
-                        t.append(strs[j]);
-                    t.append(st.substring(0, k));
-                    if (t.toString().compareTo(res) > 0)
-                        res = t.toString();
+    //3
+    //Approach #3 Optimized Solution [Accepted]
+    public class Solution3 {
+        public String splitLoopedString(String[] strs) {
+            for (int i = 0; i < strs.length; i++) {
+                String rev = new StringBuilder(strs[i]).reverse().toString();
+                if (strs[i].compareTo(rev) < 0)
+                    strs[i] = rev;
+            }
+            String res = "";
+            for (int i = 0; i < strs.length; i++) {
+                String rev = new StringBuilder(strs[i]).reverse().toString();
+                for (String st: new String[] {strs[i], rev}) {
+                    for (int k = 0; k < st.length(); k++) {
+                        StringBuilder t = new StringBuilder(st.substring(k));
+                        for (int j = i + 1; j < strs.length; j++)
+                            t.append(strs[j]);
+                        for (int j = 0; j < i; j++)
+                            t.append(strs[j]);
+                        t.append(st.substring(0, k));
+                        if (t.toString().compareTo(res) > 0)
+                            res = t.toString();
+                    }
                 }
             }
+            return res;
         }
-        return res;
     }
-}
 
 
 //------------------------------------------------------------------------------
+    //4
     //DescriptionHintsSubmissionsDiscussSolution
     //Neat Java Solution
     public class Solution4 {
@@ -129,7 +131,7 @@ public class Solution3 {
 
 
 //------------------------------------------------------------------------------
-
+    //5
     /*Java straight forward method with explanation
 for each string other than the one we place the cut we choose the bigger one between itself and its reverse. We use the bigger one in the final concatenation.
 for the string which we cut - strs[i], we try each cut position for both strs[i] and its reverese, concatenate the other words after it to find the maximum result.

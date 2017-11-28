@@ -6,9 +6,14 @@ import org.junit.Test;
 //  https://leetcode.com/problems/repeated-substring-pattern/description/
 //  http://www.lintcode.com/problem/repeated-substring-pattern/
 //
+//  Implement strStr()
+//  Repeated String Match
+//  4:
+//
 //
 public class _459_String_Repeated_Substring_Pattern_E {
 //------------------------------------------------------------------------------
+    //1
     //Java Simple Solution with Explanation
     public boolean repeatedSubstringPattern(String str) {
         int l = str.length();
@@ -30,6 +35,7 @@ public class _459_String_Repeated_Substring_Pattern_E {
     If i is a divisor of length, repeat the substring from 0 to i the number of times i is contained in s.length
     If the repeated substring is equals to the input str return true*/
 //------------------------------------------------------------------------------
+    //2
     //Java & O(n)
     public boolean repeatedSubstringPattern2(String str) {
         //This is the kmp issue
@@ -63,6 +69,7 @@ public class _459_String_Repeated_Substring_Pattern_E {
 
 
 //------------------------------------------------------------------------------
+    //3
     //Simple Java solution, 2 lines
     public boolean repeatedSubstringPattern3(String str) {
         String s = str + str;
@@ -70,27 +77,27 @@ public class _459_String_Repeated_Substring_Pattern_E {
     }
 
 //------------------------------------------------------------------------------
-
-//9Ch
-public class Jiuzhang {
-    public boolean repeatedSubstringPattern(String s) {
-        int l = s.length();
-        int[] next = new int[l];
-        next[0] = -1;
-        int i, j = -1;
-        for (i = 1; i < l; i++) {
-            while (j >= 0 && s.charAt(i) != s.charAt(j + 1)) {
-                j = next[j];
+    //4
+    //9Ch
+    public class Jiuzhang {
+        public boolean repeatedSubstringPattern(String s) {
+            int l = s.length();
+            int[] next = new int[l];
+            next[0] = -1;
+            int i, j = -1;
+            for (i = 1; i < l; i++) {
+                while (j >= 0 && s.charAt(i) != s.charAt(j + 1)) {
+                    j = next[j];
+                }
+                if (s.charAt(i) == s.charAt(j + 1)) {
+                    j++;
+                }
+                next[i] = j;
             }
-            if (s.charAt(i) == s.charAt(j + 1)) {
-                j++;
-            }
-            next[i] = j;
+            int lenSub = l - 1 - next[l - 1];
+            return lenSub != l && l % lenSub ==0;
         }
-        int lenSub = l - 1 - next[l - 1];
-        return lenSub != l && l % lenSub ==0;
     }
-}
 
 
 //------------------------------------------------------------------------------
@@ -115,11 +122,14 @@ Output: True
 
 Explanation: It's the substring "abc" four times. (And the substring "abcabc" twice.)
 Seen this question in a real interview before?   Yes  No
+
 Companies
 Google Amazon
+
 Related Topics
 String
+
 Similar Questions
-Implement strStr() Repeated String Match
-Java
+Implement strStr()
+Repeated String Match
  */

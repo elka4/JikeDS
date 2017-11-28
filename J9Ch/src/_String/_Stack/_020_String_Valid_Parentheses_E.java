@@ -7,8 +7,16 @@ import org.junit.Test;
 //  http://www.lintcode.com/problem/valid-parentheses/
 //
 //  给定一个字符串所表示的括号序列，包含以下字符： '(', ')', '{', '}', '[' and ']'， 判定是否是有效的括号序列。
+//  String Stack
+//  22 Generate Parentheses - String, Backtracking
+//  32 Longest Valid Parentheses - String, DP
+//  301 Remove Invalid Parentheses - DFS, BFS
+//
+//  5:
+//
 public class _020_String_Valid_Parentheses_E {
 //------------------------------------------------------------------------------
+    //1
     //Short java solution
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<Character>();
@@ -25,7 +33,7 @@ public class _020_String_Valid_Parentheses_E {
         return stack.isEmpty();
     }
 //------------------------------------------------------------------------------
-
+    //2
     //My easy to understand Java Solution with one stack
     public class Solution2 {
         public boolean isValid(String s) {
@@ -51,6 +59,7 @@ public class _020_String_Valid_Parentheses_E {
     }
 
 //------------------------------------------------------------------------------
+    //3
     //12 lines of Java
     public class Solution3 {
         public boolean isValid(String s) {
@@ -65,6 +74,7 @@ public class _020_String_Valid_Parentheses_E {
         }
     }
 //------------------------------------------------------------------------------
+    //4
     //9CH
     public class Jiuzhang {
         public boolean isValidParentheses(String s) {
@@ -88,7 +98,8 @@ public class _020_String_Valid_Parentheses_E {
                     || (c1 == '[' && c2 == ']');
         }
     }
-
+//------------------------------------------------------------------------------
+    //5
     // version: 高频题班
     public class Jiuzhang2 {
         /**

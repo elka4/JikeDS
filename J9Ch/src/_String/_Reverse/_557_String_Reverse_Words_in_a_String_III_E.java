@@ -5,10 +5,15 @@ import org.junit.Test;
 //  557. Reverse Words in a String III
 //  https://leetcode.com/problems/reverse-words-in-a-string-iii/description/
 //
+//  String
+//  _541_String_Reverse_String_II_E
+//  6:
+//
 public class _557_String_Reverse_Words_in_a_String_III_E {
 //------------------------------------------------------------------------------
     //https://leetcode.com/articles/reverse-words-in-a-string/
 //------------------------------------------------------------------------------
+    //1
     //Approach #1 Simple Solution[Accepted]
     public class Solution1 {
         public String reverseWords(String s) {
@@ -23,6 +28,7 @@ public class _557_String_Reverse_Words_in_a_String_III_E {
 
 
 //------------------------------------------------------------------------------
+    //2
     //Approach #2 Without using pre-defined split and reverse function [Accepted]
     public class Solution2 {
         public String reverseWords(String s) {
@@ -54,6 +60,7 @@ public class _557_String_Reverse_Words_in_a_String_III_E {
     }
 
 //------------------------------------------------------------------------------
+    //3
     //Approach #3 Using StringBuilder and reverse method [Accepted]
     public class Solution3 {
         public String reverseWords(String input) {
@@ -75,6 +82,7 @@ public class _557_String_Reverse_Words_in_a_String_III_E {
 
 
 //------------------------------------------------------------------------------
+    //4
     //short java code without explanation
     class Solution4{
         public String reverseWords(String s) {
@@ -87,6 +95,7 @@ public class _557_String_Reverse_Words_in_a_String_III_E {
     }
 
 //------------------------------------------------------------------------------
+    //5
     //Java Solution
     class Solution5{
         public String reverseWords(String s) {
@@ -103,6 +112,7 @@ public class _557_String_Reverse_Words_in_a_String_III_E {
     }
 
 //------------------------------------------------------------------------------
+    //6
     //Java Solution, StringBuilder
     public class Solution6 {
         public String reverseWords(String s) {

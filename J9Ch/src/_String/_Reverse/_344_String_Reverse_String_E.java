@@ -5,30 +5,38 @@ import org.junit.Test;
 //  344. Reverse String
 //  https://leetcode.com/problems/reverse-string/
 //
+//Two Pointers String
+//
+//Reverse Vowels of a String
+//Reverse String II
+//  4:
+//
 public class _344_String_Reverse_String_E {
 //------------------------------------------------------------------------------
+    //1
     //https://discuss.leetcode.com/topic/43296/java-simple-and-clean-with-explanations-6-solutions
     //[JAVA] Simple and Clean with Explanations [6 Solutions]
     //https://www.ratchapong.com/algorithm-practice/leetcode/reverse-string [Full solutions]
-public class Solution1 {
-    public String reverseString(String s) {
-        char[] word = s.toCharArray();
-        int i = 0;
-        int j = s.length() - 1;
-        while (i < j) {
-            char temp = word[i];
-            word[i] = word[j];
-            word[j] = temp;
-            i++;
-            j--;
+    public class Solution1 {
+        public String reverseString(String s) {
+            char[] word = s.toCharArray();
+            int i = 0;
+            int j = s.length() - 1;
+            while (i < j) {
+                char temp = word[i];
+                word[i] = word[j];
+                word[j] = temp;
+                i++;
+                j--;
+            }
+            return new String(word);
         }
-        return new String(word);
     }
-}
 
 
 
 //------------------------------------------------------------------------------
+    //2
     //https://discuss.leetcode.com/topic/43296/java-simple-and-clean-with-explanations-6-solutions
     //Approach: Iterative Swapping Using Two Pointers
     public class Solution2 {
@@ -50,6 +58,7 @@ public class Solution1 {
 
 
 //------------------------------------------------------------------------------
+    //3
     //https://discuss.leetcode.com/topic/43296/java-simple-and-clean-with-explanations-6-solutions
     public class Solution3 {
         public String reverseString(String s) {
@@ -67,6 +76,7 @@ public class Solution1 {
         }
     }
 //------------------------------------------------------------------------------
+    //4
     //Java- easiest method- 2-line code, attached another method
     class Solution4{
         //method 1: use StringBuilder

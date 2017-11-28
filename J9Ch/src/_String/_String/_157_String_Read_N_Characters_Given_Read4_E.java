@@ -5,7 +5,7 @@ import org.junit.Test;
 //  https://leetcode.com/problems/read-n-characters-given-read4/description/
 //  http://www.lintcode.com/problem/read-n-characters-given-read4/
 //
-//
+//  3:
 //
 public class _157_String_Read_N_Characters_Given_Read4_E {
 //------------------------------------------------------------------------------
@@ -14,6 +14,7 @@ public class _157_String_Read_N_Characters_Given_Read4_E {
     }
     int read4(char[] buf) {return 1;}
 //------------------------------------------------------------------------------
+    //1
     //Another accepted Java solution
     class Solution1{
         public int read(char[] buf, int n) {
@@ -39,7 +40,7 @@ public class _157_String_Read_N_Characters_Given_Read4_E {
         }
     }
 //------------------------------------------------------------------------------
-
+    //2
     //DescriptionHintsSubmissionsDiscussSolution
     //Accepted clean java solution
 /* The read4 API is defined in the parent class Reader4.
@@ -73,28 +74,29 @@ public class _157_String_Read_N_Characters_Given_Read4_E {
     }
 
 //------------------------------------------------------------------------------
-//9Ch
-class Solution {
-    /**
-     * @param buf Destination buffer
-     * @param n   Maximum number of characters to read
-     * @return    The number of characters read
-     */
-    public int read(char[] buf, int n) {
-        char[] buf4 = new char[4];
-        int offset = 0;
+    //3
+    //9Ch
+    class Solution {
+        /**
+         * @param buf Destination buffer
+         * @param n   Maximum number of characters to read
+         * @return    The number of characters read
+         */
+        public int read(char[] buf, int n) {
+            char[] buf4 = new char[4];
+            int offset = 0;
 
-        while (true) {
-            int size = read4(buf4);
-            for (int i = 0; i < size && offset < n; i++) {
-                buf[offset++] = buf4[i];
-            }
-            if (size == 0 || offset == n) {
-                return offset;
+            while (true) {
+                int size = read4(buf4);
+                for (int i = 0; i < size && offset < n; i++) {
+                    buf[offset++] = buf4[i];
+                }
+                if (size == 0 || offset == n) {
+                    return offset;
+                }
             }
         }
     }
-}
 
 //------------------------------------------------------------------------------
 }

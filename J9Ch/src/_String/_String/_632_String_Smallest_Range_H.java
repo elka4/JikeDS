@@ -6,13 +6,15 @@ import org.junit.Test;
 //  632. Smallest Range
 //  https://leetcode.com/problems/smallest-range/description/
 //
+//  Minimum Window Substring
+//  6:
 //
 public class _632_String_Smallest_Range_H {
 //------------------------------------------------------------------------------
 //https://leetcode.com/problems/smallest-range/solution/
 //------------------------------------------------------------------------------
-//Approach #1 Brute Force [Time Limit Exceeded]
-
+    //1
+    //Approach #1 Brute Force [Time Limit Exceeded]
     public class Solution1 {
         public int[] smallestRange(int[][] nums) {
             int minx = 0, miny = Integer.MAX_VALUE;
@@ -48,103 +50,106 @@ public class _632_String_Smallest_Range_H {
 
 
 //------------------------------------------------------------------------------
-//Approach #2 Better Brute Force [Time Limit Exceeded]
-public class Solution2 {
-    public int[] smallestRange(int[][] nums) {
-        int minx = 0, miny = Integer.MAX_VALUE;
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = 0; j < nums[i].length; j++) {
-                for (int k = i; k < nums.length; k++) {
-                    for (int l = (k == i ? j : 0); l < nums[k].length; l++) {
-                        int min = Math.min(nums[i][j], nums[k][l]);
-                        int max = Math.max(nums[i][j], nums[k][l]);
-                        int n, m;
-                        for (m = 0; m < nums.length; m++) {
-                            n = Arrays.binarySearch(nums[m], min);
-                            if (n < 0)
-                                n = -1 - n;
-                            if (n == nums[m].length || nums[m][n] < min || nums[m][n] > max)
-                                break;
-                        }
-                        if (m == nums.length) {
-                            if (miny - minx > max - min || (miny - minx == max - min && minx > min)) {
-                                miny = max;
-                                minx = min;
+    //2
+    //Approach #2 Better Brute Force [Time Limit Exceeded]
+    public class Solution2 {
+        public int[] smallestRange(int[][] nums) {
+            int minx = 0, miny = Integer.MAX_VALUE;
+            for (int i = 0; i < nums.length; i++) {
+                for (int j = 0; j < nums[i].length; j++) {
+                    for (int k = i; k < nums.length; k++) {
+                        for (int l = (k == i ? j : 0); l < nums[k].length; l++) {
+                            int min = Math.min(nums[i][j], nums[k][l]);
+                            int max = Math.max(nums[i][j], nums[k][l]);
+                            int n, m;
+                            for (m = 0; m < nums.length; m++) {
+                                n = Arrays.binarySearch(nums[m], min);
+                                if (n < 0)
+                                    n = -1 - n;
+                                if (n == nums[m].length || nums[m][n] < min || nums[m][n] > max)
+                                    break;
+                            }
+                            if (m == nums.length) {
+                                if (miny - minx > max - min || (miny - minx == max - min && minx > min)) {
+                                    miny = max;
+                                    minx = min;
+                                }
                             }
                         }
                     }
                 }
             }
+            return new int[] {minx, miny};
         }
-        return new int[] {minx, miny};
     }
-}
 
 
 
 //------------------------------------------------------------------------------
-//Approach #3 Using Pointers [Time Limit Exceeded]
-public class Solution3 {
-    public int[] smallestRange(int[][] nums) {
-        int minx = 0, miny = Integer.MAX_VALUE;
-        int[] next = new int[nums.length];
-        boolean flag = true;
-        for (int i = 0; i < nums.length && flag; i++) {
-            for (int j = 0; j < nums[i].length && flag; j++) {
-                int min_i = 0, max_i = 0;
-                for (int k = 0; k < nums.length; k++) {
-                    if (nums[min_i][next[min_i]] > nums[k][next[k]])
-                        min_i = k;
-                    if (nums[max_i][next[max_i]] < nums[k][next[k]])
-                        max_i = k;
-                }
-                if (miny - minx > nums[max_i][next[max_i]] - nums[min_i][next[min_i]]) {
-                    miny = nums[max_i][next[max_i]];
-                    minx = nums[min_i][next[min_i]];
-                }
-                next[min_i]++;
-                if (next[min_i] == nums[min_i].length) {
-                    flag = false;
+    //3
+    //Approach #3 Using Pointers [Time Limit Exceeded]
+    public class Solution3 {
+        public int[] smallestRange(int[][] nums) {
+            int minx = 0, miny = Integer.MAX_VALUE;
+            int[] next = new int[nums.length];
+            boolean flag = true;
+            for (int i = 0; i < nums.length && flag; i++) {
+                for (int j = 0; j < nums[i].length && flag; j++) {
+                    int min_i = 0, max_i = 0;
+                    for (int k = 0; k < nums.length; k++) {
+                        if (nums[min_i][next[min_i]] > nums[k][next[k]])
+                            min_i = k;
+                        if (nums[max_i][next[max_i]] < nums[k][next[k]])
+                            max_i = k;
+                    }
+                    if (miny - minx > nums[max_i][next[max_i]] - nums[min_i][next[min_i]]) {
+                        miny = nums[max_i][next[max_i]];
+                        minx = nums[min_i][next[min_i]];
+                    }
+                    next[min_i]++;
+                    if (next[min_i] == nums[min_i].length) {
+                        flag = false;
+                    }
                 }
             }
+            return new int[] {minx, miny};
         }
-        return new int[] {minx, miny};
     }
-}
 
 
 
 //------------------------------------------------------------------------------
-//Approach #4 Using Priority Queue [Accepted]:
-public class Solution4 {
-    public int[] smallestRange(int[][] nums) {
-        int minx = 0, miny = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
-        int[] next = new int[nums.length];
-        boolean flag = true;
-        PriorityQueue < Integer > min_queue = new PriorityQueue < Integer > ((i, j) -> nums[i][next[i]] - nums[j][next[j]]);
-        for (int i = 0; i < nums.length; i++) {
-            min_queue.offer(i);
-            max = Math.max(max, nums[i][0]);
-        }
-        for (int i = 0; i < nums.length && flag; i++) {
-            for (int j = 0; j < nums[i].length && flag; j++) {
-                int min_i = min_queue.poll();
-                if (miny - minx > max - nums[min_i][next[min_i]]) {
-                    minx = nums[min_i][next[min_i]];
-                    miny = max;
-                }
-                next[min_i]++;
-                if (next[min_i] == nums[min_i].length) {
-                    flag = false;
-                    break;
-                }
-                min_queue.offer(min_i);
-                max = Math.max(max, nums[min_i][next[min_i]]);
+    //4
+    //Approach #4 Using Priority Queue [Accepted]:
+    public class Solution4 {
+        public int[] smallestRange(int[][] nums) {
+            int minx = 0, miny = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+            int[] next = new int[nums.length];
+            boolean flag = true;
+            PriorityQueue < Integer > min_queue = new PriorityQueue < Integer > ((i, j) -> nums[i][next[i]] - nums[j][next[j]]);
+            for (int i = 0; i < nums.length; i++) {
+                min_queue.offer(i);
+                max = Math.max(max, nums[i][0]);
             }
+            for (int i = 0; i < nums.length && flag; i++) {
+                for (int j = 0; j < nums[i].length && flag; j++) {
+                    int min_i = min_queue.poll();
+                    if (miny - minx > max - nums[min_i][next[min_i]]) {
+                        minx = nums[min_i][next[min_i]];
+                        miny = max;
+                    }
+                    next[min_i]++;
+                    if (next[min_i] == nums[min_i].length) {
+                        flag = false;
+                        break;
+                    }
+                    min_queue.offer(min_i);
+                    max = Math.max(max, nums[min_i][next[min_i]]);
+                }
+            }
+            return new int[] { minx, miny};
         }
-        return new int[] { minx, miny};
     }
-}
 
 
 
@@ -202,8 +207,8 @@ public class Solution4 {
 
 
 //------------------------------------------------------------------------------
-//My JAVA accepted code with Priority Queue (revised, easier to read)
-
+    //6
+    //My JAVA accepted code with Priority Queue (revised, easier to read)
     class MyNumber{
 
         int num;

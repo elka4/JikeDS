@@ -7,15 +7,67 @@ import java.util.*;
 //  https://leetcode.com/problems/restore-ip-addresses/description/
 //  http://www.lintcode.com/zh-cn/problem/restore-ip-addresses/
 //  4: 4
-//
+//  String, Backtracking
 //
 public class _093_String_Restore_IP_Addresses_M {
-// 1
+//-------------------------------------------------------------------------
+    //4
+    // 9Ch
+    //每个单位里只有数字
+    //这个是Backtracking，用list来存储状态，在返回上一层函数之后要删除之前增加的
+    public ArrayList<String> restoreIpAddresses_J1(String s) {
+        ArrayList<String> result = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<String>();
+        if(s.length() <4 || s.length() > 12) return result;
+
+        helper(result, list, s , 0);
+        return result;
+    }
+
+    public void helper(ArrayList<String> result, ArrayList<String> list, String s, int start){
+        if(list.size() == 4){
+            if(start != s.length()) return;
+
+            StringBuilder sb = new StringBuilder();
+            for(String tmp: list){
+                sb.append(tmp);
+                sb.append('.');
+            }
+            sb.deleteCharAt(sb.length() - 1);
+            result.add(sb.toString());
+            return;
+        }
+
+        for(int i = start; i < s.length() && i < start + 3; i++){
+            String tmp = s.substring(start, i + 1);//关键，每次就是取i多一位的sub string
+            if(isvalid(tmp)){
+                list.add(tmp);
+                helper(result, list, s, i + 1);
+                list.remove(list.size() - 1);
+            }
+        }
+    }
+
+    private boolean isvalid(String s){
+        // to eliminate cases like "00", "10"
+        if(s.charAt(0) == '0') return s.equals("0");
+        int digit = Integer.valueOf(s);
+        return digit >= 0 && digit <= 255;
+    }
+
+
+    @Test
+    public void test04(){
+        System.out.println(restoreIpAddresses_J1("25525511135"));
+    }
+    //[255.255.11.135, 255.255.111.35]
+//-------------------------------------------------------------------------
+    // 1
     //My code in Java
-/*
-3-loop divides the string s into 4 substring: s1, s2, s3, s4. Check if each substring is valid.
-In isValid, strings whose length greater than 3 or equals to 0 is not valid; or if the string's length is longer than 1 and the first letter is '0' then it's invalid; or the string whose integer representation greater than 255 is invalid.
-*/
+    /*
+    3-loop divides the string s into 4 substring: s1, s2, s3, s4. Check if each substring is valid.
+    In isValid, strings whose length greater than 3 or equals to 0 is not valid; or if the string's length is longer than 1 and the first letter is '0' then it's invalid; or the string whose integer representation greater than 255 is invalid.
+    */
     public List<String> restoreIpAddresses01(String s) {
         List<String> res = new ArrayList<String>();
         int len = s.length();
@@ -118,59 +170,7 @@ the basic idea is to make three cuts into the string, separating it into four pa
     }
     //[255.255.11.135, 255.255.111.35]
 
-//-------------------------------------------------------------------------
-    //4
-    // 9Ch
-    //每个单位里只有数字
-    //这个是Backtracking，用list来存储状态，在返回上一层函数之后要删除之前增加的
-    public ArrayList<String> restoreIpAddresses_J1(String s) {
-        ArrayList<String> result = new ArrayList<String>();
-        ArrayList<String> list = new ArrayList<String>();
 
-        if(s.length() <4 || s.length() > 12)
-            return result;
-
-        helper(result, list, s , 0);
-        return result;
-    }
-
-    public void helper(ArrayList<String> result, ArrayList<String> list, String s, int start){
-        if(list.size() == 4){
-            if(start != s.length()) return;
-
-            StringBuilder sb = new StringBuilder();
-            for(String tmp: list){
-                sb.append(tmp);
-                sb.append('.');
-            }
-            sb.deleteCharAt(sb.length() - 1);
-            result.add(sb.toString());
-            return;
-        }
-
-        for(int i = start; i < s.length() && i < start + 3; i++){
-            String tmp = s.substring(start, i + 1);
-            if(isvalid(tmp)){
-                list.add(tmp);
-                helper(result, list, s, i + 1);
-                list.remove(list.size() - 1);
-            }
-        }
-    }
-
-    private boolean isvalid(String s){
-        // to eliminate cases like "00", "10"
-        if(s.charAt(0) == '0') return s.equals("0");
-        int digit = Integer.valueOf(s);
-        return digit >= 0 && digit <= 255;
-    }
-
-
-    @Test
-    public void test04(){
-        System.out.println(restoreIpAddresses_J1("25525511135"));
-    }
-    //[255.255.11.135, 255.255.111.35]
 
 //-------------------------------------------------------------------------
 }
@@ -193,6 +193,7 @@ the basic idea is to make three cuts into the string, separating it into four pa
 字符串处理 回溯法 递归
 相关题目
 中等 子集
+//-------------------------------------------------------------------------
  */
 
 
@@ -204,5 +205,5 @@ Given "25525511135",
 
 return ["255.255.11.135", "255.255.111.35"]. (Order does not matter)
 
-
+//-------------------------------------------------------------------------
  */

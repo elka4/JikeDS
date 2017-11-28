@@ -6,13 +6,17 @@ import org.junit.Test;
 //  https://leetcode.com/problems/shortest-palindrome/description/
 //  http://www.lintcode.com/problem/shortest-palindrome/
 //  给一个字符串 S, 你可以通过在前面添加字符将其转换为回文串.找到并返回用这种方式转换的最短回文串.
-//
+//Longest Palindromic Substring
+//Implement strStr()
+//Palindrome Pairs
+//  6:
 //
 public class _214_String_Shortest_Palindrome_H {
 //------------------------------------------------------------------------------
     //https://leetcode.com/problems/shortest-palindrome/solution/
     //C++
 //------------------------------------------------------------------------------
+    //1
     //Clean KMP solution with super detailed explanation
     class Solution1{
         public String shortestPalindrome(String s) {
@@ -64,7 +68,7 @@ public class _214_String_Shortest_Palindrome_H {
         }
     }
 //------------------------------------------------------------------------------
-
+    //2
 /*    My 9-lines three pointers Java solution with explanation
             Explanation
     The key point is to find the longest palindrome starting from the first character, and then reverse the remaining part as the prefix to s. Any advice will be welcome!*/
@@ -83,6 +87,7 @@ public class _214_String_Shortest_Palindrome_H {
     }
 
 //------------------------------------------------------------------------------
+    //3
     //Easy Java solution
 /*
 First, we can find the longest palindrome which include the first character in s, then we just need to reverse the suffix and add it to the front of string s.
@@ -126,6 +131,7 @@ When looking for the longest palindrome, we start from the center and traverse t
 
 
 //------------------------------------------------------------------------------
+    //4
     //Using Longest Palindrome
     class Solution4{
         public String shortestPalindrome(String s) {
@@ -154,6 +160,7 @@ When looking for the longest palindrome, we start from the center and traverse t
         }
     }
 //------------------------------------------------------------------------------
+    //5
     //Java Solution AC O(N^2) with lots of comments.
     public class Solution5 {
         public String shortestPalindrome(String s) {
@@ -208,6 +215,7 @@ When looking for the longest palindrome, we start from the center and traverse t
     }
 
 //------------------------------------------------------------------------------
+    //6
     //9Ch
     public class Jiuzhang {
         public String shortestPalindrome(String s) {
@@ -247,10 +255,15 @@ Credits:
 Special thanks to @ifanchu for adding this problem and creating all test cases. Thanks to @Freezen for additional test cases.
 
 Seen this question in a real interview before?   Yes  No
+
 Companies
 Google Pocket Gems
+
 Related Topics
 String
+
 Similar Questions
-Longest Palindromic Substring Implement strStr() Palindrome Pairs
+Longest Palindromic Substring
+Implement strStr()
+Palindrome Pairs
  */

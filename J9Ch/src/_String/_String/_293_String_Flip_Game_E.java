@@ -6,8 +6,11 @@ import org.junit.Test;
 //  293. Flip Game
 //  https://leetcode.com/problems/flip-game/description/
 //
+//  5:
+//
 public class _293_String_Flip_Game_E {
 //------------------------------------------------------------------------------
+    //1
     //4 lines in Java
     public List<String> generatePossibleNextMoves(String s) {
         List list = new ArrayList();
@@ -16,7 +19,7 @@ public class _293_String_Flip_Game_E {
         return list;
     }
 //------------------------------------------------------------------------------
-
+    //2
 /*    Simple solution in Java
     We start from i = 1 and check whether current and previous characters of the input string equals to +. If true, then add substring to a list: characters before previous one (concatenating with --) and characters after the current character.*/
 
@@ -31,7 +34,7 @@ public class _293_String_Flip_Game_E {
     }
 
 //------------------------------------------------------------------------------
-
+    //3
     //AC simple O(n) JAVA solution
     public List<String> generatePossibleNextMoves3(String s) {
         List<String> res = new ArrayList<String>();
@@ -47,6 +50,7 @@ public class _293_String_Flip_Game_E {
         return res;
     }
 //------------------------------------------------------------------------------
+    //4
     //Simple Java 8 functional (declarative) solution
 //I noticed that Java 8 streams are much slower than loops. Streams make the code declarative but are a huge hit to the performance, unfortunately.
 
@@ -59,8 +63,8 @@ public class _293_String_Flip_Game_E {
     }
 
 //------------------------------------------------------------------------------
+    //5
     //Simple java solution, no fancy
-
     public class Solution5 {
         public List<String> generatePossibleNextMoves(String s) {
             List<String> result = new ArrayList<String>();
@@ -98,5 +102,4 @@ Related Topics
 String
 Similar Questions
 Flip Game II
-Java
  */

@@ -8,13 +8,19 @@ import org.junit.Test;
 //
 //给定一个字符串， 包含大小写字母、空格' '，请返回其最后一个单词的长度。
 // 如果不存在最后一个单词，请返回 0
+//
+//  3:
+//
 public class _058_String_Length_of_Last_Word_E {
 //------------------------------------------------------------------------------
+    //1
     //A single line of Code in Java
     public int lengthOfLastWord(String s) {
+
         return s.trim().length()-s.trim().lastIndexOf(" ")-1;
     }
 //------------------------------------------------------------------------------
+    //2
     //My 3 line 0 ms java solution
     public int lengthOfLastWord2(String s) {
         s = s.trim();
@@ -24,30 +30,31 @@ public class _058_String_Length_of_Last_Word_E {
 
 
 //------------------------------------------------------------------------------
-//9CH
-public class Jiuzhang {
-    public int lengthOfLastWord(String s) {
-        int length = 0;
-        char[] chars = s.toCharArray();
-        for (int i = s.length() - 1; i >= 0; i--) {
-            if (length == 0) {
-                if (chars[i] == ' ') {
-                    continue;
+    //3
+    //9CH
+    public class Jiuzhang {
+        public int lengthOfLastWord(String s) {
+            int length = 0;
+            char[] chars = s.toCharArray();
+            for (int i = s.length() - 1; i >= 0; i--) {
+                if (length == 0) {
+                    if (chars[i] == ' ') {
+                        continue;
+                    } else {
+                        length++;
+                    }
                 } else {
-                    length++;
-                }
-            } else {
-                if (chars[i] == ' ') {
-                    break;
-                } else {
-                    length++;
+                    if (chars[i] == ' ') {
+                        break;
+                    } else {
+                        length++;
+                    }
                 }
             }
-        }
 
-        return length;
+            return length;
+        }
     }
-}
 
 //------------------------------------------------------------------------------
 }
@@ -65,16 +72,12 @@ Output: 5
 Seen this question in a real interview before?   Yes  No
 Related Topics
 String
-Java
- */
+------------------------------------------------------------------------------
+*/
 
 /*
 422. 最后一个单词的长度
 
- 描述
- 笔记
- 数据
- 评测
 给定一个字符串， 包含大小写字母、空格' '，请返回其最后一个单词的长度。
 
 如果不存在最后一个单词，请返回 0 。
@@ -87,6 +90,5 @@ Java
 样例
 给定 s = "Hello World"，返回 5。
 
-标签
-相关题目
+------------------------------------------------------------------------------
  */

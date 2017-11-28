@@ -4,9 +4,15 @@ import org.junit.Test;
 
 //  541. Reverse String II
 //  https://leetcode.com/problems/reverse-string-ii/description/
+//  String
+//  Reverse String
+//  Reverse Words in a String III
+//
+//  4:
 //
 public class _541_String_Reverse_String_II_E {
 //------------------------------------------------------------------------------
+    //1
     //Java Concise Solution
     public class Solution1 {
         public String reverseStr(String s, int k) {
@@ -29,6 +35,7 @@ public class _541_String_Reverse_String_II_E {
         }
     }
 //------------------------------------------------------------------------------
+    //2
     //[C++][Java] Clean Code
     /**
      * 0            k           2k          3k
@@ -50,6 +57,7 @@ public class _541_String_Reverse_String_II_E {
     }
 
 //------------------------------------------------------------------------------
+    //3
     //Verbose Java Solution, StringBuilder(s)
     //Tried to maximize usage of StringBuilder :)
     public class Solution3 {
@@ -81,6 +89,7 @@ public class _541_String_Reverse_String_II_E {
 
 
 //------------------------------------------------------------------------------
+    //4
     //6 lines java solution with O(n) runtime
     public class Solution4 {
         public String reverseStr(String s, int k) {
@@ -112,5 +121,6 @@ Related Topics
 String
 
 Similar Questions
-Reverse String Reverse Words in a String III
+Reverse String
+Reverse Words in a String III
  */

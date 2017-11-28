@@ -5,10 +5,14 @@ import org.junit.Test;
 //  340. Longest Substring with At Most K Distinct Characters
 //  https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/
 //  http://www.lintcode.com/problem/longest-substring-with-at-most-k-distinct-characters/
-//
+//  Hash Table, String
+//  159. Longest Substring with At Most Two Distinct Characters - Hash Table Two Pointers String
+//  424. Longest Repeating Character Replacement
+//  5:
 //
 public class _340_String_Longest_Substring_with_At_Most_K_Distinct_Characters_H {
 //------------------------------------------------------------------------------
+    //1
 /*15 lines java solution using slide window
     feel it is not a new question, just use num to track the number of distinct characters within the slide window*/
 
@@ -28,7 +32,7 @@ public class _340_String_Longest_Substring_with_At_Most_K_Distinct_Characters_H 
         }
     }
 //------------------------------------------------------------------------------
-
+    //2
 /*
     Java O(nlogk) using TreeMap to keep last occurrence Interview "follow-up" question!
     Solving the problem with O(n) time is not enough, some interviewer may require this solution as a followup. Instead of recording each char's count, we keep track of char's last occurrence. If you consider k as constant, it is also a O(n) algorithm.
@@ -70,6 +74,7 @@ public class _340_String_Longest_Substring_with_At_Most_K_Distinct_Characters_H 
     }
 
 //------------------------------------------------------------------------------
+    //3
 /*
 Generic solution in Java that can be used for Unicode
     This problem can be solved using two pointers. The important part is while (map.size() > k), we move left pointer to make sure the map size is less or equal to k. This can be easily extended to any number of unique characters.
@@ -101,6 +106,7 @@ Generic solution in Java that can be used for Unicode
 
 
 //------------------------------------------------------------------------------
+    //4
     //Easy to understand java solution
     class Solution4{
         public int lengthOfLongestSubstringKDistinct(String s, int k) {
@@ -145,48 +151,49 @@ Generic solution in Java that can be used for Unicode
 
 
 //------------------------------------------------------------------------------
+    //5
     //9Ch
-public class Jiuzhang {
-    /**
-     * @param s : A string
-     * @return : The length of the longest substring
-     *           that contains at most k distinct characters.
-     */
-    public int lengthOfLongestSubstringKDistinct(String s, int k) {
-        // write your code here
-        int maxLen = 0;
+    public class Jiuzhang {
+        /**
+         * @param s : A string
+         * @return : The length of the longest substring
+         *           that contains at most k distinct characters.
+         */
+        public int lengthOfLongestSubstringKDistinct(String s, int k) {
+            // write your code here
+            int maxLen = 0;
 
-        // Key: letter; value: the number of occurrences.
-        Map<Character, Integer> map = new HashMap<Character, Integer>();
-        int i, j = 0;
-        char c;
-        for (i = 0; i < s.length(); i++) {
-            while (j < s.length()) {
-                c = s.charAt(j);
-                if (map.containsKey(c)) {
-                    map.put(c, map.get(c) + 1);
-                } else {
-                    if(map.size() ==k)
-                        break;
-                    map.put(c, 1);
+            // Key: letter; value: the number of occurrences.
+            Map<Character, Integer> map = new HashMap<Character, Integer>();
+            int i, j = 0;
+            char c;
+            for (i = 0; i < s.length(); i++) {
+                while (j < s.length()) {
+                    c = s.charAt(j);
+                    if (map.containsKey(c)) {
+                        map.put(c, map.get(c) + 1);
+                    } else {
+                        if(map.size() ==k)
+                            break;
+                        map.put(c, 1);
+                    }
+                    j++;
                 }
-                j++;
-            }
 
-            maxLen = Math.max(maxLen, j - i);
-            c = s.charAt(i);
-            if(map.containsKey(c)){
-                int count = map.get(c);
-                if (count > 1) {
-                    map.put(c, count - 1);
-                } else {
-                    map.remove(c);
+                maxLen = Math.max(maxLen, j - i);
+                c = s.charAt(i);
+                if(map.containsKey(c)){
+                    int count = map.get(c);
+                    if (count > 1) {
+                        map.put(c, count - 1);
+                    } else {
+                        map.remove(c);
+                    }
                 }
             }
+            return maxLen;
         }
-        return maxLen;
     }
-}
 
 
 //------------------------------------------------------------------------------
@@ -198,8 +205,7 @@ For example, Given s = “eceba” and k = 2,
 
 T is "ece" which its length is 3.
 
-Seen this question in a real interview before?   Yes  No
-
+------------------------------------------------------------------------------
 Companies
 Google AppDynamics Coupang
 
@@ -207,6 +213,6 @@ Related Topics
 Hash Table String
 
 Similar Questions
-Longest Substring with At Most Two Distinct Characters
-Longest Repeating Character Replacement
+159. Longest Substring with At Most Two Distinct Characters - Hash Table Two Pointers String
+424. Longest Repeating Character Replacement
  */

@@ -7,10 +7,14 @@ import org.junit.Test;
 //  http://www.lintcode.com/problem/valid-palindrome/
 //
 //给定一个字符串，判断其是否为一个回文串。只包含字母和数字，忽略大小写。
-
-
+//Two Pointers String
+//234 Palindrome Linked List - LinkedList
+//_680_Valid_Palindrome_II - String
+//  6:
+//
 public class _125_String_Valid_Palindrome_E {
 //------------------------------------------------------------------------------
+    //1
     //Accepted pretty Java solution(271ms)
     public class Solution1 {
         public boolean isPalindrome(String s) {
@@ -39,6 +43,7 @@ public class _125_String_Valid_Palindrome_E {
         }
     }
 //------------------------------------------------------------------------------
+    //2
     //My three line java solution
     public class Solution2 {
         public boolean isPalindrome(String s) {
@@ -48,6 +53,7 @@ public class _125_String_Valid_Palindrome_E {
         }
     }
 //------------------------------------------------------------------------------
+    //3
 //Java 9ms solution with some of my thoughts
 
 /*
@@ -76,6 +82,7 @@ public class _125_String_Valid_Palindrome_E {
     }
 
 //------------------------------------------------------------------------------
+    //4
     //This is my accepted Java code, just for reference only
     public class Solution4 {
         public boolean isPalindrome(String s) {
@@ -90,6 +97,7 @@ public class _125_String_Valid_Palindrome_E {
     }
 
 //------------------------------------------------------------------------------
+    //5
     //3ms java solution(beat 100% of java solution)
     class Solution5{
     /*    simply build an array that map all possible char into integer(if not alphanumeric,mark it as zero)
@@ -132,6 +140,7 @@ public class _125_String_Valid_Palindrome_E {
 
 
 //------------------------------------------------------------------------------
+    //6
     //9CH
     public class Jiuzhang {
         public boolean isPalindrome(String s) {
@@ -192,6 +201,6 @@ Related Topics
 Two Pointers String
 
 Similar Questions
-Palindrome Linked List
-_680_Valid_Palindrome_II
+234 Palindrome Linked List - LinkedList
+_680_Valid_Palindrome_II - String
 */

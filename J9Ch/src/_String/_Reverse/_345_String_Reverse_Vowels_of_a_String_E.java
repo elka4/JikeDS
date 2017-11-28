@@ -5,10 +5,14 @@ import org.junit.Test;
 //  345. Reverse Vowels of a String
 //  https://leetcode.com/problems/reverse-vowels-of-a-string/description/
 //  http://www.lintcode.com/problem/reverse-vowels-of-a-string/
+//  Two Pointers String
+//  _344_String_Reverse_String_E
+//  4:
 //
 //
 public class _345_String_Reverse_Vowels_of_a_String_E {
 //------------------------------------------------------------------------------
+    //1
 //Java Standard Two Pointer Solution
 //    In the inner while loop, don't forget the condition "start less than end" while incrementing start and decrementing end. This is my friend's google phone interview question. Cheers!
 // update! May use a HashSet<Character> to reduce the look up time to O(1)
@@ -41,7 +45,7 @@ public class _345_String_Reverse_Vowels_of_a_String_E {
         }
     }
 //------------------------------------------------------------------------------
-
+    //2
     //One pass Java Solution 13ms
     public class Solution2 {
         public String reverseVowels(String s) {
@@ -80,6 +84,7 @@ public class _345_String_Reverse_Vowels_of_a_String_E {
     Set<Character> vowels = new HashSet<>(Arrays.asList(new Character[]{'a','e','i','o','u','A','E','I','O','U'}));
 
 //------------------------------------------------------------------------------
+    //3
     //Simple Java Solution using StringBuilder
     public class Solution3 {
         public String reverseVowels(String s) {
@@ -105,6 +110,7 @@ public class _345_String_Reverse_Vowels_of_a_String_E {
 
 
 //------------------------------------------------------------------------------
+    //4
     //9Ch
     public class Jiuzhang {
         public String reverseVowels(String s) {

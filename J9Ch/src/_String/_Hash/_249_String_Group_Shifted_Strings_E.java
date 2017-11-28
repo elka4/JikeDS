@@ -5,9 +5,42 @@ import org.junit.Test;
 
 //  249. Group Shifted Strings
 //  https://leetcode.com/problems/group-shifted-strings/description/
+//  Hash Table String
+//  _049_String_Group_Anagrams_M - hash
+//  7:6
 //
 public class _249_String_Group_Shifted_Strings_E {
 //------------------------------------------------------------------------------
+    //6
+    //JAVA beat 96% :)
+    //和_049_String_Group_Anagrams_M真的很像啊，用每个string的第一个字母找到gap
+    //然后用gap对这个string的每一个字母进行位移，用新的string作为key，原string作为value放进hash
+    //最后hash的value作为result
+    public class Solution6 {
+        public List<List<String>> groupStrings(String[] strings) {
+            if(strings.length < 1 || strings == null) return new ArrayList<List<String>>();
+            Map<String,List<String>> map = new HashMap<>();
+
+            for(String s : strings){
+                char[] chars = s.toCharArray();
+                char start = chars[0];
+                // - gap to every char in chars and make sure chars[0] is 'a'
+                int gap = start - 'a';
+                for(int i = 0; i < chars.length; i++){
+                    chars[i] -= gap;
+                    if(chars[i] < 'a'){
+                        chars[i] += 26;
+                    }
+                }
+                String key = String.valueOf(chars);
+                if(!map.containsKey(key)) map.put(key, new ArrayList<String>());
+                map.get(key).add(s);
+            }
+            return new ArrayList<List<String>>(map.values());
+        }
+    }
+//------------------------------------------------------------------------------
+    //1
     //My Concise JAVA Solution
     public class Solution1 {
         public List<List<String>> groupStrings(String[] strings) {
@@ -38,7 +71,7 @@ public class _249_String_Group_Shifted_Strings_E {
         }
     }
 //------------------------------------------------------------------------------
-
+    //2
 /*    Concise 10-lines JAVA Solution with explanation
             Explanation
 
@@ -60,6 +93,7 @@ public class _249_String_Group_Shifted_Strings_E {
 
 
 //------------------------------------------------------------------------------
+    //3
 /*1-4 lines in Java
     Not sure I did it as good as it can be, as I'm still a beginner at Java streaming. If you can improve this, I'll be happy to see how.*/
     class Solution3{
@@ -71,6 +105,7 @@ public class _249_String_Group_Shifted_Strings_E {
         }
     }
 //------------------------------------------------------------------------------
+    //4
     //Simple solution in JAVA with detailed explaination
     /*
     HashMap<List<Integer>, List<String>> map:
@@ -121,6 +156,7 @@ finally, iterate through the res and sort each List<String>
     }
 
 //------------------------------------------------------------------------------
+    //5
     //Java Solution with separate shiftStr() function
     public class Solution5 {
         public List<List<String>> groupStrings(String[] strings) {
@@ -158,31 +194,10 @@ finally, iterate through the res and sort each List<String>
     }
 
 
-//------------------------------------------------------------------------------
-    //JAVA beat 96% :)
-    public class Solution6 {
-        public List<List<String>> groupStrings(String[] strings) {
-            if(strings.length < 1 || strings == null) return new ArrayList<List<String>>();
-            Map<String,List<String>> map = new HashMap<>();
-            for(String s : strings){
-                char[] chars = s.toCharArray();
-                char start = chars[0];
-                int gap = start - 'a'; // - gap to every char in chars and make sure chars[0] is 'a'
-                for(int i = 0; i < chars.length; i++){
-                    chars[i] -= gap;
-                    if(chars[i] < 'a'){
-                        chars[i] += 26;
-                    }
-                }
-                String key = String.valueOf(chars);
-                if(!map.containsKey(key)) map.put(key, new ArrayList<String>());
-                map.get(key).add(s);
-            }
-            return new ArrayList<List<String>>(map.values());
-        }
-    }
+
 
 //------------------------------------------------------------------------------
+    //7
     //Beats 99% 4ms JAVA solution
     public class Solution7 {
         public List<List<String>> groupStrings(String[] strings) {
@@ -240,6 +255,7 @@ Given a string, we can "shift" each of its letter to its successive letter, for 
 "abc" -> "bcd" -> ... -> "xyz"
 Given a list of strings which contains only lowercase alphabets, group all strings that belong to the same shifting sequence.
 
+//------------------------------------------------------------------------------
 For example, given: ["abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"],
 A solution is:
 
@@ -249,11 +265,14 @@ A solution is:
   ["acef"],
   ["a","z"]
 ]
-Seen this question in a real interview before?   Yes  No
+//------------------------------------------------------------------------------
 Companies
 Google Uber
+
 Related Topics
 Hash Table String
+
 Similar Questions
 Group Anagrams
+//------------------------------------------------------------------------------
  */

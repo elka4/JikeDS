@@ -5,32 +5,34 @@ import org.junit.Test;
 //
 //  165. Compare Version Numbers
 //  https://leetcode.com/problems/compare-version-numbers/description/
+//  5:
 //
 public class _165_String_Compare_Version_Numbers_E {
 //------------------------------------------------------------------------------
-/*Accepted small Java solution.
-    This code assumes that next level is zero if no mo levels in shorter version number. And than compare levels.*/
-class Solution1{
-    public int compareVersion(String version1, String version2) {
-        String[] levels1 = version1.split("\\.");
-        String[] levels2 = version2.split("\\.");
+    //1
+    /*Accepted small Java solution.
+        This code assumes that next level is zero if no mo levels in shorter version number. And than compare levels.*/
+    class Solution1{
+        public int compareVersion(String version1, String version2) {
+            String[] levels1 = version1.split("\\.");
+            String[] levels2 = version2.split("\\.");
 
-        int length = Math.max(levels1.length, levels2.length);
-        for (int i=0; i<length; i++) {
-            Integer v1 = i < levels1.length ? Integer.parseInt(levels1[i]) : 0;
-            Integer v2 = i < levels2.length ? Integer.parseInt(levels2[i]) : 0;
-            int compare = v1.compareTo(v2);
-            if (compare != 0) {
-                return compare;
+            int length = Math.max(levels1.length, levels2.length);
+            for (int i=0; i<length; i++) {
+                Integer v1 = i < levels1.length ? Integer.parseInt(levels1[i]) : 0;
+                Integer v2 = i < levels2.length ? Integer.parseInt(levels2[i]) : 0;
+                int compare = v1.compareTo(v2);
+                if (compare != 0) {
+                    return compare;
+                }
             }
-        }
 
-        return 0;
+            return 0;
+        }
     }
-}
 
 //------------------------------------------------------------------------------
-
+    //2
 /*    Java solution with fewer if logic
     I checked other Java solution and the basic idea is the same. In addition, I simply the logic by making the two version number same length. For example, if version1 = "1.0.2", and version2 = "1.0", the I will convert the version2 to "1.0.0".*/
 
@@ -53,7 +55,7 @@ class Solution1{
     }
 
 //------------------------------------------------------------------------------
-
+    //3
     //My JAVA solution without split
     public class Solution3 {
         public int compareVersion(String version1, String version2) {
@@ -85,6 +87,7 @@ class Solution1{
         }
     }
 //------------------------------------------------------------------------------
+    //4
     //Simple JAVA Solution
     public class Solution4 {
         public int compareVersion(String version1, String version2) {
@@ -106,6 +109,7 @@ class Solution1{
     }
 
 //------------------------------------------------------------------------------
+    //5
     //My solutions in 3 languages
     public class Solution5 {
         public int compareVersion(String version1, String version2) {

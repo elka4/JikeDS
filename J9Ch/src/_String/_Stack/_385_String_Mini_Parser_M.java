@@ -5,8 +5,11 @@ import org.junit.Test;
 //  385. Mini Parser
 //  https://leetcode.com/problems/mini-parser/description/
 //
+//  2
+//
 public class _385_String_Mini_Parser_M {
 //------------------------------------------------------------------------------
+    //1
 /*An Java Iterative Solution
     This approach will just iterate through every char in the string (no recursion).
 
@@ -59,6 +62,7 @@ public class _385_String_Mini_Parser_M {
     }
 
 //------------------------------------------------------------------------------
+    //2
     //Straightforward Java solution with explanation and a simple implementation of NestedInteger for your ease of testing
     class Solution2{
         public NestedInteger deserialize(String s) {
@@ -172,7 +176,8 @@ Companies
 Airbnb
 Related Topics
 String Stack
+
 Similar Questions
-Flatten Nested List Iterator Ternary Expression Parser Remove Comments
-Java
+Flatten Nested List Iterator
+Ternary Expression Parser Remove Comments
  */

@@ -5,10 +5,44 @@ import org.junit.Test;
 //  17. Letter Combinations of a Phone Number
 //  https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
 //  http://www.lintcode.com/zh-cn/problem/letter-combinations-of-a-phone-number/
-//
-//
+//  backtracking, string
+//  6：5
+//  _022_String_Generate_Parentheses_M
 public class _017_String_Letter_Combinations_of_a_Phone_Number_M {
- //My java solution with FIFO queue
+//-------------------------------------------------------------------------------
+    //5
+    //改写 version: 高频题班 方法1 计状态
+    //不需要l，digits.length()就可以了
+    //每次传到下层的有新的长度x+1，和新的string str+c
+    class Solution_Jiuzhang2{
+        ArrayList<String> ans = new ArrayList<>();
+
+        public ArrayList<String> letterCombinations(String digits) {
+            if (digits.length() == 0) {
+                return ans;
+            }
+            String phone[] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+            dfs(0, "", digits, phone);
+            return ans;
+        }
+
+        //x就是offset
+        void dfs(int x, String str, String digits, String phone[]) {
+            if (x == digits.length()) {
+                ans.add(str);
+                return;
+            }
+            int d = digits.charAt(x) - '0';
+
+            for (char c : phone[d].toCharArray()) {
+                dfs(x + 1, str + c, digits, phone);
+            }
+        }
+    }
+
+//-------------------------------------------------------------------------------
+    //1
+    //My java solution with FIFO queue
     //
     public List<String> letterCombinations01(String digits) {
         LinkedList<String> ans = new LinkedList<String>();
@@ -41,6 +75,7 @@ public class _017_String_Letter_Combinations_of_a_Phone_Number_M {
     }//1
 
 //-------------------------------------------------------------------------------
+    //2
     //My recursive solution using Java
     private final String[] KEYS = { "", "", "abc", "def", "ghi",
         "jkl", "mno", "pqrs", "tuv", "wxyz" };
@@ -74,6 +109,7 @@ public class _017_String_Letter_Combinations_of_a_Phone_Number_M {
     }//1
 
 //-------------------------------------------------------------------------------
+    //3
     // jiuzhang
     public ArrayList<String> letterCombinations_J1(String digits) {
         ArrayList<String> result = new ArrayList<String>();
@@ -119,91 +155,68 @@ public class _017_String_Letter_Combinations_of_a_Phone_Number_M {
     }
 
 //-------------------------------------------------------------------------------
+    //4
     // 9Ch
     // version: 高频题班
 
     //  方法1 计状态
-    ArrayList<String> ans = new ArrayList<>();
-    public ArrayList<String> letterCombinations_J2(String digits) {
-        // Write your code here
-        String phone[] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-
-        if (digits.length() == 0) {
-            return ans;
-        }
-        dfs(0, digits.length(), "", digits, phone);
-        return ans;
-    }
-    void dfs(int x, int l, String str, String digits, String phone[]) {
-        if (x == l) {
-            ans.add(str);
-            return;
-        }
-        int d = digits.charAt(x) - '0';
-        for (char c : phone[d].toCharArray()) {
-            dfs(x + 1, l, str + c, digits, phone);
-        }
-    }
-
-    //改写 version: 高频题班 方法1 计状态
-    //不需要l，digits.length()就可以了
-    class Solution_Jiuzhang2{
+    class Solution_Jiuzhang1{
         ArrayList<String> ans = new ArrayList<>();
-        public ArrayList<String> letterCombinations(String digits) {
-            // Write your code here
+        public ArrayList<String> letterCombinations_J2(String digits) {
             String phone[] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
             if (digits.length() == 0) {
                 return ans;
             }
-            dfs(0, "", digits, phone);
+            dfs(0, digits.length(), "", digits, phone);
             return ans;
         }
-        //x就是offset
-        void dfs(int x, String str, String digits, String phone[]) {
-            if (x == digits.length()) {
+        void dfs(int x, int l, String str, String digits, String phone[]) {
+            if (x == l) {
                 ans.add(str);
                 return;
             }
             int d = digits.charAt(x) - '0';
             for (char c : phone[d].toCharArray()) {
-                dfs(x + 1, str + c, digits, phone);
+                dfs(x + 1, l, str + c, digits, phone);
             }
         }
     }
 
 //-------------------------------------------------------------------------------
+    //6
     // 9Ch
     // 方法2 计状态。仅仅是展示把能放到global的全放到global什么样子。可以让dfs（）参数很少。
-    ArrayList<String> ans_J3 = new ArrayList<>();
+    class Solution_Jiuzhang3{
+        ArrayList<String> result = new ArrayList<>();
+        int l;
+        String digits;
+        final String phone[] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
-    int l;
-    String digits;
-    final String phone[] = {"", "", "abc", "def", "ghi", "jkl",
-            "mno", "pqrs", "tuv", "wxyz"};
+        public ArrayList<String> letterCombinations(String digits) {
 
-    public ArrayList<String> letterCombinations_J3(String digits) {
-        // Write your code here
-        this.l = digits.length();
-        this.digits = digits;
+            this.l = digits.length();
+            this.digits = digits;
 
-        if (digits.length() == 0) {
-            return ans_J3;
+            if (digits.length() == 0) {
+                return result;
+            }
+            dfs(0, "");
+            return result;
         }
-        dfs_J3(0, "");
-        return ans_J3;
+
+        void dfs(int x, String str) {
+            if (x == l) {
+                result.add(str);
+                return;
+            }
+            int d = digits.charAt(x) - '0';
+            for (char c : phone[d].toCharArray()) {
+                dfs(x + 1, str + c);
+            }
+        }
     }
 
-    void dfs_J3(int x, String str) {
-        if (x == l) {
-            ans_J3.add(str);
-            return;
-        }
-        int d = digits.charAt(x) - '0';
-        for (char c : phone[d].toCharArray()) {
-            dfs_J3(x + 1, str + c);
-        }
-    }
 
 
 //--------------------------------------------------------------------------------
@@ -225,9 +238,32 @@ Cellphone
 给定 "23"
 
 返回 ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
+//--------------------------------------------------------------------------------
  */
 
 /*
 Input:Digit string "23"
 Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+//--------------------------------------------------------------------------------
+ */
+
+/*
+Input:Digit string "23"
+Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+Note:
+Although the above answer is in lexicographical order, your answer could be in any order you want.
+
+Seen this question in a real interview before?   Yes  No
+Companies
+Google Facebook Amazon Uber Dropbox
+
+Related Topics
+String Backtracking
+
+Similar Questions
+_022_String_Generate_Parentheses_M
+Combination Sum
+Binary Watch
+Java
+//--------------------------------------------------------------------------------
  */

@@ -6,89 +6,94 @@ import org.junit.Test;
 //
 //  609. Find Duplicate File in System
 //  https://leetcode.com/problems/find-duplicate-file-in-system/description/
+//   String, Hash
+//
 //
 public class _609_String_Find_Duplicate_File_in_System_M {
 //------------------------------------------------------------------------------
 //https://leetcode.com/problems/find-duplicate-file-in-system/solution/
 //------------------------------------------------------------------------------
-//Approach #1 Brute Force [Time Limit Exceeded]
-public class Solution1 {
-    public List < List < String >> findDuplicate(String[] paths) {
-        List < String[] > list = new ArrayList < > ();
-        for (String path: paths) {
-            String[] values = path.split(" ");
-            for (int i = 1; i < values.length; i++) {
-                String[] name_cont = values[i].split("\\(");
-                name_cont[1] = name_cont[1].replace(")", "");
-                list.add(new String[] {
-                        values[0] + "/" + name_cont[0], name_cont[1]
-                });
-            }
-        }
-        boolean[] visited = new boolean[list.size()];
-        List < List < String >> res = new ArrayList < > ();
-        for (int i = 0; i < list.size() - 1; i++) {
-            if (visited[i])
-                continue;
-            List < String > l = new ArrayList < > ();
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(i)[1].equals(list.get(j)[1])) {
-                    l.add(list.get(j)[0]);
-                    visited[j] = true;
-                }
-            }
-            if (l.size() > 0) {
-                l.add(list.get(i)[0]);
-                res.add(l);
-            }
-        }
-        return res;
-    }
-}
-
-
-
-
-//------------------------------------------------------------------------------
-
-//Approach #2 Using HashMap [Accepted]
-
-    public class Solution2 {
+    //1
+    //Approach #1 Brute Force [Time Limit Exceeded]
+    public class Solution1 {
         public List < List < String >> findDuplicate(String[] paths) {
-            HashMap < String, List < String >> map = new HashMap < > ();
+            List < String[] > list = new ArrayList < > ();
             for (String path: paths) {
                 String[] values = path.split(" ");
                 for (int i = 1; i < values.length; i++) {
                     String[] name_cont = values[i].split("\\(");
                     name_cont[1] = name_cont[1].replace(")", "");
-                    List < String > list = map.getOrDefault(name_cont[1], new ArrayList < String > ());
-                    list.add(values[0] + "/" + name_cont[0]);
-                    map.put(name_cont[1], list);
+                    list.add(new String[] {
+                            values[0] + "/" + name_cont[0], name_cont[1]
+                    });
                 }
             }
+            boolean[] visited = new boolean[list.size()];
             List < List < String >> res = new ArrayList < > ();
-            for (String key: map.keySet()) {
-                if (map.get(key).size() > 1)
-                    res.add(map.get(key));
+            for (int i = 0; i < list.size() - 1; i++) {
+                if (visited[i])
+                    continue;
+                List < String > l = new ArrayList < > ();
+                for (int j = i + 1; j < list.size(); j++) {
+                    if (list.get(i)[1].equals(list.get(j)[1])) {
+                        l.add(list.get(j)[0]);
+                        visited[j] = true;
+                    }
+                }
+                if (l.size() > 0) {
+                    l.add(list.get(i)[0]);
+                    res.add(l);
+                }
             }
             return res;
         }
     }
 
 
+
+
+//------------------------------------------------------------------------------
+    //2
+    //Approach #2 Using HashMap [Accepted]
+    public class Solution2 {
+        public List < List < String >> findDuplicate(String[] paths) {
+            HashMap < String, List < String >> map = new HashMap < > ();
+
+            for (String path: paths) {
+                String[] values = path.split(" ");
+                for (int i = 1; i < values.length; i++) {
+                    String[] name_cont = values[i].split("\\(");
+                    name_cont[1] = name_cont[1].replace(")", "");
+                    List < String > list = map.getOrDefault(name_cont[1],
+                            new ArrayList < String > ());
+                    list.add(values[0] + "/" + name_cont[0]);
+                    map.put(name_cont[1], list);
+                }
+            }
+
+            List < List < String >> result = new ArrayList < > ();
+            for (String key: map.keySet()) {
+                if (map.get(key).size() > 1)
+                    result.add(map.get(key));
+            }
+            return result;
+        }
+    }
+
+
 //------------------------------------------------------------------------------
 
-
-//    Straight forward solution with a tiny bit of Java8
-//    If the creation of the map can also be done using Java8 that would have been cool.
-
+    //3
+    //Straight forward solution with a tiny bit of Java8
+    //If the creation of the map can also be done using Java8 that would have been cool.
     public static List<List<String>> findDuplicate(String[] paths) {
         Map<String, List<String>> map = new HashMap<>();
         for(String path : paths) {
             String[] tokens = path.split(" ");
             for(int i = 1; i < tokens.length; i++) {
                 String file = tokens[i].substring(0, tokens[i].indexOf('('));
-                String content = tokens[i].substring(tokens[i].indexOf('(') + 1, tokens[i].indexOf(')'));
+                String content = tokens[i].substring(tokens[i].indexOf('(') + 1,
+                        tokens[i].indexOf(')'));
                 map.putIfAbsent(content, new ArrayList<>());
                 map.get(content).add(tokens[0] + "/" + file);
             }
@@ -96,6 +101,7 @@ public class Solution1 {
         return map.values().stream().filter(e -> e.size() > 1).collect(Collectors.toList());
     }
 //------------------------------------------------------------------------------
+    //4
     //Java Solution, HashMap
     public class Solution4 {
         public List<List<String>> findDuplicate(String[] paths) {
@@ -150,8 +156,10 @@ The output is a list of group of duplicate file paths. For each group, it contai
 Example 1:
 Input:
 ["root/a 1.txt(abcd) 2.txt(efgh)", "root/c 3.txt(abcd)", "root/c/d 4.txt(efgh)", "root 4.txt(efgh)"]
+
 Output:
 [["root/a/2.txt","root/c/d/4.txt","root/4.txt"],["root/a/1.txt","root/c/3.txt"]]
+
 Note:
 No order is required for the final output.
 You may assume the directory name, file name and file content only has letters and digits, and the length of file content is in the range of [1,50].
@@ -164,8 +172,10 @@ If the file content is very large (GB level), how will you modify your solution?
 If you can only read the file by 1kb each time, how will you modify your solution?
 What is the time complexity of your modified solution? What is the most time-consuming part and memory consuming part of it? How to optimize?
 How to make sure the duplicated files you find are not false positive?
+
 Companies
 Dropbox
+
 Related Topics
  String, Hash
  */

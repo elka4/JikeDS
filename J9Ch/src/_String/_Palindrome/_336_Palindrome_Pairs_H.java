@@ -1,12 +1,17 @@
-package _String._Hash;
+package _String._Palindrome;
 import java.util.*;
 import org.junit.Test;
 
 //  336. Palindrome Pairs
 //  https://leetcode.com/problems/palindrome-pairs/description/
+//  Hash Table, String, Trie
+//  5. Longest Palindromic Substring - String
+//  214. Shortest Palindrome - String
+//  4:
 //
 public class _336_Palindrome_Pairs_H {
 //------------------------------------------------------------------------------
+    //1
     //150 ms 45 lines JAVA solution
     class Solution1{
         public List<List<Integer>> palindromePairs(String[] words) {
@@ -61,7 +66,7 @@ public class _336_Palindrome_Pairs_H {
 
     Another way to avoid duplicates is to use Set<List<Integer>> ret = new HashSet<>(); and return new ArrayList<>(ret);*/
 //------------------------------------------------------------------------------
-
+    //2
     //https://discuss.leetcode.com/topic/39585/o-n-k-2-java-solution-with-trie-structure-n-total-number-of-words-k-average-length-of-each-word
     class Solution2{
         private class TrieNode {
@@ -225,7 +230,7 @@ We have the TrieNode structure at the top. In the palindromePairs function, we b
     }
 
 //------------------------------------------------------------------------------
-    //
+    //4
     //Accepted short Java solution using HashMap
     class Solution4{
         public List<List<Integer>> palindromePairs(String[] words) {
@@ -256,6 +261,8 @@ We have the TrieNode structure at the top. In the palindromePairs function, we b
     }
 
 //------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
 }
 /*
 Given a list of unique words, find all pairs of distinct indices (i, j) in the given list, so that the concatenation of the two words, i.e. words[i] + words[j] is a palindrome.
@@ -264,14 +271,16 @@ Example 1:
 Given words = ["bat", "tab", "cat"]
 Return [[0, 1], [1, 0]]
 The palindromes are ["battab", "tabbat"]
+
+
 Example 2:
 Given words = ["abcd", "dcba", "lls", "s", "sssll"]
 Return [[0, 1], [1, 0], [3, 2], [2, 4]]
 The palindromes are ["dcbaabcd", "abcddcba", "slls", "llssssll"]
-Credits:
-Special thanks to @dietpepsi for adding this problem and creating all test cases.
 
-Seen this question in a real interview before?   Yes  No
+
+------------------------------------------------------------------------------
+
 Companies
 Google Airbnb
 
@@ -279,5 +288,6 @@ Related Topics
 Hash Table String Trie
 
 Similar Questions
-Longest Palindromic Substring Shortest Palindrome
+5. Longest Palindromic Substring - String
+214. Shortest Palindrome - String
  */

@@ -5,12 +5,15 @@ import org.junit.Test;
 //  551. Student Attendance Record I
 //  https://leetcode.com/problems/student-attendance-record-i/description/
 //
+//  Student Attendance Record II
+//  7:
+//
 public class _551_String_Student_Attendance_Record_I_E {
 //------------------------------------------------------------------------------
 //https://leetcode.com/problems/student-attendance-record-i/solution/
 //------------------------------------------------------------------------------
-//Approach #1 Simple Solution [Accepted]
-
+    //1
+    //Approach #1 Simple Solution [Accepted]
     public class Solution1 {
         public boolean checkRecord(String s) {
             int count=0;
@@ -25,8 +28,8 @@ public class _551_String_Student_Attendance_Record_I_E {
 
 
 //------------------------------------------------------------------------------
-//Approach #2 Better Solution [Accepted]
-
+    //2
+    //Approach #2 Better Solution [Accepted]
     public class Solution2 {
         public boolean checkRecord(String s) {
             int count=0;
@@ -39,9 +42,8 @@ public class _551_String_Student_Attendance_Record_I_E {
 
 
 //------------------------------------------------------------------------------
-
-///Approach #3 Single pass Solution (Without indexOf method) [Accepted]
-
+    //3
+    //Approach #3 Single pass Solution (Without indexOf method) [Accepted]
     public class Solution3 {
         public boolean checkRecord(String s) {
             int countA = 0;
@@ -57,19 +59,21 @@ public class _551_String_Student_Attendance_Record_I_E {
 
 
 //------------------------------------------------------------------------------
-//Approach #4 Using Regex [Accepted]
-
+    //4
+    //Approach #4 Using Regex [Accepted]
     public class Solution4 {
         public boolean checkRecord(String s) {
             return !s.matches(".*(A.*A|LLL).*");
         }
     }
 //------------------------------------------------------------------------------
-//Java 1-liner
-public boolean checkRecord(String s) {
+    //5
+    //Java 1-liner
+    public boolean checkRecord(String s) {
     return !s.matches(".*LLL.*|.*A.*A.*");
 }
 //------------------------------------------------------------------------------
+    //6
 /*    DescriptionHintsSubmissionsDiscussSolution
     Java Simple without Regex 3 lines
     Simple by using Java String Functions -*/
@@ -83,6 +87,7 @@ public boolean checkRecord(String s) {
     }
 
 //------------------------------------------------------------------------------
+    //7
     //Java O(N) solution - Accepted
     public boolean checkRecord6(String s) {
         int countA=0;

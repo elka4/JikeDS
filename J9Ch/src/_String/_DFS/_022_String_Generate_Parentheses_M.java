@@ -6,11 +6,59 @@ import java.util.*;
 //  22. Generate Parentheses
 //  https://leetcode.com/problems/generate-parentheses/description/
 //  http://www.lintcode.com/zh-cn/problem/generate-parentheses/
-// 3 == 9， 10
-//
-//
+//  10:
+//  String, Backtracking
+//  _017_String_Letter_Combinations_of_a_Phone_Number_M
 public class _022_String_Generate_Parentheses_M {
+//--------------------------------------------------------------------------------
+    // 9
+    //Zhu
+    /*
+    这个方法是DFS，但是并不是backtracking，因为每次传递到下层函数的是通过 + 重新创建的一个String
+     */
+    public List<String> generateParenthesis_Zhu(int n) {
+        List<String> result = new ArrayList<>();
+        if(n <= 0) return result;
 
+        dfs("", n, n, result);
+        return result;
+    }
+
+    void dfs(String paren, int left, int right, List<String> result){
+        if (left > right) {
+            return;
+        }
+        if (left == 0 && right == 0) {
+            result.add(paren);
+        }
+        if (left > 0) {
+            dfs(paren + '(', left - 1, right, result);
+        }
+        if(right > 0 ){
+            dfs(paren + ')', left, right - 1, result);
+        }
+    }
+
+
+    @Test
+    public void test09(){
+        System.out.println(generateParenthesis_Zhu(3));
+    }
+    //[((())), (()()), (())(), ()(()), ()()()]
+
+    @Test
+    public void test09_1(){
+//        System.out.println(generateParenthesis_Zhu(3));
+        System.gc();
+        long t0 = System.currentTimeMillis();
+/*        for (int i = 1; i < 15; i++) {
+            generateParenthesis_Zhu(i);
+        }*/
+        generateParenthesis_Zhu(15);
+        long t = System.currentTimeMillis() - t0;
+        System.out.println(" String time: " + t + " ms");
+    }//String time: 7658 ms
+//-------------------------------------------------------------------------------
     // 1
     /*  An iterative method.
     My method is DP. First consider how to get the result f(n) from previous result f(0)...f(n-1).
@@ -268,55 +316,7 @@ Here it is rewritten as in a single function:
     }
     //[((())), (()()), (())(), ()(()), ()()()]
 
-//--------------------------------------------------------------------------------
-    // 9
-    //Zhu
-    /*
-    这个方法是DFS，但是并不是backtracking，因为每次传递到下层函数的是通过 + 重新创建的一个String
 
-     */
-    public List<String> generateParenthesis_Zhu(int n) {
-        List<String> result = new ArrayList<>();
-
-        if(n <= 0){
-            return result;
-        }
-        dfs("", n, n, result);
-        return result;
-    }
-
-    void dfs(String paren, int left, int right, List<String> result){
-        if (left > right) {
-            return;
-        }
-        if (left == 0 && right == 0) {
-            result.add(paren);
-        }
-        if (left > 0) {
-            dfs(paren + "(", left - 1, right, result);
-        }
-        if(right > 0 ){
-            dfs(paren + ")", left, right - 1, result);
-        }
-    }
-    @Test
-    public void test09(){
-        System.out.println(generateParenthesis_Zhu(3));
-    }
-    //[((())), (()()), (())(), ()(()), ()()()]
-
-    @Test
-    public void test09_1(){
-//        System.out.println(generateParenthesis_Zhu(3));
-        System.gc();
-        long t0 = System.currentTimeMillis();
-/*        for (int i = 1; i < 15; i++) {
-            generateParenthesis_Zhu(i);
-        }*/
-        generateParenthesis_Zhu(15);
-        long t = System.currentTimeMillis() - t0;
-        System.out.println(" String time: " + t + " ms");
-    }//String time: 7658 ms
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------
     // 10
@@ -373,10 +373,6 @@ Here it is rewritten as in a single function:
 /*
 生成括号
 
- 描述
- 笔记
- 数据
- 评测
 给定 n 对括号，请写一个函数以将其生成新的括号组合，并返回所有组合结果。
 
 样例
@@ -390,6 +386,7 @@ Here it is rewritten as in a single function:
 容易 有效的括号序列 28 %
 中等 不同的二叉查找树 II 33 %
 中等 不同的二叉查找树
+//--------------------------------------------------------------------------------
  */
 
 
@@ -404,8 +401,16 @@ For example, given n = 3, a solution set is:
   "()(())",
   "()()()"
 ]
- */
 
-/*
+Seen this question in a real interview before?   Yes  No
+Companies
+Google Uber Zenefits
 
+Related Topics
+String Backtracking
+
+Similar Questions
+_017_String_Letter_Combinations_of_a_Phone_Number_M
+_020_String_Valid_Parentheses_E
+//--------------------------------------------------------------------------------
  */

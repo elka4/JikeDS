@@ -5,24 +5,28 @@ import org.junit.Test;
 //  657. Judge Route Circle
 //  https://leetcode.com/problems/judge-route-circle/
 //
+//  Friend Circles
+//  6:
+//
 public class _657_String_Judge_Route_Circle_E {
 //------------------------------------------------------------------------------
-//[C++] [Java] Clean Code
-public class Solution1 {
-    public boolean judgeCircle(String moves) {
-        int x = 0;
-        int y = 0;
-        for (char ch : moves.toCharArray()) {
-            if (ch == 'U') y++;
-            else if (ch == 'D') y--;
-            else if (ch == 'R') x++;
-            else if (ch == 'L') x--;
+    //1
+    //[C++] [Java] Clean Code
+    public class Solution1 {
+        public boolean judgeCircle(String moves) {
+            int x = 0;
+            int y = 0;
+            for (char ch : moves.toCharArray()) {
+                if (ch == 'U') y++;
+                else if (ch == 'D') y--;
+                else if (ch == 'R') x++;
+                else if (ch == 'L') x--;
+            }
+            return x == 0 && y == 0;
         }
-        return x == 0 && y == 0;
     }
-}
 //------------------------------------------------------------------------------
-
+    //2
 //    Easy 2 lines Java
 //    Easy solution using split.(It needs spaces from front and behind to be calculated correctly):
 
@@ -32,6 +36,7 @@ public class Solution1 {
     }
 
 //------------------------------------------------------------------------------
+    //3
 //Java solution with explanation - O(n)
 /*We have to check if the net displacement is 0. This is true only if the distance traversed up equals that of down
     and traversed left equals that of right.*/
@@ -61,24 +66,25 @@ public class Solution1 {
 
 
 //------------------------------------------------------------------------------
-//Java solution, if else...
-public class Solution4 {
-    public boolean judgeCircle(String moves) {
-        int x = 0, y = 0;
-        for (char c : moves.toCharArray()) {
-            if (c == 'R') x++;
-            else if (c == 'L') x--;
-            else if (c == 'U') y--;
-            else if (c == 'D') y++;
+    //4
+    //Java solution, if else...
+    public class Solution4 {
+        public boolean judgeCircle(String moves) {
+            int x = 0, y = 0;
+            for (char c : moves.toCharArray()) {
+                if (c == 'R') x++;
+                else if (c == 'L') x--;
+                else if (c == 'U') y--;
+                else if (c == 'D') y++;
+            }
+            return x == 0 && y == 0;
         }
-        return x == 0 && y == 0;
     }
-}
 
 
 //------------------------------------------------------------------------------
-//[Java/C++] 4 lines solution
-
+    //5
+    //[Java/C++] 4 lines solution
     public boolean judgeCircle4(String moves) {
         int x = 0, y = 0;
         for(char c: moves.toCharArray()){
@@ -88,8 +94,8 @@ public class Solution4 {
     }
 
 //------------------------------------------------------------------------------
-//share my java solution!
-
+    //6
+    //share my java solution!
     public class Solution5 {
         public boolean judgeCircle(String moves) {
             int[] current = new int[2];

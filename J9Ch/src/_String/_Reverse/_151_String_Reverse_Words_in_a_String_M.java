@@ -7,8 +7,11 @@ import org.junit.Test;
 //  http://www.lintcode.com/problem/reverse-words-in-a-string/
 //  给定一个字符串，逐个翻转字符串中的每个单词。
 //
+//  5:
+//
 public class _151_String_Reverse_Words_in_a_String_M {
 //------------------------------------------------------------------------------
+    //1
     //Clean Java two-pointers solution (no trim( ), no split( ), no StringBuilder)
     public class Solution1 {
 
@@ -61,6 +64,7 @@ public class _151_String_Reverse_Words_in_a_String_M {
 
     }
 //------------------------------------------------------------------------------
+    //2
     //My accepted Java solution
     public class Solution2 {
         public String reverseWords(String s) {
@@ -90,14 +94,16 @@ Instead of using substring, insert the word-characters directly in the StringBui
  */
 
 //------------------------------------------------------------------------------
-//  Java 3-line builtin solution
-public String reverseWords(String s) {
-    String[] words = s.trim().split(" +");
-    Collections.reverse(Arrays.asList(words));
-    return String.join(" ", words);
-}
+    //3
+    //  Java 3-line builtin solution
+    public String reverseWords(String s) {
+        String[] words = s.trim().split(" +");
+        Collections.reverse(Arrays.asList(words));
+        return String.join(" ", words);
+    }
 
 //------------------------------------------------------------------------------
+    //4
 /*
     Here is my concise and fast code that beats 73% of Java submissions.
 
@@ -117,6 +123,7 @@ public String reverseWords(String s) {
     }
 
 //------------------------------------------------------------------------------
+    //5
     //9CH
     public class Jiuzhang {
         public String reverseWords(String s) {

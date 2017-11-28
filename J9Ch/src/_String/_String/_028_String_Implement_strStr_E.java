@@ -7,10 +7,15 @@ import org.junit.Test;
 //  http://www.lintcode.com/problem/implement-strstr/
 //
 //对于一个给定的 source 字符串和一个 target 字符串，你应该在 source 字符串中找出 target 字符串出现的第一个位置(从0开始)。如果不存在，则返回 -1。
-
-
+//  Two Pointers String
+//  214 Shortest Palindrome - String
+//  459 Repeated Substring Pattern - String
+//  3:
+//
+//
 public class _028_String_Implement_strStr_E {
 //------------------------------------------------------------------------------
+    //1
     //Elegant Java solution
     public int strStr(String haystack, String needle) {
         for (int i = 0; ; i++) {
@@ -22,6 +27,7 @@ public class _028_String_Implement_strStr_E {
         }
     }
 //------------------------------------------------------------------------------
+    //2
     //Share my accepted java solution
     public class Solution2 {
         public int strStr(String haystack, String needle) {
@@ -43,6 +49,7 @@ public class _028_String_Implement_strStr_E {
 
 
 //------------------------------------------------------------------------------
+    //3
     //9Ch
     class Jiuzhang {
         /**
@@ -90,8 +97,11 @@ Output: -1
 Seen this question in a real interview before?   Yes  No
 Companies
 Facebook Microsoft Apple Pocket Gems
+
 Related Topics
 Two Pointers String
+
 Similar Questions
-Shortest Palindrome Repeated Substring Pattern
+214 Shortest Palindrome
+459 Repeated Substring Pattern
  */

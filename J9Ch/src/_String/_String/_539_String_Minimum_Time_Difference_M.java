@@ -5,10 +5,13 @@ import org.junit.Test;
 //  539. Minimum Time Difference
 //  https://leetcode.com/problems/minimum-time-difference/description/
 //
+//  3:
+//
 public class _539_String_Minimum_Time_Difference_M {
 //------------------------------------------------------------------------------
-//Verbose Java Solution, Bucket
-//    There is only 24 * 60 = 1440 possible time points. Just create a boolean array, each element stands for if we see that time point or not. Then things become simple...
+    //1
+    //Verbose Java Solution, Bucket
+    //    There is only 24 * 60 = 1440 possible time points. Just create a boolean array, each element stands for if we see that time point or not. Then things become simple...
 
     public class Solution1 {
         public int findMinDifference(List<String> timePoints) {
@@ -40,7 +43,7 @@ public class _539_String_Minimum_Time_Difference_M {
         }
     }
 //------------------------------------------------------------------------------
-
+    //2
     //Java sorting with a sentinel node
     public class Solution2 {
         public int findMinDifference(List<String> timePoints) {
@@ -84,28 +87,29 @@ public class _539_String_Minimum_Time_Difference_M {
     }
 
 //------------------------------------------------------------------------------
-//Java 10 liner solution. Simplest so far
-public class Solution3 {
-    public int findMinDifference(List<String> timePoints) {
-        int mm = Integer.MAX_VALUE;
-        List<Integer> time = new ArrayList<>();
+    //3
+    //Java 10 liner solution. Simplest so far
+    public class Solution3 {
+        public int findMinDifference(List<String> timePoints) {
+            int mm = Integer.MAX_VALUE;
+            List<Integer> time = new ArrayList<>();
 
-        for(int i = 0; i < timePoints.size(); i++){
-            Integer h = Integer.valueOf(timePoints.get(i).substring(0, 2));
-            time.add(60 * h + Integer.valueOf(timePoints.get(i).substring(3, 5)));
+            for(int i = 0; i < timePoints.size(); i++){
+                Integer h = Integer.valueOf(timePoints.get(i).substring(0, 2));
+                time.add(60 * h + Integer.valueOf(timePoints.get(i).substring(3, 5)));
+            }
+
+            Collections.sort(time, (Integer a, Integer b) -> a - b);
+
+            for(int i = 1; i < time.size(); i++){
+                System.out.println(time.get(i));
+                mm = Math.min(mm, time.get(i) - time.get(i-1));
+            }
+
+            int corner = time.get(0) + (1440 - time.get(time.size()-1));
+            return Math.min(mm, corner);
         }
-
-        Collections.sort(time, (Integer a, Integer b) -> a - b);
-
-        for(int i = 1; i < time.size(); i++){
-            System.out.println(time.get(i));
-            mm = Math.min(mm, time.get(i) - time.get(i-1));
-        }
-
-        int corner = time.get(0) + (1440 - time.get(time.size()-1));
-        return Math.min(mm, corner);
     }
-}
 
 //------------------------------------------------------------------------------
 }

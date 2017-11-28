@@ -5,8 +5,11 @@ import org.junit.Test;
 //  227. Basic Calculator II
 //  https://leetcode.com/problems/basic-calculator-ii/description/
 //
+//  3:
+//
 public class _227_String_Basic_Calculator_II_M {
 //------------------------------------------------------------------------------
+    //1
     //Share my java solution
     public class Solution1 {
         public int calculate(String s) {
@@ -45,6 +48,7 @@ public class _227_String_Basic_Calculator_II_M {
         }
     }
 //------------------------------------------------------------------------------
+    //2
     //Java straight forward iteration Solution with comments, No Stack, O(N) & O(1)
     public int calculate(String s) {
         if (s == null) return 0;
@@ -89,56 +93,57 @@ public class _227_String_Basic_Calculator_II_M {
 
 
 //------------------------------------------------------------------------------
-//9Ch
-class Jiuzhang {
-    public int calculate(String s) {
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
-
-        List<String> list = new ArrayList<>();
-        Deque<String> deque = new ArrayDeque<>();
-
-        int n = 0;
-        for (char ch : s.toCharArray()) {
-            if (ch == ' ') {
-                continue;
+    //3
+    //9Ch
+    class Jiuzhang {
+        public int calculate(String s) {
+            if (s == null || s.length() == 0) {
+                return 0;
             }
-            if (Character.isDigit(ch)) {
-                n = n * 10 + ch - '0';
-            } else {
-                list.add("" + n);
-                n = 0;
-                list.add("" + ch);
+
+            List<String> list = new ArrayList<>();
+            Deque<String> deque = new ArrayDeque<>();
+
+            int n = 0;
+            for (char ch : s.toCharArray()) {
+                if (ch == ' ') {
+                    continue;
+                }
+                if (Character.isDigit(ch)) {
+                    n = n * 10 + ch - '0';
+                } else {
+                    list.add("" + n);
+                    n = 0;
+                    list.add("" + ch);
+                }
             }
-        }
-        list.add("" + n);
+            list.add("" + n);
 
-        for (int i = 0; i < list.size(); i++) {
-            String cur = list.get(i);
-            if (cur.equals("*") || cur.equals("/")) {
-                int a = Integer.parseInt(deque.pop());
-                int b = Integer.parseInt(list.get(i+1));
-                i++;
-                int c = cur.equals("*") ? a * b : a / b;
-                deque.push("" + c);
-            } else {
-                deque.push(cur);
+            for (int i = 0; i < list.size(); i++) {
+                String cur = list.get(i);
+                if (cur.equals("*") || cur.equals("/")) {
+                    int a = Integer.parseInt(deque.pop());
+                    int b = Integer.parseInt(list.get(i+1));
+                    i++;
+                    int c = cur.equals("*") ? a * b : a / b;
+                    deque.push("" + c);
+                } else {
+                    deque.push(cur);
+                }
             }
-        }
-        // System.out.println(deque.toString());
+            // System.out.println(deque.toString());
 
-        while (deque.size() != 1) {
-            int a = Integer.parseInt(deque.pollLast());
-            String sign = deque.pollLast();
-            int b = Integer.parseInt(deque.pollLast());
-            int c = sign.equals("+") ? a + b : a - b;
-            deque.offerLast("" + c);
-        }
+            while (deque.size() != 1) {
+                int a = Integer.parseInt(deque.pollLast());
+                String sign = deque.pollLast();
+                int b = Integer.parseInt(deque.pollLast());
+                int c = sign.equals("+") ? a + b : a - b;
+                deque.offerLast("" + c);
+            }
 
-        return (int)Integer.parseInt(deque.peek());
+            return (int)Integer.parseInt(deque.peek());
+        }
     }
-}
 
 //------------------------------------------------------------------------------
 }
@@ -164,5 +169,6 @@ Airbnb
 Related Topics
 String
 Similar Questions
-Basic Calculator Expression Add Operators
+Basic Calculator
+Expression Add Operators
  */

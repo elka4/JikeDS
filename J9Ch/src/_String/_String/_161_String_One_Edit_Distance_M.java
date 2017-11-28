@@ -5,10 +5,11 @@ import org.junit.Test;
 //  161. One Edit Distance
 //  https://leetcode.com/problems/one-edit-distance/description/
 //
-//
+//  5:
 //
 public class _161_String_One_Edit_Distance_M {
 //------------------------------------------------------------------------------
+    //1
     //My CLEAR JAVA solution with explanation
     class Solution1{
         /*
@@ -40,6 +41,7 @@ public class _161_String_One_Edit_Distance_M {
         }
     }
 //------------------------------------------------------------------------------
+    //2
     //Easy understood Java solution
     class Solution2{
         public boolean isOneEditDistance(String s, String t) {
@@ -66,7 +68,7 @@ public class _161_String_One_Edit_Distance_M {
     }
 
 //------------------------------------------------------------------------------
-
+    //3
     //in class
     public boolean isOneEditDistance(String s, String t){
         if (s.length() > t.length()) {
@@ -100,7 +102,7 @@ public class _161_String_One_Edit_Distance_M {
     }
 
 //--------------------------------------------------------------------------------
-
+    //4
     // 9Ch
     /**
      * @param s a string
@@ -134,7 +136,7 @@ public class _161_String_One_Edit_Distance_M {
     }
 
 //--------------------------------------------------------------------------------
-
+    //5
     // version: 高频题班
     /**
      * @param s a string

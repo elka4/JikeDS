@@ -5,8 +5,11 @@ import org.junit.Test;
 //  468. Validate IP Address
 //  https://leetcode.com/problems/validate-ip-address/description/
 //
+//  2:
+//
 public class _468_String_Validate_IP_Address_M {
 //------------------------------------------------------------------------------
+    //1
     //Java Simple Solution
     public String validIPAddress(String IP) {
         if(isValidIPv4(IP)) return "IPv4";
@@ -65,6 +68,7 @@ public class _468_String_Validate_IP_Address_M {
 
 
 //------------------------------------------------------------------------------
+    //2
     //9Ch
     public class Solution {
         String IPv6char = "0123456789abcdefABCDEF";
@@ -182,5 +186,4 @@ Companies
 Twitter
 Related Topics
 String
-Java
  */

@@ -7,11 +7,16 @@ import org.junit.Test;
 //  http://www.lintcode.com/zh-cn/problem/add-binary/
 //
 //  给定两个二进制字符串，返回他们的和（用二进制表示）。
-
-
+//  Math, String
+//  2 Add Two Numbers - LinkedList Math
+//  43 Multiply Strings - String, Math
+//  66 Plus One - Array Math
+//  3:
+//
 public class _067_String_Add_Binary_E {
 //------------------------------------------------------------------------------
-//Short AC solution in Java with explanation
+    //1
+    //Short AC solution in Java with explanation
     public class Solution1 {
         public String addBinary(String a, String b) {
             StringBuilder sb = new StringBuilder();
@@ -29,6 +34,7 @@ public class _067_String_Add_Binary_E {
     }
     //Computation from string usually can be simplified by using a carry as such.
 //------------------------------------------------------------------------------
+    //2
     //Simple accepted java solution
     public class Solution2 {
         public String addBinary(String a, String b) {
@@ -65,6 +71,7 @@ public class _067_String_Add_Binary_E {
 
 
 //------------------------------------------------------------------------------
+    //3
     //9Ch
     public class Jiuzhang {
         public String addBinary(String a, String b) {
@@ -118,16 +125,14 @@ Related Topics
 Math String
 
 Similar Questions
-Add Two Numbers Multiply Strings Plus One
+2 Add Two Numbers - LinkedList Math
+43 Multiply Strings - String, Math
+66 Plus One - Array Math
  */
 
-/*
+/*------------------------------------------------------------------------------
 408. 二进制求和
 
- 描述
- 笔记
- 数据
- 评测
 给定两个二进制字符串，返回他们的和（用二进制表示）。
 
 您在真实的面试中是否遇到过这个题？ Yes
@@ -143,4 +148,5 @@ b = 1
 相关题目
 中等 两个整数相除 17 %
 容易 加一
+------------------------------------------------------------------------------
  */

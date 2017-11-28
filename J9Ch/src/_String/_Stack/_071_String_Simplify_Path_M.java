@@ -7,8 +7,13 @@ import org.junit.Test;
 //  http://www.lintcode.com/problem/simplify-path/
 //
 //  给定一个文档(Unix-style)的完全路径，请进行路径简化。
+//  String Stack
+//  6:
+//
+//
 public class _071_String_Simplify_Path_M {
 //------------------------------------------------------------------------------
+    //1
     //Java 10-lines solution with stack
 /*    Hi guys!
 
@@ -28,6 +33,7 @@ public class _071_String_Simplify_Path_M {
     }
 
 //------------------------------------------------------------------------------
+    //2
     //Share my 8ms Java solution
     public String simplifyPath(String path) {
         String[] dir = path.split("/");
@@ -52,7 +58,7 @@ public class _071_String_Simplify_Path_M {
     }
 
 //------------------------------------------------------------------------------
-
+    //3
     //Accepted solution using Deque
     /**
      * Deque of strings (directories).
@@ -90,6 +96,7 @@ public class _071_String_Simplify_Path_M {
     }
 
 //------------------------------------------------------------------------------
+    //4
     //Java easy to understand Stack solution.
     public String simplifyPath4(String path) {
         Stack<String> stack = new Stack<>();
@@ -107,6 +114,7 @@ public class _071_String_Simplify_Path_M {
 
 
 //------------------------------------------------------------------------------
+    //5
     //AC Solution in Java
     public class Solution5 {
         public String simplifyPath(String path) {
@@ -126,6 +134,7 @@ public class _071_String_Simplify_Path_M {
     }
 
 //------------------------------------------------------------------------------
+    //6
     //9Ch
     public class Jiuzhang {
         public String simplifyPath(String path) {
@@ -165,6 +174,7 @@ click to show corner cases.
 Seen this question in a real interview before?   Yes  No
 Companies
 Facebook Microsoft
+
 Related Topics
 String Stack
  */

@@ -5,13 +5,17 @@ import org.junit.Test;
 //  616. Add Bold Tag in String
 //  https://leetcode.com/problems/add-bold-tag-in-string/description/
 //
+//Merge Intervals
+//Tag Validator
+//  7:
+//
+//
 public class _616_String_Add_Bold_Tag_in_String_M {
 //------------------------------------------------------------------------------
 //https://leetcode.com/problems/add-bold-tag-in-string/solution/
 //------------------------------------------------------------------------------
-
-//Approach #1 Brute Force [Time Limit Exceeded]
-
+    //1
+    //Approach #1 Brute Force [Time Limit Exceeded]
     public class Solution1 {
         public String addBoldTag(String s, String[] dict) {
             List < int[] > list = new ArrayList < > ();
@@ -46,44 +50,43 @@ public class _616_String_Add_Bold_Tag_in_String_M {
 
 
 //------------------------------------------------------------------------------
-
-//Approach #2 Similar to Merge Interval Problem [Accepted]
-public class Solution2 {
-    public String addBoldTag(String s, String[] dict) {
-        List < int[] > list = new ArrayList < > ();
-        for (String d: dict) {
-            for (int i = 0; i <= s.length() - d.length(); i++) {
-                if (s.substring(i, i + d.length()).equals(d))
-                    list.add(new int[] {i, i + d.length() - 1});
+    //2
+    //Approach #2 Similar to Merge Interval Problem [Accepted]
+    public class Solution2 {
+        public String addBoldTag(String s, String[] dict) {
+            List < int[] > list = new ArrayList < > ();
+            for (String d: dict) {
+                for (int i = 0; i <= s.length() - d.length(); i++) {
+                    if (s.substring(i, i + d.length()).equals(d))
+                        list.add(new int[] {i, i + d.length() - 1});
+                }
             }
-        }
-        if (list.size() == 0)
-            return s;
-        Collections.sort(list, (a, b) -> a[0] == b[0] ? a[1] - b[1] : a[0] - b[0]);
-        int start, prev = 0, end = 0;
-        StringBuilder res = new StringBuilder();
-        for (int i = 0; i < list.size(); i++) {
-            res.append(s.substring(prev, list.get(i)[0]));
-            start = i;
-            end = list.get(i)[1];
-            while (i < list.size() - 1 && list.get(i + 1)[0] <= end + 1) {
-                end = Math.max(end, list.get(i + 1)[1]);
-                i++;
+            if (list.size() == 0)
+                return s;
+            Collections.sort(list, (a, b) -> a[0] == b[0] ? a[1] - b[1] : a[0] - b[0]);
+            int start, prev = 0, end = 0;
+            StringBuilder res = new StringBuilder();
+            for (int i = 0; i < list.size(); i++) {
+                res.append(s.substring(prev, list.get(i)[0]));
+                start = i;
+                end = list.get(i)[1];
+                while (i < list.size() - 1 && list.get(i + 1)[0] <= end + 1) {
+                    end = Math.max(end, list.get(i + 1)[1]);
+                    i++;
+                }
+                res.append("<b>" + s.substring(list.get(start)[0], end + 1) + "</b>");
+                prev = end + 1;
             }
-            res.append("<b>" + s.substring(list.get(start)[0], end + 1) + "</b>");
-            prev = end + 1;
+            res.append(s.substring(end + 1, s.length()));
+            return res.toString();
         }
-        res.append(s.substring(end + 1, s.length()));
-        return res.toString();
     }
-}
 
 
 
 //------------------------------------------------------------------------------
-
-//Approach #3 Using Boolean(Marking) Array[Accepted]
-
+    //3
+    //Approach #3 Using Boolean(Marking) Array[Accepted]
     public class Solution3 {
         public String addBoldTag(String s, String[] dict) {
             boolean[] bold = new boolean[s.length()];
@@ -111,6 +114,7 @@ public class Solution2 {
 
 
 //------------------------------------------------------------------------------
+    //4
 /*Java Solution, boolean array
     Use a boolean array to mark if character at each position is bold or not. After that, things will become simple.*/
 
@@ -144,6 +148,7 @@ public class Solution2 {
 
 
 //------------------------------------------------------------------------------
+    //5
 /*Java solution, Same as Merge Interval.
     Consider you have string
     s = "aaabbcc"
@@ -225,7 +230,7 @@ public class Solution2 {
 
 
 //------------------------------------------------------------------------------
-
+    //6
     //short java solution
     public String addBoldTag6(String s, String[] dict) {
         int n = s.length();
@@ -250,6 +255,7 @@ public class Solution2 {
         return sb.toString();
     }
 //------------------------------------------------------------------------------
+    //7
     //Java Parsing Solution
     public static String addBoldTag7(String s, String[] dict) {
         int n = s.length();

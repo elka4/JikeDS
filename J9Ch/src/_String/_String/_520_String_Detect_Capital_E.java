@@ -6,26 +6,31 @@ import org.junit.Test;
 //  520. Detect Capital
 //  https://leetcode.com/problems/detect-capital/description/
 //
+//  5:
+//
 public class _520_String_Detect_Capital_E {
 //------------------------------------------------------------------------------
-//3 Lines
-public class Solution1 {
-    public boolean detectCapitalUse(String word) {
-        int cnt = 0;
-        for(char c: word.toCharArray()) if('Z' - c >= 0) cnt++;
-        return ((cnt==0 || cnt==word.length()) || (cnt==1 && 'Z' - word.charAt(0)>=0));
+    //1
+    //3 Lines
+    public class Solution1 {
+        public boolean detectCapitalUse(String word) {
+            int cnt = 0;
+            for(char c: word.toCharArray()) if('Z' - c >= 0) cnt++;
+            return ((cnt==0 || cnt==word.length()) || (cnt==1 && 'Z' - word.charAt(0)>=0));
+        }
     }
-}
 //------------------------------------------------------------------------------
-//Java 1-Liner
-//Regex again.
+    //2
+    //Java 1-Liner
+    //Regex again.
 
-    public boolean detectCapitalUse2(String word) {
-        return word.matches("[A-Z]+|[a-z]+|[A-Z][a-z]+");
-    }
+        public boolean detectCapitalUse2(String word) {
+            return word.matches("[A-Z]+|[a-z]+|[A-Z][a-z]+");
+        }
 
 
 //------------------------------------------------------------------------------
+    //3
     //Simple Java Solution O(n) time O(1) space
     public boolean detectCapitalUse3(String word) {
         return word.equals(word.toUpperCase()) ||
@@ -33,6 +38,8 @@ public class Solution1 {
                 Character.isUpperCase(word.charAt(0)) &&
                         word.substring(1).equals(word.substring(1).toLowerCase());
     }
+//------------------------------------------------------------------------------
+    //4
     //A slightly more verbose, but more efficient solution:
 
     public boolean detectCapitalUse4(String word) {
@@ -43,6 +50,7 @@ public class Solution1 {
         return numUpper == 0 || numUpper == word.length();
     }
 //------------------------------------------------------------------------------
+    //5
     /*Java short solution using built-in String methods
     The string can be correctly capitalized if either: it's shorter than 2 characters, or if it's all lower case, or if it's all upper case, or if from position 1 onward there are only lowercase letters.*/
 

@@ -2,17 +2,21 @@ package _String._Math;
 import java.util.*;
 import org.junit.Test;
 
-//Integer to Roman
-//
+//  12. Integer to Roman
+//  https://leetcode.com/problems/integer-to-roman/
+//  Math String
+//  13. Roman to Integer - Math, String
+//  273. Integer to English Words - Math, String
+//  3:1
 //
 public class _012_String_Integer_to_Roman_M {
 //------------------------------------------------------------------------------
 
-//------------------------------------------------------------------------------
 
 
 
 //------------------------------------------------------------------------------
+    //1
        /*
      * @param n: The integer
      * @return: Roman representation
@@ -50,7 +54,7 @@ public class _012_String_Integer_to_Roman_M {
 
 
 //--------------------------------------------------------------------------------
-
+    //2
     public String intToRoman2(int num) {
         if(num <= 0) {
             return "";
@@ -72,7 +76,7 @@ public class _012_String_Integer_to_Roman_M {
 
 
 //--------------------------------------------------------------------------------
-
+    //3
     // version: 高频题班
     /**
      * @param n The integer
@@ -87,5 +91,20 @@ public class _012_String_Integer_to_Roman_M {
         return M[n / 1000] + C[(n / 100) % 10] + X[(n / 10) % 10] + I[n % 10];
     }
 
-
+//--------------------------------------------------------------------------------
 }
+/*
+Given an integer, convert it to a roman numeral.
+
+Input is guaranteed to be within the range from 1 to 3999.
+
+Companies
+Twitter
+
+Related Topics
+Math String
+
+Similar Questions
+13. Roman to Integer - Math, String
+273. Integer to English Words - Math, String
+ */

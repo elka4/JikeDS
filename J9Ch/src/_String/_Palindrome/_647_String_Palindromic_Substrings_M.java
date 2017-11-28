@@ -4,9 +4,16 @@ import org.junit.Test;
 
 //  647. Palindromic Substrings
 //  https://leetcode.com/problems/palindromic-substrings/
+//String Dynamic Programming
+//
+//  5 Longest Palindromic Substring - String
+//  516 Longest Palindromic Subsequence - DP
+//  647 Palindromic Substrings - String, DP
+//  5:
 //
 public class _647_String_Palindromic_Substrings_M {
 //------------------------------------------------------------------------------
+    //1
 //Java solution, 8 lines, extendPalindrome
 //    Idea is start from each index and try to extend palindrome for both odd and even length.
 
@@ -31,7 +38,7 @@ public class _647_String_Palindromic_Substrings_M {
         }
     }
 //------------------------------------------------------------------------------
-
+    //2
     //Java DP solution based on longest palindromic substring
     //This solution is almost same as the DP solution for longest palindromic substring, instead of storing the longest, just get the count of palindromic substrings.
     public class Solution2 {
@@ -52,6 +59,7 @@ public class _647_String_Palindromic_Substrings_M {
 
 
 //------------------------------------------------------------------------------
+    //3
     //[Java/C++] 6 lines solution - NO DP
 /*
 The idea is count the number of different palindromic substrings from their respective middle.
@@ -69,6 +77,7 @@ In the following code, when we consider the substring s[i-j, ..., i+j], i is the
         }
     }
 //------------------------------------------------------------------------------
+    //4
     //A very easy explanation with an example
     class Solution4{
         int count =1;
@@ -91,6 +100,7 @@ In the following code, when we consider the substring s[i-j, ..., i+j], i is the
         }
     }
 //------------------------------------------------------------------------------
+    //5
     //  Java Concise O(n^2) Time O(1) Space DP Solution
     class Solution5{
         public int countSubstrings(String s) {
