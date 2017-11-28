@@ -4,8 +4,23 @@ import org.junit.Test;
 //  283. Move Zeroes
 //  https://leetcode.com/problems/move-zeroes/description/
 //  http://www.lintcode.com/zh-cn/problem/move-zeroes/
-//  6:
+//  6: 6, 1,
+//  给一个数组 nums 写一个函数将 0 移动到数组的最后面，非零元素保持原数组的顺序
 public class _283_TwoPointer_Move_Zeroes_E {
+//------------------------------------------------------------------------------
+    //6
+    public void moveZeroes1(int[] nums) {
+        int left = 0, right = 0;
+
+        while (right < nums.length) {
+            if (nums[right] != 0) {
+                swap(nums, left, right);
+                left++;
+            }
+            right++;
+        }
+    }
+
 //------------------------------------------------------------------------------
     //1
     class Solution1 {
@@ -24,6 +39,22 @@ public class _283_TwoPointer_Move_Zeroes_E {
                 }
                 left++;
             }
+        }
+        public void moveZeroes1(int[] nums) {
+            int left = 0;
+
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] == 0) {
+                    continue;
+                }
+                swap(nums, i, left);
+                left++;
+            }
+        }
+        private void swap(int[] nums, int i, int j) {
+            int tmp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = tmp;
         }
     }
 //------------------------------------------------------------------------------
@@ -139,15 +170,15 @@ public class _283_TwoPointer_Move_Zeroes_E {
 
         while (right < nums.length) {
             printArr(nums);
-            System.out.print("| " + "left: " + left + " | " + "right: " + right);
+            //System.out.print("| " + "left: " + left + " | " + "right: " + right);
 
             if (nums[right] != 0) {
-                System.out.print(" | nums[right] " + nums[right]);
+                //System.out.print(" | nums[right] " + nums[right]);
                 swap(nums, left, right);
                 left++;
             }
             right++;
-            System.out.println();
+            //System.out.println();
         }
     }
 

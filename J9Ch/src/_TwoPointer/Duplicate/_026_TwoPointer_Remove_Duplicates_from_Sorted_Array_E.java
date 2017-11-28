@@ -1,12 +1,15 @@
 package _TwoPointer.Duplicate;
 
+import org.junit.Test;
+
 //  26. Remove Duplicates from Sorted Array
 //  https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 //  http://www.lintcode.com/en/problem/remove-duplicates-from-sorted-array/
 //  Array, Two Pointers
 //  _027_TwoPointer_Remove_Element_E
-//  2:2
+//  3:2
 //  双前向指针
+//  给定一个排序数组，在原数组中删除重复出现的数字，使得每个元素只出现一次，并且返回新的数组的长度。
 public class _026_TwoPointer_Remove_Duplicates_from_Sorted_Array_E {
     //https://leetcode.com/articles/remove-duplicates-sorted-array/
 //------------------------------------------------------------------------------
@@ -27,13 +30,11 @@ public class _026_TwoPointer_Remove_Duplicates_from_Sorted_Array_E {
 //------------------------------------------------------------------------------
     //2
     // 9Ch
-    public class Jiuzhang {
+    public class removeDuplicates_9CH {
         public int removeDuplicates(int[] nums) {
-            if (nums == null || nums.length == 0) {
-                return 0;
-            }
-
+            if (nums == null || nums.length == 0) return 0;
             int size = 0;
+
             for (int i = 0; i < nums.length; i++) {
                 if (nums[i] != nums[size]) {
                     nums[++size] = nums[i];
@@ -42,6 +43,33 @@ public class _026_TwoPointer_Remove_Duplicates_from_Sorted_Array_E {
             return size + 1;
         }
     }
+
+    @Test
+    public void test01(){
+        int[] nums = {0,0,1,1,1,1,2,2};
+        System.out.println(new removeDuplicates_9CH().removeDuplicates(nums));
+        System.out.println();
+        for (int i:nums) {
+            System.out.print(i + " ");
+        }
+    }
+
+//------------------------------------------------------------------------------
+    //3
+    // for each 重写2
+    public class removeDuplicates_9CH2 {
+        public int removeDuplicates(int[] nums) {
+            int size = 0;
+
+            for (int n:nums) {
+                if (n != nums[size]) {
+                    nums[++size] = n;
+                }
+            }
+            return size + 1;
+        }
+    }
+
 
 //------------------------------------------------------------------------------
 }

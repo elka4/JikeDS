@@ -4,7 +4,13 @@ import org.junit.Test;
 
 //  268. Missing Number
 //  https://leetcode.com/problems/missing-number/description/
+//  Array, Math, Bit Manipulation
+//  41. First Missing Positive - Array
+//  _136_Bit_Single_Number_M
+//  _leet_287_Find_the_Duplicate_Number
 //  8:
+
+
 public class _268_Bit_Missing_Number_M {
 //------------------------------------------------------------------------------
     //1

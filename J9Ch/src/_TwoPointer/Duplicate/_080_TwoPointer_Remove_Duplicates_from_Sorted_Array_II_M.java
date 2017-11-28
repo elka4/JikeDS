@@ -5,12 +5,14 @@ package _TwoPointer.Duplicate;
 //  https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/
 //  http://www.lintcode.com/zh-cn/problem/remove-duplicates-from-sorted-array-ii/
 //  Array, Two Pointers
-//  4:
+//  4:1， 4
 //  双前向指针
+//  允许元素出现两次
 public class _080_TwoPointer_Remove_Duplicates_from_Sorted_Array_II_M {
 //------------------------------------------------------------------------------
     //1
 //Same simple solution written in several languages. Just go through the numbers and include those in the result that haven't been included twice already.
+    //关键是里用给的nums是sorted
     public int removeDuplicates(int[] nums) {
         int i = 0;
         for (int n : nums)
@@ -94,6 +96,7 @@ public class _080_TwoPointer_Remove_Duplicates_from_Sorted_Array_II_M {
                 return 0;
             }
             int index = 0, count = 1;
+
             for (int i = 1; i < nums.length; i++) {
                 if (nums[i] == nums[index]) {
                     if (count < 2) {

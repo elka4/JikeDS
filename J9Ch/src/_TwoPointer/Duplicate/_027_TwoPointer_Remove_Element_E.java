@@ -8,29 +8,73 @@ import org.junit.Test;
 //  _026_TwoPointer_Remove_Duplicates_from_Sorted_Array_E
 //  _203_List_Remove_Linked_List_Elements_E
 //  _283_TwoPointer_Move_Zeroes_E
-//  4:
+//  4:1
 //  双前向指针
+//给定一个数组和一个值，在原地删除与值相同的数字，返回新数组的长度。
+//元素的顺序可以改变，并且对新的数组不会有影响。
 public class _027_TwoPointer_Remove_Element_E {
+//------------------------------------------------------------------------------
+
     //https://leetcode.com/problems/remove-element/solution/
 //------------------------------------------------------------------------------
     //1
     //Approach #1 (Two Pointers) [Accepted]
+    //按顺序一个一个检查元素，如果不等于目标val，就把这个元素赋给nums[size]， size++
     public int removeElement(int[] nums, int val) {
-        int i = 0;
-        for (int j = 0; j < nums.length; j++) {
-            if (nums[j] != val) {
-                nums[i] = nums[j];
-                i++;
+        int size = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != val) {
+                nums[size] = nums[i];
+                size++;
             }
         }
-        return i;
+        return size;
     }
+    //按顺序一个一个检查元素，如果不等于nums[size]，就把这个元素赋给nums[++size]
+    public class removeDuplicates_9CH {
+        public int removeDuplicates(int[] nums) {
+            int size = 0;
+
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] != nums[size]) {
+                    nums[++size] = nums[i];
+                }
+            }
+            return size + 1;
+        }
+    }
+//------------------------------------------------------------------------------
+
+    //for each 重写上面
+    public int removeElement0(int[] nums, int val) {
+        int size = 0;
+        for (int n:nums) {
+            if (n != val) {
+                nums[size++] = n;
+            }
+        }
+        return size;
+    }
+
+    public class removeDuplicates_9CH2 {
+        public int removeDuplicates(int[] nums) {
+            int size = 0;
+            for (int n:nums) {
+                if (n != nums[size]) {
+                    nums[++size] = n;
+                }
+            }
+            return size + 1;
+        }
+    }
+
+
     @Test
     public void test01(){
         int[] nums = {0,4,4,0,0,2,4,4};
         System.out.println(removeElement(nums, 4));
-        for (int i:nums
-                ) {
+        for (int i:nums) {
             System.out.print(i + " ");
         }
     }
@@ -60,8 +104,7 @@ public class _027_TwoPointer_Remove_Element_E {
     public void test02(){
         int[] nums = {0,4,4,0,0,2,4,4};
         System.out.println(removeElement2(nums, 4));
-        for (int i:nums
-                ) {
+        for (int i:nums) {
             System.out.print(i + " ");
         }
     }
@@ -162,7 +205,6 @@ Your function should return length = 2, with the first two elements of nums bein
 
 /*
 给定一个数组和一个值，在原地删除与值相同的数字，返回新数组的长度。
-
 元素的顺序可以改变，并且对新的数组不会有影响。
 
 样例

@@ -1,11 +1,21 @@
 package _TwoPointer.Duplicate;
-
 import lib.ListNode;
 
 //  287. Find the Duplicate Number
 //  https://leetcode.com/problems/find-the-duplicate-number/description/
 //  http://www.lintcode.com/zh-cn/problem/find-the-duplicate-number/
 //  10:
+
+//  Array, Two Pointers, Binary Search
+
+//  41. First Missing Positive - Array
+//  136. Single Number - Hash, Set
+//  142. Linked List Cycle II - LinkedList, Two Pointer
+//  268. Missing Number - Array, Math, Bit
+//  645. Set Mismatch - Hash, Math
+
+//给出一个数组 nums 包含 n + 1 个整数，每个整数是从 1 到 n (包括边界)，
+//保证至少存在一个重复的整数。假设只有一个重复的整数，找出这个重复的数。
 public class _287_TwoPointer_Find_the_Duplicate_Number_H {
 //------------------------------------------------------------------------------
     //1
