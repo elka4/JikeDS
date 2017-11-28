@@ -6,10 +6,28 @@ import org.junit.Test;
 //  https://leetcode.com/problems/reverse-words-in-a-string/description/
 //  http://www.lintcode.com/problem/reverse-words-in-a-string/
 //  给定一个字符串，逐个翻转字符串中的每个单词。
-//
-//  5:
+//  Given s = "the sky is blue",return "blue is sky the".
+//  6:6 自己写的。
 //
 public class _151_String_Reverse_Words_in_a_String_M {
+//------------------------------------------------------------------------------
+    //6
+    //mine based on 9Ch
+    //用trim().split(" +")去掉两边的所有空格，而且把中间的连续空格当做一个分隔符
+    //倒着处理array生成sb
+    //sb去掉最后一个多加的空格，生成String返回
+    public class Jiuzhang2 {
+        public String reverseWords(String s) {
+            String[] array = s.trim().split(" +");//"\\s+"
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = array.length - 1; i >= 0; --i) {
+                sb.append(array[i]).append(' ');
+            }
+
+            return sb.substring(0, sb.length() - 1);
+        }
+    }
 //------------------------------------------------------------------------------
     //1
     //Clean Java two-pointers solution (no trim( ), no split( ), no StringBuilder)
@@ -66,6 +84,8 @@ public class _151_String_Reverse_Words_in_a_String_M {
 //------------------------------------------------------------------------------
     //2
     //My accepted Java solution
+    //Given s = "the sky is blue",return "blue is sky the".
+    //其实是利用了正则表达式将string转为string[]，然后倒过来
     public class Solution2 {
         public String reverseWords(String s) {
             String[] parts = s.trim().split("\\s+");
@@ -96,35 +116,41 @@ Instead of using substring, insert the word-characters directly in the StringBui
 //------------------------------------------------------------------------------
     //3
     //  Java 3-line builtin solution
-    public String reverseWords(String s) {
-        String[] words = s.trim().split(" +");
-        Collections.reverse(Arrays.asList(words));
-        return String.join(" ", words);
+    //这解的关键是熟悉Collections和String的操作
+    class Solution3{
+        public String reverseWords(String s) {
+            String[] words = s.trim().split(" +");
+            Collections.reverse(Arrays.asList(words));
+            return String.join(" ", words);
+        }
     }
+
 
 //------------------------------------------------------------------------------
     //4
 /*
-    Here is my concise and fast code that beats 73% of Java submissions.
+Here is my concise and fast code that beats 73% of Java submissions.
 
-    I scan from the end to make the concatenation logic clear and use StringBuilder to make the String concatenation faster. I also use trim when returning the results to avoid boundary checking.
+I scan from the end to make the concatenation logic clear and use StringBuilder to make the String concatenation faster. I also use trim when returning the results to avoid boundary checking.
 
-    Hope it helps.*/
-
-    public static String reverseWords4(String s) {
-        StringBuilder res = new StringBuilder();
-        for (int start = s.length() - 1; start >= 0; start--) {
-            if (s.charAt(start) == ' ') continue;
-            int end = start;
-            while (start >= 0 && s.charAt(start) != ' ') start--;
-            res.append(s.substring(start + 1, end + 1)).append(" ");
+Hope it helps.*/
+    //这也算是双指针吧
+    class Solution4 {
+        public String reverseWords(String s) {
+            StringBuilder result = new StringBuilder();
+            for (int start = s.length() - 1; start >= 0; start--) {
+                if (s.charAt(start) == ' ') continue;
+                int end = start;
+                while (start >= 0 && s.charAt(start) != ' ') start--;
+                result.append(s.substring(start + 1, end + 1)).append(" ");
+            }
+            return result.toString().trim();
         }
-        return res.toString().trim();
     }
-
 //------------------------------------------------------------------------------
     //5
     //9CH
+    //这个和2类似，就是用了StringBuilder提高性能
     public class Jiuzhang {
         public String reverseWords(String s) {
             if (s == null || s.length() == 0) {
@@ -136,11 +162,10 @@ Instead of using substring, insert the word-characters directly in the StringBui
 
             for (int i = array.length - 1; i >= 0; --i) {
                 if (!array[i].equals("")) {
-                    sb.append(array[i]).append(" ");
+                    sb.append(array[i]).append(' ');
                 }
             }
 
-            //remove the last " "
             return sb.length() == 0 ? "" : sb.substring(0, sb.length() - 1);
         }
     }
@@ -151,8 +176,8 @@ Instead of using substring, insert the word-characters directly in the StringBui
 Given an input string, reverse the string word by word.
 
 For example,
-Given s = "the sky is blue",
-return "blue is sky the".
+Given s = "the sky is blue",return "blue is sky the".
+
 
 Update (2015-02-12):
 For C programmers: Try to solve it in-place in O(1) space.

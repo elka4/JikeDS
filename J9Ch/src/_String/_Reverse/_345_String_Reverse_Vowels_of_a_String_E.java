@@ -7,16 +7,17 @@ import org.junit.Test;
 //  http://www.lintcode.com/problem/reverse-vowels-of-a-string/
 //  Two Pointers String
 //  _344_String_Reverse_String_E
-//  4:
-//
-//
+//  4:  1, 2。都是用对撞型双指针，不过2用了set。
+//  和_344_String_Reverse_String_E基本一样就是两端swap，不过中间做了是否元音的判断!!!
+//  只翻转元音字母
 public class _345_String_Reverse_Vowels_of_a_String_E {
 //------------------------------------------------------------------------------
     //1
 //Java Standard Two Pointer Solution
-//    In the inner while loop, don't forget the condition "start less than end" while incrementing start and decrementing end. This is my friend's google phone interview question. Cheers!
+//In the inner while loop, don't forget the condition "start less than end" while incrementing start and decrementing end. This is my friend's google phone interview question. Cheers!
 // update! May use a HashSet<Character> to reduce the look up time to O(1)
 
+    //Given s = "hello", return "holle".
     public class Solution1 {
         public String reverseVowels(String s) {
             if(s == null || s.length()==0) return s;
@@ -24,43 +25,31 @@ public class _345_String_Reverse_Vowels_of_a_String_E {
             char[] chars = s.toCharArray();
             int start = 0;
             int end = s.length()-1;
+
             while(start<end){
+                while(start<end && !vowels.contains(chars[start]+"")) start++;
+                while(start<end && !vowels.contains(chars[end]+"")) end--;
 
-                while(start<end && !vowels.contains(chars[start]+"")){
-                    start++;
-                }
-
-                while(start<end && !vowels.contains(chars[end]+"")){
-                    end--;
-                }
-
+                //swap
                 char temp = chars[start];
                 chars[start] = chars[end];
                 chars[end] = temp;
-
                 start++;
                 end--;
             }
             return new String(chars);
         }
     }
+
 //------------------------------------------------------------------------------
     //2
     //One pass Java Solution 13ms
     public class Solution2 {
         public String reverseVowels(String s) {
             char[] list=s.toCharArray();
-            Set<Character> set=new HashSet<>();
-            set.add('a');
-            set.add('e');
-            set.add('i');
-            set.add('o');
-            set.add('u');
-            set.add('A');
-            set.add('E');
-            set.add('I');
-            set.add('O');
-            set.add('U');
+            Set<Character> set = new HashSet<>(Arrays.asList(
+                    new Character[]{'a','e','i','o','u','A','E','I','O','U'}));
+
             for (int i=0, j=list.length-1; i<j; ) {
                 if (!set.contains(list[i])) {
                     i++;
@@ -70,6 +59,7 @@ public class _345_String_Reverse_Vowels_of_a_String_E {
                     j--;
                     continue;
                 }
+
                 char temp=list[i];
                 list[i]=list[j];
                 list[j]=temp;
@@ -79,10 +69,25 @@ public class _345_String_Reverse_Vowels_of_a_String_E {
             return String.valueOf(list);
         }
     }
+    //要知道这个方法
     //We could also initilize the set like this:
+    //Set<Character> set = new HashSet<>(Arrays.asList(new Character[]{'a','e','i','o','u','A','E','I','O','U'}));
 
-    Set<Character> vowels = new HashSet<>(Arrays.asList(new Character[]{'a','e','i','o','u','A','E','I','O','U'}));
-
+    @Test
+    public void test2_1(){
+        System.out.println(Arrays.asList(
+                new Character[]{'a','e','i','o','u','A','E','I','O','U'}));
+    }//[a, e, i, o, u, A, E, I, O, U]
+    @Test
+    public void test2_2(){
+        System.out.println(Arrays.asList(
+                new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}));
+    }//[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+    @Test
+    public void test2_3(){
+        System.out.println(Arrays.asList(
+                new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}));
+    }//[[I@3339ad8e]
 //------------------------------------------------------------------------------
     //3
     //Simple Java Solution using StringBuilder

@@ -12,12 +12,14 @@ import org.junit.Test;
 //  32 Longest Valid Parentheses - String, DP
 //  301 Remove Invalid Parentheses - DFS, BFS
 //
-//  5:
+//  5:  1, 真的是简洁优美啊
 //
 public class _020_String_Valid_Parentheses_E {
 //------------------------------------------------------------------------------
     //1
     //Short java solution
+    //逐个看每个char，如果是左括号就将相应的右括号压栈
+    //如果是右括号就检查两点：1，stack是否为空。2，stack.pop()是否和当前char相同
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<Character>();
         for (char c : s.toCharArray()) {
@@ -102,12 +104,7 @@ public class _020_String_Valid_Parentheses_E {
     //5
     // version: 高频题班
     public class Jiuzhang2 {
-        /**
-         * @param s A string
-         * @return whether the string is a valid parentheses
-         */
         public boolean isValidParentheses(String s) {
-            // Write your code here
             Stack<Character> stack = new Stack<>();
             for (char c : s.toCharArray()) {
                 if (c == '(' || c == '[' || c == '{') {
@@ -150,7 +147,7 @@ Related Topics
 String Stack
 
 Similar Questions
-Generate Parentheses
-Longest Valid Parentheses
-Remove Invalid Parentheses
+22  Generate Parentheses - String, Backtracking
+32  Longest Valid Parentheses - String, DP
+301 Remove Invalid Parentheses - DFS, BFS
  */

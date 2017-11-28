@@ -4,15 +4,35 @@ package _String._Reverse;
 //  189. Rotate Array
 //  https://leetcode.com/problems/rotate-array/description/
 //  http://www.lintcode.com/problem/rotate-array/
+//  Array
+//  61 Rotate List
+//  _186_String_Reverse_Words_in_a_String_II_M
+//  6:4
 //
-//  6:
-//Rotate List
-//Reverse Words in a String II
-//
-//
-public class _189_Rotate_Array {
+public class _189_Rotate_Array_E {
 //------------------------------------------------------------------------------
 //https://leetcode.com/problems/rotate-array/solution/
+
+//------------------------------------------------------------------------------
+    //4
+    //Approach #4 Using Reverse [Accepted]
+    public class Solution4 {
+        public void rotate(int[] nums, int k) {
+            k %= nums.length;
+            reverse(nums, 0, nums.length - 1);
+            reverse(nums, 0, k - 1);
+            reverse(nums, k, nums.length - 1);
+        }
+        public void reverse(int[] nums, int start, int end) {
+            while (start < end) {
+                int temp = nums[start];
+                nums[start] = nums[end];
+                nums[end] = temp;
+                start++;
+                end--;
+            }
+        }
+    }
 //------------------------------------------------------------------------------
     //1
     //Approach #1 Brute Force [Time Limit Exceeded]
@@ -30,8 +50,6 @@ public class _189_Rotate_Array {
         }
     }
 
-
-
 //------------------------------------------------------------------------------
     //2
     //Approach #2 Using Extra Array [Accepted]
@@ -46,8 +64,6 @@ public class _189_Rotate_Array {
             }
         }
     }
-
-
 
 //------------------------------------------------------------------------------
     //3
@@ -70,30 +86,6 @@ public class _189_Rotate_Array {
             }
         }
     }
-
-
-
-//------------------------------------------------------------------------------
-    //4
-    //Approach #4 Using Reverse [Accepted]
-    public class Solution4 {
-        public void rotate(int[] nums, int k) {
-            k %= nums.length;
-            reverse(nums, 0, nums.length - 1);
-            reverse(nums, 0, k - 1);
-            reverse(nums, k, nums.length - 1);
-        }
-        public void reverse(int[] nums, int start, int end) {
-            while (start < end) {
-                int temp = nums[start];
-                nums[start] = nums[end];
-                nums[end] = temp;
-                start++;
-                end--;
-            }
-        }
-    }
-
 
 
 //------------------------------------------------------------------------------
@@ -124,7 +116,17 @@ public class _189_Rotate_Array {
 //------------------------------------------------------------------------------
     //6
     //9Ch
+    //这个没有解法4好记好理解，还是应该先翻转整个array
     public class Jiuzhang {
+        public void rotate(int[] nums, int k) {
+            if (nums.length == 0) return;
+
+            k = k % nums.length;
+            reverse(nums, 0, nums.length - k - 1);
+            reverse(nums, nums.length - k, nums.length - 1);
+            reverse(nums, 0, nums.length - 1);
+        }
+
         private void reverse(int[] nums, int start, int end) {
             while (start < end) {
                 int temp = nums[start];
@@ -133,16 +135,7 @@ public class _189_Rotate_Array {
                 start++; end--;
             }
         }
-        public void rotate(int[] nums, int k) {
-            if (nums.length == 0) {
-                return;
-            }
 
-            k = k % nums.length;
-            reverse(nums, 0, nums.length - k - 1);
-            reverse(nums, nums.length - k, nums.length - 1);
-            reverse(nums, 0, nums.length - 1);
-        }
     }
 
 
@@ -172,7 +165,6 @@ Related Topics
 Array
 
 Similar Questions
-Rotate List
-Reverse Words in a String II
-Java
+61 Rotate List
+_186_String_Reverse_Words_in_a_String_II_M
  */

@@ -5,11 +5,11 @@ import org.junit.Test;
 //  125. Valid Palindrome
 //  https://leetcode.com/problems/valid-palindrome/description/
 //  http://www.lintcode.com/problem/valid-palindrome/
-//
-//给定一个字符串，判断其是否为一个回文串。只包含字母和数字，忽略大小写。
-//Two Pointers String
-//234 Palindrome Linked List - LinkedList
-//_680_Valid_Palindrome_II - String
+//  Two Pointers String
+//  给定一个字符串，判断其是否为一个回文串。只包含字母和数字，忽略大小写。
+//  Two Pointers String
+//  234 Palindrome Linked List - LinkedList
+//  _680_Valid_Palindrome_II - String
 //  6:
 //
 public class _125_String_Valid_Palindrome_E {

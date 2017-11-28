@@ -7,8 +7,10 @@ import org.junit.Test;
 //
 //  String
 //  _541_String_Reverse_String_II_E
-//  6:
-//
+//  6:1,
+//  翻转每一个单词的字母
+//  Input: "Let's take LeetCode contest"   Output: "s'teL ekat edoCteeL tsetnoc"
+//  最好就是用StringBuilder的reverse方法对每个word进行翻转
 public class _557_String_Reverse_Words_in_a_String_III_E {
 //------------------------------------------------------------------------------
     //https://leetcode.com/articles/reverse-words-in-a-string/
@@ -18,9 +20,11 @@ public class _557_String_Reverse_Words_in_a_String_III_E {
     public class Solution1 {
         public String reverseWords(String s) {
             String words[] = s.split(" ");
-            StringBuilder res=new StringBuilder();
+            StringBuilder res = new StringBuilder();
+
             for (String word: words)
-                res.append(new StringBuffer(word).reverse().toString() + " ");
+                res.append(new StringBuilder(word).reverse().toString() + " ");
+
             return res.toString().trim();
         }
     }
@@ -87,9 +91,14 @@ public class _557_String_Reverse_Words_in_a_String_III_E {
     class Solution4{
         public String reverseWords(String s) {
             String[] str = s.split(" ");
-            for (int i = 0; i < str.length; i++) str[i] = new StringBuilder(str[i]).reverse().toString();
+
+            for (int i = 0; i < str.length; i++)
+                str[i] = new StringBuilder(str[i]).reverse().toString();
+
             StringBuilder result = new StringBuilder();
-            for (String st : str) result.append(st + " ");
+            for (String st : str)
+                result.append(st + " ");
+
             return result.toString().trim();
         }
     }
@@ -101,6 +110,7 @@ public class _557_String_Reverse_Words_in_a_String_III_E {
         public String reverseWords(String s) {
             String[] strs = s.split(" ");
             StringBuffer sb = new StringBuffer();
+
             for(String str: strs){
                 StringBuffer temp = new StringBuffer(str);
                 sb.append(temp.reverse());
@@ -142,8 +152,8 @@ public class _557_String_Reverse_Words_in_a_String_III_E {
 Given a string, you need to reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.
 
 Example 1:
-Input: "Let's take LeetCode contest"
-Output: "s'teL ekat edoCteeL tsetnoc"
+Input: "Let's take LeetCode contest"   Output: "s'teL ekat edoCteeL tsetnoc"
+
 Note: In the string, each word is separated by single space and there will not be any extra space in the string.
 
 Seen this question in a real interview before?   Yes  No

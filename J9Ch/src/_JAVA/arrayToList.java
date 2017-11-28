@@ -1,5 +1,4 @@
 package _JAVA;
-
 import org.junit.Test;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -10,8 +9,7 @@ import java.util.stream.BaseStream;
 
 
 public class arrayToList {
-
-
+//--------------------------------------------------------------------------------
     @Test
     public void test01(){
         int[] array = { 1, 2, 3 };
@@ -21,6 +19,7 @@ public class arrayToList {
         System.out.println(list);
     }
 
+//--------------------------------------------------------------------------------
 
     @Test
     public void test02(){
@@ -31,6 +30,7 @@ public class arrayToList {
         Collections.addAll(list, Arrays.stream(ints).boxed().toArray(Integer[]::new));
         System.out.println(list);
     }
+//--------------------------------------------------------------------------------
 
     @Test
     public void test03(){
@@ -38,6 +38,7 @@ public class arrayToList {
         List<Integer> list =  Arrays.stream(ints).boxed().collect(Collectors.toList());
         System.out.println(list);
     }
+//--------------------------------------------------------------------------------
 
     //  http://blog.csdn.net/chenleixing/article/details/43775127
 /*  Array.asList:数组转list时你一定要知道的“陷阱”！
@@ -92,6 +93,7 @@ cc
 - - - - - - - - - - -
  */
 
+//--------------------------------------------------------------------------------
 
     @Test
     public void test05(){
@@ -104,6 +106,7 @@ cc
         Collections.addAll(new ArrayList<Integer>(5), ob);//或者新建一个空的list,把要转换的                                                                   数组用Collections.addAll添加进去
 
     }
+//--------------------------------------------------------------------------------
 
     @Test
     public void test06(){
@@ -113,6 +116,7 @@ cc
         //Arrays.asList(ArrayUtils.toObject(i));//上边的代码：int i[]={11,22,33};，达到了我们想要的效果
 
     }
+//--------------------------------------------------------------------------------
 
         @Test
     public void test07(){
@@ -130,6 +134,7 @@ cc
     [I@3339ad8e
     [[I@3339ad8e]
      */
+//--------------------------------------------------------------------------------
 
     @Test
     public void test08(){
@@ -138,6 +143,7 @@ cc
         System.out.println(listOfArrays);
         System.out.println(listOfArrays.contains(1));
     }
+//--------------------------------------------------------------------------------
 
     @Test
     public void test09(){
@@ -145,15 +151,16 @@ cc
         String[] arr = new String[]{"a", "b"};
         List<String> list = Arrays.asList(arr);
         System.out.println(list);
-
     }
+//--------------------------------------------------------------------------------
 
     @Test
     public void test10(){
-//        如果是原型数据，例如将int数组转为list:
+// 如果是原型数据，例如将int数组转为list:
         int[] arr = new int[]{1, 2, 3};
-//        List<Integer> list = IntStream.of(in.readIntArray()).boxed().collect(Collectors.toList());
+// List<Integer> list = IntStream.of(in.readIntArray()).boxed().collect(Collectors.toList());
     }
+//--------------------------------------------------------------------------------
 
     @Test
     public void test11(){
@@ -170,6 +177,7 @@ cc
         }
     }
 
+//--------------------------------------------------------------------------------
 
     @Test
     public void test12(){
@@ -181,6 +189,7 @@ cc
             System.out.println(arr[i]);
         }
     }
+//--------------------------------------------------------------------------------
 
     @Test
     public void test13(){
@@ -190,6 +199,7 @@ cc
         System.out.println(intList);
 
     }
+//--------------------------------------------------------------------------------
 
     @Test
     public void test14(){
@@ -216,5 +226,21 @@ cc
         List list2 = java.util.Arrays.asList(s);
         System.out.println(list2);
     }
-
+//--------------------------------------------------------------------------------
+    @Test
+    public void test2_1(){
+        System.out.println(Arrays.asList(
+                new Character[]{'a','e','i','o','u','A','E','I','O','U'}));
+    }//[a, e, i, o, u, A, E, I, O, U]
+    @Test
+    public void test2_2(){
+        System.out.println(Arrays.asList(
+                new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}));
+    }//[1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+    @Test
+    public void test2_3(){
+        System.out.println(Arrays.asList(
+                new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}));
+    }//[[I@3339ad8e]
+//--------------------------------------------------------------------------------
 }

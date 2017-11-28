@@ -8,30 +8,67 @@ import org.junit.Test;
 //
 //  给定一个文档(Unix-style)的完全路径，请进行路径简化。
 //  String Stack
-//  6:
+//  6:1
 //
 //
 public class _071_String_Simplify_Path_M {
 //------------------------------------------------------------------------------
     //1
     //Java 10-lines solution with stack
-/*    Hi guys!
-
-    The main idea is to push to the stack every valid file name (not in {"",".",".."}), popping only if there's smth to pop and we met "..". I don't feel like the code below needs any additional comments.*/
+/*The main idea is to push to the stack every valid file name (not in {"",".",".."}), popping only if there's smth to pop and we met "..". I don't feel like the code below needs any additional comments.*/
+    // 遇见..就pop
+    // 遇到正常名字就push
     class Solution1{
         public String simplifyPath(String path) {
             Deque<String> stack = new LinkedList<>();
             Set<String> skip = new HashSet<>(Arrays.asList("..",".",""));
+
             for (String dir : path.split("/")) {
-                if (dir.equals("..") && !stack.isEmpty()) stack.pop();
-                else if (!skip.contains(dir)) stack.push(dir);
+                if (dir.equals("..") && !stack.isEmpty())
+                    stack.pop();
+                else if (!skip.contains(dir))
+                    stack.push(dir);
             }
-            String res = "";
-            for (String dir : stack) res = "/" + dir + res;
-            return res.isEmpty() ? "/" : res;
+
+            String result = "";
+            for (String dir : stack)//记着这个foreach处理stack
+                result = "/" + dir + result;
+
+            return result.isEmpty() ? "/" : result;
         }
     }
+/*    "" 如果不放进skip就会过不了下面这个
 
+    Input:
+            "/..."
+    Output:
+            "//..."
+    Expected:
+            "/..."*/
+
+    @Test
+    public void test1_1(){
+        Deque<String> stack = new LinkedList<>();
+        stack.push("1");
+        stack.push("2");
+        stack.push("3");
+        System.out.println(stack);//[3, 2, 1]
+        for (String s:stack) {
+            System.out.print(s + ' ');
+        }//3 2 1
+    }
+
+    @Test
+    public void test1_2(){
+        Deque<String> stack = new LinkedList<>();
+        stack.add("1");
+        stack.add("2");
+        stack.add("3");
+        System.out.println(stack);//[1, 2, 3]
+        for (String s:stack) {
+            System.out.print(s + ' ');
+        }//1 2 3
+    }
 //------------------------------------------------------------------------------
     //2
     //Share my 8ms Java solution

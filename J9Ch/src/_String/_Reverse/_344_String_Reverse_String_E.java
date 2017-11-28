@@ -5,12 +5,12 @@ import org.junit.Test;
 //  344. Reverse String
 //  https://leetcode.com/problems/reverse-string/
 //
-//Two Pointers String
+//  Two Pointers String
 //
-//Reverse Vowels of a String
-//Reverse String II
-//  4:
-//
+//  Reverse Vowels of a String
+//  Reverse String II
+//  4:1 string转为char[]后对撞型双指针翻转array。
+//  Given s = "hello", return "olleh".
 public class _344_String_Reverse_String_E {
 //------------------------------------------------------------------------------
     //1
@@ -33,12 +33,11 @@ public class _344_String_Reverse_String_E {
         }
     }
 
-
-
 //------------------------------------------------------------------------------
     //2
     //https://discuss.leetcode.com/topic/43296/java-simple-and-clean-with-explanations-6-solutions
     //Approach: Iterative Swapping Using Two Pointers
+    //留意下这个位运算的swap方法
     public class Solution2 {
         public String reverseString(String s) {
             char[] word = s.toCharArray();
@@ -55,11 +54,10 @@ public class _344_String_Reverse_String_E {
         }
     }
 
-
-
 //------------------------------------------------------------------------------
     //3
     //https://discuss.leetcode.com/topic/43296/java-simple-and-clean-with-explanations-6-solutions
+    //记着byte也可以转为String
     public class Solution3 {
         public String reverseString(String s) {
             byte[] bytes = s.getBytes();
@@ -75,9 +73,11 @@ public class _344_String_Reverse_String_E {
             return new String(bytes);
         }
     }
+
 //------------------------------------------------------------------------------
     //4
-    //Java- easiest method- 2-line code, attached another method
+    //Java- easiest method- 2-line code, attach ed another method
+    //就是用了StringBuilder好利用StringBuilder的reverse方法，作弊呀
     class Solution4{
         //method 1: use StringBuilder
         public String reverseString(String s) {
@@ -102,6 +102,7 @@ public class _344_String_Reverse_String_E {
             return new String(cs);
         }
     }
+
 //------------------------------------------------------------------------------
 }
 /*
