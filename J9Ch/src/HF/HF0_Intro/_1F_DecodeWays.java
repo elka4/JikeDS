@@ -1,5 +1,4 @@
 package HF.HF0_Intro;
-
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -40,9 +39,69 @@ f[i-2] | S[i-2]S[i-1]对应一个字母
     – f[n] = f[n-1] + f[n-2]
  */
 
-//Decode Ways
-//5:
+
+//• 划分性动态规划
+//  91 Decode Ways
+//  https://leetcode.com/problems/decode-ways/description/
+//  5:2, 4
 public class _1F_DecodeWays {
+//------------------------------------------------------------------------
+    //2
+    // 9Ch version: 高频题班
+    public int numDecodings2(String s) {
+        // Write your code here
+        int n = s.length();
+        if (n == 0) {
+            return 0;   // only for this problem, but the ans should be 1
+        }
+        char sc[] = s.toCharArray();
+        int[] f = new int[n + 1];
+        f[0] = 1;
+
+        for (int i = 1; i <= n; i++) {
+            if (sc[i - 1] != '0') {
+                f[i] += f[i - 1];
+            }
+            if (i >= 2) {
+                int val2 = (sc[i - 2] - '0') * 10 + sc[i - 1] - '0';
+                if (10 <= val2 && val2 <= 26) {
+                    f[i] += f[i - 2];
+                }
+            }
+        }
+        return f[n];
+    }
+
+    @Test
+    public void test02(){
+        System.out.println(numDecodings2("2526"));
+        System.out.println(numDecodings2("12"));
+        System.out.println(numDecodings2("1212"));
+    }
+//-------------------------------------------------------------------------
+    //4
+    public int numDecodings4(String s) {
+        if(s == null || s.length() == 0) {
+            return 0;
+        }
+        int n = s.length();
+        int[] dp = new int[n+1];
+        dp[0] = 1;
+        dp[1] = s.charAt(0) != '0' ? 1 : 0;
+
+        for(int i = 2; i <= n; i++) {
+            int first = Integer.valueOf(s.substring(i-1, i));
+            int second = Integer.valueOf(s.substring(i-2, i));
+            if(first >= 1 && first <= 9) {
+                dp[i] += dp[i-1];
+            }
+            if(second >= 10 && second <= 26) {
+                dp[i] += dp[i-2];
+            }
+        }
+        return dp[n];
+    }
+
 //------------------------------------------------------------------------
     //1
     // 9Ch
@@ -73,44 +132,6 @@ public class _1F_DecodeWays {
         System.out.println(numDecodings("12"));
     }
 
-//------------------------------------------------------------------------
-    //2
-    // version: 高频题班
-    // 9Ch
-    /**
-     * @param s a string,  encoded message
-     * @return an integer, the number of ways decoding
-     */
-    public int numDecodings2(String s) {
-        // Write your code here
-        int l = s.length();
-        if (l == 0) {
-            return 0;   // only for this problem, but the ans should be 1
-        }
-        char sc[] = s.toCharArray();
-        int[] f = new int[l + 1];
-        f[0] = 1;
-
-        for (int i = 1; i <= l; i++) {
-            if (sc[i - 1] != '0') {
-                f[i] += f[i - 1];
-            }
-            if (i >= 2) {
-                int val2 = (sc[i - 2] - '0') * 10 + sc[i - 1] - '0';
-                if (10 <= val2 && val2 <= 26) {
-                    f[i] += f[i - 2];
-                }
-            }
-        }
-        return f[l];
-    }
-
-    @Test
-    public void test02(){
-        System.out.println(numDecodings2("2526"));
-        System.out.println(numDecodings2("12"));
-        System.out.println(numDecodings2("1212"));
-    }
 
 //------------------------------------------------------------------------
     //3
@@ -129,28 +150,6 @@ public class _1F_DecodeWays {
         return memo[0];
     }
 
-//-------------------------------------------------------------------------
-    //4
-    public int numDecodings4(String s) {
-        if(s == null || s.length() == 0) {
-            return 0;
-        }
-        int n = s.length();
-        int[] dp = new int[n+1];
-        dp[0] = 1;
-        dp[1] = s.charAt(0) != '0' ? 1 : 0;
-        for(int i = 2; i <= n; i++) {
-            int first = Integer.valueOf(s.substring(i-1, i));
-            int second = Integer.valueOf(s.substring(i-2, i));
-            if(first >= 1 && first <= 9) {
-                dp[i] += dp[i-1];
-            }
-            if(second >= 10 && second <= 26) {
-                dp[i] += dp[i-2];
-            }
-        }
-        return dp[n];
-    }
 
 //------------------------------------------------------------------------
     //5

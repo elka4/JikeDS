@@ -1,24 +1,51 @@
 package HF.HF0_Intro;
-
 import org.junit.Test;
 
 // Check Word Abbreviation
 //  http://www.lintcode.com/zh-cn/problem/check-word-abbreviation/
 
-
 //  408. Valid Word Abbreviation
 //  https://leetcode.com/problems/valid-word-abbreviation/description/
 //  String
-//  Minimum Unique Word Abbreviation
+//  _411_BackTracking_Minimum_Unique_Word_Abbreviation_M
 //  Word Abbreviation
+//
+//  3:1
+//
 public class _6G_CheckWordsAbbreviation_String {
 //-------------------------------------------------------------------------
     //1
-    /**
-     * @param word a non-empty string
-     * @param abbr an abbreviation
-     * @return true if string matches with the given abbr or false
-     */
+    //Short and easy to understand Java Solution
+    //双前向指针
+    //三种情况：
+    // 1，word.charAt(i) == abbr.charAt(j) word和abbr对应字母一样, continue.
+    // 2, abbr.charAt(j) 是0或者是letter， return false.
+    // 3，abbr.charAt(j)是数字，移动j直到数字结束。根据起始位置得到substring
+    // 最后看i是否走到word末尾，j是否走到abbr末尾。
+
+    //我根据1重写的
+    public boolean validWordAbbreviation_mine(String word, String abbr) {
+        int i = 0, j = 0;
+        while (i < word.length() && j < abbr.length()) {
+            //case 1
+            if (word.charAt(i) == abbr.charAt(j)) {
+                ++i;++j;
+                continue;
+            }
+            //case 2
+            if (abbr.charAt(j) == '0' || Character.isLetter(abbr.charAt(j)))
+                return false;
+
+            //case 3
+            int start = j;
+            while (j < abbr.length() && Character.isDigit(abbr.charAt(j))) j++;
+            int num = Integer.valueOf(abbr.substring(start, j));
+            i += num;
+        }
+        return i == word.length() && j == abbr.length();
+    }
+//-------------------------------------------------------------------------
+    //2
     public boolean validWordAbbreviation(String word, String abbr) {
         // Write your code here
         int number = 0;
@@ -45,13 +72,8 @@ public class _6G_CheckWordsAbbreviation_String {
 
 
 //-------------------------------------------------------------------------
-    //2
+    //3
     // version: 高频题班
-    /**
-     * @param word a non-empty string
-     * @param abbr an abbreviation
-     * @return true if string matches with the given abbr or false
-     */
     public boolean validWordAbbreviation2(String word, String abbr) {
         // Write your code here
         int i = 0, j = 0;
@@ -80,7 +102,6 @@ public class _6G_CheckWordsAbbreviation_String {
 
     @Test
     public void test01(){
-
         System.out.println(validWordAbbreviation2("wqwrtyasdfga", "w10b"));
     }
 
@@ -91,8 +112,6 @@ public class _6G_CheckWordsAbbreviation_String {
 
 
 //-------------------------------------------------------------------------
-
-
 }
 
 /*
@@ -114,15 +133,12 @@ Example 2:
 
 Given s = "apple", abbr = "a2e":
 Return false.
+-------------------------------------------------------------------------
  */
 
 /*
 637. 检查缩写字
 
- 描述
- 笔记
- 数据
- 评测
 给定一个非空字符串 word 和缩写 abbr，返回字符串是否可以和给定的缩写匹配。
 比如一个 “word” 的字符串仅包含以下有效缩写：
 
@@ -145,4 +161,5 @@ Return false.
 字符串处理 谷歌
 相关题目
 困难 单词缩写
+-------------------------------------------------------------------------
  */

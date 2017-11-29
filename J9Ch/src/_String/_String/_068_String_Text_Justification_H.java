@@ -192,9 +192,9 @@ Note: Each word is guaranteed not to exceed L in length.
 
 click to show corner cases.
 
-Seen this question in a real interview before?   Yes  No
 Companies
 Facebook LinkedIn Airbnb
+
 Related Topics
 String
  */

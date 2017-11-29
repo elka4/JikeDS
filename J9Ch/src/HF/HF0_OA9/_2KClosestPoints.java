@@ -1,14 +1,16 @@
 package HF.HF0_OA9;
-
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-//堆
-//K Closest Points
+//  Heap
+//  K Closest Points
+//  http://www.lintcode.com/en/problem/k-closest-points/
+//
 public class _2KClosestPoints {
+//----------------------------------------------------------------------------
 
     class Point {
         public int x, y;
@@ -111,10 +113,6 @@ return [[1,1],[2,5],[4,4]]
 /*
 K个最近的点
 
- Description
- Notes
- Testcase
- Judge
 给定一些 points 和一个 origin，从 points 中找到 k 个离 origin 最近的点。
 按照距离由小到大返回。如果两个点有相同距离，则按照x值来排序；若x值也相同，就再按照y值排序。
 

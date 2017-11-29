@@ -5,7 +5,7 @@ import org.junit.Test;
 //  161. One Edit Distance
 //  https://leetcode.com/problems/one-edit-distance/description/
 //
-//  5:
+//  5: 4, 5
 //
 public class _161_String_One_Edit_Distance_M {
 //------------------------------------------------------------------------------
@@ -28,15 +28,22 @@ public class _161_String_One_Edit_Distance_M {
         public boolean isOneEditDistance(String s, String t) {
             for (int i = 0; i < Math.min(s.length(), t.length()); i++) {
                 if (s.charAt(i) != t.charAt(i)) {
-                    if (s.length() == t.length()) // s has the same length as t, so the only possibility is replacing one char in s and t
+                    // s has the same length as t, so the only possibility
+                    // is replacing one char in s and t
+                    if (s.length() == t.length())
                         return s.substring(i + 1).equals(t.substring(i + 1));
-                    else if (s.length() < t.length()) // t is longer than s, so the only possibility is deleting one char from t
+                    // t is longer than s, so the only possibility is
+                    // deleting one char from t
+                    else if (s.length() < t.length())
                         return s.substring(i).equals(t.substring(i + 1));
-                    else // s is longer than t, so the only possibility is deleting one char from s
+                    else
+                        // s is longer than t, so the only possibility is
+                        // deleting one char from s
                         return t.substring(i).equals(s.substring(i + 1));
                 }
             }
-            //All previous chars are the same, the only possibility is deleting the end char in the longer one of s and t
+            //All previous chars are the same, the only possibility is
+            // deleting the end char in the longer one of s and t
             return Math.abs(s.length() - t.length()) == 1;
         }
     }
@@ -183,11 +190,12 @@ public class _161_String_One_Edit_Distance_M {
 /*
 Given two strings S and T, determine if they are both one edit distance apart.
 
-Seen this question in a real interview before?   Yes  No
 Companies
 Facebook Uber Twitter Snapchat
+
 Related Topics
 String
+
 Similar Questions
 Edit Distance
  */
@@ -196,10 +204,9 @@ Edit Distance
 /*
 One Edit Distance
 
-Example:
-• s=“abcd” t=“abce”
-• s=“abcd” t=“abcef”
+Example:    • s=“abcd” t=“abce” • s=“abcd” t=“abcef”
 output: true output: false
+
  • 两种one edit:
     1.增加/减少一位
     2.更改一位

@@ -1,4 +1,7 @@
 package HF.HF0_Intro;
+import org.junit.Test;
+
+
 //双序列型动态规划
 
 /*
@@ -71,14 +74,69 @@ f[i][j] = f[i][j-2] OR (f[i-1][j] AND (B[j-2]=‘.’ OR B[j-2]=A[i-1]))，如�
 -----------------------------------------------------------------------------------------------
  */
 
-import org.junit.Test;
 
 //  10. Regular Expression Matching
 //  https://leetcode.com/problems/regular-expression-matching/description/
+//  7:4
 //
 public class _2RegularExpressionMatching_DP {
+//-----------------------------------------------------------------------------------
     //https://leetcode.com/problems/regular-expression-matching/solution/
+//-----------------------------------------------------------------------------------
+    //4
+/*
+    Easy DP Java Solution with detailed Explanation
+    This Solution use 2D DP. beat 90% solutions, very simple.
 
+    Here are some conditions to figure out, then the logic can be very straightforward.
+
+    1, If p.charAt(j) == s.charAt(i) :  dp[i][j] = dp[i-1][j-1];
+    2, If p.charAt(j) == '.' : dp[i][j] = dp[i-1][j-1];
+    3, If p.charAt(j) == '*':
+        here are two sub conditions:
+                1   if p.charAt(j-1) != s.charAt(i) : dp[i][j] = dp[i][j-2]
+                //in this case, a* only counts as empty
+
+                2   if p.charAt(i-1) == s.charAt(i) or p.charAt(i-1) == '.':
+                    dp[i][j] = dp[i-1][j]    //in this case, a* counts as multiple a
+                    or dp[i][j] = dp[i][j-1]   // in this case, a* counts as single a
+                    or dp[i][j] = dp[i][j-2]   // in this case, a* counts as empty
+                    Here is the solution
+*/
+
+    public boolean isMatch4(String s, String p) {
+        if (s == null || p == null) {
+            return false;
+        }
+        boolean[][] dp = new boolean[s.length()+1][p.length()+1];
+        dp[0][0] = true;
+        for (int i = 0; i < p.length(); i++) {
+            if (p.charAt(i) == '*' && dp[0][i-1]) {
+                dp[0][i+1] = true;
+            }
+        }
+        for (int i = 0 ; i < s.length(); i++) {
+            for (int j = 0; j < p.length(); j++) {
+                if (p.charAt(j) == '.') {
+                    dp[i+1][j+1] = dp[i][j];
+                }
+                if (p.charAt(j) == s.charAt(i)) {
+                    dp[i+1][j+1] = dp[i][j];
+                }
+                if (p.charAt(j) == '*') {
+                    if (p.charAt(j-1) != s.charAt(i) && p.charAt(j-1) != '.') {
+                        dp[i+1][j+1] = dp[i+1][j-1];
+                    } else {
+                        dp[i+1][j+1] = (dp[i+1][j] || dp[i][j+1] || dp[i+1][j-1]);
+                    }
+                }
+            }
+        }
+        return dp[s.length()][p.length()];
+    }
+
+//-----------------------------------------------------------------------------------
+    //1
     //Approach #1: Recursion [Accepted]
     class Solution01 {
         public boolean isMatch(String text, String pattern) {
@@ -96,6 +154,7 @@ public class _2RegularExpressionMatching_DP {
     }
 
 //-----------------------------------------------------------------------------------
+    //2
     //Approach #2: Dynamic Programming [Accepted]
     //Top-Down Variation
     enum Result {
@@ -133,6 +192,7 @@ public class _2RegularExpressionMatching_DP {
     }
 
 //-----------------------------------------------------------------------------------
+    //3
     //Bottom-Up Variation
     class Solution03 {
         public boolean isMatch(String text, String pattern) {
@@ -155,58 +215,9 @@ public class _2RegularExpressionMatching_DP {
         }
     }
 
-//-----------------------------------------------------------------------------------
-
-/*
-    Easy DP Java Solution with detailed Explanation
-    This Solution use 2D DP. beat 90% solutions, very simple.
-
-    Here are some conditions to figure out, then the logic can be very straightforward.
-
-1, If p.charAt(j) == s.charAt(i) :  dp[i][j] = dp[i-1][j-1];
-2, If p.charAt(j) == '.' : dp[i][j] = dp[i-1][j-1];
-3, If p.charAt(j) == '*':
-    here are two sub conditions:
-            1   if p.charAt(j-1) != s.charAt(i) : dp[i][j] = dp[i][j-2]  //in this case, a* only counts as empty
-            2   if p.charAt(i-1) == s.charAt(i) or p.charAt(i-1) == '.':
-    dp[i][j] = dp[i-1][j]    //in this case, a* counts as multiple a
-    or dp[i][j] = dp[i][j-1]   // in this case, a* counts as single a
-    or dp[i][j] = dp[i][j-2]   // in this case, a* counts as empty
-    Here is the solution
-*/
-
-    public boolean isMatch4(String s, String p) {
-        if (s == null || p == null) {
-            return false;
-        }
-        boolean[][] dp = new boolean[s.length()+1][p.length()+1];
-        dp[0][0] = true;
-        for (int i = 0; i < p.length(); i++) {
-            if (p.charAt(i) == '*' && dp[0][i-1]) {
-                dp[0][i+1] = true;
-            }
-        }
-        for (int i = 0 ; i < s.length(); i++) {
-            for (int j = 0; j < p.length(); j++) {
-                if (p.charAt(j) == '.') {
-                    dp[i+1][j+1] = dp[i][j];
-                }
-                if (p.charAt(j) == s.charAt(i)) {
-                    dp[i+1][j+1] = dp[i][j];
-                }
-                if (p.charAt(j) == '*') {
-                    if (p.charAt(j-1) != s.charAt(i) && p.charAt(j-1) != '.') {
-                        dp[i+1][j+1] = dp[i+1][j-1];
-                    } else {
-                        dp[i+1][j+1] = (dp[i+1][j] || dp[i][j+1] || dp[i+1][j-1]);
-                    }
-                }
-            }
-        }
-        return dp[s.length()][p.length()];
-    }
 
 //-----------------------------------------------------------------------------------
+    //5
     //Clean Java Solution
     public boolean isMatch5(String s, String p) {
         if (p.isEmpty()) {
@@ -234,6 +245,7 @@ public class _2RegularExpressionMatching_DP {
 
 
 //-----------------------------------------------------------------------------------
+    //6
     // 9CH DP
     public boolean isMatch1(String s, String p) {
         char[] c1 = s.toCharArray();
@@ -283,6 +295,7 @@ public class _2RegularExpressionMatching_DP {
     }
 
 //-----------------------------------------------------------------------------------
+    //7
     public boolean isMatch(String s, String p) {
         //Java note: s.substring(n) will be "" if n == s.length(), but if n > s.length(), index oob error
 

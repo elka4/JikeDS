@@ -10,21 +10,78 @@ import java.util.*;
 //  https://leetcode.com/problems/word-abbreviation/description/
 
 //  String Sort
-//  Valid Word Abbreviation
+//  Valid Word Abbreviation/
 //  Minimum Unique Word Abbreviation
-public class _7G_WordsAbbreviation {
-    /**
-     * @param dict an array of n distinct non-empty strings
-     * @return an array of minimal possible abbreviations for every word
-     */
-    public String[] wordsAbbreviation(String[] dict) {
-        // Write your code here
+//  4:2
+//
+public class _7G_WordsAbbreviation_String {
+//-------------------------------------------------------------------------
+    //2
+    // version: 高频题班
+    public List<String> wordsAbbreviation(List<String> dict) {
+        int len = dict.size();
+        String[] result = new String[len];
+        int[] prefix = new int[len];
+        Map<String, Integer> count = new HashMap<>();
+
+        for (int i = 0; i < len; i++) {
+            prefix[i] = 1;
+            result[i] = getAbbr(dict.get(i), 1);
+            count.put(result[i], count.getOrDefault(result[i], 0) + 1);
+        }
+
+        while (true) {
+            boolean unique = true;
+            for (int i = 0; i < len; i++) {
+                if (count.get(result[i]) > 1) {
+                    prefix[i]++;
+                    result[i] = getAbbr(dict.get(i), prefix[i]);
+                    count.put(result[i], count.getOrDefault(result[i], 0) + 1);
+                    unique = false;
+                }
+            }
+            if (unique) break;
+        }
+        return Arrays.asList(result);
+    }
+
+    String getAbbr(String s, int p) {
+        if (p >= s.length() - 2) {
+            return s;
+        }
+        String ans;
+        ans = s.substring(0, p) + (s.length() - 1 - p) + s.charAt(s.length() - 1);
+        return ans;
+    }
+
+    @Test
+    public void test2(){
+        String[] strs = {"like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"};
+
+        List<String> result = wordsAbbreviation(Arrays.asList(strs));
+        System.out.println(result);
+//        for (String s:result) {
+//            System.out.print(s + ", ");
+//        }
+    }//l2e, god, internal, me, i6t, interval, inte4n, f2e, intr4n
+
+    @Test
+    public void test22(){
+        System.out.println(getAbbr("internal", 1));//i6l
+        System.out.println(getAbbr("internal", 2));//in5l
+        System.out.println(getAbbr("internal", 3));//int4l
+        System.out.println(getAbbr("internal", 4));//inte3l
+    }
+
+//-------------------------------------------------------------------------
+    //1
+    public String[] wordsAbbreviation1(String[] dict) {
         if (dict == null || dict.length == 0) {
             return new String[0];
         }
 
         int n = dict.length;
-        String[] res = new String[n];
+        String[] result = new String[n];
         List<Integer> results = new ArrayList<Integer>();
         for (int i = 0; i < dict.length; i++) {
             results.add(i);
@@ -55,7 +112,7 @@ public class _7G_WordsAbbreviation {
                     for (int i : map.get(word)) {
                         index = i;
                     }
-                    res[index] = word;
+                    result[index] = word;
                 } else {
                     for (int i : map.get(word)) {
                         next.add(i);
@@ -65,100 +122,24 @@ public class _7G_WordsAbbreviation {
             results = next;
             len++;
         }
-        return res;
+        return result;
     }
 
-    /*
-    Given dict = ["like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"]
-          return ["l2e","god","internal","me","i6t","interval","inte4n","f2e","intr4n"]
-     */
+
     @Test
     public void test1(){
         String[] strs = {"like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"};
-        String[] result = wordsAbbreviation(strs);
+        String[] result = wordsAbbreviation1(strs);
         for (String s:result) {
-            System.out.println(s);
+            System.out.print(s + ", ");
         }
-        /*
-        l2e
-        god
-        internal
-        me
-        i6t
-        interval
-        inte4n
-        f2e
-        intr4n
-
-         */
+        //l2e, god, internal, me, i6t, interval, inte4n, f2e, intr4n
     }
 
-//-------------------------------------------------------------------------
-
-// version: 高频题班
-
-    /**
-     * @param dict an array of n distinct non-empty strings
-     * @return an array of minimal possible abbreviations for every word
-     */
-    public String[] wordsAbbreviation2(String[] dict) {
-        int len = dict.length;
-        String[] ans = new String[len];
-        int[] prefix = new int[len];
-        Map<String, Integer> count = new HashMap<>();
-
-        for (int i = 0; i < len; i++) {
-            prefix[i] = 1;
-            ans[i] = getAbbr(dict[i], 1);
-            count.put(ans[i], count.getOrDefault(ans[i], 0) + 1);
-        }
-
-        while (true) {
-            boolean unique = true;
-            for (int i = 0; i < len; i++) {
-                if (count.get(ans[i]) > 1) {
-                    prefix[i]++;
-                    ans[i] = getAbbr(dict[i], prefix[i]);
-                    count.put(ans[i], count.getOrDefault(ans[i], 0) + 1);
-                    unique = false;
-                }
-            }
-            if (unique) {
-                break;
-            }
-        }
-        return ans;
-    }
-
-    String getAbbr(String s, int p) {
-        if (p >= s.length() - 2) {
-            return s;
-        }
-        String ans;
-        ans = s.substring(0, p) + (s.length() - 1 - p) + s.charAt(s.length() - 1);
-        return ans;
-    }
-
-    @Test
-    public void test2(){
-        String[] strs = {"like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"};
-        String[] result = wordsAbbreviation2(strs);
-        for (String s:result) {
-            System.out.println(s);
-        }
-    }
-
-    @Test
-    public void test22(){
-        System.out.println(getAbbr("internal", 1));
-        System.out.println(getAbbr("internal", 2));
-        System.out.println(getAbbr("internal", 3));
-        System.out.println(getAbbr("internal", 4));
-    }
 
 
 //-------------------------------------------------------------------------
-
+    //3
     //Really simple and straightforward Java solution
     public List<String> wordsAbbreviation3(List<String> dict) {
         int len=dict.size();
@@ -188,6 +169,7 @@ public class _7G_WordsAbbreviation {
         return Arrays.asList(ans);
     }
 
+    //这个recursion的写法还挺有意思
     private String makeAbbr(String s, int k) {
         if (k>=s.length()-2) return s;
         StringBuilder builder=new StringBuilder();
@@ -202,15 +184,22 @@ public class _7G_WordsAbbreviation {
         List<String> list = Arrays.asList("like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion");
         System.out.println(wordsAbbreviation3(list));
     }
-
+    @Test
+    public void test33(){
+        System.out.println(makeAbbr("internal", 1));//i6l
+        System.out.println(makeAbbr("internal", 2));//in5l
+        System.out.println(makeAbbr("internal", 3));//int4l
+        System.out.println(makeAbbr("internal", 4));//inte3l
+    }
 //--------------------------------------------------------------------------------
-
+    //4
     //Verbose Java Solution, HashMap(s)
     public List<String> wordsAbbreviation2(List<String> dict) {
         Map<String, String> wordToAbbr = new HashMap<>();
         Map<Integer, List<String>> groups = new HashMap<>();
 
-        // Try to group words by their length. Because no point to compare words with different length.
+        // Try to group words by their length.
+        // Because no point to compare words with different length.
         // Also no point to look at words with length < 4.
         for (String word : dict) {
             int len = word.length();
@@ -252,7 +241,8 @@ public class _7G_WordsAbbreviation {
                 if (res.containsKey(s)) continue;
                 // Generate the current abbreviation
                 String abbr = s.substring(0, i) + (len - 1 - i) + s.charAt(len - 1);
-                // Tick: use reversed abbreviation to word map to check if there is any duplicated abbreviation
+                // Tick: use reversed abbreviation to word map to check
+                // if there is any duplicated abbreviation
                 if (!abbrToWord.containsKey(abbr)) {
                     abbrToWord.put(abbr, s);
                 }
@@ -283,7 +273,7 @@ public class _7G_WordsAbbreviation {
     @Test
     public void test4(){
         String[] strs = {"like", "lcce", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"};
-        String[] result = wordsAbbreviation2(strs);
+        List<String> result = wordsAbbreviation(Arrays.asList(strs));
         for (String s:result) {
             System.out.println(s);
         }
@@ -306,16 +296,12 @@ The return answers should be in the same order as the original array.
 样例
 Given dict = ["like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"]
 return ["l2e","god","internal","me","i6t","interval","inte4n","f2e","intr4n"]
-标签
+标签-------------------------------------------------------------------------------
  */
 
 /*
 639. 单词缩写
 
- 描述
- 笔记
- 数据
- 评测
 给出一组 n 个不同的非空字符串，您需要按以下规则为每个单词生成 最小 的缩写。
 1. 从第一个字符开始，然后加上中间缩写掉的字符的长度，后跟最后一个字符。
 2. 如果有冲突，就是多个单词共享相同的缩写，使用较长的前缀，而不是仅使用第一个字符，直到使单词的缩写的映射变为唯一。 换句话说，最终得到的缩写不能映射到多个原始单词。
@@ -327,7 +313,7 @@ n 和每个单词的长度均不会超过 400。
 每个单词的长度大于 1。
 这些词只包括小写英文字母。
 返回答案应该与原始数组保持相同的顺序。
-您在真实的面试中是否遇到过这个题？ Yes
+
 样例
 给出 dict = ["like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"]
 返回 ["l2e","god","internal","me","i6t","interval","inte4n","f2e","intr4n"]
@@ -335,4 +321,5 @@ n 和每个单词的长度均不会超过 400。
 排序 字符串处理 谷歌 Snapchat
 相关题目
 容易 检查缩写字
+-------------------------------------------------------------------------------
  */

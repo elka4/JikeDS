@@ -110,12 +110,12 @@ By using the read4 API, implement the function int read(char *buf, int n) that r
 Note:
 The read function will only be called once for each test case.
 
-Seen this question in a real interview before?   Yes  No
 Companies
 Facebook
+
 Related Topics
 String
+
 Similar Questions
 Read N Characters Given Read4 II - Call multiple times
-Java
  */

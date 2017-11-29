@@ -6,8 +6,69 @@ import org.junit.Test;
 //  527. Word Abbreviation
 //  https://leetcode.com/problems/word-abbreviation/description/
 //  String, Sort
+//  Valid Word Abbreviation/
+//  Minimum Unique Word Abbreviation
+//
+//
 //
 public class _527_Word_Abbreviation_H {
+//-------------------------------------------------------------------------
+    //2
+    // version: 高频题班
+    public String[] wordsAbbreviation2(String[] dict) {
+        int len = dict.length;
+        String[] result = new String[len];
+        int[] prefix = new int[len];
+        Map<String, Integer> count = new HashMap<>();
+
+        for (int i = 0; i < len; i++) {
+            prefix[i] = 1;
+            result[i] = getAbbr(dict[i], 1);
+            count.put(result[i], count.getOrDefault(result[i], 0) + 1);
+        }
+
+        while (true) {
+            boolean unique = true;
+            for (int i = 0; i < len; i++) {
+                if (count.get(result[i]) > 1) {
+                    prefix[i]++;
+                    result[i] = getAbbr(dict[i], prefix[i]);
+                    count.put(result[i], count.getOrDefault(result[i], 0) + 1);
+                    unique = false;
+                }
+            }
+            if (unique) {
+                break;
+            }
+        }
+        return result;
+    }
+
+    String getAbbr(String s, int p) {
+        if (p >= s.length() - 2) {
+            return s;
+        }
+        String ans;
+        ans = s.substring(0, p) + (s.length() - 1 - p) + s.charAt(s.length() - 1);
+        return ans;
+    }
+
+    @Test
+    public void test2(){
+        String[] strs = {"like", "god", "internal", "me", "internet", "interval", "intension", "face", "intrusion"};
+        String[] result = wordsAbbreviation2(strs);
+        for (String s:result) {
+            System.out.print(s + ", ");
+        }
+    }//l2e, god, internal, me, i6t, interval, inte4n, f2e, intr4n
+
+    @Test
+    public void test22(){
+        System.out.println(getAbbr("internal", 1));//i6l
+        System.out.println(getAbbr("internal", 2));//in5l
+        System.out.println(getAbbr("internal", 3));//int4l
+        System.out.println(getAbbr("internal", 4));//inte3l
+    }
 //-------------------------------------------------------------------------
     //1
  //Really simple and straightforward Java solution

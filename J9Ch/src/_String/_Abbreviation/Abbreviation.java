@@ -490,6 +490,45 @@ The words consist of lowercase English letters only.
 The return answers should be in the same order as the original array.
  */
 
+    //2
+    // version: 高频题班
+    public String[] wordsAbbreviation2(String[] dict) {
+        int len = dict.length;
+        String[] result = new String[len];
+        int[] prefix = new int[len];
+        Map<String, Integer> count = new HashMap<>();
+
+        for (int i = 0; i < len; i++) {
+            prefix[i] = 1;
+            result[i] = getAbbr(dict[i], 1);
+            count.put(result[i], count.getOrDefault(result[i], 0) + 1);
+        }
+
+        while (true) {
+            boolean unique = true;
+            for (int i = 0; i < len; i++) {
+                if (count.get(result[i]) > 1) {
+                    prefix[i]++;
+                    result[i] = getAbbr(dict[i], prefix[i]);
+                    count.put(result[i], count.getOrDefault(result[i], 0) + 1);
+                    unique = false;
+                }
+            }
+            if (unique) {
+                break;
+            }
+        }
+        return result;
+    }
+
+    String getAbbr(String s, int p) {
+        if (p >= s.length() - 2) {
+            return s;
+        }
+        String ans;
+        ans = s.substring(0, p) + (s.length() - 1 - p) + s.charAt(s.length() - 1);
+        return ans;
+    }
 
 /////// 5. Word Abbreviation, 5. Word Abbreviation, 5. Word Abbreviation, 5. Word Abbreviation, 5. Word Abbreviation
 

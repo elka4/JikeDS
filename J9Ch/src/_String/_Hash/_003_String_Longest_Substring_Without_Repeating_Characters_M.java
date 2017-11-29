@@ -1,11 +1,11 @@
-package _String._TwoPointer;
+package _String._Hash;
 import java.util.*;
 import org.junit.Test;
 
 //  leetcode    3. Longest Substring Without Repeating Characters
-//  https://leetcode.com/problems/longest-substring-without-repeating-characters/solution/
+//  https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 //
-//  8:
+//  8: 2 set, 3 map.
 //
 public class _003_String_Longest_Substring_Without_Repeating_Characters_M {
 //-------------------------------------------------------------------------
@@ -244,4 +244,14 @@ int[256] for Extended ASCII
 LeetCode – Longest Substring Without Repeating Characters (Java)
 
 Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.
+
+
+Companies
+Amazon Bloomberg Yelp Adobe
+
+Related Topics
+Hash Table Two Pointers String
+
+Similar Questions
+Longest Substring with At Most Two Distinct Characters
  */

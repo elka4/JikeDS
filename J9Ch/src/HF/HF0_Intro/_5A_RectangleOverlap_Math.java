@@ -6,8 +6,10 @@ import java.util.TreeSet;
 
 
 //  http://www.lintcode.com/zh-cn/problem/rectangle-overlap/
+//
+//  3:1
 public class _5A_RectangleOverlap_Math {
-
+//-------------------------------------------------------------------------
       class Point {
           public int x, y;
           public Point() { x = 0; y = 0; }
@@ -15,7 +17,7 @@ public class _5A_RectangleOverlap_Math {
       }
 
 //-------------------------------------------------------------------------
-
+    //1
     /**
      * @param l1 top-left coordinate of first rectangle
      * @param r1 bottom-right coordinate of first rectangle
@@ -34,17 +36,14 @@ public class _5A_RectangleOverlap_Math {
         return true;
     }
 
-    /*
-    Given l1 = [0, 8], r1 = [8, 0], l2 = [6, 6], r2 = [10, 0], return true
+/*
+Given l1 = [0, 8], r1 = [8, 0], l2 = [6, 6], r2 = [10, 0], return true
 
 Given l1 = [0, 8], r1 = [8, 0], l2 = [9, 6], r2 = [10, 0], return `false
-     */
-
-
+*/
 
 //-------------------------------------------------------------------------
-
-
+    //2
     //Really Easy Understanding Solution(O(n), Java)
     public boolean isRectangleCover(int[][] rectangles) {
 
@@ -83,8 +82,7 @@ Given l1 = [0, 8], r1 = [8, 0], l2 = [9, 6], r2 = [10, 0], return `false
     }
 
 //-------------------------------------------------------------------------
-
-
+    //3
     //O(n log n) sweep line solution
     public class Event implements Comparable<Event> {
         int time;
@@ -147,9 +145,6 @@ Given l1 = [0, 8], r1 = [8, 0], l2 = [9, 6], r2 = [10, 0], return `false
     }
 
 //-------------------------------------------------------------------------
-
-
-
 }
 
 /*
@@ -169,15 +164,12 @@ Example
 Given l1 = [0, 8], r1 = [8, 0], l2 = [6, 6], r2 = [10, 0], return true
 
 Given l1 = [0, 8], r1 = [8, 0], l2 = [9, 6], r2 = [10, 0], return `false
+-------------------------------------------------------------------------
  */
 
 /*
 626. 矩形重叠
 
- 描述
- 笔记
- 数据
- 评测
 给定两个矩形，判断这两个矩形是否有重叠。
 
  注意事项
@@ -197,4 +189,5 @@ r2代表第二个矩形的右下角
 
 标签
 数学 亚马逊
+-------------------------------------------------------------------------
  */

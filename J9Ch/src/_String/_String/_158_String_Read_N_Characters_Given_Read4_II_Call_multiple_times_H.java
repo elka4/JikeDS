@@ -162,11 +162,12 @@ By using the read4 API, implement the function int read(char *buf, int n) that r
 Note:
 The read function may be called multiple times.
 
-Seen this question in a real interview before?   Yes  No
 Companies
 Google Facebook Bloomberg
+
 Related Topics
 String
+
 Similar Questions
 Read N Characters Given Read4
  */

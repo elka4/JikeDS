@@ -6,12 +6,43 @@ import org.junit.Test;
 //  https://leetcode.com/problems/shortest-palindrome/description/
 //  http://www.lintcode.com/problem/shortest-palindrome/
 //  给一个字符串 S, 你可以通过在前面添加字符将其转换为回文串.找到并返回用这种方式转换的最短回文串.
-//Longest Palindromic Substring
-//Implement strStr()
-//Palindrome Pairs
-//  6:
+//  Given "aacecaaa", return "aaacecaaa".   Given "abcd", return "dcbabcd".
+//  5 Longest Palindromic Substring
+//  Implement strStr()
+//  336 Palindrome Pairs
+//  6:6
 //
 public class _214_String_Shortest_Palindrome_H {
+
+//------------------------------------------------------------------------------
+    //6
+    //9Ch
+    public class Jiuzhang {
+        public String shortestPalindrome(String s) {
+            int j = 0;
+            //找到第一个使他不回文的位置
+            for (int i = s.length() - 1; i >= 0; i--) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    j += 1;
+                }
+            }
+            //本身是回文
+            if (j == s.length()) {
+                return s;
+            }
+            // 后缀不能够匹配的字符串
+            String suffix = s.substring(j);
+
+            // 前面补充prefix让他和suffix回文匹配
+            String prefix = new StringBuilder(suffix).reverse().toString();
+
+            //递归调用找 [0,j]要最少可以补充多少个字符让他回文
+            String mid = shortestPalindrome(s.substring(0, j));
+
+            String ans = prefix + mid  + suffix;
+            return  ans;
+        }
+    }
 //------------------------------------------------------------------------------
     //https://leetcode.com/problems/shortest-palindrome/solution/
     //C++
@@ -69,9 +100,9 @@ public class _214_String_Shortest_Palindrome_H {
     }
 //------------------------------------------------------------------------------
     //2
-/*    My 9-lines three pointers Java solution with explanation
-            Explanation
-    The key point is to find the longest palindrome starting from the first character, and then reverse the remaining part as the prefix to s. Any advice will be welcome!*/
+/*My 9-lines three pointers Java solution with explanation
+Explanation
+The key point is to find the longest palindrome starting from the first character, and then reverse the remaining part as the prefix to s. Any advice will be welcome!*/
     class Solution2{
         public String shortestPalindrome(String s) {
             int i = 0, end = s.length() - 1, j = end; char chs[] = s.toCharArray();
@@ -93,7 +124,7 @@ public class _214_String_Shortest_Palindrome_H {
 First, we can find the longest palindrome which include the first character in s, then we just need to reverse the suffix and add it to the front of string s.
 
 When looking for the longest palindrome, we start from the center and traverse to left and right, and we need to think the length of the palindrome could be odd or even.
- */
+*/
     public class Solution3 {
         public String shortestPalindrome(String s) {
             int n = s.length();
@@ -102,7 +133,8 @@ When looking for the longest palindrome, we start from the center and traverse t
             }
             int idx = 0;
             for(int center = n/2; center>=0; center--){
-                if(valid(s, center, 1)){   //is the longest valid palindrome? (assume length is even)
+                //is the longest valid palindrome? (assume length is even)
+                if(valid(s, center, 1)){
                     idx = 2*center+1;
                     break;
                 }
@@ -214,31 +246,6 @@ When looking for the longest palindrome, we start from the center and traverse t
         }
     }
 
-//------------------------------------------------------------------------------
-    //6
-    //9Ch
-    public class Jiuzhang {
-        public String shortestPalindrome(String s) {
-            int j = 0;
-            for (int i = s.length() - 1; i >= 0; i--) {//找到第一个使他不回文的位置
-                if (s.charAt(i) == s.charAt(j)) {
-                    j += 1;
-                }
-            }
-
-            if (j == s.length()) {  //本身是回文
-                return s;
-            }
-
-            String suffix = s.substring(j); // 后缀不能够匹配的字符串
-            // 前面补充prefix让他和suffix回文匹配
-            String prefix = new StringBuilder(suffix).reverse().toString();
-            //递归调用找 [0,j]要最少可以补充多少个字符让他回文
-            String mid = shortestPalindrome(s.substring(0, j));
-            String ans = prefix + mid  + suffix;
-            return  ans;
-        }
-    }
 
 //------------------------------------------------------------------------------
 }
@@ -247,9 +254,7 @@ Given a string S, you are allowed to convert it to a palindrome by adding charac
 
 For example:
 
-Given "aacecaaa", return "aaacecaaa".
-
-Given "abcd", return "dcbabcd".
+Given "aacecaaa", return "aaacecaaa".   Given "abcd", return "dcbabcd".
 
 Credits:
 Special thanks to @ifanchu for adding this problem and creating all test cases. Thanks to @Freezen for additional test cases.

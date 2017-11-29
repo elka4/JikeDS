@@ -65,11 +65,8 @@ If the last word does not exist, return 0.
 
 Note: A word is defined as a character sequence consists of non-space characters only.
 
-Example:
+Example:  Input: "Hello World"  Output: 5
 
-Input: "Hello World"
-Output: 5
-Seen this question in a real interview before?   Yes  No
 Related Topics
 String
 ------------------------------------------------------------------------------

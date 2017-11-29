@@ -1,4 +1,4 @@
-package _String._TwoPointer;
+package _String._Hash;
 import java.util.*;
 import org.junit.Test;
 
@@ -11,9 +11,8 @@ import org.junit.Test;
 public class _030_String_Substring_with_Concatenation_of_All_Words_H {
 //------------------------------------------------------------------------------
 
-//-------------------------------------------------------------------------
     //1
-//    I think your code is O(kn) where k = |L[0]|. I made a real O(n) code using k maps and each time do maps.get(i%k) to get its corresponding map. But I use extra queue, while the queue could be simplified into one variable after seeing your code.
+//I think your code is O(kn) where k = |L[0]|. I made a real O(n) code using k maps and each time do maps.get(i%k) to get its corresponding map. But I use extra queue, while the queue could be simplified into one variable after seeing your code.
 
     public class Solution {
         public List<Integer> findSubstring(String S, String[] L) {
@@ -199,10 +198,10 @@ This is my Java version of Sliding Window.
 /*
 You are given a string, s, and a list of words, words, that are all of the same length. Find all starting indices of substring(s) in s that is a concatenation of each word in words exactly once and without any intervening characters.
 
-For example, given:
-s: "barfoothefoobarman"
-words: ["foo", "bar"]
+For example, given: s: "barfoothefoobarman" words: ["foo", "bar"]
 
 You should return the indices: [0,9].
 (order does not matter).
+
+
  */
