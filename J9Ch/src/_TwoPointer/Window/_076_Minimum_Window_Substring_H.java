@@ -1,12 +1,21 @@
-package _TwoPointer.Subarray;
-import java.util.HashMap;
+package _TwoPointer.Window;
+import org.junit.Test;
+import java.util.*;
 
 //  76. Minimum Window Substring
 //  https://leetcode.com/problems/minimum-window-substring/description/
 //  http://www.lintcode.com/zh-cn/problem/minimum-window-substring/
 //  8:
+//  Hash Table, Two Pointers, String
+//30  Substring with Concatenation of All Words - Hash, Two Pointers, String
+//209 Minimum Size Subarray Sum - Array, Two Pointers, Binary Search
+//239 Sliding Window Maximum - Heap
+//567 Permutation in String - Two Pointers
+//632 Smallest Range - Hash, Two Pointers, String
+//Minimum Window Subsequence
 //
-public class _076_TwoPointer_Minimum_Window_Substring_H {
+//
+public class _076_Minimum_Window_Substring_H {
 //-------------------------------------------------------------------------
     //1
     public String minWindow(String s, String t) {
@@ -327,6 +336,21 @@ Note:
 If there is no such window in S that covers all characters in T, return the empty string "".
 
 If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in S.
+
+Companies
+Facebook Uber LinkedIn Snapchat
+
+Related Topics
+Hash Table, Two Pointers, String
+
+Similar Questions
+30  Substring with Concatenation of All Words - Hash, Two Pointers, String
+209 Minimum Size Subarray Sum - Array, Two Pointers, Binary Search
+239 Sliding Window Maximum - Heap
+567 Permutation in String - Two Pointers
+632 Smallest Range - Hash, Two Pointers, String
+Minimum Window Subsequence
+-------------------------------------------------------------------------
  */
 
 //给定一个字符串source和一个目标字符串target，在字符串source中找到包括所有目标字符串字母的子串。

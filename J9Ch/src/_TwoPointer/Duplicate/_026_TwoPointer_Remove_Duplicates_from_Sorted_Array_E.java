@@ -1,5 +1,4 @@
 package _TwoPointer.Duplicate;
-
 import org.junit.Test;
 
 //  26. Remove Duplicates from Sorted Array

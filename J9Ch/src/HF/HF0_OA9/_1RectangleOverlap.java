@@ -1,5 +1,4 @@
 package HF.HF0_OA9;
-
 import org.junit.Test;
 
 import java.util.Comparator;
@@ -10,12 +9,14 @@ import java.util.TreeSet;
 //基础题
 //Rectangle Overlap
 public class _1RectangleOverlap {
+//-------------------------------------------------------------------------
 
     class Point {
         public int x, y;
         public Point() { x = 0; y = 0; }
         public Point(int a, int b) { x = a; y = b; }
     }
+//-------------------------------------------------------------------------
 
     /**
      * @param l1 top-left coordinate of first rectangle

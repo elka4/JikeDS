@@ -1,18 +1,20 @@
-package HF.HF0_OA9;
+package _TwoPointer.Window;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 //  Sliding window类
 //  Window Sum
 //  http://www.lintcode.com/en/problem/window-sum/
-//
+//  3:
 //
 public class _3WindowSum {
 //-------------------------------------------------------------------------
-
+    //1
     /**
      * @param nums a list of integers.
      * @return the sum of the element inside the window at each moving.
@@ -49,6 +51,7 @@ public class _3WindowSum {
     }*/
 
 //-------------------------------------------------------------------------
+    //2
     public int[] winSum2(int[] nums, int k) {
         // write your code here
         if (k <= 0){
@@ -109,7 +112,7 @@ public class _3WindowSum {
         }
     }
 //-------------------------------------------------------------------------
-
+    //3
     public int[] winSumMy(int[] nums, int k) {
         // write your code here
 
