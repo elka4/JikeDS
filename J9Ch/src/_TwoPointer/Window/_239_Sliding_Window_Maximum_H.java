@@ -6,10 +6,10 @@ import java.util.*;
 //  https://leetcode.com/problems/sliding-window-maximum/description/
 //  http://www.lintcode.com/problem/sliding-window-maximum/
 //  Heap
-//76 Minimum Window Substring
-//155 Min Stack
-//156 Longest Substring with At Most Two Distinct Characters
-//265 Paint House II
+//  76 Minimum Window Substring
+//  155 Min Stack
+//  156 Longest Substring with At Most Two Distinct Characters
+//  265 Paint House II
 //
 //  给出一个可能包含重复的整数数组，和一个大小为 k 的滑动窗口,
 //  从左到右在数组中滑动这个窗口，找到数组中每个窗口内的最大值。
@@ -17,6 +17,7 @@ import java.util.*;
 //
 public class _239_Sliding_Window_Maximum_H {
 //-------------------------------------------------------------------------
+    //1
 /*
 Java O(n) solution using deque with explanation
 We scan the array from 0 to n-1, keep "promising" elements in the deque. The algorithm is amortized O(n) as each element is put and polled once.
@@ -59,6 +60,7 @@ As a result elements in the deque are ordered in both sequence in array and thei
         }
     }
 //-------------------------------------------------------------------------
+    //2
 /*
 O(n) solution in Java with two simple pass in the array
 For Example: A = [2,1,3,4,6,3,8,9,10,12,56], w=4
@@ -104,7 +106,7 @@ sliding_max = 4, 6, 6, 8, 9, 10, 12, 56
 
 
 //-------------------------------------------------------------------------
-
+    //3
     //9Ch
     public class Ch9 {
         /**
@@ -126,10 +128,10 @@ sliding_max = 4, 6, 6, 8, 9, 10, 12, 56
 
         public ArrayList<Integer> maxSlidingWindow(int[] nums, int k) {
             // write your code here
-            ArrayList<Integer> ans = new ArrayList<Integer>();
+            ArrayList<Integer> result = new ArrayList<Integer>();
             Deque<Integer> deque = new ArrayDeque<Integer>();
             if (nums.length == 0) {
-                return ans;
+                return result;
             }
             for (int i = 0; i < k - 1; i++) {
                 inQueue(deque, nums[i]);
@@ -137,10 +139,10 @@ sliding_max = 4, 6, 6, 8, 9, 10, 12, 56
 
             for(int i = k - 1; i < nums.length; i++) {
                 inQueue(deque, nums[i]);
-                ans.add(deque.peekFirst());
+                result.add(deque.peekFirst());
                 outQueue(deque, nums[i - k + 1]);
             }
-            return ans;
+            return result;
 
         }
     }

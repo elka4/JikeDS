@@ -11,7 +11,7 @@ import java.util.Queue;
 //
 public class _295_Median_from_Data_Stream_H {
 //------------------------------------------------------------------------------
-
+    //1
 //Short simple Java/C++/Python, O(log n) + O(1)
 /*
 I keep two heaps (or priority queues):
@@ -48,7 +48,7 @@ Update: These are pretty short already, but by now I wrote even shorter ones.
         }
     }
 //------------------------------------------------------------------------------
-
+    //2
 //Very Short, O(log n) + O(1)
 /*
 Same idea as before, but really exploiting the symmetry of the two heaps by switching them whenever a number is added. Still O(log n) for adding and O(1) for median. Partially inspired by peisi's updated solution.
@@ -97,5 +97,7 @@ addNum(2)
 findMedian() -> 1.5
 addNum(3)
 findMedian() -> 2
+
+
 //------------------------------------------------------------------------------
  */

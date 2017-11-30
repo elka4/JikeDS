@@ -10,14 +10,14 @@ import java.util.*;
 //  _076_Minimum_Window_Substring_H
 //  674 Longest Continuous Increasing Subsequence
 //
-//
+//  4:
 //
 public class _727_Minimum_Window_Subsequence_H {
 //-------------------------------------------------------------------------
 //https://leetcode.com/problems/minimum-window-subsequence/solution/
 
 //-------------------------------------------------------------------------
-
+    //1
     //Approach #1: Dynamic Programming (Postfix Variation) [Accepted]
     class Solution1 {
         public String minWindow(String S, String T) {
@@ -50,7 +50,7 @@ public class _727_Minimum_Window_Subsequence_H {
     }
 
 //-------------------------------------------------------------------------
-
+    //2
     //Approach #2: Dynamic Programming (Next Array Variation) [Accepted]
     class Solution2 {
         public String minWindow(String S, String T) {
@@ -96,6 +96,7 @@ public class _727_Minimum_Window_Subsequence_H {
         }
     }
 //-------------------------------------------------------------------------
+    //3
     //Trying to translate the author's idea into a less efficient but easier to understand version.
     class Solution3 {
         public String minWindow(String S, String T) {
@@ -138,7 +139,7 @@ public class _727_Minimum_Window_Subsequence_H {
 
 
 //-------------------------------------------------------------------------
-
+    //4
     //Java solution, sliding window
     class Solution4 {
         public String minWindow(String S, String T) {
@@ -175,9 +176,6 @@ public class _727_Minimum_Window_Subsequence_H {
 
 //-------------------------------------------------------------------------
 
-
-
-//-------------------------------------------------------------------------
 
 
 //-------------------------------------------------------------------------

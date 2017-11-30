@@ -11,12 +11,16 @@ import java.util.function.Supplier;
 //
 //  给定一个包含 n 个整数的数组，和一个大小为 k 的滑动窗口,从左到右在数组中滑动这个窗口，
 //  找到数组中每个窗口内的中位数。(如果数组个数是偶数，则在该窗口排序数字后，返回第 N/2 个数字。)
+//
+//
+//
 public class
 _480_Sliding_Window_Median_H {
 //------------------------------------------------------------------------------
     //https://leetcode.com/problems/sliding-window-median/solution/
     //C++
 //------------------------------------------------------------------------------
+    //1
     //Easy to understand O(nlogk) Java solution using TreeMap
     /*
     TreeMap is used to implement an ordered MultiSet.
@@ -99,6 +103,7 @@ _480_Sliding_Window_Median_H {
 
 
 //------------------------------------------------------------------------------
+    //2
     //Java solution using two PriorityQueues
 
     /*
@@ -180,7 +185,7 @@ _480_Sliding_Window_Median_H {
         }
     }
 //------------------------------------------------------------------------------
-
+    //3
     //Java using two Tree Sets - O(n logk)
     /*
     Inspired by this solution. to the problem: 295. Find Median from Data Stream
@@ -224,7 +229,7 @@ _480_Sliding_Window_Median_H {
 
 
 //------------------------------------------------------------------------------
-
+    //4
     //Great idea! I re-write it using another way:
     class Solution4 {
         class myInteger{
@@ -320,7 +325,7 @@ _480_Sliding_Window_Median_H {
 //------------------------------------------------------------------------------
 
 
-
+    //5
     // 9Ch 1
     public class Ch9_1 {
         /**
@@ -395,6 +400,7 @@ _480_Sliding_Window_Median_H {
     }
 
 //------------------------------------------------------------------------------
+    //6
     // 9Ch 2
     // Normal heap Version
     public class Ch9_2 {
@@ -458,6 +464,7 @@ _480_Sliding_Window_Median_H {
         }
     }
 //------------------------------------------------------------------------------
+    //7
     // 9CH HashHeap
     // Hash Heap Version
     class HashHeap {
@@ -627,6 +634,7 @@ _480_Sliding_Window_Median_H {
     }
 
 //------------------------------------------------------------------------------
+    //8
     // 9Ch 3
     public class Ch9_3 {
         /**

@@ -5,27 +5,35 @@ import java.util.*;
 //  76. Minimum Window Substring
 //  https://leetcode.com/problems/minimum-window-substring/description/
 //  http://www.lintcode.com/zh-cn/problem/minimum-window-substring/
-//  8:
+
 //  Hash Table, Two Pointers, String
-//30  Substring with Concatenation of All Words - Hash, Two Pointers, String
-//209 Minimum Size Subarray Sum - Array, Two Pointers, Binary Search
-//239 Sliding Window Maximum - Heap
-//567 Permutation in String - Two Pointers
-//632 Smallest Range - Hash, Two Pointers, String
-//Minimum Window Subsequence
+//
+//  30  Substring with Concatenation of All Words - Hash, Two Pointers, String
+//  209 Minimum Size Subarray Sum - Array, Two Pointers, Binary Search
+//  239 Sliding Window Maximum - Heap
+//  567 Permutation in String - Two Pointers
+//  632 Smallest Range - Hash, Two Pointers, String
+//  717 Minimum Window Subsequence - DP
+//
+//  8:
+//  给定一个字符串source和一个目标字符串target，在字符串source中找到包括所有目标字符串字母的子串。
+//   minimum window in S which will contain all the characters:
+//  S = "ADOBECODEBANC"   T = "ABC"     Minimum window is "BANC".
 //
 //
 public class _076_Minimum_Window_Substring_H {
 //-------------------------------------------------------------------------
     //1
     public String minWindow(String s, String t) {
-
         int[] map = new int[128];
         char[] sc = s.toCharArray();
         char[] tc = t.toCharArray();
 
-        for (char c : t.toCharArray()) map[c]++;
+        for (char c : t.toCharArray())
+            map[c]++;
+
         int counter = t.length(), begin = 0, end = 0, d = Integer.MAX_VALUE, head = 0;
+
         while (end < sc.length) {
             if (map[sc[end++]]-- > 0) counter--; //in t
             while (counter == 0) { //valid
@@ -37,6 +45,27 @@ public class _076_Minimum_Window_Substring_H {
     }
 //-------------------------------------------------------------------------
     //2
+    //make the template more applicable for Longest Substring Without Repeating Character
+    public int lengthOfLongestSubstring(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        int len = 0;
+        int head = 0, i = 0;
+        int[] sTable = new int[256];
+        int repeat = 0;
+        while (i < s.length()) {
+            if (sTable[s.charAt(i++)]++ > 0) repeat++;   //total number of repeat
+            while(repeat > 0) {
+                if (sTable[s.charAt(head++)]-- > 1) repeat--;
+            }
+            len = Math.max(len, i - head);
+        }
+        return len;
+    }
+
+//-------------------------------------------------------------------------
+    //3
 /*    Here comes the template.
 
     For most substring problem, we are given a string and need to find a substring of it which satisfy some restrictions. A general way is to use a hashmap assisted with two pointers. The template is given below.
@@ -66,27 +95,6 @@ public class _076_Minimum_Window_Substring_H {
         }
         return d;
     }*/
-//-------------------------------------------------------------------------
-    //3
-//    make the template more applicable for Longest Substring Without Repeating Character
-
-    public int lengthOfLongestSubstring(String s) {
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
-        int len = 0;
-        int head = 0, i = 0;
-        int[] sTable = new int[256];
-        int repeat = 0;
-        while (i < s.length()) {
-            if (sTable[s.charAt(i++)]++ > 0) repeat++;   //total number of repeat
-            while(repeat > 0) {
-                if (sTable[s.charAt(head++)]-- > 1) repeat--;
-            }
-            len = Math.max(len, i - head);
-        }
-        return len;
-    }
 
 
 //-------------------------------------------------------------------------
@@ -328,9 +336,7 @@ public class _076_Minimum_Window_Substring_H {
 Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
 
 For example,
-S = "ADOBECODEBANC"
-T = "ABC"
-Minimum window is "BANC".
+S = "ADOBECODEBANC"   T = "ABC"     Minimum window is "BANC".
 
 Note:
 If there is no such window in S that covers all characters in T, return the empty string "".
@@ -349,7 +355,7 @@ Similar Questions
 239 Sliding Window Maximum - Heap
 567 Permutation in String - Two Pointers
 632 Smallest Range - Hash, Two Pointers, String
-Minimum Window Subsequence
+717 Minimum Window Subsequence - DP
 -------------------------------------------------------------------------
  */
 
