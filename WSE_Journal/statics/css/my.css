@@ -1,0 +1,131 @@
+@font-face {  
+    /* font-properties */  
+    font-family: 'myarial';  
+    src:  
+    url('../fonts/myarial.ttf'); /* IE9 */  
+}  
+
+@font-face {  
+    /* font-properties */  
+    font-family: 'myopima';  
+    src:  
+    url('../fonts/myopima.ttf'); /* IE9 */  
+}  
+
+@font-face {  
+    /* font-properties */  
+    font-family: 'mycourier';  
+    src:  
+    url('../fonts/mycourier.ttf'); /* IE9 */  
+}  
+
+
+
+h2 { color: #111; font-family: 'myopima'; font-size: 50px; font-weight: 300; line-height: 32px; margin: 0 0 72px; text-align: center; }
+p { color: black; font-family: 'mycourier', sans-serif; font-size: 14px; line-height: 24px; margin: 0 0 0; }
+table {
+    height: 100%
+}
+.submit_btn{
+    clear: both;
+    width: 100px;
+    text-align:center;
+    background: #4C7FEB;
+    color: #fff;
+    text-transform: uppercase;
+    border: 1px solid #4C7FEB;
+    padding: 8px 0 8px 0px;
+    margin: 0 auto;
+    -webkit-transition: color 0.2s,background-color 0.2s,box-shadow 0.2s,border 0.2s;
+    -moz-transition: color 0.2s,background-color 0.2s,box-shadow 0.2s,border 0.2s;
+    -o-transition: color 0.2s,background-color 0.2s,box-shadow 0.2s,border 0.2s;
+    transition: color 0.2s,background-color 0.2s,box-shadow 0.2s,border 0.2s;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.submit_btn:hover{
+    background: #285AC5;
+    box-shadow: none;
+}
+input[type="submit"]
+{
+    font-size:14px;
+    font-family: 'myarial';
+}
+input[type="text"]
+{
+    font-size:20px;
+    font-family: 'myarial';
+}
+.get {
+    padding: 10px 0;
+}
+
+.get2 {
+    padding: 20px 0;
+}        
+@media only screen and (min-width: 1200px) {
+    .blog-g-fixed {
+    max-width: 1200px;
+    }
+}
+
+@media only screen and (min-width: 641px) {
+    .blog-sidebar {
+    font-size: 1.4rem;
+    }
+}
+
+.blog-main {
+    padding: 20px 0;
+}
+
+.blog-title {
+    margin: 6px 0 6px 0;
+    font-family: 'myarial';
+    font-size: 1.3em;
+    font-weight:normal;
+    color: #013ADF;
+    line-height:100%;
+}
+
+.blog-authors {
+    font-family: 'myarial';
+    font-style:italic;
+    color: #585858;
+    font-weight: normal;
+    font-size: 0.6em;
+    
+}
+.blog-keywords {
+    font-family: 'myarial';
+    color: snow;
+    font-weight: lighter;
+    font-size: 0.6em;
+}
+
+.blog-date {
+    margin: 3px 0 3px 0;
+    font-family: 'myarial';
+    color: black;
+    font-weight: normal;
+    font-size: 0.6em;
+}
+
+.blog-abs {
+    font-family: 'myarial';
+    color: black;
+    font-size: 0.9em;
+    line-height:150%;
+     font-weight: normal;
+}
+
+.blog-footer {
+    margin-bottom: 0;
+    padding: 30% 0 0 0;
+    text-align: center;
+}

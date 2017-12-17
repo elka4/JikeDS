@@ -91,8 +91,8 @@ public class _9RussianDollEnvelopes {
                     envelopes[j][1] >= envelopes[i][1]){
                     continue;
                 }
-
-                f[i] = Math.max(f[i], f[j] + 1);//不放，f[i]//放， f[j] + 1。1就是envelope i。
+                //不放，f[i]//放， f[j] + 1。1就是envelope i。
+                f[i] = Math.max(f[i], f[j] + 1);
             }
             result = Math.max(result, f[i]);
         }

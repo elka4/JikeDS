@@ -1,0 +1,4 @@
+JOURNAL;Nature
+Link;http://www.nature.com/nature/research/biological-sciences.html
+Level;1
+First_Level_Pre_Filter;http://www.nature.com/nature/journal/

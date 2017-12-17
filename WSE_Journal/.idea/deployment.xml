@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="aws" deleteMissingItems="true">
+    <serverData>
+      <paths name="aws">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/index.php" />
+            <mapping deploy="/craw_index" local="$PROJECT_DIR$/craw_index" web="/craw_index/index.php" />
+            <mapping deploy="/search" local="$PROJECT_DIR$/search" web="/search/index.php" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
+  </component>
+</project>

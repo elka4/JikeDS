@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <!--<p>Get your query <a href="/query">here</a></p>-->
+
+    <form action="#" th:action="@{/query?query2=}" th:object="${results}" method="post">
+        <table>
+            <tr>
+                <td>Query:</td>
+                <td><input type="text" th:field="*{queryStr}" /></td>
+                <!--<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>-->
+            </tr>
+
+            <tr>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <p th:text="'Hello, ' + ${results} + '!'" />
+
+
+
+</body>
+</html>

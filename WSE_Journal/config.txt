@@ -1,0 +1,5 @@
+downloadsFolder;downloads
+indexFolder;index
+weeknum;1
+cachePath;cacheFile
+urlFile;urlFile.txt

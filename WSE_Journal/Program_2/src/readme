@@ -1,0 +1,12 @@
+
+<~/sandbox/CoreUtils/scratch> $ javac -d . -cp ~/sandbox/CoreUtils/lib/commons-cli-1.2.jar:. StackOverflowExample.java
+<~/sandbox/CoreUtils/scratch> $ java -cp ~/sandbox/CoreUtils/lib/commons-cli-1.2.jar:. StackOverflowExample -C foo -job1
+OK
+
+<~/sandbox/CoreUtils/scratch> $ java -cp ~/sandbox/CoreUtils/lib/commons-cli-1.2.jar:. StackOverflowExample -C foo -job2
+usage: cmdname
+ -C <count>   description of C
+ -job1        description of job1
+ -job2        description of job2
+ -job3        description of job3
+ -W <width>   description of W

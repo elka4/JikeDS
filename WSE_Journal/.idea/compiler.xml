@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="craw_index" />
+        <module name="crawl" />
+        <module name="demo" />
+        <module name="gs-serving-web-content (1)" />
+        <module name="gs-serving-web-content (2)" />
+        <module name="gs-validating-form-input (1)" />
+        <module name="gs-validating-form-input (2)" />
+        <module name="search" />
+        <module name="searcher" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="craw_index" target="1.8" />
+      <module name="craw_index (1)" target="1.8" />
+      <module name="craw_index (2)" target="1.8" />
+      <module name="crawl" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="gs-serving-web-content (1)" target="1.8" />
+      <module name="gs-serving-web-content (2)" target="1.8" />
+      <module name="gs-validating-form-input (1)" target="1.8" />
+      <module name="gs-validating-form-input (2)" target="1.8" />
+      <module name="search" target="1.8" />
+      <module name="searcher" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

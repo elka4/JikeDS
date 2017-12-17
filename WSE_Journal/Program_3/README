@@ -1,0 +1,6 @@
+lib: All third party file
+src: all source code
+bin: .class file
+MANIFEST: build file
+this project compiles as normal java project.
+The main class is WebCrawler.
