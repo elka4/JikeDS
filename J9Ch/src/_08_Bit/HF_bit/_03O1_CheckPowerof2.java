@@ -1,6 +1,5 @@
 package _08_Bit.HF_bit;
 
-import a.g.I;
 import org.junit.Test;
 
 //  142. O(1) Check Power of 2

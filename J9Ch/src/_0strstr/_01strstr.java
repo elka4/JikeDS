@@ -1,6 +1,6 @@
-package _1strstr;
+package _0strstr;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 /**
  * Created by tzh on 1/14/17.

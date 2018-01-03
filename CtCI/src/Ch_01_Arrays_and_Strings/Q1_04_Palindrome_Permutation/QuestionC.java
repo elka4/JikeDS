@@ -1,6 +1,6 @@
 package Ch_01_Arrays_and_Strings.Q1_04_Palindrome_Permutation;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 public class QuestionC {
 	/* Toggle the ith bit in the integer. */
