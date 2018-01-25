@@ -20,7 +20,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete_main.iml" filepath="$PROJECT_DIR$/.idea/modules/complete_main.iml" group="complete" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete_test.iml" filepath="$PROJECT_DIR$/.idea/modules/complete_test.iml" group="complete" />
       <module fileurl="file://$PROJECT_DIR$/jsp_demo/jsp_demo.iml" filepath="$PROJECT_DIR$/jsp_demo/jsp_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jsp_demo/jsp_demo.iml" filepath="$PROJECT_DIR$/jsp_demo/jsp_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode/leetcode.iml" filepath="$PROJECT_DIR$/leetcode/leetcode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" filepath="$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" filepath="$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" />
       <module fileurl="file://$PROJECT_DIR$/top100/top100.iml" filepath="$PROJECT_DIR$/top100/top100.iml" />
     </modules>
