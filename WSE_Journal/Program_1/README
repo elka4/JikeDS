@@ -1,4 +1,0 @@
-src ----- source code of indexer and retriver
-lib ----- third-party jar file
-usuage for indexer: java -jar Indexer.jar <index_dir> <data_dir>
-usuage for retriver: java -jar Retriver.jar <index_dir> <query>

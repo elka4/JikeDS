@@ -1,4 +1,0 @@
-nature;40.137
-Nneuro;17.839
-Nmed;29.886
-science;37.205

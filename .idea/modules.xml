@@ -6,12 +6,10 @@
       <module fileurl="file://$PROJECT_DIR$/CtCI/CtCI.iml" filepath="$PROJECT_DIR$/CtCI/CtCI.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignPattern/DesignPattern.iml" filepath="$PROJECT_DIR$/DesignPattern/DesignPattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/J9Ch/J9Ch.iml" filepath="$PROJECT_DIR$/J9Ch/J9Ch.iml" />
-      <module fileurl="file://$PROJECT_DIR$/JSP/JSP.iml" filepath="$PROJECT_DIR$/JSP/JSP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/JSPStudy/JSPStudy.iml" filepath="$PROJECT_DIR$/JSPStudy/JSPStudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaEE/JavaEE.iml" filepath="$PROJECT_DIR$/JavaEE/JavaEE.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaStudy/JavaStudy.iml" filepath="$PROJECT_DIR$/JavaStudy/JavaStudy.iml" />
       <module fileurl="file://$PROJECT_DIR$/JikeDS.iml" filepath="$PROJECT_DIR$/JikeDS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Jike_NodJs_Sid/Jike_NodJs_Sid.iml" filepath="$PROJECT_DIR$/Jike_NodJs_Sid/Jike_NodJs_Sid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Leet_Ed/Leet_Ed.iml" filepath="$PROJECT_DIR$/Leet_Ed/Leet_Ed.iml" />
       <module fileurl="file://$PROJECT_DIR$/LintCodeBook/LintCodeBook.iml" filepath="$PROJECT_DIR$/LintCodeBook/LintCodeBook.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringPython/SpringPython.iml" filepath="$PROJECT_DIR$/SpringPython/SpringPython.iml" />
       <module fileurl="file://$PROJECT_DIR$/Try/Try.iml" filepath="$PROJECT_DIR$/Try/Try.iml" />
@@ -19,11 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete.iml" filepath="$PROJECT_DIR$/.idea/modules/complete.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete_main.iml" filepath="$PROJECT_DIR$/.idea/modules/complete_main.iml" group="complete" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete_test.iml" filepath="$PROJECT_DIR$/.idea/modules/complete_test.iml" group="complete" />
-      <module fileurl="file://$PROJECT_DIR$/jsp_demo/jsp_demo.iml" filepath="$PROJECT_DIR$/jsp_demo/jsp_demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jsp_demo/jsp_demo.iml" filepath="$PROJECT_DIR$/jsp_demo/jsp_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/leetcode/leetcode.iml" filepath="$PROJECT_DIR$/leetcode/leetcode.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" filepath="$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" filepath="$PROJECT_DIR$/spring-mvc-showcase/spring-mvc-showcase.iml" />
       <module fileurl="file://$PROJECT_DIR$/top100/top100.iml" filepath="$PROJECT_DIR$/top100/top100.iml" />
     </modules>
   </component>

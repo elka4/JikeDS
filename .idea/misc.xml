@@ -19,7 +19,6 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/spring-mvc-showcase/pom.xml" />
         <option value="$PROJECT_DIR$/../week2/week2-1/pom.xml" />
         <option value="$PROJECT_DIR$/../week2/week2-2/pom.xml" />
         <option value="$PROJECT_DIR$/../week3/pom.xml" />
@@ -33,7 +32,6 @@
         <option value="$PROJECT_DIR$/../../../Study/SpringMVC/SpringMVC7/pom.xml" />
         <option value="$PROJECT_DIR$/../../../Study/SpringMVC/SpringMVC8/pom.xml" />
         <option value="$PROJECT_DIR$/../../../Study/SpringMVC/SpringMVC9/pom.xml" />
-        <option value="$PROJECT_DIR$/jsp_demo/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

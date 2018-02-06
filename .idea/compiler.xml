@@ -22,13 +22,11 @@
         <module name="demo (2)" />
         <module name="fleet-location-service" />
         <module name="helloworld-spring-boot" />
-        <module name="jsp_demo" />
         <module name="lesson2" />
         <module name="lesson3" />
         <module name="lesson4" />
         <module name="lesson5" />
         <module name="lesson6" />
-        <module name="spring-mvc-showcase" />
         <module name="springmvc" />
       </profile>
     </annotationProcessing>
