@@ -1,4 +1,4 @@
-package leetcode;
+package Leet_Ed;
 
 import org.omg.PortableServer.LIFESPAN_POLICY_ID;
 

@@ -1,4 +1,4 @@
-package leetcode;
+package Leet_Ed;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

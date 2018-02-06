@@ -1,4 +1,4 @@
-package leetcode;
+package Leet_Ed;
 
 
 /**

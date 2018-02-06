@@ -1,4 +1,4 @@
-package leetcode;
+package Leet_Ed;
 
 import jdk.nashorn.internal.ir.IdentNode;
 

@@ -1,4 +1,4 @@
-package leetcode;
+package Leet_Ed;
 
 /**
  * Created by Edward on 24/07/2017.

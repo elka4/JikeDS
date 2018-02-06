@@ -1,4 +1,4 @@
-package leetcode;
+package Leet_Ed;
 
 import java.io.Serializable;
 import java.util.HashSet;
