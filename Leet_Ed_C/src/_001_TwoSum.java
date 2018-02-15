@@ -22,7 +22,7 @@ public class _001_TwoSum {
      space : O(n)
      * @param nums
      * @param target
-     * @return
+     * @return int[]
      */
 
     public static int[] twoSum(int[] nums, int target) {
