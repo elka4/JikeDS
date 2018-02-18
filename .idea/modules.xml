@@ -18,40 +18,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete_main.iml" filepath="$PROJECT_DIR$/.idea/modules/complete_main.iml" group="complete" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/complete_test.iml" filepath="$PROJECT_DIR$/.idea/modules/complete_test.iml" group="complete" />
       <module fileurl="file://$PROJECT_DIR$/leetcode/leetcode.iml" filepath="$PROJECT_DIR$/leetcode/leetcode.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/binarysearchtrees/src/main/main.iml" filepath="$PROJECT_DIR$/elements_J/binarysearchtrees/src/main/main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/sorting/src/main/main1.iml" filepath="$PROJECT_DIR$/elements_J/sorting/src/main/main1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/arrays/src/main/main10.iml" filepath="$PROJECT_DIR$/elements_J/arrays/src/main/main10.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/greedyalgorithms/src/main/main11.iml" filepath="$PROJECT_DIR$/elements_J/greedyalgorithms/src/main/main11.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/graphs/src/main/main12.iml" filepath="$PROJECT_DIR$/elements_J/graphs/src/main/main12.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/datastructures/src/main/main13.iml" filepath="$PROJECT_DIR$/elements_J/datastructures/src/main/main13.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/utils/src/main/main14.iml" filepath="$PROJECT_DIR$/elements_J/utils/src/main/main14.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/binarytrees/src/main/main15.iml" filepath="$PROJECT_DIR$/elements_J/binarytrees/src/main/main15.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/heaps/src/main/main16.iml" filepath="$PROJECT_DIR$/elements_J/heaps/src/main/main16.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/hashtables/src/main/main17.iml" filepath="$PROJECT_DIR$/elements_J/hashtables/src/main/main17.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/stacksandqueues/src/main/main2.iml" filepath="$PROJECT_DIR$/elements_J/stacksandqueues/src/main/main2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/strings/src/main/main3.iml" filepath="$PROJECT_DIR$/elements_J/strings/src/main/main3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/primitives/src/main/main4.iml" filepath="$PROJECT_DIR$/elements_J/primitives/src/main/main4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/recursion/src/main/main5.iml" filepath="$PROJECT_DIR$/elements_J/recursion/src/main/main5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/searching/src/main/main6.iml" filepath="$PROJECT_DIR$/elements_J/searching/src/main/main6.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/dynamicprogramming/src/main/main7.iml" filepath="$PROJECT_DIR$/elements_J/dynamicprogramming/src/main/main7.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/parallelcomputing/src/main/main8.iml" filepath="$PROJECT_DIR$/elements_J/parallelcomputing/src/main/main8.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/linkedlists/src/main/main9.iml" filepath="$PROJECT_DIR$/elements_J/linkedlists/src/main/main9.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/greedyalgorithms/src/test/test.iml" filepath="$PROJECT_DIR$/elements_J/greedyalgorithms/src/test/test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/binarytrees/src/test/test1.iml" filepath="$PROJECT_DIR$/elements_J/binarytrees/src/test/test1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/sorting/src/test/test10.iml" filepath="$PROJECT_DIR$/elements_J/sorting/src/test/test10.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/parallelcomputing/src/test/test11.iml" filepath="$PROJECT_DIR$/elements_J/parallelcomputing/src/test/test11.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/arrays/src/test/test12.iml" filepath="$PROJECT_DIR$/elements_J/arrays/src/test/test12.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/searching/src/test/test13.iml" filepath="$PROJECT_DIR$/elements_J/searching/src/test/test13.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/strings/src/test/test14.iml" filepath="$PROJECT_DIR$/elements_J/strings/src/test/test14.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/recursion/src/test/test15.iml" filepath="$PROJECT_DIR$/elements_J/recursion/src/test/test15.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/dynamicprogramming/src/test/test2.iml" filepath="$PROJECT_DIR$/elements_J/dynamicprogramming/src/test/test2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/primitives/src/test/test3.iml" filepath="$PROJECT_DIR$/elements_J/primitives/src/test/test3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/stacksandqueues/src/test/test4.iml" filepath="$PROJECT_DIR$/elements_J/stacksandqueues/src/test/test4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/graphs/src/test/test5.iml" filepath="$PROJECT_DIR$/elements_J/graphs/src/test/test5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/hashtables/src/test/test6.iml" filepath="$PROJECT_DIR$/elements_J/hashtables/src/test/test6.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/linkedlists/src/test/test7.iml" filepath="$PROJECT_DIR$/elements_J/linkedlists/src/test/test7.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/binarysearchtrees/src/test/test8.iml" filepath="$PROJECT_DIR$/elements_J/binarysearchtrees/src/test/test8.iml" />
-      <module fileurl="file://$PROJECT_DIR$/elements_J/heaps/src/test/test9.iml" filepath="$PROJECT_DIR$/elements_J/heaps/src/test/test9.iml" />
       <module fileurl="file://$PROJECT_DIR$/top100/top100.iml" filepath="$PROJECT_DIR$/top100/top100.iml" />
     </modules>
   </component>
