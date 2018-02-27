@@ -19,7 +19,7 @@ class TrieNode {
     }
 }
 
-public class AddandSearchWord {
+public class _211_AddandSearchWord {
     /**
      * 211. Add and Search Word - Data structure design
      * Design a data structure that supports the following two operations:
@@ -43,7 +43,7 @@ public class AddandSearchWord {
 
 
     /** Initialize your data structure here. */
-    public AddandSearchWord() {
+    public _211_AddandSearchWord() {
         root = new TrieNode();
     }
 
